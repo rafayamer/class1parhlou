@@ -4,6 +4,7 @@ Newest decisions first. A newer decision supersedes the PRD ([`PRD.md`](PRD.md))
 
 | ID | Date | Decision | Supersedes / notes |
 |---|---|---|---|
+| D-011 | 2026-11-12 | **iOS-style glass bars and app-wide animation.** Glass comes from the vendored open-source library PrismalAGSL (`android/prismal`, see its `UPSTREAM.md`). Animations respect Android's "Remove animations" setting. **Minimum Android raised from 7.0 to 7.1 (API 25)** because the library requires it. | Library licence: repo file MIT, source headers Apache-2.0; both permissive, both notices kept. |
 | D-010 | 2026-11-12 | **Visual design: "Calm Green"** from the founder's reference image 1 (sage background, lime accents, dark pill navigation), in **light and dark** themes, with layout ideas from reference 2. See [`design/README.md`](design/README.md). | Replaces the purple/lavender baseline in PRD §5. "Pro" upsell, XP and streaks from the references are not used. |
 | D-009 | 2026-11-12 | **Launch scope follows the PRD as written:** Punjab Board, Classes 9 and 10, founder-selected academically verified subjects, one PKR 3,999/month plan with Complete Academy and Test Series pathways. | Replaces D-004 ("Class 9 Maths only"). Which subjects are first is still open (PRD §31.1). |
 | D-008 | 2026-11-12 | **Milestone 1 builds backend core and Android foundation in parallel**, alongside Gate 0 documents. | Deviates from strict PRD gate order. Backend RLS tests must pass before any real student data or AI calls. |

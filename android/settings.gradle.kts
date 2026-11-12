@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "parhlou-student"
-include(":app")
+include(":app", ":prismal")

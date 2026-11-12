@@ -33,7 +33,9 @@ import pk.parhlou.student.data.OnboardingState
 import pk.parhlou.student.data.ParhlouRepository
 import pk.parhlou.student.data.Pathway
 import pk.parhlou.student.domain.StudyPlan
+import androidx.compose.animation.AnimatedContent
 import pk.parhlou.student.ui.components.BigButton
+import pk.parhlou.student.ui.components.rememberStepTransition
 import pk.parhlou.student.ui.components.CheckRow
 import pk.parhlou.student.ui.components.ChoiceCard
 import pk.parhlou.student.ui.components.Muted
@@ -85,11 +87,15 @@ fun OnboardingScreen(
             progress = { (step + 1) / 4f },
             modifier = Modifier.fillMaxWidth().semantics { contentDescription = "Step ${step + 1} of 4" },
         )
-        when (step) {
-            0 -> ConsentStep(state.consentAcknowledged) { update(state.copy(consentAcknowledged = it)) }
-            1 -> AcademicStep(repo, state) { update(it) }
-            2 -> PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
-            else -> AvailabilityStep(state) { update(it) }
+        AnimatedContent(targetState = step, transitionSpec = rememberStepTransition(), label = "onboardingStep") { s ->
+            Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                when (s) {
+                    0 -> ConsentStep(state.consentAcknowledged) { update(state.copy(consentAcknowledged = it)) }
+                    1 -> AcademicStep(repo, state) { update(it) }
+                    2 -> PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
+                    else -> AvailabilityStep(state) { update(it) }
+                }
+            }
         }
         val canContinue = when (step) {
             0 -> state.consentAcknowledged

@@ -25,6 +25,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import pk.parhlou.student.ui.components.CircleIcon
+import pk.parhlou.student.ui.components.appear
 import pk.parhlou.student.ui.components.ProgressRing
 import pk.parhlou.student.ui.components.SecondaryButton
 import pk.parhlou.student.ui.components.TaskRow
@@ -140,7 +141,7 @@ fun HomeScreen(
 
     ParhlouScreen(title = null) {
         // Greeting row
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.appear(0), verticalAlignment = Alignment.CenterVertically) {
             Surface(shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface) {
                 Row(Modifier.padding(start = 6.dp, end = 14.dp, top = 6.dp, bottom = 6.dp),
                     verticalAlignment = Alignment.CenterVertically) {
@@ -165,10 +166,11 @@ fun HomeScreen(
                 append("today?")
             },
             style = MaterialTheme.typography.displaySmall,
+            modifier = Modifier.appear(1),
         )
 
         // Quick actions: tutor, book, scanner
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(Modifier.appear(2), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
             Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
                 border = BorderStroke(1.5.dp, MaterialTheme.colorScheme.primaryContainer),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
@@ -182,7 +184,7 @@ fun HomeScreen(
         Card(
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
             shape = RoundedCornerShape(28.dp),
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.appear(3).fillMaxWidth(),
         ) {
             Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -215,9 +217,9 @@ fun HomeScreen(
             }
         }
 
-        WeekStrip(studyDays = onboarding.studyDaysPerWeek)
+        Box(Modifier.appear(4)) { WeekStrip(studyDays = onboarding.studyDaysPerWeek) }
 
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        Row(Modifier.appear(5), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Tile("My book", Icons.Filled.MenuBook, onSubjects, Modifier.weight(1f))
             Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))

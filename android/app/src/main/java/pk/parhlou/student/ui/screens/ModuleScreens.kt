@@ -39,6 +39,12 @@ import pk.parhlou.student.domain.Evidence
 import pk.parhlou.student.domain.QuizAnswer
 import pk.parhlou.student.domain.QuizScorer
 import pk.parhlou.student.domain.QuizSummary
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.Column
+import pk.parhlou.student.ui.components.LocalReducedMotion
+import pk.parhlou.student.ui.components.rememberStepTransition
 import pk.parhlou.student.ui.components.BigButton
 import pk.parhlou.student.ui.components.CheckRow
 import pk.parhlou.student.ui.components.ChoiceCard
@@ -60,7 +66,7 @@ fun ModuleScreen(
     onAskTutor: () -> Unit,
     onBack: () -> Unit,
 ) {
-    var stage by rememberSaveable { mutableStateOf(Stage.LEARN) }
+    var current by rememberSaveable { mutableStateOf(Stage.LEARN) }
     LaunchedEffect(module.id) {
         if (progress.evidence(module.id).isEmpty()) progress.add(module.id, Evidence.ModuleOpened)
     }
@@ -77,22 +83,26 @@ fun ModuleScreen(
         ) {
             Stage.entries.forEach { s ->
                 FilterChip(
-                    selected = stage == s, onClick = { stage = s }, label = { Text(s.label) },
+                    selected = current == s, onClick = { current = s }, label = { Text(s.label) },
                     modifier = Modifier.heightIn(min = 48.dp),
                 )
             }
         }
+        AnimatedContent(targetState = current, transitionSpec = rememberStepTransition(), label = "stage") { stage ->
+        Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
         when (stage) {
-            Stage.LEARN -> LearnStage(module, progress) { stage = Stage.UNDERSTAND }
+            Stage.LEARN -> LearnStage(module, progress) { current = Stage.UNDERSTAND }
             Stage.UNDERSTAND -> QuizContent(
                 questions = quiz,
                 passPercent = null,
                 onFinished = { summary -> progress.add(module.id, Evidence.QuizCompleted(summary.firstTryPercent)) },
-                onNext = { stage = Stage.READ },
+                onNext = { current = Stage.READ },
             )
-            Stage.READ -> ReadStage(module, progress) { stage = Stage.WRITE }
-            Stage.WRITE -> WriteStage(module, progress, store) { stage = Stage.IMPROVE }
+            Stage.READ -> ReadStage(module, progress) { current = Stage.WRITE }
+            Stage.WRITE -> WriteStage(module, progress, store) { current = Stage.IMPROVE }
             Stage.IMPROVE -> ImproveStage(module, progress, onAskTutor)
+        }
+        }
         }
     }
 }
@@ -224,11 +234,14 @@ fun QuizContent(
         return
     }
 
-    val q = order[index]
-    Muted("Question ${index + 1} of ${order.size}" + (passPercent?.let { " · pass mark $it%" } ?: ""))
+    AnimatedContent(targetState = index, transitionSpec = rememberStepTransition(), label = "question") { shownIndex ->
+    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+    val q = order[shownIndex]
+    Muted("Question ${shownIndex + 1} of ${order.size}" + (passPercent?.let { " · pass mark $it%" } ?: ""))
     Sheet { Text(q.stem, style = MaterialTheme.typography.titleLarge) }
+    Crossfade(targetState = chosen, animationSpec = tween(if (LocalReducedMotion.current) 0 else 250), label = "reveal") { picked ->
+    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
     q.options.forEachIndexed { i, option ->
-        val picked = chosen
         if (picked == null) {
             ChoiceCard(
                 title = option,
@@ -247,6 +260,8 @@ fun QuizContent(
             )
         }
     }
+    }
+    }
     val c = chosen
     if (c != null) {
         Text(if (c == q.sampleCorrectIndex) "Correct." else "Not quite. The right answer is highlighted.",
@@ -259,6 +274,8 @@ fun QuizContent(
                 onFinished(s)
             } else index++
         })
+    }
+    }
     }
 }
 

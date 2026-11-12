@@ -37,16 +37,34 @@ import pk.parhlou.student.ui.screens.WelcomeScreen
 import pk.parhlou.student.ui.screens.TutorScreen
 import pk.parhlou.student.ui.screens.ProfileScreen
 import pk.parhlou.student.ui.components.NavItem
-import pk.parhlou.student.ui.components.PillNavBar
-import androidx.compose.foundation.layout.consumeWindowInsets
-import androidx.compose.foundation.layout.padding
+import pk.parhlou.student.ui.components.GlassTabBar
+import pk.parhlou.student.ui.components.GlassTabBarHeight
+import pk.parhlou.student.ui.components.LocalBottomBarSpace
+import pk.parhlou.student.ui.components.LocalReducedMotion
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.background
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.navigation.NavBackStackEntry
+import com.styropyr0.prismal.initializePrismal
+import com.styropyr0.prismal.sources.prismalGlassLayer
+import androidx.compose.ui.platform.LocalContext
+import com.styropyr0.prismal.sources.rememberPrismalGlassLayer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.navigation.compose.currentBackStackEntryAsState
 
 object Routes {
@@ -84,6 +102,8 @@ private val placeholders = mapOf(
 
 @Composable
 fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
+    val context = LocalContext.current
+    remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
     val onboarding by store.onboarding.collectAsState(initial = null)
     val state = onboarding
     if (state == null) {
@@ -103,14 +123,30 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
         restoreState = true
     }
 
-    Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
-        bottomBar = { if (showBar) PillNavBar(navItems, current, ::goTop) },
-    ) { outer ->
+    // Everything the app draws is recorded into this layer so the glass tab bar can blur/refract it.
+    val backdrop = rememberPrismalGlassLayer()
+    val reduced = LocalReducedMotion.current
+    val enter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
+        if (reduced) EnterTransition.None
+        else fadeIn(tween(260)) + slideInHorizontally(tween(320, easing = FastOutSlowInEasing)) { it / 6 }
+    }
+    val exit: AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition = {
+        if (reduced) ExitTransition.None else fadeOut(tween(180))
+    }
+    val popEnter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
+        if (reduced) EnterTransition.None
+        else fadeIn(tween(260)) + slideInHorizontally(tween(320, easing = FastOutSlowInEasing)) { -it / 6 }
+    }
+
+    Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
     NavHost(
         nav,
         startDestination = if (state.completed) Routes.HOME else Routes.WELCOME,
-        modifier = Modifier.padding(outer).consumeWindowInsets(outer),
+        modifier = Modifier.fillMaxSize().prismalGlassLayer(backdrop),
+        enterTransition = enter,
+        exitTransition = exit,
+        popEnterTransition = popEnter,
+        popExitTransition = exit,
     ) {
         composable(Routes.WELCOME) { WelcomeScreen(onStart = { nav.navigate(Routes.ONBOARDING) }) }
         composable(Routes.ONBOARDING) {
@@ -124,7 +160,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onExit = { nav.popBackStack() },
             )
         }
-        composable(Routes.HOME) {
+        composable(Routes.HOME) { WithTabBarSpace {
             HomeScreen(
                 repo = repo, onboarding = state, progress = progress,
                 onOpenModule = { nav.navigate("module/$it") },
@@ -134,18 +170,18 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onTutor = { nav.navigate(Routes.TUTOR) },
                 onPlaceholder = { nav.navigate("soon/$it") },
             )
-        }
+        } }
         composable(Routes.TUTOR) { TutorScreen(repo, state, onBack = nav.back()) }
-        composable(Routes.PROFILE) {
+        composable(Routes.PROFILE) { WithTabBarSpace {
             ProfileScreen(
                 repo, state, progress,
                 onPlaceholder = { nav.navigate("soon/$it") },
                 onClearDevice = { scope.launch { store.clearAll() } },
             )
-        }
-        composable(Routes.SUBJECTS) {
+        } }
+        composable(Routes.SUBJECTS) { WithTabBarSpace {
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null)
-        }
+        } }
         composable(Routes.SUBJECT) { entry ->
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
             if (subject == null) Missing(nav) else
@@ -159,7 +195,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onAskTutor = { nav.navigate(Routes.TUTOR) }, onBack = nav.back(),
             )
         }
-        composable(Routes.TESTS) {
+        composable(Routes.TESTS) { WithTabBarSpace {
             TestsScreen(
                 blueprints = subjectIds.flatMap { repo.blueprints(it) },
                 readinessPassed = readinessPassed,
@@ -167,7 +203,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
             )
-        }
+        } }
         composable(Routes.READINESS) {
             ReadinessScreen(
                 questions = subjectIds.flatMap { repo.readinessQuiz(it) }.take(10),
@@ -195,8 +231,25 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
             PlaceholderScreen(title, msg, onBack = { nav.popBackStack() })
         }
     }
+    AnimatedVisibility(
+        visible = showBar,
+        modifier = Modifier.align(Alignment.BottomCenter),
+        enter = if (reduced) EnterTransition.None else fadeIn() + slideInVertically { it },
+        exit = if (reduced) ExitTransition.None else fadeOut() + slideOutVertically { it },
+    ) {
+        GlassTabBar(
+            items = navItems,
+            selectedIndex = navItems.indexOfFirst { it.route == current }.coerceAtLeast(0),
+            onSelect = { goTop(navItems[it].route) },
+            backdrop = backdrop,
+        )
+    }
     }
 }
+
+@Composable
+private fun WithTabBarSpace(content: @Composable () -> Unit) =
+    CompositionLocalProvider(LocalBottomBarSpace provides GlassTabBarHeight, content = content)
 
 private fun NavHostController.back(): () -> Unit = { popBackStack() }
 

@@ -1,6 +1,6 @@
 # Parhlou student app (Android)
 
-Kotlin + Jetpack Compose, Material 3, single activity. **Milestone 1 foundation with offline sample data.** It is not connected to the backend, has no sign-in, billing, scanner or AI marking yet.
+Kotlin 2.2 + Jetpack Compose (BOM 2026.06), Material 3, single activity, minimum Android 7.1 (API 25). Glass bars come from the vendored PrismalAGSL library in `prismal/` (see `prismal/UPSTREAM.md`). **Milestone 1 foundation with offline sample data.** It is not connected to the backend, has no sign-in, billing, scanner or AI marking yet.
 
 ## What's in it
 
@@ -17,7 +17,7 @@ The visual theme (`ui/theme/Theme.kt`) is the "Calm Green" design in light and d
 
 ## Build and test
 
-Requires JDK 17+ and the Android SDK (platform 35).
+Requires JDK 17+ and the Android SDK (platform 36).
 
 ```bash
 ./gradlew :app:assembleDebug
@@ -27,7 +27,7 @@ Requires JDK 17+ and the Android SDK (platform 35).
 ./gradlew :app:testDebugUnitTest
 ```
 
-If Robolectric can't download its Android runtime jars (restricted networks), download `android-all-instrumented` 14 and 15 jars from Maven Central into a folder and run:
+If Robolectric can't download its Android runtime jars (restricted networks), download the `android-all-instrumented` 12.1, 14 and 15 jars from Maven Central into a folder and run:
 
 ```bash
 ./gradlew :app:testDebugUnitTest -ProbolectricDir=/path/to/jars

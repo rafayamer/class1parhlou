@@ -25,7 +25,8 @@ import java.io.File
 /** Renders design screenshots on demand: ./gradlew :app:testDebugUnitTest -PscreenshotDir=/tmp/shots */
 @RunWith(RobolectricTestRunner::class)
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
-@Config(sdk = [34], qualifiers = "w393dp-h852dp-xxhdpi")
+// Android 12L renders the RenderEffect blur tier; Robolectric's native Skia cannot compile the API 33+ AGSL shaders.
+@Config(sdk = [32], qualifiers = "w393dp-h852dp-xxhdpi")
 class ScreenshotTest {
     @get:Rule val rule = createAndroidComposeRule<ComponentActivity>()
     private val dir = System.getProperty("parhlou.screenshotDir")
@@ -39,6 +40,7 @@ class ScreenshotTest {
                 Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
         }
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
+        rule.mainClock.autoAdvance = true
         val mode = if (dark) "dark" else "light"
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         save("1-home-$mode")
@@ -48,8 +50,8 @@ class ScreenshotTest {
 
     private fun androidx.compose.ui.test.junit4.AndroidComposeTestRule<*, ComponentActivity>.activityRule() {
         onNode(hasContentDescription("Back")).performClick()
-        onNode(hasContentDescription("Profile")).performClick(); save("3-profile-${if (isDark) "dark" else "light"}")
-        onNode(hasContentDescription("Book")).performClick()
+        onNodeWithText("Profile").performClick(); save("3-profile-${if (isDark) "dark" else "light"}")
+        onNodeWithText("Book").performClick()
         onNodeWithText("Mathematics · Class 9").performClick(); save("4-units-${if (isDark) "dark" else "light"}")
         onNodeWithText("1. Rational and irrational numbers").performClick()
         onNodeWithText("2 Quiz").performClick()

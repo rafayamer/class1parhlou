@@ -16,11 +16,17 @@
 | Study-hours totals | Not measured yet; no fabricated data | Nothing until tracked |
 | Calendar meetings/events | No invented sessions | A plain week strip with today highlighted |
 
+## Glass and motion (D-011)
+
+- **Glass:** floating glass title bar on every screen and an iOS-style glass tab bar with a draggable liquid droplet, from the vendored PrismalAGSL library (`android/prismal`). It adapts per phone: frosted look on Android 7.1–11, blur on Android 12, full liquid glass (refraction, highlights) on Android 13+.
+- **Motion:** sliding screen transitions, staggered entrance on Home, animated progress ring, springy button presses, sliding onboarding steps / module stages / quiz questions, cross-fade answer reveal, tab bar slides in and out. All of it switches off when the phone's "Remove animations" setting is on.
+- **Not yet checked on a real phone:** the Android 13+ liquid-glass shaders. Screenshots below are rendered as Android 12L (blur tier) because the test renderer can't compile those shaders.
+
 ## Tokens
 
 All colours live in `android/app/src/main/java/pk/parhlou/student/ui/theme/Theme.kt` (`Palette`). Roles: `primary` = main action (ink in light, lime in dark), `primaryContainer` = lime highlight, `secondary` = green icons and good states, `tertiary` = amber warnings only.
 
-## Screens (rendered by `ScreenshotTest`, 393×852 dp)
+## Screens (rendered by `ScreenshotTest`, 393×852 dp, Android 12L)
 
 `screens/` holds home, tutor, profile, units and quiz in light and dark. Regenerate:
 

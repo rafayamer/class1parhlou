@@ -14,6 +14,16 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.unit.Dp
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import com.styropyr0.prismal.sources.prismalGlassLayer
+import com.styropyr0.prismal.sources.rememberPrismalGlassLayer
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -57,51 +67,77 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
-/** Standard screen: title bar with optional back, scrolling column, 16dp gutters. */
-@OptIn(ExperimentalMaterial3Api::class)
+/**
+ * Standard screen. Content scrolls underneath a floating glass title bar (iOS style) and, on main
+ * screens, underneath the glass tab bar ([LocalBottomBarSpace] keeps the last item reachable).
+ * `title = null` hides the bar (Home draws its own greeting header).
+ */
 @Composable
 fun ParhlouScreen(
     title: String?,
     onBack: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    Scaffold(
-        containerColor = MaterialTheme.colorScheme.background,
-        topBar = {
-            if (title != null) TopAppBar(
-                title = { Text(title, modifier = Modifier.semantics { heading() }) },
-                navigationIcon = {
-                    if (onBack != null) {
-                        IconButton(onClick = onBack) {
-                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-                        }
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.background),
-            )
-        },
-    ) { padding ->
+    val backdrop = rememberPrismalGlassLayer()
+    val bottomSpace = LocalBottomBarSpace.current
+    // Surface sets the default text/icon colour for the theme (light or dark).
+    Surface(color = MaterialTheme.colorScheme.background, contentColor = MaterialTheme.colorScheme.onBackground) {
+    Box(Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(padding)
+                .prismalGlassLayer(backdrop)
+                .background(MaterialTheme.colorScheme.background)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = 16.dp, vertical = 8.dp),
+                .statusBarsPadding()
+                .padding(horizontal = 16.dp)
+                .padding(top = if (title != null) 76.dp else 8.dp, bottom = 16.dp + bottomSpace),
             verticalArrangement = Arrangement.spacedBy(14.dp),
             content = content,
         )
+        if (title != null) {
+            Row(
+                Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                if (onBack != null) {
+                    val interaction = remember { MutableInteractionSource() }
+                    Box(
+                        Modifier.size(52.dp).pressScale(interaction).glassCapsule(backdrop)
+                            .clip(CircleShape)
+                            .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onBack)
+                            .semantics { contentDescription = "Back" },
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface)
+                    }
+                }
+                Box(
+                    Modifier.heightIn(min = 52.dp).glassCapsule(backdrop).padding(horizontal = 20.dp),
+                    contentAlignment = Alignment.CenterStart,
+                ) {
+                    Text(title, style = MaterialTheme.typography.titleMedium, maxLines = 1,
+                        color = MaterialTheme.colorScheme.onSurface,
+                        modifier = Modifier.semantics { heading() })
+                }
+            }
+        }
+    }
     }
 }
 
 /** The one big primary action per screen (PRD §2). */
 @Composable
 fun BigButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) {
+    val interaction = remember { MutableInteractionSource() }
     Button(
         onClick = onClick,
         enabled = enabled,
+        interactionSource = interaction,
         shape = RoundedCornerShape(50),
         contentPadding = PaddingValues(vertical = 16.dp),
-        modifier = modifier.fillMaxWidth().heightIn(min = 56.dp),
+        modifier = modifier.pressScale(interaction).fillMaxWidth().heightIn(min = 56.dp),
     ) { Text(text, style = MaterialTheme.typography.labelLarge) }
 }
 
@@ -268,50 +304,19 @@ fun ProgressRing(
         Modifier.size(size).semantics { contentDescription = description },
         contentAlignment = Alignment.Center,
     ) {
+        val reduced = LocalReducedMotion.current
+        val shown by animateFloatAsState(
+            targetValue = fraction.coerceIn(0f, 1f),
+            animationSpec = if (reduced) snap() else tween(durationMillis = 900, easing = FastOutSlowInEasing),
+            label = "ring",
+        )
         Canvas(Modifier.fillMaxSize()) {
             val stroke = Stroke(width = 8.dp.toPx(), cap = StrokeCap.Round)
             drawArc(track, startAngle = 0f, sweepAngle = 360f, useCenter = false, style = stroke)
-            drawArc(progress, startAngle = -90f, sweepAngle = 360f * fraction.coerceIn(0f, 1f), useCenter = false, style = stroke)
+            drawArc(progress, startAngle = -90f, sweepAngle = 360f * shown, useCenter = false, style = stroke)
         }
         Text(label, style = MaterialTheme.typography.titleMedium, color = textColor)
     }
 }
 
 data class NavItem(val route: String, val label: String, val icon: ImageVector)
-
-/** Floating pill navigation: the selected item shows icon and label, the others show an icon. */
-@Composable
-fun PillNavBar(items: List<NavItem>, selectedRoute: String?, onSelect: (String) -> Unit) {
-    Box(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp),
-        contentAlignment = Alignment.Center) {
-        Surface(
-            shape = RoundedCornerShape(50),
-            color = MaterialTheme.colorScheme.surface,
-            shadowElevation = 6.dp,
-        ) {
-            Row(Modifier.padding(6.dp), horizontalArrangement = Arrangement.spacedBy(4.dp),
-                verticalAlignment = Alignment.CenterVertically) {
-                items.forEach { item ->
-                    val selected = item.route == selectedRoute
-                    Row(
-                        Modifier
-                            .heightIn(min = 48.dp)
-                            .clip(RoundedCornerShape(50))
-                            .background(if (selected) MaterialTheme.colorScheme.primary else Color.Transparent)
-                            .clickable(role = Role.Tab) { onSelect(item.route) }
-                            .semantics { this.selected = selected; if (!selected) contentDescription = item.label }
-                            .padding(horizontal = if (selected) 16.dp else 12.dp, vertical = 12.dp),
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Icon(item.icon, contentDescription = null, modifier = Modifier.size(24.dp),
-                            tint = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant)
-                        if (selected) {
-                            Spacer(Modifier.width(8.dp))
-                            Text(item.label, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimary)
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
