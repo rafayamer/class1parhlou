@@ -1,0 +1,19 @@
+# Minimal Supabase CLI config for local development (`supabase start`, `supabase test db`).
+project_id = "parhlou"
+
+[api]
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+
+[db]
+port = 54322
+major_version = 16
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "http://localhost:3000"
+enable_signup = true

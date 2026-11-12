@@ -21,13 +21,13 @@ Learner (minor), verified guardian, unverified/adversarial "guardian", assigned 
 
 | # | Threat | Control | Verified by |
 |---|---|---|---|
-| T1 | Learner reads another tenant's marks/progress (PRD §29.2) | RLS deny-by-default; membership-scoped policies | `supabase/tests/02_tenant_isolation.sql` |
-| T2 | Unverified or revoked guardian reads a child's data (§29.13) | Guardian policies require `status = 'verified'` and the scope | `supabase/tests/03_guardians.sql` |
-| T3 | Learner reads answer keys or DRAFT content | Keys in a separate table with no learner policy; curriculum policies require `PUBLISHED` | `supabase/tests/04_content_and_keys.sql` |
-| T4 | Learner writes their own marks/entitlements | No insert/update policies for authenticated users; only service role / security-definer RPCs | `supabase/tests/05_marks_entitlements.sql` |
-| T5 | Evidence history rewritten | Append-only triggers on `learning_events`, `audit_logs`, `consent_events` | `supabase/tests/06_append_only.sql` |
-| T6 | Paper with wrong mark totals published | `validate_blueprint` + publish check | `supabase/tests/07_blueprints.sql` |
-| T7 | Client fakes a correct quiz answer | `answer_quiz_item` scores server-side; first attempt preserved | `supabase/tests/08_quiz_rpc.sql` |
+| T1 | Learner reads another tenant's marks/progress (PRD §29.2) | RLS deny-by-default; membership-scoped policies | `supabase/tests/database/rls.test.sql` |
+| T2 | Unverified or revoked guardian reads a child's data (§29.13) | Guardian policies require `status = 'verified'` and the scope | `supabase/tests/database/rls.test.sql` |
+| T3 | Learner reads answer keys or DRAFT content | Keys in a separate table with no learner policy; curriculum policies require `PUBLISHED` | `supabase/tests/database/rls.test.sql` |
+| T4 | Learner writes their own marks/entitlements | No insert/update policies for authenticated users; only service role / security-definer RPCs | `supabase/tests/database/rls.test.sql` |
+| T5 | Evidence history rewritten | Append-only triggers on `learning_events`, `audit_logs`, `consent_events` | `supabase/tests/database/rls.test.sql` |
+| T6 | Paper with wrong mark totals published | `validate_blueprint` + publish check | `supabase/tests/database/rls.test.sql` |
+| T7 | Client fakes a correct quiz answer | `answer_quiz_item` scores server-side; first attempt preserved | `supabase/tests/database/rls.test.sql` |
 | T8 | Service-role/AI keys shipped in app | Keys never in Android code or assets; CI secret scan (todo) | Manual review (todo) |
 | T9 | Public scan URLs | Private bucket, short-lived signed URLs | Gate 2b (todo) |
 | T10 | Duplicate billing on 25-page retries | Idempotency keys on uploads/jobs | Gate 2b/5 (todo) |
