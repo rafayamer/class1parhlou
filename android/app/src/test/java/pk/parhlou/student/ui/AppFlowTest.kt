@@ -32,6 +32,7 @@ class AppFlowTest {
     fun onboardingThenHomeThenQuiz() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
 
+        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Get started") }
         rule.onNodeWithText("Get started").performClick()
 
         // Step 1: cannot continue without acknowledging the notice.
@@ -68,6 +69,7 @@ class AppFlowTest {
     @Test
     fun testSeriesPapersStayLockedUntilReadinessIsPassed() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
+        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Get started") }
         rule.onNodeWithText("Get started").performClick()
         rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()

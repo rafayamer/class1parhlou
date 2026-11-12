@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
@@ -227,17 +228,24 @@ fun QuizContent(
     Muted("Question ${index + 1} of ${order.size}" + (passPercent?.let { " · pass mark $it%" } ?: ""))
     Sheet { Text(q.stem, style = MaterialTheme.typography.titleLarge) }
     q.options.forEachIndexed { i, option ->
-        val answered = chosen != null
-        ChoiceCard(
-            title = option,
-            subtitle = if (answered) q.rationales.getOrNull(i) else null,
-            selected = chosen == i || (answered && i == q.sampleCorrectIndex),
-            enabled = !answered,
-            onClick = {
-                chosen = i
-                history = QuizScorer.record(history, q.id, i, q.sampleCorrectIndex)
-            },
-        )
+        val picked = chosen
+        if (picked == null) {
+            ChoiceCard(
+                title = option,
+                selected = false,
+                onClick = {
+                    chosen = i
+                    history = QuizScorer.record(history, q.id, i, q.sampleCorrectIndex)
+                },
+            )
+        } else {
+            AnswerCard(
+                option = option,
+                rationale = q.rationales.getOrNull(i),
+                isCorrect = i == q.sampleCorrectIndex,
+                isChosen = i == picked,
+            )
+        }
     }
     val c = chosen
     if (c != null) {
@@ -251,5 +259,37 @@ fun QuizContent(
                 onFinished(s)
             } else index++
         })
+    }
+}
+
+/** An option after answering: the right answer in green, a wrong choice in red, every option explained. */
+@Composable
+private fun AnswerCard(option: String, rationale: String?, isCorrect: Boolean, isChosen: Boolean) {
+    val scheme = MaterialTheme.colorScheme
+    val container = when {
+        isCorrect -> scheme.primaryContainer
+        isChosen -> scheme.error.copy(alpha = 0.14f)
+        else -> scheme.surface
+    }
+    val content = if (isCorrect) scheme.onPrimaryContainer else scheme.onSurface
+    androidx.compose.material3.Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(18.dp),
+        colors = androidx.compose.material3.CardDefaults.cardColors(containerColor = container, contentColor = content),
+        border = if (isChosen && !isCorrect) androidx.compose.foundation.BorderStroke(1.5.dp, scheme.error) else null,
+    ) {
+        androidx.compose.foundation.layout.Column(
+            Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(option, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+                when {
+                    isCorrect -> Text("Correct answer", style = MaterialTheme.typography.labelMedium, color = content)
+                    isChosen -> Text("Your answer", style = MaterialTheme.typography.labelMedium, color = scheme.error)
+                }
+            }
+            if (rationale != null) Text(rationale, style = MaterialTheme.typography.bodyMedium)
+        }
     }
 }

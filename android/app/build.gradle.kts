@@ -34,6 +34,8 @@ android {
         // Offline Robolectric: pass -ProbolectricDir=/path/with/android-all-instrumented jars
         // where the network blocks Robolectric's own downloader.
         unitTests.all { test ->
+            // -PscreenshotDir=/path renders design screenshots (ScreenshotTest); skipped otherwise.
+            project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
             project.findProperty("robolectricDir")?.let { dir ->
                 test.systemProperty("robolectric.offline", "true")
                 test.systemProperty("robolectric.dependency.dir", dir.toString())

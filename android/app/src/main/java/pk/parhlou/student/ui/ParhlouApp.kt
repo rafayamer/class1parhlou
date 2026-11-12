@@ -34,6 +34,20 @@ import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
 import pk.parhlou.student.ui.screens.TestsScreen
 import pk.parhlou.student.ui.screens.WelcomeScreen
+import pk.parhlou.student.ui.screens.TutorScreen
+import pk.parhlou.student.ui.screens.ProfileScreen
+import pk.parhlou.student.ui.components.NavItem
+import pk.parhlou.student.ui.components.PillNavBar
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Quiz
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.navigation.compose.currentBackStackEntryAsState
 
 object Routes {
     const val WELCOME = "welcome"
@@ -49,12 +63,23 @@ object Routes {
     const val RESULT = "result"
     const val JOURNEY = "journey"
     const val PLACEHOLDER = "soon/{key}"
+    const val TUTOR = "tutor"
+    const val PROFILE = "profile"
 }
+
+/** Main destinations shown in the floating pill bar. */
+private val navItems = listOf(
+    NavItem(Routes.HOME, "Home", Icons.Filled.Home),
+    NavItem(Routes.SUBJECTS, "Book", Icons.AutoMirrored.Filled.MenuBook),
+    NavItem(Routes.TESTS, "Papers", Icons.Filled.Quiz),
+    NavItem(Routes.PROFILE, "Profile", Icons.Filled.Person),
+)
 
 private val placeholders = mapOf(
     "guardian" to ("Add a parent" to "Linking a parent needs verified accounts on the server. It arrives with guardian reports."),
     "profile" to ("Profile & privacy" to "Account settings, data export and deletion arrive when sign-in is connected."),
-    "tutor" to ("AI tutor" to "The tutor answers only from approved, cited sources. It arrives after the content library is verified."),
+    "scanner" to ("Scan answer sheets" to "The camera scanner for up to 25 pages is the next part to be built."),
+    "history" to ("Practice history" to "Your saved quiz and paper history appears here once your account is connected."),
 )
 
 @Composable
@@ -70,8 +95,23 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
     val scope = rememberCoroutineScope()
     var readinessPassed by rememberSaveable { mutableStateOf(false) }
     val subjectIds = state.subjectIds.toList()
+    val current = nav.currentBackStackEntryAsState().value?.destination?.route
+    val showBar = current in navItems.map { it.route }
+    fun goTop(route: String) = nav.navigate(route) {
+        popUpTo(Routes.HOME) { saveState = true }
+        launchSingleTop = true
+        restoreState = true
+    }
 
-    NavHost(nav, startDestination = if (state.completed) Routes.HOME else Routes.WELCOME) {
+    Scaffold(
+        containerColor = MaterialTheme.colorScheme.background,
+        bottomBar = { if (showBar) PillNavBar(navItems, current, ::goTop) },
+    ) { outer ->
+    NavHost(
+        nav,
+        startDestination = if (state.completed) Routes.HOME else Routes.WELCOME,
+        modifier = Modifier.padding(outer).consumeWindowInsets(outer),
+    ) {
         composable(Routes.WELCOME) { WelcomeScreen(onStart = { nav.navigate(Routes.ONBOARDING) }) }
         composable(Routes.ONBOARDING) {
             OnboardingScreen(
@@ -91,11 +131,20 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onSubjects = { nav.navigate(Routes.SUBJECTS) },
                 onTests = { nav.navigate(Routes.TESTS) },
                 onJourney = { nav.navigate(Routes.JOURNEY) },
+                onTutor = { nav.navigate(Routes.TUTOR) },
                 onPlaceholder = { nav.navigate("soon/$it") },
             )
         }
+        composable(Routes.TUTOR) { TutorScreen(repo, state, onBack = nav.back()) }
+        composable(Routes.PROFILE) {
+            ProfileScreen(
+                repo, state, progress,
+                onPlaceholder = { nav.navigate("soon/$it") },
+                onClearDevice = { scope.launch { store.clearAll() } },
+            )
+        }
         composable(Routes.SUBJECTS) {
-            SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = nav.back())
+            SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null)
         }
         composable(Routes.SUBJECT) { entry ->
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
@@ -107,7 +156,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
             val module = repo.module(id)
             if (module == null) Missing(nav) else ModuleScreen(
                 module = module, quiz = repo.moduleQuiz(id), progress = progress, store = store,
-                onAskTutor = { nav.navigate("soon/tutor") }, onBack = nav.back(),
+                onAskTutor = { nav.navigate(Routes.TUTOR) }, onBack = nav.back(),
             )
         }
         composable(Routes.TESTS) {
@@ -116,7 +165,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 readinessPassed = readinessPassed,
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
-                onBack = nav.back(),
+                onBack = null,
             )
         }
         composable(Routes.READINESS) {
@@ -135,7 +184,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
             val b = subjectIds.flatMap { repo.blueprints(it) }.firstOrNull { it.id == entry.arguments?.getString("id") }
             if (b == null) Missing(nav) else ExamScreen(
                 b, store,
-                onSubmit = { nav.navigate(Routes.RESULT) { popUpTo(Routes.HOME) } },
+                onSubmit = { progress.paperSubmitted(); nav.navigate(Routes.RESULT) { popUpTo(Routes.HOME) } },
                 onBack = nav.back(),
             )
         }
@@ -145,6 +194,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
             val (title, msg) = placeholders[entry.arguments?.getString("key")] ?: ("Coming later" to "This part isn't built yet.")
             PlaceholderScreen(title, msg, onBack = { nav.popBackStack() })
         }
+    }
     }
 }
 

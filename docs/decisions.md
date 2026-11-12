@@ -4,6 +4,7 @@ Newest decisions first. A newer decision supersedes the PRD ([`PRD.md`](PRD.md))
 
 | ID | Date | Decision | Supersedes / notes |
 |---|---|---|---|
+| D-010 | 2026-11-12 | **Visual design: "Calm Green"** from the founder's reference image 1 (sage background, lime accents, dark pill navigation), in **light and dark** themes, with layout ideas from reference 2. See [`design/README.md`](design/README.md). | Replaces the purple/lavender baseline in PRD §5. "Pro" upsell, XP and streaks from the references are not used. |
 | D-009 | 2026-11-12 | **Launch scope follows the PRD as written:** Punjab Board, Classes 9 and 10, founder-selected academically verified subjects, one PKR 3,999/month plan with Complete Academy and Test Series pathways. | Replaces D-004 ("Class 9 Maths only"). Which subjects are first is still open (PRD §31.1). |
 | D-008 | 2026-11-12 | **Milestone 1 builds backend core and Android foundation in parallel**, alongside Gate 0 documents. | Deviates from strict PRD gate order. Backend RLS tests must pass before any real student data or AI calls. |
 | D-007 | 2026-11-12 | **PRD saved in the repo** as the planning baseline (`docs/PRD.md`). | — |
@@ -26,4 +27,4 @@ Newest decisions first. A newer decision supersedes the PRD ([`PRD.md`](PRD.md))
 | O-6 | Guardian verification process; social features deferred until after pilot? | Founder |
 | O-7 | Offline retention, deletion/export and backup policy sign-off. | Founder + tech lead |
 | O-8 | Referral discount/commission rules and payout timing. | Founder |
-| O-9 | Approved UI reference (Easy Guided ZIP / images) and A-to-Z Master Guide to be added to the repo. | Founder (promised next) |
+| O-9 | A-to-Z Master Guide to be added to the repo (UI reference images received, see D-010). | Founder |

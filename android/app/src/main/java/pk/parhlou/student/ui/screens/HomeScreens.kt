@@ -1,5 +1,33 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.PhotoCamera
+import androidx.compose.material.icons.filled.PlayCircle
+import androidx.compose.material.icons.filled.SmartToy
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import pk.parhlou.student.ui.components.CircleIcon
+import pk.parhlou.student.ui.components.ProgressRing
+import pk.parhlou.student.ui.components.SecondaryButton
+import pk.parhlou.student.ui.components.TaskRow
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -95,65 +123,266 @@ fun HomeScreen(
     onSubjects: () -> Unit,
     onTests: () -> Unit,
     onJourney: () -> Unit,
+    onTutor: () -> Unit,
     onPlaceholder: (String) -> Unit,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
+    val moduleIds = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
+    val assessed = progress.assessedCount(moduleIds)
+    val go = {
+        when (task) {
+            is NextTask.OpenModule -> onOpenModule(task.moduleId)
+            is NextTask.OpenTests -> onTests()
+            NextTask.Nothing -> onSubjects()
+        }
+    }
 
-    ParhlouScreen(title = "Home") {
-        Card(
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text("Do this now", color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.bodyMedium)
-                Text(task.title, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.titleLarge)
-                Text(task.reason, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.bodyMedium)
+    ParhlouScreen(title = null) {
+        // Greeting row
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Surface(shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface) {
+                Row(Modifier.padding(start = 6.dp, end = 14.dp, top = 6.dp, bottom = 6.dp),
+                    verticalAlignment = Alignment.CenterVertically) {
+                    CircleIcon(Icons.Filled.Person, size = 32.dp)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Hello!", style = MaterialTheme.typography.labelLarge)
+                }
+            }
+            Spacer(Modifier.weight(1f))
+            Surface(onClick = { onPlaceholder("profile") }, shape = CircleShape,
+                color = MaterialTheme.colorScheme.surface, modifier = Modifier.size(48.dp)) {
+                Box(contentAlignment = Alignment.Center) {
+                    Icon(Icons.Filled.Notifications, contentDescription = "Notifications", tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
             }
         }
-        BigButton("Continue", onClick = {
-            when (task) {
-                is NextTask.OpenModule -> onOpenModule(task.moduleId)
-                is NextTask.OpenTests -> onTests()
-                NextTask.Nothing -> onSubjects()
+
+        Text(
+            buildAnnotatedString {
+                append("Ready to\n")
+                withStyle(SpanStyle(color = MaterialTheme.colorScheme.onSurfaceVariant)) { append("study ") }
+                append("today?")
+            },
+            style = MaterialTheme.typography.displaySmall,
+        )
+
+        // Quick actions: tutor, book, scanner
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
+            Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.5.dp, MaterialTheme.colorScheme.primaryContainer),
+                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
+                Box(contentAlignment = Alignment.Center) { Text("Ask a question", style = MaterialTheme.typography.labelLarge) }
             }
-        })
+            QuickIcon(Icons.Filled.MenuBook, "Open my book", onSubjects)
+            QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", { onPlaceholder("scanner") })
+        }
+
+        // Hero: the one thing to do now, with assessed progress
+        Card(
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
+            shape = RoundedCornerShape(28.dp),
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text("Do this now", color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.75f),
+                            style = MaterialTheme.typography.labelMedium)
+                        Text(task.title, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.titleLarge)
+                        Text(task.reason, color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
+                            style = MaterialTheme.typography.bodyMedium)
+                    }
+                    Spacer(Modifier.width(12.dp))
+                    ProgressRing(
+                        fraction = if (moduleIds.isEmpty()) 0f else assessed / moduleIds.size.toFloat(),
+                        label = "$assessed/${moduleIds.size}",
+                        description = "$assessed of ${moduleIds.size} modules assessed",
+                        track = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.18f),
+                        progress = MaterialTheme.colorScheme.primaryContainer,
+                        textColor = MaterialTheme.colorScheme.onPrimary,
+                    )
+                }
+                Button(
+                    onClick = go,
+                    shape = RoundedCornerShape(50),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    ),
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp),
+                ) { Text("Continue", style = MaterialTheme.typography.labelLarge) }
+            }
+        }
+
+        WeekStrip(studyDays = onboarding.studyDaysPerWeek)
 
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Tile("Subjects", Icons.Filled.MenuBook, onSubjects, Modifier.weight(1f))
-            Tile("Tests", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
+            Tile("My book", Icons.Filled.MenuBook, onSubjects, Modifier.weight(1f))
+            Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
         }
 
-        Sheet {
-            Text("Today's plan", style = MaterialTheme.typography.titleMedium)
-            Text("${onboarding.minutesPerDay} minutes · ${task.title}", style = MaterialTheme.typography.bodyLarge)
-            Muted("Reviews will appear here once you have test results to revise from.")
-        }
+        Text("Today's tasks", style = MaterialTheme.typography.titleLarge)
+        TaskRow(Icons.Filled.PlayCircle, "Lesson", "${onboarding.minutesPerDay} min planned today", go)
+        TaskRow(Icons.Filled.Quiz, "Readiness quiz", "Check you're ready for the next paper", onTests)
+        TaskRow(Icons.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
 
         subjects.forEach { s ->
-            val moduleIds = s.chapters.flatMap { c -> c.modules.map { it.id } }
             Sheet {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
                     SampleBadge()
                 }
-                Muted("${progress.assessedCount(moduleIds)} of ${moduleIds.size} available modules assessed")
+                val ids = s.chapters.flatMap { c -> c.modules.map { it.id } }
+                Muted("${progress.assessedCount(ids)} of ${ids.size} available modules assessed")
                 if (!s.editionVerified) Muted("Book edition not yet verified: ${s.editionLabel}")
             }
         }
+        Spacer(Modifier.height(8.dp))
+    }
+}
 
-        Sheet {
-            Text("Account", style = MaterialTheme.typography.titleMedium)
-            Muted("Plan: not connected in this build. Paid features will need a verified Google Play subscription.")
-            Row {
-                TextButton(onClick = { onPlaceholder("guardian") }) {
-                    Icon(Icons.Filled.FamilyRestroom, contentDescription = null); Text("  Add a parent")
+@Composable
+private fun QuickIcon(icon: androidx.compose.ui.graphics.vector.ImageVector, description: String, onClick: () -> Unit) {
+    Surface(onClick = onClick, shape = CircleShape, color = MaterialTheme.colorScheme.surface, modifier = Modifier.size(52.dp)) {
+        Box(contentAlignment = Alignment.Center) {
+            Icon(icon, contentDescription = description, tint = MaterialTheme.colorScheme.onSurface)
+        }
+    }
+}
+
+/** This week's days with today highlighted. A calendar only: it shows no invented sessions. */
+@Composable
+private fun WeekStrip(studyDays: Int) {
+    val cal = java.util.Calendar.getInstance()
+    val today = cal.get(java.util.Calendar.DAY_OF_MONTH)
+    cal.set(java.util.Calendar.DAY_OF_WEEK, cal.firstDayOfWeek)
+    val names = java.text.SimpleDateFormat("EEE", java.util.Locale.getDefault())
+    Sheet {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("This week", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            Muted("$studyDays study days planned")
+        }
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            repeat(7) {
+                val day = cal.get(java.util.Calendar.DAY_OF_MONTH)
+                val isToday = day == today
+                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(names.format(cal.time).take(2), style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Box(
+                        Modifier.size(34.dp).clip(CircleShape)
+                            .background(if (isToday) MaterialTheme.colorScheme.primaryContainer else Color.Transparent),
+                        contentAlignment = Alignment.Center,
+                    ) {
+                        Text("$day", style = MaterialTheme.typography.labelLarge,
+                            color = if (isToday) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface)
+                    }
                 }
-                TextButton(onClick = { onPlaceholder("profile") }) {
-                    Icon(Icons.Filled.Person, contentDescription = null); Text("  Profile & privacy")
+                cal.add(java.util.Calendar.DAY_OF_MONTH, 1)
+            }
+        }
+    }
+}
+
+@Composable
+fun TutorScreen(repo: ParhlouRepository, onboarding: OnboardingState, onBack: () -> Unit) {
+    ParhlouScreen("AI tutor", onBack = onBack) {
+        Spacer(Modifier.height(12.dp))
+        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+            Box(Modifier.size(132.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.45f)),
+                contentAlignment = Alignment.Center) {
+                Box(Modifier.size(96.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer),
+                    contentAlignment = Alignment.Center) {
+                    Icon(Icons.Filled.SmartToy, contentDescription = null, tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                        modifier = Modifier.size(48.dp))
                 }
             }
+        }
+        Text("How can I help you today?", style = MaterialTheme.typography.headlineMedium,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.fillMaxWidth())
+        Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            onboarding.subjectIds.mapNotNull { repo.subject(it) }.forEach { s ->
+                StatusPill(s.name, warning = false)
+            }
+        }
+        Sheet {
+            OutlinedTextField(
+                value = "", onValueChange = {}, enabled = false,
+                placeholder = { Text("Ask a question…") },
+                modifier = Modifier.fillMaxWidth(),
+                shape = RoundedCornerShape(20.dp),
+            )
+            Muted("The tutor isn't switched on yet. It will answer only from approved, cited book pages for your board and class, and will say so when it can't find a source.")
+        }
+    }
+}
+
+@Composable
+fun ProfileScreen(
+    repo: ParhlouRepository,
+    onboarding: OnboardingState,
+    progress: ProgressStore,
+    onPlaceholder: (String) -> Unit,
+    onClearDevice: () -> Unit,
+) {
+    val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
+    val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
+    var confirmClear by remember { mutableStateOf(false) }
+    ParhlouScreen("Profile") {
+        Sheet {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                CircleIcon(Icons.Filled.Person, size = 64.dp)
+                Spacer(Modifier.width(14.dp))
+                Column {
+                    Text("Learner", style = MaterialTheme.typography.titleLarge)
+                    Muted(listOfNotNull(
+                        if (onboarding.boardCode == "PB") "Punjab" else onboarding.boardCode,
+                        onboarding.grade?.let { "Class $it" },
+                        onboarding.pathway?.label,
+                    ).joinToString(" · "))
+                }
+            }
+        }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Stat("Quizzes done", progress.quizzesCompleted().toString(), Modifier.weight(1f))
+            Stat("Modules assessed", "${progress.assessedCount(ids)}", Modifier.weight(1f))
+            Stat("Papers handed in", progress.papersSubmitted.toString(), Modifier.weight(1f))
+        }
+        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+            shape = RoundedCornerShape(24.dp), modifier = Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                Text("Your plan", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                Text("One monthly plan: PKR 3,999. Not connected in this build; access will come only from a verified Google Play subscription.",
+                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            }
+        }
+        TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Verified parents can see your progress", { onPlaceholder("guardian") })
+        TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", { onPlaceholder("history") })
+        TaskRow(Icons.Filled.Lock, "Privacy & data", "Export or delete your data", { onPlaceholder("profile") })
+        if (!confirmClear) {
+            SecondaryButton("Clear this phone", onClick = { confirmClear = true })
+        } else {
+            Sheet {
+                Text("Remove your setup, drafts and timers from this phone?", style = MaterialTheme.typography.titleMedium)
+                Muted("Use this on a shared phone. It can't be undone.")
+                BigButton("Yes, clear this phone", onClick = onClearDevice)
+                SecondaryButton("Cancel", onClick = { confirmClear = false })
+            }
+        }
+    }
+}
+
+@Composable
+private fun Stat(label: String, value: String, modifier: Modifier = Modifier) {
+    Card(modifier = modifier, shape = RoundedCornerShape(22.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
+        Column(Modifier.fillMaxWidth().padding(vertical = 14.dp, horizontal = 8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally) {
+            Text(value, style = MaterialTheme.typography.headlineMedium)
+            Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center)
         }
     }
 }
@@ -180,8 +409,8 @@ fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress
 }
 
 @Composable
-fun SubjectsScreen(repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: () -> Unit) {
-    ParhlouScreen("Subjects", onBack = onBack) {
+fun SubjectsScreen(repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: (() -> Unit)?) {
+    ParhlouScreen("My book", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         if (subjects.isEmpty()) Muted("You haven't chosen any available subjects.")
         subjects.forEach { s ->

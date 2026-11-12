@@ -43,9 +43,9 @@ fun TestsScreen(
     readinessPassed: Boolean,
     onReadiness: () -> Unit,
     onOpen: (String) -> Unit,
-    onBack: () -> Unit,
+    onBack: (() -> Unit)?,
 ) {
-    ParhlouScreen("Tests and papers", onBack = onBack) {
+    ParhlouScreen("Papers", onBack = onBack) {
         Sheet {
             Text("Readiness check", style = MaterialTheme.typography.titleMedium)
             Muted("A short quiz before each paper. Pass mark $READINESS_PASS_PERCENT%. Failing it doesn't use up a paper.")
