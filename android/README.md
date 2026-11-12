@@ -2,7 +2,18 @@
 
 Kotlin 2.2 + Jetpack Compose (BOM 2026.06), Material 3, single activity, minimum Android 7.1 (API 25). Glass bars come from the vendored PrismalAGSL library in `prismal/` (see `prismal/UPSTREAM.md`). **Milestone 1 foundation with offline sample data.** It is not connected to the backend, has no sign-in, billing, scanner or AI marking yet.
 
-## What's in it
+## Prototype features (demo brain, no real AI yet)
+
+- **AI Tutor** (`ai/DemoBrain.kt`, `ui/screens/TutorScreens.kt`): chat that answers from 12 sample notes on Maths 9 Unit 1 in the Luna structure (answer, explanation, steps, source label, check question), with "Explain more simply / Another example / Show each step / Ask me a question". It checks the answer to its own question, refuses what it doesn't know, stays inside the student's subjects and is locked while a paper is running. Opens from Home, a module, a wrong MCQ and a Check Master result.
+- **Chapter test** (`ui/screens/TestScreens.kt`): a real 40-mark Unit 1 paper: 10 MCQs, 8 short (answer 6), 3 long (answer 2). Typed answers and page photos (photo picker, stored privately) save as you go.
+- **Check Master** (`domain/CheckMaster.kt`, `ui/screens/CheckMasterScreens.kt`): marks MCQs exactly and typed answers criterion by criterion with what/why/how. Unrecognised answers are "Couldn't check automatically" and photos "Waiting for the AI examiner", never zero. Every question can be retyped and re-checked; the first result is kept. The same checker marks written practice in lessons.
+- **Invigilator** (`domain/Invigilator.kt`): logs start, leaving, returning and hand-in, then reports time used and time away. Report only, on the phone only.
+- **Saved progress**: evidence is an append-only log on the phone. Demo-checked papers never count as verified.
+- **Swap to GPT-6 Luna**: implement `ai/ParhlouAi` against the server gateway; screens don't change. See `docs/AI-INSTRUCTIONS.md`.
+
+Limits: the demo brain is rule-based and only knows the Unit 1 sample content. Photo picking and leave-the-app tracking have not been tried on a real phone.
+
+## Screens
 
 - Welcome and the four-step setup (PRD §4): data notice, board/class/medium/subjects (unreleased boards and subjects shown as "Coming later"), pathway (Complete Academy / Test Series), study time with an honest feasibility message.
 - Home (PRD §5): greeting, Ask a question / book / scan shortcuts, a dark "Do this now" card with one Continue action and an assessed-progress ring, week strip, tiles and today's tasks. Floating pill bar: Home, Book, Papers, Profile.
@@ -11,7 +22,7 @@ Kotlin 2.2 + Jetpack Compose (BOM 2026.06), Material 3, single activity, minimum
 - Test Series (PRD §11): readiness check gates the papers; paper start screen validates that marks add up; 90-minute style timer that keeps running if the app is closed; honest "marking pending" result.
 - Progress states from PRD §9. The Journey rocket counts only assessed modules.
 
-Sample content is written by Parhlou for development, labelled "Sample — not reviewed", and contains no textbook text. Unit names follow the new Punjab Class 9 Maths book as reported by third-party sources and are unverified.
+Sample content is written by Parhlou for development, labelled "Sample — demo content", and contains no textbook text. Unit names follow the new Punjab Class 9 Maths book as reported by third-party sources and are unverified.
 
 The visual theme (`ui/theme/Theme.kt`) is the "Calm Green" design in light and dark (decision D-010, see `docs/design/`). Screenshots: `docs/design/screens/`.
 

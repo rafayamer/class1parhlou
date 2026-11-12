@@ -101,7 +101,9 @@ fun nextTask(subjects: List<Subject>, pathway: Pathway?, progress: ProgressStore
         return NextTask.OpenModule(repair.third.id, "Fix: ${repair.third.title}", "Your last test showed a weak area here.")
     }
     val open = modules.firstOrNull {
-        progress.state(it.third.id) !in setOf(LearningState.ASSESSED, LearningState.MASTERED, LearningState.READY_FOR_ASSESSMENT)
+        progress.state(it.third.id) !in setOf(
+            LearningState.ASSESSED, LearningState.MASTERED, LearningState.READY_FOR_ASSESSMENT, LearningState.DEMO_CHECKED,
+        )
     }
     return if (open != null) {
         val started = progress.state(open.third.id) != LearningState.NOT_STARTED
@@ -237,7 +239,7 @@ fun HomeScreen(
                     SampleBadge()
                 }
                 val ids = s.chapters.flatMap { c -> c.modules.map { it.id } }
-                Muted("${progress.assessedCount(ids)} of ${ids.size} available modules assessed")
+                Muted("${progress.assessedCount(ids)} verified · ${progress.demoCheckedCount(ids)} demo-checked · ${ids.size} modules available")
                 if (!s.editionVerified) Muted("Book edition not yet verified: ${s.editionLabel}")
             }
         }
@@ -284,39 +286,6 @@ private fun WeekStrip(studyDays: Int) {
                 }
                 cal.add(java.util.Calendar.DAY_OF_MONTH, 1)
             }
-        }
-    }
-}
-
-@Composable
-fun TutorScreen(repo: ParhlouRepository, onboarding: OnboardingState, onBack: () -> Unit) {
-    ParhlouScreen("AI tutor", onBack = onBack) {
-        Spacer(Modifier.height(12.dp))
-        Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-            Box(Modifier.size(132.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.45f)),
-                contentAlignment = Alignment.Center) {
-                Box(Modifier.size(96.dp).clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer),
-                    contentAlignment = Alignment.Center) {
-                    Icon(Icons.Filled.SmartToy, contentDescription = null, tint = MaterialTheme.colorScheme.onPrimaryContainer,
-                        modifier = Modifier.size(48.dp))
-                }
-            }
-        }
-        Text("How can I help you today?", style = MaterialTheme.typography.headlineMedium,
-            textAlign = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.fillMaxWidth())
-        Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            onboarding.subjectIds.mapNotNull { repo.subject(it) }.forEach { s ->
-                StatusPill(s.name, warning = false)
-            }
-        }
-        Sheet {
-            OutlinedTextField(
-                value = "", onValueChange = {}, enabled = false,
-                placeholder = { Text("Ask a question…") },
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(20.dp),
-            )
-            Muted("The tutor isn't switched on yet. It will answer only from approved, cited book pages for your board and class, and will say so when it can't find a source.")
         }
     }
 }
@@ -394,18 +363,20 @@ fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress
     val ids = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         .flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
     val assessed = progress.assessedCount(ids)
+    val demoChecked = progress.demoCheckedCount(ids)
     ParhlouScreen("Journey", onBack = onBack) {
         Sheet {
-            Icon(Icons.Filled.RocketLaunch, contentDescription = null, tint = MaterialTheme.colorScheme.primary,
+            Icon(Icons.Filled.RocketLaunch, contentDescription = null, tint = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.size(48.dp))
             Text("Next milestone", style = MaterialTheme.typography.titleMedium)
             LinearProgressIndicator(
                 progress = { if (ids.isEmpty()) 0f else assessed / ids.size.toFloat() },
                 modifier = Modifier.fillMaxWidth().height(10.dp)
-                    .semantics { contentDescription = "$assessed of ${ids.size} modules assessed" },
+                    .semantics { contentDescription = "$assessed of ${ids.size} modules verified" },
             )
-            Text("$assessed of ${ids.size} modules assessed", style = MaterialTheme.typography.bodyLarge)
-            Muted("Your rocket only moves when a test proves you've learned something. Watching or reading alone doesn't count.")
+            Text("Verified: $assessed of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
+            Text("Demo-checked: $demoChecked of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
+            Muted("Your rocket moves only on verified marks from the AI examiner. Demo-checked papers are good practice, but they don't move it yet. Watching or reading alone never counts.")
         }
     }
 }

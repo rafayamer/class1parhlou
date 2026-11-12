@@ -8,6 +8,8 @@ enum class LearningState(val label: String) {
     READY_FOR_ASSESSMENT("Ready for test"),
     PENDING_REVIEW("Marking pending"),
     REPAIR_REQUIRED("Needs repair"),
+    /** Marked by the on-phone demo checker: useful practice, but not verified evidence. */
+    DEMO_CHECKED("Demo-checked"),
     ASSESSED("Assessed"),
     MASTERED("Mastered"),
 }
@@ -20,6 +22,8 @@ sealed interface Evidence {
     data object WrittenSubmitted : Evidence
     data object ExamPendingReview : Evidence
     data class ExamMarked(val percent: Int) : Evidence
+    /** A paper marked by the demo checker. It never counts as verified assessment. */
+    data class DemoCheckedExam(val percent: Int) : Evidence
 }
 
 /**
@@ -41,6 +45,8 @@ object ProgressCalculator {
             }
             else -> Unit
         }
+
+        if (events.any { it is Evidence.DemoCheckedExam }) return LearningState.DEMO_CHECKED
 
         val bestQuiz = events.filterIsInstance<Evidence.QuizCompleted>().maxOfOrNull { it.firstTryPercent }
         return when {

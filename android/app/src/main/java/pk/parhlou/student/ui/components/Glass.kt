@@ -76,7 +76,7 @@ fun Modifier.pressScale(interaction: MutableInteractionSource, pressed: Float = 
 @Composable
 fun Modifier.glassCapsule(backdrop: PrismalBackdrop): Modifier {
     val density = LocalDensity.current
-    val tint = MaterialTheme.colorScheme.surface.copy(alpha = 0.55f)
+    val tint = MaterialTheme.colorScheme.surface.copy(alpha = 0.82f) // opaque enough to keep the title readable over text
     return drawPrismalGlass(
         backdrop = backdrop,
         shape = { PrismalCapsule() },

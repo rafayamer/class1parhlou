@@ -36,6 +36,9 @@ class FakeRepository : ParhlouRepository {
     override fun chapterOf(moduleId: String): Chapter? =
         maths9.chapters.firstOrNull { c -> c.modules.any { it.id == moduleId } }
 
+    override fun modulesOfChapter(chapterId: String?): List<Module> =
+        maths9.chapters.firstOrNull { it.id == chapterId }?.modules.orEmpty()
+
     override fun moduleQuiz(moduleId: String, count: Int): List<McqQuestion> =
         if (module(moduleId) == null) emptyList() else sampleMcqs.take(count.coerceIn(5, 15))
 
@@ -55,6 +58,7 @@ class FakeRepository : ParhlouRepository {
                     BlueprintSection("Long questions", count = 3, attempt = 2, marksEach = 6.0),
                 ),
                 official = false,
+                chapterId = "u-1",
             ),
             PaperBlueprint(
                 id = "sample-full-paper",
@@ -69,6 +73,12 @@ class FakeRepository : ParhlouRepository {
                 official = false,
             ),
         )
+
+    override fun paper(blueprintId: String): PaperContent? =
+        if (blueprintId == SampleContent.CHAPTER_TEST) SampleContent.chapterTest else null
+
+    override fun notes(subjectId: String): List<ConceptNote> =
+        if (subjectId == MATHS_9) SampleContent.notes else emptyList()
 
     companion object {
         const val MATHS_9 = "pb-9-math"
@@ -89,7 +99,7 @@ class FakeRepository : ParhlouRepository {
                     "Without looking, write the definition of a rational number.",
                     "Give two examples of irrational numbers and explain why.",
                 ),
-                writtenPrompts = listOf("Explain why √2 cannot be written as p/q. Show your reasoning."),
+                writtenQuestions = SampleContent.moduleWritten.getValue("m-1-1"),
                 status = ReviewStatus.SAMPLE_UNREVIEWED,
             ),
             Module(
@@ -100,7 +110,7 @@ class FakeRepository : ParhlouRepository {
                     "Read the properties of addition and multiplication.",
                     "Write the distributive property from memory with an example.",
                 ),
-                writtenPrompts = listOf("Show that 3(4 + 5) = 3·4 + 3·5 and name the property used."),
+                writtenQuestions = SampleContent.moduleWritten.getValue("m-1-2"),
                 status = ReviewStatus.SAMPLE_UNREVIEWED,
             ),
         )
@@ -120,8 +130,14 @@ class FakeRepository : ParhlouRepository {
             },
         )
 
+        private val quizNotes = mapOf(
+            "q1" to "n-irrational", "q2" to "n-recurring-fraction", "q3" to "n-identity-inverse",
+            "q4" to "n-identity-inverse", "q5" to "n-decimals", "q6" to "n-surds", "q7" to "n-commutative",
+            "q8" to "n-surds", "q9" to "n-rational", "q10" to "n-distributive",
+        )
+
         private fun q(id: String, stem: String, options: List<String>, correct: Int, rationales: List<String>) =
-            McqQuestion(id, stem, options, correct, rationales, ReviewStatus.SAMPLE_UNREVIEWED)
+            McqQuestion(id, stem, options, correct, rationales, ReviewStatus.SAMPLE_UNREVIEWED, quizNotes[id])
 
         val sampleMcqs = listOf(
             q("q1", "Which of these numbers is irrational?", listOf("√9", "0.25", "√2", "3/4"), 2,

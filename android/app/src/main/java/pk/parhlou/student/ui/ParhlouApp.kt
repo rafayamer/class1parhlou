@@ -29,7 +29,12 @@ import pk.parhlou.student.ui.screens.ModuleScreen
 import pk.parhlou.student.ui.screens.OnboardingScreen
 import pk.parhlou.student.ui.screens.PlaceholderScreen
 import pk.parhlou.student.ui.screens.ReadinessScreen
-import pk.parhlou.student.ui.screens.ResultScreen
+import pk.parhlou.student.ui.screens.CheckMasterScreen
+import pk.parhlou.student.ui.screens.TutorSeed
+import pk.parhlou.student.ai.DemoBrain
+import pk.parhlou.student.ai.ParhlouAi
+import pk.parhlou.student.data.ExamDesk
+import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
 import pk.parhlou.student.ui.screens.TestsScreen
@@ -78,7 +83,7 @@ object Routes {
     const val READINESS = "readiness"
     const val ASSESSMENT = "assessment/{id}"
     const val EXAM = "exam/{id}"
-    const val RESULT = "result"
+    const val RESULT = "checked/{id}"
     const val JOURNEY = "journey"
     const val PLACEHOLDER = "soon/{key}"
     const val TUTOR = "tutor"
@@ -96,25 +101,31 @@ private val navItems = listOf(
 private val placeholders = mapOf(
     "guardian" to ("Add a parent" to "Linking a parent needs verified accounts on the server. It arrives with guardian reports."),
     "profile" to ("Profile & privacy" to "Account settings, data export and deletion arrive when sign-in is connected."),
-    "scanner" to ("Scan answer sheets" to "The camera scanner for up to 25 pages is the next part to be built."),
+    "scanner" to ("Scan answer sheets" to "The camera scanner for up to 25 pages isn't built yet. In a paper you can already add page photos from your gallery."),
     "history" to ("Practice history" to "Your saved quiz and paper history appears here once your account is connected."),
 )
 
 @Composable
-fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
+fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remember(repo) { DemoBrain(repo) }) {
     val context = LocalContext.current
     remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
+    val scope = rememberCoroutineScope()
+    val progress = remember { ProgressStore(store, scope) }
+    val progressLoaded by produceState(false) { progress.load(); value = true }
     val onboarding by store.onboarding.collectAsState(initial = null)
     val state = onboarding
-    if (state == null) {
+    if (state == null || !progressLoaded) {
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator() }
         return
     }
     val nav = rememberNavController()
-    val progress = remember { ProgressStore() }
-    val scope = rememberCoroutineScope()
-    var readinessPassed by rememberSaveable { mutableStateOf(false) }
+    val desk = remember { ExamDesk(context.applicationContext, repo, store, ai, progress) }
+    val readinessPassed by store.readinessPassed.collectAsState(initial = false)
+    val activeExam by store.activeExam.collectAsState(initial = null)
+    var tutorSeed by remember { mutableStateOf<TutorSeed?>(null) }
+    fun openTutor(seed: TutorSeed?) { tutorSeed = seed; nav.navigate(Routes.TUTOR) }
     val subjectIds = state.subjectIds.toList()
+    val blueprints = subjectIds.flatMap { repo.blueprints(it) }
     val current = nav.currentBackStackEntryAsState().value?.destination?.route
     val showBar = current in navItems.map { it.route }
     fun goTop(route: String) = nav.navigate(route) {
@@ -167,11 +178,13 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
                 onSubjects = { nav.navigate(Routes.SUBJECTS) },
                 onTests = { nav.navigate(Routes.TESTS) },
                 onJourney = { nav.navigate(Routes.JOURNEY) },
-                onTutor = { nav.navigate(Routes.TUTOR) },
+                onTutor = { openTutor(null) },
                 onPlaceholder = { nav.navigate("soon/$it") },
             )
         } }
-        composable(Routes.TUTOR) { TutorScreen(repo, state, onBack = nav.back()) }
+        composable(Routes.TUTOR) {
+            TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back())
+        }
         composable(Routes.PROFILE) { WithTabBarSpace {
             ProfileScreen(
                 repo, state, progress,
@@ -190,14 +203,18 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
         composable(Routes.MODULE) { entry ->
             val id = entry.arguments?.getString("id").orEmpty()
             val module = repo.module(id)
+            val subject = subjectIds.mapNotNull { repo.subject(it) }
+                .firstOrNull { s -> s.chapters.any { c -> c.modules.any { it.id == id } } }
             if (module == null) Missing(nav) else ModuleScreen(
-                module = module, quiz = repo.moduleQuiz(id), progress = progress, store = store,
-                onAskTutor = { nav.navigate(Routes.TUTOR) }, onBack = nav.back(),
+                module = module, quiz = repo.moduleQuiz(id), progress = progress, store = store, ai = ai,
+                courseLabel = "class ${subject?.grade ?: ""} ${subject?.name ?: ""} Punjab board",
+                onAskTutor = { openTutor(it) }, onBack = nav.back(),
             )
         }
         composable(Routes.TESTS) { WithTabBarSpace {
             TestsScreen(
-                blueprints = subjectIds.flatMap { repo.blueprints(it) },
+                blueprints = blueprints,
+                available = blueprints.filter { repo.paper(it.id) != null }.map { it.id }.toSet(),
                 readinessPassed = readinessPassed,
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
@@ -207,24 +224,42 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore) {
         composable(Routes.READINESS) {
             ReadinessScreen(
                 questions = subjectIds.flatMap { repo.readinessQuiz(it) }.take(10),
-                onPassed = { readinessPassed = true; nav.popBackStack() },
+                onPassed = { scope.launch { store.setReadinessPassed(true) }; nav.popBackStack() },
                 onBack = nav.back(),
             )
         }
         composable(Routes.ASSESSMENT) { entry ->
-            val b = subjectIds.flatMap { repo.blueprints(it) }.firstOrNull { it.id == entry.arguments?.getString("id") }
-            if (b == null) Missing(nav) else
-                AssessmentStartScreen(b, onStart = { nav.navigate("exam/${b.id}") }, onBack = nav.back())
+            val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
+            val paper = b?.let { repo.paper(it.id) }
+            if (b == null || paper == null) Missing(nav) else {
+                val log by store.examLog(b.id).collectAsState(initial = "")
+                AssessmentStartScreen(
+                    blueprint = b, examLog = log,
+                    onStart = { nav.navigate("exam/${b.id}") },
+                    onResult = { nav.navigate("checked/${b.id}") },
+                    onReset = { scope.launch { desk.reset(paper) } },
+                    onBack = nav.back(),
+                )
+            }
         }
         composable(Routes.EXAM) { entry ->
-            val b = subjectIds.flatMap { repo.blueprints(it) }.firstOrNull { it.id == entry.arguments?.getString("id") }
-            if (b == null) Missing(nav) else ExamScreen(
-                b, store,
-                onSubmit = { progress.paperSubmitted(); nav.navigate(Routes.RESULT) { popUpTo(Routes.HOME) } },
+            val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
+            val paper = b?.let { repo.paper(it.id) }
+            if (b == null || paper == null) Missing(nav) else ExamScreen(
+                blueprint = b, paper = paper, store = store, desk = desk, appScope = scope,
+                onSubmitted = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
                 onBack = nav.back(),
             )
         }
-        composable(Routes.RESULT) { ResultScreen(onHome = { nav.popBackStack(Routes.HOME, inclusive = false) }) }
+        composable(Routes.RESULT) { entry ->
+            val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
+            val paper = b?.let { repo.paper(it.id) }
+            if (b == null || paper == null) Missing(nav) else CheckMasterScreen(
+                blueprint = b, paper = paper, desk = desk, store = store,
+                onExplain = { openTutor(it) },
+                onHome = { nav.popBackStack(Routes.HOME, inclusive = false) },
+            )
+        }
         composable(Routes.JOURNEY) { JourneyScreen(repo, state, progress, onBack = nav.back()) }
         composable(Routes.PLACEHOLDER) { entry ->
             val (title, msg) = placeholders[entry.arguments?.getString("key")] ?: ("Coming later" to "This part isn't built yet.")

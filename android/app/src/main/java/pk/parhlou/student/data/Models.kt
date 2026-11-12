@@ -46,7 +46,7 @@ data class Module(
     val video: VideoLink?,
     val bookReference: BookReference?,
     val readingTasks: List<String>,
-    val writtenPrompts: List<String>,
+    val writtenQuestions: List<WrittenQuestion>,
     val status: ReviewStatus,
 )
 
@@ -58,6 +58,56 @@ data class McqQuestion(
     val sampleCorrectIndex: Int,
     val rationales: List<String>,
     val status: ReviewStatus,
+    /** Concept note the tutor uses to explain this question. */
+    val noteId: String? = null,
+)
+
+/** One marking point of a rubric. [accept] lists alternative pattern groups; see ai/TextMatch.kt for the syntax. */
+data class RubricCriterion(
+    val id: String,
+    val description: String,
+    val marks: Double,
+    val accept: List<List<String>>,
+    val why: String,
+    val how: String,
+)
+
+/** A written question with its model answer and criterion-level marking scheme. */
+data class WrittenQuestion(
+    val id: String,
+    val text: String,
+    val marks: Double,
+    val modelAnswer: List<String>,
+    val rubric: List<RubricCriterion>,
+    val followUp: String,
+    val noteId: String? = null,
+    /** Index of the blueprint section this question belongs to (papers only). */
+    val section: Int = 0,
+    val number: Int = 0,
+)
+
+/** The questions of one published paper. */
+data class PaperContent(
+    val blueprintId: String,
+    val mcqs: List<McqQuestion>,
+    val written: List<WrittenQuestion>,
+)
+
+/** A short teaching note the tutor answers from. Sample notes are written by Parhlou, not copied from a textbook. */
+data class ConceptNote(
+    val id: String,
+    val subjectId: String,
+    val moduleId: String,
+    val title: String,
+    val keywords: List<String>,
+    val answer: String,
+    val explanation: String,
+    val simple: String,
+    val examples: List<String>,
+    val steps: List<String>,
+    val checkQuestion: String,
+    val checkAnswer: String,
+    val checkAccept: List<List<String>>,
 )
 
 data class BlueprintSection(
@@ -75,6 +125,8 @@ data class PaperBlueprint(
     val totalMarks: Double,
     val sections: List<BlueprintSection>,
     val official: Boolean,
+    /** Chapter this paper assesses, when it is a chapter test. */
+    val chapterId: String? = null,
 )
 
 data class OnboardingState(

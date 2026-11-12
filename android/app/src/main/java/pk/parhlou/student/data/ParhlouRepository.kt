@@ -12,7 +12,12 @@ interface ParhlouRepository {
     fun subject(id: String): Subject?
     fun module(id: String): Module?
     fun chapterOf(moduleId: String): Chapter?
+    fun modulesOfChapter(chapterId: String?): List<Module>
     fun moduleQuiz(moduleId: String, count: Int = 10): List<McqQuestion>
     fun readinessQuiz(subjectId: String): List<McqQuestion>
     fun blueprints(subjectId: String): List<PaperBlueprint>
+    /** Questions of a paper, or null when none are published for it yet. */
+    fun paper(blueprintId: String): PaperContent?
+    /** Notes the tutor may answer from for this subject. Never notes of another board or subject. */
+    fun notes(subjectId: String): List<ConceptNote>
 }

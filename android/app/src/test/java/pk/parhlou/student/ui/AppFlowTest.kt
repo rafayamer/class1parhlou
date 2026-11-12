@@ -58,7 +58,7 @@ class AppFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick()
 
         // Module: five-stage rail, honest empty video state, quiz with rationales.
-        rule.onNodeWithText("Sample — not reviewed").assertExists()
+        rule.onNodeWithText("Sample — demo content").assertExists()
         rule.onNodeWithText("No teacher video has been linked", substring = true).assertExists()
         rule.onNodeWithText("2 Quiz").performScrollTo().performClick()
         rule.onNodeWithText("Which of these numbers is irrational?").assertExists()
@@ -84,10 +84,13 @@ class AppFlowTest {
 
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Take your readiness check") }
         rule.onNodeWithText("Continue").performClick()
-        // Both sample papers are shown, labelled as practice patterns, and disabled.
-        val papers = rule.onAllNodes(androidx.compose.ui.test.hasText("Locked until you pass the readiness check.", substring = true))
-        assertEquals(2, papers.fetchSemanticsNodes().size)
-        papers.assertAll(androidx.compose.ui.test.isNotEnabled())
+        // The chapter test is locked behind the readiness check; the full paper has no questions yet. Both are disabled.
+        val locked = rule.onAllNodes(androidx.compose.ui.test.hasText("Locked until you pass the readiness check.", substring = true))
+        assertEquals(1, locked.fetchSemanticsNodes().size)
+        locked.assertAll(androidx.compose.ui.test.isNotEnabled())
+        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("Not available yet", substring = true))
+        assertEquals(1, notReady.fetchSemanticsNodes().size)
+        notReady.assertAll(androidx.compose.ui.test.isNotEnabled())
         assertEquals(2, rule.onAllNodes(androidx.compose.ui.test.hasText("Practice pattern — not official", substring = true))
             .fetchSemanticsNodes().size)
     }

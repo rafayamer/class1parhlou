@@ -31,6 +31,13 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import pk.parhlou.student.ai.CriterionStatus
+import pk.parhlou.student.ai.MarkStatus
+import pk.parhlou.student.ai.ParhlouAi
+import pk.parhlou.student.ai.WrittenMark
+import pk.parhlou.student.data.WrittenQuestion
+import androidx.compose.runtime.produceState
+import androidx.compose.ui.platform.testTag
 import pk.parhlou.student.data.LocalStore
 import pk.parhlou.student.data.McqQuestion
 import pk.parhlou.student.data.Module
@@ -63,7 +70,10 @@ fun ModuleScreen(
     quiz: List<McqQuestion>,
     progress: ProgressStore,
     store: LocalStore,
-    onAskTutor: () -> Unit,
+    ai: ParhlouAi,
+    /** Words that describe the course for a lesson search, e.g. "9th class Mathematics Punjab board". */
+    courseLabel: String,
+    onAskTutor: (TutorSeed) -> Unit,
     onBack: () -> Unit,
 ) {
     var current by rememberSaveable { mutableStateOf(Stage.LEARN) }
@@ -91,16 +101,21 @@ fun ModuleScreen(
         AnimatedContent(targetState = current, transitionSpec = rememberStepTransition(), label = "stage") { stage ->
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
         when (stage) {
-            Stage.LEARN -> LearnStage(module, progress) { current = Stage.UNDERSTAND }
+            Stage.LEARN -> LearnStage(module, progress, courseLabel) { current = Stage.UNDERSTAND }
             Stage.UNDERSTAND -> QuizContent(
                 questions = quiz,
                 passPercent = null,
                 onFinished = { summary -> progress.add(module.id, Evidence.QuizCompleted(summary.firstTryPercent)) },
                 onNext = { current = Stage.READ },
+                onAskTutor = { q, chosen -> onAskTutor(TutorSeed(moduleId = module.id, mcq = q, chosen = chosen)) },
             )
             Stage.READ -> ReadStage(module, progress) { current = Stage.WRITE }
-            Stage.WRITE -> WriteStage(module, progress, store) { current = Stage.IMPROVE }
-            Stage.IMPROVE -> ImproveStage(module, progress, onAskTutor)
+            Stage.WRITE -> WriteStage(module, progress, store, ai) { current = Stage.IMPROVE }
+            Stage.IMPROVE -> ImproveStage(
+                module, progress, store, ai,
+                onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, noteId = module.writtenQuestions.firstOrNull()?.noteId)) },
+                onRetryQuiz = { current = Stage.UNDERSTAND },
+            )
         }
         }
         }
@@ -108,13 +123,20 @@ fun ModuleScreen(
 }
 
 @Composable
-private fun LearnStage(module: Module, progress: ProgressStore, onNext: () -> Unit) {
+private fun LearnStage(module: Module, progress: ProgressStore, courseLabel: String, onNext: () -> Unit) {
     val context = LocalContext.current
     Sheet {
         Text("Teacher video", style = MaterialTheme.typography.titleMedium)
         val video = module.video
         if (video == null) {
-            Muted("No teacher video has been linked and checked for this module yet. You can study from your book in step 3.")
+            Muted("No teacher video has been linked and checked for this module yet. You can search YouTube for a lesson, or study from your book in step 3.")
+            SecondaryButton("Find a lesson on YouTube", onClick = {
+                val query = Uri.encode("$courseLabel ${module.title}")
+                runCatching {
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=$query")))
+                }
+            })
+            Muted("Opens a YouTube search. Parhlou hasn't checked these videos and doesn't copy them.")
         } else {
             Text("${video.teacher} · ${video.channel}", style = MaterialTheme.typography.bodyLarge)
             Muted("Opens in YouTube. Parhlou does not copy or download videos.")
@@ -152,49 +174,99 @@ private fun ReadStage(module: Module, progress: ProgressStore, onNext: () -> Uni
     })
 }
 
+private fun writtenDraftKey(module: Module, q: WrittenQuestion) = "${module.id}_${q.id}"
+
 @Composable
-private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStore, onNext: () -> Unit) {
+private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStore, ai: ParhlouAi, onNext: () -> Unit) {
     val scope = rememberCoroutineScope()
-    module.writtenPrompts.forEachIndexed { i, prompt ->
-        val key = "${module.id}_w$i"
+    var submitted by remember(module.id) { mutableStateOf(Evidence.WrittenSubmitted in progress.evidence(module.id)) }
+    if (module.writtenQuestions.isEmpty()) {
+        Muted("No written practice is published for this module yet.")
+        return
+    }
+    module.writtenQuestions.forEach { q ->
+        val key = writtenDraftKey(module, q)
         val saved by store.draft(key).collectAsState(initial = null)
         var text by remember(key) { mutableStateOf<String?>(null) }
-        val value = text ?: saved ?: ""
+        val answer = text ?: saved ?: ""
         Sheet {
-            Text(prompt, style = MaterialTheme.typography.titleMedium)
-            OutlinedTextField(
-                value = value,
-                onValueChange = { new -> text = new; scope.launch { store.saveDraft(key, new) } },
-                modifier = Modifier.fillMaxWidth().heightIn(min = 140.dp)
-                    .semantics { contentDescription = "Your answer" },
-                placeholder = { Text("Write your answer. It saves as you type.") },
-            )
-            Muted("Saved on this phone.")
+            Row {
+                Text(q.text, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+                Text("  [${fmt(q.marks)}]", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            if (!submitted) {
+                OutlinedTextField(
+                    value = answer,
+                    onValueChange = { new -> text = new; scope.launch { store.saveDraft(key, new) } },
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 140.dp).testTag("practice-${q.id}"),
+                    placeholder = { Text("Write your answer and working. It saves as you type.") },
+                )
+                Muted("Saved on this phone.")
+            } else {
+                Muted("Your answer:")
+                Text(answer.ifBlank { "(nothing written)" }, style = MaterialTheme.typography.bodyLarge)
+                val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0) }
+                StatusPill(DEMO_CHECKER_LABEL)
+                val checked = mark
+                if (checked == null) Muted("Checking…") else WrittenMarkDetails(q, checked)
+            }
         }
     }
-    var submitted by remember(module.id) { mutableStateOf(Evidence.WrittenSubmitted in progress.evidence(module.id)) }
     if (submitted) {
-        Sheet {
-            Text("Answer submitted", style = MaterialTheme.typography.titleMedium)
-            Muted("Written feedback needs the marking service, which isn't connected in this build. Nothing has been marked.")
-        }
+        SecondaryButton("Edit my answer and check again", onClick = { submitted = false })
         BigButton("Next: improve", onClick = onNext)
     } else {
-        BigButton("Submit answer", onClick = { progress.add(module.id, Evidence.WrittenSubmitted); submitted = true })
+        BigButton("Check my answer", onClick = { progress.add(module.id, Evidence.WrittenSubmitted); submitted = true })
     }
 }
 
 @Composable
-private fun ImproveStage(module: Module, progress: ProgressStore, onAskTutor: () -> Unit) {
-    val quiz = progress.evidence(module.id).filterIsInstance<Evidence.QuizCompleted>()
+private fun ImproveStage(
+    module: Module,
+    progress: ProgressStore,
+    store: LocalStore,
+    ai: ParhlouAi,
+    onAskTutor: () -> Unit,
+    onRetryQuiz: () -> Unit,
+) {
+    val evidence = progress.evidence(module.id)
+    val quiz = evidence.filterIsInstance<Evidence.QuizCompleted>()
     Sheet {
         Text("Where you are", style = MaterialTheme.typography.titleMedium)
-        Text(progress.state(module.id).label, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
+        Text(progress.state(module.id).label, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.secondary)
         if (quiz.isEmpty()) Muted("Do the quiz to see what to work on.")
         else Muted("Best first-try quiz score: ${quiz.maxOf { it.firstTryPercent }}%")
-        Muted("A module is only marked assessed after a chapter test, not from practice alone.")
+        Muted("A module only counts as verified after a properly marked chapter test, not from practice alone.")
     }
-    SecondaryButton("Ask the tutor about this topic", onClick = onAskTutor)
+    if (Evidence.WrittenSubmitted in evidence) {
+        module.writtenQuestions.forEach { q ->
+            val saved by store.draft(writtenDraftKey(module, q)).collectAsState(initial = null)
+            val answer = saved.orEmpty()
+            val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0) }
+            val m = mark
+            if (m != null) {
+                val missing = m.criteria.filter { it.status == CriterionStatus.NOT_FOUND }
+                Sheet {
+                    Text("Written practice: ${fmt(m.awarded)} / ${fmt(q.marks)}", style = MaterialTheme.typography.titleMedium)
+                    when {
+                        m.status == MarkStatus.COULD_NOT_CHECK || m.status == MarkStatus.NOT_ATTEMPTED ->
+                            Muted("Go back to step 4, compare with the model answer and write it out clearly.")
+                        missing.isEmpty() -> Muted("Every marking point was found. Well done.")
+                        else -> missing.forEach { c ->
+                            Text("What was missing: ${c.description}", style = MaterialTheme.typography.bodyLarge)
+                            Muted("Why it matters: ${c.why}")
+                            Muted("How to fix it: ${c.how}")
+                        }
+                    }
+                    Text("Try next: ${q.followUp}", style = MaterialTheme.typography.bodyLarge)
+                }
+            }
+        }
+    } else {
+        Muted("Do the written practice in step 4 to get it checked.")
+    }
+    BigButton("Ask the tutor about this topic", onClick = onAskTutor)
+    SecondaryButton("Retry the quiz", onClick = onRetryQuiz)
 }
 
 /** Shared MCQ runner for module quizzes and Test Series readiness checks. */
@@ -205,6 +277,7 @@ fun QuizContent(
     onFinished: (QuizSummary) -> Unit,
     onNext: () -> Unit,
     nextLabel: String = "Next: book",
+    onAskTutor: ((McqQuestion, Int) -> Unit)? = null,
 ) {
     if (questions.isEmpty()) {
         Muted("No reviewed questions are available here yet.")
@@ -267,6 +340,9 @@ fun QuizContent(
         Text(if (c == q.sampleCorrectIndex) "Correct." else "Not quite. The right answer is highlighted.",
             style = MaterialTheme.typography.titleMedium,
             color = if (c == q.sampleCorrectIndex) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error)
+        if (c != q.sampleCorrectIndex && onAskTutor != null) {
+            SecondaryButton("Ask the tutor why", onClick = { onAskTutor(q, c) })
+        }
         BigButton(if (index == order.lastIndex) "See result" else "Next question", onClick = {
             if (index == order.lastIndex) {
                 val s = QuizScorer.summarise(order.map { it.id }, history)

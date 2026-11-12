@@ -24,6 +24,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import com.styropyr0.prismal.sources.prismalGlassLayer
 import com.styropyr0.prismal.sources.rememberPrismalGlassLayer
+import androidx.compose.foundation.layout.imePadding
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -76,10 +82,20 @@ import androidx.compose.ui.unit.dp
 fun ParhlouScreen(
     title: String?,
     onBack: (() -> Unit)? = null,
+    /** Pinned above the keyboard at the bottom of the screen (the tutor's question box). */
+    bottomBar: (@Composable () -> Unit)? = null,
+    /** When this value changes, the content scrolls to its end (new chat message). */
+    scrollToEndKey: Any? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     val backdrop = rememberPrismalGlassLayer()
     val bottomSpace = LocalBottomBarSpace.current
+    val scroll = rememberScrollState()
+    val density = LocalDensity.current
+    var barHeight by remember { mutableStateOf(0.dp) }
+    LaunchedEffect(scrollToEndKey, scroll.maxValue) {
+        if (scrollToEndKey != null) scroll.scrollTo(scroll.maxValue)
+    }
     // Surface sets the default text/icon colour for the theme (light or dark).
     Surface(color = MaterialTheme.colorScheme.background, contentColor = MaterialTheme.colorScheme.onBackground) {
     Box(Modifier.fillMaxSize()) {
@@ -88,10 +104,10 @@ fun ParhlouScreen(
                 .fillMaxSize()
                 .prismalGlassLayer(backdrop)
                 .background(MaterialTheme.colorScheme.background)
-                .verticalScroll(rememberScrollState())
+                .verticalScroll(scroll)
                 .statusBarsPadding()
                 .padding(horizontal = 16.dp)
-                .padding(top = if (title != null) 76.dp else 8.dp, bottom = 16.dp + bottomSpace),
+                .padding(top = if (title != null) 76.dp else 8.dp, bottom = 16.dp + bottomSpace + barHeight),
             verticalArrangement = Arrangement.spacedBy(14.dp),
             content = content,
         )
@@ -118,9 +134,19 @@ fun ParhlouScreen(
                     contentAlignment = Alignment.CenterStart,
                 ) {
                     Text(title, style = MaterialTheme.typography.titleMedium, maxLines = 1,
+                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
                         color = MaterialTheme.colorScheme.onSurface,
                         modifier = Modifier.semantics { heading() })
                 }
+            }
+        }
+        if (bottomBar != null) {
+            Surface(
+                color = MaterialTheme.colorScheme.background,
+                modifier = Modifier.align(Alignment.BottomCenter).fillMaxWidth()
+                    .onSizeChanged { barHeight = with(density) { it.height.toDp() } },
+            ) {
+                Box(Modifier.navigationBarsPadding().imePadding().padding(horizontal = 16.dp, vertical = 10.dp)) { bottomBar() }
             }
         }
     }
@@ -204,7 +230,7 @@ fun StatusPill(text: String, warning: Boolean = true) {
 }
 
 @Composable
-fun SampleBadge() = StatusPill("Sample — not reviewed")
+fun SampleBadge() = StatusPill("Sample — demo content")
 
 /** A large selectable choice (onboarding). */
 @Composable
