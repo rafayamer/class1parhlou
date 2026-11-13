@@ -151,7 +151,7 @@ fun HomeScreen(
                     verticalAlignment = Alignment.CenterVertically) {
                     CircleIcon(Icons.Filled.Person, size = 32.dp)
                     Spacer(Modifier.width(8.dp))
-                    Text("Hello!", style = MaterialTheme.typography.labelLarge)
+                    Text(if (onboarding.name.isBlank()) "Hello!" else "Hello, ${onboarding.name}!", style = MaterialTheme.typography.labelLarge)
                 }
             }
             Spacer(Modifier.weight(1f))
@@ -299,6 +299,16 @@ fun ProfileScreen(
     progress: ProgressStore,
     onPlaceholder: (String) -> Unit,
     onClearDevice: () -> Unit,
+    /** Signed-in email, or null when signed out. */
+    email: String? = null,
+    accountsAvailable: Boolean = false,
+    onSignIn: () -> Unit = {},
+    onSignOut: () -> Unit = {},
+    onExport: () -> Unit = {},
+    onDeleteAccount: () -> Unit = {},
+    onHistory: () -> Unit = { onPlaceholder("history") },
+    versionLabel: String = "",
+    accountMessage: String? = null,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
@@ -310,7 +320,7 @@ fun ProfileScreen(
                 CircleIcon(Icons.Filled.Person, size = 64.dp)
                 Spacer(Modifier.width(14.dp))
                 Column {
-                    Text("Learner", style = MaterialTheme.typography.titleLarge)
+                    Text(onboarding.name.ifBlank { "Learner" }, style = MaterialTheme.typography.titleLarge)
                     Muted(listOfNotNull(
                         if (onboarding.boardCode == "PB") "Punjab" else onboarding.boardCode,
                         onboarding.grade?.let { "Class $it" },
@@ -332,9 +342,33 @@ fun ProfileScreen(
                     style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
             }
         }
-        TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Verified parents can see your progress", { onPlaceholder("guardian") })
-        TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", { onPlaceholder("history") })
-        TaskRow(Icons.Filled.Lock, "Privacy & data", "Export or delete your data", { onPlaceholder("profile") })
+        if (accountsAvailable) {
+            Sheet {
+                Text("Account", style = MaterialTheme.typography.titleMedium)
+                if (email == null) {
+                    Muted("Not signed in. Your progress is only on this phone.")
+                    BigButton("Sign in to save progress", onClick = onSignIn)
+                } else {
+                    Text(email, style = MaterialTheme.typography.bodyLarge)
+                    Muted("Progress and settings are saved to your account.")
+                    SecondaryButton("Download my data", onClick = onExport)
+                    SecondaryButton("Sign out", onClick = onSignOut)
+                }
+                accountMessage?.let { Muted(it) }
+            }
+        }
+        TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
+        TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Coming later", { onPlaceholder("guardian") })
+        var confirmDelete by remember { mutableStateOf(false) }
+        if (email != null) {
+            if (!confirmDelete) SecondaryButton("Delete my account", onClick = { confirmDelete = true })
+            else Sheet {
+                Text("Delete your account and all your data?", style = MaterialTheme.typography.titleMedium)
+                Muted("Your answers, marks and progress are removed from the server and this phone. This can't be undone.")
+                BigButton("Yes, delete everything", onClick = { confirmDelete = false; onDeleteAccount() })
+                SecondaryButton("Cancel", onClick = { confirmDelete = false })
+            }
+        }
         if (!confirmClear) {
             SecondaryButton("Clear this phone", onClick = { confirmClear = true })
         } else {
@@ -345,6 +379,7 @@ fun ProfileScreen(
                 SecondaryButton("Cancel", onClick = { confirmClear = false })
             }
         }
+        if (versionLabel.isNotBlank()) Muted(versionLabel)
     }
 }
 

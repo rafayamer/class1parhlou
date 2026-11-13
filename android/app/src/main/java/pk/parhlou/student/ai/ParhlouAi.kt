@@ -21,7 +21,13 @@ interface ParhlouAi {
 
     /** Marks one typed answer against its rubric. [photos] is how many page photos are attached. */
     /** [images] holds the photos as data URLs when [readsPhotos] is true. */
-    suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String> = emptyList()): WrittenMark
+    suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String> = emptyList(), paperId: String? = null): WrittenMark
+
+    /**
+     * Asks the server to check a paper's MCQ choices against its own answer key and record them, so they count as
+     * server-verified marks. Returns false where there is no server (the demo brain), which is not an error.
+     */
+    suspend fun recordMcqs(paperId: String, answers: Map<String, Int>): Boolean = false
 }
 
 enum class TutorStyle { NORMAL, SIMPLER, ANOTHER_EXAMPLE, STEPS, QUIZ_ME }

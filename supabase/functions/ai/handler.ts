@@ -69,3 +69,24 @@ export function markRecord(req: any, result: any, userId: string | null, usage: 
     status: String(result.status), model: usage.model, prompt_version: usage.promptVersion,
   };
 }
+
+/**
+ * Checks a paper's MCQ choices against the server's own answer key (no AI call). Returns the result for the app
+ * and the rows to record for a signed-in student. Unknown question ids are ignored, never trusted.
+ */
+export function markMcqs(req: any, content: Content, userId: string | null): { status: number; body: unknown; rows: Record<string, unknown>[] } {
+  const paperId = typeof req?.paperId === "string" && /^[A-Za-z0-9._-]{1,80}$/.test(req.paperId) ? req.paperId : null;
+  const answers = req?.answers && typeof req.answers === "object" ? req.answers : null;
+  if (!paperId || !answers) return { status: 400, body: { error: "BAD_REQUEST" }, rows: [] };
+  const results: { questionId: string; correct: boolean }[] = [];
+  for (const [id, chosen] of Object.entries(answers).slice(0, 100)) {
+    const mcq = content.mcqs.find((m: any) => m.id === id);
+    if (!mcq || !Number.isInteger(chosen)) continue;
+    results.push({ questionId: id, correct: chosen === mcq.correctIndex });
+  }
+  const rows = userId ? results.map((r) => ({
+    user_id: userId, paper_id: paperId, question_id: r.questionId, awarded: r.correct ? 1 : 0, max_marks: 1,
+    status: "CHECKED", model: "answer-key", prompt_version: "-",
+  })) : [];
+  return { status: 200, body: { result: { results } }, rows };
+}

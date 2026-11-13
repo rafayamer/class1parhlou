@@ -57,7 +57,7 @@ object CheckMaster {
         val written = paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { q ->
             val answer = submission.written[q.id].orEmpty()
             val photos = submission.photos[q.id] ?: 0
-            var mark = ai.markWritten(q, answer, photos, submission.photoData[q.id].orEmpty())
+            var mark = ai.markWritten(q, answer, photos, submission.photoData[q.id].orEmpty(), blueprint.id)
             if (MarkingValidator.problems(q, mark).isNotEmpty()) {
                 // An invalid AI result is rejected, not shown: the question simply stays unchecked.
                 mark = WrittenMark(q.id, MarkStatus.COULD_NOT_CHECK, emptyList(), q.followUp)
@@ -65,6 +65,25 @@ object CheckMaster {
             WrittenOutcome(q, answer, photos, q.id in counted, mark)
         }
         return PaperResult(mcq, written, mcq.count { it.correct } * mcqEach, blueprint.totalMarks)
+    }
+
+    /**
+     * The paper's percentage from marks the server recorded itself, or null if the server does not hold a mark for
+     * every answered MCQ and every counted written answer (then nothing is treated as verified).
+     */
+    fun verifiedPercent(result: PaperResult, server: Map<String, Pair<Double, Double>>, mcqMarksEach: Double): Int? {
+        if (server.isEmpty() || result.total <= 0) return null
+        var marks = 0.0
+        for (o in result.mcq) {
+            if (o.chosen == null) continue
+            val (awarded, max) = server[o.question.id] ?: return null
+            marks += if (max > 0) awarded / max * mcqMarksEach else 0.0
+        }
+        for (o in result.written.filter { it.counted }) {
+            val (awarded, _) = server[o.question.id] ?: return null
+            marks += awarded.coerceAtMost(o.question.marks)
+        }
+        return ((marks * 100) / result.total).toInt().coerceIn(0, 100)
     }
 
     /** Applies each section's "answer N of M" rule: the first N attempted questions count. */

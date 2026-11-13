@@ -28,6 +28,8 @@ class ExamDesk(
     private val store: LocalStore,
     private val ai: ParhlouAi,
     private val progress: ProgressStore,
+    /** Marks the server recorded for a paper (question id → awarded, max); empty when not signed in or offline. */
+    private val serverMarks: suspend (paperId: String) -> Map<String, Pair<Double, Double>> = { emptyMap() },
 ) {
     private companion object {
         const val MAX_PHOTOS = 5
@@ -79,12 +81,16 @@ class ExamDesk(
     /** Hands the paper in: closes the invigilator log, runs the first check and records demo-checked evidence. */
     suspend fun submit(blueprint: PaperBlueprint, paper: PaperContent, now: Long = System.currentTimeMillis()): PaperResult {
         store.appendExamEvent(blueprint.id, ExamEventType.SUBMITTED, now)
-        val result = check(blueprint, paper, submission(paper))
+        val submission = submission(paper)
+        val result = check(blueprint, paper, submission)
         store.saveFirstResult(
             blueprint.id,
             result.written.associate { it.question.id to it.mark.awarded } + ("mcq" to result.mcqMarks) + ("total" to result.confirmed),
         )
-        val evidence = Evidence.DemoCheckedExam(result.percent)
+        ai.recordMcqs(blueprint.id, submission.mcq)
+        // Only marks the server recorded itself count as verified ("AI-assessed"); everything else stays demo-checked.
+        val verified = CheckMaster.verifiedPercent(result, serverMarks(blueprint.id), blueprint.sections.firstOrNull()?.marksEach ?: 1.0)
+        val evidence = if (verified != null) Evidence.ExamMarked(verified) else Evidence.DemoCheckedExam(result.percent)
         progress.add(ProgressStore.PAPER_PREFIX + blueprint.id, evidence, now)
         repo.modulesOfChapter(blueprint.chapterId).forEach { progress.add(it.id, evidence, now) }
         return result

@@ -6,7 +6,7 @@
 // so they can change without redeploying. The bundled sample is only a fallback.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import bundled from "./content/sample.json" with { type: "json" };
-import { handle, markRecord, type Content } from "./handler.ts";
+import { handle, markMcqs, markRecord, type Content } from "./handler.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
@@ -75,6 +75,13 @@ Deno.serve(async (request) => {
 
   let body: unknown;
   try { body = await request.json(); } catch { return json({ error: "BAD_REQUEST" }, 400); }
+
+  if ((body as any)?.task === "mark_mcqs") {
+    const firstId = Object.keys((body as any)?.answers ?? {})[0];
+    const m = markMcqs(body, pick(settings.contents, { questionId: firstId }), userId);
+    if (m.rows.length) await db.from("ai_marks").insert(m.rows);
+    return json(m.body, m.status);
+  }
 
   const outcome = await handle(body, pick(settings.contents, body), (url, init) => fetch(url, init), apiKey, settings.perInstall - (mine ?? 0));
   if (outcome.usage) {

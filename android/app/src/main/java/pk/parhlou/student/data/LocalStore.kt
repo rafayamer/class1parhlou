@@ -39,6 +39,14 @@ class LocalStore(private val context: Context) {
         val progress = stringPreferencesKey("progress_log")
         val readiness = booleanPreferencesKey("readiness_passed")
         val install = stringPreferencesKey("install_id")
+        val access = stringPreferencesKey("auth_access")
+        val refresh = stringPreferencesKey("auth_refresh")
+        val expires = androidx.datastore.preferences.core.longPreferencesKey("auth_expires")
+        val userId = stringPreferencesKey("auth_user")
+        val email = stringPreferencesKey("auth_email")
+        val guest = booleanPreferencesKey("guest")
+        val name = stringPreferencesKey("name")
+        val synced = intPreferencesKey("synced_lines")
     }
 
     val onboarding: Flow<OnboardingState> = context.dataStore.data.map { it.toOnboarding() }
@@ -54,6 +62,7 @@ class LocalStore(private val context: Context) {
             p[K.days] = state.studyDaysPerWeek
             p[K.minutes] = state.minutesPerDay
             p[K.completed] = state.completed
+            p[K.name] = state.name
         }
     }
 
@@ -136,6 +145,31 @@ class LocalStore(private val context: Context) {
         context.dataStore.edit { it[K.readiness] = passed }
     }
 
+    // ---- Account session and sync state ---------------------------------------------------------------
+
+    val session: Flow<Session?> = context.dataStore.data.map { p ->
+        val access = p[K.access] ?: return@map null
+        Session(access, p[K.refresh] ?: "", p[K.expires] ?: 0L, p[K.userId] ?: "", p[K.email] ?: "")
+    }
+
+    suspend fun saveSession(s: Session?) {
+        context.dataStore.edit { p ->
+            if (s == null) { p.remove(K.access); p.remove(K.refresh); p.remove(K.expires); p.remove(K.userId); p.remove(K.email) }
+            else { p[K.access] = s.accessToken; p[K.refresh] = s.refreshToken; p[K.expires] = s.expiresAt; p[K.userId] = s.userId; p[K.email] = s.email }
+        }
+    }
+
+    /** True once the student chose to use the app without an account. */
+    val guest: Flow<Boolean> = context.dataStore.data.map { it[K.guest] ?: false }
+    suspend fun setGuest(value: Boolean) { context.dataStore.edit { it[K.guest] = value } }
+
+    /** How many lines of the progress log have been uploaded. The log is append-only, so this only grows. */
+    suspend fun syncedLines(): Int = context.dataStore.data.first()[K.synced] ?: 0
+    suspend fun setSyncedLines(n: Int) { context.dataStore.edit { it[K.synced] = n } }
+
+    /** Replaces the progress log (used once, when a new phone downloads the history). */
+    suspend fun replaceProgress(log: String) { context.dataStore.edit { it[K.progress] = log } }
+
     /** A random id for this install, used only to count AI calls until sign-in exists. */
     suspend fun installId(): String {
         context.dataStore.data.first()[K.install]?.let { return it }
@@ -159,5 +193,6 @@ class LocalStore(private val context: Context) {
         studyDaysPerWeek = this[K.days] ?: 5,
         minutesPerDay = this[K.minutes] ?: 60,
         completed = this[K.completed] ?: false,
+        name = this[K.name] ?: "",
     )
 }

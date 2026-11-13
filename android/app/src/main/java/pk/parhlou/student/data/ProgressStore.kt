@@ -29,6 +29,9 @@ class ProgressStore(private val store: LocalStore? = null, private val scope: Co
         if (store != null && scope != null) scope.launch { store.appendProgress(line) }
     }
 
+    /** Every recorded event, oldest first. */
+    fun history(): List<LoggedEvidence> = log.toList()
+
     fun evidence(moduleId: String): List<Evidence> = log.filter { it.key == moduleId }.map { it.evidence }
 
     fun state(moduleId: String): LearningState = ProgressCalculator.stateOf(evidence(moduleId))

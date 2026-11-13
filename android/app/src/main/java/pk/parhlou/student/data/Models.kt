@@ -139,4 +139,6 @@ data class OnboardingState(
     val studyDaysPerWeek: Int = 5,
     val minutesPerDay: Int = 60,
     val completed: Boolean = false,
+    /** First name, used in the greeting. Kept on the phone and in the student's own server settings. */
+    val name: String = "",
 )

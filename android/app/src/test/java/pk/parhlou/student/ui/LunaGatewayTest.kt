@@ -31,7 +31,7 @@ class LunaGatewayTest {
             sent += headers to JSONObject(body)
             reply?.let { status to it }
         }
-        return LunaGateway("https://example.test/ai", "anon-key", { "install-1234567890abcdef" }, DemoBrain(repo), transport)
+        return LunaGateway("https://example.test/ai", "anon-key", { "install-1234567890abcdef" }, DemoBrain(repo), transport = transport)
     }
 
     private fun markReply(vararg statuses: String, ids: List<String> = q.rubric.map { it.id }) =

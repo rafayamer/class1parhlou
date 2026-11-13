@@ -34,6 +34,15 @@ import pk.parhlou.student.ui.screens.TutorSeed
 import pk.parhlou.student.ai.DemoBrain
 import pk.parhlou.student.ai.ParhlouAi
 import pk.parhlou.student.data.ExamDesk
+import pk.parhlou.student.data.Account
+import pk.parhlou.student.ui.screens.SignInScreen
+import pk.parhlou.student.ui.screens.HistoryScreen
+import androidx.compose.runtime.LaunchedEffect
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
@@ -88,6 +97,8 @@ object Routes {
     const val PLACEHOLDER = "soon/{key}"
     const val TUTOR = "tutor"
     const val PROFILE = "profile"
+    const val SIGN_IN = "signin"
+    const val HISTORY = "history"
 }
 
 /** Main destinations shown in the floating pill bar. */
@@ -106,7 +117,14 @@ private val placeholders = mapOf(
 )
 
 @Composable
-fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remember(repo) { DemoBrain(repo) }) {
+fun ParhlouApp(
+    repo: ParhlouRepository,
+    store: LocalStore,
+    ai: ParhlouAi = remember(repo) { DemoBrain(repo) },
+    /** Sign-in and sync; null in builds without a Supabase address. */
+    account: Account? = null,
+    versionLabel: String = "",
+) {
     val context = LocalContext.current
     remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
     val scope = rememberCoroutineScope()
@@ -119,7 +137,26 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
         return
     }
     val nav = rememberNavController()
-    val desk = remember(repo, ai) { ExamDesk(context.applicationContext, repo, store, ai, progress) }
+    val session by (account?.auth?.session ?: flowOf(null)).collectAsState(initial = null)
+    val guest by store.guest.collectAsState(initial = false)
+    val accountError by (account?.error ?: MutableStateFlow(null)).collectAsState()
+    var accountMessage by remember { mutableStateOf<String?>(null) }
+    // After signing in (by link or code): restore or upload, then continue to the right screen.
+    val signedInAs = session?.userId
+    LaunchedEffect(signedInAs) {
+        if (account == null || signedInAs == null) return@LaunchedEffect
+        val settings = account.afterSignIn(progress)
+        val onSignIn = nav.currentDestination?.route == Routes.SIGN_IN
+        if (onSignIn) nav.navigate(if (settings.completed) Routes.HOME else Routes.ONBOARDING) { popUpTo(0) }
+    }
+    // Upload new progress whenever the app goes to the background.
+    LifecycleEventEffect(Lifecycle.Event.ON_STOP) { account?.let { a -> scope.launch { a.syncNow() } } }
+    val needsSignIn = account != null && session == null && !guest
+    val desk = remember(repo, ai, account) {
+        ExamDesk(context.applicationContext, repo, store, ai, progress) { paperId ->
+            if (account == null) emptyMap() else account.sync.paperMarks(paperId)
+        }
+    }
     val readinessPassed by store.readinessPassed.collectAsState(initial = false)
     val activeExam by store.activeExam.collectAsState(initial = null)
     var tutorSeed by remember { mutableStateOf<TutorSeed?>(null) }
@@ -159,13 +196,28 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
         popEnterTransition = popEnter,
         popExitTransition = exit,
     ) {
-        composable(Routes.WELCOME) { WelcomeScreen(onStart = { nav.navigate(Routes.ONBOARDING) }) }
+        composable(Routes.WELCOME) {
+            WelcomeScreen(onStart = { nav.navigate(if (needsSignIn) Routes.SIGN_IN else Routes.ONBOARDING) })
+        }
+        composable(Routes.SIGN_IN) {
+            if (account == null) Missing(nav) else SignInScreen(
+                auth = account.auth,
+                initialName = state.name,
+                error = accountError,
+                onName = { n -> scope.launch { store.saveOnboarding(store.onboarding.first().copy(name = n)) } },
+                onGuest = {
+                    scope.launch { store.setGuest(true) }
+                    nav.navigate(if (state.completed) Routes.HOME else Routes.ONBOARDING) { popUpTo(0) }
+                },
+                onBack = { nav.popBackStack() },
+            )
+        }
         composable(Routes.ONBOARDING) {
             OnboardingScreen(
                 repo = repo,
                 initial = state,
                 onSave = { s ->
-                    scope.launch { store.saveOnboarding(s) }
+                    scope.launch { store.saveOnboarding(s); if (s.completed) account?.syncNow(s) }
                     if (s.completed) nav.navigate(Routes.HOME) { popUpTo(0) }
                 },
                 onExit = { nav.popBackStack() },
@@ -189,7 +241,28 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
             ProfileScreen(
                 repo, state, progress,
                 onPlaceholder = { nav.navigate("soon/$it") },
-                onClearDevice = { scope.launch { store.clearAll() } },
+                onClearDevice = { scope.launch { account?.auth?.signOut(); store.clearAll() } },
+                email = session?.email,
+                accountsAvailable = account != null,
+                onSignIn = { scope.launch { store.setGuest(false) }; nav.navigate(Routes.SIGN_IN) },
+                onSignOut = { scope.launch { account?.syncNow(); account?.auth?.signOut(); accountMessage = "Signed out. Your progress is still on this phone." } },
+                onExport = {
+                    scope.launch {
+                        val json = account?.sync?.exportData()
+                        accountMessage = if (json == null) "Couldn't download your data. Check your internet and try again."
+                        else { shareText(context, "parhlou-my-data.json", json); null }
+                    }
+                },
+                onDeleteAccount = {
+                    scope.launch {
+                        val ok = account?.sync?.deleteAccount() == true
+                        if (ok) { account?.auth?.signOut(); store.clearAll() }
+                        else accountMessage = "Couldn't delete the account. Check your internet and try again."
+                    }
+                },
+                onHistory = { nav.navigate(Routes.HISTORY) },
+                versionLabel = versionLabel,
+                accountMessage = accountMessage,
             )
         } }
         composable(Routes.SUBJECTS) { WithTabBarSpace {
@@ -260,6 +333,12 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
                 onHome = { nav.popBackStack(Routes.HOME, inclusive = false) },
             )
         }
+        composable(Routes.HISTORY) {
+            HistoryScreen(progress.history(), titleOf = { key ->
+                val k = key.removePrefix(ProgressStore.PAPER_PREFIX)
+                repo.module(k)?.title ?: blueprints.firstOrNull { it.id == k }?.title ?: k
+            }, onBack = nav.back())
+        }
         composable(Routes.JOURNEY) { JourneyScreen(repo, state, progress, onBack = nav.back()) }
         composable(Routes.PLACEHOLDER) { entry ->
             val (title, msg) = placeholders[entry.arguments?.getString("key")] ?: ("Coming later" to "This part isn't built yet.")
@@ -285,6 +364,17 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
 @Composable
 private fun WithTabBarSpace(content: @Composable () -> Unit) =
     CompositionLocalProvider(LocalBottomBarSpace provides GlassTabBarHeight, content = content)
+
+/** Writes text to a private cache file and opens the share sheet for it. */
+private fun shareText(context: android.content.Context, fileName: String, text: String) {
+    val dir = java.io.File(context.cacheDir, "exports").apply { mkdirs() }
+    val file = java.io.File(dir, fileName).apply { writeText(text) }
+    val uri = androidx.core.content.FileProvider.getUriForFile(context, "${context.packageName}.files", file)
+    val send = android.content.Intent(android.content.Intent.ACTION_SEND)
+        .setType("application/json").putExtra(android.content.Intent.EXTRA_STREAM, uri)
+        .addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
+    context.startActivity(android.content.Intent.createChooser(send, "Save your data").addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+}
 
 private fun NavHostController.back(): () -> Unit = { popBackStack() }
 

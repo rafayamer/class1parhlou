@@ -1,6 +1,12 @@
 package pk.parhlou.student
 
+import android.content.Intent
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
+import pk.parhlou.student.data.Account
+import pk.parhlou.student.data.AuthClient
+import pk.parhlou.student.data.AuthResult
+import pk.parhlou.student.data.SyncClient
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +35,26 @@ import pk.parhlou.student.update.AppUpdater
 import pk.parhlou.student.update.UpdateInfo
 
 class MainActivity : ComponentActivity() {
+    private var account: Account? = null
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleSignInLink(intent)
+    }
+
+    /** A tapped sign-in link: store the session, or show why it didn't work. */
+    private fun handleSignInLink(intent: Intent?) {
+        val uri = intent?.data ?: return
+        val a = account ?: return
+        lifecycleScope.launch {
+            when (val r = a.auth.handleRedirect(uri)) {
+                is AuthResult.Failed -> a.error.value = r.message
+                is AuthResult.SignedIn -> a.error.value = null
+                else -> Unit
+            }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -37,6 +63,12 @@ class MainActivity : ComponentActivity() {
         val supabaseUrl = BuildConfig.PARHLOU_AI_URL.substringBefore("/functions/", "")
         val remote = RemoteContent(applicationContext, supabaseUrl, BuildConfig.SUPABASE_ANON_KEY, packed)
         val updater = AppUpdater(applicationContext, BuildConfig.UPDATE_REPO, BuildConfig.VERSION_CODE)
+        if (supabaseUrl.isNotBlank()) {
+            val auth = AuthClient(supabaseUrl, BuildConfig.SUPABASE_ANON_KEY, store)
+            account = Account(auth, SyncClient(supabaseUrl, BuildConfig.SUPABASE_ANON_KEY, auth, store), store)
+        }
+        if (savedInstanceState == null) handleSignInLink(intent)
+        val account = account
         setContent {
             ParhlouTheme { ProvideMotion {
                 val scope = rememberCoroutineScope()
@@ -57,7 +89,8 @@ class MainActivity : ComponentActivity() {
                 val ai = remember(repo) {
                     val demo = DemoBrain(repo)
                     if (BuildConfig.PARHLOU_AI_URL.isBlank()) demo
-                    else LunaGateway(BuildConfig.PARHLOU_AI_URL, BuildConfig.SUPABASE_ANON_KEY, { store.installId() }, demo)
+                    else LunaGateway(BuildConfig.PARHLOU_AI_URL, BuildConfig.SUPABASE_ANON_KEY, { store.installId() }, demo,
+                        accessToken = { account?.auth?.accessToken() })
                 }
                 val offer = update?.let { info ->
                     UpdateOffer(info.build, info.publishedOn, installing) {
@@ -65,7 +98,8 @@ class MainActivity : ComponentActivity() {
                     }
                 }
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
-                    ParhlouApp(repo = repo, store = store, ai = ai)
+                    ParhlouApp(repo = repo, store = store, ai = ai, account = account,
+                        versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
                 }
             } }
         }

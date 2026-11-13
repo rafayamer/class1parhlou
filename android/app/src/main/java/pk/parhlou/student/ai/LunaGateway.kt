@@ -22,6 +22,8 @@ class LunaGateway(
     private val anonKey: String,
     private val installId: suspend () -> String,
     private val fallback: ParhlouAi,
+    /** The signed-in student's session token, or null to fall back to the install id. */
+    private val accessToken: suspend () -> String? = { null },
     private val transport: GatewayTransport = ::httpPost,
 ) : ParhlouAi {
 
@@ -41,20 +43,28 @@ class LunaGateway(
         return call(body)?.let(::parseTutor) ?: offline(fallback.mcqFeedback(question, chosen, subjectIds))
     }
 
-    override suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String>): WrittenMark {
+    override suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String>, paperId: String?): WrittenMark {
         if (answer.isBlank() && images.isEmpty()) return fallback.markWritten(question, answer, photos)
         val body = JSONObject().put("task", "mark_written").put("questionId", question.id)
             .put("answer", answer).put("images", JSONArray(images))
+        if (paperId != null) body.put("paperId", paperId)
         val mark = call(body)?.let { parseMark(question, it) }
         // Model output is untrusted: it is used only if it matches this question's rubric exactly.
         return if (mark != null && MarkingValidator.problems(question, mark).isEmpty()) mark
         else fallback.markWritten(question, answer, photos)
     }
 
+    override suspend fun recordMcqs(paperId: String, answers: Map<String, Int>): Boolean {
+        if (answers.isEmpty()) return true
+        val body = JSONObject().put("task", "mark_mcqs").put("paperId", paperId).put("answers", JSONObject(answers as Map<*, *>))
+        return call(body) != null
+    }
+
     private suspend fun call(body: JSONObject): JSONObject? = runCatching {
+        val token = accessToken()
         val headers = mapOf(
             "Content-Type" to "application/json",
-            "Authorization" to "Bearer $anonKey",
+            "Authorization" to "Bearer ${token ?: anonKey}",
             "apikey" to anonKey,
             "x-parhlou-install" to installId(),
         )

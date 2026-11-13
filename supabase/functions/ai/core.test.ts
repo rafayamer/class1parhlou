@@ -132,3 +132,13 @@ test("server records marks only for signed-in students, valid results and real a
   assert.equal(markRecord({ task: "mark_written" }, { ...result, criteria: [{ max: 1, awarded: 5 }] }, "user-1", usage), null);
   assert.equal((markRecord({ task: "mark_written", paperId: "bad id; drop" }, result, "user-1", usage) as any).paper_id, null);
 });
+
+import { markMcqs } from "./handler.ts";
+test("MCQs are checked against the server's key; unknown ids and bad input are ignored", () => {
+  const p4 = content.mcqs.find((m: any) => m.id === "p4");
+  const m: any = markMcqs({ paperId: "sample-chapter-test", answers: { p4: p4.correctIndex, p1: 0, nope: 2, p2: "x" } }, content, "user-1");
+  assert.deepEqual(m.body.result.results.map((r: any) => [r.questionId, r.correct]), [["p4", true], ["p1", false]]);
+  assert.deepEqual(m.rows.map((r: any) => r.awarded), [1, 0]);
+  assert.equal(markMcqs({ paperId: "x", answers: { p4: 2 } }, content, null).rows.length, 0);
+  assert.equal(markMcqs({ answers: {} }, content, "u").status, 400);
+});
