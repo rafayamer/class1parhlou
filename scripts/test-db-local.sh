@@ -34,6 +34,6 @@ for t in "$ROOT"/supabase/tests/database/*.test.sql; do
   echo "test: $(basename "$t")"
   out="$("${RUN[@]}" psql -h "$WORK" -p "$PORT" -U postgres -d parhlou_test -X -A -t -f "$t" 2>&1)" || status=1
   echo "$out"
-  if grep -qE '^not ok|Looks like you failed|ERROR' <<<"$out"; then status=1; fi
+  if grep -qE '^not ok|Looks like you (failed|planned)|ERROR' <<<"$out"; then status=1; fi
 done
 exit $status

@@ -1,7 +1,7 @@
 -- Accounts, sync, AI marks, deletion and owner functions.
 begin;
 create extension if not exists pgtap;
-select plan(31);
+select plan(30);
 
 -- Platform tenant comes from seed.sql. The owner email is configured before the owner signs up.
 select public.set_owner_email('Owner@Example.test');
