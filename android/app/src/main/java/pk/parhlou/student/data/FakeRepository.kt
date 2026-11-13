@@ -60,18 +60,6 @@ class FakeRepository : ParhlouRepository {
                 official = false,
                 chapterId = "u-1",
             ),
-            PaperBlueprint(
-                id = "sample-full-paper",
-                title = "Full paper (reported board pattern, unconfirmed)",
-                durationMinutes = 150,
-                totalMarks = 75.0,
-                sections = listOf(
-                    BlueprintSection("MCQ", count = 15, attempt = 15, marksEach = 1.0, minutes = 20),
-                    BlueprintSection("Short questions", count = 27, attempt = 18, marksEach = 2.0),
-                    BlueprintSection("Long questions", count = 5, attempt = 3, marksEach = 8.0),
-                ),
-                official = false,
-            ),
         )
 
     override fun paper(blueprintId: String): PaperContent? =

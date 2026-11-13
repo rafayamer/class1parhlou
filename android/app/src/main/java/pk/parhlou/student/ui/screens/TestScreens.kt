@@ -66,6 +66,7 @@ import pk.parhlou.student.domain.BlueprintValidator
 import pk.parhlou.student.domain.ExamClock
 import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.ExamLog
+import pk.parhlou.student.domain.MockPaper
 import pk.parhlou.student.ui.components.BigButton
 import pk.parhlou.student.ui.components.Muted
 import pk.parhlou.student.ui.components.ParhlouScreen
@@ -86,6 +87,8 @@ fun TestsScreen(
     onReadiness: () -> Unit,
     onOpen: (String) -> Unit,
     onBack: (() -> Unit)?,
+    /** Quarter/half/full mocks that can't be built yet (ready ones are already in [blueprints]). */
+    pendingMocks: List<MockPaper.NeedsQuestions> = emptyList(),
 ) {
     ParhlouScreen("Papers", onBack = onBack) {
         Sheet {
@@ -110,7 +113,36 @@ fun TestsScreen(
                 }
             }
         }
+        if (pendingMocks.isNotEmpty()) {
+            Text("Mock papers", style = MaterialTheme.typography.titleLarge)
+            pendingMocks.forEach { m ->
+                Card(onClick = {}, enabled = false, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
+                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Text("${m.scope.label} (Units ${m.chapters.first().number}–${m.chapters.last().number})", style = MaterialTheme.typography.titleMedium)
+                        StatusPill("Practice pattern — not official")
+                        Muted(
+                            if (m.missing.isNotEmpty()) "Needs questions for ${unitRanges(m.missing.map { it.number })} first."
+                            else "Needs more questions of the right marks before it can be built.",
+                        )
+                    }
+                }
+            }
+        }
     }
+}
+
+/** "Units 2–4, 7" from [2, 3, 4, 7]. */
+internal fun unitRanges(numbers: List<Int>): String {
+    val sorted = numbers.sorted()
+    val parts = mutableListOf<String>()
+    var start = sorted.firstOrNull() ?: return "no units"
+    var prev = start
+    for (n in sorted.drop(1) + Int.MIN_VALUE) {
+        if (n == prev + 1) { prev = n; continue }
+        parts += if (start == prev) "$start" else "$start–$prev"
+        start = n; prev = n
+    }
+    return (if (sorted.size == 1) "Unit " else "Units ") + parts.joinToString(", ")
 }
 
 @Composable

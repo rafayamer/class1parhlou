@@ -129,6 +129,10 @@ fun HomeScreen(
     onJourney: () -> Unit,
     onTutor: () -> Unit,
     onPlaceholder: (String) -> Unit,
+    /** Today's plan from [pk.parhlou.student.domain.StudyPlanner]; empty shows the basic tasks. */
+    plan: List<pk.parhlou.student.domain.PlanTask> = emptyList(),
+    onPlanTask: (pk.parhlou.student.domain.PlanTask) -> Unit = {},
+    onPlanner: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -229,10 +233,16 @@ fun HomeScreen(
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
         }
 
-        Text("Today's tasks", style = MaterialTheme.typography.titleLarge)
-        TaskRow(Icons.Filled.PlayCircle, "Lesson", "${onboarding.minutesPerDay} min planned today", go)
-        TaskRow(Icons.Filled.Quiz, "Readiness quiz", "Check you're ready for the next paper", onTests)
-        TaskRow(Icons.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Today's tasks", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+            androidx.compose.material3.TextButton(onClick = onPlanner) { Text("Full plan") }
+        }
+        if (plan.isEmpty()) {
+            TaskRow(Icons.Filled.PlayCircle, "Lesson", "${onboarding.minutesPerDay} min planned today", go)
+            TaskRow(Icons.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
+        } else plan.filterNot { it.target == (task as? NextTask.OpenModule)?.moduleId }.take(3).forEach { t ->
+            TaskRow(t.kind.icon(), t.title, t.reason, onClick = { onPlanTask(t) })
+        }
 
         subjects.forEach { s ->
             Sheet {

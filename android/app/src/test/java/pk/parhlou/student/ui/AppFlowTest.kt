@@ -88,11 +88,32 @@ class AppFlowTest {
         val locked = rule.onAllNodes(androidx.compose.ui.test.hasText("Locked until you pass the readiness check.", substring = true))
         assertEquals(1, locked.fetchSemanticsNodes().size)
         locked.assertAll(androidx.compose.ui.test.isNotEnabled())
-        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("Not available yet", substring = true))
-        assertEquals(1, notReady.fetchSemanticsNodes().size)
+        // Quarter, half and full mocks are listed but can't be built from Unit 1 alone.
+        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("Needs questions for Units", substring = true))
+        assertEquals(3, notReady.fetchSemanticsNodes().size)
         notReady.assertAll(androidx.compose.ui.test.isNotEnabled())
-        assertEquals(2, rule.onAllNodes(androidx.compose.ui.test.hasText("Practice pattern — not official", substring = true))
+        assertEquals(4, rule.onAllNodes(androidx.compose.ui.test.hasText("Practice pattern — not official", substring = true))
             .fetchSemanticsNodes().size)
+    }
+
+    @Test
+    fun aMissedTopicIsRepairedFirstFromTheHomePlan() {
+        val missed = System.currentTimeMillis() - 2 * 24 * 60 * 60 * 1000L
+        runBlocking {
+            store.saveOnboarding(pk.parhlou.student.data.OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9),
+                pk.parhlou.student.data.Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
+            store.replaceProgress(pk.parhlou.student.domain.EvidenceCodec.line(missed, "topic:n-surds", pk.parhlou.student.domain.Evidence.TopicMissed))
+        }
+        rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
+        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Do this now") }
+
+        rule.onNodeWithText("Fix: Simplifying square roots").performScrollTo().assertExists()
+        rule.onNodeWithText("Full plan").performScrollTo().performClick()
+        rule.onNodeWithText("You missed this once recently, last 2 days ago.", substring = true).assertExists()
+        rule.onNodeWithText("See 1 weak topic").performScrollTo().performClick()
+        rule.onNodeWithText("Missed once · Fix this").performClick()
+        // The tutor opens on that topic.
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("square root", substring = true, ignoreCase = true)).fetchSemanticsNodes().isNotEmpty() }
     }
 
     private fun androidx.compose.ui.test.junit4.ComposeContentTestRule.onAllNodesWithTextExists(text: String): Boolean =

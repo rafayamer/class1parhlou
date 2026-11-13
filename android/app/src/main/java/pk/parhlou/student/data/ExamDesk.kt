@@ -12,8 +12,9 @@ import kotlinx.coroutines.withContext
 import pk.parhlou.student.ai.ParhlouAi
 import pk.parhlou.student.domain.CheckMaster
 import pk.parhlou.student.domain.Evidence
-import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.PaperResult
+import pk.parhlou.student.domain.TOPIC_PREFIX
+import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.PaperSubmission
 import java.io.File
 
@@ -92,6 +93,7 @@ class ExamDesk(
         val verified = CheckMaster.verifiedPercent(result, serverMarks(blueprint.id), blueprint.sections.firstOrNull()?.marksEach ?: 1.0)
         val evidence = if (verified != null) Evidence.ExamMarked(verified) else Evidence.DemoCheckedExam(result.percent)
         progress.add(ProgressStore.PAPER_PREFIX + blueprint.id, evidence, now)
+        topicEvidence(result).forEach { (note, ev) -> progress.add(TOPIC_PREFIX + note, ev, now) }
         repo.modulesOfChapter(blueprint.chapterId).forEach { progress.add(it.id, evidence, now) }
         return result
     }
@@ -107,6 +109,22 @@ class ExamDesk(
         bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
         "data:image/jpeg;base64," + Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP)
     }.getOrNull()
+
+    /** Which tutor topics the paper shows as missed or mastered (only answered questions count). */
+    private fun topicEvidence(result: PaperResult): List<Pair<String, Evidence>> {
+        val out = mutableListOf<Pair<String, Evidence>>()
+        result.mcq.filter { it.chosen != null }.forEach { o ->
+            o.question.noteId?.let { out += it to (if (o.correct) Evidence.TopicCorrect else Evidence.TopicMissed) }
+        }
+        result.written.filter { it.counted }.forEach { o ->
+            val note = o.question.noteId ?: return@forEach
+            when {
+                o.mark.criteria.any { it.status == pk.parhlou.student.ai.CriterionStatus.NOT_FOUND } -> out += note to Evidence.TopicMissed
+                o.mark.status == pk.parhlou.student.ai.MarkStatus.CHECKED -> out += note to Evidence.TopicCorrect
+            }
+        }
+        return out
+    }
 
     /** Clears answers, photos and the log of one paper so it can be sat again. */
     suspend fun reset(paper: PaperContent) {

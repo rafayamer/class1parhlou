@@ -80,6 +80,18 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material3.MaterialTheme
 import androidx.navigation.compose.currentBackStackEntryAsState
+import pk.parhlou.student.data.PaperContent
+import pk.parhlou.student.data.Pathway
+import pk.parhlou.student.domain.MockPaper
+import pk.parhlou.student.domain.MockScope
+import pk.parhlou.student.domain.PaperAssembler
+import pk.parhlou.student.domain.PlanKind
+import pk.parhlou.student.domain.PlanModule
+import pk.parhlou.student.domain.PlanTask
+import pk.parhlou.student.domain.StudyPlanner
+import pk.parhlou.student.domain.Weakness
+import pk.parhlou.student.ui.screens.PlannerScreen
+import pk.parhlou.student.ui.screens.WeakTopicsScreen
 
 object Routes {
     const val WELCOME = "welcome"
@@ -99,6 +111,8 @@ object Routes {
     const val PROFILE = "profile"
     const val SIGN_IN = "signin"
     const val HISTORY = "history"
+    const val PLANNER = "planner"
+    const val WEAK_TOPICS = "weak-topics"
 }
 
 /** Main destinations shown in the floating pill bar. */
@@ -162,7 +176,35 @@ fun ParhlouApp(
     var tutorSeed by remember { mutableStateOf<TutorSeed?>(null) }
     fun openTutor(seed: TutorSeed?) { tutorSeed = seed; nav.navigate(Routes.TUTOR) }
     val subjectIds = state.subjectIds.toList()
-    val blueprints = subjectIds.flatMap { repo.blueprints(it) }
+    val subjects = subjectIds.mapNotNull { repo.subject(it) }
+    val chapterBlueprints = subjectIds.flatMap { repo.blueprints(it) }
+    // Quarter/half/full mocks built from each chapter's published questions; never from partial content.
+    val mocks = remember(repo, subjectIds) {
+        subjects.flatMap { s ->
+            val pool = s.chapters.associate { c ->
+                val papers = chapterBlueprints.filter { it.chapterId == c.id }.mapNotNull { repo.paper(it.id) }
+                c.id to PaperContent("pool-${c.id}", papers.flatMap { it.mcqs }, papers.flatMap { it.written })
+            }
+            MockScope.entries.map { PaperAssembler.assemble(it, s.chapters, pool, PaperAssembler.boardPattern()) }
+        }
+    }
+    val readyMocks = mocks.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id }
+    val blueprints = chapterBlueprints + readyMocks.values.map { it.blueprint }
+    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper
+    val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
+    val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
+    fun plan() = StudyPlanner.plan(
+        planModules, progress.history(), { noteTitles[it] },
+        blueprints.filter { paperOf(it.id) != null }.map { it.id to it.title },
+        testSeries = state.pathway == Pathway.TEST_SERIES, minutesPerDay = state.minutesPerDay, now = System.currentTimeMillis(),
+    )
+    fun weakTopics() = Weakness.topics(progress.history(), { noteTitles[it] }, System.currentTimeMillis())
+    fun openPlanTask(t: PlanTask) = when (t.kind) {
+        PlanKind.REPAIR -> openTutor(TutorSeed(noteId = t.target))
+        PlanKind.REVIEW, PlanKind.LEARN -> nav.navigate("module/${t.target}")
+        PlanKind.PAPER -> nav.navigate("assessment/${t.target}")
+        PlanKind.READINESS -> nav.navigate(Routes.READINESS)
+    }
     val current = nav.currentBackStackEntryAsState().value?.destination?.route
     val showBar = current in navItems.map { it.route }
     fun goTop(route: String) = nav.navigate(route) {
@@ -232,8 +274,23 @@ fun ParhlouApp(
                 onJourney = { nav.navigate(Routes.JOURNEY) },
                 onTutor = { openTutor(null) },
                 onPlaceholder = { nav.navigate("soon/$it") },
+                plan = plan(),
+                onPlanTask = ::openPlanTask,
+                onPlanner = { nav.navigate(Routes.PLANNER) },
             )
         } }
+        composable(Routes.PLANNER) {
+            PlannerScreen(
+                tasks = plan(), minutesPerDay = state.minutesPerDay, weakTopics = weakTopics(),
+                onTask = ::openPlanTask,
+                onWeakTopics = { nav.navigate(Routes.WEAK_TOPICS) },
+                onBook = { goTop(Routes.SUBJECTS) },
+                onBack = nav.back(),
+            )
+        }
+        composable(Routes.WEAK_TOPICS) {
+            WeakTopicsScreen(weakTopics(), onFix = { openTutor(TutorSeed(noteId = it.noteId)) }, onBack = nav.back())
+        }
         composable(Routes.TUTOR) {
             TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back())
         }
@@ -287,11 +344,12 @@ fun ParhlouApp(
         composable(Routes.TESTS) { WithTabBarSpace {
             TestsScreen(
                 blueprints = blueprints,
-                available = blueprints.filter { repo.paper(it.id) != null }.map { it.id }.toSet(),
+                available = blueprints.filter { paperOf(it.id) != null }.map { it.id }.toSet(),
                 readinessPassed = readinessPassed,
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
+                pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
             )
         } }
         composable(Routes.READINESS) {
@@ -303,7 +361,7 @@ fun ParhlouApp(
         }
         composable(Routes.ASSESSMENT) { entry ->
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
-            val paper = b?.let { repo.paper(it.id) }
+            val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else {
                 val log by store.examLog(b.id).collectAsState(initial = "")
                 AssessmentStartScreen(
@@ -317,7 +375,7 @@ fun ParhlouApp(
         }
         composable(Routes.EXAM) { entry ->
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
-            val paper = b?.let { repo.paper(it.id) }
+            val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else ExamScreen(
                 blueprint = b, paper = paper, store = store, desk = desk, appScope = scope,
                 onSubmitted = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
@@ -326,7 +384,7 @@ fun ParhlouApp(
         }
         composable(Routes.RESULT) { entry ->
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
-            val paper = b?.let { repo.paper(it.id) }
+            val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else CheckMasterScreen(
                 blueprint = b, paper = paper, desk = desk, store = store,
                 onExplain = { openTutor(it) },
@@ -367,13 +425,8 @@ private fun WithTabBarSpace(content: @Composable () -> Unit) =
 
 /** Writes text to a private cache file and opens the share sheet for it. */
 private fun shareText(context: android.content.Context, fileName: String, text: String) {
-    val dir = java.io.File(context.cacheDir, "exports").apply { mkdirs() }
-    val file = java.io.File(dir, fileName).apply { writeText(text) }
-    val uri = androidx.core.content.FileProvider.getUriForFile(context, "${context.packageName}.files", file)
-    val send = android.content.Intent(android.content.Intent.ACTION_SEND)
-        .setType("application/json").putExtra(android.content.Intent.EXTRA_STREAM, uri)
-        .addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
-    context.startActivity(android.content.Intent.createChooser(send, "Save your data").addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+    val file = java.io.File(exportsDir(context), fileName).apply { writeText(text) }
+    shareFile(context, file, "application/json", "Save your data")
 }
 
 private fun NavHostController.back(): () -> Unit = { popBackStack() }

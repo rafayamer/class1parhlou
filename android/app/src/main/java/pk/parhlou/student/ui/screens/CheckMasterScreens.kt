@@ -32,6 +32,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import androidx.compose.ui.platform.LocalContext
+import java.io.File
+import pk.parhlou.student.domain.MarkedPdf
+import pk.parhlou.student.ui.exportsDir
+import pk.parhlou.student.ui.shareFile
 import pk.parhlou.student.ai.CriterionStatus
 import pk.parhlou.student.ai.MarkStatus
 import pk.parhlou.student.ai.WrittenMark
@@ -146,6 +153,21 @@ fun CheckMasterScreen(
             }
         }
 
+        val context = LocalContext.current
+        var pdfMessage by remember { mutableStateOf<String?>(null) }
+        SecondaryButton("Save marked paper (PDF)", onClick = {
+            scope.launch {
+                val file = runCatching {
+                    withContext(Dispatchers.IO) {
+                        val photos = r.written.associate { o -> o.question.id to desk.photos(id, o.question.id) }
+                        MarkedPdf.write(File(exportsDir(context), "parhlou-marked-$id.pdf"), blueprint, r, report, photos, DEMO_CHECKER_LABEL)
+                    }
+                }.getOrNull()
+                if (file == null) pdfMessage = "Couldn't make the PDF. Free some space on the phone and try again."
+                else { pdfMessage = null; shareFile(context, file, "application/pdf", "Save your marked paper") }
+            }
+        })
+        pdfMessage?.let { Muted(it) }
         BigButton("Back to home", onClick = onHome)
     }
 }

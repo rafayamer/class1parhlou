@@ -13,6 +13,8 @@ object EvidenceCodec {
         Evidence.ExamPendingReview -> "P"
         is Evidence.ExamMarked -> "E:${e.percent}"
         is Evidence.DemoCheckedExam -> "D:${e.percent}"
+        Evidence.TopicMissed -> "M"
+        Evidence.TopicCorrect -> "C"
     }
 
     fun decode(code: String): Evidence? {
@@ -26,6 +28,8 @@ object EvidenceCodec {
             "P" -> Evidence.ExamPendingReview
             "E" -> number?.let { Evidence.ExamMarked(it) }
             "D" -> number?.let { Evidence.DemoCheckedExam(it) }
+            "M" -> Evidence.TopicMissed
+            "C" -> Evidence.TopicCorrect
             else -> null
         }
     }

@@ -43,6 +43,7 @@ import pk.parhlou.student.data.McqQuestion
 import pk.parhlou.student.data.Module
 import pk.parhlou.student.data.ProgressStore
 import pk.parhlou.student.domain.Evidence
+import pk.parhlou.student.domain.TOPIC_PREFIX
 import pk.parhlou.student.domain.QuizAnswer
 import pk.parhlou.student.domain.QuizScorer
 import pk.parhlou.student.domain.QuizSummary
@@ -108,6 +109,10 @@ fun ModuleScreen(
                 onFinished = { summary -> progress.add(module.id, Evidence.QuizCompleted(summary.firstTryPercent)) },
                 onNext = { current = Stage.READ },
                 onAskTutor = { q, chosen -> onAskTutor(TutorSeed(moduleId = module.id, mcq = q, chosen = chosen)) },
+                onAnswered = { q, correct, attempt ->
+                    val note = q.noteId
+                    if (note != null && attempt == 1) progress.add(TOPIC_PREFIX + note, if (correct) Evidence.TopicCorrect else Evidence.TopicMissed)
+                },
             )
             Stage.READ -> ReadStage(module, progress) { current = Stage.WRITE }
             Stage.WRITE -> WriteStage(module, progress, store, ai) { current = Stage.IMPROVE }
@@ -180,6 +185,8 @@ private fun writtenDraftKey(module: Module, q: WrittenQuestion) = "${module.id}_
 private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStore, ai: ParhlouAi, onNext: () -> Unit) {
     val scope = rememberCoroutineScope()
     var submitted by remember(module.id) { mutableStateOf(Evidence.WrittenSubmitted in progress.evidence(module.id)) }
+    // Topic evidence is recorded once per "Check my answer", not every time the marks are shown again.
+    var justChecked by remember(module.id) { mutableStateOf(false) }
     if (module.writtenQuestions.isEmpty()) {
         Muted("No written practice is published for this module yet.")
         return
@@ -209,6 +216,15 @@ private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStor
                 StatusPill(DEMO_CHECKER_LABEL)
                 val checked = mark
                 if (checked == null) Muted("Checking…") else WrittenMarkDetails(q, checked)
+                LaunchedEffect(checked) {
+                    val note = q.noteId
+                    if (justChecked && checked != null && note != null) {
+                        when {
+                            checked.criteria.any { it.status == CriterionStatus.NOT_FOUND } -> progress.add(TOPIC_PREFIX + note, Evidence.TopicMissed)
+                            checked.status == MarkStatus.CHECKED -> progress.add(TOPIC_PREFIX + note, Evidence.TopicCorrect)
+                        }
+                    }
+                }
             }
         }
     }
@@ -216,7 +232,11 @@ private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStor
         SecondaryButton("Edit my answer and check again", onClick = { submitted = false })
         BigButton("Next: improve", onClick = onNext)
     } else {
-        BigButton("Check my answer", onClick = { progress.add(module.id, Evidence.WrittenSubmitted); submitted = true })
+        BigButton("Check my answer", onClick = {
+            progress.add(module.id, Evidence.WrittenSubmitted)
+            justChecked = true
+            submitted = true
+        })
     }
 }
 
@@ -278,6 +298,8 @@ fun QuizContent(
     onNext: () -> Unit,
     nextLabel: String = "Next: book",
     onAskTutor: ((McqQuestion, Int) -> Unit)? = null,
+    /** Called for every answer: the question, whether it was right, and which attempt it was (1 = first try). */
+    onAnswered: (McqQuestion, Boolean, Int) -> Unit = { _, _, _ -> },
 ) {
     if (questions.isEmpty()) {
         Muted("No reviewed questions are available here yet.")
@@ -322,6 +344,7 @@ fun QuizContent(
                 onClick = {
                     chosen = i
                     history = QuizScorer.record(history, q.id, i, q.sampleCorrectIndex)
+                    history.last().let { a -> onAnswered(q, a.correct, a.attemptNo) }
                 },
             )
         } else {

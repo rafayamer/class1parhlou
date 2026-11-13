@@ -24,6 +24,10 @@ sealed interface Evidence {
     data class ExamMarked(val percent: Int) : Evidence
     /** A paper marked by the demo checker. It never counts as verified assessment. */
     data class DemoCheckedExam(val percent: Int) : Evidence
+    /** A first-try MCQ or a marking point was missed on this topic (logged under key "topic:<noteId>"). */
+    data object TopicMissed : Evidence
+    /** The topic was answered correctly later (logged under key "topic:<noteId>"). */
+    data object TopicCorrect : Evidence
 }
 
 /**
