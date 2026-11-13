@@ -13,6 +13,12 @@ Kotlin 2.2 + Jetpack Compose (BOM 2026.06), Material 3, single activity, minimum
 
 Limits: the demo brain is rule-based and only knows the Unit 1 sample content. Photo picking and leave-the-app tracking have not been tried on a real phone.
 
+## Live updates
+
+- **Content** (`data/RemoteContent.kt`, `data/ContentBundle.kt`): the app downloads the published bundle on open and when it returns to the front, keeps a copy for offline use, and falls back to the packed-in sample.
+- **App builds** (`.github/workflows/android.yml`, `update/AppUpdater.kt`): every push builds an APK and publishes a release `build-<n>`; the app shows "Update available" on Home and Profile and installs with one tap. Builds are signed with the shared prototype key in `keys/`.
+- Prototype only: remove `REQUEST_INSTALL_PACKAGES`, the updater and the committed key before a Play Store release.
+
 ## Screens
 
 - Welcome and the four-step setup (PRD §4): data notice, board/class/medium/subjects (unreleased boards and subjects shown as "Coming later"), pathway (Complete Academy / Test Series), study time with an honest feasibility message.

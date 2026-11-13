@@ -36,6 +36,11 @@ Calls GPT-6 Luna for the tutor and Check Master. The OpenAI key lives only here,
 - Function `ai` deployed (verify_jwt off; it checks the app key itself). Secrets: `PARHLOU_APP_KEY` is set; **`OPENAI_API_KEY` must be added by the owner** in the dashboard. Optional: `PARHLOU_DAILY_AI_CALLS` (default 300 per install), `PARHLOU_DAILY_TOTAL_AI_CALLS` (default 2000 for the project).
 - Re-deploy: `SUPABASE_ACCESS_TOKEN=sbp_... ./scripts/deploy-supabase.sh hulfrloizndafqchcwhz function`
 
+### Changing content or settings live
+
+- Content: edit the content, then `SUPABASE_ACCESS_TOKEN=sbp_... ./scripts/publish-content.sh hulfrloizndafqchcwhz`. It publishes a new version; phones download it the next time the app is opened or brought to the front, and the AI function uses it within 30 seconds.
+- Settings (table `app_config`): `ai_enabled` (true/false), `daily_calls_per_install`, `daily_calls_total`. Change them in the Supabase table editor; the function follows within 30 seconds.
+
 ### Going live (new project)
 
 1. Create a project at supabase.com (name `parhlou`, region Mumbai or Singapore).

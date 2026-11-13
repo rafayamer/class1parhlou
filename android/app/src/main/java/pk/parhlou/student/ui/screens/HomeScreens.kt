@@ -71,6 +71,7 @@ import pk.parhlou.student.data.ProgressStore
 import pk.parhlou.student.data.Subject
 import pk.parhlou.student.domain.LearningState
 import pk.parhlou.student.ui.components.BigButton
+import pk.parhlou.student.ui.components.UpdateBanner
 import pk.parhlou.student.ui.components.Muted
 import pk.parhlou.student.ui.components.ParhlouScreen
 import pk.parhlou.student.ui.components.SampleBadge
@@ -142,6 +143,7 @@ fun HomeScreen(
     }
 
     ParhlouScreen(title = null) {
+        UpdateBanner()
         // Greeting row
         Row(Modifier.appear(0), verticalAlignment = Alignment.CenterVertically) {
             Surface(shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface) {
@@ -302,6 +304,7 @@ fun ProfileScreen(
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
     var confirmClear by remember { mutableStateOf(false) }
     ParhlouScreen("Profile") {
+        UpdateBanner()
         Sheet {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 CircleIcon(Icons.Filled.Person, size = 64.dp)

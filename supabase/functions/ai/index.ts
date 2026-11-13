@@ -2,14 +2,46 @@
 // Holds the OpenAI key (secret OPENAI_API_KEY) and calls gpt-6-luna. The phone never sees the key.
 // Deployed with verify_jwt = false because the app has no sign-in yet; it protects itself with the app key
 // check, a per-install daily limit and a project-wide daily cap.
+// Content (questions, keys, rubrics, notes) and limits are read from the database (app_content, app_config),
+// so they can change without redeploying. The bundled sample is only a fallback.
 import { createClient } from "jsr:@supabase/supabase-js@2";
-import content from "./content/sample.json" with { type: "json" };
-import { handle } from "./handler.ts";
+import bundled from "./content/sample.json" with { type: "json" };
+import { handle, type Content } from "./handler.ts";
 
-const DAILY_LIMIT = Number(Deno.env.get("PARHLOU_DAILY_AI_CALLS") ?? "300");
-// Hard ceiling for the whole project per day, so a leaked address cannot run up the OpenAI bill.
-const DAILY_TOTAL = Number(Deno.env.get("PARHLOU_DAILY_TOTAL_AI_CALLS") ?? "2000");
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
+const CACHE_MS = 30_000;
+
+interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number }
+let cache: Live | null = null;
+
+async function live(db: any): Promise<Live> {
+  if (cache && Date.now() - cache.at < CACHE_MS) return cache;
+  const [{ data: rows }, { data: config }] = await Promise.all([
+    db.from("app_content").select("bundle").eq("status", "PUBLISHED"),
+    db.from("app_config").select("key,value"),
+  ]);
+  const setting = (key: string, fallback: unknown) => (config ?? []).find((c: any) => c.key === key)?.value ?? fallback;
+  const contents = (rows ?? []).map((r: any) => r.bundle as Content).filter((b: any) => b?.subjectId && Array.isArray(b.written));
+  cache = {
+    at: Date.now(),
+    contents: contents.length ? contents : [bundled as unknown as Content],
+    enabled: setting("ai_enabled", true) === true,
+    perInstall: Number(setting("daily_calls_per_install", 300)),
+    total: Number(setting("daily_calls_total", 2000)),
+  };
+  return cache;
+}
+
+/** Picks the subject bundle a request is about: by question id, or by the learner's subjects for the tutor. */
+function pick(contents: Content[], body: any): Content {
+  const id = body?.questionId;
+  if (id) {
+    const hit = contents.find((c) => c.written.some((w: any) => w.id === id) || c.mcqs.some((m: any) => m.id === id));
+    if (hit) return hit;
+  }
+  const subjects: string[] = Array.isArray(body?.subjectIds) ? body.subjectIds : [];
+  return contents.find((c) => subjects.includes(c.subjectId)) ?? contents[0];
+}
 
 Deno.serve(async (request) => {
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405);
@@ -22,16 +54,21 @@ Deno.serve(async (request) => {
   if (!/^[A-Za-z0-9-]{16,64}$/.test(caller)) return json({ error: "AUTH_REQUIRED" }, 401);
 
   const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-  const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
-  const { count } = await db.from("ai_usage").select("id", { count: "exact", head: true }).eq("caller", caller).gte("created_at", since);
+  const settings = await live(db);
+  if (!settings.enabled) return json({ error: "AI_SWITCHED_OFF" }, 503);
 
-  const { count: total } = await db.from("ai_usage").select("id", { count: "exact", head: true }).gte("created_at", since);
-  if ((total ?? 0) >= DAILY_TOTAL) return json({ error: "QUOTA_LIMIT" }, 429);
+  const since = new Date(Date.now() - 24 * 3600 * 1000).toISOString();
+  const [{ count: mine }, { count: total }] = await Promise.all([
+    db.from("ai_usage").select("id", { count: "exact", head: true }).eq("caller", caller).gte("created_at", since),
+    db.from("ai_usage").select("id", { count: "exact", head: true }).gte("created_at", since),
+  ]);
+  // Project-wide ceiling, so a leaked address cannot run up the OpenAI bill.
+  if ((total ?? 0) >= settings.total) return json({ error: "QUOTA_LIMIT" }, 429);
 
   let body: unknown;
   try { body = await request.json(); } catch { return json({ error: "BAD_REQUEST" }, 400); }
 
-  const outcome = await handle(body, content as any, (url, init) => fetch(url, init), apiKey, DAILY_LIMIT - (count ?? 0));
+  const outcome = await handle(body, pick(settings.contents, body), (url, init) => fetch(url, init), apiKey, settings.perInstall - (mine ?? 0));
   if (outcome.usage) {
     await db.from("ai_usage").insert({
       caller, task: outcome.usage.task, model: outcome.usage.model, prompt_version: outcome.usage.promptVersion,

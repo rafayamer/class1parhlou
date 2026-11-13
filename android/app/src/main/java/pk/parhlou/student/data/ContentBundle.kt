@@ -1,0 +1,196 @@
+package pk.parhlou.student.data
+
+import org.json.JSONArray
+import org.json.JSONObject
+
+/**
+ * One subject's content as a single JSON document. The same document is published to the server
+ * (table app_content), downloaded by the app, and read by the AI function for questions and marking keys.
+ * Changing it on the server updates every phone the next time the app is opened; no new app build is needed.
+ */
+object ContentBundle {
+    const val FORMAT = 1
+
+    // ---- Writing ---------------------------------------------------------------------------------------
+
+    fun export(repo: ParhlouRepository, subjectId: String, courseEdition: String): JSONObject {
+        val subject = requireNotNull(repo.subject(subjectId)) { "unknown subject $subjectId" }
+        val firstModule = subject.chapters.flatMap { it.modules }.firstOrNull()
+        val quiz = firstModule?.let { repo.moduleQuiz(it.id, 15) }.orEmpty()
+        val blueprints = repo.blueprints(subjectId)
+        val papers = blueprints.mapNotNull { repo.paper(it.id) }
+        val allWritten = papers.flatMap { it.written } + subject.chapters.flatMap { c -> c.modules.flatMap { it.writtenQuestions } }
+        val allMcqs = (papers.flatMap { it.mcqs } + quiz + repo.readinessQuiz(subjectId)).distinctBy { it.id }
+        return JSONObject()
+            .put("format", FORMAT)
+            .put("subjectId", subjectId)
+            .put("course", JSONObject().put("board", "Punjab").put("grade", subject.grade).put("subject", subject.name).put("edition", courseEdition))
+            .put("subject", subject(subject))
+            .put("notes", array(repo.notes(subjectId), ::note))
+            .put("quiz", array(quiz, ::mcq))
+            .put("readiness", array(repo.readinessQuiz(subjectId), ::mcq))
+            .put("blueprints", array(blueprints, ::blueprint))
+            .put("papers", array(papers) { p ->
+                JSONObject().put("blueprintId", p.blueprintId).put("mcqs", array(p.mcqs, ::mcq)).put("written", array(p.written, ::written))
+            })
+            // Flat lists read by the AI function (supabase/functions/ai/handler.ts).
+            .put("written", array(allWritten.distinctBy { it.id }, ::written))
+            .put("mcqs", array(allMcqs, ::mcq))
+    }
+
+    private fun <T> array(items: List<T>, f: (T) -> Any) = JSONArray().apply { items.forEach { put(f(it)) } }
+    private fun strings(items: List<String>) = JSONArray(items)
+
+    private fun subject(s: Subject) = JSONObject()
+        .put("id", s.id).put("name", s.name).put("grade", s.grade)
+        .put("editionLabel", s.editionLabel).put("editionVerified", s.editionVerified)
+        .put("chapters", array(s.chapters) { c ->
+            JSONObject().put("id", c.id).put("number", c.number).put("title", c.title).put("status", c.status.name)
+                .put("modules", array(c.modules, ::module))
+        })
+
+    private fun module(m: Module) = JSONObject()
+        .put("id", m.id).put("position", m.position).put("title", m.title).put("status", m.status.name)
+        .put("video", m.video?.let { JSONObject().put("url", it.url).put("teacher", it.teacher).put("channel", it.channel) } ?: JSONObject.NULL)
+        .put("bookReference", m.bookReference?.let { JSONObject().put("text", it.text).put("verified", it.verified) } ?: JSONObject.NULL)
+        .put("readingTasks", strings(m.readingTasks))
+        .put("writtenQuestions", array(m.writtenQuestions, ::written))
+
+    private fun written(q: WrittenQuestion) = JSONObject()
+        .put("id", q.id).put("text", q.text).put("marks", q.marks).put("modelAnswer", strings(q.modelAnswer))
+        .put("followUp", q.followUp).put("noteId", q.noteId ?: JSONObject.NULL)
+        .put("section", q.section).put("number", q.number).put("matching", "method")
+        .put("rubric", array(q.rubric) { c ->
+            JSONObject().put("id", c.id).put("description", c.description).put("marks", c.marks)
+                .put("why", c.why).put("how", c.how).put("accept", array(c.accept, ) { JSONArray(it) })
+        })
+
+    private fun mcq(q: McqQuestion) = JSONObject()
+        .put("id", q.id).put("stem", q.stem).put("options", strings(q.options)).put("correctIndex", q.sampleCorrectIndex)
+        .put("rationales", strings(q.rationales)).put("status", q.status.name).put("noteId", q.noteId ?: JSONObject.NULL)
+
+    private fun note(n: ConceptNote) = JSONObject()
+        .put("id", n.id).put("subjectId", n.subjectId).put("moduleId", n.moduleId).put("title", n.title)
+        .put("keywords", strings(n.keywords)).put("answer", n.answer).put("explanation", n.explanation).put("simple", n.simple)
+        .put("examples", strings(n.examples)).put("steps", strings(n.steps))
+        .put("checkQuestion", n.checkQuestion).put("checkAnswer", n.checkAnswer).put("checkAccept", array(n.checkAccept, ) { JSONArray(it) })
+
+    private fun blueprint(b: PaperBlueprint) = JSONObject()
+        .put("id", b.id).put("title", b.title).put("durationMinutes", b.durationMinutes).put("totalMarks", b.totalMarks)
+        .put("official", b.official).put("chapterId", b.chapterId ?: JSONObject.NULL)
+        .put("sections", array(b.sections) { s ->
+            JSONObject().put("type", s.type).put("count", s.count).put("attempt", s.attempt).put("marksEach", s.marksEach)
+                .put("minutes", s.minutes ?: JSONObject.NULL)
+        })
+
+    // ---- Reading ---------------------------------------------------------------------------------------
+
+    private fun <T> JSONArray.list(f: (JSONObject) -> T): List<T> = List(length()) { f(getJSONObject(it)) }
+    private fun JSONArray.strings(): List<String> = List(length()) { getString(it) }
+    private fun JSONObject.textOrNull(key: String): String? = if (isNull(key)) null else getString(key)
+    private fun status(name: String) = runCatching { ReviewStatus.valueOf(name) }.getOrDefault(ReviewStatus.DRAFT)
+
+    fun readSubject(o: JSONObject) = Subject(
+        o.getString("id"), o.getString("name"), o.getInt("grade"), o.getString("editionLabel"), o.getBoolean("editionVerified"),
+        o.getJSONArray("chapters").list { c ->
+            Chapter(c.getString("id"), c.getInt("number"), c.getString("title"), c.getJSONArray("modules").list(::readModule), status(c.getString("status")))
+        },
+    )
+
+    private fun readModule(m: JSONObject) = Module(
+        id = m.getString("id"), position = m.getInt("position"), title = m.getString("title"),
+        video = m.optJSONObject("video")?.let { VideoLink(it.getString("url"), it.getString("teacher"), it.getString("channel")) },
+        bookReference = m.optJSONObject("bookReference")?.let { BookReference(it.getString("text"), it.getBoolean("verified")) },
+        readingTasks = m.getJSONArray("readingTasks").strings(),
+        writtenQuestions = m.getJSONArray("writtenQuestions").list(::readWritten),
+        status = status(m.getString("status")),
+    )
+
+    fun readWritten(q: JSONObject) = WrittenQuestion(
+        id = q.getString("id"), text = q.getString("text"), marks = q.getDouble("marks"),
+        modelAnswer = q.getJSONArray("modelAnswer").strings(),
+        rubric = q.getJSONArray("rubric").list { c ->
+            RubricCriterion(
+                c.getString("id"), c.getString("description"), c.getDouble("marks"),
+                c.optJSONArray("accept")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
+                c.getString("why"), c.getString("how"),
+            )
+        },
+        followUp = q.getString("followUp"), noteId = q.textOrNull("noteId"),
+        section = q.optInt("section", 0), number = q.optInt("number", 0),
+    )
+
+    fun readMcq(q: JSONObject) = McqQuestion(
+        q.getString("id"), q.getString("stem"), q.getJSONArray("options").strings(), q.getInt("correctIndex"),
+        q.getJSONArray("rationales").strings(), status(q.optString("status")), q.textOrNull("noteId"),
+    )
+
+    fun readNote(n: JSONObject) = ConceptNote(
+        n.getString("id"), n.getString("subjectId"), n.getString("moduleId"), n.getString("title"),
+        n.getJSONArray("keywords").strings(), n.getString("answer"), n.getString("explanation"), n.getString("simple"),
+        n.getJSONArray("examples").strings(), n.getJSONArray("steps").strings(),
+        n.getString("checkQuestion"), n.getString("checkAnswer"),
+        n.getJSONArray("checkAccept").let { a -> List(a.length()) { a.getJSONArray(it).strings() } },
+    )
+
+    fun readBlueprint(b: JSONObject) = PaperBlueprint(
+        id = b.getString("id"), title = b.getString("title"), durationMinutes = b.getInt("durationMinutes"),
+        totalMarks = b.getDouble("totalMarks"),
+        sections = b.getJSONArray("sections").list { s ->
+            BlueprintSection(s.getString("type"), s.getInt("count"), s.getInt("attempt"), s.getDouble("marksEach"),
+                if (s.isNull("minutes")) null else s.getInt("minutes"))
+        },
+        official = b.getBoolean("official"), chapterId = b.textOrNull("chapterId"),
+    )
+
+    fun readPaper(p: JSONObject) = PaperContent(
+        p.getString("blueprintId"), p.getJSONArray("mcqs").list(::readMcq), p.getJSONArray("written").list(::readWritten),
+    )
+
+    /** Parses a downloaded bundle. Throws if it is not a complete, readable bundle of a known format. */
+    fun repository(bundle: JSONObject, version: Int, base: ParhlouRepository): BundleRepository {
+        require(bundle.optInt("format") == FORMAT) { "unsupported bundle format" }
+        return BundleRepository(
+            version = version,
+            subject = readSubject(bundle.getJSONObject("subject")),
+            notes = bundle.getJSONArray("notes").list(::readNote),
+            quiz = bundle.getJSONArray("quiz").list(::readMcq),
+            readiness = bundle.getJSONArray("readiness").list(::readMcq),
+            blueprints = bundle.getJSONArray("blueprints").list(::readBlueprint),
+            papers = bundle.getJSONArray("papers").list(::readPaper),
+            base = base,
+        )
+    }
+}
+
+/**
+ * Content downloaded from the server for one subject. Anything it doesn't cover (the list of boards,
+ * other subjects) comes from [base], the content packed inside the app.
+ */
+class BundleRepository(
+    val version: Int,
+    private val subject: Subject,
+    private val notes: List<ConceptNote>,
+    private val quiz: List<McqQuestion>,
+    private val readiness: List<McqQuestion>,
+    private val blueprints: List<PaperBlueprint>,
+    private val papers: List<PaperContent>,
+    private val base: ParhlouRepository,
+) : ParhlouRepository {
+    private val modules = subject.chapters.flatMap { it.modules }
+
+    override fun boards() = base.boards()
+    override fun subjectOptions(boardCode: String, grade: Int) = base.subjectOptions(boardCode, grade)
+    override fun subject(id: String) = if (id == subject.id) subject else base.subject(id)
+    override fun module(id: String) = modules.firstOrNull { it.id == id } ?: base.module(id)
+    override fun chapterOf(moduleId: String) = subject.chapters.firstOrNull { c -> c.modules.any { it.id == moduleId } } ?: base.chapterOf(moduleId)
+    override fun modulesOfChapter(chapterId: String?) =
+        subject.chapters.firstOrNull { it.id == chapterId }?.modules ?: base.modulesOfChapter(chapterId)
+    override fun moduleQuiz(moduleId: String, count: Int) =
+        if (modules.any { it.id == moduleId }) quiz.take(count.coerceIn(5, 15)) else base.moduleQuiz(moduleId, count)
+    override fun readinessQuiz(subjectId: String) = if (subjectId == subject.id) readiness else base.readinessQuiz(subjectId)
+    override fun blueprints(subjectId: String) = if (subjectId == subject.id) blueprints else base.blueprints(subjectId)
+    override fun paper(blueprintId: String) =
+        if (blueprints.any { it.id == blueprintId }) papers.firstOrNull { it.blueprintId == blueprintId } else base.paper(blueprintId)
+    override fun notes(subjectId: String) = if (subjectId == subject.id) notes else base.notes(subjectId)
+}

@@ -346,3 +346,24 @@ fun ProgressRing(
 }
 
 data class NavItem(val route: String, val label: String, val icon: ImageVector)
+
+/** Shown on Home and Profile when a newer prototype build is available. Draws nothing when up to date. */
+@Composable
+fun UpdateBanner() {
+    val offer = LocalUpdateOffer.current ?: return
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(24.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Update available", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text(
+                "Build ${offer.build}" + (if (offer.publishedOn.isNotBlank()) " · ${offer.publishedOn}" else "") +
+                    ". Your answers and progress stay on this phone.",
+                style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer,
+            )
+            BigButton(if (offer.installing) "Downloading…" else "Update now", onClick = offer.install, enabled = !offer.installing)
+        }
+    }
+}

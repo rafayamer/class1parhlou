@@ -12,8 +12,12 @@ android {
         applicationId = "pk.parhlou.student"
         minSdk = 25
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0-foundation"
+        // CI passes -PbuildNumber=<run number>; the in-app updater compares it with the latest release.
+        val buildNumber = (project.findProperty("buildNumber") as String?)?.toIntOrNull() ?: 1
+        versionCode = buildNumber
+        versionName = "0.2.$buildNumber"
+        // GitHub repository whose releases carry new prototype APKs. Empty = no update checks.
+        buildConfigField("String", "UPDATE_REPO", "\"${project.findProperty("updateRepo") ?: ""}\"")
         // AI gateway (Supabase Edge Function). Empty = the app uses the on-phone demo brain.
         // Set in ~/.gradle/gradle.properties or with -PparhlouAiUrl=... -PsupabaseAnonKey=...
         // Never put an OpenAI key here: it lives only on the server.
@@ -22,7 +26,18 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        // Shared prototype key (android/keys/README.md) so every build can update the previous one. Not for the Play Store.
+        create("prototype") {
+            storeFile = rootProject.file("keys/prototype.jks")
+            storePassword = "parhlou-prototype"
+            keyAlias = "parhlou"
+            keyPassword = "parhlou-prototype"
+        }
+    }
+
     buildTypes {
+        debug { signingConfig = signingConfigs.getByName("prototype") }
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))

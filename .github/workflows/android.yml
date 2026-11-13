@@ -1,0 +1,52 @@
+# Builds the prototype app on every push and publishes it as a release tagged build-<n>.
+# The installed app checks the latest release and offers a one-tap update.
+name: Android prototype build
+
+on:
+  push:
+    branches: [main, claude/confident-planck-dn7fy2]
+    paths: ["android/**", ".github/workflows/android.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # Public values only. The OpenAI key lives on the Supabase server, never here.
+      PARHLOU_AI_URL: https://hulfrloizndafqchcwhz.supabase.co/functions/v1/ai
+      SUPABASE_PUBLISHABLE_KEY: sb_publishable_1B5nCScqVoPf4YyzKQ1caQ_-Gi2WaEU
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Test
+        working-directory: android
+        run: ./gradlew :app:testDebugUnitTest
+      - name: Build APK
+        working-directory: android
+        run: >
+          ./gradlew :app:assembleDebug
+          -PbuildNumber=${{ github.run_number }}
+          -PparhlouAiUrl=$PARHLOU_AI_URL
+          -PsupabaseAnonKey=$SUPABASE_PUBLISHABLE_KEY
+          -PupdateRepo=${{ github.repository }}
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp android/app/build/outputs/apk/debug/app-debug.apk parhlou.apk
+          gh release create "build-${{ github.run_number }}" parhlou.apk \
+            --title "Parhlou prototype build ${{ github.run_number }}" \
+            --notes "Automatic prototype build of ${{ github.sha }}. Not a Play Store release." \
+            --target "${{ github.sha }}" --latest

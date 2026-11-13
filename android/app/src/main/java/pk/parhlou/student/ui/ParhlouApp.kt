@@ -119,7 +119,7 @@ fun ParhlouApp(repo: ParhlouRepository, store: LocalStore, ai: ParhlouAi = remem
         return
     }
     val nav = rememberNavController()
-    val desk = remember { ExamDesk(context.applicationContext, repo, store, ai, progress) }
+    val desk = remember(repo, ai) { ExamDesk(context.applicationContext, repo, store, ai, progress) }
     val readinessPassed by store.readinessPassed.collectAsState(initial = false)
     val activeExam by store.activeExam.collectAsState(initial = null)
     var tutorSeed by remember { mutableStateOf<TutorSeed?>(null) }
