@@ -60,7 +60,7 @@ class DemoBrain(private val repo: ParhlouRepository) : ParhlouAi {
         )
     }
 
-    override suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int): WrittenMark {
+    override suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String>): WrittenMark {
         val typed = answer.isNotBlank()
         val met = question.rubric.associate { it.id to (typed && TextMatch.matchesAny(answer, it.accept)) }
         val anyMet = met.values.any { it }

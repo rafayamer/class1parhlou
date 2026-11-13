@@ -38,6 +38,7 @@ class LocalStore(private val context: Context) {
         val activeExam = stringPreferencesKey("active_exam")
         val progress = stringPreferencesKey("progress_log")
         val readiness = booleanPreferencesKey("readiness_passed")
+        val install = stringPreferencesKey("install_id")
     }
 
     val onboarding: Flow<OnboardingState> = context.dataStore.data.map { it.toOnboarding() }
@@ -133,6 +134,14 @@ class LocalStore(private val context: Context) {
 
     suspend fun setReadinessPassed(passed: Boolean) {
         context.dataStore.edit { it[K.readiness] = passed }
+    }
+
+    /** A random id for this install, used only to count AI calls until sign-in exists. */
+    suspend fun installId(): String {
+        context.dataStore.data.first()[K.install]?.let { return it }
+        val id = java.util.UUID.randomUUID().toString()
+        context.dataStore.edit { if (it[K.install] == null) it[K.install] = id }
+        return context.dataStore.data.first()[K.install] ?: id
     }
 
     /** Removes everything stored on this device (sign-out on a shared phone, and tests). */

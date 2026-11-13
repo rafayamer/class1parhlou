@@ -1,7 +1,11 @@
 package pk.parhlou.student.data
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
+import android.util.Base64
+import java.io.ByteArrayOutputStream
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
@@ -25,6 +29,11 @@ class ExamDesk(
     private val ai: ParhlouAi,
     private val progress: ProgressStore,
 ) {
+    private companion object {
+        const val MAX_PHOTOS = 5
+        const val MAX_PHOTO_SIDE = 1600
+    }
+
     fun draftKey(paperId: String, questionId: String) = "exam_${paperId}_$questionId"
 
     private fun photoDir(paperId: String, questionId: String) = File(context.filesDir, "exam/$paperId/$questionId")
@@ -58,6 +67,9 @@ class ExamDesk(
             mcq = store.mcqChoices(id).first(),
             written = paper.written.associate { it.id to store.draft(draftKey(id, it.id)).first() },
             photos = paper.written.associate { it.id to photos(id, it.id).size },
+            photoData = if (!ai.readsPhotos) emptyMap() else withContext(Dispatchers.IO) {
+                paper.written.associate { q -> q.id to photos(id, q.id).take(MAX_PHOTOS).mapNotNull(::toDataUrl) }
+            },
         )
     }
 
@@ -77,6 +89,18 @@ class ExamDesk(
         repo.modulesOfChapter(blueprint.chapterId).forEach { progress.add(it.id, evidence, now) }
         return result
     }
+
+    /** Downsizes a page photo and encodes it for the AI examiner. Null if the file is not a readable image. */
+    private fun toDataUrl(file: File): String? = runCatching {
+        val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+        BitmapFactory.decodeFile(file.path, bounds)
+        var sample = 1
+        while (maxOf(bounds.outWidth, bounds.outHeight) / (sample * 2) >= MAX_PHOTO_SIDE) sample *= 2
+        val bitmap = BitmapFactory.decodeFile(file.path, BitmapFactory.Options().apply { inSampleSize = sample }) ?: return null
+        val out = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
+        "data:image/jpeg;base64," + Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP)
+    }.getOrNull()
 
     /** Clears answers, photos and the log of one paper so it can be sat again. */
     suspend fun reset(paper: PaperContent) {

@@ -1,0 +1,118 @@
+package pk.parhlou.student.ai
+
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.json.JSONArray
+import org.json.JSONObject
+import pk.parhlou.student.data.McqQuestion
+import pk.parhlou.student.data.WrittenQuestion
+import java.net.HttpURLConnection
+import java.net.URL
+
+/** Sends a JSON body to the gateway. Returns the HTTP status and response text, or null if it could not be reached. */
+typealias GatewayTransport = suspend (url: String, headers: Map<String, String>, body: String) -> Pair<Int, String>?
+
+/**
+ * Real AI: calls the Parhlou gateway (supabase/functions/ai), which holds the OpenAI key and calls GPT-6 Luna.
+ * The phone sends only ids and the student's own text or photos; questions and marking keys stay on the server.
+ * Whenever the gateway is unreachable or returns something invalid, [fallback] answers and the reply says so.
+ */
+class LunaGateway(
+    private val endpoint: String,
+    private val anonKey: String,
+    private val installId: suspend () -> String,
+    private val fallback: ParhlouAi,
+    private val transport: GatewayTransport = ::httpPost,
+) : ParhlouAi {
+
+    override val label = "Parhlou AI (GPT-6 Luna)"
+    override val readsPhotos = true
+
+    override suspend fun tutor(turn: TutorTurn): TutorReply {
+        val body = JSONObject()
+            .put("task", "tutor").put("question", turn.question).put("style", turn.style.name)
+            .put("subjectIds", JSONArray(turn.subjectIds.toList())).put("lastNoteId", turn.lastNoteId ?: JSONObject.NULL)
+            .put("awaitingCheck", turn.awaitingCheck).put("examActive", turn.examActive)
+        return call(body)?.let(::parseTutor) ?: offline(fallback.tutor(turn))
+    }
+
+    override suspend fun mcqFeedback(question: McqQuestion, chosen: Int, subjectIds: Set<String>): TutorReply {
+        val body = JSONObject().put("task", "mcq_feedback").put("questionId", question.id).put("chosen", chosen)
+        return call(body)?.let(::parseTutor) ?: offline(fallback.mcqFeedback(question, chosen, subjectIds))
+    }
+
+    override suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String>): WrittenMark {
+        if (answer.isBlank() && images.isEmpty()) return fallback.markWritten(question, answer, photos)
+        val body = JSONObject().put("task", "mark_written").put("questionId", question.id)
+            .put("answer", answer).put("images", JSONArray(images))
+        val mark = call(body)?.let { parseMark(question, it) }
+        // Model output is untrusted: it is used only if it matches this question's rubric exactly.
+        return if (mark != null && MarkingValidator.problems(question, mark).isEmpty()) mark
+        else fallback.markWritten(question, answer, photos)
+    }
+
+    private suspend fun call(body: JSONObject): JSONObject? = runCatching {
+        val headers = mapOf(
+            "Content-Type" to "application/json",
+            "Authorization" to "Bearer $anonKey",
+            "apikey" to anonKey,
+            "x-parhlou-install" to installId(),
+        )
+        val (status, text) = transport(endpoint, headers, body.toString()) ?: return null
+        if (status != 200) return null
+        JSONObject(text).optJSONObject("result")
+    }.getOrNull()
+
+    private fun parseTutor(r: JSONObject): TutorReply? {
+        val kind = runCatching { ReplyKind.valueOf(r.getString("kind")) }.getOrNull() ?: return null
+        val answer = r.optString("answer").ifBlank { return null }
+        val noteId = r.optString("noteId").takeIf { !r.isNull("noteId") && it.isNotBlank() }
+        return TutorReply(
+            kind = kind, answer = answer,
+            explanation = r.optString("explanation").takeIf { !r.isNull("explanation") && it.isNotBlank() },
+            steps = r.optJSONArray("steps")?.let { a -> List(a.length()) { a.getString(it) } }.orEmpty(),
+            source = if (noteId != null) SOURCE else null,
+            checkQuestion = r.optString("checkQuestion").takeIf { !r.isNull("checkQuestion") && it.isNotBlank() },
+            noteId = noteId,
+        )
+    }
+
+    private fun parseMark(question: WrittenQuestion, r: JSONObject): WrittenMark? {
+        val status = runCatching { MarkStatus.valueOf(r.getString("status")) }.getOrNull() ?: return null
+        val array = r.optJSONArray("criteria") ?: return null
+        val criteria = List(array.length()) { i ->
+            val c = array.getJSONObject(i)
+            val rubric = question.rubric.firstOrNull { it.id == c.optString("criterionId") } ?: return null
+            val criterionStatus = runCatching { CriterionStatus.valueOf(c.getString("status")) }.getOrNull() ?: return null
+            // Marks, wording and advice come from the app's own rubric, never from the reply.
+            CriterionMark(rubric.id, rubric.description, rubric.marks,
+                if (criterionStatus == CriterionStatus.MET) rubric.marks else 0.0, criterionStatus, rubric.why, rubric.how)
+        }
+        return WrittenMark(question.id, status, criteria, question.followUp)
+    }
+
+    private fun offline(reply: TutorReply) =
+        reply.copy(source = "Demo tutor: the AI is offline right now" + (reply.source?.let { " · $it" } ?: ""))
+
+    companion object {
+        const val SOURCE = "Parhlou approved notes, answered by GPT-6 Luna"
+
+        suspend fun httpPost(url: String, headers: Map<String, String>, body: String): Pair<Int, String>? =
+            withContext(Dispatchers.IO) {
+                runCatching {
+                    val c = URL(url).openConnection() as HttpURLConnection
+                    try {
+                        c.requestMethod = "POST"
+                        c.connectTimeout = 15_000
+                        c.readTimeout = 90_000
+                        c.doOutput = true
+                        headers.forEach { (k, v) -> c.setRequestProperty(k, v) }
+                        c.outputStream.use { it.write(body.toByteArray()) }
+                        val status = c.responseCode
+                        val stream = if (status in 200..299) c.inputStream else c.errorStream
+                        status to (stream?.bufferedReader()?.use { it.readText() } ?: "")
+                    } finally { c.disconnect() }
+                }.getOrNull()
+            }
+    }
+}

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- No permissions yet. Camera and network are added with the scanner and backend milestones. -->
+    <!-- Internet is used only to reach the Parhlou AI gateway. Photos are picked with the system photo picker. -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"

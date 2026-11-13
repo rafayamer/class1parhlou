@@ -9,7 +9,7 @@ Kotlin 2.2 + Jetpack Compose (BOM 2026.06), Material 3, single activity, minimum
 - **Check Master** (`domain/CheckMaster.kt`, `ui/screens/CheckMasterScreens.kt`): marks MCQs exactly and typed answers criterion by criterion with what/why/how. Unrecognised answers are "Couldn't check automatically" and photos "Waiting for the AI examiner", never zero. Every question can be retyped and re-checked; the first result is kept. The same checker marks written practice in lessons.
 - **Invigilator** (`domain/Invigilator.kt`): logs start, leaving, returning and hand-in, then reports time used and time away. Report only, on the phone only.
 - **Saved progress**: evidence is an append-only log on the phone. Demo-checked papers never count as verified.
-- **Swap to GPT-6 Luna**: implement `ai/ParhlouAi` against the server gateway; screens don't change. See `docs/AI-INSTRUCTIONS.md`.
+- **GPT-6 Luna** (`ai/LunaGateway.kt`): used when the app is built with `-PparhlouAiUrl` and `-PsupabaseAnonKey`; otherwise, or when offline, the demo brain answers and says so. The OpenAI key is never in the app. See `supabase/README.md`.
 
 Limits: the demo brain is rule-based and only knows the Unit 1 sample content. Photo picking and leave-the-app tracking have not been tried on a real phone.
 

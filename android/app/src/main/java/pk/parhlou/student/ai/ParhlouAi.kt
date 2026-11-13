@@ -12,12 +12,16 @@ interface ParhlouAi {
     /** Shown to the student so they always know what is answering. */
     val label: String
 
+    /** True when this AI can read page photos. The demo brain cannot. */
+    val readsPhotos: Boolean get() = false
+
     suspend fun tutor(turn: TutorTurn): TutorReply
 
     suspend fun mcqFeedback(question: McqQuestion, chosen: Int, subjectIds: Set<String>): TutorReply
 
     /** Marks one typed answer against its rubric. [photos] is how many page photos are attached. */
-    suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int): WrittenMark
+    /** [images] holds the photos as data URLs when [readsPhotos] is true. */
+    suspend fun markWritten(question: WrittenQuestion, answer: String, photos: Int, images: List<String> = emptyList()): WrittenMark
 }
 
 enum class TutorStyle { NORMAL, SIMPLER, ANOTHER_EXAMPLE, STEPS, QUIZ_ME }

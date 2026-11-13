@@ -14,6 +14,11 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "0.1.0-foundation"
+        // AI gateway (Supabase Edge Function). Empty = the app uses the on-phone demo brain.
+        // Set in ~/.gradle/gradle.properties or with -PparhlouAiUrl=... -PsupabaseAnonKey=...
+        // Never put an OpenAI key here: it lives only on the server.
+        buildConfigField("String", "PARHLOU_AI_URL", "\"${project.findProperty("parhlouAiUrl") ?: ""}\"")
+        buildConfigField("String", "SUPABASE_ANON_KEY", "\"${project.findProperty("supabaseAnonKey") ?: ""}\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -27,7 +32,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    buildFeatures { compose = true }
+    buildFeatures { compose = true; buildConfig = true }
     testOptions {
         unitTests.isIncludeAndroidResources = true
         // Offline Robolectric: pass -ProbolectricDir=/path/with/android-all-instrumented jars
