@@ -9,6 +9,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
+import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.performTextReplacement
 import androidx.test.core.app.ApplicationProvider
@@ -83,6 +84,47 @@ class PrototypeFlowTest {
         rule.waitUntil(5_000) { exists("so I won't guess") }
         // Only my own earlier chat bubble carries that text now; the chip row is gone.
         assertEquals(1, rule.onAllNodes(hasText("Show each step")).fetchSemanticsNodes().size)
+    }
+
+    @Test
+    fun scannedPagesAreMatchedToQuestionsBeforeHandIn() {
+        // Two pages already scanned (the camera can't run here); the scanner opens on its review.
+        val ctx = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val scan = pk.parhlou.scanner.PageStore(java.io.File(ctx.filesDir, "exam/$paperId/_scan")).apply { clear() }
+        repeat(2) { n ->
+            val f = java.io.File(scan.photoDir(), "p$n.jpg")
+            f.outputStream().use { android.graphics.Bitmap.createBitmap(30, 40, android.graphics.Bitmap.Config.ARGB_8888).compress(android.graphics.Bitmap.CompressFormat.JPEG, 80, it) }
+            scan.add(pk.parhlou.scanner.Photo(f, 30, 40, null))
+        }
+        launch()
+        rule.onNodeWithText("Continue").performClick()
+        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
+        rule.onNodeWithText("Start paper").performScrollTo().performClick()
+        rule.waitUntil(5_000) { exists("Invigilator on") }
+        rule.onNodeWithText("2 pages scanned · 2 not matched to a question yet.").performScrollTo().assertExists()
+
+        // Hand-in warns about unmatched pages and offers to match them.
+        rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
+        rule.onNodeWithText("Some pages aren't matched").assertExists()
+        rule.onNodeWithText("Match pages").performClick()
+        rule.waitUntil(5_000) { exists("Your pages (2)") }
+        rule.onNodeWithText("2 pages aren't matched", substring = true).assertExists()
+
+        rule.onAllNodes(hasText("Choose question"))[0].performClick()
+        rule.onNodeWithText("B1").performClick()
+        rule.onNodeWithTag("scan-pages").performScrollToIndex(1)
+        rule.onAllNodes(hasText("Choose question"))[0].performClick()
+        rule.onNodeWithText("B1").performClick()
+        assertEquals(2, rule.onAllNodes(hasText("Answer to B1")).fetchSemanticsNodes().size)
+        assertTrue(!exists("aren't matched"))
+        rule.onNodeWithContentDescription("Move page 2 up").performClick()
+        rule.onNodeWithText("Done").performClick()
+
+        // Back in the paper, the timer kept running and both pages count as photos of B1.
+        rule.waitUntil(5_000) { exists("2 pages scanned and matched to questions.") }
+        assertTrue(exists("2 page photos attached"))
+        val log = runBlocking { store.examLog(paperId).first() }
+        assertTrue("scanning must not count as leaving the paper", ExamLog.parse(log).none { it.type == ExamEventType.LEFT })
     }
 
     @Test

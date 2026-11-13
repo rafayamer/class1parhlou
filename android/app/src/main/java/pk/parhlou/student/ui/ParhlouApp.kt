@@ -160,8 +160,11 @@ fun ParhlouApp(
     LaunchedEffect(signedInAs) {
         if (account == null || signedInAs == null) return@LaunchedEffect
         val settings = account.afterSignIn(progress)
-        val onSignIn = nav.currentDestination?.route == Routes.SIGN_IN
-        if (onSignIn) nav.navigate(if (settings.completed) Routes.HOME else Routes.ONBOARDING) { popUpTo(0) }
+        // Storage and network calls may resume on a background thread; navigation must run on the main thread.
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main.immediate) {
+            val onSignIn = nav.currentDestination?.route == Routes.SIGN_IN
+            if (onSignIn) nav.navigate(if (settings.completed) Routes.HOME else Routes.ONBOARDING) { popUpTo(0) }
+        }
     }
     // Upload new progress whenever the app goes to the background.
     LifecycleEventEffect(Lifecycle.Event.ON_STOP) { account?.let { a -> scope.launch { a.syncNow() } } }

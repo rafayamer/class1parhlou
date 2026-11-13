@@ -17,6 +17,7 @@ import pk.parhlou.student.domain.TOPIC_PREFIX
 import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.PaperSubmission
 import java.io.File
+import pk.parhlou.scanner.PageStore
 
 /**
  * Everything a paper needs on the phone: saved answers, attached page photos, the invigilator log and
@@ -41,8 +42,19 @@ class ExamDesk(
 
     private fun photoDir(paperId: String, questionId: String) = File(context.filesDir, "exam/$paperId/$questionId")
 
+    private val scans = mutableMapOf<String, PageStore>()
+
+    /** Pages scanned with the camera for one paper; each is matched to a question by the student. */
+    fun scanStore(paperId: String): PageStore = synchronized(scans) {
+        scans.getOrPut(paperId) { PageStore(File(context.filesDir, "exam/$paperId/_scan")) }
+    }
+
+    /** Gallery photos of an answer, then its scanned pages in scan order. */
     fun photos(paperId: String, questionId: String): List<File> =
-        photoDir(paperId, questionId).listFiles()?.sortedBy { it.name }.orEmpty()
+        photoDir(paperId, questionId).listFiles()?.sortedBy { it.name }.orEmpty() + scanStore(paperId).filesFor(questionId)
+
+    /** Scanned pages not yet matched to a question; they are not sent for marking. */
+    fun unassignedScans(paperId: String): Int = scanStore(paperId).unassigned().size
 
     /** Copies picked images into private storage. Returns how many were added. */
     suspend fun addPhotos(paperId: String, questionId: String, uris: List<Uri>): Int = withContext(Dispatchers.IO) {
@@ -130,6 +142,7 @@ class ExamDesk(
     suspend fun reset(paper: PaperContent) {
         val id = paper.blueprintId
         store.resetExam(id, paper.written.map { draftKey(id, it.id) })
+        scanStore(id).clear()
         withContext(Dispatchers.IO) { File(context.filesDir, "exam/$id").deleteRecursively() }
     }
 }

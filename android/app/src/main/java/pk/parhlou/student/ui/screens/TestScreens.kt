@@ -24,6 +24,9 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.AlertDialog
+import pk.parhlou.scanner.ScanQuestion
+import pk.parhlou.scanner.ScannerFlow
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -257,6 +260,30 @@ fun ExamScreen(
     }
 
     val startedAt = log?.let { ExamLog.startedAt(it) }
+    // The scanner opens inside the paper, so the invigilator doesn't count scanning as leaving it.
+    var scanning by remember { mutableStateOf(false) }
+    var scanVersion by remember { mutableIntStateOf(0) }
+    var confirmUnmatched by remember { mutableStateOf(0) }
+    val questions = remember(paper) {
+        paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { ScanQuestion(it.id, questionLabel(it)) }
+    }
+    if (scanning && startedAt != null) {
+        ScannerFlow(
+            store = desk.scanStore(id), questions = questions,
+            status = ExamClock(startedAt, blueprint.durationMinutes).label(now),
+            onClose = { scanning = false; scanVersion++ },
+        )
+        return
+    }
+    val handIn = {
+        submitting = true
+        appScope.launch {
+            desk.submit(blueprint, paper)
+            // Storage may resume this coroutine on a background thread; navigation must run on the main thread.
+            withContext(Dispatchers.Main.immediate) { onSubmitted() }
+        }
+        Unit
+    }
     ParhlouScreen(blueprint.title, onBack = onBack) {
         if (startedAt == null) { Muted("Loading…"); return@ParhlouScreen }
         val clock = ExamClock(startedAt, blueprint.durationMinutes)
@@ -289,19 +316,40 @@ fun ExamScreen(
                 }
             } else {
                 paper.written.filter { it.section == index }.sortedBy { it.number }.forEach { q ->
-                    WrittenAnswerCard(id, q, store, desk, enabled = !locked)
+                    WrittenAnswerCard(id, q, store, desk, enabled = !locked, scanVersion = scanVersion)
                 }
             }
         }
 
-        BigButton(if (submitting) "Checking your paper…" else "Hand in paper", enabled = !submitting, onClick = {
-            submitting = true
-            appScope.launch {
-                desk.submit(blueprint, paper)
-                // Storage may resume this coroutine on a background thread; navigation must run on the main thread.
-                withContext(Dispatchers.Main.immediate) { onSubmitted() }
+        if (paper.written.isNotEmpty()) {
+            val scanned = remember(scanVersion) { desk.scanStore(id).pages().size }
+            val unmatched = remember(scanVersion) { desk.unassignedScans(id) }
+            Sheet {
+                Text("Answers on paper", style = MaterialTheme.typography.titleMedium)
+                Muted(
+                    when {
+                        scanned == 0 -> "Wrote on paper? Scan your pages, then choose which question each page answers."
+                        unmatched > 0 -> "$scanned pages scanned · $unmatched not matched to a question yet."
+                        else -> "$scanned pages scanned and matched to questions."
+                    },
+                )
+                SecondaryButton(if (scanned == 0) "Scan answer pages" else "Scan or review pages", onClick = { scanning = true }, enabled = !locked)
             }
+        }
+
+        BigButton(if (submitting) "Checking your paper…" else "Hand in paper", enabled = !submitting, onClick = {
+            val unmatched = desk.unassignedScans(id)
+            if (unmatched > 0) confirmUnmatched = unmatched else handIn()
         })
+    }
+    if (confirmUnmatched > 0) {
+        AlertDialog(
+            onDismissRequest = { confirmUnmatched = 0 },
+            title = { Text("Some pages aren't matched") },
+            text = { Text("$confirmUnmatched scanned ${if (confirmUnmatched == 1) "page isn't" else "pages aren't"} matched to a question, so ${if (confirmUnmatched == 1) "it" else "they"} won't be marked.") },
+            confirmButton = { TextButton(onClick = { confirmUnmatched = 0; scanning = true }) { Text("Match pages") } },
+            dismissButton = { TextButton(onClick = { confirmUnmatched = 0; handIn() }) { Text("Hand in anyway") } },
+        )
     }
 }
 
@@ -325,13 +373,13 @@ private fun McqCard(number: Int, q: McqQuestion, chosen: Int?, enabled: Boolean,
 }
 
 @Composable
-private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalStore, desk: ExamDesk, enabled: Boolean) {
+private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalStore, desk: ExamDesk, enabled: Boolean, scanVersion: Int = 0) {
     val scope = rememberCoroutineScope()
     val key = desk.draftKey(paperId, q.id)
     val saved by store.draft(key).collectAsState(initial = null)
     var text by remember(key) { mutableStateOf<String?>(null) }
     var photoVersion by remember(key) { mutableIntStateOf(0) }
-    val photos = remember(key, photoVersion) { desk.photos(paperId, q.id) }
+    val photos = remember(key, photoVersion, scanVersion) { desk.photos(paperId, q.id) }
     val picker = rememberLauncherForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(5)) { uris ->
         if (uris.isNotEmpty()) scope.launch { desk.addPhotos(paperId, q.id, uris); photoVersion++ }
     }

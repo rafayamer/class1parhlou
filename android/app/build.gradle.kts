@@ -24,6 +24,8 @@ android {
         buildConfigField("String", "PARHLOU_AI_URL", "\"${project.findProperty("parhlouAiUrl") ?: ""}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${project.findProperty("supabaseAnonKey") ?: ""}\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // The scanner's OpenCV library is native: ship it for 64-bit and 32-bit ARM phones only.
+        ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
     }
 
     signingConfigs {
@@ -48,6 +50,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures { compose = true; buildConfig = true }
+    // Compress native libraries (mostly OpenCV) in the APK: a much smaller download on mobile data, unpacked at install.
+    packaging { jniLibs { useLegacyPackaging = true } }
     testOptions {
         unitTests.isIncludeAndroidResources = true
         // Offline Robolectric: pass -ProbolectricDir=/path/with/android-all-instrumented jars
@@ -71,6 +75,7 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2026.06.01")
     implementation(composeBom)
     implementation(project(":prismal"))
+    implementation(project(":scanner"))
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
