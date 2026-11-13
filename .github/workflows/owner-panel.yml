@@ -1,0 +1,51 @@
+# Tests and builds the owner panel, then publishes it to GitHub Pages.
+# One-time setup: repository Settings → Pages → Source: "GitHub Actions".
+name: Owner panel
+
+on:
+  push:
+    branches: [main, claude/confident-planck-dn7fy2]
+    paths: ["owner-panel/**", "supabase/functions/ai/content/**", ".github/workflows/owner-panel.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: owner-panel
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: owner-panel
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: owner-panel/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+        env:
+          PANEL_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: owner-panel/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
