@@ -78,6 +78,12 @@ class PageStore(val dir: File) {
         return true
     }
 
+    /** The page couldn't be processed (e.g. an unreadable photo): it is shown and sent as photographed. */
+    @Synchronized fun renderFailed(id: String, rev: Int) {
+        if (page(id)?.rev != rev) return
+        save(pages.map { if (it.id == id) it.copy(out = it.src, outRev = rev) else it })
+    }
+
     @Synchronized fun assign(id: String, questionId: String?) {
         save(pages.map { if (it.id == id) it.copy(questionId = questionId) else it })
     }

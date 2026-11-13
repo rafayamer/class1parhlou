@@ -68,6 +68,15 @@ private val Light = lightColorScheme(
     outline = Palette.Outline,
     outlineVariant = Palette.Outline,
     error = Palette.Red,
+    // Cards, menus, dialogs and chips use these; unset they fall back to Material's lavender.
+    surfaceTint = Color.Transparent,
+    surfaceBright = Palette.White,
+    surfaceDim = Palette.SageDeep,
+    surfaceContainerLowest = Palette.White,
+    surfaceContainerLow = Palette.White,
+    surfaceContainer = Color(0xFFF6F9F4),
+    surfaceContainerHigh = Palette.White,
+    surfaceContainerHighest = Palette.White,
 )
 
 private val Dark = darkColorScheme(
@@ -89,6 +98,14 @@ private val Dark = darkColorScheme(
     outline = Palette.OutlineDark,
     outlineVariant = Palette.OutlineDark,
     error = Palette.RedLight,
+    surfaceTint = Color.Transparent,
+    surfaceBright = Palette.NightRaised,
+    surfaceDim = Palette.Night,
+    surfaceContainerLowest = Palette.Night,
+    surfaceContainerLow = Palette.NightSurface,
+    surfaceContainer = Color(0xFF1F261F),
+    surfaceContainerHigh = Palette.NightSurface,
+    surfaceContainerHighest = Palette.NightSurface,
 )
 
 private val Type = Typography(

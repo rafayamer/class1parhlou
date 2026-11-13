@@ -68,10 +68,8 @@ object StudyPlanner {
         val tasks = mutableListOf<PlanTask>()
 
         Weakness.topics(history, noteTitle, now).take(2).forEach { t ->
-            val ago = days(now - t.lastMissedAt)
             tasks += PlanTask(PlanKind.REPAIR, "Fix: ${t.title}",
-                "You missed this ${plural(t.recentMisses, "time")} recently${if (ago > 0) ", last $ago ${if (ago == 1) "day" else "days"} ago" else " (today)"}.",
-                10, t.noteId)
+                "You missed this ${times(t.recentMisses)} recently, last ${ago(now - t.lastMissedAt)}.", 10, t.noteId)
         }
 
         modules.forEach { m ->
@@ -82,7 +80,7 @@ object StudyPlanner {
             val since = days(now - last)
             if (since >= interval) {
                 tasks += PlanTask(PlanKind.REVIEW, "Review: ${m.title}",
-                    "Last practised $since ${if (since == 1) "day" else "days"} ago. Reviewing now helps you remember it for the exam.", 15, m.id)
+                    "Last practised ${ago(now - last)}. Reviewing now helps you remember it for the exam.", 15, m.id)
             }
         }
 
@@ -122,5 +120,6 @@ object StudyPlanner {
     }
 
     private fun days(ms: Long) = (ms / DAY).toInt()
-    private fun plural(n: Int, word: String) = if (n == 1) "once" else "$n ${word}s"
+    private fun times(n: Int) = when (n) { 1 -> "once"; 2 -> "twice"; else -> "$n times" }
+    private fun ago(ms: Long) = when (val d = days(ms)) { 0 -> "today"; 1 -> "yesterday"; else -> "$d days ago" }
 }

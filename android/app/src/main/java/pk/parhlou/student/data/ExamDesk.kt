@@ -49,9 +49,13 @@ class ExamDesk(
         scans.getOrPut(paperId) { PageStore(File(context.filesDir, "exam/$paperId/_scan")) }
     }
 
+    /** Photos added from the gallery for one answer. */
+    fun galleryPhotos(paperId: String, questionId: String): List<File> =
+        photoDir(paperId, questionId).listFiles()?.sortedBy { it.name }.orEmpty()
+
     /** Gallery photos of an answer, then its scanned pages in scan order. */
     fun photos(paperId: String, questionId: String): List<File> =
-        photoDir(paperId, questionId).listFiles()?.sortedBy { it.name }.orEmpty() + scanStore(paperId).filesFor(questionId)
+        galleryPhotos(paperId, questionId) + scanStore(paperId).filesFor(questionId)
 
     /** Scanned pages not yet matched to a question; they are not sent for marking. */
     fun unassignedScans(paperId: String): Int = scanStore(paperId).unassigned().size

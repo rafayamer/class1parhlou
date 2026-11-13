@@ -380,6 +380,7 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalS
     var text by remember(key) { mutableStateOf<String?>(null) }
     var photoVersion by remember(key) { mutableIntStateOf(0) }
     val photos = remember(key, photoVersion, scanVersion) { desk.photos(paperId, q.id) }
+    val added = remember(key, photoVersion) { desk.galleryPhotos(paperId, q.id).size }
     val picker = rememberLauncherForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(5)) { uris ->
         if (uris.isNotEmpty()) scope.launch { desk.addPhotos(paperId, q.id, uris); photoVersion++ }
     }
@@ -398,7 +399,11 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalS
         )
         if (photos.isNotEmpty()) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { photos.take(5).forEach { PhotoThumb(it) } }
-            Muted("${photos.size} page photo${if (photos.size == 1) "" else "s"} attached. Photos wait for the AI examiner.")
+            val scanned = photos.size - added
+            Muted(
+                "${photos.size} page photo${if (photos.size == 1) "" else "s"} attached" +
+                    (if (scanned > 0) " ($scanned scanned)" else "") + ". Photos wait for the AI examiner.",
+            )
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
             TextButton(
@@ -406,12 +411,12 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalS
                 onClick = { picker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) },
                 modifier = Modifier.heightIn(min = 48.dp),
             ) { Text("Add page photos") }
-            if (photos.isNotEmpty()) {
+            if (added > 0) {
                 TextButton(
                     enabled = enabled,
                     onClick = { scope.launch { desk.removePhotos(paperId, q.id); photoVersion++ } },
                     modifier = Modifier.heightIn(min = 48.dp),
-                ) { Text("Remove photos") }
+                ) { Text("Remove added photos") }
             }
         }
     }

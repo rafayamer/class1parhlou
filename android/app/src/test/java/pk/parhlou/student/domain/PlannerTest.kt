@@ -73,7 +73,7 @@ class StudyPlannerTest {
         val tasks = plan(listOf(LoggedEvidence(NOW - 2 * DAY, "topic:n-surds", Evidence.TopicMissed)))
         assertEquals(PlanKind.REPAIR, tasks.first().kind)
         assertEquals("n-surds", tasks.first().target)
-        assertTrue(tasks.first().reason, tasks.first().reason.contains("2 days ago"))
+        assertTrue(tasks.first().reason, tasks.first().reason.contains("last 2 days ago"))
     }
 
     @Test fun reviewsFollowTheSpacedSchedule() {

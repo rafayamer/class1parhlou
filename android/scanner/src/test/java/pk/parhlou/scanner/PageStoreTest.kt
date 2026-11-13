@@ -81,6 +81,16 @@ class PageStoreTest {
         assertEquals("a", store.filesFor("q1").single().readText())
     }
 
+    @Test fun aPageThatCantBeProcessedIsSentAsPhotographed() {
+        val a = store.add(photo("a"))!!
+        store.assign(a.id, "q1")
+        store.renderFailed(a.id, a.rev)
+        val p = store.page(a.id)!!
+        assertTrue(p.rendered)
+        assertEquals("a", store.filesFor("q1").single().readText())
+        assertTrue(File(p.src).exists())
+    }
+
     @Test fun deleteRemovesFilesAndThePageLimitHolds() {
         val a = store.add(photo("a"))!!
         val src = File(a.src)

@@ -10,6 +10,8 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -34,7 +36,7 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Crop
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.PhotoCamera
-import androidx.compose.material.icons.filled.RotateRight
+import androidx.compose.material.icons.automirrored.filled.RotateRight
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -130,7 +132,8 @@ fun ScannerFlow(
         pages.filterNot { it.rendered }.forEach { p ->
             val dest = store.renderFile()
             val ok = withContext(Dispatchers.Default) { engine.render(p, dest) }
-            if (ok && store.rendered(p.id, p.rev, dest)) changed() else if (!ok) dest.delete()
+            if (ok) { if (store.rendered(p.id, p.rev, dest)) changed() }
+            else { dest.delete(); store.renderFailed(p.id, p.rev); changed() }
         }
     }
 
@@ -422,14 +425,14 @@ private fun PageCard(
                     }
                 }
             }
-            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                 FILTERS.forEach { (id, name) ->
                     FilterChip(selected = page.filter == id, onClick = { onFilter(id) }, label = { Text(name) })
                 }
             }
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = onCrop) { Icon(Icons.Filled.Crop, contentDescription = "Crop page ${index + 1}") }
-                IconButton(onClick = onRotate) { Icon(Icons.Filled.RotateRight, contentDescription = "Turn page ${index + 1}") }
+                IconButton(onClick = onRotate) { Icon(Icons.AutoMirrored.Filled.RotateRight, contentDescription = "Turn page ${index + 1}") }
                 IconButton(onClick = { onMove(-1) }, enabled = index > 0) { Icon(Icons.Filled.ArrowUpward, contentDescription = "Move page ${index + 1} up") }
                 IconButton(onClick = { onMove(1) }, enabled = index < total - 1) { Icon(Icons.Filled.ArrowDownward, contentDescription = "Move page ${index + 1} down") }
                 IconButton(onClick = onRetake) { Icon(Icons.Filled.PhotoCamera, contentDescription = "Retake page ${index + 1}") }

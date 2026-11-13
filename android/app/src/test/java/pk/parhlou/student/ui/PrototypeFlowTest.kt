@@ -109,6 +109,8 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Match pages").performClick()
         rule.waitUntil(5_000) { exists("Your pages (2)") }
         rule.onNodeWithText("2 pages aren't matched", substring = true).assertExists()
+        // Without OpenCV (as here) the pages can't be processed; they are kept as photographed, not stuck "Preparing".
+        rule.waitUntil(10_000) { !exists("Preparing") }
 
         rule.onAllNodes(hasText("Choose question"))[0].performClick()
         rule.onNodeWithText("B1").performClick()

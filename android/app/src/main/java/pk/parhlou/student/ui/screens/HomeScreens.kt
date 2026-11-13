@@ -41,7 +41,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.FamilyRestroom
-import androidx.compose.material.icons.filled.MenuBook
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Quiz
 import androidx.compose.material.icons.filled.RocketLaunch
@@ -184,7 +184,7 @@ fun HomeScreen(
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
                 Box(contentAlignment = Alignment.Center) { Text("Ask a question", style = MaterialTheme.typography.labelLarge) }
             }
-            QuickIcon(Icons.Filled.MenuBook, "Open my book", onSubjects)
+            QuickIcon(Icons.AutoMirrored.Filled.MenuBook, "Open my book", onSubjects)
             QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", { onPlaceholder("scanner") })
         }
 
@@ -228,7 +228,7 @@ fun HomeScreen(
         Box(Modifier.appear(4)) { WeekStrip(studyDays = onboarding.studyDaysPerWeek) }
 
         Row(Modifier.appear(5), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Tile("My book", Icons.Filled.MenuBook, onSubjects, Modifier.weight(1f))
+            Tile("My book", Icons.AutoMirrored.Filled.MenuBook, onSubjects, Modifier.weight(1f))
             Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
         }
@@ -239,7 +239,7 @@ fun HomeScreen(
         }
         if (plan.isEmpty()) {
             TaskRow(Icons.Filled.PlayCircle, "Lesson", "${onboarding.minutesPerDay} min planned today", go)
-            TaskRow(Icons.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
+            TaskRow(Icons.AutoMirrored.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
         } else plan.filterNot { it.target == (task as? NextTask.OpenModule)?.moduleId }.take(3).forEach { t ->
             TaskRow(t.kind.icon(), t.title, t.reason, onClick = { onPlanTask(t) })
         }

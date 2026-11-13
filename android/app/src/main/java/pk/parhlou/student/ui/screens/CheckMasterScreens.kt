@@ -11,7 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.CheckCircle
-import androidx.compose.material.icons.filled.Help
+import androidx.compose.material.icons.automirrored.filled.Help
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -250,7 +250,7 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
             when (c.status) {
                 CriterionStatus.MET -> Icon(Icons.Filled.CheckCircle, contentDescription = "Marks given", tint = MaterialTheme.colorScheme.secondary, modifier = Modifier.size(22.dp))
                 CriterionStatus.NOT_FOUND -> Icon(Icons.Filled.Cancel, contentDescription = "Not found", tint = MaterialTheme.colorScheme.error, modifier = Modifier.size(22.dp))
-                CriterionStatus.UNSURE -> Icon(Icons.Filled.Help, contentDescription = "Not checked", tint = MaterialTheme.colorScheme.tertiary, modifier = Modifier.size(22.dp))
+                CriterionStatus.UNSURE -> Icon(Icons.AutoMirrored.Filled.Help, contentDescription = "Not checked", tint = MaterialTheme.colorScheme.tertiary, modifier = Modifier.size(22.dp))
             }
             Column(Modifier.weight(1f)) {
                 Text("${c.description}  (${fmt(c.awarded)}/${fmt(c.max)})", style = MaterialTheme.typography.bodyLarge)

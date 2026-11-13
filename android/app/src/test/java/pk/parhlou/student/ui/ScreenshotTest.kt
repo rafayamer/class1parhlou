@@ -91,6 +91,70 @@ class ScreenshotTest {
         save("9-checkmaster-question-$mode")
     }
 
+    /** The screens added for plans, weak topics, mock papers, the scanner and the profile. */
+    private fun shootMore(dark: Boolean) {
+        assumeTrue(dir != null)
+        val mode = if (dark) "dark" else "light"
+        val ctx = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = LocalStore(ctx)
+        val day = 24 * 60 * 60 * 1000L
+        val now = System.currentTimeMillis()
+        runBlocking {
+            store.clearAll()
+            store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9),
+                Pathway.COMPLETE_ACADEMY, 5, 60, completed = true, name = "Ayesha"))
+            store.setReadinessPassed(true)
+            store.replaceProgress(listOf(
+                pk.parhlou.student.domain.EvidenceCodec.line(now - 3 * day, "m-1-1", pk.parhlou.student.domain.Evidence.QuizCompleted(70)),
+                pk.parhlou.student.domain.EvidenceCodec.line(now - 2 * day, "topic:n-surds", pk.parhlou.student.domain.Evidence.TopicMissed),
+                pk.parhlou.student.domain.EvidenceCodec.line(now - 1 * day, "topic:n-surds", pk.parhlou.student.domain.Evidence.TopicMissed),
+                pk.parhlou.student.domain.EvidenceCodec.line(now - 1 * day, "topic:n-rational", pk.parhlou.student.domain.Evidence.TopicMissed),
+            ).joinToString("\n"))
+        }
+        // Two scanned pages waiting in the chapter test (the camera can't run here).
+        val scan = pk.parhlou.scanner.PageStore(File(ctx.filesDir, "exam/${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}/_scan")).apply { clear() }
+        repeat(2) { n ->
+            val f = File(scan.photoDir(), "p$n.jpg")
+            val page = Bitmap.createBitmap(300, 400, Bitmap.Config.ARGB_8888).apply {
+                val c = android.graphics.Canvas(this); c.drawColor(android.graphics.Color.WHITE)
+                val pen = android.graphics.Paint().apply { color = android.graphics.Color.rgb(30, 50, 140); textSize = 22f }
+                listOf("Q B${n + 1}.", "0.45 = 45/100", "= 9/20", "so it is rational").forEachIndexed { i, t -> c.drawText(t, 24f, 60f + i * 40f, pen) }
+            }
+            f.outputStream().use { page.compress(Bitmap.CompressFormat.JPEG, 90, it) }
+            scan.add(pk.parhlou.scanner.Photo(f, 300, 400, null))?.let { if (n == 0) scan.assign(it.id, "s1") }
+        }
+        rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
+        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.onNodeWithText("Today's tasks").performScrollTo()
+        save("10-home-plan-$mode")
+        rule.onNodeWithText("Full plan").performScrollTo().performClick()
+        save("11-plan-$mode")
+        rule.onNodeWithText("See 2 weak topics").performScrollTo().performClick()
+        save("12-weak-topics-$mode")
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.onNodeWithContentDescription("Back").performClick()
+
+        rule.onAllNodes(hasText("Papers")).onFirst().performClick()
+        rule.onNodeWithText("Mock papers").performScrollTo()
+        save("13-papers-mocks-$mode")
+        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
+        rule.onNodeWithText("Start paper").performScrollTo().performClick()
+        rule.waitUntil(5_000) { exists("Invigilator on") }
+        rule.onNodeWithText("Answers on paper").performScrollTo()
+        save("14-paper-scan-card-$mode")
+        rule.onNodeWithText("Scan or review pages").performScrollTo().performClick()
+        rule.waitUntil(5_000) { exists("Your pages (2)") }
+        save("15-scan-review-$mode")
+        rule.onNodeWithText("Done").performClick()
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.onAllNodes(hasText("Profile")).onFirst().performClick()
+        save("16-profile-$mode")
+    }
+
+    @Test fun moreLight() = shootMore(false)
+    @Test fun moreDark() = shootMore(true)
+
     private fun save(name: String) {
         rule.waitForIdle()
         val view = rule.activity.window.decorView

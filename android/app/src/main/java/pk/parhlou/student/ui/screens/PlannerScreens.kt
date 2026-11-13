@@ -40,7 +40,7 @@ fun PlannerScreen(
     onBack: () -> Unit,
 ) {
     ParhlouScreen("Today's plan", onBack = onBack) {
-        Muted("Planned for about $minutesPerDay minutes. Fixing mistakes comes first, then reviews that are due, then new work.")
+        Muted("Up to $minutesPerDay minutes today. Fixing mistakes comes first, then reviews that are due, then new work.")
         if (tasks.isEmpty()) {
             Sheet {
                 Text("Nothing planned yet", style = MaterialTheme.typography.titleMedium)
