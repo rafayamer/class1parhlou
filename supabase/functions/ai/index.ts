@@ -1,12 +1,12 @@
 // Supabase Edge Function: POST /functions/v1/ai
 // Holds the OpenAI key (secret OPENAI_API_KEY) and calls gpt-6-luna. The phone never sees the key.
-// Deployed with verify_jwt = false because the app has no sign-in yet; it protects itself with the app key
-// check, a per-install daily limit and a project-wide daily cap.
+// Deployed with verify_jwt = false so older builds without sign-in keep working; it checks the app key itself,
+// verifies a student's session token when one is sent, and applies per-student and project-wide daily limits.
 // Content (questions, keys, rubrics, notes) and limits are read from the database (app_content, app_config),
 // so they can change without redeploying. The bundled sample is only a fallback.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import bundled from "./content/sample.json" with { type: "json" };
-import { handle, type Content } from "./handler.ts";
+import { handle, markRecord, type Content } from "./handler.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
@@ -49,11 +49,19 @@ Deno.serve(async (request) => {
   const apiKey = Deno.env.get("OPENAI_API_KEY");
   if (!apiKey) return json({ error: "AI_NOT_CONFIGURED" }, 503);
 
-  // Until sign-in exists, callers are counted per install id. Replace with the signed-in user id.
-  const caller = (request.headers.get("x-parhlou-install") ?? "").slice(0, 64);
-  if (!/^[A-Za-z0-9-]{16,64}$/.test(caller)) return json({ error: "AUTH_REQUIRED" }, 401);
-
   const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+
+  // Signed-in students send their session token; limits and marks are then per student.
+  // Older builds without sign-in send an install id instead.
+  let userId: string | null = null;
+  const bearer = (request.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "");
+  if (bearer && bearer !== APP_KEY && bearer.split(".").length === 3) {
+    const { data, error } = await db.auth.getUser(bearer);
+    if (error || !data?.user) return json({ error: "SESSION_EXPIRED" }, 401);
+    userId = data.user.id;
+  }
+  const caller = userId ?? (request.headers.get("x-parhlou-install") ?? "").slice(0, 64);
+  if (!userId && !/^[A-Za-z0-9-]{16,64}$/.test(caller)) return json({ error: "AUTH_REQUIRED" }, 401);
   const settings = await live(db);
   if (!settings.enabled) return json({ error: "AI_SWITCHED_OFF" }, 503);
 
@@ -75,6 +83,8 @@ Deno.serve(async (request) => {
       input_tokens: outcome.usage.inputTokens, output_tokens: outcome.usage.outputTokens,
       attempts: outcome.usage.attempts, ok: outcome.usage.ok,
     });
+    const mark = markRecord(body, (outcome.body as any)?.result, userId, outcome.usage);
+    if (mark) await db.from("ai_marks").insert(mark);
   }
   return json(outcome.body, outcome.status);
 });

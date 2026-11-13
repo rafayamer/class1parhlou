@@ -116,3 +116,19 @@ test("tutor only receives notes for the learner's own subjects", () => {
   assert.ok(follow.question.includes("Simplifying square roots"));
   assert.equal(follow.pendingCheck, "Simplify √18.");
 });
+
+// ---- marks recorded by the server --------------------------------------------------------------------
+import { markRecord } from "./handler.ts";
+
+test("server records marks only for signed-in students, valid results and real attempts", () => {
+  const usage: any = { ok: true, model: "gpt-6-luna", promptVersion: "p" };
+  const result = { questionId: "s7", status: "CHECKED", criteria: [{ max: 1, awarded: 1 }, { max: 2, awarded: 0 }] };
+  const row: any = markRecord({ task: "mark_written", paperId: "sample-chapter-test" }, result, "user-1", usage);
+  assert.deepEqual([row.awarded, row.max_marks, row.paper_id, row.question_id], [1, 3, "sample-chapter-test", "s7"]);
+  assert.equal(markRecord({ task: "mark_written" }, result, null, usage), null);
+  assert.equal(markRecord({ task: "tutor" }, result, "user-1", usage), null);
+  assert.equal(markRecord({ task: "mark_written" }, { ...result, status: "COULD_NOT_CHECK" }, "user-1", usage), null);
+  assert.equal(markRecord({ task: "mark_written" }, result, "user-1", { ...usage, ok: false }), null);
+  assert.equal(markRecord({ task: "mark_written" }, { ...result, criteria: [{ max: 1, awarded: 5 }] }, "user-1", usage), null);
+  assert.equal((markRecord({ task: "mark_written", paperId: "bad id; drop" }, result, "user-1", usage) as any).paper_id, null);
+});

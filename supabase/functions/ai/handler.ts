@@ -55,3 +55,17 @@ export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey:
   const { result, usage } = await runTask(task, fetchFn, apiKey);
   return { status: 200, body: { result, model: usage.model, promptVersion: usage.promptVersion }, usage };
 }
+
+/** The row the server records for a marked answer of a signed-in student, or null if nothing should be recorded. */
+export function markRecord(req: any, result: any, userId: string | null, usage: Usage | undefined): Record<string, unknown> | null {
+  if (!userId || !usage?.ok || req?.task !== "mark_written" || !result || !Array.isArray(result.criteria)) return null;
+  if (result.status === "NOT_ATTEMPTED" || result.status === "COULD_NOT_CHECK") return null;
+  const max = result.criteria.reduce((s: number, c: any) => s + Number(c.max ?? 0), 0);
+  const awarded = result.criteria.reduce((s: number, c: any) => s + Number(c.awarded ?? 0), 0);
+  if (!(max > 0) || awarded < 0 || awarded > max) return null;
+  const paperId = typeof req.paperId === "string" && /^[A-Za-z0-9._-]{1,80}$/.test(req.paperId) ? req.paperId : null;
+  return {
+    user_id: userId, paper_id: paperId, question_id: String(result.questionId), awarded, max_marks: max,
+    status: String(result.status), model: usage.model, prompt_version: usage.promptVersion,
+  };
+}
