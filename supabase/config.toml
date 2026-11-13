@@ -17,3 +17,6 @@ sql_paths = ["./seed.sql"]
 [auth]
 site_url = "http://localhost:3000"
 enable_signup = true
+
+[functions.ai]
+verify_jwt = false
