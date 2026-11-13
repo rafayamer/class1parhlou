@@ -51,6 +51,6 @@ th { color: var(--muted); font-weight: 600; } .scroll { overflow-x: auto; }
 .option input[type=radio] { width: auto; }
 @media (max-width: 760px) {
   .shell { display: block; } .nav { width: auto; border-right: none; border-bottom: 1px solid var(--line); padding: 12px; }
-  .nav a { display: inline-block; } .nav .who { display: none; } main { padding: 16px; } .split { grid-template-columns: 1fr; }
+  .nav a { display: inline-block; } .nav .who { margin-top: 8px; padding: 0; } .nav .who div { display: none; } main { padding: 16px; } .split { grid-template-columns: 1fr; }
   .option { grid-template-columns: 28px 1fr 36px; } .option .why { grid-column: 2 / 4; }
 }
