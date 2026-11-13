@@ -35,6 +35,8 @@ android {
         unitTests.all { test ->
             // -PscreenshotDir=/path renders design screenshots (ScreenshotTest); skipped otherwise.
             project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
+            // -PcontentExport=/path/sample.json writes the sample content for the AI gateway (ContentExportTest).
+            project.findProperty("contentExport")?.let { test.systemProperty("parhlou.contentExport", it.toString()) }
             project.findProperty("robolectricDir")?.let { dir ->
                 test.systemProperty("robolectric.offline", "true")
                 test.systemProperty("robolectric.dependency.dir", dir.toString())
