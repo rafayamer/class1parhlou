@@ -32,6 +32,18 @@ Research sources (third-party unless stated):
 | Math 6/7/8, GRE Math Review | Middle-school books; commercial GRE guide | Out of scope | None | Parked |
 | AKU Fee Voucher.pdf (×2) | Personal document | — | — | **Exclude from all pipelines** |
 
+## 2b. Search for the current Class 9 Maths book (2026-11-13)
+
+- The founder's Drive has **no copy of the current 13-unit book** (searched by title and text for Class 9 / Mathematics / PCTB / PTB / "National Curriculum" / "Logarithms"). Only the superseded 2018 `Math 9.pdf` is known (section 2). It must not be used for book-exact content.
+- The official board site (pctb.gov.pk / pctb.punjab.gov.pk) is not reachable from the build environment's network allowlist.
+- Third-party listings report an English-medium "9th Class Math (EM) New Punjab Text Book" for 2025-26 and a "2026" revision; editions conflict, so only the board's own PDF or printed book should be used.
+- **Needed from the founder:** the official PCTB Class 9 Mathematics PDF (English medium) for the current session, or permission to add the board's website to the allowed hosts so it can be downloaded and checksummed.
+
+Search results seen (third-party, not sources of content):
+- https://www.taleem360.com/9th-class-maths-um-new-snc-punjab-text-book-pdf
+- https://www.taleem360.com/categories/9th-text-books-punjab
+- https://maryamnotes.pk/9/punjab-board/mathematics
+
 ## 3. Teacher videos
 
 No videos registered yet. Each future entry needs: channel/teacher, URL, unit/module mapping, edition checked against, embed availability, transcript rights (default: **none** — no caption scraping), date checked, replacement plan.
