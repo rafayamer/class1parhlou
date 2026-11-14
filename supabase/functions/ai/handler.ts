@@ -17,9 +17,10 @@ export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMI
     const question = String(req.question ?? "").slice(0, limits.maxTextChars);
     const style = STYLES.includes(req.style) ? req.style : "NORMAL";
     const subjects: string[] = Array.isArray(req.subjectIds) ? req.subjectIds : [];
-    // Only notes of the learner's own subjects are ever shown to the model.
-    const notes = subjects.includes(content.subjectId) ? content.notes : [];
-    const last = notes.find((n) => n.id === req.lastNoteId);
+    // Only notes of the learner's own subjects are ever shown to the model, and only the relevant ones.
+    const all = subjects.includes(content.subjectId) ? content.notes : [];
+    const last = all.find((n) => n.id === req.lastNoteId);
+    const notes = relevantNotes(all, question, { lastNoteId: req.lastNoteId, moduleId: req.moduleId });
     const followUp = question.trim() === "" && last ? `Continue with the topic "${last.title}".` : question;
     if (followUp.trim() === "") return bad("EMPTY_QUESTION");
     return {
@@ -29,7 +30,7 @@ export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMI
     };
   }
   if (req.task === "mcq_feedback") {
-    const mcq = content.mcqs.find((m) => m.id === req.questionId);
+    const mcq = allMcqs(content).find((m) => m.id === req.questionId);
     if (!mcq) return bad("SOURCE_NOT_APPROVED", 404);
     const chosen = Number(req.chosen);
     if (!Number.isInteger(chosen) || chosen < 0 || chosen >= mcq.options.length) return bad("BAD_REQUEST");
@@ -89,4 +90,31 @@ export function markMcqs(req: any, content: Content, userId: string | null): { s
     status: "CHECKED", model: "answer-key", prompt_version: "-",
   })) : [];
   return { status: 200, body: { result: { results } }, rows };
+}
+
+/** Every MCQ in a bundle: the bank, module quizzes, the readiness quiz and papers. */
+export function allMcqs(content: Content): any[] {
+  const c = content as any;
+  return [...(c.mcqs ?? []), ...(c.quiz ?? []), ...(c.readiness ?? []), ...((c.papers ?? []).flatMap((p: any) => p.mcqs ?? []))];
+}
+
+const STOP = new Set("the a an of to in is and or for what how why do does i me my it this that with on by from be are can you please explain".split(" "));
+const words = (t: string) => (t.toLowerCase().match(/[a-z0-9√²³]+/g) ?? []).filter((w) => w.length > 1 && !STOP.has(w));
+
+/**
+ * The notes a tutor question needs: the topic being continued and the current module's notes first, then the best
+ * keyword matches, at most [limit]. Small bundles are sent whole.
+ */
+export function relevantNotes(notes: any[], question: string, ctx: { lastNoteId?: string; moduleId?: string } = {}, limit = 6): any[] {
+  if (notes.length <= limit) return notes;
+  const q = new Set(words(question));
+  const score = (n: any) => {
+    let s = 0;
+    for (const k of n.keywords ?? []) { const kw = words(k); if (kw.length && kw.every((w) => q.has(w))) s += 3; }
+    for (const w of words(n.title)) if (q.has(w)) s += 2;
+    if (n.id === ctx.lastNoteId) s += 10;
+    if (ctx.moduleId && (n as any).moduleId === ctx.moduleId) s += 4;
+    return s;
+  };
+  return notes.map((n) => [score(n), n] as const).filter(([s]) => s > 0).sort((a, b) => b[0] - a[0]).slice(0, limit).map(([, n]) => n);
 }

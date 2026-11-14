@@ -102,7 +102,10 @@ fun ModuleScreen(
         AnimatedContent(targetState = current, transitionSpec = rememberStepTransition(), label = "stage") { stage ->
         Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
         when (stage) {
-            Stage.LEARN -> LearnStage(module, progress, courseLabel) { current = Stage.UNDERSTAND }
+            Stage.LEARN -> LearnStage(
+                module, progress, courseLabel,
+                onAskTutor = { q -> onAskTutor(TutorSeed(moduleId = module.id, question = q)) },
+            ) { current = Stage.UNDERSTAND }
             Stage.UNDERSTAND -> QuizContent(
                 questions = quiz,
                 passPercent = null,
@@ -128,8 +131,21 @@ fun ModuleScreen(
 }
 
 @Composable
-private fun LearnStage(module: Module, progress: ProgressStore, courseLabel: String, onNext: () -> Unit) {
+private fun LearnStage(
+    module: Module,
+    progress: ProgressStore,
+    courseLabel: String,
+    onAskTutor: (String) -> Unit,
+    onNext: () -> Unit,
+) {
     val context = LocalContext.current
+    module.lesson?.let { lesson ->
+        TutorLesson(lesson, module.id, onAskTutor = onAskTutor, onFinished = {
+            progress.add(module.id, Evidence.LessonCompleted)
+            onNext()
+        })
+        Text("Also helpful", style = MaterialTheme.typography.titleMedium)
+    }
     Sheet {
         Text("Teacher video", style = MaterialTheme.typography.titleMedium)
         val video = module.video
@@ -152,7 +168,7 @@ private fun LearnStage(module: Module, progress: ProgressStore, courseLabel: Str
             Muted("This records that you studied. It doesn't count as mastering the topic.")
         }
     }
-    BigButton("Next: quiz", onClick = onNext)
+    if (module.lesson == null) BigButton("Next: quiz", onClick = onNext)
 }
 
 @Composable

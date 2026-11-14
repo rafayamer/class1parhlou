@@ -110,7 +110,9 @@ test("unknown question, over quota, bad images and unknown task are refused befo
 test("tutor only receives notes for the learner's own subjects", () => {
   const mine: any = toTask({ task: "tutor", question: "surds?", subjectIds: [content.subjectId] }, content);
   const other: any = toTask({ task: "tutor", question: "surds?", subjectIds: ["pb-9-phy"] }, content);
-  assert.equal(mine.notes.length, content.notes.length);
+  // Only the relevant notes are sent (the surds note for a surds question), never the whole subject.
+  assert.ok(mine.notes.length > 0 && mine.notes.length <= 6);
+  assert.ok(mine.notes.some((n: any) => n.id === "n-surds"));
   assert.equal(other.notes.length, 0);
   const follow: any = toTask({ task: "tutor", question: "", style: "STEPS", lastNoteId: "n-surds", awaitingCheck: true, subjectIds: [content.subjectId] }, content);
   assert.ok(follow.question.includes("Simplifying square roots"));
@@ -141,4 +143,23 @@ test("MCQs are checked against the server's key; unknown ids and bad input are i
   assert.deepEqual(m.rows.map((r: any) => r.awarded), [1, 0]);
   assert.equal(markMcqs({ paperId: "x", answers: { p4: 2 } }, content, null).rows.length, 0);
   assert.equal(markMcqs({ answers: {} }, content, "u").status, 400);
+});
+
+import { allMcqs, relevantNotes } from "./handler.ts";
+
+test("tutor gets only the notes that match the question, the topic in progress first", () => {
+  const notes = Array.from({ length: 20 }, (_, i) => ({ id: `n${i}`, moduleId: `m${i % 4}`, title: `Topic ${i}`, keywords: [`word${i}`] }));
+  notes[7].keywords = ["logarithm", "characteristic"];
+  notes[12].title = "Laws of logarithm";
+  const picked = relevantNotes(notes, "How do I find the characteristic of a logarithm?", { lastNoteId: "n3" });
+  assert.equal(picked[0].id, "n3");
+  assert.ok(picked.some((n: any) => n.id === "n7"));
+  assert.ok(picked.some((n: any) => n.id === "n12"));
+  assert.ok(picked.length <= 6);
+  assert.equal(relevantNotes(notes.slice(0, 4), "anything").length, 4);
+});
+
+test("MCQ explanations find questions in quizzes and papers too", () => {
+  const content: any = { mcqs: [{ id: "a" }], quiz: [{ id: "b" }], readiness: [{ id: "c" }], papers: [{ mcqs: [{ id: "d" }] }] };
+  assert.deepEqual(allMcqs(content).map((m) => m.id), ["a", "b", "c", "d"]);
 });

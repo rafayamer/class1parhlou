@@ -17,6 +17,8 @@ enum class LearningState(val label: String) {
 sealed interface Evidence {
     data object ModuleOpened : Evidence
     data object VideoStudyConfirmed : Evidence
+    /** Worked through the module's tutor lesson to the end. */
+    data object LessonCompleted : Evidence
     data object ReadingChecked : Evidence
     data class QuizCompleted(val firstTryPercent: Int) : Evidence
     data object WrittenSubmitted : Evidence

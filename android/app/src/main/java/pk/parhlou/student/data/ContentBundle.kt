@@ -104,6 +104,24 @@ object ContentBundle {
         readingTasks = m.getJSONArray("readingTasks").strings(),
         writtenQuestions = m.getJSONArray("writtenQuestions").list(::readWritten),
         status = status(m.getString("status")),
+        lesson = m.optJSONObject("lesson")?.let(::readLesson),
+    )
+
+    private fun readLesson(l: JSONObject) = Lesson(
+        explain = l.optJSONArray("explain")?.list { LessonCard(it.getString("title"), it.getString("body")) }.orEmpty(),
+        example = l.optJSONObject("example")?.let { e ->
+            WorkedExample(e.getString("question"), e.getJSONArray("steps").list { ExampleStep(it.getString("text"), it.optString("why")) }, e.optString("answer"))
+        },
+        yourTurn = l.optJSONArray("yourTurn")?.list { p ->
+            PracticeStep(
+                p.getString("question"), p.getString("answer"),
+                p.optJSONArray("accept")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
+                p.optJSONArray("hints")?.strings().orEmpty(), p.optJSONArray("solution")?.strings().orEmpty(),
+            )
+        }.orEmpty(),
+        examTips = l.optJSONArray("examTips")?.strings().orEmpty(),
+        mistakes = l.optJSONArray("mistakes")?.strings().orEmpty(),
+        recap = l.optJSONArray("recap")?.list { RecapItem(it.getString("question"), it.getString("answer")) }.orEmpty(),
     )
 
     fun readWritten(q: JSONObject) = WrittenQuestion(
@@ -123,6 +141,7 @@ object ContentBundle {
     fun readMcq(q: JSONObject) = McqQuestion(
         q.getString("id"), q.getString("stem"), q.getJSONArray("options").strings(), q.getInt("correctIndex"),
         q.getJSONArray("rationales").strings(), status(q.optString("status")), q.textOrNull("noteId"),
+        moduleId = if (q.has("moduleId")) q.textOrNull("moduleId") else null,
     )
 
     fun readNote(n: JSONObject) = ConceptNote(
@@ -186,8 +205,12 @@ class BundleRepository(
     override fun chapterOf(moduleId: String) = subject.chapters.firstOrNull { c -> c.modules.any { it.id == moduleId } } ?: base.chapterOf(moduleId)
     override fun modulesOfChapter(chapterId: String?) =
         subject.chapters.firstOrNull { it.id == chapterId }?.modules ?: base.modulesOfChapter(chapterId)
-    override fun moduleQuiz(moduleId: String, count: Int) =
-        if (modules.any { it.id == moduleId }) quiz.take(count.coerceIn(5, 15)) else base.moduleQuiz(moduleId, count)
+    override fun moduleQuiz(moduleId: String, count: Int): List<McqQuestion> {
+        if (modules.none { it.id == moduleId }) return base.moduleQuiz(moduleId, count)
+        // The module's own questions; older bundles without module links share one quiz, as before.
+        if (quiz.none { it.moduleId != null }) return quiz.take(count.coerceIn(5, 15))
+        return quiz.filter { it.moduleId == moduleId }.take(count.coerceIn(5, 15))
+    }
     override fun readinessQuiz(subjectId: String) = if (subjectId == subject.id) readiness else base.readinessQuiz(subjectId)
     override fun blueprints(subjectId: String) = if (subjectId == subject.id) blueprints else base.blueprints(subjectId)
     override fun paper(blueprintId: String) =

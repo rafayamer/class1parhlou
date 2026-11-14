@@ -61,6 +61,8 @@ android {
             project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
             // -PcontentExport=/path/sample.json writes the sample content for the AI gateway (ContentExportTest).
             project.findProperty("contentExport")?.let { test.systemProperty("parhlou.contentExport", it.toString()) }
+            // -PcourseBundle=/path/bundle.json checks a built course with the app's own marker (ContentQualityTest).
+            project.findProperty("courseBundle")?.let { test.systemProperty("parhlou.courseBundle", it.toString()) }
             project.findProperty("robolectricDir")?.let { dir ->
                 test.systemProperty("robolectric.offline", "true")
                 test.systemProperty("robolectric.dependency.dir", dir.toString())

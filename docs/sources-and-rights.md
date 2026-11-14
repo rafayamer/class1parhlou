@@ -44,6 +44,15 @@ Search results seen (third-party, not sources of content):
 - https://www.taleem360.com/categories/9th-text-books-punjab
 - https://maryamnotes.pk/9/punjab-board/mathematics
 
+## 2c. Class 9 Mathematics textbook used for content (2026-11-14)
+
+| Item | Detail |
+|---|---|
+| Book | Mathematics 9, English medium, Punjab Curriculum and Textbook Board, National Curriculum 2023, session 2025-26 onwards (file title "Inner title and contents Maths 9 EM 2025-26", 288 pages, scanned at 250 dpi) |
+| Obtained from | The board's site was under maintenance; downloaded from a mirror of the board's PDF (taleem360). SHA-256 `f49010874bc5840844490f8ce23511a7a484c6ef0538aadf1edae0227f526867`, 71,587,059 bytes |
+| Rights | Founder's statement: full permission to use the content (D-022). Not named in the app. |
+| Transcription | Each page read with GPT-6 Luna vision into `content/class9-maths/pages/` (faithful transcription; cost in `cost-log.jsonl`) |
+
 ## 3. Teacher videos
 
 No videos registered yet. Each future entry needs: channel/teacher, URL, unit/module mapping, edition checked against, embed availability, transcript rights (default: **none** — no caption scraping), date checked, replacement plan.

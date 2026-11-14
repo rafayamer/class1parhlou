@@ -1,0 +1,4399 @@
+{
+ "chapter": {
+  "id": "u-1",
+  "number": 1,
+  "title": "Real Numbers",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-1-1",
+    "position": 1,
+    "title": "1.1 Introduction to Real Numbers",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 1, section 1.1, pages 1–11; Exercise 1.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 1.1 (pages 1–11) in your textbook.",
+     "Solve Exercise 1.1 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-1-1-1",
+      "text": "Identify as rational or irrational: 2.353535",
+      "marks": 2,
+      "modelAnswer": [
+       "2.353535 is a terminating decimal number, therefore it is a rational number."
+      ],
+      "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+      "noteId": "n-1-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify 2.353535 as a terminating decimal.",
+        "marks": 1,
+        "why": "Recognising the decimal type supports the classification.",
+        "how": "State that the decimal has a finite number of digits.",
+        "accept": [
+         [
+          "terminating"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct classification.",
+        "marks": 1,
+        "why": "The final classification is required.",
+        "how": "State that it is rational.",
+        "accept": [
+         [
+          "rational"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.1 Q1(i)"
+     },
+     {
+      "id": "w-1-1-2",
+      "text": "Identify as rational or irrational: 0.6̅",
+      "marks": 2,
+      "modelAnswer": [
+       "0.6̅ is a non-terminating and recurring decimal number, therefore it is a rational number."
+      ],
+      "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+      "noteId": "n-1-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the decimal as recurring.",
+        "marks": 1,
+        "why": "Recognising the repeating pattern supports the classification.",
+        "how": "State that the digit 6 repeats infinitely.",
+        "accept": [
+         [
+          "recurring"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct classification.",
+        "marks": 1,
+        "why": "The final classification is required.",
+        "how": "State that it is rational.",
+        "accept": [
+         [
+          "rational"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.1 Q1(ii)"
+     },
+     {
+      "id": "w-1-1-3",
+      "text": "Identify as rational or irrational: 2.236067…",
+      "marks": 2,
+      "modelAnswer": [
+       "2.236067… is a non-terminating and non-recurring decimal number, therefore it is an irrational number."
+      ],
+      "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+      "noteId": "n-1-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Recognise that the decimal does not terminate.",
+        "marks": 1,
+        "why": "The decimal's continuing form is part of the reasoning.",
+        "how": "State that it is non-terminating.",
+        "accept": [
+         [
+          "non-terminating"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct classification.",
+        "marks": 1,
+        "why": "The final classification is required.",
+        "how": "State that it is irrational.",
+        "accept": [
+         [
+          "irrational"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.1 Q1(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to classify numbers or decimal expansions as rational or irrational. State the reason: terminating, recurring, or non-terminating and non-recurring.",
+      "For recurring decimals, show the full working: let x equal the decimal, multiply by 10 or 100 as needed, subtract, and solve for x.",
+      "Property questions usually award marks for naming the property accurately, including the operation where needed, such as associative property over addition.",
+      "For order properties, identify whether the same number is added or multiplied and whether the multiplier is positive or negative.",
+      "When asked for rational numbers between two numbers, show the average method and make sure both answers lie strictly between the given numbers."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Let x be the recurring decimal.",
+        "One digit repeats, so multiply both sides by 10 and subtract the original equation."
+       ],
+       "accept": [
+        [
+         "4/9"
+        ]
+       ],
+       "question": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+       "solution": [
+        "Let x = 0.4̅",
+        "x = 0.44444...",
+        "Multiply both sides by 10",
+        "10x = 4.44444...",
+        "10x − x = 4.44444… − 0.44444…",
+        "9x = 4",
+        "x = 4/9"
+       ],
+       "answer": "4/9"
+      },
+      {
+       "hints": [
+        "The repeating block has two digits.",
+        "Let x = 0.373737...; multiply by 100, then subtract x."
+       ],
+       "accept": [
+        [
+         "37/99"
+        ]
+       ],
+       "question": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (ii) 0.3̅7̅",
+       "solution": [
+        "Let x = 0.3̅7̅",
+        "x = 0.373737…",
+        "Multiply by 100 on both sides",
+        "100x = 37.373737…",
+        "100x − x = 37.373737… − 0.373737…",
+        "99x = 37",
+        "x = 37/99"
+       ],
+       "answer": "37/99"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Naming the repeating decimal as x lets us turn the problem into an equation.",
+        "text": "Let  x = 0.5̅"
+       },
+       {
+        "why": "Writing out the repeating digits makes the pattern clear.",
+        "text": "x = 0.55555...  ...(i)"
+       },
+       {
+        "why": "Multiplying by 10 shifts the decimal one place so the repeating parts can cancel.",
+        "text": "Multiply both sides by 10"
+       },
+       {
+        "why": "This is the equation after multiplying each side by 10.",
+        "text": "10x = 10(0.5555...)"
+       },
+       {
+        "why": "The decimal point has shifted one place to the right.",
+        "text": "10x = 5.55555...  ...(ii)"
+       },
+       {
+        "why": "Subtracting the first equation from the second removes the repeating decimal.",
+        "text": "Subtracting (i) from (ii)"
+       },
+       {
+        "why": "These are the two sides being subtracted.",
+        "text": "10x − x = (5.55555…) − (0.55555…)"
+       },
+       {
+        "why": "Subtracting gives a simple equation for x.",
+        "text": "9x = 5"
+       },
+       {
+        "why": "Dividing both sides by 9 gives the fraction.",
+        "text": "⇒ x = 5/9"
+       },
+       {
+        "why": "This confirms the recurring decimal is written in the form p/q.",
+        "text": "Which shows the decimal number in the form of p/q."
+       }
+      ],
+      "question": "EXAMPLE 3: Express the following recurring decimals as the rational number p/q, where p and q are integers. (i) 0.5̅",
+      "answer": "5/9"
+     },
+     "explain": [
+      {
+       "title": "Real numbers",
+       "body": "The real numbers are the union of rational numbers and irrational numbers: R = Q ∪ Q'. Rational numbers can be expressed as p/q, where p and q are integers and q ≠ 0. Irrational numbers cannot be expressed as a quotient of integers."
+      },
+      {
+       "title": "Decimal types",
+       "body": "A decimal that ends is terminating. A decimal with a repeating pattern that continues forever is non-terminating and recurring; both types are rational. A decimal that continues forever without repeating is irrational."
+      },
+      {
+       "title": "Recurring decimals as fractions",
+       "body": "Let the recurring decimal be x. Multiply x by 10 for a one-digit repeating block, or by 100 for a two-digit repeating block. Subtract the original equation to cancel the repeating digits, then solve for x."
+      },
+      {
+       "title": "Properties and inequalities",
+       "body": "Real-number properties describe how addition and multiplication behave. For inequalities, adding the same number to both sides keeps the inequality direction. Multiplying by a negative number reverses the direction."
+      },
+      {
+       "title": "Numbers between two numbers",
+       "body": "One way to find a rational number between two numbers is to find their average. Repeating the method with a new pair can give another rational number between the original numbers."
+      }
+     ],
+     "mistakes": [
+      "Calling every decimal that continues forever irrational: recurring decimals are rational.",
+      "Forgetting that a rational number must have a non-zero denominator.",
+      "Using 10 instead of 100 when the repeating block has two digits.",
+      "Subtracting recurring-decimal equations incorrectly so the repeating parts do not cancel.",
+      "Forgetting to reverse an inequality when multiplying or dividing by a negative number.",
+      "Naming a property without specifying whether it is over addition or multiplication when that distinction is needed."
+     ]
+    }
+   },
+   {
+    "id": "m-1-2",
+    "position": 2,
+    "title": "1.2 Radical Expressions",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 1, section 1.2, pages 11–14; Exercise 1.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 1.2 (pages 11–14) in your textbook.",
+     "Solve Exercise 1.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-1-2-1",
+      "text": "Rationalize the denominator: 13/(4 + √3)",
+      "marks": 2,
+      "modelAnswer": [
+       "13/(4 + √3) = 13/(4 + √3) × (4 − √3)/(4 − √3)",
+       "= 13(4 − √3)/(16 − 3)",
+       "= 13(4 − √3)/13",
+       "= 4 − √3."
+      ],
+      "followUp": "Rationalize the denominator of 13/(4 + √3).",
+      "noteId": "n-1-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Multiply the numerator and denominator by the conjugate.",
+        "marks": 1,
+        "why": "Using the conjugate makes the denominator rational.",
+        "how": "Show multiplication by 4 − √3 on both numerator and denominator.",
+        "accept": [
+         [
+          "13(4-√3)"
+         ],
+         [
+          "52-13√3"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify to the correct final answer.",
+        "marks": 1,
+        "why": "The simplified result is the required answer.",
+        "how": "Simplify the quotient to 4 − √3.",
+        "accept": [
+         [
+          "4-√3"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.2 Q1(i)"
+     },
+     {
+      "id": "w-1-2-2",
+      "text": "Rationalize the denominator: (√2 + √5)/√3",
+      "marks": 2,
+      "modelAnswer": [
+       "(√2 + √5)/√3 = ((√2 + √5)/√3) × (√3/√3)",
+       "= (√6 + √15)/3."
+      ],
+      "followUp": "Rationalize the denominator of 13/(4 + √3).",
+      "noteId": "n-1-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Multiply numerator and denominator by √3.",
+        "marks": 1,
+        "why": "Multiplying by √3/√3 removes the radical from the denominator.",
+        "how": "Show the equivalent multiplication by √3/√3.",
+        "accept": [
+         [
+          "(√2+√5)√3"
+         ],
+         [
+          "√6+√15"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct simplified final answer.",
+        "marks": 1,
+        "why": "The simplified quotient is the required answer.",
+        "how": "Simplify the numerator and denominator to (√6 + √15)/3.",
+        "accept": [
+         [
+          "(√6+√15)/3"
+         ],
+         [
+          "√6+√15",
+          "3"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.2 Q1(ii)"
+     },
+     {
+      "id": "w-1-2-3",
+      "text": "Rationalize the denominator: (√2 − 1)/√5",
+      "marks": 2,
+      "modelAnswer": [
+       "(√2 − 1)/√5 = ((√2 − 1)/√5) × (√5/√5)",
+       "= (√10 − √5)/5."
+      ],
+      "followUp": "Rationalize the denominator of 13/(4 + √3).",
+      "noteId": "n-1-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Multiply numerator and denominator by √5.",
+        "marks": 1,
+        "why": "Multiplying by √5/√5 makes the denominator rational.",
+        "how": "Show multiplication by √5/√5.",
+        "accept": [
+         [
+          "(√2-1)√5"
+         ],
+         [
+          "√10-√5"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct final answer.",
+        "marks": 1,
+        "why": "This is the simplified rationalized form.",
+        "how": "Simplify the numerator and denominator to (√10 − √5)/5.",
+        "accept": [
+         [
+          "(√10-√5)/5"
+         ],
+         [
+          "√10-√5",
+          "5"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.2 Q1(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The board may ask you to rationalize a denominator. Multiply both numerator and denominator by the denominator’s conjugate when it has two terms.",
+      "For a single radical in the denominator, multiply the numerator and denominator by that radical.",
+      "Simplification questions often test fractional and negative indices. Rewrite negative powers as reciprocals and apply the index laws carefully.",
+      "For questions involving conjugate surds, use (a + b)(a − b) = a² − b² to simplify the product.",
+      "Show the intermediate steps: method marks can be earned for the correct conjugate, exponent law, or simplification even if an arithmetic slip occurs."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "The denominator has two terms, so find its conjugate.",
+        "Multiply top and bottom by 4 − √3, then use (4 + √3)(4 − √3) = 16 − 3."
+       ],
+       "accept": [
+        [
+         "4-√3"
+        ]
+       ],
+       "question": "Rationalize the denominator of 13/(4 + √3).",
+       "solution": [
+        "13/(4 + √3) = 13/(4 + √3) × (4 − √3)/(4 − √3)",
+        "= 13(4 − √3)/(16 − 3)",
+        "= 13(4 − √3)/13",
+        "= 4 − √3."
+       ],
+       "answer": "4 − √3"
+      },
+      {
+       "hints": [
+        "There is one radical in the denominator, so multiply top and bottom by √3.",
+        "Multiply √3 by each term in the numerator, then simplify the denominator."
+       ],
+       "accept": [
+        [
+         "(√6+√15)/3"
+        ]
+       ],
+       "question": "Rationalize the denominator of (√2 + √5)/√3.",
+       "solution": [
+        "(√2 + √5)/√3 = ((√2 + √5)/√3) × (√3/√3)",
+        "= (√6 + √15)/3."
+       ],
+       "answer": "(√6 + √15)/3"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Multiplying by the conjugate changes the denominator into a difference of squares, which is rational.",
+        "text": "3/(√5 + √2) = 3/(√5 + √2) × (√5 − √2)/(√5 − √2)"
+       },
+       {
+        "why": "The numerator gains the conjugate factor and the denominator becomes the difference of the squared terms.",
+        "text": "= 3(√5 − √2)/((√5)² − (√2)²) = 3(√5 − √2)/(5 − 2)"
+       },
+       {
+        "why": "The denominator simplifies to 3, which cancels the factor 3 in the numerator.",
+        "text": "= 3(√5 − √2)/3 = √5 − √2"
+       }
+      ],
+      "question": "Rationalize the denominator of: 3/(√5 + √2)",
+      "answer": "√5 − √2"
+     },
+     "explain": [
+      {
+       "title": "Radicals and indices",
+       "body": "If n is a positive integer greater than 1 and a is a real number, then any real number x such that x = ⁿ√a is called nᵗʰ root of a. Here, √ is called radical and n is the index of radical. A real number under the radical sign is called a radicand. Exponential form of x = ⁿ√a is x = (a)^(1/n)."
+      },
+      {
+       "title": "Laws of radicals and indices",
+       "body": "Use the laws to split products and quotients inside a radical, or to rewrite roots as fractional powers. For example, ⁿ√(ab) = ⁿ√a · ⁿ√b and a^m/a^n = a^(m−n). A negative exponent means take the reciprocal."
+      },
+      {
+       "title": "Surds and conjugates",
+       "body": "An irrational radical with rational radicand is called a surd. A surd containing one term is a monomial surd; a surd containing the sum of two monomial surds is a binomial surd. √a + √b and √a − √b are called conjugate surds of each other."
+      },
+      {
+       "title": "Rationalizing a denominator",
+       "body": "To rationalize a denominator of the form a + b√x or a − b√x, we multiply both the numerator and denominator by the conjugate factor. The product of conjugate surds is a rational number."
+      }
+     ],
+     "mistakes": [
+      "Changing the sign incorrectly when writing the conjugate; only the sign between the two terms changes.",
+      "Multiplying only the denominator by the conjugate instead of multiplying both numerator and denominator.",
+      "Forgetting that a negative exponent means a reciprocal.",
+      "Adding exponents when dividing powers with the same base; subtract the exponents instead.",
+      "Stopping before simplifying the rationalized expression to its simplest form.",
+      "Treating every irrational number as a surd; the radicand in a surd must be rational."
+     ]
+    }
+   },
+   {
+    "id": "m-1-3",
+    "position": 3,
+    "title": "1.3 Application of Real Numbers in Daily Life",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 1, section 1.3, pages 14–19; Exercise 1.3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 1.3 (pages 14–19) in your textbook.",
+     "Solve Exercise 1.3 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-1-3-1",
+      "text": "The sum of three consecutive integers is forty-two, find the three integers.",
+      "marks": 2,
+      "modelAnswer": [
+       "Let the three consecutive integers be x, x + 1 and x + 2.",
+       "x + (x + 1) + (x + 2) = 42",
+       "3x + 3 = 42 ⇒ 3x = 39 ⇒ x = 13",
+       "The three integers are 13, 14 and 15."
+      ],
+      "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+      "noteId": "n-1-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Let the integers be x, x + 1, and x + 2; form and solve the sum equation.",
+        "marks": 1,
+        "why": "Representing consecutive integers correctly sets up the problem.",
+        "how": "Write x + (x + 1) + (x + 2) = 42 and obtain x = 13.",
+        "accept": [
+         [
+          "x",
+          "x+1",
+          "x+2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the three integers.",
+        "marks": 1,
+        "why": "The three integers are the required final result.",
+        "how": "Give 13, 14, and 15.",
+        "accept": [
+         [
+          "13",
+          "14",
+          "15"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.3 Q1"
+     },
+     {
+      "id": "w-1-3-2",
+      "text": "The diagram shows right angled ΔABC in which the length of AC is (√3 + √5)cm. The area of ΔABC is (1+√15) cm². Find the length AB in the form (a√3 + b√5) cm, where a and b are integers.",
+      "marks": 4,
+      "modelAnswer": [
+       "Area of ΔABC = 1/2 × AB × AC",
+       "1 + √15 = 1/2 × AB × (√3 + √5)",
+       "AB = 2(1 + √15)/(√3 + √5)",
+       "AB = 2(1 + √15)(√5 − √3)/((√3 + √5)(√5 − √3))",
+       "AB = (1 + √15)(√5 − √3)",
+       "AB = 4√3 − 2√5 cm"
+      ],
+      "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+      "noteId": "n-1-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Use the triangle area formula and substitute the known side.",
+        "marks": 1,
+        "why": "The area formula for a right-angled triangle connects the given area and side to AB.",
+        "how": "Write 1 + √15 = 1/2 × AB × (√3 + √5).",
+        "accept": [
+         [
+          "area=1/2*AB*AC"
+         ],
+         [
+          "1/2*AB*(√3+√5)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Solve the area equation for AB.",
+        "marks": 1,
+        "why": "Rearranging the equation isolates the unknown length.",
+        "how": "Obtain AB = 2(1 + √15)/(√3 + √5).",
+        "accept": [
+         [
+          "AB=2(1+√15)/(√3+√5)"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Rationalise and simplify the denominator.",
+        "marks": 1,
+        "why": "Correct simplification is needed to express the answer in the requested form.",
+        "how": "Multiply by the conjugate √5 − √3 and simplify.",
+        "accept": [
+         [
+          "(1+√15)(√5−√3)"
+         ],
+         [
+          "rationalise"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "State AB in centimetres.",
+        "marks": 1,
+        "why": "The final length must be in the requested form.",
+        "how": "Give AB = 4√3 − 2√5 cm.",
+        "accept": [
+         [
+          "4√3−2√5"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.3 Q2"
+     },
+     {
+      "id": "w-1-3-3",
+      "text": "A rectangle has sides of length 2 + √18 m and (5 − 4/√2) m. Express the area of the rectangle in the form a + b√2, where a and b are integers.",
+      "marks": 4,
+      "modelAnswer": [
+       "Area = (2 + √18)(5 − 4/√2)",
+       "= (2 + 3√2)(5 − 2√2)",
+       "= 10 − 4√2 + 15√2 − 12",
+       "= (11√2 − 2)m²"
+      ],
+      "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+      "noteId": "n-1-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Set up the product of the given sides.",
+        "marks": 1,
+        "why": "The area of a rectangle is the product of its side lengths.",
+        "how": "Write Area = (2 + √18)(5 − 4/√2).",
+        "accept": [
+         [
+          "(2+√18)(5−4/√2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Rewrite the radicals in terms of √2.",
+        "marks": 1,
+        "why": "Simplifying the radicals makes the product easier to evaluate.",
+        "how": "Use √18 = 3√2 and 4/√2 = 2√2.",
+        "accept": [
+         [
+          "2+3√2"
+         ],
+         [
+          "2√2"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Expand the product.",
+        "marks": 1,
+        "why": "Expanding the factors correctly gives the terms to combine.",
+        "how": "Multiply (2 + 3√2)(5 − 2√2).",
+        "accept": [
+         [
+          "10−4√2+15√2−12"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Combine like terms and include the unit.",
+        "marks": 1,
+        "why": "The simplified area is the required final answer.",
+        "how": "Give (11√2 − 2)m².",
+        "accept": [
+         [
+          "11√2−2"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 1.3 Q3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Board questions may ask you to convert temperatures, find a profit or loss percentage, share profit in a ratio, or solve an age or number problem.",
+      "For profit and loss, write the cost price and selling price first, then show the profit or loss calculation and the percentage formula.",
+      "For a temperature conversion, write the correct formula from your textbook before substituting the value.",
+      "For age and sum-and-difference questions, define variables and write the equations clearly; correct equations can earn marks even if an arithmetic error follows.",
+      "For tax, subtract the exempted amount before finding the stated percentage. Include the rupee unit in money answers."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start with the given formula: °F = (9°C)/5 + 32.",
+        "Substitute 48 for °C, then calculate (9 × 48)/5 and add 32."
+       ],
+       "accept": [
+        [
+         "118.4"
+        ],
+        [
+         "118.4°F"
+        ]
+       ],
+       "question": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+       "solution": [
+        "°F = (9°C)/5 + 32",
+        "°F = (9 × 48)/5 + 32",
+        "°F = 86.4 + 32",
+        "°F = 118.4°F"
+       ],
+       "answer": "118.4°F"
+      },
+      {
+       "hints": [
+        "Find the profit first by subtracting the cost price from the selling price.",
+        "Use Profit % = (profit/CP × 100) % with Rs. 1500 as the cost price."
+       ],
+       "accept": [
+        [
+         "1.33%"
+        ],
+        [
+         "1.33"
+        ]
+       ],
+       "question": "Mirha bought a toy for Rs. 1500 and sold for Rs. 1520. What was her profit percentage?",
+       "solution": [
+        "Cost Price = CP = Rs. 1500",
+        "Selling Price = SP = Rs. 1520",
+        "Profit = SP − CP = 1520 − 1500 = Rs. 20",
+        "Profit % = (profit/CP × 100) %",
+        "= (20/1500 × 100) % = 1.33%"
+       ],
+       "answer": "1.33%"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "These values identify the cost price and selling price given in the question.",
+        "text": "Cost Price = CP = Rs. 6590"
+       },
+       {
+        "why": "Profit is found by subtracting the cost price from the selling price.",
+        "text": "Selling Price = SP = Rs. 6850"
+       },
+       {
+        "why": "This is the textbook formula for finding profit.",
+        "text": "Profit = SP − CP"
+       },
+       {
+        "why": "Substitute the given prices into the formula.",
+        "text": "= 6850 − 6590"
+       },
+       {
+        "why": "The difference is the profit earned in rupees.",
+        "text": "= Rs. 260"
+       },
+       {
+        "why": "Now use the textbook formula to compare profit with cost price.",
+        "text": "Now, we find the profit percentage."
+       },
+       {
+        "why": "This formula expresses profit as a percentage of the cost price.",
+        "text": "Profit % = (profit/CP × 100) %"
+       },
+       {
+        "why": "Substitute the profit and cost price found above.",
+        "text": "= (260 × 100/6590) %"
+       },
+       {
+        "why": "Calculate the percentage and round it as shown in your textbook.",
+        "text": "= 3.94% ≈ 4%"
+       }
+      ],
+      "question": "EXAMPLE 11: Hamail purchased a bicycle for Rs. 6590 and sold it for Rs.6850. Find the profit percentage.",
+      "answer": "3.94% ≈ 4%"
+     },
+     "explain": [
+      {
+       "title": "Real numbers in everyday life",
+       "body": "Real numbers are used in many fields, including science and engineering, medicine and health, environmental science, computer science, navigation and transportation, surveying and architecture, and statistics. In this section, you use them to solve practical problems."
+      },
+      {
+       "title": "Temperature conversions",
+       "body": "Use the conversion formula that matches the direction of the question: K = °C + 273; °C = 5/9 (F − 32)°; and °F = (9°C)/5 + 32. Substitute the known temperature and calculate."
+      },
+      {
+       "title": "Profit and loss",
+       "body": "Your textbook defines: “Profit = selling Price − cost price” and “Loss = cost price − selling price”. For a percentage, compare the profit or loss with the cost price: Profit % = (profit/CP × 100) % and Loss % = (loss/CP × 100) %."
+      },
+      {
+       "title": "Sharing profit and simple profit rate",
+       "body": "To divide a profit in a ratio, add the ratio parts and give each person their fraction of the total profit. For simple profit, your textbook gives Rate = (amount of profit × 100)/(time × principal)."
+      },
+      {
+       "title": "Turning words into equations",
+       "body": "For questions about sums, differences, or ages, assign a variable to each unknown, write an equation for each condition, and solve. Check that the result matches what the question asks for."
+      }
+     ],
+     "mistakes": [
+      "Reversing the profit and loss calculations: profit is SP − CP, while loss is CP − SP.",
+      "Finding a profit or loss percentage using the selling price instead of the cost price.",
+      "Using the wrong temperature formula or forgetting to add 32 when converting Celsius to Fahrenheit.",
+      "Including an exempted amount in the income used to calculate tax.",
+      "Giving a person's present age when the question asks for their age six years ago.",
+      "Rounding too early or leaving off the unit, such as °F, kelvin, or Rs."
+     ]
+    }
+   },
+   {
+    "id": "m-1-4",
+    "position": 4,
+    "title": "Unit 1 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 1, review exercise, pages 19–20; Review Exercise 1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 1 and attempt Review Exercise 1 (pages 19–20)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-1-4-1",
+      "text": "If a = 3/2, b = 5/3 and c = 7/5, then verify that a(b + c) = ab + ac.",
+      "marks": 4,
+      "modelAnswer": [
+       "a(b + c) = 3/2(5/3 + 7/5)",
+       "= 3/2(46/15)",
+       "= 23/5",
+       "ab + ac = (3/2)(5/3) + (3/2)(7/5)",
+       "= 5/2 + 21/10",
+       "= 25/10 + 21/10",
+       "= 23/5",
+       "∴ a(b + c) = ab + ac = 23/5"
+      ],
+      "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+      "noteId": "n-1-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find b + c.",
+        "marks": 1,
+        "why": "The bracket must be evaluated correctly before multiplying.",
+        "how": "Write 5/3 + 7/5 = 46/15.",
+        "accept": [
+         [
+          "46/15"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Calculate a(b + c).",
+        "marks": 1,
+        "why": "This establishes the value of the left-hand side.",
+        "how": "Multiply 3/2 by 46/15 to get 23/5.",
+        "accept": [
+         [
+          "23/5"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Calculate ab and ac.",
+        "marks": 1,
+        "why": "Both products on the right-hand side must be calculated.",
+        "how": "Find ab = 5/2 and ac = 21/10.",
+        "accept": [
+         [
+          "5/2",
+          "21/10"
+         ],
+         [
+          "25/10",
+          "21/10"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "State the common value.",
+        "marks": 1,
+        "why": "Matching both sides verifies the property.",
+        "how": "Show that ab + ac = 23/5, equal to a(b + c).",
+        "accept": [
+         [
+          "23/5"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise Q2(i)"
+     },
+     {
+      "id": "w-1-4-2",
+      "text": "If a = 3/2, b = 5/3 and c = 7/5, then verify that (a + b)c = ac + bc.",
+      "marks": 4,
+      "modelAnswer": [
+       "(a + b)c = (3/2 + 5/3)(7/5)",
+       "= (19/6)(7/5)",
+       "= 133/30",
+       "ac + bc = (3/2)(7/5) + (5/3)(7/5)",
+       "= 21/10 + 7/3",
+       "= 63/30 + 70/30",
+       "= 133/30",
+       "∴ (a + b)c = ac + bc = 133/30"
+      ],
+      "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+      "noteId": "n-1-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find a + b.",
+        "marks": 1,
+        "why": "Adding the first two values correctly is needed to calculate the left side.",
+        "how": "Write 3/2 + 5/3 = 19/6.",
+        "accept": [
+         [
+          "19/6"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Calculate (a + b)c.",
+        "marks": 1,
+        "why": "This gives the value of the left-hand side.",
+        "how": "Multiply 19/6 by 7/5.",
+        "accept": [
+         [
+          "133/30"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Calculate ac and bc.",
+        "marks": 1,
+        "why": "Both products in the right-hand side are required.",
+        "how": "Find ac = 21/10 and bc = 7/3.",
+        "accept": [
+         [
+          "21/10",
+          "7/3"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "State the common value.",
+        "marks": 1,
+        "why": "Equal values on both sides complete the verification.",
+        "how": "Show ac + bc = 133/30, equal to (a + b)c.",
+        "accept": [
+         [
+          "133/30"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise Q2(ii)"
+     },
+     {
+      "id": "w-1-4-3",
+      "text": "If a = 4/3, b = 5/2, c = 7/4, then verify the associative property of real numbers w.r.t addition and multiplication.",
+      "marks": 4,
+      "modelAnswer": [
+       "Addition:",
+       "(a + b) + c = (4/3 + 5/2) + 7/4",
+       "= 23/6 + 7/4",
+       "= 46/12 + 21/12",
+       "= 67/12",
+       "a + (b + c) = 4/3 + (5/2 + 7/4)",
+       "= 4/3 + 17/4",
+       "= 16/12 + 51/12",
+       "= 67/12",
+       "∴ (a + b) + c = a + (b + c)",
+       "Multiplication:",
+       "(ab)c = ((4/3)(5/2))(7/4)",
+       "= (10/3)(7/4)",
+       "= 35/6",
+       "a(bc) = (4/3)((5/2)(7/4))",
+       "= (4/3)(35/8)",
+       "= 35/6",
+       "∴ (ab)c = a(bc)"
+      ],
+      "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+      "noteId": "n-1-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Verify associativity for addition.",
+        "marks": 1,
+        "why": "The addition calculation must show both groupings give the same value.",
+        "how": "Calculate each grouping and obtain 67/12.",
+        "accept": [
+         [
+          "67/12"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Verify associativity for multiplication.",
+        "marks": 1,
+        "why": "The multiplication calculation must show both groupings give the same value.",
+        "how": "Calculate each grouping and obtain 35/6.",
+        "accept": [
+         [
+          "35/6"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Show the addition grouping.",
+        "marks": 1,
+        "why": "Correctly identifying the property connects the calculations to the question.",
+        "how": "Write the two addition groupings as equal.",
+        "accept": [
+         [
+          "(a+b)+c",
+          "a+(b+c)"
+         ],
+         [
+          "associative"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Show the multiplication grouping.",
+        "marks": 1,
+        "why": "The final conclusion must cover the multiplication grouping as well.",
+        "how": "Write the two multiplication groupings as equal.",
+        "accept": [
+         [
+          "(ab)c",
+          "a(bc)"
+         ],
+         [
+          "associative"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise Q3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The review includes direct MCQs on number types, real-number properties, radicals, and powers; identify the definition or rule before choosing an option.",
+      "For verification questions, show the left-hand side and right-hand side separately and simplify both to the same value.",
+      "For property questions, state the property and show the relevant equality or comparison clearly.",
+      "For algebra word problems, define the variable, form the equation from the given information, solve it, and state the requested values.",
+      "For the simple-profit question, show the profit for each rate period separately, then add both profits to the principal."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Consecutive odd integers differ by 2.",
+        "Use n, n + 2, and n + 4, then set their sum equal to 51."
+       ],
+       "accept": [
+        [
+         "15",
+         "17",
+         "19"
+        ]
+       ],
+       "question": "The sum of three consecutive odd integers is 51. Find the three integers.",
+       "solution": [
+        "Let the three consecutive odd integers be n, n + 2 and n + 4.",
+        "n + (n + 2) + (n + 4) = 51",
+        "3n + 6 = 51",
+        "3n = 45",
+        "n = 15",
+        "The three integers are 15, 17 and 19."
+       ],
+       "answer": "15, 17, 19"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Consecutive odd integers increase by 2, so this represents all three in order.",
+        "text": "Let the three consecutive odd integers be n, n + 2 and n + 4."
+       },
+       {
+        "why": "Their sum is given as 51, so add the expressions and equate them to 51.",
+        "text": "n + (n + 2) + (n + 4) = 51"
+       },
+       {
+        "why": "Collecting like terms makes the equation easier to solve.",
+        "text": "3n + 6 = 51"
+       },
+       {
+        "why": "Subtracting 6 isolates the term containing n.",
+        "text": "3n = 45"
+       },
+       {
+        "why": "Dividing by 3 gives the first integer.",
+        "text": "n = 15"
+       },
+       {
+        "why": "Substitute n = 15 into the three expressions to find all the integers.",
+        "text": "The three integers are 15, 17 and 19."
+       }
+      ],
+      "question": "The sum of three consecutive odd integers is 51. Find the three integers.",
+      "answer": "15, 17, 19"
+     },
+     "explain": [
+      {
+       "title": "Rational and irrational numbers",
+       "body": "A rational number can be written as a ratio of integers with a non-zero denominator. A number such as √7 is irrational because 7 is not a perfect square. The real numbers include both rational and irrational numbers."
+      },
+      {
+       "title": "Real-number properties",
+       "body": "Reflexive property means a number equals itself. Symmetric property lets us reverse an equality. Transitive property carries an equality or inequality through a middle value. Trichotomy says that for two real numbers, exactly one of <, =, or > holds."
+      },
+      {
+       "title": "Distributive and associative properties",
+       "body": "The distributive property connects multiplication and addition, as in a(b + c) = ab + ac. The associative property changes the grouping of addition or multiplication without changing the result."
+      },
+      {
+       "title": "Simplifying radicals and powers",
+       "body": "For a perfect-power expression under a radical, use the root index to simplify its exponents. For powers with the same base, use exponent rules and factor common powers before cancelling."
+      },
+      {
+       "title": "Forming equations from problems",
+       "body": "Use a variable to represent an unknown quantity. Consecutive odd integers differ by 2; for a two-bucket problem, represent the larger amount using the stated difference. For simple profit at different rates, calculate each time period separately."
+      }
+     ],
+     "mistakes": [
+      "Calling √n rational when n is not a perfect square.",
+      "Confusing reflexive property (a = a) with symmetric property (if a = b, then b = a).",
+      "Forgetting that consecutive odd integers differ by 2, not 1.",
+      "Applying a radical to only part of an expression or dividing exponents by the wrong root index.",
+      "In a word problem, solving for a variable but not stating what the requested quantities are.",
+      "For the changing-rate simple-profit question, using the new rate for all seven years instead of treating the two periods separately.",
+      "The answer key lists option (b) for Q1(vii), although the printed equation gives x = 3/2, option (a); it also lists option (a) for Q1(viii), although the statement describes the symmetric property, option (b)."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-1-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-1-1",
+   "title": "Recognising Rational and Irrational Numbers",
+   "keywords": [
+    "real numbers",
+    "rational",
+    "irrational",
+    "terminating",
+    "recurring",
+    "decimal"
+   ],
+   "answer": "A real number is either rational or irrational.",
+   "explanation": "Real numbers include both rational and irrational numbers. A rational number can be written as p/q, where p and q are integers and q ≠ 0. An irrational number cannot be written as a quotient of integers. Terminating and recurring decimals are rational; non-terminating, non-recurring decimals are irrational.",
+   "simple": "A decimal that ends or repeats is rational. A decimal that goes on forever without repeating is irrational.",
+   "examples": [
+    "0.25 is a terminating decimal, so it is rational.",
+    "0.333... is recurring, so it is rational."
+   ],
+   "steps": [
+    "Check whether the decimal ends.",
+    "If it does not end, check whether its digits repeat.",
+    "A terminating or recurring decimal is rational.",
+    "A non-terminating, non-recurring decimal is irrational."
+   ],
+   "checkQuestion": "Is 0.272727... rational or irrational?",
+   "checkAnswer": "Irrational: it is non-terminating and non-recurring.",
+   "checkAccept": [
+    [
+     "rational"
+    ]
+   ]
+  },
+  {
+   "id": "n-1-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-1-2",
+   "title": "Radicals, surds, and rationalizing denominators",
+   "keywords": [
+    "radical",
+    "radicand",
+    "index",
+    "surd",
+    "conjugate",
+    "rationalize"
+   ],
+   "answer": "For 3/(√5 + √2), multiply the numerator and denominator by √5 − √2.",
+   "explanation": "A radical is another way to write a root. To simplify radicals, use the laws of radicals and indices. To rationalize a denominator with two terms, multiply the numerator and denominator by the conjugate.",
+   "simple": "A surd is an irrational root of a rational number. If a denominator has a sum or difference of two terms, use its conjugate to remove the radical from the denominator.",
+   "examples": [
+    "√5 is a surd; √9 is not a surd because it simplifies to 3.",
+    "The conjugate of √5 + √2 is √5 − √2."
+   ],
+   "steps": [
+    "Identify the radical and its index.",
+    "Use the laws of radicals and indices to simplify roots and powers.",
+    "For a two-term radical denominator, multiply top and bottom by its conjugate.",
+    "Simplify the numerator and denominator."
+   ],
+   "checkQuestion": "What should you multiply by to rationalize 3/(√5 + √2)?",
+   "checkAnswer": "Multiply the numerator and denominator by the conjugate of the denominator.",
+   "checkAccept": [
+    [
+     "√5-√2"
+    ],
+    [
+     "conjugate"
+    ]
+   ]
+  },
+  {
+   "id": "n-1-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-1-3",
+   "title": "Using Real Numbers in Daily Life",
+   "keywords": [
+    "real numbers",
+    "temperature",
+    "profit",
+    "loss",
+    "cost price",
+    "selling price",
+    "percentage"
+   ],
+   "answer": "Real numbers can be used to solve everyday problems such as temperature conversion, profit and loss, tax, and sharing profit in a given ratio.",
+   "explanation": "Real numbers help us solve everyday problems involving temperatures, ages, trade, tax, and sharing profits. For profit or loss percentages, compare the profit or loss with the cost price.",
+   "simple": "Use the right formula, put in the given numbers, and show the calculation clearly.",
+   "examples": [
+    "A bicycle costs Rs. 6590 and sells for Rs. 6850. Profit = Rs. 260, so profit percentage = (260/6590 × 100)% ≈ 4%.",
+    "A temperature of 48°C is 118.4°F because °F = (9 × 48)/5 + 32 = 118.4."
+   ],
+   "steps": [
+    "Identify what the question asks you to find.",
+    "Choose the matching formula from your textbook.",
+    "Substitute the given values and calculate carefully.",
+    "Write the answer with its unit or percentage sign."
+   ],
+   "checkQuestion": "A toy costs Rs. 200 and sells for Rs. 230. What is the profit percentage?",
+   "checkAnswer": "15%",
+   "checkAccept": [
+    [
+     "15%"
+    ],
+    [
+     "15"
+    ]
+   ]
+  },
+  {
+   "id": "n-1-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-1-4",
+   "title": "Real Numbers: Unit Review",
+   "keywords": [
+    "real numbers",
+    "rational",
+    "irrational",
+    "trichotomy",
+    "associative",
+    "exponents",
+    "consecutive odd integers"
+   ],
+   "answer": "Real numbers include rational and irrational numbers, and their properties help us simplify expressions and solve problems.",
+   "explanation": "Real numbers include rational and irrational numbers. Use the real-number properties to rearrange and compare expressions, and use exponent rules to simplify powers and radicals. In word problems, translate the information into an equation before solving.",
+   "simple": "Real numbers are all the numbers on the number line. Some can be written as fractions; others, like √7, cannot.",
+   "examples": [
+    "√7 is irrational because 7 is not a perfect square.",
+    "The sum of three consecutive odd integers can be written as n + (n + 2) + (n + 4)."
+   ],
+   "steps": [
+    "Recognise whether a number is rational or irrational.",
+    "Name the property shown by an equality or inequality.",
+    "Apply exponent and radical rules carefully.",
+    "For a word problem, define a variable and form an equation.",
+    "Check that your result fits the question."
+   ],
+   "checkQuestion": "What does the trichotomy property say about two real numbers a and b?",
+   "checkAnswer": "Exactly one of a < b, a = b, or a > b is true.",
+   "checkAccept": [
+    [
+     "a<b",
+     "a=b",
+     "a>b"
+    ],
+    [
+     "exactly one"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-1-1-1",
+   "stem": "How is 0.375 classified?",
+   "options": [
+    "Rational",
+    "Irrational",
+    "Natural",
+    "Not a real number"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 0.375 is a terminating decimal, so it is rational.",
+    "Incorrect: a terminating decimal is rational, not irrational.",
+    "Incorrect: 0.375 is not a natural counting number.",
+    "Incorrect: 0.375 is a real number."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-2",
+   "stem": "How is 0.666... classified?",
+   "options": [
+    "Rational",
+    "Irrational",
+    "Natural",
+    "Integer"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: its digits repeat, so it is a rational number.",
+    "Incorrect: a recurring decimal is rational, not irrational.",
+    "Incorrect: 0.666... is not a natural counting number.",
+    "Incorrect: 0.666... is not an integer."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-3",
+   "stem": "Which description applies to an irrational decimal?",
+   "options": [
+    "Terminating and rational",
+    "Recurring and rational",
+    "Non-terminating and non-recurring, so irrational",
+    "Non-terminating and recurring, so irrational"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Incorrect: a terminating decimal is rational.",
+    "Incorrect: a recurring decimal is rational.",
+    "Correct: an irrational decimal continues without terminating or recurring.",
+    "Incorrect: a non-terminating recurring decimal is rational."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-4",
+   "stem": "Which expression represents the set of real numbers?",
+   "options": [
+    "Q ∪ Q'",
+    "Q ∩ Q'",
+    "Q − Q'",
+    "Q' − Q"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: real numbers are the union of rational and irrational numbers.",
+    "Incorrect: the intersection does not represent all real numbers.",
+    "Incorrect: subtracting the irrational set does not include all real numbers.",
+    "Incorrect: this gives only part of the irrational set, not all real numbers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-5",
+   "stem": "What rational number is equal to 0.5555...?",
+   "options": [
+    "5/9",
+    "9/5",
+    "5/10",
+    "0.5"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: letting x = 0.555..., subtraction gives 9x = 5, so x = 5/9.",
+    "Incorrect: 9/5 is greater than 1, but 0.555... is less than 1.",
+    "Incorrect: 5/10 equals 0.5, not 0.5555....",
+    "Incorrect: 0.5 is not equal to 0.5555...."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-6",
+   "stem": "Which property is shown by 100 × 1 = 100?",
+   "options": [
+    "Additive identity",
+    "Multiplicative identity",
+    "Additive inverse",
+    "Multiplicative inverse"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: the additive identity involves adding 0.",
+    "Correct: multiplying a real number by 1 leaves it unchanged.",
+    "Incorrect: an additive inverse gives a sum of 0.",
+    "Incorrect: a multiplicative inverse gives a product of 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-7",
+   "stem": "Which equation shows the left distributive property of multiplication over addition?",
+   "options": [
+    "a(b + c) = ab + ac",
+    "a(b + c) = (a + b)c",
+    "a + (b + c) = (a + b)c",
+    "a(b − c) = ab + ac"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: this is the left distributive property stated in the section.",
+    "Incorrect: this is not the distributive property.",
+    "Incorrect: the two sides use different operations and are not the stated property.",
+    "Incorrect: the expression should be ab − ac when distributing over subtraction."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-1-8",
+   "stem": "Which statement is the additive order property?",
+   "options": [
+    "If a < b, then a + c < b + c",
+    "If a < b, then a + c > b + c",
+    "If a < b, then ac > bc for c > 0",
+    "If a < b, then 1/a < 1/b for numbers of the same sign"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: adding the same real number to both sides preserves the inequality.",
+    "Incorrect: adding the same number does not reverse the inequality.",
+    "Incorrect: multiplication by a positive number preserves, rather than reverses, the inequality.",
+    "Incorrect: for numbers of the same sign, the reciprocal property reverses the inequality."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-1",
+   "moduleId": "m-1-1"
+  },
+  {
+   "id": "q-1-2-1",
+   "stem": "What is a real number under the radical sign called?",
+   "options": [
+    "The index of the radical",
+    "The radicand",
+    "The radical sign",
+    "The exponent"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This names the small number that indicates which root is being taken.",
+    "This is correct: the real number under the radical sign is the radicand.",
+    "This names the symbol √, not the number under it.",
+    "This names a power, not the number under the radical sign."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-2",
+   "stem": "Which statement gives the definition of a surd?",
+   "options": [
+    "A rational number",
+    "An irrational radical with rational radicand",
+    "Any irrational number",
+    "A radical with an irrational radicand"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A surd is irrational, so it is not a rational number.",
+    "This is correct: an irrational radical with rational radicand is called a surd.",
+    "Not every irrational number is a surd; for example, √π is not a surd.",
+    "An irrational radicand does not fit the definition given for a surd."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-3",
+   "stem": "What is the conjugate of √3 + √5?",
+   "options": [
+    "√3 − √5",
+    "√3 + √5",
+    "3 + 5",
+    "√3 × √5"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: change the sign between the two terms to get the conjugate.",
+    "This is the original expression, not its conjugate.",
+    "This is not a radical expression and is not the conjugate.",
+    "This is a product, not the conjugate of the given sum."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-4",
+   "stem": "To rationalize the denominator of 1/(√5 + √2), which factor should multiply both numerator and denominator?",
+   "options": [
+    "√5 + √2",
+    "√5 − √2",
+    "√5 × √2",
+    "5 − 2"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the denominator itself, not its conjugate.",
+    "This is correct: it is the conjugate of √5 + √2.",
+    "This product is not the conjugate factor.",
+    "This is the difference of the radicands, not the conjugate factor."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-5",
+   "stem": "Which expression is the exponential form of ⁿ√a?",
+   "options": [
+    "ⁿ√a = aⁿ",
+    "ⁿ√a = a^(1/n)",
+    "ⁿ√a = a/n",
+    "ⁿ√a = 1/aⁿ"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This raises a to the power n rather than taking its nth root.",
+    "This is correct: the exponential form of ⁿ√a is a^(1/n).",
+    "This divides a by n and does not express an nth root.",
+    "This is not the exponential form of the nth root."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-6",
+   "stem": "Using the laws of indices, what is a^m/a^n?",
+   "options": [
+    "a^(m+n)",
+    "a^(m−n)",
+    "a^(mn)",
+    "a^m + a^n"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the rule for multiplying like bases, not dividing them.",
+    "This is correct: when dividing like bases, subtract the exponents.",
+    "This is the exponent rule for raising a power to a power.",
+    "This adds the powers as separate terms and is not the quotient law."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-2-7",
+   "stem": "Simplify 64^(−4/3).",
+   "options": [
+    "1/256",
+    "1/64",
+    "1/16",
+    "256"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: 64^(−4/3) = 1/4⁴ = 1/256.",
+    "This does not apply the exponent 4 to the cube root correctly.",
+    "This uses an incorrect value for 64^(4/3).",
+    "A negative exponent means the reciprocal, so this is not correct."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-2",
+   "moduleId": "m-1-2"
+  },
+  {
+   "id": "q-1-3-1",
+   "stem": "Using K = °C + 273, what is 37°C in Kelvin?",
+   "options": [
+    "310 kelvin",
+    "273 kelvin",
+    "37 kelvin",
+    "98.6 kelvin"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 37 + 273 = 310 kelvin.",
+    "This is the Kelvin value for 0°C, not 37°C.",
+    "This repeats the Celsius temperature instead of converting it.",
+    "This is the given Fahrenheit temperature in Example 10, not its Kelvin value."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-2",
+   "stem": "Convert 48°C to Fahrenheit using °F = (9°C)/5 + 32.",
+   "options": [
+    "100°F",
+    "118.4°F",
+    "86.4°F",
+    "120°F"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This does not result from substituting 48 into the formula.",
+    "Correct: (9 × 48)/5 + 32 = 86.4 + 32 = 118.4°F.",
+    "This is only the value of (9 × 48)/5; 32 has not been added.",
+    "This is not the result of the stated conversion formula."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-3",
+   "stem": "Which formula gives profit?",
+   "options": [
+    "SP − CP",
+    "CP − SP",
+    "profit/CP × 100",
+    "CP + SP"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Profit = selling price − cost price.",
+    "This is the formula for loss.",
+    "This gives the profit percentage calculation, not the profit amount.",
+    "Adding the cost price and selling price does not give the profit."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-4",
+   "stem": "A book costs Rs. 850 and sells for Rs. 720. What is the loss?",
+   "options": [
+    "Rs. 130",
+    "Rs. 720",
+    "Rs. 850",
+    "Rs. 1570"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Loss = CP − SP = 850 − 720 = Rs. 130.",
+    "This is the selling price, not the loss.",
+    "This is the cost price, not the loss.",
+    "This is the sum of the two prices, not the loss."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-5",
+   "stem": "A Rs. 450,000 profit is shared in the ratio 4 : 7 : 14. What is the share for the person with ratio part 7?",
+   "options": [
+    "Rs. 72,000",
+    "Rs. 126,000",
+    "Rs. 252,000",
+    "Rs. 450,000"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the share for ratio part 4.",
+    "Correct: The ratio parts total 25, and (7/25) × 450,000 = Rs. 126,000.",
+    "This is the share for ratio part 14.",
+    "This is the total profit, not one person's share."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-6",
+   "stem": "The simple profit is Rs. 3840 on Rs. 6400 for 12 years. What is the rate of profit?",
+   "options": [
+    "5%",
+    "10%",
+    "12%",
+    "20%"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Rate = (3840 × 100)/(12 × 6400) = 5%.",
+    "This is not the result of substituting the values into the textbook formula.",
+    "This does not follow from the stated profit, principal, and time.",
+    "This does not follow from the stated profit, principal, and time."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-7",
+   "stem": "The sum of a father's and son's ages is 72. Six years ago, the father was twice the son's age. How old was the son six years ago?",
+   "options": [
+    "Rs. 20",
+    "Rs. 26",
+    "Rs. 32",
+    "Rs. 46"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: The son is 26 now, so six years ago he was 20.",
+    "This is the son's present age, not his age six years ago.",
+    "This does not satisfy both age conditions.",
+    "This is not the son's age six years ago."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-3-8",
+   "stem": "Find the compound markup on Rs. 375,000 for one year at 14% compounded annually.",
+   "options": [
+    "Rs. 42,000",
+    "Rs. 52,500",
+    "Rs. 67,500",
+    "Rs. 375,000"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not 14% of Rs. 375,000.",
+    "Correct: For one year, markup = (14/100) × 375,000 = Rs. 52,500.",
+    "This is not the result of applying the 14% rate for one year.",
+    "This is the principal, not the markup."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-1-3",
+   "moduleId": "m-1-3"
+  },
+  {
+   "id": "q-1-4-1",
+   "stem": "√7 is:",
+   "options": [
+    "integer",
+    "rational number",
+    "irrational number",
+    "natural number"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not correct because √7 is not an integer.",
+    "This is not correct because √7 cannot be written as a ratio of integers.",
+    "This is correct because 7 is not a perfect square, so √7 is irrational.",
+    "This is not correct because √7 is not a natural number."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-2",
+   "stem": "π and e are:",
+   "options": [
+    "natural numbers",
+    "integers",
+    "rational numbers",
+    "irrational numbers"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is not correct because neither π nor e is a natural number.",
+    "This is not correct because neither π nor e is an integer.",
+    "This is not correct because neither number can be expressed as a ratio of integers.",
+    "This is correct because both π and e are irrational numbers."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-3",
+   "stem": "If n is not a perfect square, then √n is:",
+   "options": [
+    "rational number",
+    "natural number",
+    "integer",
+    "irrational number"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is not correct because the square root of a non-perfect square is irrational.",
+    "This is not correct because √n is not a natural number in this case.",
+    "This is not correct because √n is not an integer in this case.",
+    "This is correct because the square root of a non-perfect square is irrational."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-4",
+   "stem": "√3 + √5 is:",
+   "options": [
+    "whole number",
+    "integer",
+    "rational number",
+    "irrational number"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is not correct because the sum is not a whole number.",
+    "This is not correct because the sum is not an integer.",
+    "This is not correct because the sum is irrational, not rational.",
+    "This is correct because √3 + √5 is irrational."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-5",
+   "stem": "For all x ∈ R, x = x is called:",
+   "options": [
+    "reflexive property",
+    "transitive number",
+    "symmetric property",
+    "trichotomy property"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because every real number is equal to itself.",
+    "This is not the name of the property shown by x = x.",
+    "This is not correct because symmetry concerns reversing an equality.",
+    "This is not correct because trichotomy compares two real numbers."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-6",
+   "stem": "Let a, b, c ∈ R, then a > b and b > c ⇒ a > c is called ______ property.",
+   "options": [
+    "trichotomy",
+    "transitive",
+    "additive",
+    "multiplicative"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not correct because trichotomy compares two numbers using <, =, or >.",
+    "This is correct because the inequality relation passes from a > b and b > c to a > c.",
+    "This is not correct because no addition is being applied to the inequality.",
+    "This is not correct because no multiplication is being applied to the inequality."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-7",
+   "stem": "2^x × 8^x = 64 then x =",
+   "options": [
+    "3/2",
+    "3/4",
+    "5/6",
+    "2/3"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is mathematically correct: 2^x × 8^x = 2^(4x) = 2^6, so x = 3/2; the answer key's (b) conflicts with the equation.",
+    "This is the answer printed in the answer key, but substituting x = 3/4 gives 16^(3/4), not 64.",
+    "This is not correct because substituting x = 5/6 does not make the product 64.",
+    "This is not correct because substituting x = 2/3 does not make the product 64."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-8",
+   "stem": "Let a, b ∈ R, then a = b and b = a is called _________ property.",
+   "options": [
+    "reflexive",
+    "symmetric",
+    "transitive",
+    "additive"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not correct because reflexive property states that a = a; the answer key's (a) does not match the statement.",
+    "This is correct because an equality can be reversed: if a = b, then b = a.",
+    "This is not correct because transitive property uses an additional equality such as b = c.",
+    "This is not correct because additive property involves adding the same quantity."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-9",
+   "stem": "√75 + √27 =",
+   "options": [
+    "√102",
+    "9√3",
+    "5√3",
+    "8√3"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is not correct because the radicals should first be simplified and then added.",
+    "This is not correct because √75 + √27 simplifies to 5√3 + 3√3, not 9√3.",
+    "This is not correct because it leaves out the simplified value of √27.",
+    "This is correct because √75 + √27 = 5√3 + 3√3 = 8√3."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  },
+  {
+   "id": "q-1-4-10",
+   "stem": "The product of (3 + √5)(3 − √5) is:",
+   "options": [
+    "prime number",
+    "odd number",
+    "irrational number",
+    "rational number"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is not correct because the product is 9 − 5 = 4, which is not prime.",
+    "Although 4 is even, not odd, this option is not correct.",
+    "This is not correct because the radicals cancel and the result is rational.",
+    "This is correct because (3 + √5)(3 − √5) = 9 − 5 = 4, a rational number."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-1-4",
+   "moduleId": "m-1-4"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-1-1-1",
+   "text": "Identify as rational or irrational: 2.353535",
+   "marks": 2,
+   "modelAnswer": [
+    "2.353535 is a terminating decimal number, therefore it is a rational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify 2.353535 as a terminating decimal.",
+     "marks": 1,
+     "why": "Recognising the decimal type supports the classification.",
+     "how": "State that the decimal has a finite number of digits.",
+     "accept": [
+      [
+       "terminating"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is rational.",
+     "accept": [
+      [
+       "rational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(i)"
+  },
+  {
+   "id": "w-1-1-2",
+   "text": "Identify as rational or irrational: 0.6̅",
+   "marks": 2,
+   "modelAnswer": [
+    "0.6̅ is a non-terminating and recurring decimal number, therefore it is a rational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the decimal as recurring.",
+     "marks": 1,
+     "why": "Recognising the repeating pattern supports the classification.",
+     "how": "State that the digit 6 repeats infinitely.",
+     "accept": [
+      [
+       "recurring"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is rational.",
+     "accept": [
+      [
+       "rational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(ii)"
+  },
+  {
+   "id": "w-1-1-3",
+   "text": "Identify as rational or irrational: 2.236067…",
+   "marks": 2,
+   "modelAnswer": [
+    "2.236067… is a non-terminating and non-recurring decimal number, therefore it is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognise that the decimal does not terminate.",
+     "marks": 1,
+     "why": "The decimal's continuing form is part of the reasoning.",
+     "how": "State that it is non-terminating.",
+     "accept": [
+      [
+       "non-terminating"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(iii)"
+  },
+  {
+   "id": "w-1-1-4",
+   "text": "Identify as rational or irrational: √7",
+   "marks": 2,
+   "modelAnswer": [
+    "√7 is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Refer to the given number √7.",
+     "marks": 1,
+     "why": "Identifying the given number correctly is needed for the classification.",
+     "how": "Use the radical expression in the classification.",
+     "accept": [
+      [
+       "sqrt7"
+      ],
+      [
+       "root7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that √7 is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(iv)"
+  },
+  {
+   "id": "w-1-1-5",
+   "text": "Identify as rational or irrational: e",
+   "marks": 2,
+   "modelAnswer": [
+    "e is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Refer to e.",
+     "marks": 1,
+     "why": "The number in the question must be identified.",
+     "how": "Use e in the classification.",
+     "accept": [
+      [
+       "e"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that e is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(v)"
+  },
+  {
+   "id": "w-1-1-6",
+   "text": "Identify as rational or irrational: π",
+   "marks": 2,
+   "modelAnswer": [
+    "π is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Refer to π.",
+     "marks": 1,
+     "why": "The number in the question must be identified.",
+     "how": "Use π in the classification.",
+     "accept": [
+      [
+       "pi"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that π is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(vi)"
+  },
+  {
+   "id": "w-1-1-7",
+   "text": "Identify as rational or irrational: 5 + √11",
+   "marks": 2,
+   "modelAnswer": [
+    "5 + √11 is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Refer to the expression 5 + √11.",
+     "marks": 1,
+     "why": "The given expression must be identified.",
+     "how": "Use the expression in the classification.",
+     "accept": [
+      [
+       "5+sqrt11"
+      ],
+      [
+       "5+root11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(vii)"
+  },
+  {
+   "id": "w-1-1-8",
+   "text": "Identify as rational or irrational: √3 + √13",
+   "marks": 2,
+   "modelAnswer": [
+    "√3 + √13 is an irrational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Refer to the expression √3 + √13.",
+     "marks": 1,
+     "why": "The given expression must be identified.",
+     "how": "Use the expression in the classification.",
+     "accept": [
+      [
+       "sqrt3+sqrt13"
+      ],
+      [
+       "root3+root13"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is irrational.",
+     "accept": [
+      [
+       "irrational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(viii)"
+  },
+  {
+   "id": "w-1-1-9",
+   "text": "Identify as rational or irrational: 15/4",
+   "marks": 2,
+   "modelAnswer": [
+    "15/4 is a quotient of integers with a non-zero denominator, therefore it is a rational number."
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognise 15/4 as a quotient of integers.",
+     "marks": 1,
+     "why": "Showing the number as a quotient identifies its rational form.",
+     "how": "Note that 15 and 4 are integers and 4 ≠ 0.",
+     "accept": [
+      [
+       "15/4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct classification.",
+     "marks": 1,
+     "why": "The final classification is required.",
+     "how": "State that it is rational.",
+     "accept": [
+      [
+       "rational"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q1(ix)"
+  },
+  {
+   "id": "w-1-1-10",
+   "text": "Express as a rational number p/q where p and q are integers and q ≠ 0: 0.4̅",
+   "marks": 4,
+   "modelAnswer": [
+    "Let x = 0.4̅",
+    "x = 0.44444...",
+    "Multiply both sides by 10",
+    "10x = 4.44444...",
+    "10x − x = 4.44444… − 0.44444…",
+    "9x = 4",
+    "x = 4/9"
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Let x equal the recurring decimal.",
+     "marks": 1,
+     "why": "Setting x equal to the recurring decimal begins the textbook method.",
+     "how": "Write x = 0.4444....",
+     "accept": [
+      [
+       "x=0.4~"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Multiply both sides by 10.",
+     "marks": 1,
+     "why": "Multiplying by 10 aligns the repeating digits.",
+     "how": "Write 10x = 4.4444....",
+     "accept": [
+      [
+       "10x=4.4~"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Subtract x from 10x.",
+     "marks": 1,
+     "why": "Subtracting eliminates the repeating decimal.",
+     "how": "Obtain 9x = 4.",
+     "accept": [
+      [
+       "9x=4"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the rational number.",
+     "marks": 1,
+     "why": "The answer must be expressed as p/q.",
+     "how": "State x = 4/9.",
+     "accept": [
+      [
+       "4/9"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q3(i)"
+  },
+  {
+   "id": "w-1-1-11",
+   "text": "Express as a rational number p/q where p and q are integers and q ≠ 0: 0.3̅7̅",
+   "marks": 4,
+   "modelAnswer": [
+    "Let x = 0.3̅7̅",
+    "x = 0.373737…",
+    "Multiply by 100 on both sides",
+    "100x = 37.373737…",
+    "100x − x = 37.373737… − 0.373737…",
+    "99x = 37",
+    "x = 37/99"
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Let x equal the recurring decimal.",
+     "marks": 1,
+     "why": "Setting x equal to the recurring decimal begins the textbook method.",
+     "how": "Write x = 0.373737....",
+     "accept": [
+      [
+       "x=0.37~"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Multiply both sides by 100.",
+     "marks": 1,
+     "why": "Multiplying by 100 aligns the two repeating digits.",
+     "how": "Write 100x = 37.373737....",
+     "accept": [
+      [
+       "100x=37.37~"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Subtract x from 100x.",
+     "marks": 1,
+     "why": "Subtracting eliminates the repeating decimal.",
+     "how": "Obtain 99x = 37.",
+     "accept": [
+      [
+       "99x=37"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the rational number.",
+     "marks": 1,
+     "why": "The answer must be expressed as p/q.",
+     "how": "State x = 37/99.",
+     "accept": [
+      [
+       "37/99"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q3(ii)"
+  },
+  {
+   "id": "w-1-1-12",
+   "text": "Express as a rational number p/q where p and q are integers and q ≠ 0: 0.2̅1̅",
+   "marks": 4,
+   "modelAnswer": [
+    "Let x = 0.2̅1̅",
+    "x = 0.212121…",
+    "Multiply by 100 on both sides",
+    "100x = 21.212121…",
+    "100x − x = 21.212121… − 0.212121…",
+    "99x = 21",
+    "x = 21/99"
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Let x equal the recurring decimal.",
+     "marks": 1,
+     "why": "Setting x equal to the recurring decimal begins the textbook method.",
+     "how": "Write x = 0.212121....",
+     "accept": [
+      [
+       "x=0.21~"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Multiply both sides by 100.",
+     "marks": 1,
+     "why": "Multiplying by 100 aligns the two repeating digits.",
+     "how": "Write 100x = 21.212121....",
+     "accept": [
+      [
+       "100x=21.21~"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Subtract x from 100x.",
+     "marks": 1,
+     "why": "Subtracting eliminates the repeating decimal.",
+     "how": "Obtain 99x = 21.",
+     "accept": [
+      [
+       "99x=21"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the rational number.",
+     "marks": 1,
+     "why": "The answer must agree with the answer key.",
+     "how": "State x = 21/99.",
+     "accept": [
+      [
+       "21/99"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q3(iii)"
+  },
+  {
+   "id": "w-1-1-13",
+   "text": "Name the property used: (a + 4) + b = a + (4 + b)",
+   "marks": 2,
+   "modelAnswer": [
+    "Associative property over addition"
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the type of property.",
+     "marks": 1,
+     "why": "The grouping changes while the order stays the same.",
+     "how": "Recognise the associative property.",
+     "accept": [
+      [
+       "associative"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Specify the operation.",
+     "marks": 1,
+     "why": "The operation must be named correctly.",
+     "how": "State that it is over addition.",
+     "accept": [
+      [
+       "addition"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q4(i)"
+  },
+  {
+   "id": "w-1-1-14",
+   "text": "Name the property used: √2 + √3 = √3 + √2",
+   "marks": 2,
+   "modelAnswer": [
+    "Commutative property over addition"
+   ],
+   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the type of property.",
+     "marks": 1,
+     "why": "The order of the addends changes.",
+     "how": "Recognise the commutative property.",
+     "accept": [
+      [
+       "commutative"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Specify the operation.",
+     "marks": 1,
+     "why": "The operation must be named correctly.",
+     "how": "State that it is over addition.",
+     "accept": [
+      [
+       "addition"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.1 Q4(ii)"
+  },
+  {
+   "id": "w-1-2-1",
+   "text": "Rationalize the denominator: 13/(4 + √3)",
+   "marks": 2,
+   "modelAnswer": [
+    "13/(4 + √3) = 13/(4 + √3) × (4 − √3)/(4 − √3)",
+    "= 13(4 − √3)/(16 − 3)",
+    "= 13(4 − √3)/13",
+    "= 4 − √3."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply the numerator and denominator by the conjugate.",
+     "marks": 1,
+     "why": "Using the conjugate makes the denominator rational.",
+     "how": "Show multiplication by 4 − √3 on both numerator and denominator.",
+     "accept": [
+      [
+       "13(4-√3)"
+      ],
+      [
+       "52-13√3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the correct final answer.",
+     "marks": 1,
+     "why": "The simplified result is the required answer.",
+     "how": "Simplify the quotient to 4 − √3.",
+     "accept": [
+      [
+       "4-√3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(i)"
+  },
+  {
+   "id": "w-1-2-2",
+   "text": "Rationalize the denominator: (√2 + √5)/√3",
+   "marks": 2,
+   "modelAnswer": [
+    "(√2 + √5)/√3 = ((√2 + √5)/√3) × (√3/√3)",
+    "= (√6 + √15)/3."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply numerator and denominator by √3.",
+     "marks": 1,
+     "why": "Multiplying by √3/√3 removes the radical from the denominator.",
+     "how": "Show the equivalent multiplication by √3/√3.",
+     "accept": [
+      [
+       "(√2+√5)√3"
+      ],
+      [
+       "√6+√15"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct simplified final answer.",
+     "marks": 1,
+     "why": "The simplified quotient is the required answer.",
+     "how": "Simplify the numerator and denominator to (√6 + √15)/3.",
+     "accept": [
+      [
+       "(√6+√15)/3"
+      ],
+      [
+       "√6+√15",
+       "3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(ii)"
+  },
+  {
+   "id": "w-1-2-3",
+   "text": "Rationalize the denominator: (√2 − 1)/√5",
+   "marks": 2,
+   "modelAnswer": [
+    "(√2 − 1)/√5 = ((√2 − 1)/√5) × (√5/√5)",
+    "= (√10 − √5)/5."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply numerator and denominator by √5.",
+     "marks": 1,
+     "why": "Multiplying by √5/√5 makes the denominator rational.",
+     "how": "Show multiplication by √5/√5.",
+     "accept": [
+      [
+       "(√2-1)√5"
+      ],
+      [
+       "√10-√5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "This is the simplified rationalized form.",
+     "how": "Simplify the numerator and denominator to (√10 − √5)/5.",
+     "accept": [
+      [
+       "(√10-√5)/5"
+      ],
+      [
+       "√10-√5",
+       "5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(iii)"
+  },
+  {
+   "id": "w-1-2-4",
+   "text": "Rationalize the denominator: (6 − 4√2)/(6 + 4√2)",
+   "marks": 4,
+   "modelAnswer": [
+    "(6 − 4√2)/(6 + 4√2) = ((6 − 4√2)/(6 + 4√2)) × ((6 − 4√2)/(6 − 4√2))",
+    "= (6 − 4√2)²/(6² − (4√2)²)",
+    "= (36 − 48√2 + 32)/(36 − 32)",
+    "= (68 − 48√2)/4",
+    "= 17 − 12√2."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply by the conjugate of the denominator.",
+     "marks": 2,
+     "why": "Multiplying by the denominator's conjugate rationalizes the denominator.",
+     "how": "Show multiplication of numerator and denominator by 6 − 4√2.",
+     "accept": [
+      [
+       "(6-4√2)(6-4√2)"
+      ],
+      [
+       "(6-4√2)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Expand the numerator and evaluate the denominator.",
+     "marks": 1,
+     "why": "Correctly expanding the numerator is needed to simplify the expression.",
+     "how": "Use (6 − 4√2)² = 68 − 48√2 and 36 − 32 = 4.",
+     "accept": [
+      [
+       "36-48√2+32"
+      ],
+      [
+       "68-48√2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "The correctly simplified result earns the final mark.",
+     "how": "Divide the numerator terms by 4.",
+     "accept": [
+      [
+       "17-12√2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(iv)"
+  },
+  {
+   "id": "w-1-2-5",
+   "text": "Rationalize the denominator: (√3 − √2)/(√3 + √2)",
+   "marks": 2,
+   "modelAnswer": [
+    "(√3 − √2)/(√3 + √2) = ((√3 − √2)/(√3 + √2)) × ((√3 − √2)/(√3 − √2))",
+    "= (√3 − √2)²/(3 − 2)",
+    "= (3 + 2 − 2√6)/1",
+    "= 5 − 2√6."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply by the conjugate of the denominator.",
+     "marks": 1,
+     "why": "Multiplying by the conjugate makes the denominator rational.",
+     "how": "Show multiplication by (√3 − √2)/(√3 − √2).",
+     "accept": [
+      [
+       "(√3-√2)(√3-√2)"
+      ],
+      [
+       "(√3-√2)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "This is the correctly simplified rationalized form.",
+     "how": "Simplify the numerator and denominator to 5 − 2√6.",
+     "accept": [
+      [
+       "5-2√6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(v)"
+  },
+  {
+   "id": "w-1-2-6",
+   "text": "Rationalize the denominator: 4√3/(√7 + √5)",
+   "marks": 2,
+   "modelAnswer": [
+    "4√3/(√7 + √5) = (4√3/(√7 + √5)) × ((√7 − √5)/(√7 − √5))",
+    "= 4√3(√7 − √5)/(7 − 5)",
+    "= 2√3(√7 − √5)."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply by the conjugate of the denominator.",
+     "marks": 1,
+     "why": "Multiplication by the conjugate changes the denominator into a difference of squares.",
+     "how": "Show multiplication by (√7 − √5)/(√7 − √5).",
+     "accept": [
+      [
+       "4√3(√7-√5)"
+      ],
+      [
+       "4√3(√7-√5)/2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "This is the simplified rationalized answer.",
+     "how": "Simplify the denominator to 7 − 5 = 2 and reduce the factor 4/2.",
+     "accept": [
+      [
+       "2√3(√7-√5)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q1(vi)"
+  },
+  {
+   "id": "w-1-2-7",
+   "text": "Simplify: (3/4)^−2 ÷ (4/9)^3 × 16/27",
+   "marks": 4,
+   "modelAnswer": [
+    "(3/4)^−2 ÷ (4/9)³ × 16/27",
+    "= 16/9 ÷ 64/729 × 16/27",
+    "= 16/9 × 729/64 × 16/27",
+    "= 12."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Simplify the negative power.",
+     "marks": 1,
+     "why": "The negative exponent must be changed to its reciprocal form.",
+     "how": "Use (3/4)^−2 = (4/3)² = 16/9.",
+     "accept": [
+      [
+       "16/9"
+      ],
+      [
+       "(4/3)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Evaluate the cubed fraction.",
+     "marks": 1,
+     "why": "The cube of the fraction is needed before carrying out the division.",
+     "how": "Show (4/9)³ = 64/729.",
+     "accept": [
+      [
+       "64/729"
+      ],
+      [
+       "(4/9)^3"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Carry out the operations and give the correct answer.",
+     "marks": 2,
+     "why": "Correct division, multiplication, and simplification give the final value.",
+     "how": "Change division by 64/729 to multiplication by 729/64, then simplify to 12.",
+     "accept": [
+      [
+       "16/9×729/64×16/27"
+      ],
+      [
+       "12"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q2(ii)"
+  },
+  {
+   "id": "w-1-2-8",
+   "text": "Simplify: (0.027)^−1/3",
+   "marks": 2,
+   "modelAnswer": [
+    "(0.027)^−1/3 = 1/(0.027)^(1/3)",
+    "= 1/0.3",
+    "= 10/3."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite the decimal as a cube.",
+     "marks": 1,
+     "why": "Recognizing 0.027 as (0.3)³ identifies its cube root.",
+     "how": "Show 0.027 = (0.3)³.",
+     "accept": [
+      [
+       "0.3"
+      ],
+      [
+       "3/10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "The negative exponent gives the reciprocal of the cube root.",
+     "how": "Use (0.3)^−1 = 10/3.",
+     "accept": [
+      [
+       "10/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q2(iii)"
+  },
+  {
+   "id": "w-1-2-10",
+   "text": "If x = 3 + √8, find x + 1/x.",
+   "marks": 2,
+   "modelAnswer": [
+    "1/x = 1/(3 + √8) = 3 − √8",
+    "x + 1/x = (3 + √8) + (3 − √8)",
+    "= 6."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find 1/x.",
+     "marks": 1,
+     "why": "Finding the reciprocal uses the difference of squares and simplifies the expression.",
+     "how": "Use 1/(3 + √8) = 3 − √8 because (3 + √8)(3 − √8) = 1.",
+     "accept": [
+      [
+       "1/(3+√8)"
+      ],
+      [
+       "3-√8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "Adding x and its reciprocal gives the requested value.",
+     "how": "Add 3 + √8 and 3 − √8.",
+     "accept": [
+      [
+       "6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q3(i)"
+  },
+  {
+   "id": "w-1-2-11",
+   "text": "If x = 3 + √8, find x − 1/x.",
+   "marks": 2,
+   "modelAnswer": [
+    "1/x = 3 − √8",
+    "x − 1/x = (3 + √8) − (3 − √8)",
+    "= 2√8."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find 1/x.",
+     "marks": 1,
+     "why": "The reciprocal is needed to evaluate the difference.",
+     "how": "Show 1/x = 3 − √8.",
+     "accept": [
+      [
+       "1/x=3-√8"
+      ],
+      [
+       "3-√8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "Subtracting the reciprocal from x gives the required value.",
+     "how": "Calculate (3 + √8) − (3 − √8).",
+     "accept": [
+      [
+       "2√8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q3(ii)"
+  },
+  {
+   "id": "w-1-2-12",
+   "text": "If x = 3 + √8, find x² + 1/x².",
+   "marks": 4,
+   "modelAnswer": [
+    "x + 1/x = 6",
+    "(x + 1/x)² = x² + 2 + 1/x²",
+    "36 = x² + 2 + 1/x²",
+    "x² + 1/x² = 36 − 2 = 34."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find x + 1/x.",
+     "marks": 1,
+     "why": "The sum of x and its reciprocal is a useful result for finding the sum of their squares.",
+     "how": "Show x + 1/x = 6.",
+     "accept": [
+      [
+       "x+1/x=6"
+      ],
+      [
+       "6"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Square the sum.",
+     "marks": 1,
+     "why": "Squaring the sum gives the two squares and twice their product.",
+     "how": "Write (x + 1/x)² = x² + 2 + 1/x².",
+     "accept": [
+      [
+       "(x+1/x)^2"
+      ],
+      [
+       "36"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Subtract 2 and give the correct answer.",
+     "marks": 2,
+     "why": "Since x(1/x) = 1, subtracting 2 gives the requested sum of squares.",
+     "how": "Calculate x² + 1/x² = 36 − 2 = 34.",
+     "accept": [
+      [
+       "36-2"
+      ],
+      [
+       "34"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q3(iii)"
+  },
+  {
+   "id": "w-1-2-13",
+   "text": "Find the rational numbers p and q such that (8 − 3√2)/(4 + 3√2) = p + q√2.",
+   "marks": 4,
+   "modelAnswer": [
+    "(8 − 3√2)/(4 + 3√2) = ((8 − 3√2)/(4 + 3√2)) × ((4 − 3√2)/(4 − 3√2))",
+    "= (32 − 24√2 − 12√2 + 18)/(16 − 18)",
+    "= (50 − 36√2)/(−2)",
+    "= −25 + 18√2",
+    "∴ p = −25, q = 18."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Multiply by the conjugate.",
+     "marks": 1,
+     "why": "Using the conjugate rationalizes the denominator.",
+     "how": "Multiply numerator and denominator by 4 − 3√2.",
+     "accept": [
+      [
+       "(8-3√2)(4-3√2)"
+      ],
+      [
+       "4-3√2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Expand and simplify the fraction.",
+     "marks": 1,
+     "why": "Correct expansion gives the numerator and denominator needed to simplify.",
+     "how": "Obtain numerator 50 − 36√2 and denominator −2.",
+     "accept": [
+      [
+       "50-36√2"
+      ],
+      [
+       "16-18"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Express the quotient in the form p + q√2.",
+     "marks": 1,
+     "why": "Writing the result as a rational part plus a √2 part identifies p and q.",
+     "how": "Simplify the quotient to −25 + 18√2.",
+     "accept": [
+      [
+       "-25+18√2"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State p and q.",
+     "marks": 1,
+     "why": "These are the required rational numbers.",
+     "how": "Give p = −25 and q = 18.",
+     "accept": [
+      [
+       "p=-25",
+       "q=18"
+      ],
+      [
+       "-25",
+       "18"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q4"
+  },
+  {
+   "id": "w-1-2-14",
+   "text": "Simplify: √(((216)^(2/3) × (25)^(1/2))/((0.04)^−3/2))",
+   "marks": 4,
+   "modelAnswer": [
+    "√(((216)^(2/3) × (25)^(1/2))/((0.04)^−3/2))",
+    "= √((36 × 5)/125)",
+    "= √(180/125)",
+    "= √(36/25)",
+    "= 6/5."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Evaluate 216^(2/3).",
+     "marks": 1,
+     "why": "Evaluating the fractional power of 216 is needed to simplify the numerator.",
+     "how": "Use 216^(2/3) = (∛216)² = 36.",
+     "accept": [
+      [
+       "36"
+      ],
+      [
+       "216^(2/3)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Evaluate 25^(1/2).",
+     "marks": 1,
+     "why": "Evaluating the square root of 25 completes the numerator.",
+     "how": "Use 25^(1/2) = 5.",
+     "accept": [
+      [
+       "5"
+      ],
+      [
+       "25^(1/2)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Evaluate (0.04)^−3/2.",
+     "marks": 1,
+     "why": "Evaluating the negative fractional power gives the denominator inside the radical.",
+     "how": "Use 0.04 = 1/25 to obtain (0.04)^−3/2 = 125.",
+     "accept": [
+      [
+       "125"
+      ],
+      [
+       "(0.04)^-3/2"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Simplify the outer square root.",
+     "marks": 1,
+     "why": "Taking the square root of 36/25 gives the required final answer.",
+     "how": "Calculate √(180/125) = √(36/25) = 6/5.",
+     "accept": [
+      [
+       "6/5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q5(iii)"
+  },
+  {
+   "id": "w-1-3-1",
+   "text": "The sum of three consecutive integers is forty-two, find the three integers.",
+   "marks": 2,
+   "modelAnswer": [
+    "Let the three consecutive integers be x, x + 1 and x + 2.",
+    "x + (x + 1) + (x + 2) = 42",
+    "3x + 3 = 42 ⇒ 3x = 39 ⇒ x = 13",
+    "The three integers are 13, 14 and 15."
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Let the integers be x, x + 1, and x + 2; form and solve the sum equation.",
+     "marks": 1,
+     "why": "Representing consecutive integers correctly sets up the problem.",
+     "how": "Write x + (x + 1) + (x + 2) = 42 and obtain x = 13.",
+     "accept": [
+      [
+       "x",
+       "x+1",
+       "x+2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the three integers.",
+     "marks": 1,
+     "why": "The three integers are the required final result.",
+     "how": "Give 13, 14, and 15.",
+     "accept": [
+      [
+       "13",
+       "14",
+       "15"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q1"
+  },
+  {
+   "id": "w-1-3-2",
+   "text": "The diagram shows right angled ΔABC in which the length of AC is (√3 + √5)cm. The area of ΔABC is (1+√15) cm². Find the length AB in the form (a√3 + b√5) cm, where a and b are integers.",
+   "marks": 4,
+   "modelAnswer": [
+    "Area of ΔABC = 1/2 × AB × AC",
+    "1 + √15 = 1/2 × AB × (√3 + √5)",
+    "AB = 2(1 + √15)/(√3 + √5)",
+    "AB = 2(1 + √15)(√5 − √3)/((√3 + √5)(√5 − √3))",
+    "AB = (1 + √15)(√5 − √3)",
+    "AB = 4√3 − 2√5 cm"
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the triangle area formula and substitute the known side.",
+     "marks": 1,
+     "why": "The area formula for a right-angled triangle connects the given area and side to AB.",
+     "how": "Write 1 + √15 = 1/2 × AB × (√3 + √5).",
+     "accept": [
+      [
+       "area=1/2*AB*AC"
+      ],
+      [
+       "1/2*AB*(√3+√5)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve the area equation for AB.",
+     "marks": 1,
+     "why": "Rearranging the equation isolates the unknown length.",
+     "how": "Obtain AB = 2(1 + √15)/(√3 + √5).",
+     "accept": [
+      [
+       "AB=2(1+√15)/(√3+√5)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Rationalise and simplify the denominator.",
+     "marks": 1,
+     "why": "Correct simplification is needed to express the answer in the requested form.",
+     "how": "Multiply by the conjugate √5 − √3 and simplify.",
+     "accept": [
+      [
+       "(1+√15)(√5−√3)"
+      ],
+      [
+       "rationalise"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State AB in centimetres.",
+     "marks": 1,
+     "why": "The final length must be in the requested form.",
+     "how": "Give AB = 4√3 − 2√5 cm.",
+     "accept": [
+      [
+       "4√3−2√5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q2"
+  },
+  {
+   "id": "w-1-3-3",
+   "text": "A rectangle has sides of length 2 + √18 m and (5 − 4/√2) m. Express the area of the rectangle in the form a + b√2, where a and b are integers.",
+   "marks": 4,
+   "modelAnswer": [
+    "Area = (2 + √18)(5 − 4/√2)",
+    "= (2 + 3√2)(5 − 2√2)",
+    "= 10 − 4√2 + 15√2 − 12",
+    "= (11√2 − 2)m²"
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the product of the given sides.",
+     "marks": 1,
+     "why": "The area of a rectangle is the product of its side lengths.",
+     "how": "Write Area = (2 + √18)(5 − 4/√2).",
+     "accept": [
+      [
+       "(2+√18)(5−4/√2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rewrite the radicals in terms of √2.",
+     "marks": 1,
+     "why": "Simplifying the radicals makes the product easier to evaluate.",
+     "how": "Use √18 = 3√2 and 4/√2 = 2√2.",
+     "accept": [
+      [
+       "2+3√2"
+      ],
+      [
+       "2√2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Expand the product.",
+     "marks": 1,
+     "why": "Expanding the factors correctly gives the terms to combine.",
+     "how": "Multiply (2 + 3√2)(5 − 2√2).",
+     "accept": [
+      [
+       "10−4√2+15√2−12"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Combine like terms and include the unit.",
+     "marks": 1,
+     "why": "The simplified area is the required final answer.",
+     "how": "Give (11√2 − 2)m².",
+     "accept": [
+      [
+       "11√2−2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q3"
+  },
+  {
+   "id": "w-1-3-4",
+   "text": "Find two numbers whose sum is 68 and difference is 22.",
+   "marks": 2,
+   "modelAnswer": [
+    "Let a and b be the two numbers.",
+    "a + b = 68 ...(i)",
+    "a − b = 22 ...(ii)",
+    "Add (i) and (ii): 2a = 90 ⇒ a = 45",
+    "Put a = 45 in (i): 45 + b = 68 ⇒ b = 23",
+    "The two numbers are 45 and 23."
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form the two equations and solve for the numbers.",
+     "marks": 1,
+     "why": "The sum and difference equations represent the given information.",
+     "how": "Add the equations to get 2a = 90 and a = 45.",
+     "accept": [
+      [
+       "a+b=68",
+       "a−b=22"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State both numbers.",
+     "marks": 1,
+     "why": "Both numbers must satisfy the stated sum and difference.",
+     "how": "Give 45 and 23.",
+     "accept": [
+      [
+       "45",
+       "23"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q4"
+  },
+  {
+   "id": "w-1-3-6",
+   "text": "The sum of the ages of the father and son is 72 years. Six years ago, the father’s age was 2 times the age of the son. What was son’s age six years ago?",
+   "marks": 4,
+   "modelAnswer": [
+    "Let the present ages of the father and son be x and y years respectively.",
+    "x + y = 72 ...(i)",
+    "x − 6 = 2(y − 6) ...(ii)",
+    "From (ii): x − 6 = 2y − 12 ⇒ x = 2y − 6",
+    "Put in (i): 2y − 6 + y = 72 ⇒ 3y = 78 ⇒ y = 26",
+    "Son’s age six years ago = 26 − 6 = 20 years"
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Represent the present ages and their sum.",
+     "marks": 1,
+     "why": "The present ages must satisfy the given total.",
+     "how": "Let the father's and son's ages be x and y; write x + y = 72.",
+     "accept": [
+      [
+       "x+y=72"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Express the father's age as twice the son's age six years ago.",
+     "marks": 1,
+     "why": "The second equation captures the condition from six years ago.",
+     "how": "Write x − 6 = 2(y − 6).",
+     "accept": [
+      [
+       "x−6=2(y−6)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Solve for the son's present age.",
+     "marks": 1,
+     "why": "Solving the equations gives the son's present age before finding his past age.",
+     "how": "Obtain y = 26.",
+     "accept": [
+      [
+       "y=26"
+      ],
+      [
+       "x=46"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Subtract six years from the son's present age.",
+     "marks": 1,
+     "why": "The question asks for the son's age six years ago, not his present age.",
+     "how": "Give 26 − 6 = 20 years.",
+     "accept": [
+      [
+       "20 years"
+      ],
+      [
+       "20"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q6"
+  },
+  {
+   "id": "w-1-3-7",
+   "text": "Mirha bought a toy for Rs. 1500 and sold for Rs. 1520. What was her profit percentage?",
+   "marks": 2,
+   "modelAnswer": [
+    "Cost Price = CP = Rs. 1500",
+    "Selling Price = SP = Rs. 1520",
+    "Profit = SP − CP = 1520 − 1500 = Rs. 20",
+    "Profit % = (profit/CP × 100) %",
+    "= (20/1500 × 100) % = 1.33%"
+   ],
+   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
+   "noteId": "n-1-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find profit by subtracting cost price from selling price.",
+     "marks": 1,
+     "why": "The profit amount is needed before its percentage can be found.",
+     "how": "Calculate 1520 − 1500 = Rs. 20.",
+     "accept": [
+      [
+       "1520-1500=20"
+      ],
+      [
+       "20"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the profit percentage formula and state the result.",
+     "marks": 1,
+     "why": "Profit percentage compares profit with cost price.",
+     "how": "Calculate (20/1500 × 100)% ≈ 1.33%.",
+     "accept": [
+      [
+       "1.33%"
+      ],
+      [
+       "1.33"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.3 Q7"
+  },
+  {
+   "id": "w-1-4-1",
+   "text": "If a = 3/2, b = 5/3 and c = 7/5, then verify that a(b + c) = ab + ac.",
+   "marks": 4,
+   "modelAnswer": [
+    "a(b + c) = 3/2(5/3 + 7/5)",
+    "= 3/2(46/15)",
+    "= 23/5",
+    "ab + ac = (3/2)(5/3) + (3/2)(7/5)",
+    "= 5/2 + 21/10",
+    "= 25/10 + 21/10",
+    "= 23/5",
+    "∴ a(b + c) = ab + ac = 23/5"
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find b + c.",
+     "marks": 1,
+     "why": "The bracket must be evaluated correctly before multiplying.",
+     "how": "Write 5/3 + 7/5 = 46/15.",
+     "accept": [
+      [
+       "46/15"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate a(b + c).",
+     "marks": 1,
+     "why": "This establishes the value of the left-hand side.",
+     "how": "Multiply 3/2 by 46/15 to get 23/5.",
+     "accept": [
+      [
+       "23/5"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate ab and ac.",
+     "marks": 1,
+     "why": "Both products on the right-hand side must be calculated.",
+     "how": "Find ab = 5/2 and ac = 21/10.",
+     "accept": [
+      [
+       "5/2",
+       "21/10"
+      ],
+      [
+       "25/10",
+       "21/10"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the common value.",
+     "marks": 1,
+     "why": "Matching both sides verifies the property.",
+     "how": "Show that ab + ac = 23/5, equal to a(b + c).",
+     "accept": [
+      [
+       "23/5"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q2(i)"
+  },
+  {
+   "id": "w-1-4-2",
+   "text": "If a = 3/2, b = 5/3 and c = 7/5, then verify that (a + b)c = ac + bc.",
+   "marks": 4,
+   "modelAnswer": [
+    "(a + b)c = (3/2 + 5/3)(7/5)",
+    "= (19/6)(7/5)",
+    "= 133/30",
+    "ac + bc = (3/2)(7/5) + (5/3)(7/5)",
+    "= 21/10 + 7/3",
+    "= 63/30 + 70/30",
+    "= 133/30",
+    "∴ (a + b)c = ac + bc = 133/30"
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find a + b.",
+     "marks": 1,
+     "why": "Adding the first two values correctly is needed to calculate the left side.",
+     "how": "Write 3/2 + 5/3 = 19/6.",
+     "accept": [
+      [
+       "19/6"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate (a + b)c.",
+     "marks": 1,
+     "why": "This gives the value of the left-hand side.",
+     "how": "Multiply 19/6 by 7/5.",
+     "accept": [
+      [
+       "133/30"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate ac and bc.",
+     "marks": 1,
+     "why": "Both products in the right-hand side are required.",
+     "how": "Find ac = 21/10 and bc = 7/3.",
+     "accept": [
+      [
+       "21/10",
+       "7/3"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the common value.",
+     "marks": 1,
+     "why": "Equal values on both sides complete the verification.",
+     "how": "Show ac + bc = 133/30, equal to (a + b)c.",
+     "accept": [
+      [
+       "133/30"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q2(ii)"
+  },
+  {
+   "id": "w-1-4-3",
+   "text": "If a = 4/3, b = 5/2, c = 7/4, then verify the associative property of real numbers w.r.t addition and multiplication.",
+   "marks": 4,
+   "modelAnswer": [
+    "Addition:",
+    "(a + b) + c = (4/3 + 5/2) + 7/4",
+    "= 23/6 + 7/4",
+    "= 46/12 + 21/12",
+    "= 67/12",
+    "a + (b + c) = 4/3 + (5/2 + 7/4)",
+    "= 4/3 + 17/4",
+    "= 16/12 + 51/12",
+    "= 67/12",
+    "∴ (a + b) + c = a + (b + c)",
+    "Multiplication:",
+    "(ab)c = ((4/3)(5/2))(7/4)",
+    "= (10/3)(7/4)",
+    "= 35/6",
+    "a(bc) = (4/3)((5/2)(7/4))",
+    "= (4/3)(35/8)",
+    "= 35/6",
+    "∴ (ab)c = a(bc)"
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Verify associativity for addition.",
+     "marks": 1,
+     "why": "The addition calculation must show both groupings give the same value.",
+     "how": "Calculate each grouping and obtain 67/12.",
+     "accept": [
+      [
+       "67/12"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Verify associativity for multiplication.",
+     "marks": 1,
+     "why": "The multiplication calculation must show both groupings give the same value.",
+     "how": "Calculate each grouping and obtain 35/6.",
+     "accept": [
+      [
+       "35/6"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Show the addition grouping.",
+     "marks": 1,
+     "why": "Correctly identifying the property connects the calculations to the question.",
+     "how": "Write the two addition groupings as equal.",
+     "accept": [
+      [
+       "(a+b)+c",
+       "a+(b+c)"
+      ],
+      [
+       "associative"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Show the multiplication grouping.",
+     "marks": 1,
+     "why": "The final conclusion must cover the multiplication grouping as well.",
+     "how": "Write the two multiplication groupings as equal.",
+     "accept": [
+      [
+       "(ab)c",
+       "a(bc)"
+      ],
+      [
+       "associative"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q3"
+  },
+  {
+   "id": "w-1-4-4",
+   "text": "Is 0 a rational number? Explain.",
+   "marks": 2,
+   "modelAnswer": [
+    "Yes, 0 is a rational number because 0 = 0/1, where 0 and 1 are integers and 1 ≠ 0."
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Give the decision.",
+     "marks": 1,
+     "why": "The answer must directly state whether 0 is rational.",
+     "how": "State that 0 is rational.",
+     "accept": [
+      [
+       "yes"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give a fractional form.",
+     "marks": 1,
+     "why": "A ratio of integers with a non-zero denominator demonstrates rationality.",
+     "how": "Write 0 = 0/1.",
+     "accept": [
+      [
+       "0/1"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q4"
+  },
+  {
+   "id": "w-1-4-5",
+   "text": "State trichotomy property of real numbers.",
+   "marks": 2,
+   "modelAnswer": [
+    "For any two real numbers a and b, exactly one of the following is true: a < b, a = b, or a > b."
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the three comparisons.",
+     "marks": 1,
+     "why": "All three possible comparisons must be included.",
+     "how": "Write a < b, a = b, and a > b.",
+     "accept": [
+      [
+       "a<b",
+       "a=b",
+       "a>b"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the exclusivity.",
+     "marks": 1,
+     "why": "Trichotomy says precisely one comparison applies.",
+     "how": "Say exactly one of the three is true.",
+     "accept": [
+      [
+       "exactly one"
+      ],
+      [
+       "one of"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q5"
+  },
+  {
+   "id": "w-1-4-6",
+   "text": "Find two rational numbers between 4 and 5.",
+   "marks": 2,
+   "modelAnswer": [
+    "9/2 = 4.5, so 4 < 9/2 < 5.",
+    "17/4 = 4.25, so 4 < 17/4 < 5.",
+    "∴ Two rational numbers between 4 and 5 are 9/2 and 17/4."
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Give one rational number in the interval.",
+     "marks": 1,
+     "why": "The first number must be rational and strictly between 4 and 5.",
+     "how": "For example, give 9/2.",
+     "accept": [
+      [
+       "9/2"
+      ],
+      [
+       "17/4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give another rational number in the interval.",
+     "marks": 1,
+     "why": "A second rational number in the interval is also required.",
+     "how": "For example, give 17/4.",
+     "accept": [
+      [
+       "17/4"
+      ],
+      [
+       "19/4"
+      ],
+      [
+       "21/4"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q6"
+  },
+  {
+   "id": "w-1-4-8",
+   "text": "Simplify the following: ∛((27)^(2x))",
+   "marks": 2,
+   "modelAnswer": [
+    "∛((27)^(2x)) = ∛((3³)^(2x))",
+    "= ∛(3^(6x))",
+    "= 3^(2x)"
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite the base.",
+     "marks": 1,
+     "why": "Writing 27 as a power of 3 makes the cube root straightforward.",
+     "how": "Use 27 = 3³.",
+     "accept": [
+      [
+       "27=3^3"
+      ],
+      [
+       "27",
+       "3^3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the simplified expression.",
+     "marks": 1,
+     "why": "The cube root cancels the power of 3 in the base.",
+     "how": "Simplify to 3^(2x).",
+     "accept": [
+      [
+       "3^(2x)"
+      ],
+      [
+       "3^2x"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q7(ii)"
+  },
+  {
+   "id": "w-1-4-9",
+   "text": "Simplify the following: (6(3)^(n+2))/(3^(n+1) − 3^n)",
+   "marks": 2,
+   "modelAnswer": [
+    "(6(3)^(n+2))/(3^(n+1) − 3^n)",
+    "= (6·3^n·3²)/(3^n(3 − 1))",
+    "= (6·3^n·9)/(2·3^n)",
+    "= 27"
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the denominator.",
+     "marks": 1,
+     "why": "Factoring the denominator makes the common power cancel.",
+     "how": "Write it as 3^n(3 − 1) = 2·3^n.",
+     "accept": [
+      [
+       "2*3^n"
+      ],
+      [
+       "3^(n+1)-3^n"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Evaluate the remaining factors.",
+     "marks": 1,
+     "why": "The simplified expression is the required final result.",
+     "how": "Cancel the common power and obtain 27.",
+     "accept": [
+      [
+       "27"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q7(iii)"
+  },
+  {
+   "id": "w-1-4-10",
+   "text": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "marks": 4,
+   "modelAnswer": [
+    "Let the three consecutive odd integers be n, n + 2 and n + 4.",
+    "n + (n + 2) + (n + 4) = 51",
+    "3n + 6 = 51",
+    "3n = 45",
+    "n = 15",
+    "The three integers are 15, 17 and 19."
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Represent the integers.",
+     "marks": 1,
+     "why": "Consecutive odd integers differ by 2.",
+     "how": "Use n, n + 2, and n + 4.",
+     "accept": [
+      [
+       "n",
+       "n+2",
+       "n+4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Form and simplify the equation.",
+     "marks": 1,
+     "why": "The equation translates the given sum into algebra.",
+     "how": "Add the three expressions and set their sum equal to 51.",
+     "accept": [
+      [
+       "3n+6=51"
+      ],
+      [
+       "3n=45"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find the first integer.",
+     "marks": 1,
+     "why": "Solving for the first integer allows all three to be found.",
+     "how": "Solve to get n = 15.",
+     "accept": [
+      [
+       "n=15"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the three integers.",
+     "marks": 1,
+     "why": "The final values must be three odd integers with the required sum.",
+     "how": "Give 15, 17, and 19.",
+     "accept": [
+      [
+       "15",
+       "17",
+       "19"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q8"
+  },
+  {
+   "id": "w-1-4-11",
+   "text": "Abdullah picked up 96 balls and placed them into two buckets. One bucket has twenty-eight more balls than the other bucket. How many balls were in each bucket?",
+   "marks": 4,
+   "modelAnswer": [
+    "Let the number of balls in the smaller bucket be x.",
+    "The number of balls in the other bucket is x + 28.",
+    "x + (x + 28) = 96",
+    "2x + 28 = 96",
+    "2x = 68",
+    "x = 34",
+    "The numbers of balls in the two buckets are 34 and 62."
+   ],
+   "followUp": "The sum of three consecutive odd integers is 51. Find the three integers.",
+   "noteId": "n-1-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Represent the two bucket counts.",
+     "marks": 1,
+     "why": "The bucket counts must reflect the difference of 28.",
+     "how": "Let the smaller count be x and the larger be x + 28.",
+     "accept": [
+      [
+       "x",
+       "x+28"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Form the total equation.",
+     "marks": 1,
+     "why": "The equation must use the total number of balls.",
+     "how": "Set the two bucket counts' sum equal to 96.",
+     "accept": [
+      [
+       "2x+28=96"
+      ],
+      [
+       "x+x+28=96"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Solve for the smaller count.",
+     "marks": 1,
+     "why": "The smaller bucket's count follows from solving the equation.",
+     "how": "Obtain x = 34.",
+     "accept": [
+      [
+       "x=34"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State both counts.",
+     "marks": 1,
+     "why": "Both bucket counts must be stated and satisfy the conditions.",
+     "how": "Give 34 and 62.",
+     "accept": [
+      [
+       "34",
+       "62"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise Q9"
+  }
+ ],
+ "report": {
+  "unit": 1,
+  "title": "Real Numbers",
+  "dropped": [
+   "MCQ m-1-2#7: independent check disagreed",
+   "Written m-1-2#8 (Ex 1.2 Q2(iv)): model answer misses a marking point",
+   "Written m-1-3#4 (Ex 1.3 Q5): model answer misses a marking point",
+   "Written m-1-3#7 (Ex 1.3 Q8): model answer misses a marking point",
+   "Written m-1-3#8 (Ex 1.3 Q9): model answer misses a marking point",
+   "Written m-1-4#6 (Review Exercise Q7(i)): model answer misses a marking point",
+   "Written m-1-4#11 (Review Exercise Q10): model answer misses a marking point",
+   "Your-turn m-1-4: 1 with unusable answer patterns"
+  ]
+ }
+}

@@ -7,6 +7,7 @@ object EvidenceCodec {
     fun encode(e: Evidence): String = when (e) {
         Evidence.ModuleOpened -> "O"
         Evidence.VideoStudyConfirmed -> "V"
+        Evidence.LessonCompleted -> "L"
         Evidence.ReadingChecked -> "R"
         is Evidence.QuizCompleted -> "Q:${e.firstTryPercent}"
         Evidence.WrittenSubmitted -> "W"
@@ -22,6 +23,7 @@ object EvidenceCodec {
         return when (code.substringBefore(':')) {
             "O" -> Evidence.ModuleOpened
             "V" -> Evidence.VideoStudyConfirmed
+            "L" -> Evidence.LessonCompleted
             "R" -> Evidence.ReadingChecked
             "Q" -> number?.let { Evidence.QuizCompleted(it) }
             "W" -> Evidence.WrittenSubmitted

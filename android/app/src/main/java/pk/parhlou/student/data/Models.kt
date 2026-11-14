@@ -48,7 +48,38 @@ data class Module(
     val readingTasks: List<String>,
     val writtenQuestions: List<WrittenQuestion>,
     val status: ReviewStatus,
+    /** Taught like a home tutor: explanations, a worked example step by step, your turn, exam tips. */
+    val lesson: Lesson? = null,
 )
+
+/** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */
+data class Lesson(
+    val explain: List<LessonCard>,
+    val example: WorkedExample?,
+    val yourTurn: List<PracticeStep>,
+    val examTips: List<String>,
+    val mistakes: List<String>,
+    /** Two quick questions on the previous module, asked first. */
+    val recap: List<RecapItem> = emptyList(),
+)
+
+data class LessonCard(val title: String, val body: String)
+
+data class WorkedExample(val question: String, val steps: List<ExampleStep>, val answer: String)
+
+/** One line of working, and why it is done. */
+data class ExampleStep(val text: String, val why: String)
+
+/** The student's own try, checked by [accept] patterns (TextMatch syntax), with hints before the solution. */
+data class PracticeStep(
+    val question: String,
+    val answer: String,
+    val accept: List<List<String>>,
+    val hints: List<String>,
+    val solution: List<String>,
+)
+
+data class RecapItem(val question: String, val answer: String)
 
 data class McqQuestion(
     val id: String,
@@ -60,6 +91,8 @@ data class McqQuestion(
     val status: ReviewStatus,
     /** Concept note the tutor uses to explain this question. */
     val noteId: String? = null,
+    /** The module whose quiz this question belongs to (module quizzes only). */
+    val moduleId: String? = null,
 )
 
 /** One marking point of a rubric. [accept] lists alternative pattern groups; see ai/TextMatch.kt for the syntax. */

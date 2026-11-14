@@ -22,6 +22,7 @@ object TextMatch {
         s = s.replace("…", " ").replace(Regex("\\.{2,}"), " ")
         s = s.replace("square root of", "√").replace("square root", "√").replace("sqrt", "√")
         s = s.replace(Regex("\\broot\\b"), "√")
+        s = s.replace(Regex("\\bpi\\b"), "π").replace(Regex("\\btheta\\b"), "θ")
         s = s.replace("^2", "²").replace("^3", "³").replace(Regex("\\s*squared"), "²")
         s = s.replace(Regex("√\\s*\\(\\s*(\\d+(?:\\.\\d+)?)\\s*\\)"), "√$1").replace(Regex("√\\s+"), "√")
         s = s.replace(Regex("(\\d)\\s*\\*\\s*√"), "$1√")
