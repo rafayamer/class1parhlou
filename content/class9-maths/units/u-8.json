@@ -1,0 +1,1024 @@
+{
+ "chapter": {
+  "id": "u-8",
+  "number": 8,
+  "title": "Logic",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-8-1",
+    "position": 1,
+    "title": "8.1 Statement",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 8, section 8.1, pages 147–160",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 8.1 (pages 147–160) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-8-1-1",
+      "text": "Write the converse, inverse and contrapositive of the following conditional: ~p → q",
+      "marks": 2,
+      "modelAnswer": [
+       "The given conditional is ~p → q.",
+       "Converse: q → ~p.",
+       "Inverse: ~~p → ~q, that is, p → ~q.",
+       "Contrapositive: ~q → ~~p, that is, ~q → p."
+      ],
+      "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+      "noteId": "n-8-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the converse.",
+        "marks": 0.5,
+        "why": "The converse reverses the antecedent and consequent.",
+        "how": "Interchange the two parts of the conditional.",
+        "accept": [
+         [
+          "q→~p"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the inverse.",
+        "marks": 0.5,
+        "why": "The inverse negates both parts of the original conditional.",
+        "how": "Negate the antecedent and the consequent.",
+        "accept": [
+         [
+          "p→~q"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct contrapositive.",
+        "marks": 1,
+        "why": "The contrapositive reverses the parts and negates both.",
+        "how": "Reverse the order and negate each part.",
+        "accept": [
+         [
+          "~q→p"
+         ]
+        ]
+       }
+      ],
+      "source": "Exercise 8, Q2(i)"
+     },
+     {
+      "id": "w-8-1-2",
+      "text": "Write the converse, inverse and contrapositive of the following conditional: q → p",
+      "marks": 2,
+      "modelAnswer": [
+       "The given conditional is q → p.",
+       "Converse: p → q.",
+       "Inverse: ~q → ~p.",
+       "Contrapositive: ~p → ~q."
+      ],
+      "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+      "noteId": "n-8-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the converse.",
+        "marks": 0.5,
+        "why": "The converse reverses the order of the parts.",
+        "how": "Interchange antecedent and consequent.",
+        "accept": [
+         [
+          "p→q"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the inverse.",
+        "marks": 0.5,
+        "why": "The inverse negates both original parts.",
+        "how": "Negate the antecedent and consequent.",
+        "accept": [
+         [
+          "~q→~p"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct contrapositive.",
+        "marks": 1,
+        "why": "The contrapositive reverses the order and negates both parts.",
+        "how": "Reverse the parts and negate each one.",
+        "accept": [
+         [
+          "~p→~q"
+         ]
+        ]
+       }
+      ],
+      "source": "Exercise 8, Q2(ii)"
+     },
+     {
+      "id": "w-8-1-3",
+      "text": "Write the truth table of (p ∨ q) ↔ (p ∧ q).",
+      "marks": 4,
+      "modelAnswer": [
+       "p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q)",
+       "T | T | T | T | T",
+       "T | F | T | F | F",
+       "F | T | T | F | F",
+       "F | F | F | F | T"
+      ],
+      "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+      "noteId": "n-8-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correctly evaluate the first row.",
+        "marks": 1,
+        "why": "The first row has both statements true, so both compound parts are true.",
+        "how": "For p = T and q = T, the biconditional is true.",
+        "accept": [
+         [
+          "T|T|T|T|T"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correctly evaluate the middle rows.",
+        "marks": 1,
+        "why": "When exactly one statement is true, the disjunction and conjunction differ.",
+        "how": "The biconditional is false for T,F and F,T.",
+        "accept": [
+         [
+          "T|F|T|F|F",
+          "F|T|T|F|F"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Correctly evaluate the last row's compound parts.",
+        "marks": 1,
+        "why": "When both are false, both the disjunction and conjunction are false.",
+        "how": "For p = F and q = F, the biconditional is true.",
+        "accept": [
+         [
+          "F|F|F|F|T"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the correct final truth column.",
+        "marks": 1,
+        "why": "The final column is the required truth value of the compound statement.",
+        "how": "List the outputs in the standard row order TT, TF, FT, FF.",
+        "accept": [
+         [
+          "T F F T"
+         ],
+         [
+          "T|T|T|T|T",
+          "T|F|T|F|F",
+          "F|T|T|F|F",
+          "F|F|F|F|T"
+         ]
+        ]
+       }
+      ],
+      "source": "Exercise 8, Q3(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The exercise asks for definitions and distinctions, truth tables, converse/inverse/contrapositive, and deductive proofs.",
+      "For truth-table questions, write the rows in the order TT, TF, FT, FF and use the correct truth rule for each operator.",
+      "For a conditional, remember that it is false only when the antecedent is true and the consequent is false.",
+      "For an algebraic proof, start with L.H.S, show each expansion or algebraic rule clearly, and finish with “= R.H.S”, “⇒ L.H.S = R.H.S” and “Hence proved.”",
+      "For odd/even integer proofs, use the definitions x = 2k + 1 and x = 2k respectively, where k ∈ Z, then finish by writing the result in the appropriate form."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start from the L.H.S and expand (x − 4)².",
+        "Write the square as (x − 4)(x − 4), then collect like terms and add 9."
+       ],
+       "accept": [
+        [
+         "x^2-8x+25"
+        ],
+        [
+         "(x-4)^2+9=x^2-8x+25"
+        ]
+       ],
+       "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+       "solution": [
+        "Proof: L.H.S = (x − 4)² + 9",
+        "= (x − 4)(x − 4) + 9",
+        "= x² − 4x − 4x + 16 + 9",
+        "= x² − 8x + 25 = R.H.S",
+        "⇒ L.H.S = R.H.S",
+        "Thus, (x − 4)² + 9 = x² − 8x + 25. Hence proved."
+       ],
+       "answer": "(x − 4)² + 9 = x² − 8x + 25"
+      },
+      {
+       "hints": [
+        "Expand both squares separately.",
+        "Remember that subtracting (x − 1)² changes the signs of all terms in its expansion."
+       ],
+       "accept": [
+        [
+         "4x"
+        ],
+        [
+         "(x+1)^2-(x-1)^2=4x"
+        ]
+       ],
+       "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (ii) prove that (x + 1)² − (x − 1)² = 4x",
+       "solution": [
+        "Proof: L.H.S = (x + 1)² − (x − 1)²",
+        "= (x² + 2x + 1) − (x² − 2x + 1)",
+        "= x² + 2x + 1 − x² + 2x − 1",
+        "= 4x = R.H.S",
+        "⇒ L.H.S = R.H.S",
+        "Thus, (x + 1)² − (x − 1)² = 4x. Hence proved."
+       ],
+       "answer": "(x + 1)² − (x − 1)² = 4x"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "We begin with the left-hand side because the goal is to show that it becomes the right-hand side.",
+        "text": "Proof: L.H.S = (x + 1)² + 7"
+       },
+       {
+        "why": "A square of a bracket means multiplying the bracket by itself.",
+        "text": "= (x + 1)(x + 1) + 7"
+       },
+       {
+        "why": "The distributive law expands the first bracket across the second.",
+        "text": "= x × (x + 1) + 1 × (x + 1) + 7"
+       },
+       {
+        "why": "Distribute each multiplication to expand the remaining brackets.",
+        "text": "= x × x + x × 1 + 1 × x + 1 × 1 + 7"
+       },
+       {
+        "why": "Use x × x = x² and rearrange the products using the commutative law.",
+        "text": "= x² + 1 × x + 1 × x + 1 + 7"
+       },
+       {
+        "why": "Combine the two x terms and add the constants.",
+        "text": "= x² + (1 + 1)x + 8"
+       },
+       {
+        "why": "This is exactly the right-hand side, so the two sides are equal.",
+        "text": "= x² + 2x + 8 = R.H.S"
+       },
+       {
+        "why": "The equality of the two sides completes the proof.",
+        "text": "⇒ L.H.S = R.H.S"
+       },
+       {
+        "why": "State the proved identity and finish in the textbook style.",
+        "text": "Thus, (x + 1)² + 7 = x² + 2x + 8. Hence proved"
+       }
+      ],
+      "question": "Prove that: (x + 1)² + 7 = x² + 2x + 8",
+      "answer": "(x + 1)² + 7 = x² + 2x + 8"
+     },
+     "explain": [
+      {
+       "title": "1. A mathematical statement",
+       "body": "A sentence or mathematical expression which may be true or false but not both is called a statement. For example, 3 + 4 = 8 is a statement, and it is false."
+      },
+      {
+       "title": "2. Negation, conjunction and disjunction",
+       "body": "The negation ~p means “not p”. The conjunction p ∧ q means “p and q” and is true only when both statements are true. The disjunction p ∨ q means “p or q” and is true when at least one statement is true."
+      },
+      {
+       "title": "3. Conditional and biconditional",
+       "body": "A conditional has the form p → q, read “if p then q”. It is false only when p is true and q is false. A biconditional p ↔ q is true when p and q have the same truth value."
+      },
+      {
+       "title": "4. Theorem, conjecture and axiom",
+       "body": "A theorem is a mathematical statement that has been proved true based on previously known facts. A conjecture is believed to be true based on observations but has not yet been proved. An axiom is a mathematical statement that we believe to be true without any evidence or requiring any proof."
+      },
+      {
+       "title": "5. How to prove an algebraic identity",
+       "body": "Start from L.H.S, use definitions and algebraic laws to simplify one step at a time, and show that the result is R.H.S. For odd integers, use x = 2k + 1 for some k ∈ Z; for even integers, use x = 2k for some k ∈ Z."
+      }
+     ],
+     "mistakes": [
+      "Calling a conjecture a theorem before it has been proved.",
+      "Forgetting that a conjunction is true only when both statements are true.",
+      "Saying a conditional is false whenever its consequent is false; it is false only when the antecedent is also true.",
+      "Writing the converse instead of the contrapositive. The contrapositive reverses the order and negates both parts.",
+      "In a proof, skipping the algebraic steps or failing to state that the result equals R.H.S.",
+      "In an odd/even proof, not stating that the new integer parameter is an integer."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-8-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-8-1",
+   "title": "Statements, logic and proof",
+   "keywords": [
+    "statement",
+    "proof",
+    "logic",
+    "conjunction",
+    "conditional",
+    "theorem",
+    "conjecture",
+    "axiom"
+   ],
+   "answer": "A mathematical statement is a sentence or expression which may be true or false but not both. A proof is a logical sequence of steps that gives evidence that a statement is correct.",
+   "explanation": "A mathematical statement is a sentence or expression that is either true or false, but not both. A proof is a logical sequence of steps that gives evidence that a mathematical statement is correct.",
+   "simple": "A statement is something that can be true or false. A proof shows, step by step, why a mathematical statement is true.",
+   "examples": [
+    "3 + 4 = 8 is a mathematical statement; it is false.",
+    "If x is odd, write x = 2k + 1 for some k ∈ Z. Then x² = 4k² + 4k + 1 = 2(2k² + 2k) + 1, so x² is odd."
+   ],
+   "steps": [
+    "Decide what the statement claims.",
+    "Use known definitions, facts or rules.",
+    "Write each logical or algebraic step clearly.",
+    "Show that the steps establish the claim."
+   ],
+   "checkQuestion": "What is the difference between a mathematical statement and its proof?",
+   "checkAnswer": "A statement is the claim; a proof is the logical evidence that establishes whether the claim is correct.",
+   "checkAccept": [
+    [
+     "claim",
+     "proof"
+    ],
+    [
+     "true or false",
+     "logical steps"
+    ],
+    [
+     "statement",
+     "evidence"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-8-1-1",
+   "stem": "Which of the following expressions is often related to inductive reasoning?",
+   "options": [
+    "based on repeated experiments",
+    "if and only if statements",
+    "Statement is proven by a theorem",
+    "based on general principles"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: inductive reasoning draws general conclusions from observations or repeated experiments.",
+    "This describes a biconditional, not inductive reasoning.",
+    "This does not describe induction; induction uses observations to reach a general conclusion.",
+    "Reasoning from general principles is associated with deduction."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-2",
+   "stem": "Which of the following sentences describe deductive reasoning?",
+   "options": [
+    "general conclusions from a limited number of observations",
+    "based on repeated experiments",
+    "based on units of information that are accurate",
+    "draw conclusion from well-known facts"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This describes induction: drawing a general conclusion from observations.",
+    "Repeated experiments are associated with inductive reasoning.",
+    "This describes a mathematical statement, not deductive reasoning.",
+    "Correct: deduction draws conclusions from premises or well-known facts."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-3",
+   "stem": "Which one of the following statements is true?",
+   "options": [
+    "The set of integers is finite",
+    "The sum of the interior angles of any quadrilateral is always 180°",
+    "22/7 ∉ Q′",
+    "All isosceles triangles are equilateral triangles"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is false because the set of integers is infinite.",
+    "This is false because the interior angles of a quadrilateral sum to 360°.",
+    "Correct: 22/7 is rational, so it is not an irrational number.",
+    "This is false because an isosceles triangle need not be equilateral."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-4",
+   "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+   "options": [
+    "the stove is not burning.",
+    "the stove is dim",
+    "the stove is turned to low heat",
+    "it is both burning and not burning."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: this directly states that the original statement is not true.",
+    "A dim stove might still be burning, so this is not its negation.",
+    "A stove on low heat could still be burning, so this is not its negation.",
+    "A statement and its negation cannot both be true; this does not express the negation correctly."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-5",
+   "stem": "The conjunction of two statements p and q is true when:",
+   "options": [
+    "both p and q are false.",
+    "both p and q are true.",
+    "only q is true.",
+    "only p is true."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A conjunction is false when both statements are false.",
+    "Correct: p ∧ q is true only when both p and q are true.",
+    "If only q is true, the conjunction is false.",
+    "If only p is true, the conjunction is false."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-6",
+   "stem": "A conditional is regarded as false only when:",
+   "options": [
+    "antecedent is true and consequent is false.",
+    "consequent is true and antecedent is false.",
+    "antecedent is true only.",
+    "consequent is false only."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a conditional is false exactly when its antecedent is true and its consequent is false.",
+    "In this case the conditional is true.",
+    "The consequent may also be true, so this condition alone does not make it false.",
+    "The antecedent may be false, so this condition alone does not make it false."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-8",
+   "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+   "options": [
+    "theorem",
+    "conjecture",
+    "axiom",
+    "postulates"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "It has not been proved in the section, so it is not a theorem.",
+    "Correct: it is presented as an unproved statement believed to be true, that is, a conjecture.",
+    "It is not accepted as a starting fact without proof; it is an unproved conjecture.",
+    "A postulate is an accepted statement without proof, often associated with geometry."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-9",
+   "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+   "options": [
+    "theorem",
+    "conjecture",
+    "axiom",
+    "logic"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "A theorem is proved from known facts, while this is accepted without proof.",
+    "A conjecture is believed true but remains unproved; this statement is given as an axiom.",
+    "Correct: the section lists this as a Euclid axiom.",
+    "Logic is a method of reasoning, not the name for this accepted geometric fact."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  },
+  {
+   "id": "q-8-1-10",
+   "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+   "options": [
+    "converse",
+    "theorem",
+    "axiom",
+    "conditional"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A converse reverses the parts of a conditional; this statement is not presented in that form.",
+    "Correct: the statement is a mathematical result that can be proved, so it is a theorem.",
+    "The section gives it as an example of a true mathematical statement and theorem, not an axiom.",
+    "A conditional has an if-then form, which this statement does not have."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-8-1",
+   "moduleId": "m-8-1"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-8-1-1",
+   "text": "Write the converse, inverse and contrapositive of the following conditional: ~p → q",
+   "marks": 2,
+   "modelAnswer": [
+    "The given conditional is ~p → q.",
+    "Converse: q → ~p.",
+    "Inverse: ~~p → ~q, that is, p → ~q.",
+    "Contrapositive: ~q → ~~p, that is, ~q → p."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the converse.",
+     "marks": 0.5,
+     "why": "The converse reverses the antecedent and consequent.",
+     "how": "Interchange the two parts of the conditional.",
+     "accept": [
+      [
+       "q→~p"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the inverse.",
+     "marks": 0.5,
+     "why": "The inverse negates both parts of the original conditional.",
+     "how": "Negate the antecedent and the consequent.",
+     "accept": [
+      [
+       "p→~q"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct contrapositive.",
+     "marks": 1,
+     "why": "The contrapositive reverses the parts and negates both.",
+     "how": "Reverse the order and negate each part.",
+     "accept": [
+      [
+       "~q→p"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q2(i)"
+  },
+  {
+   "id": "w-8-1-2",
+   "text": "Write the converse, inverse and contrapositive of the following conditional: q → p",
+   "marks": 2,
+   "modelAnswer": [
+    "The given conditional is q → p.",
+    "Converse: p → q.",
+    "Inverse: ~q → ~p.",
+    "Contrapositive: ~p → ~q."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the converse.",
+     "marks": 0.5,
+     "why": "The converse reverses the order of the parts.",
+     "how": "Interchange antecedent and consequent.",
+     "accept": [
+      [
+       "p→q"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the inverse.",
+     "marks": 0.5,
+     "why": "The inverse negates both original parts.",
+     "how": "Negate the antecedent and consequent.",
+     "accept": [
+      [
+       "~q→~p"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct contrapositive.",
+     "marks": 1,
+     "why": "The contrapositive reverses the order and negates both parts.",
+     "how": "Reverse the parts and negate each one.",
+     "accept": [
+      [
+       "~p→~q"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q2(ii)"
+  },
+  {
+   "id": "w-8-1-3",
+   "text": "Write the truth table of (p ∨ q) ↔ (p ∧ q).",
+   "marks": 4,
+   "modelAnswer": [
+    "p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q)",
+    "T | T | T | T | T",
+    "T | F | T | F | F",
+    "F | T | T | F | F",
+    "F | F | F | F | T"
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correctly evaluate the first row.",
+     "marks": 1,
+     "why": "The first row has both statements true, so both compound parts are true.",
+     "how": "For p = T and q = T, the biconditional is true.",
+     "accept": [
+      [
+       "T|T|T|T|T"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correctly evaluate the middle rows.",
+     "marks": 1,
+     "why": "When exactly one statement is true, the disjunction and conjunction differ.",
+     "how": "The biconditional is false for T,F and F,T.",
+     "accept": [
+      [
+       "T|F|T|F|F",
+       "F|T|T|F|F"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Correctly evaluate the last row's compound parts.",
+     "marks": 1,
+     "why": "When both are false, both the disjunction and conjunction are false.",
+     "how": "For p = F and q = F, the biconditional is true.",
+     "accept": [
+      [
+       "F|F|F|F|T"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct final truth column.",
+     "marks": 1,
+     "why": "The final column is the required truth value of the compound statement.",
+     "how": "List the outputs in the standard row order TT, TF, FT, FF.",
+     "accept": [
+      [
+       "T F F T"
+      ],
+      [
+       "T|T|T|T|T",
+       "T|F|T|F|F",
+       "F|T|T|F|F",
+       "F|F|F|F|T"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q3(iii)"
+  },
+  {
+   "id": "w-8-1-4",
+   "text": "Differentiate between a mathematical statement and its proof. Given two examples.",
+   "marks": 4,
+   "modelAnswer": [
+    "A mathematical statement is a sentence or mathematical expression which may be true or false but not both.",
+    "A proof is a logical sequence of steps that gives evidence that a statement is correct.",
+    "Example of a statement: 3 + 4 = 8. It is false.",
+    "Example of a proof: If x is odd, x = 2k + 1 for some k ∈ Z; then x² = 2(2k² + 2k) + 1, so x² is odd."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Define a mathematical statement.",
+     "marks": 1,
+     "why": "The defining feature of a mathematical statement is its truth value.",
+     "how": "State that it may be true or false but not both.",
+     "accept": [
+      [
+       "true or false"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain what a proof does.",
+     "marks": 1,
+     "why": "A proof provides justified reasoning rather than merely restating a claim.",
+     "how": "Describe it as logical steps or evidence establishing a statement.",
+     "accept": [
+      [
+       "logical sequence"
+      ],
+      [
+       "evidence"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give one mathematical statement example.",
+     "marks": 1,
+     "why": "A valid example makes the difference concrete.",
+     "how": "Use a clear statement and indicate its truth value.",
+     "accept": [
+      [
+       "3+4=8"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give an example of a proof.",
+     "marks": 1,
+     "why": "A proof example should show reasoning that establishes a mathematical claim.",
+     "how": "Use a mathematical claim with supporting logical steps.",
+     "accept": [
+      [
+       "x=2k+1"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q4"
+  },
+  {
+   "id": "w-8-1-6",
+   "text": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+   "marks": 2,
+   "modelAnswer": [
+    "This is a conjecture.",
+    "It is believed to be true based on examples, but it has not been proved."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Classify the statement.",
+     "marks": 1,
+     "why": "The statement is presented as the Goldbach Conjecture.",
+     "how": "Identify it as a conjecture.",
+     "accept": [
+      [
+       "conjecture"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the reason.",
+     "marks": 1,
+     "why": "Its unproved status is the reason it is a conjecture rather than a theorem.",
+     "how": "Explain that examples support it but no proof is known.",
+     "accept": [
+      [
+       "not been proved"
+      ],
+      [
+       "unproved"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q7(ii)"
+  },
+  {
+   "id": "w-8-1-7",
+   "text": "Formulate a simple deductive proof for the following algebraic expression; prove that the L.H.S is equal to the R.H.S: (x − 4)² + 9 = x² − 8x + 25",
+   "marks": 4,
+   "modelAnswer": [
+    "Proof: L.H.S = (x − 4)² + 9",
+    "= (x − 4)(x − 4) + 9",
+    "= x² − 4x − 4x + 16 + 9",
+    "= x² − 8x + 25 = R.H.S",
+    "⇒ L.H.S = R.H.S",
+    "Thus, (x − 4)² + 9 = x² − 8x + 25. Hence proved."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite the square as a product.",
+     "marks": 1,
+     "why": "Expanding the square correctly is the first essential step.",
+     "how": "Use (x − 4)² = (x − 4)(x − 4).",
+     "accept": [
+      [
+       "(x-4)(x-4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Expand and collect the terms.",
+     "marks": 1,
+     "why": "Correct expansion gives the terms needed to simplify.",
+     "how": "Obtain x² − 8x + 16 before adding 9.",
+     "accept": [
+      [
+       "x^2-4x-4x+16"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify the constant terms.",
+     "marks": 1,
+     "why": "Adding 9 to 16 gives the required constant term.",
+     "how": "Show 16 + 9 = 25.",
+     "accept": [
+      [
+       "x^2-8x+25"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final equality.",
+     "marks": 1,
+     "why": "The final expression must match the right-hand side.",
+     "how": "Conclude L.H.S = R.H.S and hence proved.",
+     "accept": [
+      [
+       "L.H.S=R.H.S"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q8(i)"
+  },
+  {
+   "id": "w-8-1-10",
+   "text": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+   "marks": 4,
+   "modelAnswer": [
+    "Let x be an odd integer.",
+    "Then x = 2k + 1 for some k ∈ Z.",
+    "Now, 9x + 4 = 9(2k + 1) + 4",
+    "= 18k + 9 + 4",
+    "= 18k + 13",
+    "= 2(9k + 6) + 1",
+    "Since 9k + 6 ∈ Z, 9x + 4 is odd, by definition of an odd integer."
+   ],
+   "followUp": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: (i) prove that (x − 4)² + 9 = x² − 8x + 25",
+   "noteId": "n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express x as an odd integer.",
+     "marks": 1,
+     "why": "The definition of an odd integer provides the starting form.",
+     "how": "Write x = 2k + 1 for some k ∈ Z.",
+     "accept": [
+      [
+       "x=2k+1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Substitute into 9x + 4.",
+     "marks": 1,
+     "why": "Substitution applies the given assumption to the expression.",
+     "how": "Replace x with 2k + 1.",
+     "accept": [
+      [
+       "9(2k+1)+4"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify and put it in odd form.",
+     "marks": 1,
+     "why": "Simplifying prepares the expression to be written in the definition of odd.",
+     "how": "Rewrite 18k + 13 as 2(9k + 6) + 1.",
+     "accept": [
+      [
+       "18k+13"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the conclusion.",
+     "marks": 1,
+     "why": "An expression of the form 2m + 1, with integer m, is odd.",
+     "how": "Conclude that 9x + 4 is odd.",
+     "accept": [
+      [
+       "odd"
+      ],
+      [
+       "2(9k+6)+1"
+      ]
+     ]
+    }
+   ],
+   "source": "Exercise 8, Q10"
+  }
+ ],
+ "report": {
+  "unit": 8,
+  "title": "Logic",
+  "dropped": [
+   "MCQ m-8-1#6: independent check disagreed",
+   "Written m-8-1#4 (Exercise 8, Q5): model answer misses a marking point",
+   "Written m-8-1#7 (Exercise 8, Q8(ii)): model answer misses a marking point",
+   "Written m-8-1#8 (Exercise 8, Q8(iii)): model answer misses a marking point"
+  ]
+ }
+}

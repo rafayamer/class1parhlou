@@ -1,0 +1,3529 @@
+{
+ "chapter": {
+  "id": "u-2",
+  "number": 2,
+  "title": "Logarithms",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-2-1",
+    "position": 1,
+    "title": "2.1 Scientific Notation",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.1, pages 21–23; Exercise 2.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.1 (pages 21–23) in your textbook.",
+     "Solve Exercise 2.1 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-2-1-7",
+      "text": "Express the following numbers in ordinary notation: (i) 8.04 × 10²",
+      "marks": 2,
+      "modelAnswer": [
+       "8.04 × 10² = 804"
+      ],
+      "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+      "noteId": "n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct direction",
+        "marks": 1,
+        "why": "A positive exponent means the decimal point moves to the right.",
+        "how": "Identify that the decimal point moves two places right.",
+        "accept": [
+         [
+          "10^2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct ordinary notation",
+        "marks": 1,
+        "why": "The final answer must show the decimal point moved two places.",
+        "how": "Write 804.",
+        "accept": [
+         [
+          "804"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.1 Q2(i)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Expect questions asking you to convert numbers from ordinary notation to scientific notation, or back again.",
+      "For scientific notation, show a coefficient from 1 up to but not including 10, then write the correct power of 10.",
+      "Show the decimal-point movement and count the places carefully; the direction determines whether the exponent is positive or negative.",
+      "For ordinary notation, show the decimal shift and include the requested unit in applied questions."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "A negative exponent means the decimal point moves left.",
+        "Move it 6 places to the left, adding zeros as needed."
+       ],
+       "accept": [
+        [
+         "0.0000055"
+        ]
+       ],
+       "question": "Express the following numbers in ordinary notation: (v) 5.5 × 10⁻⁶",
+       "solution": [
+        "Identify the parts: coefficient 5.5 and exponent −6.",
+        "Since the exponent is negative 6, move the decimal point 6 places to the left.",
+        "5.5 × 10⁻⁶ = 0.0000055"
+       ],
+       "answer": "0.0000055"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The coefficient in scientific notation must be at least 1 and less than 10.",
+        "text": "Step 1: Move the decimal to get a number between 1 and 10: 7.8"
+       },
+       {
+        "why": "The number of places moved gives the exponent.",
+        "text": "Step 2:Count the number of places you moved the decimal: 7 places"
+       },
+       {
+        "why": "The decimal moved left, so the exponent is positive.",
+        "text": "Step 3:Write in scientific notation: 78,000,000 = 7.8 × 10⁷"
+       },
+       {
+        "why": "A leftward decimal shift gives a positive exponent.",
+        "text": "Since we moved the decimal to the left, the exponent is positive."
+       }
+      ],
+      "question": "Convert 78,000,000 to scientific notation.",
+      "answer": "78,000,000 = 7.8 × 10⁷"
+     },
+     "explain": [
+      {
+       "title": "Scientific notation",
+       "body": "A method used to express very large or very small numbers in a more manageable form is known as Scientific notation. It is commonly used in science, engineering and mathematics to simplify complex calculations."
+      },
+      {
+       "title": "The required form",
+       "body": "A number in scientific notation is written as: a × 10ⁿ, where 1 ≤ a < 10 and n ∈ Z. Here “a” is called the coefficient or base number."
+      },
+      {
+       "title": "Choosing the exponent's sign",
+       "body": "If the number is greater than 1 then n is positive and if the number is less than 1 then n is negative. When changing ordinary notation to scientific notation, moving the decimal point left gives a positive exponent; moving it right gives a negative exponent."
+      },
+      {
+       "title": "Returning to ordinary notation",
+       "body": "If exponent is positive then the decimal will move to the right. If exponent is negative then the decimal will move to the left. Move it the number of places shown by the exponent."
+      }
+     ],
+     "mistakes": [
+      "Writing a coefficient that is less than 1 or 10 and above; the coefficient must satisfy 1 ≤ a < 10.",
+      "Using a positive exponent when the decimal point moved right while converting a small ordinary number to scientific notation.",
+      "Moving the decimal point in the wrong direction when converting from scientific notation to ordinary notation.",
+      "Miscounting the decimal places or leaving out zeros in a very small or very large ordinary number.",
+      "Changing the value when adjusting a coefficient such as 73 × 10³; the exponent must also be adjusted."
+     ]
+    }
+   },
+   {
+    "id": "m-2-2",
+    "position": 2,
+    "title": "2.2 Logarithm",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.2, pages 23–25; Exercise 2.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.2 (pages 23–25) in your textbook.",
+     "Solve Exercise 2.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-2-2-4",
+      "text": "Express the following in logarithmic form: p = q^r.",
+      "marks": 2,
+      "modelAnswer": [
+       "p = q^r",
+       "log_q p = r"
+      ],
+      "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+      "noteId": "n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the logarithm using q as its base and p as its result.",
+        "marks": 1,
+        "why": "The base and result must be in their correct positions.",
+        "how": "Place q below log and p after it.",
+        "accept": [
+         [
+          "log_q p"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct logarithm value.",
+        "marks": 1,
+        "why": "The exponent r becomes the logarithm value.",
+        "how": "Write r after the equals sign.",
+        "accept": [
+         [
+          "log_q p=r"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.2 Q1(vii)"
+     },
+     {
+      "id": "w-2-2-5",
+      "text": "Express the following in exponential form: log₅ 125 = 3.",
+      "marks": 2,
+      "modelAnswer": [
+       "log₅ 125 = 3",
+       "5³ = 125"
+      ],
+      "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+      "noteId": "n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the base and exponent correctly.",
+        "marks": 1,
+        "why": "The base is raised to the logarithm value.",
+        "how": "Raise 5 to the power 3.",
+        "accept": [
+         [
+          "5^3"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Complete the exponential equation.",
+        "marks": 1,
+        "why": "The result in logarithmic form becomes the result in exponential form.",
+        "how": "Write 125 on the right side.",
+        "accept": [
+         [
+          "5^3=125"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.2 Q2(i)"
+     },
+     {
+      "id": "w-2-2-7",
+      "text": "Express the following in exponential form: 1/2 = log₉ 3.",
+      "marks": 2,
+      "modelAnswer": [
+       "1/2 = log₉ 3",
+       "9^(1/2) = 3"
+      ],
+      "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+      "noteId": "n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the base with the exponent 1/2.",
+        "marks": 1,
+        "why": "The base must be raised to the logarithm value.",
+        "how": "Use 9 as the base and 1/2 as the exponent.",
+        "accept": [
+         [
+          "9^(1/2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Complete the exponential equation.",
+        "marks": 1,
+        "why": "The logarithm's result becomes the exponential equation's result.",
+        "how": "Write 3 on the right side.",
+        "accept": [
+         [
+          "9^(1/2)=3"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.2 Q2(vi)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Expect short questions asking you to convert between logarithmic and exponential forms, or to find an unknown using that conversion.",
+      "For a conversion, show the base, result, and exponent in their correct positions; a correct final form earns the marks.",
+      "For an unknown, write the equivalent exponential equation first, then show the value of the unknown.",
+      "Copy negative signs and fractions in exponents and results carefully, because changing either changes the answer."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Rewrite the logarithm as a power equation.",
+        "Now express 64 as a power of 4."
+       ],
+       "accept": [
+        [
+         "x=4"
+        ]
+       ],
+       "question": "Find the value of x in each of the following: (i) log_x 64 = 3",
+       "solution": [
+        "log_x 64 = 3",
+        "Its exponential form is:",
+        "x³ = 64",
+        "⇒ x³ = 4³",
+        "⇒ x = 4"
+       ],
+       "answer": "x = 4"
+      },
+      {
+       "hints": [
+        "Change the logarithmic equation to exponential form.",
+        "Write 10⁻³ as a fraction."
+       ],
+       "accept": [
+        [
+         "x=1/1000"
+        ]
+       ],
+       "question": "Find the value of x in each of the following: (iv) log_10 x = −3",
+       "solution": [
+        "log₁₀ x = −3",
+        "Its exponential form is:",
+        "10⁻³ = x",
+        "⇒ x = 1/1000"
+       ],
+       "answer": "x = 1/1000"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Start with the given logarithmic equation.",
+        "text": "(i) log_5 25 = x"
+       },
+       {
+        "why": "The logarithm rule changes this into a power equation.",
+        "text": "Its exponential form is:"
+       },
+       {
+        "why": "The base is 5, the exponent is x, and the result is 25.",
+        "text": "5^x = 25"
+       },
+       {
+        "why": "Write 25 as a power of 5 so the exponents can be compared.",
+        "text": "⇒ 5^x = 5²"
+       },
+       {
+        "why": "Equal powers with the same base have equal exponents.",
+        "text": "⇒ x = 2"
+       },
+       {
+        "why": "Start the second part with its given logarithmic equation.",
+        "text": "(ii) log_2 x = 6"
+       },
+       {
+        "why": "Change the logarithmic equation to exponential form.",
+        "text": "Its exponential form is:"
+       },
+       {
+        "why": "The base is 2, the exponent is 6, and the result is x.",
+        "text": "2⁶ = x"
+       },
+       {
+        "why": "Evaluate 2⁶ to find x.",
+        "text": "⇒ x = 64"
+       }
+      ],
+      "question": "EXAMPLE 7: Find the value of x in each case: (i) log_5 25 = x  (ii) log_2 x = 6",
+      "answer": "(i) x = 2  (ii) x = 64"
+     },
+     "explain": [
+      {
+       "title": "What a logarithm tells us",
+       "body": "In simple words, the logarithm of a real number tells us how many times one number must be multiplied by itself to get another number."
+      },
+      {
+       "title": "Parts of a logarithm",
+       "body": "The general form of a logarithm is: log_b x = y. Where: b is the base, x is the result or the number whose logarithm is being taken, and y is the exponent or the logarithm of x to the base b."
+      },
+      {
+       "title": "The key conversion",
+       "body": "log_b x = y  ⇔  bʸ = x where b > 0, x > 0 and b ≠ 1. In words, \"the logarithm of x to the base b is y,\" means that when b is raised to the power y, it equals x."
+      },
+      {
+       "title": "Finding an unknown",
+       "body": "Change the logarithmic equation into exponential form. Then solve the power equation for the unknown."
+      }
+     ],
+     "mistakes": [
+      "Mixing up the base, result, and exponent when changing forms.",
+      "Forgetting that the exponent in exponential form becomes the value of the logarithm.",
+      "Dropping a negative sign in an exponent or logarithm value.",
+      "Confusing the result x with the exponent y in log_b x = y.",
+      "Giving an answer without showing the exponential form when the question asks you to find an unknown."
+     ]
+    }
+   },
+   {
+    "id": "m-2-3",
+    "position": 3,
+    "title": "2.3 Common Logarithm",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.3, pages 25–30; Exercise 2.3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.3 (pages 25–30) in your textbook.",
+     "Solve Exercise 2.3 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-2-3-1",
+      "text": "Find characteristic of the following numbers: (ii) 59.28",
+      "marks": 2,
+      "modelAnswer": [
+       "Characteristic = number of digits to the left of the decimal point − 1",
+       "= 2 − 1 = 1"
+      ],
+      "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+      "noteId": "n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the number of digits to the left of the decimal point.",
+        "marks": 1,
+        "why": "The characteristic rule depends on the digits to the left of the decimal point.",
+        "how": "State that 59.28 has 2 digits to the left of the decimal point.",
+        "accept": [
+         [
+          "2",
+          "1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Subtract 1 and give the characteristic.",
+        "marks": 1,
+        "why": "The final characteristic is the requested answer.",
+        "how": "Calculate 2 − 1 = 1.",
+        "accept": [
+         [
+          "1"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.3 Q1(ii)"
+     },
+     {
+      "id": "w-2-3-2",
+      "text": "Find characteristic of the following numbers: (v) 0.000049",
+      "marks": 2,
+      "modelAnswer": [
+       "Characteristic = − (number of zeros between the decimal point and the first non-zero digit + 1)",
+       "= − (4 + 1) = −5"
+      ],
+      "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+      "noteId": "n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Count the zeros between the decimal point and the first non-zero digit.",
+        "marks": 1,
+        "why": "Counting the zeros correctly determines the characteristic.",
+        "how": "Identify 4 zeros.",
+        "accept": [
+         [
+          "4"
+         ],
+         [
+          "0.000049"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Apply the rule for numbers less than 1.",
+        "marks": 1,
+        "why": "The final signed characteristic is required.",
+        "how": "Calculate −(4 + 1) = −5.",
+        "accept": [
+         [
+          "-5"
+         ],
+         [
+          "5",
+          "bar"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.3 Q1(v)"
+     },
+     {
+      "id": "w-2-3-3",
+      "text": "Find logarithm of the following numbers: (i) 43",
+      "marks": 2,
+      "modelAnswer": [
+       "Characteristic = 2 − 1 = 1",
+       "Mantissa = 0.6335",
+       "So, log 43 = 1 + 0.6335 = 1.6335"
+      ],
+      "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+      "noteId": "n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the characteristic.",
+        "marks": 1,
+        "why": "The characteristic is found from the number's size.",
+        "how": "For 43, calculate 2 − 1 = 1.",
+        "accept": [
+         [
+          "1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Use the table mantissa and state the final logarithm.",
+        "marks": 1,
+        "why": "The table mantissa combined with the characteristic gives the logarithm.",
+        "how": "Use mantissa 0.6335 and combine it with characteristic 1.",
+        "accept": [
+         [
+          "1.6335"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.3 Q2(i)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The board can ask you to find the characteristic, calculate a logarithm from a table, use a given logarithm to find a related logarithm, or find x using an antilogarithm.",
+      "For characteristic questions, show the rule and the count of digits or zeros before giving the answer.",
+      "For logarithm-table questions, show the characteristic, mantissa-table value, any mean difference, and the combined logarithm; these working steps can earn method marks.",
+      "For antilogarithm questions, show how a negative logarithm is rewritten with a positive mantissa, then show the table value and decimal-point placement.",
+      "Keep a negative characteristic barred and the mantissa positive; do not combine them as if both parts were negative."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Count the zeros between the decimal point and the first non-zero digit.",
+        "Use characteristic = − (number of zeros + 1), then add the positive mantissa."
+       ],
+       "accept": [
+        [
+         "-1.0575"
+        ],
+        [
+         "−1.0575"
+        ]
+       ],
+       "question": "Find logarithm of the following numbers: (iv) 0.0876",
+       "solution": [
+        "Characteristic = − (1 + 1) = −2",
+        "Mantissa = 0.9425",
+        "So, log 0.0876 = −2 + 0.9425 = −1.0575"
+       ],
+       "answer": "−1.0575"
+      },
+      {
+       "hints": [
+        "A negative logarithm must be changed to a negative characteristic and a positive mantissa.",
+        "Write −1.5726 = −2 + 0.4274, find antilog 0.4274, and place the decimal point using 2̅."
+       ],
+       "accept": [
+        [
+         "0.020675"
+        ],
+        [
+         "x=0.020675"
+        ]
+       ],
+       "question": "Find the value of x. (iv) log x = −1.5726",
+       "solution": [
+        "log x = −2 + 2 − 1.5726",
+        "= −2 + 0.4274 = 2̅.4274",
+        "Antilog table value of 0.4274 = 2.0675",
+        "Since characteristic is 2̅, the decimal point is placed before 2 digits to the left from the reference position.",
+        "So, x = 0.020675"
+       ],
+       "answer": "x = 0.020675"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The characteristic of a number less than 1 is found by counting the zeros before its first non-zero digit.",
+        "text": "Characteristic = − (1 + 1) = −2"
+       },
+       {
+        "why": "The table lookup gives the positive decimal part of the logarithm.",
+        "text": "Mantissa = 0.6794  (Look for 47 in the row and 8 in the column of the log table)"
+       },
+       {
+        "why": "Add the characteristic and mantissa to obtain the logarithm.",
+        "text": "So, log 0.0478 = −2 + 0.6794 = −1.3206"
+       }
+      ],
+      "question": "EXAMPLE 10: Find logarithm of the following numbers: (iv) log 0.0478",
+      "answer": "log 0.0478 = −1.3206"
+     },
+     "explain": [
+      {
+       "title": "Common logarithm",
+       "body": "The **common logarithm** is the logarithm with a base of 10. It is written as log_10 or simply as log (when no base is mentioned, it is usually assumed to be base 10). For example, 10² = 100, so log 100 = 2."
+      },
+      {
+       "title": "Characteristic",
+       "body": "The characteristic is the integral part of the logarithm. It tells us how big or small the number is. For a number greater than 1, subtract 1 from its digits to the left of the decimal point. For a number less than 1, use the negative of (the number of zeros before the first non-zero digit + 1). When the characteristic is negative, we write it with bar."
+      },
+      {
+       "title": "Mantissa",
+       "body": "The mantissa is the decimal part of the logarithm. It represents the \"fractional\" component and is always positive. For example, in log 5000 = 3.698 the mantissa is 0.698."
+      },
+      {
+       "title": "Using the logarithm table",
+       "body": "Find the characteristic from the size of the number. Use the first digits to find the table entry, and use the next digit for the column; add a mean difference when the table method requires it. Then combine characteristic and mantissa."
+      },
+      {
+       "title": "Antilogarithm and natural logarithm",
+       "body": "An antilogarithm is the inverse operation of a logarithm. It helps to find a number whose logarithmic value is given. The natural logarithm is the logarithm with base e, where e is approximately equal to 2.71828; it is denoted as ln."
+      }
+     ],
+     "mistakes": [
+      "For a number less than 1, forgetting the extra 1 in the characteristic rule gives the wrong characteristic.",
+      "Writing a negative mantissa instead of a barred negative characteristic loses marks; the mantissa should be positive.",
+      "Forgetting to add the mean difference gives an incorrect mantissa or antilogarithm.",
+      "Using the characteristic incorrectly when placing the decimal point gives a value ten times too large or too small.",
+      "Writing only the answer in a table question can lose method marks; show the characteristic, table value, and combination."
+     ]
+    }
+   },
+   {
+    "id": "m-2-4",
+    "position": 4,
+    "title": "2.4 Laws of Logarithm",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.4, pages 30–35; Exercise 2.4",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.4 (pages 30–35) in your textbook.",
+     "Solve Exercise 2.4 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-2-4-7",
+      "text": "Expand the following using laws of logarithms: ln (a²b/c)",
+      "marks": 2,
+      "modelAnswer": [
+       "ln (a²b/c)",
+       "= ln a² + ln b − ln c",
+       "= 2 ln a + ln b − ln c"
+      ],
+      "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+      "noteId": "n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Expand the product and quotient.",
+        "marks": 1,
+        "why": "The product and quotient laws split the expression into separate logarithms.",
+        "how": "Split a²b into its factors and subtract the logarithm of c.",
+        "accept": [
+         [
+          "ln a^2 + ln b - ln c"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Apply the power law and give the final expansion.",
+        "marks": 1,
+        "why": "The expanded power term must have its exponent as a coefficient.",
+        "how": "Use ln a² = 2 ln a.",
+        "accept": [
+         [
+          "2ln a+ln b-ln c"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.4 Q3(iii)"
+     },
+     {
+      "id": "w-2-4-9",
+      "text": "Find the value of x in the following equation: log 2 + log x = 1",
+      "marks": 2,
+      "modelAnswer": [
+       "log 2 + log x = 1",
+       "log (2x) = 1",
+       "2x = 10¹",
+       "x = 5"
+      ],
+      "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+      "noteId": "n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Combine the logarithms.",
+        "marks": 1,
+        "why": "The product law combines the logarithms before solving.",
+        "how": "Write log(2x) = 1.",
+        "accept": [
+         [
+          "log(2x)=1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Solve and state the value of x.",
+        "marks": 1,
+        "why": "Converting from logarithmic form gives the required value.",
+        "how": "Use 2x = 10¹ = 10, so x = 5.",
+        "accept": [
+         [
+          "x=5"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.4 Q4(i)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The board paper may ask you to state or use one of the product, quotient, power or change of base laws.",
+      "For questions asking you to expand, show each law as a separate step; marks are often given for the correct rule as well as the final expression.",
+      "For a single logarithm, turn coefficients into powers first, then combine sums as products and differences as quotients.",
+      "For logarithmic equations, combine logs with the laws, convert to exponential form, and show the value of the variable.",
+      "In application questions, substitute the given values into the formula before calculating, and include the correct unit when needed."
+     ],
+     "yourTurn": [],
+     "example": {
+      "steps": [
+       {
+        "why": "This is the expression given in the question, with a power on the whole quotient.",
+        "text": "log₅ (xy/z)⁸"
+       },
+       {
+        "why": "The power law brings the exponent 8 in front of the logarithm.",
+        "text": "= 8 log₅ (xy/z)"
+       },
+       {
+        "why": "The quotient law subtracts the logarithm of the denominator.",
+        "text": "= 8[log₅ (xy) − log₅ z]"
+       },
+       {
+        "why": "The product law splits the numerator into the factors x and y.",
+        "text": "= 8[log₅ x + log₅ y − log₅ z]"
+       }
+      ],
+      "question": "Expand the following using laws of logarithms: (ii) log₅ (xy/z)⁸",
+      "answer": "8[log₅ x + log₅ y − log₅ z]"
+     },
+     "explain": [
+      {
+       "title": "Product Law",
+       "body": "log_b xy = log_b x + log_b y. The logarithm of the product is the sum of the logarithms of the factors."
+      },
+      {
+       "title": "Quotient Law",
+       "body": "log_b (x/y) = log_b x − log_b y. The logarithm of a quotient is the difference between the logarithms of the numerator and the denominator."
+      },
+      {
+       "title": "Power Law",
+       "body": "log_b xⁿ = n × log_b x. The logarithm of a number raised to a power is the product of the power and the logarithm of the base number."
+      },
+      {
+       "title": "Change of Base Law",
+       "body": "log_b x = (log_a x)/(log_a b). This law allows to change the base of a logarithm from “b” to any other base “a”."
+      }
+     ],
+     "mistakes": [
+      "Adding logarithms when the numbers inside are divided; a quotient requires subtraction.",
+      "Subtracting logarithms when the numbers inside are multiplied; a product requires addition.",
+      "Forgetting to bring down an exponent when expanding a logarithm.",
+      "Putting a subtracted logarithm in the numerator when combining into a single logarithm.",
+      "Reversing the numerator and denominator in the change of base formula.",
+      "Stopping after combining logarithms without evaluating when the question asks for a value."
+     ]
+    }
+   },
+   {
+    "id": "m-2-5",
+    "position": 5,
+    "title": "Unit 2 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, review exercise, pages 35–36; Review Exercise 2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 2 and attempt Review Exercise 2 (pages 35–36)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-2-5-1",
+      "text": "Express the following number in scientific notation: 0.000567",
+      "marks": 2,
+      "modelAnswer": [
+       "0.000567 = 5.67 × 10^(-4)",
+       "∴ 5.67 × 10^(-4)"
+      ],
+      "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+      "noteId": "n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the coefficient correctly.",
+        "marks": 1,
+        "why": "The coefficient must be between 1 and 10 and keep the digits of the original number.",
+        "how": "Move the decimal point to give 5.67.",
+        "accept": [
+         [
+          "5.67"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct power of 10.",
+        "marks": 1,
+        "why": "The negative power shows that the original number is less than 1.",
+        "how": "Count four places moved to the right and use exponent −4.",
+        "accept": [
+         [
+          "10^-4"
+         ],
+         [
+          "10^(-4)"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 2 Q2(i)"
+     },
+     {
+      "id": "w-2-5-2",
+      "text": "Express the following number in scientific notation: 734",
+      "marks": 2,
+      "modelAnswer": [
+       "734 = 7.34 × 10^2",
+       "∴ 7.34 × 10^2"
+      ],
+      "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+      "noteId": "n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the coefficient correctly.",
+        "marks": 1,
+        "why": "The scientific-notation coefficient must be between 1 and 10.",
+        "how": "Move the decimal point in 734 to obtain 7.34.",
+        "accept": [
+         [
+          "7.34"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct power of 10.",
+        "marks": 1,
+        "why": "The exponent records two places moved to the left.",
+        "how": "Use exponent 2.",
+        "accept": [
+         [
+          "10^2"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 2 Q2(ii)"
+     },
+     {
+      "id": "w-2-5-3",
+      "text": "Express the following number in ordinary notation: 2.6 × 10³",
+      "marks": 2,
+      "modelAnswer": [
+       "2.6 × 10³ = 2600",
+       "∴ 2600"
+      ],
+      "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+      "noteId": "n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Move the decimal point correctly.",
+        "marks": 1,
+        "why": "The decimal point must move in the direction indicated by the positive exponent.",
+        "how": "Move it three places to the right.",
+        "accept": [
+         [
+          "2600"
+         ],
+         [
+          "2,600"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the ordinary-notation value.",
+        "marks": 1,
+        "why": "The ordinary notation must have the correct value.",
+        "how": "Write 2600.",
+        "accept": [
+         [
+          "2600"
+         ],
+         [
+          "2,600"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 2 Q3(i)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The review tests scientific notation, ordinary notation, and changing between logarithmic and exponential forms; show the decimal movement or the base–exponent relationship for method marks.",
+      "Logarithm questions often ask you to solve for x or combine and expand logarithms. Write the relevant law or rewrite in exponential form before simplifying.",
+      "For numerical questions using logarithm tables, show the logarithms, their combination, and the antilogarithm if those steps are required by the question.",
+      "For the population model question, set the population expression equal to 35, solve for t, and convert t years after 2016 into a calendar year; round as directed."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Recall that a difference of logarithms becomes a quotient.",
+        "Use the power law first, then the quotient law."
+       ],
+       "accept": [
+        [
+         "log2"
+        ],
+        [
+         "log 2"
+        ]
+       ],
+       "question": "Write as a single logarithm: 3 log 4 − log 32",
+       "solution": [
+        "3 log 4 − log 32 = log 4³ − log 32",
+        "= log (64/32)",
+        "∴ log 2"
+       ],
+       "answer": "log 2"
+      },
+      {
+       "hints": [
+        "Set the population model equal to 35 and isolate the power of 1.025.",
+        "Take common logarithms to solve for t, then add t to 2016."
+       ],
+       "accept": [
+        [
+         "2035"
+        ]
+       ],
+       "question": "In the year 2016, the population of a city was 22 millions and was growing at a rate of 2.5% per year. The function p(t) = 22(1.025)ᵗ gives the population in millions, t years after 2016. Use the model to determine in which year the population will reach 35 millions. Round the answer to the nearest year.",
+       "solution": [
+        "35 = 22(1.025)ᵗ",
+        "35/22 = (1.025)ᵗ",
+        "log (35/22) = t log 1.025",
+        "t = log (35/22) / log 1.025 ≈ 18.99 ≈ 19 years",
+        "Year = 2016 + 19 = 2035"
+       ],
+       "answer": "2035"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This is the equation given in the review question.",
+        "text": "log₉ x = 0.5"
+       },
+       {
+        "why": "By the definition of logarithmic form, x is the base raised to the logarithm's value.",
+        "text": "x = 9^0.5"
+       },
+       {
+        "why": "The square root of 9 is 3.",
+        "text": "∴ x = 3"
+       }
+      ],
+      "question": "Find the value of x: log₉ x = 0.5",
+      "answer": "x = 3"
+     },
+     "explain": [
+      {
+       "title": "Scientific notation",
+       "body": "Write a number as a coefficient times a power of 10. The coefficient should be at least 1 and less than 10. Moving the decimal left gives a positive exponent; moving it right gives a negative exponent."
+      },
+      {
+       "title": "Logarithmic and exponential forms",
+       "body": "The forms aᵇ = c and logₐ c = b say the same thing: a raised to b gives c. The base stays the base, the result becomes the logarithm's argument, and the exponent becomes its value."
+      },
+      {
+       "title": "Common logarithms",
+       "body": "A common logarithm has base 10, usually written without showing the base. For example, log 100 = 2 because 10² = 100. The logarithm of zero is undefined."
+      },
+      {
+       "title": "Laws of logarithms",
+       "body": "Use log A + log B = log (AB), log A − log B = log (A/B), and k log A = log Aᵏ. These laws help you combine or expand logarithmic expressions."
+      },
+      {
+       "title": "Solving logarithmic equations",
+       "body": "Rewrite a logarithmic equation in exponential form. For exponential equations with the same base on both sides, equate the exponents and solve."
+      },
+      {
+       "title": "Applications and numerical work",
+       "body": "For growth models, substitute the target value, solve for the time, and interpret the time in context. For calculations with logarithm tables, combine logarithms and then find the antilogarithm."
+      }
+     ],
+     "mistakes": [
+      "In scientific notation, moving the decimal to the right requires a negative power of 10; moving it to the left requires a positive power.",
+      "When converting forms, do not swap the base and the argument: aᵇ = c becomes logₐ c = b.",
+      "Use addition of logarithms for multiplication and subtraction of logarithms for division; do not reverse these laws.",
+      "When using the power law, multiply the exponent too: 3 log y² = log y⁶, not log y³.",
+      "log 0 is undefined, not zero.",
+      "In a growth-model answer, distinguish t years after 2016 from the calendar year: add t to 2016."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-2-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-2-1",
+   "title": "Scientific Notation",
+   "keywords": [
+    "scientific notation",
+    "coefficient",
+    "exponent",
+    "decimal point",
+    "ordinary notation"
+   ],
+   "answer": "Scientific notation is a × 10ⁿ, where 1 ≤ a < 10 and n ∈ Z.",
+   "explanation": "Scientific notation writes a number as a coefficient from 1 up to, but not including, 10, multiplied by a power of 10. Move the decimal point to make the coefficient; the number of places moved gives the exponent.",
+   "simple": "Write the number with one non-zero digit before the decimal point, then multiply by a power of 10.",
+   "examples": [
+    "78,000,000 = 7.8 × 10⁷",
+    "0.0000000315 = 3.15 × 10⁻⁸"
+   ],
+   "steps": [
+    "Move the decimal point until the number is at least 1 and less than 10.",
+    "Count how many places the decimal point moved.",
+    "Moving left gives a positive exponent; moving right gives a negative exponent.",
+    "For ordinary notation, move the decimal right for a positive exponent and left for a negative exponent."
+   ],
+   "checkQuestion": "Write 0.0042 in scientific notation.",
+   "checkAnswer": "4.2 × 10⁻³",
+   "checkAccept": [
+    [
+     "4.2×10^-3"
+    ],
+    [
+     "4.2×10⁻³"
+    ]
+   ]
+  },
+  {
+   "id": "n-2-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-2-2",
+   "title": "Changing Between Logarithmic and Exponential Forms",
+   "keywords": [
+    "logarithm",
+    "base",
+    "exponential form",
+    "logarithmic form",
+    "power"
+   ],
+   "answer": "log_b x = y means bʸ = x: the base is b, the result is x, and the logarithm is y.",
+   "explanation": "A logarithm tells us which power of a base gives a number. The key link is log_b x = y ⇔ bʸ = x. Use this link to change forms or find an unknown.",
+   "simple": "A logarithm asks: what power of the base makes this number?",
+   "examples": [
+    "log₂ 8 = 3 because 2³ = 8.",
+    "3⁴ = 81 becomes log₃ 81 = 4."
+   ],
+   "steps": [
+    "Identify the base, result, and exponent.",
+    "Use log_b x = y ⇔ bʸ = x.",
+    "To find an unknown, write the equation in exponential form and solve."
+   ],
+   "checkQuestion": "Write 2⁵ = 32 in logarithmic form.",
+   "checkAnswer": "log₂ 32 = 5",
+   "checkAccept": [
+    [
+     "log_2 32=5"
+    ]
+   ]
+  },
+  {
+   "id": "n-2-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-2-3",
+   "title": "Common logarithms and antilogarithms",
+   "keywords": [
+    "common logarithm",
+    "characteristic",
+    "mantissa",
+    "antilogarithm",
+    "log table",
+    "mean difference"
+   ],
+   "answer": "log x = −2 + 0.5433 = 2̅.5433, so the characteristic is 2̅ and the positive mantissa is 0.5433.",
+   "explanation": "A common logarithm uses base 10. To find a logarithm, find its characteristic and mantissa separately, then combine them. To find a number from its logarithm, use the antilogarithm table and place the decimal point using the characteristic.",
+   "simple": "The characteristic helps place the decimal point. The mantissa gives the table digits. For an antilogarithm, use the table digits first, then place the decimal point.",
+   "examples": [
+    "log 345 = 2.5378",
+    "log 0.0478 = −1.3206"
+   ],
+   "steps": [
+    "For a number greater than 1, characteristic = number of digits to the left of the decimal point − 1.",
+    "For a number less than 1, characteristic = − (number of zeros between the decimal point and the first non-zero digit + 1).",
+    "Find the mantissa from the common logarithm table, adding the mean difference when needed.",
+    "Combine the characteristic and mantissa to give the logarithm.",
+    "For an antilogarithm, find the table value and mean difference, add them, and place the decimal point using the characteristic."
+   ],
+   "checkQuestion": "Write −1.4567 as a characteristic and a positive mantissa.",
+   "checkAnswer": "The characteristic is 2̅ and the mantissa is 0.5433.",
+   "checkAccept": [
+    [
+     "2̅",
+     "0.5433"
+    ],
+    [
+     "-2",
+     "0.5433"
+    ],
+    [
+     "2",
+     "0.5433"
+    ]
+   ]
+  },
+  {
+   "id": "n-2-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-2-4",
+   "title": "Laws of Logarithm",
+   "keywords": [
+    "product law",
+    "quotient law",
+    "power law",
+    "change of base",
+    "expand logarithms",
+    "single logarithm"
+   ],
+   "answer": "The logarithm of a product is the sum of the logarithms of its factors; the logarithm of a quotient is the difference of the logarithms of its numerator and denominator; and the logarithm of a power is the power multiplied by the logarithm of the base number.",
+   "explanation": "Use the product, quotient and power laws to expand or combine logarithms. Use change of base when you need to rewrite a logarithm in another base.",
+   "simple": "Multiplication inside a logarithm becomes addition outside it; division becomes subtraction; a power becomes a multiplier.",
+   "examples": [],
+   "steps": [
+    "For a product, add the logarithms: log_b(xy) = log_b x + log_b y.",
+    "For a quotient, subtract: log_b(x/y) = log_b x − log_b y.",
+    "For a power, bring the power in front: log_b(xⁿ) = n log_b x.",
+    "To combine logarithms, reverse these laws; remember that subtraction means a quotient."
+   ],
+   "checkQuestion": "Write log₃ 2 + log₃ 3 as a single logarithm.",
+   "checkAnswer": "log₃ 6",
+   "checkAccept": [
+    [
+     "log3 6"
+    ]
+   ]
+  },
+  {
+   "id": "n-2-5",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-2-5",
+   "title": "Logarithms: powers in another form",
+   "keywords": [
+    "logarithm",
+    "base",
+    "exponent",
+    "scientific notation",
+    "logarithm laws",
+    "exponential form"
+   ],
+   "answer": "log₃ 9 = 2, because 3² = 9.",
+   "explanation": "A logarithm tells you the power to which a base must be raised to give a number. Use the laws of logarithms to change between exponential and logarithmic forms, simplify expressions, and solve for unknowns.",
+   "simple": "A logarithm is another way to ask, “What power gives this number?”",
+   "examples": [
+    "Since 3² = 9, log₃ 9 = 2.",
+    "Since log₁₀ 100 = 2, 10² = 100."
+   ],
+   "steps": [
+    "Identify the base and the number inside the logarithm.",
+    "Ask what power of the base gives that number.",
+    "For equations, rewrite the logarithm in exponential form and solve.",
+    "Use logarithm laws to combine or expand expressions."
+   ],
+   "checkQuestion": "What is log₃ 9?",
+   "checkAnswer": "2",
+   "checkAccept": [
+    [
+     "2"
+    ],
+    [
+     "log₃ 9=2"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-2-1-1",
+   "stem": "Which is the scientific notation for 2,000,000?",
+   "options": [
+    "2 × 10⁶",
+    "2 × 10⁵",
+    "20 × 10⁵",
+    "0.2 × 10⁷"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 2 is between 1 and 10 and 2 × 10⁶ equals 2,000,000.",
+    "This equals 200,000, which is ten times too small.",
+    "The coefficient 20 is not less than 10, so this is not scientific notation.",
+    "This equals 2,000,000, but the coefficient 0.2 is less than 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-1-2",
+   "stem": "Which is the scientific notation for 0.0042?",
+   "options": [
+    "4.2 × 10³",
+    "4.2 × 10⁻³",
+    "42 × 10⁻⁴",
+    "0.42 × 10⁻²"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is too large because the positive exponent gives 4,200.",
+    "This is correct because 4.2 × 10⁻³ equals 0.0042 and the coefficient is in the required range.",
+    "This equals 0.0042, but 42 is not a coefficient between 1 and 10.",
+    "This equals 0.0042, but 0.42 is less than 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-1-3",
+   "stem": "What is 8.04 × 10² in ordinary notation?",
+   "options": [
+    "804",
+    "80.4",
+    "8.04",
+    "0.804"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because a positive exponent of 2 moves the decimal point two places to the right.",
+    "This moves the decimal point only one place to the right.",
+    "This leaves the decimal point unchanged instead of moving it two places.",
+    "This moves the decimal point in the wrong direction."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-1-4",
+   "stem": "What is 1.5 × 10⁻² in ordinary notation?",
+   "options": [
+    "0.015",
+    "0.15",
+    "1.5",
+    "150"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because a negative exponent of 2 moves the decimal point two places to the left.",
+    "This moves the decimal point only one place to the left.",
+    "This does not move the decimal point.",
+    "This moves the decimal point to the right instead of left."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-1-5",
+   "stem": "Express 73 × 10³ in scientific notation.",
+   "options": [
+    "7.3 × 10⁴",
+    "73 × 10³",
+    "7.3 × 10³",
+    "0.73 × 10⁵"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 73 × 10³ equals 7.3 × 10⁴ and the coefficient is between 1 and 10.",
+    "This has the right value but 73 is not a permitted coefficient.",
+    "This equals 7,300, which is one tenth of the given number.",
+    "This has the right value but 0.73 is less than 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-1-6",
+   "stem": "Express 0.65 × 10² in scientific notation.",
+   "options": [
+    "6.5 × 10¹",
+    "6.5 × 10²",
+    "0.65 × 10²",
+    "65 × 10¹"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the number equals 65, which is 6.5 × 10¹ in scientific notation.",
+    "This equals 650, which is ten times too large.",
+    "This has the right value but 0.65 is less than 1.",
+    "This has the right value but 65 is greater than 10."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-1",
+   "moduleId": "m-2-1"
+  },
+  {
+   "id": "q-2-2-1",
+   "stem": "Which exponential form is equivalent to log₂ 8 = 3?",
+   "options": [
+    "2³ = 8",
+    "3² = 8",
+    "8² = 3",
+    "2⁸ = 3"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the base 2 raised to the exponent 3 gives 8.",
+    "This is wrong because 3 is not the base and 3² is 9.",
+    "This is wrong because it reverses the base and result.",
+    "This is wrong because it treats the result as the exponent."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-2-2",
+   "stem": "Convert 3⁴ = 81 to logarithmic form.",
+   "options": [
+    "log₃ 81 = 4",
+    "log₄ 81 = 3",
+    "log₈₁ 3 = 4",
+    "log₃ 4 = 81"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the base is 3, the result is 81, and the exponent is 4.",
+    "This is wrong because it uses 4 as the base and 3 as the logarithm.",
+    "This is wrong because it uses 81 as the base.",
+    "This is wrong because it places the exponent and result incorrectly."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-2-3",
+   "stem": "What is the value of log₅ 1?",
+   "options": [
+    "log₅ 1 = 0",
+    "log₅ 1 = 1",
+    "log₁ 5 = 0",
+    "log₀ 5 = 1"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 5⁰ = 1.",
+    "This is wrong because 5¹ = 5, not 1.",
+    "This is wrong because the base and result are reversed, and 1 cannot be a logarithm base.",
+    "This is wrong because a base of 0 is not allowed."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-2-4",
+   "stem": "Which logarithmic equation is equivalent to 10⁻³ = x?",
+   "options": [
+    "log₁₀ x = −3",
+    "log₁₀ x = 3",
+    "logₓ 10 = −3",
+    "log₁₀ (−3) = x"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the base is 10, the result is x, and the exponent is −3.",
+    "This is wrong because it changes the negative exponent to a positive one.",
+    "This is wrong because x is put in the base position.",
+    "This is wrong because it uses −3 as the result and x as the exponent."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-2-5",
+   "stem": "Find x if logₓ 64 = 3.",
+   "options": [
+    "x = 4",
+    "x = 3",
+    "x = 64",
+    "x = 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because x³ = 64 and 4³ = 64.",
+    "This is wrong because 3³ = 27, not 64.",
+    "This is wrong because 64³ is not 64.",
+    "This is wrong because 2³ = 8, not 64."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-2-6",
+   "stem": "Find x if log₂ 1024 = x.",
+   "options": [
+    "x = 10",
+    "x = 9",
+    "x = 5",
+    "x = 1024"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 2¹⁰ = 1024.",
+    "This is wrong because 2⁹ = 512.",
+    "This is wrong because 2⁵ = 32.",
+    "This is wrong because it confuses the result with the exponent."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-2",
+   "moduleId": "m-2-2"
+  },
+  {
+   "id": "q-2-3-1",
+   "stem": "What is the base of a common logarithm?",
+   "options": [
+    "10",
+    "e",
+    "2",
+    "0"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a common logarithm has base 10.",
+    "Incorrect: e is the base of a natural logarithm.",
+    "Incorrect: 2 is not the base of a common logarithm.",
+    "Incorrect: 0 is not the base of a common logarithm."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-2",
+   "stem": "What is the characteristic of log 567?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "1"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: the characteristic is one less than the number of digits to the left of the decimal point.",
+    "Correct: 567 has 3 digits to the left of the decimal point, so its characteristic is 3 − 1 = 2.",
+    "Incorrect: 4 is not obtained by applying the characteristic rule.",
+    "Incorrect: 1 is one less than the correct characteristic."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-3",
+   "stem": "What is the characteristic of log 0.0123?",
+   "options": [
+    "−2",
+    "2",
+    "−1",
+    "1"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: there is 1 zero between the decimal point and the first non-zero digit, so the characteristic is −(1 + 1) = −2.",
+    "Incorrect: the characteristic is negative for this number less than 1.",
+    "Incorrect: this misses the extra 1 in the rule.",
+    "Incorrect: this has the wrong sign and value."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-4",
+   "stem": "What is the mantissa of a logarithm?",
+   "options": [
+    "The decimal part of the logarithm",
+    "The integral part of the logarithm",
+    "The number of digits in the number",
+    "The base of the logarithm"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the mantissa is the decimal part of the logarithm.",
+    "Incorrect: the integral part is the characteristic.",
+    "Incorrect: the mantissa is not a count of the number's digits.",
+    "Incorrect: the base is not called the mantissa."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-5",
+   "stem": "In an antilogarithm, what does the antilogarithm give?",
+   "options": [
+    "The number or result",
+    "The exponent",
+    "The base",
+    "The characteristic"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the antilogarithm gives the number or result.",
+    "Incorrect: the exponent is the logarithm, not the antilogarithm result.",
+    "Incorrect: the base is not the antilogarithm result.",
+    "Incorrect: the characteristic is part of a logarithm, not the result found."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-6",
+   "stem": "What is the base of a natural logarithm?",
+   "options": [
+    "e",
+    "10",
+    "1",
+    "2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a natural logarithm has base e.",
+    "Incorrect: 10 is the base of a common logarithm.",
+    "Incorrect: 1 is not the base of a natural logarithm.",
+    "Incorrect: 2 is not the base of a natural logarithm."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-7",
+   "stem": "What is log 1?",
+   "options": [
+    "0",
+    "1",
+    "10",
+    "Undefined"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 10⁰ = 1, so log 1 = 0.",
+    "Incorrect: log 10 = 1, not log 1.",
+    "Incorrect: log 1 is not 10.",
+    "Incorrect: it is log 0 that is undefined."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-3-8",
+   "stem": "When finding an antilogarithm, what helps determine where to place the decimal point?",
+   "options": [
+    "The decimal point is placed using the characteristic.",
+    "The mantissa is always negative.",
+    "The characteristic is always positive.",
+    "The common logarithm has base e."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the characteristic determines the decimal point's position.",
+    "Incorrect: the mantissa is always positive in the textbook method.",
+    "Incorrect: characteristics for numbers less than 1 are negative.",
+    "Incorrect: the common logarithm has base 10, while e is the natural-log base."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-3",
+   "moduleId": "m-2-3"
+  },
+  {
+   "id": "q-2-4-1",
+   "stem": "Which expression is equal to log₂(xy)?",
+   "options": [
+    "log₂ x + log₂ y",
+    "log₂(x + y)",
+    "log₂ x − log₂ y",
+    "log₂(xy)²"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the product law changes a product inside the logarithm into a sum.",
+    "This is not correct because the product law does not turn multiplication into addition inside the logarithm.",
+    "This is not correct because subtraction is used for a quotient, not a product.",
+    "This is not correct because it adds an extra power not present in the expression."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-2",
+   "stem": "Which expression is equal to log₅(x/y)?",
+   "options": [
+    "log₅ x + log₅ y",
+    "log₅ x − log₅ y",
+    "log₅(x − y)",
+    "log₅ y − log₅ x"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not correct because addition corresponds to a product, not a quotient.",
+    "This is correct because the quotient law subtracts the logarithm of the denominator from that of the numerator.",
+    "This is not correct because the quotient law does not subtract the numbers inside one logarithm.",
+    "This is not correct because it reverses the order of numerator and denominator."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-3",
+   "stem": "Which expression is equal to log₃(x⁴)?",
+   "options": [
+    "log₃ x + 4",
+    "4 log₃ x",
+    "log₃(4x)",
+    "(log₃ x)⁴"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not correct because the power law multiplies the logarithm by 4 rather than adding 4.",
+    "This is correct because the power law brings the exponent in front as a multiplier.",
+    "This is not correct because it places 4 inside as a factor rather than bringing down the exponent.",
+    "This is not correct because the logarithm itself is not raised to the fourth power."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-4",
+   "stem": "Expand log₇(3 × 4).",
+   "options": [
+    "log₇ 12",
+    "log₇ 3 + log₇ 4",
+    "log₇ 3 − log₇ 4",
+    "log₇ 3 × log₇ 4"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not expanded; it simply evaluates the product inside the logarithm.",
+    "This is correct because the product law splits a product into a sum of logarithms.",
+    "This is not correct because subtraction is used for a quotient.",
+    "This is not correct because the product law uses addition, not multiplication, between logarithms."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-5",
+   "stem": "Simplify log₄(5²) using the power law.",
+   "options": [
+    "log₄ 5",
+    "2 log₄ 5",
+    "log₄ 10",
+    "log₄ 25"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not correct because it omits the exponent 2.",
+    "This is correct because log₄(5²) = 2 log₄ 5.",
+    "This is not correct because the exponent does not change 5 into a factor of 10.",
+    "This is not correct because it leaves the squared value inside the logarithm."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-6",
+   "stem": "Use the change of base law to write log₂ 18 using base 3.",
+   "options": [
+    "(log₃ 18)/(log₃ 2)",
+    "(log₃ 2)/(log₃ 18)",
+    "log₃ 18 − log₃ 2",
+    "log₃ 18 + log₃ 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because log_b x = (log_a x)/(log_a b), here with a = 3.",
+    "This is not correct because it reverses the numerator and denominator in the change of base formula.",
+    "This is not correct because subtraction is not the change of base law.",
+    "This is not correct because addition is not the change of base law."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-7",
+   "stem": "Write 2 log₃ 10 − log₃ 4 as a single logarithm.",
+   "options": [
+    "log₃ 25",
+    "log₃ 6",
+    "log₃ 100",
+    "log₃ 4"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 2 log₃ 10 = log₃ 100 and log₃ 100 − log₃ 4 = log₃ 25.",
+    "This is not correct because 6 is not the quotient of 100 and 4.",
+    "This is not correct because it does not combine the subtraction with log₃ 4.",
+    "This is not correct because it omits the contribution from 2 log₃ 10."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-4-8",
+   "stem": "Evaluate log₃ 12 + log₃ 0.25.",
+   "options": [
+    "log₃ 2",
+    "2",
+    "1",
+    "log₃ 9"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not correct because the sum combines to log₃ 3, not log₃ 2.",
+    "This is not correct because 3² is not the product 12 × 0.25.",
+    "This is correct because log₃ 12 + log₃ 0.25 = log₃ 3 = 1.",
+    "This is not correct because log₃ 9 = 2, but the combined argument here is 3."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-2-4",
+   "moduleId": "m-2-4"
+  },
+  {
+   "id": "q-2-5-2",
+   "stem": "Scientific notation of 0.00034 is:",
+   "options": [
+    "3.4 × 10³",
+    "3.4 × 10⁻⁴",
+    "3.4 × 10⁴",
+    "3.4 × 10⁻³"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is much larger than 0.00034.",
+    "3.4 × 10⁻⁴ equals 0.00034.",
+    "This is much larger than 0.00034.",
+    "3.4 × 10⁻³ equals 0.0034, which is ten times 0.00034."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-3",
+   "stem": "The base of common logarithm is:",
+   "options": [
+    "2",
+    "10",
+    "5",
+    "e"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Base 2 is used for binary logarithms, not common logarithms.",
+    "Common logarithms have base 10.",
+    "Base 5 is not the base of common logarithms.",
+    "The number e is the base of natural logarithms."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-4",
+   "stem": "log₂ 2³ = __________.",
+   "options": [
+    "1",
+    "2",
+    "5",
+    "3"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "log₂ 2³ asks for the power of 2 that gives 8, and that power is not 1.",
+    "The power of 2 that gives 8 is not 2.",
+    "The power of 2 that gives 8 is not 5.",
+    "Since 2³ = 8, log₂ 2³ = 3."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-5",
+   "stem": "log 100 = __________.",
+   "options": [
+    "2",
+    "3",
+    "10",
+    "1"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The common logarithm is base 10, and 10² = 100.",
+    "10³ = 1000, not 100.",
+    "10 is the base, not the value of log 100.",
+    "10¹ = 10, not 100."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-6",
+   "stem": "If log 2 = 0.3010, then log 200 is:",
+   "options": [
+    "1.3010",
+    "0.6010",
+    "2.3010",
+    "2.6010"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "log 200 = log 2 + 2, so this value is too small by 1.",
+    "This does not follow from log 200 = log 2 + 2.",
+    "log 200 = log (2 × 100) = log 2 + log 100 = 0.3010 + 2 = 2.3010.",
+    "This is 0.3 too large; log 200 is 2.3010."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-7",
+   "stem": "log (0) = __________.",
+   "options": [
+    "positive",
+    "negative",
+    "zero",
+    "undefined"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "No power of 10 gives 0, so log 0 is not positive.",
+    "No power of 10 gives 0, so log 0 is not negative.",
+    "log 1 is zero; log 0 is not zero.",
+    "The logarithm of zero is undefined."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-8",
+   "stem": "log 10,000 =",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "10² = 100, not 10,000.",
+    "10³ = 1,000, not 10,000.",
+    "10⁴ = 10,000, so log 10,000 = 4.",
+    "10⁵ = 100,000, not 10,000."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-9",
+   "stem": "log 5 + log 3 = __________.",
+   "options": [
+    "log 0",
+    "log 2",
+    "log (5/3)",
+    "log 15"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "The product law gives log 5 + log 3 = log (5 × 3), not log 0.",
+    "The sum of these logarithms is not log 2.",
+    "The quotient law applies to subtraction, not addition.",
+    "By the product law, log 5 + log 3 = log (5 × 3) = log 15."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  },
+  {
+   "id": "q-2-5-10",
+   "stem": "3⁴ = 81 in logarithmic form is:",
+   "options": [
+    "log₃ 4 = 81",
+    "log₄ 3 = 81",
+    "log₃ 81 = 4",
+    "log₄ 81 = 3"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This says 3⁸¹ = 4, which is not the given statement.",
+    "This says 4⁸¹ = 3, which is not the given statement.",
+    "The equivalence aᵇ = c ⇔ logₐ c = b gives log₃ 81 = 4.",
+    "This reverses the base and the exponent; it does not express 3⁴ = 81."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-2-5",
+   "moduleId": "m-2-5"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-2-1-7",
+   "text": "Express the following numbers in ordinary notation: (i) 8.04 × 10²",
+   "marks": 2,
+   "modelAnswer": [
+    "8.04 × 10² = 804"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A positive exponent means the decimal point moves to the right.",
+     "how": "Identify that the decimal point moves two places right.",
+     "accept": [
+      [
+       "10^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The final answer must show the decimal point moved two places.",
+     "how": "Write 804.",
+     "accept": [
+      [
+       "804"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(i)"
+  },
+  {
+   "id": "w-2-2-4",
+   "text": "Express the following in logarithmic form: p = q^r.",
+   "marks": 2,
+   "modelAnswer": [
+    "p = q^r",
+    "log_q p = r"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the logarithm using q as its base and p as its result.",
+     "marks": 1,
+     "why": "The base and result must be in their correct positions.",
+     "how": "Place q below log and p after it.",
+     "accept": [
+      [
+       "log_q p"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct logarithm value.",
+     "marks": 1,
+     "why": "The exponent r becomes the logarithm value.",
+     "how": "Write r after the equals sign.",
+     "accept": [
+      [
+       "log_q p=r"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q1(vii)"
+  },
+  {
+   "id": "w-2-2-5",
+   "text": "Express the following in exponential form: log₅ 125 = 3.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₅ 125 = 3",
+    "5³ = 125"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the base and exponent correctly.",
+     "marks": 1,
+     "why": "The base is raised to the logarithm value.",
+     "how": "Raise 5 to the power 3.",
+     "accept": [
+      [
+       "5^3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Complete the exponential equation.",
+     "marks": 1,
+     "why": "The result in logarithmic form becomes the result in exponential form.",
+     "how": "Write 125 on the right side.",
+     "accept": [
+      [
+       "5^3=125"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q2(i)"
+  },
+  {
+   "id": "w-2-2-7",
+   "text": "Express the following in exponential form: 1/2 = log₉ 3.",
+   "marks": 2,
+   "modelAnswer": [
+    "1/2 = log₉ 3",
+    "9^(1/2) = 3"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the base with the exponent 1/2.",
+     "marks": 1,
+     "why": "The base must be raised to the logarithm value.",
+     "how": "Use 9 as the base and 1/2 as the exponent.",
+     "accept": [
+      [
+       "9^(1/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Complete the exponential equation.",
+     "marks": 1,
+     "why": "The logarithm's result becomes the exponential equation's result.",
+     "how": "Write 3 on the right side.",
+     "accept": [
+      [
+       "9^(1/2)=3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q2(vi)"
+  },
+  {
+   "id": "w-2-2-9",
+   "text": "Find the value of x: log_x 64 = 3.",
+   "marks": 2,
+   "modelAnswer": [
+    "log_x 64 = 3",
+    "Its exponential form is:",
+    "x³ = 64",
+    "⇒ x³ = 4³",
+    "⇒ x = 4"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "Changing to exponential form gives the equation needed to solve for x.",
+     "how": "Use x as the base, 3 as the exponent, and 64 as the result.",
+     "accept": [
+      [
+       "x^3=64"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "The final value must satisfy x³ = 64.",
+     "how": "Give x = 4.",
+     "accept": [
+      [
+       "x=4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(i)"
+  },
+  {
+   "id": "w-2-2-10",
+   "text": "Find the value of x: log₅ 1 = x.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₅ 1 = x",
+    "Its exponential form is:",
+    "5^x = 1",
+    "⇒ x = 0"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "The exponential form relates the base, exponent, and result.",
+     "how": "Use 5 as the base, x as the exponent, and 1 as the result.",
+     "accept": [
+      [
+       "5^x=1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "The power of 5 that gives 1 is zero.",
+     "how": "Give x = 0.",
+     "accept": [
+      [
+       "x=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(ii)"
+  },
+  {
+   "id": "w-2-2-13",
+   "text": "Find the value of x: log₄ x = 3/2.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₄ x = 3/2",
+    "Its exponential form is:",
+    "4^(3/2) = x",
+    "⇒ x = 8"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "The logarithmic equation must be changed to exponential form.",
+     "how": "Raise 4 to the power 3/2 to get x.",
+     "accept": [
+      [
+       "4^(3/2)=x"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "Evaluating the exponential expression gives the required value.",
+     "how": "Give x = 8.",
+     "accept": [
+      [
+       "x=8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(v)"
+  },
+  {
+   "id": "w-2-2-14",
+   "text": "Find the value of x: log₂ 1024 = x.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₂ 1024 = x",
+    "Its exponential form is:",
+    "2^x = 1024",
+    "⇒ 2^x = 2¹⁰",
+    "⇒ x = 10"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "The exponential form shows which power of 2 must equal 1024.",
+     "how": "Use x as the exponent and 1024 as the result.",
+     "accept": [
+      [
+       "2^x=1024"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "Since 2¹⁰ = 1024, the exponent is 10.",
+     "how": "Give x = 10.",
+     "accept": [
+      [
+       "x=10"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(vi)"
+  },
+  {
+   "id": "w-2-3-1",
+   "text": "Find characteristic of the following numbers: (ii) 59.28",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = number of digits to the left of the decimal point − 1",
+    "= 2 − 1 = 1"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the number of digits to the left of the decimal point.",
+     "marks": 1,
+     "why": "The characteristic rule depends on the digits to the left of the decimal point.",
+     "how": "State that 59.28 has 2 digits to the left of the decimal point.",
+     "accept": [
+      [
+       "2",
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Subtract 1 and give the characteristic.",
+     "marks": 1,
+     "why": "The final characteristic is the requested answer.",
+     "how": "Calculate 2 − 1 = 1.",
+     "accept": [
+      [
+       "1"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q1(ii)"
+  },
+  {
+   "id": "w-2-3-2",
+   "text": "Find characteristic of the following numbers: (v) 0.000049",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = − (number of zeros between the decimal point and the first non-zero digit + 1)",
+    "= − (4 + 1) = −5"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the zeros between the decimal point and the first non-zero digit.",
+     "marks": 1,
+     "why": "Counting the zeros correctly determines the characteristic.",
+     "how": "Identify 4 zeros.",
+     "accept": [
+      [
+       "4"
+      ],
+      [
+       "0.000049"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the rule for numbers less than 1.",
+     "marks": 1,
+     "why": "The final signed characteristic is required.",
+     "how": "Calculate −(4 + 1) = −5.",
+     "accept": [
+      [
+       "-5"
+      ],
+      [
+       "5",
+       "bar"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q1(v)"
+  },
+  {
+   "id": "w-2-3-3",
+   "text": "Find logarithm of the following numbers: (i) 43",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = 2 − 1 = 1",
+    "Mantissa = 0.6335",
+    "So, log 43 = 1 + 0.6335 = 1.6335"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the characteristic.",
+     "marks": 1,
+     "why": "The characteristic is found from the number's size.",
+     "how": "For 43, calculate 2 − 1 = 1.",
+     "accept": [
+      [
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the table mantissa and state the final logarithm.",
+     "marks": 1,
+     "why": "The table mantissa combined with the characteristic gives the logarithm.",
+     "how": "Use mantissa 0.6335 and combine it with characteristic 1.",
+     "accept": [
+      [
+       "1.6335"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q2(i)"
+  },
+  {
+   "id": "w-2-3-4",
+   "text": "Find logarithm of the following numbers: (ii) 579",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = 3 − 1 = 2",
+    "Mantissa = 0.7627",
+    "So, log 579 = 2 + 0.7627 = 2.7627"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the characteristic.",
+     "marks": 1,
+     "why": "The characteristic follows from the three digits before the decimal point.",
+     "how": "Calculate 3 − 1 = 2.",
+     "accept": [
+      [
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the table mantissa and give the final logarithm.",
+     "marks": 1,
+     "why": "The final logarithm combines the characteristic and table mantissa.",
+     "how": "Use mantissa 0.7627 and combine it with characteristic 2.",
+     "accept": [
+      [
+       "2.7627"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q2(ii)"
+  },
+  {
+   "id": "w-2-3-6",
+   "text": "Find logarithm of the following numbers: (vi) 0.000354",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = − (3 + 1) = −4",
+    "Mantissa = 0.5490",
+    "So, log 0.000354 = −4 + 0.5490 = −3.4510"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the characteristic.",
+     "marks": 1,
+     "why": "Counting the zeros gives the correct negative characteristic.",
+     "how": "There are 3 zeros before the first non-zero digit, so −(3 + 1) = −4.",
+     "accept": [
+      [
+       "-4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the table mantissa and state the final logarithm.",
+     "marks": 1,
+     "why": "The final value combines characteristic −4 with the positive mantissa.",
+     "how": "Use mantissa 0.5490 and calculate −4 + 0.5490 = −3.4510.",
+     "accept": [
+      [
+       "-3.4510"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q2(vi)"
+  },
+  {
+   "id": "w-2-3-7",
+   "text": "If log 3.177 = 0.5019, then find: (i) log 3177",
+   "marks": 2,
+   "modelAnswer": [
+    "3177 = 3.177 × 10³",
+    "log 3177 = log 3.177 + log 10³",
+    "= 0.5019 + 3 = 3.5019"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express 3177 as a multiple of 3.177.",
+     "marks": 1,
+     "why": "Relating the numbers by a power of 10 gives the change in characteristic.",
+     "how": "Write 3177 = 3.177 × 10³.",
+     "accept": [
+      [
+       "3177",
+       "3.177"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the logarithm law and give the answer.",
+     "marks": 1,
+     "why": "The final logarithm uses the given logarithm and the power of 10.",
+     "how": "Calculate log 3177 = 0.5019 + 3 = 3.5019.",
+     "accept": [
+      [
+       "3.5019"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q3(i)"
+  },
+  {
+   "id": "w-2-3-8",
+   "text": "If log 3.177 = 0.5019, then find: (ii) log 31.77",
+   "marks": 2,
+   "modelAnswer": [
+    "31.77 = 3.177 × 10",
+    "log 31.77 = log 3.177 + log 10",
+    "= 0.5019 + 1 = 1.5019"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express 31.77 as a multiple of 3.177.",
+     "marks": 1,
+     "why": "The factor of 10 shows the change in logarithm.",
+     "how": "Write 31.77 = 3.177 × 10.",
+     "accept": [
+      [
+       "31.77",
+       "3.177"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the logarithm law and give the answer.",
+     "marks": 1,
+     "why": "The final logarithm adds 1 to the given logarithm.",
+     "how": "Calculate log 31.77 = 0.5019 + 1 = 1.5019.",
+     "accept": [
+      [
+       "1.5019"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q3(ii)"
+  },
+  {
+   "id": "w-2-3-9",
+   "text": "If log 3.177 = 0.5019, then find: (iii) log 0.03177",
+   "marks": 2,
+   "modelAnswer": [
+    "0.03177 = 3.177 × 10⁻²",
+    "log 0.03177 = log 3.177 + log 10⁻²",
+    "= 0.5019 − 2 = −1.4981"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express 0.03177 as a multiple of 3.177.",
+     "marks": 1,
+     "why": "The factor 10⁻² gives the required change in logarithm.",
+     "how": "Write 0.03177 = 3.177 × 10⁻².",
+     "accept": [
+      [
+       "0.03177",
+       "3.177"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the logarithm law and give the answer.",
+     "marks": 1,
+     "why": "The final value subtracts 2 from the given logarithm.",
+     "how": "Calculate 0.5019 − 2 = −1.4981.",
+     "accept": [
+      [
+       "-1.4981"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q3(iii)"
+  },
+  {
+   "id": "w-2-3-10",
+   "text": "Find the value of x. (i) log x = 0.0065",
+   "marks": 4,
+   "modelAnswer": [
+    "Characteristic = 0, Mantissa = 0.0065",
+    "Antilog table value of 0.0065 = 1.015",
+    "Since characteristic is 0, insert the decimal point at the reference position.",
+    "So, x = 1.015"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the characteristic and mantissa.",
+     "marks": 1,
+     "why": "Separating characteristic and mantissa prepares the table lookup.",
+     "how": "State characteristic 0 and mantissa 0.0065.",
+     "accept": [
+      [
+       "0",
+       "0.0065"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Read the antilogarithm table.",
+     "marks": 1,
+     "why": "The antilogarithm table gives the digits of x.",
+     "how": "Find antilog 0.0065 = 1.015.",
+     "accept": [
+      [
+       "1.015"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Place the decimal point using characteristic 0.",
+     "marks": 1,
+     "why": "Correct decimal placement is necessary to recover x.",
+     "how": "Keep the decimal point at the reference position.",
+     "accept": [
+      [
+       "1.015"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final value of x.",
+     "marks": 1,
+     "why": "The final answer must state the value of x.",
+     "how": "State x = 1.015.",
+     "accept": [
+      [
+       "x=1.015"
+      ],
+      [
+       "1.015"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q4(i)"
+  },
+  {
+   "id": "w-2-3-11",
+   "text": "Find the value of x. (ii) log x = 1.192",
+   "marks": 4,
+   "modelAnswer": [
+    "Characteristic = 1, Mantissa = 0.192",
+    "Antilog table value of 0.192 = 1.556",
+    "Since characteristic is 1, place the decimal point one place to the right.",
+    "So, x = 15.56"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Separate the characteristic and mantissa.",
+     "marks": 1,
+     "why": "The characteristic and mantissa determine the table lookup and decimal placement.",
+     "how": "State characteristic 1 and mantissa 0.192.",
+     "accept": [
+      [
+       "1",
+       "0.192"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Read the antilogarithm table.",
+     "marks": 1,
+     "why": "The table provides the antilogarithm digits.",
+     "how": "Find antilog 0.192 = 1.556.",
+     "accept": [
+      [
+       "1.556"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Place the decimal point for characteristic 1.",
+     "marks": 1,
+     "why": "The characteristic determines the decimal point position.",
+     "how": "Move the decimal point one place to the right.",
+     "accept": [
+      [
+       "15.56"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final value.",
+     "marks": 1,
+     "why": "The final answer must state the value of x.",
+     "how": "State x = 15.56.",
+     "accept": [
+      [
+       "x=15.56"
+      ],
+      [
+       "15.56"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q4(ii)"
+  },
+  {
+   "id": "w-2-3-12",
+   "text": "Find the value of x. (iii) log x = −3.434",
+   "marks": 4,
+   "modelAnswer": [
+    "log x = −4 + 4 − 3.434",
+    "= −4 + 0.566 = 4̅.566",
+    "Antilog table value of 0.566 = 3.681",
+    "Since characteristic is 4̅, the decimal point is placed before 4 digits to the left from the reference position.",
+    "So, x = 0.0003681"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express the logarithm as a barred characteristic and positive mantissa.",
+     "marks": 1,
+     "why": "Rewriting the logarithm with a positive mantissa is needed for the antilog table.",
+     "how": "Write −3.434 = −4 + 0.566 = 4̅.566.",
+     "accept": [
+      [
+       "-4",
+       "0.566"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the antilogarithm of the positive mantissa.",
+     "marks": 1,
+     "why": "The table lookup gives the digits before decimal placement.",
+     "how": "Use antilog 0.566 = 3.681.",
+     "accept": [
+      [
+       "3.681"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Place the decimal point for characteristic 4̅.",
+     "marks": 1,
+     "why": "The negative characteristic determines the decimal point position.",
+     "how": "Place it before 4 digits to the left of the reference position.",
+     "accept": [
+      [
+       "0.0003681"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final value.",
+     "marks": 1,
+     "why": "The final answer must state the value of x.",
+     "how": "State x = 0.0003681.",
+     "accept": [
+      [
+       "x=0.0003681"
+      ],
+      [
+       "0.0003681"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q4(iii)"
+  },
+  {
+   "id": "w-2-3-14",
+   "text": "Find the value of x. (vi) log x = −2.0184",
+   "marks": 4,
+   "modelAnswer": [
+    "log x = −3 + 3 − 2.0184",
+    "= −3 + 0.9816 = 3̅.9816",
+    "Antilog table value of 0.9816 = 9.585",
+    "Since characteristic is 3̅, the decimal point is placed before 3 digits to the left from the reference position.",
+    "So, x = 0.009585"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite using a negative characteristic and positive mantissa.",
+     "marks": 1,
+     "why": "The negative logarithm must be rewritten with a positive mantissa.",
+     "how": "Write −2.0184 = −3 + 0.9816 = 3̅.9816.",
+     "accept": [
+      [
+       "-3",
+       "0.9816"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the antilogarithm of the mantissa.",
+     "marks": 1,
+     "why": "The antilogarithm table supplies the significant digits.",
+     "how": "Use antilog 0.9816 = 9.585.",
+     "accept": [
+      [
+       "9.585"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Place the decimal point for characteristic 3̅.",
+     "marks": 1,
+     "why": "The barred characteristic determines the decimal point position.",
+     "how": "Place it before 3 digits to the left from the reference position.",
+     "accept": [
+      [
+       "0.009585"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final value.",
+     "marks": 1,
+     "why": "The final answer must state the value of x.",
+     "how": "State x = 0.009585.",
+     "accept": [
+      [
+       "x=0.009585"
+      ],
+      [
+       "0.009585"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q4(vi)"
+  },
+  {
+   "id": "w-2-4-7",
+   "text": "Expand the following using laws of logarithms: ln (a²b/c)",
+   "marks": 2,
+   "modelAnswer": [
+    "ln (a²b/c)",
+    "= ln a² + ln b − ln c",
+    "= 2 ln a + ln b − ln c"
+   ],
+   "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+   "noteId": "n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Expand the product and quotient.",
+     "marks": 1,
+     "why": "The product and quotient laws split the expression into separate logarithms.",
+     "how": "Split a²b into its factors and subtract the logarithm of c.",
+     "accept": [
+      [
+       "ln a^2 + ln b - ln c"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the power law and give the final expansion.",
+     "marks": 1,
+     "why": "The expanded power term must have its exponent as a coefficient.",
+     "how": "Use ln a² = 2 ln a.",
+     "accept": [
+      [
+       "2ln a+ln b-ln c"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.4 Q3(iii)"
+  },
+  {
+   "id": "w-2-4-9",
+   "text": "Find the value of x in the following equation: log 2 + log x = 1",
+   "marks": 2,
+   "modelAnswer": [
+    "log 2 + log x = 1",
+    "log (2x) = 1",
+    "2x = 10¹",
+    "x = 5"
+   ],
+   "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+   "noteId": "n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Combine the logarithms.",
+     "marks": 1,
+     "why": "The product law combines the logarithms before solving.",
+     "how": "Write log(2x) = 1.",
+     "accept": [
+      [
+       "log(2x)=1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve and state the value of x.",
+     "marks": 1,
+     "why": "Converting from logarithmic form gives the required value.",
+     "how": "Use 2x = 10¹ = 10, so x = 5.",
+     "accept": [
+      [
+       "x=5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.4 Q4(i)"
+  },
+  {
+   "id": "w-2-5-1",
+   "text": "Express the following number in scientific notation: 0.000567",
+   "marks": 2,
+   "modelAnswer": [
+    "0.000567 = 5.67 × 10^(-4)",
+    "∴ 5.67 × 10^(-4)"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the coefficient correctly.",
+     "marks": 1,
+     "why": "The coefficient must be between 1 and 10 and keep the digits of the original number.",
+     "how": "Move the decimal point to give 5.67.",
+     "accept": [
+      [
+       "5.67"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct power of 10.",
+     "marks": 1,
+     "why": "The negative power shows that the original number is less than 1.",
+     "how": "Count four places moved to the right and use exponent −4.",
+     "accept": [
+      [
+       "10^-4"
+      ],
+      [
+       "10^(-4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q2(i)"
+  },
+  {
+   "id": "w-2-5-2",
+   "text": "Express the following number in scientific notation: 734",
+   "marks": 2,
+   "modelAnswer": [
+    "734 = 7.34 × 10^2",
+    "∴ 7.34 × 10^2"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the coefficient correctly.",
+     "marks": 1,
+     "why": "The scientific-notation coefficient must be between 1 and 10.",
+     "how": "Move the decimal point in 734 to obtain 7.34.",
+     "accept": [
+      [
+       "7.34"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct power of 10.",
+     "marks": 1,
+     "why": "The exponent records two places moved to the left.",
+     "how": "Use exponent 2.",
+     "accept": [
+      [
+       "10^2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q2(ii)"
+  },
+  {
+   "id": "w-2-5-3",
+   "text": "Express the following number in ordinary notation: 2.6 × 10³",
+   "marks": 2,
+   "modelAnswer": [
+    "2.6 × 10³ = 2600",
+    "∴ 2600"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Move the decimal point correctly.",
+     "marks": 1,
+     "why": "The decimal point must move in the direction indicated by the positive exponent.",
+     "how": "Move it three places to the right.",
+     "accept": [
+      [
+       "2600"
+      ],
+      [
+       "2,600"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the ordinary-notation value.",
+     "marks": 1,
+     "why": "The ordinary notation must have the correct value.",
+     "how": "Write 2600.",
+     "accept": [
+      [
+       "2600"
+      ],
+      [
+       "2,600"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q3(i)"
+  },
+  {
+   "id": "w-2-5-4",
+   "text": "Express the following number in ordinary notation: 8.794 × 10⁻⁴",
+   "marks": 2,
+   "modelAnswer": [
+    "8.794 × 10⁻⁴ = 0.0008794",
+    "∴ 0.0008794"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Move the decimal point in the correct direction.",
+     "marks": 1,
+     "why": "The negative exponent means move the decimal point to the left.",
+     "how": "Move it four places to the left.",
+     "accept": [
+      [
+       "0.0008794"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the ordinary-notation value.",
+     "marks": 1,
+     "why": "The final decimal must show all place-value zeros correctly.",
+     "how": "Write 0.0008794.",
+     "accept": [
+      [
+       "0.0008794"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q3(ii)"
+  },
+  {
+   "id": "w-2-5-5",
+   "text": "Express the following in logarithmic form: 3⁷ = 2187",
+   "marks": 2,
+   "modelAnswer": [
+    "3⁷ = 2187",
+    "∴ log₃ 2187 = 7"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the logarithm with the correct base and number.",
+     "marks": 1,
+     "why": "The logarithm's base must be the base of the exponential expression.",
+     "how": "Write log₃ 2187.",
+     "accept": [
+      [
+       "log₃ 2187"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the exponent as the logarithm's value.",
+     "marks": 1,
+     "why": "The logarithm equals the exponent in the exponential form.",
+     "how": "Write = 7.",
+     "accept": [
+      [
+       "=7"
+      ],
+      [
+       "7"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q4(i)"
+  },
+  {
+   "id": "w-2-5-6",
+   "text": "Express the following in logarithmic form: aᵇ = c",
+   "marks": 2,
+   "modelAnswer": [
+    "aᵇ = c",
+    "∴ logₐ c = b"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the logarithm with the correct base and argument.",
+     "marks": 1,
+     "why": "The base a and result c must be placed correctly in the logarithm.",
+     "how": "Use logₐ c.",
+     "accept": [
+      [
+       "logₐ c"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the logarithm's value.",
+     "marks": 1,
+     "why": "The exponent b becomes the value of the logarithm.",
+     "how": "Write = b.",
+     "accept": [
+      [
+       "=b"
+      ],
+      [
+       "b"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q4(ii)"
+  },
+  {
+   "id": "w-2-5-7",
+   "text": "Express the following in logarithmic form: (12)² = 144",
+   "marks": 2,
+   "modelAnswer": [
+    "(12)² = 144",
+    "∴ log₁₂ 144 = 2"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the logarithm with the correct base and argument.",
+     "marks": 1,
+     "why": "The exponential base and result become the logarithm's base and argument.",
+     "how": "Use log₁₂ 144.",
+     "accept": [
+      [
+       "log₁₂ 144"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the logarithm's value.",
+     "marks": 1,
+     "why": "The exponent becomes the value of the logarithm.",
+     "how": "Write = 2.",
+     "accept": [
+      [
+       "=2"
+      ],
+      [
+       "2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q4(iii)"
+  },
+  {
+   "id": "w-2-5-8",
+   "text": "Express the following in exponential form: log₄ 8 = x",
+   "marks": 2,
+   "modelAnswer": [
+    "log₄ 8 = x",
+    "∴ 4^x = 8"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the exponential expression correctly.",
+     "marks": 1,
+     "why": "The logarithm's base becomes the exponential base and its value becomes the exponent.",
+     "how": "Write 4^x.",
+     "accept": [
+      [
+       "4^x"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the exponential result.",
+     "marks": 1,
+     "why": "The logarithm's argument becomes the result of the exponential expression.",
+     "how": "Write = 8.",
+     "accept": [
+      [
+       "=8"
+      ],
+      [
+       "8"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q5(i)"
+  },
+  {
+   "id": "w-2-5-9",
+   "text": "Express the following in exponential form: log₉ 729 = 3",
+   "marks": 2,
+   "modelAnswer": [
+    "log₉ 729 = 3",
+    "∴ 9³ = 729"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the exponential expression correctly.",
+     "marks": 1,
+     "why": "The base and logarithm's value become the base and exponent.",
+     "how": "Write 9³.",
+     "accept": [
+      [
+       "9^3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the exponential result.",
+     "marks": 1,
+     "why": "The logarithm's argument is the exponential result.",
+     "how": "Write = 729.",
+     "accept": [
+      [
+       "=729"
+      ],
+      [
+       "729"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q5(ii)"
+  },
+  {
+   "id": "w-2-5-11",
+   "text": "Find the value of x: log₉ x = 0.5",
+   "marks": 2,
+   "modelAnswer": [
+    "log₉ x = 0.5",
+    "x = 9^0.5",
+    "∴ x = 3"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite in exponential form.",
+     "marks": 1,
+     "why": "Changing to exponential form correctly connects x to the base and logarithm's value.",
+     "how": "Use x = 9^0.5.",
+     "accept": [
+      [
+       "x=9^0.5"
+      ],
+      [
+       "x=√9"
+      ],
+      [
+       "x=3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct value of x.",
+     "marks": 1,
+     "why": "The equation must be solved for x.",
+     "how": "Since 9^0.5 = 3, state x = 3.",
+     "accept": [
+      [
+       "x=3"
+      ],
+      [
+       "3"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q6(i)"
+  }
+ ],
+ "report": {
+  "unit": 2,
+  "title": "Logarithms",
+  "dropped": [
+   "Written m-2-1#0 (Ex 2.1 Q1(i)): model answer misses a marking point",
+   "Written m-2-1#1 (Ex 2.1 Q1(ii)): model answer misses a marking point",
+   "Written m-2-1#2 (Ex 2.1 Q1(iii)): model answer misses a marking point",
+   "Written m-2-1#3 (Ex 2.1 Q1(iv)): model answer misses a marking point",
+   "Written m-2-1#4 (Ex 2.1 Q1(v)): model answer misses a marking point",
+   "Written m-2-1#5 (Ex 2.1 Q1(vi)): model answer misses a marking point",
+   "Written m-2-1#7 (Ex 2.1 Q2(ii)): model answer misses a marking point",
+   "Written m-2-1#8 (Ex 2.1 Q2(iii)): model answer misses a marking point",
+   "Written m-2-1#9 (Ex 2.1 Q2(iv)): model answer misses a marking point",
+   "Written m-2-1#10 (Ex 2.1 Q2(v)): model answer misses a marking point",
+   "Written m-2-1#11 (Ex 2.1 Q2(vi)): model answer misses a marking point",
+   "Written m-2-1#12 (Ex 2.1 Q3): model answer misses a marking point",
+   "Written m-2-1#13 (Ex 2.1 Q4): model answer misses a marking point",
+   "Your-turn m-2-1: 1 with unusable answer patterns",
+   "Written m-2-2#0 (Ex 2.2 Q1(i)): model answer misses a marking point",
+   "Written m-2-2#1 (Ex 2.2 Q1(iii)): model answer misses a marking point",
+   "Written m-2-2#2 (Ex 2.2 Q1(v)): model answer misses a marking point",
+   "Written m-2-2#5 (Ex 2.2 Q2(v)): model answer misses a marking point",
+   "Written m-2-2#7 (Ex 2.2 Q2(viii)): model answer misses a marking point",
+   "Written m-2-2#10 (Ex 2.2 Q3(iii)): model answer misses a marking point",
+   "Written m-2-2#11 (Ex 2.2 Q3(iv)): model answer misses a marking point",
+   "Written m-2-3#4 (Ex 2.3 Q2(iv)): independent check disagreed",
+   "Written m-2-3#12 (Ex 2.3 Q4(iv)): independent check disagreed",
+   "Written m-2-4#0 (Ex 2.4 Q1(i)): model answer misses a marking point",
+   "Written m-2-4#1 (Ex 2.4 Q1(ii)): model answer misses a marking point",
+   "Written m-2-4#2 (Ex 2.4 Q1(iii)): model answer misses a marking point",
+   "Written m-2-4#3 (Ex 2.4 Q2(iv)): model answer misses a marking point",
+   "Written m-2-4#4 (Ex 2.4 Q2(v)): model answer misses a marking point",
+   "Written m-2-4#5 (Ex 2.4 Q2(vi)): model answer misses a marking point",
+   "Written m-2-4#7 (Ex 2.4 Q3(vi)): model answer misses a marking point",
+   "Written m-2-4#9 (Ex 2.4 Q4(ii)): model answer misses a marking point",
+   "Written m-2-4#10 (Ex 2.4 Q4(vi)): model answer misses a marking point",
+   "Written m-2-4#11 (Ex 2.4 Q6): model answer misses a marking point",
+   "Written m-2-4#12 (Ex 2.4 Q8): model answer misses a marking point",
+   "Your-turn m-2-4: 2 with unusable answer patterns",
+   "MCQ m-2-5#0: independent check disagreed",
+   "Written m-2-5#9 (Review Exercise 2 Q5(iii)): model answer misses a marking point",
+   "Written m-2-5#11 (Review Exercise 2 Q6(ii)): model answer misses a marking point",
+   "Written m-2-5#12 (Review Exercise 2 Q6(iii)): model answer misses a marking point",
+   "Written m-2-5#13 (Review Exercise 2 Q7(i)): model answer misses a marking point"
+  ]
+ }
+}

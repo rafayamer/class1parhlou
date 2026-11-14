@@ -1,0 +1,4422 @@
+{
+ "chapter": {
+  "id": "u-7",
+  "number": 7,
+  "title": "Coordinate Geometry",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-7-1",
+    "position": 1,
+    "title": "7.1 Coordinate Plane",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 7, section 7.1, pages 123–128; Exercise 7.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 7.1 (pages 123–128) in your textbook.",
+     "Solve Exercise 7.1 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-7-1-1",
+      "text": "Find the distance between the points: A(6, 7), B(0, −2).",
+      "marks": 2,
+      "modelAnswer": [
+       "d = √((0 − 6)² + (−2 − 7)²)",
+       "d = √(36 + 81) = √117",
+       "d = 3√13"
+      ],
+      "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+      "noteId": "n-7-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute the coordinates into the distance formula.",
+        "marks": 1,
+        "why": "Correct substitution shows the distance formula has been applied to both coordinates.",
+        "how": "Write the square root of the sum of the squared coordinate differences.",
+        "accept": [
+         [
+          "sqrt((0-6)^2+(-2-7)^2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify to the correct distance.",
+        "marks": 1,
+        "why": "The simplified distance is the required final result.",
+        "how": "Simplify √117 to 3√13.",
+        "accept": [
+         [
+          "3sqrt13"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.1 Q2(i)"
+     },
+     {
+      "id": "w-7-1-2",
+      "text": "Find the distance between the points: C(−5, −2), D(3, 2).",
+      "marks": 2,
+      "modelAnswer": [
+       "d = √((3 − (−5))² + (2 − (−2))²)",
+       "d = √(8² + 4²) = √80",
+       "d = 4√5"
+      ],
+      "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+      "noteId": "n-7-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Apply the distance formula.",
+        "marks": 1,
+        "why": "Correct substitution is essential for obtaining the distance.",
+        "how": "Use the differences between the corresponding coordinates.",
+        "accept": [
+         [
+          "sqrt((3-(-5))^2+(2-(-2))^2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify the distance.",
+        "marks": 1,
+        "why": "The final simplified value gives the required length.",
+        "how": "Evaluate √80 as 4√5.",
+        "accept": [
+         [
+          "4sqrt5"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.1 Q2(ii)"
+     },
+     {
+      "id": "w-7-1-3",
+      "text": "Find the distance between the points: L(0, 3), M(−2, −4).",
+      "marks": 2,
+      "modelAnswer": [
+       "d = √((−2 − 0)² + (−4 − 3)²)",
+       "d = √(4 + 49)",
+       "d = √53"
+      ],
+      "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+      "noteId": "n-7-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute into the distance formula.",
+        "marks": 1,
+        "why": "Substituting both coordinate differences correctly earns the method mark.",
+        "how": "Square the horizontal and vertical differences.",
+        "accept": [
+         [
+          "sqrt((-2-0)^2+(-4-3)^2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct final distance.",
+        "marks": 1,
+        "why": "This is the correct simplified distance.",
+        "how": "Evaluate √(4 + 49).",
+        "accept": [
+         [
+          "sqrt53"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.1 Q2(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The board may ask you to find a distance or midpoint from two given coordinates; write the relevant formula before substituting.",
+      "For a distance answer, show the squared coordinate differences and simplify the radical fully.",
+      "For a midpoint, average the x-coordinates together and the y-coordinates together; keep the result in ordered-pair form.",
+      "For a right-triangle question, find the three side lengths (or their squares) and use the Pythagoras relationship; identify which vertex has the right angle.",
+      "For a collinearity question, show that the slopes of two pairs of points are equal."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Write the distance formula and identify each x- and y-coordinate.",
+        "Substitute the two points; simplify √117."
+       ],
+       "accept": [
+        [
+         "3sqrt13"
+        ],
+        [
+         "3sqrt13units"
+        ]
+       ],
+       "question": "Find the distance between the points: A(6, 7), B(0, −2).",
+       "solution": [
+        "d = √((0 − 6)² + (−2 − 7)²)",
+        "d = √(36 + 81)",
+        "d = √117 = 3√13"
+       ],
+       "answer": "3√13"
+      },
+      {
+       "hints": [
+        "Use the midpoint formula: average the x-coordinates and average the y-coordinates.",
+        "Work out (3 + (−2))/2 and (1 + (−4))/2 separately."
+       ],
+       "accept": [
+        [
+         "(1/2,-3/2)"
+        ],
+        [
+         "(0.5,-1.5)"
+        ]
+       ],
+       "question": "Find the midpoint of the line segment joining the two points: A(3, 1), B(−2, −4).",
+       "solution": [
+        "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+        "M = ((3 + (−2))/2, (1 + (−4))/2)",
+        "M = (1/2, −3/2)"
+       ],
+       "answer": "(1/2, −3/2)"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The midpoint formula averages the x-coordinates and the y-coordinates separately.",
+        "text": "M(x, y) = ((x₁ + x₂)/2, (y₁ + y₂)/2)"
+       },
+       {
+        "why": "Put the coordinates of A and B into the corresponding places in the formula.",
+        "text": "Substitute x₁ = 2, y₁ = 3, x₂ = 8 and y₂ = 7, into the midpoint formula"
+       },
+       {
+        "why": "This shows the two coordinate averages before simplifying.",
+        "text": "M(x, y) = ((2 + 8)/2, (3 + 7)/2)"
+       },
+       {
+        "why": "Evaluate both averages to obtain the ordered pair for the midpoint.",
+        "text": "M(x, y) = (10/2, 10/2) = (5, 5)"
+       }
+      ],
+      "question": "Find the midpoint of the line segment joining the points A (2,3) and B(8,7).",
+      "answer": "M = (5, 5)"
+     },
+     "explain": [
+      {
+       "title": "The coordinate plane",
+       "body": "Draw two perpendicular number lines that meet at the origin O. The horizontal line x'Ox is called the x-axis and the vertical line y'Oy is called the y-axis. A point is named by an ordered pair (x, y)."
+      },
+      {
+       "title": "Coordinates and quadrants",
+       "body": "The first component of the ordered pair (x, y) is called x-coordinate or abscissa and the second component is called y-coordinate or ordinate of P. In Quadrant I both coordinates are positive; in II x is negative and y positive; in III both are negative; in IV x is positive and y negative. Points on the x-axis have the form (a, 0), and points on the y-axis have the form (0, b)."
+      },
+      {
+       "title": "Distance between two points",
+       "body": "For A(x₁, y₁) and B(x₂, y₂), the distance formula is d = √((x₂ − x₁)² + (y₂ − y₁)²). Subtract matching coordinates, square the differences, add them, and take the square root. Distance is always non-negative."
+      },
+      {
+       "title": "Midpoint of a line segment",
+       "body": "The midpoint is halfway between two endpoints. Average the x-coordinates to get its x-coordinate and average the y-coordinates to get its y-coordinate: M(x, y) = ((x₁ + x₂)/2, (y₁ + y₂)/2)."
+      }
+     ],
+     "mistakes": [
+      "Mixing up x and y when substituting coordinates into a formula.",
+      "Forgetting to square both coordinate differences in the distance formula.",
+      "Giving a negative distance instead of a non-negative length.",
+      "Adding the coordinates for a midpoint but forgetting to divide each sum by 2.",
+      "Leaving a radical unsimplified when it can be simplified.",
+      "In right-triangle questions, using the wrong side as the hypotenuse instead of the side opposite the stated right angle."
+     ]
+    }
+   },
+   {
+    "id": "m-7-2",
+    "position": 2,
+    "title": "7.2 Equations of Straight Lines",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 7, section 7.2, pages 128–141; Exercise 7.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 7.2 (pages 128–141) in your textbook.",
+     "Solve Exercise 7.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-7-2-1",
+      "text": "Find an equation of the horizontal line through (7, −9).",
+      "marks": 2,
+      "modelAnswer": [
+       "A horizontal line has equation y = constant.",
+       "Through (7, −9), y = −9.",
+       "∴ y + 9 = 0"
+      ],
+      "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+      "noteId": "n-7-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the constant y-coordinate.",
+        "marks": 1,
+        "why": "The y-coordinate stays constant on a horizontal line.",
+        "how": "Use y = −9.",
+        "accept": [
+         [
+          "y=-9"
+         ],
+         [
+          "y+9=0"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the equation in the required simplified form.",
+        "marks": 1,
+        "why": "The answer key gives the equation in general form.",
+        "how": "Rearrange y = −9 as y + 9 = 0.",
+        "accept": [
+         [
+          "y+9=0"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.2 Q6(a)"
+     },
+     {
+      "id": "w-7-2-2",
+      "text": "Find an equation of the vertical line through (−5, 3).",
+      "marks": 2,
+      "modelAnswer": [
+       "A vertical line has equation x = constant.",
+       "Through (−5, 3), x = −5.",
+       "∴ x + 5 = 0"
+      ],
+      "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+      "noteId": "n-7-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the constant x-coordinate.",
+        "marks": 1,
+        "why": "The x-coordinate stays constant on a vertical line.",
+        "how": "Use x = −5.",
+        "accept": [
+         [
+          "x=-5"
+         ],
+         [
+          "x+5=0"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the equation in general form.",
+        "marks": 1,
+        "why": "This is the general-form answer given in the answer key.",
+        "how": "Rearrange x = −5 as x + 5 = 0.",
+        "accept": [
+         [
+          "x+5=0"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.2 Q6(b)"
+     },
+     {
+      "id": "w-7-2-3",
+      "text": "Find an equation of the line through A(−6, 5) having slope 7.",
+      "marks": 2,
+      "modelAnswer": [
+       "y − 5 = 7(x − (−6))",
+       "y − 5 = 7(x + 6)",
+       "y = 7x + 47",
+       "∴ 7x − y + 47 = 0"
+      ],
+      "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+      "noteId": "n-7-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute into the point-slope form.",
+        "marks": 1,
+        "why": "The point-slope form correctly uses the given point and slope.",
+        "how": "Write y − 5 = 7(x + 6).",
+        "accept": [
+         [
+          "y-5=7(x+6)"
+         ],
+         [
+          "y=7x+47"
+         ],
+         [
+          "7x-y+47=0"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify to the required equation.",
+        "marks": 1,
+        "why": "The answer key gives the simplified general-form equation.",
+        "how": "Rearrange to 7x − y + 47 = 0.",
+        "accept": [
+         [
+          "7x-y+47=0"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.2 Q6(c)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The exercise tests slope, inclination, collinearity, parallel and perpendicular lines, and forming equations from points, slopes, or intercepts.",
+      "Show the slope formula and the substitutions clearly; these working steps can earn marks even if an arithmetic error occurs later.",
+      "For a line through a point with a known slope, write the point-slope form before rearranging.",
+      "For horizontal and vertical lines, use y = a and x = b respectively; do not try to assign a finite slope to a vertical line.",
+      "For parallel lines show equal slopes; for perpendicular lines show that the product of the slopes is −1.",
+      "For a final equation, simplify carefully and include the equals sign and zero where required."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "The line is horizontal, so its y-coordinate is constant.",
+        "Use y = a for a horizontal line and substitute the point's y-coordinate."
+       ],
+       "accept": [
+        [
+         "y+9=0"
+        ],
+        [
+         "y=-9"
+        ]
+       ],
+       "question": "Find an equation of: (a) the horizontal line through (7, −9)",
+       "solution": [
+        "A horizontal line has equation y = a.",
+        "The line passes through (7, −9), so a = −9.",
+        "Thus y = −9.",
+        "∴ y + 9 = 0"
+       ],
+       "answer": "y + 9 = 0"
+      },
+      {
+       "hints": [
+        "A line perpendicular to a line of slope −3/2 has slope equal to the negative reciprocal.",
+        "Use the point-slope form y − y₁ = m(x − x₁) with point (−4, −6)."
+       ],
+       "accept": [
+        [
+         "2x-3y-10=0"
+        ],
+        [
+         "y=2/3x-10/3"
+        ]
+       ],
+       "question": "Find an equation of the line through (−4, −6) and perpendicular to a line having slope −3/2.",
+       "solution": [
+        "The slope of the required line is m = 2/3.",
+        "Using point-slope form, y − (−6) = (2/3)(x − (−4)).",
+        "y + 6 = (2/3)(x + 4).",
+        "∴ 2x − 3y − 10 = 0"
+       ],
+       "answer": "2x − 3y − 10 = 0"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The two-point form requires the slope of the line through the given points.",
+        "text": "m = (−4 − 1)/(6 − (−2))"
+       },
+       {
+        "why": "Subtracting the coordinates gives the slope −5/8.",
+        "text": "m = −5/8"
+       },
+       {
+        "why": "Substitute the slope and one given point, (−2, 1), into point-slope form.",
+        "text": "y − 1 = −5/8[x − (−2)]"
+       },
+       {
+        "why": "Removing the double negative gives the equivalent equation.",
+        "text": "y − 1 = −5/8(x + 2)"
+       },
+       {
+        "why": "Clearing the fraction and collecting terms gives the equation in general form.",
+        "text": "5x + 8y + 2 = 0"
+       }
+      ],
+      "question": "Find an equation of line through the points (−2, 1) and (6, −4).",
+      "answer": "5x + 8y + 2 = 0"
+     },
+     "explain": [
+      {
+       "title": "Inclination and slope",
+       "body": "The textbook defines inclination this way: “The angle α (0° < α < 180°) is measured counterclockwise from positive x-axis to a non-horizontal straight line ℓ is called the inclination of ℓ.” The textbook also defines slope this way: “In analytical geometry, slope or gradient m of a non-vertical straight line with α as its inclination is defined by: m = tan α.” A horizontal line has slope zero; a vertical line has an undefined slope."
+      },
+      {
+       "title": "Slope from two points",
+       "body": "For points P(x₁, y₁) and Q(x₂, y₂), use m = (y₂ − y₁)/(x₂ − x₁). Subtract the y-coordinates in the same order as the x-coordinates. The textbook states: “If slope of AB = slope of BC, then the points A, B and C are collinear.”"
+      },
+      {
+       "title": "Parallel and perpendicular lines",
+       "body": "Two lines are parallel when their slopes are equal. They are perpendicular when m₁m₂ = −1, so their slopes are negative reciprocals."
+      },
+      {
+       "title": "Choose an equation form",
+       "body": "Use y = mx + c when the slope and y-intercept are known. Use y − y₁ = m(x − x₁) when a point and slope are known. Use x/a + y/b = 1 when the x- and y-intercepts are known. A horizontal line has equation y = a, and a vertical line has equation x = b."
+      },
+      {
+       "title": "General equation",
+       "body": "The general equation of a straight line is ax + by + c = 0, where a and b are not simultaneously zero. Rearranging it to y = mx + c₁ reveals its slope when b is not zero."
+      }
+     ],
+     "mistakes": [
+      "Reversing the subtraction order for only the numerator or only the denominator when calculating slope.",
+      "Treating a vertical line as having slope zero; its slope is undefined.",
+      "Using equal slopes for perpendicular lines instead of checking m₁m₂ = −1.",
+      "Using the wrong sign when substituting a negative coordinate into point-slope form.",
+      "Forgetting that the y-coordinate is constant on a horizontal line and the x-coordinate is constant on a vertical line.",
+      "Stopping at a point-slope equation when the question or answer key expects a simplified general-form equation."
+     ]
+    }
+   },
+   {
+    "id": "m-7-3",
+    "position": 3,
+    "title": "7.3 Applications of Coordinate Geometry in Real life Situations",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 7, section 7.3, pages 141–145; Exercise 7.3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 7.3 (pages 141–145) in your textbook.",
+     "Solve Exercise 7.3 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-7-3-1",
+      "text": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+      "marks": 4,
+      "modelAnswer": [
+       "d = √((9 − 2)² + (12 − 6)²)",
+       "d = √(7² + 6²) = √(49 + 36)",
+       "d = √85 ≈ 9.22 km"
+      ],
+      "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+      "noteId": "n-7-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Set up the distance formula.",
+        "marks": 1,
+        "why": "The correct distance formula must be set up for the given coordinates.",
+        "how": "Substitute the x- and y-coordinates into the distance formula.",
+        "accept": [
+         [
+          "sqrt((9-2)^2+(12-6)^2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Find the coordinate differences.",
+        "marks": 1,
+        "why": "Correct coordinate differences are needed before squaring.",
+        "how": "Calculate 9 − 2 and 12 − 6.",
+        "accept": [
+         [
+          "7^2",
+          "6^2"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Simplify under the square root.",
+        "marks": 1,
+        "why": "Squaring and adding the differences gives the exact distance.",
+        "how": "Evaluate √(49 + 36) as √85.",
+        "accept": [
+         [
+          "sqrt85"
+         ],
+         [
+          "sqrt(49+36)"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the distance in kilometres.",
+        "marks": 1,
+        "why": "The final distance and its unit must be stated.",
+        "how": "State √85 ≈ 9.22 km.",
+        "accept": [
+         [
+          "9.22",
+          "km"
+         ],
+         [
+          "sqrt85",
+          "km"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.3 Q1"
+     },
+     {
+      "id": "w-7-3-2",
+      "text": "Consider a straight trail (represented by coordinate plane) that starts at point (5, 7) and ends at point (15, 3). What are the coordinates of the midpoint?",
+      "marks": 2,
+      "modelAnswer": [
+       "M = ((5 + 15)/2, (7 + 3)/2)",
+       "M = (10, 5)"
+      ],
+      "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+      "noteId": "n-7-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Average the x- and y-coordinates.",
+        "marks": 1,
+        "why": "The midpoint is found by averaging the corresponding coordinates.",
+        "how": "Calculate (5 + 15)/2 and (7 + 3)/2.",
+        "accept": [
+         [
+          "(5+15)/2",
+          "(7+3)/2"
+         ],
+         [
+          "10",
+          "5"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the midpoint.",
+        "marks": 1,
+        "why": "The final ordered pair must place the coordinates in the correct order.",
+        "how": "Write the midpoint as (10, 5).",
+        "accept": [
+         [
+          "(10,5)"
+         ],
+         [
+          "10",
+          "5"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.3 Q2"
+     },
+     {
+      "id": "w-7-3-3",
+      "text": "An architect is designing a park with two buildings located at (10, 8) and (4, 3) on the grid. Calculate the straight-line distance between the buildings. Assume the coordinates are in metres.",
+      "marks": 4,
+      "modelAnswer": [
+       "d = √((4 − 10)² + (3 − 8)²)",
+       "d = √((−6)² + (−5)²)",
+       "d = √(36 + 25) = √61",
+       "d ≈ 7.81 m"
+      ],
+      "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+      "noteId": "n-7-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Set up the formula.",
+        "marks": 1,
+        "why": "The distance formula represents the straight-line distance.",
+        "how": "Substitute the two coordinate pairs.",
+        "accept": [
+         [
+          "sqrt((4-10)^2+(3-8)^2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Find the coordinate differences.",
+        "marks": 1,
+        "why": "Correct differences ensure the squared terms are correct.",
+        "how": "Calculate 4 − 10 and 3 − 8.",
+        "accept": [
+         [
+          "(-6)^2",
+          "(-5)^2"
+         ],
+         [
+          "6^2",
+          "5^2"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Simplify the radical.",
+        "marks": 1,
+        "why": "Adding the squared differences gives the exact distance.",
+        "how": "Evaluate √(36 + 25) as √61.",
+        "accept": [
+         [
+          "sqrt61"
+         ],
+         [
+          "sqrt(36+25)"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "State the distance in metres.",
+        "marks": 1,
+        "why": "The answer needs the appropriate unit.",
+        "how": "Write √61 ≈ 7.81 m.",
+        "accept": [
+         [
+          "7.81",
+          "m"
+         ],
+         [
+          "sqrt61",
+          "m"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 7.3 Q3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A board question may describe two places, points, or buildings and ask for the straight-line distance. Write the distance formula, substitute the coordinates, simplify, and state the unit.",
+      "For a midpoint question, show the average of the x-coordinates and the average of the y-coordinates, then write the ordered pair.",
+      "For a rectangle perimeter question, show the side lengths and add all four sides; do not give just the sum of the two different side lengths.",
+      "For a heading-angle question like your textbook's Example 18, find the slope first, then use tan θ = m and θ = tan⁻¹(m). Include the direction in the final statement.",
+      "Marks are commonly earned for choosing the right method, correct substitution or coordinate differences, accurate simplification, and a final answer with units where needed."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Use the distance formula for the two coordinate pairs.",
+        "The coordinate differences are 9 − 2 and 12 − 6; square them, add, then take the square root."
+       ],
+       "accept": [
+        [
+         "sqrt85",
+         "km"
+        ],
+        [
+         "9.22",
+         "km"
+        ]
+       ],
+       "question": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+       "solution": [
+        "d = √((9 − 2)² + (12 − 6)²)",
+        "d = √(7² + 6²) = √(49 + 36)",
+        "d = √85 ≈ 9.22 km"
+       ],
+       "answer": "√85 ≈ 9.22 km"
+      },
+      {
+       "hints": [
+        "Average the x-coordinates to get the midpoint's first coordinate.",
+        "Average 5 and 15, then average 7 and 3; write the results as an ordered pair."
+       ],
+       "accept": [
+        [
+         "(10,5)"
+        ],
+        [
+         "10",
+         "5"
+        ]
+       ],
+       "question": "Consider a straight trail (represented by coordinate plane) that starts at point (5, 7) and ends at point (15, 3). What are the coordinates of the midpoint?",
+       "solution": [
+        "M = ((5 + 15)/2, (7 + 3)/2)",
+        "M = (10, 5)"
+       ],
+       "answer": "(10, 5)"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This identifies the distance formula that will be used.",
+        "text": "We apply the distance formula:"
+       },
+       {
+        "why": "The points are substituted into the formula, keeping the coordinate order consistent.",
+        "text": "d = |AB| = √((7 − 3)² + (1 − 4)²)"
+       },
+       {
+        "why": "The differences are calculated before squaring.",
+        "text": "d = |AB| = √((4)² + (−3)²)"
+       },
+       {
+        "why": "Squaring and adding gives 25, whose square root is 5.",
+        "text": "d = |AB| = √(16 + 9) = √25 = 5"
+       },
+       {
+        "why": "The final statement names the result and its unit.",
+        "text": "Thus, the straight line distance between City A and City B is 5 units."
+       }
+      ],
+      "question": "EXAMPLE 15: Suppose two cities, City A and City B, are represented by the coordinates (3, 4) and (7, 1) on a map. Find the straight-line distance between the two cities.",
+      "answer": "5 units"
+     },
+     "explain": [
+      {
+       "title": "Distance between two points",
+       "body": "Your textbook uses d = √((x₂ − x₁)² + (y₂ − y₁)²). Subtract the x-coordinates and the y-coordinates, square each difference, add them, and take the square root. Add the context's unit, such as kilometres or metres."
+      },
+      {
+       "title": "Finding a midpoint",
+       "body": "The midpoint is halfway between two points. Add the x-coordinates and divide by 2; then add the y-coordinates and divide by 2. Put the two results in an ordered pair."
+      },
+      {
+       "title": "Slope and heading angle",
+       "body": "For the heading example in your textbook, slope m is the change in y divided by the change in x. Then tan θ = m, so θ = tan⁻¹(m). The final direction can be described relative to east."
+      },
+      {
+       "title": "Perimeter from coordinates",
+       "body": "For a rectangular field, use its corner coordinates to find the horizontal and vertical side lengths. Add all four sides to find the fencing needed."
+      }
+     ],
+     "mistakes": [
+      "Subtracting the coordinates in inconsistent order or forgetting to square one of the differences.",
+      "Adding the coordinates for a midpoint but forgetting to divide each sum by 2.",
+      "Writing the midpoint coordinates in the wrong order.",
+      "Stopping at the sum of two different side lengths instead of adding all four sides for a perimeter.",
+      "Forgetting to include the units in a distance or fencing answer.",
+      "For a heading angle, writing the slope as the angle instead of using θ = tan⁻¹(m)."
+     ]
+    }
+   },
+   {
+    "id": "m-7-4",
+    "position": 4,
+    "title": "Unit 7 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 7, review exercise, pages 145–146; Review Exercise 7",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 7 and attempt Review Exercise 7 (pages 145–146)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-7-4-1",
+      "text": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+      "marks": 2,
+      "modelAnswer": [
+       "Distance = √((7 − 2)² + (8 − 3)²)",
+       "= √(25 + 25)",
+       "= √50 = 5√2"
+      ],
+      "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+      "noteId": "n-7-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Use the distance formula with the two coordinate differences.",
+        "marks": 1,
+        "why": "The distance formula and coordinate differences are the essential method.",
+        "how": "Substitute the coordinates into √((x₂ − x₁)² + (y₂ − y₁)²).",
+        "accept": [
+         [
+          "√((7−2)^2+(8−3)^2)"
+         ],
+         [
+          "√50"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the distance in simplified exact form.",
+        "marks": 1,
+        "why": "The simplified distance is the required final result.",
+        "how": "Simplify √50 to 5√2.",
+        "accept": [
+         [
+          "5√2"
+         ],
+         [
+          "√50"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 7 Q2"
+     },
+     {
+      "id": "w-7-4-2",
+      "text": "Find the midpoint of the line segment joining the points (4, −2) and (−6, 3).",
+      "marks": 2,
+      "modelAnswer": [
+       "Midpoint = ((4 + (−6))/2, (−2 + 3)/2)",
+       "= (−2/2, 1/2)",
+       "= (−1, 1/2)"
+      ],
+      "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+      "noteId": "n-7-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute the endpoint coordinates into the midpoint formula.",
+        "marks": 1,
+        "why": "The midpoint formula averages the x-coordinates and the y-coordinates separately.",
+        "how": "Show the two coordinate averages.",
+        "accept": [
+         [
+          "((4−6)/2, (−2+3)/2)"
+         ],
+         [
+          "(-2/2, 1/2)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the midpoint.",
+        "marks": 1,
+        "why": "The simplified ordered pair is the midpoint.",
+        "how": "Simplify both coordinate averages and write them as an ordered pair.",
+        "accept": [
+         [
+          "(−1, 1/2)"
+         ],
+         [
+          "(-1,1/2)"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 7 Q3"
+     },
+     {
+      "id": "w-7-4-3",
+      "text": "Calculate the gradient (slope) of the line passing through the points (1, 2) and (4, 6).",
+      "marks": 2,
+      "modelAnswer": [
+       "Gradient = (6 − 2)/(4 − 1)",
+       "= 4/3"
+      ],
+      "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+      "noteId": "n-7-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Use the gradient formula with the given points.",
+        "marks": 1,
+        "why": "The gradient formula uses change in y divided by change in x.",
+        "how": "Substitute the y-coordinate difference over the x-coordinate difference.",
+        "accept": [
+         [
+          "(6−2)/(4−1)"
+         ],
+         [
+          "4/3"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the gradient.",
+        "marks": 1,
+        "why": "The simplified ratio is the correct gradient.",
+        "how": "Simplify the substituted ratio.",
+        "accept": [
+         [
+          "4/3"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 7 Q4"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Multiple-choice questions may ask you to recognise line forms, parallel or perpendicular gradients, distance and midpoint formulas.",
+      "For numerical questions, write the formula first, substitute the coordinates clearly, then simplify. These steps can earn method marks even if there is an arithmetic error.",
+      "For line equations, show the gradient and substitution into the required form; make sure the final equation is in the form asked for.",
+      "For questions asking for more than one result, such as gradient and distance, label each result so neither is missed."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Use the distance formula: √((x₂ − x₁)² + (y₂ − y₁)²).",
+        "The coordinate differences are 5 and 5; square them, add them and simplify the square root."
+       ],
+       "accept": [
+        [
+         "5√2"
+        ],
+        [
+         "√50"
+        ]
+       ],
+       "question": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+       "solution": [
+        "Distance = √((7 − 2)² + (8 − 3)²)",
+        "= √(5² + 5²)",
+        "= √50",
+        "= 5√2"
+       ],
+       "answer": "5√2"
+      },
+      {
+       "hints": [
+        "Find gradient using (y₂ − y₁)/(x₂ − x₁).",
+        "For distance, use the same two points in √((x₂ − x₁)² + (y₂ − y₁)²)."
+       ],
+       "accept": [
+        [
+         "3/2",
+         "4√13"
+        ],
+        [
+         "3/2",
+         "14.4"
+        ]
+       ],
+       "question": "A drone is flying from point (2, 3) to point (10, 15) on the grid. Calculate the gradient of the line along which the drone is flying and the total distance travelled.",
+       "solution": [
+        "Gradient = (15 − 3)/(10 − 2)",
+        "= 12/8 = 3/2",
+        "Distance = √((10 − 2)² + (15 − 3)²)",
+        "= √(8² + 12²)",
+        "= √208 = 4√13 ≈ 14.4 units"
+       ],
+       "answer": "Gradient = 3/2; distance = 4√13 ≈ 14.4 units"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The gradient is the change in y divided by the change in x.",
+        "text": "Gradient = (6 − 2)/(4 − 1)"
+       },
+       {
+        "why": "Subtracting gives the vertical change 4 and horizontal change 3.",
+        "text": "= 4/3"
+       }
+      ],
+      "question": "Calculate the gradient (slope) of the line passing through the points (1, 2) and (4, 6).",
+      "answer": "4/3"
+     },
+     "explain": [
+      {
+       "title": "Gradient tells the line's steepness",
+       "body": "For two points (x₁, y₁) and (x₂, y₂), calculate gradient as (y₂ − y₁)/(x₂ − x₁). Subtract y-values in the numerator and x-values in the denominator."
+      },
+      {
+       "title": "Distance measures the straight-line gap",
+       "body": "Use √((x₂ − x₁)² + (y₂ − y₁)²). Square each coordinate difference, add them, and take the square root. For example, differences 3 and 4 give distance √(9 + 16) = 5."
+      },
+      {
+       "title": "Midpoint is halfway between the points",
+       "body": "Average the x-coordinates and average the y-coordinates: midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2). Keep the averages in the order (x, y)."
+      },
+      {
+       "title": "Parallel and perpendicular lines",
+       "body": "Parallel lines have equal gradients. If the product of the gradients of two lines is −1, the lines are perpendicular."
+      },
+      {
+       "title": "Choose the line form the question asks for",
+       "body": "Slope-intercept form is y = c + mx, and point-slope form is y − y₁ = m(x − x₁). Intercepts form is x/a + y/b = 1, and normal form is x cos α + y sin α = p. Write the final equation in the named form."
+      }
+     ],
+     "mistakes": [
+      "Reversing only one subtraction in the gradient formula; keep the order of the points consistent in both numerator and denominator.",
+      "Adding the coordinates for distance instead of squaring their differences.",
+      "Writing the midpoint coordinates in the wrong order or forgetting to divide both sums by 2.",
+      "Assuming perpendicular lines have equal gradients; their gradients have product −1.",
+      "Finding the right line but leaving it in a different form from the one requested."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-7-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-7-1",
+   "title": "Coordinates, distance and midpoint",
+   "keywords": [
+    "coordinate plane",
+    "quadrants",
+    "distance formula",
+    "midpoint formula",
+    "abscissa",
+    "ordinate"
+   ],
+   "answer": "Use the distance formula d = √((x₂ − x₁)² + (y₂ − y₁)²) and the midpoint formula M = ((x₁ + x₂)/2, (y₁ + y₂)/2).",
+   "explanation": "A point is written as an ordered pair (x, y): x tells how far to move horizontally, and y tells how far to move vertically. Use the distance formula to find the length between two points and the midpoint formula to find the point halfway between them.",
+   "simple": "Think of (x, y) as a map instruction: move x units sideways and y units up or down.",
+   "examples": [
+    "The distance between (5, 6) and (5, −2) is 8.",
+    "The midpoint of (2, 3) and (8, 7) is (5, 5)."
+   ],
+   "steps": [
+    "For distance, subtract the x-coordinates and the y-coordinates separately.",
+    "Square both differences and add them.",
+    "Take the square root of the sum.",
+    "For a midpoint, add the x-coordinates and divide by 2; do the same with the y-coordinates."
+   ],
+   "checkQuestion": "What is the distance between (1, 2) and (4, 6)?",
+   "checkAnswer": "The distance is 5 units.",
+   "checkAccept": [
+    [
+     "5"
+    ],
+    [
+     "5 units"
+    ]
+   ]
+  },
+  {
+   "id": "n-7-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-7-2",
+   "title": "Equations of Straight Lines",
+   "keywords": [
+    "slope",
+    "gradient",
+    "inclination",
+    "parallel",
+    "perpendicular",
+    "point-slope",
+    "intercept",
+    "straight line"
+   ],
+   "answer": "For a non-vertical line through (x₁, y₁) with slope m, use y − y₁ = m(x − x₁).",
+   "explanation": "A straight line can be described by its slope and a point, by its intercepts, or by its relationship to the axes. Choose the form that matches the information given, then simplify the equation.",
+   "simple": "Slope tells how steep a line is. Use the information you know—such as a point and slope—to write an equation that describes every point on the line.",
+   "examples": [
+    "A horizontal line through (7, −9) has equation y = −9, or y + 9 = 0.",
+    "A line with slope 2 through (5, 1) has equation y − 1 = 2(x − 5), or y = 2x − 9."
+   ],
+   "steps": [
+    "Find the slope using the given information, or use the slope already given.",
+    "Choose a suitable form: y = mx + c, y − y₁ = m(x − x₁), or an intercept form.",
+    "Substitute the known values into the chosen form.",
+    "Simplify and write the equation clearly."
+   ],
+   "checkQuestion": "Find the equation of the line through (0, 3) with slope −4.",
+   "checkAnswer": "y = −4x + 3",
+   "checkAccept": [
+    [
+     "y=-4x+3"
+    ],
+    [
+     "y+4x=3"
+    ],
+    [
+     "y-3=-4x"
+    ]
+   ]
+  },
+  {
+   "id": "n-7-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-7-3",
+   "title": "Coordinate Geometry in Real Life",
+   "keywords": [
+    "distance formula",
+    "midpoint",
+    "coordinates",
+    "straight-line distance",
+    "perimeter",
+    "slope"
+   ],
+   "answer": "The distance formula gives the straight-line distance, and averaging the coordinates gives the midpoint.",
+   "explanation": "Use the distance formula to find the straight-line distance between two points. To find the midpoint, average the two x-coordinates and average the two y-coordinates. For a rectangular boundary, find its side lengths and add them to get the perimeter.",
+   "simple": "Distance tells how far apart two points are. A midpoint is halfway between two points.",
+   "examples": [
+    "The distance between (3, 4) and (7, 1) is √((7 − 3)² + (1 − 4)²) = √25 = 5 units.",
+    "The midpoint of (2, 5) and (8, 9) is ((2 + 8)/2, (5 + 9)/2) = (5, 7)."
+   ],
+   "steps": [
+    "For points (x₁, y₁) and (x₂, y₂), use d = √((x₂ − x₁)² + (y₂ − y₁)²) to find their distance.",
+    "For the midpoint, calculate ((x₁ + x₂)/2, (y₁ + y₂)/2).",
+    "For the perimeter of a rectangle, add its four side lengths."
+   ],
+   "checkQuestion": "What is the midpoint of (4, 6) and (8, 10)?",
+   "checkAnswer": "(6, 8)",
+   "checkAccept": [
+    [
+     "(6, 8)"
+    ],
+    [
+     "6",
+     "8"
+    ]
+   ]
+  },
+  {
+   "id": "n-7-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-7-4",
+   "title": "Coordinate Geometry: Review",
+   "keywords": [
+    "gradient",
+    "slope",
+    "midpoint",
+    "distance",
+    "parallel",
+    "line equation"
+   ],
+   "answer": "The gradient is 4/3.",
+   "explanation": "Coordinate geometry uses points on a plane to find distances, midpoints, gradients and equations of straight lines. Keep the x-coordinates together and the y-coordinates together when using the formulas.",
+   "simple": "A coordinate is a location (x, y). Use the change in y and change in x to find gradient; use the midpoint and distance formulas to compare two locations.",
+   "examples": [
+    "For (1, 2) and (4, 6), gradient = (6 − 2)/(4 − 1) = 4/3.",
+    "For (4, −2) and (−6, 3), midpoint = ((4 − 6)/2, (−2 + 3)/2) = (−1, 1/2)."
+   ],
+   "steps": [
+    "Write down the two points and identify x₁, y₁, x₂ and y₂.",
+    "For gradient, calculate (y₂ − y₁)/(x₂ − x₁).",
+    "For midpoint, calculate ((x₁ + x₂)/2, (y₁ + y₂)/2).",
+    "For distance, calculate √((x₂ − x₁)² + (y₂ − y₁)²).",
+    "Use the gradient and a point to form the required equation of a line."
+   ],
+   "checkQuestion": "Find the gradient of the line through (1, 2) and (4, 6).",
+   "checkAnswer": "4/3",
+   "checkAccept": [
+    [
+     "4/3"
+    ],
+    [
+     "4 ÷ 3"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-7-1-1",
+   "stem": "What is the point where the two coordinate axes intersect called?",
+   "options": [
+    "x-axis",
+    "y-axis",
+    "origin",
+    "Quadrant I"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The x-axis is the horizontal coordinate axis, not the point where the axes meet.",
+    "The y-axis is the vertical coordinate axis, not the intersection point.",
+    "The intersection point of the axes is called the origin.",
+    "Quadrant I is one of the four regions between the axes."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-2",
+   "stem": "What is the first component of an ordered pair (x, y) called?",
+   "options": [
+    "The abscissa",
+    "The ordinate",
+    "The origin",
+    "The graph"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The first component, x, is called the x-coordinate or abscissa.",
+    "The ordinate is the second component, y.",
+    "The origin is the point (0, 0).",
+    "The graph is the point in the plane that corresponds to an ordered pair."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-3",
+   "stem": "In which quadrant does the point (4, −3) lie?",
+   "options": [
+    "Quadrant I",
+    "Quadrant II",
+    "Quadrant III",
+    "Quadrant IV"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Quadrant I has x > 0 and y > 0, but this point has a negative y-coordinate.",
+    "Quadrant II has x < 0 and y > 0, unlike this point.",
+    "Quadrant III has x < 0 and y < 0, but this point has positive x.",
+    "Quadrant IV has x > 0 and y < 0, so the point lies there."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-4",
+   "stem": "What is the distance between (1, 2) and (4, 6)?",
+   "options": [
+    "√13",
+    "5",
+    "7",
+    "25"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The squared coordinate differences add to 25, not 13.",
+    "The distance is √((4 − 1)² + (6 − 2)²) = √25 = 5.",
+    "The sum of the coordinate differences is 7, but distance is found using the distance formula.",
+    "25 is the squared distance, not the distance."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-5",
+   "stem": "Find the midpoint of the line segment joining (2, 3) and (8, 7).",
+   "options": [
+    "(5, 5)",
+    "(10, 10)",
+    "(3, 4)",
+    "(6, 4)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Averaging the x-coordinates and y-coordinates gives (5, 5).",
+    "These are the coordinate sums, not their averages.",
+    "This pair is not found by averaging the corresponding coordinates.",
+    "The x-coordinate should be (2 + 8)/2 = 5, not 6."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-6",
+   "stem": "Where do points of the form (a, 0) lie?",
+   "options": [
+    "The x-axis",
+    "The y-axis",
+    "Quadrant II",
+    "Quadrant IV"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Points with second coordinate 0 lie on the x-axis.",
+    "Points on the y-axis have first coordinate 0.",
+    "A point in Quadrant II has x < 0 and y > 0, so its y-coordinate is not 0.",
+    "A point in Quadrant IV has x > 0 and y < 0, so its y-coordinate is not 0."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-7",
+   "stem": "Which statement about the distance between two points is correct?",
+   "options": [
+    "The distance is directed and can be negative.",
+    "The distance is always non-negative.",
+    "The distance is always zero.",
+    "The distance is the midpoint of the two points."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The textbook states that distance is not a directed distance from one point to another.",
+    "Distance is always taken to be non-negative.",
+    "Distance is zero only when the two points coincide.",
+    "A midpoint is a point, while distance is a length."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-1-8",
+   "stem": "Which expression gives the midpoint of A(x₁, y₁) and B(x₂, y₂)?",
+   "options": [
+    "(x₁ − x₂, y₁ − y₂)",
+    "((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "(x₁ + x₂, y₁ + y₂)",
+    "((x₁ − x₂)/2, (y₁ − y₂)/2)"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This expression gives differences, not the averages needed for a midpoint.",
+    "The midpoint coordinates are the averages of the corresponding endpoint coordinates.",
+    "These are coordinate sums without dividing by 2.",
+    "A midpoint uses the averages of the sums, not half the differences."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-1",
+   "moduleId": "m-7-1"
+  },
+  {
+   "id": "q-7-2-1",
+   "stem": "Find the slope of the line joining (−2, 4) and (5, 11).",
+   "options": [
+    "1",
+    "−1",
+    "0",
+    "Undefined"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: (11 − 4)/(5 − (−2)) = 7/7 = 1.",
+    "This has the wrong sign; both coordinates increase, so the slope is positive.",
+    "A zero slope belongs to a horizontal line, not this line.",
+    "An undefined slope belongs to a vertical line, and the x-coordinates here differ."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-2-2",
+   "stem": "Which is the slope-intercept equation of a line with slope −5 and y-intercept 2?",
+   "options": [
+    "y = 5x + 2",
+    "y = −5x + 2",
+    "y = −5x − 2",
+    "x = 2"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The slope in this equation is positive 5, not −5.",
+    "Correct: substituting m = −5 and c = 2 into y = mx + c gives y = −5x + 2.",
+    "This has the correct slope but the wrong y-intercept.",
+    "This is a vertical line, not a line with a defined slope of −5."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-2-3",
+   "stem": "What condition shows that two non-vertical lines with slopes m₁ and m₂ are perpendicular?",
+   "options": [
+    "m₁ = m₂",
+    "m₁m₂ = 1",
+    "m₁ + m₂ = 0",
+    "m₁m₂ = −1"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Equal slopes show that the lines are parallel, not perpendicular.",
+    "A product of 1 does not give the perpendicular-slope condition.",
+    "Slopes that add to zero are opposites, which does not generally make lines perpendicular.",
+    "Correct: perpendicular lines have slopes whose product is −1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-2-4",
+   "stem": "A horizontal line passes through (−3, 6). What is its equation?",
+   "options": [
+    "x = 6",
+    "y = 6",
+    "y = 0",
+    "x = 0"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "x = 6 is vertical, not horizontal.",
+    "Correct: every point on this horizontal line has y-coordinate 6.",
+    "y = 0 is the x-axis and does not pass through (−3, 6).",
+    "x = 0 is the y-axis and does not pass through (−3, 6)."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-2-5",
+   "stem": "A line has x-intercept −3 and y-intercept 4. Which equation is in intercept form?",
+   "options": [
+    "x/3 + y/4 = 1",
+    "x/3 + y/(−4) = 1",
+    "x/(−3) + y/4 = 1",
+    "x/(−3) + y/(−4) = 1"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This uses x-intercept 3 instead of −3.",
+    "This gives the wrong signs for both intercepts.",
+    "Correct: substitute a = −3 and b = 4 into x/a + y/b = 1.",
+    "This uses the correct x-intercept but the wrong sign for the y-intercept."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-2-6",
+   "stem": "Which point-slope equation represents the line with slope 3 through (−1, 2)?",
+   "options": [
+    "y − 2 = 3(x + 1)",
+    "y + 2 = 3(x − 1)",
+    "y − 2 = −3(x + 1)",
+    "y + 1 = 3(x − 2)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: put m = 3, x₁ = −1 and y₁ = 2 into y − y₁ = m(x − x₁).",
+    "This uses the point (1, −2), not (−1, 2).",
+    "This gives the line slope −3 instead of 3.",
+    "This uses a different point and does not represent the required line."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-2",
+   "moduleId": "m-7-2"
+  },
+  {
+   "id": "q-7-3-1",
+   "stem": "Which formula finds the straight-line distance between two points?",
+   "options": [
+    "√((x₂ − x₁)² + (y₂ − y₁)²)",
+    "((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "(x₂ − x₁) + (y₂ − y₁)",
+    "x₁y₁ + x₂y₂"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the distance formula used to find the straight-line distance.",
+    "This formula gives the midpoint, not the distance.",
+    "Adding coordinate differences does not generally give the straight-line distance.",
+    "Multiplying and adding coordinates does not give the distance."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-2",
+   "stem": "What is the midpoint of (2, 5) and (8, 9)?",
+   "options": [
+    "(5, 7)",
+    "(10, 14)",
+    "(3, 5)",
+    "(7, 9)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Averaging the x-coordinates gives 5 and the y-coordinates gives 7.",
+    "These are the sums of the coordinates, not their averages.",
+    "These are not the averages of the corresponding coordinates.",
+    "These values do not follow from averaging the coordinates."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-3",
+   "stem": "Find the distance between (3, 4) and (7, 1).",
+   "options": [
+    "5 units",
+    "7 units",
+    "√7 units",
+    "25 units"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The distance is √(4² + (−3)²) = √25 = 5 units.",
+    "The coordinate differences should be squared and added, giving 5 rather than 7.",
+    "The squared differences add to 25, not 7.",
+    "The squared distance is 25; the distance is its square root, 5."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-4",
+   "stem": "What is the slope between (2, 3) and (7, 23)?",
+   "options": [
+    "4",
+    "9/4",
+    "−4",
+    "2/9"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The slope is (23 − 3)/(7 − 2) = 20/5 = 4.",
+    "This is not the quotient of the change in y by the change in x.",
+    "The slope is positive because both coordinate changes are positive.",
+    "The changes in coordinates have been used in the wrong order."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-5",
+   "stem": "A rectangle has corners (0, 0), (0, 5), (8, 5), and (8, 0). What is its perimeter?",
+   "options": [
+    "26 units",
+    "13 units",
+    "40 units",
+    "20 units"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The side lengths are 5 and 8, so the perimeter is 2(5 + 8) = 26 units.",
+    "This is the sum of the two different side lengths, not the perimeter.",
+    "This does not equal twice the sum of the side lengths.",
+    "This does not add all four sides of the rectangle."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-6",
+   "stem": "Find the midpoint of (5, 7) and (15, 3).",
+   "options": [
+    "(10, 5)",
+    "(20, 10)",
+    "(5, 10)",
+    "(10, 10)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The coordinate averages are (5 + 15)/2 = 10 and (7 + 3)/2 = 5.",
+    "These are the sums of the coordinates, not their averages.",
+    "The x-coordinate is not the average of 5 and 15.",
+    "The y-coordinate is not the average of 7 and 3."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-7",
+   "stem": "For a plane travelling from (50, 60) to (120, 150), the book's method gives slope 9/7. What is the heading angle relative to east?",
+   "options": [
+    "52.13° north of east",
+    "9/7° north of east",
+    "37.87° north of east",
+    "90° north of east"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Using θ = tan⁻¹(9/7) gives approximately 52.13° north of east.",
+    "The slope is the tangent of the angle; it is not the angle in degrees.",
+    "This is not the angle obtained from tan⁻¹(9/7).",
+    "A slope of 9/7 does not indicate a vertical direction."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-3-8",
+   "stem": "Find the midpoint of (10° N, 50° E) and (20° N, 60° E).",
+   "options": [
+    "(15° N, 55° E)",
+    "(30° N, 110° E)",
+    "(15° N, 110° E)",
+    "(10° N, 50° E)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The average latitude is 15° N and the average longitude is 55° E.",
+    "These are sums rather than averages of the coordinates.",
+    "The latitude is averaged correctly, but the longitude is not.",
+    "This is the starting point, not the midpoint."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-7-3",
+   "moduleId": "m-7-3"
+  },
+  {
+   "id": "q-7-4-1",
+   "stem": "The equation of a straight line in the slope-intercept form is written as:",
+   "options": [
+    "y = m(x + c)",
+    "y − y₁ = m(x − x₁)",
+    "y = c + mx",
+    "ax + by + c = 0"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not the standard slope-intercept form.",
+    "This is the point-slope form.",
+    "This is the slope-intercept form, with gradient m and y-intercept c.",
+    "This is a general form of a linear equation, not the requested slope-intercept form."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-2",
+   "stem": "The gradients of two parallel lines are:",
+   "options": [
+    "equal",
+    "zero",
+    "negative reciprocals of each other",
+    "always undefined"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Parallel lines have equal gradients.",
+    "Parallel lines need not have zero gradient.",
+    "Negative reciprocal gradients describe perpendicular lines, not parallel lines.",
+    "Parallel lines do not always have undefined gradients."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-3",
+   "stem": "If the product of the gradients of two lines is −1, then the lines are:",
+   "options": [
+    "Parallel",
+    "perpendicular",
+    "Collinear",
+    "coincident"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Parallel lines have equal gradients rather than gradients whose product is −1.",
+    "Gradients with product −1 indicate perpendicular lines.",
+    "Collinear describes points on the same straight line, not this gradient relationship.",
+    "Coincident lines are the same line, so their gradients are equal."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-4",
+   "stem": "Distance between two points P(1, 2) and Q(4, 6) is:",
+   "options": [
+    "5",
+    "6",
+    "√13",
+    "4"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The distance is √((4 − 1)² + (6 − 2)²) = √25 = 5.",
+    "The distance formula gives 5, not 6.",
+    "√13 does not result from the coordinate differences 3 and 4.",
+    "The coordinate differences are 3 and 4, so the distance is 5, not 4."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-5",
+   "stem": "The midpoint of a line segment with endpoints (−2, 4) and (6, −2) is:",
+   "options": [
+    "(4, 2)",
+    "(2, 1)",
+    "(1, 1)",
+    "(0, 0)"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The midpoint is found by averaging each coordinate, giving (2, 1).",
+    "Averaging the x-coordinates and y-coordinates gives (2, 1).",
+    "The averages of the coordinates are not (1, 1).",
+    "The averages of the coordinates are not both zero."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-6",
+   "stem": "A line passing through points (1, 2) and (4, 5) is:",
+   "options": [
+    "y = x + 1",
+    "y = 2x + 3",
+    "y = 3x − 2",
+    "y = x + 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Both points satisfy y = x + 1.",
+    "At x = 1, this equation gives y = 5, not 2.",
+    "At x = 1, this equation gives y = 1, not 2.",
+    "At x = 1, this equation gives y = 3, not 2."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-7",
+   "stem": "The equation of a line in point-slope form is:",
+   "options": [
+    "y = m(x + c)",
+    "y − y₁ = m(x − x₁)",
+    "y = c + mx",
+    "ax + by + c = 0"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not the standard point-slope form.",
+    "This is the point-slope form, using a point (x₁, y₁) and gradient m.",
+    "This is the slope-intercept form.",
+    "This is a general form of a linear equation."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-8",
+   "stem": "2x + 3y − 6 = 0 in the slope-intercept form is:",
+   "options": [
+    "y = −2/3 x + 2",
+    "y = 2/3 x − 2",
+    "y = 2/3 x + 1",
+    "y = −2/3 x − 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Rearranging gives 3y = −2x + 6, so y = −2/3 x + 2.",
+    "This has the wrong sign for the x-term and the wrong constant.",
+    "This has the wrong sign for the x-term and the wrong constant.",
+    "This has the correct x-term sign but the wrong constant."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-9",
+   "stem": "The equation of a line in symmetric form is:",
+   "options": [
+    "x/a + y/b = 1",
+    "(x − x₁)/l + (y − y₁)/m = (z − z₁)/l",
+    "(x − x₁)/cos α = (y − y₁)/sin α = r",
+    "y − y₁ = m(x − x₁)"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is the intercept form.",
+    "This is not the symmetric form of a line in the plane shown in the options.",
+    "This is the symmetric form shown in the textbook.",
+    "This is the point-slope form."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  },
+  {
+   "id": "q-7-4-10",
+   "stem": "The equation of a line in normal form is:",
+   "options": [
+    "y = mx + c",
+    "x/a + y/b = 1",
+    "(x − x₁)/cos α = (y − y₁)/sin α",
+    "x cos α + y sin α = p"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is the slope-intercept form.",
+    "This is the intercept form.",
+    "This is not the normal form; it is missing the normal distance p.",
+    "This is the normal form of a line."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-7-4",
+   "moduleId": "m-7-4"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-7-1-1",
+   "text": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((0 − 6)² + (−2 − 7)²)",
+    "d = √(36 + 81) = √117",
+    "d = 3√13"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute the coordinates into the distance formula.",
+     "marks": 1,
+     "why": "Correct substitution shows the distance formula has been applied to both coordinates.",
+     "how": "Write the square root of the sum of the squared coordinate differences.",
+     "accept": [
+      [
+       "sqrt((0-6)^2+(-2-7)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the correct distance.",
+     "marks": 1,
+     "why": "The simplified distance is the required final result.",
+     "how": "Simplify √117 to 3√13.",
+     "accept": [
+      [
+       "3sqrt13"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q2(i)"
+  },
+  {
+   "id": "w-7-1-2",
+   "text": "Find the distance between the points: C(−5, −2), D(3, 2).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((3 − (−5))² + (2 − (−2))²)",
+    "d = √(8² + 4²) = √80",
+    "d = 4√5"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the distance formula.",
+     "marks": 1,
+     "why": "Correct substitution is essential for obtaining the distance.",
+     "how": "Use the differences between the corresponding coordinates.",
+     "accept": [
+      [
+       "sqrt((3-(-5))^2+(2-(-2))^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the distance.",
+     "marks": 1,
+     "why": "The final simplified value gives the required length.",
+     "how": "Evaluate √80 as 4√5.",
+     "accept": [
+      [
+       "4sqrt5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q2(ii)"
+  },
+  {
+   "id": "w-7-1-3",
+   "text": "Find the distance between the points: L(0, 3), M(−2, −4).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((−2 − 0)² + (−4 − 3)²)",
+    "d = √(4 + 49)",
+    "d = √53"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute into the distance formula.",
+     "marks": 1,
+     "why": "Substituting both coordinate differences correctly earns the method mark.",
+     "how": "Square the horizontal and vertical differences.",
+     "accept": [
+      [
+       "sqrt((-2-0)^2+(-4-3)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final distance.",
+     "marks": 1,
+     "why": "This is the correct simplified distance.",
+     "how": "Evaluate √(4 + 49).",
+     "accept": [
+      [
+       "sqrt53"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q2(iii)"
+  },
+  {
+   "id": "w-7-1-4",
+   "text": "Find the distance between the points: P(−8, −7), Q(0, 0).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((0 − (−8))² + (0 − (−7))²)",
+    "d = √(64 + 49)",
+    "d = √113"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the distance formula.",
+     "marks": 1,
+     "why": "Correct substitution into the formula earns the method mark.",
+     "how": "Find both coordinate differences and square them.",
+     "accept": [
+      [
+       "sqrt((0-(-8))^2+(0-(-7))^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the correct final answer.",
+     "marks": 1,
+     "why": "The final value is the distance between the points.",
+     "how": "Evaluate √(64 + 49).",
+     "accept": [
+      [
+       "sqrt113"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q2(iv)"
+  },
+  {
+   "id": "w-7-1-5",
+   "text": "Find the distance between the two given points: A(3, 1), B(−2, −4).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((−2 − 3)² + (−4 − 1)²)",
+    "d = √(25 + 25) = √50",
+    "d = 5√2"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute into the distance formula.",
+     "marks": 1,
+     "why": "The formula and coordinates must be used correctly to find the length.",
+     "how": "Use the x-coordinate difference and the y-coordinate difference.",
+     "accept": [
+      [
+       "sqrt((-2-3)^2+(-4-1)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the result.",
+     "marks": 1,
+     "why": "This is the correct exact distance.",
+     "how": "Evaluate √50 as 5√2.",
+     "accept": [
+      [
+       "5sqrt2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(i)(a)"
+  },
+  {
+   "id": "w-7-1-6",
+   "text": "Find the distance between the two given points: A(−8, 3), B(2, −1).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((2 − (−8))² + (−1 − 3)²)",
+    "d = √(100 + 16) = √116",
+    "d = 2√29"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute in the distance formula.",
+     "marks": 1,
+     "why": "Correct use of the coordinate differences shows the required method.",
+     "how": "Square and add the differences in the x- and y-coordinates.",
+     "accept": [
+      [
+       "sqrt((2-(-8))^2+(-1-3)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final distance.",
+     "marks": 1,
+     "why": "The simplified value is the correct distance.",
+     "how": "Simplify √116 to 2√29.",
+     "accept": [
+      [
+       "2sqrt29"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(i)(b)"
+  },
+  {
+   "id": "w-7-1-7",
+   "text": "Find the distance between the two given points: A(−√5, −1/3), B(−3√5, 5).",
+   "marks": 2,
+   "modelAnswer": [
+    "d = √((−3√5 − (−√5))² + (5 − (−1/3))²)",
+    "d = √(20 + 256/9) = √(436/9)",
+    "d = 2√109/3"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the distance formula to both coordinates.",
+     "marks": 1,
+     "why": "Correct substitution, including the fractional coordinate, earns the method mark.",
+     "how": "Find the x- and y-coordinate differences before squaring.",
+     "accept": [
+      [
+       "sqrt((-3sqrt5-(-sqrt5))^2+(5-(-1/3))^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the correct final result.",
+     "marks": 1,
+     "why": "This is the exact simplified distance in the answer key.",
+     "how": "Combine the squared differences to obtain √436/3 = 2√109/3.",
+     "accept": [
+      [
+       "2sqrt109/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(i)(c)"
+  },
+  {
+   "id": "w-7-1-8",
+   "text": "Find the midpoint of the line segment joining the two points: A(3, 1), B(−2, −4).",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "M = ((3 + (−2))/2, (1 + (−4))/2)",
+    "M = (1/2, −3/2)"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the midpoint formula.",
+     "marks": 1,
+     "why": "Averaging both corresponding coordinates is the midpoint method.",
+     "how": "Add the x-coordinates and y-coordinates separately, then divide each sum by 2.",
+     "accept": [
+      [
+       "((3+(-2))/2,(1+(-4))/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the midpoint.",
+     "marks": 1,
+     "why": "The ordered pair is the correct midpoint.",
+     "how": "Simplify both coordinate averages.",
+     "accept": [
+      [
+       "(1/2,-3/2)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(ii)(a)"
+  },
+  {
+   "id": "w-7-1-9",
+   "text": "Find the midpoint of the line segment joining the two points: A(−8, 3), B(2, −1).",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "M = ((−8 + 2)/2, (3 + (−1))/2)",
+    "M = (−3, 1)"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute the coordinates into the midpoint formula.",
+     "marks": 1,
+     "why": "The midpoint formula requires averaging each pair of corresponding coordinates.",
+     "how": "Add the x-values and the y-values separately and divide each by 2.",
+     "accept": [
+      [
+       "((-8+2)/2,(3+(-1))/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct midpoint.",
+     "marks": 1,
+     "why": "This ordered pair is the correct midpoint.",
+     "how": "Evaluate both averages.",
+     "accept": [
+      [
+       "(-3,1)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(ii)(b)"
+  },
+  {
+   "id": "w-7-1-10",
+   "text": "Find the midpoint of the line segment joining the two points: A(−√5, −1/3), B(−3√5, 5).",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "M = ((−√5 + (−3√5))/2, (−1/3 + 5)/2)",
+    "M = (−2√5, 7/3)"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the midpoint formula.",
+     "marks": 1,
+     "why": "Both coordinate averages must be set up correctly.",
+     "how": "Add the x-coordinates and y-coordinates separately, then divide by 2.",
+     "accept": [
+      [
+       "((-sqrt5+(-3sqrt5))/2,(-1/3+5)/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct midpoint.",
+     "marks": 1,
+     "why": "This is the correct simplified midpoint.",
+     "how": "Simplify each coordinate average.",
+     "accept": [
+      [
+       "(-2sqrt5,7/3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q3(ii)(c)"
+  },
+  {
+   "id": "w-7-1-12",
+   "text": "Find h such that the points A(−1, h), B(3, 2) and C(7, 3) are collinear.",
+   "marks": 4,
+   "modelAnswer": [
+    "Slope of BC = (3 − 2)/(7 − 3) = 1/4",
+    "Since A, B and C are collinear, slope of AB = slope of BC.",
+    "(2 − h)/(3 − (−1)) = 1/4",
+    "(2 − h)/4 = 1/4",
+    "2 − h = 1",
+    "h = 1"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the slope of BC.",
+     "marks": 1,
+     "why": "The slope of BC gives the common slope required for collinearity.",
+     "how": "Use the changes in the coordinates of B and C.",
+     "accept": [
+      [
+       "slopebc"
+      ],
+      [
+       "1/4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set the slope of AB equal to the slope of BC.",
+     "marks": 1,
+     "why": "The slope using A and B must be expressed with the unknown h.",
+     "how": "Use the coordinate differences for A and B.",
+     "accept": [
+      [
+       "h-2"
+      ],
+      [
+       "3-(-1)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Solve the collinearity equation.",
+     "marks": 1,
+     "why": "Solving the equal-slope equation determines the unknown coordinate.",
+     "how": "Equate the two slopes and solve for h.",
+     "accept": [
+      [
+       "(2-h)/4=1/4"
+      ],
+      [
+       "h=1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the correct final value.",
+     "marks": 1,
+     "why": "The final value agrees with the answer key.",
+     "how": "Give h = 1.",
+     "accept": [
+      [
+       "h=1"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q7"
+  },
+  {
+   "id": "w-7-1-13",
+   "text": "The points A(−5, −2) and B(5, −4) are ends of a diameter of a circle. Find the centre and radius of the circle.",
+   "marks": 4,
+   "modelAnswer": [
+    "Centre = ((−5 + 5)/2, (−2 + (−4))/2) = (0, −3)",
+    "Diameter = √((5 − (−5))² + (−4 − (−2))²)",
+    "Diameter = √(100 + 4) = 2√26",
+    "Radius = 2√26/2 = √26",
+    "Centre C(0, −3); radius = √26"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the centre using the midpoint formula.",
+     "marks": 1,
+     "why": "The centre is the midpoint of the diameter's endpoints.",
+     "how": "Average the x-coordinates and the y-coordinates.",
+     "accept": [
+      [
+       "(((-5)+5)/2,((-2)+(-4))/2)"
+      ],
+      [
+       "(0,-3)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate the diameter length.",
+     "marks": 1,
+     "why": "The distance between the endpoints gives the diameter.",
+     "how": "Apply the distance formula to A and B.",
+     "accept": [
+      [
+       "sqrt((5-(-5))^2+(-4-(-2))^2)"
+      ],
+      [
+       "2sqrt26"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find the radius.",
+     "marks": 1,
+     "why": "The radius is half the diameter.",
+     "how": "Divide 2√26 by 2.",
+     "accept": [
+      [
+       "sqrt26"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the centre and radius.",
+     "marks": 1,
+     "why": "Both the centre and radius are required in the final answer.",
+     "how": "Give C(0, −3) and radius √26.",
+     "accept": [
+      [
+       "c(0,-3)"
+      ],
+      [
+       "radius=sqrt26"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q8"
+  },
+  {
+   "id": "w-7-2-1",
+   "text": "Find an equation of the horizontal line through (7, −9).",
+   "marks": 2,
+   "modelAnswer": [
+    "A horizontal line has equation y = constant.",
+    "Through (7, −9), y = −9.",
+    "∴ y + 9 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the constant y-coordinate.",
+     "marks": 1,
+     "why": "The y-coordinate stays constant on a horizontal line.",
+     "how": "Use y = −9.",
+     "accept": [
+      [
+       "y=-9"
+      ],
+      [
+       "y+9=0"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the equation in the required simplified form.",
+     "marks": 1,
+     "why": "The answer key gives the equation in general form.",
+     "how": "Rearrange y = −9 as y + 9 = 0.",
+     "accept": [
+      [
+       "y+9=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(a)"
+  },
+  {
+   "id": "w-7-2-2",
+   "text": "Find an equation of the vertical line through (−5, 3).",
+   "marks": 2,
+   "modelAnswer": [
+    "A vertical line has equation x = constant.",
+    "Through (−5, 3), x = −5.",
+    "∴ x + 5 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the constant x-coordinate.",
+     "marks": 1,
+     "why": "The x-coordinate stays constant on a vertical line.",
+     "how": "Use x = −5.",
+     "accept": [
+      [
+       "x=-5"
+      ],
+      [
+       "x+5=0"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the equation in general form.",
+     "marks": 1,
+     "why": "This is the general-form answer given in the answer key.",
+     "how": "Rearrange x = −5 as x + 5 = 0.",
+     "accept": [
+      [
+       "x+5=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(b)"
+  },
+  {
+   "id": "w-7-2-3",
+   "text": "Find an equation of the line through A(−6, 5) having slope 7.",
+   "marks": 2,
+   "modelAnswer": [
+    "y − 5 = 7(x − (−6))",
+    "y − 5 = 7(x + 6)",
+    "y = 7x + 47",
+    "∴ 7x − y + 47 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute into the point-slope form.",
+     "marks": 1,
+     "why": "The point-slope form correctly uses the given point and slope.",
+     "how": "Write y − 5 = 7(x + 6).",
+     "accept": [
+      [
+       "y-5=7(x+6)"
+      ],
+      [
+       "y=7x+47"
+      ],
+      [
+       "7x-y+47=0"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the required equation.",
+     "marks": 1,
+     "why": "The answer key gives the simplified general-form equation.",
+     "how": "Rearrange to 7x − y + 47 = 0.",
+     "accept": [
+      [
+       "7x-y+47=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(c)"
+  },
+  {
+   "id": "w-7-2-4",
+   "text": "Find an equation of the line through (8, −3) having slope 0.",
+   "marks": 2,
+   "modelAnswer": [
+    "A line with slope 0 is horizontal.",
+    "Through (8, −3), y = −3.",
+    "∴ y + 3 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the horizontal-line equation.",
+     "marks": 1,
+     "why": "A line with slope zero is horizontal.",
+     "how": "The constant y-coordinate is −3.",
+     "accept": [
+      [
+       "y=-3"
+      ],
+      [
+       "y+3=0"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the final equation in general form.",
+     "marks": 1,
+     "why": "This matches the answer key's general form.",
+     "how": "Rearrange y = −3.",
+     "accept": [
+      [
+       "y+3=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(d)"
+  },
+  {
+   "id": "w-7-2-5",
+   "text": "Find an equation of the line through (−8, 5) having slope undefined.",
+   "marks": 2,
+   "modelAnswer": [
+    "An undefined slope indicates a vertical line.",
+    "Through (−8, 5), x = −8.",
+    "∴ x + 8 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the vertical-line equation.",
+     "marks": 1,
+     "why": "An undefined slope indicates a vertical line.",
+     "how": "The constant x-coordinate is −8.",
+     "accept": [
+      [
+       "x=-8"
+      ],
+      [
+       "x+8=0"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the equation in general form.",
+     "marks": 1,
+     "why": "This is the answer key's general-form equation.",
+     "how": "Rearrange x = −8.",
+     "accept": [
+      [
+       "x+8=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(e)"
+  },
+  {
+   "id": "w-7-2-6",
+   "text": "Find an equation of the line through (−5, −3) and (9, −1).",
+   "marks": 4,
+   "modelAnswer": [
+    "m = (−1 − (−3))/(9 − (−5)) = 2/14 = 1/7",
+    "y − (−3) = (1/7)(x − (−5))",
+    "y + 3 = (1/7)(x + 5)",
+    "7y + 21 = x + 5",
+    "∴ x − 7y − 16 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the slope using the two points.",
+     "marks": 1,
+     "why": "The slope is needed to form the equation of the line.",
+     "how": "Calculate (−1 − (−3))/(9 − (−5)) = 1/7.",
+     "accept": [
+      [
+       "1/7"
+      ],
+      [
+       "2/14"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Substitute into point-slope form.",
+     "marks": 1,
+     "why": "The point-slope form uses the slope and a point on the line.",
+     "how": "Use y + 3 = (1/7)(x + 5).",
+     "accept": [
+      [
+       "y+3=1/7(x+5)"
+      ],
+      [
+       "7y+21=x+5"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify and state the final equation.",
+     "marks": 2,
+     "why": "The simplified equation is the required answer.",
+     "how": "Rearrange to x − 7y − 16 = 0.",
+     "accept": [
+      [
+       "x-7y-16=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(f)"
+  },
+  {
+   "id": "w-7-2-7",
+   "text": "Find an equation of the line with y-intercept −7 and slope −5.",
+   "marks": 2,
+   "modelAnswer": [
+    "y = mx + c",
+    "y = −5x − 7",
+    "∴ 5x + y + 7 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute into y = mx + c.",
+     "marks": 1,
+     "why": "The given slope and y-intercept determine the slope-intercept form.",
+     "how": "Use m = −5 and c = −7.",
+     "accept": [
+      [
+       "y=-5x-7"
+      ],
+      [
+       "y+5x=-7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rearrange to the final equation.",
+     "marks": 1,
+     "why": "The answer key gives the equation in general form.",
+     "how": "Write 5x + y + 7 = 0.",
+     "accept": [
+      [
+       "5x+y+7=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(g)"
+  },
+  {
+   "id": "w-7-2-8",
+   "text": "Find an equation of the line with x-intercept −3 and y-intercept 4.",
+   "marks": 2,
+   "modelAnswer": [
+    "x/(−3) + y/4 = 1",
+    "−4x + 3y = 12",
+    "∴ 4x − 3y + 12 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute the intercepts into intercept form.",
+     "marks": 1,
+     "why": "The intercept form correctly uses both given intercepts.",
+     "how": "Use x/(−3) + y/4 = 1.",
+     "accept": [
+      [
+       "x/(-3)+y/4=1"
+      ],
+      [
+       "4x-3y=12"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify to the final equation.",
+     "marks": 1,
+     "why": "The answer key gives the simplified general-form equation.",
+     "how": "Rearrange to 4x − 3y + 12 = 0.",
+     "accept": [
+      [
+       "4x-3y+12=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(h)"
+  },
+  {
+   "id": "w-7-2-9",
+   "text": "Find an equation of the line with x-intercept −9 and slope −4.",
+   "marks": 2,
+   "modelAnswer": [
+    "The x-intercept gives the point (−9, 0).",
+    "y − 0 = −4(x − (−9))",
+    "y = −4x − 36",
+    "∴ 4x + y + 36 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the point-slope form with the intercept point.",
+     "marks": 1,
+     "why": "The x-intercept gives the point (−9, 0), and the slope is given.",
+     "how": "Write y − 0 = −4(x − (−9)).",
+     "accept": [
+      [
+       "y-0=-4(x+9)"
+      ],
+      [
+       "y=-4x-36"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rearrange to general form.",
+     "marks": 1,
+     "why": "This is the simplified equation in the answer key.",
+     "how": "Write 4x + y + 36 = 0.",
+     "accept": [
+      [
+       "4x+y+36=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q6(i)"
+  },
+  {
+   "id": "w-7-2-10",
+   "text": "Find an equation of the perpendicular bisector of the segment joining the points A(3, 5) and B(9, 8).",
+   "marks": 4,
+   "modelAnswer": [
+    "Midpoint of AB = ((3 + 9)/2, (5 + 8)/2) = (6, 13/2)",
+    "Slope of AB = (8 − 5)/(9 − 3) = 1/2",
+    "Slope of perpendicular bisector = −2",
+    "y − 13/2 = −2(x − 6)",
+    "∴ 4x + 2y − 37 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the midpoint of AB.",
+     "marks": 1,
+     "why": "A perpendicular bisector passes through the midpoint of the segment.",
+     "how": "Calculate ((3 + 9)/2, (5 + 8)/2) = (6, 13/2).",
+     "accept": [
+      [
+       "6,13/2"
+      ],
+      [
+       "(6,13/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the slope of AB and its negative reciprocal.",
+     "marks": 1,
+     "why": "The slope of AB is needed to find the perpendicular slope.",
+     "how": "Slope AB = 1/2, so the perpendicular slope is −2.",
+     "accept": [
+      [
+       "1/2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Write the perpendicular bisector using point-slope form.",
+     "marks": 1,
+     "why": "The point-slope form ensures the line passes through the midpoint with the correct slope.",
+     "how": "Use y − 13/2 = −2(x − 6).",
+     "accept": [
+      [
+       "y-13/2=-2(x-6)"
+      ],
+      [
+       "y+2x=?"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Simplify and state the equation.",
+     "marks": 1,
+     "why": "The final simplified equation is the required answer.",
+     "how": "Rearrange to 4x + 2y − 37 = 0.",
+     "accept": [
+      [
+       "4x+2y-37=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q7"
+  },
+  {
+   "id": "w-7-2-11",
+   "text": "Find an equation of the line through (−4, −6) and perpendicular to a line having slope −3/2.",
+   "marks": 2,
+   "modelAnswer": [
+    "The required slope is m = 2/3.",
+    "y − (−6) = (2/3)(x − (−4))",
+    "y + 6 = (2/3)(x + 4)",
+    "∴ 2x − 3y − 10 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the required line's slope.",
+     "marks": 1,
+     "why": "The perpendicular slope is the negative reciprocal of −3/2.",
+     "how": "Use m = 2/3.",
+     "accept": [
+      [
+       "2/3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use point-slope form and simplify.",
+     "marks": 1,
+     "why": "The equation must pass through the given point and have the required slope.",
+     "how": "Use y + 6 = (2/3)(x + 4), giving 2x − 3y − 10 = 0.",
+     "accept": [
+      [
+       "2x-3y-10=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q8"
+  },
+  {
+   "id": "w-7-2-12",
+   "text": "Find an equation of the line through (11, −5) and parallel to a line with slope −24.",
+   "marks": 2,
+   "modelAnswer": [
+    "The required slope is m = −24.",
+    "y − (−5) = −24(x − 11)",
+    "y + 5 = −24(x − 11)",
+    "∴ 24x + y − 259 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the slope of the parallel line.",
+     "marks": 1,
+     "why": "Parallel lines have equal slopes.",
+     "how": "The required slope is −24.",
+     "accept": [
+      [
+       "-24"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use point-slope form and simplify.",
+     "marks": 1,
+     "why": "The equation must pass through the specified point.",
+     "how": "Use y + 5 = −24(x − 11), giving 24x + y − 259 = 0.",
+     "accept": [
+      [
+       "24x+y-259=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q9"
+  },
+  {
+   "id": "w-7-2-13",
+   "text": "Find an equation of the line through (−4, 7) and parallel to the line 2x − 7y + 4 = 0.",
+   "marks": 2,
+   "modelAnswer": [
+    "2x − 7y + 4 = 0 gives y = (2/7)x + 4/7.",
+    "The slope of the required line is 2/7.",
+    "y − 7 = (2/7)(x − (−4))",
+    "∴ 2x − 7y + 57 = 0"
+   ],
+   "followUp": "Find an equation of: (a) the horizontal line through (7, −9)",
+   "noteId": "n-7-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find or identify the slope of the given line.",
+     "marks": 1,
+     "why": "The given line has slope 2/7, and parallel lines have equal slopes.",
+     "how": "Rearrange the line to y = (2/7)x + 4/7.",
+     "accept": [
+      [
+       "2/7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use point-slope form and simplify.",
+     "marks": 1,
+     "why": "The required equation must pass through (−4, 7).",
+     "how": "Use y − 7 = (2/7)(x + 4), giving 2x − 7y + 57 = 0.",
+     "accept": [
+      [
+       "2x-7y+57=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.2 Q12"
+  },
+  {
+   "id": "w-7-3-1",
+   "text": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "marks": 4,
+   "modelAnswer": [
+    "d = √((9 − 2)² + (12 − 6)²)",
+    "d = √(7² + 6²) = √(49 + 36)",
+    "d = √85 ≈ 9.22 km"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the distance formula.",
+     "marks": 1,
+     "why": "The correct distance formula must be set up for the given coordinates.",
+     "how": "Substitute the x- and y-coordinates into the distance formula.",
+     "accept": [
+      [
+       "sqrt((9-2)^2+(12-6)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the coordinate differences.",
+     "marks": 1,
+     "why": "Correct coordinate differences are needed before squaring.",
+     "how": "Calculate 9 − 2 and 12 − 6.",
+     "accept": [
+      [
+       "7^2",
+       "6^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify under the square root.",
+     "marks": 1,
+     "why": "Squaring and adding the differences gives the exact distance.",
+     "how": "Evaluate √(49 + 36) as √85.",
+     "accept": [
+      [
+       "sqrt85"
+      ],
+      [
+       "sqrt(49+36)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the distance in kilometres.",
+     "marks": 1,
+     "why": "The final distance and its unit must be stated.",
+     "how": "State √85 ≈ 9.22 km.",
+     "accept": [
+      [
+       "9.22",
+       "km"
+      ],
+      [
+       "sqrt85",
+       "km"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q1"
+  },
+  {
+   "id": "w-7-3-2",
+   "text": "Consider a straight trail (represented by coordinate plane) that starts at point (5, 7) and ends at point (15, 3). What are the coordinates of the midpoint?",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((5 + 15)/2, (7 + 3)/2)",
+    "M = (10, 5)"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Average the x- and y-coordinates.",
+     "marks": 1,
+     "why": "The midpoint is found by averaging the corresponding coordinates.",
+     "how": "Calculate (5 + 15)/2 and (7 + 3)/2.",
+     "accept": [
+      [
+       "(5+15)/2",
+       "(7+3)/2"
+      ],
+      [
+       "10",
+       "5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the midpoint.",
+     "marks": 1,
+     "why": "The final ordered pair must place the coordinates in the correct order.",
+     "how": "Write the midpoint as (10, 5).",
+     "accept": [
+      [
+       "(10,5)"
+      ],
+      [
+       "10",
+       "5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q2"
+  },
+  {
+   "id": "w-7-3-3",
+   "text": "An architect is designing a park with two buildings located at (10, 8) and (4, 3) on the grid. Calculate the straight-line distance between the buildings. Assume the coordinates are in metres.",
+   "marks": 4,
+   "modelAnswer": [
+    "d = √((4 − 10)² + (3 − 8)²)",
+    "d = √((−6)² + (−5)²)",
+    "d = √(36 + 25) = √61",
+    "d ≈ 7.81 m"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the formula.",
+     "marks": 1,
+     "why": "The distance formula represents the straight-line distance.",
+     "how": "Substitute the two coordinate pairs.",
+     "accept": [
+      [
+       "sqrt((4-10)^2+(3-8)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the coordinate differences.",
+     "marks": 1,
+     "why": "Correct differences ensure the squared terms are correct.",
+     "how": "Calculate 4 − 10 and 3 − 8.",
+     "accept": [
+      [
+       "(-6)^2",
+       "(-5)^2"
+      ],
+      [
+       "6^2",
+       "5^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify the radical.",
+     "marks": 1,
+     "why": "Adding the squared differences gives the exact distance.",
+     "how": "Evaluate √(36 + 25) as √61.",
+     "accept": [
+      [
+       "sqrt61"
+      ],
+      [
+       "sqrt(36+25)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the distance in metres.",
+     "marks": 1,
+     "why": "The answer needs the appropriate unit.",
+     "how": "Write √61 ≈ 7.81 m.",
+     "accept": [
+      [
+       "7.81",
+       "m"
+      ],
+      [
+       "sqrt61",
+       "m"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q3"
+  },
+  {
+   "id": "w-7-3-4",
+   "text": "A delivery driver needs to calculate the distance between two delivery locations. One location is at (7, 2) and the other is at (12, 10) on the city grid map, where each unit represents kilometres. What is the distance between the two locations?",
+   "marks": 4,
+   "modelAnswer": [
+    "d = √((12 − 7)² + (10 − 2)²)",
+    "d = √(5² + 8²)",
+    "d = √(25 + 64) = √89",
+    "d ≈ 9.43 km"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the distance formula.",
+     "marks": 1,
+     "why": "The distance formula is the required method.",
+     "how": "Substitute the coordinates into the formula.",
+     "accept": [
+      [
+       "sqrt((12-7)^2+(10-2)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the coordinate differences.",
+     "marks": 1,
+     "why": "The changes in x and y must be calculated correctly.",
+     "how": "Calculate 12 − 7 and 10 − 2.",
+     "accept": [
+      [
+       "5^2",
+       "8^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify the radical.",
+     "marks": 1,
+     "why": "The squared differences add to 89.",
+     "how": "Evaluate √(25 + 64) as √89.",
+     "accept": [
+      [
+       "sqrt89"
+      ],
+      [
+       "sqrt(25+64)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the distance in kilometres.",
+     "marks": 1,
+     "why": "The final answer should include the map's distance unit.",
+     "how": "Write √89 ≈ 9.43 km.",
+     "accept": [
+      [
+       "9.43",
+       "km"
+      ],
+      [
+       "sqrt89",
+       "km"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q4"
+  },
+  {
+   "id": "w-7-3-5",
+   "text": "The start and end points of a race track are given by coordinates (3, 9) and (9, 13). What is the midpoint of the track?",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((3 + 9)/2, (9 + 13)/2)",
+    "M = (6, 11)"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Average the coordinates.",
+     "marks": 1,
+     "why": "The midpoint formula averages each pair of corresponding coordinates.",
+     "how": "Calculate (3 + 9)/2 and (9 + 13)/2.",
+     "accept": [
+      [
+       "(3+9)/2",
+       "(9+13)/2"
+      ],
+      [
+       "6",
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the midpoint.",
+     "marks": 1,
+     "why": "The answer must be given as an ordered pair.",
+     "how": "Write (6, 11).",
+     "accept": [
+      [
+       "(6,11)"
+      ],
+      [
+       "6",
+       "11"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q5"
+  },
+  {
+   "id": "w-7-3-6",
+   "text": "The coordinates of two points on a road are A(3, 4) and B(7, 10). Find the midpoint of the road.",
+   "marks": 2,
+   "modelAnswer": [
+    "M = ((3 + 7)/2, (4 + 10)/2)",
+    "M = (5, 7)"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Average the corresponding coordinates.",
+     "marks": 1,
+     "why": "A midpoint is found by averaging the x-coordinates and y-coordinates separately.",
+     "how": "Calculate (3 + 7)/2 and (4 + 10)/2.",
+     "accept": [
+      [
+       "(3+7)/2",
+       "(4+10)/2"
+      ],
+      [
+       "5",
+       "7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the midpoint.",
+     "marks": 1,
+     "why": "Both averages must be recorded in the correct order.",
+     "how": "Write (5, 7).",
+     "accept": [
+      [
+       "(5,7)"
+      ],
+      [
+       "5",
+       "7"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q6"
+  },
+  {
+   "id": "w-7-3-7",
+   "text": "A ship is navigating from port A located at (12° N, 65° W) to port B at (20° N, 45° W). If the ship travels along the shortest path on the surface of the Earth, calculate the straight line distance between the points.",
+   "marks": 4,
+   "modelAnswer": [
+    "d = √((20 − 12)² + (65 − 45)²)",
+    "d = √(8² + 20²) = √(64 + 400)",
+    "d = √464 = 4√29",
+    "d ≈ 21.5 units"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the distance calculation.",
+     "marks": 1,
+     "why": "The textbook answer uses the distance formula on the coordinate differences.",
+     "how": "Use the latitude and longitude differences in the distance formula.",
+     "accept": [
+      [
+       "sqrt((20-12)^2+(65-45)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the coordinate differences.",
+     "marks": 1,
+     "why": "The coordinate differences are 8 and 20.",
+     "how": "Calculate 20 − 12 and 65 − 45.",
+     "accept": [
+      [
+       "8^2",
+       "20^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify the exact distance.",
+     "marks": 1,
+     "why": "Simplifying √464 gives the exact answer 4√29.",
+     "how": "Evaluate √(8² + 20²) = √464 = 4√29.",
+     "accept": [
+      [
+       "4sqrt29"
+      ],
+      [
+       "sqrt464"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the approximate distance.",
+     "marks": 1,
+     "why": "The final answer must match the answer key and state its units.",
+     "how": "Write 4√29 ≈ 21.5 units.",
+     "accept": [
+      [
+       "21.5",
+       "units"
+      ],
+      [
+       "4sqrt29",
+       "units"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q7"
+  },
+  {
+   "id": "w-7-3-8",
+   "text": "Farah is fencing around a rectangular field with corners at (0,0), (0,5), (8, 5) and (8, 0). How much fencing material will she need to cover the entire perimeter of the field?",
+   "marks": 4,
+   "modelAnswer": [
+    "The side lengths are 5 units and 8 units.",
+    "Perimeter = 5 + 5 + 8 + 8",
+    "Perimeter = 26 units"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the side lengths.",
+     "marks": 1,
+     "why": "The lengths of the rectangle's sides must be identified.",
+     "how": "Read the vertical side as 5 units and the horizontal side as 8 units.",
+     "accept": [
+      [
+       "5",
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the perimeter.",
+     "marks": 1,
+     "why": "The perimeter includes all four sides.",
+     "how": "Add two lengths of 5 and two lengths of 8.",
+     "accept": [
+      [
+       "2(5+8)"
+      ],
+      [
+       "5+5+8+8"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the perimeter.",
+     "marks": 1,
+     "why": "Correct addition gives the perimeter.",
+     "how": "Evaluate 5 + 5 + 8 + 8.",
+     "accept": [
+      [
+       "26"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final answer with units.",
+     "marks": 1,
+     "why": "The final answer should give the amount of fencing required.",
+     "how": "Write 26 units.",
+     "accept": [
+      [
+       "26",
+       "units"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q8"
+  },
+  {
+   "id": "w-7-3-9",
+   "text": "An airplane is flying from city X at (40° N, 100° W) to city Y at (50° N, 80° W). Use coordinate geometry, calculate the shortest distance between these two cities.",
+   "marks": 4,
+   "modelAnswer": [
+    "d = √((50 − 40)² + (100 − 80)²)",
+    "d = √(10² + 20²) = √(100 + 400)",
+    "d = √500 = 10√5",
+    "d ≈ 22.4 units"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the distance formula.",
+     "marks": 1,
+     "why": "The coordinate geometry method starts with the distance formula.",
+     "how": "Substitute the differences in latitude and longitude.",
+     "accept": [
+      [
+       "sqrt((50-40)^2+(100-80)^2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the coordinate differences.",
+     "marks": 1,
+     "why": "The coordinate differences are 10 and 20.",
+     "how": "Calculate 50 − 40 and 100 − 80.",
+     "accept": [
+      [
+       "10^2",
+       "20^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify the exact distance.",
+     "marks": 1,
+     "why": "Simplifying √500 gives the exact answer 10√5.",
+     "how": "Evaluate √(100 + 400) = √500 = 10√5.",
+     "accept": [
+      [
+       "10sqrt5"
+      ],
+      [
+       "sqrt500"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the approximate distance.",
+     "marks": 1,
+     "why": "The final distance should include the stated unit.",
+     "how": "Write 10√5 ≈ 22.4 units.",
+     "accept": [
+      [
+       "22.4",
+       "units"
+      ],
+      [
+       "10sqrt5",
+       "units"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q9"
+  },
+  {
+   "id": "w-7-3-10",
+   "text": "A land surveyor is marking out a rectangular plot of land with corners at (3, 1), (3, 6), (8, 6), and (8, 1). Calculate the perimeter.",
+   "marks": 4,
+   "modelAnswer": [
+    "The side lengths are 5 units and 5 units.",
+    "Perimeter = 5 + 5 + 5 + 5",
+    "Perimeter = 20 units"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the side lengths.",
+     "marks": 1,
+     "why": "The rectangle has side lengths 5 and 5.",
+     "how": "Subtract the corresponding coordinates to find each side.",
+     "accept": [
+      [
+       "5",
+       "5",
+       "5",
+       "5"
+      ],
+      [
+       "5",
+       "5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the perimeter.",
+     "marks": 1,
+     "why": "The perimeter is the sum of all four sides.",
+     "how": "Add the four side lengths.",
+     "accept": [
+      [
+       "5+5+5+5"
+      ],
+      [
+       "2(5+5)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the perimeter.",
+     "marks": 1,
+     "why": "Correct addition gives the total boundary length.",
+     "how": "Evaluate the sum as 20.",
+     "accept": [
+      [
+       "20"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final answer.",
+     "marks": 1,
+     "why": "The final result must state the perimeter and its unit.",
+     "how": "Write Perimeter = 20 units.",
+     "accept": [
+      [
+       "20",
+       "units"
+      ],
+      [
+       "perimeter=20"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q10"
+  },
+  {
+   "id": "w-7-3-11",
+   "text": "A landscaper needs to install a fence around a rectangular garden. The garden has its corners at the coordinates: A(0, 0), B(5, 0), C(5, 3), and D(0, 3). How much fencing is required?",
+   "marks": 4,
+   "modelAnswer": [
+    "The side lengths are 5 units and 3 units.",
+    "Perimeter = 5 + 5 + 3 + 3",
+    "Perimeter = 16 units"
+   ],
+   "followUp": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+   "noteId": "n-7-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the side lengths.",
+     "marks": 1,
+     "why": "Both side lengths are needed to find the entire perimeter.",
+     "how": "The horizontal side is 5 units and the vertical side is 3 units.",
+     "accept": [
+      [
+       "5",
+       "3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the perimeter.",
+     "marks": 1,
+     "why": "A rectangle has two sides of each length.",
+     "how": "Add two sides of 5 and two sides of 3.",
+     "accept": [
+      [
+       "2(5+3)"
+      ],
+      [
+       "5+5+3+3"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the perimeter.",
+     "marks": 1,
+     "why": "Adding the four sides gives the total fence length.",
+     "how": "Evaluate 5 + 5 + 3 + 3.",
+     "accept": [
+      [
+       "16"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the answer with units.",
+     "marks": 1,
+     "why": "The final answer should state the fencing required.",
+     "how": "Write 16 units.",
+     "accept": [
+      [
+       "16",
+       "units"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.3 Q11"
+  },
+  {
+   "id": "w-7-4-1",
+   "text": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "marks": 2,
+   "modelAnswer": [
+    "Distance = √((7 − 2)² + (8 − 3)²)",
+    "= √(25 + 25)",
+    "= √50 = 5√2"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the distance formula with the two coordinate differences.",
+     "marks": 1,
+     "why": "The distance formula and coordinate differences are the essential method.",
+     "how": "Substitute the coordinates into √((x₂ − x₁)² + (y₂ − y₁)²).",
+     "accept": [
+      [
+       "√((7−2)^2+(8−3)^2)"
+      ],
+      [
+       "√50"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the distance in simplified exact form.",
+     "marks": 1,
+     "why": "The simplified distance is the required final result.",
+     "how": "Simplify √50 to 5√2.",
+     "accept": [
+      [
+       "5√2"
+      ],
+      [
+       "√50"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q2"
+  },
+  {
+   "id": "w-7-4-2",
+   "text": "Find the midpoint of the line segment joining the points (4, −2) and (−6, 3).",
+   "marks": 2,
+   "modelAnswer": [
+    "Midpoint = ((4 + (−6))/2, (−2 + 3)/2)",
+    "= (−2/2, 1/2)",
+    "= (−1, 1/2)"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute the endpoint coordinates into the midpoint formula.",
+     "marks": 1,
+     "why": "The midpoint formula averages the x-coordinates and the y-coordinates separately.",
+     "how": "Show the two coordinate averages.",
+     "accept": [
+      [
+       "((4−6)/2, (−2+3)/2)"
+      ],
+      [
+       "(-2/2, 1/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the midpoint.",
+     "marks": 1,
+     "why": "The simplified ordered pair is the midpoint.",
+     "how": "Simplify both coordinate averages and write them as an ordered pair.",
+     "accept": [
+      [
+       "(−1, 1/2)"
+      ],
+      [
+       "(-1,1/2)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q3"
+  },
+  {
+   "id": "w-7-4-3",
+   "text": "Calculate the gradient (slope) of the line passing through the points (1, 2) and (4, 6).",
+   "marks": 2,
+   "modelAnswer": [
+    "Gradient = (6 − 2)/(4 − 1)",
+    "= 4/3"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the gradient formula with the given points.",
+     "marks": 1,
+     "why": "The gradient formula uses change in y divided by change in x.",
+     "how": "Substitute the y-coordinate difference over the x-coordinate difference.",
+     "accept": [
+      [
+       "(6−2)/(4−1)"
+      ],
+      [
+       "4/3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the gradient.",
+     "marks": 1,
+     "why": "The simplified ratio is the correct gradient.",
+     "how": "Simplify the substituted ratio.",
+     "accept": [
+      [
+       "4/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q4"
+  },
+  {
+   "id": "w-7-4-4",
+   "text": "Find the equation of the line in the form y = mx + c that passes through the points (3, 7) and (5, 11).",
+   "marks": 4,
+   "modelAnswer": [
+    "m = (11 − 7)/(5 − 3) = 2",
+    "y − 7 = 2(x − 3)",
+    "y − 7 = 2x − 6",
+    "y = 2x + 1"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the gradient.",
+     "marks": 1,
+     "why": "The gradient is needed to form the equation of the line.",
+     "how": "Use the change in y divided by the change in x.",
+     "accept": [
+      [
+       "(11−7)/(5−3)"
+      ],
+      [
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the gradient and a given point.",
+     "marks": 1,
+     "why": "Substituting a point into point-slope form gives a valid line equation.",
+     "how": "Substitute m = 2 and (3, 7) into point-slope form.",
+     "accept": [
+      [
+       "y−7=2(x−3)"
+      ],
+      [
+       "y=2x−6+7"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Rearrange to the required form.",
+     "marks": 2,
+     "why": "The requested slope-intercept equation must be correctly simplified.",
+     "how": "Simplify and write the equation as y = mx + c.",
+     "accept": [
+      [
+       "y=2x+1"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q5"
+  },
+  {
+   "id": "w-7-4-5",
+   "text": "If two lines are parallel and one line has a gradient of 2/3, what is the gradient of the other line?",
+   "marks": 2,
+   "modelAnswer": [
+    "Parallel lines have equal gradients.",
+    "Therefore, the gradient of the other line is 2/3."
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the gradient property of parallel lines.",
+     "marks": 1,
+     "why": "The property of parallel lines determines the second gradient.",
+     "how": "Recognise that parallel lines have equal gradients.",
+     "accept": [
+      [
+       "parallel lines have equal gradients"
+      ],
+      [
+       "equal gradients"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the other gradient.",
+     "marks": 1,
+     "why": "The second line has the same gradient as the first.",
+     "how": "Use the given gradient.",
+     "accept": [
+      [
+       "2/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q6"
+  },
+  {
+   "id": "w-7-4-6",
+   "text": "An airplane needs to fly from city A at coordinates (12, 5) to city B at coordinates (8, −4). Calculate the straight-line distance between these two cities.",
+   "marks": 2,
+   "modelAnswer": [
+    "Distance = √((8 − 12)² + (−4 − 5)²)",
+    "= √(16 + 81)",
+    "= √97 ≈ 9.85 units"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute the coordinates into the distance formula.",
+     "marks": 1,
+     "why": "The distance formula correctly combines both coordinate differences.",
+     "how": "Show the differences in x and y under the square root.",
+     "accept": [
+      [
+       "√((8−12)^2+(−4−5)^2)"
+      ],
+      [
+       "√97"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the exact distance and its approximate value.",
+     "marks": 1,
+     "why": "The calculated distance is the final result.",
+     "how": "Simplify the radical and give the approximate distance in units.",
+     "accept": [
+      [
+       "√97"
+      ],
+      [
+       "9.85"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q7"
+  },
+  {
+   "id": "w-7-4-7",
+   "text": "In a landscaping project, the path starts at (2, 3) and ends at (10, 7). Find the midpoint.",
+   "marks": 2,
+   "modelAnswer": [
+    "Midpoint = ((2 + 10)/2, (3 + 7)/2)",
+    "= (12/2, 10/2)",
+    "= (6, 5)"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute into the midpoint formula.",
+     "marks": 1,
+     "why": "The midpoint formula averages each pair of matching coordinates.",
+     "how": "Average the x-coordinates and the y-coordinates separately.",
+     "accept": [
+      [
+       "((2+10)/2, (3+7)/2)"
+      ],
+      [
+       "(12/2, 10/2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the midpoint.",
+     "marks": 1,
+     "why": "The ordered pair gives the required midpoint.",
+     "how": "Simplify both averages.",
+     "accept": [
+      [
+       "(6,5)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q8"
+  },
+  {
+   "id": "w-7-4-8",
+   "text": "A drone is flying from point (2, 3) to point (10, 15) on the grid. Calculate the gradient of the line along which the drone is flying and the total distance travelled.",
+   "marks": 4,
+   "modelAnswer": [
+    "Gradient = (15 − 3)/(10 − 2)",
+    "= 12/8 = 3/2",
+    "Distance = √((10 − 2)² + (15 − 3)²)",
+    "= √(64 + 144) = √208 = 4√13 ≈ 14.4 units"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Calculate the gradient.",
+     "marks": 1,
+     "why": "The gradient is found from the vertical change divided by the horizontal change.",
+     "how": "Substitute the coordinates into the gradient formula.",
+     "accept": [
+      [
+       "(15−3)/(10−2)"
+      ],
+      [
+       "3/2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the gradient.",
+     "marks": 1,
+     "why": "The simplified gradient is one of the two requested results.",
+     "how": "Simplify the ratio.",
+     "accept": [
+      [
+       "3/2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Use the distance formula.",
+     "marks": 1,
+     "why": "The distance formula gives the drone's total straight-line distance.",
+     "how": "Substitute both coordinate differences and simplify the radical.",
+     "accept": [
+      [
+       "√((10−2)^2+(15−3)^2)"
+      ],
+      [
+       "√208"
+      ],
+      [
+       "4√13"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the distance.",
+     "marks": 1,
+     "why": "The exact or approximate distance completes the answer.",
+     "how": "Give the exact distance and its approximation in units.",
+     "accept": [
+      [
+       "4√13"
+      ],
+      [
+       "14.4"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q9"
+  },
+  {
+   "id": "w-7-4-9",
+   "text": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in slope-intercept form.",
+   "marks": 2,
+   "modelAnswer": [
+    "y = mx + c",
+    "y = −3x + 2"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the slope-intercept form.",
+     "marks": 1,
+     "why": "Slope-intercept form identifies the positions of the gradient and y-intercept.",
+     "how": "Substitute m = −3 and c = 2 into y = mx + c.",
+     "accept": [
+      [
+       "y=mx+c"
+      ],
+      [
+       "y=−3x+2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the equation.",
+     "marks": 1,
+     "why": "This is the requested equation with both given values substituted.",
+     "how": "Write the simplified slope-intercept equation.",
+     "accept": [
+      [
+       "y=−3x+2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q10(a)"
+  },
+  {
+   "id": "w-7-4-12",
+   "text": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in intercepts form.",
+   "marks": 2,
+   "modelAnswer": [
+    "For x-intercept, set y = 0: 0 = −3x + 2, so x = 2/3.",
+    "y/2 + x/(2/3) = 1"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the intercepts for the line.",
+     "marks": 1,
+     "why": "Intercept form uses the x- and y-intercepts in the denominators.",
+     "how": "Use the given y-intercept and find the x-intercept from y = −3x + 2.",
+     "accept": [
+      [
+       "y/2+x/(2/3)=1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the equation in intercepts form.",
+     "marks": 1,
+     "why": "The correctly substituted intercepts give the required form.",
+     "how": "Substitute the intercepts into the book's intercept form.",
+     "accept": [
+      [
+       "y/2+x/(2/3)=1"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q10(d)"
+  },
+  {
+   "id": "w-7-4-13",
+   "text": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in symmetric form.",
+   "marks": 2,
+   "modelAnswer": [
+    "y = −3x + 2",
+    "3x + y = 2",
+    "y/√10 + 3x/√10 = 2/√10"
+   ],
+   "followUp": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+   "noteId": "n-7-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the line's coefficients and normalising factor.",
+     "marks": 1,
+     "why": "The line equation is rearranged and normalised to obtain the required symmetric-form expression.",
+     "how": "Rewrite y = −3x + 2 and divide through by √10.",
+     "accept": [
+      [
+       "y/√10+3x/√10=2/√10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the symmetric form.",
+     "marks": 1,
+     "why": "The final equation matches the textbook answer for this form.",
+     "how": "Write the complete normalised equation.",
+     "accept": [
+      [
+       "y/√10+3x/√10=2/√10"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 7 Q10(e)"
+  }
+ ],
+ "report": {
+  "unit": 7,
+  "title": "Coordinate Geometry",
+  "dropped": [
+   "Written m-7-1#10 (Ex 7.1 Q6): model answer misses a marking point",
+   "Written m-7-1#13 (Ex 7.1 Q9): model answer misses a marking point",
+   "Written m-7-4#9 (Review Exercise 7 Q10(b)): independent check disagreed",
+   "Written m-7-4#10 (Review Exercise 7 Q10(c)): independent check disagreed",
+   "Written m-7-4#13 (Review Exercise 7 Q10(f)): independent check disagreed"
+  ]
+ }
+}

@@ -1,0 +1,4460 @@
+{
+ "chapter": {
+  "id": "u-4",
+  "number": 4,
+  "title": "Factorization and Algebraic Manipulation",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-4-1",
+    "position": 1,
+    "title": "4.1 Identifying Common Factors and Trinomials Concretely, Pictorially and Symbolically",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, section 4.1, pages 65–74; Exercise 4.1, Exercise 4.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 4.1 (pages 65–74) in your textbook.",
+     "Solve Exercise 4.1, Exercise 4.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-4-1-1",
+      "text": "Factorize by identifying common factors: 15y² + 20y",
+      "marks": 2,
+      "modelAnswer": [
+       "15y² + 20y",
+       "= 5y(3y + 4)"
+      ],
+      "followUp": "Factorize: 2x² + 7x + 3",
+      "noteId": "n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify and take out the common factor 5y.",
+        "marks": 1,
+        "why": "Taking out the highest common factor is the key step.",
+        "how": "Write 15y² + 20y = 5y(3y + 4).",
+        "accept": [
+         [
+          "5y"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct factorization.",
+        "marks": 1,
+        "why": "The final factors must multiply back to the original expression.",
+        "how": "Finish with 5y(3y + 4).",
+        "accept": [
+         [
+          "5y(3y+4)"
+         ],
+         [
+          "5y(4+3y)"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.1 Q1(ii)"
+     },
+     {
+      "id": "w-4-1-2",
+      "text": "Factorize: x² + 4x + 3",
+      "marks": 2,
+      "modelAnswer": [
+       "x² + 4x + 3",
+       "= x² + x + 3x + 3",
+       "= x(x + 1) + 3(x + 1)",
+       "= (x + 1)(x + 3)"
+      ],
+      "followUp": "Factorize: 2x² + 7x + 3",
+      "noteId": "n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Split and group the middle term.",
+        "marks": 1,
+        "why": "Splitting the middle term shows the product-and-sum method.",
+        "how": "Use 1 and 3, whose product is 3 and sum is 4.",
+        "accept": [
+         [
+          "x²+x+3x+3"
+         ],
+         [
+          "x(x+1)+3(x+1)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct factorization.",
+        "marks": 1,
+        "why": "The final factors must multiply back to the given trinomial.",
+        "how": "Take the common binomial factor from the grouped terms.",
+        "accept": [
+         [
+          "(x+1)(x+3)"
+         ],
+         [
+          "(x+3)(x+1)"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.1 Q2(ii)"
+     },
+     {
+      "id": "w-4-1-3",
+      "text": "Factorize: x² + x − 12",
+      "marks": 2,
+      "modelAnswer": [
+       "x² + x − 12",
+       "= x² + 4x − 3x − 12",
+       "= x(x + 4) − 3(x + 4)",
+       "= (x + 4)(x − 3)"
+      ],
+      "followUp": "Factorize: 2x² + 7x + 3",
+      "noteId": "n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Split the middle term and group.",
+        "marks": 1,
+        "why": "The middle term must be split using numbers with product −12 and sum 1.",
+        "how": "Use 4 and −3, then factor each group.",
+        "accept": [
+         [
+          "x²+4x−3x−12"
+         ],
+         [
+          "x(x+4)−3(x+4)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct factorization.",
+        "marks": 1,
+        "why": "The final factors must reproduce all three terms.",
+        "how": "Take out the common binomial factor.",
+        "accept": [
+         [
+          "(x+4)(x−3)"
+         ],
+         [
+          "(x−3)(x+4)"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.1 Q3(i)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Board questions commonly ask you to factorize a common-factor expression, a quadratic trinomial, a quartic expression, or a sum or difference of cubes.",
+      "For quadratics, show the split middle term and grouping; these working steps can earn marks even if a later step has an error.",
+      "For quartics, show how you made a difference of squares before writing the factors.",
+      "For cube expressions, identify the cubes and write the correct identity, including the signs in the second factor.",
+      "Check your final factors by expanding them or checking their product and sum against the original expression."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Find two numbers with product 3 and sum 7.",
+        "Split 7x into x + 6x, then group the terms."
+       ],
+       "accept": [
+        [
+         "(2x+1)(x+3)"
+        ],
+        [
+         "(x+3)(2x+1)"
+        ]
+       ],
+       "question": "Factorize: 2x² + 7x + 3",
+       "solution": [
+        "2x² + 7x + 3",
+        "= 2x² + x + 6x + 3",
+        "= x(2x + 1) + 3(2x + 1)",
+        "= (2x + 1)(x + 3)"
+       ],
+       "answer": "(2x + 1)(x + 3)"
+      },
+      {
+       "hints": [
+        "Find two numbers with product −2 and sum −1.",
+        "Split −x into −2x + x, then factor by grouping."
+       ],
+       "accept": [
+        [
+         "(x−2)(x+1)"
+        ],
+        [
+         "(x+1)(x−2)"
+        ]
+       ],
+       "question": "Factorize: x² − x − 2",
+       "solution": [
+        "x² − x − 2",
+        "= x² − 2x + x − 2",
+        "= x(x − 2) + 1(x − 2)",
+        "= (x − 2)(x + 1)"
+       ],
+       "answer": "(x − 2)(x + 1)"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The coefficient of x² is 2 and the constant term is 26, so their product is needed for the split-middle-term method.",
+        "text": "Step – I: Multiply the coefficient of x² with constant term. i.e., 2 × 26 = 52"
+       },
+       {
+        "why": "Listing factor pairs helps find the pair whose sum is the middle coefficient, 17.",
+        "text": "Step – II: List all the factors of 52: 1, 52; 2, 26; 4, 13; −1, −52; −2, −26; −4, −13."
+       },
+       {
+        "why": "The pair 4 and 13 has product 52 and sum 17.",
+        "text": "Step – III: Sum of factors equals middle term (17): 4 + 13 = 17."
+       },
+       {
+        "why": "Replacing 17x by 4x + 13x makes the terms factor by grouping.",
+        "text": "Step – IV: 2x² + 17x + 26 = 2x² + 4x + 13x + 26"
+       },
+       {
+        "why": "Each pair now has the common binomial x + 2.",
+        "text": "Step – V: = 2x(x + 2) + 13(x + 2)"
+       },
+       {
+        "why": "Take the common binomial outside brackets to finish the factorization.",
+        "text": "Step – VI: = (x + 2)(2x + 13)"
+       }
+      ],
+      "question": "Factorize: 2x² + 17x + 26",
+      "answer": "(x + 2)(2x + 13)"
+     },
+     "explain": [
+      {
+       "title": "Common factors",
+       "body": "In algebra, a common factor is an expression that divides two or more expressions exactly. For example, 2x − 6 = 2(x − 3), so 2 is a common factor of both terms."
+      },
+      {
+       "title": "Trinomials and binomials",
+       "body": "Trinomial factoring is converting trinomial expression as a product of two binomial expressions. A trinomial is an expression with three terms and binomial is an expression with two terms."
+      },
+      {
+       "title": "Factor quadratics by grouping",
+       "body": "For x² + px + q, find two numbers whose product is q and whose sum is p. For ax² + bx + c, multiply a by c, find a factor pair with the required sum, split the middle term, and group."
+      },
+      {
+       "title": "Use identities for quartics and cubes",
+       "body": "A quartic expression may be rewritten as a difference of squares. For cubes, use a³ + b³ = (a + b)(a² − ab + b²) or a³ − b³ = (a − b)(a² + ab + b²)."
+      }
+     ],
+     "mistakes": [
+      "Taking out a factor that is not common to every term, or not taking out the highest common factor.",
+      "Choosing two numbers whose sum is right but whose product is wrong when splitting a middle term.",
+      "Forgetting to factor the common binomial after grouping.",
+      "Using the wrong signs in the sum or difference of cubes identity.",
+      "Assuming (a + b)² = a² + b² or (a + b)³ = a³ + b³."
+     ]
+    }
+   },
+   {
+    "id": "m-4-2",
+    "position": 2,
+    "title": "4.3 Highest Common Factor (HCF) and Least Common Multiple (LCM) of Algebraic Expressions",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, section 4.3, pages 74–77; Exercise 4.3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 4.3 (pages 74–77) in your textbook.",
+     "Solve Exercise 4.3 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-4-2-1",
+      "text": "Find HCF by factorization method: 21x²y, 35xy²",
+      "marks": 2,
+      "modelAnswer": [
+       "21x²y = 3 × 7 × x × x × y",
+       "35xy² = 5 × 7 × x × y × y",
+       "∴ HCF = 7 × x × y = 7xy"
+      ],
+      "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+      "noteId": "n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the common numerical and variable factors.",
+        "marks": 1,
+        "why": "Writing the expressions as factors shows which factors are shared.",
+        "how": "Factor the numerical coefficients and the variables in both expressions.",
+        "accept": [
+         [
+          "21x²y",
+          "35xy²"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the HCF.",
+        "marks": 1,
+        "why": "The final HCF must include exactly the common factors.",
+        "how": "Multiply the common factors 7, x and y.",
+        "accept": [
+         [
+          "7xy"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.3 Q1(i)"
+     },
+     {
+      "id": "w-4-2-2",
+      "text": "Find HCF by factorization method: 4x² − 9y², 2x² − 3xy",
+      "marks": 4,
+      "modelAnswer": [
+       "4x² − 9y² = (2x − 3y)(2x + 3y)",
+       "2x² − 3xy = x(2x − 3y)",
+       "∴ HCF = 2x − 3y"
+      ],
+      "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+      "noteId": "n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor the first expression.",
+        "marks": 1,
+        "why": "Correctly factoring the difference of squares reveals its factors.",
+        "how": "Use the difference of two squares.",
+        "accept": [
+         [
+          "(2x−3y)(2x+3y)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Factor the second expression.",
+        "marks": 1,
+        "why": "Factoring the second expression reveals its common binomial factor.",
+        "how": "Take x as the common factor.",
+        "accept": [
+         [
+          "x(2x−3y)"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "State the HCF.",
+        "marks": 2,
+        "why": "The HCF is the factor shared by both factorizations.",
+        "how": "Identify the common factor and give it as the final answer.",
+        "accept": [
+         [
+          "2x−3y"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.3 Q1(ii)"
+     },
+     {
+      "id": "w-4-2-3",
+      "text": "Find HCF by factorization method: a³ + 2a² − 3a, 2a³ + 5a² − 3a",
+      "marks": 4,
+      "modelAnswer": [
+       "a³ + 2a² − 3a = a(a² + 2a − 3)",
+       "= a(a + 3)(a − 1)",
+       "2a³ + 5a² − 3a = a(2a² + 5a − 3)",
+       "= a(2a − 1)(a + 3)",
+       "∴ HCF = a(a + 3)"
+      ],
+      "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+      "noteId": "n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor the first expression.",
+        "marks": 1,
+        "why": "The first complete factorization makes its possible common factors visible.",
+        "how": "Take out a and factor the remaining quadratic.",
+        "accept": [
+         [
+          "a(a+3)(a−1)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Factor the second expression.",
+        "marks": 1,
+        "why": "The second complete factorization confirms the shared factors.",
+        "how": "Take out a and factor the remaining quadratic.",
+        "accept": [
+         [
+          "a(2a−1)(a+3)"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "State the HCF.",
+        "marks": 2,
+        "why": "The final HCF contains the factors common to both expressions.",
+        "how": "Multiply the common factors a and a + 3.",
+        "accept": [
+         [
+          "a(a+3)"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.3 Q1(iv)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to find an HCF by factorization or by the division method. For factorization, show the factorization of each expression and clearly identify the common factors.",
+      "For an LCM by prime factorization, show the factors and include every required factor at its greatest power.",
+      "Questions may ask you to find a missing polynomial or the product of two polynomials using LCM × HCF = p(x) × q(x). Write the relationship before substituting values.",
+      "Marks are usually earned for correct factorization or division, identifying common or required factors, and writing the correct final expression. Keep the working clear so each step can be checked."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Factor the numerical coefficients and variables in both expressions.",
+        "Keep only the factors that occur in both expressions, using the smaller power of each."
+       ],
+       "accept": [
+        [
+         "7xy"
+        ]
+       ],
+       "question": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+       "solution": [
+        "21x²y = 3 × 7 × x × x × y",
+        "35xy² = 5 × 7 × x × y × y",
+        "∴ HCF = 7 × x × y",
+        "= 7xy"
+       ],
+       "answer": "HCF = 7xy"
+      },
+      {
+       "hints": [
+        "Factor a² − 4a + 4 as a perfect square.",
+        "Factor a² − 2a by taking out a, then use the greatest power of each factor."
+       ],
+       "accept": [
+        [
+         "a(a−2)²"
+        ]
+       ],
+       "question": "Find LCM of the following expressions by using prime factorization method.\n(iii) a² − 4a + 4, a² − 2a",
+       "solution": [
+        "a² − 4a + 4 = (a − 2)(a − 2) = (a − 2)²",
+        "a² − 2a = a(a − 2)",
+        "LCM = a(a − 2)²"
+       ],
+       "answer": "LCM = a(a − 2)²"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The first expression is split into factors so the factors needed in the LCM can be seen.",
+        "text": "As x² − 3x + 2 = x² − 2x − x + 2"
+       },
+       {
+        "why": "Grouping terms gives the shared binomial factor.",
+        "text": "= x(x − 2) − 1(x − 2)"
+       },
+       {
+        "why": "Taking out the common binomial completes the factorization.",
+        "text": "= (x − 2)(x − 1)"
+       },
+       {
+        "why": "The difference of two squares factors into two binomials.",
+        "text": "And x² − 1 = (x − 1)(x + 1)"
+       },
+       {
+        "why": "Splitting the middle term allows the third polynomial to be factorized by grouping.",
+        "text": "x² − 5x + 4 = x² − 4x − x + 4"
+       },
+       {
+        "why": "The terms are grouped to show a common binomial.",
+        "text": "= x(x − 4) − 1(x − 4)"
+       },
+       {
+        "why": "Taking out the common binomial completes this factorization.",
+        "text": "= (x − 4)(x − 1)"
+       },
+       {
+        "why": "The factor x − 1 occurs in all three expressions.",
+        "text": "Common factors = x − 1"
+       },
+       {
+        "why": "The remaining factors are the non-common factors needed for the LCM.",
+        "text": "Non-common factors = (x + 1)(x − 2)(x − 4)"
+       },
+       {
+        "why": "The LCM is the product of the common and non-common factors.",
+        "text": "LCM = Common factors × Non-common factors"
+       },
+       {
+        "why": "Substituting the factors gives the complete LCM.",
+        "text": "= (x − 1) × (x + 1)(x − 2)(x − 4)"
+       },
+       {
+        "why": "This is the final factorized form.",
+        "text": "= (x − 1)(x + 1)(x − 2)(x − 4)"
+       }
+      ],
+      "question": "Find the LCM of the polynomials x² − 3x + 2, x² − 1 and x² − 5x + 4.",
+      "answer": "(x − 1)(x + 1)(x − 2)(x − 4)"
+     },
+     "explain": [
+      {
+       "title": "Highest Common Factor",
+       "body": "The HCF of two or more algebraic expressions refers to the greatest algebraic expression which divides them without leaving a remainder. Factor each expression, then multiply only the factors shared by all of them."
+      },
+      {
+       "title": "HCF by division",
+       "body": "Divide the polynomial with the higher degree by the other polynomial. If there is a remainder, continue using the divisor and remainder. A constant factor that is not common to all the given polynomials is ignored, as shown in your textbook."
+      },
+      {
+       "title": "Least Common Multiple",
+       "body": "The LCM of two or more algebraic expressions is the smallest expression that is divisible by each of the given expressions. By factorization, use the factors required by the expressions, taking each factor at its greatest required power."
+      },
+      {
+       "title": "Relationship between LCM and HCF",
+       "body": "For two polynomials, LCM × HCF = p(x) × q(x). To find a missing polynomial, divide LCM × HCF by the polynomial already given. To find the product, multiply the LCM by the HCF."
+      }
+     ],
+     "mistakes": [
+      "For the HCF, including a factor that is not common to every expression.",
+      "For the LCM, leaving out a factor or using a lower power than is required.",
+      "Confusing the HCF and LCM rules: HCF uses common factors, while the LCM includes all required factors.",
+      "Forgetting to factor completely before identifying common or required factors.",
+      "Using LCM × HCF = p(x) × q(x) incorrectly; write the relationship first and substitute carefully.",
+      "Leaving out the zero remainder when showing division proves that one polynomial divides another."
+     ]
+    }
+   },
+   {
+    "id": "m-4-3",
+    "position": 3,
+    "title": "4.4 Square Root of an Algebraic Expression",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, section 4.4, pages 77–80; Exercise 4.4",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 4.4 (pages 77–80) in your textbook.",
+     "Solve Exercise 4.4 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-4-3-1",
+      "text": "Find the square root by factorization method: x² − 8x + 16",
+      "marks": 2,
+      "modelAnswer": [
+       "x² − 8x + 16 = (x − 4)²",
+       "Taking square root, √(x² − 8x + 16) = ±(x − 4)"
+      ],
+      "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+      "noteId": "n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor the polynomial as a square.",
+        "marks": 1,
+        "why": "Recognising the perfect-square trinomial is the key factorization step.",
+        "how": "Show x² − 8x + 16 = (x − 4)².",
+        "accept": [
+         [
+          "(x-4)^2"
+         ],
+         [
+          "x^2-8x+16"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the square root.",
+        "marks": 1,
+        "why": "The final square-root expression is required for the answer.",
+        "how": "Write ±(x − 4), as in your textbook.",
+        "accept": [
+         [
+          "±(x-4)"
+         ],
+         [
+          "x-4"
+         ],
+         [
+          "-x+4"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.4 Q1(i)"
+     },
+     {
+      "id": "w-4-3-3",
+      "text": "Find the square root by factorization method: 36a² + 84a + 49",
+      "marks": 2,
+      "modelAnswer": [
+       "36a² + 84a + 49 = (6a + 7)²",
+       "Taking square root, √(36a² + 84a + 49) = ±(6a + 7)"
+      ],
+      "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+      "noteId": "n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor as a square.",
+        "marks": 1,
+        "why": "The perfect-square factorization shows how to take the root.",
+        "how": "Show 36a² + 84a + 49 = (6a + 7)².",
+        "accept": [
+         [
+          "(6a+7)^2"
+         ],
+         [
+          "36a^2+84a+49"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the square root.",
+        "marks": 1,
+        "why": "The square-root expression completes the answer.",
+        "how": "Write ±(6a + 7).",
+        "accept": [
+         [
+          "±(6a+7)"
+         ],
+         [
+          "6a+7"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.4 Q1(iii)"
+     },
+     {
+      "id": "w-4-3-4",
+      "text": "Find the square root by factorization method: 64y² − 32y + 4",
+      "marks": 2,
+      "modelAnswer": [
+       "64y² − 32y + 4 = (8y − 2)²",
+       "Taking square root, √(64y² − 32y + 4) = ±(8y − 2)"
+      ],
+      "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+      "noteId": "n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor the polynomial.",
+        "marks": 1,
+        "why": "Factoring as a square is the essential method step.",
+        "how": "Show 64y² − 32y + 4 = (8y − 2)².",
+        "accept": [
+         [
+          "(8y-2)^2"
+         ],
+         [
+          "64y^2-32y+4"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the square root.",
+        "marks": 1,
+        "why": "The final square root earns the remaining mark.",
+        "how": "Write ±(8y − 2).",
+        "accept": [
+         [
+          "±(8y-2)"
+         ],
+         [
+          "8y-2"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 4.4 Q1(iv)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The board may ask you to find the square root of a perfect-square polynomial by factorization or by the division method.",
+      "For a factorization question, show the factorization clearly before writing the square root; for a division-method question, show how each quotient term is obtained and confirm that the remainder is zero.",
+      "For real-world questions, factorize first, set the relevant factor or factors equal to zero, and state every value asked for.",
+      "Keep the signs and the final notation consistent with your textbook's answer key."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Look for a perfect-square trinomial.",
+        "The first and last terms are x² and 4, so check the square of x − 2."
+       ],
+       "accept": [
+        [
+         "x-4"
+        ],
+        [
+         "-x+4"
+        ],
+        [
+         "±(x-4)"
+        ]
+       ],
+       "question": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+       "solution": [
+        "x² − 8x + 16 = (x − 4)²",
+        "Taking square root, √(x² − 8x + 16) = ±(x − 4)"
+       ],
+       "answer": "±(x − 4)"
+      },
+      {
+       "hints": [
+        "The first square-root term comes from √(4x⁴).",
+        "Start with 2x²; double it to get 4x², then use the x³ term to find the next quotient term."
+       ],
+       "accept": [
+        [
+         "2x^2-7x-3"
+        ],
+        [
+         "±(2x^2-7x-3)"
+        ]
+       ],
+       "question": "Find the square root of the following polynomials by division method: (i) 4x⁴ − 28x³ + 37x² + 42x + 9",
+       "solution": [
+        "√(4x⁴) = 2x²",
+        "Double 2x² to get 4x²; dividing −28x³ by 4x² gives −7x",
+        "Double (2x² − 7x) to get 4x² − 14x; dividing −12x² by 4x² gives −3",
+        "The remainder is 0",
+        "Hence, the square root is ±(2x² − 7x − 3)"
+       ],
+       "answer": "±(2x² − 7x − 3)"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This takes out the common factor 9 and prepares the expression for recognition as a perfect square.",
+        "text": "36x⁴ − 36x² + 9 = 9(4x⁴ − 4x² + 1)"
+       },
+       {
+        "why": "The terms inside the brackets match the pattern A² − 2AB + B².",
+        "text": "= 9[(2x²)² − 2(2x²)(1) + (1)²]"
+       },
+       {
+        "why": "The bracketed trinomial is the square of 2x² − 1, and 9 is 3².",
+        "text": "= 3²(2x² − 1)²"
+       },
+       {
+        "why": "Now take the square root of both sides of the expression.",
+        "text": "Taking square root on both sides"
+       },
+       {
+        "why": "This writes the square root of the product as the product of the square roots.",
+        "text": "√(36x⁴ − 36x² + 9) = √(3²(2x² − 1)²)"
+       },
+       {
+        "why": "The square root is taken separately for each squared factor.",
+        "text": "= √(3²) · √((2x² − 1)²)"
+       },
+       {
+        "why": "The square root of a square gives the expression with the sign shown in the textbook.",
+        "text": "= ±3(2x² − 1)"
+       }
+      ],
+      "question": "EXAMPLE 26: Find the square root of the expression 36x⁴ − 36x² + 9",
+      "answer": "±3(2x² − 1)"
+     },
+     "explain": [
+      {
+       "title": "What a square root means",
+       "body": "The square root of an algebraic expression refers to a value that, when multiplied by itself, gives the original expression. Just like finding the square root of a number, taking the square root of an algebraic expression involves determining what expression, when squared, results in the given expression."
+      },
+      {
+       "title": "Factorization method",
+       "body": "Rewrite the polynomial as a perfect square, such as (x − 4)². Then take the square root of the square factor and follow your textbook's sign notation."
+      },
+      {
+       "title": "Division method",
+       "body": "When the degree of the polynomial is higher, division method in finding the square root is very useful. Start with the square root of the leading term, double the root found so far to obtain the next term, and continue until the remainder is zero."
+      },
+      {
+       "title": "Using factors in applications",
+       "body": "For a question asking when a function is zero, factorize the expression and set each variable factor equal to zero. Then state the values of x."
+      }
+     ],
+     "mistakes": [
+      "Forgetting the negative sign in the middle term when recognising a square such as (x − 4)².",
+      "In the division method, forgetting to double the root found so far before finding the next quotient term.",
+      "Stopping before checking that the remainder is zero.",
+      "Leaving out one of the zero values after factorizing an expression.",
+      "Changing the signs or final form given in your textbook's answer key."
+     ]
+    }
+   },
+   {
+    "id": "m-4-4",
+    "position": 4,
+    "title": "Unit 4 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, review exercise, pages 80–81; Review Exercise 4",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 4 and attempt Review Exercise 4 (pages 80–81)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-4-4-1",
+      "text": "Factorize the following expressions: 4x³ + 18x² − 12x",
+      "marks": 2,
+      "modelAnswer": [
+       "4x³ + 18x² − 12x = 2x(2x² + 9x − 6)",
+       "Answer: 2x(2x² + 9x − 6)"
+      ],
+      "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+      "noteId": "n-4-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Take out the common factor.",
+        "marks": 1,
+        "why": "Taking out the common factor is the essential first step.",
+        "how": "Identify and factor out 2x.",
+        "accept": [
+         [
+          "2x"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the fully factored expression.",
+        "marks": 1,
+        "why": "The final product must expand to the original expression.",
+        "how": "Write the quotient inside the brackets.",
+        "accept": [
+         [
+          "2x(2x^2+9x-6)"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 4 Q2(i)"
+     },
+     {
+      "id": "w-4-4-2",
+      "text": "Factorize the following expressions: x³ + 64y³",
+      "marks": 2,
+      "modelAnswer": [
+       "x³ + 64y³ = x³ + (4y)³",
+       "x³ + (4y)³ = (x + 4y)(x² − 4xy + 16y²)",
+       "Answer: (x + 4y)(x² − 4xy + 16y²)"
+      ],
+      "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+      "noteId": "n-4-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the sum-of-cubes factors.",
+        "marks": 1,
+        "why": "Recognizing the sum of cubes gives the first factor.",
+        "how": "Use x³ + (4y)³.",
+        "accept": [
+         [
+          "x+4y"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the complete factorization.",
+        "marks": 1,
+        "why": "The complete identity is needed to factor the expression correctly.",
+        "how": "Apply a³ + b³ = (a + b)(a² − ab + b²).",
+        "accept": [
+         [
+          "(x+4y)(x^2-4xy+16y^2)"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 4 Q2(ii)"
+     },
+     {
+      "id": "w-4-4-3",
+      "text": "Factorize the following expressions: x³y³ − 8",
+      "marks": 2,
+      "modelAnswer": [
+       "x³y³ − 8 = (xy)³ − 2³",
+       "(xy)³ − 2³ = (xy − 2)(x²y² + 2xy + 4)",
+       "Answer: (xy − 2)(x²y² + 2xy + 4)"
+      ],
+      "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+      "noteId": "n-4-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the difference-of-cubes factors.",
+        "marks": 1,
+        "why": "Recognizing the difference of cubes gives the first factor.",
+        "how": "Write the expression as (xy)³ − 2³.",
+        "accept": [
+         [
+          "xy-2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the complete factorization.",
+        "marks": 1,
+        "why": "The complete identity gives the correct factorization.",
+        "how": "Apply a³ − b³ = (a − b)(a² + ab + b²).",
+        "accept": [
+         [
+          "(xy-2)(x^2y^2+2xy+4)"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 4 Q2(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Review questions may ask you to factorize an expression, find the HCF and LCM, or find a square root.",
+      "For factorization, show the identity or common factor you use, then write the final factors clearly.",
+      "For HCF and LCM, first show the factorization of each polynomial; then state both results.",
+      "For a square root, include both signs when giving the square roots of a perfect square.",
+      "In a word problem, show how the expression is factorized and state the answer with its unit."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Look for a common factor in all three terms.",
+        "Take out 2x and divide each term by it."
+       ],
+       "accept": [
+        [
+         "2x(2x^2+9x-6)"
+        ],
+        [
+         "2x",
+         "2x^2+9x-6"
+        ]
+       ],
+       "question": "Factorize the following expressions: 4x³ + 18x² − 12x",
+       "solution": [
+        "4x³ + 18x² − 12x = 2x(2x² + 9x − 6)",
+        "Answer: 2x(2x² + 9x − 6)"
+       ],
+       "answer": "2x(2x² + 9x − 6)"
+      },
+      {
+       "hints": [
+        "Look for two numbers whose product is 15.",
+        "The numbers are −3 and −5, so write the quadratic as two binomial factors."
+       ],
+       "accept": [
+        [
+         "3 years",
+         "5 years"
+        ],
+        [
+         "3",
+         "5"
+        ]
+       ],
+       "question": "Huria is analyzing the total cost of her loan, modeled by the expression C(x) = x² − 8x + 15, where x represents the number of years. What is the optimal repayment period for Huria's loan?",
+       "solution": [
+        "C(x) = x² − 8x + 15",
+        "C(x) = (x − 3)(x − 5)",
+        "Therefore, x = 3 or x = 5.",
+        "Answer: 3 years or 5 years"
+       ],
+       "answer": "3 years or 5 years"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The two brackets share the expression x² + 6x, so set a shifted version of it equal to A.",
+        "text": "Let A = x² + 6x − 3."
+       },
+       {
+        "why": "The first bracket is A + 6 and the second bracket is A − 6.",
+        "text": "(x² + 6x + 3)(x² + 6x − 9) + 36 = (A + 6)(A − 6) + 36"
+       },
+       {
+        "why": "The product of a sum and difference is A² − 36, and the added 36 cancels the −36.",
+        "text": "(A + 6)(A − 6) + 36 = A² − 36 + 36 = A²"
+       },
+       {
+        "why": "Replace A with its original expression to give the factorized answer.",
+        "text": "A² = (x² + 6x − 3)²"
+       }
+      ],
+      "question": "Factorize the following expressions: (x² + 6x + 3)(x² + 6x − 9) + 36",
+      "answer": "(x² + 6x − 3)²"
+     },
+     "explain": [
+      {
+       "title": "Take out a common factor",
+       "body": "If every term has the same factor, take it outside brackets. For example, 12x + 36 = 12(x + 3)."
+      },
+      {
+       "title": "Recognize special patterns",
+       "body": "A sum or difference of cubes can be factored using cube identities. A perfect-square trinomial has the form a² ± 2ab + b² = (a ± b)²."
+      },
+      {
+       "title": "Factor quadratics",
+       "body": "For a quadratic, find factors that give the correct first and last terms and also make the middle term."
+      },
+      {
+       "title": "Find HCF and LCM",
+       "body": "Factor each polynomial first. The HCF uses common factors at their lowest powers; the LCM uses all factors at their highest powers."
+      },
+      {
+       "title": "Find a square root",
+       "body": "Rewrite a perfect-square expression as the square of a bracket. Remember that both the positive and negative bracket have that square."
+      }
+     ],
+     "mistakes": [
+      "Forgetting to take out the common factor from every term.",
+      "Using the wrong sign in a sum-of-cubes or difference-of-cubes identity.",
+      "Finding the LCM using the lowest powers instead of the highest powers.",
+      "Giving only one square root and leaving out ±.",
+      "In the loan question, reporting only one of the two values given by the factorization."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-4-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-4-1",
+   "title": "How to factorize algebraic expressions",
+   "keywords": [
+    "common factor",
+    "trinomial",
+    "factorize",
+    "quadratic",
+    "difference of squares",
+    "sum of cubes"
+   ],
+   "answer": "Factor out common factors first; if there are none, use the method that matches the expression.",
+   "explanation": "A common factor is taken outside brackets. For a trinomial, split the middle term into two terms whose product and sum fit the expression, then group terms. For example, x² + 9x + 14 = (x + 2)(x + 7). For cubes, use the identities for a³ + b³ or a³ − b³.",
+   "simple": "Factorization means rewriting an expression as a product of simpler expressions. Look for a common factor first; otherwise, use the suitable factorization method.",
+   "examples": [
+    "15y² + 20y = 5y(3y + 4)",
+    "8x³ + 27 = (2x + 3)(4x² − 6x + 9)"
+   ],
+   "steps": [
+    "Look for a factor common to every term and take it outside brackets.",
+    "For x² + px + q, find two numbers whose product is q and whose sum is p.",
+    "For ax² + bx + c, multiply a by c, split the middle term, then group.",
+    "For a⁴-type expressions, make a difference of squares when possible.",
+    "For cubes, identify the cube terms and use the sum or difference of cubes identity."
+   ],
+   "checkQuestion": "Factorize x² + 5x + 6.",
+   "checkAnswer": "(x + 2)(x + 3)",
+   "checkAccept": [
+    [
+     "(x+2)(x+3)"
+    ],
+    [
+     "(x+3)(x+2)"
+    ]
+   ]
+  },
+  {
+   "id": "n-4-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-4-2",
+   "title": "Finding HCF and LCM of Algebraic Expressions",
+   "keywords": [
+    "HCF",
+    "LCM",
+    "factorization",
+    "common factors",
+    "division method",
+    "polynomial"
+   ],
+   "answer": "The HCF is the greatest common factor; the LCM is the smallest expression divisible by all the given expressions.",
+   "explanation": "To find an HCF, identify the greatest expression that divides every given expression without a remainder. To find an LCM, include every factor needed to make an expression divisible by each given expression. For two polynomials, use LCM × HCF = product of the polynomials.",
+   "simple": "HCF means the biggest factor shared by all the expressions. LCM means the smallest expression that contains all the factors needed by each one.",
+   "examples": [
+    "For 6x²y and 9xy², the common factors are 3, x and y, so the HCF is 3xy.",
+    "For x² − 1 and x² + x, factor them as (x − 1)(x + 1) and x(x + 1). The LCM is x(x − 1)(x + 1)."
+   ],
+   "steps": [
+    "Factor each expression completely.",
+    "For the HCF, multiply only the factors common to every expression, using the smallest power of each.",
+    "For the LCM, include each factor that occurs, using its greatest power.",
+    "For two polynomials, use LCM × HCF = product of the two polynomials to find a missing polynomial or their product."
+   ],
+   "checkQuestion": "What is the HCF of x² − 1 and x² + x?",
+   "checkAnswer": "x + 1",
+   "checkAccept": [
+    [
+     "x+1"
+    ]
+   ]
+  },
+  {
+   "id": "n-4-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-4-3",
+   "title": "Finding the square root of a polynomial",
+   "keywords": [
+    "square root",
+    "factorization",
+    "division method",
+    "perfect square",
+    "polynomial",
+    "remainder"
+   ],
+   "answer": "The square root of a perfect-square polynomial is the expression whose square equals that polynomial.",
+   "explanation": "A square root is an expression that gives the original expression when multiplied by itself. For a perfect-square polynomial, factor it as a square or use the division method, then write the square root with the sign shown in your textbook.",
+   "simple": "Find the expression that, when squared, gives the polynomial. For example, (x − 4)² gives x² − 8x + 16.",
+   "examples": [
+    "x² − 8x + 16 = (x − 4)², so its square root is ±(x − 4).",
+    "x⁴ − 12x³ + 42x² − 36x + 9 = (x² − 6x + 3)², so its square root is ±(x² − 6x + 3)."
+   ],
+   "steps": [
+    "For the factorization method, rewrite the polynomial as a perfect square.",
+    "For the division method, find the first square-root term from the first term of the polynomial.",
+    "Double the root found so far, use it to find the next term, and continue until the remainder is zero.",
+    "Take the square root and include the sign or signs used in your textbook."
+   ],
+   "checkQuestion": "What is the square root of x² − 6x + 9?",
+   "checkAnswer": "The square root is ±(x − 3).",
+   "checkAccept": [
+    [
+     "x-3"
+    ],
+    [
+     "-x+3"
+    ],
+    [
+     "±(x-3)"
+    ]
+   ]
+  },
+  {
+   "id": "n-4-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-4-4",
+   "title": "Unit 4 Review: Factorization and Algebraic Manipulation",
+   "keywords": [
+    "factorization",
+    "HCF",
+    "LCM",
+    "square root",
+    "cubic",
+    "polynomial"
+   ],
+   "answer": "Factorization rewrites an expression as a product of factors.",
+   "explanation": "Factor each expression into its simplest factors. For LCM and HCF, first factor each polynomial fully, then take the highest or lowest powers of the factors as needed.",
+   "simple": "Break an expression into multiplied parts, just as a number can be broken into factors.",
+   "examples": [
+    "12x + 36 = 12(x + 3)",
+    "x² − 6x + 9 = (x − 3)²"
+   ],
+   "steps": [
+    "Look for a common factor and take it out.",
+    "Recognize special patterns such as a difference of cubes or a perfect-square trinomial.",
+    "For HCF and LCM, factor each polynomial first.",
+    "For a square root, identify the expression whose square gives the polynomial."
+   ],
+   "checkQuestion": "Factorize 4x² + 8x.",
+   "checkAnswer": "4x(x + 2)",
+   "checkAccept": [
+    [
+     "4x(x+2)"
+    ],
+    [
+     "4x",
+     "x+2"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-4-1-1",
+   "stem": "Factorize 15y² + 20y.",
+   "options": [
+    "5y(3y + 4)",
+    "5y(3y + 5)",
+    "y(15y + 20y)",
+    "5(3y + 4)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 5y is the highest common factor and leaves 3y + 4.",
+    "This is incorrect because expanding gives 15y² + 25y.",
+    "This is incorrect because the second term inside the brackets should be 20, not 20y.",
+    "This is incorrect because the common factor y is missing."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-1-2",
+   "stem": "Factorize x² + 4x + 3.",
+   "options": [
+    "(x + 1)(x + 3)",
+    "(x − 1)(x − 3)",
+    "(x + 2)(x + 2)",
+    "(x + 1)(x + 2)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 1 × 3 = 3 and 1 + 3 = 4.",
+    "This is incorrect because the product has a positive middle term but the constant is positive; expanding gives x² − 4x + 3.",
+    "This is incorrect because it expands to x² + 4x + 4.",
+    "This is incorrect because it expands to x² + 3x + 2."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-1-3",
+   "stem": "Factorize 2x² + 7x + 3.",
+   "options": [
+    "(2x + 1)(x + 3)",
+    "(2x + 3)(x + 1)",
+    "(2x − 1)(x − 3)",
+    "(x + 1)(x + 3)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because its expansion is 2x² + 7x + 3.",
+    "This is incorrect because its expansion is 2x² + 5x + 3.",
+    "This is incorrect because its expansion has a negative middle term.",
+    "This is incorrect because its leading term is x², not 2x²."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-1-4",
+   "stem": "Factorize x⁴ + 4x² + 16.",
+   "options": [
+    "(x² − 2x + 4)(x² + 2x + 4)",
+    "(x² − 4)(x² + 4)",
+    "(x² − 2x + 4)²",
+    "(x² + 2x + 4)²"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because it comes from (x² + 4)² − (2x)².",
+    "This is incorrect because it expands to x⁴ − 16.",
+    "This is incorrect because the squared factor produces extra terms and is not equal to the expression.",
+    "This is incorrect because the squared factor produces extra terms and is not equal to the expression."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-1-5",
+   "stem": "Factorize x³ + 8.",
+   "options": [
+    "(x + 2)(x² − 2x + 4)",
+    "(x − 2)(x² + 2x + 4)",
+    "(x + 2)(x² + 2x + 4)",
+    "(x − 2)(x² − 2x + 4)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct by the sum of cubes identity with a = x and b = 2.",
+    "This is incorrect because it represents x³ − 8.",
+    "This is incorrect because the quadratic factor has the wrong sign for the middle term.",
+    "This is incorrect because it represents neither the given sum of cubes nor its correct factorization."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-1-6",
+   "stem": "Which identity factorizes a³ − b³?",
+   "options": [
+    "(a − b)(a² + ab + b²)",
+    "(a + b)(a² + ab + b²)",
+    "(a − b)(a² − ab + b²)",
+    "(a + b)(a² − ab + b²)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: a³ − b³ = (a − b)(a² + ab + b²).",
+    "This is incorrect because it is not the identity for a difference of cubes.",
+    "This is incorrect because the sign of the middle term in the quadratic factor is wrong.",
+    "This is incorrect because it is not the identity for a difference of cubes."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-1",
+   "moduleId": "m-4-1"
+  },
+  {
+   "id": "q-4-2-1",
+   "stem": "What is the HCF of 21x²y and 35xy²?",
+   "options": [
+    "7xy",
+    "7x²y²",
+    "35xy",
+    "7x"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the common numerical factor is 7 and the common variables are x and y.",
+    "This is incorrect because x² and y² are not both factors of each expression.",
+    "This is incorrect because 35 does not divide 21.",
+    "This is incorrect because y is also a common factor."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-2-3",
+   "stem": "Find the LCM of x² + x and x³ + x².",
+   "options": [
+    "x²(x + 1)",
+    "x(x + 1)",
+    "x² + 1",
+    "x³(x + 1)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the expressions factor as x(x + 1) and x²(x + 1), so the greatest required powers give x²(x + 1).",
+    "This is incorrect because it is not divisible by x³ + x².",
+    "This is incorrect because x² + 1 is not a factor of either expression.",
+    "This is incorrect because it includes an unnecessary extra factor of x."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-2-4",
+   "stem": "Find the LCM of a² − 4a + 4 and a² − 2a.",
+   "options": [
+    "a(a − 2)",
+    "a²(a − 2)",
+    "a(a − 2)²",
+    "(a − 2)²"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is incorrect because it has only one factor of a − 2.",
+    "This is incorrect because it includes an extra factor of a.",
+    "This is correct: the expressions factor as (a − 2)² and a(a − 2), so the LCM is a(a − 2)².",
+    "This is incorrect because it does not include the factor a from the second expression."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-2-5",
+   "stem": "Which relationship connects the LCM and HCF of two polynomials p(x) and q(x)?",
+   "options": [
+    "LCM − HCF = p(x)q(x)",
+    "LCM × HCF = p(x)q(x)",
+    "LCM + HCF = p(x)q(x)",
+    "LCM ÷ HCF = p(x)q(x)"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is incorrect because the relationship uses multiplication, not subtraction.",
+    "This is correct: LCM × HCF = p(x) × q(x).",
+    "This is incorrect because the relationship does not use addition.",
+    "This is incorrect because the relationship does not use division."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-2-6",
+   "stem": "If the LCM is x³ − 10x² + 11x + 70, the HCF is x − 7, and one polynomial is x² − 12x + 35, what is the other polynomial?",
+   "options": [
+    "x² − 5x − 14",
+    "x² − 7x − 14",
+    "x² − 5x + 14",
+    "x² + 5x − 14"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: (LCM × HCF) ÷ the given polynomial gives x² − 5x − 14.",
+    "This is incorrect because the coefficient of x does not result from the required division.",
+    "This is incorrect because the constant term has the wrong sign.",
+    "This is incorrect because the coefficient of x has the wrong sign."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-2-7",
+   "stem": "Find the LCM of 2a²b, 4ab² and 6ab.",
+   "options": [
+    "12a²b²",
+    "12ab²",
+    "24a²b²",
+    "6a²b"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the least common numerical multiple is 12, and the greatest required powers are a² and b².",
+    "This is incorrect because it does not include the required power a².",
+    "This is incorrect because 24 is not the least common numerical multiple.",
+    "This is incorrect because it does not include the required power b²."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-2",
+   "moduleId": "m-4-2"
+  },
+  {
+   "id": "q-4-3-1",
+   "stem": "What is the square root of x² − 8x + 16?",
+   "options": [
+    "±(x − 4)",
+    "±(x + 4)",
+    "x − 8",
+    "x² − 4"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because x² − 8x + 16 = (x − 4)².",
+    "This is wrong because (x + 4)² has a positive middle term.",
+    "This is wrong because x − 8 does not square to the given polynomial.",
+    "This is wrong because x² − 4 is not a square root of the polynomial."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-2",
+   "stem": "Find the square root of 9x² + 12x + 4.",
+   "options": [
+    "±(3x + 2)",
+    "±(3x − 2)",
+    "3x² + 2",
+    "±(9x + 4)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 9x² + 12x + 4 = (3x + 2)².",
+    "This is wrong because squaring 3x − 2 gives a negative middle term.",
+    "This is wrong because 3x² + 2 does not square to the given polynomial.",
+    "This is wrong because 9x + 4 is not the expression whose square gives the polynomial."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-3",
+   "stem": "Find the square root of 36a² + 84a + 49.",
+   "options": [
+    "±(6a + 7)",
+    "±(6a − 7)",
+    "6a² + 7",
+    "±(36a + 49)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 36a² + 84a + 49 = (6a + 7)².",
+    "This is wrong because squaring 6a − 7 gives a negative middle term.",
+    "This is wrong because 6a² + 7 does not square to the polynomial.",
+    "This is wrong because 36a + 49 is not its square root."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-4",
+   "stem": "What is the square root of 200t² − 120t + 18?",
+   "options": [
+    "±√2(10t − 3)",
+    "±2(10t − 3)",
+    "±√2(10t + 3)",
+    "±√2(5t − 3)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 200t² − 120t + 18 = 2(10t − 3)².",
+    "This is wrong because its square has a factor of 4 rather than 2.",
+    "This is wrong because the sign of the middle term would be positive.",
+    "This is wrong because the leading term would be 50t² rather than 200t²."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-5",
+   "stem": "Which expression is a square root of 4x⁴ − 28x³ + 37x² + 42x + 9?",
+   "options": [
+    "±(2x² − 7x − 3)",
+    "±(2x² + 7x − 3)",
+    "±(2x² − 7x + 3)",
+    "±(4x² − 7x − 3)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because squaring it gives all the terms of the polynomial.",
+    "This is wrong because its square has a positive x³ term.",
+    "This is wrong because its square has a negative x term.",
+    "This is wrong because its leading term would be 16x⁴ when squared."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-6",
+   "stem": "What is the square root of 121x⁴ − 198x³ − 183x² + 216x + 144?",
+   "options": [
+    "±(11x² − 9x − 12)",
+    "±(11x² + 9x − 12)",
+    "±(11x² − 9x + 12)",
+    "±(121x² − 9x − 12)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because its square is the given polynomial.",
+    "This is wrong because its square has a positive x³ term.",
+    "This is wrong because its square has a negative x term.",
+    "This is wrong because its leading term would have degree four after squaring."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-7",
+   "stem": "For R(x) = −x² + 6x − 8, which values of x give zero return?",
+   "options": [
+    "x = 2 or x = 4",
+    "x = −2 or x = −4",
+    "x = 2 or x = −4",
+    "x = 4 only"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because R(x) = −(x − 2)(x − 4).",
+    "This is wrong because substituting these negative values does not give zero.",
+    "This is wrong because x = −4 is not a zero of the expression.",
+    "This is wrong because x = 2 is also a zero."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-3-8",
+   "stem": "At what value of x is P(x) = x³ − 15x² + 75x − 125 equal to zero?",
+   "options": [
+    "x = 5",
+    "x = 0",
+    "x = 1",
+    "x = 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because P(x) = (x − 5)³.",
+    "This is wrong because P(0) = −125, not zero.",
+    "This is wrong because P(1) is not zero.",
+    "This is wrong because P(2) is not zero."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-4-3",
+   "moduleId": "m-4-3"
+  },
+  {
+   "id": "q-4-4-1",
+   "stem": "The factorization of 12x + 36 is:",
+   "options": [
+    "12(x + 3)",
+    "12(3x)",
+    "12(3x + 1)",
+    "x(12 + 36x)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because taking out the common factor 12 gives 12(x + 3).",
+    "This is incorrect because expanding it gives 36x, not 12x + 36.",
+    "This is incorrect because expanding it gives 36x + 12.",
+    "This is incorrect because expanding it gives 12x + 36x²."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-2",
+   "stem": "The factors of 4x² − 12x + 9 are:",
+   "options": [
+    "(2x + 3)²",
+    "(2x − 3)²",
+    "(2x − 3)(2x + 3)",
+    "(2 + 3x)(2 − 3x)²"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is incorrect because it expands to 4x² + 12x + 9.",
+    "This is correct because it expands to 4x² − 12x + 9.",
+    "This is incorrect because it expands to 4x² − 9.",
+    "This is incorrect because it does not expand to the given quadratic."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-3",
+   "stem": "The HCF of a³b³ and ab² is:",
+   "options": [
+    "a³b³",
+    "ab²",
+    "a⁴b⁵",
+    "a²b"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is incorrect because the powers of a and b are not both common at these highest powers.",
+    "This is correct because the lowest common powers are a¹ and b².",
+    "This is incorrect because multiplying the expressions does not give their HCF.",
+    "This is incorrect because the power of b is too low for the common factor."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-4",
+   "stem": "The LCM of 16x², 4x and 30xy is:",
+   "options": [
+    "480x³y",
+    "240xy",
+    "240x²y",
+    "120x⁴y"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is incorrect because the numerical coefficient is not the least common multiple of 16, 4 and 30.",
+    "This is incorrect because it does not contain the highest power x².",
+    "This is correct because the numerical LCM is 240 and the highest variable powers are x² and y.",
+    "This is incorrect because it uses an unnecessarily high power of x."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-5",
+   "stem": "Product of LCM and HCF = __________ of two polynomials.",
+   "options": [
+    "sum",
+    "difference",
+    "product",
+    "quotient"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is incorrect because the relationship is not addition.",
+    "This is incorrect because the relationship is not subtraction.",
+    "This is correct because the product of the LCM and HCF equals the product of the two polynomials.",
+    "This is incorrect because the relationship is not division."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-6",
+   "stem": "The square root of x² − 6x + 9 is:",
+   "options": [
+    "±(x − 3)",
+    "±(x + 3)",
+    "x − 3",
+    "x + 3"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because x² − 6x + 9 = (x − 3)² and both square roots are included.",
+    "This is incorrect because (x + 3)² has a positive middle term.",
+    "This is incomplete because it gives only one of the two square roots.",
+    "This is incorrect because it does not square to the given expression."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-7",
+   "stem": "The LCM of (a − b)² and (a − b)⁴ is:",
+   "options": [
+    "(a − b)²",
+    "(a − b)³",
+    "(a − b)⁴",
+    "(a − b)⁶"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is incorrect because it does not contain the higher power needed.",
+    "This is incorrect because it is still lower than the fourth power.",
+    "This is correct because the LCM takes the highest power, which is four.",
+    "This is incorrect because it uses a higher power than is needed."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-8",
+   "stem": "Factorization of x³ + 3x² + 3x + 1 is:",
+   "options": [
+    "(x + 1)³",
+    "(x − 1)³",
+    "(x + 1)(x² + x + 1)",
+    "(x − 1)(x² − x + 1)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because it expands to x³ + 3x² + 3x + 1.",
+    "This is incorrect because it expands to x³ − 3x² + 3x − 1.",
+    "This is incorrect because it expands to x³ + 2x² + 2x + 1.",
+    "This is incorrect because it expands to x³ − 1."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-9",
+   "stem": "Cubic polynomial has degree:",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is incorrect because degree 1 is linear.",
+    "This is incorrect because degree 2 is quadratic.",
+    "This is correct because a cubic polynomial has degree 3.",
+    "This is incorrect because degree 4 is quartic."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-4-1-1",
+   "text": "Factorize by identifying common factors: 15y² + 20y",
+   "marks": 2,
+   "modelAnswer": [
+    "15y² + 20y",
+    "= 5y(3y + 4)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify and take out the common factor 5y.",
+     "marks": 1,
+     "why": "Taking out the highest common factor is the key step.",
+     "how": "Write 15y² + 20y = 5y(3y + 4).",
+     "accept": [
+      [
+       "5y"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct factorization.",
+     "marks": 1,
+     "why": "The final factors must multiply back to the original expression.",
+     "how": "Finish with 5y(3y + 4).",
+     "accept": [
+      [
+       "5y(3y+4)"
+      ],
+      [
+       "5y(4+3y)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.1 Q1(ii)"
+  },
+  {
+   "id": "w-4-1-2",
+   "text": "Factorize: x² + 4x + 3",
+   "marks": 2,
+   "modelAnswer": [
+    "x² + 4x + 3",
+    "= x² + x + 3x + 3",
+    "= x(x + 1) + 3(x + 1)",
+    "= (x + 1)(x + 3)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Split and group the middle term.",
+     "marks": 1,
+     "why": "Splitting the middle term shows the product-and-sum method.",
+     "how": "Use 1 and 3, whose product is 3 and sum is 4.",
+     "accept": [
+      [
+       "x²+x+3x+3"
+      ],
+      [
+       "x(x+1)+3(x+1)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct factorization.",
+     "marks": 1,
+     "why": "The final factors must multiply back to the given trinomial.",
+     "how": "Take the common binomial factor from the grouped terms.",
+     "accept": [
+      [
+       "(x+1)(x+3)"
+      ],
+      [
+       "(x+3)(x+1)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.1 Q2(ii)"
+  },
+  {
+   "id": "w-4-1-3",
+   "text": "Factorize: x² + x − 12",
+   "marks": 2,
+   "modelAnswer": [
+    "x² + x − 12",
+    "= x² + 4x − 3x − 12",
+    "= x(x + 4) − 3(x + 4)",
+    "= (x + 4)(x − 3)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Split the middle term and group.",
+     "marks": 1,
+     "why": "The middle term must be split using numbers with product −12 and sum 1.",
+     "how": "Use 4 and −3, then factor each group.",
+     "accept": [
+      [
+       "x²+4x−3x−12"
+      ],
+      [
+       "x(x+4)−3(x+4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct factorization.",
+     "marks": 1,
+     "why": "The final factors must reproduce all three terms.",
+     "how": "Take out the common binomial factor.",
+     "accept": [
+      [
+       "(x+4)(x−3)"
+      ],
+      [
+       "(x−3)(x+4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.1 Q3(i)"
+  },
+  {
+   "id": "w-4-1-4",
+   "text": "Factorize: 6 + 7x − 3x²",
+   "marks": 4,
+   "modelAnswer": [
+    "6 + 7x − 3x²",
+    "= 6 + 9x − 2x − 3x²",
+    "= 3(2 + 3x) − x(2 + 3x)",
+    "= (2 + 3x)(3 − x)",
+    "= (3x + 2)(3 − x)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rearrange and split the middle term.",
+     "marks": 1,
+     "why": "A suitable split of the middle term makes grouping possible.",
+     "how": "Write the expression as 6 + 9x − 2x − 3x².",
+     "accept": [
+      [
+       "6+9x−2x−3x²"
+      ],
+      [
+       "3(2+3x)−x(2+3x)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor each group.",
+     "marks": 1,
+     "why": "Both groups must contain the same binomial factor.",
+     "how": "Take out 3 from the first group and −x from the second.",
+     "accept": [
+      [
+       "3(2+3x)−x(2+3x)"
+      ],
+      [
+       "(2+3x)(3−x)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the final factors.",
+     "marks": 2,
+     "why": "The answer must be a correct factorization of the original expression.",
+     "how": "Reorder the binomial terms to match the answer key.",
+     "accept": [
+      [
+       "(3x+2)(3−x)"
+      ],
+      [
+       "(2+3x)(3−x)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.1 Q4(viii)"
+  },
+  {
+   "id": "w-4-1-5",
+   "text": "Factorize: x⁴ + 4x² + 16",
+   "marks": 4,
+   "modelAnswer": [
+    "x⁴ + 4x² + 16",
+    "= (x² + 4)² − 4x²",
+    "= (x² + 4)² − (2x)²",
+    "= (x² + 4 − 2x)(x² + 4 + 2x)",
+    "= (x² − 2x + 4)(x² + 2x + 4)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite as a difference of squares.",
+     "marks": 1,
+     "why": "Adding and subtracting a suitable term creates a difference of squares.",
+     "how": "Use (x² + 4)² − (2x)².",
+     "accept": [
+      [
+       "(x²+4)²−4x²"
+      ],
+      [
+       "(x²+4)²−(2x)²"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply A² − B² = (A − B)(A + B).",
+     "marks": 2,
+     "why": "The difference of squares must be factored with both signs.",
+     "how": "Take A = x² + 4 and B = 2x.",
+     "accept": [
+      [
+       "(x²+4−2x)(x²+4+2x)"
+      ],
+      [
+       "(x²−2x+4)(x²+2x+4)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final factorization.",
+     "marks": 1,
+     "why": "The final answer must have the factors correctly simplified.",
+     "how": "Write the two quadratic factors.",
+     "accept": [
+      [
+       "(x²−2x+4)(x²+2x+4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q1(iii)"
+  },
+  {
+   "id": "w-4-1-6",
+   "text": "Factorize: x⁴ − 14x² + 1",
+   "marks": 4,
+   "modelAnswer": [
+    "x⁴ − 14x² + 1",
+    "= (x² + 1)² − 16x²",
+    "= (x² + 1)² − (4x)²",
+    "= (x² + 1 − 4x)(x² + 1 + 4x)",
+    "= (x² − 4x + 1)(x² + 4x + 1)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Create the difference of squares.",
+     "marks": 1,
+     "why": "The expression is rewritten as a difference of squares.",
+     "how": "Use (x² + 1)² − (4x)².",
+     "accept": [
+      [
+       "(x²+1)²−16x²"
+      ],
+      [
+       "(x²+1)²−(4x)²"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the difference of squares identity.",
+     "marks": 2,
+     "why": "Both conjugate factors are needed to preserve the expression.",
+     "how": "Factor A² − B² as (A − B)(A + B).",
+     "accept": [
+      [
+       "(x²+1−4x)(x²+1+4x)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final factorization.",
+     "marks": 1,
+     "why": "The final factors must match the given expression.",
+     "how": "Arrange each factor in descending powers.",
+     "accept": [
+      [
+       "(x²−4x+1)(x²+4x+1)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q1(iv)"
+  },
+  {
+   "id": "w-4-1-7",
+   "text": "Factorize: (3x² + 5x + 3)(3x² + 5x + 5) − 3",
+   "marks": 4,
+   "modelAnswer": [
+    "(3x² + 5x + 3)(3x² + 5x + 5) − 3",
+    "= (y + 3)(y + 5) − 3, where y = 3x² + 5x",
+    "= y² + 8y + 12",
+    "= y² + 6y + 2y + 12",
+    "= y(y + 6) + 2(y + 6)",
+    "= (y + 6)(y + 2)",
+    "= (3x² + 5x + 6)(3x² + 5x + 2)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set the common expression equal to y.",
+     "marks": 1,
+     "why": "The repeated quadratic expression is replaced by one variable to simplify the work.",
+     "how": "Let y = 3x² + 5x.",
+     "accept": [
+      [
+       "y=3x²+5x"
+      ],
+      [
+       "(y+3)(y+5)−3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Expand and factorize the expression in y.",
+     "marks": 1,
+     "why": "Expanding produces a trinomial that can be factorized by grouping.",
+     "how": "Obtain y² + 8y + 12, then split 8y as 6y + 2y.",
+     "accept": [
+      [
+       "y²+8y+12"
+      ],
+      [
+       "y²+6y+2y+12"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Factor the trinomial in y.",
+     "marks": 1,
+     "why": "This is the factorization of the trinomial in the temporary variable.",
+     "how": "Group the terms and take out the common binomial.",
+     "accept": [
+      [
+       "(y+6)(y+2)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final factorization.",
+     "marks": 1,
+     "why": "Substituting back gives the required expression in x.",
+     "how": "Replace y with 3x² + 5x.",
+     "accept": [
+      [
+       "(3x²+5x+6)(3x²+5x+2)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q2(iv)"
+  },
+  {
+   "id": "w-4-1-8",
+   "text": "Factorize: (x + 1)(x − 1)(x + 2)(x − 2) − 16x²",
+   "marks": 4,
+   "modelAnswer": [
+    "(x + 1)(x − 1)(x + 2)(x − 2) − 16x²",
+    "= (x² − 1)(x² − 4) − 16x²",
+    "= x⁴ − 21x² + 4",
+    "= (x² + 2)² − 25x²",
+    "= (x² + 2)² − (5x)²",
+    "= (x² + 2 − 5x)(x² + 2 + 5x)",
+    "= (x² − 5x + 2)(x² + 5x + 2)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Pair the factors and simplify.",
+     "marks": 1,
+     "why": "Pairing conjugate factors uses the difference of squares and simplifies the expression.",
+     "how": "Use (x + 1)(x − 1) = x² − 1 and (x + 2)(x − 2) = x² − 4.",
+     "accept": [
+      [
+       "(x²−1)(x²−4)−16x²"
+      ],
+      [
+       "x⁴−21x²+4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rewrite the simplified expression.",
+     "marks": 1,
+     "why": "This rewriting creates a difference of squares.",
+     "how": "Express it as (x² + 2)² − (5x)².",
+     "accept": [
+      [
+       "(x²+2)²−25x²"
+      ],
+      [
+       "(x²+2)²−(5x)²"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Apply the difference of squares identity.",
+     "marks": 1,
+     "why": "Factoring both signs correctly gives the two quadratic factors.",
+     "how": "Use (A − B)(A + B).",
+     "accept": [
+      [
+       "(x²+2−5x)(x²+2+5x)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final answer.",
+     "marks": 1,
+     "why": "The final answer must be the required factorization.",
+     "how": "Arrange the terms in each factor.",
+     "accept": [
+      [
+       "(x²−5x+2)(x²+5x+2)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q2(vi)"
+  },
+  {
+   "id": "w-4-1-9",
+   "text": "Factorize: 8x³ + 12x² + 6x + 1",
+   "marks": 4,
+   "modelAnswer": [
+    "8x³ + 12x² + 6x + 1",
+    "= (2x)³ + 3(2x)²(1) + 3(2x)(1)² + 1³",
+    "= (2x + 1)³"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Match the expression to the cube pattern.",
+     "marks": 1,
+     "why": "Recognising the terms as a binomial cube identifies the correct identity.",
+     "how": "Recognise a = 2x and b = 1.",
+     "accept": [
+      [
+       "(2x)³+3(2x)²(1)+3(2x)(1)²+1³"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the sum-of-cubes pattern for a perfect cube.",
+     "marks": 2,
+     "why": "The binomial cube is the factorization of the given four-term expression.",
+     "how": "Write the expression as (2x + 1)³.",
+     "accept": [
+      [
+       "(2x+1)³"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final answer.",
+     "marks": 1,
+     "why": "The answer must state the complete factorization.",
+     "how": "Write the cube or its three equal factors.",
+     "accept": [
+      [
+       "(2x+1)³"
+      ],
+      [
+       "(2x+1)(2x+1)(2x+1)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q3(i)"
+  },
+  {
+   "id": "w-4-1-10",
+   "text": "Factorize: 64x³ + 125",
+   "marks": 4,
+   "modelAnswer": [
+    "64x³ + 125",
+    "= (4x)³ + 5³",
+    "= (4x + 5)((4x)² − (4x)(5) + 5²)",
+    "= (4x + 5)(16x² − 20x + 25)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express both terms as cubes.",
+     "marks": 1,
+     "why": "Identifying the two cubes gives the values needed for the identity.",
+     "how": "Write 64x³ + 125 = (4x)³ + 5³.",
+     "accept": [
+      [
+       "(4x)³+5³"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the sum of cubes identity.",
+     "marks": 1,
+     "why": "The sum of cubes uses a plus in the first factor and a minus middle term in the second.",
+     "how": "Use a³ + b³ = (a + b)(a² − ab + b²).",
+     "accept": [
+      [
+       "(4x+5)((4x)²−(4x)(5)+5²)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final factorization.",
+     "marks": 2,
+     "why": "The factors must be correctly simplified and complete.",
+     "how": "Simplify each term in the quadratic factor.",
+     "accept": [
+      [
+       "(4x+5)(16x²−20x+25)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q4(ii)"
+  },
+  {
+   "id": "w-4-1-11",
+   "text": "Factorize: 27 − 512y³",
+   "marks": 4,
+   "modelAnswer": [
+    "27 − 512y³",
+    "= 3³ − (8y)³",
+    "= (3 − 8y)(3² + (3)(8y) + (8y)²)",
+    "= (3 − 8y)(9 + 24y + 64y²)"
+   ],
+   "followUp": "Factorize: 2x² + 7x + 3",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Express both terms as cubes.",
+     "marks": 1,
+     "why": "Recognising the difference of cubes identifies the correct identity.",
+     "how": "Write 27 − 512y³ = 3³ − (8y)³.",
+     "accept": [
+      [
+       "3³−(8y)³"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the difference of cubes identity.",
+     "marks": 1,
+     "why": "The difference of cubes has a minus in the first factor and plus signs in the quadratic factor.",
+     "how": "Use a³ − b³ = (a − b)(a² + ab + b²).",
+     "accept": [
+      [
+       "(3−8y)(3²+(3)(8y)+(8y)²)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final factorization.",
+     "marks": 2,
+     "why": "The final factors must be simplified correctly.",
+     "how": "Evaluate the squares and product in the second factor.",
+     "accept": [
+      [
+       "(3−8y)(9+24y+64y²)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.2 Q4(vi)"
+  },
+  {
+   "id": "w-4-2-1",
+   "text": "Find HCF by factorization method: 21x²y, 35xy²",
+   "marks": 2,
+   "modelAnswer": [
+    "21x²y = 3 × 7 × x × x × y",
+    "35xy² = 5 × 7 × x × y × y",
+    "∴ HCF = 7 × x × y = 7xy"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the common numerical and variable factors.",
+     "marks": 1,
+     "why": "Writing the expressions as factors shows which factors are shared.",
+     "how": "Factor the numerical coefficients and the variables in both expressions.",
+     "accept": [
+      [
+       "21x²y",
+       "35xy²"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the HCF.",
+     "marks": 1,
+     "why": "The final HCF must include exactly the common factors.",
+     "how": "Multiply the common factors 7, x and y.",
+     "accept": [
+      [
+       "7xy"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q1(i)"
+  },
+  {
+   "id": "w-4-2-2",
+   "text": "Find HCF by factorization method: 4x² − 9y², 2x² − 3xy",
+   "marks": 4,
+   "modelAnswer": [
+    "4x² − 9y² = (2x − 3y)(2x + 3y)",
+    "2x² − 3xy = x(2x − 3y)",
+    "∴ HCF = 2x − 3y"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "Correctly factoring the difference of squares reveals its factors.",
+     "how": "Use the difference of two squares.",
+     "accept": [
+      [
+       "(2x−3y)(2x+3y)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "Factoring the second expression reveals its common binomial factor.",
+     "how": "Take x as the common factor.",
+     "accept": [
+      [
+       "x(2x−3y)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the HCF.",
+     "marks": 2,
+     "why": "The HCF is the factor shared by both factorizations.",
+     "how": "Identify the common factor and give it as the final answer.",
+     "accept": [
+      [
+       "2x−3y"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q1(ii)"
+  },
+  {
+   "id": "w-4-2-3",
+   "text": "Find HCF by factorization method: a³ + 2a² − 3a, 2a³ + 5a² − 3a",
+   "marks": 4,
+   "modelAnswer": [
+    "a³ + 2a² − 3a = a(a² + 2a − 3)",
+    "= a(a + 3)(a − 1)",
+    "2a³ + 5a² − 3a = a(2a² + 5a − 3)",
+    "= a(2a − 1)(a + 3)",
+    "∴ HCF = a(a + 3)"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "The first complete factorization makes its possible common factors visible.",
+     "how": "Take out a and factor the remaining quadratic.",
+     "accept": [
+      [
+       "a(a+3)(a−1)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "The second complete factorization confirms the shared factors.",
+     "how": "Take out a and factor the remaining quadratic.",
+     "accept": [
+      [
+       "a(2a−1)(a+3)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the HCF.",
+     "marks": 2,
+     "why": "The final HCF contains the factors common to both expressions.",
+     "how": "Multiply the common factors a and a + 3.",
+     "accept": [
+      [
+       "a(a+3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q1(iv)"
+  },
+  {
+   "id": "w-4-2-4",
+   "text": "Find HCF by factorization method: x² + 15x + 56, x² + 5x − 24, x² + 8x",
+   "marks": 4,
+   "modelAnswer": [
+    "x² + 15x + 56 = (x + 7)(x + 8)",
+    "x² + 5x − 24 = (x + 8)(x − 3)",
+    "x² + 8x = x(x + 8)",
+    "∴ HCF = x + 8"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "Factoring the first expression identifies its factors.",
+     "how": "Find two numbers with product 56 and sum 15.",
+     "accept": [
+      [
+       "(x+7)(x+8)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "Factoring the second expression shows the shared factor.",
+     "how": "Find two numbers with product −24 and sum 5.",
+     "accept": [
+      [
+       "(x+8)(x−3)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Factor the third expression.",
+     "marks": 1,
+     "why": "Factoring the third expression confirms the common binomial.",
+     "how": "Take x as the common factor.",
+     "accept": [
+      [
+       "x(x+8)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the HCF.",
+     "marks": 1,
+     "why": "The final answer is the factor common to all three expressions.",
+     "how": "Give the shared factor.",
+     "accept": [
+      [
+       "x+8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q1(vi)"
+  },
+  {
+   "id": "w-4-2-5",
+   "text": "Find HCF of the following expressions by using division method: 27x³ + 9x² − 3x − 10, 3x − 2",
+   "marks": 2,
+   "modelAnswer": [
+    "27x³ + 9x² − 3x − 10 = (3x − 2)(9x² + 9x + 5)",
+    "Remainder = 0",
+    "∴ HCF = 3x − 2"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Perform the division.",
+     "marks": 1,
+     "why": "A zero remainder shows that the divisor divides the polynomial exactly.",
+     "how": "Divide the cubic polynomial by 3x − 2 and obtain quotient 9x² + 9x + 5.",
+     "accept": [
+      [
+       "9x²+9x+5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the HCF.",
+     "marks": 1,
+     "why": "The exact divisor is the HCF for this pair.",
+     "how": "Give the divisor after confirming the remainder is zero.",
+     "accept": [
+      [
+       "3x−2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q2(i)"
+  },
+  {
+   "id": "w-4-2-6",
+   "text": "Find HCF of the following expressions by using division method: x³ − 9x² + 23x − 15, x² − 4x + 3",
+   "marks": 4,
+   "modelAnswer": [
+    "x³ − 9x² + 23x − 15 = (x − 5)(x² − 4x + 3)",
+    "Remainder = 0",
+    "∴ HCF = x² − 4x + 3"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Divide the cubic polynomial by the quadratic.",
+     "marks": 1,
+     "why": "The quotient and zero remainder show the first polynomial is divisible by the second.",
+     "how": "Obtain quotient x − 5 with remainder zero.",
+     "accept": [
+      [
+       "x−5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Record the remainder.",
+     "marks": 1,
+     "why": "A zero remainder establishes exact divisibility.",
+     "how": "Show that the division has no remainder.",
+     "accept": [
+      [
+       "0"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the HCF.",
+     "marks": 2,
+     "why": "The divisor is the HCF once it divides the other expression exactly.",
+     "how": "Give the quadratic divisor as the final answer.",
+     "accept": [
+      [
+       "x²−4x+3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q2(ii)"
+  },
+  {
+   "id": "w-4-2-8",
+   "text": "Find LCM of the following expressions by using prime factorization method: 2a²b, 4ab², 6ab",
+   "marks": 2,
+   "modelAnswer": [
+    "2a²b = 2 × a × a × b",
+    "4ab² = 2 × 2 × a × b × b",
+    "6ab = 2 × 3 × a × b",
+    "LCM = 2 × 2 × 3 × a × a × b × b = 12a²b²"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the required numerical and variable factors.",
+     "marks": 1,
+     "why": "Prime factorization identifies the greatest powers needed for the LCM.",
+     "how": "Take the least common multiple of 2, 4 and 6, and the greatest powers a² and b².",
+     "accept": [
+      [
+       "2a²b",
+       "4ab²",
+       "6ab"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the LCM.",
+     "marks": 1,
+     "why": "The LCM must include every required factor.",
+     "how": "Multiply the selected factors.",
+     "accept": [
+      [
+       "12a²b²"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q3(i)"
+  },
+  {
+   "id": "w-4-2-9",
+   "text": "Find LCM of the following expressions by using prime factorization method: a² − 4a + 4, a² − 2a",
+   "marks": 4,
+   "modelAnswer": [
+    "a² − 4a + 4 = (a − 2)²",
+    "a² − 2a = a(a − 2)",
+    "LCM = a(a − 2)²"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "Factoring the first expression reveals its repeated factor.",
+     "how": "Recognize the perfect-square trinomial.",
+     "accept": [
+      [
+       "(a−2)²"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "Factoring the second expression reveals its factors.",
+     "how": "Take out the common factor a.",
+     "accept": [
+      [
+       "a(a−2)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Select factors for the LCM.",
+     "marks": 1,
+     "why": "The LCM uses each factor at its greatest required power.",
+     "how": "Include a and the greater power, (a − 2)².",
+     "accept": [
+      [
+       "a",
+       "(a−2)²"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the LCM.",
+     "marks": 1,
+     "why": "The final expression is divisible by both given expressions.",
+     "how": "Multiply the selected factors.",
+     "accept": [
+      [
+       "a(a−2)²"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q3(iii)"
+  },
+  {
+   "id": "w-4-2-10",
+   "text": "Find LCM of the following expressions by using prime factorization method: x⁴ − 16, x³ − 4x",
+   "marks": 4,
+   "modelAnswer": [
+    "x⁴ − 16 = (x² − 4)(x² + 4) = (x − 2)(x + 2)(x² + 4)",
+    "x³ − 4x = x(x² − 4) = x(x − 2)(x + 2)",
+    "LCM = x(x − 2)(x + 2)(x² + 4)",
+    "= x(x⁴ − 16)"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "Factoring the first expression reveals its factors.",
+     "how": "Use the difference of two squares.",
+     "accept": [
+      [
+       "(x²−4)(x²+4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "Factoring the second expression identifies its additional factor x.",
+     "how": "Take out x and factor x² − 4.",
+     "accept": [
+      [
+       "x(x−2)(x+2)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Select the factors for the LCM.",
+     "marks": 1,
+     "why": "The LCM includes each distinct factor required by the two expressions.",
+     "how": "Include x, x − 2, x + 2 and x² + 4.",
+     "accept": [
+      [
+       "x",
+       "x−2",
+       "x+2",
+       "x²+4"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the LCM.",
+     "marks": 1,
+     "why": "The final expression is divisible by both given expressions.",
+     "how": "Write the product of the required factors, or its equivalent form.",
+     "accept": [
+      [
+       "x(x⁴−16)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q3(iv)"
+  },
+  {
+   "id": "w-4-2-11",
+   "text": "Find LCM of the following expressions by using prime factorization method: 16 − 4x², x² + x − 6, 4 − x²",
+   "marks": 4,
+   "modelAnswer": [
+    "16 − 4x² = 4(4 − x²)",
+    "x² + x − 6 = (x + 3)(x − 2)",
+    "4 − x² = (2 − x)(2 + x)",
+    "LCM = 4(4 − x²)(x + 3)"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the first expression.",
+     "marks": 1,
+     "why": "The first expression factors into 4 and the shared difference of squares.",
+     "how": "Factor out 4.",
+     "accept": [
+      [
+       "4(4−x²)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the second expression.",
+     "marks": 1,
+     "why": "Factoring the trinomial reveals a factor shared with 4 − x².",
+     "how": "Find two numbers with product −6 and sum 1.",
+     "accept": [
+      [
+       "(x+3)(x−2)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Factor the third expression.",
+     "marks": 1,
+     "why": "Factoring the third expression confirms the factors already included.",
+     "how": "Use the difference of two squares.",
+     "accept": [
+      [
+       "(2−x)(2+x)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the LCM.",
+     "marks": 1,
+     "why": "The final LCM includes all factors at their required powers.",
+     "how": "Combine the required factors and give the equivalent book answer.",
+     "accept": [
+      [
+       "4(4−x²)(x+3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q3(v)"
+  },
+  {
+   "id": "w-4-2-12",
+   "text": "The HCF of two polynomials is y − 7 and their LCM is y³ − 10y² + 11y + 70. If one of the polynomials is y² − 5y − 14, find the other.",
+   "marks": 4,
+   "modelAnswer": [
+    "q(y) = (LCM × HCF)/(given polynomial)",
+    "= ((y³ − 10y² + 11y + 70)(y − 7))/(y² − 5y − 14)",
+    "y² − 5y − 14 = (y − 7)(y + 2)",
+    "q(y) = (y³ − 10y² + 11y + 70)/(y + 2)",
+    "= y² − 12y + 35"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the LCM-HCF relationship.",
+     "marks": 1,
+     "why": "The relationship between LCM, HCF and the two polynomials sets up the calculation.",
+     "how": "Write the other polynomial as (LCM × HCF) divided by the given polynomial.",
+     "accept": [
+      [
+       "LCM×HCF",
+       "y²−5y−14"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the known polynomial.",
+     "marks": 1,
+     "why": "Factoring the given polynomial makes cancellation possible.",
+     "how": "Factor y² − 5y − 14.",
+     "accept": [
+      [
+       "(y−7)(y+2)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Divide and state the other polynomial.",
+     "marks": 2,
+     "why": "The quotient gives the missing polynomial.",
+     "how": "Simplify the relationship and give the quotient.",
+     "accept": [
+      [
+       "y²−12y+35"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q4"
+  },
+  {
+   "id": "w-4-2-13",
+   "text": "The LCM and HCF of two polynomial p(x) and q(x) are 36x³(x + a)(x³ − a³) and x²(x − a) respectively. If p(x) = 4x²(x² − a²), find q(x).",
+   "marks": 4,
+   "modelAnswer": [
+    "q(x) = (LCM × HCF)/p(x)",
+    "= [36x³(x + a)(x³ − a³) × x²(x − a)]/[4x²(x² − a²)]",
+    "x² − a² = (x − a)(x + a)",
+    "q(x) = 9x³(x³ − a³)"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the relationship.",
+     "marks": 1,
+     "why": "The relationship gives an expression for the unknown polynomial.",
+     "how": "Use q(x) = (LCM × HCF)/p(x).",
+     "accept": [
+      [
+       "LCM×HCF",
+       "4x²(x²−a²)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Substitute the given LCM, HCF and p(x).",
+     "marks": 1,
+     "why": "Substituting all the given expressions is needed for correct simplification.",
+     "how": "Place the product of LCM and HCF over p(x).",
+     "accept": [
+      [
+       "36x³(x+a)(x³−a³)",
+       "x²(x−a)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Factor and simplify.",
+     "marks": 1,
+     "why": "Factoring the difference of squares allows common factors to cancel.",
+     "how": "Use x² − a² = (x − a)(x + a) and cancel common factors.",
+     "accept": [
+      [
+       "x²−a²",
+       "(x−a)(x+a)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State q(x).",
+     "marks": 1,
+     "why": "The simplified expression is the required second polynomial.",
+     "how": "Give the remaining expression after cancellation.",
+     "accept": [
+      [
+       "9x³(x³−a³)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q5"
+  },
+  {
+   "id": "w-4-2-14",
+   "text": "The HCF and LCM of two polynomials is (x + a) and 12x²(x + a)(x² − a²) respectively. Find the product of the two polynomials.",
+   "marks": 4,
+   "modelAnswer": [
+    "Product of the two polynomials = LCM × HCF",
+    "= 12x²(x + a)(x² − a²)(x + a)",
+    "x² − a² = (x − a)(x + a)",
+    "= 12x²(x − a)(x + a)³"
+   ],
+   "followUp": "Find HCF by factorization method.\n(i) 21x²y, 35xy²",
+   "noteId": "n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the relationship.",
+     "marks": 1,
+     "why": "The product of two polynomials equals their LCM multiplied by their HCF.",
+     "how": "Write product = LCM × HCF.",
+     "accept": [
+      [
+       "LCM×HCF"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Substitute the given expressions.",
+     "marks": 1,
+     "why": "Correct substitution keeps all given factors in the product.",
+     "how": "Multiply the stated LCM by the stated HCF.",
+     "accept": [
+      [
+       "12x²(x+a)(x²−a²)",
+       "x+a"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Factor the difference of squares.",
+     "marks": 1,
+     "why": "Factoring the difference of squares allows the product to be written in factorized form.",
+     "how": "Use x² − a² = (x − a)(x + a).",
+     "accept": [
+      [
+       "(x−a)(x+a)"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the product.",
+     "marks": 1,
+     "why": "The final answer correctly combines all factors and powers.",
+     "how": "Combine the factors and give the simplified result.",
+     "accept": [
+      [
+       "12x²(x−a)(x+a)³"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.3 Q6"
+  },
+  {
+   "id": "w-4-3-1",
+   "text": "Find the square root by factorization method: x² − 8x + 16",
+   "marks": 2,
+   "modelAnswer": [
+    "x² − 8x + 16 = (x − 4)²",
+    "Taking square root, √(x² − 8x + 16) = ±(x − 4)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the polynomial as a square.",
+     "marks": 1,
+     "why": "Recognising the perfect-square trinomial is the key factorization step.",
+     "how": "Show x² − 8x + 16 = (x − 4)².",
+     "accept": [
+      [
+       "(x-4)^2"
+      ],
+      [
+       "x^2-8x+16"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the square root.",
+     "marks": 1,
+     "why": "The final square-root expression is required for the answer.",
+     "how": "Write ±(x − 4), as in your textbook.",
+     "accept": [
+      [
+       "±(x-4)"
+      ],
+      [
+       "x-4"
+      ],
+      [
+       "-x+4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q1(i)"
+  },
+  {
+   "id": "w-4-3-3",
+   "text": "Find the square root by factorization method: 36a² + 84a + 49",
+   "marks": 2,
+   "modelAnswer": [
+    "36a² + 84a + 49 = (6a + 7)²",
+    "Taking square root, √(36a² + 84a + 49) = ±(6a + 7)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor as a square.",
+     "marks": 1,
+     "why": "The perfect-square factorization shows how to take the root.",
+     "how": "Show 36a² + 84a + 49 = (6a + 7)².",
+     "accept": [
+      [
+       "(6a+7)^2"
+      ],
+      [
+       "36a^2+84a+49"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the square root.",
+     "marks": 1,
+     "why": "The square-root expression completes the answer.",
+     "how": "Write ±(6a + 7).",
+     "accept": [
+      [
+       "±(6a+7)"
+      ],
+      [
+       "6a+7"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q1(iii)"
+  },
+  {
+   "id": "w-4-3-4",
+   "text": "Find the square root by factorization method: 64y² − 32y + 4",
+   "marks": 2,
+   "modelAnswer": [
+    "64y² − 32y + 4 = (8y − 2)²",
+    "Taking square root, √(64y² − 32y + 4) = ±(8y − 2)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the polynomial.",
+     "marks": 1,
+     "why": "Factoring as a square is the essential method step.",
+     "how": "Show 64y² − 32y + 4 = (8y − 2)².",
+     "accept": [
+      [
+       "(8y-2)^2"
+      ],
+      [
+       "64y^2-32y+4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the square root.",
+     "marks": 1,
+     "why": "The final square root earns the remaining mark.",
+     "how": "Write ±(8y − 2).",
+     "accept": [
+      [
+       "±(8y-2)"
+      ],
+      [
+       "8y-2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q1(iv)"
+  },
+  {
+   "id": "w-4-3-5",
+   "text": "Find the square root by factorization method: 200t² − 120t + 18",
+   "marks": 2,
+   "modelAnswer": [
+    "200t² − 120t + 18 = 2(100t² − 60t + 9)",
+    "= 2(10t − 3)²",
+    "Taking square root, √(200t² − 120t + 18) = ±√2(10t − 3)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the expression.",
+     "marks": 1,
+     "why": "Taking out the common factor reveals the perfect square.",
+     "how": "Show 200t² − 120t + 18 = 2(10t − 3)².",
+     "accept": [
+      [
+       "2(10t-3)^2"
+      ],
+      [
+       "200t^2-120t+18"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the square root.",
+     "marks": 1,
+     "why": "The square root of the remaining factor must be included.",
+     "how": "Write ±√2(10t − 3).",
+     "accept": [
+      [
+       "±√2(10t-3)"
+      ],
+      [
+       "√2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q1(v)"
+  },
+  {
+   "id": "w-4-3-6",
+   "text": "Find the square root by factorization method: 40x² + 120x + 90",
+   "marks": 2,
+   "modelAnswer": [
+    "40x² + 120x + 90 = 10(4x² + 12x + 9)",
+    "= 10(2x + 3)²",
+    "Taking square root, √(40x² + 120x + 90) = ±√10(2x + 3)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the expression.",
+     "marks": 1,
+     "why": "Taking out the common factor displays the square trinomial.",
+     "how": "Show 40x² + 120x + 90 = 10(2x + 3)².",
+     "accept": [
+      [
+       "10(2x+3)^2"
+      ],
+      [
+       "40x^2+120x+90"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the square root.",
+     "marks": 1,
+     "why": "The final answer must include the square root of 10.",
+     "how": "Write ±√10(2x + 3).",
+     "accept": [
+      [
+       "±√10(2x+3)"
+      ],
+      [
+       "√10"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q1(vi)"
+  },
+  {
+   "id": "w-4-3-7",
+   "text": "Find the square root by division method: 4x⁴ − 28x³ + 37x² + 42x + 9",
+   "marks": 4,
+   "modelAnswer": [
+    "√(4x⁴) = 2x²",
+    "Double 2x² to get 4x²; dividing −28x³ by 4x² gives −7x",
+    "Double (2x² − 7x) to get 4x² − 14x; dividing −12x² by 4x² gives −3",
+    "The remainder is 0",
+    "Hence, the square root is ±(2x² − 7x − 3)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the first term.",
+     "marks": 1,
+     "why": "The first root term comes from the first term of the polynomial.",
+     "how": "Use √(4x⁴) = 2x².",
+     "accept": [
+      [
+       "2x^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the second term.",
+     "marks": 1,
+     "why": "The doubled partial root is used to find the next term.",
+     "how": "Double 2x² to get 4x², then divide −28x³ by 4x² to get −7x.",
+     "accept": [
+      [
+       "-7x"
+      ],
+      [
+       "4x^2-14x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Complete the division.",
+     "marks": 1,
+     "why": "The final quotient term must make the remainder zero.",
+     "how": "The next term is −3 and the remainder is zero.",
+     "accept": [
+      [
+       "-3"
+      ],
+      [
+       "4x^2-14x-3"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the square root.",
+     "marks": 1,
+     "why": "The complete square-root expression is the requested result.",
+     "how": "Write ±(2x² − 7x − 3).",
+     "accept": [
+      [
+       "±(2x^2-7x-3)"
+      ],
+      [
+       "2x^2-7x-3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q2(i)"
+  },
+  {
+   "id": "w-4-3-8",
+   "text": "Find the square root by division method: 121x⁴ − 198x³ − 183x² + 216x + 144",
+   "marks": 4,
+   "modelAnswer": [
+    "√(121x⁴) = 11x²",
+    "Double 11x² to get 22x²; dividing −198x³ by 22x² gives −9x",
+    "Double (11x² − 9x) to get 22x² − 18x; dividing −264x² by 22x² gives −12",
+    "The remainder is 0",
+    "Hence, the square root is ±(11x² − 9x − 12)"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the first term.",
+     "marks": 1,
+     "why": "The leading term of the square root comes from the leading polynomial term.",
+     "how": "Use √(121x⁴) = 11x².",
+     "accept": [
+      [
+       "11x^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the second term.",
+     "marks": 1,
+     "why": "Doubling the partial root gives the divisor used to find the next term.",
+     "how": "Double 11x² to get 22x², then divide −198x³ by 22x².",
+     "accept": [
+      [
+       "-9x"
+      ],
+      [
+       "22x^2-18x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find the last term.",
+     "marks": 1,
+     "why": "The last term completes the square-root division with zero remainder.",
+     "how": "The remaining quotient term is −12 and the remainder is zero.",
+     "accept": [
+      [
+       "-12"
+      ],
+      [
+       "22x^2-18x-12"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final answer.",
+     "marks": 1,
+     "why": "The answer must state the complete square root.",
+     "how": "Write ±(11x² − 9x − 12).",
+     "accept": [
+      [
+       "±(11x^2-9x-12)"
+      ],
+      [
+       "11x^2-9x-12"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q2(ii)"
+  },
+  {
+   "id": "w-4-3-11",
+   "text": "Factorize the expression and find the investment levels that result in zero return: R(x) = −x² + 6x − 8",
+   "marks": 4,
+   "modelAnswer": [
+    "R(x) = −x² + 6x − 8",
+    "= −(x² − 6x + 8)",
+    "= −(x − 2)(x − 4)",
+    "For zero return, x − 2 = 0 or x − 4 = 0",
+    "Thus, x = 2 or x = 4"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factorize the quadratic.",
+     "marks": 2,
+     "why": "The factorized expression makes the zero-return values visible.",
+     "how": "Show R(x) = −(x − 2)(x − 4).",
+     "accept": [
+      [
+       "-(x-2)(x-4)"
+      ],
+      [
+       "-x^2+6x-8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the zero-return values.",
+     "marks": 2,
+     "why": "Setting each factor to zero gives both investment levels.",
+     "how": "State x = 2 or x = 4.",
+     "accept": [
+      [
+       "x=2",
+       "x=4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q3"
+  },
+  {
+   "id": "w-4-3-12",
+   "text": "Find the break-even point(s), where the profit is zero: P(x) = x³ − 15x² + 75x − 125",
+   "marks": 4,
+   "modelAnswer": [
+    "P(x) = x³ − 15x² + 75x − 125",
+    "= (x)³ − 3(x)²(5) + 3(x)(5)² − (5)³",
+    "= (x − 5)³",
+    "For zero profit, x − 5 = 0",
+    "Thus, x = 5"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factorize the cubic.",
+     "marks": 2,
+     "why": "Recognising the cubic perfect power identifies the factor giving zero profit.",
+     "how": "Show P(x) = (x − 5)³.",
+     "accept": [
+      [
+       "(x-5)^3"
+      ],
+      [
+       "x^3-15x^2+75x-125"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the break-even value.",
+     "marks": 2,
+     "why": "Solving the factor equal to zero gives the break-even point.",
+     "how": "Set x − 5 = 0 and write x = 5.",
+     "accept": [
+      [
+       "x=5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q4"
+  },
+  {
+   "id": "w-4-3-13",
+   "text": "Determine where the potential energy is zero: V(x) = 2x³ − 6x² + 4x",
+   "marks": 4,
+   "modelAnswer": [
+    "V(x) = 2x³ − 6x² + 4x",
+    "= 2x(x² − 3x + 2)",
+    "= 2x(x − 1)(x − 2)",
+    "For zero potential energy, x = 0 or x − 1 = 0 or x − 2 = 0",
+    "Thus, x = 0, x = 1 or x = 2"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factorize the expression.",
+     "marks": 2,
+     "why": "Factorizing gives the factors whose zero values make the expression zero.",
+     "how": "Show V(x) = 2x(x − 1)(x − 2).",
+     "accept": [
+      [
+       "2x(x-1)(x-2)"
+      ],
+      [
+       "2x^3-6x^2+4x"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State all zero values.",
+     "marks": 2,
+     "why": "Each variable factor gives a value where the potential energy is zero.",
+     "how": "Write x = 0, x = 1 or x = 2.",
+     "accept": [
+      [
+       "x=0",
+       "x=1",
+       "x=2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q5"
+  },
+  {
+   "id": "w-4-3-14",
+   "text": "Find the points of zero deflection: Y(x) = 2x² − 8x + 6",
+   "marks": 4,
+   "modelAnswer": [
+    "Y(x) = 2x² − 8x + 6",
+    "= 2(x² − 4x + 3)",
+    "= 2(x − 1)(x − 3)",
+    "For zero deflection, x − 1 = 0 or x − 3 = 0",
+    "Thus, x = 1 or x = 3"
+   ],
+   "followUp": "Find the square root of the following polynomials by factorization method: (i) x² − 8x + 16",
+   "noteId": "n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factorize the quadratic.",
+     "marks": 2,
+     "why": "The factorization shows which values make the deflection zero.",
+     "how": "Show Y(x) = 2(x − 1)(x − 3).",
+     "accept": [
+      [
+       "2(x-1)(x-3)"
+      ],
+      [
+       "2x^2-8x+6"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State both points.",
+     "marks": 2,
+     "why": "Both factor equations must be solved to find all zero-deflection points.",
+     "how": "Write x = 1 or x = 3.",
+     "accept": [
+      [
+       "x=1",
+       "x=3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 4.4 Q6"
+  },
+  {
+   "id": "w-4-4-1",
+   "text": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "marks": 2,
+   "modelAnswer": [
+    "4x³ + 18x² − 12x = 2x(2x² + 9x − 6)",
+    "Answer: 2x(2x² + 9x − 6)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Take out the common factor.",
+     "marks": 1,
+     "why": "Taking out the common factor is the essential first step.",
+     "how": "Identify and factor out 2x.",
+     "accept": [
+      [
+       "2x"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the fully factored expression.",
+     "marks": 1,
+     "why": "The final product must expand to the original expression.",
+     "how": "Write the quotient inside the brackets.",
+     "accept": [
+      [
+       "2x(2x^2+9x-6)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(i)"
+  },
+  {
+   "id": "w-4-4-2",
+   "text": "Factorize the following expressions: x³ + 64y³",
+   "marks": 2,
+   "modelAnswer": [
+    "x³ + 64y³ = x³ + (4y)³",
+    "x³ + (4y)³ = (x + 4y)(x² − 4xy + 16y²)",
+    "Answer: (x + 4y)(x² − 4xy + 16y²)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the sum-of-cubes factors.",
+     "marks": 1,
+     "why": "Recognizing the sum of cubes gives the first factor.",
+     "how": "Use x³ + (4y)³.",
+     "accept": [
+      [
+       "x+4y"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the complete factorization.",
+     "marks": 1,
+     "why": "The complete identity is needed to factor the expression correctly.",
+     "how": "Apply a³ + b³ = (a + b)(a² − ab + b²).",
+     "accept": [
+      [
+       "(x+4y)(x^2-4xy+16y^2)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(ii)"
+  },
+  {
+   "id": "w-4-4-3",
+   "text": "Factorize the following expressions: x³y³ − 8",
+   "marks": 2,
+   "modelAnswer": [
+    "x³y³ − 8 = (xy)³ − 2³",
+    "(xy)³ − 2³ = (xy − 2)(x²y² + 2xy + 4)",
+    "Answer: (xy − 2)(x²y² + 2xy + 4)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the difference-of-cubes factors.",
+     "marks": 1,
+     "why": "Recognizing the difference of cubes gives the first factor.",
+     "how": "Write the expression as (xy)³ − 2³.",
+     "accept": [
+      [
+       "xy-2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the complete factorization.",
+     "marks": 1,
+     "why": "The complete identity gives the correct factorization.",
+     "how": "Apply a³ − b³ = (a − b)(a² + ab + b²).",
+     "accept": [
+      [
+       "(xy-2)(x^2y^2+2xy+4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(iii)"
+  },
+  {
+   "id": "w-4-4-4",
+   "text": "Factorize the following expressions: −x² − 23x − 60",
+   "marks": 2,
+   "modelAnswer": [
+    "−x² − 23x − 60 = −(x² + 23x + 60)",
+    "−(x² + 23x + 60) = −(x + 3)(x + 20)",
+    "Answer: −(x + 3)(x + 20)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor out the negative sign.",
+     "marks": 1,
+     "why": "Taking out the negative sign makes the quadratic easier to factor.",
+     "how": "Rewrite the expression as −(x² + 23x + 60).",
+     "accept": [
+      [
+       "-("
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Factor the quadratic and state the answer.",
+     "marks": 1,
+     "why": "The two binomial factors must multiply to the expression inside the negative sign.",
+     "how": "Find two numbers with product 60 and sum 23.",
+     "accept": [
+      [
+       "-(x+3)(x+20)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(iv)"
+  },
+  {
+   "id": "w-4-4-5",
+   "text": "Factorize the following expressions: 2x² + 7x + 3",
+   "marks": 2,
+   "modelAnswer": [
+    "2x² + 7x + 3 = 2x² + 6x + x + 3",
+    "= 2x(x + 3) + 1(x + 3)",
+    "= (2x + 1)(x + 3)",
+    "Answer: (2x + 1)(x + 3)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find suitable factors for the quadratic.",
+     "marks": 1,
+     "why": "Choosing factors that give the middle term is the key factorization step.",
+     "how": "Split the middle term or check the product and sum.",
+     "accept": [
+      [
+       "2x"
+      ],
+      [
+       "3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the complete factorization.",
+     "marks": 1,
+     "why": "The final factors must multiply to the given trinomial.",
+     "how": "Write the two binomial factors.",
+     "accept": [
+      [
+       "(2x+1)(x+3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(v)"
+  },
+  {
+   "id": "w-4-4-6",
+   "text": "Factorize the following expressions: x⁴ + 64",
+   "marks": 4,
+   "modelAnswer": [
+    "x⁴ + 64 = (x² + 8)² − (4x)²",
+    "= (x² + 8 + 4x)(x² + 8 − 4x)",
+    "= (x² + 4x + 8)(x² − 4x + 8)",
+    "Answer: (x² + 4x + 8)(x² − 4x + 8)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Create a difference of squares.",
+     "marks": 1,
+     "why": "Rewriting the expression as a difference of squares reveals a factorization.",
+     "how": "Use (x² + 8)² − (4x)².",
+     "accept": [
+      [
+       "(x^2+8)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the difference-of-squares identity.",
+     "marks": 1,
+     "why": "The difference-of-squares identity supplies the two factors.",
+     "how": "Factor as (x² + 8 + 4x)(x² + 8 − 4x).",
+     "accept": [
+      [
+       "x^2+8-4x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the complete factorization.",
+     "marks": 2,
+     "why": "The final factors must be correct and equivalent to the original expression.",
+     "how": "Arrange each factor in standard order and give the final result.",
+     "accept": [
+      [
+       "(x^2+4x+8)(x^2-4x+8)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(vi)"
+  },
+  {
+   "id": "w-4-4-7",
+   "text": "Factorize the following expressions: x⁴ + 2x² + 9",
+   "marks": 4,
+   "modelAnswer": [
+    "x⁴ + 2x² + 9 = (x² + 3)² − (2x)²",
+    "= (x² + 3 + 2x)(x² + 3 − 2x)",
+    "= (x² + 2x + 3)(x² − 2x + 3)",
+    "Answer: (x² + 2x + 3)(x² − 2x + 3)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite as a difference of squares.",
+     "marks": 1,
+     "why": "This rewriting makes the expression a difference of squares.",
+     "how": "Use (x² + 3)² − (2x)².",
+     "accept": [
+      [
+       "(x^2+3)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the difference-of-squares identity.",
+     "marks": 1,
+     "why": "The identity gives the two factors before arranging terms.",
+     "how": "Factor (x² + 3)² − (2x)².",
+     "accept": [
+      [
+       "x^2+3+2x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the complete factorization.",
+     "marks": 2,
+     "why": "The correct final factors show the expression has been factorized fully.",
+     "how": "Arrange the two factors in standard order.",
+     "accept": [
+      [
+       "(x^2+2x+3)(x^2-2x+3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(vii)"
+  },
+  {
+   "id": "w-4-4-8",
+   "text": "Factorize the following expressions: (x² + 6x + 3)(x² + 6x − 9) + 36",
+   "marks": 4,
+   "modelAnswer": [
+    "Let A = x² + 6x − 3.",
+    "(x² + 6x + 3)(x² + 6x − 9) + 36 = (A + 6)(A − 6) + 36",
+    "= A² − 36 + 36",
+    "= (x² + 6x − 3)²",
+    "Answer: (x² + 6x − 3)²"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognize the common expression.",
+     "marks": 1,
+     "why": "Using a shared expression makes the factors easier to see.",
+     "how": "Let the common part be x² + 6x − 3.",
+     "accept": [
+      [
+       "x^2+6x-3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rewrite the brackets.",
+     "marks": 1,
+     "why": "This correctly rewrites the two brackets in terms of the common expression.",
+     "how": "Express them as the common part plus 6 and minus 6.",
+     "accept": [
+      [
+       "A+6",
+       "A-6"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Simplify and state the final answer.",
+     "marks": 2,
+     "why": "The simplification must lead to the exact square shown in the answer key.",
+     "how": "Use (A + 6)(A − 6) + 36 = A².",
+     "accept": [
+      [
+       "(x^2+6x-3)^2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q2(ix)"
+  },
+  {
+   "id": "w-4-4-9",
+   "text": "Find LCM and HCF: 4x³ + 12x², 8x² + 16x",
+   "marks": 4,
+   "modelAnswer": [
+    "4x³ + 12x² = 4x²(x + 3)",
+    "8x² + 16x = 8x(x + 2)",
+    "LCM = 8x²(x + 2)(x + 3)",
+    "HCF = 4x",
+    "Answer: LCM = 8x²(x + 2)(x + 3), HCF = 4x"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor both polynomials.",
+     "marks": 1,
+     "why": "Factoring both expressions is needed before finding their HCF and LCM.",
+     "how": "Take out the common numerical and variable factors.",
+     "accept": [
+      [
+       "4x^2(x+3)"
+      ],
+      [
+       "8x(x+2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the HCF.",
+     "marks": 1,
+     "why": "The HCF uses the common factors at their lowest powers.",
+     "how": "Take the common factors from the two factorizations.",
+     "accept": [
+      [
+       "4x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find and state the LCM.",
+     "marks": 2,
+     "why": "The LCM must contain every factor at its highest power.",
+     "how": "Take each factor at its highest power.",
+     "accept": [
+      [
+       "8x^2(x+2)(x+3)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q3(i)"
+  },
+  {
+   "id": "w-4-4-10",
+   "text": "Find LCM and HCF: x³ + 3x² − 4x, x² − 4x + 3",
+   "marks": 4,
+   "modelAnswer": [
+    "x³ + 3x² − 4x = x(x² + 3x − 4) = x(x + 4)(x − 1)",
+    "x² − 4x + 3 = (x − 1)(x − 3)",
+    "LCM = x(x − 1)(x − 3)(x + 4)",
+    "HCF = x − 1",
+    "Answer: LCM = x(x − 1)(x − 3)(x + 4), HCF = x − 1"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor both polynomials.",
+     "marks": 1,
+     "why": "Both polynomials must be factored before the common factors can be compared.",
+     "how": "Factor the cubic and the quadratic fully.",
+     "accept": [
+      [
+       "x(x+4)(x-1)"
+      ],
+      [
+       "(x-1)(x-3)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the HCF.",
+     "marks": 1,
+     "why": "The HCF is the factor common to both expressions.",
+     "how": "Identify the shared factor.",
+     "accept": [
+      [
+       "x-1"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find and state the LCM.",
+     "marks": 2,
+     "why": "The LCM must include all factors at their greatest powers.",
+     "how": "Combine all distinct factors from the two factorizations.",
+     "accept": [
+      [
+       "x(x-1)(x-3)(x+4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q3(ii)"
+  },
+  {
+   "id": "w-4-4-11",
+   "text": "Find LCM and HCF: x² + 8x + 16, x² − 16",
+   "marks": 4,
+   "modelAnswer": [
+    "x² + 8x + 16 = (x + 4)²",
+    "x² − 16 = (x − 4)(x + 4)",
+    "LCM = (x − 4)(x + 4)²",
+    "HCF = x + 4",
+    "Answer: LCM = (x − 4)(x + 4)², HCF = x + 4"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor both polynomials.",
+     "marks": 1,
+     "why": "The factors reveal the common factor and the highest powers needed.",
+     "how": "Use a perfect-square trinomial and a difference of squares.",
+     "accept": [
+      [
+       "(x+4)^2"
+      ],
+      [
+       "(x-4)(x+4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the HCF.",
+     "marks": 1,
+     "why": "The HCF is the common factor with the lowest power.",
+     "how": "Identify the factor present in both expressions.",
+     "accept": [
+      [
+       "x+4"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find and state the LCM.",
+     "marks": 2,
+     "why": "The LCM uses each factor at its highest power.",
+     "how": "Use the greatest power of each distinct factor.",
+     "accept": [
+      [
+       "(x-4)(x+4)^2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q3(iii)"
+  },
+  {
+   "id": "w-4-4-12",
+   "text": "Find LCM and HCF: x³ − 9x, x² − x − 6",
+   "marks": 4,
+   "modelAnswer": [
+    "x³ − 9x = x(x² − 9) = x(x − 3)(x + 3)",
+    "x² − x − 6 = (x − 3)(x + 2)",
+    "LCM = x(x + 2)(x² − 9)",
+    "HCF = x − 3",
+    "Answer: LCM = x(x + 2)(x² − 9), HCF = x − 3"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor both polynomials.",
+     "marks": 1,
+     "why": "Factoring both polynomials shows all factors needed for the HCF and LCM.",
+     "how": "Factor out x in the first, then factor the quadratics.",
+     "accept": [
+      [
+       "x(x-3)(x+3)"
+      ],
+      [
+       "(x-3)(x+2)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the HCF.",
+     "marks": 1,
+     "why": "The HCF is the shared factor.",
+     "how": "Identify the factor common to both expressions.",
+     "accept": [
+      [
+       "x-3"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find and state the LCM.",
+     "marks": 2,
+     "why": "The LCM must include every factor at its highest power.",
+     "how": "Combine the distinct factors without leaving out x.",
+     "accept": [
+      [
+       "x(x+2)(x^2-9)"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q3(iv)"
+  }
+ ],
+ "report": {
+  "unit": 4,
+  "title": "Factorization and Algebraic Manipulation",
+  "dropped": [
+   "MCQ m-4-2#1: independent check disagreed",
+   "MCQ m-4-2#7: independent check disagreed",
+   "Written m-4-2#6 (Ex 4.3 Q2(iv)): independent check disagreed",
+   "Written m-4-3#1 (Ex 4.4 Q1(ii)): independent check disagreed",
+   "Written m-4-3#8 (Ex 4.4 Q2(iii)): independent check disagreed",
+   "Written m-4-3#9 (Ex 4.4 Q2(iv)): independent check disagreed",
+   "MCQ m-4-4#9: independent check disagreed",
+   "Written m-4-4#12 (Review Exercise 4 Q4): independent check disagreed",
+   "Written m-4-4#13 (Review Exercise 4 Q5): independent check disagreed"
+  ]
+ }
+}
