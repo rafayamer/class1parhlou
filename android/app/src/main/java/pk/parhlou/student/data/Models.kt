@@ -69,6 +69,8 @@ data class BookSolution(
     val figure: String,
     val accept: List<List<String>>,
     val checked: Boolean,
+    /** Shown under the answer, e.g. when the textbook's answer key differs from the checked working. */
+    val note: String = "",
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */

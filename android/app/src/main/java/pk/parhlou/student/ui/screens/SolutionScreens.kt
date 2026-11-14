@@ -70,6 +70,7 @@ private fun SolutionCard(s: BookSolution, key: String) {
         if (steps >= s.steps.size && steps > 0) {
             if (s.figure.isNotBlank()) Muted("Figure: ${s.figure}")
             if (s.answer.isNotBlank()) Text("Answer: ${s.answer}", style = MaterialTheme.typography.titleMedium)
+            if (s.note.isNotBlank()) Muted(s.note)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
             if (steps < s.steps.size) {

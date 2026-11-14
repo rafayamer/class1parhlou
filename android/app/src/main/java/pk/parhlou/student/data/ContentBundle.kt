@@ -112,6 +112,7 @@ object ContentBundle {
                 steps = s.optJSONArray("steps")?.strings().orEmpty(), answer = s.optString("answer"), figure = s.optString("figure"),
                 accept = s.optJSONArray("accept")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
                 checked = s.optBoolean("checked", true),
+                note = s.optString("note"),
             )
         }.orEmpty(),
     )

@@ -49,8 +49,9 @@ function bookCounts(text) {
 
 // ── 1. Inventory: every example, exercise part and MCQ, verbatim ──────────────────────────────────────────
 const INVENTORY = `You list EVERYTHING in one section of a Pakistani Class 9 Mathematics textbook, copying the book's words exactly.
-- examples: EVERY worked example ("EXAMPLE n"), with its question, the book's solution as one line per step, and its final answer.
-- exercise: EVERY exercise question and EVERY part separately ((i), (ii), ... each its own item). "question" must be complete on its own:
+- examples: EVERY worked example (each block starting "EXAMPLE n:", including all its parts), with its question, the BOOK'S OWN solution
+  copied as one line per step, and its final answer. Worked examples are NEVER exercise items.
+- exercise: ONLY questions printed after an "EXERCISE" heading (or in the review exercise): EVERY question and EVERY part separately ((i), (ii), ... each its own item). "question" must be complete on its own:
   the question's instruction plus the part, e.g. "Rationalise the denominator: 3/(√5 − √2)". "source" like "Ex ${UNIT}.2 Q3(ii)" or "Review Ex ${UNIT} Q4".
   bookAnswer: the book's answer from the answer key when given, else "". drawing: true if it needs a graph, number line, construction or diagram.
   Multiple-choice items are NOT exercise items.
@@ -71,6 +72,8 @@ for (const [i, sec] of outline.sections.entries()) {
     inv = await stage(`inv-${i + 1}-retry`, () => structured("section_inventory", INVENTORY,
       `${input}\n\nNOTE: the exercise has about ${expected.exerciseItems} question parts and ${expected.examples} examples. Your previous list had ${inv.exercise.length}. List every one.`, invSchema));
   }
+  // Anything labelled "Example" belongs with the examples (it keeps its checked solution below).
+  inv = { ...inv, exercise: inv.exercise.filter((q) => !/^example/i.test(q.source)), strayExamples: inv.exercise.filter((q) => /^example/i.test(q.source)) };
   sections.push({ sec, inv, expected });
   console.log(`  ${sec.number}: ${inv.examples.length}/${expected.examples} examples, ${inv.exercise.length}/${expected.exerciseItems} exercise parts, ${inv.mcqs.length} MCQs. $${costSoFar().toFixed(3)}`);
 }
@@ -91,7 +94,7 @@ Answers from four-figure log tables or rounded as asked are equivalent within th
 problem: one sentence on what is wrong, or "".`;
 const checkSchema = obj({ items: arr(obj({ id: str, candidateCorrect: bool, matchesBook: bool, problem: str })) });
 
-const all = sections.flatMap((s, si) => s.inv.exercise.map((q, k) => ({ ...q, id: `${si}:${k}` })));
+const all = sections.flatMap((s, si) => [...s.inv.exercise, ...s.inv.strayExamples].map((q, k) => ({ ...q, id: `${si}:${k}` })));
 const solved = new Map();
 for (let b = 0; b < all.length; b += 8) {
   const batch = all.slice(b, b + 8);
@@ -135,33 +138,56 @@ for (let b = 0; b < bookMcqs.length; b += 15) {
   for (const m of out.items) mcqOut.set(m.id, m);
 }
 
+// MCQs where the solver disagrees with the book's key: a separate examiner decides which option is right.
+const disputed = bookMcqs.filter((q) => q.answerIndex >= 0 && mcqOut.get(q.id) && mcqOut.get(q.id).correctIndex !== q.answerIndex);
+const ruling = new Map();
+if (disputed.length) {
+  const out = await stage("mcq-dispute", () => structured("mcq_ruling",
+    `Two answers are proposed for each multiple-choice item (A and B). Work it out carefully yourself and return the index of the correct option (0-based), or -1 if neither is right.`,
+    JSON.stringify(disputed.map((q) => ({ id: q.id, stem: q.stem, options: q.options, A: q.answerIndex, B: mcqOut.get(q.id).correctIndex }))),
+    obj({ items: arr(obj({ id: str, correctIndex: int })) }), 16000));
+  for (const r of out.items) ruling.set(r.id, r.correctIndex);
+}
+
 // ── 4. Assemble per section, and report coverage ──────────────────────────────────────────────────────────
-const report = { unit: UNIT, title: outline.unitTitle, sections: [], solutionOnlyBookAnswer: [], mcqDisagreements: [] };
+const report = { unit: UNIT, title: outline.unitTitle, sections: [], solutionOnlyBookAnswer: [], answerKeyConflicts: [], mcqDisagreements: [] };
 const result = { unit: UNIT, sections: [] };
 for (const [si, s] of sections.entries()) {
   const solutions = [];
-  s.inv.examples.forEach((e) => solutions.push({ kind: "EXAMPLE", source: e.label, question: e.question, steps: e.solution, answer: e.answer, figure: "", accept: [], checked: true }));
-  s.inv.exercise.forEach((q, k) => {
+  s.inv.examples.forEach((e) => solutions.push({ kind: "EXAMPLE", source: e.label, question: e.question, steps: e.solution, answer: e.answer, figure: "", accept: [], checked: true, note: "" }));
+  [...s.inv.exercise, ...s.inv.strayExamples].forEach((q, k) => {
     const id = `${si}:${k}`, sol = solved.get(id), v = verdicts.get(id);
-    const ok = sol && v && v.candidateCorrect && v.matchesBook;
+    const kind = /^example/i.test(q.source) ? "EXAMPLE" : "EXERCISE";
+    // Correct working confirmed by the solver and the independent examiner. If the textbook's key disagrees
+    // (a misprint, or a misread scan), the checked working is shown with a note rather than a wrong answer.
+    const ok = sol && v && v.candidateCorrect;
+    const note = ok && !v.matchesBook && q.bookAnswer ? `Your textbook's answer key shows "${q.bookAnswer}"; the checked working above gives this answer.` : "";
+    if (note) report.answerKeyConflicts.push(`${q.source}: key "${q.bookAnswer}", checked answer "${sol.finalAnswer}"`);
     const accept = ok ? sol.accept.map((g) => g.filter((p) => p.trim())).filter((g) => g.length) : [];
     const usable = accept.length && matchesAny(sol.finalAnswer, accept) && !matchesAny("", accept) ? accept : [];
-    if (ok) solutions.push({ kind: "EXERCISE", source: q.source, question: q.question, steps: sol.steps, answer: sol.finalAnswer, figure: sol.figure, accept: usable, checked: true });
+    if (ok) solutions.push({ kind, source: q.source, question: q.question, steps: sol.steps, answer: sol.finalAnswer, figure: sol.figure, accept: usable, checked: true, note });
     else {
       // Never show an unchecked solution: the question and the book's own answer only.
-      solutions.push({ kind: "EXERCISE", source: q.source, question: q.question, steps: [], answer: q.bookAnswer, figure: "", accept: [], checked: false });
+      solutions.push({ kind, source: q.source, question: q.question, steps: [], answer: q.bookAnswer, figure: "", accept: [], checked: false, note: "" });
       report.solutionOnlyBookAnswer.push(`${q.source}: ${v?.problem || "no checked solution"}`);
     }
   });
   const mcqs = s.inv.mcqs.map((q, k) => {
-    const m = mcqOut.get(`${si}:${k}`);
-    const key = q.answerIndex >= 0 ? q.answerIndex : m?.correctIndex;
-    if (m && q.answerIndex >= 0 && m.correctIndex !== q.answerIndex) report.mcqDisagreements.push(`${q.source}: book ${q.answerIndex}, solver ${m.correctIndex} (book kept)`);
-    return { source: q.source, stem: q.stem, options: q.options, correctIndex: key ?? 0, rationales: m?.rationales ?? [] };
-  }).filter((q) => q.rationales.length === q.options.length);
+    const id = `${si}:${k}`, m = mcqOut.get(id);
+    let key = q.answerIndex >= 0 ? q.answerIndex : m?.correctIndex;
+    if (ruling.has(id)) {
+      const r = ruling.get(id);
+      // Two independent passes agree against the key: use theirs. A three-way split: leave the item out.
+      if (r === m.correctIndex) key = r; else if (r !== q.answerIndex) key = -1;
+      report.mcqDisagreements.push(`${q.source}: book ${q.answerIndex}, solver ${m.correctIndex}, examiner ${r} → ${key < 0 ? "left out" : key === q.answerIndex ? "book kept" : "corrected"}`);
+    }
+    // Reasons must agree with the key used; regenerate-free rule: reasons came from the solver, so drop them if the key is the book's and differs.
+    const rationales = m && key === m.correctIndex ? m.rationales : [];
+    return { source: q.source, stem: q.stem, options: q.options, correctIndex: key ?? -1, rationales };
+  }).filter((q) => q.correctIndex >= 0 && q.rationales.length === q.options.length);
   result.sections.push({ number: s.sec.number, solutions, mcqs });
   report.sections.push({ number: s.sec.number, title: s.sec.title,
-    examples: `${s.inv.examples.length}/${s.expected.examples}`,
+    examples: `${solutions.filter((x) => x.kind === "EXAMPLE").length}/${s.expected.examples}`,
     exercise: `${s.inv.exercise.length}/${s.expected.exerciseItems}`,
     solved: solutions.filter((x) => x.kind === "EXERCISE" && x.checked).length,
     mcqs: mcqs.length });
