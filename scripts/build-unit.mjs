@@ -79,6 +79,25 @@ if (sections.length > 1 && sections[0].number.endsWith(".0")) {
   sections[0].text = [...intro.text, ...sections[0].text];
   sections[0].pages = [...new Set([...intro.pages, ...sections[0].pages])];
 }
+// A unit with only one main section (e.g. Logic: 8.1 with 8.1.1–8.1.5) is split at its sub-sections, so each
+// becomes a lesson of its own; the section's exercise is given to every part.
+const mains = sections.filter((s) => !s.review);
+if (mains.length === 1) {
+  const only = mains[0];
+  const subHeading = new RegExp(`^#{1,4}\\s*(${UNIT}\\.\\d+\\.\\d+)\\s+(.+)$`);
+  const parts = [];
+  for (const line of only.text) {
+    const sub = subHeading.exec(line.trim());
+    if (sub || !parts.length) parts.push({ number: sub ? sub[1] : only.number, title: sub ? sub[2].replace(/[.\s]+$/, "") : only.title, pages: only.pages, text: [] });
+    parts[parts.length - 1].text.push(line);
+  }
+  const exerciseAt = only.text.findIndex((l) => /^#{0,4}\s*EXERCISE\b/i.test(l.trim()));
+  const exerciseText = exerciseAt >= 0 ? only.text.slice(exerciseAt) : [];
+  if (parts.length > 1) {
+    for (const part of parts) if (!part.text.some((l) => /EXERCISE\b/i.test(l))) part.text.push("", ...exerciseText);
+    sections.splice(sections.indexOf(only), 1, ...parts);
+  }
+}
 
 // Answer key for this unit: blocks headed "EXERCISE <unit>.<n>" or "REVIEW EXERCISE <unit>" at the back of the book.
 const answers = {};
@@ -88,7 +107,7 @@ for (const p of pages.filter((pg) => pg.n >= answersStart)) {
     const trimmed = line.trim();
     const ex = /^#{0,4}\s*(REVIEW\s+)?EXERCISE\s+(\d+)(?:\.(\d+))?/i.exec(trimmed);
     if (ex) {
-      key = Number(ex[2]) === UNIT ? (ex[1] ? "review" : `${ex[2]}.${ex[3] ?? ""}`) : null;
+      key = Number(ex[2]) === UNIT ? (ex[1] ? "review" : (ex[3] ? `${ex[2]}.${ex[3]}` : `${ex[2]}`)) : null;
       if (key) answers[key] = answers[key] ?? [];
       continue;
     }
@@ -101,7 +120,7 @@ const outline = {
   unitTitle: unitTitle || `Unit ${UNIT}`,
   sections: sections.map((s) => {
     const text = s.text.join("\n");
-    const exercises = [...new Set([...text.matchAll(/EXERCISE\s+(\d+\.\d+)/gi)].map((m) => m[1]))];
+    const exercises = [...new Set([...text.matchAll(/(?<!REVIEW\s)EXERCISE\s+(\d+(?:\.\d+)?)/gi)].map((m) => m[1]))];
     const keyLines = s.review ? (answers.review ?? []) : exercises.flatMap((e) => answers[e] ?? []);
     const nums = s.pages.map(printed);
     return {
@@ -157,7 +176,10 @@ for (const [i, sec] of outline.sections.entries()) {
 // ── C. Independent check of every answer ──────────────────────────────────────────────────────────────────
 const CHECK = `You are an independent Class 9 maths examiner. Solve each item yourself, carefully, WITHOUT trusting any given key.
 For MCQs return the index (0-based) of the correct option. For written items return your final answer, then say whether the
-candidate final answer is mathematically equivalent to yours (same value/set/expression/statement; ignore formatting).`;
+candidate final answer is mathematically equivalent to yours (same value/set/expression/statement; ignore formatting).
+Precision: answers found with four-figure log/antilog tables, or rounded as the question asks, are equivalent when they agree to
+the precision those methods give (e.g. log 0.0876 = −1.0575 from tables vs −1.0580 exactly: equivalent; 0.02675 vs 0.020675: NOT
+equivalent). Decimals that agree to 3 significant figures are equivalent unless the question demands more.`;
 const checkSchema = obj({
   mcqs: arr(obj({ id: str, correctIndex: { type: "integer" } })),
   written: arr(obj({ id: str, myAnswer: str, candidateEquivalent: { type: "boolean" } })),

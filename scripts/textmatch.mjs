@@ -1,6 +1,7 @@
 // Same matching rules as the app's TextMatch (android/.../ai/TextMatch.kt), so the content builder can prove that
 // every model answer earns its marks before the app ever sees it. Keep the two in step.
 const lettersOnly = /^[a-z ]+$/;
+const SUPERSCRIPTS = { "⁻": "-", "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9" };
 
 export function normalise(raw) {
   let s = raw.toLowerCase().replaceAll("\n", " ; ");
@@ -9,7 +10,10 @@ export function normalise(raw) {
   s = s.replace(/square root of/g, "√").replace(/square root/g, "√").replace(/sqrt/g, "√");
   s = s.replace(/\broot\b/g, "√");
   s = s.replace(/\bpi\b/g, "π").replace(/\btheta\b/g, "θ");
-  s = s.replace(/\^2/g, "²").replace(/\^3/g, "³").replace(/\s*squared/g, "²");
+  // Powers: "x²", "x^2", "x squared" and "10⁻³", "10^-3", "10^(-3)" all become caret form.
+  s = s.replace(/\s*squared/g, "^2").replace(/\s*cubed/g, "^3");
+  s = s.replace(/[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (m) => "^" + [...m].map((c) => SUPERSCRIPTS[c] ?? c).join(""));
+  s = s.replace(/\^\s*\(\s*(-?\d+)\s*\)/g, "^$1").replace(/\^\s+/g, "^");
   s = s.replace(/√\s*\(\s*(\d+(?:\.\d+)?)\s*\)/g, "√$1").replace(/√\s+/g, "√");
   s = s.replace(/(\d)\s*\*\s*√/g, "$1√");
   return s.replace(/\s+/g, " ").trim();

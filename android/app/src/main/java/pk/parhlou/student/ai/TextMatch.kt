@@ -12,6 +12,7 @@ package pk.parhlou.student.ai
  */
 object TextMatch {
     private val lettersOnly = Regex("^[a-z ]+$")
+    private val SUPERSCRIPTS = mapOf('⁻' to '-', '⁰' to '0', '¹' to '1', '²' to '2', '³' to '3', '⁴' to '4', '⁵' to '5', '⁶' to '6', '⁷' to '7', '⁸' to '8', '⁹' to '9')
 
     /** Lower-cases and unifies the many ways students type the same maths. */
     fun normalise(raw: String): String {
@@ -23,7 +24,10 @@ object TextMatch {
         s = s.replace("square root of", "√").replace("square root", "√").replace("sqrt", "√")
         s = s.replace(Regex("\\broot\\b"), "√")
         s = s.replace(Regex("\\bpi\\b"), "π").replace(Regex("\\btheta\\b"), "θ")
-        s = s.replace("^2", "²").replace("^3", "³").replace(Regex("\\s*squared"), "²")
+        // Powers: "x²", "x^2", "x squared" and "10⁻³", "10^-3", "10^(-3)" all become caret form.
+        s = s.replace(Regex("\\s*squared"), "^2").replace(Regex("\\s*cubed"), "^3")
+        s = s.replace(Regex("[⁻⁰¹²³⁴⁵⁶⁷⁸⁹]+")) { m -> "^" + m.value.map { SUPERSCRIPTS[it] ?: it }.joinToString("") }
+        s = s.replace(Regex("\\^\\s*\\(\\s*(-?\\d+)\\s*\\)"), "^$1").replace(Regex("\\^\\s+"), "^")
         s = s.replace(Regex("√\\s*\\(\\s*(\\d+(?:\\.\\d+)?)\\s*\\)"), "√$1").replace(Regex("√\\s+"), "√")
         s = s.replace(Regex("(\\d)\\s*\\*\\s*√"), "$1√")
         return s.replace(Regex("\\s+"), " ").trim()
