@@ -1,0 +1,4659 @@
+{
+ "chapter": {
+  "id": "u-3",
+  "number": 3,
+  "title": "Sets and Functions",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-3-1",
+    "position": 1,
+    "title": "3.1 Mathematics as the Study of Patterns, Structures and Relationships",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.1, pages 37–42; Exercise 3.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.1 (pages 37–42) in your textbook.",
+     "Solve Exercise 3.1 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-3-1-1",
+      "text": "Write the following set in set builder notation: {1, 4, 9, 16, 25, 36, …, 484}.",
+      "marks": 2,
+      "modelAnswer": [
+       "1 = 1² and 484 = 22².",
+       "{x | x = n², n ∈ N ∧ 1 ≤ n ≤ 22}"
+      ],
+      "followUp": "What is the number of elements of the power set of { }?",
+      "noteId": "n-3-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the square-number rule.",
+        "marks": 1,
+        "why": "The listed elements are squares of natural numbers.",
+        "how": "Write x = n², where n is a natural number.",
+        "accept": [
+         [
+          "x=n^2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct range and final set-builder form.",
+        "marks": 1,
+        "why": "The bounds ensure the set starts at 1 and ends at 484.",
+        "how": "State 1 ≤ n ≤ 22 and write the full set-builder notation.",
+        "accept": [
+         [
+          "1≤n≤22"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.1 Q1(i)"
+     },
+     {
+      "id": "w-3-1-2",
+      "text": "Write the following set in set builder notation: {2, 4, 8, 16, …, 256}.",
+      "marks": 2,
+      "modelAnswer": [
+       "2 = 2¹ and 256 = 2⁸.",
+       "{x | x = 2^n, n ∈ N ∧ 1 ≤ n ≤ 8}"
+      ],
+      "followUp": "What is the number of elements of the power set of { }?",
+      "noteId": "n-3-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the common rule for the elements.",
+        "marks": 1,
+        "why": "This rule generates the powers of 2 in the set.",
+        "how": "Write x = 2ⁿ.",
+        "accept": [
+         [
+          "x=2^n"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct bounds and full notation.",
+        "marks": 1,
+        "why": "These bounds give the first element 2 and the last element 256.",
+        "how": "Use n ∈ N and 1 ≤ n ≤ 8.",
+        "accept": [
+         [
+          "1≤n≤8"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.1 Q1(ii)"
+     },
+     {
+      "id": "w-3-1-3",
+      "text": "Write the following set in set builder notation: {0, ±1, ±2, …, ±1000}.",
+      "marks": 2,
+      "modelAnswer": [
+       "The elements are integers from −1000 to 1000, inclusive.",
+       "{x | x ∈ Z ∧ −1000 ≤ x ≤ 1000}"
+      ],
+      "followUp": "What is the number of elements of the power set of { }?",
+      "noteId": "n-3-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the number set.",
+        "marks": 1,
+        "why": "The set contains integers, including zero and negative integers.",
+        "how": "Use x ∈ Z.",
+        "accept": [
+         [
+          "x∈Z"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the inclusive bounds and full notation.",
+        "marks": 1,
+        "why": "The bounds include every listed integer and no integers outside the set.",
+        "how": "Write −1000 ≤ x ≤ 1000.",
+        "accept": [
+         [
+          "−1000≤x≤1000"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.1 Q1(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "In short questions, you may be asked to change a set from descriptive or set-builder form to tabular form, or the other way around.",
+      "For set-builder questions, marks are earned for identifying the correct rule and giving the correct domain or bounds.",
+      "For power-set questions, show that you have included the empty set, each required subset, and the original set.",
+      "For questions about the number of elements in a power set, state the number of elements in the original set and use n(P(S)) = 2^m.",
+      "For definitions and comparisons, use precise terms such as same elements, same number of elements, one element, and no elements."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Count the elements in the given set.",
+        "Use n(P(S)) = 2^m, where m is the number of elements in the original set."
+       ],
+       "accept": [
+        [
+         "1"
+        ]
+       ],
+       "question": "What is the number of elements of the power set of { }?",
+       "solution": [
+        "The empty set has 0 elements.",
+        "n(P(S)) = 2⁰ = 1.",
+        "1"
+       ],
+       "answer": "1"
+      },
+      {
+       "hints": [
+        "A two-element set has four subsets.",
+        "List the empty set, both one-element subsets, and the original set."
+       ],
+       "accept": [
+        [
+         "∅"
+        ],
+        [
+         "{9}"
+        ],
+        [
+         "{11}"
+        ],
+        [
+         "{9,11}"
+        ]
+       ],
+       "question": "Write down the power set of {9, 11}.",
+       "solution": [
+        "The subsets of {9, 11} are ∅, {9}, {11}, and {9, 11}.",
+        "P({9, 11}) = {∅, {9}, {11}, {9, 11}}",
+        "{∅, {9}, {11}, {9, 11}}"
+       ],
+       "answer": "{∅, {9}, {11}, {9, 11}}"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The power set contains every subset of the original set.",
+        "text": "The subsets of D = {a} are ∅ and {a}."
+       },
+       {
+        "why": "Put all of those subsets inside braces to write the power set.",
+        "text": "P(D) = {∅, {a}}"
+       }
+      ],
+      "question": "If D = {a}, write P(D).",
+      "answer": "P(D) = {∅, {a}}"
+     },
+     "explain": [
+      {
+       "title": "Patterns",
+       "body": "A mathematical pattern is a predictable arrangement of numbers, shapes, or symbols that follows a specific rule or relationship. For example, in 1, 4, 7, 10, 13, each term is found by adding 3 to the previous term."
+      },
+      {
+       "title": "Structures and relationships",
+       "body": "A mathematical structure is a collection of items or objects, along with particular relationships defined among them. Looking for how parts repeat or connect helps us understand the structure. We can also establish a relationship between two sets when there is a correspondence between the numbers of these sets."
+      },
+      {
+       "title": "Sets and their forms",
+       "body": "A set is described as a well-defined collection of distinct objects, numbers or elements, so that we may be able to decide whether the object belongs to the collection or not. A set can be described in words, by listing its elements in tabular (roster) form, or by stating a shared property in set-builder form."
+      },
+      {
+       "title": "Membership and subsets",
+       "body": "The symbol ∈ means that an element belongs to a set, and ∉ means it does not belong. If every element of A is an element of B, then A is a subset of B. A proper subset is not equal to the larger set."
+      },
+      {
+       "title": "Empty set and power set",
+       "body": "The empty set has no elements, while a singleton set has one element. The power set of a set S denoted by P(S) is the set containing all the possible subsets of S. If S has m elements, its power set has 2^m elements."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse {0}, which has one element, with ∅, which has no elements.",
+      "Do not confuse equal sets, which have the same elements, with equivalent sets, which have the same number of elements.",
+      "Do not forget that a power set includes the empty set and the original set.",
+      "Count an element that is itself a set as one element; for example, {a, {b, c}} has two elements.",
+      "In set-builder notation, include the correct number set and the correct bounds.",
+      "Remember that a proper subset cannot be equal to the original set."
+     ]
+    }
+   },
+   {
+    "id": "m-3-2",
+    "position": 2,
+    "title": "3.2 Operations on Sets",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.2, pages 42–55; Exercise 3.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.2 (pages 42–55) in your textbook.",
+     "Solve Exercise 3.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-3-2-1",
+      "text": "Find A ∩ B, where A = {1, 2, 3, 4, 5}, B = {4, 6, 8, 10}.",
+      "marks": 2,
+      "modelAnswer": [
+       "A ∩ B = {1, 2, 3, 4, 5} ∩ {4, 6, 8, 10}",
+       "A ∩ B = {4}"
+      ],
+      "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+      "noteId": "n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the element common to A and B.",
+        "marks": 1,
+        "why": "The common element must be identified correctly.",
+        "how": "Check which element occurs in both sets.",
+        "accept": [
+         [
+          "4"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the intersection.",
+        "marks": 1,
+        "why": "The answer must state the intersection using set notation.",
+        "how": "Write the common element in braces as A ∩ B.",
+        "accept": [
+         [
+          "A∩B",
+          "{4}"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.2 Q4(i)"
+     },
+     {
+      "id": "w-3-2-2",
+      "text": "Find G ∪ H, where G = {1, 2, 4, 8, 16, 32, 64, 128} and H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+      "marks": 4,
+      "modelAnswer": [
+       "G ∪ H = {1, 2, 4, 8, 16, 32, 64, 128} ∪ {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}",
+       "G ∪ H = {1, 2, 4, 8, 9, 16, 25, 32, 36, 49, 64, 81, 100, 121, 128, 144}"
+      ],
+      "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+      "noteId": "n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Collect the elements from both sets without repetition.",
+        "marks": 2,
+        "why": "The union must contain every element appearing in either set, with duplicates listed once.",
+        "how": "Combine G and H, listing each element only once.",
+        "accept": [
+         [
+          "1",
+          "2",
+          "4",
+          "8",
+          "9",
+          "16",
+          "25",
+          "32",
+          "36",
+          "49",
+          "64",
+          "81",
+          "100",
+          "121",
+          "128",
+          "144"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Show the union notation.",
+        "marks": 1,
+        "why": "Correct notation makes clear that the requested operation is union.",
+        "how": "Label the result G ∪ H.",
+        "accept": [
+         [
+          "G∪H"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct final set.",
+        "marks": 1,
+        "why": "The complete final set is required for full marks.",
+        "how": "Include all union elements in the final answer.",
+        "accept": [
+         [
+          "1",
+          "2",
+          "4",
+          "8",
+          "9",
+          "16",
+          "25",
+          "32",
+          "36",
+          "49",
+          "64",
+          "81",
+          "100",
+          "121",
+          "128",
+          "144"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.2 Q2(ii)"
+     },
+     {
+      "id": "w-3-2-3",
+      "text": "Find G ∩ H, where G = {1, 2, 4, 8, 16, 32, 64, 128} and H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+      "marks": 2,
+      "modelAnswer": [
+       "G ∩ H = {1, 2, 4, 8, 16, 32, 64, 128} ∩ {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}",
+       "G ∩ H = {1, 4, 16, 64}"
+      ],
+      "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+      "noteId": "n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the common elements.",
+        "marks": 1,
+        "why": "The intersection contains only elements shared by both sets.",
+        "how": "Compare the two sets and select their shared elements.",
+        "accept": [
+         [
+          "1",
+          "4",
+          "16",
+          "64"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Write the intersection in set notation.",
+        "marks": 1,
+        "why": "The answer must state the requested intersection clearly.",
+        "how": "Use G ∩ H and list the common elements in braces.",
+        "accept": [
+         [
+          "G∩H",
+          "{1,4,16,64}"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.2 Q2(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Board questions commonly ask you to find a union, intersection, difference or complement from sets or a Venn diagram.",
+      "For two-set counting questions, write n(A ∪ B) = n(A) + n(B) − n(A ∩ B) before substituting values; this earns method marks.",
+      "For three-set questions, show the full inclusion-exclusion formula, including the plus sign before the triple intersection, then substitute and simplify.",
+      "For questions asking for people who like none, subtract the union count from the universal-set count.",
+      "For a Venn diagram question, fill the centre first, then the pairwise-only regions, then the single-set-only regions; show all given information and labels."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Use the two-set inclusion-exclusion rule.",
+        "Here the union is all 55 students, so subtract 55 from the sum of the two game counts."
+       ],
+       "accept": [
+        [
+         "9"
+        ]
+       ],
+       "question": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+       "solution": [
+        "Let A = students who like cricket and B = students who like hockey.",
+        "n(A ∪ B) = 55, n(A) = 34, n(B) = 30.",
+        "n(A ∩ B) = n(A) + n(B) − n(A ∪ B)",
+        "= 34 + 30 − 55",
+        "= 9"
+       ],
+       "answer": "9 students like to play both games."
+      },
+      {
+       "hints": [
+        "Use the inclusion-exclusion principle for three sets.",
+        "Let x be the number who play all three; substitute the union count and all three pairwise counts in the formula."
+       ],
+       "accept": [
+        [
+         "5"
+        ]
+       ],
+       "question": "(a) How many students play all three sports?",
+       "solution": [
+        "Let C = students who play cricket, F = students who play football and H = students who play hockey.",
+        "Let n(C ∩ F ∩ H) = x.",
+        "n(C ∪ F ∪ H) = n(C) + n(F) + n(H) − n(C ∩ F) − n(F ∩ H) − n(C ∩ H) + n(C ∩ F ∩ H)",
+        "125 = 60 + 70 + 40 − 25 − 15 − 10 + x",
+        "x = 5"
+       ],
+       "answer": "5 students play all three sports."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The set names and counts keep track of which information belongs to each product category.",
+        "text": "Let U = total number of customers surveyed in the shopping mall"
+       },
+       {
+        "why": "These names identify the three sets used in the calculation.",
+        "text": "G = Customer who bought garments"
+       },
+       {
+        "why": "This defines the cosmetics set.",
+        "text": "C = Customer who bought cosmetics"
+       },
+       {
+        "why": "This defines the electronics set.",
+        "text": "E = Customer who bought electronics"
+       },
+       {
+        "why": "Writing all the given counts clearly helps prevent a mistaken substitution.",
+        "text": "n(U) = 130, n(G) = 57, n(C) = 50, n(E) = 46, n(G ∩ C) = 31, n(G ∩ E) = 25, n(C ∩ E) = 21 and n(G ∩ C ∩ E) = 12."
+       },
+       {
+        "why": "At least one product means the union of the three sets.",
+        "text": "We are to find n(G ∪ C ∪ E)."
+       },
+       {
+        "why": "The three-set inclusion-exclusion principle counts each region correctly.",
+        "text": "n(G ∪ C ∪ E) = n(G) + n(C) + n(E) − n(G ∩ C) − n(G ∩ E) − n(C ∩ E) + n(G ∩ C ∩ E)"
+       },
+       {
+        "why": "Substitute the counts given in the question.",
+        "text": "= 57 + 50 + 46 − 31 − 25 − 21 + 12"
+       },
+       {
+        "why": "Simplifying gives the number of customers who bought at least one product.",
+        "text": "= 88"
+       },
+       {
+        "why": "The total surveyed minus the union gives the number outside all three sets.",
+        "text": "n(G ∪ C ∪ E)′ = n(U) − n(G ∪ C ∪ E)"
+       },
+       {
+        "why": "Substitute the total surveyed and the union count.",
+        "text": "= 130 − 88 = 42"
+       }
+      ],
+      "question": "EXAMPLE 6: A survey of 130 customers in a shopping mall was conducted in which they were asked about buying preferences.\n\nThe survey result showed the following statistics:\n\n- 57 customers bought garments\n- 50 customers bought cosmetics\n- 46 customers bought electronics\n- 31 customers purchased both garments and cosmetics\n- 25 customers purchased both garments and electronics\n- 21 customers purchased both cosmetics and electronics\n- 12 customers purchased all three products i.e. garments, cosmetics, and electronics.\n\n(a) How many of the customers bought at least one of the products: garments, cosmetics or electronics?\n\n(b) How many of the customers bought only one of the products: garments, Cosmetics or electronics?\n\n(c) How many customers did not buy any of the three products?",
+      "answer": "(a) 88 customers bought at least one product. (b) 35 customers bought only one product. (c) 42 customers did not buy any of the three products."
+     },
+     "explain": [
+      {
+       "title": "Union and intersection",
+       "body": "The union A ∪ B contains elements in A or B, including elements in both. The intersection A ∩ B contains only elements that belong to both sets. Your textbook defines the union as “The union of two sets A and B, denoted by A∪B, is the set of all elements which belong to A or B.” It defines the intersection as “The intersection of two sets A and B, denoted by A ∩ B, is the set of all elements that belong to both A and B.”"
+      },
+      {
+       "title": "Difference and complement",
+       "body": "A − B keeps elements in A but not in B, so in general A − B ≠ B − A. The complement A′ contains elements of the universal set U that are not in A. Your textbook defines the difference as “The difference between the sets A and B denoted by A−B, consists of all the elements that belong to A but do not belong to B.” It defines the complement as “The complement of a set A, denoted by A' or A^c relative to the universal set U is the set of all elements of U, which do not belong to A.”"
+      },
+      {
+       "title": "Disjoint and overlapping sets",
+       "body": "Your textbook defines disjoint sets this way: “If the intersection of two sets is the empty set, the sets are said to be disjoint.” It defines overlapping sets this way: “If the intersection of two sets is non-empty but neither is a subset of the other, the sets are called overlapping sets.”"
+      },
+      {
+       "title": "Counting elements",
+       "body": "Your textbook defines cardinality as “The cardinality of a set is defined as the total number of elements of a set.” For two sets, n(A ∪ B) = n(A) + n(B) − n(A ∩ B). For three sets, subtract the pairwise intersections and then add the triple intersection."
+      },
+      {
+       "title": "De Morgan’s Laws",
+       "body": "The complement of a union is the intersection of the complements: (A ∪ B)′ = A′ ∩ B′. The complement of an intersection is the union of the complements: (A ∩ B)′ = A′ ∪ B′."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse ∪ (or) with ∩ (and).",
+      "Do not count a shared element twice when finding a union; subtract the intersection.",
+      "Do not assume A − B equals B − A; set difference is not commutative.",
+      "When finding a complement, use the stated universal set U; elements outside U cannot be included.",
+      "For three sets, subtract all three pairwise intersections and add the triple intersection once.",
+      "In a Venn diagram, pairwise intersection counts may include the central triple intersection unless the question explicitly says “only.”"
+     ]
+    }
+   },
+   {
+    "id": "m-3-3",
+    "position": 3,
+    "title": "3.3 Binary Relations",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.3, pages 55–62; Exercise 3.3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.3 (pages 55–62) in your textbook.",
+     "Solve Exercise 3.3 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-3-3-1",
+      "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | y = x} in A. State its domain and range.",
+      "marks": 2,
+      "modelAnswer": [
+       "For y = x, the relation is {(1, 1), (2, 2), (3, 3), (4, 4)}.",
+       "Domain of (i) = {1, 2, 3, 4}",
+       "Range of (i) = {1, 2, 3, 4}"
+      ],
+      "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+      "noteId": "n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "List the ordered pairs satisfying y = x.",
+        "marks": 1,
+        "why": "The relation must include exactly the pairs in A × A for which y = x.",
+        "how": "Match each element of A with itself.",
+        "accept": [
+         [
+          "(1,1)",
+          "(2,2)",
+          "(3,3)",
+          "(4,4)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the domain and range.",
+        "marks": 1,
+        "why": "The domain and range must be read from the first and second elements.",
+        "how": "State that both sets are {1, 2, 3, 4}.",
+        "accept": [
+         [
+          "{1,2,3,4}"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.3 Q1(i)"
+     },
+     {
+      "id": "w-3-3-2",
+      "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | y + x = 5} in A. State its domain and range.",
+      "marks": 2,
+      "modelAnswer": [
+       "For x + y = 5, the relation is {(1, 4), (2, 3), (3, 2), (4, 1)}.",
+       "Domain of (ii) = {1, 2, 3, 4}",
+       "Range of (ii) = {1, 2, 3, 4}"
+      ],
+      "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+      "noteId": "n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the ordered pairs satisfying x + y = 5.",
+        "marks": 1,
+        "why": "These are exactly the ordered pairs from A × A whose elements add to 5.",
+        "how": "Check the possible x-values from 1 to 4.",
+        "accept": [
+         [
+          "(1,4)",
+          "(2,3)",
+          "(3,2)",
+          "(4,1)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the domain and range.",
+        "marks": 1,
+        "why": "The domain and range are the sets of first and second elements.",
+        "how": "Write both sets as {1, 2, 3, 4}.",
+        "accept": [
+         [
+          "{1,2,3,4}"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.3 Q1(ii)"
+     },
+     {
+      "id": "w-3-3-3",
+      "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | x + y < 5} in A. State its domain and range.",
+      "marks": 2,
+      "modelAnswer": [
+       "For x + y < 5, the relation is {(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (3, 1)}.",
+       "Domain of (iii) = {1, 2, 3}",
+       "Range of (iii) = {1, 2, 3}"
+      ],
+      "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+      "noteId": "n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "List all ordered pairs that satisfy x + y < 5.",
+        "marks": 1,
+        "why": "Only pairs with sum less than 5 belong to this relation.",
+        "how": "Check pairs in A × A and include those whose sum is less than 5.",
+        "accept": [
+         [
+          "(1,1)",
+          "(1,2)",
+          "(1,3)",
+          "(2,1)",
+          "(2,2)",
+          "(3,1)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the domain and range.",
+        "marks": 1,
+        "why": "The domain and range are obtained from the first and second coordinates.",
+        "how": "State that both are {1, 2, 3}.",
+        "accept": [
+         [
+          "domain",
+          "{1,2,3}",
+          "range"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 3.3 Q1(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Short questions may ask you to list a relation from a condition and then state its domain and range. Check every pair in A × A.",
+      "For function-value questions, show the substitution before simplifying; this makes the method clear and can earn working marks.",
+      "When constants are unknown, show both equations, the subtraction or elimination step, and the substitution used to find the second constant.",
+      "For function types, remember: into means Range f ≠ B; onto means Range f = B; bijective means both one-one and onto."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Substitute the given inputs into g(x) = ax + b + 5.",
+        "Form two equations, subtract to find a, then substitute to find b."
+       ],
+       "accept": [
+        [
+         "a=10/3",
+         "b=-5/3"
+        ]
+       ],
+       "question": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+       "solution": [
+        "Given g(x) = ax + b + 5",
+        "If g(−1) = 0, then −a + b + 5 = 0",
+        "⇒ −a + b = −5 ...(i)",
+        "If g(2) = 10, then 2a + b + 5 = 10",
+        "⇒ 2a + b = 5 ...(ii)",
+        "Subtract equation (i) from equation (ii):",
+        "(2a + b) − (−a + b) = 5 − (−5)",
+        "3a = 10 ⇒ a = 10/3",
+        "Substitute a = 10/3 in equation (i):",
+        "−10/3 + b = −5",
+        "b = −5 + 10/3",
+        "⇒ b = −5/3",
+        "Thus, a = 10/3 and b = −5/3"
+       ],
+       "answer": "a = 10/3, b = −5/3"
+      },
+      {
+       "hints": [
+        "Use f(1) = 6 to make your first equation.",
+        "For f(−2), remember that (−2)² = 4; then solve the two equations."
+       ],
+       "accept": [
+        [
+         "c=4/3",
+         "d=14/3"
+        ]
+       ],
+       "question": "Consider the function f(x) = cx² + d, where c and d are constant numbers. If f(1) = 6 and f(−2) = 10, then find the values of c and d.",
+       "solution": [
+        "Given f(x) = cx² + d",
+        "If f(1) = 6, then c(1)² + d = 6",
+        "⇒ c + d = 6 ...(i)",
+        "If f(−2) = 10, then c(−2)² + d = 10",
+        "⇒ 4c + d = 10 ...(ii)",
+        "Subtract equation (i) from equation (ii):",
+        "(4c + d) − (c + d) = 10 − 6",
+        "3c = 4 ⇒ c = 4/3",
+        "Substitute c = 4/3 in equation (i):",
+        "4/3 + d = 6",
+        "d = 6 − 4/3",
+        "⇒ d = 14/3",
+        "Thus, c = 4/3 and d = 14/3"
+       ],
+       "answer": "c = 4/3, d = 14/3"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This records the function that will be used to form equations.",
+        "text": "Given function f(x) = ax + b + 3"
+       },
+       {
+        "why": "Substituting x = 1 and f(1) = 4 gives the first equation.",
+        "text": "If f(1) = 4"
+       },
+       {
+        "why": "Evaluate the function at 1 and use its given value.",
+        "text": "Then a × 1 + b + 3 = 4"
+       },
+       {
+        "why": "Rearrange to make an equation in a and b.",
+        "text": "⇒ a + b = 1 ...(i)"
+       },
+       {
+        "why": "Use the second given function value to form another equation.",
+        "text": "Similarly, f(5) = 9"
+       },
+       {
+        "why": "Substitute x = 5 in the given function.",
+        "text": "⇒ a × 5 + b + 3 = 9"
+       },
+       {
+        "why": "Rearrange the equation.",
+        "text": "⇒ 5a + b = 6 ...(ii)"
+       },
+       {
+        "why": "Subtracting eliminates b and leaves an equation in a.",
+        "text": "Subtract equation (i) from equation (ii), we get."
+       },
+       {
+        "why": "Subtract the left sides and the right sides.",
+        "text": "(5a + b) − (a + b) = 6 − 1"
+       },
+       {
+        "why": "Simplify the equation.",
+        "text": "5a + b − a − b = 5"
+       },
+       {
+        "why": "Solve for a.",
+        "text": "4a = 5 ⇒ a = 5/4"
+       },
+       {
+        "why": "Use equation (i) to find b.",
+        "text": "Substitute a = 5/4 in the equation (i)"
+       },
+       {
+        "why": "Replace a with 5/4.",
+        "text": "5/4 + b = 1"
+       },
+       {
+        "why": "Make b the subject.",
+        "text": "b = 1 − 5/4"
+       },
+       {
+        "why": "Simplify and state both constants.",
+        "text": "⇒ b = −1/4"
+       },
+       {
+        "why": "This gives the required values.",
+        "text": "Thus, a = 5/4 and b = −1/4"
+       }
+      ],
+      "question": "EXAMPLE 11: Consider f(x) = ax + b + 3, where a and b are constant numbers. If f(1) = 4 and f(5) = 9, then find the value of a and b.",
+      "answer": "a = 5/4 and b = −1/4"
+     },
+     "explain": [
+      {
+       "title": "Relations and ordered pairs",
+       "body": "Mathematically, a relation is any set of ordered pairs. The first elements make the domain; the second elements make the range. For example, if r = {(1, 4), (2, 3)}, then Dom r = {1, 2} and Ran r = {4, 3}."
+      },
+      {
+       "title": "What makes a relation a function?",
+       "body": "A function is a relation from A to B whose domain is A and whose ordered pairs do not have equal first elements. In other words, each input has one output. Different inputs may still have the same output."
+      },
+      {
+       "title": "Types of functions",
+       "body": "An into function has Range f ⊂ B and Range f ≠ B. An onto function has Range f = B. A bijective function is both one-one and onto."
+      },
+      {
+       "title": "Finding function values and constants",
+       "body": "To find f(k), replace every x in the function rule with k. If a rule contains unknown constants, substitute the given function values to form equations, then solve them together."
+      },
+      {
+       "title": "Linear and quadratic functions",
+       "body": "The function {(x, y) | y = mx + c} is called a linear function because its graph is a straight line. The function {(x, y) | y = ax² + bx + c} is called a quadratic function."
+      }
+     ],
+     "mistakes": [
+      "Mixing up domain and range: the domain uses first elements and the range uses second elements.",
+      "Forgetting that the relation must use ordered pairs from the given Cartesian product.",
+      "Calling a relation a function even when one input is paired with two different outputs.",
+      "Assuming a function must be onto; an into function can leave elements of B unused.",
+      "Forgetting brackets around a negative input before squaring, such as writing −4² instead of (−4)².",
+      "When finding unknown constants, stopping after finding one constant or making an arithmetic error when substituting back.",
+      "Giving only the final answer in a multi-step question and missing marks for the equations and working."
+     ]
+    }
+   },
+   {
+    "id": "m-3-4",
+    "position": 4,
+    "title": "Unit 3 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, review exercise, pages 62–64; Review Exercise 3",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 3 and attempt Review Exercise 3 (pages 62–64)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-3-4-1",
+      "text": "Consider the set P = {x | x = 5m, m ∈ N} and Q = {x | x = 2m, m ∈ N}. Find P ∩ Q",
+      "marks": 2,
+      "modelAnswer": [
+       "P = {5, 10, 15, 20, 25, 30, ...}",
+       "Q = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, ...}",
+       "P ∩ Q = {10, 20, 30, 40, 50, ...}"
+      ],
+      "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+      "noteId": "n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the common multiples.",
+        "marks": 1,
+        "why": "The common elements must be multiples of both 5 and 2.",
+        "how": "List multiples shared by P and Q, beginning with 10.",
+        "accept": [
+         [
+          "10",
+          "20"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the intersection.",
+        "marks": 1,
+        "why": "The answer must give the complete pattern of common elements.",
+        "how": "Write the positive multiples of 10 using the book's ellipsis notation.",
+        "accept": [
+         [
+          "10",
+          "20",
+          "30"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 3, Q8"
+     },
+     {
+      "id": "w-3-4-2",
+      "text": "Find g(0), where g(x) = 7x − 2.",
+      "marks": 2,
+      "modelAnswer": [
+       "g(0) = 7(0) − 2",
+       "g(0) = −2"
+      ],
+      "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+      "noteId": "n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute x = 0.",
+        "marks": 1,
+        "why": "Substitution shows that the correct input was used.",
+        "how": "Write g(0) = 7(0) − 2.",
+        "accept": [
+         [
+          "7(0)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify.",
+        "marks": 1,
+        "why": "The final simplified value is required.",
+        "how": "Evaluate the expression to get −2.",
+        "accept": [
+         [
+          "-2"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 3, Q10(i)"
+     },
+     {
+      "id": "w-3-4-3",
+      "text": "Find g(−5/3), where g(x) = 7x − 2.",
+      "marks": 2,
+      "modelAnswer": [
+       "g(−5/3) = 7(−5/3) − 2",
+       "g(−5/3) = −35/3 − 6/3",
+       "g(−5/3) = −41/3"
+      ],
+      "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+      "noteId": "n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Substitute x = −5/3.",
+        "marks": 1,
+        "why": "Correct substitution is the essential first step.",
+        "how": "Write g(−5/3) = 7(−5/3) − 2.",
+        "accept": [
+         [
+          "7(-5/3)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify the expression.",
+        "marks": 1,
+        "why": "The final value must be correctly simplified.",
+        "how": "Calculate −35/3 − 6/3 = −41/3.",
+        "accept": [
+         [
+          "-41/3"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 3, Q10(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Review questions may test set-builder notation, power sets, complements, unions, intersections, and Cartesian products as short MCQs.",
+      "For a two-set counting problem, write n(A ∪ B) = n(A) + n(B) − n(A ∩ B) before substituting the numbers.",
+      "For function questions, show the substitution into the given formula before simplifying; this can earn a method mark.",
+      "For a problem involving three sets, add the three set sizes, subtract the pairwise intersections, then add the triple intersection.",
+      "In a written response, give the requested set in braces or the requested numerical value, and do not omit units or the final statement when relevant."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start by setting 7x − 5 equal to 100.",
+        "Add 5 to both sides, then divide by 7."
+       ],
+       "accept": [
+        [
+         "15"
+        ]
+       ],
+       "question": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+       "solution": [
+        "k(x) = 100",
+        "7x − 5 = 100",
+        "7x = 105",
+        "x = 15"
+       ],
+       "answer": "15"
+      },
+      {
+       "hints": [
+        "Use the two-set union formula.",
+        "Add 120 and 90, then subtract the 60 students counted in both."
+       ],
+       "accept": [
+        [
+         "150"
+        ]
+       ],
+       "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (a) How many passed either the math or science test?",
+       "solution": [
+        "n(M ∪ S) = n(M) + n(S) − n(M ∩ S)",
+        "n(M ∪ S) = 120 + 90 − 60",
+        "n(M ∪ S) = 150"
+       ],
+       "answer": "150"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This is the two-set union formula, so it counts students passing either test without counting those in both twice.",
+        "text": "n(M ∪ S) = n(M) + n(S) − n(M ∩ S)"
+       },
+       {
+        "why": "Replace each set count with the number given in the question.",
+        "text": "n(M ∪ S) = 120 + 90 − 60"
+       },
+       {
+        "why": "This calculation gives the number of students who passed at least one test.",
+        "text": "n(M ∪ S) = 150"
+       }
+      ],
+      "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (a) How many passed either the math or science test?",
+      "answer": "150 students"
+     },
+     "explain": [
+      {
+       "title": "Set notation and listing",
+       "body": "A set-builder description tells you which elements belong in a set. To write a set in tabular form, list its members inside braces. Check the number system and any restrictions in the description."
+      },
+      {
+       "title": "Set operations",
+       "body": "A ∪ B contains elements in A or B or both. A ∩ B contains elements common to both. A − B contains elements in A but not in B. A′ contains elements in the universal set U that are not in A."
+      },
+      {
+       "title": "Counting unions",
+       "body": "For two sets, n(A ∪ B) = n(A) + n(B) − n(A ∩ B). Subtract the intersection because it was counted once in each set."
+      },
+      {
+       "title": "Three-set counting",
+       "body": "For three sets, add the three individual counts, subtract the three pairwise intersections, then add the triple intersection. This corrects the repeated counting."
+      },
+      {
+       "title": "Cartesian products and functions",
+       "body": "The number of ordered pairs in A × B is n(A) × n(B). To evaluate a function, replace x with the input value and simplify using the correct order of operations."
+      }
+     ],
+     "mistakes": [
+      "Counting shared elements twice when finding a union.",
+      "Forgetting that a complement is taken relative to the universal set U.",
+      "Confusing A − B with B − A; set difference is not generally reversible.",
+      "For a Cartesian product, adding the set sizes instead of multiplying them.",
+      "Substituting a function input incorrectly, especially when the input is negative or a fraction.",
+      "In three-set inclusion-exclusion, forgetting to add the triple intersection back."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-3-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-3-1",
+   "title": "Sets and power sets",
+   "keywords": [
+    "sets",
+    "subset",
+    "proper subset",
+    "empty set",
+    "power set",
+    "roster form"
+   ],
+   "answer": "The power set has 4 elements.",
+   "explanation": "A power set lists every possible subset of a set. Include the empty set and the original set.",
+   "simple": "A set is a collection of different items. A subset is made from some or all of those items; the power set gathers all the subsets.",
+   "examples": [
+    "If D = {a}, then P(D) = {∅, {a}}.",
+    "If a set has 2 elements, its power set has 2² = 4 elements."
+   ],
+   "steps": [
+    "Count the elements in the original set: n(S) = 2.",
+    "Use n(P(S)) = 2^m, where m is the number of elements in S.",
+    "Calculate 2² = 4."
+   ],
+   "checkQuestion": "How many elements are in the power set of a set with 2 elements?",
+   "checkAnswer": "4",
+   "checkAccept": [
+    [
+     "4"
+    ]
+   ]
+  },
+  {
+   "id": "n-3-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-3-2",
+   "title": "Operations on Sets and Counting Overlaps",
+   "keywords": [
+    "union",
+    "intersection",
+    "difference",
+    "complement",
+    "cardinality",
+    "inclusion-exclusion",
+    "Venn diagram"
+   ],
+   "answer": "For two sets, n(A ∪ B) = n(A) + n(B) − n(A ∩ B). For three sets, add the three set sizes, subtract the three pairwise intersections, then add the triple intersection.",
+   "explanation": "Union collects elements in either set; intersection collects elements in both. For counting, add the set sizes and subtract overlaps that were counted more than once. For three sets, add the triple intersection back after subtracting the pairwise intersections.",
+   "simple": "Union means everything in either set. Intersection means what the sets share. When counting a union, subtract the shared elements so they are not counted twice.",
+   "examples": [
+    "If A = {1, 2, 3} and B = {2, 3, 4}, then A ∪ B = {1, 2, 3, 4} and A ∩ B = {2, 3}.",
+    "If n(A) = 34, n(B) = 30 and n(A ∪ B) = 55, then n(A ∩ B) = 34 + 30 − 55 = 9."
+   ],
+   "steps": [
+    "Write the set sizes and the size of their union.",
+    "Use n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+    "Rearrange to find the intersection: n(A ∩ B) = n(A) + n(B) − n(A ∪ B).",
+    "Substitute the numbers and calculate."
+   ],
+   "checkQuestion": "In a class of 55 students, 34 like cricket and 30 like hockey. Every student likes at least one. How many like both?",
+   "checkAnswer": "9 students like both games.",
+   "checkAccept": [
+    [
+     "9"
+    ]
+   ]
+  },
+  {
+   "id": "n-3-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-3-3",
+   "title": "Relations and functions",
+   "keywords": [
+    "relation",
+    "ordered pair",
+    "domain",
+    "range",
+    "function",
+    "into",
+    "onto"
+   ],
+   "answer": "A function is a relation in which no two ordered pairs have equal first elements.",
+   "explanation": "A relation is a set of ordered pairs. A function is a special relation where each input has exactly one output. To find a function value, substitute the given input for x. To find unknown constants, substitute the given function values and solve the resulting equations.",
+   "simple": "A relation pairs things up. In a function, each input is paired with only one output.",
+   "examples": [
+    "If f(x) = 2x + 1, then f(3) = 2 × 3 + 1 = 7.",
+    "If r = {(1, 4), (2, 3)}, then Dom r = {1, 2} and Ran r = {4, 3}."
+   ],
+   "steps": [
+    "For a relation, list the ordered pairs that satisfy the given condition.",
+    "The domain is the set of first elements in the pairs.",
+    "The range is the set of second elements in the pairs.",
+    "For a function value, replace x with the given number and simplify.",
+    "For unknown constants, substitute the given function values, form equations, and solve."
+   ],
+   "checkQuestion": "If f(x) = 3x + 1, what is f(2)?",
+   "checkAnswer": "f(2) = 7",
+   "checkAccept": [
+    [
+     "7"
+    ]
+   ]
+  },
+  {
+   "id": "n-3-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-3-4",
+   "title": "Reviewing Sets and Functions",
+   "keywords": [
+    "sets",
+    "union",
+    "intersection",
+    "complement",
+    "cartesian product",
+    "function",
+    "inclusion exclusion"
+   ],
+   "answer": "Use set operations and function substitution, keeping the notation and steps clear.",
+   "explanation": "This review brings together set notation, set operations, counting with unions, and evaluating functions. For set questions, list the elements that satisfy the stated operation. For function questions, substitute the input for x and simplify.",
+   "simple": "For sets, keep the elements that match the operation. For functions, put the given number in place of x.",
+   "examples": [
+    "If A = {1, 2, 3} and B = {3, 4}, then A ∩ B = {3}.",
+    "If f(x) = 3x + 1, then f(2) = 3(2) + 1 = 7."
+   ],
+   "steps": [
+    "Identify whether the question is about sets, counting, or functions.",
+    "For unions, use n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+    "For complements and differences, use the universal set to decide which elements remain.",
+    "For functions, substitute the input value and simplify carefully."
+   ],
+   "checkQuestion": "If n(A) = 7, n(B) = 6 and n(A ∩ B) = 3, find n(A ∪ B).",
+   "checkAnswer": "n(A ∪ B) = 10",
+   "checkAccept": [
+    [
+     "10"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-3-1-1",
+   "stem": "Which statement best describes a mathematical pattern?",
+   "options": [
+    "A predictable arrangement that follows a rule or relationship",
+    "A collection that must contain numbers only",
+    "A list with no repeated rule",
+    "A shape that has no parts"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a mathematical pattern follows a rule or relationship.",
+    "Wrong: patterns can involve shapes or symbols as well as numbers.",
+    "Wrong: a pattern is predictable and follows a rule.",
+    "Wrong: a pattern may use shapes, but this is not its definition."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-2",
+   "stem": "What is a singleton set?",
+   "options": [
+    "A set with exactly one element",
+    "A set with no elements",
+    "A set with infinitely many elements",
+    "A set containing only numbers"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a singleton set has only one element.",
+    "Wrong: a set with no elements is an empty set.",
+    "Wrong: the definition does not require infinitely many elements.",
+    "Wrong: elements of a set need not be numbers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-3",
+   "stem": "Which of these is a singleton set?",
+   "options": [
+    "{0}",
+    "∅",
+    "{}",
+    "The set of natural numbers"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: {0} has one element, namely 0.",
+    "Wrong: ∅ has no elements.",
+    "Wrong: {} denotes the empty set and has no elements.",
+    "Wrong: the set of natural numbers has more than one element."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-4",
+   "stem": "When are two sets equal?",
+   "options": [
+    "They have exactly the same elements.",
+    "They have the same number of elements.",
+    "They have no elements in common.",
+    "One must have more elements than the other."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: equal sets contain exactly the same elements.",
+    "Wrong: having the same number of elements describes equivalent sets.",
+    "Wrong: equal sets must have all the same elements, not none in common.",
+    "Wrong: equal sets have the same elements and therefore the same number of elements."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-5",
+   "stem": "Which is the set-builder form of {1, 2, 3}?",
+   "options": [
+    "A = {1, 2, 3}",
+    "A = {x | x is a natural number less than 4}",
+    "A is the set of natural numbers less than 4",
+    "A = {x | x is an integer}"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Wrong: this is roster form, listing the elements.",
+    "Correct: it uses a variable and a property that describes the elements.",
+    "Wrong: this describes the set in words, which is descriptive form.",
+    "Wrong: this describes all integers, not just 1, 2, and 3."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-6",
+   "stem": "If every element of A is in B and B has at least one element not in A, which notation shows that A is a proper subset of B?",
+   "options": [
+    "A ⊂ B",
+    "A = B",
+    "A ~ B",
+    "A ∉ B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: A ⊂ B denotes a proper subset.",
+    "Wrong: A = B would mean the sets have exactly the same elements.",
+    "Wrong: A ~ B means the sets have the same number of elements.",
+    "Wrong: ∉ means is not an element of."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-7",
+   "stem": "If a finite set S has m elements, how many elements does its power set have?",
+   "options": [
+    "2^m",
+    "m²",
+    "2m",
+    "m + 2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the number of elements of P(S) is 2^m.",
+    "Wrong: m² is not the power-set counting rule.",
+    "Wrong: 2m is not the power-set counting rule.",
+    "Wrong: m + 2 is not the power-set counting rule."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-1-8",
+   "stem": "What rule generates each term of the Fibonacci sequence described in your textbook?",
+   "options": [
+    "Adding the previous two terms",
+    "Multiplying the previous two terms",
+    "Adding 3 to every term",
+    "Subtracting the previous term"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: each term is obtained by adding the previous two terms.",
+    "Wrong: the described Fibonacci rule uses addition, not multiplication.",
+    "Wrong: adding 3 is the rule for a different numerical pattern in the section.",
+    "Wrong: the described rule adds the previous two terms."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-1",
+   "moduleId": "m-3-1"
+  },
+  {
+   "id": "q-3-2-1",
+   "stem": "Which statement describes the union A ∪ B?",
+   "options": [
+    "Elements in A or B, or both",
+    "Elements in both A and B only",
+    "Elements in A but not B",
+    "Elements outside both A and B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the union contains every element belonging to A or B, including shared elements.",
+    "Incorrect: this describes the intersection A ∩ B.",
+    "Incorrect: this describes the difference A − B.",
+    "Incorrect: this describes the complement of A ∪ B in the universal set."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-2",
+   "stem": "If A = {1, 2, 3} and B = {2, 3, 4, 5}, what is A ∩ B?",
+   "options": [
+    "{2, 3}",
+    "{1, 2, 3, 4, 5}",
+    "{1, 4, 5}",
+    "{2, 3, 4, 5}"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 2 and 3 are the elements that belong to both sets.",
+    "Incorrect: this is A ∪ B, not the intersection.",
+    "Incorrect: 1, 4 and 5 do not belong to both sets.",
+    "Incorrect: 4 and 5 are in B only, not in A."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-3",
+   "stem": "Which expression gives the elements that belong to A but do not belong to B?",
+   "options": [
+    "A − B",
+    "A ∩ B",
+    "A ∪ B",
+    "A′"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: A − B contains elements in A that are not in B.",
+    "Incorrect: A ∩ B contains elements in both sets.",
+    "Incorrect: A ∪ B contains elements in either set.",
+    "Incorrect: A′ contains elements of the universal set that are not in A."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-4",
+   "stem": "Which equality gives the complement of A relative to U?",
+   "options": [
+    "A′ = U − A",
+    "A′ = U ∩ A",
+    "A′ = A − U",
+    "A′ = A ∪ U"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the complement contains elements of U that are not in A.",
+    "Incorrect: U ∩ A gives A when A is a subset of U.",
+    "Incorrect: A − U is empty when A is a subset of U.",
+    "Incorrect: A ∪ U is U, not the complement of A."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-5",
+   "stem": "Which formula gives the cardinality of the union of two finite sets?",
+   "options": [
+    "n(A) + n(B) − n(A ∩ B)",
+    "n(A) + n(B) + n(A ∩ B)",
+    "n(A) − n(B)",
+    "n(A ∩ B) − n(A) − n(B)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: subtract the intersection because it was counted twice when adding the set sizes.",
+    "Incorrect: this adds the overlap again instead of correcting the double count.",
+    "Incorrect: this gives a difference of counts, not the union size.",
+    "Incorrect: this is not the inclusion-exclusion formula for a union."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-6",
+   "stem": "When are two sets called disjoint?",
+   "options": [
+    "A ∩ B = ∅",
+    "A ∪ B = ∅",
+    "A ⊆ B",
+    "A = B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: disjoint sets have empty intersection.",
+    "Incorrect: two non-empty disjoint sets can have a non-empty union.",
+    "Incorrect: being a subset does not mean sets are disjoint.",
+    "Incorrect: equal non-empty sets are not disjoint."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-7",
+   "stem": "By De Morgan’s Laws, what is (A ∪ B)′ equal to?",
+   "options": [
+    "A′ ∩ B′",
+    "A′ ∪ B′",
+    "A ∩ B",
+    "A ∪ B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the complement of a union is the intersection of the complements.",
+    "Incorrect: A′ ∪ B′ is the complement of A ∩ B.",
+    "Incorrect: this is the intersection itself, not its complement.",
+    "Incorrect: this is the union itself, not its complement."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-2-8",
+   "stem": "Which rule gives n(A ∪ B ∪ C)?",
+   "options": [
+    "Add the three set sizes, subtract the three pairwise intersections, then add the triple intersection",
+    "Add the three set sizes and all pairwise intersections",
+    "Subtract the triple intersection from the sum of the three set sizes",
+    "Add the three set sizes, subtract pairwise intersections, then subtract the triple intersection"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: this is the three-set inclusion-exclusion principle.",
+    "Incorrect: pairwise overlaps would be counted more, not less.",
+    "Incorrect: the pairwise intersections must also be accounted for.",
+    "Incorrect: the triple intersection must be added back after subtracting pairwise intersections."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-2",
+   "moduleId": "m-3-2"
+  },
+  {
+   "id": "q-3-3-1",
+   "stem": "Mathematically, a relation is:",
+   "options": [
+    "A set of ordered pairs",
+    "A set of first elements only",
+    "A set of second elements only",
+    "A set of numbers with no order"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the textbook defines a relation as any set of ordered pairs.",
+    "This describes only the first elements, which may form a domain.",
+    "This describes only the second elements, which may form a range.",
+    "A relation is represented by ordered pairs, not by an unordered collection of numbers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-2",
+   "stem": "What is the domain of r = {(1, 3), (2, 4)}?",
+   "options": [
+    "{1, 2}",
+    "{3, 4}",
+    "{(1, 3), (2, 4)}",
+    "{(3, 1), (4, 2)}"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the domain contains the first elements of the ordered pairs.",
+    "These are the second elements, so they form the range.",
+    "This is the relation itself, not its domain.",
+    "These are reversed pairs and do not give the domain as a set."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-3",
+   "stem": "What is the range of r = {(1, 3), (2, 4)}?",
+   "options": [
+    "{3, 4}",
+    "{1, 2}",
+    "{(1, 3), (2, 4)}",
+    "{1, 2, 3, 4}"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the range contains the second elements of the ordered pairs.",
+    "These are the first elements, so they form the domain.",
+    "This is the relation itself, not its range.",
+    "This combines the first and second elements instead of listing only the second elements."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-4",
+   "stem": "Which condition makes a relation from A to B a function?",
+   "options": [
+    "Each first element occurs only once",
+    "Each second element occurs only once",
+    "The range must be empty",
+    "The domain must equal the co-domain"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: no two ordered pairs of a function have equal first elements.",
+    "A function can have different inputs with the same output, so this is not required.",
+    "A function has a range of its output values, so its range need not be empty.",
+    "A function may be into, so its range need not equal its co-domain."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-5",
+   "stem": "If Range f ⊂ B and Range f ≠ B, then f is an:",
+   "options": [
+    "Into function",
+    "Onto function",
+    "Bijective function",
+    "Not a function"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: a function whose range is not all of B is into B.",
+    "An onto function has Range f = B.",
+    "A bijective function is both one-one and onto, so its range equals B.",
+    "A range smaller than B does not stop a relation from being a function."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-6",
+   "stem": "If f(x) = x² − 1, find f(−2).",
+   "options": [
+    "f(−2) = 3",
+    "f(−2) = −3",
+    "f(−2) = 7",
+    "f(−2) = −7"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: (−2)² − 1 = 4 − 1 = 3.",
+    "Squaring −2 gives positive 4, not −2, so this result is incorrect.",
+    "This does not result from substituting −2 into x² − 1.",
+    "Squaring a negative number gives a positive result, so −7 is incorrect."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-7",
+   "stem": "The graph of a linear function y = mx + c is a:",
+   "options": [
+    "Straight line",
+    "Circle",
+    "Parabola",
+    "A single point"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the textbook states that a linear function has a straight-line graph.",
+    "A circle is not the general graph of y = mx + c.",
+    "A parabola is associated with a quadratic function, not a linear function.",
+    "A linear function generally has a graph extending as a straight line, not just one point."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-3-8",
+   "stem": "A bijective function is:",
+   "options": [
+    "The function is both one-one and onto",
+    "The function is into but not one-one",
+    "The function has no domain",
+    "The function has equal first elements"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: a bijective function is both one-one and onto.",
+    "This does not satisfy the definition of a bijection.",
+    "A function has a domain; a bijection does not remove it.",
+    "A function cannot have equal first elements in two different ordered pairs."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-3-3",
+   "moduleId": "m-3-3"
+  },
+  {
+   "id": "q-3-4-1",
+   "stem": "The set builder form of the set {1, 1/3, 1/5, 1/7, ...} is:",
+   "options": [
+    "{x | x = 1/n, n ∈ W}",
+    "{x | x = 1/(2n + 1), n ∈ W}",
+    "{x | x = 1/(n + 1), n ∈ W}",
+    "{x | x = 2n + 1, n ∈ W}"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This gives reciprocals of whole numbers, including 1/2, which is not in the set.",
+    "This gives reciprocals of positive odd numbers, matching the listed terms.",
+    "This gives reciprocals of consecutive numbers after adding one, so it includes 1/2.",
+    "This gives odd whole numbers, not their reciprocals."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-2",
+   "stem": "If A = {}, then P(A) is:",
+   "options": [
+    "{}",
+    "{1}",
+    "{{ }}",
+    "∅"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The power set contains the empty set as an element, so it is not empty.",
+    "The power set contains sets, not the number 1.",
+    "The empty set has exactly one subset: itself, so its power set is {{ }}.",
+    "This represents the empty set, but the power set has one member."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-3",
+   "stem": "If U = {1, 2, 3, 4, 5}, A = {1, 2, 3} and B = {3, 4, 5}, then U − (A ∩ B) is:",
+   "options": [
+    "{1, 2, 4, 5}",
+    "{2, 3}",
+    "{1, 3, 4, 5}",
+    "{1, 2, 3}"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A ∩ B = {3}; removing 3 from U gives this set.",
+    "This is not the result of removing the intersection from U.",
+    "This incorrectly keeps 3 and removes 2.",
+    "This is A, not U minus the intersection."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-4",
+   "stem": "If A and B are overlapping sets, then n(A − B) is equal to",
+   "options": [
+    "n(A)",
+    "n(B)",
+    "A ∩ B",
+    "n(A) − n(A ∩ B)"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This counts every element of A, including those also in B.",
+    "This counts elements of B, not the elements of A outside B.",
+    "This names the shared set rather than counting A − B.",
+    "Subtracting the shared elements from n(A) leaves the elements in A − B."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-5",
+   "stem": "If A ⊆ B and B − A ≠ ∅, then n(B − A) is equal to",
+   "options": [
+    "0",
+    "n(B)",
+    "n(A)",
+    "n(B) − n(A)"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "The question states that B − A is non-empty, so its number of elements is not zero.",
+    "This counts all elements of B, including those in A.",
+    "This counts A, not the part of B outside A.",
+    "Since A is contained in B, removing A's elements from B leaves n(B) − n(A) elements."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-6",
+   "stem": "If n(A ∪ B) = 50, n(A) = 30 and n(B) = 35, then n(A ∩ B) = :",
+   "options": [
+    "23",
+    "15",
+    "9",
+    "40"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This does not satisfy n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
+    "Using the union formula gives 30 + 35 − 50 = 15.",
+    "This is not the intersection size given by the union formula.",
+    "The intersection cannot be 40 when the union has 50 elements and the sets have 30 and 35 elements."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-7",
+   "stem": "If A = {1, 2, 3, 4} and B = {x, y, z}, then cartesian product of A and B contains exactly ______ elements.",
+   "options": [
+    "13",
+    "12",
+    "10",
+    "6"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The Cartesian product has 4 × 3 elements, not 13.",
+    "There are 4 choices for the first coordinate and 3 for the second, giving 12 ordered pairs.",
+    "This is not the product of the two set sizes.",
+    "This does not count all ordered pairs in A × B."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-8",
+   "stem": "If f(x) = x² − 3x + 2, then the value of f(a + 1) is equal to:",
+   "options": [
+    "a + 1",
+    "a² + 1",
+    "a² + 2a + 1",
+    "a² − a"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Substitution and simplification do not give a + 1.",
+    "This omits the terms produced by substituting a + 1 into the function.",
+    "This is only (a + 1)² and does not include the other terms in f.",
+    "Substituting gives (a + 1)² − 3(a + 1) + 2 = a² − a."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-9",
+   "stem": "Given that f(x) = 3x + 1, if f(x) = 28, then the value of x is:",
+   "options": [
+    "9",
+    "27",
+    "3",
+    "18"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Solving 3x + 1 = 28 gives 3x = 27 and x = 9.",
+    "27 is the value of 3x, not x.",
+    "Substituting x = 3 gives f(x) = 10, not 28.",
+    "Substituting x = 18 gives f(x) = 55, not 28."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  },
+  {
+   "id": "q-3-4-10",
+   "stem": "Let A = {1, 2, 3} and B = {a, b} two non-empty sets and f : A → B be a a function defined as f = {(1, a), (2, b), (3, b)}, then which of the following statement is true?",
+   "options": [
+    "f is injective",
+    "f is surjective",
+    "f is bijective",
+    "f is into only"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "It is not injective because 2 and 3 both map to b.",
+    "Both elements a and b of the codomain are images, so the function is surjective.",
+    "A bijection must be both injective and surjective, but this function is not injective.",
+    "It is not into only because every element of B is an image."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-3-4",
+   "moduleId": "m-3-4"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-3-1-1",
+   "text": "Write the following set in set builder notation: {1, 4, 9, 16, 25, 36, …, 484}.",
+   "marks": 2,
+   "modelAnswer": [
+    "1 = 1² and 484 = 22².",
+    "{x | x = n², n ∈ N ∧ 1 ≤ n ≤ 22}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the square-number rule.",
+     "marks": 1,
+     "why": "The listed elements are squares of natural numbers.",
+     "how": "Write x = n², where n is a natural number.",
+     "accept": [
+      [
+       "x=n^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct range and final set-builder form.",
+     "marks": 1,
+     "why": "The bounds ensure the set starts at 1 and ends at 484.",
+     "how": "State 1 ≤ n ≤ 22 and write the full set-builder notation.",
+     "accept": [
+      [
+       "1≤n≤22"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q1(i)"
+  },
+  {
+   "id": "w-3-1-2",
+   "text": "Write the following set in set builder notation: {2, 4, 8, 16, …, 256}.",
+   "marks": 2,
+   "modelAnswer": [
+    "2 = 2¹ and 256 = 2⁸.",
+    "{x | x = 2^n, n ∈ N ∧ 1 ≤ n ≤ 8}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the common rule for the elements.",
+     "marks": 1,
+     "why": "This rule generates the powers of 2 in the set.",
+     "how": "Write x = 2ⁿ.",
+     "accept": [
+      [
+       "x=2^n"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct bounds and full notation.",
+     "marks": 1,
+     "why": "These bounds give the first element 2 and the last element 256.",
+     "how": "Use n ∈ N and 1 ≤ n ≤ 8.",
+     "accept": [
+      [
+       "1≤n≤8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q1(ii)"
+  },
+  {
+   "id": "w-3-1-3",
+   "text": "Write the following set in set builder notation: {0, ±1, ±2, …, ±1000}.",
+   "marks": 2,
+   "modelAnswer": [
+    "The elements are integers from −1000 to 1000, inclusive.",
+    "{x | x ∈ Z ∧ −1000 ≤ x ≤ 1000}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the number set.",
+     "marks": 1,
+     "why": "The set contains integers, including zero and negative integers.",
+     "how": "Use x ∈ Z.",
+     "accept": [
+      [
+       "x∈Z"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the inclusive bounds and full notation.",
+     "marks": 1,
+     "why": "The bounds include every listed integer and no integers outside the set.",
+     "how": "Write −1000 ≤ x ≤ 1000.",
+     "accept": [
+      [
+       "−1000≤x≤1000"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q1(iii)"
+  },
+  {
+   "id": "w-3-1-4",
+   "text": "Write the following set in set builder notation: {1, 2, 4, 5, 10, 20, 25, 50, 100}.",
+   "marks": 2,
+   "modelAnswer": [
+    "Each listed number is a divisor of 100.",
+    "{x | x is a divisor of 100}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognize the shared divisor property.",
+     "marks": 1,
+     "why": "Every listed number divides 100 exactly.",
+     "how": "State that x is a divisor of 100.",
+     "accept": [
+      [
+       "divisor"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the complete set-builder description.",
+     "marks": 1,
+     "why": "The number 100 identifies the number whose divisors form the set.",
+     "how": "Use the property that x is a divisor of 100.",
+     "accept": [
+      [
+       "100"
+      ],
+      [
+       "divisor"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q1(vii)"
+  },
+  {
+   "id": "w-3-1-5",
+   "text": "Write the following set in tabular form: {x | x ∈ R ∧ 2x + 1 = 0}.",
+   "marks": 2,
+   "modelAnswer": [
+    "2x + 1 = 0",
+    "2x = −1",
+    "x = −1/2",
+    "{−1/2}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Solve the equation.",
+     "marks": 1,
+     "why": "Solving the condition gives the only possible element.",
+     "how": "Rearrange 2x + 1 = 0 to obtain x = −1/2.",
+     "accept": [
+      [
+       "x=−1/2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the answer as a set.",
+     "marks": 1,
+     "why": "Tabular form places the element inside braces.",
+     "how": "List −1/2 inside braces.",
+     "accept": [
+      [
+       "{−1/2}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q2(ii)"
+  },
+  {
+   "id": "w-3-1-6",
+   "text": "Write the following set in tabular form: {x | x ∈ P ∧ x < 12}.",
+   "marks": 2,
+   "modelAnswer": [
+    "The prime numbers less than 12 are 2, 3, 5, 7, and 11.",
+    "{2, 3, 5, 7, 11}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the primes below 12.",
+     "marks": 1,
+     "why": "These are the prime numbers less than 12, apart from the largest one.",
+     "how": "List the prime numbers less than 12.",
+     "accept": [
+      [
+       "2"
+      ],
+      [
+       "3"
+      ],
+      [
+       "5"
+      ],
+      [
+       "7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Complete the tabular form.",
+     "marks": 1,
+     "why": "The full list must include 11 and be written as a set.",
+     "how": "Write {2, 3, 5, 7, 11}.",
+     "accept": [
+      [
+       "11"
+      ],
+      [
+       "{2,3,5,7,11}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q2(iii)"
+  },
+  {
+   "id": "w-3-1-7",
+   "text": "Write the following set in tabular form: {x | x is a divisor of 128}.",
+   "marks": 2,
+   "modelAnswer": [
+    "The positive divisors of 128 are powers of 2 from 1 to 128.",
+    "{1, 2, 4, 8, 16, 32, 64, 128}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Begin listing the positive divisors.",
+     "marks": 1,
+     "why": "The listed values are divisors of 128.",
+     "how": "List the divisors from 1 through 8.",
+     "accept": [
+      [
+       "1"
+      ],
+      [
+       "2"
+      ],
+      [
+       "4"
+      ],
+      [
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Finish the divisor list.",
+     "marks": 1,
+     "why": "The complete tabular form must include all remaining divisors.",
+     "how": "Include 16, 32, 64, and 128 in the set.",
+     "accept": [
+      [
+       "16"
+      ],
+      [
+       "32"
+      ],
+      [
+       "64"
+      ],
+      [
+       "128"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q2(iv)"
+  },
+  {
+   "id": "w-3-1-8",
+   "text": "Write the following set in tabular form: {x | x ∈ N ∧ x + 4 = 0}.",
+   "marks": 2,
+   "modelAnswer": [
+    "x + 4 = 0 gives x = −4.",
+    "Since −4 ∉ N, the set has no elements.",
+    "{}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Solve the equation and compare with the domain.",
+     "marks": 1,
+     "why": "Solving the condition shows the only possible value is −4.",
+     "how": "Obtain x = −4 and note that it is not a natural number.",
+     "accept": [
+      [
+       "x=−4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the tabular form of the empty set.",
+     "marks": 1,
+     "why": "No natural number satisfies the condition, so the set is empty.",
+     "how": "Write {}.",
+     "accept": [
+      [
+       "{}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q2(vi)"
+  },
+  {
+   "id": "w-3-1-9",
+   "text": "Write two proper subsets of {a, b, c}.",
+   "marks": 2,
+   "modelAnswer": [
+    "{a} ⊂ {a, b, c}",
+    "{b} ⊂ {a, b, c}",
+    "{a} and {b}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Give one proper subset.",
+     "marks": 1,
+     "why": "{a} contains an element of the given set and is not equal to it.",
+     "how": "Write a subset such as {a}.",
+     "accept": [
+      [
+       "{a}"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give a different proper subset.",
+     "marks": 1,
+     "why": "{b} is a second subset and is not equal to the given set.",
+     "how": "Write another subset such as {b}.",
+     "accept": [
+      [
+       "{b}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q3(i)"
+  },
+  {
+   "id": "w-3-1-10",
+   "text": "Is there any set which has no proper subset? If so, name that set.",
+   "marks": 2,
+   "modelAnswer": [
+    "Yes.",
+    "The empty set has no proper subset.",
+    "Yes, the empty set { } or ∅."
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Give the yes-or-no response.",
+     "marks": 1,
+     "why": "The question requires stating whether such a set exists.",
+     "how": "State that such a set exists.",
+     "accept": [
+      [
+       "yes"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Name the set.",
+     "marks": 1,
+     "why": "The empty set has no elements from which a proper subset can be formed.",
+     "how": "Identify the set as the empty set, ∅ or { }.",
+     "accept": [
+      [
+       "∅"
+      ],
+      [
+       "{}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q4"
+  },
+  {
+   "id": "w-3-1-11",
+   "text": "What is the difference between {a, b} and {{a, b}}?",
+   "marks": 2,
+   "modelAnswer": [
+    "{a, b} has two elements: a and b.",
+    "{{a, b}} has one element: the set {a, b}.",
+    "{a, b} is a set containing two elements a and b while {{a, b}} is a set containing one element {a, b}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the first set.",
+     "marks": 1,
+     "why": "The first set has a and b as its two elements.",
+     "how": "State that {a, b} contains two elements, a and b.",
+     "accept": [
+      [
+       "{a,b}"
+      ],
+      [
+       "two"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the second set.",
+     "marks": 1,
+     "why": "In the second set, the single element is the set {a, b}.",
+     "how": "State that {{a, b}} contains one element, {a, b}.",
+     "accept": [
+      [
+       "{{a,b}}"
+      ],
+      [
+       "one"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q5"
+  },
+  {
+   "id": "w-3-1-12",
+   "text": "What is the number of elements of the power set of {a, {b, c}}?",
+   "marks": 2,
+   "modelAnswer": [
+    "The set {a, {b, c}} has 2 elements.",
+    "n(P(S)) = 2² = 4.",
+    "4"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the elements of the original set.",
+     "marks": 1,
+     "why": "The set has two elements: a and {b, c}.",
+     "how": "State that the original set has 2 elements.",
+     "accept": [
+      [
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the power-set formula and give the result.",
+     "marks": 1,
+     "why": "The power set of a set with 2 elements has 2² elements.",
+     "how": "Calculate 2² = 4.",
+     "accept": [
+      [
+       "2^2=4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q6(v)"
+  },
+  {
+   "id": "w-3-1-13",
+   "text": "Write down the power set of {9, 11}.",
+   "marks": 4,
+   "modelAnswer": [
+    "The subsets of {9, 11} are ∅, {9}, {11}, and {9, 11}.",
+    "P({9, 11}) = {∅, {9}, {11}, {9, 11}}",
+    "{∅, {9}, {11}, {9, 11}}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Include the empty subset and one singleton subset.",
+     "marks": 1,
+     "why": "The power set must include the empty set and the one-element subset {9}.",
+     "how": "Write ∅ and {9}.",
+     "accept": [
+      [
+       "∅"
+      ],
+      [
+       "{9}"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Include the other singleton subset.",
+     "marks": 1,
+     "why": "The singleton subset {11} is another subset of the original set.",
+     "how": "Write {11}.",
+     "accept": [
+      [
+       "{11}"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Include the original set as a subset.",
+     "marks": 1,
+     "why": "The original set is itself a subset and belongs in its power set.",
+     "how": "Write {9, 11}.",
+     "accept": [
+      [
+       "{9,11}"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Write the complete power set.",
+     "marks": 1,
+     "why": "The final answer must list all four subsets as elements of one set.",
+     "how": "Put the four subsets together inside braces.",
+     "accept": [
+      [
+       "{∅,{9},{11},{9,11}}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q7(i)"
+  },
+  {
+   "id": "w-3-1-14",
+   "text": "Write down the power set of {∅}.",
+   "marks": 2,
+   "modelAnswer": [
+    "The subsets of {∅} are ∅ and {∅}.",
+    "{∅, {∅}}"
+   ],
+   "followUp": "What is the number of elements of the power set of { }?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Include the empty subset.",
+     "marks": 1,
+     "why": "The empty set is a subset of every set.",
+     "how": "Write ∅ as one element of the power set.",
+     "accept": [
+      [
+       "∅"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Include the original set and give the complete answer.",
+     "marks": 1,
+     "why": "{∅} is the original set and is also a subset of itself.",
+     "how": "Write {∅} alongside ∅ inside the power set.",
+     "accept": [
+      [
+       "{∅}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.1 Q7(iii)"
+  },
+  {
+   "id": "w-3-2-1",
+   "text": "Find A ∩ B, where A = {1, 2, 3, 4, 5}, B = {4, 6, 8, 10}.",
+   "marks": 2,
+   "modelAnswer": [
+    "A ∩ B = {1, 2, 3, 4, 5} ∩ {4, 6, 8, 10}",
+    "A ∩ B = {4}"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the element common to A and B.",
+     "marks": 1,
+     "why": "The common element must be identified correctly.",
+     "how": "Check which element occurs in both sets.",
+     "accept": [
+      [
+       "4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the intersection.",
+     "marks": 1,
+     "why": "The answer must state the intersection using set notation.",
+     "how": "Write the common element in braces as A ∩ B.",
+     "accept": [
+      [
+       "A∩B",
+       "{4}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q4(i)"
+  },
+  {
+   "id": "w-3-2-2",
+   "text": "Find G ∪ H, where G = {1, 2, 4, 8, 16, 32, 64, 128} and H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+   "marks": 4,
+   "modelAnswer": [
+    "G ∪ H = {1, 2, 4, 8, 16, 32, 64, 128} ∪ {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}",
+    "G ∪ H = {1, 2, 4, 8, 9, 16, 25, 32, 36, 49, 64, 81, 100, 121, 128, 144}"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Collect the elements from both sets without repetition.",
+     "marks": 2,
+     "why": "The union must contain every element appearing in either set, with duplicates listed once.",
+     "how": "Combine G and H, listing each element only once.",
+     "accept": [
+      [
+       "1",
+       "2",
+       "4",
+       "8",
+       "9",
+       "16",
+       "25",
+       "32",
+       "36",
+       "49",
+       "64",
+       "81",
+       "100",
+       "121",
+       "128",
+       "144"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Show the union notation.",
+     "marks": 1,
+     "why": "Correct notation makes clear that the requested operation is union.",
+     "how": "Label the result G ∪ H.",
+     "accept": [
+      [
+       "G∪H"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final set.",
+     "marks": 1,
+     "why": "The complete final set is required for full marks.",
+     "how": "Include all union elements in the final answer.",
+     "accept": [
+      [
+       "1",
+       "2",
+       "4",
+       "8",
+       "9",
+       "16",
+       "25",
+       "32",
+       "36",
+       "49",
+       "64",
+       "81",
+       "100",
+       "121",
+       "128",
+       "144"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q2(ii)"
+  },
+  {
+   "id": "w-3-2-3",
+   "text": "Find G ∩ H, where G = {1, 2, 4, 8, 16, 32, 64, 128} and H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+   "marks": 2,
+   "modelAnswer": [
+    "G ∩ H = {1, 2, 4, 8, 16, 32, 64, 128} ∩ {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}",
+    "G ∩ H = {1, 4, 16, 64}"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the common elements.",
+     "marks": 1,
+     "why": "The intersection contains only elements shared by both sets.",
+     "how": "Compare the two sets and select their shared elements.",
+     "accept": [
+      [
+       "1",
+       "4",
+       "16",
+       "64"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the intersection in set notation.",
+     "marks": 1,
+     "why": "The answer must state the requested intersection clearly.",
+     "how": "Use G ∩ H and list the common elements in braces.",
+     "accept": [
+      [
+       "G∩H",
+       "{1,4,16,64}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q2(iii)"
+  },
+  {
+   "id": "w-3-2-4",
+   "text": "Find P ∩ Q, where P = {x | x is a prime number and 0 < x ≤ 20} and Q = {x | x is a divisor of 210 and 0 < x ≤ 20}.",
+   "marks": 2,
+   "modelAnswer": [
+    "P ∩ Q = {2, 3, 5, 7}"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the common elements.",
+     "marks": 1,
+     "why": "Only elements meeting both set conditions belong in the intersection.",
+     "how": "Select numbers that are both prime and divisors of 210.",
+     "accept": [
+      [
+       "2",
+       "3",
+       "5",
+       "7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the intersection.",
+     "marks": 1,
+     "why": "Set notation identifies the requested result precisely.",
+     "how": "Write the common elements in braces after P ∩ Q.",
+     "accept": [
+      [
+       "P∩Q",
+       "{2,3,5,7}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q3(i)"
+  },
+  {
+   "id": "w-3-2-5",
+   "text": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "marks": 2,
+   "modelAnswer": [
+    "n(A ∪ B) = 55, n(A) = 34, n(B) = 30",
+    "n(A ∩ B) = n(A) + n(B) − n(A ∪ B)",
+    "= 34 + 30 − 55",
+    "= 9"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the inclusion-exclusion calculation.",
+     "marks": 1,
+     "why": "The two-set inclusion-exclusion relation avoids counting students who like both games twice.",
+     "how": "Use n(A ∩ B) = n(A) + n(B) − n(A ∪ B).",
+     "accept": [
+      [
+       "34+30-55"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct number of students.",
+     "marks": 1,
+     "why": "The question asks for the number of students in both sets.",
+     "how": "Calculate 34 + 30 − 55.",
+     "accept": [
+      [
+       "9"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q7"
+  },
+  {
+   "id": "w-3-2-9",
+   "text": "(a) Find (A′ ∪ B′) ∩ C, where A is labelled from 50 to 89, B from 101 to 150, and C from 1 to 49 and 90 to 100.",
+   "marks": 4,
+   "modelAnswer": [
+    "C = {1, 2, …, 49, 90, 91, …, 100}",
+    "C ∩ A = ∅ and C ∩ B = ∅",
+    "Therefore, (A′ ∪ B′) ∩ C = C",
+    "(A′ ∪ B′) ∩ C = {1, 2, …, 49, 90, 91, …, 100}"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the disjoint employee ranges.",
+     "marks": 1,
+     "why": "The labels show which employee ranges belong to each set.",
+     "how": "Read the ranges for A, B and C from the question.",
+     "accept": [
+      [
+       "C∩A=∅",
+       "C∩B=∅"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the expression using the disjoint ranges.",
+     "marks": 1,
+     "why": "The expression asks for elements in C that also satisfy the complement condition.",
+     "how": "Since C has no elements in A or B, every element of C is in A′ ∪ B′.",
+     "accept": [
+      [
+       "C"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "List the elements of C.",
+     "marks": 1,
+     "why": "The result must include both stated ranges in C.",
+     "how": "Use the labels 1 through 49 and 90 through 100.",
+     "accept": [
+      [
+       "1",
+       "49",
+       "90",
+       "100"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final set.",
+     "marks": 1,
+     "why": "The final set must match the two ranges specified for C.",
+     "how": "Write both ranges in set notation.",
+     "accept": [
+      [
+       "{1,2",
+       "90,91",
+       "100}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q11(a)"
+  },
+  {
+   "id": "w-3-2-10",
+   "text": "(b) Find n{A ∩ (B′ ∩ C′)}, where A has 40 employees.",
+   "marks": 2,
+   "modelAnswer": [
+    "A ∩ (B′ ∩ C′) = A",
+    "n{A ∩ (B′ ∩ C′)} = n(A)",
+    "= 40"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Simplify the set expression.",
+     "marks": 1,
+     "why": "A is disjoint from both B and C, so all elements of A satisfy both complements.",
+     "how": "Use the fact that A, B and C have separate employee labels.",
+     "accept": [
+      [
+       "A∩(B′∩C′)",
+       "A"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the required cardinality.",
+     "marks": 1,
+     "why": "The cardinality of A is 40 employees.",
+     "how": "Use n(A) = 40.",
+     "accept": [
+      [
+       "40"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q11(b)"
+  },
+  {
+   "id": "w-3-2-11",
+   "text": "(a) How many students play all three sports? There are 125 students in at least one sport; 60 play cricket, 70 play football, 40 play hockey, 25 play both cricket and football, 15 play both football and hockey, and 10 play both cricket and hockey.",
+   "marks": 4,
+   "modelAnswer": [
+    "Let C = students who play cricket, F = students who play football and H = students who play hockey.",
+    "Let n(C ∩ F ∩ H) = x.",
+    "n(C ∪ F ∪ H) = n(C) + n(F) + n(H) − n(C ∩ F) − n(F ∩ H) − n(C ∩ H) + n(C ∩ F ∩ H)",
+    "125 = 60 + 70 + 40 − 25 − 15 − 10 + x",
+    "x = 5"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the set cardinalities.",
+     "marks": 1,
+     "why": "The given union, set sizes and pairwise intersections must be used.",
+     "how": "Assign sets for cricket, football and hockey.",
+     "accept": [
+      [
+       "125",
+       "60",
+       "70",
+       "40",
+       "25",
+       "15",
+       "10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the equation for the triple intersection.",
+     "marks": 1,
+     "why": "The three-set inclusion-exclusion equation accounts for overlaps correctly.",
+     "how": "Let x be the number playing all three sports.",
+     "accept": [
+      [
+       "125=60+70+40-25-15-10+x"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the triple intersection.",
+     "marks": 1,
+     "why": "Correct arithmetic determines the central Venn region.",
+     "how": "Evaluate the equation for x.",
+     "accept": [
+      [
+       "5"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final answer.",
+     "marks": 1,
+     "why": "The final response must answer how many students play all three.",
+     "how": "Write the number of students.",
+     "accept": [
+      [
+       "5"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q12(a)"
+  },
+  {
+   "id": "w-3-2-12",
+   "text": "(a) At least how many people like nihari, biryani or korma? 40 people like nihari, 65 like biryani, 50 like korma, 20 like nihari and biryani, 35 like biryani and korma, 27 like nihari and korma, and 12 like all three.",
+   "marks": 4,
+   "modelAnswer": [
+    "n(N ∪ B ∪ K) = n(N) + n(B) + n(K) − n(N ∩ B) − n(B ∩ K) − n(N ∩ K) + n(N ∩ B ∩ K)",
+    "= 40 + 65 + 50 − 20 − 35 − 27 + 12",
+    "= 85"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the given cardinalities.",
+     "marks": 1,
+     "why": "All three set sizes, pairwise intersections and the triple intersection are needed.",
+     "how": "Name the sets and record each supplied count.",
+     "accept": [
+      [
+       "40",
+       "65",
+       "50",
+       "20",
+       "35",
+       "27",
+       "12"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the three-set inclusion-exclusion formula.",
+     "marks": 1,
+     "why": "The three-set inclusion-exclusion formula gives the number who like at least one food.",
+     "how": "Add individual counts, subtract pair intersections, and add the triple intersection.",
+     "accept": [
+      [
+       "n(N∪B∪K)",
+       "40+65+50-20-35-27+12"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the union size.",
+     "marks": 1,
+     "why": "The arithmetic must give the number in the union.",
+     "how": "Evaluate the expression.",
+     "accept": [
+      [
+       "85"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final answer.",
+     "marks": 1,
+     "why": "The final answer must directly state the number asked for.",
+     "how": "Give the number of people.",
+     "accept": [
+      [
+       "85"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q13(a)"
+  },
+  {
+   "id": "w-3-2-13",
+   "text": "(b) How many people did not like nihari, biryani, or korma? There were 130 people surveyed.",
+   "marks": 2,
+   "modelAnswer": [
+    "n(N ∪ B ∪ K) = 85",
+    "n(N ∪ B ∪ K)′ = n(U) − n(N ∪ B ∪ K)",
+    "= 130 − 85",
+    "= 45"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the complement count.",
+     "marks": 1,
+     "why": "The number outside all three sets is the universal-set size minus the union size.",
+     "how": "Subtract the number who like at least one food from 130.",
+     "accept": [
+      [
+       "130-85",
+       "n(U)-n(N∪B∪K)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate and state the answer.",
+     "marks": 1,
+     "why": "The final number gives the people who like none of the foods.",
+     "how": "Evaluate 130 − 85.",
+     "accept": [
+      [
+       "45"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q13(b)"
+  },
+  {
+   "id": "w-3-2-14",
+   "text": "(c) How many people like only one of the following foods: nihari, biryani, or korma?",
+   "marks": 4,
+   "modelAnswer": [
+    "Only nihari = 40 − 20 − 27 + 12 = 5",
+    "Only biryani = 65 − 20 − 35 + 12 = 22",
+    "Only korma = 50 − 27 − 35 + 12 = 0",
+    "Total who like only one = 5 + 22 + 0 = 27"
+   ],
+   "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+   "noteId": "n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the count for only one food in each set.",
+     "marks": 1,
+     "why": "Each only-one count must remove the two pairwise overlaps and restore the triple overlap.",
+     "how": "Calculate the only-nihari, only-biryani and only-korma counts.",
+     "accept": [
+      [
+       "40-20-27+12",
+       "65-20-35+12",
+       "50-27-35+12"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the three individual-only counts.",
+     "marks": 1,
+     "why": "The individual-only counts must be calculated correctly.",
+     "how": "Evaluate each expression using the given numbers.",
+     "accept": [
+      [
+       "5",
+       "22",
+       "0"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add the only-one counts.",
+     "marks": 1,
+     "why": "The question asks for the total who like only one of the foods.",
+     "how": "Add the three single-set-only regions.",
+     "accept": [
+      [
+       "5+22+0",
+       "27"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final answer.",
+     "marks": 1,
+     "why": "The final answer must be the total number who like exactly one food.",
+     "how": "Give the sum of the three only-one counts.",
+     "accept": [
+      [
+       "27"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.2 Q13(c)"
+  },
+  {
+   "id": "w-3-3-1",
+   "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | y = x} in A. State its domain and range.",
+   "marks": 2,
+   "modelAnswer": [
+    "For y = x, the relation is {(1, 1), (2, 2), (3, 3), (4, 4)}.",
+    "Domain of (i) = {1, 2, 3, 4}",
+    "Range of (i) = {1, 2, 3, 4}"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "List the ordered pairs satisfying y = x.",
+     "marks": 1,
+     "why": "The relation must include exactly the pairs in A × A for which y = x.",
+     "how": "Match each element of A with itself.",
+     "accept": [
+      [
+       "(1,1)",
+       "(2,2)",
+       "(3,3)",
+       "(4,4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the domain and range.",
+     "marks": 1,
+     "why": "The domain and range must be read from the first and second elements.",
+     "how": "State that both sets are {1, 2, 3, 4}.",
+     "accept": [
+      [
+       "{1,2,3,4}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q1(i)"
+  },
+  {
+   "id": "w-3-3-2",
+   "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | y + x = 5} in A. State its domain and range.",
+   "marks": 2,
+   "modelAnswer": [
+    "For x + y = 5, the relation is {(1, 4), (2, 3), (3, 2), (4, 1)}.",
+    "Domain of (ii) = {1, 2, 3, 4}",
+    "Range of (ii) = {1, 2, 3, 4}"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the ordered pairs satisfying x + y = 5.",
+     "marks": 1,
+     "why": "These are exactly the ordered pairs from A × A whose elements add to 5.",
+     "how": "Check the possible x-values from 1 to 4.",
+     "accept": [
+      [
+       "(1,4)",
+       "(2,3)",
+       "(3,2)",
+       "(4,1)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the domain and range.",
+     "marks": 1,
+     "why": "The domain and range are the sets of first and second elements.",
+     "how": "Write both sets as {1, 2, 3, 4}.",
+     "accept": [
+      [
+       "{1,2,3,4}"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q1(ii)"
+  },
+  {
+   "id": "w-3-3-3",
+   "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | x + y < 5} in A. State its domain and range.",
+   "marks": 2,
+   "modelAnswer": [
+    "For x + y < 5, the relation is {(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (3, 1)}.",
+    "Domain of (iii) = {1, 2, 3}",
+    "Range of (iii) = {1, 2, 3}"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "List all ordered pairs that satisfy x + y < 5.",
+     "marks": 1,
+     "why": "Only pairs with sum less than 5 belong to this relation.",
+     "how": "Check pairs in A × A and include those whose sum is less than 5.",
+     "accept": [
+      [
+       "(1,1)",
+       "(1,2)",
+       "(1,3)",
+       "(2,1)",
+       "(2,2)",
+       "(3,1)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the domain and range.",
+     "marks": 1,
+     "why": "The domain and range are obtained from the first and second coordinates.",
+     "how": "State that both are {1, 2, 3}.",
+     "accept": [
+      [
+       "domain",
+       "{1,2,3}",
+       "range"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q1(iii)"
+  },
+  {
+   "id": "w-3-3-4",
+   "text": "For A = {1, 2, 3, 4}, find the relation {(x, y) | x + y > 5} in A. State its domain and range.",
+   "marks": 2,
+   "modelAnswer": [
+    "For x + y > 5, the relation is {(2, 4), (3, 3), (3, 4), (4, 2), (4, 3), (4, 4)}.",
+    "Domain of (iv) = {2, 3, 4}",
+    "Range of (iv) = {2, 3, 4}"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "List all ordered pairs satisfying x + y > 5.",
+     "marks": 1,
+     "why": "These are the pairs from A × A whose sum is greater than 5.",
+     "how": "Check each possible pair and keep those with sum greater than 5.",
+     "accept": [
+      [
+       "(2,4)",
+       "(3,3)",
+       "(3,4)",
+       "(4,2)",
+       "(4,3)",
+       "(4,4)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the domain and range.",
+     "marks": 1,
+     "why": "The domain and range consist of the first and second coordinates.",
+     "how": "Write both as {2, 3, 4}.",
+     "accept": [
+      [
+       "domain",
+       "{2,3,4}",
+       "range"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q1(iv)"
+  },
+  {
+   "id": "w-3-3-5",
+   "text": "If g(x) = 3x + 2, find g(0).",
+   "marks": 2,
+   "modelAnswer": [
+    "g(0) = 3 × 0 + 2 = 2"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 0.",
+     "marks": 1,
+     "why": "Substitution shows the correct method.",
+     "how": "Write g(0) = 3 × 0 + 2.",
+     "accept": [
+      [
+       "3*0+2",
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the value of g(0).",
+     "marks": 1,
+     "why": "The final value must be simplified correctly.",
+     "how": "Simplify to 2.",
+     "accept": [
+      [
+       "2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(i)"
+  },
+  {
+   "id": "w-3-3-6",
+   "text": "If g(x) = 3x + 2, find g(−3).",
+   "marks": 2,
+   "modelAnswer": [
+    "g(−3) = 3 × (−3) + 2 = −9 + 2 = −7"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = −3.",
+     "marks": 1,
+     "why": "Correct substitution is necessary to obtain the value.",
+     "how": "Write g(−3) = 3 × (−3) + 2.",
+     "accept": [
+      [
+       "3*(-3)+2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the expression.",
+     "marks": 1,
+     "why": "The expression must be simplified with the correct sign.",
+     "how": "Calculate −9 + 2 = −7.",
+     "accept": [
+      [
+       "-7"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(ii)"
+  },
+  {
+   "id": "w-3-3-7",
+   "text": "If g(x) = 3x + 2, find g(2/3).",
+   "marks": 2,
+   "modelAnswer": [
+    "g(2/3) = 3 × (2/3) + 2 = 2 + 2 = 4"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 2/3.",
+     "marks": 1,
+     "why": "Substituting the fraction correctly is the key method step.",
+     "how": "Write g(2/3) = 3 × 2/3 + 2.",
+     "accept": [
+      [
+       "3*(2/3)+2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "The arithmetic gives the required function value.",
+     "how": "Calculate 2 + 2 = 4.",
+     "accept": [
+      [
+       "4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(iii)"
+  },
+  {
+   "id": "w-3-3-8",
+   "text": "If h(x) = x² + 1, find h(1).",
+   "marks": 2,
+   "modelAnswer": [
+    "h(1) = (1)² + 1 = 2"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 1.",
+     "marks": 1,
+     "why": "Substitution gives the correct expression to evaluate.",
+     "how": "Write h(1) = (1)² + 1.",
+     "accept": [
+      [
+       "(1)^2+1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "The expression must be evaluated correctly.",
+     "how": "Calculate 1 + 1 = 2.",
+     "accept": [
+      [
+       "2"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(iv)"
+  },
+  {
+   "id": "w-3-3-9",
+   "text": "If h(x) = x² + 1, find h(−4).",
+   "marks": 2,
+   "modelAnswer": [
+    "h(−4) = (−4)² + 1 = 16 + 1 = 17"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = −4.",
+     "marks": 1,
+     "why": "The negative input must be substituted inside brackets before squaring.",
+     "how": "Write h(−4) = (−4)² + 1.",
+     "accept": [
+      [
+       "(-4)^2+1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "Squaring the negative number gives a positive result.",
+     "how": "Calculate 16 + 1 = 17.",
+     "accept": [
+      [
+       "17"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(v)"
+  },
+  {
+   "id": "w-3-3-10",
+   "text": "If h(x) = x² + 1, find h(−1/2).",
+   "marks": 2,
+   "modelAnswer": [
+    "h(−1/2) = (−1/2)² + 1 = 1/4 + 1 = 5/4"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = −1/2.",
+     "marks": 1,
+     "why": "The input must be substituted correctly before squaring.",
+     "how": "Write h(−1/2) = (−1/2)² + 1.",
+     "accept": [
+      [
+       "(-1/2)^2+1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "The fraction must be squared and added accurately.",
+     "how": "Calculate 1/4 + 1 = 5/4.",
+     "accept": [
+      [
+       "5/4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q3(vi)"
+  },
+  {
+   "id": "w-3-3-11",
+   "text": "Given that f(x) = ax + b + 1, where a and b are constant numbers. If f(3) = 8 and f(6) = 14, then find the values of a and b.",
+   "marks": 4,
+   "modelAnswer": [
+    "Given function f(x) = ax + b + 1",
+    "If f(3) = 8, then 3a + b + 1 = 8",
+    "⇒ 3a + b = 7 ...(i)",
+    "Similarly, f(6) = 14",
+    "⇒ 6a + b + 1 = 14",
+    "⇒ 6a + b = 13 ...(ii)",
+    "Subtract equation (i) from equation (ii):",
+    "(6a + b) − (3a + b) = 13 − 7",
+    "3a = 6 ⇒ a = 2",
+    "Substitute a = 2 in equation (i):",
+    "3(2) + b = 7",
+    "b = 1",
+    "Thus, a = 2 and b = 1"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form the two equations.",
+     "marks": 1,
+     "why": "The given function values must be converted into equations.",
+     "how": "Substitute x = 3 and x = 6 into f(x).",
+     "accept": [
+      [
+       "3a+b=7",
+       "6a+b=13"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find a.",
+     "marks": 1,
+     "why": "Solving the pair of equations gives the value of a.",
+     "how": "Subtract the first equation from the second.",
+     "accept": [
+      [
+       "a=2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find b.",
+     "marks": 1,
+     "why": "Substitution into an equation is needed to determine b.",
+     "how": "Substitute a = 2 into either equation.",
+     "accept": [
+      [
+       "b=1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final values.",
+     "marks": 1,
+     "why": "Both constants must be stated correctly as the final answer.",
+     "how": "Write a = 2 and b = 1.",
+     "accept": [
+      [
+       "a=2",
+       "b=1"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q4"
+  },
+  {
+   "id": "w-3-3-12",
+   "text": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "marks": 4,
+   "modelAnswer": [
+    "Given g(x) = ax + b + 5",
+    "If g(−1) = 0, then −a + b + 5 = 0",
+    "⇒ −a + b = −5 ...(i)",
+    "If g(2) = 10, then 2a + b + 5 = 10",
+    "⇒ 2a + b = 5 ...(ii)",
+    "Subtract equation (i) from equation (ii):",
+    "(2a + b) − (−a + b) = 5 − (−5)",
+    "3a = 10 ⇒ a = 10/3",
+    "Substitute a = 10/3 in equation (i):",
+    "−10/3 + b = −5",
+    "b = −5 + 10/3",
+    "⇒ b = −5/3",
+    "Thus, a = 10/3 and b = −5/3"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form the two equations.",
+     "marks": 1,
+     "why": "Substitution of both given inputs forms the equations needed to solve.",
+     "how": "Substitute x = −1 and x = 2.",
+     "accept": [
+      [
+       "-a+b+5=0",
+       "2a+b+5=10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve for a.",
+     "marks": 1,
+     "why": "Eliminating b gives the value of a.",
+     "how": "Subtract the equations and solve the resulting equation.",
+     "accept": [
+      [
+       "a=10/3"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Solve for b.",
+     "marks": 1,
+     "why": "The value of b follows by substitution into one equation.",
+     "how": "Substitute a = 10/3 into either equation.",
+     "accept": [
+      [
+       "b=-5/3"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final values.",
+     "marks": 1,
+     "why": "Both constants must be given correctly.",
+     "how": "Write a = 10/3 and b = −5/3.",
+     "accept": [
+      [
+       "a=10/3",
+       "b=-5/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q5"
+  },
+  {
+   "id": "w-3-3-13",
+   "text": "Consider the function defined by f(x) = 5x + 2. If f(x) = 32, find the x value.",
+   "marks": 2,
+   "modelAnswer": [
+    "f(x) = 5x + 2 = 32",
+    "5x = 30",
+    "x = 6"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form and simplify the equation.",
+     "marks": 1,
+     "why": "The function value must be set equal to 32 and solved.",
+     "how": "Write 5x + 2 = 32, then subtract 2.",
+     "accept": [
+      [
+       "5x+2=32",
+       "5x=30"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve for x.",
+     "marks": 1,
+     "why": "The value of x is the required final answer.",
+     "how": "Divide both sides by 5.",
+     "accept": [
+      [
+       "x=6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q6"
+  },
+  {
+   "id": "w-3-3-14",
+   "text": "Consider the function f(x) = cx² + d, where c and d are constant numbers. If f(1) = 6 and f(−2) = 10, then find the values of c and d.",
+   "marks": 4,
+   "modelAnswer": [
+    "Given f(x) = cx² + d",
+    "If f(1) = 6, then c(1)² + d = 6",
+    "⇒ c + d = 6 ...(i)",
+    "If f(−2) = 10, then c(−2)² + d = 10",
+    "⇒ 4c + d = 10 ...(ii)",
+    "Subtract equation (i) from equation (ii):",
+    "(4c + d) − (c + d) = 10 − 6",
+    "3c = 4 ⇒ c = 4/3",
+    "Substitute c = 4/3 in equation (i):",
+    "4/3 + d = 6",
+    "d = 6 − 4/3",
+    "⇒ d = 14/3",
+    "Thus, c = 4/3 and d = 14/3"
+   ],
+   "followUp": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+   "noteId": "n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form the two equations.",
+     "marks": 1,
+     "why": "Substitution of the given inputs produces equations in c and d.",
+     "how": "Substitute x = 1 and x = −2 into f(x).",
+     "accept": [
+      [
+       "c+d=6",
+       "4c+d=10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find c.",
+     "marks": 1,
+     "why": "Subtracting the equations determines c.",
+     "how": "Subtract c + d = 6 from 4c + d = 10.",
+     "accept": [
+      [
+       "c=4/3"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find d.",
+     "marks": 1,
+     "why": "Substitution into either equation determines d.",
+     "how": "Substitute c = 4/3 into c + d = 6.",
+     "accept": [
+      [
+       "d=14/3"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final values.",
+     "marks": 1,
+     "why": "Both constants must be stated correctly as the final answer.",
+     "how": "Write c = 4/3 and d = 14/3.",
+     "accept": [
+      [
+       "c=4/3",
+       "d=14/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 3.3 Q7"
+  },
+  {
+   "id": "w-3-4-1",
+   "text": "Consider the set P = {x | x = 5m, m ∈ N} and Q = {x | x = 2m, m ∈ N}. Find P ∩ Q",
+   "marks": 2,
+   "modelAnswer": [
+    "P = {5, 10, 15, 20, 25, 30, ...}",
+    "Q = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, ...}",
+    "P ∩ Q = {10, 20, 30, 40, 50, ...}"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the common multiples.",
+     "marks": 1,
+     "why": "The common elements must be multiples of both 5 and 2.",
+     "how": "List multiples shared by P and Q, beginning with 10.",
+     "accept": [
+      [
+       "10",
+       "20"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the intersection.",
+     "marks": 1,
+     "why": "The answer must give the complete pattern of common elements.",
+     "how": "Write the positive multiples of 10 using the book's ellipsis notation.",
+     "accept": [
+      [
+       "10",
+       "20",
+       "30"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q8"
+  },
+  {
+   "id": "w-3-4-2",
+   "text": "Find g(0), where g(x) = 7x − 2.",
+   "marks": 2,
+   "modelAnswer": [
+    "g(0) = 7(0) − 2",
+    "g(0) = −2"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 0.",
+     "marks": 1,
+     "why": "Substitution shows that the correct input was used.",
+     "how": "Write g(0) = 7(0) − 2.",
+     "accept": [
+      [
+       "7(0)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "The final simplified value is required.",
+     "how": "Evaluate the expression to get −2.",
+     "accept": [
+      [
+       "-2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q10(i)"
+  },
+  {
+   "id": "w-3-4-3",
+   "text": "Find g(−5/3), where g(x) = 7x − 2.",
+   "marks": 2,
+   "modelAnswer": [
+    "g(−5/3) = 7(−5/3) − 2",
+    "g(−5/3) = −35/3 − 6/3",
+    "g(−5/3) = −41/3"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = −5/3.",
+     "marks": 1,
+     "why": "Correct substitution is the essential first step.",
+     "how": "Write g(−5/3) = 7(−5/3) − 2.",
+     "accept": [
+      [
+       "7(-5/3)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the expression.",
+     "marks": 1,
+     "why": "The final value must be correctly simplified.",
+     "how": "Calculate −35/3 − 6/3 = −41/3.",
+     "accept": [
+      [
+       "-41/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q10(iii)"
+  },
+  {
+   "id": "w-3-4-4",
+   "text": "Find s(1), where s(x) = 8x² − 3.",
+   "marks": 2,
+   "modelAnswer": [
+    "s(1) = 8(1)² − 3",
+    "s(1) = 8 − 3",
+    "s(1) = 5"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 1.",
+     "marks": 1,
+     "why": "The input must be substituted into the squared term.",
+     "how": "Write s(1) = 8(1)² − 3.",
+     "accept": [
+      [
+       "8(1)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Evaluate.",
+     "marks": 1,
+     "why": "The final evaluation earns the answer mark.",
+     "how": "Simplify to 8 − 3 = 5.",
+     "accept": [
+      [
+       "5"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q10(iv)"
+  },
+  {
+   "id": "w-3-4-5",
+   "text": "Find s(7/2), where s(x) = 8x² − 3.",
+   "marks": 2,
+   "modelAnswer": [
+    "s(7/2) = 8(7/2)² − 3",
+    "s(7/2) = 8 × 49/4 − 3",
+    "s(7/2) = 98 − 3",
+    "s(7/2) = 95"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Substitute x = 7/2.",
+     "marks": 1,
+     "why": "Substituting the fraction correctly is necessary before simplifying.",
+     "how": "Write s(7/2) = 8(7/2)² − 3.",
+     "accept": [
+      [
+       "8(7/2)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify.",
+     "marks": 1,
+     "why": "The final numerical value is required.",
+     "how": "Calculate 8 × 49/4 − 3 = 98 − 3 = 95.",
+     "accept": [
+      [
+       "95"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q10(vi)"
+  },
+  {
+   "id": "w-3-4-6",
+   "text": "Given that f(x) = ax + b, where a and b are constant numbers. If f(−2) = 3 and f(4) = 10, then find the values of a and b.",
+   "marks": 4,
+   "modelAnswer": [
+    "f(−2) = −2a + b = 3",
+    "f(4) = 4a + b = 10",
+    "Subtracting, 6a = 7",
+    "a = 7/6",
+    "−2(7/6) + b = 3",
+    "b = 16/3",
+    "a = 7/6, b = 16/3"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form the two equations.",
+     "marks": 1,
+     "why": "The given function values must be translated into equations.",
+     "how": "Substitute −2 and 4 into f(x) = ax + b.",
+     "accept": [
+      [
+       "-2a+b=3",
+       "4a+b=10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve for a.",
+     "marks": 1,
+     "why": "Eliminating b allows a to be found.",
+     "how": "Subtract the first equation from the second to obtain 6a = 7.",
+     "accept": [
+      [
+       "6a=7"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find a and substitute to obtain b.",
+     "marks": 1,
+     "why": "The value of a must be stated correctly.",
+     "how": "Use a = 7/6 in either equation.",
+     "accept": [
+      [
+       "a=7/6"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the final values.",
+     "marks": 1,
+     "why": "Both constants are needed for the complete answer.",
+     "how": "Give a = 7/6 and b = 16/3.",
+     "accept": [
+      [
+       "b=16/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q11"
+  },
+  {
+   "id": "w-3-4-7",
+   "text": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "marks": 2,
+   "modelAnswer": [
+    "k(x) = 100",
+    "7x − 5 = 100",
+    "7x = 105",
+    "x = 15"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set the function equal to 100.",
+     "marks": 1,
+     "why": "The given function value must be used to form the equation.",
+     "how": "Write 7x − 5 = 100.",
+     "accept": [
+      [
+       "7x-5=100"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve the equation.",
+     "marks": 1,
+     "why": "The final value of x is the requested answer.",
+     "how": "Add 5 and divide by 7 to get x = 15.",
+     "accept": [
+      [
+       "15"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q12"
+  },
+  {
+   "id": "w-3-4-8",
+   "text": "Consider the function g(x) = mx² + n, where m and n are constant numbers. If g(4) = 20 and g(0) = 5, find the values of m and n.",
+   "marks": 4,
+   "modelAnswer": [
+    "g(4) = 16m + n = 20",
+    "g(0) = n = 5",
+    "16m + 5 = 20",
+    "16m = 15",
+    "m = 15/16, n = 5"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Form equations from the function values.",
+     "marks": 1,
+     "why": "Substituting the given inputs creates equations in m and n.",
+     "how": "Use g(4) = 20 and g(0) = 5.",
+     "accept": [
+      [
+       "16m+n=20",
+       "n=5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find n.",
+     "marks": 1,
+     "why": "The value at zero directly determines n.",
+     "how": "From g(0) = 5, obtain n = 5.",
+     "accept": [
+      [
+       "n=5"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Find m.",
+     "marks": 1,
+     "why": "Substitution of n leaves an equation for m.",
+     "how": "Use 16m + 5 = 20 to get 16m = 15.",
+     "accept": [
+      [
+       "16m=15"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the values.",
+     "marks": 1,
+     "why": "The final answer must include both constants.",
+     "how": "Give m = 15/16 and n = 5.",
+     "accept": [
+      [
+       "m=15/16",
+       "n=5"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q13"
+  },
+  {
+   "id": "w-3-4-9",
+   "text": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (a) How many passed either the math or science test?",
+   "marks": 2,
+   "modelAnswer": [
+    "n(M ∪ S) = n(M) + n(S) − n(M ∩ S)",
+    "n(M ∪ S) = 120 + 90 − 60",
+    "n(M ∪ S) = 150"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the union formula.",
+     "marks": 1,
+     "why": "The shared students must not be counted twice.",
+     "how": "Use n(M ∪ S) = n(M) + n(S) − n(M ∩ S).",
+     "accept": [
+      [
+       "120+90-60"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate the union.",
+     "marks": 1,
+     "why": "The question asks for the number who passed either test.",
+     "how": "Evaluate 120 + 90 − 60.",
+     "accept": [
+      [
+       "150"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q15(a)"
+  },
+  {
+   "id": "w-3-4-10",
+   "text": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (b) How many did not pass either of the two tests?",
+   "marks": 2,
+   "modelAnswer": [
+    "Number who passed neither = 180 − n(M ∪ S)",
+    "Number who passed neither = 180 − 150",
+    "Number who passed neither = 30"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Subtract the union from the total.",
+     "marks": 1,
+     "why": "Those who passed neither are the total minus those who passed at least one.",
+     "how": "Use the result for part (a), 150.",
+     "accept": [
+      [
+       "180-150"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate.",
+     "marks": 1,
+     "why": "The final count of students who passed neither is required.",
+     "how": "Evaluate 180 − 150.",
+     "accept": [
+      [
+       "30"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q15(b)"
+  },
+  {
+   "id": "w-3-4-11",
+   "text": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (c) How many passed the science test but not the math test?",
+   "marks": 2,
+   "modelAnswer": [
+    "Science but not math = n(S) − n(M ∩ S)",
+    "Science but not math = 90 − 60",
+    "Science but not math = 30"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Subtract the intersection from the science total.",
+     "marks": 1,
+     "why": "The students who passed both must be removed from those who passed science.",
+     "how": "Use 90 − 60.",
+     "accept": [
+      [
+       "90-60"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate.",
+     "marks": 1,
+     "why": "The final count in science but not math is required.",
+     "how": "Evaluate 90 − 60.",
+     "accept": [
+      [
+       "30"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q15(c)"
+  },
+  {
+   "id": "w-3-4-12",
+   "text": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. (d) How many failed the science test?",
+   "marks": 2,
+   "modelAnswer": [
+    "Number who failed science = 180 − 90",
+    "Number who failed science = 90"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Subtract science passes from the total.",
+     "marks": 1,
+     "why": "Students who failed science are the total minus those who passed science.",
+     "how": "Use 180 − 90.",
+     "accept": [
+      [
+       "180-90"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate.",
+     "marks": 1,
+     "why": "The final failure count is required.",
+     "how": "Evaluate 180 − 90.",
+     "accept": [
+      [
+       "90"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q15(d)"
+  },
+  {
+   "id": "w-3-4-13",
+   "text": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics: 150 developers like Python; 130 developers like Java; 120 developers like PHP; 70 developers like both Python and Java; 60 developers like both Python and PHP; 50 developers like both Java and PHP; 40 developers like all three languages: Python, Java and PHP. (a) How many developers use at least one of these languages?",
+   "marks": 4,
+   "modelAnswer": [
+    "n(P ∪ J ∪ H) = n(P) + n(J) + n(H) − n(P ∩ J) − n(P ∩ H) − n(J ∩ H) + n(P ∩ J ∩ H)",
+    "n(P ∪ J ∪ H) = 150 + 130 + 120 − 70 − 60 − 50 + 40",
+    "n(P ∪ J ∪ H) = 260"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Add the individual set sizes.",
+     "marks": 1,
+     "why": "The three individual totals begin the inclusion-exclusion calculation.",
+     "how": "Add the Python, Java and PHP totals.",
+     "accept": [
+      [
+       "150+130+120"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Subtract the pairwise intersections.",
+     "marks": 1,
+     "why": "The pairwise intersections have each been counted twice and must be subtracted.",
+     "how": "Subtract 70, 60 and 50.",
+     "accept": [
+      [
+       "-70",
+       "-60",
+       "-50"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add the triple intersection.",
+     "marks": 1,
+     "why": "The triple intersection was subtracted too many times and must be added back.",
+     "how": "Add 40.",
+     "accept": [
+      [
+       "+40"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the number using at least one language.",
+     "marks": 1,
+     "why": "The final union count is the requested result.",
+     "how": "Evaluate the inclusion-exclusion expression.",
+     "accept": [
+      [
+       "260"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q16(a)"
+  },
+  {
+   "id": "w-3-4-14",
+   "text": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics: 150 developers like Python; 130 developers like Java; 120 developers like PHP; 70 developers like both Python and Java; 60 developers like both Python and PHP; 50 developers like both Java and PHP; 40 developers like all three languages: Python, Java and PHP. (d) How many developers use only PHP?",
+   "marks": 4,
+   "modelAnswer": [
+    "PHP only = n(H) − n(P ∩ H) − n(J ∩ H) + n(P ∩ J ∩ H)",
+    "PHP only = 120 − 60 − 50 + 40",
+    "PHP only = 50"
+   ],
+   "followUp": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+   "noteId": "n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Start with all PHP users.",
+     "marks": 1,
+     "why": "The total PHP set is the starting count.",
+     "how": "Use n(H) = 120.",
+     "accept": [
+      [
+       "120"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Remove users in each pairwise overlap.",
+     "marks": 1,
+     "why": "Users shared with Python or Java are not PHP-only.",
+     "how": "Subtract n(P ∩ H) and n(J ∩ H).",
+     "accept": [
+      [
+       "-60",
+       "-50"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Correct for the triple overlap.",
+     "marks": 1,
+     "why": "The triple overlap was removed twice, so it must be added back once.",
+     "how": "Add 40 back.",
+     "accept": [
+      [
+       "+40"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State and calculate the answer.",
+     "marks": 1,
+     "why": "The final count must be PHP users only.",
+     "how": "Evaluate 120 − 60 − 50 + 40.",
+     "accept": [
+      [
+       "50"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 3, Q16(d)"
+  }
+ ],
+ "report": {
+  "unit": 3,
+  "title": "Sets and Functions",
+  "dropped": [
+   "Written m-3-2#5 (Ex 3.2 Q8): independent check disagreed, model answer misses a marking point",
+   "Written m-3-2#6 (Ex 3.2 Q9): independent check disagreed, model answer misses a marking point",
+   "Written m-3-2#7 (Ex 3.2 Q10): independent check disagreed, model answer misses a marking point"
+  ]
+ }
+}
