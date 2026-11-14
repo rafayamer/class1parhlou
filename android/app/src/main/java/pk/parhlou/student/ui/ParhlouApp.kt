@@ -91,6 +91,7 @@ import pk.parhlou.student.domain.PlanTask
 import pk.parhlou.student.domain.StudyPlanner
 import pk.parhlou.student.domain.Weakness
 import pk.parhlou.student.ui.screens.PlannerScreen
+import pk.parhlou.student.ui.screens.ScanChooserScreen
 import pk.parhlou.student.ui.screens.WeakTopicsScreen
 
 object Routes {
@@ -103,7 +104,8 @@ object Routes {
     const val TESTS = "tests"
     const val READINESS = "readiness"
     const val ASSESSMENT = "assessment/{id}"
-    const val EXAM = "exam/{id}"
+    const val EXAM = "exam/{id}?scan={scan}"
+    const val SCAN = "scan"
     const val RESULT = "checked/{id}"
     const val JOURNEY = "journey"
     const val PLACEHOLDER = "soon/{key}"
@@ -126,7 +128,6 @@ private val navItems = listOf(
 private val placeholders = mapOf(
     "guardian" to ("Add a parent" to "Linking a parent needs verified accounts on the server. It arrives with guardian reports."),
     "profile" to ("Profile & privacy" to "Account settings, data export and deletion arrive when sign-in is connected."),
-    "scanner" to ("Scan answer sheets" to "The camera scanner for up to 25 pages isn't built yet. In a paper you can already add page photos from your gallery."),
     "history" to ("Practice history" to "Your saved quiz and paper history appears here once your account is connected."),
 )
 
@@ -281,8 +282,23 @@ fun ParhlouApp(
                 onPlanTask = ::openPlanTask,
                 onPlanner = { nav.navigate(Routes.PLANNER) },
                 onHistory = { nav.navigate(Routes.HISTORY) },
+                // Camera: straight into the scanner of the paper in progress, or choose a paper first.
+                onScan = {
+                    val active = activeExam
+                    if (active != null && blueprints.any { it.id == active }) nav.navigate("exam/$active?scan=true")
+                    else nav.navigate(Routes.SCAN)
+                },
             )
         } }
+        composable(Routes.SCAN) {
+            ScanChooserScreen(
+                papers = blueprints.filter { paperOf(it.id)?.written?.isNotEmpty() == true },
+                readinessPassed = readinessPassed,
+                onStart = { nav.navigate("exam/$it?scan=true") { popUpTo(Routes.SCAN) { inclusive = true } } },
+                onReadiness = { nav.navigate(Routes.READINESS) },
+                onBack = nav.back(),
+            )
+        }
         composable(Routes.PLANNER) {
             PlannerScreen(
                 tasks = plan(), minutesPerDay = state.minutesPerDay, weakTopics = weakTopics(),
@@ -377,11 +393,15 @@ fun ParhlouApp(
                 )
             }
         }
-        composable(Routes.EXAM) { entry ->
+        composable(
+            Routes.EXAM,
+            arguments = listOf(androidx.navigation.navArgument("scan") { type = androidx.navigation.NavType.BoolType; defaultValue = false }),
+        ) { entry ->
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
             val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else ExamScreen(
                 blueprint = b, paper = paper, store = store, desk = desk, appScope = scope,
+                openScanner = entry.arguments?.getBoolean("scan") == true,
                 onSubmitted = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
                 onBack = nav.back(),
             )

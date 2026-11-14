@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -126,6 +127,22 @@ fun ScannerFlow(
     var retake by remember { mutableStateOf<String?>(null) }
     var cropping by remember { mutableStateOf<String?>(null) }
     val changed = { version++ }
+    val scope = rememberCoroutineScope()
+    var importing by remember { mutableStateOf(false) }
+    val gallery = rememberLauncherForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(20)) { uris ->
+        if (uris.isEmpty()) return@rememberLauncherForActivityResult
+        importing = true
+        scope.launch {
+            val photos = importFromGallery(context, store, uris)
+            val r = retake
+            if (r != null && photos.isNotEmpty()) { store.retake(r, photos.first()); retake = null }
+            else photos.forEach { store.add(it) }
+            importing = false
+            camera = false
+            changed()
+        }
+    }
+    val pickFromGallery = { gallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
 
     // Render every page whose settings changed since its last render.
     LaunchedEffect(version) {
@@ -160,6 +177,8 @@ fun ScannerFlow(
                 },
                 onReview = { camera = false; retake = null },
                 onClose = onClose,
+                onGallery = pickFromGallery,
+                importing = importing,
             )
             else -> ReviewScreen(
                 pages, questions, status,
@@ -171,6 +190,7 @@ fun ScannerFlow(
                 onCrop = { cropping = it },
                 onRetake = { retake = it; camera = true },
                 onAddMore = { camera = true },
+                onGallery = pickFromGallery,
                 onDone = onClose,
             )
         }
@@ -201,6 +221,8 @@ private fun CaptureScreen(
     onPhoto: (Photo) -> Unit,
     onReview: () -> Unit,
     onClose: () -> Unit,
+    onGallery: () -> Unit,
+    importing: Boolean,
 ) {
     val context = LocalContext.current
     val owner = LocalLifecycleOwner.current
@@ -219,7 +241,12 @@ private fun CaptureScreen(
     var error by remember { mutableStateOf<String?>(null) }
     val full = count >= PageStore.MAX_PAGES && !retaking
     val track = remember { Tracker() }
-    val cam = remember(granted) { if (granted) DocCamera(context) else null }
+    // "Try again" bumps this to build a fresh camera.
+    var attempt by remember { mutableIntStateOf(0) }
+    var cameraFailed by remember { mutableStateOf(false) }
+    val cam = remember(granted, attempt) { if (granted) DocCamera(context) else null }
+    // Page detection needs OpenCV's native library; when a phone can't load it, photos are kept as taken.
+    val detection by produceState<Boolean?>(null) { value = withContext(Dispatchers.Default) { DocVision.ready() } }
     val latestAuto = remember { mutableStateOf(auto) }.apply { value = auto }
 
     val shoot = shoot@{
@@ -267,7 +294,9 @@ private fun CaptureScreen(
         DisposableEffect(cam) {
             val main = ContextCompat.getMainExecutor(context)
             cam.onDetect = { c -> main.execute { onDetect(c) } }
-            scope.launch { runCatching { cam.bind(owner) }.onFailure { error = "The camera couldn't start." } }
+            scope.launch {
+                runCatching { cam.bind(owner) }.onFailure { cameraFailed = true }
+            }
             onDispose { cam.release() }
         }
     }
@@ -278,16 +307,27 @@ private fun CaptureScreen(
             Text(if (retaking) "Retake page" else "Scan answer pages", color = Color.White,
                 style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
             status?.let { Text(it, color = Color.White, style = MaterialTheme.typography.labelLarge) }
+            TextButton(onClick = onGallery) { Text("Gallery", color = Color.White) }
         }
         Box(Modifier.fillMaxWidth().weight(1f), contentAlignment = Alignment.Center) {
-            if (!granted || cam == null) {
+            if (!granted || cam == null || cameraFailed) {
                 Column(Modifier.padding(24.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Text("Parhlou needs the camera to scan your answer pages. Photos stay on this phone until you hand in.",
-                        color = Color.White, style = MaterialTheme.typography.bodyLarge)
-                    if (asked && !granted) Text("Camera permission was refused. You can allow it in the phone's Settings.",
-                        color = Color.White.copy(alpha = 0.8f))
-                    if (!granted) Button(onClick = { ask.launch(Manifest.permission.CAMERA) }) { Text("Allow camera") }
-                    else Text("Close and open the scanner again to start the camera.", color = Color.White)
+                    when {
+                        cameraFailed -> {
+                            Text("The camera couldn't start on this phone.", color = Color.White, style = MaterialTheme.typography.titleMedium)
+                            Text("Close other apps that use the camera and try again, or take the photos with your camera app and add them from the gallery.",
+                                color = Color.White.copy(alpha = 0.85f))
+                            Button(onClick = { cameraFailed = false; attempt++ }) { Text("Try again") }
+                        }
+                        else -> {
+                            Text("Parhlou needs the camera to scan your answer pages. Photos stay on this phone until you hand in.",
+                                color = Color.White, style = MaterialTheme.typography.bodyLarge)
+                            if (asked && !granted) Text("Camera permission was refused. You can allow it in the phone's Settings, or add photos from the gallery.",
+                                color = Color.White.copy(alpha = 0.85f))
+                            Button(onClick = { ask.launch(Manifest.permission.CAMERA) }) { Text("Allow camera") }
+                        }
+                    }
+                    OutlinedButton(onClick = onGallery) { Text("Add from gallery", color = Color.White) }
                 }
             } else {
                 Box(Modifier.fillMaxWidth().aspectRatio(3f / 4f)) {
@@ -305,7 +345,9 @@ private fun CaptureScreen(
             }
         }
         val hint = when {
+            importing -> "Adding photos…"
             error != null -> error!!
+            detection == false -> "Page edges can't be found automatically on this phone. Fill the frame with the page; photos are kept as taken."
             full -> "You've reached ${PageStore.MAX_PAGES} pages for this paper."
             busy -> "Saving…"
             corners == null -> "Fit one page in the frame on a dark surface."
@@ -321,7 +363,7 @@ private fun CaptureScreen(
                 Text(if (auto) "Auto" else "Manual", color = Color.White)
             }
             Surface(
-                onClick = { shoot() }, enabled = granted && !busy && !full, shape = CircleShape,
+                onClick = { shoot() }, enabled = granted && !cameraFailed && !busy && !full, shape = CircleShape,
                 color = if (steady) Color(0xFF7BC67B) else Color.White, modifier = Modifier.size(72.dp).testTag("shutter"),
             ) { Box(contentAlignment = Alignment.Center) { Icon(Icons.Filled.PhotoCamera, contentDescription = "Capture page", tint = Color.Black) } }
             Box(Modifier.weight(1f), contentAlignment = Alignment.CenterEnd) {
@@ -346,6 +388,7 @@ private fun ReviewScreen(
     onCrop: (String) -> Unit,
     onRetake: (String) -> Unit,
     onAddMore: () -> Unit,
+    onGallery: () -> Unit,
     onDone: () -> Unit,
 ) {
     var deleting by remember { mutableStateOf<String?>(null) }
@@ -373,7 +416,9 @@ private fun ReviewScreen(
         }
         Row(Modifier.fillMaxWidth().padding(16.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             OutlinedButton(onClick = onAddMore, enabled = pages.size < PageStore.MAX_PAGES,
-                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Add pages") }
+                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Camera") }
+            OutlinedButton(onClick = onGallery, enabled = pages.size < PageStore.MAX_PAGES,
+                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Gallery") }
             Button(onClick = onDone, modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Done") }
         }
     }

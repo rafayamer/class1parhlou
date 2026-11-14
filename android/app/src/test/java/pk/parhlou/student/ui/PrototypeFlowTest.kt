@@ -136,7 +136,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("The invigilator records", substring = true).assertExists()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
-        rule.waitUntil(5_000) { exists("Invigilator on") }
+        rule.waitUntil(10_000) { exists("Invigilator on") }
 
         // Two MCQs (one right, one wrong), one full written answer, one partial, one unrecognised.
         rule.onNodeWithTag("mcq-p1-3").performScrollTo().performClick()

@@ -37,6 +37,7 @@ import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -234,6 +235,8 @@ fun ExamScreen(
     appScope: CoroutineScope,
     onSubmitted: () -> Unit,
     onBack: () -> Unit,
+    /** Opened from the Home camera button: show the scanner straight away. */
+    openScanner: Boolean = false,
 ) {
     val id = blueprint.id
     val log by store.examLog(id).collectAsState(initial = null)
@@ -261,7 +264,7 @@ fun ExamScreen(
 
     val startedAt = log?.let { ExamLog.startedAt(it) }
     // The scanner opens inside the paper, so the invigilator doesn't count scanning as leaving it.
-    var scanning by remember { mutableStateOf(false) }
+    var scanning by rememberSaveable { mutableStateOf(openScanner) }
     var scanVersion by remember { mutableIntStateOf(0) }
     var confirmUnmatched by remember { mutableStateOf(0) }
     val questions = remember(paper) {
@@ -441,3 +444,35 @@ private fun PhotoThumb(file: File) {
 }
 
 internal fun fmt(d: Double) = if (d % 1.0 == 0.0) d.toLong().toString() else d.toString()
+
+/** Opened from the Home camera button when no paper is in progress: pick the paper whose answers you're scanning. */
+@Composable
+fun ScanChooserScreen(
+    papers: List<PaperBlueprint>,
+    readinessPassed: Boolean,
+    onStart: (String) -> Unit,
+    onReadiness: () -> Unit,
+    onBack: () -> Unit,
+) {
+    ParhlouScreen("Scan answer sheets", onBack = onBack) {
+        Muted("Scanned pages belong to a paper, so each page can be matched to the question it answers. Choose the paper you're writing.")
+        when {
+            papers.isEmpty() -> Sheet {
+                Text("No papers with written questions yet", style = MaterialTheme.typography.titleMedium)
+                Muted("Scanning is for written answers. It will be available when a paper with written questions is published.")
+            }
+            !readinessPassed -> Sheet {
+                Text("Pass the readiness check first", style = MaterialTheme.typography.titleMedium)
+                Muted("Papers unlock after a short readiness quiz. Then you can start a paper and scan your answers.")
+                BigButton("Take the readiness check", onClick = onReadiness)
+            }
+            else -> papers.forEach { b ->
+                Sheet {
+                    Text(b.title, style = MaterialTheme.typography.titleMedium)
+                    Muted("${b.durationMinutes} minutes · ${fmt(b.totalMarks)} marks. Starting it starts the timer and the invigilator.")
+                    SecondaryButton("Start and scan", onClick = { onStart(b.id) })
+                }
+            }
+        }
+    }
+}

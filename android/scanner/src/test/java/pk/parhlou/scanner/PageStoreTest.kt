@@ -14,6 +14,8 @@ import java.io.File
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
+// Real image decoding, so a file that isn't a picture is recognised as such.
+@org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
 class PageStoreTest {
     private lateinit var dir: File
     private lateinit var store: PageStore
@@ -100,5 +102,21 @@ class PageStoreTest {
         assertNull(store.add(photo("extra")))
         store.clear()
         assertTrue(PageStore(dir).pages().isEmpty())
+    }
+
+    @Test fun galleryPhotosAreCopiedInWithTheirUprightSize() = kotlinx.coroutines.runBlocking {
+        val ctx = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val src = File(ctx.cacheDir, "picked.jpg").apply {
+            outputStream().use { android.graphics.Bitmap.createBitmap(300, 400, android.graphics.Bitmap.Config.ARGB_8888)
+                .compress(android.graphics.Bitmap.CompressFormat.JPEG, 80, it) }
+        }
+        val notAnImage = File(ctx.cacheDir, "notes.txt").apply { writeText("hello") }
+        val photos = importFromGallery(ctx, store, listOf(android.net.Uri.fromFile(src), android.net.Uri.fromFile(notAnImage)))
+        assertEquals(1, photos.size)
+        assertEquals(300, photos[0].width)
+        assertEquals(400, photos[0].height)
+        assertTrue(src.exists()) // the student's own photo is left alone
+        val page = store.add(photos[0])!!
+        assertTrue(File(page.src).exists())
     }
 }

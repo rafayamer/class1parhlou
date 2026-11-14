@@ -16,6 +16,8 @@ import androidx.compose.ui.test.performSemanticsAction
 import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
+import org.junit.Assert.assertEquals
+import kotlinx.coroutines.flow.first
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.swipe
@@ -152,5 +154,42 @@ class NavigationTest {
         rule.onNodeWithContentDescription(fmt.format(cal.time)).performTouchInput { click() }
         rule.onNodeWithText("Open today's plan").performScrollTo().performTouchInput { click() }
         rule.waitUntil(3_000) { exists("Today's plan") && !onHome() }
+    }
+
+    private fun tapCamera() {
+        rule.onNodeWithContentDescription("Scan answer sheets").performTouchInput { click() }
+        rule.waitForIdle()
+    }
+
+    @Test fun homeCameraWithLockedPapersExplainsTheReadinessCheck() {
+        launch()
+        tapCamera()
+        rule.waitUntil(3_000) { exists("Pass the readiness check first") }
+        rule.onNodeWithText("Take the readiness check").performTouchInput { click() }
+        rule.waitUntil(3_000) { !exists("Pass the readiness check first") && !onHome() }
+    }
+
+    @Test fun homeCameraStartsAPaperWithTheScannerOpen() {
+        runBlocking { store.setReadinessPassed(true) }
+        launch()
+        tapCamera()
+        rule.waitUntil(3_000) { exists("Start and scan") }
+        rule.onNodeWithText("Start and scan").performTouchInput { click() }
+        // The scanner is open inside the paper; the camera isn't allowed in tests, so the gallery is offered.
+        rule.waitUntil(5_000) { exists("Scan answer pages") && exists("Add from gallery") }
+        runBlocking { assertEquals(pk.parhlou.student.data.SampleContent.CHAPTER_TEST, store.activeExam.first()) }
+        // Closing the scanner shows the paper, whose timer is running.
+        rule.onNodeWithContentDescription("Close scanner").performTouchInput { click() }
+        rule.waitUntil(3_000) { exists("Invigilator on") }
+    }
+
+    @Test fun homeCameraReopensThePaperInProgress() {
+        runBlocking {
+            store.setReadinessPassed(true)
+            store.appendExamEvent(pk.parhlou.student.data.SampleContent.CHAPTER_TEST, pk.parhlou.student.domain.ExamEventType.STARTED, System.currentTimeMillis())
+        }
+        launch()
+        tapCamera()
+        rule.waitUntil(5_000) { exists("Scan answer pages") && !exists("Start and scan") }
     }
 }

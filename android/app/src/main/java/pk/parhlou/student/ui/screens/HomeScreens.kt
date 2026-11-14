@@ -139,6 +139,7 @@ fun HomeScreen(
     onPlanTask: (pk.parhlou.student.domain.PlanTask) -> Unit = {},
     onPlanner: () -> Unit = {},
     onHistory: () -> Unit = {},
+    onScan: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -191,7 +192,7 @@ fun HomeScreen(
                 Box(contentAlignment = Alignment.Center) { Text("Ask a question", style = MaterialTheme.typography.labelLarge) }
             }
             QuickIcon(Icons.AutoMirrored.Filled.MenuBook, "Open my book", onSubjects)
-            QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", { onPlaceholder("scanner") })
+            QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", onScan)
         }
 
         // Hero: the one thing to do now, with assessed progress

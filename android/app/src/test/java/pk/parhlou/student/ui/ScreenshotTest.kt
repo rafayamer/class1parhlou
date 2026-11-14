@@ -127,7 +127,7 @@ class ScreenshotTest {
         rule.waitUntil(5_000) { exists("Do this now") }
         rule.onNodeWithText("Today's tasks").performScrollTo()
         save("10-home-plan-$mode")
-        rule.onNodeWithText("Full plan").performScrollTo().performClick()
+        rule.onNodeWithText("Open today's plan").performScrollTo().performClick()
         save("11-plan-$mode")
         rule.onNodeWithText("See 2 weak topics").performScrollTo().performClick()
         save("12-weak-topics-$mode")
