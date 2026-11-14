@@ -280,6 +280,7 @@ fun ParhlouApp(
                 plan = plan(),
                 onPlanTask = ::openPlanTask,
                 onPlanner = { nav.navigate(Routes.PLANNER) },
+                onHistory = { nav.navigate(Routes.HISTORY) },
             )
         } }
         composable(Routes.PLANNER) {

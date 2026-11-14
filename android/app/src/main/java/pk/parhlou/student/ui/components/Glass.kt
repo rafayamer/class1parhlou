@@ -1,6 +1,27 @@
 package pk.parhlou.student.ui.components
 
 import android.provider.Settings
+import android.view.HapticFeedbackConstants
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.snap
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.Role
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.togetherWith
 import androidx.compose.animation.core.animateFloatAsState
@@ -26,14 +47,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.semantics.selected
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.styropyr0.prismal.PrismalBackdrop
-import com.styropyr0.prismal.components.LocalPrismalBottomTabHighlightedIndex
-import com.styropyr0.prismal.components.PrismalGlassBottomTab
-import com.styropyr0.prismal.components.PrismalGlassBottomTabs
 import com.styropyr0.prismal.drawPrismalGlass
 import com.styropyr0.prismal.prismalGlassEffects
 import com.styropyr0.prismal.shapes.PrismalCapsule
@@ -72,7 +88,11 @@ fun Modifier.pressScale(interaction: MutableInteractionSource, pressed: Float = 
     return graphicsLayer { scaleX = scale; scaleY = scale }
 }
 
-/** Frosted glass capsule sampling [backdrop]; used for the floating title bar and glass buttons. */
+/**
+ * Frosted glass capsule sampling [backdrop]; used for the floating title bar and glass buttons.
+ * Only put it on a background element: anything tappable inside a wide glass capsule stops receiving taps
+ * (the layer clips hit-testing to an outline that rejects them). See [GlassTabBar].
+ */
 @Composable
 fun Modifier.glassCapsule(backdrop: PrismalBackdrop): Modifier {
     val density = LocalDensity.current
@@ -85,7 +105,10 @@ fun Modifier.glassCapsule(backdrop: PrismalBackdrop): Modifier {
     )
 }
 
-/** iOS-style glass tab bar with a draggable liquid selection droplet. */
+/**
+ * Floating glass tab bar. Plain tap targets (one per section) over a frosted capsule, with a pill that slides to the
+ * selected tab. Built here rather than with Prismal's droplet tabs, whose drag overlay swallowed taps.
+ */
 @Composable
 fun GlassTabBar(
     items: List<NavItem>,
@@ -93,32 +116,49 @@ fun GlassTabBar(
     onSelect: (Int) -> Unit,
     backdrop: PrismalBackdrop,
 ) {
-    val selectedColor = MaterialTheme.colorScheme.secondary
+    val reduced = LocalReducedMotion.current
+    val view = LocalView.current
+    val selectedColor = MaterialTheme.colorScheme.onPrimaryContainer
     val idleColor = MaterialTheme.colorScheme.onSurface
     Box(
         Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 20.dp, vertical = 10.dp),
         contentAlignment = Alignment.Center,
     ) {
-        PrismalGlassBottomTabs(
-            selectedTabIndex = { selectedIndex },
-            onTabSelected = onSelect,
-            backdrop = backdrop,
-            tabsCount = items.size,
-            tintDropletContent = true,
-            dropletContentTint = selectedColor,
-            hapticFeedback = true,
-        ) {
-            items.forEachIndexed { index, item ->
-                val highlighted = LocalPrismalBottomTabHighlightedIndex.current() == index
-                val color = if (highlighted) selectedColor else idleColor
-                PrismalGlassBottomTab(
-                    onClick = { onSelect(index) },
-                    modifier = Modifier.semantics { selected = index == selectedIndex },
-                ) {
-                    Icon(item.icon, contentDescription = null, tint = color, modifier = Modifier.size(24.dp))
-                    Text(item.label, style = MaterialTheme.typography.labelMedium, color = color)
+        // The glass is drawn on its own layer behind the tabs, never around them: the glass clips touches to its
+        // outline, and for a wide capsule that outline rejected every tap (the bar didn't respond on phones).
+        Box(Modifier.fillMaxWidth().height(64.dp).shadow(10.dp, CircleShape, clip = false)) {
+        Box(Modifier.matchParentSize().glassCapsule(backdrop))
+        BoxWithConstraints(Modifier.fillMaxSize().padding(4.dp)) {
+            val tabWidth = maxWidth / items.size
+            val pillX by animateDpAsState(
+                tabWidth * selectedIndex,
+                if (reduced) snap() else spring(dampingRatio = 0.75f, stiffness = Spring.StiffnessMediumLow),
+                label = "tabPill",
+            )
+            Box(
+                Modifier.offset(x = pillX).width(tabWidth).fillMaxHeight()
+                    .clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer),
+            )
+            Row(Modifier.fillMaxSize().selectableGroup()) {
+                items.forEachIndexed { index, item ->
+                    val selected = index == selectedIndex
+                    Column(
+                        Modifier.weight(1f).fillMaxHeight().clip(CircleShape)
+                            .selectable(selected = selected, role = Role.Tab) {
+                                view.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                                onSelect(index)
+                            }
+                            .testTag("tab-${item.route}"),
+                        verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        val color = if (selected) selectedColor else idleColor
+                        Icon(item.icon, contentDescription = null, tint = color, modifier = Modifier.size(24.dp))
+                        Text(item.label, style = MaterialTheme.typography.labelMedium, color = color)
+                    }
                 }
             }
+        }
         }
     }
 }

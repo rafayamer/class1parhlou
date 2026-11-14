@@ -153,3 +153,24 @@ class PaperAssemblerTest {
         assertEquals("Unit 5", unitRanges(listOf(5)))
     }
 }
+
+class DaySummaryTest {
+    @Test fun countsOneDaysPracticeAndReadsNaturally() {
+        val day = 24 * 60 * 60 * 1000L
+        val start = 1_800_000_000_000L
+        val history = listOf(
+            LoggedEvidence(start + 1000, "m-1-1", Evidence.QuizCompleted(80)),
+            LoggedEvidence(start + 2000, "m-1-2", Evidence.QuizCompleted(60)),
+            LoggedEvidence(start + 3000, "m-1-1", Evidence.WrittenSubmitted),
+            LoggedEvidence(start + 4000, "paper:unit-1", Evidence.DemoCheckedExam(70)),
+            LoggedEvidence(start + 4000, "m-1-1", Evidence.DemoCheckedExam(70)), // module copy of the same paper
+            LoggedEvidence(start + 5000, "topic:n-surds", Evidence.TopicCorrect),
+            LoggedEvidence(start + day + 1, "m-1-1", Evidence.QuizCompleted(90)), // next day
+        )
+        val s = DaySummary.of(history, start, start + day)
+        assertEquals(DaySummary(quizzes = 2, written = 1, papers = 1, topicsFixed = 1), s)
+        assertEquals("2 quizzes, 1 written answer, 1 paper and 1 topic fixed", s.describe())
+        assertEquals("1 quiz", DaySummary(1, 0, 0, 0).describe())
+        assertTrue(DaySummary.of(history, start - day, start).empty)
+    }
+}

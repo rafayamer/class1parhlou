@@ -123,3 +123,31 @@ object StudyPlanner {
     private fun times(n: Int) = when (n) { 1 -> "once"; 2 -> "twice"; else -> "$n times" }
     private fun ago(ms: Long) = when (val d = days(ms)) { 0 -> "today"; 1 -> "yesterday"; else -> "$d days ago" }
 }
+
+/** What a student did on one day, for the Home week calendar. */
+data class DaySummary(val quizzes: Int, val written: Int, val papers: Int, val topicsFixed: Int) {
+    val empty: Boolean get() = quizzes + written + papers + topicsFixed == 0
+
+    /** "2 quizzes, 1 written answer and 1 paper", or "" when nothing was done. */
+    fun describe(): String {
+        fun n(count: Int, one: String, many: String) = if (count == 0) null else "$count ${if (count == 1) one else many}"
+        val parts = listOfNotNull(
+            n(quizzes, "quiz", "quizzes"), n(written, "written answer", "written answers"),
+            n(papers, "paper", "papers"), n(topicsFixed, "topic fixed", "topics fixed"),
+        )
+        return when (parts.size) { 0 -> ""; 1 -> parts[0]; else -> parts.dropLast(1).joinToString(", ") + " and " + parts.last() }
+    }
+
+    companion object {
+        /** Evidence logged in [from, until). Paper marks are counted once per paper. */
+        fun of(history: List<LoggedEvidence>, from: Long, until: Long): DaySummary {
+            val day = history.filter { it.at in from until until }
+            return DaySummary(
+                quizzes = day.count { it.evidence is Evidence.QuizCompleted },
+                written = day.count { it.evidence == Evidence.WrittenSubmitted },
+                papers = day.filter { it.key.startsWith("paper:") }.map { it.key }.distinct().size,
+                topicsFixed = day.count { it.key.startsWith(TOPIC_PREFIX) && it.evidence == Evidence.TopicCorrect },
+            )
+        }
+    }
+}

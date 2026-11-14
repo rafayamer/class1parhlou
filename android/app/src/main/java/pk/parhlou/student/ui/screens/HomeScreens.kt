@@ -1,5 +1,10 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.ui.semantics.Role
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -133,6 +138,7 @@ fun HomeScreen(
     plan: List<pk.parhlou.student.domain.PlanTask> = emptyList(),
     onPlanTask: (pk.parhlou.student.domain.PlanTask) -> Unit = {},
     onPlanner: () -> Unit = {},
+    onHistory: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -225,7 +231,9 @@ fun HomeScreen(
             }
         }
 
-        Box(Modifier.appear(4)) { WeekStrip(studyDays = onboarding.studyDaysPerWeek) }
+        Box(Modifier.appear(4)) {
+            WeekStrip(onboarding.studyDaysPerWeek, progress.history(), tasksToday = plan.size, onPlan = onPlanner, onHistory = onHistory)
+        }
 
         Row(Modifier.appear(5), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Tile("My book", Icons.AutoMirrored.Filled.MenuBook, onSubjects, Modifier.weight(1f))
@@ -270,34 +278,85 @@ private fun QuickIcon(icon: androidx.compose.ui.graphics.vector.ImageVector, des
 
 /** This week's days with today highlighted. A calendar only: it shows no invented sessions. */
 @Composable
-private fun WeekStrip(studyDays: Int) {
-    val cal = java.util.Calendar.getInstance()
-    val today = cal.get(java.util.Calendar.DAY_OF_MONTH)
-    cal.set(java.util.Calendar.DAY_OF_WEEK, cal.firstDayOfWeek)
-    val names = java.text.SimpleDateFormat("EEE", java.util.Locale.getDefault())
+private fun WeekStrip(
+    studyDays: Int,
+    history: List<pk.parhlou.student.domain.LoggedEvidence>,
+    tasksToday: Int,
+    onPlan: () -> Unit,
+    onHistory: () -> Unit,
+) {
+    // Seven days starting on the week's first day; tap a day to see what was done (or what's planned).
+    val days = remember {
+        val cal = java.util.Calendar.getInstance().apply {
+            set(java.util.Calendar.HOUR_OF_DAY, 0); set(java.util.Calendar.MINUTE, 0)
+            set(java.util.Calendar.SECOND, 0); set(java.util.Calendar.MILLISECOND, 0)
+            set(java.util.Calendar.DAY_OF_WEEK, firstDayOfWeek)
+        }
+        List(7) { cal.timeInMillis.also { cal.add(java.util.Calendar.DAY_OF_MONTH, 1) } }
+    }
+    val now = System.currentTimeMillis()
+    val todayIndex = days.indexOfLast { it <= now }.coerceAtLeast(0)
+    var selected by rememberSaveable { mutableIntStateOf(todayIndex) }
+    val dayEnd = { i: Int -> if (i < 6) days[i + 1] else days[6] + 24 * 60 * 60 * 1000L }
+    val summaries = remember(history.size, days) { days.indices.map { pk.parhlou.student.domain.DaySummary.of(history, days[it], dayEnd(it)) } }
+    val dayName = java.text.SimpleDateFormat("EEE", java.util.Locale.getDefault())
+    val longName = java.text.SimpleDateFormat("EEEE d MMMM", java.util.Locale.getDefault())
+    val dayNumber = java.text.SimpleDateFormat("d", java.util.Locale.getDefault())
     Sheet {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("This week", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
             Muted("$studyDays study days planned")
         }
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            repeat(7) {
-                val day = cal.get(java.util.Calendar.DAY_OF_MONTH)
-                val isToday = day == today
-                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Text(names.format(cal.time).take(2), style = MaterialTheme.typography.labelMedium,
+        Row(Modifier.fillMaxWidth().selectableGroup(), horizontalArrangement = Arrangement.SpaceBetween) {
+            days.forEachIndexed { i, start ->
+                val isToday = i == todayIndex
+                val isSelected = i == selected
+                Column(
+                    Modifier.clip(RoundedCornerShape(14.dp))
+                        .selectable(selected = isSelected, role = Role.Tab) { selected = i }
+                        .padding(horizontal = 4.dp, vertical = 2.dp)
+                        .semantics { contentDescription = longName.format(java.util.Date(start)) },
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(4.dp),
+                ) {
+                    Text(dayName.format(java.util.Date(start)).take(2), style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Box(
                         Modifier.size(34.dp).clip(CircleShape)
-                            .background(if (isToday) MaterialTheme.colorScheme.primaryContainer else Color.Transparent),
+                            .background(
+                                when {
+                                    isSelected -> MaterialTheme.colorScheme.primaryContainer
+                                    isToday -> MaterialTheme.colorScheme.surfaceVariant
+                                    else -> Color.Transparent
+                                },
+                            ),
                         contentAlignment = Alignment.Center,
                     ) {
-                        Text("$day", style = MaterialTheme.typography.labelLarge,
-                            color = if (isToday) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface)
+                        Text(dayNumber.format(java.util.Date(start)), style = MaterialTheme.typography.labelLarge,
+                            color = if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface)
                     }
+                    // A dot under days with recorded practice.
+                    Box(Modifier.size(6.dp).clip(CircleShape).background(
+                        if (summaries[i].empty) Color.Transparent else MaterialTheme.colorScheme.secondary))
                 }
-                cal.add(java.util.Calendar.DAY_OF_MONTH, 1)
             }
+        }
+        val title = if (selected == todayIndex) "Today" else longName.format(java.util.Date(days[selected]))
+        val done = summaries[selected]
+        Text(title, style = MaterialTheme.typography.titleSmall)
+        when {
+            selected == todayIndex -> {
+                Muted(
+                    (if (done.empty) "Nothing practised yet today. " else "Done so far: ${done.describe()}. ") +
+                        if (tasksToday > 0) "$tasksToday ${if (tasksToday == 1) "task is" else "tasks are"} in today's plan." else "",
+                )
+                TextButton(onClick = onPlan, modifier = Modifier.heightIn(min = 48.dp)) { Text("Open today's plan") }
+            }
+            selected < todayIndex -> {
+                Muted(if (done.empty) "No practice recorded on this day." else "You did ${done.describe()}.")
+                if (!done.empty) TextButton(onClick = onHistory, modifier = Modifier.heightIn(min = 48.dp)) { Text("See practice history") }
+            }
+            else -> Muted("Coming up. Your plan for this day is made on the day, from what you practise and miss before then.")
         }
     }
 }
