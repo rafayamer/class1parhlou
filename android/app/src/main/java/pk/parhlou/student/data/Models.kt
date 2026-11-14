@@ -50,6 +50,25 @@ data class Module(
     val status: ReviewStatus,
     /** Taught like a home tutor: explanations, a worked example step by step, your turn, exam tips. */
     val lesson: Lesson? = null,
+    /** Every worked example and exercise question of this section, with step-by-step solutions. */
+    val solutions: List<BookSolution> = emptyList(),
+)
+
+enum class SolutionKind { EXAMPLE, EXERCISE }
+
+/**
+ * One textbook example or exercise question with its solution in the book's method. [checked] is false when no
+ * solution passed the checks; then only the textbook's own answer is shown, never an unchecked solution.
+ */
+data class BookSolution(
+    val kind: SolutionKind,
+    val source: String,
+    val question: String,
+    val steps: List<String>,
+    val answer: String,
+    val figure: String,
+    val accept: List<List<String>>,
+    val checked: Boolean,
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */

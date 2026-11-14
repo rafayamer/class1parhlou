@@ -18,10 +18,30 @@ if (!units.length) throw new Error("no built units");
 const norm = (s) => s.toLowerCase().replace(/\s+/g, " ").trim();
 const notes = [], quiz = [], written = [], blueprints = [], papers = [], readiness = [];
 
+const coverage = [];
 for (const u of units) {
-  // MCQs: no repeated stems within a unit.
+  // Full book coverage (build-solutions.mjs): every example and exercise question, and every book MCQ.
+  const solFile = `${ROOT}/units/u-${u.chapter.number}-solutions.json`;
+  const sol = existsSync(solFile) ? JSON.parse(readFileSync(solFile, "utf8")) : null;
+  const sectionOf = (m, i) => sol?.sections.length === u.chapter.modules.length ? sol.sections[i]
+    : sol?.sections.find((s) => m.title.startsWith(s.number + " ") || (s.number.endsWith(".R") && /review/i.test(m.title)));
+  u.chapter.modules.forEach((m, i) => {
+    const s = sectionOf(m, i);
+    m.solutions = s?.solutions ?? [];
+    for (const q of s?.mcqs ?? []) {
+      u.quiz.push({ id: `b-${u.chapter.number}-${i + 1}-${u.quiz.length + 1}`, stem: q.stem, options: q.options, correctIndex: q.correctIndex,
+        rationales: q.rationales, status: "APPROVED", noteId: u.notes.find((n) => n.moduleId === m.id)?.id ?? null, moduleId: m.id });
+    }
+  });
+  if (sol) {
+    const ex = u.chapter.modules.flatMap((m) => m.solutions.filter((x) => x.kind === "EXERCISE"));
+    coverage.push(`Unit ${u.chapter.number}: ${u.chapter.modules.reduce((n, m) => n + m.solutions.filter((x) => x.kind === "EXAMPLE").length, 0)} examples, ${ex.length} exercise questions (${ex.filter((x) => x.checked).length} with checked step-by-step solutions)`);
+  } else coverage.push(`Unit ${u.chapter.number}: full solutions not built yet`);
+
+  // MCQs: no repeated stems within a unit; the book's own come first.
   const seen = new Set();
-  const unitQuiz = u.quiz.filter((q) => !seen.has(norm(q.stem)) && seen.add(norm(q.stem)));
+  const ordered = [...u.quiz.filter((q) => q.id.startsWith("b-")), ...u.quiz.filter((q) => !q.id.startsWith("b-"))];
+  const unitQuiz = ordered.filter((q) => !seen.has(norm(q.stem)) && seen.add(norm(q.stem)));
   notes.push(...u.notes);
   quiz.push(...unitQuiz);
   const unitWritten = u.written.map(({ source, ...w }) => w);
@@ -90,6 +110,7 @@ const bundle = {
 const problems = bundleProblems(bundle, SUBJECT);
 writeFileSync(OUT, JSON.stringify(bundle));
 const kb = Math.round(JSON.stringify(bundle).length / 1024);
+coverage.forEach((c) => console.log(c));
 console.log(`Course: ${units.length} units, ${units.reduce((s, u) => s + u.chapter.modules.length, 0)} modules, ${notes.length} notes, ${quiz.length} MCQs, ${written.length} written, ${blueprints.length} unit tests, ${kb} KB → ${OUT}`);
 if (problems.length) {
   console.log(`${problems.length} publishing problems:`);

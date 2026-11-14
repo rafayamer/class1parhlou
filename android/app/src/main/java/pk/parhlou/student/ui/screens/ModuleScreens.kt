@@ -189,6 +189,7 @@ private fun ReadStage(module: Module, progress: ProgressStore, onNext: () -> Uni
             CheckRow(task, checked = i in done, onChange = { if (it) done += i else done -= i })
         }
     }
+    if (module.solutions.isNotEmpty()) BookSolutions(module)
     BigButton("Next: write", onClick = {
         if (done.size == module.readingTasks.size) progress.add(module.id, Evidence.ReadingChecked)
         onNext()

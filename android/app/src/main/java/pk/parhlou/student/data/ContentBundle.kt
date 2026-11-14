@@ -105,6 +105,15 @@ object ContentBundle {
         writtenQuestions = m.getJSONArray("writtenQuestions").list(::readWritten),
         status = status(m.getString("status")),
         lesson = m.optJSONObject("lesson")?.let(::readLesson),
+        solutions = m.optJSONArray("solutions")?.list { s ->
+            BookSolution(
+                kind = if (s.optString("kind") == "EXAMPLE") SolutionKind.EXAMPLE else SolutionKind.EXERCISE,
+                source = s.optString("source"), question = s.getString("question"),
+                steps = s.optJSONArray("steps")?.strings().orEmpty(), answer = s.optString("answer"), figure = s.optString("figure"),
+                accept = s.optJSONArray("accept")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
+                checked = s.optBoolean("checked", true),
+            )
+        }.orEmpty(),
     )
 
     private fun readLesson(l: JSONObject) = Lesson(

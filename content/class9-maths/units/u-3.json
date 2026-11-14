@@ -1853,26 +1853,6 @@
    "moduleId": "m-3-4"
   },
   {
-   "id": "q-3-4-6",
-   "stem": "If n(A ∪ B) = 50, n(A) = 30 and n(B) = 35, then n(A ∩ B) = :",
-   "options": [
-    "23",
-    "15",
-    "9",
-    "40"
-   ],
-   "correctIndex": 1,
-   "rationales": [
-    "This does not satisfy n(A ∪ B) = n(A) + n(B) − n(A ∩ B).",
-    "Using the union formula gives 30 + 35 − 50 = 15.",
-    "This is not the intersection size given by the union formula.",
-    "The intersection cannot be 40 when the union has 50 elements and the sets have 30 and 35 elements."
-   ],
-   "status": "APPROVED",
-   "noteId": "n-3-4",
-   "moduleId": "m-3-4"
-  },
-  {
    "id": "q-3-4-7",
    "stem": "If A = {1, 2, 3, 4} and B = {x, y, z}, then cartesian product of A and B contains exactly ______ elements.",
    "options": [
@@ -2489,6 +2469,9 @@
      "accept": [
       [
        "2^2=4"
+      ],
+      [
+       "4"
       ]
      ]
     }
@@ -2863,14 +2846,15 @@
    "source": "Ex 3.2 Q7"
   },
   {
-   "id": "w-3-2-9",
-   "text": "(a) Find (A′ ∪ B′) ∩ C, where A is labelled from 50 to 89, B from 101 to 150, and C from 1 to 49 and 90 to 100.",
+   "id": "w-3-2-7",
+   "text": "In sports events, 19 people wear blue shirts, 15 wear green shirts, 3 wear blue and green shirts, 4 wear a cap and blue shirts, and 2 wear a cap and green shirts. The total number of people with either a blue or green shirt or cap is 34. How many people are wearing caps?",
    "marks": 4,
    "modelAnswer": [
-    "C = {1, 2, …, 49, 90, 91, …, 100}",
-    "C ∩ A = ∅ and C ∩ B = ∅",
-    "Therefore, (A′ ∪ B′) ∩ C = C",
-    "(A′ ∪ B′) ∩ C = {1, 2, …, 49, 90, 91, …, 100}"
+    "Let B = people wearing blue shirts, G = people wearing green shirts and C = people wearing caps.",
+    "Let n(C) = x.",
+    "n(B ∪ G ∪ C) = n(B) + n(G) + n(C) − n(B ∩ G) − n(B ∩ C) − n(G ∩ C)",
+    "34 = 19 + 15 + x − 3 − 4 − 2",
+    "x = 9"
    ],
    "followUp": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
    "noteId": "n-3-2",
@@ -2880,60 +2864,62 @@
    "rubric": [
     {
      "id": "a",
-     "description": "Identify the disjoint employee ranges.",
+     "description": "Identify the given set counts and union size.",
      "marks": 1,
-     "why": "The labels show which employee ranges belong to each set.",
-     "how": "Read the ranges for A, B and C from the question.",
+     "why": "Correct use of the given counts is necessary for the calculation.",
+     "how": "Assign sets for blue shirts, green shirts and caps.",
      "accept": [
       [
-       "C∩A=∅",
-       "C∩B=∅"
+       "19",
+       "15",
+       "3",
+       "4",
+       "2",
+       "34"
       ]
      ]
     },
     {
      "id": "b",
-     "description": "Simplify the expression using the disjoint ranges.",
+     "description": "Set up and rearrange the inclusion-exclusion equation.",
      "marks": 1,
-     "why": "The expression asks for elements in C that also satisfy the complement condition.",
-     "how": "Since C has no elements in A or B, every element of C is in A′ ∪ B′.",
+     "why": "The union count must be related to the set sizes and overlaps.",
+     "how": "Let x be the number wearing caps and use the given pairwise overlap counts.",
      "accept": [
       [
-       "C"
+       "34=19+15+x-3-4-2"
+      ],
+      [
+       "x=34-19-15+3+4+2"
       ]
      ]
     },
     {
      "id": "c",
-     "description": "List the elements of C.",
+     "description": "Calculate the unknown count.",
      "marks": 1,
-     "why": "The result must include both stated ranges in C.",
-     "how": "Use the labels 1 through 49 and 90 through 100.",
+     "why": "The calculation must produce the number of people wearing caps.",
+     "how": "Evaluate the rearranged equation.",
      "accept": [
       [
-       "1",
-       "49",
-       "90",
-       "100"
+       "9"
       ]
      ]
     },
     {
      "id": "d",
-     "description": "State the final set.",
+     "description": "State the final answer.",
      "marks": 1,
-     "why": "The final set must match the two ranges specified for C.",
-     "how": "Write both ranges in set notation.",
+     "why": "A clear final answer completes the response to the question.",
+     "how": "State the number of people wearing caps.",
      "accept": [
       [
-       "{1,2",
-       "90,91",
-       "100}"
+       "9"
       ]
      ]
     }
    ],
-   "source": "Ex 3.2 Q11(a)"
+   "source": "Ex 3.2 Q9"
   },
   {
    "id": "w-3-2-10",
@@ -3022,6 +3008,9 @@
      "accept": [
       [
        "125=60+70+40-25-15-10+x"
+      ],
+      [
+       "x=125-60-70-40+25+15+10"
       ]
      ]
     },
@@ -4652,8 +4641,9 @@
   "title": "Sets and Functions",
   "dropped": [
    "Written m-3-2#5 (Ex 3.2 Q8): independent check disagreed, model answer misses a marking point",
-   "Written m-3-2#6 (Ex 3.2 Q9): independent check disagreed, model answer misses a marking point",
-   "Written m-3-2#7 (Ex 3.2 Q10): independent check disagreed, model answer misses a marking point"
+   "Written m-3-2#7 (Ex 3.2 Q10): independent check disagreed, model answer misses a marking point",
+   "Written m-3-2#8 (Ex 3.2 Q11(a)): model answer misses a marking point",
+   "MCQ m-3-4#5: independent check disagreed"
   ]
  }
 }

@@ -994,10 +994,10 @@
         "how": "Write tan π/6 = tan 30° = 1/√3.",
         "accept": [
          [
-          "1/√3"
+          "tan30°"
          ],
          [
-          "√3/3"
+          "1/√3"
          ]
         ]
        },
@@ -1482,7 +1482,8 @@
         "how": "Write tan 60° = h/40.",
         "accept": [
          [
-          "tan60°=height/40"
+          "tan60°",
+          "height/40"
          ]
         ]
        },
@@ -1494,7 +1495,10 @@
         "how": "Evaluate 40 tan 60° and include metres.",
         "accept": [
          [
-          "69.28"
+          "40√3"
+         ],
+         [
+          "69.28m"
          ]
         ]
        }
@@ -4927,11 +4931,11 @@
      "how": "Take base = √3 and perpendicular = √2.",
      "accept": [
       [
-       "base=√3",
-       "perpendicular=√2"
+       "√3/√2"
       ],
       [
-       "√3/√2"
+       "base=√3",
+       "perpendicular=√2"
       ]
      ]
     },
@@ -4969,381 +4973,13 @@
      "how": "Take the reciprocals of sin θ and cos θ.",
      "accept": [
       [
-       "√(5/2)",
-       "√(5/3)"
+       "cosecθ=√(5/2)",
+       "secθ=√(5/3)"
       ]
      ]
     }
    ],
    "source": "Ex 6.3 Q1(v)"
-  },
-  {
-   "id": "w-6-3-6",
-   "text": "Prove the following trigonometric identity: (sin θ + cos θ)² = 1 + 2 sin θ cos θ",
-   "marks": 2,
-   "modelAnswer": [
-    "L.H.S = (sin θ + cos θ)²",
-    "= sin² θ + 2 sin θ cos θ + cos² θ",
-    "= 1 + 2 sin θ cos θ = R.H.S"
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Expand the left-hand side.",
-     "marks": 1,
-     "why": "Expanding the square makes the identity usable.",
-     "how": "Write out the two square terms and the middle term.",
-     "accept": [
-      [
-       "sin² θ + 2 sin θ cos θ + cos² θ"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Use sin² θ + cos² θ = 1.",
-     "marks": 1,
-     "why": "Using the Pythagoras identity reaches the required right-hand side.",
-     "how": "Replace the two square terms by 1.",
-     "accept": [
-      [
-       "1 + 2 sin θ cos θ"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q2"
-  },
-  {
-   "id": "w-6-3-8",
-   "text": "Prove the following trigonometric identity: sin θ/cosec θ + cos θ/sec θ = 1",
-   "marks": 2,
-   "modelAnswer": [
-    "L.H.S = sin θ/(1/sin θ) + cos θ/(1/cos θ)",
-    "= sin² θ + cos² θ",
-    "= 1 = R.H.S"
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Rewrite cosec θ and sec θ using sine and cosine.",
-     "marks": 1,
-     "why": "Using reciprocal ratios changes the fractions into squares.",
-     "how": "Obtain sin² θ + cos² θ.",
-     "accept": [
-      [
-       "sin² θ",
-       "cos² θ"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Apply sin² θ + cos² θ = 1.",
-     "marks": 1,
-     "why": "The Pythagoras identity gives the required result.",
-     "how": "Simplify the sum to 1.",
-     "accept": [
-      [
-       "1"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q4"
-  },
-  {
-   "id": "w-6-3-11",
-   "text": "Prove the following trigonometric identity: (1 − sin θ)/cos θ = cos θ/(1 + sin θ)",
-   "marks": 4,
-   "modelAnswer": [
-    "L.H.S = (1 − sin θ)/cos θ",
-    "= (1 − sin θ)(1 + sin θ)/[cos θ(1 + sin θ)]",
-    "= (1 − sin² θ)/[cos θ(1 + sin θ)]",
-    "= cos² θ/[cos θ(1 + sin θ)]",
-    "= cos θ/(1 + sin θ) = R.H.S"
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Transform the left-hand side by multiplying by 1 + sin θ.",
-     "marks": 1,
-     "why": "Multiplying by the conjugate sets up the Pythagoras identity.",
-     "how": "Use the conjugate factor in the numerator and denominator.",
-     "accept": [
-      [
-       "(1−sin θ)(1+sin θ)",
-       "1−sin² θ"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Replace 1 − sin² θ with cos² θ.",
-     "marks": 1,
-     "why": "The identity 1 − sin² θ = cos² θ makes the cancellation possible.",
-     "how": "Apply sin² θ + cos² θ = 1.",
-     "accept": [
-      [
-       "cos² θ"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Simplify the transformed left-hand side.",
-     "marks": 1,
-     "why": "Canceling a factor of cos θ produces the right-hand side.",
-     "how": "Reduce cos² θ divided by cos θ.",
-     "accept": [
-      [
-       "cos θ/(1+sin θ)"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "State that the two sides are equal.",
-     "marks": 1,
-     "why": "The final expression must agree with the right-hand side.",
-     "how": "Conclude L.H.S = R.H.S.",
-     "accept": [
-      [
-       "cos θ/(1+sin θ)"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q7"
-  },
-  {
-   "id": "w-6-3-12",
-   "text": "Prove the following trigonometric identity: (sec θ − tan θ)² = (1 − sin θ)/(1 + sin θ)",
-   "marks": 4,
-   "modelAnswer": [
-    "L.H.S = (sec θ − tan θ)²",
-    "= (1/cos θ − sin θ/cos θ)²",
-    "= (1 − sin θ)²/cos² θ",
-    "= (1 − sin θ)²/[(1 − sin θ)(1 + sin θ)]",
-    "= (1 − sin θ)/(1 + sin θ) = R.H.S"
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Rewrite sec θ − tan θ.",
-     "marks": 1,
-     "why": "Writing sec and tan in terms of sine and cosine gives a common denominator.",
-     "how": "Use sec θ = 1/cos θ and tan θ = sin θ/cos θ.",
-     "accept": [
-      [
-       "1/cosθ−sinθ/cosθ"
-      ],
-      [
-       "(1−sinθ)/cosθ"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Square the fraction.",
-     "marks": 1,
-     "why": "Squaring the difference gives the next expression correctly.",
-     "how": "Square both the numerator and denominator.",
-     "accept": [
-      [
-       "(1−sinθ)²/cos²θ"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Use the Pythagoras identity and factor.",
-     "marks": 1,
-     "why": "Factoring 1 − sin² θ allows a common factor to cancel.",
-     "how": "Write cos² θ = (1 − sin θ)(1 + sin θ).",
-     "accept": [
-      [
-       "(1−sinθ)(1+sinθ)"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Cancel the common factor and conclude.",
-     "marks": 1,
-     "why": "The simplified expression is the required right-hand side.",
-     "how": "State the required identity.",
-     "accept": [
-      [
-       "(1−sinθ)/(1+sinθ)"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q8"
-  },
-  {
-   "id": "w-6-3-13",
-   "text": "Prove the following trigonometric identity: (tan θ + cot θ)² = sec² θ cosec² θ",
-   "marks": 4,
-   "modelAnswer": [
-    "L.H.S = (tan θ + cot θ)²",
-    "= (sin θ/cos θ + cos θ/sin θ)²",
-    "= [(sin² θ + cos² θ)/(sin θ cos θ)]²",
-    "= [1/(sin θ cos θ)]²",
-    "= sec² θ cosec² θ = R.H.S"
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Rewrite tan θ and cot θ.",
-     "marks": 1,
-     "why": "Writing tangent and cotangent in sine and cosine enables combination.",
-     "how": "Use their ratio definitions.",
-     "accept": [
-      [
-       "sinθ/cosθ+cosθ/sinθ"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Combine the fractions and simplify the numerator.",
-     "marks": 1,
-     "why": "The Pythagoras identity simplifies the sum.",
-     "how": "Use sin² θ + cos² θ = 1.",
-     "accept": [
-      [
-       "(sin²θ+cos²θ)/(sinθcosθ)"
-      ],
-      [
-       "1/(sinθcosθ)"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Square the simplified expression.",
-     "marks": 1,
-     "why": "Squaring the reciprocal product produces the left-hand side in reciprocal form.",
-     "how": "Obtain 1/(sin² θ cos² θ).",
-     "accept": [
-      [
-       "[1/(sinθcosθ)]²"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Use reciprocal identities and conclude.",
-     "marks": 1,
-     "why": "Rewriting the reciprocal squares as secant and cosecant gives the required side.",
-     "how": "Replace 1/cos² θ by sec² θ and 1/sin² θ by cosec² θ.",
-     "accept": [
-      [
-       "sec²θcosec²θ"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q9"
-  },
-  {
-   "id": "w-6-3-14",
-   "text": "Prove the following trigonometric identity: (tan θ + sec θ − 1)/(tan θ − sec θ + 1) = tan θ + sec θ",
-   "marks": 4,
-   "modelAnswer": [
-    "Let t = tan θ + sec θ.",
-    "(tan θ + sec θ)(tan θ − sec θ + 1)",
-    "= tan² θ − sec² θ + tan θ + sec θ",
-    "= −1 + tan θ + sec θ",
-    "= tan θ + sec θ − 1",
-    "Therefore, (tan θ + sec θ − 1)/(tan θ − sec θ + 1) = tan θ + sec θ."
-   ],
-   "followUp": "If θ lies in the first quadrant, find the remaining trigonometric ratios of θ: (i) sin θ = 2/3",
-   "noteId": "n-6-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Consider multiplying the denominator by tan θ + sec θ.",
-     "marks": 1,
-     "why": "Multiplying by the proposed right-hand side checks the equality.",
-     "how": "Expand the product.",
-     "accept": [
-      [
-       "(tanθ+secθ)(tanθ−secθ+1)"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Expand and group the terms.",
-     "marks": 1,
-     "why": "The expansion exposes the difference of squares.",
-     "how": "Write tan² θ − sec² θ + tan θ + sec θ.",
-     "accept": [
-      [
-       "tan²θ−sec²θ+tanθ+secθ"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Use sec² θ − tan² θ = 1.",
-     "marks": 1,
-     "why": "The Pythagoras identity reduces the difference of squares to −1.",
-     "how": "Replace tan² θ − sec² θ by −1.",
-     "accept": [
-      [
-       "tan²θ−sec²θ=−1"
-      ],
-      [
-       "−1+tanθ+secθ"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Conclude the two sides are equal.",
-     "marks": 1,
-     "why": "The product equals the numerator, proving the required quotient identity.",
-     "how": "State that the numerator equals (tan θ + sec θ) times the denominator.",
-     "accept": [
-      [
-       "tanθ+secθ−1"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.3 Q10"
   },
   {
    "id": "w-6-4-1",
@@ -5457,10 +5093,10 @@
      "how": "Write tan π/6 = tan 30° = 1/√3.",
      "accept": [
       [
-       "1/√3"
+       "tan30°"
       ],
       [
-       "√3/3"
+       "1/√3"
       ]
      ]
     },
@@ -5953,7 +5589,8 @@
      "how": "Write 2 × √3/2 × 1/2.",
      "accept": [
       [
-       "2×√3/2×1/2"
+       "√3/2",
+       "1/2"
       ]
      ]
     },
@@ -6886,7 +6523,8 @@
      "how": "Write tan 60° = h/40.",
      "accept": [
       [
-       "tan60°=height/40"
+       "tan60°",
+       "height/40"
       ]
      ]
     },
@@ -6898,7 +6536,10 @@
      "how": "Evaluate 40 tan 60° and include metres.",
      "accept": [
       [
-       "69.28"
+       "40√3"
+      ],
+      [
+       "69.28m"
       ]
      ]
     }
@@ -7215,89 +6856,6 @@
     }
    ],
    "source": "Ex 6.6 Q7"
-  },
-  {
-   "id": "w-6-6-8",
-   "text": "Measure of angle of elevation of the top of a cliff is 25°, on walking 100 metres towards the cliff, measure of angle of elevation of the top is 45°. Find the height of the cliff.",
-   "marks": 4,
-   "modelAnswer": [
-    "Let x be the nearer horizontal distance and h be the height of the cliff.",
-    "tan 25° = h/(x + 100)",
-    "tan 45° = h/x, so x = h",
-    "tan 25° = h/(h + 100)",
-    "h = 100 tan 25°/(1 − tan 25°)",
-    "h = 87.4 m"
-   ],
-   "followUp": "Q1. The angle of elevation of the top of a flag post from a point on the ground level 40 m away from the flag post is 60°. Find the height of the post.",
-   "noteId": "n-6-6",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Form the equations for the two positions.",
-     "marks": 1,
-     "why": "The two observations give tangent relationships for the same cliff height.",
-     "how": "Let x be the nearer distance and h the height.",
-     "accept": [
-      [
-       "tan25",
-       "h/(x+100)"
-      ],
-      [
-       "tan45",
-       "h/x"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Use the 45° equation.",
-     "marks": 1,
-     "why": "The 45° observation makes the nearer distance equal to the height.",
-     "how": "From tan 45° = h/x, obtain x = h.",
-     "accept": [
-      [
-       "tan45",
-       "1"
-      ],
-      [
-       "x=h"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Substitute x = h.",
-     "marks": 1,
-     "why": "Substitution gives an equation that determines the height.",
-     "how": "Use tan 25° = h/(h+100).",
-     "accept": [
-      [
-       "tan25",
-       "h/(h+100)"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Give the height.",
-     "marks": 1,
-     "why": "The final answer must be the cliff's height.",
-     "how": "Solve h = 100 tan 25°/(1 − tan 25°) = 87.4 m.",
-     "accept": [
-      [
-       "87.4",
-       "m"
-      ],
-      [
-       "87.4"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 6.6 Q8"
   },
   {
    "id": "w-6-6-9",
@@ -7965,7 +7523,11 @@
      "how": "Use (cos θ − sin θ)(cos θ + sin θ) as the common denominator.",
      "accept": [
       [
-       "(cosθ+sinθ)²+(cosθ−sinθ)²"
+       "2(cosθ+sinθ)²+2(cosθ−sinθ)²",
+       "cos²θ−sin²θ"
+      ],
+      [
+       "2(cos²θ+sin²θ)/(cos²θ−sin²θ)"
       ]
      ]
     },
@@ -7978,9 +7540,6 @@
      "accept": [
       [
        "2(cos²θ+sin²θ)"
-      ],
-      [
-       "2"
       ]
      ]
     },
@@ -8221,11 +7780,18 @@
   "unit": 6,
   "title": "Trigonometry",
   "dropped": [
-   "Written m-6-3#6 (Ex 6.3 Q3): model answer misses a marking point",
-   "Written m-6-3#8 (Ex 6.3 Q5): model answer misses a marking point",
-   "Written m-6-3#9 (Ex 6.3 Q6): model answer misses a marking point",
+   "Written m-6-3#5 (Ex 6.3 Q2): independent check disagreed",
+   "Written m-6-3#6 (Ex 6.3 Q3): independent check disagreed, model answer misses a marking point",
+   "Written m-6-3#7 (Ex 6.3 Q4): independent check disagreed",
+   "Written m-6-3#8 (Ex 6.3 Q5): independent check disagreed, model answer misses a marking point",
+   "Written m-6-3#9 (Ex 6.3 Q6): independent check disagreed, model answer misses a marking point",
+   "Written m-6-3#10 (Ex 6.3 Q7): independent check disagreed",
+   "Written m-6-3#11 (Ex 6.3 Q8): independent check disagreed, model answer misses a marking point",
+   "Written m-6-3#12 (Ex 6.3 Q9): independent check disagreed, model answer misses a marking point",
+   "Written m-6-3#13 (Ex 6.3 Q10): independent check disagreed, model answer misses a marking point",
    "MCQ m-6-5#2: independent check disagreed",
-   "MCQ m-6-6#5: independent check disagreed"
+   "MCQ m-6-6#5: independent check disagreed",
+   "Written m-6-6#7 (Ex 6.6 Q8): independent check disagreed"
   ]
  }
 }

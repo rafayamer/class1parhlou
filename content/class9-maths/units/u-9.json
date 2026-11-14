@@ -145,14 +145,12 @@
       "source": "Ex 9.1 Q3"
      },
      {
-      "id": "w-9-1-6",
-      "text": "A plank is placed straight upstairs that 20 cm wide and 16 cm deep. A rectangular box of height 8 cm and width x cm is placed on a stair under the plank. Find the value of x.",
-      "marks": 4,
+      "id": "w-9-1-4",
+      "text": "Find the value of x in each of the following: (i) Right triangles ABE and DCE share the horizontal line A–E–C; AE = 7.5 cm, EC = 3 cm, CD = 1.2 cm, and AB = x.",
+      "marks": 2,
       "modelAnswer": [
-       "The triangles formed by the plank are similar.",
-       "x/20 = 8/16",
-       "x = 20 × 8/16",
-       "x = 10 cm"
+       "x/1.2 = 7.5/3",
+       "x = 1.2 × 7.5/3 = 3 cm"
       ],
       "followUp": "In triangle ABC, the sides are given as mAB = 6 cm, mBC = 9 cm and mCA = 12 cm. In triangle DEF, the sides are given as mDE = 10.5 cm, mEF = 15.75 cm, and mFD = 21 cm. Prove that the triangles are similar.",
       "noteId": "n-9-1",
@@ -162,43 +160,34 @@
       "rubric": [
        {
         "id": "a",
-        "description": "Identify the similar triangles and use corresponding lengths.",
+        "description": "Set up the proportion for the similar right triangles.",
         "marks": 1,
-        "why": "The matching triangles formed by the plank and stair must be recognised as similar.",
-        "how": "Explain that the triangles have proportional corresponding sides.",
+        "why": "The corresponding sides must be placed in matching ratios.",
+        "how": "Use x/1.2 = 7.5/3.",
         "accept": [
          [
-          "similar"
+          "x/1.2",
+          "7.5/3"
          ]
         ]
        },
        {
         "id": "b",
-        "description": "Write the proportion.",
+        "description": "Solve the proportion and give the answer.",
         "marks": 1,
-        "why": "The proportion must pair the box dimensions with the corresponding stair dimensions.",
-        "how": "Use x/20 = 8/16.",
+        "why": "The final value of x is the required result.",
+        "how": "Calculate x = 1.2 × 7.5/3 = 3 cm.",
         "accept": [
          [
-          "x/20",
-          "8/16"
-         ]
-        ]
-       },
-       {
-        "id": "c",
-        "description": "Solve and state the final answer.",
-        "marks": 2,
-        "why": "Solving the proportion gives the requested width.",
-        "how": "Calculate x = 20 × 8/16 = 10 cm.",
-        "accept": [
+          "x=3"
+         ],
          [
-          "x=10"
+          "3cm"
          ]
         ]
        }
       ],
-      "source": "Ex 9.1 Q5"
+      "source": "Ex 9.1 Q4(i)"
      }
     ],
     "lesson": {
@@ -420,15 +409,15 @@
       "source": "Ex 9.2 Q1(iv)"
      },
      {
-      "id": "w-9-2-3",
-      "text": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
+      "id": "w-9-2-8",
+      "text": "Given that area of ΔABC = 36 cm² and mAB = 6 cm, mBD = 4 cm. Find (a) the area of ΔADE.",
       "marks": 4,
       "modelAnswer": [
-       "A₁/A₂ = (ℓ₁/ℓ₂)²",
-       "240/A₂ = (10/6)²",
-       "240/A₂ = (5/3)² = 25/9",
-       "A₂ = 240 × 9/25",
-       "A₂ = 86.4 cm²"
+       "mAD = mAB + mBD = 6 + 4 = 10 cm",
+       "AB/AD = 6/10 = 3/5",
+       "Area(ΔABC)/Area(ΔADE) = (AB/AD)²",
+       "36/Area(ΔADE) = (3/5)² = 9/25",
+       "Area(ΔADE) = 36 × 25/9 = 100 cm²"
       ],
       "followUp": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
       "noteId": "n-9-2",
@@ -438,54 +427,69 @@
       "rubric": [
        {
         "id": "a",
-        "description": "Set up the area ratio.",
+        "description": "Find the full side AD.",
         "marks": 1,
-        "why": "The area ratio must be set up in the same order as the corresponding lengths.",
-        "how": "Write 240/A₂ = (10/6)².",
+        "why": "The full corresponding side AD is required for the length ratio.",
+        "how": "Use AD = AB + BD = 6 + 4 = 10 cm.",
         "accept": [
          [
-          "240/"
+          "AD=10"
+         ],
+         [
+          "6+4"
+         ],
+         [
+          "10"
          ]
         ]
        },
        {
         "id": "b",
-        "description": "Simplify the squared ratio.",
+        "description": "Write the side ratio.",
         "marks": 1,
-        "why": "The length ratio must be squared correctly.",
-        "how": "Use (10/6)² = (5/3)² = 25/9.",
+        "why": "This gives the ratio of corresponding sides of the similar triangles.",
+        "how": "Use AB/AD = 6/10 = 3/5.",
         "accept": [
+         [
+          "6/10"
+         ],
+         [
+          "3/5"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Relate the triangle areas.",
+        "marks": 1,
+        "why": "The area ratio is the square of the corresponding-side ratio.",
+        "how": "Set 36/Area(ΔADE) = (6/10)² = 9/25.",
+        "accept": [
+         [
+          "36/A"
+         ],
+         [
+          "36/ADE"
+         ],
          [
           "25/9"
          ]
         ]
        },
        {
-        "id": "c",
-        "description": "Solve for A₂.",
-        "marks": 1,
-        "why": "Rearranging the proportion isolates the unknown area.",
-        "how": "Calculate A₂ = 240 × 9/25.",
-        "accept": [
-         [
-          "240*9/25"
-         ]
-        ]
-       },
-       {
         "id": "d",
-        "description": "State the final area.",
+        "description": "Solve and state the area.",
         "marks": 1,
-        "why": "The answer must be the correct area with square units.",
-        "how": "Give A₂ = 86.4 cm².",
+        "why": "This is the required area of the larger triangle.",
+        "how": "Calculate Area(ΔADE) = 36 × 25/9 = 100 cm².",
         "accept": [
          [
-          "86.4"
+          "100"
          ]
         ]
        }
       ],
-      "source": "Ex 9.2 Q2(i)"
+      "source": "Ex 9.2 Q3(a)"
      }
     ],
     "lesson": {
@@ -880,6 +884,9 @@
         "how": "Divide by 180° to get n − 2 = 7.",
         "accept": [
          [
+          "(n-2)*180=1260"
+         ],
+         [
           "n-2=7"
          ]
         ]
@@ -893,11 +900,78 @@
         "accept": [
          [
           "n=9"
+         ],
+         [
+          "9 sides"
          ]
         ]
        }
       ],
       "source": "Ex 9.4 Q1(iv)"
+     },
+     {
+      "id": "w-9-4-5",
+      "text": "In a parallelogram ABCD, mAB =10 cm, mAD = 6 cm and m∠BAD = 45°. Calculate the area of ABCD.",
+      "marks": 4,
+      "modelAnswer": [
+       "Height = 6 sin 45° = 6 × 0.707 = 4.242 cm",
+       "Area of ABCD = base × height",
+       "= 10 × 4.242",
+       "= 42.42 cm²"
+      ],
+      "followUp": "Q1. (ii) Calculate the measure of each interior angle of a regular hexagon.",
+      "noteId": "n-9-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the perpendicular height from AD and the 45° angle.",
+        "marks": 1,
+        "why": "The area formula needs the perpendicular height, not the sloping side.",
+        "how": "Use height = 6 sin 45° = 3√2 cm.",
+        "accept": [
+         [
+          "6sin45"
+         ],
+         [
+          "3sqrt2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Apply A = base × height.",
+        "marks": 1,
+        "why": "The parallelogram's area is base multiplied by perpendicular height.",
+        "how": "Use A = 10 × 3√2.",
+        "accept": [
+         [
+          "10*4.242"
+         ],
+         [
+          "10*6sin45"
+         ],
+         [
+          "10*3sqrt2"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Evaluate and state the area.",
+        "marks": 2,
+        "why": "The final value must agree with the answer key and include area units.",
+        "how": "Give 42.42 cm².",
+        "accept": [
+         [
+          "42.42"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 9.4 Q2"
      },
      {
       "id": "w-9-4-6",
@@ -956,59 +1030,6 @@
        }
       ],
       "source": "Ex 9.4 Q3"
-     },
-     {
-      "id": "w-9-4-7",
-      "text": "A shape is created by cutting a square in half diagonally and then attaching a right-angled triangle to the hypotenuse of each half. Explain why this shape can tessellate and calculate the interior angle of the new shape.",
-      "marks": 4,
-      "modelAnswer": [
-       "The shape can tessellate because its pieces can fit together without gaps or overlaps.",
-       "The interior angles meeting at a vertex sum to 360°."
-      ],
-      "followUp": "Q1. (ii) Calculate the measure of each interior angle of a regular hexagon.",
-      "noteId": "n-9-4",
-      "section": 0,
-      "number": 0,
-      "matching": "method",
-      "rubric": [
-       {
-        "id": "a",
-        "description": "State that the shape can tessellate.",
-        "marks": 1,
-        "why": "The answer must state whether the shape can tessellate.",
-        "how": "Explain that the pieces can fit together without gaps or overlaps.",
-        "accept": [
-         [
-          "tessellate"
-         ]
-        ]
-       },
-       {
-        "id": "b",
-        "description": "Give the angle sum at the meeting point.",
-        "marks": 2,
-        "why": "The required angle condition is that angles meeting at a point add to a full turn.",
-        "how": "State that the interior angles sum to 360°.",
-        "accept": [
-         [
-          "360"
-         ]
-        ]
-       },
-       {
-        "id": "c",
-        "description": "Explain why the angle sum allows tiling.",
-        "marks": 1,
-        "why": "The explanation connects the angle sum to a gap-free tessellation.",
-        "how": "Mention that the shapes fit with no gaps or overlaps.",
-        "accept": [
-         [
-          "without gaps"
-         ]
-        ]
-       }
-      ],
-      "source": "Ex 9.4 Q4"
      }
     ],
     "lesson": {
@@ -1123,50 +1144,6 @@
     ],
     "writtenQuestions": [
      {
-      "id": "w-9-5-1",
-      "text": "If the sum of the interior angles of a polygon is 1080°, how many sides does the polygon has?",
-      "marks": 2,
-      "modelAnswer": [
-       "Sum of interior angles = (n − 2) × 180°",
-       "1080° = (n − 2) × 180°",
-       "n − 2 = 6",
-       "n = 8",
-       "The polygon has 8 sides."
-      ],
-      "followUp": "Three similar jugs have heights 8 cm, 12 cm and 16 cm. If the smallest jug holds 1/2 litre, find the capacities of the other two.",
-      "noteId": "n-9-5",
-      "section": 0,
-      "number": 0,
-      "matching": "method",
-      "rubric": [
-       {
-        "id": "a",
-        "description": "Use the polygon interior-angle sum formula.",
-        "marks": 1,
-        "why": "The interior-angle sum formula sets up the relation between the angle sum and the number of sides.",
-        "how": "Write 1080° = (n − 2) × 180°.",
-        "accept": [
-         [
-          "n-2=6"
-         ]
-        ]
-       },
-       {
-        "id": "b",
-        "description": "Find and state the number of sides.",
-        "marks": 1,
-        "why": "The question asks for the number of sides.",
-        "how": "Solve for n and include the unit as sides.",
-        "accept": [
-         [
-          "n=8"
-         ]
-        ]
-       }
-      ],
-      "source": "Review Exercise 9 Q2"
-     },
-     {
       "id": "w-9-5-2",
       "text": "Two similar bottles are such that one is twice as high as the other. What is the ratio of their surface areas and their capacities?",
       "marks": 4,
@@ -1270,6 +1247,53 @@
        }
       ],
       "source": "Review Exercise 9 Q4(a)"
+     },
+     {
+      "id": "w-9-5-4",
+      "text": "Each dimension of a model car is 1/10 of the corresponding car dimension. Find the ratio of: (b) the capacities of their boots",
+      "marks": 2,
+      "modelAnswer": [
+       "Ratio of corresponding lengths = 1:10",
+       "Ratio of boot capacities = 1³:10³ = 1:1000"
+      ],
+      "followUp": "Three similar jugs have heights 8 cm, 12 cm and 16 cm. If the smallest jug holds 1/2 litre, find the capacities of the other two.",
+      "noteId": "n-9-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the corresponding-length ratio.",
+        "marks": 1,
+        "why": "The capacity ratio depends on the corresponding-length ratio.",
+        "how": "Use model:car = 1:10.",
+        "accept": [
+         [
+          "1:10"
+         ],
+         [
+          "1/10"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the boot-capacity ratio.",
+        "marks": 1,
+        "why": "Capacity scales as the cube of the length ratio.",
+        "how": "Cube 1:10.",
+        "accept": [
+         [
+          "1:1000"
+         ],
+         [
+          "1/1000"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 9 Q4(b)"
      }
     ],
     "lesson": {
@@ -2003,26 +2027,6 @@
    "moduleId": "m-9-4"
   },
   {
-   "id": "q-9-4-3",
-   "stem": "What is the sum of the interior angles of a decagon?",
-   "options": [
-    "900°",
-    "1080°",
-    "1260°",
-    "1440°"
-   ],
-   "correctIndex": 3,
-   "rationales": [
-    "900° is too small; a decagon has eight triangles' worth of interior angles.",
-    "1080° is the interior-angle sum of an octagon, not a decagon.",
-    "1260° is the interior-angle sum of a nonagon, not a decagon.",
-    "1440° is correct because (10 − 2) × 180° = 1440°."
-   ],
-   "status": "SAMPLE_UNREVIEWED",
-   "noteId": "n-9-4",
-   "moduleId": "m-9-4"
-  },
-  {
    "id": "q-9-4-4",
    "stem": "Which formula gives the total number of diagonals in a polygon with n sides?",
    "options": [
@@ -2409,14 +2413,12 @@
    "source": "Ex 9.1 Q3"
   },
   {
-   "id": "w-9-1-6",
-   "text": "A plank is placed straight upstairs that 20 cm wide and 16 cm deep. A rectangular box of height 8 cm and width x cm is placed on a stair under the plank. Find the value of x.",
-   "marks": 4,
+   "id": "w-9-1-4",
+   "text": "Find the value of x in each of the following: (i) Right triangles ABE and DCE share the horizontal line A–E–C; AE = 7.5 cm, EC = 3 cm, CD = 1.2 cm, and AB = x.",
+   "marks": 2,
    "modelAnswer": [
-    "The triangles formed by the plank are similar.",
-    "x/20 = 8/16",
-    "x = 20 × 8/16",
-    "x = 10 cm"
+    "x/1.2 = 7.5/3",
+    "x = 1.2 × 7.5/3 = 3 cm"
    ],
    "followUp": "In triangle ABC, the sides are given as mAB = 6 cm, mBC = 9 cm and mCA = 12 cm. In triangle DEF, the sides are given as mDE = 10.5 cm, mEF = 15.75 cm, and mFD = 21 cm. Prove that the triangles are similar.",
    "noteId": "n-9-1",
@@ -2426,43 +2428,80 @@
    "rubric": [
     {
      "id": "a",
-     "description": "Identify the similar triangles and use corresponding lengths.",
+     "description": "Set up the proportion for the similar right triangles.",
      "marks": 1,
-     "why": "The matching triangles formed by the plank and stair must be recognised as similar.",
-     "how": "Explain that the triangles have proportional corresponding sides.",
+     "why": "The corresponding sides must be placed in matching ratios.",
+     "how": "Use x/1.2 = 7.5/3.",
      "accept": [
       [
-       "similar"
+       "x/1.2",
+       "7.5/3"
       ]
      ]
     },
     {
      "id": "b",
-     "description": "Write the proportion.",
+     "description": "Solve the proportion and give the answer.",
      "marks": 1,
-     "why": "The proportion must pair the box dimensions with the corresponding stair dimensions.",
-     "how": "Use x/20 = 8/16.",
+     "why": "The final value of x is the required result.",
+     "how": "Calculate x = 1.2 × 7.5/3 = 3 cm.",
      "accept": [
       [
-       "x/20",
-       "8/16"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Solve and state the final answer.",
-     "marks": 2,
-     "why": "Solving the proportion gives the requested width.",
-     "how": "Calculate x = 20 × 8/16 = 10 cm.",
-     "accept": [
+       "x=3"
+      ],
       [
-       "x=10"
+       "3cm"
       ]
      ]
     }
    ],
-   "source": "Ex 9.1 Q5"
+   "source": "Ex 9.1 Q4(i)"
+  },
+  {
+   "id": "w-9-1-5",
+   "text": "Find the value of x in each of the following: (iii) Two triangles CED and FEG meet at E; CD = x cm, DE = 2.5 cm, EG = 2.4 cm, and FG = 2.1 cm.",
+   "marks": 2,
+   "modelAnswer": [
+    "x/2.1 = 2.5/2.4",
+    "x = 2.1 × 2.5/2.4 = 2.1875 cm",
+    "x ≈ 2.19 cm"
+   ],
+   "followUp": "In triangle ABC, the sides are given as mAB = 6 cm, mBC = 9 cm and mCA = 12 cm. In triangle DEF, the sides are given as mDE = 10.5 cm, mEF = 15.75 cm, and mFD = 21 cm. Prove that the triangles are similar.",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the ratio for the similar triangles.",
+     "marks": 1,
+     "why": "Matching corresponding sides gives the correct proportion.",
+     "how": "Use x/2.1 = 2.5/2.4.",
+     "accept": [
+      [
+       "x/2.1",
+       "2.5/2.4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Solve the proportion.",
+     "marks": 1,
+     "why": "The final answer must be correctly calculated and rounded to two decimal places.",
+     "how": "Calculate x = 2.1 × 2.5/2.4 ≈ 2.19 cm.",
+     "accept": [
+      [
+       "x=2.19"
+      ],
+      [
+       "2.19cm"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 9.1 Q4(iii)"
   },
   {
    "id": "w-9-1-8",
@@ -2645,15 +2684,15 @@
    "source": "Ex 9.2 Q1(iv)"
   },
   {
-   "id": "w-9-2-3",
-   "text": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
+   "id": "w-9-2-8",
+   "text": "Given that area of ΔABC = 36 cm² and mAB = 6 cm, mBD = 4 cm. Find (a) the area of ΔADE.",
    "marks": 4,
    "modelAnswer": [
-    "A₁/A₂ = (ℓ₁/ℓ₂)²",
-    "240/A₂ = (10/6)²",
-    "240/A₂ = (5/3)² = 25/9",
-    "A₂ = 240 × 9/25",
-    "A₂ = 86.4 cm²"
+    "mAD = mAB + mBD = 6 + 4 = 10 cm",
+    "AB/AD = 6/10 = 3/5",
+    "Area(ΔABC)/Area(ΔADE) = (AB/AD)²",
+    "36/Area(ΔADE) = (3/5)² = 9/25",
+    "Area(ΔADE) = 36 × 25/9 = 100 cm²"
    ],
    "followUp": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
    "noteId": "n-9-2",
@@ -2663,65 +2702,80 @@
    "rubric": [
     {
      "id": "a",
-     "description": "Set up the area ratio.",
+     "description": "Find the full side AD.",
      "marks": 1,
-     "why": "The area ratio must be set up in the same order as the corresponding lengths.",
-     "how": "Write 240/A₂ = (10/6)².",
+     "why": "The full corresponding side AD is required for the length ratio.",
+     "how": "Use AD = AB + BD = 6 + 4 = 10 cm.",
      "accept": [
       [
-       "240/"
+       "AD=10"
+      ],
+      [
+       "6+4"
+      ],
+      [
+       "10"
       ]
      ]
     },
     {
      "id": "b",
-     "description": "Simplify the squared ratio.",
+     "description": "Write the side ratio.",
      "marks": 1,
-     "why": "The length ratio must be squared correctly.",
-     "how": "Use (10/6)² = (5/3)² = 25/9.",
+     "why": "This gives the ratio of corresponding sides of the similar triangles.",
+     "how": "Use AB/AD = 6/10 = 3/5.",
      "accept": [
+      [
+       "6/10"
+      ],
+      [
+       "3/5"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Relate the triangle areas.",
+     "marks": 1,
+     "why": "The area ratio is the square of the corresponding-side ratio.",
+     "how": "Set 36/Area(ΔADE) = (6/10)² = 9/25.",
+     "accept": [
+      [
+       "36/A"
+      ],
+      [
+       "36/ADE"
+      ],
       [
        "25/9"
       ]
      ]
     },
     {
-     "id": "c",
-     "description": "Solve for A₂.",
-     "marks": 1,
-     "why": "Rearranging the proportion isolates the unknown area.",
-     "how": "Calculate A₂ = 240 × 9/25.",
-     "accept": [
-      [
-       "240*9/25"
-      ]
-     ]
-    },
-    {
      "id": "d",
-     "description": "State the final area.",
+     "description": "Solve and state the area.",
      "marks": 1,
-     "why": "The answer must be the correct area with square units.",
-     "how": "Give A₂ = 86.4 cm².",
+     "why": "This is the required area of the larger triangle.",
+     "how": "Calculate Area(ΔADE) = 36 × 25/9 = 100 cm².",
      "accept": [
       [
-       "86.4"
+       "100"
       ]
      ]
     }
    ],
-   "source": "Ex 9.2 Q2(i)"
+   "source": "Ex 9.2 Q3(a)"
   },
   {
-   "id": "w-9-2-4",
-   "text": "Find the unknowns in the following figures: (ii) Two similar triangles. The first has A₁ = 60 cm² and base 15 cm; the second has A₂ = ? and base 20 cm.",
+   "id": "w-9-2-9",
+   "text": "Given that area of ΔABC = 36 cm² and mAB = 6 cm, mBD = 4 cm. Find (b) the area of trapezium BCED.",
    "marks": 4,
    "modelAnswer": [
-    "A₁/A₂ = (ℓ₁/ℓ₂)²",
-    "60/A₂ = (15/20)²",
-    "60/A₂ = 9/16",
-    "A₂ = 60 × 16/9",
-    "A₂ = 106.67 cm²"
+    "mAD = mAB + mBD = 6 + 4 = 10 cm",
+    "Area(ΔABC)/Area(ΔADE) = (6/10)² = 9/25",
+    "36/Area(ΔADE) = 9/25",
+    "Area(ΔADE) = 36 × 25/9 = 100 cm²",
+    "Area of trapezium BCED = 100 − 36 = 64 cm²"
    ],
    "followUp": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
    "noteId": "n-9-2",
@@ -2731,125 +2785,69 @@
    "rubric": [
     {
      "id": "a",
-     "description": "Set up the area relationship.",
+     "description": "Find AD.",
      "marks": 1,
-     "why": "The areas must be compared in the same order as the lengths.",
-     "how": "Write 60/A₂ = (15/20)².",
+     "why": "The full side establishes the scale between the similar triangles.",
+     "how": "Calculate AD = AB + BD = 10 cm.",
      "accept": [
       [
-       "60/"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Evaluate the squared length ratio.",
-     "marks": 1,
-     "why": "The corresponding-length ratio has to be squared.",
-     "how": "Simplify (15/20)² to 9/16.",
-     "accept": [
-      [
-       "9/16"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Rearrange to find A₂.",
-     "marks": 1,
-     "why": "Solving the proportion gives the unknown area.",
-     "how": "Calculate A₂ = 60 × 16/9.",
-     "accept": [
-      [
-       "60*16/9"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Give the area with units.",
-     "marks": 1,
-     "why": "The final value must match the required area.",
-     "how": "State A₂ = 106.67 cm².",
-     "accept": [
-      [
-       "106.6~"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 9.2 Q2(ii)"
-  },
-  {
-   "id": "w-9-2-5",
-   "text": "Find the unknowns in the following figures: (iii) Two similar trapeziums. The first has A₁ = ? and base 3.6 cm; the second has A₂ = 18 cm² and base 5.76 cm.",
-   "marks": 4,
-   "modelAnswer": [
-    "A₁/A₂ = (ℓ₁/ℓ₂)²",
-    "A₁/18 = (3.6/5.76)²",
-    "A₁/18 = (5/8)² = 25/64",
-    "A₁ = 18 × 25/64",
-    "A₁ = 7.03125 cm²"
-   ],
-   "followUp": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
-   "noteId": "n-9-2",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Set up the area ratio.",
-     "marks": 1,
-     "why": "The unknown area needs to be related to the known area.",
-     "how": "Write A₁/18 = (3.6/5.76)².",
-     "accept": [
-      [
-       "18"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Simplify the corresponding-length ratio.",
-     "marks": 1,
-     "why": "Simplifying the length ratio helps calculate its square accurately.",
-     "how": "Use 3.6/5.76 = 5/8.",
-     "accept": [
-      [
-       "5/8"
+       "AD=10"
       ],
       [
-       "0.625"
+       "6+4"
+      ],
+      [
+       "10"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the squared side ratio.",
+     "marks": 1,
+     "why": "The area ratio is needed to find the smaller triangle's area.",
+     "how": "Write 36/Area(ΔADE) = (6/10)² = 9/25.",
+     "accept": [
+      [
+       "9/25"
+      ],
+      [
+       "36/ADE"
       ]
      ]
     },
     {
      "id": "c",
-     "description": "Calculate the unknown area.",
+     "description": "Find the area of ΔADE.",
      "marks": 1,
-     "why": "Squaring the length ratio and applying it to the known area gives A₁.",
-     "how": "Use A₁ = 18 × 25/64.",
+     "why": "The area of ΔADE is needed before subtracting to find the trapezium.",
+     "how": "Calculate Area(ΔADE) = 36 × 25/9 = 100 cm².",
      "accept": [
       [
-       "18*25/64"
+       "100"
+      ],
+      [
+       "36*25/9"
+      ],
+      [
+       "36x25/9"
       ]
      ]
     },
     {
      "id": "d",
-     "description": "State the answer with square units.",
+     "description": "Subtract and state the answer.",
      "marks": 1,
-     "why": "The final answer must be the required area.",
-     "how": "Give A₁ = 7.03125 cm².",
+     "why": "The trapezium's area is the difference between the two triangle areas.",
+     "how": "Area(BCED) = 100 − 36 = 64 cm².",
      "accept": [
       [
-       "7.03125"
+       "64"
       ]
      ]
     }
    ],
-   "source": "Ex 9.2 Q2(iii)"
+   "source": "Ex 9.2 Q3(b)"
   },
   {
    "id": "w-9-2-10",
@@ -3453,6 +3451,86 @@
    "source": "Ex 9.3 Q4(iv)"
   },
   {
+   "id": "w-9-3-9",
+   "text": "The ratio of the corresponding lengths of two similar canonical cans is 3 : 2. (i) The larger canonical can have surface area of 96 m². Find the surface area of the smaller canonical can.",
+   "marks": 4,
+   "modelAnswer": [
+    "ℓ₁/ℓ₂ = 3/2",
+    "A₁/A₂ = (ℓ₁/ℓ₂)²",
+    "96/A₂ = (3/2)²",
+    "A₂ = 96 × 4/9",
+    "A₂ = 42.67 m²"
+   ],
+   "followUp": "Two right cones have volumes in the ratio 64 : 125. What is the ratio of: (i) their heights (ii) their base areas?",
+   "noteId": "n-9-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the length ratio in the stated order.",
+     "marks": 1,
+     "why": "The larger-to-smaller length ratio sets the corresponding area ratio.",
+     "how": "ℓ₁/ℓ₂ = 3/2.",
+     "accept": [
+      [
+       "3/2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write the area ratio.",
+     "marks": 1,
+     "why": "Similar surface areas vary as the square of the length ratio.",
+     "how": "A₁/A₂ = (3/2)² = 9/4.",
+     "accept": [
+      [
+       "(3/2)^2"
+      ],
+      [
+       "9/4"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Calculate the smaller area.",
+     "marks": 1,
+     "why": "This substitutes the larger area and rearranges to find the smaller area.",
+     "how": "A₂ = 96 × 4/9.",
+     "accept": [
+      [
+       "96/A2=9/4"
+      ],
+      [
+       "A2=96*4/9"
+      ],
+      [
+       "96*4/9"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the smaller surface area.",
+     "marks": 1,
+     "why": "The final area is the requested value, rounded to two decimal places as in the answer key.",
+     "how": "A₂ = 42.67 m².",
+     "accept": [
+      [
+       "42.67"
+      ],
+      [
+       "128/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 9.3 Q5(i)"
+  },
+  {
    "id": "w-9-3-11",
    "text": "The ratio of the heights of two similar cylindrical water tanks is 5 : 3. (i) If the surface area of the larger tank is 250 square metres, find the surface area of the smaller tank.",
    "marks": 4,
@@ -3630,6 +3708,9 @@
      "how": "Divide by 180° to get n − 2 = 7.",
      "accept": [
       [
+       "(n-2)*180=1260"
+      ],
+      [
        "n-2=7"
       ]
      ]
@@ -3643,11 +3724,78 @@
      "accept": [
       [
        "n=9"
+      ],
+      [
+       "9 sides"
       ]
      ]
     }
    ],
    "source": "Ex 9.4 Q1(iv)"
+  },
+  {
+   "id": "w-9-4-5",
+   "text": "In a parallelogram ABCD, mAB =10 cm, mAD = 6 cm and m∠BAD = 45°. Calculate the area of ABCD.",
+   "marks": 4,
+   "modelAnswer": [
+    "Height = 6 sin 45° = 6 × 0.707 = 4.242 cm",
+    "Area of ABCD = base × height",
+    "= 10 × 4.242",
+    "= 42.42 cm²"
+   ],
+   "followUp": "Q1. (ii) Calculate the measure of each interior angle of a regular hexagon.",
+   "noteId": "n-9-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the perpendicular height from AD and the 45° angle.",
+     "marks": 1,
+     "why": "The area formula needs the perpendicular height, not the sloping side.",
+     "how": "Use height = 6 sin 45° = 3√2 cm.",
+     "accept": [
+      [
+       "6sin45"
+      ],
+      [
+       "3sqrt2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply A = base × height.",
+     "marks": 1,
+     "why": "The parallelogram's area is base multiplied by perpendicular height.",
+     "how": "Use A = 10 × 3√2.",
+     "accept": [
+      [
+       "10*4.242"
+      ],
+      [
+       "10*6sin45"
+      ],
+      [
+       "10*3sqrt2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Evaluate and state the area.",
+     "marks": 2,
+     "why": "The final value must agree with the answer key and include area units.",
+     "how": "Give 42.42 cm².",
+     "accept": [
+      [
+       "42.42"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 9.4 Q2"
   },
   {
    "id": "w-9-4-6",
@@ -3706,59 +3854,6 @@
     }
    ],
    "source": "Ex 9.4 Q3"
-  },
-  {
-   "id": "w-9-4-7",
-   "text": "A shape is created by cutting a square in half diagonally and then attaching a right-angled triangle to the hypotenuse of each half. Explain why this shape can tessellate and calculate the interior angle of the new shape.",
-   "marks": 4,
-   "modelAnswer": [
-    "The shape can tessellate because its pieces can fit together without gaps or overlaps.",
-    "The interior angles meeting at a vertex sum to 360°."
-   ],
-   "followUp": "Q1. (ii) Calculate the measure of each interior angle of a regular hexagon.",
-   "noteId": "n-9-4",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "State that the shape can tessellate.",
-     "marks": 1,
-     "why": "The answer must state whether the shape can tessellate.",
-     "how": "Explain that the pieces can fit together without gaps or overlaps.",
-     "accept": [
-      [
-       "tessellate"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Give the angle sum at the meeting point.",
-     "marks": 2,
-     "why": "The required angle condition is that angles meeting at a point add to a full turn.",
-     "how": "State that the interior angles sum to 360°.",
-     "accept": [
-      [
-       "360"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Explain why the angle sum allows tiling.",
-     "marks": 1,
-     "why": "The explanation connects the angle sum to a gap-free tessellation.",
-     "how": "Mention that the shapes fit with no gaps or overlaps.",
-     "accept": [
-      [
-       "without gaps"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 9.4 Q4"
   },
   {
    "id": "w-9-4-10",
@@ -3846,49 +3941,6 @@
    "source": "Ex 9.4 Q8"
   },
   {
-   "id": "w-9-4-12",
-   "text": "A rectangular wall has a length of 10 m and a width of 4 meters. If 1 litre of paint covers 7 m², how many liters of paint are needed to cover the wall?",
-   "marks": 2,
-   "modelAnswer": [
-    "Area of wall = 10 × 4 = 40 m²",
-    "Litres needed = 40/7 ≈ 5.71",
-    "Therefore, 6 litres are needed."
-   ],
-   "followUp": "Q1. (ii) Calculate the measure of each interior angle of a regular hexagon.",
-   "noteId": "n-9-4",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Calculate the wall area.",
-     "marks": 1,
-     "why": "The wall area determines the paint needed.",
-     "how": "Use 10 × 4 = 40 m².",
-     "accept": [
-      [
-       "10*4",
-       "40"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Divide the area by the coverage per litre and round up.",
-     "marks": 1,
-     "why": "The answer must cover the wall and follow the answer key.",
-     "how": "40/7 is about 5.71, so 6 litres are needed.",
-     "accept": [
-      [
-       "6 litres"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 9.4 Q9"
-  },
-  {
    "id": "w-9-4-13",
    "text": "A window has a trapezoidal shape with parallel sides of 3 m and 1.5 m and a height of 2 m. Find the area of the window.",
    "marks": 2,
@@ -3932,50 +3984,6 @@
     }
    ],
    "source": "Ex 9.4 Q10"
-  },
-  {
-   "id": "w-9-5-1",
-   "text": "If the sum of the interior angles of a polygon is 1080°, how many sides does the polygon has?",
-   "marks": 2,
-   "modelAnswer": [
-    "Sum of interior angles = (n − 2) × 180°",
-    "1080° = (n − 2) × 180°",
-    "n − 2 = 6",
-    "n = 8",
-    "The polygon has 8 sides."
-   ],
-   "followUp": "Three similar jugs have heights 8 cm, 12 cm and 16 cm. If the smallest jug holds 1/2 litre, find the capacities of the other two.",
-   "noteId": "n-9-5",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Use the polygon interior-angle sum formula.",
-     "marks": 1,
-     "why": "The interior-angle sum formula sets up the relation between the angle sum and the number of sides.",
-     "how": "Write 1080° = (n − 2) × 180°.",
-     "accept": [
-      [
-       "n-2=6"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Find and state the number of sides.",
-     "marks": 1,
-     "why": "The question asks for the number of sides.",
-     "how": "Solve for n and include the unit as sides.",
-     "accept": [
-      [
-       "n=8"
-      ]
-     ]
-    }
-   ],
-   "source": "Review Exercise 9 Q2"
   },
   {
    "id": "w-9-5-2",
@@ -4629,24 +4637,26 @@
   "title": "Similar Figures",
   "dropped": [
    "Written m-9-1#1 (Ex 9.1 Q2): model answer misses a marking point",
-   "Written m-9-1#3 (Ex 9.1 Q4(i)): model answer misses a marking point",
-   "Written m-9-1#4 (Ex 9.1 Q4(iii)): independent check disagreed",
-   "Written m-9-1#6 (Ex 9.1 Q6): independent check disagreed, model answer misses a marking point",
+   "Written m-9-1#5 (Ex 9.1 Q5): model answer misses a marking point",
+   "Written m-9-1#6 (Ex 9.1 Q6): model answer misses a marking point",
    "MCQ m-9-2#7: independent check disagreed",
-   "Written m-9-2#5 (Ex 9.2 Q2(iv)): independent check disagreed, model answer misses a marking point",
+   "Written m-9-2#2 (Ex 9.2 Q2(i)): model answer misses a marking point",
+   "Written m-9-2#3 (Ex 9.2 Q2(ii)): model answer misses a marking point",
+   "Written m-9-2#4 (Ex 9.2 Q2(iii)): model answer misses a marking point",
+   "Written m-9-2#5 (Ex 9.2 Q2(iv)): model answer misses a marking point",
    "Written m-9-2#6 (Ex 9.2 Q2(v)): independent check disagreed",
-   "Written m-9-2#7 (Ex 9.2 Q3(a)): independent check disagreed",
-   "Written m-9-2#8 (Ex 9.2 Q3(b)): independent check disagreed",
-   "Written m-9-3#8 (Ex 9.3 Q5(i)): independent check disagreed",
    "Written m-9-3#9 (Ex 9.3 Q5(ii)): independent check disagreed",
+   "MCQ m-9-4#2: independent check disagreed",
    "Written m-9-4#0 (Ex 9.4 Q1(i)): independent check disagreed, model answer misses a marking point",
    "Written m-9-4#1 (Ex 9.4 Q1(ii)): model answer misses a marking point",
    "Written m-9-4#2 (Ex 9.4 Q1(iii)): model answer misses a marking point",
-   "Written m-9-4#4 (Ex 9.4 Q2): independent check disagreed, model answer misses a marking point",
+   "Written m-9-4#6 (Ex 9.4 Q4): independent check disagreed, model answer misses a marking point",
    "Written m-9-4#7 (Ex 9.4 Q5): independent check disagreed, model answer misses a marking point",
    "Written m-9-4#8 (Ex 9.4 Q6): independent check disagreed, model answer misses a marking point",
+   "Written m-9-4#11 (Ex 9.4 Q9): independent check disagreed",
    "MCQ m-9-5#4: independent check disagreed",
    "MCQ m-9-5#6: independent check disagreed",
+   "Written m-9-5#0 (Review Exercise 9 Q2): model answer misses a marking point",
    "Written m-9-5#14 (Review Exercise 9 Q9): independent check disagreed"
   ]
  }

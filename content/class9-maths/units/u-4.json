@@ -1751,26 +1751,6 @@
    "moduleId": "m-4-4"
   },
   {
-   "id": "q-4-4-6",
-   "stem": "The square root of x² − 6x + 9 is:",
-   "options": [
-    "±(x − 3)",
-    "±(x + 3)",
-    "x − 3",
-    "x + 3"
-   ],
-   "correctIndex": 0,
-   "rationales": [
-    "This is correct because x² − 6x + 9 = (x − 3)² and both square roots are included.",
-    "This is incorrect because (x + 3)² has a positive middle term.",
-    "This is incomplete because it gives only one of the two square roots.",
-    "This is incorrect because it does not square to the given expression."
-   ],
-   "status": "APPROVED",
-   "noteId": "n-4-4",
-   "moduleId": "m-4-4"
-  },
-  {
    "id": "q-4-4-7",
    "stem": "The LCM of (a − b)² and (a − b)⁴ is:",
    "options": [
@@ -1825,6 +1805,26 @@
     "This is incorrect because degree 2 is quadratic.",
     "This is correct because a cubic polynomial has degree 3.",
     "This is incorrect because degree 4 is quartic."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-4-4",
+   "moduleId": "m-4-4"
+  },
+  {
+   "id": "q-4-4-10",
+   "stem": "One of the factors of x³ − 27 is:",
+   "options": [
+    "x − 3",
+    "x + 3",
+    "x² − 3x + 9",
+    "Both a and c"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because x³ − 27 = (x − 3)(x² + 3x + 9).",
+    "This is incorrect because x + 3 is not a factor of x³ − 27.",
+    "This is incorrect because the quadratic factor has a positive, not negative, middle term.",
+    "This is incorrect because option c is not a factor, so both a and c cannot be correct."
    ],
    "status": "APPROVED",
    "noteId": "n-4-4",
@@ -4173,7 +4173,7 @@
      "how": "Let the common part be x² + 6x − 3.",
      "accept": [
       [
-       "x^2+6x-3"
+       "x²+6x−3"
       ]
      ]
     },
@@ -4185,8 +4185,7 @@
      "how": "Express them as the common part plus 6 and minus 6.",
      "accept": [
       [
-       "A+6",
-       "A-6"
+       "(A+6)(A−6)"
       ]
      ]
     },
@@ -4198,7 +4197,7 @@
      "how": "Use (A + 6)(A − 6) + 36 = A².",
      "accept": [
       [
-       "(x^2+6x-3)^2"
+       "(x²+6x−3)²"
       ]
      ]
     }
@@ -4440,6 +4439,52 @@
     }
    ],
    "source": "Review Exercise 4 Q3(iv)"
+  },
+  {
+   "id": "w-4-4-13",
+   "text": "Find square root by factorization and division method of the expression 16x⁴ + 8x² + 1.",
+   "marks": 4,
+   "modelAnswer": [
+    "16x⁴ + 8x² + 1 = (4x²)² + 2(4x²)(1) + 1²",
+    "= (4x² + 1)²",
+    "Square root = ±(4x² + 1)",
+    "Answer: ±(4x² + 1)"
+   ],
+   "followUp": "Factorize the following expressions: 4x³ + 18x² − 12x",
+   "noteId": "n-4-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the expression as a perfect square.",
+     "marks": 2,
+     "why": "Recognizing the perfect-square trinomial gives its square root.",
+     "how": "Match the first and last terms and the middle term.",
+     "accept": [
+      [
+       "(4x^2+1)^2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State both square roots.",
+     "marks": 2,
+     "why": "Both positive and negative expressions have the same square.",
+     "how": "Include the ± sign in the final answer.",
+     "accept": [
+      [
+       "±"
+      ],
+      [
+       "4x^2+1"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 4 Q4"
   }
  ],
  "report": {
@@ -4452,8 +4497,7 @@
    "Written m-4-3#1 (Ex 4.4 Q1(ii)): independent check disagreed",
    "Written m-4-3#8 (Ex 4.4 Q2(iii)): independent check disagreed",
    "Written m-4-3#9 (Ex 4.4 Q2(iv)): independent check disagreed",
-   "MCQ m-4-4#9: independent check disagreed",
-   "Written m-4-4#12 (Review Exercise 4 Q4): independent check disagreed",
+   "MCQ m-4-4#5: independent check disagreed",
    "Written m-4-4#13 (Review Exercise 4 Q5): independent check disagreed"
   ]
  }

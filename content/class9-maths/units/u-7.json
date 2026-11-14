@@ -2324,6 +2324,87 @@
    "source": "Ex 7.1 Q3(ii)(c)"
   },
   {
+   "id": "w-7-1-11",
+   "text": "Find h such that the points A(√3, −1), B(0, 2) and C(h, −2) are vertices of a right triangle with right angle at the vertex A.",
+   "marks": 4,
+   "modelAnswer": [
+    "|AB|² = (0 − √3)² + (2 − (−1))² = 12",
+    "|AC|² = (h − √3)² + (−2 − (−1))² = (h − √3)² + 1",
+    "|BC|² = (h − 0)² + (−2 − 2)² = h² + 16",
+    "Since the right angle is at A, |AB|² + |AC|² = |BC|².",
+    "12 + (h − √3)² + 1 = h² + 16",
+    "16 − 2√3h = 16",
+    "h = 0"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the right-triangle side relationship.",
+     "marks": 1,
+     "why": "The right angle at A means the squares of the two sides meeting at A add to the square of the opposite side.",
+     "how": "Set |AB|² + |AC|² = |BC|².",
+     "accept": [
+      [
+       "ab",
+       "ac",
+       "bc"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate the three squared distances.",
+     "marks": 1,
+     "why": "Correct squared side lengths are needed to form the equation.",
+     "how": "Apply the distance formula to each pair of points.",
+     "accept": [
+      [
+       "12"
+      ],
+      [
+       "(h-sqrt3)^2+1"
+      ],
+      [
+       "h^2+16"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Form and solve the equation.",
+     "marks": 1,
+     "why": "The correctly simplified equation leads to the required value.",
+     "how": "Substitute the squared distances into the right-angle condition and simplify.",
+     "accept": [
+      [
+       "16-2sqrt3h=16"
+      ],
+      [
+       "h=0"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the correct final answer.",
+     "marks": 1,
+     "why": "The final value agrees with the answer key.",
+     "how": "Give h = 0.",
+     "accept": [
+      [
+       "h=0"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q6"
+  },
+  {
    "id": "w-7-1-12",
    "text": "Find h such that the points A(−1, h), B(3, 2) and C(7, 3) are collinear.",
    "marks": 4,
@@ -2477,6 +2558,86 @@
     }
    ],
    "source": "Ex 7.1 Q8"
+  },
+  {
+   "id": "w-7-1-14",
+   "text": "Find h such that the points A(h, 1), B(2, 7) and C(−6, −7) are vertices of a right triangle with right angle at the vertex A.",
+   "marks": 4,
+   "modelAnswer": [
+    "|AB|² = (2 − h)² + (7 − 1)² = (2 − h)² + 36",
+    "|AC|² = (−6 − h)² + (−7 − 1)² = (−6 − h)² + 64",
+    "|BC|² = (−6 − 2)² + (−7 − 7)² = 260",
+    "Since the right angle is at A, |AB|² + |AC|² = |BC|².",
+    "(2 − h)² + 36 + (−6 − h)² + 64 = 260",
+    "h² + 4h − 60 = 0",
+    "(h + 10)(h − 6) = 0",
+    "h = −10 or h = 6"
+   ],
+   "followUp": "Find the distance between the points: A(6, 7), B(0, −2).",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the right-triangle relationship.",
+     "marks": 1,
+     "why": "For the right angle at A, the squares of the sides meeting there add to the square of BC.",
+     "how": "Set |AB|² + |AC|² equal to |BC|².",
+     "accept": [
+      [
+       "ab",
+       "ac",
+       "bc"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate the squared lengths.",
+     "marks": 1,
+     "why": "The correct squared distances produce the equation in h.",
+     "how": "Apply the distance formula to AB, AC and BC.",
+     "accept": [
+      [
+       "(2-h)^2+36"
+      ],
+      [
+       "(-6-h)^2+64"
+      ],
+      [
+       "260"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Form and simplify the equation.",
+     "marks": 1,
+     "why": "Simplifying the right-angle equation gives the quadratic to solve.",
+     "how": "Substitute the squared lengths and collect terms.",
+     "accept": [
+      [
+       "h^2+4h-60=0"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give both values of h.",
+     "marks": 1,
+     "why": "Both solutions are required for the complete final answer.",
+     "how": "Factor or solve the quadratic equation.",
+     "accept": [
+      [
+       "h=-10",
+       "h=6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 7.1 Q9"
   },
   {
    "id": "w-7-2-1",
@@ -4412,8 +4573,6 @@
   "unit": 7,
   "title": "Coordinate Geometry",
   "dropped": [
-   "Written m-7-1#10 (Ex 7.1 Q6): model answer misses a marking point",
-   "Written m-7-1#13 (Ex 7.1 Q9): model answer misses a marking point",
    "Written m-7-4#9 (Review Exercise 7 Q10(b)): independent check disagreed",
    "Written m-7-4#10 (Review Exercise 7 Q10(c)): independent check disagreed",
    "Written m-7-4#13 (Review Exercise 7 Q10(f)): independent check disagreed"
