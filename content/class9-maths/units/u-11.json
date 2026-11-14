@@ -1,0 +1,2174 @@
+{
+ "chapter": {
+  "id": "u-11",
+  "number": 11,
+  "title": "Loci and Construction",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-11-1",
+    "position": 1,
+    "title": "11.1 Construction of Triangles",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.1, pages 200–204",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.1 (pages 200–204) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "Construction questions usually ask you to construct a triangle from given side lengths and angle measures; bring a sharp pencil, ruler, compass and protractor.",
+      "Marks are earned for drawing the given side to the stated length, constructing the correct angle, using arcs or rays to locate the third vertex, and joining and labelling the triangle.",
+      "Show the construction clearly: keep compass arcs visible where possible and label each vertex and given measurement.",
+      "For the ambiguous case, state whether the arc cuts the ray twice, touches it once, or does not meet it; this determines whether two, one or no triangles can be formed."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "First draw DE = 4.3 cm.",
+        "Construct the two given angles at D and E; the rays meet at C."
+       ],
+       "accept": [
+        [
+         "CDE"
+        ]
+       ],
+       "question": "Draw a triangle CDE when m D̅E̅ = 4.3 cm, m∠D = 30° and m∠E = 120°.",
+       "solution": [
+        "(i) Draw m D̅E̅ = 4.3 cm.",
+        "(ii) Draw angles 30° and 120° at points D and E respectively using a pair of compasses and draw two rays through these angles from D and E.",
+        "(iii) These two rays intersect each other at point C.",
+        "Hence, ΔCDE is the required triangle."
+       ],
+       "answer": "ΔCDE is the required triangle."
+      },
+      {
+       "hints": [
+        "Draw DE = 6 cm, then construct the 110° angle at D.",
+        "With centre E and radius 9 cm, mark F on the ray and join E to F."
+       ],
+       "accept": [
+        [
+         "DEF"
+        ]
+       ],
+       "question": "Construct a triangle DEF when m D̅E̅ = 6 cm, m∠D = 110° and m E̅F̅ = 9 cm.",
+       "solution": [
+        "(i) Draw m D̅E̅ = 6 cm.",
+        "(ii) Construct m∠D = 110° using protractor and draw D⃗X⃗ through this angle.",
+        "(iii) Draw an arc of radius 9 cm with centre at point E intersecting D⃗X⃗ at point F.",
+        "(iv) Join E and F.",
+        "Hence, ΔDEF is the required triangle."
+       ],
+       "answer": "ΔDEF is the required triangle."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This gives the first given side and one base of the triangle.",
+        "text": "(i) Draw a line segment BC of length 5.5cm."
+       },
+       {
+        "why": "The included angle must be at B, where the two given sides meet.",
+        "text": "(ii) Draw an angle 60° at point B using a pair of compasses and draw a ray BX through this angle."
+       },
+       {
+        "why": "This marks the second given side from B along the constructed ray.",
+        "text": "(iii) Draw an arc of radius 4.2 cm with centre at point B intersecting BX at point D."
+       },
+       {
+        "why": "Joining C to D completes the triangle.",
+        "text": "(iv) Join C and D."
+       },
+       {
+        "why": "The completed figure has the required lengths and angle.",
+        "text": "Hence, ΔBCD is the required triangle."
+       }
+      ],
+      "question": "Construct a triangle BCD in which measures of two sides are 5.5 cm and 4.2 cm and measure of their included angle is 60°.",
+      "answer": "Hence, ΔBCD is the required triangle."
+     },
+     "explain": [
+      {
+       "title": "What is a triangle?",
+       "body": "A triangle is a closed figure having three sides and three angles."
+      },
+      {
+       "title": "Check the side lengths first",
+       "body": "The sum of the measure of any two sides of a triangle is always greater than the measure of the third side. If this condition fails, those lengths cannot make a triangle."
+      },
+      {
+       "title": "Two sides and their included angle",
+       "body": "Draw one given side, construct the included angle at its endpoint, and mark the other side along the ray. Join the remaining endpoints."
+      },
+      {
+       "title": "One side and two angles",
+       "body": "Draw the given side, construct one angle at each endpoint, and draw the rays. Their intersection is the third vertex."
+      },
+      {
+       "title": "The ambiguous case",
+       "body": "With two sides and an acute angle opposite one of them, the arc may meet the ray twice, touch it once, or not meet it. In Example 5, EF greater than 3 cm gives two triangles, EF equal to 3 cm gives one, and EF less than 3 cm gives none."
+      }
+     ],
+     "mistakes": [
+      "Putting the included angle at the wrong endpoint or drawing it on the wrong side of the given line segment.",
+      "Using the wrong compass centre or radius, so the side lengths are not correct.",
+      "Joining the wrong intersection point or forgetting to label the vertices.",
+      "Assuming an acute-angle construction always gives two triangles; check whether the arc intersects, touches or misses the ray.",
+      "Ignoring the Triangle Inequality Theorem when deciding whether three given lengths can form a triangle."
+     ]
+    }
+   },
+   {
+    "id": "m-11-2",
+    "position": 2,
+    "title": "11.2 Perpendicular Bisectors and Medians of a Triangle",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.2, pages 204–205",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.2 (pages 204–205) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to state the definitions of a perpendicular bisector, median, circumcentre, or centroid. Use the precise defining features: equal halves and 90° for a perpendicular bisector; vertex and opposite-side midpoint for a median.",
+      "For a construction question, show the compass arcs and the lines drawn through their intersections. Mark the midpoints and label the constructed lines and concurrency points clearly.",
+      "When asked to find or identify the concurrency points, name the perpendicular-bisector point O as the circumcentre and the median point O′ as the centroid.",
+      "Keep the two constructions distinct: the perpendicular bisectors are made using arcs from the endpoints of each side; the medians are made by joining vertices to opposite-side midpoints."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Begin by drawing triangle GEF using the three given side lengths.",
+        "For each side, construct its perpendicular bisector with equal-radius arcs from the endpoints; then join each vertex to the opposite midpoint."
+       ],
+       "accept": [
+        [
+         "circumcentre",
+         "centroid"
+        ],
+        [
+         "perpendicular bisectors",
+         "medians"
+        ]
+       ],
+       "question": "Draw perpendicular bisector of the triangle EFG with mE̅F̅ = 5cm, mF̅G̅ = 2.5cm and mE̅G̅ = 4.3 cm. Find the medians.",
+       "solution": [
+        "Draw △GEF as explained in the previous examples.",
+        "Draw two arcs above and below E̅F̅ with more than half of mE̅F̅ with centre at E.",
+        "Draw two arcs above and below E̅F̅ with radius more than half of mE̅F̅ with centre at F.",
+        "Draw a line through the points of intersection of the arcs in steps (ii) and (iii), to get the perpendicular bisector of EF at A.",
+        "Repeat to draw the perpendicular bisectors of FG and EG at B and C respectively.",
+        "Join G to opposite midpoint A to get median GA; join F to opposite midpoint C to get median FC; join E to opposite midpoint B to get median EB.",
+        "The perpendicular bisectors meet at O (the circumcentre), and the medians meet at O′ (the centroid)."
+       ],
+       "answer": "The medians are GA, FC and EB; the perpendicular bisectors meet at O and the medians meet at O′."
+      },
+      {
+       "hints": [
+        "Recall which lines meet at each named point.",
+        "The perpendicular bisectors meet at one named centre; the medians meet at the other."
+       ],
+       "accept": [
+        [
+         "circumcentre",
+         "centroid"
+        ]
+       ],
+       "question": "What are the points of concurrency of the perpendicular bisectors and the medians of a triangle called?",
+       "solution": [
+        "The point of concurrency of the perpendicular bisectors of the sides of a triangle is called circumcentre.",
+        "The point of concurrency of the medians of a triangle is called centroid of the triangle."
+       ],
+       "answer": "The perpendicular bisectors meet at the circumcentre; the medians meet at the centroid."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The triangle must be drawn first so its three sides are available for the constructions.",
+        "text": "i. Draw △GEF as explained in the previous examples."
+       },
+       {
+        "why": "The arcs from E help locate points that are equally distant from the endpoints of EF.",
+        "text": "ii. Draw two arcs above and below E̅F̅ with more than half of mE̅F̅ with centre at E."
+       },
+       {
+        "why": "Using the same radius from F makes the arc intersections suitable for drawing the perpendicular bisector.",
+        "text": "iii. Draw two arcs above and below E̅F̅ with radius more than half of mE̅F̅ with centre at F."
+       },
+       {
+        "why": "The line through the arc intersections is the perpendicular bisector of EF and meets EF at its midpoint A.",
+        "text": "iv. Draw a line through the points of intersection of the arcs in steps (ii) and (iii), we get the perpendicular bisector ↔LL′ of the side EF at A."
+       },
+       {
+        "why": "Repeating the construction for the other two sides gives all three perpendicular bisectors.",
+        "text": "v. Draw two more perpendicular bisectors ↔MM′ and ↔NN′ of the sides FG and EG at B and C respectively."
+       },
+       {
+        "why": "Joining vertex G to the midpoint of the opposite side EF makes a median.",
+        "text": "vi. Join the point G with opposite midpoint A so GA is the median."
+       },
+       {
+        "why": "Each of the other vertices is joined to the midpoint of its opposite side to make the remaining medians.",
+        "text": "vii. Join the point F with opposite midpoint C, we get median FC and join point E with opposite midpoint B, we get median EB."
+       },
+       {
+        "why": "This identifies the concurrency points and their names.",
+        "text": "Hence, we see that the perpendicular bisector LL′, MM′ and NN′ are concurrent at point O or A and the medians GA, EB and FC are concurrent at point O′."
+       }
+      ],
+      "question": "Draw perpendicular bisector of the triangle EFG with mE̅F̅ = 5cm, mF̅G̅ = 2.5cm and mE̅G̅ = 4.3 cm. Find the medians.",
+      "answer": "The medians are GA, FC and EB. The perpendicular bisectors are concurrent at O (the circumcentre), and the medians are concurrent at O′ (the centroid)."
+     },
+     "explain": [
+      {
+       "title": "Perpendicular bisector",
+       "body": "A perpendicular bisector is a line that intersects a line segment at right angle and dividing it into two equal parts. In other words, it intersects the line segment at its midpoint and forms right angles (90°) with it."
+      },
+      {
+       "title": "Median",
+       "body": "A median of a triangle is a line segment that joins a vertex to the midpoint of the side that is opposite to that vertex."
+      },
+      {
+       "title": "Point of concurrency",
+       "body": "A point of concurrency is the single point where three or more lines, rays or line segments intersect or meet in a geometric figure. This concept is commonly used in triangles, where several important types of points of concurrency exist."
+      },
+      {
+       "title": "Two special points in a triangle",
+       "body": "The point of concurrency of perpendicular bisector of the sides of a triangle is called circumcentre. The point of concurrency of the medians of a triangle is called centroid of the triangle."
+      }
+     ],
+     "mistakes": [
+      "Drawing a perpendicular bisector that does not meet the side at 90° or does not pass through its midpoint.",
+      "Using unequal compass radii from the two endpoints when constructing the perpendicular bisector.",
+      "Calling a line from a vertex to an arbitrary point on the opposite side a median; it must reach the midpoint.",
+      "Mixing up the names: perpendicular bisectors meet at the circumcentre, while medians meet at the centroid.",
+      "Leaving construction arcs, midpoint labels, or the concurrency points unclear in a construction answer."
+     ]
+    }
+   },
+   {
+    "id": "m-11-3",
+    "position": 3,
+    "title": "11.3 Angle Bisector of a Triangle",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.3, pages 205–206",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.3 (pages 205–206) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to construct an angle bisector in a triangle; show the arcs and the ray clearly.",
+      "Write the construction steps in order. The arc from the vertex, the two intersecting arcs, and the final ray are important marking points.",
+      "A short definition question may ask what the point of concurrency of the angle bisectors is called: the incentre."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "First construct the triangle using the given lengths and angle.",
+        "For the angle at F, mark A and B with an arc centred at F, then use equal-radius arcs from A and B to locate P."
+       ],
+       "accept": [
+        [
+         "F→P"
+        ],
+        [
+         "FP",
+         "bisector"
+        ]
+       ],
+       "question": "Draw angle bisector of a triangle FGH if:\n\nmFG = 5.2 cm, mGH = 4.1 cm and m∠FGH = 120°",
+       "solution": [
+        "Construct ΔFGH with given lengths and angle.",
+        "Draw an arc of suitable radius with centre at point F intersecting sides FG and FH at points A and B respectively.",
+        "Draw two arcs with centres at points A and B with suitable radius.",
+        "Draw a ray from F passing through the point of intersection of the arcs in step (iii). Which is the required angle bisector F→P of the angle F."
+       ],
+       "answer": "The required angle bisector is the ray F→P."
+      },
+      {
+       "hints": [
+        "Look for the name given to the point where lines or rays meet.",
+        "The three angle bisectors meet at one point; your textbook gives this point a special name."
+       ],
+       "accept": [
+        [
+         "incentre"
+        ],
+        [
+         "incenter"
+        ]
+       ],
+       "question": "What is the point of concurrency of the angle bisectors of a triangle called?",
+       "solution": [
+        "The three angle bisectors of a triangle intersect at one point.",
+        "The point of concurrency of the angle bisectors of a triangle is called the incentre."
+       ],
+       "answer": "The incentre of the triangle."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The given lengths and angle determine the triangle whose angle bisector is required.",
+        "text": "(i) Construct ΔFGH with given lengths and angle."
+       },
+       {
+        "why": "This arc marks equal distances from F on both sides of the angle.",
+        "text": "(ii) Draw an arc of suitable radius with centre at point F intersecting sides FG and FH at points A and B respectively."
+       },
+       {
+        "why": "Using A and B as centres gives an intersection point equally placed from both sides of the angle.",
+        "text": "(iii) Draw two arcs with centres at points A and B with suitable radius."
+       },
+       {
+        "why": "The ray through the arcs’ intersection divides the angle at F into two equal parts.",
+        "text": "(iv) Draw a ray from F passing through the point of intersection of the arcs in step (iii). Which is the required angle bisector F→P of the angle F."
+       },
+       {
+        "why": "Constructing the other two bisectors shows that all three meet at one point.",
+        "text": "(v) Draw two more angle bisectors G→Q and H→R of the angles G and H respectively."
+       }
+      ],
+      "question": "Draw angle bisector of a triangle FGH if:\n\nmFG = 5.2 cm, mGH = 4.1 cm and m∠FGH = 120°",
+      "answer": "The required angle bisector at F is the ray F→P."
+     },
+     "explain": [
+      {
+       "title": "What an angle bisector does",
+       "body": "An angle bisector of a triangle is a line or ray that divides an angle into two equal parts, creating two smaller angles that are congruent (each having half the measure of the original angle)."
+      },
+      {
+       "title": "Constructing an angle bisector",
+       "body": "Use an arc centred at the angle’s vertex to mark both sides. Then draw arcs from those two marks and draw a ray from the vertex through the arcs’ intersection."
+      },
+      {
+       "title": "The incentre",
+       "body": "The angle bisectors of a triangle are concurrent: they meet at one point. The point of concurrency of the angle bisectors of a triangle is called incentre of the triangle."
+      }
+     ],
+     "mistakes": [
+      "Drawing the first arc from a point other than the angle’s vertex.",
+      "Using different radii for the two arcs from the side-intersection points.",
+      "Drawing the final ray from the wrong vertex or not through the arcs’ intersection.",
+      "Calling the common point a centroid or an orthocentre instead of an incentre."
+     ]
+    }
+   },
+   {
+    "id": "m-11-4",
+    "position": 4,
+    "title": "11.4 Altitudes of Triangle",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.4, pages 206–208; Exercise 11.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.4 (pages 206–208) in your textbook.",
+     "Solve Exercise 11.1 in your notebook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to construct a triangle, draw its altitudes and identify its orthocentre.",
+      "Show the construction clearly: label the vertices and feet of the perpendiculars, and mark each right angle.",
+      "For verification, draw all three altitudes and show that they meet at one point; label that point O or as the orthocentre.",
+      "Marks are commonly earned for constructing the triangle correctly, drawing perpendiculars to the opposite sides, and identifying their common point."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Begin with the given side EF = 4 cm.",
+        "Construct the 45° angle at E, mark D so that DE = 4.8 cm, and draw the three perpendiculars."
+       ],
+       "accept": [
+        [
+         "orthocentre"
+        ],
+        [
+         "orthocenter"
+        ],
+        [
+         "intersection",
+         "altitudes"
+        ]
+       ],
+       "question": "Q4. Given the measurements of △DEF : m DE = 4.8 cm, m EF = 4 cm and m∠E = 45°, draw altitudes of △DEF and find orthocentre.",
+       "solution": [
+        "Draw EF = 4 cm.",
+        "At E, construct a 45° angle with EF as one arm.",
+        "On the other arm, mark D so that DE = 4.8 cm.",
+        "Join D to F to complete △DEF.",
+        "Draw a perpendicular from D to EF.",
+        "Draw a perpendicular from E to DF.",
+        "Draw a perpendicular from F to DE.",
+        "Mark the common intersection of the three altitudes as O; O is the orthocentre of △DEF."
+       ],
+       "answer": "The three altitudes meet at O, the orthocentre of △DEF."
+      },
+      {
+       "hints": [
+        "Construct BC = 5 cm and make the given 62° angle at B.",
+        "The possible point D must lie on the other arm of the angle and be 4.7 cm from C; check how many times the circle centred at C reaches that arm."
+       ],
+       "accept": [
+        [
+         "two",
+         "triangles"
+        ],
+        [
+         "2",
+         "triangles"
+        ],
+        [
+         "ambiguous"
+        ]
+       ],
+       "question": "Q5. Construct the following triangles and find whether there exists any ambiguous case.\n\n(i) △BCD ; m BC = 5 cm, m∠B = 62° and m CD = 4.7 cm",
+       "solution": [
+        "Draw BC = 5 cm.",
+        "At B, construct a ray making an angle of 62° with BC.",
+        "With centre C and radius 4.7 cm, draw an arc cutting the ray at two points D₁ and D₂.",
+        "Join C to D₁ and C to D₂.",
+        "Two triangles, △BCD₁ and △BCD₂, can be constructed, so an ambiguous case exists."
+       ],
+       "answer": "Yes. There are two possible triangles, so an ambiguous case exists."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The given measurements determine the triangle whose altitudes will be drawn.",
+        "text": "(i) Construct △GHI using the given measurements."
+       },
+       {
+        "why": "An altitude from G must be perpendicular to the opposite side HI.",
+        "text": "(ii) Draw perpendicular \\overrightarrow{GA} from G to the opposite side HI."
+       },
+       {
+        "why": "The remaining perpendiculars are altitudes from the other two vertices to their opposite sides.",
+        "text": "(iii) Draw two more perpendiculars \\overrightarrow{HB} and \\overrightarrow{IC}. The first is from point H to the opposite side GI and the other is from point I to the opposite side GH."
+       },
+       {
+        "why": "Since all three altitudes meet at O, their concurrency is verified.",
+        "text": "So, \\overrightarrow{GA}, \\overrightarrow{HB} and \\overrightarrow{IC} are the altitudes of △GHI and they intersect at one point O. i.e., the altitudes of △GHI are concurrent."
+       }
+      ],
+      "question": "EXAMPLE 9:\n\nConstruct a triangle GHI in which mGH = 5.7 cm, m∠G = 68° and m∠H = 50°. Prove that altitudes of the ΔGHI are concurrent.",
+      "answer": "The altitudes \\overrightarrow{GA}, \\overrightarrow{HB} and \\overrightarrow{IC} intersect at one point O; therefore, the altitudes of △GHI are concurrent."
+     },
+     "explain": [
+      {
+       "title": "What is an altitude?",
+       "body": "Your textbook defines it this way: “Altitude is a ray drawn perpendicular from a vertex to the opposite side of the triangle.” In other words, it starts at a triangle’s vertex and meets the opposite side at a right angle. The opposite side may need to be extended."
+      },
+      {
+       "title": "Altitudes meet at one point",
+       "body": "There is one altitude from each of the three vertices. Your textbook states: “There are three altitudes of the triangle which meet at a single point i.e. the altitudes of a triangle are concurrent.” The common meeting point is called the orthocentre."
+      },
+      {
+       "title": "Finding the orthocentre in a construction",
+       "body": "First construct the triangle from the measurements given. Then draw a perpendicular from each vertex to its opposite side or the extension of that side. The point where the perpendiculars meet is the orthocentre."
+      },
+      {
+       "title": "The orthocentre",
+       "body": "Your textbook defines it as: “The point of concurrency of the altitudes of the triangle is called orthocentre of the triangle.” Label the common point clearly in your construction."
+      }
+     ],
+     "mistakes": [
+      "Drawing a perpendicular from a vertex to a side that is not opposite that vertex.",
+      "Forgetting to make the altitude perpendicular; it must meet the opposite side at 90°.",
+      "Assuming an altitude must always fall on the side segment instead of allowing the side to be extended.",
+      "Drawing only one or two altitudes when asked to verify that all three are concurrent.",
+      "Failing to label the common intersection as the orthocentre."
+     ]
+    }
+   },
+   {
+    "id": "m-11-5",
+    "position": 5,
+    "title": "11.5 Loci and Construction",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.5, pages 208–211",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.5 (pages 208–211) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "Construction questions may ask you to draw one or more loci and label their intersection; use the correct construction for each condition.",
+      "For a point at a fixed distance from a point, draw a circle with that point as centre and the given distance as radius.",
+      "For a point equidistant from two points, construct the perpendicular bisector of the segment joining them; for a point equidistant from two intersecting lines, construct the angle bisector.",
+      "Marks are earned by drawing the correct loci, placing the required point at their intersection, and labelling it clearly.",
+      "For scale questions, convert the real distance to the drawing distance using the stated scale, then convert any measured drawing distance back to the real distance."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "First identify the two conditions the point must satisfy.",
+        "Draw a circle centred at E with radius 2 cm and the angle bisector of angle DEF; label their intersection inside the triangle X."
+       ],
+       "accept": [
+        [
+         "2 cm",
+         "angle bisector"
+        ]
+       ],
+       "question": "Construct an isosceles triangle DEF with vertical angle 80° at E and mEF = mDE = 3.1 cm. Draw the locus of all points which are:\n(i) at a distance of 2 cm from point E,\n(ii) equidistant from DE and EF.\nLabel the point X inside the triangle which is 2 cm from point E and equidistant from ED and EF.",
+       "solution": [
+        "Construct triangle DEF with the given measurements.",
+        "Draw a circle of radius 2 cm with centre at E.",
+        "Draw angle bisector EL of angle DEF.",
+        "The two loci intersect at X inside the triangle; label this point X."
+       ],
+       "answer": "Draw a circle of radius 2 cm centred at E and the angle bisector of angle DEF; their intersection inside the triangle is X."
+      },
+      {
+       "hints": [
+        "Use the scale 10 m = 1 cm to convert 13 m to a drawing distance.",
+        "Draw the perpendicular bisector of LM and the angle bisector of angle MLN for P; draw the 1.3 cm parallel line and the angle bisector for Q. Convert PQ using the scale."
+       ],
+       "accept": [
+        [
+         "13 m"
+        ]
+       ],
+       "question": "A field is in the form of a triangle LMN with mLM = 69 m, m∠L = 60° and m∠M = 45°.\n(i) Construct ΔLMN with given measurements. [Scale: 10m = 1cm]\n(ii) Draw the locus of all points which are equidistant from L and M, equidistant from LM and LN and at a distance of 13 m from LM inside the triangular field.\n(iii) Two trees are to be planted at points P and Q inside the field.\n(a) Mark the position of point P which is equidistant from L and M and equidistant from LM and LN.\n(b) Mark the position of point Q which is equidistant from LM and LN and 13 m from LM.\n(c) Find mPQ.",
+       "solution": [
+        "Construct triangle LMN with the given measurements using a scale of 10 m to represent 1 cm.",
+        "Draw perpendicular bisector ℓ₁ of LM.",
+        "Draw angle bisector of angle MLN.",
+        "Draw a parallel line ℓ₂ inside triangle LMN, 1.3 cm from LM.",
+        "Label P where the perpendicular bisector and angle bisector meet inside the triangle.",
+        "Label Q where the angle bisector and the parallel line meet inside the triangle.",
+        "mPQ = 1.3 × 10 = 13 m."
+       ],
+       "answer": "mPQ = 13 m."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The rectangle is the starting figure required by the given side lengths.",
+        "text": "Construct rectangle ABCD with the given lengths."
+       },
+       {
+        "why": "A circle centred at A contains exactly the points 2 cm from A.",
+        "text": "Draw a circle of radius 2 cm with centre at A."
+       },
+       {
+        "why": "Every point on this perpendicular bisector is equidistant from A and B.",
+        "text": "Draw perpendicular bisector of AB."
+       },
+       {
+        "why": "The intersection satisfies both loci, so it meets both conditions.",
+        "text": "The two loci intersect at P inside the rectangle which is 2 cm from point A and equidistant from A and B."
+       }
+      ],
+      "question": "Construct a rectangle ABCD with mAB = 3.5 cm and mBC = 2.3 cm. Draw the locus of all points which are:\n(i) at a distance of 2 cm from point A.\n(ii) equidistant from A and B.\nLabel the point P inside the rectangle which is 2 cm from point A and equidistant from A and B.",
+      "answer": "P is the intersection inside the rectangle of the circle centred at A with radius 2 cm and the perpendicular bisector of AB."
+     },
+     "explain": [
+      {
+       "title": "What is a locus?",
+       "body": "A locus (plural loci) is a set of points that follow a given rule. It tells us where a point can be when it obeys a condition."
+      },
+      {
+       "title": "Common loci in two dimensions",
+       "body": "The locus of a point whose distance is constant from a fixed point is called a circle. Points at a constant distance from a fixed line form two parallel lines. Points equidistant from two fixed points lie on their perpendicular bisector. Points equidistant from two intersecting lines lie on an angle bisector."
+      },
+      {
+       "title": "Intersections of loci",
+       "body": "If two or more loci intersect at a point P, then P satisfies all given conditions of the loci. Draw each locus and mark the intersection that meets the question's location requirement."
+      },
+      {
+       "title": "Using a scale",
+       "body": "In Example 12, the scale is 10 m = 1 cm. So 13 m is represented by 1.3 cm, and a drawing length of 1.3 cm represents 13 m in the field."
+      }
+     ],
+     "mistakes": [
+      "Drawing a circle with the wrong centre or radius for a fixed-distance condition.",
+      "Using the angle bisector when the condition is equidistance from two points, or using the perpendicular bisector when the condition is equidistance from two lines.",
+      "Marking a point on only one locus instead of at the intersection of all required loci.",
+      "Forgetting to choose the intersection inside the given shape when the question specifies it.",
+      "Using the scale in the wrong direction or forgetting to write the real measurement with its units."
+     ]
+    }
+   },
+   {
+    "id": "m-11-6",
+    "position": 6,
+    "title": "11.6 Real Life Application of Loci",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, section 11.6, pages 211–213; Exercise 11.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 11.6 (pages 211–213) in your textbook.",
+     "Solve Exercise 11.2 in your notebook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "Locus questions commonly ask you to construct or draw a set of points satisfying a distance condition.",
+      "For a fixed distance from one point, show the centre and draw the circle with the stated radius.",
+      "For equal distances from two points, construct the perpendicular bisector of the segment joining them.",
+      "When a question gives two conditions, use both loci and mark the required intersection point or points clearly.",
+      "Use the stated lengths and label points and constructed loci neatly; an accurate construction and the correct final point both matter."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think about the shape made by points all the same distance from A.",
+        "Set the compass to 5 cm and use A as its centre."
+       ],
+       "accept": [
+        [
+         "circle",
+         "A",
+         "5cm"
+        ]
+       ],
+       "question": "Two points A and B are 8.2 cm apart. Construct the locus of points 5 cm from point A.",
+       "solution": [
+        "Set the compass opening to 5 cm.",
+        "Place the compass point at A and draw a circle.",
+        "The circle is the locus of points 5 cm from A."
+       ],
+       "answer": "A circle centred at A with radius 5 cm."
+      },
+      {
+       "hints": [
+        "Equal distances from two points are represented by a particular straight line.",
+        "Use intersecting arcs from E and F, then join their intersections."
+       ],
+       "accept": [
+        [
+         "perpendicular",
+         "bisector",
+         "EF"
+        ]
+       ],
+       "question": "Two points E and F are 5.4 cm apart. Construct a locus of a point P which moves such that it is equidistant from E and F.",
+       "solution": [
+        "Draw EF = 5.4 cm.",
+        "With a compass radius greater than half of EF, draw arcs centred at E above and below EF.",
+        "With the same radius, draw arcs centred at F to intersect the first pair of arcs.",
+        "Join the two arc-intersection points and extend the line.",
+        "This perpendicular bisector of EF is the required locus."
+       ],
+       "answer": "The perpendicular bisector of EF."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This names the two fixed water sources whose distances must be equal.",
+        "text": "Let X and Y represent the two water sources in the park."
+       },
+       {
+        "why": "The perpendicular bisector contains every point that is equally distant from X and Y.",
+        "text": "Draw the perpendicular bisector of XY which represents the locus of all points equidistant from X and Y."
+       }
+      ],
+      "question": "A park has two water sources at two different points. A fire hydrant needs to be placed so it is equally accessible to both sources.",
+      "answer": "Place the hydrant on the perpendicular bisector of XY."
+     },
+     "explain": [
+      {
+       "title": "Locus for equal distances from two points",
+       "body": "Your textbook says: “Draw the perpendicular bisector of XY which represents the locus of all points equidistant from X and Y.” So if a point must be equally far from two fixed points, construct the perpendicular bisector of the segment joining them."
+      },
+      {
+       "title": "Locus for a fixed distance from one point",
+       "body": "If every point must be the same distance from one fixed point, the locus is a circle. The fixed point is the centre, and the required distance is the radius."
+      },
+      {
+       "title": "Use more than one condition",
+       "body": "When a question gives two conditions, construct the locus for each condition. Any point satisfying both conditions lies where the two loci meet."
+      },
+      {
+       "title": "Loci in real situations",
+       "body": "A place equally accessible to two water sources can be chosen on their perpendicular bisector. A safety boundary a fixed distance from a source can be shown by a circle."
+      }
+     ],
+     "mistakes": [
+      "Drawing a circle when the condition is equal distance from two points; that condition needs a perpendicular bisector.",
+      "Using a perpendicular bisector when the condition is a fixed distance from just one point; that condition needs a circle.",
+      "Setting the compass to the wrong radius or measuring from the wrong centre.",
+      "Forgetting to mark the intersection when a question gives two conditions.",
+      "Leaving the constructed line or circle unlabeled, or drawing it inaccurately."
+     ]
+    }
+   },
+   {
+    "id": "m-11-7",
+    "position": 7,
+    "title": "Unit 11 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 11, review exercise, pages 213–214; Review Exercise 11",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 11 and attempt Review Exercise 11 (pages 213–214)."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "Review questions may ask you to choose a locus from a condition, state a triangle property, or construct a triangle and its locus.",
+      "In construction questions, show the construction lines clearly and label the given lengths, angles, vertices, and locus.",
+      "Marks are commonly earned for the correctly constructed base, accurate angles or lengths, the correct third vertex, and the correctly drawn locus.",
+      "For a region question, show the boundary and make clear which side or interior region satisfies the condition."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Draw AB = 5.3 cm first.",
+        "Draw the 30° ray at A and the 120° ray at B on the same side of AB; their meeting point is C. Then construct the perpendicular bisector of AB."
+       ],
+       "accept": [
+        [
+         "5.3",
+         "30",
+         "120",
+         "perpendicular",
+         "bisector"
+        ]
+       ],
+       "question": "Construct a triangle ABC with mA̅B̅ = 5.3 cm, m∠A = 30° and m∠B = 120°.\nDraw the locus of all points which are equidistant from A and B.",
+       "solution": [
+        "Draw AB = 5.3 cm.",
+        "At A, construct a ray making an angle of 30° with AB.",
+        "At B, construct a ray making an angle of 120° with BA on the same side of AB.",
+        "Label the intersection of the rays C and join AC and BC.",
+        "With A and B as centres and equal radii greater than half of AB, draw arcs above and below AB.",
+        "Join the two arc-intersection points; this line is the perpendicular bisector of AB and is the required locus."
+       ],
+       "answer": "Triangle ABC is constructed with AB = 5.3 cm, ∠A = 30° and ∠B = 120°. Its required locus is the perpendicular bisector of AB."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The 8 cm side is a convenient base, and the 6 cm side can be erected perpendicular to it.",
+        "text": "Draw AB = 8 cm."
+       },
+       {
+        "why": "A right angle between the 8 cm and 6 cm sides makes the triangle right angled.",
+        "text": "At B, construct a perpendicular to AB."
+       },
+       {
+        "why": "This fixes the second leg at the required length.",
+        "text": "On the perpendicular, mark C so that BC = 6 cm."
+       },
+       {
+        "why": "Joining the remaining endpoints completes the triangle; its hypotenuse is 10 cm.",
+        "text": "Join A to C; AC = 10 cm."
+       }
+      ],
+      "question": "Construct a right angled triangle with measures of sides 6 cm, 8 cm and 10 cm.",
+      "answer": "A right angled triangle ABC is constructed with AB = 8 cm, BC = 6 cm, ∠B = 90° and AC = 10 cm."
+     },
+     "explain": [
+      {
+       "title": "Triangle construction condition",
+       "body": "A triangle can be constructed only when the sum of any two side lengths is greater than the third side. An equilateral triangle has all sides equal and all angles 60°; it is also isosceles."
+      },
+      {
+       "title": "Triangle facts and special segments",
+       "body": "The angles of a triangle add to 180°. A median joins a vertex to the midpoint of the opposite side. The three internal angle bisectors meet at one point."
+      },
+      {
+       "title": "Locus from a fixed point or line",
+       "body": "Points at a fixed distance from one point lie on a circle centred at that point. Points at a fixed distance from a straight line lie on parallel lines, one on each side."
+      },
+      {
+       "title": "Locus from equal distances",
+       "body": "Points equidistant from two fixed points lie on the perpendicular bisector of the segment joining them. Points equidistant from two intersecting lines lie on their angle bisectors."
+      },
+      {
+       "title": "Showing a required region",
+       "body": "Convert real distances using the given scale before drawing. For example, 32 m at 1 cm to 10 m is 3.2 cm. For a region, identify its boundary first, then shade or mark the side that meets the words such as inside, less than, or farther than."
+      }
+     ],
+     "mistakes": [
+      "Using a side-sum equal to the third side; it must be strictly greater.",
+      "Drawing an angle at the wrong endpoint or measuring it from the wrong arm.",
+      "Confusing the perpendicular bisector of a segment with an angle bisector.",
+      "Forgetting that a fixed-distance locus from a point is a circle centred at that point.",
+      "Using the scale backwards or shading the wrong side of a locus boundary."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-11-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-1",
+   "title": "Constructing triangles",
+   "keywords": [
+    "triangle",
+    "construction",
+    "included angle",
+    "compass",
+    "ambiguous case",
+    "triangle inequality"
+   ],
+   "answer": "Construct the given measurements accurately, then join the points to complete the triangle.",
+   "explanation": "A triangle can be constructed when enough side lengths and angle measures are given. Draw the given side or angle first, then use a compass or protractor to locate the remaining vertex.",
+   "simple": "Draw the known part first. Then use the given lengths and angles to find where the third corner must be.",
+   "examples": [
+    "For two sides and their included angle: draw one side, construct the included angle at its endpoint, mark the second side on the ray, and join the endpoints.",
+    "For one side and two angles: draw the side, construct an angle at each endpoint, and mark where the rays meet."
+   ],
+   "steps": [
+    "Draw the given side or angle.",
+    "Use a protractor or compass to construct the given angles or lengths.",
+    "Mark the point where the two rays or arcs meet.",
+    "Join the points to complete the triangle."
+   ],
+   "checkQuestion": "When one side and two angles are given, what marks the third vertex?",
+   "checkAnswer": "The two rays meet at the third vertex.",
+   "checkAccept": [
+    [
+     "third vertex"
+    ],
+    [
+     "rays",
+     "meet"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-2",
+   "title": "Perpendicular Bisectors and Medians",
+   "keywords": [
+    "perpendicular bisector",
+    "median",
+    "midpoint",
+    "concurrency",
+    "circumcentre",
+    "centroid"
+   ],
+   "answer": "The perpendicular bisectors meet at the circumcentre; the medians meet at the centroid.",
+   "explanation": "A perpendicular bisector cuts a side into two equal parts at a right angle. A median joins a vertex to the midpoint of the opposite side. In a triangle, the three perpendicular bisectors meet at the circumcentre, while the three medians meet at the centroid.",
+   "simple": "A perpendicular bisector cuts a side in half at 90°. A median goes from a corner of a triangle to the midpoint of the opposite side.",
+   "examples": [
+    "For side EF, construct arcs from E and F using the same radius, greater than half of EF. Join the two arc-intersection points to draw its perpendicular bisector.",
+    "If A is the midpoint of EF, then GA is the median from vertex G."
+   ],
+   "steps": [
+    "Construct the triangle with the given side lengths.",
+    "For a side, draw equal-radius arcs from its two endpoints, using a radius greater than half the side.",
+    "Join the arc-intersection points to draw the perpendicular bisector of that side.",
+    "Repeat for the other two sides.",
+    "Join each vertex to the midpoint of its opposite side to draw the medians."
+   ],
+   "checkQuestion": "What is the name of the point where the medians of a triangle meet?",
+   "checkAnswer": "The circumcentre is where the perpendicular bisectors meet; the centroid is where the medians meet.",
+   "checkAccept": [
+    [
+     "medians",
+     "centroid"
+    ],
+    [
+     "centroid"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-3",
+   "title": "Angle Bisector of a Triangle",
+   "keywords": [
+    "angle bisector",
+    "triangle",
+    "equal angles",
+    "arc",
+    "concurrent",
+    "incentre"
+   ],
+   "answer": "The three angle bisectors meet at the incentre of the triangle.",
+   "explanation": "An angle bisector divides an angle into two equal angles. For a triangle, construct the bisector of each angle using arcs. The three bisectors meet at one point called the incentre.",
+   "simple": "An angle bisector splits an angle exactly in half. The three angle bisectors of a triangle meet at the incentre.",
+   "examples": [],
+   "steps": [
+    "Construct the triangle using the given lengths and angle.",
+    "With the vertex of the angle as centre, draw an arc that cuts both sides of the angle.",
+    "With the two cut points as centres, draw arcs that intersect.",
+    "Draw a ray from the vertex through the arcs’ intersection.",
+    "Repeat for the other two angles; the three bisectors meet at the incentre."
+   ],
+   "checkQuestion": "What is the point where the three angle bisectors of a triangle meet called?",
+   "checkAnswer": "The incentre",
+   "checkAccept": [
+    [
+     "incentre"
+    ],
+    [
+     "incenter"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-4",
+   "title": "Altitudes and the orthocentre",
+   "keywords": [
+    "altitude",
+    "perpendicular",
+    "vertex",
+    "opposite side",
+    "concurrent",
+    "orthocentre"
+   ],
+   "answer": "The three altitudes of a triangle are concurrent, and their point of concurrency is the orthocentre.",
+   "explanation": "An altitude is drawn from a vertex perpendicular to the opposite side (or its extension). The three altitudes meet at the orthocentre.",
+   "simple": "An altitude is a perpendicular line from a triangle’s corner to the opposite side or its extension. Where all three altitudes meet is called the orthocentre.",
+   "examples": [
+    "In △GHI, the altitudes from G, H and I meet at O; O is the orthocentre.",
+    "For △DEF, draw perpendiculars from the vertices to the opposite sides. Their common intersection is the orthocentre."
+   ],
+   "steps": [
+    "Construct the triangle using the given measurements.",
+    "From a vertex, draw a perpendicular to the opposite side or its extension.",
+    "Repeat from the other two vertices.",
+    "Mark the common intersection of the altitudes as the orthocentre."
+   ],
+   "checkQuestion": "What is the point where the three altitudes of a triangle meet called?",
+   "checkAnswer": "The orthocentre.",
+   "checkAccept": [
+    [
+     "orthocentre"
+    ],
+    [
+     "orthocenter"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-5",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-5",
+   "title": "Loci and Construction",
+   "keywords": [
+    "locus",
+    "circle",
+    "perpendicular bisector",
+    "angle bisector",
+    "parallel lines",
+    "intersection"
+   ],
+   "answer": "The locus of points at a fixed distance from one fixed point is a circle.",
+   "explanation": "A locus is the set of points that follow a given rule. To locate a point that must follow two rules, draw both loci; their intersection satisfies both conditions.",
+   "simple": "A locus is a path or set of places where a point can be, based on a rule.",
+   "examples": [
+    "A point 2 cm from A lies on a circle with centre A and radius 2 cm.",
+    "A point equidistant from A and B lies on the perpendicular bisector of AB."
+   ],
+   "steps": [
+    "Identify each condition in the question.",
+    "Choose and draw the locus for each condition.",
+    "Mark the point where the loci intersect.",
+    "Check that the point satisfies every condition."
+   ],
+   "checkQuestion": "What is the locus of points at a fixed distance from one fixed point?",
+   "checkAnswer": "A circle.",
+   "checkAccept": [
+    [
+     "circle"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-6",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-6",
+   "title": "Loci for equal distances and fixed distances",
+   "keywords": [
+    "locus",
+    "perpendicular bisector",
+    "equidistant",
+    "fixed distance",
+    "circle"
+   ],
+   "answer": "Equal distance from two points gives a perpendicular bisector; a fixed distance from one point gives a circle.",
+   "explanation": "A point that is equally far from two fixed points lies on the perpendicular bisector of the segment joining them. A point that is a fixed distance from one point lies on a circle centred at that point.",
+   "simple": "A locus is the path or set of places that satisfy a rule. For example, all places 5 cm from A make a circle around A.",
+   "examples": [
+    "A point 5 cm from A lies on a circle centred at A with radius 5 cm.",
+    "A point equally distant from E and F lies on the perpendicular bisector of EF."
+   ],
+   "steps": [
+    "Identify the condition: equal distances from two points, or a fixed distance from one point.",
+    "For equal distances from two points, construct the perpendicular bisector of the segment joining them.",
+    "For a fixed distance from one point, draw a circle centred at that point with the required radius."
+   ],
+   "checkQuestion": "What is the locus of points equidistant from E and F?",
+   "checkAnswer": "The perpendicular bisector of EF.",
+   "checkAccept": [
+    [
+     "perpendicular",
+     "bisector",
+     "EF"
+    ]
+   ]
+  },
+  {
+   "id": "n-11-7",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-11-7",
+   "title": "Loci and construction: review",
+   "keywords": [
+    "locus",
+    "construction",
+    "perpendicular bisector",
+    "angle bisector",
+    "equidistant",
+    "circle"
+   ],
+   "answer": "A locus is the set of all points satisfying a stated condition.",
+   "explanation": "A locus is the path or set of points that follows a stated condition. For example, points a fixed distance from a point lie on a circle, while points equidistant from two points lie on their perpendicular bisector.",
+   "simple": "A locus is all the places a moving point can be while following a rule.",
+   "examples": [
+    "Points 3 cm from A lie on a circle with centre A and radius 3 cm.",
+    "Points equidistant from two intersecting lines lie on their angle bisectors."
+   ],
+   "steps": [
+    "Read the condition and identify the known length or angle.",
+    "Construct the required triangle using a ruler, compass, and protractor as needed.",
+    "Match the locus condition to its path: fixed distance from a point gives a circle; equal distance from two points gives a perpendicular bisector; equal distance from two intersecting lines gives angle bisectors.",
+    "Draw and label the required locus or region."
+   ],
+   "checkQuestion": "What is the locus of points equidistant from two fixed points?",
+   "checkAnswer": "The perpendicular bisector of the segment joining the two fixed points.",
+   "checkAccept": [
+    [
+     "perpendicular",
+     "bisector"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-11-1-1",
+   "stem": "When constructing a triangle from three given side lengths, which side may be drawn first?",
+   "options": [
+    "Draw any one of the three sides first.",
+    "Draw the longest side first.",
+    "Draw the shortest side first.",
+    "Draw the three sides without using a compass."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: your textbook says that when three sides are given, we can draw any length first.",
+    "Incorrect: the longest side does not have to be drawn first.",
+    "Incorrect: the shortest side does not have to be drawn first.",
+    "Incorrect: a compass is used to mark the other two side lengths from the endpoints."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-2",
+   "stem": "Which statement is the Triangle Inequality Theorem?",
+   "options": [
+    "The sum of any two sides is greater than the third side.",
+    "The sum of any two sides is equal to the third side.",
+    "The sum of any two sides is less than the third side.",
+    "All three sides must have equal lengths."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the sum of the measure of any two sides of a triangle is always greater than the measure of the third side.",
+    "Incorrect: the theorem says greater than, not equal to.",
+    "Incorrect: the theorem says greater than, not less than.",
+    "Incorrect: the theorem applies to every triangle, not only equilateral triangles."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-3",
+   "stem": "For a triangle given two sides and their included angle, what is the correct construction method?",
+   "options": [
+    "At the endpoint of the first side, construct the included angle and mark the second side on its ray.",
+    "Draw two unrelated sides and estimate the angle.",
+    "Construct the angle at the opposite endpoint of the second side.",
+    "Draw a circle and choose any point on it."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the included angle is drawn at the endpoint of the first side, then the second side is marked on its ray.",
+    "Incorrect: the sides and angle must be connected by the given measurements.",
+    "Incorrect: the included angle is between the two given sides, not placed arbitrarily.",
+    "Incorrect: a circle is not the construction method described for this case."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-4",
+   "stem": "When one side and two angles are given, how is the third vertex found?",
+   "options": [
+    "The two rays intersect at the third vertex.",
+    "The two rays are parallel.",
+    "The rays meet at the midpoint of the given side.",
+    "The third vertex is chosen anywhere."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the rays drawn from the two endpoints intersect at the third vertex.",
+    "Incorrect: the construction depends on the rays intersecting, not being parallel.",
+    "Incorrect: the intersection need not be the midpoint of the given side.",
+    "Incorrect: the vertex is fixed by the intersection of the constructed rays."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-5",
+   "stem": "If the angle opposite the given side is obtuse, how many triangles are possible in the case described in your textbook?",
+   "options": [
+    "One triangle is possible.",
+    "Two triangles are possible.",
+    "No triangle is possible.",
+    "An equilateral triangle is always possible."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: your textbook states that if the given opposite angle is obtuse, only one triangle is possible.",
+    "Incorrect: the two-triangle ambiguous case is described for an acute angle.",
+    "Incorrect: the textbook’s obtuse-angle case constructs one triangle.",
+    "Incorrect: the given measurements do not guarantee an equilateral triangle."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-6",
+   "stem": "In Example 5, DE = 6 cm, ∠D = 30°, and EF = 3.6 cm. How many triangles are formed?",
+   "options": [
+    "Two triangles are possible.",
+    "Only one triangle is possible.",
+    "No triangle is possible.",
+    "Three triangles are possible."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 3.6 cm is greater than the 3 cm perpendicular distance, so the arc intersects the ray at two points.",
+    "Incorrect: the arc intersects the ray at two points, not just one.",
+    "Incorrect: the arc does intersect the ray because its radius is greater than 3 cm.",
+    "Incorrect: the construction gives two intersection points, not three."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-7",
+   "stem": "If DE = 6 cm, ∠D = 30°, and EF = 3 cm, what happens in the acute-angle construction described in your textbook?",
+   "options": [
+    "One right-angled triangle is possible.",
+    "Two triangles are possible.",
+    "No triangle is possible.",
+    "One obtuse-angled triangle is possible."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the arc touches the ray once, and EF is perpendicular to the ray, making a right-angled triangle.",
+    "Incorrect: the arc touches the ray rather than crossing it twice.",
+    "Incorrect: the arc touches the ray, so a triangle can be formed.",
+    "Incorrect: the textbook identifies the resulting triangle as right angled."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-1-8",
+   "stem": "If DE = 6 cm, ∠D = 30°, and EF = 2.5 cm, what is the result?",
+   "options": [
+    "No triangle can be formed.",
+    "One triangle is possible.",
+    "Two triangles are possible.",
+    "A right-angled triangle is always possible."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 2.5 cm is less than the 3 cm perpendicular distance, so the arc does not intersect the ray.",
+    "Incorrect: the arc does not reach the ray, so there is no triangle.",
+    "Incorrect: the arc does not intersect the ray even once.",
+    "Incorrect: the arc does not touch the ray, so no right-angled triangle is formed."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-1",
+   "moduleId": "m-11-1"
+  },
+  {
+   "id": "q-11-2-1",
+   "stem": "Which description defines a perpendicular bisector?",
+   "options": [
+    "A line that cuts a segment into two equal parts at 90°",
+    "A line that joins two vertices",
+    "A line that joins a vertex to the opposite vertex",
+    "A line that divides an angle into two unequal parts"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because a perpendicular bisector meets a segment at a right angle and divides it into equal parts.",
+    "This describes a side of a triangle, not a perpendicular bisector.",
+    "A segment joining opposite vertices is a diagonal in some figures, not the definition of a perpendicular bisector.",
+    "This does not describe a perpendicular bisector, which bisects a line segment at 90°."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-2-2",
+   "stem": "What is a median of a triangle?",
+   "options": [
+    "A segment joining a vertex to the midpoint of the opposite side",
+    "A line through two side midpoints",
+    "A segment perpendicular to a side at one endpoint",
+    "A line joining the midpoints of two sides"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: a median joins a vertex to the midpoint of its opposite side.",
+    "This is not the definition of a median.",
+    "A median does not have to meet the side at a right angle or at an endpoint.",
+    "This joins two side midpoints rather than a vertex to an opposite-side midpoint."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-2-3",
+   "stem": "What is the point of concurrency of the perpendicular bisectors of a triangle called?",
+   "options": [
+    "Circumcentre",
+    "Centroid",
+    "Midpoint",
+    "Vertex"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the concurrency point of the perpendicular bisectors is the circumcentre.",
+    "The centroid is the concurrency point of the medians.",
+    "A midpoint is the point halfway along a segment, not the concurrency point of the perpendicular bisectors.",
+    "A vertex is a corner of the triangle, not the name for this concurrency point."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-2-4",
+   "stem": "What is the point of concurrency of the medians of a triangle called?",
+   "options": [
+    "Centroid",
+    "Circumcentre",
+    "Midpoint",
+    "Right angle"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the medians of a triangle meet at its centroid.",
+    "The circumcentre is where the perpendicular bisectors meet.",
+    "A midpoint is halfway along one side, not the concurrency point of the medians.",
+    "A right angle is an angle of 90°, not a point."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-2-5",
+   "stem": "To construct a median from a vertex, which point on the opposite side must you join it to?",
+   "options": [
+    "The midpoint of the opposite side",
+    "The circumcentre",
+    "A different vertex",
+    "The point where a perpendicular bisector meets a side"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because a median joins a vertex to the midpoint of the opposite side.",
+    "The circumcentre is where perpendicular bisectors meet, not the required endpoint of a median.",
+    "Joining one vertex to another gives a side of the triangle, not a median.",
+    "A perpendicular bisector's intersection with a side is its midpoint, but the defining point to use is the midpoint itself."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-2-6",
+   "stem": "When constructing a perpendicular bisector with arcs from the endpoints of a side, what radius does the book's method require?",
+   "options": [
+    "A radius greater than half the side length",
+    "A radius equal to zero",
+    "A radius less than half the side length",
+    "Two different radii for the two endpoints"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: the construction uses a radius greater than half the side length from each endpoint.",
+    "A zero radius would make no useful arcs.",
+    "A radius less than half the side length will not make the required pair of arc intersections.",
+    "The method uses the same radius from both endpoints so the arcs intersect at suitable points."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-2",
+   "moduleId": "m-11-2"
+  },
+  {
+   "id": "q-11-3-1",
+   "stem": "What is an angle bisector?",
+   "options": [
+    "A line or ray that divides an angle into two equal parts",
+    "A line that divides a side into two equal parts",
+    "A line that joins two vertices",
+    "A line perpendicular to a side"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the definition of an angle bisector.",
+    "This describes a side being bisected, not an angle.",
+    "A line joining two vertices is a side of the triangle.",
+    "A perpendicular line meets another line at a right angle; it need not bisect an angle."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-3-2",
+   "stem": "What does an angle bisector create?",
+   "options": [
+    "Two equal angles",
+    "Two supplementary angles in every case",
+    "Two right angles in every case",
+    "Two unequal angles"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "It divides the original angle into two equal parts.",
+    "The two parts add to the original angle, which is not always 180°.",
+    "The two parts are not necessarily right angles.",
+    "An angle bisector creates equal, not unequal, angles."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-3-3",
+   "stem": "In the construction in Example 8, what is done first when making the angle bisector at F?",
+   "options": [
+    "An arc centred at F cuts FG and FH at A and B",
+    "An arc centred at A cuts FG and GH",
+    "A ray is drawn through G before any arcs are made",
+    "The side GH is bisected first"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The book’s construction uses an arc centred at F to meet the two sides at A and B.",
+    "The first arc is centred at F, not A, and cuts the two sides meeting at F.",
+    "The construction uses arcs before drawing the required ray.",
+    "The method starts by marking points on the sides of the angle, not by bisecting GH."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-3-4",
+   "stem": "After the two arcs with centres A and B intersect, how is the angle bisector at F drawn?",
+   "options": [
+    "Draw a ray from F through the intersection of the two arcs",
+    "Join A to B",
+    "Draw a perpendicular to FG through H",
+    "Join F to G"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The ray from F through the arcs’ intersection is the required angle bisector.",
+    "Joining A to B does not construct the angle bisector from F.",
+    "This is not the construction described in the section.",
+    "FG is already a side of the triangle, not the required bisector."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-3-5",
+   "stem": "What do the three angle bisectors of a triangle do?",
+   "options": [
+    "The angle bisectors of a triangle are concurrent",
+    "The angle bisectors are parallel",
+    "Only two angle bisectors meet",
+    "The angle bisectors meet at a vertex"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "They intersect at one point, so they are concurrent.",
+    "They intersect at one point rather than being parallel.",
+    "All three angle bisectors meet at the same point.",
+    "Their common point is inside the triangle, not necessarily at a vertex."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-3-6",
+   "stem": "What is the point of concurrency of the angle bisectors of a triangle called?",
+   "options": [
+    "Incentre",
+    "Centroid",
+    "Orthocentre",
+    "Midpoint"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The point of concurrency of a triangle’s angle bisectors is its incentre.",
+    "The centroid is the point where the medians meet.",
+    "The orthocentre is the point where the altitudes meet.",
+    "A midpoint is the point halfway along a segment."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-3",
+   "moduleId": "m-11-3"
+  },
+  {
+   "id": "q-11-4-1",
+   "stem": "Which statement describes an altitude of a triangle?",
+   "options": [
+    "A perpendicular drawn from a vertex to the opposite side",
+    "A line joining a vertex to the midpoint of the opposite side",
+    "A line that divides an angle into two equal angles",
+    "A perpendicular bisector of a side"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the definition of an altitude.",
+    "This describes a median, not an altitude.",
+    "This describes an angle bisector.",
+    "This describes a perpendicular bisector."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-2",
+   "stem": "What is the point of concurrency of the altitudes called?",
+   "options": [
+    "Circumcentre",
+    "Centroid",
+    "Orthocentre",
+    "Incentre"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The circumcentre is the point where perpendicular bisectors meet.",
+    "The centroid is the point where medians meet.",
+    "The orthocentre is the point where altitudes meet.",
+    "The incentre is the point where angle bisectors meet."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-3",
+   "stem": "How many altitudes does a triangle have?",
+   "options": [
+    "Two",
+    "Three",
+    "Four",
+    "One"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A triangle has one altitude from each of its three vertices, not two.",
+    "A triangle has three altitudes, one from each vertex.",
+    "A triangle has three vertices, so it does not have four altitudes.",
+    "There is an altitude from each vertex, not just one."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-4",
+   "stem": "Which property of the altitudes of a triangle is stated in your textbook?",
+   "options": [
+    "The three altitudes are concurrent",
+    "The three altitudes are parallel",
+    "The three altitudes are equal in length",
+    "The three altitudes meet at a vertex"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The altitudes meet at a single point, so they are concurrent.",
+    "Altitudes of a triangle are not generally parallel.",
+    "The three altitudes are not generally equal in length.",
+    "The altitudes meet at the orthocentre, which is not generally a vertex."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-5",
+   "stem": "In △GHI, which line is the altitude from G?",
+   "options": [
+    "A perpendicular from G to HI",
+    "A perpendicular from H to GH",
+    "A perpendicular from I to HI",
+    "A perpendicular from G to GI"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The altitude from G is perpendicular to the opposite side HI.",
+    "The opposite side to H is GI, not GH.",
+    "HI is not opposite vertex I; the opposite side is GH.",
+    "GI contains vertex G, so it is not the opposite side to G."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-6",
+   "stem": "How can the orthocentre be identified in a constructed triangle?",
+   "options": [
+    "The midpoint of the opposite side",
+    "The common point of the three altitudes",
+    "The point where the sides are equal",
+    "The midpoint of an angle"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The midpoint of the opposite side is used when constructing a median.",
+    "The orthocentre is the common point of the three altitudes.",
+    "Equal sides do not define the orthocentre.",
+    "A midpoint belongs to a segment, not an angle."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-7",
+   "stem": "At what angle must an altitude meet the opposite side or its extension?",
+   "options": [
+    "At a right angle to the opposite side",
+    "At an angle of 45° to the opposite side",
+    "Parallel to the opposite side",
+    "Along the opposite side"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "An altitude is perpendicular, so it meets the opposite side or its extension at a right angle.",
+    "An altitude is not defined by a 45° angle.",
+    "A line parallel to the opposite side is not perpendicular to it.",
+    "A line along the opposite side is not an altitude from the vertex."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-4-8",
+   "stem": "Which lines meet at the orthocentre?",
+   "options": [
+    "The point where the medians meet",
+    "The point where the angle bisectors meet",
+    "The point where the altitudes meet",
+    "The point where the perpendicular bisectors meet"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Medians meet at the centroid.",
+    "Angle bisectors meet at the incentre.",
+    "Altitudes meet at the orthocentre.",
+    "Perpendicular bisectors meet at the circumcentre."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-4",
+   "moduleId": "m-11-4"
+  },
+  {
+   "id": "q-11-5-1",
+   "stem": "What is a locus?",
+   "options": [
+    "A set of points that follow a given rule",
+    "A line segment with two endpoints",
+    "An angle measuring 90°",
+    "A point that cannot move"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the definition of a locus in your textbook.",
+    "A line segment is a geometric figure, not the definition of a locus.",
+    "A right angle is an angle, not a set of points following a rule.",
+    "A locus describes a set of points, not one point that cannot move."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-2",
+   "stem": "What is the locus of a point at a constant distance from a fixed point?",
+   "options": [
+    "A circle",
+    "Two parallel lines",
+    "A perpendicular bisector",
+    "An angle bisector"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A circle has all its points at a constant distance from its centre.",
+    "Two parallel lines describe points a constant distance from a fixed line.",
+    "A perpendicular bisector describes points equidistant from two fixed points.",
+    "An angle bisector describes points equidistant from two intersecting lines."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-3",
+   "stem": "What is the locus of points at a constant distance from a fixed line?",
+   "options": [
+    "A circle",
+    "Two parallel lines",
+    "A perpendicular bisector",
+    "An angle bisector"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A circle is the locus at a constant distance from a fixed point, not a fixed line.",
+    "Two parallel lines, one on each side of the fixed line, form this locus.",
+    "A perpendicular bisector is the locus equidistant from two fixed points.",
+    "An angle bisector is the locus equidistant from two intersecting lines."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-4",
+   "stem": "What is the locus of points equidistant from two fixed points A and B?",
+   "options": [
+    "A perpendicular bisector",
+    "A circle",
+    "Two parallel lines",
+    "An angle bisector"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Every point on the perpendicular bisector of AB is equidistant from A and B.",
+    "A circle is the locus at a fixed distance from one fixed point.",
+    "Two parallel lines are the locus at a fixed distance from a fixed line.",
+    "An angle bisector is the locus equidistant from two intersecting lines."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-5",
+   "stem": "What is the locus of points equidistant from two intersecting lines?",
+   "options": [
+    "An angle bisector",
+    "A perpendicular bisector",
+    "A circle",
+    "Two parallel lines"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "An angle bisector consists of points equidistant from the two intersecting lines.",
+    "A perpendicular bisector consists of points equidistant from two fixed points.",
+    "A circle consists of points at a fixed distance from one fixed point.",
+    "Two parallel lines consist of points at a fixed distance from one fixed line."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-6",
+   "stem": "If two loci intersect at point P, what does P satisfy?",
+   "options": [
+    "The point satisfies all the given conditions",
+    "The point satisfies only the first condition",
+    "The point satisfies none of the conditions",
+    "The point must be the centre of a circle"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The intersection point lies on both loci, so it satisfies all their conditions.",
+    "A point at the intersection lies on both loci, not only the first.",
+    "The intersection point lies on each locus and therefore satisfies their conditions.",
+    "An intersection of loci does not have to be the centre of a circle."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-7",
+   "stem": "In Example 12, what distance is drawn inside the triangle to represent 13 m at the given scale?",
+   "options": [
+    "1.3 cm",
+    "13 cm",
+    "6.9 cm",
+    "69 cm"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "At 10 m to 1 cm, 13 m is represented by 1.3 cm.",
+    "13 cm would represent 130 m at this scale.",
+    "6.9 cm represents the 69 m side, not 13 m.",
+    "69 cm is not the drawing length for 13 m at this scale."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-5-8",
+   "stem": "In Example 12, what is the length PQ if the drawing shows PQ = 1.3 cm and the scale is 10 m = 1 cm?",
+   "options": [
+    "13 m",
+    "1.3 m",
+    "69 m",
+    "10 m"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Multiplying 1.3 cm by 10 m per centimetre gives 13 m.",
+    "1.3 m does not apply the scale factor of 10 m per centimetre.",
+    "69 m is the given length LM, not the length PQ.",
+    "10 m is the distance represented by 1 cm, not 1.3 cm."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-5",
+   "moduleId": "m-11-5"
+  },
+  {
+   "id": "q-11-6-1",
+   "stem": "What is the locus of points 5 cm from a fixed point A?",
+   "options": [
+    "A circle centred at A with radius 5 cm",
+    "A straight line through A",
+    "The perpendicular bisector of AB",
+    "A rectangle with sides 5 cm"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: every point on this circle is 5 cm from A.",
+    "Incorrect: a straight line through A does not keep all its points 5 cm from A.",
+    "Incorrect: the perpendicular bisector describes points equally distant from two points.",
+    "Incorrect: a rectangle is not the set of all points a fixed distance from A."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-2",
+   "stem": "Which locus contains all points equidistant from two points X and Y?",
+   "options": [
+    "The perpendicular bisector of XY",
+    "A circle centred at X",
+    "A line parallel to XY",
+    "The segment XY only"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: every point on the perpendicular bisector is equally distant from X and Y.",
+    "Incorrect: a circle centred at X gives points a fixed distance from X, not necessarily from Y.",
+    "Incorrect: a line parallel to XY does not generally keep points equally distant from X and Y.",
+    "Incorrect: points on XY are not all equally distant from X and Y."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-3",
+   "stem": "Which construction gives the locus of points equidistant from C and D?",
+   "options": [
+    "The perpendicular bisector of CD",
+    "A circle centred at C",
+    "A line through D parallel to CD",
+    "The segment CD"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the perpendicular bisector is the locus of points equidistant from C and D.",
+    "Incorrect: this gives points at a fixed distance from C only.",
+    "Incorrect: a parallel line does not represent equal distances from C and D.",
+    "Incorrect: the segment CD is not the set of all points equally distant from its endpoints."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-4",
+   "stem": "An outbreak zone is defined as all points 10 km from the infection source. What is its boundary locus?",
+   "options": [
+    "A circle centred at the source with radius 10 km",
+    "A straight line 10 km long",
+    "The perpendicular bisector of the source",
+    "A circle with diameter 10 km"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: all points 10 km from one source form a circle with that source as centre.",
+    "Incorrect: a line segment does not include all points 10 km from the source.",
+    "Incorrect: a perpendicular bisector requires two fixed points.",
+    "Incorrect: a circle with diameter 10 km has radius 5 km, not 10 km."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-5",
+   "stem": "A point must be 6.8 km from A and 7.3 km from B. Where can it be located?",
+   "options": [
+    "The points where the two circles intersect",
+    "The centre of the circle around A",
+    "The midpoint of AB only",
+    "Every point on the perpendicular bisector of AB"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the required locations satisfy both fixed-distance conditions, so they are at the intersections of the two circles.",
+    "Incorrect: the centre of the circle around A is A, which is not 6.8 km from A.",
+    "Incorrect: the midpoint is not generally at either required distance.",
+    "Incorrect: the perpendicular bisector gives equal distances from A and B, but the required distances are different."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-6",
+   "stem": "A navigation device is equidistant from two cell towers at A and B. Which locus describes its possible positions?",
+   "options": [
+    "The perpendicular bisector of the segment joining the two sources",
+    "A circle centred at either source",
+    "A line joining the two sources",
+    "A circle passing through both sources"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: all points equidistant from A and B lie on the perpendicular bisector of AB.",
+    "Incorrect: a circle centred at one tower fixes distance from that tower but not equality with the other.",
+    "Incorrect: points on AB are not generally equidistant from A and B.",
+    "Incorrect: passing through both towers does not ensure points are equidistant from them."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-7",
+   "stem": "What is the locus of points 2.2 cm from a fixed point?",
+   "options": [
+    "A circle centred at the point with radius 2.2 cm",
+    "A line 2.2 cm long",
+    "The perpendicular bisector of the line segment",
+    "A circle with radius 5.7 cm"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: all points at the fixed distance form a circle with that point as centre.",
+    "Incorrect: a line 2.2 cm long is a segment, not a locus around a point.",
+    "Incorrect: a perpendicular bisector describes equal distances from two points.",
+    "Incorrect: the radius must be 2.2 cm, not 5.7 cm."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-6-8",
+   "stem": "For the fire hydrant in the textbook's park example to be equally accessible to water sources X and Y, what should be drawn?",
+   "options": [
+    "Draw a perpendicular bisector of XY",
+    "Draw a circle centred at X",
+    "Draw a line segment XY",
+    "Draw a circle centred at Y with radius XY"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the perpendicular bisector of XY represents all points equidistant from X and Y.",
+    "Incorrect: this describes points at a fixed distance from X only.",
+    "Incorrect: the segment XY does not include all possible locations equally far from both sources.",
+    "Incorrect: a circle centred at Y does not generally give points equally far from X and Y."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-11-6",
+   "moduleId": "m-11-6"
+  },
+  {
+   "id": "q-11-7-1",
+   "stem": "A triangle can be constructed if the sum of the measure of any two sides is ____________ the measure of the third side.",
+   "options": [
+    "less than",
+    "greater than",
+    "equal to",
+    "greater than and equal to"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is wrong because two sides with a sum less than the third cannot meet to form a triangle.",
+    "This is right because the sum of any two sides must be greater than the third side.",
+    "This is wrong because equality would make the triangle flat, not a triangle.",
+    "This is wrong because equality is not allowed; the sum must be strictly greater."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-2",
+   "stem": "An equilateral triangle ____________.",
+   "options": [
+    "can be isosceles",
+    "can be right angled",
+    "can be obtuse angled",
+    "has each angle equal to 50°."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is right because an equilateral triangle has at least two equal sides, so it is also isosceles.",
+    "This is wrong because every angle in an equilateral triangle is 60°.",
+    "This is wrong because every angle in an equilateral triangle is 60°.",
+    "This is wrong because its angles are 60°, not 50°."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-3",
+   "stem": "If the sum of the measures of two angles is less than 90°, then the triangle is ____________.",
+   "options": [
+    "equilateral",
+    "acute angled",
+    "obtuse angled",
+    "right angled"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is wrong because an equilateral triangle has all three angles 60°.",
+    "This is wrong because the third angle would be greater than 90°.",
+    "This is right because the third angle is 180° minus a sum less than 90°, so it is greater than 90°.",
+    "This is wrong because the third angle would have to be exactly 90°."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-4",
+   "stem": "The line segment joining the midpoint of a side to its opposite vertex in a triangle is called ____________.",
+   "options": [
+    "median",
+    "perpendicular bisector",
+    "angle bisector",
+    "circle"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is right because a median joins a vertex to the midpoint of the opposite side.",
+    "This is wrong because a perpendicular bisector cuts a segment at its midpoint at right angles.",
+    "This is wrong because an angle bisector divides an angle into two equal angles.",
+    "This is wrong because a circle is not a line segment joining a vertex and a side midpoint."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-5",
+   "stem": "The angle bisectors of a triangle intersect at ____________.",
+   "options": [
+    "one point",
+    "two points",
+    "three points",
+    "four points"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is right because the three internal angle bisectors meet at one point.",
+    "This is wrong because all three internal angle bisectors have the same point of intersection.",
+    "This is wrong because the three angle bisectors do not meet at three separate points.",
+    "This is wrong because the three angle bisectors do not meet at four points."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-6",
+   "stem": "Locus of all points equidistant from a fixed point is ____________.",
+   "options": [
+    "circle",
+    "perpendicular bisector",
+    "angle bisector",
+    "parallel lines"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is right because all points at a fixed distance from one point form a circle.",
+    "This is wrong because a perpendicular bisector describes points equidistant from two fixed points.",
+    "This is wrong because an angle bisector describes points equidistant from two intersecting lines.",
+    "This is wrong because parallel lines are the locus of points at a fixed distance from a line."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-7",
+   "stem": "Locus of points equidistant from two fixed points is ----------------",
+   "options": [
+    "circle",
+    "perpendicular bisector",
+    "angle bisector",
+    "parallel lines"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is wrong because a circle is the locus of points a fixed distance from one point.",
+    "This is right because points equidistant from two fixed points lie on the perpendicular bisector of the segment joining them.",
+    "This is wrong because an angle bisector concerns distances from two intersecting lines.",
+    "This is wrong because parallel lines describe points equidistant from a fixed line."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-8",
+   "stem": "Locus of points equidistant from a fixed line is/are --------------------",
+   "options": [
+    "circle",
+    "perpendicular bisector",
+    "angle bisector",
+    "parallel lines"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is wrong because a circle describes points equidistant from a fixed point.",
+    "This is wrong because a perpendicular bisector is related to two fixed points.",
+    "This is wrong because an angle bisector is related to two intersecting lines.",
+    "This is right because points at a fixed distance from a line lie on parallel lines on either side of it."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-9",
+   "stem": "Locus of points equidistant from two intersecting lines is _____________.",
+   "options": [
+    "circle",
+    "perpendicular bisector",
+    "angle bisector",
+    "parallel lines"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is wrong because a circle describes points a fixed distance from one point.",
+    "This is wrong because a perpendicular bisector describes points equidistant from two fixed points.",
+    "This is right because the angle bisectors give points equidistant from two intersecting lines.",
+    "This is wrong because parallel lines describe points a fixed distance from one line."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  },
+  {
+   "id": "q-11-7-10",
+   "stem": "The set of all points which is farther than 2 km from a fixed point B is a region outside a circle of radius ____________ and centre at B.",
+   "options": [
+    "1 km",
+    "1.9 km",
+    "2 km",
+    "2.1 km"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is wrong because a radius of 1 km would represent points only 1 km from B.",
+    "This is wrong because the boundary must be at a distance of 2 km from B.",
+    "This is right because the boundary circle has radius 2 km and the required region is outside it.",
+    "This is wrong because a radius of 2.1 km would exclude some points that are more than 2 km from B."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-11-7",
+   "moduleId": "m-11-7"
+  }
+ ],
+ "written": [],
+ "report": {
+  "unit": 11,
+  "title": "Loci and Construction",
+  "dropped": [
+   "Your-turn m-11-7: 1 with unusable answer patterns"
+  ]
+ }
+}

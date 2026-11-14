@@ -1,0 +1,4340 @@
+{
+ "chapter": {
+  "id": "u-13",
+  "number": 13,
+  "title": "Probability",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "m-13-1",
+    "position": 1,
+    "title": "13.1 Probability of Single Event",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.1, pages 243–246",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.1 (pages 243–246) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to find the probability of an event using a die, a pair of dice, or another stated sample space.",
+      "Show the sample space or state its total number of outcomes, identify the favourable outcomes, and then write P(A) = n(A)/n(S).",
+      "For two dice, count ordered pairs: the first and second dice are distinguished, so there are 36 possible outcomes.",
+      "Simplify the final fraction and make sure it lies between 0 and 1."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Write the six possible results of a fair dice.",
+        "Find the results divisible by 3, then divide their count by 6."
+       ],
+       "accept": [
+        [
+         "1/3"
+        ]
+       ],
+       "question": "Abdul Raheem rolls a fair dice, what is the probability of getting the number divisible by 3?",
+       "solution": [
+        "S = {1, 2, 3, 4, 5, 6}; n(S) = 6",
+        "A = {3, 6}; n(A) = 2",
+        "P(A) = n(A)/n(S) = 2/6 = 1/3"
+       ],
+       "answer": "1/3"
+      },
+      {
+       "hints": [
+        "There are 36 ordered outcomes when two dice are rolled.",
+        "The favourable pairs have an even first number and 3 as the second number."
+       ],
+       "accept": [
+        [
+         "1/12"
+        ]
+       ],
+       "question": "Even number on the first dice and the number 3 on the second dice.",
+       "solution": [
+        "n(S) = 36",
+        "C = {(2,3), (4,3), (6,3)}; n(C) = 3",
+        "P(C) = n(C)/n(S) = 3/36 = 1/12"
+       ],
+       "answer": "1/12"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "A fair dice has six possible outcomes, so this gives the total number of outcomes.",
+        "text": "S = {1, 2, 3, 4, 5, 6}; n(S) = 6"
+       },
+       {
+        "why": "The numbers divisible by 3 on the dice are 3 and 6, so these are the favourable outcomes.",
+        "text": "Let “A” be the event of getting the number divisible by 3."
+       },
+       {
+        "why": "Listing the favourable outcomes lets us count them accurately.",
+        "text": "A = {3, 6}; n(A) = 2"
+       },
+       {
+        "why": "The probability formula is favourable outcomes divided by total possible outcomes.",
+        "text": "P(A) = n(A)/n(S) = 2/6 = 1/3"
+       },
+       {
+        "why": "This states the requested probability in a complete sentence.",
+        "text": "The probability of getting the number divisible by 3 is 1/3."
+       }
+      ],
+      "question": "Abdul Raheem rolls a fair dice, what is the probability of getting the number divisible by 3?",
+      "answer": "1/3"
+     },
+     "explain": [
+      {
+       "title": "Probability",
+       "body": "“Probability is the chance of occurrence of a particular event.” It is calculated using P(A) = n(A)/n(S), where n(A) is the number of favourable outcomes and n(S) is the total number of possible outcomes."
+      },
+      {
+       "title": "Experiment, outcomes, and sample space",
+       "body": "“The process which generates results e.g., tossing a coin, rolling a dice, etc. is called an experiment.” “The results of an experiment are called outcomes.” “The set of all possible outcomes of an experiment is called sample space.” The textbook denotes the sample space by S."
+      },
+      {
+       "title": "Favourable outcome and event",
+       "body": "“An outcome which represents how many times we expect the things to be happened” is a favourable outcome. “The set of results of an experiment is called an event.” Count the outcomes in the event to find n(A)."
+      },
+      {
+       "title": "Probability limits and event types",
+       "body": "The range of probability is 0 ≤ P(A) ≤ 1. A certain event has probability 1, and an impossible event has probability 0. Likely and unlikely describe events with greater or lesser chances of occurring."
+      }
+     ],
+     "mistakes": [
+      "Using the number of favourable outcomes as the denominator instead of the total number of possible outcomes.",
+      "For two dice, counting only 6 outcomes instead of the 36 ordered pairs.",
+      "Forgetting that the order of the dice matters when describing ordered pairs.",
+      "Not simplifying the probability fraction.",
+      "Giving a probability less than 0 or greater than 1."
+     ]
+    }
+   },
+   {
+    "id": "m-13-2",
+    "position": 2,
+    "title": "13.2 Probability of an Event Not Occurring",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.2, pages 246–248",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.2 (pages 246–248) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask for the probability that a named outcome does not occur, such as not getting a 6 or not getting a particular dice total.",
+      "Write the event and its probability first, then show P(A′) = 1 − P(A).",
+      "For dice questions, state the number of outcomes in the sample space and the number of outcomes in the event before calculating the probability.",
+      "Show the subtraction using a common denominator, such as 1 − 1/6 = (6 − 1)/6 = 5/6; this makes the working clear and helps earn method marks.",
+      "Finish with the simplified probability and a sentence identifying the event it represents."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "First find the probability of getting the number 6.",
+        "A single die has six equally likely outcomes, and only one is 6; subtract that probability from 1."
+       ],
+       "accept": [
+        [
+         "5/6"
+        ]
+       ],
+       "question": "EXAMPLE 3: Zubair rolls a dice, what is the probability of not getting the number 6?",
+       "solution": [
+        "Let “A” be the event of getting the number 6.",
+        "The sample space while rolling a dice is: S = {1, 2, 3, 4, 5, 6}",
+        "n(S) = 6",
+        "A = {6}; n(A) = 1",
+        "P(A) = n(A)/n(S) = 1/6",
+        "P(A′) = 1 − P(A)",
+        "= 1 − 1/6 = (6 − 1)/6 = 5/6"
+       ],
+       "answer": "5/6"
+      },
+      {
+       "hints": [
+        "There are 36 equally likely outcomes when two fair dice are rolled.",
+        "A double six is only one outcome, so find 1 − 1/36."
+       ],
+       "accept": [
+        [
+         "35/36"
+        ]
+       ],
+       "question": "If two fair dice are rolled. What is the probability of getting: (i) not a double six",
+       "solution": [
+        "Let “A” be the event that a double six occurs.",
+        "A = {(6, 6)}; n(A) = 1",
+        "P(A) = n(A)/n(S) = 1/36",
+        "Let “A′” be the event that not a double six occurs",
+        "P(A′) = 1 − P(A)",
+        "= 1 − 1/36 = (36 − 1)/36 = 35/36"
+       ],
+       "answer": "35/36"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This names the event whose complement we need to find.",
+        "text": "Let “A” be the event of getting the number 6."
+       },
+       {
+        "why": "A die can land on any one of these six outcomes.",
+        "text": "The sample space while rolling a dice is: S = {1, 2, 3, 4, 5, 6}"
+       },
+       {
+        "why": "There are six outcomes in the sample space.",
+        "text": "n(S) = 6"
+       },
+       {
+        "why": "Only one outcome, 6, belongs to event A.",
+        "text": "A = {6}; n(A) = 1"
+       },
+       {
+        "why": "Probability is the number of event outcomes divided by the number of sample-space outcomes.",
+        "text": "P(A) = n(A)/n(S) = 1/6"
+       },
+       {
+        "why": "The probability of not getting 6 is the complement of getting 6.",
+        "text": "P(A′) = 1 − P(A)"
+       },
+       {
+        "why": "Subtract the event probability from 1 to find its complement.",
+        "text": "= 1 − 1/6 = (6 − 1)/6 = 5/6"
+       }
+      ],
+      "question": "EXAMPLE 3: Zubair rolls a dice, what is the probability of not getting the number 6?",
+      "answer": "Thus, the probability of not getting the number 6 is 5/6."
+     },
+     "explain": [
+      {
+       "title": "The complement",
+       "body": "The probability of not getting head while tossing a coin is known as the complement of that event. More generally, the complement of event A is the event that A does not occur."
+      },
+      {
+       "title": "The complement formula",
+       "body": "The complement of an event “A” is calculated by the given formula: P(A') = 1 − P(A). Subtract the probability of the event from 1."
+      },
+      {
+       "title": "Event and complement add to 1",
+       "body": "The sum of the probability of an event “A” and the probability of an event not occurring “A” is always “1”. P(A) + P(A′) = 1."
+      },
+      {
+       "title": "Use the event’s probability first",
+       "body": "For dice, first count the outcomes in the event and the total outcomes in the sample space. Then use the complement formula. For two dice, there are 36 equally likely outcomes."
+      }
+     ],
+     "mistakes": [
+      "Giving P(A) when the question asks for the probability that A does not occur.",
+      "Forgetting that the complement is found by subtracting from 1: P(A′) = 1 − P(A).",
+      "Using the wrong total number of equally likely outcomes, such as using 6 rather than 36 for two dice.",
+      "Counting ordered dice outcomes as if (2, 6) and (6, 2) were the same outcome.",
+      "Leaving the answer unsimplified or not stating which event the final probability describes."
+     ]
+    }
+   },
+   {
+    "id": "m-13-3",
+    "position": 3,
+    "title": "13.3 Real Life Problems Involving Probability",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.3, pages 248–252; Exercise 13.1",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.3 (pages 248–252) in your textbook.",
+     "Solve Exercise 13.1 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-13-3-1",
+      "text": "Arshad rolls a dice, with sides labelled L, M, N, O, P, U. What is the probability that the dice lands on consonant?",
+      "marks": 2,
+      "modelAnswer": [
+       "Consonants = L, M, N, P = 4",
+       "Total sides = 6",
+       "P(consonant) = 4/6 = 2/3"
+      ],
+      "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+      "noteId": "n-13-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the consonant sides and their count.",
+        "marks": 1,
+        "why": "The favourable outcomes must be identified correctly.",
+        "how": "Count L, M, N and P as the 4 consonants.",
+        "accept": [
+         [
+          "4/6",
+          "4"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the simplified probability.",
+        "marks": 1,
+        "why": "The final probability must be simplified and correct.",
+        "how": "Divide 4 favourable outcomes by 6 total outcomes and simplify.",
+        "accept": [
+         [
+          "2/3"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 13.1 Q1"
+     },
+     {
+      "id": "w-13-3-2",
+      "text": "Shazia throws a pair of fair dice. What will be the probability of getting: (i) sum of dots is at least 4.",
+      "marks": 4,
+      "modelAnswer": [
+       "Total outcomes = 6 × 6 = 36",
+       "Outcomes with sum less than 4 are (1,1), (1,2), (2,1), so favourable outcomes = 36 − 3 = 33",
+       "P(sum of dots is at least 4) = 33/36",
+       "= 11/12"
+      ],
+      "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+      "noteId": "n-13-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the total number of outcomes.",
+        "marks": 1,
+        "why": "The total number of equally likely outcomes is needed as the denominator.",
+        "how": "A pair of dice has 6 × 6 = 36 outcomes.",
+        "accept": [
+         [
+          "36"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Count outcomes with a sum of at least 4.",
+        "marks": 1,
+        "why": "The favourable outcomes must be counted correctly.",
+        "how": "Only sums 2 and 3 are excluded, giving 1 + 2 = 3 excluded outcomes and 33 favourable outcomes.",
+        "accept": [
+         [
+          "33"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Write the probability as a fraction.",
+        "marks": 1,
+        "why": "The probability must be formed from favourable outcomes over total outcomes.",
+        "how": "Use 33/36.",
+        "accept": [
+         [
+          "33/36"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Simplify the final probability.",
+        "marks": 1,
+        "why": "The final answer must be in simplified form.",
+        "how": "Divide numerator and denominator of 33/36 by 3.",
+        "accept": [
+         [
+          "11/12"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 13.1 Q2(i)"
+     },
+     {
+      "id": "w-13-3-3",
+      "text": "Shazia throws a pair of fair dice. What will be the probability of getting: (iii) the difference between both the dots is equal to 4.",
+      "marks": 2,
+      "modelAnswer": [
+       "Total outcomes = 6 × 6 = 36",
+       "Outcomes with difference 4 = (1,5), (5,1), (2,6), (6,2), so n(A) = 4",
+       "P(A) = 4/36 = 1/9"
+      ],
+      "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+      "noteId": "n-13-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Count the outcomes with a difference of 4.",
+        "marks": 1,
+        "why": "The favourable ordered outcomes must be counted.",
+        "how": "The outcomes are (1,5), (5,1), (2,6), and (6,2), giving 4 outcomes.",
+        "accept": [
+         [
+          "4/36"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Divide by the 36 total outcomes and simplify.",
+        "marks": 1,
+        "why": "The final probability must be simplified.",
+        "how": "Use 4/36 = 1/9.",
+        "accept": [
+         [
+          "1/9"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 13.1 Q2(iii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "These questions can appear as short-answer questions asking for a probability from dice, cards, labelled objects or a stated probability.",
+      "For equally likely outcomes, show the favourable outcomes and total outcomes, then write P(A) = n(A)/n(S).",
+      "For a question asking for the opposite event, show the complement step P(A′) = 1 − P(A).",
+      "Simplify the fraction and include the final answer; marks are commonly awarded for the correct count, the probability setup and the simplified answer.",
+      "Read words such as “not”, “neither”, “at least” and “between” carefully so the correct outcomes are counted."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Not passing is the complement of passing.",
+        "Use P(not passing) = 1 − P(passing)."
+       ],
+       "accept": [
+        [
+         "0.15"
+        ],
+        [
+         "15/100"
+        ]
+       ],
+       "question": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+       "solution": [
+        "P(not passing) = 1 − P(passing)",
+        "= 1 − 0.85",
+        "= 0.15"
+       ],
+       "answer": "0.15"
+      },
+      {
+       "hints": [
+        "A fair dice has 6 possible results.",
+        "The favourable results are 3 and 4; for the opposite event, use 1 − P(getting 3 or 4)."
+       ],
+       "accept": [
+        [
+         "1/3",
+         "2/3"
+        ]
+       ],
+       "question": "Aslam rolled a dice. What is the probability of getting the numbers 3 or 4? Also find the probability of not getting the numbers 3 or 4.",
+       "solution": [
+        "Favourable outcomes for getting 3 or 4 = 2",
+        "Total outcomes = 6",
+        "P(getting 3 or 4) = 2/6 = 1/3",
+        "P(not getting 3 or 4) = 1 − P(getting 3 or 4)",
+        "= 1 − 1/3 = 2/3"
+       ],
+       "answer": "P(getting 3 or 4) = 1/3; P(not getting 3 or 4) = 2/3"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This identifies the event whose probability is required.",
+        "text": "Let ‘A’ be the event that the ball is blue"
+       },
+       {
+        "why": "There are five favourable balls because five balls are blue.",
+        "text": "Blue balls = n(A) = 5"
+       },
+       {
+        "why": "The total consists of all five blue and eight green balls.",
+        "text": "Total balls = n(S) = 5 + 8 = 13"
+       },
+       {
+        "why": "For equally likely selections, probability is favourable outcomes divided by total outcomes.",
+        "text": "P(A) = n(A)/n(S)"
+       },
+       {
+        "why": "Substitute the favourable and total counts into the probability formula.",
+        "text": "= 5/13"
+       },
+       {
+        "why": "This states the probability in a complete concluding sentence.",
+        "text": "Thus, the probability of selecting a blue ball is 5/13."
+       },
+       {
+        "why": "This names the event of selecting a green ball.",
+        "text": "Let ‘B’ be the event that ball is green"
+       },
+       {
+        "why": "There are eight favourable balls because eight balls are green.",
+        "text": "Green balls = n(B) = 8"
+       },
+       {
+        "why": "The total number of balls is still thirteen.",
+        "text": "Total balls = n(S) = 5 + 8 = 13"
+       },
+       {
+        "why": "Use the favourable count over the total count.",
+        "text": "P(B) = n(B)/n(S) = 8/13"
+       },
+       {
+        "why": "This gives the probability for selecting a green ball.",
+        "text": "Thus, the probability of selecting green ball is 8/13."
+       },
+       {
+        "why": "This identifies the event complementary to selecting a green ball.",
+        "text": "Let ‘B′’ be the event that the ball is not green."
+       },
+       {
+        "why": "Not green is the complement of green, so subtract its probability from 1.",
+        "text": "P(B′) = 1 − P(B)"
+       },
+       {
+        "why": "Substitute the probability of selecting a green ball.",
+        "text": "= 1 − 8/13"
+       },
+       {
+        "why": "Write 1 with denominator 13 and subtract.",
+        "text": "= (13 − 8)/13 = 5/13"
+       },
+       {
+        "why": "This states the final probability for not selecting a green ball.",
+        "text": "Thus, the probability of not selecting a green ball is 5/13."
+       }
+      ],
+      "question": "A bag contains 5 blue balls and 8 green balls. Find the probability of selecting at random:\n\n(i) a blue ball  (ii) a green ball.  (iii) not a green ball.",
+      "answer": "(i) 5/13 (ii) 8/13 (iii) 5/13"
+     },
+     "explain": [
+      {
+       "title": "Count outcomes when each result is equally likely",
+       "body": "Your textbook uses P(A) = n(A)/n(S). Here, n(A) means the number of outcomes you want, and n(S) means the total number of possible outcomes. For example, a bag with 5 blue and 8 green balls has 13 balls altogether, so P(blue) = 5/13."
+      },
+      {
+       "title": "Use the complement for an opposite event",
+       "body": "An event and its complement cover all possibilities. Your textbook writes P(B′) = 1 − P(B). If P(green) = 8/13, then P(not green) = 1 − 8/13 = 5/13."
+      },
+      {
+       "title": "Cards and dice also use outcome counts",
+       "body": "A standard pack has 52 cards, with 13 cards in each suit. A dice has 6 possible results. Count the results that fit the question, divide by the total, and simplify."
+      },
+      {
+       "title": "Read the event wording carefully",
+       "body": "“Not” and “neither” ask for outcomes outside the named event. “At least” includes the number stated and any larger numbers in the allowed range."
+      }
+     ],
+     "mistakes": [
+      "Using the number of favourable outcomes as the total number of outcomes.",
+      "Forgetting to include all possible outcomes when dice are thrown as a pair.",
+      "Treating “not” or “neither” as the named event instead of its complement.",
+      "Miscounting repeated letters in a word, such as counting only one A in MATHEMATICS.",
+      "Forgetting to simplify the final fraction.",
+      "Reading “at least 20” as only 20 instead of including 20 through 30."
+     ]
+    }
+   },
+   {
+    "id": "m-13-4",
+    "position": 4,
+    "title": "13.4 Relative Frequency as an Estimate of Probability",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.4, pages 252–253",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.4 (pages 252–253) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to calculate relative frequencies from a frequency table.",
+      "First show the total frequency, N = Σf. Then divide each required event frequency by N.",
+      "Write the result as a fraction and, when required, as a decimal. Follow the rounding shown in your textbook.",
+      "Marks are earned for finding the correct total, using the correct numerator and denominator, and giving the correct final value."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Find the frequency in the row for X = 3.",
+        "Divide that frequency by the total frequency, 43."
+       ],
+       "accept": [
+        [
+         "5/43"
+        ],
+        [
+         "0.12"
+        ]
+       ],
+       "question": "Using the table in Example 8, find the relative frequency for X = 3.",
+       "solution": [
+        "N = Σf = 43",
+        "Relative frequency for X = 3 = 5/43 = 0.12"
+       ],
+       "answer": "5/43 = 0.12"
+      },
+      {
+       "hints": [
+        "The frequency for X = 5 is 9.",
+        "Divide 9 by the total frequency, 43."
+       ],
+       "accept": [
+        [
+         "9/43"
+        ],
+        [
+         "0.21"
+        ]
+       ],
+       "question": "Using the table in Example 8, find the relative frequency for X = 5.",
+       "solution": [
+        "N = Σf = 43",
+        "Relative frequency for X = 5 = 9/43 = 0.21"
+       ],
+       "answer": "9/43 = 0.21"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The total frequency is the denominator used for every relative frequency.",
+        "text": "Σf = 3 + 5 + 6 + 9 + 10 + 8 + 2 = 43"
+       },
+       {
+        "why": "For each value of X, divide its frequency by the total frequency, 43.",
+        "text": "For X = 2: 3/43 = 0.07"
+       },
+       {
+        "why": "The frequency for X = 3 is 5, so use 5 as the numerator.",
+        "text": "For X = 3: 5/43 = 0.12"
+       },
+       {
+        "why": "The frequency for X = 4 is 6, so use 6 as the numerator.",
+        "text": "For X = 4: 6/43 = 0.14"
+       },
+       {
+        "why": "The frequency for X = 5 is 9, so use 9 as the numerator.",
+        "text": "For X = 5: 9/43 = 0.21"
+       },
+       {
+        "why": "The frequency for X = 6 is 10, so use 10 as the numerator.",
+        "text": "For X = 6: 10/43 = 0.23"
+       },
+       {
+        "why": "The frequency for X = 7 is 8, so use 8 as the numerator.",
+        "text": "For X = 7: 8/43 = 0.19"
+       },
+       {
+        "why": "The frequency for X = 8 is 2, so use 2 as the numerator.",
+        "text": "For X = 8: 2/43 = 0.04"
+       }
+      ],
+      "question": "EXAMPLE 8: Find the relative frequency of the given date. X: 2, 3, 4, 5, 6, 7, 8; f: 3, 5, 6, 9, 10, 8, 2.",
+      "answer": "Σf = 43; relative frequencies for X = 2, 3, 4, 5, 6, 7, 8 are 0.07, 0.12, 0.14, 0.21, 0.23, 0.19, 0.04 respectively."
+     },
+     "explain": [
+      {
+       "title": "Meaning of relative frequency",
+       "body": "Relative frequency tells us how often a specific event occurs relative to the total number of frequency event or trials. It compares the event’s frequency with the total frequency."
+      },
+      {
+       "title": "The formula",
+       "body": "Relative frequency = Frequency of specific event / Total frequency = x/N, where N = Σf. Add the frequencies to find N, then divide the event’s frequency by N."
+      },
+      {
+       "title": "Use the frequency table",
+       "body": "In Example 8, the frequencies add to 43. For X = 6, the frequency is 10, so the relative frequency is 10/43 = 0.23."
+      }
+     ],
+     "mistakes": [
+      "Using the value of X as the numerator instead of its frequency.",
+      "Forgetting to add all frequencies to find the total frequency.",
+      "Reversing the division and writing total frequency over event frequency.",
+      "Using a different denominator for different values in the same table.",
+      "Rounding the decimal differently from the value shown in your textbook."
+     ]
+    }
+   },
+   {
+    "id": "m-13-5",
+    "position": 5,
+    "title": "13.5 Real Life Application of Relative Frequency",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.5, pages 253–255",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.5 (pages 253–255) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-13-5-1",
+      "text": "Can you find out the probability of the students who do not play any game?",
+      "marks": 2,
+      "modelAnswer": [
+       "Total number of students = 200",
+       "Probability of students who do not play any game = 45/200 = 0.225"
+      ],
+      "followUp": "Can you find out the probability of the students who do not play any game?",
+      "noteId": "n-13-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the probability as the number who do not play any game over the total number of students.",
+        "marks": 1,
+        "why": "The outcome count and total must be identified correctly.",
+        "how": "Use 45 as the outcome count and 200 as the total.",
+        "accept": [
+         [
+          "45/200"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Simplify or evaluate 45/200.",
+        "marks": 1,
+        "why": "The final probability must be evaluated correctly.",
+        "how": "Give 0.225 or the equivalent fraction 9/40.",
+        "accept": [
+         [
+          "0.225"
+         ],
+         [
+          "9/40"
+         ]
+        ]
+       }
+      ],
+      "source": "Try Yourself! (i)"
+     },
+     {
+      "id": "w-13-5-2",
+      "text": "Can you find out the relative frequency of the students who play cricket?",
+      "marks": 2,
+      "modelAnswer": [
+       "Total number of students = 200",
+       "Relative frequency of students who play cricket = 80/200 = 0.4"
+      ],
+      "followUp": "Can you find out the probability of the students who do not play any game?",
+      "noteId": "n-13-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the cricket frequency divided by the total frequency.",
+        "marks": 1,
+        "why": "The relative frequency must use the cricket count over the total number of students.",
+        "how": "Use 80 as the cricket count and 200 as the total.",
+        "accept": [
+         [
+          "80/200"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Evaluate 80/200.",
+        "marks": 1,
+        "why": "The final relative frequency must be calculated correctly.",
+        "how": "Give 0.4 or the equivalent percentage 40%.",
+        "accept": [
+         [
+          "0.4"
+         ],
+         [
+          "40%"
+         ]
+        ]
+       }
+      ],
+      "source": "Try Yourself! (ii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask you to find a probability or relative frequency from counts in a survey or table.",
+      "Show the outcome count over the total count before writing the decimal; this makes your method clear and can earn a method mark.",
+      "If asked for a percentage, convert the decimal to a percentage by multiplying by 100.",
+      "For data in a table, first find the total frequency, then use it as the denominator for each category."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Identify how many students are in the outcome.",
+        "Divide that count by the total number of students."
+       ],
+       "accept": [
+        [
+         "45/200"
+        ],
+        [
+         "0.225"
+        ],
+        [
+         "9/40"
+        ]
+       ],
+       "question": "Can you find out the probability of the students who do not play any game?",
+       "solution": [
+        "Total number of students = 200",
+        "Probability of students who do not play any game = 45/200 = 0.225"
+       ],
+       "answer": "45/200 = 0.225"
+      },
+      {
+       "hints": [
+        "The number who play cricket is 80.",
+        "Write the cricket count over the total of 200 students, then divide."
+       ],
+       "accept": [
+        [
+         "80/200"
+        ],
+        [
+         "0.4"
+        ],
+        [
+         "40%"
+        ]
+       ],
+       "question": "Can you find out the relative frequency of the students who play cricket?",
+       "solution": [
+        "Total number of students = 200",
+        "Relative frequency of students who play cricket = 80/200 = 0.4"
+       ],
+       "answer": "80/200 = 0.4"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The same total of 80 students is the denominator for each colour.",
+        "text": "Total number of students = 80"
+       },
+       {
+        "why": "The red count is divided by the total, and the decimal is rounded as in your textbook.",
+        "text": "(i) Relative frequency for red colour = 23/80 = 0.29"
+       },
+       {
+        "why": "This expresses the red relative frequency as a percentage.",
+        "text": "It means that 29% students prefer red colour."
+       },
+       {
+        "why": "The green count is divided by the same total.",
+        "text": "(ii) Relative frequency for green colour = 15/80 = 0.19"
+       },
+       {
+        "why": "This expresses the green relative frequency as a percentage.",
+        "text": "It means that 19% students prefer green colour."
+       },
+       {
+        "why": "The pink count is divided by the same total.",
+        "text": "(iii) Relative frequency for pink colour = 25/80 = 0.31"
+       },
+       {
+        "why": "This expresses the pink relative frequency as a percentage.",
+        "text": "It means that 31% students prefer pink colour."
+       },
+       {
+        "why": "The blue count is divided by the same total.",
+        "text": "(iv) Relative frequency for blue colour = 10/80 = 0.12"
+       },
+       {
+        "why": "This expresses the blue relative frequency as a percentage.",
+        "text": "It means that 12% students prefer blue colour."
+       },
+       {
+        "why": "The white count is divided by the same total.",
+        "text": "(v) Relative frequency for white colour = 7/80 = 0.09"
+       },
+       {
+        "why": "This expresses the white relative frequency as a percentage.",
+        "text": "It means that 9% students prefer white colour."
+       }
+      ],
+      "question": "A survey was conducted on 80 students of Grade – IX and asked about their favourite colour. The responses are:\n\n(i) Red colour = 23 students\n(ii) Green colour = 15 students\n(iii) Pink colour = 25 students\n(iv) Blue colour = 10 students\n(v) White colour = 7 students.\n\nFind the relative frequency for each colour.",
+      "answer": "Red = 0.29; Green = 0.19; Pink = 0.31; Blue = 0.12; White = 0.09."
+     },
+     "explain": [
+      {
+       "title": "Meaning of relative frequency",
+       "body": "Relative frequency is an estimated probability of an event occurring when an experiment is repeated a fixed number of times."
+      },
+      {
+       "title": "How to calculate it",
+       "body": "Divide the frequency of the outcome you are interested in by the total frequency. For example, for 23 red responses out of 80 students, calculate 23/80."
+      },
+      {
+       "title": "Reading the result",
+       "body": "A relative frequency can be written as a fraction, decimal, or percentage. The sum of all the relative frequencies is always equal to or approximately equal to 1."
+      }
+     ],
+     "mistakes": [
+      "Using the outcome count as the denominator and the total as the numerator.",
+      "Using the wrong total when several categories are given.",
+      "Writing a percentage without converting the decimal by multiplying by 100.",
+      "Rounding each value too early or using a different rounding method from your textbook."
+     ]
+    }
+   },
+   {
+    "id": "m-13-6",
+    "position": 6,
+    "title": "13.6 Expected Frequency",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.6, pages 255",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.6 (pages 255) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "A board question may give the number of trials and the probability of one or more outcomes, then ask you to find expected frequencies.",
+      "Write the formula Expected frequency = N × P(A), substitute the correct values, and show the multiplication.",
+      "For a table question, calculate each outcome separately and place each result in the matching row.",
+      "Keep decimal answers when the multiplication gives a decimal, such as 4.5 or 7.5."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Use 50 as the number of trials.",
+        "Multiply 50 by the probability for 2 sixes, which is 0.12."
+       ],
+       "accept": [
+        [
+         "6"
+        ],
+        [
+         "6.0"
+        ]
+       ],
+       "question": "Using Example 11, find the expected frequency of occurrence of 2 sixes.",
+       "solution": [
+        "Expected frequency = N × P(A)",
+        "= 50 × 0.12",
+        "= 6"
+       ],
+       "answer": "6"
+      },
+      {
+       "hints": [
+        "Use 50 as the number of trials.",
+        "Multiply 50 by the probability for 6 sixes, which is 0.15."
+       ],
+       "accept": [
+        [
+         "7.5"
+        ]
+       ],
+       "question": "Using Example 11, find the expected frequency of occurrence of 6 sixes.",
+       "solution": [
+        "Expected frequency = N × P(A)",
+        "= 50 × 0.15",
+        "= 7.5"
+       ],
+       "answer": "7.5"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This is the given number of trials and the probabilities for the different numbers of sixes.",
+        "text": "Six fair dice are rolled 50 times. The probability of occurrence of different number of sixes are given below."
+       },
+       {
+        "why": "Use the given total of 50 trials and multiply it by the probability for each outcome.",
+        "text": "Expected frequency = N × P(x) = 50 × P(x)"
+       },
+       {
+        "why": "For 0 sixes, multiply 50 by its probability, 0.09.",
+        "text": "0: 50 × 0.09 = 4.5"
+       },
+       {
+        "why": "For 1 six, multiply 50 by its probability, 0.10.",
+        "text": "1: 50 × 0.10 = 5"
+       },
+       {
+        "why": "For 2 sixes, multiply 50 by its probability, 0.12.",
+        "text": "2: 50 × 0.12 = 6"
+       },
+       {
+        "why": "For 3 sixes, multiply 50 by its probability, 0.24.",
+        "text": "3: 50 × 0.24 = 12"
+       },
+       {
+        "why": "For 4 sixes, multiply 50 by its probability, 0.10.",
+        "text": "4: 50 × 0.10 = 5"
+       },
+       {
+        "why": "For 5 sixes, multiply 50 by its probability, 0.20.",
+        "text": "5: 50 × 0.20 = 10"
+       },
+       {
+        "why": "For 6 sixes, multiply 50 by its probability, 0.15.",
+        "text": "6: 50 × 0.15 = 7.5"
+       }
+      ],
+      "question": "Six fair dice are rolled 50 times. The probability of occurrence of different number of sixes are given below. Find the expected frequency of the following data:\n\n| x | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---|---|---|---|---|---|---|\n| P(x) | 0.09 | 0.10 | 0.12 | 0.24 | 0.10 | 0.20 | 0.15 |\n\nFind the expected frequency of occurrence of each six.",
+      "answer": "The expected frequencies for 0, 1, 2, 3, 4, 5, and 6 sixes are 4.5, 5, 6, 12, 5, 10, and 7.5, respectively."
+     },
+     "explain": [
+      {
+       "title": "What expected frequency means",
+       "body": "Expected frequency is a measure that estimate how often an event should be occurred depended on probability."
+      },
+      {
+       "title": "The formula",
+       "body": "Expected frequency is found by using the following method:\n\nExpected frequency = Total number of trials × Probability of the event.\n\n= N × P(A)"
+      },
+      {
+       "title": "Using the formula",
+       "body": "Find the number of trials, N, and the probability of the event, P(A). Multiply them. If you are finding expected frequencies for several outcomes, use each outcome's probability separately."
+      }
+     ],
+     "mistakes": [
+      "Adding or dividing N and P(A) instead of multiplying them.",
+      "Using the probability for the wrong outcome in a table.",
+      "Forgetting to use the total number of trials as N.",
+      "Rounding a decimal expected frequency unnecessarily."
+     ]
+    }
+   },
+   {
+    "id": "m-13-7",
+    "position": 7,
+    "title": "13.7 Real Life Application on Expected Frequency",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, section 13.7, pages 255–257; Exercise 13.2",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 13.7 (pages 255–257) in your textbook.",
+     "Solve Exercise 13.2 in your notebook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-13-7-6",
+      "text": "Q6: What is the expectation of a person who is to get Rs. 120 if he obtains at least 2 heads in single toss of three coins?",
+      "marks": 4,
+      "modelAnswer": [
+       "S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}",
+       "The outcomes with at least 2 heads are {HHH, HHT, HTH, THH}.",
+       "P(at least 2 heads) = 4/8 = 1/2",
+       "Expectation = 120 × 1/2 = 60",
+       "Final answer: Rs. 60"
+      ],
+      "followUp": "Q8. The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+      "noteId": "n-13-7",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the probability of at least 2 heads.",
+        "marks": 1,
+        "why": "The probability of at least two heads is needed to calculate the expectation.",
+        "how": "There are 4 favourable outcomes out of 8.",
+        "accept": [
+         [
+          "4/8",
+          "1/2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Set up the expected amount.",
+        "marks": 1,
+        "why": "The amount received if the event happens is the value multiplied by its probability.",
+        "how": "Multiply Rs. 120 by the probability.",
+        "accept": [
+         [
+          "120"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the expected amount.",
+        "marks": 2,
+        "why": "The final expected amount must be calculated correctly and include the currency.",
+        "how": "Calculate 120 × 1/2.",
+        "accept": [
+         [
+          "60"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 13.2 Q6"
+     },
+     {
+      "id": "w-13-7-8",
+      "text": "Q8: The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+      "marks": 2,
+      "modelAnswer": [
+       "Expected frequency = N × P(B)",
+       "= 200 × 2/5",
+       "= 80",
+       "Final answer: 80 times"
+      ],
+      "followUp": "Q8. The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+      "noteId": "n-13-7",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Set up the calculation.",
+        "marks": 1,
+        "why": "The expected-frequency calculation uses the number of trials and the event probability.",
+        "how": "Use 200 × 2/5.",
+        "accept": [
+         [
+          "200",
+          "2/5"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Calculate and state the frequency.",
+        "marks": 1,
+        "why": "The final answer gives the expected number of times the event occurs.",
+        "how": "Multiply 200 by 2/5 and include times.",
+        "accept": [
+         [
+          "80"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 13.2 Q8"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Board questions may ask you to find an expected frequency from a probability and a stated number of trials. Write E(B) = N × P(B), substitute the values, and calculate.",
+      "A question may ask for a complementary probability, such as the probability of a non-defective item. Show 1 − P(defective) before finding the expected number.",
+      "For a table of probabilities, multiply every P(x) by the number of trials and keep the results in the same order as the x-values.",
+      "For a question asking for an expectation in rupees, find the probability of receiving the money, then multiply that probability by the stated amount.",
+      "Show the probability and multiplication steps for method marks; do not write only the final number.",
+      "For Ex 13.2 Q5 as printed, counting the outcomes for a sum greater than 8 gives 10/36, so 500 × 10/36 = 138.89. The supplied answer-key value 83.33 corresponds to probability 1/6, so check this discrepancy with your teacher rather than copying an unexplained probability."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Use expected frequency = number of trials × probability.",
+        "Substitute N = 200 and P = 2/5, then multiply."
+       ],
+       "accept": [
+        [
+         "80"
+        ]
+       ],
+       "question": "Q8. The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+       "solution": [
+        "Expected frequency = N × P(B)",
+        "= 200 × 2/5",
+        "= 80",
+        "So the expected number of times is 80."
+       ],
+       "answer": "80 times"
+      },
+      {
+       "hints": [
+        "For each x-value, use expected frequency = 200 × P(x).",
+        "For example, when P(x) = 0.11, calculate 200 × 0.11; repeat for every probability in the table."
+       ],
+       "accept": [
+        [
+         "22",
+         "42",
+         "34",
+         "36",
+         "18",
+         "34",
+         "14"
+        ]
+       ],
+       "question": "Q7. Find the expected frequencies of the given data if the experiment is repeated 200 times.\n\n| x | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| P(x) | 0.11 | 0.21 | 0.17 | 0.18 | 0.09 | 0.17 | 0.07 |",
+       "solution": [
+        "Expected frequency = N × P(x), where N = 200",
+        "For x = 0: 200 × 0.11 = 22",
+        "For x = 1: 200 × 0.21 = 42",
+        "For x = 2: 200 × 0.17 = 34",
+        "For x = 3: 200 × 0.18 = 36",
+        "For x = 4: 200 × 0.09 = 18",
+        "For x = 5: 200 × 0.17 = 34",
+        "For x = 6: 200 × 0.07 = 14"
+       ],
+       "answer": "22, 42, 34, 36, 18, 34, 14"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The sample space lists all possible results of one fair-die roll.",
+        "text": "Let “S” be the sample space when a fair dice is rolled:"
+       },
+       {
+        "why": "There are six equally likely outcomes in the sample space.",
+        "text": "S = {1, 2, 3, 4, 5, 6} ; n(S) = 6"
+       },
+       {
+        "why": "This reminds us that expected frequencies across outcomes correspond to the total number of trials.",
+        "text": "REMEMBER: Sum of all expected frequencies is always equal to or approximately equal to a fixed number of trials."
+       },
+       {
+        "why": "The event contains the two outcomes that satisfy the question.",
+        "text": "Let “B” be the event that 1 or 6 comes up."
+       },
+       {
+        "why": "There are two favourable outcomes.",
+        "text": "B = {1, 6} ; n(B) = 2"
+       },
+       {
+        "why": "Probability is the number of favourable outcomes divided by the number of sample-space outcomes.",
+        "text": "So, P(B) = n(B)/n(S) = 2/6 = 1/3"
+       },
+       {
+        "why": "Expected frequency equals the number of trials multiplied by the probability of the event.",
+        "text": "Therefore, E(B) = N × P(B)"
+       },
+       {
+        "why": "Substituting the 300 trials and probability 1/3 gives the expected frequency.",
+        "text": "= 300 × 1/3 = 100"
+       },
+       {
+        "why": "This states the expected frequency in words.",
+        "text": "Thus, the average number of times 1 or 6 comes up is 100."
+       }
+      ],
+      "question": "EXAMPLE 12:\nFind the average number of times getting 1 or 6, when a fair dice is rolled 300 times.",
+      "answer": "100"
+     },
+     "explain": [
+      {
+       "title": "Expected frequency",
+       "body": "To find how many times an event is expected to happen, multiply its probability by the number of trials: E(B) = N × P(B)."
+      },
+      {
+       "title": "Find the event probability",
+       "body": "If outcomes are equally likely, find P(B) by dividing the number of outcomes in the event by the number of outcomes in the sample space."
+      },
+      {
+       "title": "Use the complement",
+       "body": "If an item is either defective or non-defective, their probabilities add to 1. So P(non-defective) = 1 − P(defective)."
+      },
+      {
+       "title": "Expected frequencies in a table",
+       "body": "For each probability in a table, multiply by the total number of trials. Keep the answers in the same order as the table."
+      }
+     ],
+     "mistakes": [
+      "Do not divide the probability by the number of trials; multiply N by P(B).",
+      "When finding a non-defective probability, subtract the defective probability from 1.",
+      "Do not confuse probability with expected frequency: probability is between 0 and 1, while expected frequency is a count.",
+      "For expected frequencies from a table, use the same number of trials for every listed probability and keep the results in the correct order.",
+      "For two dice, list the sums carefully before counting outcomes. In Q5 as printed, sums greater than 8 have 10 outcomes out of 36; the answer-key value 83.33 does not match that count."
+     ]
+    }
+   },
+   {
+    "id": "m-13-8",
+    "position": 8,
+    "title": "Unit 13 review",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 13, review exercise, pages 257–259; Review Exercise 13",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 13 and attempt Review Exercise 13 (pages 257–259)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "w-13-8-1",
+      "text": "Define the following:\n(i) relative frequency  (ii) expected frequency",
+      "marks": 4,
+      "modelAnswer": [
+       "Relative frequency = frequency of an event / total number of trials.",
+       "Expected frequency = probability of an event × total number of trials."
+      ],
+      "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+      "noteId": "n-13-8",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Define relative frequency.",
+        "marks": 2,
+        "why": "The definition must show how relative frequency compares an event's count with all trials.",
+        "how": "Write frequency of the event divided by the total number of trials.",
+        "accept": [
+         [
+          "frequency",
+          "total",
+          "trials"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Define expected frequency.",
+        "marks": 2,
+        "why": "The definition must show how expected frequency is calculated.",
+        "how": "Write probability of the event multiplied by the total number of trials.",
+        "accept": [
+         [
+          "probability",
+          "total",
+          "trials"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 13 Q2"
+     },
+     {
+      "id": "w-13-8-2",
+      "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (i) a green ball.",
+      "marks": 2,
+      "modelAnswer": [
+       "Total number of balls = 10 + 5 + 8 = 23.",
+       "P(green ball) = 5/23."
+      ],
+      "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+      "noteId": "n-13-8",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the total number of balls.",
+        "marks": 1,
+        "why": "The total number of balls is the denominator of the probability.",
+        "how": "Add the numbers of red, green and blue balls.",
+        "accept": [
+         [
+          "10+5+8",
+          "23"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the probability of selecting a green ball.",
+        "marks": 1,
+        "why": "The final probability must compare green balls with all balls.",
+        "how": "Divide the 5 green balls by the total of 23 balls.",
+        "accept": [
+         [
+          "5/23"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 13 Q3(i)"
+     },
+     {
+      "id": "w-13-8-3",
+      "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (ii) a red ball.",
+      "marks": 2,
+      "modelAnswer": [
+       "Total number of balls = 10 + 5 + 8 = 23.",
+       "P(red ball) = 10/23."
+      ],
+      "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+      "noteId": "n-13-8",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the total number of balls.",
+        "marks": 1,
+        "why": "The total number of balls is the denominator of the probability.",
+        "how": "Add the numbers of red, green and blue balls.",
+        "accept": [
+         [
+          "10+5+8",
+          "23"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the probability of selecting a red ball.",
+        "marks": 1,
+        "why": "The final probability must compare red balls with all balls.",
+        "how": "Divide the 10 red balls by the total of 23 balls.",
+        "accept": [
+         [
+          "10/23"
+         ]
+        ]
+       }
+      ],
+      "source": "Review Exercise 13 Q3(ii)"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The review includes one-mark-style MCQs on terms, sample spaces, and simple probability facts; choose the exact term or calculate the probability carefully.",
+      "For a probability calculation, show the favourable outcomes or count and the total outcomes before writing the fraction.",
+      "For coin and dice questions, state the sample space or show how many equally likely outcomes there are.",
+      "For relative-frequency tables, divide every frequency by the total number of trials and simplify each result.",
+      "For complement questions using “not”, count the outcomes that do not fit the stated event, or subtract the event count from the total."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "First find the total number of balls.",
+        "“Not a red ball” means green or blue, so count those balls together."
+       ],
+       "accept": [
+        [
+         "13/23"
+        ]
+       ],
+       "question": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+       "solution": [
+        "Total number of balls = 10 + 5 + 8 = 23.",
+        "Number of balls which are not red = 5 + 8 = 13.",
+        "P(not a red ball) = 13/23."
+       ],
+       "answer": "13/23"
+      },
+      {
+       "hints": [
+        "The total number of trials is 600.",
+        "Divide each frequency in the table by 600, then simplify."
+       ],
+       "accept": [
+        [
+         "11/60",
+         "3/20",
+         "7/40",
+         "2/15",
+         "19/150",
+         "41/200",
+         "2/75"
+        ]
+       ],
+       "question": "Six coins are tossed 600 times. The number of occurrence of tails are recorded and shown in the table given below:\n\n| No. of tails | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| Frequency | 110 | 90 | 105 | 80 | 76 | 123 | 16 |\n\nFind the relative frequency of given table.",
+       "solution": [
+        "Total frequency = 600.",
+        "Relative frequency = frequency / total frequency.",
+        "For 0 tails: 110/600 = 11/60; for 1 tail: 90/600 = 3/20.",
+        "For 2 tails: 105/600 = 7/40; for 3 tails: 80/600 = 2/15.",
+        "For 4 tails: 76/600 = 19/150; for 5 tails: 123/600 = 41/200.",
+        "For 6 tails: 16/600 = 2/75."
+       ],
+       "answer": "For 0 to 6 tails respectively: 11/60, 3/20, 7/40, 2/15, 19/150, 41/200, 2/75."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Three coin tosses have two possible results each, giving eight equally likely results.",
+        "text": "Sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}."
+       },
+       {
+        "why": "“Not at least two heads” means fewer than two heads, so the outcomes have zero or one head.",
+        "text": "Favourable outcomes = {HTT, THT, TTH, TTT}."
+       },
+       {
+        "why": "Probability is the number of favourable outcomes divided by the number of equally likely outcomes.",
+        "text": "P(not at least two heads) = 4/8 = 1/2."
+       }
+      ],
+      "question": "Three coins are tossed together, what is the probability of getting (iii) not at least two heads.",
+      "answer": "1/2"
+     },
+     "explain": [
+      {
+       "title": "Sample space and sample point",
+       "body": "The sample space is the collection of all possible outcomes of an experiment. Each individual outcome in it is a sample point. For three coin tosses, the sample space has eight outcomes."
+      },
+      {
+       "title": "Probability of an event",
+       "body": "When outcomes are equally likely, probability is the number of favourable outcomes divided by the total number of outcomes. For a pair of dice there are 36 ordered outcomes, and only one is double 2, so its probability is 1/36."
+      },
+      {
+       "title": "Events that are not wanted",
+       "body": "For an event described with “not”, count outcomes outside the event. For example, the cards that are neither jacks nor kings are the other 44 cards in a 52-card pack, so the probability is 44/52 = 11/13."
+      },
+      {
+       "title": "Relative frequency",
+       "body": "Relative frequency compares the observed frequency of an event with the total number of trials. Divide each frequency by the total frequency; the relative frequencies for all categories together add to 1."
+      },
+      {
+       "title": "Expected frequency",
+       "body": "Expected frequency is the expected number of times an event occurs in a fixed number of trials. Multiply the probability of the event by the number of trials."
+      }
+     ],
+     "mistakes": [
+      "Using the number of favourable outcomes as the denominator instead of the total number of possible outcomes.",
+      "For several coins or dice, forgetting that the outcomes are ordered and that each toss or die multiplies the number of possibilities.",
+      "For an event beginning with “not”, counting the event itself instead of its complement.",
+      "In relative-frequency questions, dividing by a category frequency instead of the total number of trials.",
+      "Forgetting to simplify fractions or omitting one category from a relative-frequency table."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "n-13-1",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-1",
+   "title": "Finding the Probability of an Event",
+   "keywords": [
+    "probability",
+    "favourable outcomes",
+    "sample space",
+    "event",
+    "outcomes",
+    "single event"
+   ],
+   "answer": "P(A) = n(A)/n(S), the number of favourable outcomes divided by the total number of possible outcomes.",
+   "explanation": "Probability measures the chance that an event occurs. Your textbook defines it as: “Probability is the chance of occurrence of a particular event.” Use P(A) = n(A)/n(S), where n(A) is the number of favourable outcomes and n(S) is the total number of possible outcomes. For example, on one fair die, the probability of rolling a 6 is 1/6. When two dice are rolled, there are 36 possible ordered outcomes; the probability of getting an even number on both is 9/36 = 1/4.",
+   "simple": "Count the results you want, then divide by the total number of possible results. For example, a fair die has one 6 and six possible results, so the chance of rolling a 6 is 1/6.",
+   "examples": [
+    "One fair die: P(getting 3) = 1/6.",
+    "Two fair dice: P(even numbers on both) = 9/36 = 1/4."
+   ],
+   "steps": [
+    "Write the sample space, S, or count all possible outcomes.",
+    "List or count the favourable outcomes for event A.",
+    "Use P(A) = n(A)/n(S).",
+    "Simplify the fraction."
+   ],
+   "checkQuestion": "A fair die is rolled once. What is the probability of getting a 5?",
+   "checkAnswer": "1/6",
+   "checkAccept": [
+    [
+     "1/6"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-2",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-2",
+   "title": "Probability of an Event Not Occurring",
+   "keywords": [
+    "complement",
+    "event",
+    "probability",
+    "not occurring",
+    "sample space",
+    "dice"
+   ],
+   "answer": "P(A′) = 5/6",
+   "explanation": "For any event, its complement means that the event does not happen. Find the event’s probability first, then subtract it from 1. For example, if getting a 6 has probability 1/6, not getting a 6 has probability 1 − 1/6 = 5/6. If the sum of two dice is 8 with probability 5/36, the probability that the sum is not 8 is 1 − 5/36 = 31/36.",
+   "simple": "To find the probability that an event does not happen, subtract the probability that it does happen from 1.",
+   "examples": [
+    "A coin has P(head) = 1/2, so P(not head) = 1 − 1/2 = 1/2.",
+    "For one die, P(not getting 6) = 1 − 1/6 = 5/6."
+   ],
+   "steps": [
+    "Let A be the event of getting 6.",
+    "P(A) = 1/6.",
+    "P(A′) = 1 − P(A).",
+    "P(A′) = 1 − 1/6 = 5/6."
+   ],
+   "checkQuestion": "A fair die is rolled. What is the probability of not getting 6?",
+   "checkAnswer": "5/6",
+   "checkAccept": [
+    [
+     "5/6"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-3",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-3",
+   "title": "Finding probabilities in real-life situations",
+   "keywords": [
+    "probability",
+    "complement",
+    "favourable outcomes",
+    "total outcomes",
+    "random selection",
+    "dice"
+   ],
+   "answer": "Use P(A) = n(A)/n(S) for equally likely outcomes, and P(A′) = 1 − P(A) for the complement.",
+   "explanation": "For an event and its complement, their probabilities add up to 1. For an event with equally likely outcomes, divide the number of favourable outcomes by the total number of outcomes. For example, if a dice has 6 sides and 2 sides show a desired result, the probability is 2/6 = 1/3. If the probability of passing is 0.85, the probability of not passing is 1 − 0.85 = 0.15.",
+   "simple": "Count the outcomes you want and divide by all possible outcomes. For the opposite event, subtract the probability from 1.",
+   "examples": [
+    "P(not passing) = 1 − 0.85 = 0.15",
+    "P(selecting a blue ball) = 5/13"
+   ],
+   "steps": [
+    "Identify the event you are asked about.",
+    "For equally likely outcomes, use P(A) = n(A)/n(S).",
+    "For the complement of an event, use P(A′) = 1 − P(A).",
+    "Simplify the probability and state the answer."
+   ],
+   "checkQuestion": "A bag has 3 red balls and 9 blue balls. What is the probability of selecting a red ball?",
+   "checkAnswer": "1/4",
+   "checkAccept": [
+    [
+     "1/4"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-4",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-4",
+   "title": "Relative Frequency as an Estimate of Probability",
+   "keywords": [
+    "relative frequency",
+    "frequency",
+    "total frequency",
+    "trials",
+    "Σf"
+   ],
+   "answer": "Relative frequency = Frequency of specific event / Total frequency = x/N, where N = Σf",
+   "explanation": "Relative frequency shows how often an event occurred out of all the trials. Add all the frequencies to find the total, then divide the event’s frequency by that total.",
+   "simple": "Count how many times the event happened, then divide by the total number of times you tried.",
+   "examples": [
+    "If the value 6 occurred 10 times in 43 trials, its relative frequency is 10/43 = 0.23.",
+    "If the value 8 occurred 2 times in 43 trials, its relative frequency is 2/43 = 0.04."
+   ],
+   "steps": [
+    "Add the frequencies: Σf = 3 + 5 + 6 + 9 + 10 + 8 + 2 = 43.",
+    "For X = 6, divide its frequency by the total: 10/43 = 0.23.",
+    "For X = 8, divide its frequency by the total: 2/43 = 0.04."
+   ],
+   "checkQuestion": "In the table, what is the relative frequency of X = 7?",
+   "checkAnswer": "8/43 = 0.19",
+   "checkAccept": [
+    [
+     "8/43"
+    ],
+    [
+     "0.19"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-5",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-5",
+   "title": "Finding relative frequency",
+   "keywords": [
+    "relative frequency",
+    "estimated probability",
+    "total frequency",
+    "observations",
+    "percentage"
+   ],
+   "answer": "Relative frequency = frequency of the outcome / total frequency.",
+   "explanation": "Relative frequency tells us how often an outcome happened compared with the total number of observations. It is used as an estimated probability.",
+   "simple": "Divide the number for the outcome you want by the total number of observations.",
+   "examples": [
+    "If 45 out of 200 students do not play any game, their relative frequency is 45/200 = 0.225.",
+    "If 80 out of 200 students play cricket, the relative frequency is 80/200 = 0.4."
+   ],
+   "steps": [
+    "Find the total number of observations.",
+    "Divide the number for the outcome by the total.",
+    "Write the result as a decimal or percentage if needed."
+   ],
+   "checkQuestion": "Out of 200 students, 80 play cricket. What is the relative frequency of students who play cricket?",
+   "checkAnswer": "80/200 = 0.4, or 40%.",
+   "checkAccept": [
+    [
+     "80/200"
+    ],
+    [
+     "0.4"
+    ],
+    [
+     "40%"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-6",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-6",
+   "title": "Finding Expected Frequency",
+   "keywords": [
+    "expected frequency",
+    "trials",
+    "probability",
+    "N × P(A)",
+    "event"
+   ],
+   "answer": "Expected frequency = N × P(A)",
+   "explanation": "Expected frequency tells us how many times an event should occur, on average, in a stated number of trials. Multiply the total number of trials by the probability of the event.",
+   "simple": "Expected frequency is the number of times an outcome is expected to happen. Multiply how many trials there are by the probability of that outcome.",
+   "examples": [
+    "If an event has probability 0.2 in 50 trials, its expected frequency is 50 × 0.2 = 10.",
+    "For the outcome of 3 sixes in Example 11, the expected frequency is 50 × 0.24 = 12."
+   ],
+   "steps": [
+    "Identify the total number of trials, N.",
+    "Identify the probability of the event, P(A).",
+    "Use Expected frequency = N × P(A).",
+    "Multiply and write the expected frequency."
+   ],
+   "checkQuestion": "An event has probability 0.2 in 50 trials. What is its expected frequency?",
+   "checkAnswer": "10",
+   "checkAccept": [
+    [
+     "10"
+    ],
+    [
+     "10.0"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-7",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-7",
+   "title": "Expected Frequency",
+   "keywords": [
+    "expected frequency",
+    "probability",
+    "trials",
+    "event",
+    "relative frequency",
+    "complement"
+   ],
+   "answer": "Expected frequency = number of trials × probability of the event.",
+   "explanation": "Expected frequency tells us how many times an event is likely to happen in a fixed number of trials. Use E(B) = N × P(B), where N is the number of trials and P(B) is the probability of the event. For example, if P(B) = 1/3 in 300 trials, E(B) = 300 × 1/3 = 100. If an item is either defective or non-defective, then P(non-defective) = 1 − P(defective).",
+   "simple": "Expected frequency is the number of times an event is likely to happen in a given number of trials.",
+   "examples": [
+    "A fair die is rolled 300 times. The probability of getting 1 or 6 is 2/6 = 1/3, so the expected frequency is 300 × 1/3 = 100.",
+    "If P(defective) = 0.3, then P(non-defective) = 1 − 0.3 = 0.7."
+   ],
+   "steps": [
+    "Find the probability of the event.",
+    "Multiply the probability by the total number of trials: E(B) = N × P(B).",
+    "Write the expected frequency, and round only if the question or textbook does so."
+   ],
+   "checkQuestion": "An event has probability 1/5. What is its expected frequency in 200 trials?",
+   "checkAnswer": "40",
+   "checkAccept": [
+    [
+     "40"
+    ]
+   ]
+  },
+  {
+   "id": "n-13-8",
+   "subjectId": "pb-9-math",
+   "moduleId": "m-13-8",
+   "title": "Probability: Review of Unit 13",
+   "keywords": [
+    "probability",
+    "sample space",
+    "sample point",
+    "favourable outcome",
+    "relative frequency",
+    "expected frequency",
+    "equally likely"
+   ],
+   "answer": "Probability = number of favourable outcomes ÷ total number of equally likely outcomes.",
+   "explanation": "Use the sample space to count all equally likely outcomes. Count the favourable outcomes for the event, then divide by the total number of outcomes. For experimental data, divide each frequency by the total number of trials to find relative frequency. Expected frequency is found by multiplying the probability by the number of trials.",
+   "simple": "Probability tells us how likely an event is. Count the outcomes that fit, then compare that count with all possible outcomes.",
+   "examples": [
+    "Three coins have 8 equally likely outcomes. Exactly three heads occurs in only HHH, so its probability is 1/8.",
+    "If 17 of 25 items are non-defective, their relative frequency is 17/25 = 0.68."
+   ],
+   "steps": [
+    "List or count all possible outcomes in the sample space.",
+    "Count the outcomes that satisfy the event.",
+    "For equally likely outcomes, divide favourable outcomes by total outcomes.",
+    "For experimental data, divide a category's frequency by the total frequency to find its relative frequency.",
+    "To find expected frequency, multiply the probability by the number of trials."
+   ],
+   "checkQuestion": "A fair die is rolled once. What is the probability of rolling a 4?",
+   "checkAnswer": "There are 6 outcomes when one die is rolled. The probability of rolling a 4 is 1/6.",
+   "checkAccept": [
+    [
+     "1/6"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q-13-1-1",
+   "stem": "What is probability?",
+   "options": [
+    "The chance of occurrence of a particular event",
+    "The result of an experiment",
+    "The set of all possible outcomes",
+    "The process which generates results"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the textbook definition of probability.",
+    "A result of an experiment is an outcome, not probability.",
+    "The set of all possible outcomes is the sample space.",
+    "A process which generates results is an experiment."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-1-2",
+   "stem": "What is the sample space?",
+   "options": [
+    "The set of favourable outcomes",
+    "The set of all possible outcomes",
+    "The result of one experiment",
+    "An event that cannot occur"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Favourable outcomes form an event, not the whole sample space.",
+    "The sample space is the set of all possible outcomes of an experiment.",
+    "A result of an experiment is an outcome or sample point.",
+    "An event that cannot occur is an impossible event."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-1-3",
+   "stem": "A fair dice is rolled once. What is the probability of getting a number divisible by 3?",
+   "options": [
+    "0",
+    "1/6",
+    "1/3",
+    "1/2"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The event is possible, so its probability is not zero.",
+    "There are two favourable results, 3 and 6, so 1/6 is too small.",
+    "There are 2 favourable outcomes out of 6, so the probability is 2/6 = 1/3.",
+    "The probability is 2/6, not 3/6."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-1-4",
+   "stem": "Two fair dice are rolled. What is the probability of getting even numbers on both dice?",
+   "options": [
+    "1/2",
+    "1/4",
+    "1/3",
+    "1/6"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "There are 9 favourable pairs out of 36, not 18.",
+    "There are 3 even choices on each die, giving 9 favourable pairs out of 36; this simplifies to 1/4.",
+    "The probability is 9/36, not 12/36.",
+    "There are 9 favourable pairs, not 6."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-1-5",
+   "stem": "What is the probability of a certain event?",
+   "options": [
+    "0",
+    "1/2",
+    "1",
+    "2"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "A probability of 0 represents an impossible event.",
+    "A probability of 1/2 represents an event with an equal chance of occurring or not occurring.",
+    "A certain event is sure to occur, and its probability is 1.",
+    "A probability cannot be greater than 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-1-6",
+   "stem": "A fair dice is rolled once. What is the probability of getting 7?",
+   "options": [
+    "0",
+    "1/6",
+    "1/2",
+    "1"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A standard die has no 7, so the event is impossible and has probability 0.",
+    "There is no favourable outcome, so the probability is not 1/6.",
+    "Getting 7 is not possible on a standard die.",
+    "A probability of 1 would mean the event is certain."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-1",
+   "moduleId": "m-13-1"
+  },
+  {
+   "id": "q-13-2-1",
+   "stem": "Which formula gives the probability of the complement of an event A?",
+   "options": [
+    "P(A′) = 1 − P(A)",
+    "P(A′) = P(A) − 1",
+    "P(A′) = 1 + P(A)",
+    "P(A′) = P(A)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the complement rule stated in the section.",
+    "Subtracting 1 from P(A) does not give the complement.",
+    "Adding the probabilities would usually make a value greater than 1.",
+    "An event and its complement do not usually have equal probabilities."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-2",
+   "stem": "What is the sum of the probabilities of an event and its complement?",
+   "options": [
+    "1",
+    "0",
+    "1/2",
+    "2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "An event and its complement together make the whole sample space, so their probabilities add to 1.",
+    "A sum of 0 would mean both probabilities are 0, which is not possible for complementary events.",
+    "The sum of complementary probabilities is always 1, not 1/2.",
+    "A probability sum of 2 is not possible."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-3",
+   "stem": "A fair coin is tossed. What is the probability of not getting a head?",
+   "options": [
+    "1/2",
+    "1",
+    "0",
+    "2"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "P(not head) = 1 − 1/2 = 1/2.",
+    "A probability of 1 would mean not getting a head is certain.",
+    "The coin can land tail, so the probability is not 0.",
+    "A probability cannot be 2."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-4",
+   "stem": "A fair die is rolled. What is the probability of not getting 6?",
+   "options": [
+    "5/6",
+    "1/6",
+    "1/2",
+    "6/5"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "There are five outcomes other than 6 out of six equally likely outcomes, so the probability is 5/6.",
+    "1/6 is the probability of getting 6, not avoiding it.",
+    "There are five outcomes that are not 6, so the probability is not 1/2.",
+    "6/5 is greater than 1 and cannot be a probability."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-5",
+   "stem": "Two fair dice are rolled. What is the probability of not getting a double six?",
+   "options": [
+    "35/36",
+    "1/36",
+    "5/36",
+    "36/35"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Only one of the 36 outcomes is a double six, so the probability of its complement is 1 − 1/36 = 35/36.",
+    "1/36 is the probability of getting a double six.",
+    "5/36 is not the probability of a double six or its complement.",
+    "36/35 is greater than 1 and cannot be a probability."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-6",
+   "stem": "Two fair dice are rolled. What is the probability that their sum is not 8?",
+   "options": [
+    "31/36",
+    "5/36",
+    "1/36",
+    "36/31"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Five of the 36 outcomes have sum 8, so the complement has probability 1 − 5/36 = 31/36.",
+    "5/36 is the probability that the sum is 8.",
+    "There is more than one outcome with sum 8, so 1/36 is not the complement probability.",
+    "36/31 is greater than 1 and cannot be a probability."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-7",
+   "stem": "Which notation in the section represents the complement of event A?",
+   "options": [
+    "A′",
+    "A",
+    "n(A)",
+    "n(S)"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A′ represents the event that A does not occur.",
+    "A represents the original event, not its complement.",
+    "n(A) means the number of outcomes in event A.",
+    "n(S) means the number of outcomes in the sample space."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-2-8",
+   "stem": "For two fair dice, five outcomes have a sum of 8. What is P(sum of both dice is 8)?",
+   "options": [
+    "5/36",
+    "31/36",
+    "1/36",
+    "35/36"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The event has 5 outcomes out of 36 equally likely outcomes, so its probability is 5/36.",
+    "31/36 is the probability that the sum is not 8.",
+    "1/36 is not the probability of the five-outcome event.",
+    "35/36 is the probability of not getting a double six."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-2",
+   "moduleId": "m-13-2"
+  },
+  {
+   "id": "q-13-3-1",
+   "stem": "If the probability that a player wins is 1/4, what is the probability that the player does not win?",
+   "options": [
+    "1/4",
+    "3/4",
+    "1/2",
+    "0"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the probability of winning, not of not winning.",
+    "This is correct because the complementary probability is 1 − 1/4 = 3/4.",
+    "This does not equal 1 − 1/4.",
+    "A probability of zero would mean the player cannot fail, which is not the case."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-2",
+   "stem": "A bag contains 5 blue balls and 8 green balls. What is the probability of selecting a blue ball?",
+   "options": [
+    "5/13",
+    "8/13",
+    "5/8",
+    "8/5"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because there are 5 blue balls out of 13 balls in total.",
+    "This is the probability of selecting a green ball.",
+    "This uses only the blue and green counts as the denominator, rather than their total.",
+    "This is greater than 1, so it cannot be a probability."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-3",
+   "stem": "What is the probability of drawing a heart from a standard pack of 52 playing cards?",
+   "options": [
+    "1/13",
+    "1/4",
+    "4/13",
+    "13/52"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the probability of drawing one specified card, not any heart.",
+    "This is correct because 13 of the 52 cards are hearts, and 13/52 = 1/4.",
+    "There are 13 hearts, not 4, so this does not count the favourable outcomes correctly.",
+    "This fraction is equivalent to 1/4, so it is also mathematically correct."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-5",
+   "stem": "A card is drawn from a standard pack of 52 cards. What is the probability of getting neither a queen nor a jack?",
+   "options": [
+    "11/13",
+    "2/13",
+    "4/13",
+    "1/13"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 4 queens and 4 jacks leave 44 cards, and 44/52 = 11/13.",
+    "This is the probability of drawing a queen or a jack, not neither.",
+    "This counts only 16 favourable cards out of 52, which is not the required event.",
+    "This is the probability of drawing one specified card, not the required group of cards."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-6",
+   "stem": "A fair dice is rolled once. What is the probability of getting a 3 or a 4?",
+   "options": [
+    "1/6",
+    "1/3",
+    "1/2",
+    "2/3"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This counts only one of the two favourable results.",
+    "This is correct because 2 of the 6 equally likely results are 3 or 4, so 2/6 = 1/3.",
+    "This would mean 3 of the 6 results are favourable, but only 2 are.",
+    "This is the probability of not getting 3 or 4, not of getting one of them."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-7",
+   "stem": "The probability that Ayesha will pass an examination is 0.85. What is the probability that she will not pass?",
+   "options": [
+    "0.15",
+    "0.85",
+    "1.15",
+    "0.05"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 1 − 0.85 = 0.15.",
+    "This is the probability that Ayesha will pass.",
+    "A probability cannot be greater than 1.",
+    "This does not equal the complementary probability."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-3-8",
+   "stem": "What is the probability of drawing a card that is not a diamond from a standard pack of 52 cards?",
+   "options": [
+    "1/13",
+    "3/4",
+    "1/4",
+    "4/13"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the probability of drawing one specified card, not any non-diamond.",
+    "This is correct because 39 of the 52 cards are not diamonds, and 39/52 = 3/4.",
+    "This is the probability of drawing a diamond.",
+    "This uses an incorrect number of favourable outcomes for the event."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-3",
+   "moduleId": "m-13-3"
+  },
+  {
+   "id": "q-13-4-1",
+   "stem": "Which expression gives the relative frequency of an event?",
+   "options": [
+    "Frequency of specific event / Total frequency",
+    "Total frequency / Frequency of specific event",
+    "Frequency of specific event + Total frequency",
+    "Total frequency − Frequency of specific event"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the method in the section: divide the event’s frequency by the total frequency.",
+    "This reverses the numerator and denominator.",
+    "Adding the frequencies does not give relative frequency.",
+    "Subtracting the frequencies does not give relative frequency."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-4-2",
+   "stem": "For the frequencies 3, 5, 6, 9, 10, 8 and 2, what is the total frequency?",
+   "options": [
+    "43",
+    "40",
+    "41",
+    "44"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Adding all the frequencies gives Σf = 43.",
+    "The sum of the listed frequencies is not 40.",
+    "The sum of the listed frequencies is not 41.",
+    "The sum of the listed frequencies is not 44."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-4-3",
+   "stem": "In the table, what is the relative frequency for X = 6?",
+   "options": [
+    "10/43 = 0.23",
+    "10/43 = 0.10",
+    "43/10 = 4.3",
+    "10/43 = 0.43"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The frequency is 10 and the total is 43, so 10/43 is approximately 0.23.",
+    "10/43 is not equal to 0.10.",
+    "This reverses the required division and does not give the relative frequency.",
+    "10/43 is not equal to 0.43."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-4-4",
+   "stem": "What is the relative frequency for X = 7 in the table?",
+   "options": [
+    "0.19",
+    "0.08",
+    "0.43",
+    "0.23"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The frequency of 7 is 8, and 8/43 is approximately 0.19.",
+    "0.08 is not the result of dividing 8 by 43.",
+    "0.43 is not the result of dividing 8 by 43.",
+    "0.23 is the table’s relative frequency for X = 6, not X = 7."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-4-5",
+   "stem": "What is the relative frequency for X = 8 in the table?",
+   "options": [
+    "2/43 = 0.04",
+    "2/43 = 0.02",
+    "43/2 = 21.5",
+    "2/43 = 0.20"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The frequency of 8 is 2, so 2/43 is approximately 0.04.",
+    "2/43 is not equal to 0.02.",
+    "This reverses the division and does not give relative frequency.",
+    "2/43 is not equal to 0.20."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-4-6",
+   "stem": "In the formula N = Σf, what does N equal for the given table?",
+   "options": [
+    "43",
+    "10",
+    "7",
+    "3"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "N is the sum of all the frequencies, which is 43.",
+    "10 is one frequency in the table, not the total.",
+    "7 is a value of X, not the total frequency.",
+    "3 is one frequency in the table, not the total."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-4",
+   "moduleId": "m-13-4"
+  },
+  {
+   "id": "q-13-5-1",
+   "stem": "In a survey of 80 students, 23 prefer red. What is the relative frequency of students who prefer red?",
+   "options": [
+    "23/80",
+    "80/23",
+    "23 + 80",
+    "23/100"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because relative frequency is the number in the outcome divided by the total number surveyed.",
+    "This reverses the outcome count and the total.",
+    "Adding the values does not give a relative frequency.",
+    "The total surveyed is 80, not 100."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-5-2",
+   "stem": "The sum of all relative frequencies for a complete set of categories is:",
+   "options": [
+    "1",
+    "0",
+    "The total number of observations",
+    "The largest frequency"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct; the textbook says the sum is always equal to or approximately equal to 1.",
+    "A sum of zero would mean there were no observations in any category.",
+    "The total number of observations is used as the denominator, not the sum of relative frequencies.",
+    "The largest frequency is not the sum of relative frequencies."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-5-3",
+   "stem": "Out of 200 students, 45 do not play any game. What is the relative frequency of students who do not play any game?",
+   "options": [
+    "45/200",
+    "200/45",
+    "45/100",
+    "200 - 45"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 45 students are in the outcome out of 200 students in total.",
+    "This reverses the outcome count and the total.",
+    "This uses 100 as the total instead of 200.",
+    "Subtracting gives a count, not the relative frequency."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-5-4",
+   "stem": "If 80 out of 200 students play cricket, which is the relative frequency of students who play cricket?",
+   "options": [
+    "80/200 = 0.4",
+    "200/80 = 2.5",
+    "80/100 = 0.8",
+    "80 + 200 = 280"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the cricket count is divided by the total number of students.",
+    "This reverses the division and is greater than 1.",
+    "This uses 100 instead of the total of 200 students.",
+    "Adding the numbers does not calculate relative frequency."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-5-5",
+   "stem": "In Example 10, what is the total of Abdul Rehman's marks across all six subjects?",
+   "options": [
+    "488",
+    "80",
+    "75",
+    "6"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 75 + 80 + 72 + 95 + 81 + 85 = 488.",
+    "This is the English marks, not the total marks.",
+    "This is the Urdu marks, not the total marks.",
+    "This is the number of subjects, not the total marks."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-5-6",
+   "stem": "How do you find the relative frequency of a category?",
+   "options": [
+    "Divide the category's frequency by the total frequency.",
+    "Multiply the category's frequency by the total frequency.",
+    "Subtract the category's frequency from the total frequency.",
+    "Divide the total frequency by the category's frequency."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct; it is the method used in the textbook examples.",
+    "Multiplication does not give the relative frequency.",
+    "Subtraction gives a difference, not the relative frequency.",
+    "This reverses the required division."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-5",
+   "moduleId": "m-13-5"
+  },
+  {
+   "id": "q-13-6-1",
+   "stem": "Which formula is used to find expected frequency?",
+   "options": [
+    "Total number of trials × Probability of the event",
+    "Total number of trials + Probability of the event",
+    "Probability of the event ÷ Total number of trials",
+    "Total number of trials − Probability of the event"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the formula given in the section: Expected frequency = N × P(A).",
+    "Adding the values is not the method for expected frequency.",
+    "Dividing probability by the number of trials is not the stated formula.",
+    "Subtracting probability from the number of trials is not the stated formula."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-6-2",
+   "stem": "An event has probability 0.3 in 40 trials. What is its expected frequency?",
+   "options": [
+    "4",
+    "8",
+    "12",
+    "20"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is too small; 40 × 0.3 is not 4.",
+    "This is not the product of 40 and 0.3.",
+    "Using N × P(A), 40 × 0.3 = 12.",
+    "This is the number of trials multiplied by 0.5, not 0.3."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-6-3",
+   "stem": "The probability of an event is 0.2. In 50 trials, what is its expected frequency?",
+   "options": [
+    "5",
+    "10",
+    "15",
+    "25"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is not the product of 50 and 0.2.",
+    "Using N × P(A), 50 × 0.2 = 10.",
+    "This is not the product of 50 and 0.2.",
+    "This is half the number of trials, not the expected frequency for probability 0.2."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-6-4",
+   "stem": "In Example 11, what is the expected frequency of getting 2 sixes in 50 rolls, if P(2) = 0.12?",
+   "options": [
+    "4.5",
+    "5",
+    "6",
+    "7.5"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not 50 multiplied by 0.12.",
+    "This is not the product of 50 and 0.12.",
+    "Using N × P(A), 50 × 0.12 = 6.",
+    "This is not the product of 50 and 0.12."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-6-5",
+   "stem": "In Example 11, what is the expected frequency of getting 3 sixes in 50 rolls, if P(3) = 0.24?",
+   "options": [
+    "5",
+    "10",
+    "12",
+    "15"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not the product of 50 and 0.24.",
+    "This is not the product of 50 and 0.24.",
+    "Using N × P(A), 50 × 0.24 = 12.",
+    "This is not the product of 50 and 0.24."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-6-6",
+   "stem": "In Example 11, what is the expected frequency of getting 6 sixes in 50 rolls, if P(6) = 0.15?",
+   "options": [
+    "4.5",
+    "5",
+    "7.5",
+    "10"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not the product of 50 and 0.15.",
+    "This is not the product of 50 and 0.15.",
+    "Using N × P(A), 50 × 0.15 = 7.5.",
+    "This is not the product of 50 and 0.15."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-6",
+   "moduleId": "m-13-6"
+  },
+  {
+   "id": "q-13-7-1",
+   "stem": "Which formula is used to find the expected frequency of an event?",
+   "options": [
+    "N × P(B)",
+    "N + P(B)",
+    "N ÷ P(B)",
+    "P(B) − N"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the expected-frequency formula used in the section.",
+    "Adding the number of trials and probability does not give expected frequency.",
+    "Dividing the number of trials by the probability is not the stated method.",
+    "Subtracting the number of trials from the probability is not the expected-frequency formula."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-2",
+   "stem": "A fair die is rolled 300 times. What is the expected frequency of getting 1 or 6?",
+   "options": [
+    "100",
+    "150",
+    "200",
+    "300"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The probability is 2/6 = 1/3, so 300 × 1/3 = 100.",
+    "150 would require an event probability of 1/2.",
+    "200 would require an event probability of 2/3.",
+    "300 would mean the event happens on every trial."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-3",
+   "stem": "If the probability of a defective bolt is 0.3, what is the probability that it is non-defective?",
+   "options": [
+    "0.7",
+    "0.3",
+    "1.3",
+    "0"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The complementary probability is 1 − 0.3 = 0.7.",
+    "This is the probability of a defective bolt, not a non-defective bolt.",
+    "A probability cannot be greater than 1.",
+    "The complementary probability is not zero."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-4",
+   "stem": "A person gets Rs. 120 if an event with probability 1/2 occurs. What is the expected amount?",
+   "options": [
+    "60",
+    "80",
+    "100",
+    "120"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The expected amount is 120 × 1/2 = Rs. 60.",
+    "Rs. 80 does not result from multiplying 120 by 1/2.",
+    "Rs. 100 is not the product of 120 and 1/2.",
+    "Rs. 120 is the amount received if the event occurs, not the expected amount."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-5",
+   "stem": "An event has probability 0.11 in 200 trials. What is its expected frequency?",
+   "options": [
+    "22",
+    "11",
+    "44",
+    "200"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The expected frequency is 200 × 0.11 = 22.",
+    "11 is half of the correct expected frequency.",
+    "44 results from using 0.22 instead of 0.11.",
+    "200 would mean the event occurs in every trial."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-6",
+   "stem": "For a complete set of possible outcomes, what should the probabilities add up to?",
+   "options": [
+    "The sum of the probabilities is 1",
+    "The sum of the probabilities is 0",
+    "Every probability is greater than 1",
+    "Every probability is a whole number"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The probabilities of all possible outcomes in a complete set add up to 1.",
+    "A total of 0 would mean there is no probability assigned to any outcome.",
+    "Probabilities cannot be greater than 1.",
+    "Probabilities are not required to be whole numbers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-7",
+   "stem": "In E(B) = N × P(B), what does N represent?",
+   "options": [
+    "The total number of trials",
+    "The probability of one event",
+    "The number of possible outcomes",
+    "The expected frequency of one outcome"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "N represents the total number of trials.",
+    "P(B), not N, represents the probability of the event.",
+    "N is not the number of possible outcomes in the sample space.",
+    "E(B), not N, represents the expected frequency."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-7-8",
+   "stem": "How do you find the expected frequency when the event probability and number of trials are known?",
+   "options": [
+    "The event's probability multiplied by the number of trials",
+    "The event's probability divided by the number of trials",
+    "The event's probability added to the number of trials",
+    "One minus the number of trials"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Multiply the probability by the number of trials.",
+    "Dividing in this order is not the method for expected frequency.",
+    "Adding the two values does not give expected frequency.",
+    "Subtracting the number of trials from 1 is not the method."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "n-13-7",
+   "moduleId": "m-13-7"
+  },
+  {
+   "id": "q-13-8-1",
+   "stem": "Each element of the sample space is called:",
+   "options": [
+    "(a) event",
+    "(b) experiment",
+    "(c) sample point",
+    "(d) outcomes"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "An event is a collection of one or more outcomes, not one element of the sample space.",
+    "An experiment is the action or process that produces outcomes.",
+    "A sample point is one individual element of the sample space.",
+    "Outcomes are possible results, but the precise term for one element is sample point."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-2",
+   "stem": "An outcome which represents how many times we expect the things to be happened is called:",
+   "options": [
+    "(a) outcomes",
+    "(b) favourable outcome",
+    "(c) sample space",
+    "(d) sample point"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Outcomes are results of an experiment, not the outcome favourable to a specified event.",
+    "A favourable outcome is an outcome that satisfies the event being considered.",
+    "The sample space is the set of all possible outcomes.",
+    "A sample point is one element of the sample space, not specifically one favourable to the event."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-3",
+   "stem": "Which one tells us how often a specific event occurs relative to the total number of frequency event or trials?",
+   "options": [
+    "(a) expected frequency",
+    "(b) sum of relative frequency",
+    "(c) relative frequency",
+    "(d) frequency"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Expected frequency estimates how many times an event should occur in a given number of trials.",
+    "The sum of relative frequencies is not the name for the proportion of trials in which one event occurs.",
+    "Relative frequency compares how often an event occurs with the total number of trials.",
+    "Frequency is the count of occurrences and does not by itself compare that count with the total trials."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-4",
+   "stem": "Estimated probability of an event occurring is also known as:",
+   "options": [
+    "(a) relative frequency",
+    "(b) expected frequency",
+    "(c) class boundaries",
+    "(d) sum of expected frequency"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Relative frequency is used as an estimate of the probability of an event.",
+    "Expected frequency is an estimated count of occurrences, not the estimated probability itself.",
+    "Class boundaries belong to grouped data and do not describe probability.",
+    "The sum of expected frequencies is a total count, not an estimated probability."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-5",
+   "stem": "The sum of all expected frequencies is equal to the fixed number of:",
+   "options": [
+    "(a) trials",
+    "(b) relative frequencies",
+    "(c) outcomes",
+    "(d) events"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Expected frequencies for all possible outcomes add up to the fixed total number of trials.",
+    "Relative frequencies are proportions and are not the fixed number referred to here.",
+    "Outcomes are possible results, not the total count of repeated experiments.",
+    "Events are occurrences or sets of outcomes, not the fixed total number of trials."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-6",
+   "stem": "The chance of occurrence of a particular event is called:",
+   "options": [
+    "(a) sample space",
+    "(b) estimated probability",
+    "(c) probability",
+    "(d) expected frequency"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The sample space is the set of all possible outcomes.",
+    "Estimated probability is an estimate of a chance based on observed data, rather than the general name asked for.",
+    "Probability is the chance of occurrence of an event.",
+    "Expected frequency is the predicted number of occurrences."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-7",
+   "stem": "An event which will probably occur. It has greater chance to occur is called:",
+   "options": [
+    "(a) equally likely event",
+    "(b) likely event",
+    "(c) unlikely event",
+    "(d) certain event"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Equally likely events have equal chances, not necessarily a greater chance of occurring.",
+    "A likely event has a greater chance of occurring.",
+    "An unlikely event has a small chance of occurring.",
+    "A certain event must occur, which is stronger than merely probably occurring."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-8",
+   "stem": "Find out the total number of possible sample space when 4 dice are rolled.:",
+   "options": [
+    "(a) 6²",
+    "(b) 6³",
+    "(c) 6⁴",
+    "(d) 6⁶"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "6² counts the outcomes for 2 dice, not 4 dice.",
+    "6³ counts the outcomes for 3 dice, not 4 dice.",
+    "Each of 4 dice has 6 outcomes, so the total is 6⁴.",
+    "6⁶ would count the outcomes for 6 dice, not 4 dice."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-9",
+   "stem": "While rolling a pair of dice, what will be the probability of double 2?",
+   "options": [
+    "(a) 1/6",
+    "(b) 1/3",
+    "(c) 5/6",
+    "(d) 1/36"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "1/6 is the probability of getting a 2 on one die, not both dice showing 2.",
+    "1/3 is not the ratio of the one favourable pair to all 36 pairs.",
+    "5/6 is the probability that one die does not show 2, not that both show 2.",
+    "Only (2, 2) is favourable among 36 equally likely pairs, so the probability is 1/36."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  },
+  {
+   "id": "q-13-8-10",
+   "stem": "A card is chosen from a pack of 52 playing cards, find the probability of getting no jack and king:",
+   "options": [
+    "(a) 2/13",
+    "(b) 11/13",
+    "(c) 2/52",
+    "(d) 11/52"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "2/13 counts 8 cards out of 52, not the cards that are neither jacks nor kings.",
+    "There are 8 jacks and kings altogether, so 44 of 52 cards are neither; 44/52 = 11/13.",
+    "2/52 counts only two cards and does not represent the cards that are neither jacks nor kings.",
+    "11/52 is not the probability for the 44 cards that are neither jacks nor kings."
+   ],
+   "status": "APPROVED",
+   "noteId": "n-13-8",
+   "moduleId": "m-13-8"
+  }
+ ],
+ "written": [
+  {
+   "id": "w-13-3-1",
+   "text": "Arshad rolls a dice, with sides labelled L, M, N, O, P, U. What is the probability that the dice lands on consonant?",
+   "marks": 2,
+   "modelAnswer": [
+    "Consonants = L, M, N, P = 4",
+    "Total sides = 6",
+    "P(consonant) = 4/6 = 2/3"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the consonant sides and their count.",
+     "marks": 1,
+     "why": "The favourable outcomes must be identified correctly.",
+     "how": "Count L, M, N and P as the 4 consonants.",
+     "accept": [
+      [
+       "4/6",
+       "4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the simplified probability.",
+     "marks": 1,
+     "why": "The final probability must be simplified and correct.",
+     "how": "Divide 4 favourable outcomes by 6 total outcomes and simplify.",
+     "accept": [
+      [
+       "2/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q1"
+  },
+  {
+   "id": "w-13-3-2",
+   "text": "Shazia throws a pair of fair dice. What will be the probability of getting: (i) sum of dots is at least 4.",
+   "marks": 4,
+   "modelAnswer": [
+    "Total outcomes = 6 × 6 = 36",
+    "Outcomes with sum less than 4 are (1,1), (1,2), (2,1), so favourable outcomes = 36 − 3 = 33",
+    "P(sum of dots is at least 4) = 33/36",
+    "= 11/12"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the total number of outcomes.",
+     "marks": 1,
+     "why": "The total number of equally likely outcomes is needed as the denominator.",
+     "how": "A pair of dice has 6 × 6 = 36 outcomes.",
+     "accept": [
+      [
+       "36"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Count outcomes with a sum of at least 4.",
+     "marks": 1,
+     "why": "The favourable outcomes must be counted correctly.",
+     "how": "Only sums 2 and 3 are excluded, giving 1 + 2 = 3 excluded outcomes and 33 favourable outcomes.",
+     "accept": [
+      [
+       "33"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Write the probability as a fraction.",
+     "marks": 1,
+     "why": "The probability must be formed from favourable outcomes over total outcomes.",
+     "how": "Use 33/36.",
+     "accept": [
+      [
+       "33/36"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Simplify the final probability.",
+     "marks": 1,
+     "why": "The final answer must be in simplified form.",
+     "how": "Divide numerator and denominator of 33/36 by 3.",
+     "accept": [
+      [
+       "11/12"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q2(i)"
+  },
+  {
+   "id": "w-13-3-3",
+   "text": "Shazia throws a pair of fair dice. What will be the probability of getting: (iii) the difference between both the dots is equal to 4.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total outcomes = 6 × 6 = 36",
+    "Outcomes with difference 4 = (1,5), (5,1), (2,6), (6,2), so n(A) = 4",
+    "P(A) = 4/36 = 1/9"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the outcomes with a difference of 4.",
+     "marks": 1,
+     "why": "The favourable ordered outcomes must be counted.",
+     "how": "The outcomes are (1,5), (5,1), (2,6), and (6,2), giving 4 outcomes.",
+     "accept": [
+      [
+       "4/36"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Divide by the 36 total outcomes and simplify.",
+     "marks": 1,
+     "why": "The final probability must be simplified.",
+     "how": "Use 4/36 = 1/9.",
+     "accept": [
+      [
+       "1/9"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q2(iii)"
+  },
+  {
+   "id": "w-13-3-4",
+   "text": "Shazia throws a pair of fair dice. What will be the probability of getting: (iv) number at least 5 on the first dice and the number at least 4 on the second dice.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total outcomes = 6 × 6 = 36",
+    "Favourable outcomes = 2 × 3 = 6",
+    "P(A) = 6/36 = 1/6"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count outcomes meeting both conditions.",
+     "marks": 1,
+     "why": "The favourable outcomes must satisfy both conditions.",
+     "how": "The first die can be 5 or 6 and the second can be 4, 5 or 6, giving 2 × 3 = 6 outcomes.",
+     "accept": [
+      [
+       "6/36"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Divide by all 36 outcomes and simplify.",
+     "marks": 1,
+     "why": "The final probability must be correctly simplified.",
+     "how": "Use 6/36 = 1/6.",
+     "accept": [
+      [
+       "1/6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q2(iv)"
+  },
+  {
+   "id": "w-13-3-5",
+   "text": "One alphabet is selected at random from the word “MATHEMATICS”. Find the probability of getting: (i) vowel",
+   "marks": 2,
+   "modelAnswer": [
+    "Total letters in MATHEMATICS = 11",
+    "Vowels = A, A, E, I = 4",
+    "P(vowel) = 4/11"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the vowels and write the probability.",
+     "marks": 2,
+     "why": "The probability uses the number of vowels over the total letters.",
+     "how": "There are 4 vowels among 11 letters, so the probability is 4/11.",
+     "accept": [
+      [
+       "4/11"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q3(i)"
+  },
+  {
+   "id": "w-13-3-6",
+   "text": "One alphabet is selected at random from the word “MATHEMATICS”. Find the probability of getting: (iii) an E",
+   "marks": 2,
+   "modelAnswer": [
+    "Total letters in MATHEMATICS = 11",
+    "Number of E's = 1",
+    "P(E) = 1/11"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the E and divide by the total number of letters.",
+     "marks": 2,
+     "why": "The probability must use the count of E letters over all letters.",
+     "how": "There is one E among 11 letters, giving 1/11.",
+     "accept": [
+      [
+       "1/11"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q3(iii)"
+  },
+  {
+   "id": "w-13-3-7",
+   "text": "One alphabet is selected at random from the word “MATHEMATICS”. Find the probability of getting: (v) not M",
+   "marks": 2,
+   "modelAnswer": [
+    "Total letters in MATHEMATICS = 11",
+    "Number of M's = 2",
+    "Letters that are not M = 11 − 2 = 9",
+    "P(not M) = 9/11"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the number of letters that are not M and write the probability.",
+     "marks": 2,
+     "why": "The complement count and total number of letters must be used.",
+     "how": "There are 2 M's, so 11 − 2 = 9 letters are not M; the probability is 9/11.",
+     "accept": [
+      [
+       "9/11"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q3(v)"
+  },
+  {
+   "id": "w-13-3-8",
+   "text": "Aslam rolled a dice. What is the probability of getting the numbers 3 or 4?",
+   "marks": 2,
+   "modelAnswer": [
+    "Favourable outcomes = 2",
+    "Total outcomes = 6",
+    "P(getting 3 or 4) = 2/6 = 1/3"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count favourable and total outcomes.",
+     "marks": 1,
+     "why": "The two favourable results must be counted from the six dice results.",
+     "how": "The favourable results are 3 and 4, and there are 6 possible results.",
+     "accept": [
+      [
+       "2/6"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify the probability.",
+     "marks": 1,
+     "why": "The final probability must be simplified.",
+     "how": "Use 2/6 = 1/3.",
+     "accept": [
+      [
+       "1/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q4"
+  },
+  {
+   "id": "w-13-3-9",
+   "text": "Also find the probability of not getting the numbers 3 or 4.",
+   "marks": 2,
+   "modelAnswer": [
+    "P(not getting 3 or 4) = 1 − P(getting 3 or 4)",
+    "= 1 − 1/3 = 2/3"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the complement probability.",
+     "marks": 1,
+     "why": "The complement method uses the probability of getting 3 or 4.",
+     "how": "Use 1 − P(getting 3 or 4) = 1 − 1/3.",
+     "accept": [
+      [
+       "1−1/3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the simplified probability.",
+     "marks": 1,
+     "why": "The final complementary probability must be simplified correctly.",
+     "how": "Simplify 1 − 1/3 to 2/3.",
+     "accept": [
+      [
+       "2/3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q4"
+  },
+  {
+   "id": "w-13-3-10",
+   "text": "Abdul Hadi labelled cards from 1 to 30 and put them in a box. He selects a card at random. What is the probability that selected card containing: (i) the number 25",
+   "marks": 2,
+   "modelAnswer": [
+    "Favourable cards = 1",
+    "Total cards = 30",
+    "P(25) = 1/30"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use favourable outcomes over total outcomes.",
+     "marks": 2,
+     "why": "There is one favourable card out of 30 equally likely cards.",
+     "how": "P(25) = 1/30.",
+     "accept": [
+      [
+       "1/30"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q5(i)"
+  },
+  {
+   "id": "w-13-3-12",
+   "text": "Abdul Hadi labelled cards from 1 to 30 and put them in a box. He selects a card at random. What is the probability that selected card containing: (iii) number at least 20",
+   "marks": 2,
+   "modelAnswer": [
+    "Numbers at least 20 are 20, 21, ..., 30",
+    "Favourable cards = 11; total cards = 30",
+    "P(number at least 20) = 11/30"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count favourable cards and give the probability.",
+     "marks": 2,
+     "why": "The count of numbers from 20 through 30 must be divided by 30.",
+     "how": "There are 11 numbers from 20 to 30 inclusive, so the probability is 11/30.",
+     "accept": [
+      [
+       "11/30"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q5(iii)"
+  },
+  {
+   "id": "w-13-3-13",
+   "text": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "marks": 2,
+   "modelAnswer": [
+    "P(not passing) = 1 − P(passing)",
+    "= 1 − 0.85 = 0.15"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the complement rule.",
+     "marks": 1,
+     "why": "Not passing is the complement of passing.",
+     "how": "Set up 1 − 0.85.",
+     "accept": [
+      [
+       "1-0.85"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the answer.",
+     "marks": 1,
+     "why": "The final probability must be calculated correctly.",
+     "how": "Calculate 1 − 0.85 = 0.15.",
+     "accept": [
+      [
+       "0.15"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q6"
+  },
+  {
+   "id": "w-13-3-14",
+   "text": "A card is selected at random from a well shuffled pack of 52 plying cards. What will be the probability of selecting: (ii) neither a queen nor a jack",
+   "marks": 2,
+   "modelAnswer": [
+    "Number of queens and jacks = 4 + 4 = 8",
+    "Number of cards neither a queen nor a jack = 52 − 8 = 44",
+    "P(neither a queen nor a jack) = 44/52 = 11/13"
+   ],
+   "followUp": "The probability that Ayesha will pass the examination is 0.85. What will be the probability that Ayesha will not pass the examination?",
+   "noteId": "n-13-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the number of favourable cards.",
+     "marks": 1,
+     "why": "The number of cards that are neither queens nor jacks must be counted.",
+     "how": "There are 4 queens and 4 jacks, so 52 − 8 = 44 cards meet the condition.",
+     "accept": [
+      [
+       "44/52"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Write and simplify the probability.",
+     "marks": 1,
+     "why": "The final probability must be simplified correctly.",
+     "how": "Use 44/52 = 11/13.",
+     "accept": [
+      [
+       "11/13"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.1 Q8(ii)"
+  },
+  {
+   "id": "w-13-5-1",
+   "text": "Can you find out the probability of the students who do not play any game?",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of students = 200",
+    "Probability of students who do not play any game = 45/200 = 0.225"
+   ],
+   "followUp": "Can you find out the probability of the students who do not play any game?",
+   "noteId": "n-13-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the probability as the number who do not play any game over the total number of students.",
+     "marks": 1,
+     "why": "The outcome count and total must be identified correctly.",
+     "how": "Use 45 as the outcome count and 200 as the total.",
+     "accept": [
+      [
+       "45/200"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Simplify or evaluate 45/200.",
+     "marks": 1,
+     "why": "The final probability must be evaluated correctly.",
+     "how": "Give 0.225 or the equivalent fraction 9/40.",
+     "accept": [
+      [
+       "0.225"
+      ],
+      [
+       "9/40"
+      ]
+     ]
+    }
+   ],
+   "source": "Try Yourself! (i)"
+  },
+  {
+   "id": "w-13-5-2",
+   "text": "Can you find out the relative frequency of the students who play cricket?",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of students = 200",
+    "Relative frequency of students who play cricket = 80/200 = 0.4"
+   ],
+   "followUp": "Can you find out the probability of the students who do not play any game?",
+   "noteId": "n-13-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the cricket frequency divided by the total frequency.",
+     "marks": 1,
+     "why": "The relative frequency must use the cricket count over the total number of students.",
+     "how": "Use 80 as the cricket count and 200 as the total.",
+     "accept": [
+      [
+       "80/200"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Evaluate 80/200.",
+     "marks": 1,
+     "why": "The final relative frequency must be calculated correctly.",
+     "how": "Give 0.4 or the equivalent percentage 40%.",
+     "accept": [
+      [
+       "0.4"
+      ],
+      [
+       "40%"
+      ]
+     ]
+    }
+   ],
+   "source": "Try Yourself! (ii)"
+  },
+  {
+   "id": "w-13-7-6",
+   "text": "Q6: What is the expectation of a person who is to get Rs. 120 if he obtains at least 2 heads in single toss of three coins?",
+   "marks": 4,
+   "modelAnswer": [
+    "S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}",
+    "The outcomes with at least 2 heads are {HHH, HHT, HTH, THH}.",
+    "P(at least 2 heads) = 4/8 = 1/2",
+    "Expectation = 120 × 1/2 = 60",
+    "Final answer: Rs. 60"
+   ],
+   "followUp": "Q8. The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+   "noteId": "n-13-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the probability of at least 2 heads.",
+     "marks": 1,
+     "why": "The probability of at least two heads is needed to calculate the expectation.",
+     "how": "There are 4 favourable outcomes out of 8.",
+     "accept": [
+      [
+       "4/8",
+       "1/2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the expected amount.",
+     "marks": 1,
+     "why": "The amount received if the event happens is the value multiplied by its probability.",
+     "how": "Multiply Rs. 120 by the probability.",
+     "accept": [
+      [
+       "120"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the expected amount.",
+     "marks": 2,
+     "why": "The final expected amount must be calculated correctly and include the currency.",
+     "how": "Calculate 120 × 1/2.",
+     "accept": [
+      [
+       "60"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.2 Q6"
+  },
+  {
+   "id": "w-13-7-8",
+   "text": "Q8: The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+   "marks": 2,
+   "modelAnswer": [
+    "Expected frequency = N × P(B)",
+    "= 200 × 2/5",
+    "= 80",
+    "Final answer: 80 times"
+   ],
+   "followUp": "Q8. The probability of getting 5 sixes while tossing six dice is 2/5, the dice is rolled 200 times. How many times would you expect it to show 5 sixes?",
+   "noteId": "n-13-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the calculation.",
+     "marks": 1,
+     "why": "The expected-frequency calculation uses the number of trials and the event probability.",
+     "how": "Use 200 × 2/5.",
+     "accept": [
+      [
+       "200",
+       "2/5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Calculate and state the frequency.",
+     "marks": 1,
+     "why": "The final answer gives the expected number of times the event occurs.",
+     "how": "Multiply 200 by 2/5 and include times.",
+     "accept": [
+      [
+       "80"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 13.2 Q8"
+  },
+  {
+   "id": "w-13-8-1",
+   "text": "Define the following:\n(i) relative frequency  (ii) expected frequency",
+   "marks": 4,
+   "modelAnswer": [
+    "Relative frequency = frequency of an event / total number of trials.",
+    "Expected frequency = probability of an event × total number of trials."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Define relative frequency.",
+     "marks": 2,
+     "why": "The definition must show how relative frequency compares an event's count with all trials.",
+     "how": "Write frequency of the event divided by the total number of trials.",
+     "accept": [
+      [
+       "frequency",
+       "total",
+       "trials"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Define expected frequency.",
+     "marks": 2,
+     "why": "The definition must show how expected frequency is calculated.",
+     "how": "Write probability of the event multiplied by the total number of trials.",
+     "accept": [
+      [
+       "probability",
+       "total",
+       "trials"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q2"
+  },
+  {
+   "id": "w-13-8-2",
+   "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (i) a green ball.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of balls = 10 + 5 + 8 = 23.",
+    "P(green ball) = 5/23."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the total number of balls.",
+     "marks": 1,
+     "why": "The total number of balls is the denominator of the probability.",
+     "how": "Add the numbers of red, green and blue balls.",
+     "accept": [
+      [
+       "10+5+8",
+       "23"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability of selecting a green ball.",
+     "marks": 1,
+     "why": "The final probability must compare green balls with all balls.",
+     "how": "Divide the 5 green balls by the total of 23 balls.",
+     "accept": [
+      [
+       "5/23"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q3(i)"
+  },
+  {
+   "id": "w-13-8-3",
+   "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (ii) a red ball.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of balls = 10 + 5 + 8 = 23.",
+    "P(red ball) = 10/23."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the total number of balls.",
+     "marks": 1,
+     "why": "The total number of balls is the denominator of the probability.",
+     "how": "Add the numbers of red, green and blue balls.",
+     "accept": [
+      [
+       "10+5+8",
+       "23"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability of selecting a red ball.",
+     "marks": 1,
+     "why": "The final probability must compare red balls with all balls.",
+     "how": "Divide the 10 red balls by the total of 23 balls.",
+     "accept": [
+      [
+       "10/23"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q3(ii)"
+  },
+  {
+   "id": "w-13-8-4",
+   "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iii) a blue ball.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of balls = 10 + 5 + 8 = 23.",
+    "P(blue ball) = 8/23."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the total number of balls.",
+     "marks": 1,
+     "why": "The total number of balls is the denominator of the probability.",
+     "how": "Add the numbers of red, green and blue balls.",
+     "accept": [
+      [
+       "10+5+8",
+       "23"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability of selecting a blue ball.",
+     "marks": 1,
+     "why": "The final probability must compare blue balls with all balls.",
+     "how": "Divide the 8 blue balls by the total of 23 balls.",
+     "accept": [
+      [
+       "8/23"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q3(iii)"
+  },
+  {
+   "id": "w-13-8-5",
+   "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of balls = 10 + 5 + 8 = 23.",
+    "Number of balls which are not red = 5 + 8 = 13.",
+    "P(not a red ball) = 13/23."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the balls that are not red.",
+     "marks": 1,
+     "why": "The favourable outcomes are all the non-red balls.",
+     "how": "Add the green and blue balls.",
+     "accept": [
+      [
+       "5+8",
+       "13"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability of selecting a non-red ball.",
+     "marks": 1,
+     "why": "The probability must use all 23 balls as the total.",
+     "how": "Divide the 13 non-red balls by 23.",
+     "accept": [
+      [
+       "13/23"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q3(iv)"
+  },
+  {
+   "id": "w-13-8-6",
+   "text": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (v) not a green ball.",
+   "marks": 2,
+   "modelAnswer": [
+    "Total number of balls = 10 + 5 + 8 = 23.",
+    "Number of balls which are not green = 10 + 8 = 18.",
+    "P(not a green ball) = 18/23."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the balls that are not green.",
+     "marks": 1,
+     "why": "The favourable outcomes are all the balls that are not green.",
+     "how": "Add the red and blue balls.",
+     "accept": [
+      [
+       "10+8",
+       "18"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability of selecting a non-green ball.",
+     "marks": 1,
+     "why": "The probability must use all 23 balls as the total.",
+     "how": "Divide the 18 non-green balls by 23.",
+     "accept": [
+      [
+       "18/23"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q3(v)"
+  },
+  {
+   "id": "w-13-8-7",
+   "text": "Three coins are tossed together, what is the probability of getting (i) exactly three heads.",
+   "marks": 2,
+   "modelAnswer": [
+    "Sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.",
+    "Number of favourable outcomes = 1.",
+    "P(exactly three heads) = 1/8."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify favourable and total outcomes.",
+     "marks": 1,
+     "why": "There is one favourable outcome among eight equally likely outcomes.",
+     "how": "Use HHH as the sole favourable outcome and 8 as the total.",
+     "accept": [
+      [
+       "HHH",
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The final probability is the ratio of favourable outcomes to total outcomes.",
+     "how": "Divide 1 by 8.",
+     "accept": [
+      [
+       "1/8"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q4(i)"
+  },
+  {
+   "id": "w-13-8-8",
+   "text": "Three coins are tossed together, what is the probability of getting (ii) at least two tails.",
+   "marks": 2,
+   "modelAnswer": [
+    "Sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.",
+    "Favourable outcomes = {HTT, THT, TTH, TTT}.",
+    "P(at least two tails) = 4/8 = 1/2."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count favourable outcomes out of the sample space.",
+     "marks": 1,
+     "why": "The outcomes with at least two tails must be counted correctly.",
+     "how": "Identify HTT, THT, TTH and TTT among the eight outcomes.",
+     "accept": [
+      [
+       "HTT",
+       "THT",
+       "TTH",
+       "TTT",
+       "4",
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The final probability simplifies the ratio of favourable to total outcomes.",
+     "how": "Calculate 4/8 and simplify.",
+     "accept": [
+      [
+       "1/2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q4(ii)"
+  },
+  {
+   "id": "w-13-8-9",
+   "text": "Three coins are tossed together, what is the probability of getting (iii) not at least two heads.",
+   "marks": 2,
+   "modelAnswer": [
+    "Sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.",
+    "Favourable outcomes = {HTT, THT, TTH, TTT}.",
+    "P(not at least two heads) = 4/8 = 1/2."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the favourable outcomes.",
+     "marks": 1,
+     "why": "The outcomes that do not have at least two heads are those with zero or one head.",
+     "how": "Count HTT, THT, TTH and TTT.",
+     "accept": [
+      [
+       "HTT",
+       "THT",
+       "TTT",
+       "4",
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The final probability is the favourable count divided by all eight outcomes.",
+     "how": "Calculate 4/8 and simplify.",
+     "accept": [
+      [
+       "1/2"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q4(iii)"
+  },
+  {
+   "id": "w-13-8-10",
+   "text": "Three coins are tossed together, what is the probability of getting (iv) not exactly two heads.",
+   "marks": 2,
+   "modelAnswer": [
+    "Sample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.",
+    "Favourable outcomes = {HHH, HTT, THT, TTH, TTT}.",
+    "P(not exactly two heads) = 5/8."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count outcomes that are not exactly two heads.",
+     "marks": 1,
+     "why": "Exactly two heads has three outcomes, so its complement has five.",
+     "how": "Exclude HHT, HTH and THH from the eight outcomes.",
+     "accept": [
+      [
+       "HHT",
+       "HTH",
+       "THH",
+       "5",
+       "8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The final probability is the ratio of five favourable outcomes to eight total outcomes.",
+     "how": "Write 5/8.",
+     "accept": [
+      [
+       "5/8"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q4(iv)"
+  },
+  {
+   "id": "w-13-8-11",
+   "text": "A card is drawn from a well shuffled pack of 52 playing cards. What will be the probability of getting (i) king or jack of red colour.",
+   "marks": 2,
+   "modelAnswer": [
+    "Number of red kings and jacks = 2 + 2 = 4.",
+    "P(king or jack of red colour) = 4/52 = 1/13."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count favourable cards and total cards.",
+     "marks": 1,
+     "why": "There are four red cards that are a king or a jack.",
+     "how": "Count two red kings and two red jacks out of 52 cards.",
+     "accept": [
+      [
+       "4",
+       "52"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The answer must be the simplified probability.",
+     "how": "Simplify 4/52.",
+     "accept": [
+      [
+       "1/13"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q5(i)"
+  },
+  {
+   "id": "w-13-8-12",
+   "text": "A card is drawn from a well shuffled pack of 52 playing cards. What will be the probability of getting (ii) not “2” of club and spade.",
+   "marks": 2,
+   "modelAnswer": [
+    "Number of cards which are not 2 of club and spade = 52 − 2 = 50.",
+    "P(not 2 of club and spade) = 50/52 = 25/26."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Count the excluded cards and total cards.",
+     "marks": 1,
+     "why": "Only the 2 of clubs and the 2 of spades are excluded.",
+     "how": "There are 2 excluded cards among 52.",
+     "accept": [
+      [
+       "2",
+       "52"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the probability.",
+     "marks": 1,
+     "why": "The probability must count the 50 cards that are not either excluded card.",
+     "how": "Calculate 50/52 and simplify.",
+     "accept": [
+      [
+       "25/26"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q5(ii)"
+  },
+  {
+   "id": "w-13-8-13",
+   "text": "Six coins are tossed 600 times. The number of occurrence of tails are recorded and shown in the table given below:\n\n| No. of tails | 0 | 1 | 2 | 3 | 4 | 5 | 6 |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| Frequency | 110 | 90 | 105 | 80 | 76 | 123 | 16 |\n\nFind the relative frequency of given table.",
+   "marks": 4,
+   "modelAnswer": [
+    "Total frequency = 600.",
+    "Relative frequency = frequency / total frequency.",
+    "For 0 tails: 110/600 = 11/60; for 1 tail: 90/600 = 3/20.",
+    "For 2 tails: 105/600 = 7/40; for 3 tails: 80/600 = 2/15.",
+    "For 4 tails: 76/600 = 19/150; for 5 tails: 123/600 = 41/200.",
+    "For 6 tails: 16/600 = 2/75."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Use the total number of trials.",
+     "marks": 1,
+     "why": "Each relative frequency uses the total number of trials as its denominator.",
+     "how": "Use 600 as the total frequency.",
+     "accept": [
+      [
+       "600"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Set up the relative frequencies.",
+     "marks": 1,
+     "why": "Each category's frequency must be divided by the total.",
+     "how": "Divide each frequency by 600.",
+     "accept": [
+      [
+       "110/600",
+       "90/600",
+       "105/600",
+       "80/600",
+       "76/600",
+       "123/600",
+       "16/600"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give all simplified relative frequencies.",
+     "marks": 2,
+     "why": "The final table should show the correct simplified relative frequency for every number of tails.",
+     "how": "Simplify each frequency divided by 600 in the order 0 to 6 tails.",
+     "accept": [
+      [
+       "11/60",
+       "3/20",
+       "7/40",
+       "2/15",
+       "19/150",
+       "41/200",
+       "2/75"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q6"
+  },
+  {
+   "id": "w-13-8-14",
+   "text": "From a lot containing 25 items, 8 items are defective. Find the relative frequency of non-defective items, also find the expected frequency of non-defective items.",
+   "marks": 4,
+   "modelAnswer": [
+    "Number of non-defective items = 25 − 8 = 17.",
+    "Relative frequency = 17/25 = 0.68.",
+    "Expected frequency of non-defective items = (17/25) × 25 = 17."
+   ],
+   "followUp": "An urn contains 10 red balls, 5 green balls and 8 blue balls. Find the probability of selecting at random (iv) not a red ball.",
+   "noteId": "n-13-8",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the number of non-defective items.",
+     "marks": 1,
+     "why": "The count of non-defective items is needed for both calculations.",
+     "how": "Subtract the 8 defective items from 25.",
+     "accept": [
+      [
+       "25-8",
+       "17"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find relative frequency.",
+     "marks": 1,
+     "why": "Relative frequency is the non-defective count divided by the total count.",
+     "how": "Calculate 17/25.",
+     "accept": [
+      [
+       "17/25"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Express the relative frequency as a decimal.",
+     "marks": 1,
+     "why": "The textbook answer gives the relative frequency as both a fraction and a decimal.",
+     "how": "Convert 17/25 to 0.68.",
+     "accept": [
+      [
+       "0.68"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Find expected frequency.",
+     "marks": 1,
+     "why": "The expected frequency is the probability multiplied by the number of items.",
+     "how": "Calculate (17/25) × 25 = 17.",
+     "accept": [
+      [
+       "17"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 13 Q7"
+  }
+ ],
+ "report": {
+  "unit": 13,
+  "title": "Probability",
+  "dropped": [
+   "MCQ m-13-3#3: independent check disagreed",
+   "Written m-13-3#10 (Ex 13.1 Q5(ii)): independent check disagreed",
+   "Written m-13-7#0 (Ex 13.2 Q1): independent check disagreed",
+   "Written m-13-7#1 (Ex 13.2 Q4(i)): independent check disagreed",
+   "Written m-13-7#2 (Ex 13.2 Q4(ii)): independent check disagreed",
+   "Written m-13-7#3 (Ex 13.2 Q4(iii)): independent check disagreed",
+   "Written m-13-7#4 (Ex 13.2 Q4(iv)): independent check disagreed",
+   "Written m-13-7#6 (Ex 13.2 Q7): independent check disagreed"
+  ]
+ }
+}
