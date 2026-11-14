@@ -290,12 +290,22 @@ private fun CaptureScreen(
         }
     }
 
+    // Watchdog: if no camera picture appears within a few seconds, say so instead of showing a black box.
+    if (cam != null && !cameraFailed) {
+        LaunchedEffect(cam) {
+            kotlinx.coroutines.delay(6_000)
+            if (!cam.streaming.value) {
+                cam.lastError = cam.lastError ?: "the preview didn't start"
+                cameraFailed = true
+            }
+        }
+    }
     if (cam != null) {
         DisposableEffect(cam) {
             val main = ContextCompat.getMainExecutor(context)
             cam.onDetect = { c -> main.execute { onDetect(c) } }
             scope.launch {
-                runCatching { cam.bind(owner) }.onFailure { cameraFailed = true }
+                runCatching { cam.bind(owner) }.onFailure { cam.lastError = it.message ?: it.javaClass.simpleName; cameraFailed = true }
             }
             onDispose { cam.release() }
         }
@@ -317,6 +327,7 @@ private fun CaptureScreen(
                             Text("The camera couldn't start on this phone.", color = Color.White, style = MaterialTheme.typography.titleMedium)
                             Text("Close other apps that use the camera and try again, or take the photos with your camera app and add them from the gallery.",
                                 color = Color.White.copy(alpha = 0.85f))
+                            cam?.lastError?.let { Text("Details: $it", color = Color.White.copy(alpha = 0.6f), style = MaterialTheme.typography.bodySmall) }
                             Button(onClick = { cameraFailed = false; attempt++ }) { Text("Try again") }
                         }
                         else -> {

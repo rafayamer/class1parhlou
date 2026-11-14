@@ -271,12 +271,20 @@ fun ExamScreen(
         paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { ScanQuestion(it.id, questionLabel(it)) }
     }
     if (scanning && startedAt != null) {
-        ScannerFlow(
-            store = desk.scanStore(id), questions = questions,
-            status = ExamClock(startedAt, blueprint.durationMinutes).label(now),
-            onClose = { scanning = false; scanVersion++ },
-        )
-        return
+        // Its own full-screen window: the camera preview must not be drawn inside the app's glass layer, where it
+        // can stay black on some phones. A dialog window doesn't stop the paper, so the invigilator logs nothing.
+        androidx.compose.ui.window.Dialog(
+            onDismissRequest = { scanning = false; scanVersion++ },
+            properties = androidx.compose.ui.window.DialogProperties(
+                usePlatformDefaultWidth = false, decorFitsSystemWindows = false, dismissOnClickOutside = false,
+            ),
+        ) {
+            ScannerFlow(
+                store = desk.scanStore(id), questions = questions,
+                status = ExamClock(startedAt, blueprint.durationMinutes).label(now),
+                onClose = { scanning = false; scanVersion++ },
+            )
+        }
     }
     val handIn = {
         submitting = true

@@ -46,6 +46,11 @@ class DocCamera(context: Context) {
   private var capture: ImageCapture? = null
   private var frame = 0
 
+  /** True once the preview is showing camera frames; the screen uses it to spot a camera that never starts. */
+  val streaming = kotlinx.coroutines.flow.MutableStateFlow(false)
+  /** Last camera error, in the camera's own words, for the "couldn't start" message. */
+  @Volatile var lastError: String? = null
+
   @Volatile var detecting = true
   var onDetect: (List<Float>?) -> Unit = {}
 
@@ -64,7 +69,16 @@ class DocCamera(context: Context) {
     val analysis = ImageAnalysis.Builder().setResolutionSelector(ratio).setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST).build()
       .also { it.setAnalyzer(worker, ::analyze) }
     p.unbindAll()
-    p.bindToLifecycle(owner, CameraSelector.DEFAULT_BACK_CAMERA, UseCaseGroup.Builder().addUseCase(previewCase).addUseCase(captureCase).addUseCase(analysis).build())
+    if (!p.hasCamera(CameraSelector.DEFAULT_BACK_CAMERA)) throw IllegalStateException("This phone has no back camera.")
+    val camera = try {
+      p.bindToLifecycle(owner, CameraSelector.DEFAULT_BACK_CAMERA, UseCaseGroup.Builder().addUseCase(previewCase).addUseCase(captureCase).addUseCase(analysis).build())
+    } catch (e: IllegalArgumentException) {
+      // Some cheaper phones can't run preview, full-size capture and analysis together: drop live edge detection.
+      p.unbindAll()
+      p.bindToLifecycle(owner, CameraSelector.DEFAULT_BACK_CAMERA, UseCaseGroup.Builder().addUseCase(previewCase).addUseCase(captureCase).build())
+    }
+    preview.previewStreamState.observe(owner) { streaming.value = it == PreviewView.StreamState.STREAMING }
+    camera.cameraInfo.cameraState.observe(owner) { state -> state.error?.let { lastError = "camera error ${it.code}" } }
     provider = p
     capture = captureCase
   }
