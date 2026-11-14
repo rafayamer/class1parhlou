@@ -21,11 +21,11 @@
     ],
     "writtenQuestions": [
      {
-      "id": "w-2-1-7",
-      "text": "Express the following numbers in ordinary notation: (i) 8.04 × 10²",
+      "id": "w-2-1-1",
+      "text": "Express the following numbers in scientific notation: (i) 2000000",
       "marks": 2,
       "modelAnswer": [
-       "8.04 × 10² = 804"
+       "2000000 = 2 × 10⁶"
       ],
       "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
       "noteId": "n-2-1",
@@ -35,30 +35,110 @@
       "rubric": [
        {
         "id": "a",
-        "description": "Correct direction",
+        "description": "Correct coefficient",
         "marks": 1,
-        "why": "A positive exponent means the decimal point moves to the right.",
-        "how": "Identify that the decimal point moves two places right.",
+        "why": "The coefficient must be at least 1 and less than 10.",
+        "how": "Move the decimal point to make 2.",
         "accept": [
          [
-          "10^2"
+          "2"
          ]
         ]
        },
        {
         "id": "b",
-        "description": "Correct ordinary notation",
+        "description": "Correct final scientific notation",
         "marks": 1,
-        "why": "The final answer must show the decimal point moved two places.",
-        "how": "Write 804.",
+        "why": "The exponent must record the six places moved to the left.",
+        "how": "Write 2 × 10⁶.",
         "accept": [
          [
-          "804"
+          "2×10^6"
          ]
         ]
        }
       ],
-      "source": "Ex 2.1 Q2(i)"
+      "source": "Ex 2.1 Q1(i)"
+     },
+     {
+      "id": "w-2-1-2",
+      "text": "Express the following numbers in scientific notation: (ii) 48900",
+      "marks": 2,
+      "modelAnswer": [
+       "48900 = 4.89 × 10⁴"
+      ],
+      "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+      "noteId": "n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct coefficient",
+        "marks": 1,
+        "why": "The coefficient must be in the range 1 ≤ a < 10.",
+        "how": "Move the decimal point to make 4.89.",
+        "accept": [
+         [
+          "4.89"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct final scientific notation",
+        "marks": 1,
+        "why": "The exponent records the four places the decimal point moved to the left.",
+        "how": "Write 4.89 × 10⁴.",
+        "accept": [
+         [
+          "4.89×10^4"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.1 Q1(ii)"
+     },
+     {
+      "id": "w-2-1-3",
+      "text": "Express the following numbers in scientific notation: (iii) 0.0042",
+      "marks": 2,
+      "modelAnswer": [
+       "0.0042 = 4.2 × 10⁻³"
+      ],
+      "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+      "noteId": "n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct coefficient",
+        "marks": 1,
+        "why": "The coefficient must be in the range 1 ≤ a < 10.",
+        "how": "Move the decimal point to make 4.2.",
+        "accept": [
+         [
+          "4.2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct final scientific notation",
+        "marks": 1,
+        "why": "The decimal point moved three places to the right, so the exponent is negative 3.",
+        "how": "Write 4.2 × 10⁻³.",
+        "accept": [
+         [
+          "4.2×10^-3"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.1 Q1(iii)"
      }
     ],
     "lesson": {
@@ -69,6 +149,25 @@
       "For ordinary notation, show the decimal shift and include the requested unit in applied questions."
      ],
      "yourTurn": [
+      {
+       "hints": [
+        "Move the decimal point until the number is between 1 and 10.",
+        "Count the places moved; moving right gives a negative exponent."
+       ],
+       "accept": [
+        [
+         "4.2×10^-3"
+        ]
+       ],
+       "question": "Express the following numbers in scientific notation: (iii) 0.0042",
+       "solution": [
+        "Move the decimal point to get a number between 1 and 10: 4.2",
+        "The decimal point moved 3 places to the right.",
+        "Since the decimal point moved to the right, the exponent is negative.",
+        "0.0042 = 4.2 × 10⁻³"
+       ],
+       "answer": "4.2 × 10⁻³"
+      },
       {
        "hints": [
         "A negative exponent means the decimal point moves left.",
@@ -235,12 +334,12 @@
       "source": "Ex 2.2 Q2(i)"
      },
      {
-      "id": "w-2-2-7",
-      "text": "Express the following in exponential form: 1/2 = log₉ 3.",
+      "id": "w-2-2-6",
+      "text": "Express the following in exponential form: log₂ 1/8 = −3.",
       "marks": 2,
       "modelAnswer": [
-       "1/2 = log₉ 3",
-       "9^(1/2) = 3"
+       "log₂ 1/8 = −3",
+       "2⁻³ = 1/8"
       ],
       "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
       "noteId": "n-2-2",
@@ -250,13 +349,13 @@
       "rubric": [
        {
         "id": "a",
-        "description": "Write the base with the exponent 1/2.",
+        "description": "Write the base raised to the correct exponent.",
         "marks": 1,
-        "why": "The base must be raised to the logarithm value.",
-        "how": "Use 9 as the base and 1/2 as the exponent.",
+        "why": "The logarithm value, including its negative sign, is the exponent.",
+        "how": "Raise 2 to −3.",
         "accept": [
          [
-          "9^(1/2)"
+          "2^-3"
          ]
         ]
        },
@@ -264,16 +363,16 @@
         "id": "b",
         "description": "Complete the exponential equation.",
         "marks": 1,
-        "why": "The logarithm's result becomes the exponential equation's result.",
-        "how": "Write 3 on the right side.",
+        "why": "The result must be transferred correctly to exponential form.",
+        "how": "Write 1/8 as the result.",
         "accept": [
          [
-          "9^(1/2)=3"
+          "2^-3=1/8"
          ]
         ]
        }
       ],
-      "source": "Ex 2.2 Q2(vi)"
+      "source": "Ex 2.2 Q2(v)"
      }
     ],
     "lesson": {
@@ -659,6 +758,50 @@
      "Solve Exercise 2.4 in your notebook."
     ],
     "writtenQuestions": [
+     {
+      "id": "w-2-4-6",
+      "text": "Write the following as a single logarithm: 2 ln a + 3 ln b − 4 ln c",
+      "marks": 2,
+      "modelAnswer": [
+       "2 ln a + 3 ln b − 4 ln c",
+       "= ln a² + ln b³ − ln c⁴",
+       "= ln (a²b³/c⁴)"
+      ],
+      "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+      "noteId": "n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Rewrite the coefficients as powers.",
+        "marks": 1,
+        "why": "The power law turns each coefficient into an exponent.",
+        "how": "Change the three terms to ln a², ln b³ and ln c⁴.",
+        "accept": [
+         [
+          "ln a^2",
+          "ln b^3",
+          "ln c^4"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the final single logarithm.",
+        "marks": 1,
+        "why": "The product and quotient laws combine the terms correctly.",
+        "how": "Place the positive terms in the numerator and the subtracted term in the denominator.",
+        "accept": [
+         [
+          "ln(a^2b^3/c^4)"
+         ]
+        ]
+       }
+      ],
+      "source": "Ex 2.4 Q2(vi)"
+     },
      {
       "id": "w-2-4-7",
       "text": "Expand the following using laws of logarithms: ln (a²b/c)",
@@ -1983,6 +2126,248 @@
  ],
  "written": [
   {
+   "id": "w-2-1-1",
+   "text": "Express the following numbers in scientific notation: (i) 2000000",
+   "marks": 2,
+   "modelAnswer": [
+    "2000000 = 2 × 10⁶"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct coefficient",
+     "marks": 1,
+     "why": "The coefficient must be at least 1 and less than 10.",
+     "how": "Move the decimal point to make 2.",
+     "accept": [
+      [
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "The exponent must record the six places moved to the left.",
+     "how": "Write 2 × 10⁶.",
+     "accept": [
+      [
+       "2×10^6"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(i)"
+  },
+  {
+   "id": "w-2-1-2",
+   "text": "Express the following numbers in scientific notation: (ii) 48900",
+   "marks": 2,
+   "modelAnswer": [
+    "48900 = 4.89 × 10⁴"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct coefficient",
+     "marks": 1,
+     "why": "The coefficient must be in the range 1 ≤ a < 10.",
+     "how": "Move the decimal point to make 4.89.",
+     "accept": [
+      [
+       "4.89"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "The exponent records the four places the decimal point moved to the left.",
+     "how": "Write 4.89 × 10⁴.",
+     "accept": [
+      [
+       "4.89×10^4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(ii)"
+  },
+  {
+   "id": "w-2-1-3",
+   "text": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "marks": 2,
+   "modelAnswer": [
+    "0.0042 = 4.2 × 10⁻³"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct coefficient",
+     "marks": 1,
+     "why": "The coefficient must be in the range 1 ≤ a < 10.",
+     "how": "Move the decimal point to make 4.2.",
+     "accept": [
+      [
+       "4.2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "The decimal point moved three places to the right, so the exponent is negative 3.",
+     "how": "Write 4.2 × 10⁻³.",
+     "accept": [
+      [
+       "4.2×10^-3"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(iii)"
+  },
+  {
+   "id": "w-2-1-4",
+   "text": "Express the following numbers in scientific notation: (iv) 0.0000009",
+   "marks": 2,
+   "modelAnswer": [
+    "0.0000009 = 9 × 10⁻⁷"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct coefficient",
+     "marks": 1,
+     "why": "The coefficient is 9, which is between 1 and 10.",
+     "how": "Move the decimal point to make 9.",
+     "accept": [
+      [
+       "9"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "The decimal point moved seven places to the right, giving a negative exponent.",
+     "how": "Write 9 × 10⁻⁷.",
+     "accept": [
+      [
+       "9×10^-7"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(iv)"
+  },
+  {
+   "id": "w-2-1-5",
+   "text": "Express the following numbers in scientific notation: (v) 73 × 10³",
+   "marks": 2,
+   "modelAnswer": [
+    "73 × 10³ = 7.3 × 10 × 10³",
+    "73 × 10³ = 7.3 × 10⁴"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct normalized coefficient",
+     "marks": 1,
+     "why": "The coefficient must be at least 1 and less than 10.",
+     "how": "Rewrite 73 as 7.3 × 10.",
+     "accept": [
+      [
+       "7.3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "The extra factor of 10 combines with 10³ to give 10⁴.",
+     "how": "Write 7.3 × 10⁴.",
+     "accept": [
+      [
+       "7.3×10^4"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(v)"
+  },
+  {
+   "id": "w-2-1-6",
+   "text": "Express the following numbers in scientific notation: (vi) 0.65 × 10²",
+   "marks": 2,
+   "modelAnswer": [
+    "0.65 × 10² = 6.5 × 10⁻¹ × 10²",
+    "0.65 × 10² = 6.5 × 10¹"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct normalized coefficient",
+     "marks": 1,
+     "why": "The coefficient must be at least 1 and less than 10.",
+     "how": "Rewrite 0.65 as 6.5 × 10⁻¹.",
+     "accept": [
+      [
+       "6.5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation",
+     "marks": 1,
+     "why": "Combining 10⁻¹ with 10² gives 10¹.",
+     "how": "Write 6.5 × 10¹.",
+     "accept": [
+      [
+       "6.5×10^1"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q1(vi)"
+  },
+  {
    "id": "w-2-1-7",
    "text": "Express the following numbers in ordinary notation: (i) 8.04 × 10²",
    "marks": 2,
@@ -2021,6 +2406,246 @@
     }
    ],
    "source": "Ex 2.1 Q2(i)"
+  },
+  {
+   "id": "w-2-1-8",
+   "text": "Express the following numbers in ordinary notation: (ii) 3 × 10⁵",
+   "marks": 2,
+   "modelAnswer": [
+    "3 × 10⁵ = 300000"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A positive exponent means the decimal point moves to the right.",
+     "how": "Move the decimal point five places right.",
+     "accept": [
+      [
+       "10^5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The answer must show all five places of the decimal shift.",
+     "how": "Write 300000.",
+     "accept": [
+      [
+       "300000"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(ii)"
+  },
+  {
+   "id": "w-2-1-9",
+   "text": "Express the following numbers in ordinary notation: (iii) 1.5 × 10⁻²",
+   "marks": 2,
+   "modelAnswer": [
+    "1.5 × 10⁻² = 0.015"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A negative exponent means the decimal point moves to the left.",
+     "how": "Move the decimal point two places left.",
+     "accept": [
+      [
+       "10^-2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The answer must show the decimal point shifted two places left.",
+     "how": "Write 0.015.",
+     "accept": [
+      [
+       "0.015"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(iii)"
+  },
+  {
+   "id": "w-2-1-10",
+   "text": "Express the following numbers in ordinary notation: (iv) 1.77 × 10⁷",
+   "marks": 2,
+   "modelAnswer": [
+    "1.77 × 10⁷ = 17700000"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A positive exponent means the decimal point moves to the right.",
+     "how": "Move the decimal point seven places right.",
+     "accept": [
+      [
+       "10^7"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The final answer must show the decimal point moved seven places.",
+     "how": "Write 17700000.",
+     "accept": [
+      [
+       "17700000"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(iv)"
+  },
+  {
+   "id": "w-2-1-11",
+   "text": "Express the following numbers in ordinary notation: (v) 5.5 × 10⁻⁶",
+   "marks": 2,
+   "modelAnswer": [
+    "5.5 × 10⁻⁶ = 0.0000055"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A negative exponent means the decimal point moves to the left.",
+     "how": "Move the decimal point six places left.",
+     "accept": [
+      [
+       "10^-6"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The final answer must show the decimal point moved six places left.",
+     "how": "Write 0.0000055.",
+     "accept": [
+      [
+       "0.0000055"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(v)"
+  },
+  {
+   "id": "w-2-1-12",
+   "text": "Express the following numbers in ordinary notation: (vi) 4 × 10⁻⁵",
+   "marks": 2,
+   "modelAnswer": [
+    "4 × 10⁻⁵ = 0.00004"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct direction",
+     "marks": 1,
+     "why": "A negative exponent means the decimal point moves to the left.",
+     "how": "Move the decimal point five places left.",
+     "accept": [
+      [
+       "10^-5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct ordinary notation",
+     "marks": 1,
+     "why": "The final answer must show the decimal point moved five places left.",
+     "how": "Write 0.00004.",
+     "accept": [
+      [
+       "0.00004"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q2(vi)"
+  },
+  {
+   "id": "w-2-1-14",
+   "text": "The circumference of the Earth at the equator is about 40075000 metres. Express this number in scientific notation.",
+   "marks": 2,
+   "modelAnswer": [
+    "40075000 m = 4.0075 × 10⁷ m"
+   ],
+   "followUp": "Express the following numbers in scientific notation: (iii) 0.0042",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct coefficient",
+     "marks": 1,
+     "why": "The coefficient must be at least 1 and less than 10.",
+     "how": "Move the decimal point to make 4.0075.",
+     "accept": [
+      [
+       "4.0075"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct final scientific notation with unit",
+     "marks": 1,
+     "why": "The decimal point moved seven places to the left and the unit must be retained.",
+     "how": "Write 4.0075 × 10⁷ m.",
+     "accept": [
+      [
+       "4.0075×10^7"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.1 Q4"
   },
   {
    "id": "w-2-2-4",
@@ -2105,6 +2730,47 @@
    "source": "Ex 2.2 Q2(i)"
   },
   {
+   "id": "w-2-2-6",
+   "text": "Express the following in exponential form: log₂ 1/8 = −3.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₂ 1/8 = −3",
+    "2⁻³ = 1/8"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the base raised to the correct exponent.",
+     "marks": 1,
+     "why": "The logarithm value, including its negative sign, is the exponent.",
+     "how": "Raise 2 to −3.",
+     "accept": [
+      [
+       "2^-3"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Complete the exponential equation.",
+     "marks": 1,
+     "why": "The result must be transferred correctly to exponential form.",
+     "how": "Write 1/8 as the result.",
+     "accept": [
+      [
+       "2^-3=1/8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q2(v)"
+  },
+  {
    "id": "w-2-2-7",
    "text": "Express the following in exponential form: 1/2 = log₉ 3.",
    "marks": 2,
@@ -2144,6 +2810,47 @@
     }
    ],
    "source": "Ex 2.2 Q2(vi)"
+  },
+  {
+   "id": "w-2-2-8",
+   "text": "Express the following in exponential form: log₄ 1/16 = −2.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₄ 1/16 = −2",
+    "4⁻² = 1/16"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the correct base and exponent.",
+     "marks": 1,
+     "why": "The base must be raised to the stated logarithm value.",
+     "how": "Raise 4 to −2.",
+     "accept": [
+      [
+       "4^-2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Complete the exponential equation.",
+     "marks": 1,
+     "why": "The logarithm's result must be kept in the exponential form.",
+     "how": "Write 1/16 as the result.",
+     "accept": [
+      [
+       "4^-2=1/16"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q2(viii)"
   },
   {
    "id": "w-2-2-9",
@@ -2231,6 +2938,92 @@
     }
    ],
    "source": "Ex 2.2 Q3(ii)"
+  },
+  {
+   "id": "w-2-2-11",
+   "text": "Find the value of x: log_x 8 = 1.",
+   "marks": 2,
+   "modelAnswer": [
+    "log_x 8 = 1",
+    "Its exponential form is:",
+    "x¹ = 8",
+    "⇒ x = 8"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "The equation must first be changed to exponential form.",
+     "how": "Use x as the base and 1 as the exponent.",
+     "accept": [
+      [
+       "x^1=8"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "A number raised to the power 1 remains that number.",
+     "how": "Give x = 8.",
+     "accept": [
+      [
+       "x=8"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(iii)"
+  },
+  {
+   "id": "w-2-2-12",
+   "text": "Find the value of x: log₁₀ x = −3.",
+   "marks": 2,
+   "modelAnswer": [
+    "log₁₀ x = −3",
+    "Its exponential form is:",
+    "10⁻³ = x",
+    "⇒ x = 1/1000"
+   ],
+   "followUp": "Find the value of x in each of the following: (i) log_x 64 = 3",
+   "noteId": "n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the equivalent exponential equation.",
+     "marks": 1,
+     "why": "The logarithm is changed to an equivalent exponential equation.",
+     "how": "Raise 10 to −3 to get x.",
+     "accept": [
+      [
+       "10^-3=x"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the correct value of x.",
+     "marks": 1,
+     "why": "The final value is the correct value of 10⁻³.",
+     "how": "Give x = 1/1000.",
+     "accept": [
+      [
+       "x=1/1000"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.2 Q3(iv)"
   },
   {
    "id": "w-2-2-13",
@@ -2492,6 +3285,48 @@
     }
    ],
    "source": "Ex 2.3 Q2(ii)"
+  },
+  {
+   "id": "w-2-3-5",
+   "text": "Find logarithm of the following numbers: (iv) 0.0876",
+   "marks": 2,
+   "modelAnswer": [
+    "Characteristic = − (1 + 1) = −2",
+    "Mantissa = 0.9425",
+    "So, log 0.0876 = −2 + 0.9425 = −1.0575"
+   ],
+   "followUp": "Find logarithm of the following numbers: (iv) 0.0876",
+   "noteId": "n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the characteristic.",
+     "marks": 1,
+     "why": "The negative characteristic is essential for a number less than 1.",
+     "how": "There is 1 zero before the first non-zero digit, so −(1 + 1) = −2.",
+     "accept": [
+      [
+       "-2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the table mantissa and state the final logarithm.",
+     "marks": 1,
+     "why": "Combining the negative characteristic with the positive mantissa gives the correct logarithm.",
+     "how": "Use mantissa 0.9425 and calculate −2 + 0.9425 = −1.0575.",
+     "accept": [
+      [
+       "-1.0575"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.3 Q2(iv)"
   },
   {
    "id": "w-2-3-6",
@@ -2949,6 +3784,50 @@
     }
    ],
    "source": "Ex 2.3 Q4(vi)"
+  },
+  {
+   "id": "w-2-4-6",
+   "text": "Write the following as a single logarithm: 2 ln a + 3 ln b − 4 ln c",
+   "marks": 2,
+   "modelAnswer": [
+    "2 ln a + 3 ln b − 4 ln c",
+    "= ln a² + ln b³ − ln c⁴",
+    "= ln (a²b³/c⁴)"
+   ],
+   "followUp": "Write the following as a single logarithm: 2 log₃ x + log₃ y",
+   "noteId": "n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Rewrite the coefficients as powers.",
+     "marks": 1,
+     "why": "The power law turns each coefficient into an exponent.",
+     "how": "Change the three terms to ln a², ln b³ and ln c⁴.",
+     "accept": [
+      [
+       "ln a^2",
+       "ln b^3",
+       "ln c^4"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the final single logarithm.",
+     "marks": 1,
+     "why": "The product and quotient laws combine the terms correctly.",
+     "how": "Place the positive terms in the numerator and the subtracted term in the denominator.",
+     "accept": [
+      [
+       "ln(a^2b^3/c^4)"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 2.4 Q2(vi)"
   },
   {
    "id": "w-2-4-7",
@@ -3429,6 +4308,50 @@
    "source": "Review Exercise 2 Q5(ii)"
   },
   {
+   "id": "w-2-5-10",
+   "text": "Express the following in exponential form: log₄ 1024 = 5",
+   "marks": 2,
+   "modelAnswer": [
+    "log₄ 1024 = 5",
+    "∴ 4⁵ = 1024"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the exponential expression correctly.",
+     "marks": 1,
+     "why": "The base and logarithm's value become the base and exponent.",
+     "how": "Write 4⁵.",
+     "accept": [
+      [
+       "4^5"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the exponential result.",
+     "marks": 1,
+     "why": "The logarithm's argument is the exponential result.",
+     "how": "Write = 1024.",
+     "accept": [
+      [
+       "=1024"
+      ],
+      [
+       "1024"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q5(iii)"
+  },
+  {
    "id": "w-2-5-11",
    "text": "Find the value of x: log₉ x = 0.5",
    "marks": 2,
@@ -3478,41 +4401,100 @@
     }
    ],
    "source": "Review Exercise 2 Q6(i)"
+  },
+  {
+   "id": "w-2-5-14",
+   "text": "Write as a single logarithm: 7 log x − 3 log y²",
+   "marks": 4,
+   "modelAnswer": [
+    "7 log x − 3 log y² = log x⁷ − log y⁶",
+    "= log (x⁷/y⁶)",
+    "∴ log (x⁷/y⁶)"
+   ],
+   "followUp": "Write as a single logarithm: 3 log 4 − log 32",
+   "noteId": "n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the power law to the first term.",
+     "marks": 1,
+     "why": "The power law moves the coefficient 7 into the exponent of x.",
+     "how": "Write 7 log x = log x⁷.",
+     "accept": [
+      [
+       "log x^7"
+      ],
+      [
+       "7logx"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the power law to the second term.",
+     "marks": 1,
+     "why": "The power law makes 3 log y² equal to log y⁶.",
+     "how": "Write 3 log y² = log y⁶.",
+     "accept": [
+      [
+       "log y^6"
+      ],
+      [
+       "3logy^2"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Combine the two logarithms.",
+     "marks": 1,
+     "why": "Subtraction of logarithms becomes a quotient inside one logarithm.",
+     "how": "Use log A − log B = log(A/B).",
+     "accept": [
+      [
+       "log(x^7/y^6)"
+      ],
+      [
+       "log x^7/y^6"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final single logarithm.",
+     "marks": 1,
+     "why": "The final expression must be one logarithm with the correct quotient.",
+     "how": "State log (x⁷/y⁶).",
+     "accept": [
+      [
+       "log(x^7/y^6)"
+      ],
+      [
+       "log x^7/y^6"
+      ]
+     ]
+    }
+   ],
+   "source": "Review Exercise 2 Q7(i)"
   }
  ],
  "report": {
   "unit": 2,
   "title": "Logarithms",
   "dropped": [
-   "Written m-2-1#0 (Ex 2.1 Q1(i)): model answer misses a marking point",
-   "Written m-2-1#1 (Ex 2.1 Q1(ii)): model answer misses a marking point",
-   "Written m-2-1#2 (Ex 2.1 Q1(iii)): model answer misses a marking point",
-   "Written m-2-1#3 (Ex 2.1 Q1(iv)): model answer misses a marking point",
-   "Written m-2-1#4 (Ex 2.1 Q1(v)): model answer misses a marking point",
-   "Written m-2-1#5 (Ex 2.1 Q1(vi)): model answer misses a marking point",
-   "Written m-2-1#7 (Ex 2.1 Q2(ii)): model answer misses a marking point",
-   "Written m-2-1#8 (Ex 2.1 Q2(iii)): model answer misses a marking point",
-   "Written m-2-1#9 (Ex 2.1 Q2(iv)): model answer misses a marking point",
-   "Written m-2-1#10 (Ex 2.1 Q2(v)): model answer misses a marking point",
-   "Written m-2-1#11 (Ex 2.1 Q2(vi)): model answer misses a marking point",
    "Written m-2-1#12 (Ex 2.1 Q3): model answer misses a marking point",
-   "Written m-2-1#13 (Ex 2.1 Q4): model answer misses a marking point",
-   "Your-turn m-2-1: 1 with unusable answer patterns",
    "Written m-2-2#0 (Ex 2.2 Q1(i)): model answer misses a marking point",
    "Written m-2-2#1 (Ex 2.2 Q1(iii)): model answer misses a marking point",
    "Written m-2-2#2 (Ex 2.2 Q1(v)): model answer misses a marking point",
-   "Written m-2-2#5 (Ex 2.2 Q2(v)): model answer misses a marking point",
-   "Written m-2-2#7 (Ex 2.2 Q2(viii)): model answer misses a marking point",
-   "Written m-2-2#10 (Ex 2.2 Q3(iii)): model answer misses a marking point",
-   "Written m-2-2#11 (Ex 2.2 Q3(iv)): model answer misses a marking point",
-   "Written m-2-3#4 (Ex 2.3 Q2(iv)): independent check disagreed",
    "Written m-2-3#12 (Ex 2.3 Q4(iv)): independent check disagreed",
    "Written m-2-4#0 (Ex 2.4 Q1(i)): model answer misses a marking point",
    "Written m-2-4#1 (Ex 2.4 Q1(ii)): model answer misses a marking point",
    "Written m-2-4#2 (Ex 2.4 Q1(iii)): model answer misses a marking point",
    "Written m-2-4#3 (Ex 2.4 Q2(iv)): model answer misses a marking point",
    "Written m-2-4#4 (Ex 2.4 Q2(v)): model answer misses a marking point",
-   "Written m-2-4#5 (Ex 2.4 Q2(vi)): model answer misses a marking point",
    "Written m-2-4#7 (Ex 2.4 Q3(vi)): model answer misses a marking point",
    "Written m-2-4#9 (Ex 2.4 Q4(ii)): model answer misses a marking point",
    "Written m-2-4#10 (Ex 2.4 Q4(vi)): model answer misses a marking point",
@@ -3520,10 +4502,8 @@
    "Written m-2-4#12 (Ex 2.4 Q8): model answer misses a marking point",
    "Your-turn m-2-4: 2 with unusable answer patterns",
    "MCQ m-2-5#0: independent check disagreed",
-   "Written m-2-5#9 (Review Exercise 2 Q5(iii)): model answer misses a marking point",
    "Written m-2-5#11 (Review Exercise 2 Q6(ii)): model answer misses a marking point",
-   "Written m-2-5#12 (Review Exercise 2 Q6(iii)): model answer misses a marking point",
-   "Written m-2-5#13 (Review Exercise 2 Q7(i)): model answer misses a marking point"
+   "Written m-2-5#12 (Review Exercise 2 Q6(iii)): model answer misses a marking point"
   ]
  }
 }

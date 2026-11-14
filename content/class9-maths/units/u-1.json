@@ -2421,7 +2421,7 @@
      "how": "Write x = 0.4444....",
      "accept": [
       [
-       "x=0.4~"
+       "x=0.4"
       ]
      ]
     },
@@ -2463,146 +2463,6 @@
     }
    ],
    "source": "Ex 1.1 Q3(i)"
-  },
-  {
-   "id": "w-1-1-11",
-   "text": "Express as a rational number p/q where p and q are integers and q ≠ 0: 0.3̅7̅",
-   "marks": 4,
-   "modelAnswer": [
-    "Let x = 0.3̅7̅",
-    "x = 0.373737…",
-    "Multiply by 100 on both sides",
-    "100x = 37.373737…",
-    "100x − x = 37.373737… − 0.373737…",
-    "99x = 37",
-    "x = 37/99"
-   ],
-   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
-   "noteId": "n-1-1",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Let x equal the recurring decimal.",
-     "marks": 1,
-     "why": "Setting x equal to the recurring decimal begins the textbook method.",
-     "how": "Write x = 0.373737....",
-     "accept": [
-      [
-       "x=0.37~"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Multiply both sides by 100.",
-     "marks": 1,
-     "why": "Multiplying by 100 aligns the two repeating digits.",
-     "how": "Write 100x = 37.373737....",
-     "accept": [
-      [
-       "100x=37.37~"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Subtract x from 100x.",
-     "marks": 1,
-     "why": "Subtracting eliminates the repeating decimal.",
-     "how": "Obtain 99x = 37.",
-     "accept": [
-      [
-       "99x=37"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Give the rational number.",
-     "marks": 1,
-     "why": "The answer must be expressed as p/q.",
-     "how": "State x = 37/99.",
-     "accept": [
-      [
-       "37/99"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 1.1 Q3(ii)"
-  },
-  {
-   "id": "w-1-1-12",
-   "text": "Express as a rational number p/q where p and q are integers and q ≠ 0: 0.2̅1̅",
-   "marks": 4,
-   "modelAnswer": [
-    "Let x = 0.2̅1̅",
-    "x = 0.212121…",
-    "Multiply by 100 on both sides",
-    "100x = 21.212121…",
-    "100x − x = 21.212121… − 0.212121…",
-    "99x = 21",
-    "x = 21/99"
-   ],
-   "followUp": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: (i) 0.4̅",
-   "noteId": "n-1-1",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Let x equal the recurring decimal.",
-     "marks": 1,
-     "why": "Setting x equal to the recurring decimal begins the textbook method.",
-     "how": "Write x = 0.212121....",
-     "accept": [
-      [
-       "x=0.21~"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Multiply both sides by 100.",
-     "marks": 1,
-     "why": "Multiplying by 100 aligns the two repeating digits.",
-     "how": "Write 100x = 21.212121....",
-     "accept": [
-      [
-       "100x=21.21~"
-      ]
-     ]
-    },
-    {
-     "id": "c",
-     "description": "Subtract x from 100x.",
-     "marks": 1,
-     "why": "Subtracting eliminates the repeating decimal.",
-     "how": "Obtain 99x = 21.",
-     "accept": [
-      [
-       "99x=21"
-      ]
-     ]
-    },
-    {
-     "id": "d",
-     "description": "Give the rational number.",
-     "marks": 1,
-     "why": "The answer must agree with the answer key.",
-     "how": "State x = 21/99.",
-     "accept": [
-      [
-       "21/99"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 1.1 Q3(iii)"
   },
   {
    "id": "w-1-1-13",
@@ -3087,6 +2947,69 @@
     }
    ],
    "source": "Ex 1.2 Q2(iii)"
+  },
+  {
+   "id": "w-1-2-9",
+   "text": "Simplify: ⁷√((x¹⁴ × y²¹ × z³⁵)/(y¹⁴z⁷))",
+   "marks": 4,
+   "modelAnswer": [
+    "⁷√((x¹⁴ × y²¹ × z³⁵)/(y¹⁴z⁷))",
+    "= ⁷√(x¹⁴y⁷z²⁸)",
+    "= x²yz⁴."
+   ],
+   "followUp": "Rationalize the denominator of 13/(4 + √3).",
+   "noteId": "n-1-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Simplify the powers inside the radicand.",
+     "marks": 2,
+     "why": "Simplifying the powers inside the radical prepares each exponent for division by 7.",
+     "how": "Cancel powers to obtain x¹⁴y⁷z²⁸.",
+     "accept": [
+      [
+       "x^14y^21z^35/(y^14z^7)"
+      ],
+      [
+       "x^14y^7z^28"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the seventh root to each factor.",
+     "marks": 1,
+     "why": "Taking the seventh root divides each exponent by 7.",
+     "how": "Divide the exponents 14, 7, and 28 by 7.",
+     "accept": [
+      [
+       "x^(14/7)"
+      ],
+      [
+       "x²y z⁴"
+      ],
+      [
+       "x²yz⁴"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "This is the correct simplified final answer.",
+     "how": "State x²yz⁴.",
+     "accept": [
+      [
+       "x²yz⁴"
+      ]
+     ]
+    }
+   ],
+   "source": "Ex 1.2 Q2(iv)"
   },
   {
    "id": "w-1-2-10",
@@ -3713,56 +3636,6 @@
    "source": "Ex 1.3 Q6"
   },
   {
-   "id": "w-1-3-7",
-   "text": "Mirha bought a toy for Rs. 1500 and sold for Rs. 1520. What was her profit percentage?",
-   "marks": 2,
-   "modelAnswer": [
-    "Cost Price = CP = Rs. 1500",
-    "Selling Price = SP = Rs. 1520",
-    "Profit = SP − CP = 1520 − 1500 = Rs. 20",
-    "Profit % = (profit/CP × 100) %",
-    "= (20/1500 × 100) % = 1.33%"
-   ],
-   "followUp": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
-   "noteId": "n-1-3",
-   "section": 0,
-   "number": 0,
-   "matching": "method",
-   "rubric": [
-    {
-     "id": "a",
-     "description": "Find profit by subtracting cost price from selling price.",
-     "marks": 1,
-     "why": "The profit amount is needed before its percentage can be found.",
-     "how": "Calculate 1520 − 1500 = Rs. 20.",
-     "accept": [
-      [
-       "1520-1500=20"
-      ],
-      [
-       "20"
-      ]
-     ]
-    },
-    {
-     "id": "b",
-     "description": "Use the profit percentage formula and state the result.",
-     "marks": 1,
-     "why": "Profit percentage compares profit with cost price.",
-     "how": "Calculate (20/1500 × 100)% ≈ 1.33%.",
-     "accept": [
-      [
-       "1.33%"
-      ],
-      [
-       "1.33"
-      ]
-     ]
-    }
-   ],
-   "source": "Ex 1.3 Q7"
-  },
-  {
    "id": "w-1-4-1",
    "text": "If a = 3/2, b = 5/3 and c = 7/5, then verify that a(b + c) = ab + ac.",
    "marks": 4,
@@ -4386,9 +4259,11 @@
   "unit": 1,
   "title": "Real Numbers",
   "dropped": [
+   "Written m-1-1#10 (Ex 1.1 Q3(ii)): model answer misses a marking point",
+   "Written m-1-1#11 (Ex 1.1 Q3(iii)): model answer misses a marking point",
    "MCQ m-1-2#7: independent check disagreed",
-   "Written m-1-2#8 (Ex 1.2 Q2(iv)): model answer misses a marking point",
    "Written m-1-3#4 (Ex 1.3 Q5): model answer misses a marking point",
+   "Written m-1-3#6 (Ex 1.3 Q7): model answer misses a marking point",
    "Written m-1-3#7 (Ex 1.3 Q8): model answer misses a marking point",
    "Written m-1-3#8 (Ex 1.3 Q9): model answer misses a marking point",
    "Written m-1-4#6 (Review Exercise Q7(i)): model answer misses a marking point",
