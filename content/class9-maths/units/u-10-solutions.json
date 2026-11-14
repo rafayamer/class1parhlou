@@ -1,0 +1,949 @@
+{
+ "unit": 10,
+ "sections": [
+  {
+   "number": "10.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q1(i)",
+     "question": "Sketch the graph of the following linear functions: y = 3x − 5",
+     "steps": [
+      "Take x = 0, then y = 3(0) − 5 = −5.",
+      "Take x = 1, then y = 3(1) − 5 = −2.",
+      "Take x = 2, then y = 3(2) − 5 = 1.",
+      "Make a table of values: x: 0, 1, 2; y: −5, −2, 1.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the points (0, −5), (1, −2) and (2, 1).",
+      "Join the plotted points with a straight line and put arrowheads at both ends."
+     ],
+     "answer": "The graph of y = 3x − 5 is a straight line through (0, −5), (1, −2) and (2, 1).",
+     "figure": "A coordinate grid with the straight line y = 3x − 5 rising from left to right, passing through (0, −5), (1, −2) and (2, 1), with arrowheads at both ends.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q1(ii)",
+     "question": "Sketch the graph of the following linear functions: y = −2x + 8",
+     "steps": [
+      "Take x = 0, then y = −2(0) + 8 = 8.",
+      "Take x = 2, then y = −2(2) + 8 = 4.",
+      "Take x = 4, then y = −2(4) + 8 = 0.",
+      "Make a table of values: x: 0, 2, 4; y: 8, 4, 0.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the points (0, 8), (2, 4) and (4, 0).",
+      "Join the plotted points with a straight line and put arrowheads at both ends."
+     ],
+     "answer": "The graph of y = −2x + 8 is a straight line through (0, 8), (2, 4) and (4, 0).",
+     "figure": "A coordinate grid with the straight line y = −2x + 8 falling from left to right, passing through (0, 8), (2, 4) and (4, 0), with arrowheads at both ends.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q1(iii)",
+     "question": "Sketch the graph of the following linear functions: y = 0.5x − 1",
+     "steps": [
+      "Take x = 0, then y = 0.5(0) − 1 = −1.",
+      "Take x = 2, then y = 0.5(2) − 1 = 0.",
+      "Take x = 4, then y = 0.5(4) − 1 = 1.",
+      "Make a table of values: x: 0, 2, 4; y: −1, 0, 1.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the points (0, −1), (2, 0) and (4, 1).",
+      "Join the plotted points with a straight line and put arrowheads at both ends."
+     ],
+     "answer": "The graph of y = 0.5x − 1 is a straight line through (0, −1), (2, 0) and (4, 1).",
+     "figure": "A coordinate grid with the straight line y = 0.5x − 1 rising from left to right, passing through (0, −1), (2, 0) and (4, 1), with arrowheads at both ends.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q2(i)",
+     "question": "Plot the graph of the following quadratic and cubic functions: y = x³ + 2x² − 5x − 6; −3.5 ≤ x ≤ 2.5",
+     "steps": [
+      "Let f(x) = x³ + 2x² − 5x − 6.",
+      "For x = −3.5, f(x) = (−3.5)³ + 2(−3.5)² − 5(−3.5) − 6 = −6.875.",
+      "For x = −3, f(x) = (−3)³ + 2(−3)² − 5(−3) − 6 = 0.",
+      "For x = −2.5, f(x) = (−2.5)³ + 2(−2.5)² − 5(−2.5) − 6 = 3.375.",
+      "For x = −2, f(x) = (−2)³ + 2(−2)² − 5(−2) − 6 = 4.",
+      "For x = −1.5, f(x) = (−1.5)³ + 2(−1.5)² − 5(−1.5) − 6 = 2.625.",
+      "For x = −1, f(x) = (−1)³ + 2(−1)² − 5(−1) − 6 = 0.",
+      "For x = −0.5, f(x) = (−0.5)³ + 2(−0.5)² − 5(−0.5) − 6 = −3.125.",
+      "For x = 0, f(x) = 0³ + 2(0)² − 5(0) − 6 = −6.",
+      "For x = 0.5, f(x) = (0.5)³ + 2(0.5)² − 5(0.5) − 6 = −7.875.",
+      "For x = 1, f(x) = 1³ + 2(1)² − 5(1) − 6 = −8.",
+      "For x = 1.5, f(x) = (1.5)³ + 2(1.5)² − 5(1.5) − 6 = −5.625.",
+      "For x = 2, f(x) = 2³ + 2(2)² − 5(2) − 6 = 0.",
+      "For x = 2.5, f(x) = (2.5)³ + 2(2.5)² − 5(2.5) − 6 = 9.625.",
+      "Make a table of values: x: −3.5, −3, −2.5, −2, −1.5, −1, −0.5, 0, 0.5, 1, 1.5, 2, 2.5; y: −6.875, 0, 3.375, 4, 2.625, 0, −3.125, −6, −7.875, −8, −5.625, 0, 9.625.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the ordered pairs from the table on the grid.",
+      "Join the plotted points with a smooth cubic curve, keeping the curve within −3.5 ≤ x ≤ 2.5."
+     ],
+     "answer": "The graph of y = x³ + 2x² − 5x − 6 for −3.5 ≤ x ≤ 2.5 is the smooth cubic curve through the plotted points.",
+     "figure": "A coordinate grid showing the smooth cubic curve y = x³ + 2x² − 5x − 6 for −3.5 ≤ x ≤ 2.5, passing through the listed points, with a local maximum and a local minimum.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q2(ii)",
+     "question": "Plot the graph of the following quadratic and cubic functions: y = x² + x − 2",
+     "steps": [
+      "Let f(x) = x² + x − 2.",
+      "For x = −3, f(x) = (−3)² + (−3) − 2 = 4.",
+      "For x = −2, f(x) = (−2)² + (−2) − 2 = 0.",
+      "For x = −1, f(x) = (−1)² + (−1) − 2 = −2.",
+      "For x = 0, f(x) = 0² + 0 − 2 = −2.",
+      "For x = 1, f(x) = 1² + 1 − 2 = 0.",
+      "For x = 2, f(x) = 2² + 2 − 2 = 4.",
+      "Make a table of values: x: −3, −2, −1, 0, 1, 2; y: 4, 0, −2, −2, 0, 4.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the ordered pairs from the table on the grid.",
+      "Join the plotted points with a smooth upward-opening curve."
+     ],
+     "answer": "The graph of y = x² + x − 2 is an upward-opening parabola through the plotted points.",
+     "figure": "A coordinate grid showing the upward-opening parabola y = x² + x − 2 through (−3, 4), (−2, 0), (−1, −2), (0, −2), (1, 0) and (2, 4).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q2(iii)",
+     "question": "Plot the graph of the following quadratic and cubic functions: y = x³ + 3x² + 2x; −2.5 ≤ x ≤ 0.5",
+     "steps": [
+      "Let f(x) = x³ + 3x² + 2x.",
+      "For x = −2.5, f(x) = (−2.5)³ + 3(−2.5)² + 2(−2.5) = −1.875.",
+      "For x = −2, f(x) = (−2)³ + 3(−2)² + 2(−2) = 0.",
+      "For x = −1.5, f(x) = (−1.5)³ + 3(−1.5)² + 2(−1.5) = 0.375.",
+      "For x = −1, f(x) = (−1)³ + 3(−1)² + 2(−1) = 0.",
+      "For x = −0.5, f(x) = (−0.5)³ + 3(−0.5)² + 2(−0.5) = −0.375.",
+      "For x = 0, f(x) = 0³ + 3(0)² + 2(0) = 0.",
+      "For x = 0.5, f(x) = (0.5)³ + 3(0.5)² + 2(0.5) = 1.875.",
+      "Make a table of values: x: −2.5, −2, −1.5, −1, −0.5, 0, 0.5; y: −1.875, 0, 0.375, 0, −0.375, 0, 1.875.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the ordered pairs from the table on the grid.",
+      "Join the plotted points with a smooth cubic curve, keeping the curve within −2.5 ≤ x ≤ 0.5."
+     ],
+     "answer": "The graph of y = x³ + 3x² + 2x for −2.5 ≤ x ≤ 0.5 is the smooth cubic curve through the plotted points.",
+     "figure": "A coordinate grid showing the smooth cubic curve y = x³ + 3x² + 2x for −2.5 ≤ x ≤ 0.5, passing through the plotted points.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q2(iv)",
+     "question": "Plot the graph of the following quadratic and cubic functions: y = 5x² − 2x − 3",
+     "steps": [
+      "Let f(x) = 5x² − 2x − 3.",
+      "For x = −1, f(x) = 5(−1)² − 2(−1) − 3 = 4.",
+      "For x = −0.6, f(x) = 5(−0.6)² − 2(−0.6) − 3 = 0.",
+      "For x = 0, f(x) = 5(0)² − 2(0) − 3 = −3.",
+      "For x = 0.2, f(x) = 5(0.2)² − 2(0.2) − 3 = −3.2.",
+      "For x = 0.4, f(x) = 5(0.4)² − 2(0.4) − 3 = −3.",
+      "For x = 1, f(x) = 5(1)² − 2(1) − 3 = 0.",
+      "Make a table of values: x: −1, −0.6, 0, 0.2, 0.4, 1; y: 4, 0, −3, −3.2, −3, 0.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the ordered pairs from the table on the grid.",
+      "Join the plotted points with a smooth upward-opening curve."
+     ],
+     "answer": "The graph of y = 5x² − 2x − 3 is an upward-opening parabola through the plotted points.",
+     "figure": "A coordinate grid showing the upward-opening parabola y = 5x² − 2x − 3, passing through (−1, 4), (−0.6, 0), (0, −3), (0.2, −3.2), (0.4, −3) and (1, 0), with the x-axis and y-axis shown.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(i)",
+     "question": "Plot the graph of the following functions: y = 4^x",
+     "steps": [
+      "Let f(x) = 4ˣ.",
+      "For x = −2, f(x) = 4⁻² = 1/16.",
+      "For x = −1, f(x) = 4⁻¹ = 1/4.",
+      "For x = 0, f(x) = 4⁰ = 1.",
+      "For x = 1, f(x) = 4¹ = 4.",
+      "For x = 2, f(x) = 4² = 16.",
+      "Make a table of values: x: −2, −1, 0, 1, 2; y: 1/16, 1/4, 1, 4, 16.",
+      "Draw the x-axis and y-axis on a coordinate grid, using a suitable scale.",
+      "Plot the ordered pairs from the table on the grid.",
+      "Join the plotted points with a smooth increasing exponential curve that approaches the x-axis as x decreases."
+     ],
+     "answer": "The graph of y = 4ˣ is an increasing exponential curve through the plotted points.",
+     "figure": "A coordinate grid with x-axis and y-axis showing the increasing exponential curve y = 4ˣ, passing through (−2, 1/16), (−1, 1/4), (0, 1), (1, 4) and (2, 16), and approaching the x-axis for negative x.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(ii)",
+     "question": "Plot the graph of the following functions: y = 5^(−x)",
+     "steps": [
+      "Make a table of values for y = 5^(−x).",
+      "For x = −2, y = 25; plot (−2, 25).",
+      "For x = −1, y = 5; plot (−1, 5).",
+      "For x = 0, y = 1; plot (0, 1).",
+      "For x = 1, y = 1/5; plot (1, 1/5).",
+      "For x = 2, y = 1/25; plot (2, 1/25).",
+      "Draw the x-axis and y-axis, and choose a suitable scale for the points.",
+      "Join the points with a smooth decreasing curve, keeping the curve above and approaching the x-axis."
+     ],
+     "answer": "Graph of y = 5^(−x), a decreasing exponential curve.",
+     "figure": "A decreasing exponential curve passing through the plotted points and approaching the x-axis without touching it.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(iii)",
+     "question": "Plot the graph of the following functions: y = 1/(x − 3), x ≠ 3",
+     "steps": [
+      "Make a table of values for y = 1/(x − 3), where x ≠ 3.",
+      "For x = 1, y = −1/2; plot (1, −1/2).",
+      "For x = 2, y = −1; plot (2, −1).",
+      "For x = 5/2, y = −2; plot (5/2, −2).",
+      "For x = 7/2, y = 2; plot (7/2, 2).",
+      "For x = 4, y = 1; plot (4, 1).",
+      "For x = 5, y = 1/2; plot (5, 1/2).",
+      "Draw the x-axis and y-axis, and draw the dashed lines x = 3 and y = 0.",
+      "Draw a smooth branch through the points to the left of x = 3, approaching both asymptotes.",
+      "Draw a smooth branch through the points to the right of x = 3, approaching both asymptotes."
+     ],
+     "answer": "Graph of y = 1/(x − 3), with vertical asymptote x = 3 and horizontal asymptote y = 0.",
+     "figure": "Two branches of y = 1/(x − 3), with vertical asymptote x = 3 and horizontal asymptote y = 0.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(iv)",
+     "question": "Plot the graph of the following functions: y = 2/x + 3, x ≠ 0",
+     "steps": [
+      "Make a table of values for y = 2/x + 3, where x ≠ 0.",
+      "For x = −2, y = 2; plot (−2, 2).",
+      "For x = −1, y = 1; plot (−1, 1).",
+      "For x = −1/2, y = −1; plot (−1/2, −1).",
+      "For x = 1/2, y = 7; plot (1/2, 7).",
+      "For x = 1, y = 5; plot (1, 5).",
+      "For x = 2, y = 4; plot (2, 4).",
+      "Draw the x-axis and y-axis; the line x = 0 is the y-axis and y = 3 is the horizontal asymptote.",
+      "Draw smooth branches through the plotted points, approaching x = 0 and y = 3."
+     ],
+     "answer": "Graph of y = 2/x + 3, with x ≠ 0.",
+     "figure": "A hyperbola for y = 2/x + 3, with the coordinate axes and asymptotes x = 0 and y = 3.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(v)",
+     "question": "Plot the graph of the following functions: y = x^(1/2)",
+     "steps": [
+      "Since y = x^(1/2) = √x, take non-negative values of x.",
+      "Make a table of values: x = 0, 1, 4, 9 and y = 0, 1, 2, 3, respectively.",
+      "Plot the points (0, 0), (1, 1), (4, 2) and (9, 3).",
+      "Draw the x-axis and y-axis.",
+      "Join the plotted points with a smooth increasing curve, beginning at the origin."
+     ],
+     "answer": "Graph of y = x^(1/2) = √x.",
+     "figure": "A curve y = √x beginning at the origin and increasing through (1, 1), (4, 2) and (9, 3).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(vi)",
+     "question": "Plot the graph of the following functions: y = 3x^(1/3)",
+     "steps": [
+      "Make a table of values for y = 3x^(1/3).",
+      "For x = −8, y = −6; plot (−8, −6).",
+      "For x = −1, y = −3; plot (−1, −3).",
+      "For x = 0, y = 0; plot (0, 0).",
+      "For x = 1, y = 3; plot (1, 3).",
+      "For x = 8, y = 6; plot (8, 6).",
+      "Draw and label the coordinate axes x, y, x′ and y′.",
+      "Join the plotted points with a smooth increasing curve."
+     ],
+     "answer": "Graph of y = 3x^(1/3).",
+     "figure": "An increasing curve y = 3x^(1/3), passing through (−8, −6), (−1, −3), (0, 0), (1, 3) and (8, 6), with axes x, y, x′ and y′.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.1 Q3(vii)",
+     "question": "Plot the graph of the following functions: y = 2x^(−2)",
+     "steps": [
+      "Rewrite y = 2x^(−2) as y = 2/x², where x ≠ 0.",
+      "Make a table of values: for x = −2 and x = 2, y = 1/2.",
+      "Plot (−2, 1/2) and (2, 1/2).",
+      "For x = −1 and x = 1, y = 2; plot (−1, 2) and (1, 2).",
+      "For x = −1/2 and x = 1/2, y = 8; plot (−1/2, 8) and (1/2, 8).",
+      "Draw and label the coordinate axes x, y, x′ and y′.",
+      "Draw two smooth branches through the plotted points, one on each side of the y-axis.",
+      "Keep both branches above the x-axis and approaching the y-axis and x-axis without touching them."
+     ],
+     "answer": "Graph of y = 2x^(−2) = 2/x².",
+     "figure": "Two branches of y = 2x^(−2) = 2/x², both above the x-axis and symmetric about the y-axis, with x = 0 and y = 0 as asymptotes.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "10.2",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q1",
+     "question": "Plot the graph of y = 2x² − 4x + 3 for x from −1 to 3. Draw tangent at (2, 3) and find the gradient.",
+     "steps": [
+      "Make a table of values for y = 2x² − 4x + 3.",
+      "For x = −1, y = 9; plot (−1, 9).",
+      "For x = 0, y = 3; plot (0, 3).",
+      "For x = 1, y = 1; plot (1, 1).",
+      "For x = 2, y = 3; plot (2, 3).",
+      "For x = 3, y = 9; plot (3, 9).",
+      "Draw the coordinate axes and plot the points for −1 ≤ x ≤ 3.",
+      "Join the points with a smooth curve to obtain the graph of the function.",
+      "At (2, 3), draw a straight line that touches the curve and has the same direction as the curve there.",
+      "Take two points on the tangent, (1, −1) and (3, 7).",
+      "Gradient of tangent = (7 − (−1))/(3 − 1) = 8/2 = 4."
+     ],
+     "answer": "Gradient of the tangent at (2, 3) = 4.",
+     "figure": "The parabola y = 2x² − 4x + 3 for −1 ≤ x ≤ 3, with a tangent at (2, 3). The tangent has gradient 4.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q2",
+     "question": "Plot the graph of y = 3x² + x + 1 and draw tangent at (1, 5). Also find gradient of the tangent line at this point.",
+     "steps": [
+      "Make a table of values for y = 3x² + x + 1.",
+      "For x = −2, y = 11; plot (−2, 11).",
+      "For x = −1, y = 3; plot (−1, 3).",
+      "For x = 0, y = 1; plot (0, 1).",
+      "For x = 1, y = 5; plot (1, 5).",
+      "For x = 2, y = 15; plot (2, 15).",
+      "Draw the coordinate axes and plot the points.",
+      "Join the points with a smooth curve to obtain the graph of the function.",
+      "At (1, 5), draw a straight line that touches the curve and has the same direction as the curve there.",
+      "Take two points on the tangent, (0, −2) and (2, 12).",
+      "Gradient of tangent = (12 − (−2))/(2 − 0) = 14/2 = 7."
+     ],
+     "answer": "Gradient of the tangent at (1, 5) = 7.",
+     "figure": "The parabola y = 3x² + x + 1 with a tangent at (1, 5). The tangent has gradient 7.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q3(a)",
+     "question": "Graph the given equation for t = 0 (in 2016) to t = 9 (in 2025), where the strength of students in a school was 1000 in 2016 and the strength decays according to the equation S = 1000 e^(−t/7), where S is the number of students at time t.",
+     "steps": [
+      "Let t represent the number of years after 2016.",
+      "The given equation is S = 1000e^(−t/7).",
+      "For t = 0, S = 1000e^0 = 1000.",
+      "For t = 1, S = 1000e^(−1/7) ≈ 867.",
+      "For t = 2, S = 1000e^(−2/7) ≈ 751.",
+      "For t = 3, S = 1000e^(−3/7) ≈ 651.",
+      "For t = 4, S = 1000e^(−4/7) ≈ 565.",
+      "For t = 5, S = 1000e^(−5/7) ≈ 490.",
+      "For t = 6, S = 1000e^(−6/7) ≈ 424.",
+      "For t = 7, S = 1000e^(−7/7) ≈ 368.",
+      "For t = 8, S = 1000e^(−8/7) ≈ 319.",
+      "For t = 9, S = 1000e^(−9/7) ≈ 276.",
+      "Draw the horizontal axis for t and mark it from 0 to 9, labelling 0 as 2016 and 9 as 2025.",
+      "Draw the vertical axis for student strength S and choose a scale that includes 0 to 1000.",
+      "Plot the points (t, S) from the table and join them with a smooth decreasing curve."
+     ],
+     "answer": "The graph of S = 1000e^(−t/7) for t = 0 to 9 is the decreasing curve through the plotted points.",
+     "figure": "A smooth, decreasing exponential curve for S = 1000e^(−t/7), with t on the horizontal axis from 0 to 9 (marked 2016 to 2025) and S on the vertical axis. The curve starts at (0, 1000) and passes approximately through (1, 867), (2, 751), (3, 651), (4, 565), (5, 490), (6, 424), (7, 368), (8, 319), and (9, 276).",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"[FIGURE: Graph of y = 1000e^(-t), with horizontal axis marked 2016 to 2025.]\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q3(b)",
+     "question": "From the graph, estimate the student’s strength in 2019 and in 2023, where the strength of students in a school was 1000 in 2016 and the strength decays according to the equation S = 1000 e^(−t/7), where S is the number of students at time t.",
+     "steps": [
+      "In 2019, t = 2019 − 2016 = 3.",
+      "For t = 3, S = 1000e^(−3/7) ≈ 651.",
+      "In 2023, t = 2023 − 2016 = 7.",
+      "For t = 7, S = 1000e^(−7/7) = 1000e^(−1) ≈ 368."
+     ],
+     "answer": "From the graph, the student strength in 2019 is approximately 651, and in 2023 it is approximately 368.",
+     "figure": "",
+     "accept": [
+      [
+       "651",
+       "368"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"From the graph, students’ strength in 2019 is approximately 50, and in 2023 approximately 1.\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q4",
+     "question": "Plot the graph of each function over the interval Q = 0 to Q = 300, where the demand and supply functions for a product are given by the equations P_d = 400 − 5Q, P_s = 3Q + 24:",
+     "steps": [
+      "Draw and label the horizontal axis Q from 0 to 300 and the vertical axis P.",
+      "For P_d = 400 − 5Q, when Q = 0, P_d = 400; plot (0, 400).",
+      "For P_d = 400 − 5Q, when Q = 300, P_d = 400 − 5(300) = −1100; plot (300, −1100).",
+      "Join these points with a straight line and label it P_d = 400 − 5Q.",
+      "For P_s = 3Q + 24, when Q = 0, P_s = 24; plot (0, 24).",
+      "For P_s = 3Q + 24, when Q = 300, P_s = 3(300) + 24 = 924; plot (300, 924).",
+      "Join these points with a straight line and label it P_s = 3Q + 24.",
+      "The intersection satisfies 400 − 5Q = 3Q + 24.",
+      "376 = 8Q, so Q = 47.",
+      "P = 3(47) + 24 = 165; mark the intersection (47, 165)."
+     ],
+     "answer": "The graph consists of P = 3Q + 24 and P = 400 − 5Q, plotted for 0 ≤ Q ≤ 300.",
+     "figure": "On axes with Q horizontal and P vertical, draw the decreasing line P = 400 − 5Q and the increasing line P = 3Q + 24. They intersect at (Q, P) = (47, 165).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q5",
+     "question": "Sketch and interpret the graph of salary function for 0 ≤ x ≤ 5, where Shahid’s salary S(x) in rupees is based on the following formula: S(x) = 45000 + 4500x, where x is the number of years he has been with the company.",
+     "steps": [
+      "S(x) = 45000 + 4500x.",
+      "When x = 0, S(0) = 45000 + 4500(0) = 45000.",
+      "When x = 1, S(1) = 45000 + 4500(1) = 49500.",
+      "When x = 2, S(2) = 45000 + 4500(2) = 54000.",
+      "When x = 3, S(3) = 45000 + 4500(3) = 58500.",
+      "When x = 4, S(4) = 45000 + 4500(4) = 63000.",
+      "When x = 5, S(5) = 45000 + 4500(5) = 67500.",
+      "Draw and label the horizontal axis x (years) from 0 to 6 and the vertical axis S(x) (rupees) up to 100000.",
+      "Plot the points obtained for x = 0 to 5 and join them with a straight line.",
+      "The graph shows that Shahid’s salary increases by Rs. 4500 for every year of service."
+     ],
+     "answer": "Shahid’s salary increases linearly with years of service and rises by Rs. 4500 for every year.",
+     "figure": "A rising straight-line graph of S(x) against x, with x from 0 to 6 and S marked up to 100000. Plot (0, 45000), (1, 49500), (2, 54000), (3, 58500), (4, 63000), and (5, 67500), then join them with a straight line.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q6(a)",
+     "question": "Find the break-even point for a company that manufactures school bags, where the cost function of producing x bags is C(x) = 1200 + 20x and the revenue from selling x bags is R(x) = 50x.",
+     "steps": [
+      "At the break-even point, revenue equals cost.",
+      "R(x) = C(x).",
+      "50x = 1200 + 20x.",
+      "50x − 20x = 1200.",
+      "30x = 1200.",
+      "x = 1200 ÷ 30 = 40."
+     ],
+     "answer": "The break-even point is 40 bags.",
+     "figure": "",
+     "accept": [
+      [
+       "40",
+       "bags"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q6(b)",
+     "question": "Determine the profit or loss when 250 bags are sold, where the cost function of producing x bags is C(x) = 1200 + 20x and the revenue from selling x bags is R(x) = 50x.",
+     "steps": [
+      "For x = 250, R(250) = 50(250) = 12500.",
+      "For x = 250, C(250) = 1200 + 20(250) = 1200 + 5000 = 6200.",
+      "Profit = Revenue − Cost.",
+      "Profit = 12500 − 6200 = 6300."
+     ],
+     "answer": "Profit = Rs. 6300.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q6(c)",
+     "question": "Plot the graphs of both the functions and identify the break-even point, where the cost function of producing x bags is C(x) = 1200 + 20x and the revenue from selling x bags is R(x) = 50x.",
+     "steps": [
+      "Draw and label the horizontal axis x (number of bags) and the vertical axis amount in rupees.",
+      "For R(x) = 50x, when x = 0, R(0) = 0; plot (0, 0).",
+      "For R(x) = 50x, when x = 40, R(40) = 50(40) = 2000; plot (40, 2000).",
+      "Join the points with a straight line and label it R(x) = 50x.",
+      "For C(x) = 1200 + 20x, when x = 0, C(0) = 1200; plot (0, 1200).",
+      "For C(x) = 1200 + 20x, when x = 40, C(40) = 1200 + 20(40) = 2000; plot (40, 2000).",
+      "Join the points with a straight line and label it C(x) = 1200 + 20x.",
+      "The two lines intersect at (40, 2000), so the break-even quantity is 40 bags."
+     ],
+     "answer": "The graphs meet at the break-even point (40, 2000), corresponding to 40 bags.",
+     "figure": "On axes with x (number of bags) horizontal and rupees vertical, the revenue line R(x) = 50x passes through (0, 0) and (40, 2000). The cost line C(x) = 1200 + 20x passes through (0, 1200) and (40, 2000). They meet at the break-even point (40, 2000).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q7",
+     "question": "Plot the graph and find profit for 500 newspapers. A newspaper agency fixed cost of Rs. 70 per edition and marginal printing and distribution costs of Rs. 40 per copy. Profit function is p(x) = 10x − 70, where x is the number of newspapers.",
+     "steps": [
+      "P(x) = 10x − 70.",
+      "When x = 0, P(0) = 10(0) − 70 = −70; plot (0, −70).",
+      "To find where the graph crosses the horizontal axis, put P(x) = 0.",
+      "0 = 10x − 70.",
+      "10x = 70, so x = 7; plot (7, 0).",
+      "Draw the axes, plot the points, and join them with a straight line.",
+      "For 500 newspapers, P(500) = 10(500) − 70 = 5000 − 70 = 4930."
+     ],
+     "answer": "Profit for 500 newspapers = Rs. 4930.",
+     "figure": "A rising straight-line graph of P(x) = 10x − 70 against x. It passes through (0, −70), crosses the horizontal axis at (7, 0), and has the point (500, 4930).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 10.2 Q8",
+     "question": "Plot the graph and find the cost of 200 shirts. Ali manufactures expensive shirts for sale to a school. Its cost (in rupees) for x shirts is C(x) = 1500 + 10x + 0.2x², 0 ≤ x ≤ 150.",
+     "steps": [
+      "Given: C(x) = 1500 + 10x + 0.2x², 0 ≤ x ≤ 150.",
+      "For x = 0, C(0) = 1500 + 10(0) + 0.2(0)² = 1500.",
+      "For x = 25, C(25) = 1500 + 10(25) + 0.2(25)² = 1875.",
+      "For x = 50, C(50) = 1500 + 10(50) + 0.2(50)² = 2500.",
+      "For x = 75, C(75) = 1500 + 10(75) + 0.2(75)² = 3375.",
+      "For x = 100, C(100) = 1500 + 10(100) + 0.2(100)² = 4500.",
+      "For x = 125, C(125) = 1500 + 10(125) + 0.2(125)² = 5875.",
+      "For x = 150, C(150) = 1500 + 10(150) + 0.2(150)² = 7500.",
+      "Take x along the horizontal axis and C(x) along the vertical axis; plot the points and join them with a smooth curve.",
+      "For 200 shirts, C(200) = 1500 + 10(200) + 0.2(200)².",
+      "C(200) = 1500 + 2000 + 8000 = 11500."
+     ],
+     "answer": "Cost of 200 shirts = Rs. 11500.",
+     "figure": "A rising curved graph of C(x) against x, plotted for 0 ≤ x ≤ 150. The plotted points include (0, 1500), (25, 1875), (50, 2500), (75, 3375), (100, 4500), (125, 5875) and (150, 7500).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "10.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q2(i)",
+     "question": "Plot the graph of the following functions: y = 3^(−x) for x from −2 to 4",
+     "steps": [
+      "Given: y = 3⁻ˣ, for −2 ≤ x ≤ 4.",
+      "For x = −2, y = 3² = 9.",
+      "For x = −1, y = 3¹ = 3.",
+      "For x = 0, y = 3⁰ = 1.",
+      "For x = 1, y = 3⁻¹ = 1/3.",
+      "For x = 2, y = 3⁻² = 1/9.",
+      "For x = 3, y = 3⁻³ = 1/27.",
+      "For x = 4, y = 3⁻⁴ = 1/81.",
+      "Take x along the horizontal axis and y along the vertical axis; plot the points (−2, 9), (−1, 3), (0, 1), (1, 1/3), (2, 1/9), (3, 1/27) and (4, 1/81).",
+      "Join the points with a smooth decreasing curve."
+     ],
+     "answer": "Graph of y = 3⁻ˣ for −2 ≤ x ≤ 4.",
+     "figure": "A decreasing curve of y = 3⁻ˣ on coordinate axes, passing through (−2, 9), (−1, 3), (0, 1), (1, 1/3), (2, 1/9), (3, 1/27) and (4, 1/81), approaching the x-axis as x increases.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q2(ii)",
+     "question": "Plot the graph of the following functions: y = 2/x, x ≠ 0",
+     "steps": [
+      "Given: y = 2/x, x ≠ 0.",
+      "For x = −4, y = 2/(−4) = −1/2.",
+      "For x = −2, y = 2/(−2) = −1.",
+      "For x = −1, y = 2/(−1) = −2.",
+      "For x = 1, y = 2/1 = 2.",
+      "For x = 2, y = 2/2 = 1.",
+      "For x = 4, y = 2/4 = 1/2.",
+      "Take x along the horizontal axis and y along the vertical axis; plot the points (−4, −1/2), (−2, −1), (−1, −2), (1, 2), (2, 1) and (4, 1/2).",
+      "Join the points in each quadrant with smooth curves that approach the axes."
+     ],
+     "answer": "Graph of y = 2/x, x ≠ 0.",
+     "figure": "A hyperbola of y = 2/x on coordinate axes, with one branch in the first quadrant and the other in the third quadrant. The curve passes through (−4, −1/2), (−2, −1), (−1, −2), (1, 2), (2, 1) and (4, 1/2), and approaches both axes.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q3(a)",
+     "question": "Plot graph of sales for the first 50 weeks.",
+     "steps": [
+      "Given: S = 200000(1 − e⁻⁰·⁰⁵ᵗ), for 0 ≤ t ≤ 50.",
+      "For t = 0, S = 200000(1 − e⁰) = 0.",
+      "For t = 10, S = 200000(1 − e⁻⁰·⁵) ≈ 78694.",
+      "For t = 20, S = 200000(1 − e⁻¹) ≈ 126424.",
+      "For t = 30, S = 200000(1 − e⁻¹·⁵) ≈ 155374.",
+      "For t = 40, S = 200000(1 − e⁻²) ≈ 172933.",
+      "For t = 50, S = 200000(1 − e⁻²·⁵) ≈ 183582.",
+      "Take t (weeks) along the horizontal axis and S (magazines) along the vertical axis; plot the points (0, 0), (10, 78694), (20, 126424), (30, 155374), (40, 172933) and (50, 183582).",
+      "Join the points with a smooth rising curve."
+     ],
+     "answer": "Graph of S = 200000(1 − e⁻⁰·⁰⁵ᵗ) for the first 50 weeks.",
+     "figure": "A rising curve of S = 200000(1 − e⁻⁰·⁰⁵ᵗ) for 0 ≤ t ≤ 50, passing approximately through (0, 0), (10, 78694), (20, 126424), (30, 155374), (40, 172933) and (50, 183582). The curve rises more slowly as t increases.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q3(b)",
+     "question": "Calculate the number of magazines sold, when t = 5 and t = 35.",
+     "steps": [
+      "Given: S = 200000(1 − e⁻⁰·⁰⁵ᵗ).",
+      "For t = 5, S = 200000(1 − e⁻⁰·²⁵).",
+      "S ≈ 200000(1 − 0.7788008) = 44239.84.",
+      "For t = 35, S = 200000(1 − e⁻¹·⁷⁵).",
+      "S ≈ 200000(1 − 0.173774) = 165245.2."
+     ],
+     "answer": "For t = 5, S = 44239.84 magazines; for t = 35, S = 165245.2 magazines.",
+     "figure": "",
+     "accept": [
+      [
+       "44239.84"
+      ],
+      [
+       "165245.2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q4(i)",
+     "question": "Plot the graph of following for x from −5 to 5: y = x² − 3",
+     "steps": [
+      "Given: y = x² − 3, for −5 ≤ x ≤ 5.",
+      "For x = −5, y = (−5)² − 3 = 22.",
+      "For x = −4, y = (−4)² − 3 = 13.",
+      "For x = −3, y = (−3)² − 3 = 6.",
+      "For x = −2, y = (−2)² − 3 = 1.",
+      "For x = −1, y = (−1)² − 3 = −2.",
+      "For x = 0, y = 0² − 3 = −3.",
+      "For x = 1, y = 1² − 3 = −2.",
+      "For x = 2, y = 2² − 3 = 1.",
+      "For x = 3, y = 3² − 3 = 6.",
+      "For x = 4, y = 4² − 3 = 13.",
+      "For x = 5, y = 5² − 3 = 22.",
+      "Take x along the horizontal axis and y along the vertical axis; plot the points and join them with a smooth curve."
+     ],
+     "answer": "Graph of y = x² − 3 for −5 ≤ x ≤ 5.",
+     "figure": "An upward-opening parabola y = x² − 3 for −5 ≤ x ≤ 5. It has vertex (0, −3), is symmetric about the y-axis, and passes through (−5, 22), (−4, 13), (−3, 6), (−2, 1), (−1, −2), (1, −2), (2, 1), (3, 6), (4, 13) and (5, 22).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q4(ii)",
+     "question": "Plot the graph of following for x from −5 to 5: y = 15 − x²",
+     "steps": [
+      "Given: y = 15 − x², for −5 ≤ x ≤ 5.",
+      "For x = −5, y = 15 − (−5)² = −10.",
+      "For x = −4, y = 15 − (−4)² = −1.",
+      "For x = −3, y = 15 − (−3)² = 6.",
+      "For x = −2, y = 15 − (−2)² = 11.",
+      "For x = −1, y = 15 − (−1)² = 14.",
+      "For x = 0, y = 15 − 0² = 15.",
+      "For x = 1, y = 15 − 1² = 14.",
+      "For x = 2, y = 15 − 2² = 11.",
+      "For x = 3, y = 15 − 3² = 6.",
+      "For x = 4, y = 15 − 4² = −1.",
+      "For x = 5, y = 15 − 5² = −10.",
+      "Take x along the horizontal axis and y along the vertical axis; plot the points and join them with a smooth curve."
+     ],
+     "answer": "Graph of y = 15 − x² for −5 ≤ x ≤ 5.",
+     "figure": "A downward-opening parabola y = 15 − x² for −5 ≤ x ≤ 5. It has vertex (0, 15), is symmetric about the y-axis, and passes through (−5, −10), (−4, −1), (−3, 6), (−2, 11), (−1, 14), (1, 14), (2, 11), (3, 6), (4, −1) and (5, −10).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q5",
+     "question": "Plot the graph of y = 1/2 (x + 4)(x − 1)(x − 3) for x from −5 to 4.",
+     "steps": [
+      "Given: y = 1/2(x + 4)(x − 1)(x − 3), for −5 ≤ x ≤ 4.",
+      "For x = −5, y = 1/2(−1)(−6)(−8) = −24.",
+      "For x = −4, y = 1/2(0)(−5)(−7) = 0.",
+      "For x = −3, y = 1/2(1)(−4)(−6) = 12.",
+      "For x = −2, y = 1/2(2)(−3)(−5) = 15.",
+      "For x = −1, y = 1/2(3)(−2)(−4) = 12.",
+      "For x = 0, y = 1/2(4)(−1)(−3) = 6.",
+      "For x = 1, y = 1/2(5)(0)(−2) = 0.",
+      "For x = 2, y = 1/2(6)(1)(−1) = −3.",
+      "For x = 3, y = 1/2(7)(2)(0) = 0.",
+      "For x = 4, y = 1/2(8)(3)(1) = 12.",
+      "Take x along the horizontal axis and y along the vertical axis; plot the points and join them with a smooth curve."
+     ],
+     "answer": "Graph of y = 1/2(x + 4)(x − 1)(x − 3) for −5 ≤ x ≤ 4.",
+     "figure": "The graph of y = 1/2(x + 4)(x − 1)(x − 3) for −5 ≤ x ≤ 4. It crosses the x-axis at (−4, 0), (1, 0) and (3, 0), and passes through (−5, −24), (−3, 12), (−2, 15), (−1, 12), (0, 6), (2, −3) and (4, 12).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q6",
+     "question": "The supply and demand functions for a particular market are given by the equations: Pₛ = Q² + 5 and P_d = Q² − 10Q, where P represents price and Q represents quantity, Sketch the graph of each function over the interval Q = −20 to Q = 20.",
+     "steps": [
+      "For the supply function, Pₛ = Q² + 5.",
+      "For the demand function, P_d = Q² − 10Q.",
+      "For the auxiliary reference curve in the three-parabola sketch, P = Q².",
+      "Use the values Q = −20, −15, −10, −5, 0, 5, 10, 15, 20.",
+      "At Q = −20, Pₛ = 405, P_d = 600, and P = 400.",
+      "At Q = −15, Pₛ = 230, P_d = 375, and P = 225.",
+      "At Q = −10, Pₛ = 105, P_d = 200, and P = 100.",
+      "At Q = −5, Pₛ = 30, P_d = 75, and P = 25.",
+      "At Q = 0, Pₛ = 5, P_d = 0, and P = 0.",
+      "At Q = 5, Pₛ = 30, P_d = −25, and P = 25.",
+      "At Q = 10, Pₛ = 105, P_d = 0, and P = 100.",
+      "At Q = 15, Pₛ = 230, P_d = 75, and P = 225.",
+      "At Q = 20, Pₛ = 405, P_d = 200, and P = 400.",
+      "Draw Q on the horizontal axis and P on the vertical axis, and mark Q from −20 to 20.",
+      "Plot the points for each function from the table and join the points for each function with a smooth curve.",
+      "Label the curves Pₛ = Q² + 5, P_d = Q² − 10Q, and P = Q²."
+     ],
+     "answer": "The graph consists of the parabolas Pₛ = Q² + 5 and P_d = Q² − 10Q over −20 ≤ Q ≤ 20, with P = Q² shown as the auxiliary reference parabola for the three-parabola sketch.",
+     "figure": "On axes with Q horizontal and P vertical, sketch and label the two given upward-opening parabolas Pₛ = Q² + 5 and P_d = Q² − 10Q over −20 ≤ Q ≤ 20. For a three-parabola book sketch, also show the reference parabola P = Q², labelled as an auxiliary curve. The given curves have vertices (0, 5) and (5, −25); the auxiliary curve has vertex (0, 0).",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 10 Q7",
+     "question": "A television manufacturer company make 40 inches LEDs. The cost of manufacturing x LEDs is C(x) = 60,000 + 250x and the revenue from selling x LEDs is R(x) = 1200x. Find the break-even point and find the profit or loss when 100 LEDs are sold. Identify the break-even point graphically.",
+     "steps": [
+      "The cost function is C(x) = 60000 + 250x.",
+      "The revenue function is R(x) = 1200x.",
+      "At the break-even point, C(x) = R(x).",
+      "60000 + 250x = 1200x.",
+      "60000 = 950x.",
+      "x = 60000/950 = 1200/19 ≈ 63.16.",
+      "At break-even, R(x) = 1200(1200/19) = 1440000/19 ≈ 75789.47.",
+      "Thus, the break-even point is approximately (63, 75790).",
+      "When 100 LEDs are sold, R(100) = 1200 × 100 = 120000.",
+      "When 100 LEDs are sold, C(100) = 60000 + 250 × 100 = 85000.",
+      "Profit = R(100) − C(100) = 120000 − 85000 = 35000.",
+      "Draw the number of LEDs on the horizontal axis and rupees on the vertical axis.",
+      "Plot points on R(x) = 1200x, including (0, 0) and (100, 120000), and draw the revenue line.",
+      "Plot points on C(x) = 60000 + 250x, including (0, 60000) and (100, 85000), and draw the cost line.",
+      "Mark and label the intersection of the two lines as the break-even point (63, 75790)."
+     ],
+     "answer": "The break-even point is approximately (63, 75790). The profit when 100 LEDs are sold is Rs. 35000.",
+     "figure": "Draw x (number of LEDs) on the horizontal axis and rupees on the vertical axis. Draw the revenue line R(x) = 1200x through (0, 0) and (100, 120000), and the cost line C(x) = 60000 + 250x through (0, 60000) and (100, 85000). Mark their intersection at approximately (63, 75790) as the break-even point.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Review Ex 10 Q1(i)",
+     "stem": "x = 5 represents:",
+     "options": [
+      "x-axis",
+      "y-axis",
+      "line ∥ to x-axis",
+      "line ∥ to y-axis"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "The x-axis is the horizontal line y = 0, not x = 5.",
+      "The y-axis is the vertical line x = 0, not x = 5.",
+      "The equation x = 5 is vertical, so it is not parallel to the x-axis.",
+      "The equation x = 5 is a vertical line parallel to the y-axis."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(ii)",
+     "stem": "Slope of the line y = 5x + 3 is:",
+     "options": [
+      "3",
+      "−3",
+      "5",
+      "−5"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The slope is the coefficient of x, which is 5, not 3.",
+      "The slope is 5, not −3.",
+      "In y = mx + b, the slope m is 5.",
+      "The slope is positive 5, not −5."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(iii)",
+     "stem": "The y-intercepts of y = −2x − 1 is:",
+     "options": [
+      "−2",
+      "2",
+      "−1",
+      "1"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The value −2 is the slope, not the y-intercept.",
+      "The y-intercept is −1, not 2.",
+      "Setting x = 0 gives y = −1, so the y-intercept is −1.",
+      "The y-intercept is −1, not 1."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(iv)",
+     "stem": "The graph of y = x³, cuts the x-axis at:",
+     "options": [
+      "x = 0",
+      "x = 1",
+      "x = −1",
+      "x = 2"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Setting y = x³ equal to zero gives x = 0, where the graph crosses the x-axis.",
+      "At x = 1, y = 1, so the graph is not on the x-axis.",
+      "At x = −1, y = −1, so the graph is not on the x-axis.",
+      "At x = 2, y = 8, so the graph is not on the x-axis."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(v)",
+     "stem": "The graph of 3^x represents:",
+     "options": [
+      "growth",
+      "decay",
+      "both (a)and(b)",
+      "a line"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Since the base 3 is greater than 1, 3^x increases and represents growth.",
+      "Exponential decay occurs when the base is between 0 and 1, unlike the base 3 here.",
+      "The function 3^x shows growth, not both growth and decay.",
+      "The graph of 3^x is curved, not a line."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(vi)",
+     "stem": "The graph of y = −x² + 5 opens:",
+     "options": [
+      "upward",
+      "downward",
+      "left side",
+      "right side"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A quadratic opens upward when its x² coefficient is positive, but here it is negative.",
+      "The negative coefficient of x² makes the parabola open downward.",
+      "Left and right describe directions of opening for sideways parabolas, not this vertical parabola.",
+      "This parabola opens vertically downward, not to the right."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(vii)",
+     "stem": "The graph of y = x² − 9 opens:",
+     "options": [
+      "upward",
+      "downward",
+      "left side",
+      "right side"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The coefficient of x² is positive, so the parabola opens upward.",
+      "A negative x² coefficient would make the parabola open downward, but the coefficient here is positive.",
+      "Left and right describe sideways parabolas, whereas this graph opens vertically.",
+      "This graph opens upward, not to the right."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(viii)",
+     "stem": "y = 5^x is __________ function.",
+     "options": [
+      "linear",
+      "quadratic",
+      "cubic",
+      "exponential"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "A linear function has x to the first power, rather than x as an exponent.",
+      "A quadratic function has x² as its variable term, rather than an exponential expression.",
+      "A cubic function has x³ as its variable term, rather than an exponential expression.",
+      "Because x is the exponent in 5^x, the function is exponential."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(ix)",
+     "stem": "Reciprocal function is:",
+     "options": [
+      "y = 7^x",
+      "y = 2/x",
+      "y = 2x²",
+      "y = 5x³"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The expression 7^x is exponential, not reciprocal.",
+      "The expression 2/x is a constant divided by x, so it is a reciprocal function.",
+      "The expression 2x² is quadratic, not reciprocal.",
+      "The expression 5x³ is cubic, not reciprocal."
+     ]
+    },
+    {
+     "source": "Review Ex 10 Q1(x)",
+     "stem": "y = −3x³ + 7 is __________ function.",
+     "options": [
+      "exponential",
+      "cubic",
+      "linear",
+      "reciprocal"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "An exponential function has the variable in the exponent, but here x is raised to a power.",
+      "The highest power of x is 3, so y = −3x³ + 7 is cubic.",
+      "A linear function has highest power 1, whereas this function has highest power 3.",
+      "A reciprocal function involves a variable in the denominator, which this function does not."
+     ]
+    }
+   ]
+  }
+ ]
+}

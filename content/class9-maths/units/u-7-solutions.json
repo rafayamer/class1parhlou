@@ -1,0 +1,2118 @@
+{
+ "unit": 7,
+ "sections": [
+  {
+   "number": "7.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(i)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x > 0.",
+     "steps": [
+      "The condition x > 0 places P to the right of the y-axis.",
+      "Since x is strictly positive, P cannot lie on the y-axis.",
+      "There is no restriction on y, so P may be above, below, or on the x-axis."
+     ],
+     "answer": "P lies in the open right half-plane, excluding the y-axis.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"Right half plane and negative y-axis\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(ii)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x > 0 and y > 0.",
+     "steps": [
+      "Since x > 0, P lies to the right of the y-axis.",
+      "Since y > 0, P lies above the x-axis.",
+      "Therefore, P lies in the 1st quadrant."
+     ],
+     "answer": "The 1st quadrant",
+     "figure": "",
+     "accept": [
+      [
+       "1st quadrant"
+      ],
+      [
+       "first quadrant"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(iii)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x = 0.",
+     "steps": [
+      "Since x = 0, P lies on the y-axis."
+     ],
+     "answer": "y-axis",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(iv)",
+     "question": "Describe the location in the plane of the point P(x, y), for which y = 0.",
+     "steps": [
+      "Since y = 0, P lies on the x-axis."
+     ],
+     "answer": "x-axis",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(v)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x > 0 and y ≤ 0.",
+     "steps": [
+      "The condition x > 0 places P to the right of the y-axis.",
+      "The condition y < 0 places P in the fourth quadrant.",
+      "The condition y = 0 places P on the positive x-axis; since x > 0, the origin is excluded."
+     ],
+     "answer": "P lies in the fourth quadrant or on the positive x-axis, excluding the origin.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"4th quadrant\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(vi)",
+     "question": "Describe the location in the plane of the point P(x, y), for which y = 0, x = 0.",
+     "steps": [
+      "Since x = 0 and y = 0, P is the point where the x-axis and y-axis intersect.",
+      "Therefore, P is the origin."
+     ],
+     "answer": "Origin",
+     "figure": "",
+     "accept": [
+      [
+       "origin"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(vii)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x = y.",
+     "steps": [
+      "Since x = y, the points have equal x- and y-coordinates.",
+      "The set of such points lies on a straight line through the origin.",
+      "This line bisects the 1st and 3rd quadrants."
+     ],
+     "answer": "It is a line bisecting 1st and 3rd quadrant.",
+     "figure": "",
+     "accept": [
+      [
+       "bisecting 1st and 3rd quadrant"
+      ],
+      [
+       "line x=y"
+      ],
+      [
+       "line through 1st and 3rd quadrant"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(viii)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x ≥ 3.",
+     "steps": [
+      "Since x ≥ 3, the x-coordinate of P is 3 or greater.",
+      "When x = 3, P lies on the line x = 3.",
+      "When x > 3, P lies to the right of the line x = 3.",
+      "Therefore, the set consists of the points on and to the right of the line x = 3."
+     ],
+     "answer": "The set of points lying on and right side of the line x = 3.",
+     "figure": "",
+     "accept": [
+      [
+       "x=3",
+       "right side"
+      ],
+      [
+       "x=3",
+       "on"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(ix)",
+     "question": "Describe the location in the plane of the point P(x, y), for which y > 0.",
+     "steps": [
+      "Since y > 0, the ordinate of P is positive.",
+      "Therefore, P lies above the x-axis."
+     ],
+     "answer": "The set of points lying above the x-axis.",
+     "figure": "",
+     "accept": [
+      [
+       "above",
+       "x-axis"
+      ],
+      [
+       "above",
+       "axis"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q1(x)",
+     "question": "Describe the location in the plane of the point P(x, y), for which x and y have opposite signs.",
+     "steps": [
+      "When x and y have opposite signs, either x < 0 and y > 0, or x > 0 and y < 0.",
+      "If x < 0 and y > 0, P lies in the second quadrant.",
+      "If x > 0 and y < 0, P lies in the fourth quadrant.",
+      "Therefore, the points lie in the second and fourth quadrants."
+     ],
+     "answer": "The set of points in the second and fourth quadrants.",
+     "figure": "",
+     "accept": [
+      [
+       "2nd",
+       "4th",
+       "quadrants"
+      ],
+      [
+       "second",
+       "fourth",
+       "quadrants"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q2(i)",
+     "question": "Find the distance between the points A(6, 7), B(0, −2).",
+     "steps": [
+      "Let A(x₁, y₁) = (6, 7) and B(x₂, y₂) = (0, −2).",
+      "Distance AB = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "AB = √[(0 − 6)² + (−2 − 7)²].",
+      "AB = √[(-6)² + (−9)²].",
+      "AB = √[36 + 81].",
+      "AB = √117.",
+      "AB = 3√13."
+     ],
+     "answer": "3√13",
+     "figure": "",
+     "accept": [
+      [
+       "3sqrt13"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q2(ii)",
+     "question": "Find the distance between the points C(−5, −2), D(3, 2).",
+     "steps": [
+      "Let C(x₁, y₁) = (−5, −2) and D(x₂, y₂) = (3, 2).",
+      "Distance CD = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "CD = √[(3 − (−5))² + (2 − (−2))²].",
+      "CD = √[8² + 4²].",
+      "CD = √[64 + 16].",
+      "CD = √80.",
+      "CD = 4√5."
+     ],
+     "answer": "4√5",
+     "figure": "",
+     "accept": [
+      [
+       "4sqrt5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q2(iii)",
+     "question": "Find the distance between the points L(0, 3), M(−2, −4).",
+     "steps": [
+      "Let L(x₁, y₁) = (0, 3) and M(x₂, y₂) = (−2, −4).",
+      "Distance LM = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "LM = √[(−2 − 0)² + (−4 − 3)²].",
+      "LM = √[(−2)² + (−7)²].",
+      "LM = √[4 + 49].",
+      "LM = √53."
+     ],
+     "answer": "√53",
+     "figure": "",
+     "accept": [
+      [
+       "sqrt53"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q2(iv)",
+     "question": "Find the distance between the points P(−8, −7), Q(0, 0).",
+     "steps": [
+      "Let P(x₁, y₁) = (−8, −7) and Q(x₂, y₂) = (0, 0).",
+      "Distance PQ = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "PQ = √[(0 − (−8))² + (0 − (−7))²].",
+      "PQ = √[8² + 7²].",
+      "PQ = √[64 + 49].",
+      "PQ = √113."
+     ],
+     "answer": "√113",
+     "figure": "",
+     "accept": [
+      [
+       "sqrt113"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(i)(a)",
+     "question": "Find the distance between the two given points A(3, 1), B(−2, −4).",
+     "steps": [
+      "Let A(x₁, y₁) = (3, 1) and B(x₂, y₂) = (−2, −4).",
+      "Distance AB = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "AB = √[(−2 − 3)² + (−4 − 1)²].",
+      "AB = √[(−5)² + (−5)²].",
+      "AB = √[25 + 25].",
+      "AB = √50.",
+      "AB = 5√2."
+     ],
+     "answer": "5√2",
+     "figure": "",
+     "accept": [
+      [
+       "5sqrt2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(i)(b)",
+     "question": "Find the distance between the two given points A(−8, 3), B(2, −1).",
+     "steps": [
+      "Let A(x₁, y₁) = (−8, 3) and B(x₂, y₂) = (2, −1).",
+      "Distance AB = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "AB = √[(2 − (−8))² + (−1 − 3)²].",
+      "AB = √[10² + (−4)²].",
+      "AB = √[100 + 16].",
+      "AB = √116.",
+      "AB = 2√29."
+     ],
+     "answer": "2√29",
+     "figure": "",
+     "accept": [
+      [
+       "2sqrt29"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(i)(c)",
+     "question": "Find the distance between the two given points A(−√5, −1/3), B(−3√5, 5).",
+     "steps": [
+      "Distance between A(x₁, y₁) and B(x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²]",
+      "AB = √[(-3√5 − (-√5))² + (5 − (-1/3))²]",
+      "AB = √[(-2√5)² + (16/3)²]",
+      "AB = √[20 + 256/9]",
+      "AB = √[(180 + 256)/9]",
+      "AB = √(436/9)",
+      "AB = 2√109/3"
+     ],
+     "answer": "2√109/3",
+     "figure": "",
+     "accept": [
+      [
+       "2√109/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(ii)(a)",
+     "question": "Find the midpoint of the line segment joining the two points A(3, 1), B(−2, −4).",
+     "steps": [
+      "Midpoint of A(x₁, y₁) and B(x₂, y₂) = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((3 + (-2))/2, (1 + (-4))/2)",
+      "Midpoint of AB = (1/2, -3/2)"
+     ],
+     "answer": "(1/2, −3/2)",
+     "figure": "",
+     "accept": [
+      [
+       "(1/2, −3/2)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(ii)(b)",
+     "question": "Find the midpoint of the line segment joining the two points A(−8, 3), B(2, −1).",
+     "steps": [
+      "Midpoint of A(x₁, y₁) and B(x₂, y₂) = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((-8 + 2)/2, (3 + (-1))/2)",
+      "Midpoint of AB = (-6/2, 2/2)",
+      "Midpoint of AB = (-3, 1)"
+     ],
+     "answer": "(−3, 1)",
+     "figure": "",
+     "accept": [
+      [
+       "(−3, 1)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q3(ii)(c)",
+     "question": "Find the midpoint of the line segment joining the two points A(−√5, −1/3), B(−3√5, 5).",
+     "steps": [
+      "Midpoint of A(x₁, y₁) and B(x₂, y₂) = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((-√5 + (-3√5))/2, (-1/3 + 5)/2)",
+      "Midpoint of AB = ((-4√5)/2, (14/3)/2)",
+      "Midpoint of AB = (-2√5, 7/3)"
+     ],
+     "answer": "(−2√5, 7/3)",
+     "figure": "",
+     "accept": [
+      [
+       "(−2√5, 7/3)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q4(i)",
+     "question": "Which of the following points are at a distance of 15 units from the origin? (i) (√176, 7).",
+     "steps": [
+      "Distance of (√176, 7) from origin = √[(√176)² + 7²]",
+      "= √(176 + 49)",
+      "= √225",
+      "= 15 units"
+     ],
+     "answer": "(√176, 7) is at a distance of 15 units from the origin.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q4(ii)",
+     "question": "Which of the following points are at a distance of 15 units from the origin? (ii) (10, −10).",
+     "steps": [
+      "Distance of (10, -10) from origin = √[10² + (-10)²]",
+      "= √(100 + 100)",
+      "= √200",
+      "= 10√2 units",
+      "Since 10√2 ≠ 15, (10, -10) is not at a distance of 15 units from the origin."
+     ],
+     "answer": "(10, −10) is not at a distance of 15 units from the origin.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q4(iii)",
+     "question": "Which of the following points are at a distance of 15 units from the origin? (iii) (1, 15).",
+     "steps": [
+      "Distance of (1, 15) from origin = √[1² + 15²]",
+      "= √(1 + 225)",
+      "= √226 units",
+      "Since √226 ≠ 15, (1, 15) is not at a distance of 15 units from the origin."
+     ],
+     "answer": "(1, 15) is not at a distance of 15 units from the origin.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q5(i)",
+     "question": "Show that the points A(0, 2), B(√3, 1) and C(0, −2) are vertices of a right triangle.",
+     "steps": [
+      "AB = √[(√3 − 0)² + (1 − 2)²]",
+      "AB = √(3 + 1)",
+      "AB = 2",
+      "BC = √[(0 − √3)² + (-2 − 1)²]",
+      "BC = √(3 + 9)",
+      "BC = 2√3",
+      "AC = √[(0 − 0)² + (-2 − 2)²]",
+      "AC = √16",
+      "AC = 4",
+      "AB² + BC² = 2² + (2√3)²",
+      "AB² + BC² = 4 + 12 = 16",
+      "AC² = 4² = 16",
+      "Therefore, AB² + BC² = AC².",
+      "Hence, by the converse of Pythagoras’ theorem, triangle ABC is right-angled at B."
+     ],
+     "answer": "The points A(0, 2), B(√3, 1) and C(0, −2) are vertices of a right triangle, right-angled at B.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q5(ii)",
+     "question": "Show that the points A(3, 1), B(−2, −3) and C(2, 2) are vertices of an isosceles triangle.",
+     "steps": [
+      "Using the distance formula,",
+      "AB = √[(-2 − 3)² + (-3 − 1)²]",
+      "AB = √[(-5)² + (-4)²] = √(25 + 16) = √41",
+      "BC = √[(2 − (-2))² + (2 − (-3))²]",
+      "BC = √[4² + 5²] = √(16 + 25) = √41",
+      "AC = √[(2 − 3)² + (2 − 1)²]",
+      "AC = √[(-1)² + 1²] = √2",
+      "Since AB = BC, two sides of △ABC are equal.",
+      "Therefore, △ABC is an isosceles triangle."
+     ],
+     "answer": "AB = BC = √41; therefore, △ABC is an isosceles triangle.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q5(iii)",
+     "question": "Show that the points A(5, 2), B(−2, 3), C(−3, −4) and D(4, −5) are vertices of a parallelogram.",
+     "steps": [
+      "Midpoint of diagonal AC = ((5 + (-3))/2, (2 + (-4))/2)",
+      "Midpoint of AC = (1, −1)",
+      "Midpoint of diagonal BD = ((−2 + 4)/2, (3 + (−5))/2)",
+      "Midpoint of BD = (1, −1)",
+      "The diagonals AC and BD have the same midpoint.",
+      "Therefore, the diagonals of quadrilateral ABCD bisect each other.",
+      "Hence, ABCD is a parallelogram."
+     ],
+     "answer": "The diagonals AC and BD bisect each other; therefore, ABCD is a parallelogram.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q6",
+     "question": "Find h such that the points A(√3, −1), B(0, 2) and C(h, −2) are vertices of a right triangle with right angle at the vertex A.",
+     "steps": [
+      "Since ∠A is a right angle, the slopes of AB and AC are negative reciprocals.",
+      "mAB = (2 − (−1))/(0 − √3) = 3/(−√3) = −√3",
+      "mAC = (−2 − (−1))/(h − √3) = −1/(h − √3)",
+      "mAB × mAC = −1",
+      "(−√3) × [−1/(h − √3)] = −1",
+      "√3/(h − √3) = −1",
+      "√3 = −(h − √3)",
+      "√3 = −h + √3",
+      "h = 0"
+     ],
+     "answer": "h = 0",
+     "figure": "",
+     "accept": [
+      [
+       "h=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q7",
+     "question": "Find h such that the points A(−1, h), B(3, 2) and C(7, 3) are collinear.",
+     "steps": [
+      "Since A, B and C are collinear, the slopes of AB and BC are equal.",
+      "mBC = (3 − 2)/(7 − 3) = 1/4",
+      "mAB = (2 − h)/(3 − (−1)) = (2 − h)/4",
+      "(2 − h)/4 = 1/4",
+      "2 − h = 1",
+      "h = 1"
+     ],
+     "answer": "h = 1",
+     "figure": "",
+     "accept": [
+      [
+       "h=1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q8",
+     "question": "The points A(−5, −2) and B(5, −4) are ends of a diameter of a circle. Find the centre and radius of the circle.",
+     "steps": [
+      "The centre of the circle is the midpoint of diameter AB.",
+      "Centre C = ((−5 + 5)/2, (−2 + (−4))/2)",
+      "C = (0, −3)",
+      "The radius is the distance from C to A.",
+      "r = √[(0 − (−5))² + (−3 − (−2))²]",
+      "r = √[5² + (−1)²] = √(25 + 1) = √26"
+     ],
+     "answer": "Centre C(0, −3); radius = √26",
+     "figure": "",
+     "accept": [
+      [
+       "C(0,-3)",
+       "radius=√26"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q9",
+     "question": "Find h such that the points A(h, 1), B(2, 7) and C(−6, −7) are vertices of a right triangle with right angle at the vertex A.",
+     "steps": [
+      "Since ∠A is a right angle, the slopes of AB and AC are negative reciprocals.",
+      "mAB = (7 − 1)/(2 − h) = 6/(2 − h)",
+      "mAC = (−7 − 1)/(−6 − h) = −8/(−6 − h) = 8/(h + 6)",
+      "mAB × mAC = −1",
+      "[6/(2 − h)] × [8/(h + 6)] = −1",
+      "48/[(2 − h)(h + 6)] = −1",
+      "48 = −(2 − h)(h + 6)",
+      "(2 − h)(h + 6) = −48",
+      "−h² − 4h + 12 = −48",
+      "h² + 4h − 60 = 0",
+      "(h + 10)(h − 6) = 0",
+      "h + 10 = 0 or h − 6 = 0",
+      "h = −10 or h = 6"
+     ],
+     "answer": "h = −10 or h = 6",
+     "figure": "",
+     "accept": [
+      [
+       "h=-10"
+      ],
+      [
+       "h=6"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.1 Q10",
+     "question": "A quadrilateral has the points A(9, 3), B(−7, 7), C(−3, −7) and D(5, −5) as its vertices. Find the midpoints of its sides. Show that the figure formed by joining the midpoints consecutively is a parallelogram.",
+     "steps": [
+      "Let E, F, G and H be the midpoints of AB, BC, CD and DA, respectively.",
+      "E = ((9 + (−7))/2, (3 + 7)/2) = (1, 5)",
+      "F = ((−7 + (−3))/2, (7 + (−7))/2) = (−5, 0)",
+      "G = ((−3 + 5)/2, (−7 + (−5))/2) = (1, −6)",
+      "H = ((5 + 9)/2, (−5 + 3)/2) = (7, −1)",
+      "Midpoint of diagonal EG = ((1 + 1)/2, (5 + (−6))/2) = (1, −1/2)",
+      "Midpoint of diagonal FH = ((−5 + 7)/2, (0 + (−1))/2) = (1, −1/2)",
+      "The diagonals EG and FH have the same midpoint, so they bisect each other.",
+      "Therefore, EFGH is a parallelogram."
+     ],
+     "answer": "The midpoints are E(1, 5), F(−5, 0), G(1, −6) and H(7, −1). Since the diagonals of EFGH bisect each other, EFGH is a parallelogram.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "7.2",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q1(i)",
+     "question": "Find the slope and inclination of the line joining the points: (−2, 4); (5, 11).",
+     "steps": [
+      "The slope of the line joining (−2, 4) and (5, 11) is",
+      "m = (11 − 4)/(5 − (−2))",
+      "m = 7/7 = 1",
+      "Let α be the inclination of the line.",
+      "tan α = m = 1",
+      "α = 45°"
+     ],
+     "answer": "m = 1, α = 45°",
+     "figure": "",
+     "accept": [
+      [
+       "m=1",
+       "45°"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q1(ii)",
+     "question": "Find the slope and inclination of the line joining the points: (3, −2); (2, 7).",
+     "steps": [
+      "Let the points be A(3, −2) and B(2, 7).",
+      "Slope, m = (y₂ − y₁)/(x₂ − x₁)",
+      "m = (7 − (−2))/(2 − 3)",
+      "m = 9/(−1) = −9",
+      "Since the slope is negative, the inclination α lies between 90° and 180°.",
+      "tan α = −9",
+      "α = 180° − tan⁻¹ 9 = 180° − 83°40′ = 96°20′"
+     ],
+     "answer": "m = −9, α = 96°20′",
+     "figure": "",
+     "accept": [
+      [
+       "m=-9"
+      ],
+      [
+       "96°20′"
+      ],
+      [
+       "96°20'"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q1(iii)",
+     "question": "Find the slope and inclination of the line joining the points: (4, 6); (4, 8).",
+     "steps": [
+      "Let the points be A(4, 6) and B(4, 8).",
+      "Slope, m = (y₂ − y₁)/(x₂ − x₁)",
+      "m = (8 − 6)/(4 − 4) = 2/0 = ∞",
+      "The line is vertical, so its inclination is 90°."
+     ],
+     "answer": "m = ∞, α = 90°",
+     "figure": "",
+     "accept": [
+      [
+       "m=∞"
+      ],
+      [
+       "α=90°"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q2(i)",
+     "question": "By means of slopes, show that the following points lie on the same line: A(−1, −3); B(1, 5); C(2, 9).",
+     "steps": [
+      "Slope of AB, m₁ = (5 − (−3))/(1 − (−1)) = 8/2 = 4",
+      "Slope of BC, m₂ = (9 − 5)/(2 − 1) = 4/1 = 4",
+      "Since m₁ = m₂, the points A, B and C lie on the same line."
+     ],
+     "answer": "A, B and C lie on the same line.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q2(ii)",
+     "question": "By means of slopes, show that the following points lie on the same line: P(4, −5); Q(7, 5); R(10, 15).",
+     "steps": [
+      "Slope of PQ, m₁ = (5 − (−5))/(7 − 4) = 10/3",
+      "Slope of QR, m₂ = (15 − 5)/(10 − 7) = 10/3",
+      "Since m₁ = m₂, the points P, Q and R lie on the same line."
+     ],
+     "answer": "P, Q and R lie on the same line.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q2(iii)",
+     "question": "By means of slopes, show that the following points lie on the same line: L(−4, 6); M(3, 8); N(10, 10).",
+     "steps": [
+      "Slope of LM, m₁ = (8 − 6)/(3 − (−4)) = 2/7",
+      "Slope of MN, m₂ = (10 − 8)/(10 − 3) = 2/7",
+      "Since m₁ = m₂, the points L, M and N lie on the same line."
+     ],
+     "answer": "L, M and N lie on the same line.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q2(iv)",
+     "question": "By means of slopes, show that the following points lie on the same line: X(a, 2b); Y(c, a + b); Z(2c − a, 2a).",
+     "steps": [
+      "The coordinates are X(a, 2b), Y(c, a + b), and Z(2c − a, 2a).",
+      "If c ≠ a, slope of XY = ((a + b) − 2b)/(c − a) = (a − b)/(c − a).",
+      "If c ≠ a, slope of XZ = (2a − 2b)/((2c − a) − a) = 2(a − b)/(2(c − a)) = (a − b)/(c − a).",
+      "Thus, when c ≠ a, slope of XY = slope of XZ, so X, Y, and Z lie on the same line.",
+      "If c = a, the x-coordinates of X, Y, and Z are a, a, and 2a − a = a, respectively.",
+      "Thus, when c = a, all three points lie on the vertical line x = a.",
+      "Therefore, for all values of a, b, and c, X, Y, and Z lie on the same line."
+     ],
+     "answer": "X, Y, and Z lie on the same line.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q3(i)",
+     "question": "Find k so that the line joining A(7, 3); B(k, −6) and the line joining C(−4, 5); D(−6, 4) are parallel.",
+     "steps": [
+      "Slope of AB, m₁ = (−6 − 3)/(k − 7) = −9/(k − 7)",
+      "Slope of CD, m₂ = (4 − 5)/(−6 − (−4)) = (−1)/(−2) = 1/2",
+      "For parallel lines, m₁ = m₂.",
+      "−9/(k − 7) = 1/2",
+      "−18 = k − 7",
+      "k = −11"
+     ],
+     "answer": "k = −11",
+     "figure": "",
+     "accept": [
+      [
+       "k=-11"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q3(ii)",
+     "question": "Find k so that the line joining A(7, 3); B(k, −6) and the line joining C(−4, 5); D(−6, 4) are perpendicular.",
+     "steps": [
+      "Slope of AB, m₁ = (−6 − 3)/(k − 7) = −9/(k − 7)",
+      "Slope of CD, m₂ = (4 − 5)/(−6 − (−4)) = (−1)/(−2) = 1/2",
+      "For perpendicular lines, m₁m₂ = −1.",
+      "(−9/(k − 7))(1/2) = −1",
+      "−9/(2(k − 7)) = −1",
+      "−9 = −2(k − 7)",
+      "9 = 2k − 14",
+      "2k = 23",
+      "k = 23/2"
+     ],
+     "answer": "k = 23/2",
+     "figure": "",
+     "accept": [
+      [
+       "k=23/2"
+      ],
+      [
+       "k=11.5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q4",
+     "question": "Using slopes, show that the triangle with its vertices A(6, 1), B(2, 7) and C(−6, −7) is a right triangle.",
+     "steps": [
+      "Slope of AB, m₁ = (7 − 1)/(2 − 6) = 6/(−4) = −3/2.",
+      "Slope of AC, m₂ = (−7 − 1)/(−6 − 6) = (−8)/(−12) = 2/3.",
+      "m₁m₂ = (−3/2)(2/3) = −1.",
+      "Therefore, AB ⟂ AC, so ∠A = 90° and △ABC is a right triangle."
+     ],
+     "answer": "△ABC is a right triangle, right-angled at A.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q5(a)",
+     "question": "Two pairs of points are given. Find whether the two lines determined by these points are (i) parallel (ii) perpendicular (iii) none: (1, −2), (2, 4) and (4, 1), (−8, 2).",
+     "steps": [
+      "Slope of the line through (1, −2) and (2, 4), m₁ = (4 − (−2))/(2 − 1) = 6.",
+      "Slope of the line through (4, 1) and (−8, 2), m₂ = (2 − 1)/(−8 − 4) = −1/12.",
+      "Since m₁ ≠ m₂, the lines are not parallel.",
+      "Also, m₁m₂ = 6(−1/12) = −1/2 ≠ −1, so the lines are not perpendicular."
+     ],
+     "answer": "The lines are neither parallel nor perpendicular.",
+     "figure": "",
+     "accept": [
+      [
+       "neither parallel nor perpendicular"
+      ],
+      [
+       "none"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q5(b)",
+     "question": "Two pairs of points are given. Find whether the two lines determined by these points are (i) parallel (ii) perpendicular (iii) none: (−3, 4), (6, 2) and (4, 5), (−2, −7).",
+     "steps": [
+      "Slope of the line through (−3, 4) and (6, 2), m₁ = (2 − 4)/(6 − (−3)) = −2/9.",
+      "Slope of the line through (4, 5) and (−2, −7), m₂ = (−7 − 5)/(−2 − 4) = 2.",
+      "Since m₁ ≠ m₂, the lines are not parallel.",
+      "Also, m₁m₂ = (−2/9)(2) = −4/9 ≠ −1, so the lines are not perpendicular."
+     ],
+     "answer": "The lines are neither parallel nor perpendicular.",
+     "figure": "",
+     "accept": [
+      [
+       "neither parallel nor perpendicular"
+      ],
+      [
+       "none"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(a)",
+     "question": "Find an equation of the horizontal line through (7, −9).",
+     "steps": [
+      "The equation of a horizontal line through (7, −9) is y = −9.",
+      "Therefore, y + 9 = 0."
+     ],
+     "answer": "y + 9 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "y+9=0"
+      ],
+      [
+       "y=-9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(b)",
+     "question": "Find an equation of the vertical line through (−5, 3).",
+     "steps": [
+      "The equation of a vertical line through (−5, 3) is x = −5.",
+      "Therefore, x + 5 = 0."
+     ],
+     "answer": "x + 5 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "x+5=0"
+      ],
+      [
+       "x=-5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(c)",
+     "question": "Find an equation of the line through A(−6, 5) having slope 7.",
+     "steps": [
+      "Using the point-slope form, y − y₁ = m(x − x₁).",
+      "Here, m = 7 and (x₁, y₁) = (−6, 5).",
+      "y − 5 = 7(x − (−6)).",
+      "y − 5 = 7(x + 6).",
+      "y − 5 = 7x + 42.",
+      "7x − y + 47 = 0."
+     ],
+     "answer": "7x − y + 47 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "7x-y+47=0"
+      ],
+      [
+       "y=7x+47"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(d)",
+     "question": "Find an equation of the line through (8, −3) having slope 0.",
+     "steps": [
+      "Using the point-slope form, y − y₁ = m(x − x₁).",
+      "Here, m = 0 and (x₁, y₁) = (8, −3).",
+      "y − (−3) = 0(x − 8).",
+      "y + 3 = 0."
+     ],
+     "answer": "y + 3 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "y+3=0"
+      ],
+      [
+       "y=-3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(e)",
+     "question": "Find an equation of the line through (−8, 5) having slope undefined.",
+     "steps": [
+      "A line with undefined slope is vertical.",
+      "The equation of a vertical line through (−8, 5) is x = −8.",
+      "Therefore, x + 8 = 0."
+     ],
+     "answer": "x + 8 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "x+8=0"
+      ],
+      [
+       "x=-8"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(f)",
+     "question": "Find an equation of the line through (−5, −3) and (9, −1).",
+     "steps": [
+      "The slope of the line through (−5, −3) and (9, −1) is m = (−1 − (−3))/(9 − (−5)) = 2/14 = 1/7.",
+      "Using the point-slope form y − y₁ = m(x − x₁), with (x₁, y₁) = (−5, −3), we get y − (−3) = 1/7[x − (−5)].",
+      "y + 3 = 1/7(x + 5).",
+      "7y + 21 = x + 5.",
+      "x − 7y − 16 = 0."
+     ],
+     "answer": "x − 7y − 16 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "x-7y-16=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(g)",
+     "question": "Find an equation of the line with y-intercept: −7 and slope: −5.",
+     "steps": [
+      "The slope-intercept form of a line is y = mx + c.",
+      "Here, m = −5 and c = −7.",
+      "Substituting these values, y = −5x − 7.",
+      "5x + y + 7 = 0."
+     ],
+     "answer": "5x + y + 7 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "5x+y+7=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(h)",
+     "question": "Find an equation of the line with x-intercept: −3 and y-intercept: 4.",
+     "steps": [
+      "The x-intercept is −3 and the y-intercept is 4.",
+      "Using the two-intercept form x/a + y/b = 1, we get x/(−3) + y/4 = 1.",
+      "Multiplying both sides by 12, −4x + 3y = 12.",
+      "4x − 3y + 12 = 0."
+     ],
+     "answer": "4x − 3y + 12 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "4x-3y+12=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q6(i)",
+     "question": "Find an equation of the line with x-intercept: −9 and slope: −4.",
+     "steps": [
+      "The x-intercept is −9, so the line passes through (−9, 0).",
+      "Using the point-slope form y − y₁ = m(x − x₁), with m = −4 and (x₁, y₁) = (−9, 0), we get y − 0 = −4[x − (−9)].",
+      "y = −4(x + 9).",
+      "4x + y + 36 = 0."
+     ],
+     "answer": "4x + y + 36 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "4x+y+36=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q7",
+     "question": "Find an equation of the perpendicular bisector of the segment joining the points A(3, 5) and B(9, 8).",
+     "steps": [
+      "The midpoint of AB is ((3 + 9)/2, (5 + 8)/2) = (6, 13/2).",
+      "The slope of AB is (8 − 5)/(9 − 3) = 3/6 = 1/2.",
+      "The slope of the perpendicular bisector is −2.",
+      "Using the point-slope form through (6, 13/2), y − 13/2 = −2(x − 6).",
+      "2y − 13 = −4x + 24.",
+      "4x + 2y − 37 = 0."
+     ],
+     "answer": "4x + 2y − 37 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "4x+2y-37=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q8",
+     "question": "Find an equation of the line through (−4, −6) and perpendicular to a line having slope −3/2.",
+     "steps": [
+      "The slope of the given line is −3/2.",
+      "The slope of a line perpendicular to it is the negative reciprocal, m = 2/3.",
+      "Using the point-slope form through (−4, −6), y − (−6) = 2/3[x − (−4)].",
+      "y + 6 = 2/3(x + 4).",
+      "3y + 18 = 2x + 8.",
+      "2x − 3y − 10 = 0."
+     ],
+     "answer": "2x − 3y − 10 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "2x-3y-10=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q9",
+     "question": "Find an equation of the line through (11, −5) and parallel to a line with slope −24.",
+     "steps": [
+      "The required line is parallel to a line with slope −24, so its slope is −24.",
+      "Using the point-slope form through (11, −5), y − (−5) = −24(x − 11).",
+      "y + 5 = −24x + 264.",
+      "24x + y − 259 = 0."
+     ],
+     "answer": "24x + y − 259 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "24x+y-259=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q10(a)",
+     "question": "Convert each of the following equations into slope intercept form, two intercept form and normal form: 2x − 4y + 11 = 0.",
+     "steps": [
+      "Given equation: 2x − 4y + 11 = 0.",
+      "(i) Slope-intercept form is y = mx + c.",
+      "−4y = −2x − 11.",
+      "y = 1/2 x + 11/4.",
+      "(ii) For the x-intercept, put y = 0: 2x + 11 = 0, so x = −11/2.",
+      "For the y-intercept, put x = 0: −4y + 11 = 0, so y = 11/4.",
+      "Using the two-intercept form x/a + y/b = 1, x/(−11/2) + y/(11/4) = 1.",
+      "(iii) The normal form is x cos α + y sin α = p, where p > 0.",
+      "Dividing 2x − 4y + 11 = 0 by −2√5 gives −x/√5 + 2y/√5 = 11/(2√5).",
+      "cos α = −1/√5 and sin α = 2/√5, so α = 116.57°.",
+      "The normal form is x cos (116.57°) + y sin (116.57°) = 11/(2√5)."
+     ],
+     "answer": "(i) y = 1/2 x + 11/4  (ii) x/(−11/2) + y/(11/4) = 1  (iii) x cos (116.57°) + y sin (116.57°) = 11/(2√5)",
+     "figure": "",
+     "accept": [
+      [
+       "y=1/2x+11/4",
+       "x/(-11/2)+y/(11/4)=1",
+       "xcos(116.57°)+ysin(116.57°)=11/(2√5)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q10(b)",
+     "question": "Convert each of the following equations into slope intercept form, two intercept form and normal form: 4x + 7y − 2 = 0.",
+     "steps": [
+      "Given: 4x + 7y − 2 = 0",
+      "7y = −4x + 2",
+      "y = −4/7 x + 2/7",
+      "For the x-intercept, put y = 0: 4x − 2 = 0, so x = 1/2.",
+      "For the y-intercept, put x = 0: 7y − 2 = 0, so y = 2/7.",
+      "Thus, the two-intercept form is x/(1/2) + y/(2/7) = 1.",
+      "4x + 7y = 2",
+      "Divide both sides by √(4² + 7²) = √65: (4/√65)x + (7/√65)y = 2/√65.",
+      "cos α = 4/√65 and sin α = 7/√65, so α ≈ 60.26°.",
+      "Thus, the normal form is x cos(60.26°) + y sin(60.26°) = 2/√65."
+     ],
+     "answer": "(i) y = −4/7 x + 2/7  (ii) x/(1/2) + y/(2/7) = 1  (iii) x cos(60.26°) + y sin(60.26°) = 2/√65",
+     "figure": "",
+     "accept": [
+      [
+       "y=-4/7x+2/7"
+      ],
+      [
+       "x/(1/2)+y/(2/7)=1"
+      ],
+      [
+       "xcos60.26+y sin60.26=2/sqrt65"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q10(c)",
+     "question": "Convert each of the following equations into slope intercept form, two intercept form and normal form: 15y − 8x + 3 = 0.",
+     "steps": [
+      "Given: 15y − 8x + 3 = 0",
+      "15y = 8x − 3",
+      "y = 8/15 x − 1/5",
+      "For the x-intercept, put y = 0: −8x + 3 = 0, so x = 3/8.",
+      "For the y-intercept, put x = 0: 15y + 3 = 0, so y = −1/5.",
+      "Thus, the two-intercept form is x/(3/8) + y/(−1/5) = 1.",
+      "−8x + 15y = −3",
+      "Multiply both sides by −1: 8x − 15y = 3.",
+      "Divide both sides by √(8² + (−15)²) = 17: (8/17)x + (−15/17)y = 3/17.",
+      "cos α = 8/17 and sin α = −15/17, so α ≈ 298.07°.",
+      "Thus, the normal form is x cos(298.07°) + y sin(298.07°) = 3/17."
+     ],
+     "answer": "(i) y = 8/15 x − 1/5  (ii) x/(3/8) + y/(−1/5) = 1  (iii) x cos(298.07°) + y sin(298.07°) = 3/17",
+     "figure": "",
+     "accept": [
+      [
+       "y=8/15x-1/5"
+      ],
+      [
+       "x/(3/8)+y/(-1/5)=1"
+      ],
+      [
+       "xcos298.07+y sin298.07=3/17"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q11(a)",
+     "question": "In each of the following check whether the two lines are (i) parallel (ii) perpendicular (iii) neither parallel nor perpendicular: 2x + y − 3 = 0 ; 4x + 2y + 5 = 0.",
+     "steps": [
+      "First line: 2x + y − 3 = 0",
+      "y = −2x + 3, so its slope is m₁ = −2.",
+      "Second line: 4x + 2y + 5 = 0",
+      "2y = −4x − 5",
+      "y = −2x − 5/2, so its slope is m₂ = −2.",
+      "Since m₁ = m₂, the two lines are parallel."
+     ],
+     "answer": "The two lines are parallel.",
+     "figure": "",
+     "accept": [
+      [
+       "parallel"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q11(b)",
+     "question": "In each of the following check whether the two lines are (i) parallel (ii) perpendicular (iii) neither parallel nor perpendicular: 3y = 2x + 5 ; 3x + 2y − 8 = 0.",
+     "steps": [
+      "First line: 3y = 2x + 5",
+      "y = 2/3 x + 5/3, so its slope is m₁ = 2/3.",
+      "Second line: 3x + 2y − 8 = 0",
+      "2y = −3x + 8",
+      "y = −3/2 x + 4, so its slope is m₂ = −3/2.",
+      "m₁m₂ = (2/3)(−3/2) = −1.",
+      "Therefore, the two lines are perpendicular."
+     ],
+     "answer": "The two lines are perpendicular.",
+     "figure": "",
+     "accept": [
+      [
+       "perpendicular"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q11(c)",
+     "question": "In each of the following check whether the two lines are (i) parallel (ii) perpendicular (iii) neither parallel nor perpendicular: 4y + 2x − 1 = 0 ; x − 2y − 7 = 0.",
+     "steps": [
+      "First line: 4y + 2x − 1 = 0",
+      "4y = −2x + 1",
+      "y = −1/2 x + 1/4, so its slope is m₁ = −1/2.",
+      "Second line: x − 2y − 7 = 0",
+      "−2y = −x + 7",
+      "y = 1/2 x − 7/2, so its slope is m₂ = 1/2.",
+      "Since m₁ ≠ m₂, the lines are not parallel.",
+      "m₁m₂ = (−1/2)(1/2) = −1/4 ≠ −1, so the lines are not perpendicular.",
+      "Therefore, the two lines are neither parallel nor perpendicular."
+     ],
+     "answer": "The two lines are neither parallel nor perpendicular.",
+     "figure": "",
+     "accept": [
+      [
+       "neither parallel nor perpendicular"
+      ],
+      [
+       "neither"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q12",
+     "question": "Find an equation of the line through (−4, 7) and parallel to the line 2x − 7y+4=0.",
+     "steps": [
+      "The required line is parallel to 2x − 7y + 4 = 0, so let its equation be 2x − 7y + c = 0.",
+      "It passes through (−4, 7).",
+      "2(−4) − 7(7) + c = 0",
+      "−8 − 49 + c = 0",
+      "c = 57",
+      "Therefore, the required equation is 2x − 7y + 57 = 0."
+     ],
+     "answer": "2x − 7y + 57 = 0",
+     "figure": "",
+     "accept": [
+      [
+       "2x-7y+57=0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.2 Q13",
+     "question": "Find an equation of the line through (5, −8) and perpendicular to the join of A(−15, −8), B(10, 7).",
+     "steps": [
+      "Slope of AB = (7 − (−8))/(10 − (−15)) = 15/25 = 3/5.",
+      "The slope of a line perpendicular to AB is −5/3.",
+      "Using the point-slope form through (5, −8), y − (−8) = (−5/3)(x − 5).",
+      "3(y + 8) = −5(x − 5).",
+      "3y + 24 = −5x + 25.",
+      "5x + 3y − 1 = 0."
+     ],
+     "answer": "5x + 3y − 1 = 0.",
+     "figure": "",
+     "accept": [
+      [
+       "5x+3y-1=0"
+      ],
+      [
+       "y+8=-5/3(x-5)"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"x + y + 3 = 0\"; the checked working above gives this answer."
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "7.3",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q1",
+     "question": "If the houses of two friends are represented by coordinates (2, 6) and (9, 12) on a grid. Find the straight line distance between their houses if the grid units represent kilometres?",
+     "steps": [
+      "The coordinates of the houses are A(2, 6) and B(9, 12).",
+      "Distance AB = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "Distance AB = √[(9 − 2)² + (12 − 6)²].",
+      "Distance AB = √[7² + 6²].",
+      "Distance AB = √(49 + 36) = √85 km.",
+      "√85 ≈ 9.22, so the distance is approximately 9.22 km."
+     ],
+     "answer": "√85 km ≈ 9.22 km",
+     "figure": "",
+     "accept": [
+      [
+       "sqrt85"
+      ],
+      [
+       "9.22 km"
+      ],
+      [
+       "9.2 km"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q2",
+     "question": "Consider a straight trail (represented by coordinate plane) that starts at point (5, 7) and ends at point (15, 3). What are the coordinates of the midpoint?",
+     "steps": [
+      "Let the endpoints be A(5, 7) and B(15, 3).",
+      "Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((5 + 15)/2, (7 + 3)/2)",
+      "= (20/2, 10/2)",
+      "= (10, 5)"
+     ],
+     "answer": "(10, 5)",
+     "figure": "",
+     "accept": [
+      [
+       "(10,5)"
+      ],
+      [
+       "10,5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q3",
+     "question": "An architect is designing a park with two buildings located at (10, 8) and (4, 3) on the grid. Calculate the straight-line distance between the buildings. Assume the coordinates are in metres.",
+     "steps": [
+      "Let the buildings be at A(10, 8) and B(4, 3).",
+      "Distance AB = √((x₂ − x₁)² + (y₂ − y₁)²)",
+      "AB = √((10 − 4)² + (8 − 3)²)",
+      "= √(6² + 5²)",
+      "= √(36 + 25)",
+      "= √61",
+      "≈ 7.81 m"
+     ],
+     "answer": "√61 ≈ 7.81 m",
+     "figure": "",
+     "accept": [
+      [
+       "√61"
+      ],
+      [
+       "7.81"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q4",
+     "question": "A delivery driver needs to calculate the distance between two delivery locations. One location is at (7, 2) and the other is at (12, 10) on the city grid map, where each unit represents kilometres. What is the distance between the two locations?",
+     "steps": [
+      "Let the delivery locations be A(7, 2) and B(12, 10).",
+      "Distance AB = √((x₂ − x₁)² + (y₂ − y₁)²)",
+      "AB = √((12 − 7)² + (10 − 2)²)",
+      "= √(5² + 8²)",
+      "= √(25 + 64)",
+      "= √89",
+      "≈ 9.43 km"
+     ],
+     "answer": "√89 ≈ 9.43 km",
+     "figure": "",
+     "accept": [
+      [
+       "√89"
+      ],
+      [
+       "9.43"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q5",
+     "question": "The start and end points of a race track are given by coordinates (3, 9) and (9, 13). What is the midpoint of the track?",
+     "steps": [
+      "Let the endpoints be A(3, 9) and B(9, 13).",
+      "Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((3 + 9)/2, (9 + 13)/2)",
+      "= (12/2, 22/2)",
+      "= (6, 11)"
+     ],
+     "answer": "(6, 11)",
+     "figure": "",
+     "accept": [
+      [
+       "(6,11)"
+      ],
+      [
+       "6,11"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q6",
+     "question": "The coordinates of two points on a road are A(3, 4) and B(7, 10). Find the midpoint of the road.",
+     "steps": [
+      "Let the endpoints be A(3, 4) and B(7, 10).",
+      "Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+      "Midpoint of AB = ((3 + 7)/2, (4 + 10)/2)",
+      "= (10/2, 14/2)",
+      "= (5, 7)"
+     ],
+     "answer": "(5, 7)",
+     "figure": "",
+     "accept": [
+      [
+       "(5,7)"
+      ],
+      [
+       "5,7"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q7",
+     "question": "A ship is navigating from port A located at (12° N, 65° W) to port B at (20° N, 45° W). If the ship travels along the shortest path on the surface of the Earth, calculate the straight line distance between the points.",
+     "steps": [],
+     "answer": "4√29 ≈ 21.5 units",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q8",
+     "question": "Farah is fencing around a rectangular field with corners at (0,0), (0,5), (8, 5) and (8, 0). How much fencing material will she need to cover the entire perimeter of the field?",
+     "steps": [
+      "The rectangular field has vertices A(0, 0), B(0, 5), C(8, 5) and D(8, 0).",
+      "AB = 5 − 0 = 5 units and BC = 8 − 0 = 8 units.",
+      "Perimeter of the field = 2(AB + BC)",
+      "= 2(5 + 8)",
+      "= 2 × 13",
+      "= 26 units"
+     ],
+     "answer": "26 units",
+     "figure": "",
+     "accept": [
+      [
+       "26"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q9",
+     "question": "An airplane is flying from city X at (40° N, 100° W) to city Y at (50° N, 80° W). Use coordinate geometry, calculate the shortest distance between these two cities.",
+     "steps": [],
+     "answer": "10√5 ≈ 22.4 units",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q10",
+     "question": "A land surveyor is marking out a rectangular plot of land with corners at (3, 1), (3, 6), (8, 6), and (8, 1). Calculate the perimeter.",
+     "steps": [
+      "The length of the plot is the difference between the x-coordinates: 8 − 3 = 5 units.",
+      "The breadth of the plot is the difference between the y-coordinates: 6 − 1 = 5 units.",
+      "Perimeter of a rectangle = 2(length + breadth).",
+      "Perimeter = 2(5 + 5) = 20 units."
+     ],
+     "answer": "Perimeter = 20 units",
+     "figure": "",
+     "accept": [
+      [
+       "20"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 7.3 Q11",
+     "question": "A landscaper needs to install a fence around a rectangular garden. The garden has its corners at the coordinates: A(0, 0), B(5, 0), C(5, 3), and D(0, 3). How much fencing is required?",
+     "steps": [
+      "AB = 5 − 0 = 5 units.",
+      "BC = 3 − 0 = 3 units.",
+      "Perimeter of a rectangle = 2(length + breadth).",
+      "Perimeter = 2(5 + 3) = 16 units."
+     ],
+     "answer": "16 units",
+     "figure": "",
+     "accept": [
+      [
+       "16"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "7.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q2",
+     "question": "Find the distance between two points A(2, 3) and B(7, 8) on a coordinate plane.",
+     "steps": [
+      "Distance between A(x₁, y₁) and B(x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "AB = √[(7 − 2)² + (8 − 3)²].",
+      "AB = √[5² + 5²].",
+      "AB = √[25 + 25] = √50.",
+      "AB = 5√2."
+     ],
+     "answer": "5√2",
+     "figure": "",
+     "accept": [
+      [
+       "5√2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q3",
+     "question": "Find the midpoint of the line segment joining the points (4, −2) and (−6, 3).",
+     "steps": [
+      "Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2).",
+      "Midpoint = ((4 + (−6))/2, (−2 + 3)/2).",
+      "Midpoint = (−2/2, 1/2).",
+      "Midpoint = (−1, 1/2)."
+     ],
+     "answer": "(−1, 1/2)",
+     "figure": "",
+     "accept": [
+      [
+       "-1",
+       "1/2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q4",
+     "question": "Calculate the gradient (slope) of the line passing through the points (1, 2) and (4, 6).",
+     "steps": [
+      "Gradient m = (y₂ − y₁)/(x₂ − x₁).",
+      "m = (6 − 2)/(4 − 1).",
+      "m = 4/3."
+     ],
+     "answer": "4/3",
+     "figure": "",
+     "accept": [
+      [
+       "4/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q5",
+     "question": "Find the equation of the line in the form y = mx + c that passes through the points (3, 7) and (5, 11).",
+     "steps": [
+      "Gradient m = (y₂ − y₁)/(x₂ − x₁).",
+      "m = (11 − 7)/(5 − 3) = 4/2 = 2.",
+      "The equation of the line is y = mx + c.",
+      "Substituting m = 2 and the point (3, 7), 7 = 2(3) + c.",
+      "7 = 6 + c, so c = 1.",
+      "Therefore, y = 2x + 1."
+     ],
+     "answer": "y = 2x + 1",
+     "figure": "",
+     "accept": [
+      [
+       "y=2x+1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q6",
+     "question": "If two lines are parallel and one line has a gradient of 2/3, what is the gradient of the other line?",
+     "steps": [
+      "Parallel lines have equal gradients.",
+      "Therefore, the gradient of the other line is 2/3."
+     ],
+     "answer": "2/3",
+     "figure": "",
+     "accept": [
+      [
+       "2/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q7",
+     "question": "An airplane needs to fly from city A at coordinates (12, 5) to city B at coordinates (8, −4). Calculate the straight-line distance between these two cities.",
+     "steps": [
+      "Distance between A(x₁, y₁) and B(x₂, y₂) = √[(x₂ − x₁)² + (y₂ − y₁)²].",
+      "AB = √[(8 − 12)² + (−4 − 5)²].",
+      "AB = √[(−4)² + (−9)²].",
+      "AB = √(16 + 81) = √97.",
+      "AB ≈ 9.85 units."
+     ],
+     "answer": "√97 ≈ 9.85 units",
+     "figure": "",
+     "accept": [
+      [
+       "√97"
+      ],
+      [
+       "9.85"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q8",
+     "question": "In a landscaping project, the path starts at (2, 3) and ends at (10, 7). Find the midpoint.",
+     "steps": [
+      "Let the endpoints be A(2, 3) and B(10, 7).",
+      "Midpoint of AB = ((x₁ + x₂)/2, (y₁ + y₂)/2).",
+      "Midpoint of AB = ((2 + 10)/2, (3 + 7)/2).",
+      "Midpoint of AB = (12/2, 10/2).",
+      "Midpoint of AB = (6, 5)."
+     ],
+     "answer": "(6, 5)",
+     "figure": "",
+     "accept": [
+      [
+       "(6,5)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q9",
+     "question": "A drone is flying from point (2, 3) to point (10, 15) on the grid. Calculate the gradient of the line along which the drone is flying and the total distance travelled.",
+     "steps": [
+      "Let the points be A(2, 3) and B(10, 15).",
+      "Gradient = (y₂ − y₁)/(x₂ − x₁).",
+      "Gradient = (15 − 3)/(10 − 2).",
+      "Gradient = 12/8 = 3/2.",
+      "Distance AB = √((x₂ − x₁)² + (y₂ − y₁)²).",
+      "Distance AB = √((10 − 2)² + (15 − 3)²).",
+      "Distance AB = √(8² + 12²).",
+      "Distance AB = √(64 + 144) = √208.",
+      "Distance AB = 4√13 ≈ 14.4 units."
+     ],
+     "answer": "Gradient = 3/2; distance travelled = 4√13 ≈ 14.4 units",
+     "figure": "",
+     "accept": [
+      [
+       "3/2",
+       "4√13"
+      ],
+      [
+       "3/2",
+       "14.4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(a)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Slope-intercept form",
+     "steps": [
+      "Slope-intercept form is y = mx + c.",
+      "Here, m = −3 and c = 2.",
+      "Substituting these values, y = −3x + 2."
+     ],
+     "answer": "y = −3x + 2",
+     "figure": "",
+     "accept": [
+      [
+       "y=-3x+2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(b)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Point-slope form using the point (1, 2)",
+     "steps": [
+      "Point-slope form is y − y₁ = m(x − x₁).",
+      "Here, m = −3 and (x₁, y₁) = (1, 2).",
+      "Substituting these values, y − 2 = −3(x − 1)."
+     ],
+     "answer": "y − 2 = −3(x − 1)",
+     "figure": "",
+     "accept": [
+      [
+       "y-2=-3(x-1)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(c)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Two-point form using the points (1, 2) and (4, −7)",
+     "steps": [
+      "Two-point form is (y − y₁)/(y₂ − y₁) = (x − x₁)/(x₂ − x₁).",
+      "Here, (x₁, y₁) = (1, 2) and (x₂, y₂) = (4, −7).",
+      "Substituting these values, (y − 2)/(−7 − 2) = (x − 1)/(4 − 1)."
+     ],
+     "answer": "(y − 2)/(−7 − 2) = (x − 1)/(4 − 1)",
+     "figure": "",
+     "accept": [
+      [
+       "(y-2)/(-7-2)=(x-1)/(4-1)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(d)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Intercepts form",
+     "steps": [
+      "The line is y = −3x + 2.",
+      "For the x-intercept, put y = 0: 0 = −3x + 2.",
+      "Thus, 3x = 2 and x = 2/3.",
+      "For the y-intercept, put x = 0: y = 2.",
+      "Intercepts form is y/b + x/a = 1, where a and b are the x- and y-intercepts.",
+      "Substituting a = 2/3 and b = 2, y/2 + x/(2/3) = 1."
+     ],
+     "answer": "y/2 + x/(2/3) = 1",
+     "figure": "",
+     "accept": [
+      [
+       "y/2+x/(2/3)=1"
+      ],
+      [
+       "x/(2/3)+y/2=1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(e)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Symmetric form",
+     "steps": [
+      "The line is y = −3x + 2.",
+      "Rearranging, 3x + y = 2.",
+      "Divide each term by √10: 3x/√10 + y/√10 = 2/√10.",
+      "Writing the terms in the required order, y/√10 + 3x/√10 = 2/√10."
+     ],
+     "answer": "y/√10 + 3x/√10 = 2/√10",
+     "figure": "",
+     "accept": [
+      [
+       "y/√10+3x/√10=2/√10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 7 Q10(f)",
+     "question": "For a line with a gradient of −3 and a y-intercept of 2, write the equation of the line in: Normal form",
+     "steps": [
+      "The equation of a line in normal form is x cos α + y sin α = p.",
+      "The given gradient is −3, so the line is 3x + y = c.",
+      "Since the y-intercept is 2, the line passes through (0, 2), giving c = 2.",
+      "Thus, the line is 3x + y = 2.",
+      "The coefficients of x and y are 3 and 1, so the length of the normal vector is √(3² + 1²) = √10.",
+      "Dividing 3x + y = 2 by √10 gives (3/√10)x + (1/√10)y = 2/√10.",
+      "Therefore, cos α = 3/√10 and sin α = 1/√10, so α ≈ 18.435°.",
+      "The normal form is x cos 18.435° + y sin 18.435° = 2/√10."
+     ],
+     "answer": "x cos 18.435° + y sin 18.435° = 2/√10.",
+     "figure": "",
+     "accept": [
+      [
+       "x cos 18.435"
+      ],
+      [
+       "3x+y=2"
+      ],
+      [
+       "3x+y-2=0"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"x cos(−71.56°) + y sin(−71.56°) = 2/√10\"; the checked working above gives this answer."
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Review Ex 7 Q1(i)",
+     "stem": "The equation of a straight line in the slope-intercept form is written as:",
+     "options": [
+      "(a) y = m(x + c)",
+      "(b) y − y₁ = m(x − x₁)",
+      "(c) y = c + mx",
+      "(d) ax + by + c = 0"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is not the standard slope-intercept form because the intercept is not written as a separate constant term.",
+      "This is the point-slope form, not the slope-intercept form.",
+      "This is the slope-intercept form, with slope m and y-intercept c.",
+      "This is the general form of a straight-line equation, not the slope-intercept form."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(ii)",
+     "stem": "The gradients of two parallel lines are:",
+     "options": [
+      "(a) equal",
+      "(b) zero",
+      "(c) negative reciprocals of each other",
+      "(d) always undefined"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Parallel nonvertical lines have equal gradients.",
+      "Parallel lines need not have zero gradients.",
+      "Negative reciprocal gradients indicate perpendicular lines, not parallel lines.",
+      "Parallel lines can have defined gradients, so they are not always undefined."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(iii)",
+     "stem": "If the product of the gradients of two lines is −1, then the lines are:",
+     "options": [
+      "(a) Parallel",
+      "(b) perpendicular",
+      "(c) Collinear",
+      "(d) coincident"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Parallel lines have equal gradients rather than gradients whose product is −1.",
+      "For two nonvertical lines, gradients with product −1 mean the lines are perpendicular.",
+      "Collinear describes points on the same line, not the relation indicated by the gradients.",
+      "Coincident lines have the same gradient, so their gradient product is not −1."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(iv)",
+     "stem": "Distance between two points P(1, 2) and Q(4, 6) is:",
+     "options": [
+      "(a) 5",
+      "(b) 6",
+      "(c) √13",
+      "(d) 4"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The distance is √((4−1)²+(6−2)²)=√25=5.",
+      "The distance formula gives 5, not 6.",
+      "The coordinate differences yield √(9+16)=5, not √13.",
+      "The distance is 5, not 4."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(v)",
+     "stem": "The midpoint of a line segment with endpoints (−2, 4) and (6, −2) is:",
+     "options": [
+      "(a) (4, 2)",
+      "(b) (2, 1)",
+      "(c) (1, 1)",
+      "(d) (0, 0)"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The midpoint coordinates are (2, 1), not (4, 2).",
+      "Averaging the x-coordinates and y-coordinates gives ((−2+6)/2, (4−2)/2)=(2, 1).",
+      "The midpoint is (2, 1), not (1, 1).",
+      "The midpoint is (2, 1), not (0, 0)."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(vi)",
+     "stem": "A line passing through points (1, 2) and (4, 5) is:",
+     "options": [
+      "(a) y = x + 1",
+      "(b) y = 2x + 3",
+      "(c) y = 3x − 2",
+      "(d) y = x + 2"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The line has slope (5−2)/(4−1)=1 and passes through (1, 2), giving y=x+1.",
+      "This equation does not pass through (1, 2), since it gives y=5 there.",
+      "This equation does not pass through (1, 2), since it gives y=1 there.",
+      "This equation gives y=3 at x=1, so it does not pass through (1, 2)."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(vii)",
+     "stem": "The equation of a line in point-slope form is:",
+     "options": [
+      "(a) y = m(x + c)",
+      "(b) y − y₁ = m(x − x₁)",
+      "(c) y = c + mx",
+      "(d) ax + by + c = 0"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This is not the standard point-slope form.",
+      "This is the point-slope form for a line with gradient m through (x₁, y₁).",
+      "This is the slope-intercept form, not the point-slope form.",
+      "This is the general form of a line, not the point-slope form."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(viii)",
+     "stem": "2x + 3y − 6 = 0 in the slope-intercept form is:",
+     "options": [
+      "(a) y = −2/3 x + 2",
+      "(b) y = 2/3 x − 2",
+      "(c) y = 2/3 x + 1",
+      "(d) y = −2/3 x − 2"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Rearranging gives 3y=−2x+6, or y=−(2/3)x+2.",
+      "This has the wrong signs for both the slope and intercept.",
+      "This has the wrong slope and intercept.",
+      "This has the correct slope but the wrong intercept."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(ix)",
+     "stem": "The equation of a line in symmetric form is:",
+     "options": [
+      "(a) x/a + y/b = 1",
+      "(b) (x − x₁)/l + (y − y₁)/m = (z − z₁)/l",
+      "(c) (x − x₁)/cos α = (y − y₁)/sin α = r",
+      "(d) y − y₁ = m(x − x₁)"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is the intercept form, not the symmetric form using direction angles.",
+      "This resembles the symmetric form for a three-dimensional line, but as written it has a mismatched direction denominator and is not the intended two-dimensional form.",
+      "This expresses a two-dimensional line through (x₁,y₁) using its direction angle α and parameter r.",
+      "This is the point-slope form, not the symmetric form."
+     ]
+    },
+    {
+     "source": "Review Ex 7 Q1(x)",
+     "stem": "The equation of a line in normal form is:",
+     "options": [
+      "(a) y = mx + c",
+      "(b) x/a + y/b = 1",
+      "(c) (x − x₁)/cos α = (y − y₁)/sin α",
+      "(d) x cos α + y sin α = p"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This is the slope-intercept form, not the normal form.",
+      "This is the intercept form of a line.",
+      "This is a symmetric form using direction angles, not the normal form.",
+      "The normal form is x cos α + y sin α = p, where p is the perpendicular distance from the origin."
+     ]
+    }
+   ]
+  }
+ ]
+}

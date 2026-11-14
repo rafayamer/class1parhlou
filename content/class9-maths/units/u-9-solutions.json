@@ -1,0 +1,1666 @@
+{
+ "unit": 9,
+ "sections": [
+  {
+   "number": "9.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q1",
+     "question": "Find whether the solids are similar. All lengths are in cm. [Figure: Two solids with corresponding lengths marked 3, 5, 4 and 4.5, 7.5, 6.]",
+     "steps": [
+      "Ratio of corresponding lengths = 4.5/3 = 1.5",
+      "Ratio of corresponding lengths = 7.5/5 = 1.5",
+      "Ratio of corresponding lengths = 6/4 = 1.5",
+      "The ratios of all corresponding lengths are equal.",
+      "Therefore, the solids are similar."
+     ],
+     "answer": "Similar",
+     "figure": "Two solids are shown with corresponding lengths 3 cm, 5 cm and 4 cm on the first solid, and 4.5 cm, 7.5 cm and 6 cm on the second solid.",
+     "accept": [
+      [
+       "similar"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q2",
+     "question": "In triangle ABC, the sides are given as mA̅B̅ = 6 cm, mB̅C̅ = 9 cm and mC̅A̅ = 12 cm. In triangle DEF, the sides are given as mD̅E̅ = 10.5 cm, mE̅F̅ = 15.75 cm, and mF̅D̅ = 21 cm. Prove that the triangles are similar.",
+     "steps": [
+      "For ΔABC and ΔDEF, AB = 6 cm, BC = 9 cm, CA = 12 cm, DE = 10.5 cm, EF = 15.75 cm and FD = 21 cm.",
+      "AB/DE = 6/10.5 = 4/7",
+      "BC/EF = 9/15.75 = 4/7",
+      "CA/FD = 12/21 = 4/7",
+      "AB/DE = BC/EF = CA/FD",
+      "Therefore, the three sides of ΔABC are proportional to the corresponding three sides of ΔDEF.",
+      "Hence, ΔABC ~ ΔDEF by SSS similarity."
+     ],
+     "answer": "ΔABC ~ ΔDEF",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q3",
+     "question": "In the given figure, ΔABC ~ ΔDEF, mA̅B̅ = 12 cm, mA̅C̅ = 20 cm and mB̅C̅ = 16 cm. In ΔDEF, mD̅E̅ = 6 cm. Find mD̅F̅ and mE̅F̅. [Figure: Triangle DEF has DE = 6 cm; corresponding triangle ABC has AB = 12 cm, AC = 20 cm, and BC = 16 cm.]",
+     "steps": [
+      "Since ΔABC ~ ΔDEF, AB/DE = AC/DF = BC/EF.",
+      "AB/DE = 12/6 = 2",
+      "AC/DF = 2",
+      "20/DF = 2",
+      "DF = 20/2 = 10 cm",
+      "BC/EF = 2",
+      "16/EF = 2",
+      "EF = 16/2 = 8 cm"
+     ],
+     "answer": "mDF = 10 cm, mEF = 8 cm",
+     "figure": "The corresponding triangles are ΔABC and ΔDEF, with AB = 12 cm, AC = 20 cm, BC = 16 cm and DE = 6 cm.",
+     "accept": [
+      [
+       "mDF=10",
+       "mEF=8"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q4(i)",
+     "question": "Find the value of x in each of the following: (i) [Figure: Right triangles ABE and DCE share the horizontal line A–E–C; AE = 7.5 cm, EC = 3 cm, CD = 1.2 cm, and AB = x.]",
+     "steps": [
+      "∠A = ∠C = 90°",
+      "∠AEB = ∠CED (vertically opposite angles)",
+      "Therefore, ΔABE ~ ΔCDE by AA similarity.",
+      "AB/CD = AE/CE",
+      "x/1.2 = 7.5/3",
+      "x/1.2 = 2.5",
+      "x = 1.2 × 2.5 = 3 cm"
+     ],
+     "answer": "x = 3 cm",
+     "figure": "A–E–C lie on one straight horizontal line. AB and CD are perpendicular to AC, and the sloping sides meet at E, forming right triangles ABE and CDE. AE = 7.5 cm, EC = 3 cm, CD = 1.2 cm and AB = x.",
+     "accept": [
+      [
+       "x=3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q4(ii)",
+     "question": "Find the value of x in each of the following: (ii) [Figure: Triangle BCD with E on BC and F on BD, and EF parallel to CD; BE = 6 cm, EC = 4 cm, BF = 8 cm, and FD = 3 cm.]",
+     "steps": [
+      "Since EF ∥ CD, the lines BC and BD are divided proportionally.",
+      "Therefore, BE/EC = BF/FD.",
+      "Substituting the given lengths, 6/4 = 8/3.",
+      "But 6/4 = 3/2 and 8/3 are not equal.",
+      "Hence the given lengths are inconsistent with EF ∥ CD, and no value of x can be determined from the stated figure.",
+      "The value 2.25 cm would follow only if EC were unknown instead of being given as 4 cm."
+     ],
+     "answer": "The given data are inconsistent, so x has no valid value as stated. The book’s intended answer, 2.25 cm, would require EC to be unknown, contradicting EC = 4 cm.",
+     "figure": "Triangle BCD with E on BC and F on BD, and EF parallel to CD; the labels show BE = 6 cm, EC = 4 cm, BF = 8 cm and FD = 3 cm.",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"x = 2.25 cm\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q4(iii)",
+     "question": "Find the value of x in each of the following: (iii) [Figure: Two triangles CED and FEG meet at E; CD = x cm, DE = 2.5 cm, EG = 2.4 cm, and FG = 2.1 cm.]",
+     "steps": [
+      "Since CD ∥ FG, ∠CDE = ∠FGE.",
+      "∠CED = ∠FEG (vertically opposite angles).",
+      "Therefore, ΔCED ~ ΔFEG by AA similarity.",
+      "CD/FG = DE/EG",
+      "x/2.1 = 2.5/2.4",
+      "x = (2.1 × 2.5)/2.4",
+      "x = 2.1875 cm ≈ 2.19 cm"
+     ],
+     "answer": "x = 2.19 cm",
+     "figure": "Triangles CED and FEG meet at E, with CD ∥ FG. The lengths shown are DE = 2.5 cm, EG = 2.4 cm and FG = 2.1 cm; CD = x.",
+     "accept": [
+      [
+       "x=2.19"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q5",
+     "question": "A plank is placed straight upstairs that 20 cm wide and 16 cm deep. A rectangular box of height 8 cm and width x cm is placed on a stair under the plank. Find the value of x. [Figure: A plank slopes over a stair and a rectangular box; labels show 20 cm along the base, 16 cm vertically, 8 cm for the box height, and x cm for its width.]",
+     "steps": [
+      "The triangles formed by the plank and the stair are similar.",
+      "Height of large triangle/width of large triangle = height of box/width of box",
+      "16/20 = 8/x",
+      "16x = 20 × 8",
+      "x = 160/16 = 10 cm"
+     ],
+     "answer": "10 cm",
+     "figure": "A sloping plank forms a right-angled triangle above the stair, with horizontal length 20 cm and vertical height 16 cm. The rectangular box beneath the plank has height 8 cm and width x cm.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q6",
+     "question": "A man who is 1.8 m tall casts a shadow of a 0.76 m in length. If at the same time a telephone pole casts a 3 m shadow, find the height of the pole.",
+     "steps": [
+      "Let the height of the telephone pole be h m.",
+      "The man and the pole cast their shadows at the same time, so the triangles formed are similar.",
+      "Height of man/length of man's shadow = height of pole/length of pole's shadow",
+      "1.8/0.76 = h/3",
+      "0.76h = 1.8 × 3",
+      "h = 5.4/0.76 = 7.1052... m",
+      "h ≈ 7.11 m"
+     ],
+     "answer": "7.11 m",
+     "figure": "",
+     "accept": [
+      [
+       "7.11"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q7",
+     "question": "Find the values of x, y and z in the given figure. [Figure: A right triangle with a 10 cm vertical side and base z; an interior perpendicular segment is labeled y, and the sloping side is divided into segments labeled 6 cm and x.]",
+     "steps": [
+      "Let the hypotenuse be (6 + x) cm.",
+      "By the right-triangle altitude theorem, (10)² = 6(6 + x).",
+      "100 = 36 + 6x.",
+      "6x = 64.",
+      "x = 64/6 = 32/3 = 10 2/3 cm.",
+      "By the right-triangle altitude theorem, y² = 6x.",
+      "y² = 6 × 32/3 = 64.",
+      "y = 8 cm.",
+      "Also, z² = x(6 + x).",
+      "z² = (32/3)(6 + 32/3) = (32/3)(50/3) = 1600/9.",
+      "z = 40/3 = 13 1/3 cm."
+     ],
+     "answer": "x = 10 2/3 cm, y = 8 cm, z = 13 1/3 cm",
+     "figure": "A right triangle with a vertical side of 10 cm and base z. The perpendicular y from the right-angle vertex meets the hypotenuse and divides it into segments 6 cm and x.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q8",
+     "question": "Draw an isosceles trapezoid ABCD where AB ∥ CD and mAB > mCD. Draw diagonals AC and BD, intersecting at E. Prove that ΔABE is similar to ΔCDE. If mAB = 8 cm, mCD = 4 cm, and mAE = 3 cm, find the length of CE.",
+     "steps": [
+      "Since AB ∥ CD and BD is a transversal, ∠ABE = ∠CDE (alternate interior angles).",
+      "Since AB ∥ CD and AC is a transversal, ∠BAE = ∠DCE (alternate interior angles).",
+      "Therefore, ΔABE ∼ ΔCDE by AA similarity.",
+      "Corresponding sides of similar triangles are proportional: AB/CD = AE/CE.",
+      "Substitute AB = 8 cm, CD = 4 cm and AE = 3 cm: 8/4 = 3/CE.",
+      "2 = 3/CE.",
+      "CE = 3/2 = 1.5 cm."
+     ],
+     "answer": "ΔABE ∼ ΔCDE; mCE = 1.5 cm",
+     "figure": "Draw an isosceles trapezoid ABCD with AB as the longer base and AB ∥ CD. Draw diagonals AC and BD, meeting at E.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.1 Q9",
+     "question": "A regular dodecagon has its side lengths decreased by a factor of 1/√2. If the perimeter of the original dodecagon is 72 cm. What is the side length of scaled dodecagon?",
+     "steps": [
+      "A regular dodecagon has 12 equal sides.",
+      "Side length of the original dodecagon = 72/12 = 6 cm.",
+      "The scale factor is 1/√2.",
+      "Side length of the scaled dodecagon = 6 × 1/√2.",
+      "= 6/√2 = 3√2 cm."
+     ],
+     "answer": "3√2 cm. The stated perimeter and scale factor give this result; 18√2/5 does not follow from them.",
+     "figure": "",
+     "accept": [
+      [
+       "3sqrt2"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"18√2/5\"; the checked working above gives this answer."
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "9.2",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q1(i)",
+     "question": "Find the ratio of the areas of similar figures if the ratio of their corresponding lengths are: (i) 1:3",
+     "steps": [
+      "Ratio of areas = square of the ratio of corresponding lengths.",
+      "= 1² : 3².",
+      "= 1 : 9."
+     ],
+     "answer": "1:9",
+     "figure": "",
+     "accept": [
+      [
+       "1:9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q1(ii)",
+     "question": "Find the ratio of the areas of similar figures if the ratio of their corresponding lengths are: (ii) 3:4",
+     "steps": [
+      "Ratio of areas = square of the ratio of corresponding lengths.",
+      "= 3² : 4².",
+      "= 9 : 16."
+     ],
+     "answer": "9:16",
+     "figure": "",
+     "accept": [
+      [
+       "9:16"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q1(iii)",
+     "question": "Find the ratio of the areas of similar figures if the ratio of their corresponding lengths are: (iii) 2:7",
+     "steps": [
+      "Ratio of areas = square of the ratio of corresponding lengths.",
+      "= 2² : 7².",
+      "= 4 : 49."
+     ],
+     "answer": "4:49",
+     "figure": "",
+     "accept": [
+      [
+       "4:49"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q1(iv)",
+     "question": "Find the ratio of the areas of similar figures if the ratio of their corresponding lengths are: (iv) 8:9",
+     "steps": [
+      "Ratio of areas = square of the ratio of corresponding lengths.",
+      "= 8² : 9².",
+      "= 64 : 81."
+     ],
+     "answer": "64:81",
+     "figure": "",
+     "accept": [
+      [
+       "64:81"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q1(v)",
+     "question": "Find the ratio of the areas of similar figures if the ratio of their corresponding lengths are: (v) 6:5",
+     "steps": [
+      "Ratio of areas = square of the ratio of corresponding lengths.",
+      "= 6² : 5².",
+      "= 36 : 25."
+     ],
+     "answer": "36:25",
+     "figure": "",
+     "accept": [
+      [
+       "36:25"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q2(i)",
+     "question": "Find the unknowns in the following figures: (i) Two similar rectangles. The first has A₁ = 240 cm² and length 10 cm; the second has A₂ = ? and length 6 cm.",
+     "steps": [
+      "For similar figures, the ratio of their areas is equal to the square of the ratio of their corresponding lengths.",
+      "A₁/A₂ = (ℓ₁/ℓ₂)²",
+      "240/A₂ = (10/6)²",
+      "240/A₂ = 100/36",
+      "A₂ = (240 × 36)/100",
+      "A₂ = 86.4 cm²"
+     ],
+     "answer": "A₂ = 86.4 cm²",
+     "figure": "Two similar rectangles are shown: the first has area 240 cm² and length 10 cm; the second has unknown area A₂ and length 6 cm.",
+     "accept": [
+      [
+       "86.4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q2(ii)",
+     "question": "Find the unknowns in the following figures: (ii) Two similar triangles. The first has A₁ = 60 cm² and base 15 cm; the second has A₂ = ? and base 20 cm.",
+     "steps": [
+      "For similar figures, the ratio of their areas is equal to the square of the ratio of their corresponding lengths.",
+      "A₁/A₂ = (b₁/b₂)²",
+      "60/A₂ = (15/20)²",
+      "60/A₂ = 225/400",
+      "A₂ = (60 × 400)/225",
+      "A₂ = 106.666… cm²",
+      "A₂ ≈ 106.67 cm²"
+     ],
+     "answer": "A₂ ≈ 106.67 cm²",
+     "figure": "Two similar triangles are shown: the first has area 60 cm² and base 15 cm; the second has unknown area A₂ and base 20 cm.",
+     "accept": [
+      [
+       "106.67"
+      ],
+      [
+       "106.666"
+      ],
+      [
+       "320/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q2(iii)",
+     "question": "Find the unknowns in the following figures: (iii) Two similar trapeziums. The first has A₁ = ? and base 3.6 cm; the second has A₂ = 18 cm² and base 5.76 cm.",
+     "steps": [
+      "For similar figures, the ratio of their areas is equal to the square of the ratio of their corresponding lengths.",
+      "A₁/A₂ = (b₁/b₂)²",
+      "A₁/18 = (3.6/5.76)²",
+      "A₁/18 = (5/8)²",
+      "A₁/18 = 25/64",
+      "A₁ = (18 × 25)/64",
+      "A₁ = 7.03125 cm²"
+     ],
+     "answer": "A₁ = 7.03125 cm²",
+     "figure": "Two similar trapeziums are shown: the first has unknown area A₁ and base 3.6 cm; the second has area 18 cm² and base 5.76 cm.",
+     "accept": [
+      [
+       "7.03125"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q2(iv)",
+     "question": "Find the unknowns in the following figures: (iv) Two similar triangular figures with curved dashed lower edges. The first has ℓ₁ = 15 cm and A₁ = ?; the second has ℓ₂ = 12 cm and A₂ = 96 cm².",
+     "steps": [
+      "For similar figures, the ratio of their areas is equal to the square of the ratio of their corresponding lengths.",
+      "A₁/A₂ = (ℓ₁/ℓ₂)²",
+      "A₁/96 = (15/12)²",
+      "A₁/96 = 25/16",
+      "A₁ = (96 × 25)/16",
+      "A₁ = 150 cm²"
+     ],
+     "answer": "A₁ = 150 cm²",
+     "figure": "Two similar triangular figures with curved dashed lower edges are shown: the first has ℓ₁ = 15 cm and unknown area A₁; the second has ℓ₂ = 12 cm and area A₂ = 96 cm².",
+     "accept": [
+      [
+       "150"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q2(v)",
+     "question": "Find the unknowns in the following figures: (v) Two triangles with parallel bases, intersecting at a point. The upper triangle has A₁ = 3 4/7 cm² and ℓ₁ = 3 cm; the lower triangle has A₂ = 63 cm² and ℓ₂ = ?.",
+     "steps": [
+      "A₁ = 3 4/7 = 25/7 cm².",
+      "For similar triangles, the ratio of their areas is the square of the ratio of corresponding lengths.",
+      "A₂/A₁ = (ℓ₂/ℓ₁)².",
+      "63/(25/7) = (ℓ₂/3)².",
+      "441/25 = (ℓ₂/3)².",
+      "ℓ₂/3 = 21/5.",
+      "ℓ₂ = 3 × 21/5 = 63/5 = 12.6 cm."
+     ],
+     "answer": "ℓ₂ = 12.6 cm. The book answer’s cm² unit is incorrect because ℓ₂ is a length.",
+     "figure": "Two similar triangles with parallel bases; the smaller triangle has area 3 4/7 cm² and corresponding length 3 cm, and the larger triangle has area 63 cm² and corresponding length ℓ₂.",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"12.6 cm²\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q3(a)",
+     "question": "Given that area of ΔABC = 36 cm² and mAB = 6 cm, mBD = 4 cm. Find (a) the area of ΔADE. Segment BC is parallel to DE.",
+     "steps": [
+      "AD = AB + BD",
+      "AD = 6 + 4 = 10 cm",
+      "Since BC ∥ DE, ΔABC ~ ΔADE.",
+      "Area of ΔABC / Area of ΔADE = (AB/AD)²",
+      "36/Area of ΔADE = (6/10)²",
+      "36/Area of ΔADE = 36/100",
+      "Area of ΔADE = (36 × 100)/36",
+      "Area of ΔADE = 100 cm²"
+     ],
+     "answer": "Area of ΔADE = 100 cm²",
+     "figure": "Triangle ABC is inside the larger triangle ADE, with B on AD and C on AE; BC is parallel to DE. AB = 6 cm, BD = 4 cm, and area of ΔABC = 36 cm².",
+     "accept": [
+      [
+       "100"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q3(b)",
+     "question": "Given that area of ΔABC = 36 cm² and mAB = 6 cm, mBD = 4 cm. Find (b) the area of trapezium BCED. Segment BC is parallel to DE.",
+     "steps": [
+      "Area of trapezium BCED = Area of ΔADE − Area of ΔABC",
+      "Area of trapezium BCED = 100 − 36",
+      "Area of trapezium BCED = 64 cm²"
+     ],
+     "answer": "Area of trapezium BCED = 64 cm²",
+     "figure": "Triangle ABC lies inside triangle ADE, and the region between BC and DE is trapezium BCED; BC is parallel to DE. The area of ΔABC is 36 cm² and the area of ΔADE is 100 cm².",
+     "accept": [
+      [
+       "64"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q4",
+     "question": "Given that ΔABC and ΔDEF are similar, with a scale factor of k = 3. If the area of ΔABC is 50 cm², find the area of triangle ΔDEF?",
+     "steps": [
+      "For similar triangles, the ratio of their areas is equal to the square of their scale factor.",
+      "Area of ΔABC / Area of ΔDEF = k²",
+      "50/Area of ΔDEF = 3²",
+      "50/Area of ΔDEF = 9",
+      "Area of ΔDEF = 50/9 cm²",
+      "Area of ΔDEF = 5 5/9 cm²"
+     ],
+     "answer": "Area of ΔDEF = 5 5/9 cm²",
+     "figure": "",
+     "accept": [
+      [
+       "5 5/9"
+      ],
+      [
+       "50/9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q5",
+     "question": "Quadrilaterals ABCD and EFGH are similar, with a scale factor of k = 1/4. If the area of quadrilateral ABCD is 64 cm², find the area of quadrilateral EFGH.",
+     "steps": [
+      "For similar quadrilaterals, the ratio of their areas is the square of the ratio of their corresponding sides.",
+      "k = side ABCD / side EFGH = 1/4",
+      "Area ABCD / Area EFGH = (1/4)² = 1/16",
+      "64 / Area EFGH = 1/16",
+      "Area EFGH = 64 × 16 = 1024 cm²"
+     ],
+     "answer": "1024 cm²",
+     "figure": "",
+     "accept": [
+      [
+       "1024"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q6",
+     "question": "The areas of two similar triangles are 16 cm² and 25 cm². What is the ratio of a pair of corresponding sides?",
+     "steps": [
+      "For similar triangles, the ratio of their areas is the square of the ratio of their corresponding sides.",
+      "Ratio of corresponding sides = √(16/25)",
+      "Ratio of corresponding sides = 4/5"
+     ],
+     "answer": "4/5",
+     "figure": "",
+     "accept": [
+      [
+       "4/5"
+      ],
+      [
+       "4:5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q7",
+     "question": "The areas of two similar triangles are 144 cm² and 81 cm². If the base of the large triangle is 30 cm, find the corresponding base of the smaller triangle.",
+     "steps": [
+      "For similar triangles, the ratio of their areas is the square of the ratio of corresponding bases.",
+      "144/81 = (30/b)², where b is the smaller triangle’s base.",
+      "144/81 = 16/9.",
+      "30/b = 4/3.",
+      "b = 30 × 3/4 = 22.5 cm."
+     ],
+     "answer": "22.5 cm",
+     "figure": "",
+     "accept": [
+      [
+       "22.5"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"22.5 cm²\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.2 Q8",
+     "question": "A regular heptagon is inscribed in a larger regular heptagon and each side of the larger heptagon is 1.7 times the side of the smaller heptagon. If the area of the smaller heptagon is known to be 100 cm², find the area of the larger heptagon.",
+     "steps": [
+      "For similar polygons, the ratio of their areas is the square of the ratio of their corresponding sides.",
+      "Side of larger heptagon / Side of smaller heptagon = 1.7",
+      "Area of larger heptagon / Area of smaller heptagon = (1.7)² = 2.89",
+      "Area of larger heptagon / 100 = 2.89",
+      "Area of larger heptagon = 100 × 2.89 = 289 cm²"
+     ],
+     "answer": "289 cm²",
+     "figure": "",
+     "accept": [
+      [
+       "289"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "9.3",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q1",
+     "question": "The radii of two spheres are in the ratio 3 : 4. What is the ratio of their volumes?",
+     "steps": [
+      "The volumes of spheres are proportional to the cubes of their radii.",
+      "Ratio of volumes = 3³ : 4³",
+      "Ratio of volumes = 27 : 64"
+     ],
+     "answer": "27/64",
+     "figure": "",
+     "accept": [
+      [
+       "27/64"
+      ],
+      [
+       "27:64"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q2",
+     "question": "Two regular tetrahedrons have volumes in the ratio 8 : 27. What is the ratio of their sides?",
+     "steps": [
+      "The volumes of similar solids are proportional to the cubes of their corresponding sides.",
+      "Ratio of sides = ∛(8/27)",
+      "Ratio of sides = 2/3"
+     ],
+     "answer": "2/3",
+     "figure": "",
+     "accept": [
+      [
+       "2/3"
+      ],
+      [
+       "2:3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q3(i)",
+     "question": "Two right cones have volumes in the ratio 64 : 125. What is the ratio of their heights?",
+     "steps": [
+      "The volume of a cone is V = 1/3 × (base area) × height.",
+      "A volume ratio alone does not give the ratio of the heights unless the base areas are also related.",
+      "Therefore, the height ratio cannot be determined from the information given.",
+      "If the cones are similar, their volume ratio is the cube of their corresponding-length ratio.",
+      "For similar cones, the height ratio is ∛(64/125) = 4/5."
+     ],
+     "answer": "The height ratio cannot be determined from the information given. If the cones are similar, it is 4:5.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"4/5\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q3(ii)",
+     "question": "Two right cones have volumes in the ratio 64 : 125. What is the ratio of their base areas?",
+     "steps": [
+      "The volume of a cone is V = 1/3 × (base area) × height.",
+      "A volume ratio alone does not determine the ratio of the base areas unless the heights are also related.",
+      "Therefore, the base-area ratio cannot be determined from the information given.",
+      "If the cones are similar, their volume ratio is the cube of their corresponding-length ratio.",
+      "For similar cones, the base-area ratio is (∛(64/125))² = (4/5)² = 16/25."
+     ],
+     "answer": "The base-area ratio cannot be determined from the information given. If the cones are similar, it is 16:25.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"16/25\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q4(i)",
+     "question": "Find the missing value in the following similar solids: (i) Two similar pyramid-like solids; the smaller is labelled V₁ = ? and 12 cm, and the larger is labelled V₂ = 1536 cm³ and 16 cm.",
+     "steps": [
+      "For similar solids, the ratio of their volumes is the cube of the ratio of corresponding lengths.",
+      "V₁/V₂ = (12/16)³",
+      "V₁/1536 = (3/4)³",
+      "V₁/1536 = 27/64",
+      "V₁ = 1536 × 27/64",
+      "V₁ = 648 cm³"
+     ],
+     "answer": "648 cm³",
+     "figure": "Two similar pyramid-like solids: the smaller is labelled 12 cm and V₁ = ?, and the larger is labelled 16 cm and V₂ = 1536 cm³.",
+     "accept": [
+      [
+       "648 cm^3"
+      ],
+      [
+       "648"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q4(ii)",
+     "question": "Find the missing value in the following similar solids: (ii) Two cylinders; the smaller is labelled h₁ = 2.5 cm and V₁ = ?, and the larger is labelled h₂ = 8.75 cm and V₂ = 171.5 cm³.",
+     "steps": [
+      "For similar solids, the ratio of their volumes is the cube of the ratio of corresponding lengths.",
+      "V₁/V₂ = (h₁/h₂)³",
+      "V₁/171.5 = (2.5/8.75)³",
+      "V₁/171.5 = (2/7)³",
+      "V₁ = 171.5 × 8/343",
+      "V₁ = 4 cm³"
+     ],
+     "answer": "4 cm³",
+     "figure": "Two similar cylinders: the smaller is labelled h₁ = 2.5 cm and V₁ = ?, and the larger is labelled h₂ = 8.75 cm and V₂ = 171.5 cm³.",
+     "accept": [
+      [
+       "4 cm^3"
+      ],
+      [
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q4(iii)",
+     "question": "Find the missing value in the following similar solids: (iii) Two cuboids labelled A₁ = 392 cm², V₁ = ?, A₂ = 162 cm², V₂ = 729 cm³.",
+     "steps": [
+      "For similar solids, the ratio of their surface areas is the square of the ratio of corresponding lengths.",
+      "A₁/A₂ = (corresponding length ratio)²",
+      "392/162 = (corresponding length ratio)²",
+      "196/81 = (corresponding length ratio)²",
+      "Corresponding length ratio = 14/9",
+      "For similar solids, V₁/V₂ = (corresponding length ratio)³",
+      "V₁/729 = (14/9)³",
+      "V₁ = 729 × 2744/729",
+      "V₁ = 2744 cm³"
+     ],
+     "answer": "2744 cm³",
+     "figure": "Two similar cuboids: the first is labelled A₁ = 392 cm² and V₁ = ?, and the second is labelled A₂ = 162 cm² and V₂ = 729 cm³.",
+     "accept": [
+      [
+       "2744 cm^3"
+      ],
+      [
+       "2744"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q4(iv)",
+     "question": "Find the missing value in the following similar solids: (iv) Two circles labelled V₁ = 64 cm³, r₁ = ?, V₂ = 216 cm³, r₂ = 12 cm.",
+     "steps": [
+      "For similar solids, the ratio of their volumes is the cube of the ratio of corresponding lengths.",
+      "V₁/V₂ = (r₁/r₂)³",
+      "64/216 = (r₁/12)³",
+      "(2/3)³ = (r₁/12)³",
+      "r₁/12 = 2/3",
+      "r₁ = 12 × 2/3",
+      "r₁ = 8 cm"
+     ],
+     "answer": "8 cm",
+     "figure": "Two similar circles as shown: the first is labelled V₁ = 64 cm³ and r₁ = ?, and the second is labelled V₂ = 216 cm³ and r₂ = 12 cm.",
+     "accept": [
+      [
+       "8 cm"
+      ],
+      [
+       "8"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q5(i)",
+     "question": "The ratio of the corresponding lengths of two similar canonical cans is 3 : 2. The larger canonical can have surface area of 96 m². Find the surface area of the smaller canonical can.",
+     "steps": [
+      "Ratio of corresponding lengths of larger can to smaller can = 3 : 2",
+      "Ratio of surface areas of larger can to smaller can = 3² : 2²",
+      "Ratio of surface areas = 9 : 4",
+      "Smaller surface area = 96 × 4/9",
+      "Smaller surface area = 42.666… m²",
+      "Smaller surface area ≈ 42.67 m²"
+     ],
+     "answer": "42.67 m²",
+     "figure": "",
+     "accept": [
+      [
+       "42.67 m^2"
+      ],
+      [
+       "42.67"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q5(ii)",
+     "question": "The ratio of the corresponding lengths of two similar canonical cans is 3 : 2. The smaller canonical can have a volume of 240 m³. Find the volume of larger canonical can.",
+     "steps": [
+      "The ratio of corresponding lengths of the larger and smaller cans is 3:2.",
+      "For similar solids, the ratio of their volumes is the cube of the ratio of corresponding lengths.",
+      "Larger volume/smaller volume = (3/2)³ = 27/8.",
+      "Larger volume = 240 × 27/8 = 810 m³."
+     ],
+     "answer": "810 m³",
+     "figure": "",
+     "accept": [
+      [
+       "810"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"810 cm³\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q6(i)",
+     "question": "The ratio of the heights of two similar cylindrical water tanks is 5 : 3. If the surface area of the larger tank is 250 square metres, find the surface area of the smaller tank.",
+     "steps": [
+      "Ratio of heights of larger tank to smaller tank = 5 : 3",
+      "Ratio of surface areas of larger tank to smaller tank = 5² : 3²",
+      "Ratio of surface areas = 25 : 9",
+      "Surface area of smaller tank = 250 × 9/25",
+      "Surface area of smaller tank = 90 m²"
+     ],
+     "answer": "90 m²",
+     "figure": "",
+     "accept": [
+      [
+       "90 m^2"
+      ],
+      [
+       "90"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.3 Q6(ii)",
+     "question": "The ratio of the heights of two similar cylindrical water tanks is 5 : 3. If the volume of the smaller tank is 270 cubic metres, find the volume of the larger tank.",
+     "steps": [
+      "Ratio of heights of larger tank to smaller tank = 5 : 3",
+      "Ratio of volumes of larger tank to smaller tank = 5³ : 3³",
+      "Ratio of volumes = 125 : 27",
+      "Volume of larger tank = 270 × 125/27",
+      "Volume of larger tank = 1250 m³"
+     ],
+     "answer": "1250 m³",
+     "figure": "",
+     "accept": [
+      [
+       "1250 m^3"
+      ],
+      [
+       "1250"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "9.4",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q1(i)",
+     "question": "What is the sum of the interior angles of a decagon (10-sided polygon)?",
+     "steps": [
+      "Number of sides of a decagon, n = 10",
+      "Sum of interior angles = (n − 2) × 180°",
+      "= (10 − 2) × 180°",
+      "= 8 × 180°",
+      "= 1440°"
+     ],
+     "answer": "1440°",
+     "figure": "",
+     "accept": [
+      [
+       "1440"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q1(ii)",
+     "question": "Calculate the measure of each interior angle of a regular hexagon.",
+     "steps": [
+      "Number of sides of a regular hexagon, n = 6",
+      "Sum of its interior angles = (n − 2) × 180°",
+      "= (6 − 2) × 180°",
+      "= 4 × 180° = 720°",
+      "Each interior angle = 720° ÷ 6",
+      "= 120°"
+     ],
+     "answer": "120°",
+     "figure": "",
+     "accept": [
+      [
+       "120"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q1(iii)",
+     "question": "What is each exterior angle of a regular pentagon?",
+     "steps": [
+      "Number of sides of a regular pentagon, n = 5",
+      "Sum of its exterior angles = 360°",
+      "Each exterior angle = 360° ÷ 5",
+      "= 72°"
+     ],
+     "answer": "72°",
+     "figure": "",
+     "accept": [
+      [
+       "72"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q1(iv)",
+     "question": "If the sum of the interior angles of a polygon is 1260°, how many sides does the polygon have?",
+     "steps": [
+      "Sum of interior angles = 1260°",
+      "(n − 2) × 180° = 1260°",
+      "n − 2 = 1260° ÷ 180°",
+      "n − 2 = 7",
+      "n = 7 + 2",
+      "n = 9"
+     ],
+     "answer": "9 sides",
+     "figure": "",
+     "accept": [
+      [
+       "9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q2",
+     "question": "In a parallelogram ABCD, mAB =10 cm, mAD = 6 cm and m∠BAD = 45°. Calculate the area of ABCD.",
+     "steps": [
+      "Area of parallelogram ABCD = base × height",
+      "Base AB = 10 cm, AD = 6 cm and ∠BAD = 45°",
+      "Height = AD × sin 45°",
+      "= 6 × 0.7071 cm",
+      "= 4.2426 cm",
+      "Area = 10 × 4.2426 cm²",
+      "= 42.426 cm²",
+      "≈ 42.42 cm²"
+     ],
+     "answer": "42.42 cm²",
+     "figure": "",
+     "accept": [
+      [
+       "42.42"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q3",
+     "question": "In a parallelogram ABCD if m∠DAB =70°, find the measures of all other angles in the parallelogram.",
+     "steps": [
+      "m∠DAB = 70°",
+      "Adjacent angles of a parallelogram are supplementary",
+      "m∠DAB + m∠ABC = 180°",
+      "70° + m∠ABC = 180°",
+      "m∠ABC = 110°",
+      "Opposite angles of a parallelogram are equal",
+      "m∠BCD = m∠DAB = 70°",
+      "m∠CDA = m∠ABC = 110°"
+     ],
+     "answer": "m∠ABC = 110°, m∠BCD = 70°, m∠CDA = 110°",
+     "figure": "",
+     "accept": [
+      [
+       "110",
+       "70"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q4",
+     "question": "A shape is created by cutting a square in half diagonally and then attaching a right-angled triangle to the hypotenuse of each half. Explain why this shape can tessellate and calculate the interior angle of the new shape.",
+     "steps": [
+      "The square is cut along a diagonal into two congruent right-angled triangles",
+      "A right-angled triangle is attached to the hypotenuse of each half",
+      "The resulting shape can be reflected and fitted together without gaps or overlaps",
+      "The angles meeting around a point in a tessellation add up to 360°"
+     ],
+     "answer": "The shape can tessellate, with interior angles summing to 360°.",
+     "figure": "",
+     "accept": [
+      [
+       "p:tessellat",
+       "360"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q5",
+     "question": "A tessellation is created by repeatedly reflecting a basic shape. The basic shape is a right-angled triangle with sides of length 3, 4, and 5 units. Find: The minimum number of reflections needed to create a tessellation that covers a square with an area of 3600 square units.",
+     "steps": [
+      "Area of the right-angled triangle = 1/2 × 3 × 4 = 6 square units.",
+      "Number of triangles needed to cover the square = 3600/6 = 600.",
+      "One triangle is the starting shape, so the number of additional triangles needed is 600 − 1 = 599.",
+      "Each reflection creates one additional triangle; therefore, 599 reflections are needed."
+     ],
+     "answer": "599 reflections are needed.",
+     "figure": "",
+     "accept": [
+      [
+       "599"
+      ],
+      [
+       "599 reflections"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"600 reflections needed to cover the square.\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q6",
+     "question": "A tessellation is created using regular hexagons. Each hexagon has a side length of 5 cm. Find the total area of the tessellation if it consists of 25 hexagons and total perimeter of the outer edge of the tessellation, assuming it's a perfect hexagon.",
+     "steps": [
+      "Area of one regular hexagon = (3√3/2) × 5² cm².",
+      "Area of one regular hexagon = (75√3/2) cm².",
+      "Area of 25 hexagons = 25 × (75√3/2) cm².",
+      "Area of 25 hexagons = (1875√3/2) cm² ≈ 1623.8 cm².",
+      "Let x cm be the side length of the assumed regular-hexagonal outer region.",
+      "(3√3/2)x² = 25 × (3√3/2) × 5².",
+      "x² = 25 × 25 = 625, so x = 25 cm.",
+      "Perimeter of the assumed regular-hexagonal outer region = 6 × 25 cm = 150 cm.",
+      "The 25 tiles alone do not specify their arrangement, so 150 cm is the perimeter only under the stated idealisation that the whole region is a regular hexagon of the same total area."
+     ],
+     "answer": "The total area is approximately 1623.8 cm². Under the regular-hexagon assumption, the outer perimeter is 150 cm; the tile count alone does not determine the perimeter of an actual arrangement.",
+     "figure": "",
+     "accept": [
+      [
+       "1623.8",
+       "150"
+      ],
+      [
+       "1875√3/2",
+       "150"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"1623.8 cm², 190 cm\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q7",
+     "question": "A rectangular floor is 12 m by 15 m. How many square tiles, each 1 m by 1 m, are needed to cover the floor?",
+     "steps": [
+      "Area of the rectangular floor = length × width.",
+      "Area of the rectangular floor = 12 × 15 m² = 180 m².",
+      "Area of one square tile = 1 × 1 m² = 1 m².",
+      "Number of tiles needed = area of floor ÷ area of one tile.",
+      "Number of tiles needed = 180 ÷ 1 = 180."
+     ],
+     "answer": "180 tiles",
+     "figure": "",
+     "accept": [
+      [
+       "180"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q8",
+     "question": "A rectangular wall is 10 m tall and 120 m wide. How many gallons of paint are needed to cover the wall, if one gallon covers 35 m²?",
+     "steps": [
+      "Area of the rectangular wall = height × width.",
+      "Area of the rectangular wall = 10 × 120 m² = 1200 m².",
+      "Gallons of paint needed = area of wall ÷ area covered by one gallon.",
+      "Gallons of paint needed = 1200 ÷ 35 = 34 2/7.",
+      "Since paint is bought in whole gallons, 35 gallons are needed."
+     ],
+     "answer": "35 gallons",
+     "figure": "",
+     "accept": [
+      [
+       "35"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q9",
+     "question": "A rectangular wall has a length of 10 m and a width of 4 meters. If 1 litre of paint covers 7 m², how many liters of paint are needed to cover the wall?",
+     "steps": [
+      "Area of the rectangular wall = length × width.",
+      "Area of the rectangular wall = 10 × 4 m² = 40 m².",
+      "Litres of paint needed = area of wall ÷ area covered by one litre.",
+      "Litres of paint needed = 40 ÷ 7 = 5 5/7.",
+      "Since paint is measured in whole litres, 6 litres are needed."
+     ],
+     "answer": "6 litres",
+     "figure": "",
+     "accept": [
+      [
+       "6"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 9.4 Q10",
+     "question": "A window has a trapezoidal shape with parallel sides of 3 m and 1.5 m and a height of 2 m. Find the area of the window.",
+     "steps": [
+      "Area of a trapezium = 1/2 × (sum of parallel sides) × height.",
+      "Area of the window = 1/2 × (3 + 1.5) × 2 m².",
+      "Area of the window = 1/2 × 4.5 × 2 m² = 4.5 m²."
+     ],
+     "answer": "4.5 m²",
+     "figure": "",
+     "accept": [
+      [
+       "4.5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "9.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q2",
+     "question": "If the sum of the interior angles of a polygon is 1080°, how many sides does the polygon has?",
+     "steps": [
+      "Sum of the interior angles of a polygon = (n − 2) × 180°.",
+      "1080° = (n − 2) × 180°.",
+      "n − 2 = 1080 ÷ 180 = 6.",
+      "n = 6 + 2 = 8."
+     ],
+     "answer": "The polygon has 8 sides.",
+     "figure": "",
+     "accept": [
+      [
+       "8"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q3",
+     "question": "Two similar bottles are such that one is twice as high as the other. What is the ratio of their surface areas and their capacities?",
+     "steps": [
+      "Ratio of the heights of the bottles = 2:1.",
+      "Ratio of their surface areas = 2²:1² = 4:1.",
+      "Ratio of their capacities = 2³:1³ = 8:1."
+     ],
+     "answer": "Surface areas = 4:1; capacities = 8:1.",
+     "figure": "",
+     "accept": [
+      [
+       "4:1",
+       "8:1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q4(a)",
+     "question": "Each dimension of a model car is 1/10 of the corresponding car dimension. Find the ratio of the areas of their windscreens.",
+     "steps": [
+      "Ratio of each model-car dimension to the corresponding car dimension = 1:10.",
+      "Ratio of their windscreen areas = 1²:10².",
+      "Ratio of the areas of their windscreens = 1:100."
+     ],
+     "answer": "1:100",
+     "figure": "",
+     "accept": [
+      [
+       "1:100"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q4(b)",
+     "question": "Each dimension of a model car is 1/10 of the corresponding car dimension. Find the ratio of the capacities of their boots.",
+     "steps": [
+      "The model car and the actual car are similar.",
+      "Ratio of corresponding dimensions (model : actual) = 1 : 10.",
+      "Ratio of their boot capacities = 1³ : 10³.",
+      "= 1 : 1000."
+     ],
+     "answer": "The ratio of the capacities of their boots is 1 : 1000.",
+     "figure": "",
+     "accept": [
+      [
+       "1:1000"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q4(c)",
+     "question": "Each dimension of a model car is 1/10 of the corresponding car dimension. Find the ratio of the widths of the cars.",
+     "steps": [
+      "The model car and the actual car are similar.",
+      "Ratio of corresponding widths (model : actual) = 1 : 10."
+     ],
+     "answer": "The ratio of their widths is 1 : 10.",
+     "figure": "",
+     "accept": [
+      [
+       "1:10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q4(d)",
+     "question": "Each dimension of a model car is 1/10 of the corresponding car dimension. Find the ratio of the number of wheels they have.",
+     "steps": [
+      "Both cars have the same number of wheels.",
+      "Ratio of the numbers of wheels (model : actual) = 4 : 4.",
+      "= 1 : 1."
+     ],
+     "answer": "The ratio of the numbers of wheels is 1 : 1.",
+     "figure": "",
+     "accept": [
+      [
+       "1:1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q5",
+     "question": "Three similar jugs have heights 8 cm, 12 cm and 16 cm. If the smallest jug holds 1/2 litre, find the capacities of the other two.",
+     "steps": [
+      "The jugs are similar, so their capacities are proportional to the cubes of their heights.",
+      "For the middle jug, ratio of heights (smallest : middle) = 8 : 12 = 2 : 3.",
+      "Ratio of capacities (smallest : middle) = 2³ : 3³ = 8 : 27.",
+      "Capacity of middle jug = 1/2 × 27/8 litres.",
+      "= 27/16 litres = 1.6875 litres ≈ 1.69 litres.",
+      "For the largest jug, ratio of heights (smallest : largest) = 8 : 16 = 1 : 2.",
+      "Ratio of capacities (smallest : largest) = 1³ : 2³ = 1 : 8.",
+      "Capacity of largest jug = 1/2 × 8 litres = 4 litres."
+     ],
+     "answer": "The capacities of the other two jugs are 1.69 litres and 4 litres.",
+     "figure": "",
+     "accept": [
+      [
+       "1.69",
+       "4"
+      ],
+      [
+       "1.6875",
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q6",
+     "question": "Three similar drinking glasses have heights 7.5 cm, 9 cm and 10.5 cm. If the tallest glass holds 343 millilitres, find the capacities of the other two.",
+     "steps": [
+      "The glasses are similar, so their capacities are proportional to the cubes of their heights.",
+      "For the smallest glass, ratio of heights (smallest : tallest) = 7.5 : 10.5 = 5 : 7.",
+      "Ratio of capacities (smallest : tallest) = 5³ : 7³ = 125 : 343.",
+      "Capacity of smallest glass = 343 × 125/343 millilitres = 125 millilitres.",
+      "For the middle glass, ratio of heights (middle : tallest) = 9 : 10.5 = 6 : 7.",
+      "Ratio of capacities (middle : tallest) = 6³ : 7³ = 216 : 343.",
+      "Capacity of middle glass = 343 × 216/343 millilitres = 216 millilitres."
+     ],
+     "answer": "The capacities of the other two glasses are 125 millilitres and 216 millilitres.",
+     "figure": "",
+     "accept": [
+      [
+       "125",
+       "216"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q7(a)",
+     "question": "A toy manufacturer produces model cars which are similar in every way to the actual cars. If the ratio of the door area of the model to the door area of the car is 1 cm to 2500 cm, find the ratio of their lengths.",
+     "steps": [
+      "The model car and the actual car are similar.",
+      "Ratio of door areas (model : actual) = 1 : 2500.",
+      "Ratio of corresponding lengths = √1 : √2500.",
+      "= 1 : 50."
+     ],
+     "answer": "The ratio of their lengths is 1 : 50.",
+     "figure": "",
+     "accept": [
+      [
+       "1:50"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q7(b)",
+     "question": "A toy manufacturer produces model cars which are similar in every way to the actual cars. If the ratio of the door area of the model to the door area of the car is 1 cm to 2500 cm, find the ratio of the capacities of their petrol tanks.",
+     "steps": [
+      "The model car and the actual car are similar.",
+      "Ratio of door areas (model : actual) = 1 : 2500.",
+      "Ratio of corresponding lengths = √1 : √2500 = 1 : 50.",
+      "Ratio of petrol tank capacities (model : actual) = 1³ : 50³.",
+      "= 1 : 125000."
+     ],
+     "answer": "The ratio of their petrol tank capacities is 1 : 125000.",
+     "figure": "",
+     "accept": [
+      [
+       "1:125000"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q7(c)",
+     "question": "A toy manufacturer produces model cars which are similar in every way to the actual cars. If the ratio of the door area of the model to the door area of the car is 1 cm to 2500 cm, find the width of the model, if the actual car is 150 cm wide.",
+     "steps": [
+      "The model car and the actual car are similar.",
+      "Ratio of door areas (model : actual) = 1 : 2500.",
+      "Ratio of corresponding lengths (model : actual) = √1 : √2500 = 1 : 50.",
+      "Actual car width = 150 cm.",
+      "Model width = 150/50 cm = 3 cm."
+     ],
+     "answer": "The width of the model is 3 cm.",
+     "figure": "",
+     "accept": [
+      [
+       "3 cm"
+      ],
+      [
+       "3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q7(d)",
+     "question": "A toy manufacturer produces model cars which are similar in every way to the actual cars. If the ratio of the door area of the model to the door area of the car is 1 cm to 2500 cm, find the area of the rear window of the actual car if the area of the rear window of the model is 3 cm².",
+     "steps": [
+      "The areas of corresponding parts of two similar cars are in the same ratio.",
+      "Area ratio of model to actual car = 1 : 2500.",
+      "Area ratio of model rear window to actual rear window = 1 : 2500.",
+      "Let the area of the actual rear window be x cm².",
+      "3 : x = 1 : 2500.",
+      "x = 3 × 2500 = 7500 cm²."
+     ],
+     "answer": "7500 cm²",
+     "figure": "",
+     "accept": [
+      [
+       "7500"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q8(a)",
+     "question": "The ratio of the areas of two similar labels on two similar jars of coffee is 144 : 169. Find the ratio of the heights of the two jars.",
+     "steps": [
+      "Ratio of the areas of the labels = 144 : 169.",
+      "The jars are similar, so the ratio of their heights is the square root of the ratio of their areas.",
+      "Ratio of heights = √144 : √169 = 12 : 13."
+     ],
+     "answer": "12 : 13",
+     "figure": "",
+     "accept": [
+      [
+       "12:13"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q8(b)",
+     "question": "The ratio of the areas of two similar labels on two similar jars of coffee is 144 : 169. Find the ratio of their capacities.",
+     "steps": [
+      "Ratio of the areas of the labels = 144 : 169.",
+      "The jars are similar, so the ratio of their corresponding lengths = √144 : √169 = 12 : 13.",
+      "The ratio of the capacities of similar jars is the cube of the ratio of their corresponding lengths.",
+      "Ratio of capacities = 12³ : 13³ = 1728 : 2197."
+     ],
+     "answer": "1728 : 2197",
+     "figure": "",
+     "accept": [
+      [
+       "1728:2197"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 9 Q9",
+     "question": "A tessellation of tiles on a floor has been made using a repeating pattern of a regular hexagon, six squares and six equilateral triangles. Find the total area of a single pattern with side length 1/2 metre of each polygon.",
+     "steps": [
+      "Draw a regular hexagon with each side 1/2 m.",
+      "Construct a square of side 1/2 m outward on each of the six sides of the hexagon.",
+      "Construct an equilateral triangle of side 1/2 m in each of the six gaps between adjacent squares.",
+      "Area of one square = (1/2)² = 1/4 m².",
+      "Area of six squares = 6 × 1/4 = 3/2 m².",
+      "Area of the regular hexagon = (3√3/2) × (1/2)² = 3√3/8 m².",
+      "Area of one equilateral triangle = (√3/4) × (1/2)² = √3/16 m².",
+      "Area of six equilateral triangles = 6 × √3/16 = 3√3/8 m².",
+      "Total area = 3/2 + 3√3/8 + 3√3/8 m².",
+      "Total area = 3/2 + 3√3/4 ≈ 2.80 m²."
+     ],
+     "answer": "The total area of one pattern is 3/2 + 3√3/4 m² ≈ 2.80 m².",
+     "figure": "A central regular hexagon with side 1/2 m; a square is attached outward to each of its six sides, and an equilateral triangle fills the gap between each pair of adjacent squares at the hexagon’s vertices.",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"6.69 m²\"; the checked working above gives this answer."
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Review Ex 9 Q1(i)",
+     "stem": "If two polygons are similar, then:",
+     "options": [
+      "their corresponding angles are equal.",
+      "their areas are equal.",
+      "their volumes are equal.",
+      "their corresponding sides are equal."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Corresponding angles of similar polygons are equal.",
+      "Similar polygons have proportional areas, not necessarily equal areas.",
+      "Polygons are two-dimensional, so volume is not applicable.",
+      "Corresponding sides are proportional, but they are not necessarily equal."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(ii)",
+     "stem": "The ratio of the areas of two similar polygons is:",
+     "options": [
+      "equal to the ratio of their perimeters.",
+      "equal to the square of the ratio of their corresponding sides.",
+      "equal to the cube of the ratio of their corresponding sides.",
+      "equal to the sum of their corresponding sides."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The area ratio is not generally equal to the perimeter ratio; it is the square of the side ratio.",
+      "The areas of similar polygons scale as the square of the ratio of corresponding sides.",
+      "The cube of the side ratio applies to volumes of similar solids, not polygon areas.",
+      "The area ratio is not the sum of corresponding side lengths."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(iii)",
+     "stem": "If the volume of two similar solids is 125 cm³ and 27 cm³, the ratio of their corresponding heights is ----------.",
+     "options": [
+      "3:5",
+      "5:3",
+      "25:9",
+      "9:25"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A height ratio of 3:5 would give a volume ratio of 27:125, the reverse of the given order.",
+      "For similar solids, the ratio of corresponding lengths is the cube root of the volume ratio, so it is 5:3.",
+      "The ratio 25:9 is the ratio of the squares of the corresponding lengths, not the lengths themselves.",
+      "The ratio 9:25 is the square of the inverse linear ratio, not the linear ratio."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(iv)",
+     "stem": "The exterior angle of regular pentagon is:",
+     "options": [
+      "40°",
+      "45°",
+      "60°",
+      "72°"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "A regular pentagon’s exterior angle is not 40°; its five exterior angles sum to 360°.",
+      "A regular pentagon’s exterior angle is not 45°.",
+      "A regular pentagon’s exterior angle is not 60°.",
+      "Each exterior angle is 360° ÷ 5 = 72°."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(v)",
+     "stem": "A parallelogram has an area of 64 cm² and a similar parallelogram has an area of 144 cm². If a side of the smaller parallelogram is 8 cm, the corresponding side of the larger parallelogram is:",
+     "options": [
+      "10 cm",
+      "12 cm",
+      "18 cm",
+      "16 cm"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A 10 cm corresponding side would give a side ratio of 10:8, inconsistent with the area ratio.",
+      "The area ratio is 144:64 = 9:4, so the side ratio is 3:2 and the larger side is 12 cm.",
+      "An 18 cm side would give a side ratio of 18:8, inconsistent with the area ratio.",
+      "A 16 cm side would give a side ratio of 2:1, inconsistent with the area ratio."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(vi)",
+     "stem": "The total number of diagonals in a polygon with 9 sides is:",
+     "options": [
+      "18",
+      "21",
+      "25",
+      "27"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "A 9-sided polygon has more than 18 diagonals.",
+      "A 9-sided polygon has more than 21 diagonals.",
+      "A 9-sided polygon has more than 25 diagonals.",
+      "The number of diagonals is 9(9 − 3) ÷ 2 = 27."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(vii)",
+     "stem": "Two spheres are similar, and their radii are in the ratio 4:5. If the surface area of the larger sphere is 500π cm², what is the surface area of the smaller sphere?",
+     "options": [
+      "256π cm²",
+      "320π cm²",
+      "400π cm²",
+      "405π cm²"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The smaller sphere’s area is not 256π cm²; the area scales as the square of the radius ratio, 16:25.",
+      "The smaller sphere’s area is 500π × (4/5)² = 320π cm².",
+      "The value 400π cm² does not follow from the squared radius ratio 16:25.",
+      "The value 405π cm² does not follow from the squared radius ratio 16:25."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(viii)",
+     "stem": "A regular polygon has an exterior angle of 30°. How many diagonals does the Polygon have?",
+     "options": [
+      "54",
+      "90",
+      "72",
+      "108"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "An exterior angle of 30° gives 12 sides, and 12(12 − 3) ÷ 2 = 54 diagonals.",
+      "A 12-sided polygon has 54 diagonals, not 90.",
+      "A 12-sided polygon has 54 diagonals, not 72.",
+      "A 12-sided polygon has 54 diagonals, not 108."
+     ]
+    },
+    {
+     "source": "Review Ex 9 Q1(x)",
+     "stem": "A regular polygon has an interior angle of 165°. How many sides does it have?",
+     "options": [
+      "15",
+      "16",
+      "20",
+      "24"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "With interior angle 165°, the exterior angle is 15°, so the polygon has 24 sides, not 15.",
+      "The exterior angle is 15°, giving 360° ÷ 15° = 24 sides, not 16.",
+      "The exterior angle is 15°, giving 24 sides, not 20.",
+      "The exterior angle is 180° − 165° = 15°, so the number of sides is 360° ÷ 15° = 24."
+     ]
+    }
+   ]
+  }
+ ]
+}

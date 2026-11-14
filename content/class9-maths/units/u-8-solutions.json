@@ -1,0 +1,4459 @@
+{
+ "unit": 8,
+ "sections": [
+  {
+   "number": "8.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → q",
+     "steps": [
+      "Let A = ~p and B = q.",
+      "Converse: B → A, so q → ~p.",
+      "Inverse: ~A → ~B, so p → ~q.",
+      "Contrapositive: ~B → ~A, so ~q → p."
+     ],
+     "answer": "Converse: q → ~p; Inverse: p → ~q; Contrapositive: ~q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: q → p",
+     "steps": [
+      "Let A = q and B = p.",
+      "Converse: B → A, so p → q.",
+      "Inverse: ~A → ~B, so ~q → ~p.",
+      "Contrapositive: ~B → ~A, so ~p → ~q."
+     ],
+     "answer": "Converse: p → q; Inverse: ~q → ~p; Contrapositive: ~p → ~q.",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → ~q",
+     "steps": [
+      "Let A = ~p and B = ~q.",
+      "Converse: B → A, so ~q → ~p.",
+      "Inverse: ~A → ~B, so p → q.",
+      "Contrapositive: ~B → ~A, so q → p."
+     ],
+     "answer": "Converse: ~q → ~p; Inverse: p → q; Contrapositive: q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~q → ~p",
+     "steps": [
+      "Let A = ~q and B = ~p.",
+      "Converse: B → A, so ~p → ~q.",
+      "Inverse: ~A → ~B, so q → p.",
+      "Contrapositive: ~B → ~A, so p → q."
+     ],
+     "answer": "Converse: ~p → ~q; Inverse: q → p; Contrapositive: p → q.",
+     "figure": "",
+     "accept": [
+      [
+       "~p→~q",
+       "q→p",
+       "p→q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "The truth values of p and q are taken in the order TT, TF, FT, FF.",
+      "For p = T, q = T: p ∨ q = T; ~(p ∨ q) = F; ~q = F; ~(p ∨ q) ∨ (~q) = F.",
+      "For p = T, q = F: p ∨ q = T; ~(p ∨ q) = F; ~q = T; ~(p ∨ q) ∨ (~q) = T.",
+      "For p = F, q = T: p ∨ q = T; ~(p ∨ q) = F; ~q = F; ~(p ∨ q) ∨ (~q) = F.",
+      "For p = F, q = F: p ∨ q = F; ~(p ∨ q) = T; ~q = T; ~(p ∨ q) ∨ (~q) = T.",
+      "Truth table: p: T, T, F, F; q: T, F, T, F; p ∨ q: T, T, T, F; ~(p ∨ q): F, F, F, T; ~q: F, T, F, T; ~(p ∨ q) ∨ (~q): F, T, F, T."
+     ],
+     "answer": "| p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q) |\n| T | T | T | F | F | F |\n| T | F | T | F | T | T |\n| F | T | T | F | F | F |\n| F | F | F | T | T | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "The truth values of p and q are taken in the order TT, TF, FT, FF.",
+      "For p = T, q = T: ~q = F; ~p = F; ~q ∨ ~p = F; ~(~q ∨ ~p) = T.",
+      "For p = T, q = F: ~q = T; ~p = F; ~q ∨ ~p = T; ~(~q ∨ ~p) = F.",
+      "For p = F, q = T: ~q = F; ~p = T; ~q ∨ ~p = T; ~(~q ∨ ~p) = F.",
+      "For p = F, q = F: ~q = T; ~p = T; ~q ∨ ~p = T; ~(~q ∨ ~p) = F.",
+      "Truth table: p: T, T, F, F; q: T, F, T, F; ~q: F, T, F, T; ~p: F, F, T, T; ~q ∨ ~p: F, T, T, T; ~(~q ∨ ~p): T, F, F, F."
+     ],
+     "answer": "| p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p) |\n| T | T | F | F | F | T |\n| T | F | T | F | T | F |\n| F | T | F | T | T | F |\n| F | F | T | T | T | F |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "The truth values of p and q are taken in the order TT, TF, FT, FF.",
+      "For p = T, q = T: p ∨ q = T; p ∧ q = T; (p ∨ q) ↔ (p ∧ q) = T.",
+      "For p = T, q = F: p ∨ q = T; p ∧ q = F; (p ∨ q) ↔ (p ∧ q) = F.",
+      "For p = F, q = T: p ∨ q = T; p ∧ q = F; (p ∨ q) ↔ (p ∧ q) = F.",
+      "For p = F, q = F: p ∨ q = F; p ∧ q = F; (p ∨ q) ↔ (p ∧ q) = T.",
+      "Truth table: p: T, T, F, F; q: T, F, T, F; p ∨ q: T, T, T, F; p ∧ q: T, F, F, F; (p ∨ q) ↔ (p ∧ q): T, F, F, T."
+     ],
+     "answer": "| p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |\n| T | T | T | T | T |\n| T | F | T | F | F |\n| F | T | T | F | F |\n| F | F | F | F | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a declarative sentence that is either true or false.",
+      "A proof is a logical argument that establishes the truth of a mathematical statement.",
+      "Example 1 (statement): The sum of two even integers is even.",
+      "Let the two even integers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even; this proves the statement.",
+      "Example 2 (statement): The square of an odd integer is odd.",
+      "Let the odd integer be 2k + 1, where k is an integer.",
+      "Its square is (2k + 1)² = 4k² + 4k + 1 = 2(2k² + 2k) + 1.",
+      "Since 2k² + 2k is an integer, 2(2k² + 2k) + 1 is odd; this proves the statement."
+     ],
+     "answer": "A mathematical statement is a declarative sentence that has a truth value (true or false); a proof is a logical argument that establishes the truth of a statement. Examples: (1) The sum of two even integers is even: 2m + 2n = 2(m + n), which is even. (2) The square of an odd integer is odd: (2k + 1)² = 2(2k² + 2k) + 1, which is odd.",
+     "figure": "",
+     "accept": [
+      [
+       "statement",
+       "proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a statement accepted as true without proof.",
+      "Example: Through any two distinct points, exactly one straight line can be drawn.",
+      "A theorem is a statement whose truth is established by a logical proof using axioms, definitions and previously proved results.",
+      "Example: The sum of the angles of a triangle is 180°."
+     ],
+     "answer": "An axiom is accepted as true without proof, for example, exactly one straight line passes through any two distinct points. A theorem is proved using axioms and previously established results, for example, the sum of the angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom",
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning connects known facts to a conclusion in a valid and orderly way.",
+      "It is important in a mathematical proof because each step must follow from accepted facts or an earlier step.",
+      "Example: Let a and b be even integers.",
+      "Then a = 2m and b = 2n for some integers m and n.",
+      "Therefore, a + b = 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, a + b is even."
+     ],
+     "answer": "Logical reasoning ensures that each step of a proof follows validly from known facts. For example, if a and b are even, then a = 2m and b = 2n for integers m and n. Thus a + b = 2(m + n), so a + b is even.",
+     "figure": "",
+     "accept": [
+      [
+       "logical reasoning"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "The statement is accepted as true without proof in Euclidean geometry.",
+      "It is one of the basic assumptions about points and straight lines."
+     ],
+     "answer": "Axiom — exactly one straight line can be drawn through any two distinct points; this is accepted without proof.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "The statement is known as Goldbach's conjecture.",
+      "It has been checked for many even numbers, but no general proof has been established.",
+      "Therefore, it is an unproved statement based on observed evidence."
+     ],
+     "answer": "Conjecture — the statement has been checked for many even numbers, but it has not been proved for all even numbers greater than 2.",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "The statement can be proved using facts about parallel lines and a straight angle.",
+      "Through one vertex of a triangle, draw a straight line parallel to the opposite side.",
+      "The two angles formed with this parallel line are equal to the two other interior angles of the triangle, by alternate interior angles.",
+      "These two angles and the angle at the vertex together form a straight angle.",
+      "A straight angle is 180°; hence the sum of the three angles of the triangle is 180°."
+     ],
+     "answer": "Theorem — the sum of the angles of a triangle is 180°, and this can be proved using the properties of parallel lines.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= x² − 8x + 16 + 9",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x − 4)² + 9 = x² − 8x + 25.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x + 1)² − (x − 1)² = 4x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 10x + 25) − (x² − 10x + 25)",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x + 5)² − (x − 5)² = 20x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "\\(\\dfrac{4+16x}{4}=\\dfrac{4}{4}+\\dfrac{16x}{4}\\)  (Dividing each term in the numerator by 4)",
+      "\\(=1+4x\\)  (Simplifying)",
+      "Thus, \\(\\dfrac{4+16x}{4}=1+4x\\)."
+     ],
+     "answer": "\\(\\dfrac{4+16x}{4}=1+4x\\).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "\\(\\dfrac{6x^2+18x}{3x^2-27}=\\dfrac{6x(x+3)}{3(x^2-9)}\\)  (Factoring the numerator and taking 3 common from the denominator)",
+      "\\(=\\dfrac{6x(x+3)}{3(x-3)(x+3)}\\)  (Using the difference of two squares)",
+      "\\(=\\dfrac{2x}{x-3}\\)  (Cancelling the common factors)",
+      "The original expression is defined for \\(x\\ne 3,-3\\).",
+      "Thus, \\(\\dfrac{6x^2+18x}{3x^2-27}=\\dfrac{2x}{x-3}\\), for \\(x\\ne 3,-3\\)."
+     ],
+     "answer": "\\(\\dfrac{6x^2+18x}{3x^2-27}=\\dfrac{2x}{x-3}\\), for \\(x\\ne 3,-3\\).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "\\(\\dfrac{x^2+7x+10}{x^2-3x-10}=\\dfrac{(x+5)(x+2)}{x^2-3x-10}\\)  (Factoring the numerator)",
+      "\\(=\\dfrac{(x+5)(x+2)}{(x-5)(x+2)}\\)  (Factoring the denominator)",
+      "\\(=\\dfrac{x+5}{x-5}\\)  (Cancelling the common factor)",
+      "The original expression is defined for \\(x\\ne 5,-2\\).",
+      "Thus, \\(\\dfrac{x^2+7x+10}{x^2-3x-10}=\\dfrac{x+5}{x-5}\\), for \\(x\\ne 5,-2\\)."
+     ],
+     "answer": "\\(\\dfrac{x^2+7x+10}{x^2-3x-10}=\\dfrac{x+5}{x-5}\\), for \\(x\\ne 5,-2\\).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let \\(x\\) be an odd integer.",
+      "Then \\(x=2k+1\\), where \\(k\\) is an integer.",
+      "\\(9x+4=9(2k+1)+4\\)  (Substituting \\(x=2k+1\\))",
+      "\\(=18k+9+4\\)",
+      "\\(=18k+13\\)",
+      "\\(=2(9k+6)+1\\)",
+      "Since \\(9k+6\\) is an integer, \\(9x+4\\) is odd."
+     ],
+     "answer": "If \\(x\\) is an odd integer, then \\(9x+4\\) is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let \\(x\\) be an odd integer.",
+      "Then \\(x=2k+1\\), where \\(k\\) is an integer.",
+      "\\(7x+5=7(2k+1)+5\\)  (Substituting \\(x=2k+1\\))",
+      "\\(=14k+7+5\\)",
+      "\\(=14k+12\\)",
+      "\\(=2(7k+6)\\)",
+      "Since \\(7k+6\\) is an integer, \\(7x+5\\) is even."
+     ],
+     "answer": "If \\(x\\) is an odd integer, then \\(7x+5\\) is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statements: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let \\(x\\) be an odd integer.",
+      "Then \\(x=2k+1\\), where \\(k\\) is an integer.",
+      "\\(x^2-4x+6=(2k+1)^2-4(2k+1)+6\\)  (Substituting \\(x=2k+1\\))",
+      "\\(=4k^2+4k+1-8k-4+6\\)",
+      "\\(=4k^2-4k+3\\)",
+      "\\(=2(2k^2-2k+1)+1\\)",
+      "Since \\(2k^2-2k+1\\) is an integer, \\(x^2-4x+6\\) is odd."
+     ],
+     "answer": "If \\(x\\) is an odd integer, then \\(x^2-4x+6\\) is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statements: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let \\(x\\) be an even integer.",
+      "Then \\(x=2k\\), where \\(k\\) is an integer.",
+      "\\(x^2+2x+4=(2k)^2+2(2k)+4\\)  (Substituting \\(x=2k\\))",
+      "\\(=4k^2+4k+4\\)",
+      "\\(=2(2k^2+2k+2)\\)",
+      "Since \\(2k^2+2k+2\\) is an integer, \\(x^2+2x+4\\) is even."
+     ],
+     "answer": "If \\(x\\) is an even integer, then \\(x^2+2x+4\\) is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let \\(x\\) be any element of the universal set.",
+      "\\(x\\in(A\\cap B)'\\iff x\\notin A\\cap B\\)  (Definition of complement)",
+      "\\(\\iff x\\notin A\\text{ or }x\\notin B\\)  (Definition of intersection)",
+      "\\(\\iff x\\in A'\\text{ or }x\\in B'\\)  (Definition of complement)",
+      "\\(\\iff x\\in A'\\cup B'\\)  (Definition of union)",
+      "Therefore, \\((A\\cap B)'=A'\\cup B'\\)."
+     ],
+     "answer": "\\((A\\cap B)'=A'\\cup B'\\).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Since x and y are positive real numbers, x + y > 0.",
+      "x² < y²",
+      "x² − y² < 0",
+      "(x − y)(x + y) < 0",
+      "Since x + y > 0, it follows that x − y < 0.",
+      "Therefore, x < y."
+     ],
+     "answer": "x < y",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "In △ABC, draw a line through A parallel to BC.",
+      "Let this line be l.",
+      "Since l ∥ BC, ∠1 = ∠B (alternate interior angles).",
+      "Since l ∥ BC, ∠2 = ∠C (alternate interior angles).",
+      "∠1 + ∠A + ∠2 = 180° (angles on a straight line).",
+      "Therefore, ∠B + ∠A + ∠C = 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "Assume b ≠ 0 and d ≠ 0, so both fractions are defined.",
+      "Suppose a/b = c/d.",
+      "Multiplying both sides by bd gives (a/b)(bd) = (c/d)(bd).",
+      "Simplifying gives ad = bc.",
+      "Conversely, suppose ad = bc.",
+      "Dividing both sides by bd gives ad/(bd) = bc/(bd).",
+      "Simplifying gives a/b = c/d.",
+      "Hence, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "a/b = c/d ⇔ ad = bc",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "Assume b ≠ 0 and d ≠ 0, so both fractions are defined.",
+      "(a/b) · (c/d) = (a · c)/(b · d).",
+      "Therefore, (a/b) · (c/d) = ac/bd."
+     ],
+     "answer": "(a/b) · (c/d) = ac/bd",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since b ≠ 0, the fractions are defined.",
+      "a/b + c/b = (a + c)/b (fractions with the same denominator are added by adding their numerators)."
+     ],
+     "answer": "a/b + c/b = (a + c)/b",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "based on repeated experiments",
+      "if and only if statements",
+      "Statement is proven by a theorem",
+      "based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning uses patterns or results from repeated observations and experiments to form a generalization.",
+      "An if-and-only-if statement is a logical equivalence, not a defining feature of inductive reasoning.",
+      "A statement proven by a theorem is established through deductive reasoning.",
+      "Reasoning from general principles to particular conclusions is deductive reasoning."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "general conclusions from a limited number of observations",
+      "based on repeated experiments",
+      "based on units of information that are accurate",
+      "draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Drawing general conclusions from a limited number of observations describes inductive reasoning.",
+      "Repeated experiments are often used in inductive reasoning.",
+      "Accurate information may support reasoning, but this option does not specifically describe deduction.",
+      "Deductive reasoning draws conclusions from established facts or premises."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "The set of integers is finite",
+      "The sum of the interior angles of any quadrilateral is always 180°",
+      "22/7 ∉ Q′",
+      "All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The set of integers is infinite, so this statement is false.",
+      "A quadrilateral’s interior angles sum to 360°, not 180°.",
+      "Since 22/7 is rational, it is not in the set of irrational numbers denoted by Q′.",
+      "An isosceles triangle need not be equilateral, so this statement is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "the stove is not burning.",
+      "the stove is dim",
+      "the stove is turned to low heat",
+      "it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The negation of “The stove is burning” is “The stove is not burning.”",
+      "Being dim does not necessarily mean the stove is not burning.",
+      "Being set to low heat does not necessarily mean the stove is not burning.",
+      "This describes a contradiction rather than the negation of the statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "both p and q are false.",
+      "both p and q are true.",
+      "only q is true.",
+      "only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction is true exactly when both p and q are true.",
+      "A conjunction is false if only q is true because p is false.",
+      "A conjunction is false if only p is true because q is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "antecedent is true and consequent is false.",
+      "consequent is true and antecedent is false.",
+      "antecedent is true only.",
+      "consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false exactly when its antecedent is true and its consequent is false.",
+      "When the antecedent is false and the consequent is true, the conditional is true.",
+      "A true antecedent alone does not make a conditional false; the consequent must also be false.",
+      "A false consequent alone does not make a conditional false if the antecedent is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "q → ~p",
+      "~q → p",
+      "~p → ~q",
+      "~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "q → ~p is not the contrapositive of q → p.",
+      "~q → p is the inverse of q → p, not its contrapositive.",
+      "The contrapositive reverses the implication and negates both parts, giving ~p → ~q.",
+      "~q → ~p is the converse of the inverse, not the contrapositive."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The statement has not been proved as a theorem and is not known to be true in general.",
+      "This is Goldbach’s conjecture, an unproved claim about even integers greater than 2.",
+      "An axiom is accepted as a starting truth, whereas this statement is an unproved conjecture.",
+      "A postulate is an accepted starting assumption, not this unproved number-theory claim."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This statement is a basic accepted principle rather than a theorem proved from other statements.",
+      "It is not merely a conjecture because it is accepted as a foundational geometric principle.",
+      "The statement is a Euclidean axiom or postulate.",
+      "Logic is a field of reasoning, not the category of this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "converse",
+      "theorem",
+      "axiom",
+      "conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A converse reverses the hypothesis and conclusion of a conditional, so it does not classify this angle-sum statement.",
+      "The triangle angle-sum statement is a theorem that can be proved from geometric axioms.",
+      "An axiom is accepted without proof, while the triangle angle-sum result is proved.",
+      "A conditional is an if-then statement, not the classification of this established result."
+     ]
+    }
+   ]
+  },
+  {
+   "number": "8.1.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~p → q",
+     "steps": [
+      "Converse: q → ~p",
+      "Inverse: p → ~q",
+      "Contrapositive: ~q → p"
+     ],
+     "answer": "Converse: q → ~p; inverse: p → ~q; contrapositive: ~q → p",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: q → p",
+     "steps": [
+      "Converse: p → q",
+      "Inverse: ~q → ~p",
+      "Contrapositive: ~p → ~q"
+     ],
+     "answer": "Converse: p → q; inverse: ~q → ~p; contrapositive: ~p → ~q",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~p → ~q",
+     "steps": [
+      "Converse: ~q → ~p",
+      "Inverse: p → q",
+      "Contrapositive: q → p"
+     ],
+     "answer": "Converse: ~q → ~p; inverse: p → q; contrapositive: q → p",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~q → ~p",
+     "steps": [
+      "Let the antecedent be A = ~q and the consequent be B = ~p.",
+      "The converse is B → A, so the converse is ~p → ~q.",
+      "The inverse is ~A → ~B, so the inverse is q → p.",
+      "The contrapositive is ~B → ~A, so the contrapositive is p → q."
+     ],
+     "answer": "Converse: ~p → ~q; Inverse: q → p; Contrapositive: p → q.",
+     "figure": "",
+     "accept": [
+      [
+       "~p → ~q",
+       "q → p",
+       "p → q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "Construct the truth table for ~(p ∨ q) ∨ (~q), using all possible truth values of p and q.",
+      "| p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q) |",
+      "| T | T | T | F | F | F |",
+      "| T | F | T | F | T | T |",
+      "| F | T | T | F | F | F |",
+      "| F | F | F | T | T | T |"
+     ],
+     "answer": "| p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q) |\n| T | T | T | F | F | F |\n| T | F | T | F | T | T |\n| F | T | T | F | F | F |\n| F | F | F | T | T | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "Construct the truth table for ~(~q ∨ ~p), using all possible truth values of p and q.",
+      "| p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p) |",
+      "| T | T | F | F | F | T |",
+      "| T | F | T | F | T | F |",
+      "| F | T | F | T | T | F |",
+      "| F | F | T | T | T | F |"
+     ],
+     "answer": "| p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p) |\n| T | T | F | F | F | T |\n| T | F | T | F | T | F |\n| F | T | F | T | T | F |\n| F | F | T | T | T | F |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "Construct the truth table for (p ∨ q) ↔ (p ∧ q), using all possible truth values of p and q.",
+      "The biconditional is true when both expressions have the same truth value.",
+      "| p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |",
+      "| T | T | T | T | T |",
+      "| T | F | T | F | F |",
+      "| F | T | T | F | F |",
+      "| F | F | F | F | T |"
+     ],
+     "answer": "| p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |\n| T | T | T | T | T |\n| T | F | T | F | F |\n| F | T | T | F | F |\n| F | F | F | F | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a declarative sentence which has a definite truth value; it is either true or false.",
+      "A proof is a logical argument consisting of accepted facts and valid steps that establishes the truth of a statement.",
+      "Example 1: Statement: 2 + 3 = 5. Proof: By addition, 2 + 3 = 5; hence the statement is true.",
+      "Example 2: Statement: The sum of two even integers is even.",
+      "Proof: Let the two even integers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even; hence the statement is true."
+     ],
+     "answer": "A statement is a sentence that is either true or false; its proof is a logical argument establishing that it is true.",
+     "figure": "",
+     "accept": [
+      [
+       "truth value",
+       "logical argument"
+      ],
+      [
+       "statement",
+       "proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a statement accepted as true without proof.",
+      "A theorem is a statement whose truth is established by a proof using axioms, definitions and previously proved results.",
+      "Example of an axiom: Through any two distinct points there is exactly one straight line.",
+      "Example of a theorem: The sum of the angles of a triangle is 180°; this is proved using established geometric results."
+     ],
+     "answer": "An axiom is accepted without proof, whereas a theorem is proved. For example, the unique straight line through two distinct points is an axiom, and the theorem that the angles of a triangle sum to 180° is proved.",
+     "figure": "",
+     "accept": [
+      [
+       "without proof",
+       "proved"
+      ],
+      [
+       "axiom",
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning connects known facts to a conclusion through valid steps and is therefore essential for establishing that a mathematical statement is true.",
+      "Example: The sum of two odd integers is even.",
+      "Let the two odd integers be 2m + 1 and 2n + 1, where m and n are integers.",
+      "Their sum is (2m + 1) + (2n + 1) = 2(m + n + 1).",
+      "Since m + n + 1 is an integer, the sum is even; this conclusion follows by logical reasoning from the definition of odd integers."
+     ],
+     "answer": "Logical reasoning is important because it establishes mathematical conclusions through valid steps. For example, it proves that the sum of two odd integers is even.",
+     "figure": "",
+     "accept": [
+      [
+       "logical reasoning",
+       "valid steps"
+      ],
+      [
+       "odd",
+       "even"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "This statement is an axiom.",
+      "It is accepted as true without proof and is a basic fact of geometry.",
+      "The phrase “two points” is understood to mean two distinct points."
+     ],
+     "answer": "It is an axiom: through any two distinct points there is exactly one straight line.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom",
+       "accepted without proof"
+      ],
+      [
+       "distinct points",
+       "exactly one straight line"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "This statement is not accepted as an axiom, because it is not taken as a basic fact without proof.",
+      "It has been checked for many even numbers, but no proof has been given that it is true for every even number greater than 2.",
+      "A statement proposed as true but not yet proved is called a conjecture."
+     ],
+     "answer": "It is a conjecture (Goldbach’s conjecture).",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture"
+      ],
+      [
+       "Goldbach"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "The angle-sum property of a triangle can be proved using the properties of parallel lines and angles.",
+      "A statement that is proved using accepted facts is called a theorem."
+     ],
+     "answer": "It is a theorem.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= x² − 8x + 16 + 9  [using (a − b)² = a² − 2ab + b²]",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x − 4)² + 9 = x² − 8x + 25.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)  [using (a + b)² and (a − b)²]",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x + 1)² − (x − 1)² = 4x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 10x + 25) − (x² − 10x + 25)  [using (a + b)² and (a − b)²]",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x + 5)² − (x − 5)² = 20x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "L.H.S. = (4 + 16x) ÷ 4",
+      "= 4 ÷ 4 + 16x ÷ 4  [by the distributive property of division over addition]",
+      "= 1 + 4x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (4 + 16x) ÷ 4 = 1 + 4x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "L.H.S. = (6x² + 18x) ÷ (3x² − 27)",
+      "= [6x(x + 3)] ÷ [3(x² − 9)]  [factorising the numerator and denominator]",
+      "= [6x(x + 3)] ÷ [3(x − 3)(x + 3)]  [using a² − b² = (a − b)(a + b)]",
+      "= 2x ÷ (x − 3)  [cancelling the common factors 3 and (x + 3), where x ≠ −3]",
+      "= R.H.S.  (where x ≠ 3, −3)"
+     ],
+     "answer": "L.H.S. = R.H.S. for x ≠ 3, −3; hence, (6x² + 18x) ÷ (3x² − 27) = 2x ÷ (x − 3).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "L.H.S. = (x² + 7x + 10) ÷ (x² − 3x − 10)",
+      "= [(x + 5)(x + 2)] ÷ (x² − 3x − 10)  [factorising the numerator]",
+      "= [(x + 5)(x + 2)] ÷ [(x − 5)(x + 2)]  [factorising the denominator]",
+      "= (x + 5) ÷ (x − 5)  [cancelling the common factor (x + 2), where x ≠ −2]",
+      "= R.H.S.  (where x ≠ −2, 5)"
+     ],
+     "answer": "L.H.S. = R.H.S. for x ≠ −2, 5; hence, (x² + 7x + 10) ÷ (x² − 3x − 10) = (x + 5) ÷ (x − 5).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1 for some integer k.",
+      "9x + 4 = 9(2k + 1) + 4.",
+      "9x + 4 = 18k + 13.",
+      "9x + 4 = 2(9k + 6) + 1.",
+      "Since 9k + 6 is an integer, 9x + 4 is odd."
+     ],
+     "answer": "If x is odd, then 9x + 4 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1 for some integer k.",
+      "7x + 5 = 7(2k + 1) + 5.",
+      "7x + 5 = 14k + 12.",
+      "7x + 5 = 2(7k + 6).",
+      "Since 7k + 6 is an integer, 7x + 5 is even."
+     ],
+     "answer": "If x is odd, then 7x + 5 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statement: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1 for some integer k.",
+      "x² − 4x + 6 = (2k + 1)² − 4(2k + 1) + 6.",
+      "x² − 4x + 6 = 4k² + 4k + 1 − 8k − 4 + 6.",
+      "x² − 4x + 6 = 4k² − 4k + 3.",
+      "x² − 4x + 6 = 2(2k² − 2k + 1) + 1.",
+      "Since 2k² − 2k + 1 is an integer, x² − 4x + 6 is odd."
+     ],
+     "answer": "If x is an odd integer, then x² − 4x + 6 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statement: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let x be an even integer.",
+      "Then x = 2k for some integer k.",
+      "x² + 2x + 4 = (2k)² + 2(2k) + 4.",
+      "x² + 2x + 4 = 4k² + 4k + 4.",
+      "x² + 2x + 4 = 2(2k² + 2k + 2).",
+      "Since 2k² + 2k + 2 is an integer, x² + 2x + 4 is even."
+     ],
+     "answer": "If x is an even integer, then x² + 2x + 4 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let x ∈ (A ∩ B)'.",
+      "Then x ∉ A ∩ B.",
+      "Therefore, x ∉ A or x ∉ B.",
+      "Hence, x ∈ A' or x ∈ B'.",
+      "Therefore, x ∈ A' ∪ B'.",
+      "Thus, (A ∩ B)' ⊆ A' ∪ B'.",
+      "Let x ∈ A' ∪ B'.",
+      "Then x ∈ A' or x ∈ B'.",
+      "Therefore, x ∉ A or x ∉ B.",
+      "Hence, x ∉ A ∩ B.",
+      "Therefore, x ∈ (A ∩ B)'.",
+      "Thus, A' ∪ B' ⊆ (A ∩ B)'.",
+      "Since each set is a subset of the other, (A ∩ B)' = A' ∪ B'."
+     ],
+     "answer": "(A ∩ B)' = A' ∪ B'.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Since x and y are positive real numbers, x + y > 0.",
+      "Given x² < y².",
+      "Therefore, y² − x² > 0.",
+      "(y − x)(y + x) > 0.",
+      "Since y + x > 0, it follows that y − x > 0.",
+      "Therefore, x < y."
+     ],
+     "answer": "If x and y are positive real numbers and x² < y², then x < y.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "Let ABC be a triangle.",
+      "Through A, draw a straight line DE parallel to BC.",
+      "Since DE ∥ BC, ∠DAB = ∠ABC (alternate interior angles).",
+      "Since DE ∥ BC, ∠CAE = ∠ACB (alternate interior angles).",
+      "∠DAB + ∠BAC + ∠CAE = 180° (angles on a straight line).",
+      "Substituting the equal angles, ∠ABC + ∠BAC + ∠ACB = 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "The given conditions state that b ≠ 0, but do not state that d ≠ 0.",
+      "If d = 0, then c/d is undefined, so the statement is not well-defined for all the given values.",
+      "For the corrected statement, suppose d ≠ 0. Then bd ≠ 0.",
+      "a/b = c/d  ⇒  bd(a/b) = bd(c/d)",
+      "⇒ ad = bc",
+      "Conversely, suppose ad = bc. Since bd ≠ 0, divide both sides by bd.",
+      "ad/(bd) = bc/(bd)",
+      "⇒ a/b = c/d",
+      "Hence, when d ≠ 0, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "As stated, the claim is not well-defined when d = 0. If d ≠ 0, then a/b = c/d ⇔ ad = bc.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "The given conditions state that b ≠ 0, but do not state that d ≠ 0.",
+      "If d = 0, then c/d and ac/(bd) are undefined, so the statement is not well-defined for all the given values.",
+      "For the corrected statement, suppose d ≠ 0. Then bd ≠ 0.",
+      "(a/b) · (c/d) = (a · c)/(b · d)",
+      "= ac/bd"
+     ],
+     "answer": "As stated, the claim is not well-defined when d = 0. If d ≠ 0, then (a/b) · (c/d) = ac/bd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since b is non-zero, 1/b exists.",
+      "a/b + c/b = a · 1/b + c · 1/b",
+      "= (a + c) · 1/b",
+      "= (a + c)/b"
+     ],
+     "answer": "Hence, a/b + c/b = (a + c)/b.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "based on repeated experiments",
+      "if and only if statements",
+      "Statement is proven by a theorem",
+      "based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning uses patterns or results from repeated observations and experiments to form a generalization.",
+      "An if-and-only-if statement is a logical equivalence, not a defining feature of inductive reasoning.",
+      "A statement proven by a theorem is established through deductive reasoning.",
+      "Reasoning from general principles to particular conclusions is deductive reasoning."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "general conclusions from a limited number of observations",
+      "based on repeated experiments",
+      "based on units of information that are accurate",
+      "draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Drawing general conclusions from a limited number of observations describes inductive reasoning.",
+      "Repeated experiments are often used in inductive reasoning.",
+      "Accurate information may support reasoning, but this option does not specifically describe deduction.",
+      "Deductive reasoning draws conclusions from established facts or premises."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "The set of integers is finite",
+      "The sum of the interior angles of any quadrilateral is always 180°",
+      "22/7 ∉ Q′",
+      "All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The set of integers is infinite, so this statement is false.",
+      "A quadrilateral’s interior angles sum to 360°, not 180°.",
+      "Since 22/7 is rational, it is not in the set of irrational numbers denoted by Q′.",
+      "An isosceles triangle need not be equilateral, so this statement is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "the stove is not burning.",
+      "the stove is dim",
+      "the stove is turned to low heat",
+      "it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The negation of “The stove is burning” is “The stove is not burning.”",
+      "Being dim does not necessarily mean the stove is not burning.",
+      "Being set to low heat does not necessarily mean the stove is not burning.",
+      "This describes a contradiction rather than the negation of the statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "both p and q are false.",
+      "both p and q are true.",
+      "only q is true.",
+      "only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction is true exactly when both p and q are true.",
+      "A conjunction is false if only q is true because p is false.",
+      "A conjunction is false if only p is true because q is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "antecedent is true and consequent is false.",
+      "consequent is true and antecedent is false.",
+      "antecedent is true only.",
+      "consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false precisely when its antecedent is true and its consequent is false.",
+      "If the antecedent is false and the consequent is true, the conditional is true.",
+      "An antecedent being true alone does not make the conditional false; the consequent must also be false.",
+      "A false consequent alone does not make the conditional false if the antecedent is also false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "q → ~p",
+      "~q → p",
+      "~p → ~q",
+      "~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is not the contrapositive because it negates only the consequent.",
+      "This is not the contrapositive because it negates only the antecedent.",
+      "The contrapositive of q → p is formed by reversing the implication and negating both parts: ~p → ~q.",
+      "This negates both parts but does not reverse their order."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This statement is not a proven theorem; it is a famous unproved claim.",
+      "This is Goldbach’s conjecture, which has not been proved for every integer greater than 2.",
+      "An axiom is accepted as a starting point rather than being an unproved claim about prime sums.",
+      "A postulate is a basic assumption, not the name for this unproved number-theory claim."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The statement is taken as a basic geometric assumption rather than proved from other results.",
+      "A conjecture is an unproved claim, whereas this is a foundational geometric assumption.",
+      "The statement is an axiom or postulate of Euclidean geometry.",
+      "Logic is a system of valid reasoning, not the classification of this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "converse",
+      "theorem",
+      "axiom",
+      "conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The statement is not the converse of a conditional; it asserts a geometric result.",
+      "The angle-sum property of a triangle is a theorem in Euclidean geometry.",
+      "An axiom is accepted without proof, whereas this result can be proved from geometric principles.",
+      "The statement can be expressed conditionally, but its classification is a theorem."
+     ]
+    }
+   ]
+  },
+  {
+   "number": "8.1.2",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → q",
+     "steps": [
+      "Converse: q → ~p",
+      "Inverse: p → ~q",
+      "Contrapositive: ~q → p"
+     ],
+     "answer": "Converse: q → ~p; Inverse: p → ~q; Contrapositive: ~q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: q → p",
+     "steps": [
+      "Converse: p → q",
+      "Inverse: ~q → ~p",
+      "Contrapositive: ~p → ~q"
+     ],
+     "answer": "Converse: p → q; Inverse: ~q → ~p; Contrapositive: ~p → ~q.",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → ~q",
+     "steps": [
+      "Converse: ~q → ~p",
+      "Inverse: p → q",
+      "Contrapositive: q → p"
+     ],
+     "answer": "Converse: ~q → ~p; Inverse: p → q; Contrapositive: q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~q → ~p",
+     "steps": [
+      "Converse: ~p → ~q",
+      "Inverse: q → p",
+      "Contrapositive: p → q"
+     ],
+     "answer": "Converse: ~p → ~q; Inverse: q → p; Contrapositive: p → q.",
+     "figure": "",
+     "accept": [
+      [
+       "~p→~q",
+       "q→p",
+       "p→q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "Let P = ~(p ∨ q) ∨ (~q).",
+      "| p | q | p ∨ q | ~(p ∨ q) | ~q | P |",
+      "| T | T | T | F | F | F |",
+      "| T | F | T | F | T | T |",
+      "| F | T | T | F | F | F |",
+      "| F | F | F | T | T | T |"
+     ],
+     "answer": "| p | q | ~(p ∨ q) ∨ (~q) |\n| T | T | F |\n| T | F | T |\n| F | T | F |\n| F | F | T |",
+     "figure": "",
+     "accept": [
+      [
+       "F F F T"
+      ],
+      [
+       "~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "Let P = ~(~q ∨ ~p).",
+      "| p | q | ~q | ~p | ~q ∨ ~p | P |",
+      "| T | T | F | F | F | T |",
+      "| T | F | T | F | T | F |",
+      "| F | T | F | T | T | F |",
+      "| F | F | T | T | T | F |"
+     ],
+     "answer": "| p | q | ~(~q ∨ ~p) |\n| T | T | T |\n| T | F | F |\n| F | T | F |\n| F | F | F |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "Write the possible truth values of p and q in the order T T, T F, F T and F F.",
+      "For each row, find the truth value of p ∨ q.",
+      "For each row, find the truth value of p ∧ q.",
+      "The biconditional is true when p ∨ q and p ∧ q have the same truth value.",
+      "Thus, complete the truth table as shown."
+     ],
+     "answer": "| p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |\n|---|---|---|---|---|\n| T | T | T | T | T |\n| T | F | T | F | F |\n| F | T | T | F | F |\n| F | F | F | F | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a declarative sentence that is either true or false.",
+      "Example 1: 2 + 3 = 5 is a true mathematical statement.",
+      "Example 2: 2 + 3 = 6 is a false mathematical statement.",
+      "A proof is a logical argument, using accepted facts and valid steps, that establishes the truth of a statement.",
+      "Example: To prove that the sum of two even numbers is even, let the even numbers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Therefore, the sum of two even numbers is even."
+     ],
+     "answer": "A mathematical statement is a sentence that is either true or false; a proof is a logical argument that establishes a statement’s truth. Examples: 2 + 3 = 5 is a statement; the proof that the sum of two even numbers is even is given above.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a basic mathematical truth accepted without proof.",
+      "Example: Through any two distinct points, exactly one straight line can be drawn.",
+      "A theorem is a mathematical statement whose truth is established by a proof using axioms, definitions or previously proved results.",
+      "Example: The sum of the interior angles of a triangle is 180°."
+     ],
+     "answer": "An axiom is accepted without proof; a theorem is proved using axioms, definitions or previously proved results. Examples: the unique-line fact is an axiom; the triangle angle-sum result is a theorem.",
+     "figure": "",
+     "accept": [
+      [
+       "accepted without proof",
+       "proved using axioms"
+      ],
+      [
+       "axiom",
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning is important because it connects known facts to a conclusion through valid steps.",
+      "It shows why a mathematical statement is true instead of merely asserting that it is true.",
+      "For example, let two even numbers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Therefore, the sum of two even numbers is even."
+     ],
+     "answer": "Logical reasoning ensures that a conclusion follows from known facts through valid steps. For example, 2m + 2n = 2(m + n), so the sum of two even numbers is even.",
+     "figure": "",
+     "accept": [
+      [
+       "logical reasoning",
+       "valid conclusion"
+      ],
+      [
+       "2m+2n=2(m+n)"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "The statement is an axiom.",
+      "It is a basic geometric fact accepted without proof: through any two distinct points, exactly one straight line can be drawn."
+     ],
+     "answer": "Axiom. The statement is accepted as a basic geometric fact without proof.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "The statement is a conjecture.",
+      "It is known as Goldbach’s conjecture and has not been proved for every even number greater than 2.",
+      "For example, 4 = 2 + 2 and 6 = 3 + 3, but examples alone do not prove the statement for all such even numbers."
+     ],
+     "answer": "Conjecture. It is known as Goldbach’s conjecture and remains unproved.",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture",
+       "unproved"
+      ],
+      [
+       "goldbach conjecture"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "The statement is a theorem.",
+      "It is established by proof in Euclidean geometry that the sum of the interior angles of any triangle is 180°."
+     ],
+     "answer": "Theorem. The sum of the interior angles of a triangle is proved to be 180°.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem",
+       "proved"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= (x − 4)(x − 4) + 9",
+      "= x² − 4x − 4x + 16 + 9",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; hence, (x − 4)² + 9 = x² − 8x + 25 is proved.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 1)² − (x − 1)² = 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 10x + 25) − (x² − 10x + 25)",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 5)² − (x − 5)² = 20x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "L.H.S. = (4 + 16x)/4",
+      "= 4/4 + 16x/4",
+      "= 1 + 4x",
+      "= R.H.S."
+     ],
+     "answer": "(4 + 16x)/4 = 1 + 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "L.H.S. = (6x² + 18x)/(3x² − 27)",
+      "= 6x(x + 3)/[3(x² − 9)]",
+      "= 6x(x + 3)/[3(x − 3)(x + 3)]",
+      "= 2x/(x − 3)",
+      "= R.H.S. (for x ≠ 3, −3)"
+     ],
+     "answer": "(6x² + 18x)/(3x² − 27) = 2x/(x − 3), for x ≠ 3, −3",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "L.H.S. = (x² + 7x + 10)/(x² − 3x − 10)",
+      "= (x + 5)(x + 2)/[(x − 5)(x + 2)]",
+      "= (x + 5)/(x − 5)",
+      "= R.H.S. (for x ≠ 5, −2)"
+     ],
+     "answer": "(x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5), for x ≠ 5, −2",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "9x + 4 = 9(2k + 1) + 4",
+      "= 18k + 9 + 4",
+      "= 18k + 13",
+      "= 2(9k + 6) + 1",
+      "Since 9k + 6 is an integer, 9x + 4 is odd."
+     ],
+     "answer": "If x is an odd integer, then 9x + 4 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "7x + 5 = 7(2k + 1) + 5",
+      "= 14k + 7 + 5",
+      "= 14k + 12",
+      "= 2(7k + 6)",
+      "Since 7k + 6 is an integer, 7x + 5 is even."
+     ],
+     "answer": "If x is an odd integer, then 7x + 5 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statements: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "x² − 4x + 6 = (2k + 1)² − 4(2k + 1) + 6",
+      "= 4k² + 4k + 1 − 8k − 4 + 6",
+      "= 4k² − 4k + 3",
+      "= 2(2k² − 2k + 1) + 1",
+      "Since 2k² − 2k + 1 is an integer, x² − 4x + 6 is odd."
+     ],
+     "answer": "If x is an odd integer, then x² − 4x + 6 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statements: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let x be an even integer.",
+      "Then x = 2k, where k is an integer.",
+      "x² + 2x + 4 = (2k)² + 2(2k) + 4.",
+      "= 4k² + 4k + 4.",
+      "= 2(2k² + 2k + 2).",
+      "Since k is an integer, 2k² + 2k + 2 is an integer.",
+      "Therefore, x² + 2x + 4 is even."
+     ],
+     "answer": "If x is an even integer, then x² + 2x + 4 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let x be any element of the universal set.",
+      "x ∈ (A ∩ B)' ⇔ x ∉ A ∩ B.",
+      "⇔ x ∉ A or x ∉ B.",
+      "⇔ x ∈ A' or x ∈ B'.",
+      "⇔ x ∈ A' ∪ B'.",
+      "Therefore, (A ∩ B)' = A' ∪ B'."
+     ],
+     "answer": "(A ∩ B)' = A' ∪ B'.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Since x² < y², x² − y² < 0.",
+      "(x − y)(x + y) < 0.",
+      "Since x and y are positive, x + y > 0.",
+      "Therefore, x − y < 0.",
+      "Hence, x < y."
+     ],
+     "answer": "If x and y are positive real numbers and x² < y², then x < y.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "Let ABC be a triangle.",
+      "Through A, draw a straight line parallel to BC.",
+      "The angle between AB and the line through A equals ∠B, by alternate interior angles.",
+      "The angle between the line through A and AC equals ∠C, by alternate interior angles.",
+      "These two angles and ∠A form a straight angle.",
+      "∠A + ∠B + ∠C = 180°.",
+      "Therefore, the sum of the interior angles of a triangle is 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "Since the fractions are defined, b ≠ 0 and d ≠ 0.",
+      "First, suppose a/b = c/d.",
+      "Multiplying both sides by bd gives (a/b)(bd) = (c/d)(bd).",
+      "Therefore, ad = bc.",
+      "Conversely, suppose ad = bc.",
+      "Dividing both sides by bd gives ad/(bd) = bc/(bd).",
+      "Therefore, a/b = c/d.",
+      "Hence, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "a/b = c/d ⇔ ad = bc.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "Since the fractions are defined, b ≠ 0 and d ≠ 0.",
+      "(a/b) · (c/d) = (a · c)/(b · d).",
+      "Therefore, (a/b) · (c/d) = ac/bd."
+     ],
+     "answer": "(a/b) · (c/d) = ac/bd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since b ≠ 0, write both fractions with denominator b.",
+      "a/b + c/b = (a + c)/b.",
+      "Therefore, a/b + c/b = (a + c)/b."
+     ],
+     "answer": "a/b + c/b = (a + c)/b.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "(a) based on repeated experiments",
+      "(b) if and only if statements",
+      "(c) Statement is proven by a theorem",
+      "(d) based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning uses repeated observations or experiments to form a generalization.",
+      "An if-and-only-if statement is a form of biconditional, not a characteristic of induction.",
+      "A statement proven by a theorem reflects deductive reasoning rather than induction.",
+      "Reasoning from general principles to specific conclusions is deductive, not inductive."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "(a) general conclusions from a limited number of observations",
+      "(b) based on repeated experiments",
+      "(c) based on units of information that are accurate",
+      "(d) draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Drawing a general conclusion from limited observations describes inductive reasoning.",
+      "Reasoning based on repeated experiments is typically inductive.",
+      "Accurate information can support reasoning, but this does not specifically define deduction.",
+      "Deductive reasoning draws conclusions from established facts or principles."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "(a) The set of integers is finite",
+      "(b) The sum of the interior angles of any quadrilateral is always 180°",
+      "(c) 22/7 ∉ Q′",
+      "(d) All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The integers are infinite, so this statement is false.",
+      "The interior angles of a quadrilateral sum to 360°, not 180°.",
+      "Since 22/7 is rational, it is not an element of Q′ when Q′ denotes the irrational numbers.",
+      "An isosceles triangle need not be equilateral; it only needs at least two equal sides."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "(a) the stove is not burning.",
+      "(b) the stove is dim",
+      "(c) the stove is turned to low heat",
+      "(d) it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "The direct negation of “The stove is burning” is “The stove is not burning.”",
+      "A stove being dim does not necessarily mean that it is not burning.",
+      "A stove set to low heat may still be burning, so this is not the negation.",
+      "This describes a contradiction rather than the negation alone."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "(a) both p and q are false.",
+      "(b) both p and q are true.",
+      "(c) only q is true.",
+      "(d) only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction p ∧ q is true exactly when both p and q are true.",
+      "If only q is true, then p ∧ q is false.",
+      "If only p is true, then p ∧ q is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "(a) antecedent is true and consequent is false.",
+      "(b) consequent is true and antecedent is false.",
+      "(c) antecedent is true only.",
+      "(d) consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false precisely when its antecedent is true and its consequent is false.",
+      "If the antecedent is false and the consequent is true, the conditional is true.",
+      "An antecedent being true alone does not make the conditional false; the consequent must also be false.",
+      "A false consequent alone does not make the conditional false if the antecedent is also false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "(a) q → ~p",
+      "(b) ~q → p",
+      "(c) ~p → ~q",
+      "(d) ~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is not the contrapositive because it negates only the consequent.",
+      "This is not the contrapositive because it negates only the antecedent.",
+      "The contrapositive of q → p is formed by reversing the implication and negating both parts: ~p → ~q.",
+      "This negates both parts but does not reverse their order."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "(a) theorem",
+      "(b) conjecture",
+      "(c) axiom",
+      "(d) postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This statement is not a proven theorem; it is a famous unproved claim.",
+      "This is Goldbach’s conjecture, which has not been proved for every integer greater than 2.",
+      "An axiom is accepted as a starting point rather than being an unproved claim about prime sums.",
+      "A postulate is a basic assumption, not the name for this unproved number-theory claim."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "(a) theorem",
+      "(b) conjecture",
+      "(c) axiom",
+      "(d) logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The statement is taken as a basic geometric assumption rather than proved from other results.",
+      "A conjecture is an unproved claim, whereas this is a foundational geometric assumption.",
+      "The statement is an axiom or postulate of Euclidean geometry.",
+      "Logic is a system of valid reasoning, not the classification of this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "(a) converse",
+      "(b) theorem",
+      "(c) axiom",
+      "(d) conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The statement is not the converse of a conditional; it asserts a geometric result.",
+      "The angle-sum property of a triangle is a theorem in Euclidean geometry.",
+      "An axiom is accepted without proof, whereas this result can be proved from geometric principles.",
+      "The statement can be expressed conditionally, but its classification is a theorem."
+     ]
+    }
+   ]
+  },
+  {
+   "number": "8.1.3",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → q",
+     "steps": [
+      "The given conditional is ~p → q.",
+      "Converse: q → ~p.",
+      "Inverse: p → ~q.",
+      "Contrapositive: ~q → p."
+     ],
+     "answer": "Converse: q → ~p; inverse: p → ~q; contrapositive: ~q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: q → p",
+     "steps": [
+      "Given conditional: q → p.",
+      "Converse: interchange the hypothesis and conclusion; p → q.",
+      "Inverse: negate the hypothesis and conclusion; ~q → ~p.",
+      "Contrapositive: interchange and negate the hypothesis and conclusion; ~p → ~q."
+     ],
+     "answer": "Converse: p → q; Inverse: ~q → ~p; Contrapositive: ~p → ~q.",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → ~q",
+     "steps": [
+      "Given conditional: ~p → ~q.",
+      "Converse: interchange the hypothesis and conclusion; ~q → ~p.",
+      "Inverse: negate the hypothesis and conclusion; p → q.",
+      "Contrapositive: interchange and negate the hypothesis and conclusion; q → p."
+     ],
+     "answer": "Converse: ~q → ~p; Inverse: p → q; Contrapositive: q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~q → ~p",
+     "steps": [
+      "Given conditional: ~q → ~p.",
+      "Converse: interchange the hypothesis and conclusion; ~p → ~q.",
+      "Inverse: negate the hypothesis and conclusion; q → p.",
+      "Contrapositive: interchange and negate the hypothesis and conclusion; p → q."
+     ],
+     "answer": "Converse: ~p → ~q; Inverse: q → p; Contrapositive: p → q.",
+     "figure": "",
+     "accept": [
+      [
+       "~p→~q",
+       "q→p",
+       "p→q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "Construct the truth table, taking the rows in the order TT, TF, FT, FF.",
+      "For p = T and q = T: p ∨ q = T, ~(p ∨ q) = F, ~q = F, so ~(p ∨ q) ∨ (~q) = F.",
+      "For p = T and q = F: p ∨ q = T, ~(p ∨ q) = F, ~q = T, so ~(p ∨ q) ∨ (~q) = T.",
+      "For p = F and q = T: p ∨ q = T, ~(p ∨ q) = F, ~q = F, so ~(p ∨ q) ∨ (~q) = F.",
+      "For p = F and q = F: p ∨ q = F, ~(p ∨ q) = T, ~q = T, so ~(p ∨ q) ∨ (~q) = T.",
+      "Truth table:",
+      "p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q)",
+      "T | T | T | F | F | F",
+      "T | F | T | F | T | T",
+      "F | T | T | F | F | F",
+      "F | F | F | T | T | T"
+     ],
+     "answer": "| p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q) |\n| T | T | T | F | F | F |\n| T | F | T | F | T | T |\n| F | T | T | F | F | F |\n| F | F | F | T | T | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "Construct the truth table, taking the rows in the order TT, TF, FT, FF.",
+      "For p = T and q = T: ~q = F, ~p = F, ~q ∨ ~p = F, so ~(~q ∨ ~p) = T.",
+      "For p = T and q = F: ~q = T, ~p = F, ~q ∨ ~p = T, so ~(~q ∨ ~p) = F.",
+      "For p = F and q = T: ~q = F, ~p = T, ~q ∨ ~p = T, so ~(~q ∨ ~p) = F.",
+      "For p = F and q = F: ~q = T, ~p = T, ~q ∨ ~p = T, so ~(~q ∨ ~p) = F.",
+      "Truth table:",
+      "p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p)",
+      "T | T | F | F | F | T",
+      "T | F | T | F | T | F",
+      "F | T | F | T | T | F",
+      "F | F | T | T | T | F"
+     ],
+     "answer": "| p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p) |\n| T | T | F | F | F | T |\n| T | F | T | F | T | F |\n| F | T | F | T | T | F |\n| F | F | T | T | T | F |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "Construct the truth table, taking the rows in the order TT, TF, FT, FF.",
+      "For p = T and q = T: p ∨ q = T and p ∧ q = T; therefore (p ∨ q) ↔ (p ∧ q) = T.",
+      "For p = T and q = F: p ∨ q = T and p ∧ q = F; therefore (p ∨ q) ↔ (p ∧ q) = F.",
+      "For p = F and q = T: p ∨ q = T and p ∧ q = F; therefore (p ∨ q) ↔ (p ∧ q) = F.",
+      "For p = F and q = F: p ∨ q = F and p ∧ q = F; therefore (p ∨ q) ↔ (p ∧ q) = T.",
+      "Truth table:",
+      "p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q)",
+      "T | T | T | T | T",
+      "T | F | T | F | F",
+      "F | T | T | F | F",
+      "F | F | F | F | T"
+     ],
+     "answer": "| p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |\n| T | T | T | T | T |\n| T | F | T | F | F |\n| F | T | T | F | F |\n| F | F | F | F | T |",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a declarative sentence which is either true or false.",
+      "A proof is a logical argument that establishes the truth of a mathematical statement, using definitions, axioms and previously proved results.",
+      "Example 1 (statement): The sum of two even integers is even.",
+      "Proof: Let the two even integers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even; hence the statement is true.",
+      "Example 2 (statement): If an integer is divisible by 4, then it is even.",
+      "Proof: Let the integer be 4k, where k is an integer.",
+      "Then 4k = 2(2k), and 2k is an integer.",
+      "Therefore the integer is even; hence the statement is true."
+     ],
+     "answer": "A mathematical statement is a declarative sentence that is either true or false. A proof is a logical argument that establishes that a statement is true. Examples: The sum of two even integers is even; an integer divisible by 4 is even. For the first, write the integers as 2m and 2n; their sum is 2(m + n), which is even. For the second, write the integer as 4k = 2(2k), which is even.",
+     "figure": "",
+     "accept": [
+      [
+       "statement",
+       "proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a statement accepted as true without proof.",
+      "Example of an axiom: Through any two distinct points, exactly one straight line can be drawn.",
+      "A theorem is a statement whose truth is established by proof.",
+      "Example of a theorem: The sum of the three angles of a triangle is 180°."
+     ],
+     "answer": "An axiom is a statement accepted as true without proof; for example, through any two distinct points exactly one straight line can be drawn. A theorem is a statement proved to be true; for example, the sum of the three angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom",
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning is important because it connects accepted facts and mathematical rules to reach a conclusion that must be true.",
+      "For example, let two even numbers be 2m and 2n, where m and n are integers.",
+      "Their sum = 2m + 2n.",
+      "Their sum = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Therefore, the sum of two even numbers is even."
+     ],
+     "answer": "Logical reasoning uses known facts and valid steps to prove that a conclusion must be true, rather than merely guessing or relying on examples. For instance, the sum of two even numbers is even: if the numbers are 2m and 2n, their sum is 2m + 2n = 2(m + n), which is even.",
+     "figure": "",
+     "accept": [
+      [
+       "logical reasoning"
+      ],
+      [
+       "deductive reasoning"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "This statement is an axiom.",
+      "An axiom is a basic statement accepted as true without proof.",
+      "The statement that exactly one straight line passes through any two distinct points is accepted as a basic fact of geometry."
+     ],
+     "answer": "Axiom — it is a basic fact of geometry accepted as true without proof.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom"
+      ],
+      [
+       "axiom",
+       "accepted without proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "This statement is a conjecture.",
+      "A conjecture is a statement believed to be true but not yet proved.",
+      "The statement that every even number greater than 2 is the sum of two prime numbers is known as Goldbach's conjecture.",
+      "It has not been proved for all even numbers."
+     ],
+     "answer": "Conjecture — Goldbach's conjecture is believed to be true but has not been proved for all even numbers.",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture"
+      ],
+      [
+       "goldbach conjecture"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "This statement is a theorem.",
+      "A theorem is a statement that can be proved using accepted facts and previously established results.",
+      "The angle sum property of a triangle can be proved using the properties of parallel lines."
+     ],
+     "answer": "Theorem — the sum of the angles in a triangle is 180° and this statement can be proved.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem"
+      ],
+      [
+       "triangle angle sum theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= x² − 2(x)(4) + 4² + 9",
+      "= x² − 8x + 16 + 9",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "(x − 4)² + 9 = x² − 8x + 25",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 1)² − (x − 1)² = 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 2(x)(5) + 5²) − (x² − 2(x)(5) + 5²)",
+      "= (x² + 10x + 25) − (x² − 10x + 25)",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 5)² − (x − 5)² = 20x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "L.H.S. = (4 + 16x) ÷ 4",
+      "= 4 ÷ 4 + 16x ÷ 4",
+      "= 1 + 4x",
+      "= R.H.S."
+     ],
+     "answer": "(4 + 16x) ÷ 4 = 1 + 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "For x ≠ 3 and x ≠ −3, the left-hand side is defined.",
+      "(6x² + 18x)/(3x² − 27) = [6x(x + 3)]/[3(x² − 9)]",
+      "= [6x(x + 3)]/[3(x − 3)(x + 3)]",
+      "= 2x/(x − 3), since 3 ≠ 0 and x + 3 ≠ 0."
+     ],
+     "answer": "(6x² + 18x)/(3x² − 27) = 2x/(x − 3), for x ≠ 3, −3.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "For x ≠ 5 and x ≠ −2, the left-hand side is defined.",
+      "(x² + 7x + 10)/(x² − 3x − 10) = [(x + 5)(x + 2)]/[(x − 5)(x + 2)]",
+      "= (x + 5)/(x − 5), since x + 2 ≠ 0."
+     ],
+     "answer": "(x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5), for x ≠ 5, −2.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "9x + 4 = 9(2k + 1) + 4",
+      "= 18k + 13",
+      "= 2(9k + 6) + 1.",
+      "Since 9k + 6 is an integer, 9x + 4 is odd."
+     ],
+     "answer": "If x is an odd integer, then 9x + 4 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "7x + 5 = 7(2k + 1) + 5",
+      "= 14k + 12",
+      "= 2(7k + 6).",
+      "Since 7k + 6 is an integer, 7x + 5 is even."
+     ],
+     "answer": "If x is an odd integer, then 7x + 5 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statements: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "x² − 4x + 6 = (2k + 1)² − 4(2k + 1) + 6",
+      "= 4k² + 4k + 1 − 8k − 4 + 6",
+      "= 4k² − 4k + 3",
+      "= 2(2k² − 2k + 1) + 1.",
+      "Since 2k² − 2k + 1 is an integer, x² − 4x + 6 is odd."
+     ],
+     "answer": "If x is an odd integer, then x² − 4x + 6 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statements: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let x be an even integer.",
+      "Then x = 2k, where k is an integer.",
+      "x² + 2x + 4 = (2k)² + 2(2k) + 4",
+      "= 4k² + 4k + 4",
+      "= 2(2k² + 2k + 2).",
+      "Since 2k² + 2k + 2 is an integer, x² + 2x + 4 is even."
+     ],
+     "answer": "If x is an even integer, then x² + 2x + 4 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let x be any element of the universal set U.",
+      "x ∈ (A ∩ B)' ⇔ x ∉ A ∩ B",
+      "⇔ x ∉ A or x ∉ B",
+      "⇔ x ∈ A' or x ∈ B'",
+      "⇔ x ∈ A' ∪ B'.",
+      "Therefore, (A ∩ B)' and A' ∪ B' have the same elements."
+     ],
+     "answer": "(A ∩ B)' = A' ∪ B'.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Let x and y be positive real numbers such that x² < y².",
+      "x² − y² < 0",
+      "(x − y)(x + y) < 0.",
+      "Since x > 0 and y > 0, x + y > 0.",
+      "Therefore, x − y < 0, so x < y."
+     ],
+     "answer": "If x and y are positive real numbers and x² < y², then x < y.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "Let ABC be a triangle.",
+      "Through A, draw the straight line XAY parallel to BC.",
+      "Since AX ∥ BC and AB is a transversal, ∠XAB = ∠ABC (alternate interior angles).",
+      "Since AY ∥ BC and AC is a transversal, ∠CAY = ∠ACB (alternate interior angles).",
+      "Since XAY is a straight line, ∠XAB + ∠BAC + ∠CAY = 180°.",
+      "Substituting ∠ABC for ∠XAB and ∠ACB for ∠CAY, ∠ABC + ∠BAC + ∠ACB = 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "Triangle ABC with B and C on the line BC. Through A, draw the straight line XAY parallel to BC, with X to the left of A and Y to the right. The angles ∠XAB, ∠BAC and ∠CAY form the straight angle XAY.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "Assume that a/b = c/d, where b ≠ 0 and d ≠ 0.",
+      "Multiplying both sides by bd, (a/b)(bd) = (c/d)(bd).",
+      "Simplifying, ad = bc.",
+      "Conversely, assume that ad = bc.",
+      "Dividing both sides by bd, ad/(bd) = bc/(bd).",
+      "Simplifying, a/b = c/d.",
+      "Therefore, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "a/b = c/d ⇔ ad = bc",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "By the definition of multiplication of fractions, (a/b) · (c/d) = (a · c)/(b · d).",
+      "Simplifying the numerator and denominator, (a · c)/(b · d) = ac/bd.",
+      "Therefore, (a/b) · (c/d) = ac/bd."
+     ],
+     "answer": "(a/b) · (c/d) = ac/bd",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since the denominators are equal, add the numerators: a/b + c/b = (a + c)/b.",
+      "Therefore, a/b + c/b = (a + c)/b."
+     ],
+     "answer": "a/b + c/b = (a + c)/b",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "based on repeated experiments",
+      "if and only if statements",
+      "Statement is proven by a theorem",
+      "based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning uses repeated observations or experiments to form a generalization.",
+      "“If and only if” describes a biconditional statement, not a method of reasoning.",
+      "A statement proven by a theorem is established deductively rather than inductively.",
+      "Reasoning from general principles is characteristic of deduction."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "general conclusions from a limited number of observations",
+      "based on repeated experiments",
+      "based on units of information that are accurate",
+      "draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Generalizing from a limited number of observations describes inductive reasoning.",
+      "Repeated experiments are commonly associated with inductive reasoning.",
+      "Accurate information alone does not specify deductive reasoning.",
+      "Deductive reasoning draws conclusions from established facts or premises."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "The set of integers is finite",
+      "The sum of the interior angles of any quadrilateral is always 180°",
+      "22/7 ∉ Q′",
+      "All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The integers are infinite, so this statement is false.",
+      "A quadrilateral’s interior angles sum to 360°, not 180°.",
+      "Since 22/7 is rational, it is not in the set of irrational numbers, denoted Q′.",
+      "An isosceles triangle need not be equilateral because only two sides must be equal."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "the stove is not burning.",
+      "the stove is dim",
+      "the stove is turned to low heat",
+      "it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "“The stove is not burning” directly negates the statement that it is burning.",
+      "A stove can be dim while still burning, so this does not negate the statement.",
+      "A stove set to low heat may still be burning, so this is not its negation.",
+      "A statement and its negation cannot both be true in classical logic."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "both p and q are false.",
+      "both p and q are true.",
+      "only q is true.",
+      "only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction is true exactly when both p and q are true.",
+      "If only q is true, then p and q are not both true, so their conjunction is false.",
+      "If only p is true, then p and q are not both true, so their conjunction is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "antecedent is true and consequent is false.",
+      "consequent is true and antecedent is false.",
+      "antecedent is true only.",
+      "consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false only when its antecedent is true and its consequent is false.",
+      "When the antecedent is false and the consequent is true, the conditional is true.",
+      "A true antecedent alone does not make the conditional false if the consequent is also true.",
+      "A false consequent alone does not make the conditional false if the antecedent is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "q → ~p",
+      "~q → p",
+      "~p → ~q",
+      "~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "q → ~p is not the contrapositive of q → p.",
+      "~q → p is the inverse of q → p, not its contrapositive.",
+      "The contrapositive of q → p is formed by negating both parts and reversing them, giving ~p → ~q.",
+      "~q → ~p reverses and negates the original parts in the wrong order."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A theorem is a statement established by proof, and this statement is not established as one here.",
+      "The statement is a conjecture rather than a proven theorem; as worded, it is also false for some odd integers such as 11.",
+      "An axiom is accepted as a starting assumption rather than proposed as this unproven number-theory claim.",
+      "A postulate is an accepted starting assumption, not a conjecture about sums of primes."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "A theorem must be derived from other statements, while this is presented as a basic assumption.",
+      "A conjecture is proposed but unproven, whereas this is a foundational geometric statement.",
+      "The statement is an axiom or postulate accepted as a basic principle of geometry.",
+      "Logic is a system of reasoning, not the classification of this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "converse",
+      "theorem",
+      "axiom",
+      "conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A converse reverses a conditional’s hypothesis and conclusion, rather than naming this result.",
+      "The angle-sum statement is a theorem in standard Euclidean geometry.",
+      "An axiom is accepted without proof, whereas the triangle angle-sum result is proved from geometric assumptions.",
+      "A conditional is an if-then statement, not the classification of this established geometric result."
+     ]
+    }
+   ]
+  },
+  {
+   "number": "8.1.4",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~p → q",
+     "steps": [
+      "The given conditional is ~p → q.",
+      "Interchanging the hypothesis and conclusion, the converse is q → ~p.",
+      "Negating the hypothesis and conclusion, the inverse is p → ~q.",
+      "Interchanging and negating the hypothesis and conclusion, the contrapositive is ~q → p."
+     ],
+     "answer": "Converse: q → ~p; Inverse: p → ~q; Contrapositive: ~q → p",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: q → p",
+     "steps": [
+      "The given conditional is q → p.",
+      "Interchanging the hypothesis and conclusion, the converse is p → q.",
+      "Negating the hypothesis and conclusion, the inverse is ~q → ~p.",
+      "Interchanging and negating the hypothesis and conclusion, the contrapositive is ~p → ~q."
+     ],
+     "answer": "Converse: p → q; Inverse: ~q → ~p; Contrapositive: ~p → ~q",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~p → ~q",
+     "steps": [
+      "The given conditional is ~p → ~q.",
+      "Interchanging the hypothesis and conclusion, the converse is ~q → ~p.",
+      "Negating the hypothesis and conclusion, the inverse is p → q.",
+      "Interchanging and negating the hypothesis and conclusion, the contrapositive is q → p."
+     ],
+     "answer": "Converse: ~q → ~p; Inverse: p → q; Contrapositive: q → p",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditional: ~q → ~p",
+     "steps": [
+      "The given conditional is ~q → ~p.",
+      "Interchanging the hypothesis and conclusion, the converse is ~p → ~q.",
+      "Negating the hypothesis and conclusion, the inverse is q → p.",
+      "Interchanging and negating the hypothesis and conclusion, the contrapositive is p → q."
+     ],
+     "answer": "Converse: ~p → ~q; Inverse: q → p; Contrapositive: p → q",
+     "figure": "",
+     "accept": [
+      [
+       "~p→~q",
+       "q→p",
+       "p→q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "Take the possible truth values of p and q in the order TT, TF, FT, FF.",
+      "p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q)",
+      "T | T | T | F | F | F",
+      "T | F | T | F | T | T",
+      "F | T | T | F | F | F",
+      "F | F | F | T | T | T"
+     ],
+     "answer": "For the rows TT, TF, FT, FF, the truth values of ~(p ∨ q) ∨ (~q) are F, T, F, T, respectively.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "Take the possible truth values of p and q in the order TT, TF, FT, FF.",
+      "p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p)",
+      "T | T | F | F | F | T",
+      "T | F | T | F | T | F",
+      "F | T | F | T | T | F",
+      "F | F | T | T | T | F"
+     ],
+     "answer": "For the rows TT, TF, FT, FF, the truth values of ~(~q ∨ ~p) are T, F, F, F, respectively.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "Take the possible truth values of p and q in the order TT, TF, FT, FF.",
+      "p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q)",
+      "T | T | T | T | T",
+      "T | F | T | F | F",
+      "F | T | T | F | F",
+      "F | F | F | F | T"
+     ],
+     "answer": "For the rows TT, TF, FT, FF, the truth values of (p ∨ q) ↔ (p ∧ q) are T, F, F, T, respectively.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a declarative sentence which is either true or false, but not both.",
+      "Example of a mathematical statement: 2 + 3 = 5.",
+      "Another example of a mathematical statement: 7 is even; this is a false statement, but it has a definite truth value.",
+      "A proof is a logical argument consisting of valid steps which establishes the truth of a statement.",
+      "Example of a proof: Let m and n be integers.",
+      "Then 2m and 2n are even integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Hence the sum of two even integers is even."
+     ],
+     "answer": "A mathematical statement is a sentence with a definite truth value; a proof is a logical argument that establishes the truth of a statement.",
+     "figure": "",
+     "accept": [
+      [
+       "definite truth value",
+       "logical argument"
+      ],
+      [
+       "statement",
+       "proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a statement accepted as true without proof.",
+      "Example: Things equal to the same thing are equal to one another.",
+      "A theorem is a statement whose truth is established by a proof using axioms and previously proved results.",
+      "Example: The sum of the interior angles of a triangle is 180°."
+     ],
+     "answer": "An axiom is accepted without proof, whereas a theorem is proved using axioms and previously established results.",
+     "figure": "",
+     "accept": [
+      [
+       "accepted without proof",
+       "proved from"
+      ],
+      [
+       "axiom",
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning connects known facts by valid steps and helps establish that a conclusion follows from the given information.",
+      "For example, let two even integers be 2m and 2n, where m and n are integers.",
+      "Their sum is 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Therefore, the sum of two even integers is even."
+     ],
+     "answer": "Logical reasoning is important because it justifies each step in a proof and shows that the conclusion follows from the given facts. For example, the sum of two even integers 2m and 2n is 2(m + n), which is even.",
+     "figure": "",
+     "accept": [
+      [
+       "valid steps",
+       "conclusion"
+      ],
+      [
+       "logical reasoning",
+       "proof"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "The statement is an axiom.",
+      "It is accepted as true without proof in geometry.",
+      "It states that exactly one straight line can be drawn through any two points."
+     ],
+     "answer": "It is an axiom: exactly one straight line passes through any two points, and this is accepted without proof.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom",
+       "without proof"
+      ],
+      [
+       "axiom",
+       "two points"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "The statement is a conjecture.",
+      "It is believed to be true and has examples such as 4 = 2 + 2 and 6 = 3 + 3.",
+      "However, it has not been proved for every even number greater than 2."
+     ],
+     "answer": "It is a conjecture: every even number greater than 2 is believed to be the sum of two prime numbers, but this has not been proved for all such numbers.",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture",
+       "not been proved"
+      ],
+      [
+       "conjecture",
+       "two prime numbers"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "The statement that the sum of the angles in a triangle is 180° is a theorem.",
+      "It is established by deductive proof using accepted geometric axioms and previously proved results."
+     ],
+     "answer": "Theorem; the angle-sum statement is established by deductive proof from accepted axioms.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= x² − 2(x)(4) + 4² + 9",
+      "= x² − 8x + 16 + 9",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "(x − 4)² + 9 = x² − 8x + 25",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 1)² − (x − 1)² = 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 10x + 25) − (x² − 10x + 25)",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "(x + 5)² − (x − 5)² = 20x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "L.H.S. = (4 + 16x)/4",
+      "= 4/4 + 16x/4",
+      "= 1 + 4x",
+      "= R.H.S."
+     ],
+     "answer": "(4 + 16x)/4 = 1 + 4x",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "For x ≠ 3 and x ≠ −3,",
+      "L.H.S. = (6x² + 18x)/(3x² − 27)",
+      "= 6x(x + 3)/[3(x² − 9)]",
+      "= 6x(x + 3)/[3(x − 3)(x + 3)]",
+      "= 2x/(x − 3)",
+      "= R.H.S."
+     ],
+     "answer": "(6x² + 18x)/(3x² − 27) = 2x/(x − 3), for x ≠ 3, −3",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "For x ≠ 5 and x ≠ −2,",
+      "L.H.S. = (x² + 7x + 10)/(x² − 3x − 10)",
+      "= [(x + 5)(x + 2)]/[(x − 5)(x + 2)]",
+      "= (x + 5)/(x − 5)",
+      "= R.H.S."
+     ],
+     "answer": "(x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5), for x ≠ 5, −2",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "9x + 4 = 9(2k + 1) + 4",
+      "= 18k + 9 + 4",
+      "= 18k + 13",
+      "= 2(9k + 6) + 1",
+      "Since 9k + 6 is an integer, 9x + 4 is odd."
+     ],
+     "answer": "If x is an odd integer, then 9x + 4 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "7x + 5 = 7(2k + 1) + 5.",
+      "7x + 5 = 14k + 7 + 5.",
+      "7x + 5 = 14k + 12.",
+      "7x + 5 = 2(7k + 6).",
+      "Since 7k + 6 is an integer, 7x + 5 is even."
+     ],
+     "answer": "7x + 5 is even.",
+     "figure": "",
+     "accept": [
+      [
+       "even"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statements: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "x² − 4x + 6 = (2k + 1)² − 4(2k + 1) + 6.",
+      "x² − 4x + 6 = 4k² + 4k + 1 − 8k − 4 + 6.",
+      "x² − 4x + 6 = 4k² − 4k + 3.",
+      "x² − 4x + 6 = 2(2k² − 2k + 1) + 1.",
+      "Since 2k² − 2k + 1 is an integer, x² − 4x + 6 is odd."
+     ],
+     "answer": "If x is an odd integer, then x² − 4x + 6 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statements: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let x be an even integer.",
+      "Then x = 2k, where k is an integer.",
+      "x² + 2x + 4 = (2k)² + 2(2k) + 4.",
+      "x² + 2x + 4 = 4k² + 4k + 4.",
+      "x² + 2x + 4 = 2(2k² + 2k + 2).",
+      "Since 2k² + 2k + 2 is an integer, x² + 2x + 4 is even."
+     ],
+     "answer": "If x is an even integer, then x² + 2x + 4 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let U be the universal set, and let x be any element of U.",
+      "x ∈ (A ∩ B)' ⇔ x ∉ A ∩ B.",
+      "x ∈ (A ∩ B)' ⇔ x ∉ A or x ∉ B.",
+      "x ∈ (A ∩ B)' ⇔ x ∈ A' or x ∈ B'.",
+      "x ∈ (A ∩ B)' ⇔ x ∈ A' ∪ B'.",
+      "Therefore, (A ∩ B)' = A' ∪ B'."
+     ],
+     "answer": "(A ∩ B)' = A' ∪ B'.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Since x and y are positive real numbers, x + y > 0.",
+      "Given x² < y², y² − x² > 0.",
+      "(y − x)(y + x) > 0.",
+      "Since y + x > 0, it follows that y − x > 0.",
+      "Therefore, x < y."
+     ],
+     "answer": "x < y.",
+     "figure": "",
+     "accept": [
+      [
+       "x<y"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "In △ABC, draw a straight line through A parallel to BC, with D and E on the line so that D, A and E are collinear.",
+      "Since DE ∥ BC, ∠DAB = ∠ABC (alternate interior angles).",
+      "Since DE ∥ BC, ∠CAE = ∠ACB (alternate interior angles).",
+      "∠DAB + ∠BAC + ∠CAE = 180° (angles on a straight line).",
+      "Substituting the equal angles, ∠ABC + ∠BAC + ∠ACB = 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "The given conditions state that b ≠ 0, but do not state that d ≠ 0.",
+      "If d = 0, then c/d is undefined, so the statement is not well-defined for all the given values.",
+      "For the corrected statement, suppose d ≠ 0. Then bd ≠ 0.",
+      "a/b = c/d  ⇒  bd(a/b) = bd(c/d)",
+      "⇒ ad = bc",
+      "Conversely, suppose ad = bc. Since bd ≠ 0, divide both sides by bd.",
+      "ad/(bd) = bc/(bd)",
+      "⇒ a/b = c/d",
+      "Hence, when d ≠ 0, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "As stated, the claim is not well-defined when d = 0. If d ≠ 0, then a/b = c/d ⇔ ad = bc.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "The given conditions state that b ≠ 0, but do not state that d ≠ 0.",
+      "If d = 0, then c/d and ac/(bd) are undefined, so the statement is not well-defined for all the given values.",
+      "For the corrected statement, suppose d ≠ 0. Then bd ≠ 0.",
+      "(a/b) · (c/d) = (a · c)/(b · d)",
+      "= ac/bd"
+     ],
+     "answer": "As stated, the claim is not well-defined when d = 0. If d ≠ 0, then (a/b) · (c/d) = ac/bd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since b is a non-zero real number, the fractions have the same denominator.",
+      "a/b + c/b = (a + c)/b",
+      "This follows from the distributive property of multiplication over addition."
+     ],
+     "answer": "a/b + c/b = (a + c)/b",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "based on repeated experiments",
+      "if and only if statements",
+      "Statement is proven by a theorem",
+      "based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning uses repeated observations or experiments to form a generalization.",
+      "“If and only if” describes a biconditional statement, not a method of reasoning.",
+      "A statement proven by a theorem is established deductively rather than inductively.",
+      "Reasoning from general principles is characteristic of deduction."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "general conclusions from a limited number of observations",
+      "based on repeated experiments",
+      "based on units of information that are accurate",
+      "draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Generalizing from a limited number of observations describes inductive reasoning.",
+      "Repeated experiments are commonly associated with inductive reasoning.",
+      "Accurate information alone does not specify deductive reasoning.",
+      "Deductive reasoning draws conclusions from established facts or premises."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "The set of integers is finite",
+      "The sum of the interior angles of any quadrilateral is always 180°",
+      "22/7 ∉ Q′",
+      "All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The integers are infinite, so this statement is false.",
+      "A quadrilateral’s interior angles sum to 360°, not 180°.",
+      "Since 22/7 is rational, it is not in the set of irrational numbers, denoted Q′.",
+      "An isosceles triangle need not be equilateral because only two sides must be equal."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "the stove is not burning.",
+      "the stove is dim",
+      "the stove is turned to low heat",
+      "it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "“The stove is not burning” directly negates the statement that it is burning.",
+      "A stove can be dim while still burning, so this does not negate the statement.",
+      "A stove set to low heat may still be burning, so this is not its negation.",
+      "A statement and its negation cannot both be true in classical logic."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "both p and q are false.",
+      "both p and q are true.",
+      "only q is true.",
+      "only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction is true exactly when both p and q are true.",
+      "If only q is true, then p and q are not both true, so their conjunction is false.",
+      "If only p is true, then p and q are not both true, so their conjunction is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "antecedent is true and consequent is false.",
+      "consequent is true and antecedent is false.",
+      "antecedent is true only.",
+      "consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false exactly when its antecedent is true and its consequent is false.",
+      "When the consequent is true and the antecedent is false, the conditional is true.",
+      "An antecedent being true alone does not make the conditional false if the consequent is also true.",
+      "A false consequent alone does not make the conditional false if the antecedent is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "q → ~p",
+      "~q → p",
+      "~p → ~q",
+      "~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is the inverse of q → p, not its contrapositive.",
+      "This is the converse of q → p, not its contrapositive.",
+      "The contrapositive reverses the order and negates both statements, giving ~p → ~q.",
+      "This negates both statements without reversing their order, so it is not the contrapositive."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "It is not a theorem established by proof, and as worded it is false for odd integers greater than 2.",
+      "It is presented as an unproven mathematical claim, so the intended classification is a conjecture.",
+      "An axiom is accepted as a starting truth rather than proposed as an unproved number-theory claim.",
+      "A postulate is a foundational assumption, not the intended category for this claim."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "theorem",
+      "conjecture",
+      "axiom",
+      "logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The statement is presented as a basic assumption rather than a result proved from other statements.",
+      "A conjecture is an unproved claim that is not being used here as a foundational assumption.",
+      "The statement is a basic geometric assumption, so it is classified here as an axiom.",
+      "Logic is the system of principles of valid reasoning, not the category for this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "converse",
+      "theorem",
+      "axiom",
+      "conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The statement is not the converse of a conditional.",
+      "The triangle angle-sum result is a theorem in Euclidean geometry.",
+      "It is proved from geometric assumptions rather than taken as an axiom here.",
+      "The statement asserts a geometric result and is not itself expressed as a conditional."
+     ]
+    }
+   ]
+  },
+  {
+   "number": "8.1.5",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(i)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → q",
+     "steps": [
+      "The given conditional is ~p → q.",
+      "Converse: q → ~p",
+      "Inverse: p → ~q",
+      "Contrapositive: ~q → p"
+     ],
+     "answer": "Converse: q → ~p; inverse: p → ~q; contrapositive: ~q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "q→~p",
+       "p→~q",
+       "~q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(ii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: q → p",
+     "steps": [
+      "The given conditional is q → p.",
+      "Converse: p → q",
+      "Inverse: ~q → ~p",
+      "Contrapositive: ~p → ~q"
+     ],
+     "answer": "Converse: p → q; inverse: ~q → ~p; contrapositive: ~p → ~q.",
+     "figure": "",
+     "accept": [
+      [
+       "p→q",
+       "~q→~p",
+       "~p→~q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iii)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~p → ~q",
+     "steps": [
+      "The given conditional is ~p → ~q.",
+      "Converse: ~q → ~p",
+      "Inverse: p → q",
+      "Contrapositive: q → p"
+     ],
+     "answer": "Converse: ~q → ~p; inverse: p → q; contrapositive: q → p.",
+     "figure": "",
+     "accept": [
+      [
+       "~q→~p",
+       "p→q",
+       "q→p"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q2(iv)",
+     "question": "Write the converse, inverse and contrapositive of the following conditionals: ~q → ~p",
+     "steps": [
+      "The given conditional is ~q → ~p.",
+      "Converse: ~p → ~q",
+      "Inverse: q → p",
+      "Contrapositive: p → q"
+     ],
+     "answer": "Converse: ~p → ~q; inverse: q → p; contrapositive: p → q.",
+     "figure": "",
+     "accept": [
+      [
+       "~p→~q",
+       "q→p",
+       "p→q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(i)",
+     "question": "Write the truth table of the following: ~(p ∨ q) ∨ (~q)",
+     "steps": [
+      "Let the possible truth-value pairs for (p, q) be (T, T), (T, F), (F, T), and (F, F).",
+      "For (T, T): p ∨ q = T, ~(p ∨ q) = F, and ~q = F; hence ~(p ∨ q) ∨ (~q) = F.",
+      "For (T, F): p ∨ q = T, ~(p ∨ q) = F, and ~q = T; hence ~(p ∨ q) ∨ (~q) = T.",
+      "For (F, T): p ∨ q = T, ~(p ∨ q) = F, and ~q = F; hence ~(p ∨ q) ∨ (~q) = F.",
+      "For (F, F): p ∨ q = F, ~(p ∨ q) = T, and ~q = T; hence ~(p ∨ q) ∨ (~q) = T.",
+      "Truth table (rows are in the order (T, T), (T, F), (F, T), (F, F)): | p | q | p ∨ q | ~(p ∨ q) | ~q | ~(p ∨ q) ∨ (~q) |; | T | T | T | F | F | F |; | T | F | T | F | T | T |; | F | T | T | F | F | F |; | F | F | F | T | T | T |"
+     ],
+     "answer": "The truth values of ~(p ∨ q) ∨ (~q), in the order (T, T), (T, F), (F, T), (F, F), are F, T, F, T.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(ii)",
+     "question": "Write the truth table of the following: ~(~q ∨ ~p)",
+     "steps": [
+      "Let the possible truth-value pairs for (p, q) be (T, T), (T, F), (F, T), and (F, F).",
+      "For (T, T): ~q = F and ~p = F; hence ~(~q ∨ ~p) = ~(F ∨ F) = T.",
+      "For (T, F): ~q = T and ~p = F; hence ~(~q ∨ ~p) = ~(T ∨ F) = F.",
+      "For (F, T): ~q = F and ~p = T; hence ~(~q ∨ ~p) = ~(F ∨ T) = F.",
+      "For (F, F): ~q = T and ~p = T; hence ~(~q ∨ ~p) = ~(T ∨ T) = F.",
+      "Truth table (rows are in the order (T, T), (T, F), (F, T), (F, F)): | p | q | ~q | ~p | ~q ∨ ~p | ~(~q ∨ ~p) |; | T | T | F | F | F | T |; | T | F | T | F | T | F |; | F | T | F | T | T | F |; | F | F | T | T | T | F |"
+     ],
+     "answer": "The truth values of ~(~q ∨ ~p), in the order (T, T), (T, F), (F, T), (F, F), are T, F, F, F.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q3(iii)",
+     "question": "Write the truth table of the following: (p ∨ q) ↔ (p ∧ q)",
+     "steps": [
+      "Let the possible truth-value pairs for (p, q) be (T, T), (T, F), (F, T), and (F, F).",
+      "For (T, T): p ∨ q = T and p ∧ q = T; hence (p ∨ q) ↔ (p ∧ q) = T.",
+      "For (T, F): p ∨ q = T and p ∧ q = F; hence (p ∨ q) ↔ (p ∧ q) = F.",
+      "For (F, T): p ∨ q = T and p ∧ q = F; hence (p ∨ q) ↔ (p ∧ q) = F.",
+      "For (F, F): p ∨ q = F and p ∧ q = F; hence (p ∨ q) ↔ (p ∧ q) = T.",
+      "Truth table (rows are in the order (T, T), (T, F), (F, T), (F, F)): | p | q | p ∨ q | p ∧ q | (p ∨ q) ↔ (p ∧ q) |; | T | T | T | T | T |; | T | F | T | F | F |; | F | T | T | F | F |; | F | F | F | F | T |"
+     ],
+     "answer": "The truth values of (p ∨ q) ↔ (p ∧ q), in the order (T, T), (T, F), (F, T), (F, F), are T, F, F, T.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q4",
+     "question": "Differentiate between a mathematical statement and its proof. Given two examples.",
+     "steps": [
+      "A mathematical statement is a sentence that is either true or false.",
+      "A proof is a logical argument that establishes the truth of a mathematical statement.",
+      "Example 1: Statement: 2 + 3 = 5.",
+      "Proof: 2 + 3 = 5 by addition; hence the statement is true.",
+      "Example 2: Statement: The sum of two odd integers is even.",
+      "Proof: Let the odd integers be 2m + 1 and 2n + 1, where m and n are integers.",
+      "Their sum = (2m + 1) + (2n + 1) = 2m + 2n + 2 = 2(m + n + 1).",
+      "Since m + n + 1 is an integer, the sum is even."
+     ],
+     "answer": "A mathematical statement is a sentence having a definite truth value, whereas a proof is a logical argument establishing that a statement is true. Examples: 2 + 3 = 5, proved by addition; and the sum of two odd integers is even, since (2m + 1) + (2n + 1) = 2(m + n + 1).",
+     "figure": "",
+     "accept": [
+      [
+       "statement",
+       "proof",
+       "truth value"
+      ],
+      [
+       "2+3=5",
+       "logical reasoning"
+      ],
+      [
+       "odd numbers",
+       "even"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q5",
+     "question": "What is the difference between an axiom and a theorem? Give examples of each.",
+     "steps": [
+      "An axiom is a statement accepted as true without proof.",
+      "Example: Through any two points there is exactly one straight line.",
+      "A theorem is a statement whose truth is established by a proof using axioms and previously proved results.",
+      "Example: The sum of the angles of a triangle is 180°."
+     ],
+     "answer": "An axiom is accepted as true without proof; for example, through any two points there is exactly one straight line. A theorem is proved using axioms and previously established results; for example, the sum of the angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [
+      [
+       "axiom",
+       "theorem",
+       "without proof",
+       "proved"
+      ],
+      [
+       "axiom",
+       "theorem",
+       "example"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q6",
+     "question": "What is the importance of logical reasoning in mathematical proofs? Give an example to illustrate your point.",
+     "steps": [
+      "Logical reasoning connects known facts and definitions to reach a valid conclusion.",
+      "It is important because each step in a proof must follow logically from earlier steps.",
+      "Example: The sum of two even integers is even.",
+      "Let the even integers be 2m and 2n, where m and n are integers.",
+      "Their sum = 2m + 2n = 2(m + n).",
+      "Since m + n is an integer, 2(m + n) is even.",
+      "Therefore, the sum of two even integers is even."
+     ],
+     "answer": "Logical reasoning ensures that each step follows from known facts and leads to a valid conclusion. For example, if the even integers are 2m and 2n, their sum is 2m + 2n = 2(m + n), which is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(i)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: There is exactly one straight line through any two points.",
+     "steps": [
+      "The statement is an axiom.",
+      "It is accepted as true without proof and is used as a basic fact in geometry."
+     ],
+     "answer": "Axiom; it is accepted as true without proof.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(ii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: Every even number greater than 2 can be written as the sum of two prime numbers.",
+     "steps": [
+      "The statement is known as Goldbach's conjecture.",
+      "It has been checked for many even numbers, but no general proof is known.",
+      "Therefore, it is a conjecture, not an established theorem."
+     ],
+     "answer": "Conjecture; it has not been proved for all even numbers greater than 2.",
+     "figure": "",
+     "accept": [
+      [
+       "conjecture",
+       "not been proved"
+      ],
+      [
+       "goldbach"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q7(iii)",
+     "question": "Indicate whether it is an axiom, conjecture or theorem and explain your reasoning: The sum of the angles in a triangle is 180°.",
+     "steps": [
+      "The statement is a theorem in Euclidean geometry.",
+      "It can be proved using the properties of parallel lines and alternate interior angles.",
+      "Therefore, the sum of the angles in a triangle is 180°."
+     ],
+     "answer": "Theorem; it can be proved that the sum of the angles in a triangle is 180°.",
+     "figure": "",
+     "accept": [
+      [
+       "theorem",
+       "proved"
+      ],
+      [
+       "triangle",
+       "180"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(i)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x − 4)² + 9 = x² − 8x + 25",
+     "steps": [
+      "L.H.S. = (x − 4)² + 9",
+      "= (x − 4)(x − 4) + 9",
+      "= x² − 4x − 4x + 16 + 9",
+      "= x² − 8x + 25",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; both are equal to x² − 8x + 25.",
+     "figure": "",
+     "accept": [
+      [
+       "x^2-8x+25"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(ii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 1)² − (x − 1)² = 4x",
+     "steps": [
+      "L.H.S. = (x + 1)² − (x − 1)²",
+      "= (x² + 2x + 1) − (x² − 2x + 1)",
+      "= x² + 2x + 1 − x² + 2x − 1",
+      "= 4x",
+      "= R.H.S."
+     ],
+     "answer": "L.H.S. = R.H.S.; both are equal to 4x.",
+     "figure": "",
+     "accept": [
+      [
+       "4x"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q8(iii)",
+     "question": "Formulate simple deductive proofs for each of the following algebraic expressions, prove that the L.H.S is equal to the R.H.S: prove that (x + 5)² − (x − 5)² = 20x",
+     "steps": [
+      "L.H.S. = (x + 5)² − (x − 5)²",
+      "= (x² + 10x + 25) − (x² − 10x + 25)",
+      "= x² + 10x + 25 − x² + 10x − 25",
+      "= 20x",
+      "= R.H.S."
+     ],
+     "answer": "Hence, (x + 5)² − (x − 5)² = 20x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(i)",
+     "question": "Prove the following by justifying each step: (4 + 16x)/4 = 1 + 4x",
+     "steps": [
+      "L.H.S. = (4 + 16x)/4",
+      "= 4/4 + 16x/4",
+      "= 1 + 4x",
+      "= R.H.S."
+     ],
+     "answer": "Hence, (4 + 16x)/4 = 1 + 4x.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(ii)",
+     "question": "Prove the following by justifying each step: (6x² + 18x)/(3x² − 27) = 2x/(x − 3)",
+     "steps": [
+      "For x ≠ 3 and x ≠ −3,",
+      "L.H.S. = (6x² + 18x)/(3x² − 27)",
+      "= 6x(x + 3)/[3(x² − 9)]",
+      "= 6x(x + 3)/[3(x − 3)(x + 3)]",
+      "= 2x/(x − 3)",
+      "= R.H.S."
+     ],
+     "answer": "Hence, (6x² + 18x)/(3x² − 27) = 2x/(x − 3), for x ≠ 3, −3.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q9(iii)",
+     "question": "Prove the following by justifying each step: (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5)",
+     "steps": [
+      "For x ≠ −2 and x ≠ 5,",
+      "L.H.S. = (x² + 7x + 10)/(x² − 3x − 10)",
+      "= [(x + 5)(x + 2)]/[(x − 5)(x + 2)]",
+      "= (x + 5)/(x − 5)",
+      "= R.H.S."
+     ],
+     "answer": "Hence, (x² + 7x + 10)/(x² − 3x − 10) = (x + 5)/(x − 5), for x ≠ −2, 5.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q10",
+     "question": "Suppose x is an integer. If x is odd, then 9x + 4 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "9x + 4 = 9(2k + 1) + 4",
+      "= 18k + 9 + 4",
+      "= 18k + 13",
+      "= 2(9k + 6) + 1.",
+      "Since 9k + 6 is an integer, 9x + 4 is odd."
+     ],
+     "answer": "Hence, if x is an odd integer, then 9x + 4 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q11",
+     "question": "Suppose x is an integer. If x is odd, then 7x + 5 is even.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "7x + 5 = 7(2k + 1) + 5",
+      "= 14k + 7 + 5",
+      "= 14k + 12",
+      "= 2(7k + 6).",
+      "Since 7k + 6 is an integer, 7x + 5 is even."
+     ],
+     "answer": "Hence, if x is an odd integer, then 7x + 5 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(i)",
+     "question": "Prove the following statements: If x is an odd integer, then show that it x² − 4x + 6 is odd.",
+     "steps": [
+      "Let x be an odd integer.",
+      "Then x = 2k + 1, where k is an integer.",
+      "x² − 4x + 6 = (2k + 1)² − 4(2k + 1) + 6",
+      "= 4k² + 4k + 1 − 8k − 4 + 6",
+      "= 4k² − 4k + 3",
+      "= 2(2k² − 2k + 1) + 1.",
+      "Since 2k² − 2k + 1 is an integer, x² − 4x + 6 is odd."
+     ],
+     "answer": "Hence, if x is an odd integer, then x² − 4x + 6 is odd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q12(ii)",
+     "question": "Prove the following statements: If x is an even integer then show that x² + 2x + 4 is even.",
+     "steps": [
+      "Let x be an even integer.",
+      "Then x = 2k, where k is an integer.",
+      "x² + 2x + 4 = (2k)² + 2(2k) + 4",
+      "= 4k² + 4k + 4",
+      "= 2(2k² + 2k + 2).",
+      "Since 2k² + 2k + 2 is an integer, x² + 2x + 4 is even."
+     ],
+     "answer": "Hence, if x is an even integer, then x² + 2x + 4 is even.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q13",
+     "question": "Prove that for any two non-empty sets A and B, (A ∩ B)' = A' ∪ B'.",
+     "steps": [
+      "Let U be the universal set, and let x be any element of U.",
+      "x ∈ (A ∩ B)' ⇔ x ∉ A ∩ B.",
+      "x ∉ A ∩ B ⇔ x ∉ A or x ∉ B.",
+      "x ∉ A or x ∉ B ⇔ x ∈ A' or x ∈ B'.",
+      "x ∈ A' or x ∈ B' ⇔ x ∈ A' ∪ B'.",
+      "Therefore, x ∈ (A ∩ B)' ⇔ x ∈ A' ∪ B'.",
+      "Hence, (A ∩ B)' = A' ∪ B'."
+     ],
+     "answer": "(A ∩ B)' = A' ∪ B'.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q14",
+     "question": "If x and y are positive real numbers and x² < y² then x < y.",
+     "steps": [
+      "Since x and y are positive real numbers, x + y > 0.",
+      "Given x² < y², subtract y² from both sides: x² − y² < 0.",
+      "Factor the difference of squares: (x − y)(x + y) < 0.",
+      "Since x + y > 0, it follows that x − y < 0.",
+      "Therefore, x < y."
+     ],
+     "answer": "If x and y are positive real numbers and x² < y², then x < y.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q15",
+     "question": "Prove that the sum of the interior angles of a triangle is 180°.",
+     "steps": [
+      "In △ABC, draw a line through A parallel to BC.",
+      "Since the line through A is parallel to BC, the angle between AB and this line equals ∠B (alternate interior angles).",
+      "The angle between this line and AC equals ∠C (alternate interior angles).",
+      "These two angles and ∠A form a straight angle.",
+      "Therefore, ∠A + ∠B + ∠C = 180°.",
+      "Hence, the sum of the interior angles of a triangle is 180°."
+     ],
+     "answer": "The sum of the interior angles of a triangle is 180°.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(i)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b = c/d ⇔ ad = bc",
+     "steps": [
+      "Assume b ≠ 0 and d ≠ 0, as required for the fractions to be defined.",
+      "(⇒) Suppose a/b = c/d.",
+      "Multiplying both sides by bd gives (a/b)(bd) = (c/d)(bd).",
+      "Simplifying gives ad = bc.",
+      "(⇐) Suppose ad = bc.",
+      "Dividing both sides by bd gives ad/(bd) = bc/(bd).",
+      "Simplifying gives a/b = c/d.",
+      "Therefore, a/b = c/d ⇔ ad = bc."
+     ],
+     "answer": "a/b = c/d ⇔ ad = bc.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(ii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: (a/b) · (c/d) = ac/bd",
+     "steps": [
+      "Assume b ≠ 0 and d ≠ 0, as required for the fractions to be defined.",
+      "By the rule for multiplication of fractions, (a/b) · (c/d) = (a · c)/(b · d).",
+      "Therefore, (a/b) · (c/d) = ac/bd."
+     ],
+     "answer": "(a/b) · (c/d) = ac/bd.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 8 Q16(iii)",
+     "question": "If a, b and c are non-zero real numbers, prove that: a/b + c/b = (a + c)/b",
+     "steps": [
+      "Since b ≠ 0, write both fractions with denominator b.",
+      "a/b + c/b = (a + c)/b.",
+      "Therefore, a/b + c/b = (a + c)/b."
+     ],
+     "answer": "a/b + c/b = (a + c)/b.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Ex 8 Q1(i)",
+     "stem": "Which of the following expressions is often related to inductive reasoning?",
+     "options": [
+      "(a) based on repeated experiments",
+      "(b) if and only if statements",
+      "(c) Statement is proven by a theorem",
+      "(d) based on general principles"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Inductive reasoning often uses repeated observations or experiments to infer a general pattern.",
+      "An if-and-only-if statement is a logical form, not a defining feature of inductive reasoning.",
+      "Proving a statement by a theorem is associated with deductive reasoning.",
+      "Reasoning from general principles is characteristic of deduction rather than induction."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ii)",
+     "stem": "Which of the following sentences describe deductive reasoning?",
+     "options": [
+      "(a) general conclusions from a limited number of observations",
+      "(b) based on repeated experiments",
+      "(c) based on units of information that are accurate",
+      "(d) draw conclusion from well-known facts"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Drawing a general conclusion from limited observations describes inductive reasoning.",
+      "Repeated experiments are commonly associated with inductive reasoning.",
+      "Accurate information can support reasoning but does not specifically describe deduction.",
+      "Deductive reasoning draws conclusions from established facts or principles."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iii)",
+     "stem": "Which one of the following statements is true?",
+     "options": [
+      "(a) The set of integers is finite",
+      "(b) The sum of the interior angles of any quadrilateral is always 180°",
+      "(c) 22/7 ∉ Q′",
+      "(d) All isosceles triangles are equilateral triangles"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The set of integers is infinite, so this statement is false.",
+      "The interior angles of a quadrilateral sum to 360°, not 180°.",
+      "Assuming Q′ denotes the irrational numbers, 22/7 is rational and therefore is not in Q′.",
+      "An isosceles triangle need not be equilateral, so this statement is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(iv)",
+     "stem": "Which of the following statements is the best to represent the negation of the statement \"The stove is burning\"?",
+     "options": [
+      "(a) the stove is not burning.",
+      "(b) the stove is dim",
+      "(c) the stove is turned to low heat",
+      "(d) it is both burning and not burning."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "This directly negates the claim that the stove is burning.",
+      "A stove being dim does not necessarily mean it is not burning.",
+      "A stove set to low heat may still be burning, so this does not negate the statement.",
+      "This asserts a contradiction rather than giving the negation of the statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(v)",
+     "stem": "The conjunction of two statements p and q is true when:",
+     "options": [
+      "(a) both p and q are false.",
+      "(b) both p and q are true.",
+      "(c) only q is true.",
+      "(d) only p is true."
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A conjunction is false when both statements are false.",
+      "A conjunction p and q is true exactly when both p and q are true.",
+      "If only q is true, then p and q is false.",
+      "If only p is true, then p and q is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vi)",
+     "stem": "A conditional is regarded as false only when:",
+     "options": [
+      "(a) antecedent is true and consequent is false.",
+      "(b) consequent is true and antecedent is false.",
+      "(c) antecedent is true only.",
+      "(d) consequent is false only."
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A conditional is false exactly when its antecedent is true and its consequent is false.",
+      "When the consequent is true and the antecedent is false, the conditional is true.",
+      "An antecedent being true alone does not make the conditional false if the consequent is also true.",
+      "A false consequent alone does not make the conditional false if the antecedent is false."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(vii)",
+     "stem": "Contrapositive of q → p is",
+     "options": [
+      "(a) q → ~p",
+      "(b) ~q → p",
+      "(c) ~p → ~q",
+      "(d) ~q → ~p"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "This is the inverse of q → p, not its contrapositive.",
+      "This is the converse of q → p, not its contrapositive.",
+      "The contrapositive reverses the order and negates both statements, giving ~p → ~q.",
+      "This negates both statements without reversing their order, so it is not the contrapositive."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(viii)",
+     "stem": "The statement “Every integer greater than 2 is a sum of two prime numbers” is:",
+     "options": [
+      "(a) theorem",
+      "(b) conjecture",
+      "(c) axiom",
+      "(d) postulates"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "It is not a theorem established by proof, and as worded it is false for odd integers greater than 2.",
+      "It is presented as an unproven mathematical claim, so the intended classification is a conjecture.",
+      "An axiom is accepted as a starting truth rather than proposed as an unproved number-theory claim.",
+      "A postulate is a foundational assumption, not the intended category for this claim."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(ix)",
+     "stem": "The statement \"A straight line can be drawn between any two points\" is :",
+     "options": [
+      "(a) theorem",
+      "(b) conjecture",
+      "(c) axiom",
+      "(d) logic"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The statement is presented as a basic assumption rather than a result proved from other statements.",
+      "A conjecture is an unproved claim that is not being used here as a foundational assumption.",
+      "The statement is a basic geometric assumption, so it is classified here as an axiom.",
+      "Logic is the system of principles of valid reasoning, not the category for this geometric statement."
+     ]
+    },
+    {
+     "source": "Ex 8 Q1(x)",
+     "stem": "The statement \"The sum of the interior angle of a triangle is 180°” is:",
+     "options": [
+      "(a) converse",
+      "(b) theorem",
+      "(c) axiom",
+      "(d) conditional"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The statement is not the converse of a conditional.",
+      "The triangle angle-sum result is a theorem in Euclidean geometry.",
+      "It is proved from geometric assumptions rather than taken as an axiom here.",
+      "The statement asserts a geometric result and is not itself expressed as a conditional."
+     ]
+    }
+   ]
+  }
+ ]
+}

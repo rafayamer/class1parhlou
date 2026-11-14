@@ -18,8 +18,52 @@ if (!units.length) throw new Error("no built units");
 const norm = (s) => s.toLowerCase().replace(/\s+/g, " ").trim();
 const notes = [], quiz = [], written = [], blueprints = [], papers = [], readiness = [];
 
+/**
+ * The book's worked examples, taken straight from the transcribed section text (no AI): "EXAMPLE n:", the question,
+ * "SOLUTION:", then the book's working up to the next example, exercise, heading or box.
+ */
+function examplesFrom(text) {
+  const lines = text.split("\n").map((l) => l.trim()).filter((l) => l && !/^PAGE\s+\d+$/i.test(l));
+  const out = [];
+  let cur = null, inSolution = false;
+  const end = (l) => /^EXAMPLE\s+\d+/i.test(l) || /^#{0,4}\s*(REVIEW\s+)?EXERCISE\b/i.test(l) || /^#{1,4}\s/.test(l) || /^(REMEMBER|NOTE|KEY FACT)\s*:/i.test(l);
+  for (const l of lines) {
+    if (cur && end(l)) { out.push(cur); cur = null; inSolution = false; }
+    const head = /^EXAMPLE\s+(\d+)\s*:?\s*(.*)$/i.exec(l);
+    if (head) { cur = { label: `Example ${head[1]}`, question: head[2] ? [head[2]] : [], steps: [] }; continue; }
+    if (!cur) continue;
+    const sol = /^\**SOLUTION\**\s*:?\**\s*(.*)$/i.exec(l);
+    if (sol) { inSolution = true; if (sol[1]) cur.steps.push(sol[1]); continue; }
+    (inSolution ? cur.steps : cur.question).push(l.replace(/\s+$/, ""));
+  }
+  if (cur) out.push(cur);
+  return out.filter((e) => e.question.length && e.steps.length).map((e) => ({
+    kind: "EXAMPLE", source: e.label, question: e.question.join("\n"), steps: e.steps, answer: "",
+    figure: "", accept: [], checked: true, note: "",
+  }));
+}
+
+/** Turns typesetting left over from the scan (e.g. "m\overline{BC}", "\frac{a}{b}") into plain maths symbols. */
+function cleanMaths(s) {
+  let t = s;
+  for (let i = 0; i < 3; i++) t = t.replace(/\\frac\s*\{([^{}]*)\}\s*\{([^{}]*)\}/g, (_, a, b) => `${/^\w+$/.test(a) ? a : `(${a})`}/${/^\w+$/.test(b) ? b : `(${b})`}`);
+  t = t.replace(/\\overline\s*\{([^{}]*)\}/g, (_, x) => [...x].map((c) => c + "̅").join(""));
+  t = t.replace(/\\overrightarrow\s*\{([^{}]*)\}/g, (_, x) => `${x}⃗`);
+  t = t.replace(/\\sqrt\s*\{([^{}]*)\}/g, (_, x) => (/^\w+$/.test(x) ? `√${x}` : `√(${x})`));
+  t = t.replace(/\\operatorname\s*\{([^{}]*)\}/g, "$1").replace(/\\text\s*\{([^{}]*)\}/g, "$1");
+  const sym = { times: "×", cdot: "·", div: "÷", le: "≤", leq: "≤", ge: "≥", geq: "≥", neq: "≠", ne: "≠", pm: "±", circ: "°", pi: "π", theta: "θ",
+    alpha: "α", beta: "β", angle: "∠", triangle: "Δ", infty: "∞", in: "∈", cup: "∪", cap: "∩", subset: "⊂", subseteq: "⊆", emptyset: "∅",
+    Rightarrow: "⇒", rightarrow: "→", Leftrightarrow: "⇔", log: "log", sin: "sin", cos: "cos", tan: "tan", quad: "  ", qquad: "  " };
+  t = t.replace(/\\(left|right)\s*/g, "").replace(/\\([A-Za-z]+)/g, (m, w) => sym[w] ?? m);
+  return t.replace(/\\([{}])/g, "$1");
+}
+const cleanAll = (v) => typeof v === "string" ? cleanMaths(v) : Array.isArray(v) ? v.map(cleanAll)
+  : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, /^(id|noteId|moduleId|chapterId|blueprintId|subjectId)$/.test(k) ? x : cleanAll(x)])) : v;
+
 const coverage = [];
 for (const u of units) {
+  const outlineFile = `${ROOT}/work/u${u.chapter.number}-outline.json`;
+  const outline = existsSync(outlineFile) ? JSON.parse(readFileSync(outlineFile, "utf8")) : null;
   // Full book coverage (build-solutions.mjs): every example and exercise question, and every book MCQ.
   const solFile = `${ROOT}/units/u-${u.chapter.number}-solutions.json`;
   const sol = existsSync(solFile) ? JSON.parse(readFileSync(solFile, "utf8")) : null;
@@ -28,11 +72,25 @@ for (const u of units) {
   u.chapter.modules.forEach((m, i) => {
     const s = sectionOf(m, i);
     m.solutions = s?.solutions ?? [];
+    // Worked examples: the book's own, verbatim, when the coverage step didn't list them.
+    const secText = outline?.sections.length === u.chapter.modules.length ? outline.sections[i].text : null;
+    if (secText) {
+      const parsed = examplesFrom(secText);
+      const labels = new Set(parsed.map((e) => e.source.toLowerCase()));
+      // The book's own text wins; AI-listed examples are kept only when the text doesn't have them.
+      const other = m.solutions.filter((x) => x.kind !== "EXAMPLE" || !labels.has((/^example\s+\d+/i.exec(x.source)?.[0] ?? "").toLowerCase()));
+      m.solutions = [...parsed, ...other];
+    }
     for (const q of s?.mcqs ?? []) {
       u.quiz.push({ id: `b-${u.chapter.number}-${i + 1}-${u.quiz.length + 1}`, stem: q.stem, options: q.options, correctIndex: q.correctIndex,
         rationales: q.rationales, status: "APPROVED", noteId: u.notes.find((n) => n.moduleId === m.id)?.id ?? null, moduleId: m.id });
     }
   });
+  // A question given to several sub-lessons (Logic's single exercise) is kept once, in the last of them.
+  const kept = new Set();
+  for (const m of [...u.chapter.modules].reverse()) {
+    m.solutions = m.solutions.filter((x) => { const k = `${x.kind}|${norm(x.question)}`; if (kept.has(k)) return false; kept.add(k); return true; });
+  }
   if (sol) {
     const ex = u.chapter.modules.flatMap((m) => m.solutions.filter((x) => x.kind === "EXERCISE"));
     coverage.push(`Unit ${u.chapter.number}: ${u.chapter.modules.reduce((n, m) => n + m.solutions.filter((x) => x.kind === "EXAMPLE").length, 0)} examples, ${ex.length} exercise questions (${ex.filter((x) => x.checked).length} with checked step-by-step solutions)`);
@@ -42,6 +100,14 @@ for (const u of units) {
   const seen = new Set();
   const ordered = [...u.quiz.filter((q) => q.id.startsWith("b-")), ...u.quiz.filter((q) => !q.id.startsWith("b-"))];
   const unitQuiz = ordered.filter((q) => !seen.has(norm(q.stem)) && seen.add(norm(q.stem)));
+  // A module left with fewer than 5 questions after removing repeats keeps its own copies (Logic's sub-lessons share MCQs).
+  for (const m of u.chapter.modules) {
+    const have = unitQuiz.filter((q) => q.moduleId === m.id).length;
+    if (have >= 5) continue;
+    const own = ordered.filter((q) => q.moduleId === m.id && !unitQuiz.includes(q));
+    const already = new Set(unitQuiz.filter((q) => q.moduleId === m.id).map((q) => norm(q.stem)));
+    unitQuiz.push(...own.filter((q) => !already.has(norm(q.stem)) && already.add(norm(q.stem))).map((q) => ({ ...q, id: `${q.id}-${m.id}` })));
+  }
   notes.push(...u.notes);
   quiz.push(...unitQuiz);
   const unitWritten = u.written.map(({ source, ...w }) => w);
@@ -107,9 +173,10 @@ const bundle = {
   notes, quiz, readiness: readiness.slice(0, 12), blueprints, papers, written, mcqs: [],
 };
 
-const problems = bundleProblems(bundle, SUBJECT);
-writeFileSync(OUT, JSON.stringify(bundle));
-const kb = Math.round(JSON.stringify(bundle).length / 1024);
+const cleaned = cleanAll(bundle);
+const problems = bundleProblems(cleaned, SUBJECT);
+writeFileSync(OUT, JSON.stringify(cleaned));
+const kb = Math.round(JSON.stringify(cleaned).length / 1024);
 coverage.forEach((c) => console.log(c));
 console.log(`Course: ${units.length} units, ${units.reduce((s, u) => s + u.chapter.modules.length, 0)} modules, ${notes.length} notes, ${quiz.length} MCQs, ${written.length} written, ${blueprints.length} unit tests, ${kb} KB → ${OUT}`);
 if (problems.length) {

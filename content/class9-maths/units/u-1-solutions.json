@@ -6,314 +6,12 @@
    "solutions": [
     {
      "kind": "EXERCISE",
-     "source": "Example 1(i)",
-     "question": "Identify the following decimal number as rational or irrational: 0.35",
-     "steps": [
-      "0.35 has a finite number of decimal places.",
-      "Therefore, 0.35 is a terminating decimal number.",
-      "Every terminating decimal number is rational."
-     ],
-     "answer": "0.35 is a terminating decimal number; therefore, it is a rational number.",
-     "figure": "",
-     "accept": [
-      [
-       "terminating",
-       "rational"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 1(ii)",
-     "question": "Identify the following decimal number as rational or irrational: 0.444...",
-     "steps": [
-      "0.444... = 0.44444...",
-      "The digit 4 repeats without end.",
-      "Therefore, 0.444... is a non-terminating and recurring decimal number.",
-      "Every non-terminating recurring decimal number is rational."
-     ],
-     "answer": "0.444... is a non-terminating and recurring decimal number; therefore, it is a rational number.",
-     "figure": "",
-     "accept": [
-      [
-       "non-terminating",
-       "recurring",
-       "rational"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 1(iii)",
-     "question": "Identify the following decimal number as rational or irrational: 3.5̅",
-     "steps": [
-      "3.5̅ = 3.5555...",
-      "The digit 5 repeats without end.",
-      "Therefore, 3.5̅ is a non-terminating and recurring decimal number.",
-      "Every non-terminating recurring decimal number is rational."
-     ],
-     "answer": "3.5̅ is a non-terminating and recurring decimal number; therefore, it is a rational number.",
-     "figure": "",
-     "accept": [
-      [
-       "non-terminating",
-       "recurring",
-       "rational"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 1(iv)",
-     "question": "Identify the following decimal number as rational or irrational: 3.36788542...",
-     "steps": [],
-     "answer": "3.36788542... is a non-terminating and non-recurring decimal number, therefore it is an irrational number.",
-     "figure": "",
-     "accept": [],
-     "checked": false
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 1(v)",
-     "question": "Identify the following decimal number as rational or irrational: 1.709975947...",
-     "steps": [],
-     "answer": "1.709975947... is a non-terminating and non-recurring decimal number, therefore it is an irrational number.",
-     "figure": "",
-     "accept": [],
-     "checked": false
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 2",
-     "question": "Represent √5 on a number line.",
-     "steps": [
-      "Draw a number line and mark O as 0.",
-      "Mark A on the number line so that OA = 2 units.",
-      "At A, draw AB perpendicular to OA and make AB = 1 unit.",
-      "Join O to B to form right-angled triangle OAB.",
-      "By Pythagoras theorem, (OB)² = (OA)² + (AB)².",
-      "(OB)² = (2)² + (1)² = 4 + 1 = 5.",
-      "OB = √5.",
-      "With O as centre and OB as radius, draw an arc cutting the number line at P.",
-      "Then OP = √5, so P represents √5 on the number line."
-     ],
-     "answer": "The point P on the number line represents √5, where OP = √5.",
-     "figure": "A number line with O at 0 and A at 2. At A, draw AB perpendicular to OA with AB = 1 unit. Join O to B. With O as centre and OB as radius, draw an arc meeting the number line at P. The length OP is √5.",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 3(i)",
-     "question": "Express the following recurring decimal as the rational number p/q, where p and q are integers: 0.5̅",
-     "steps": [
-      "Let x = 0.5̅",
-      "x = 0.55555...  ...(i)",
-      "Multiply both sides by 10.",
-      "10x = 10(0.55555...)",
-      "10x = 5.55555...  ...(ii)",
-      "Subtract (i) from (ii).",
-      "10x − x = 5.55555... − 0.55555...",
-      "9x = 5",
-      "x = 5/9"
-     ],
-     "answer": "x = 5/9, which is in the form p/q.",
-     "figure": "",
-     "accept": [
-      [
-       "5/9"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 3(ii)",
-     "question": "Express the following recurring decimal as the rational number p/q, where p and q are integers: 0.9̅3̅",
-     "steps": [
-      "Let x = 0.9̅3̅ = 0.939393...  ...(i)",
-      "Multiply both sides by 100.",
-      "100x = 100(0.939393...)",
-      "100x = 93.939393...  ...(ii)",
-      "Subtract (i) from (ii).",
-      "100x − x = 93.939393... − 0.939393...",
-      "99x = 93",
-      "x = 93/99"
-     ],
-     "answer": "x = 93/99, which is in the form p/q.",
-     "figure": "",
-     "accept": [
-      [
-       "93/99"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 4",
-     "question": "Find two rational numbers between 2 and 3.",
-     "steps": [
-      "There are infinite rational numbers between 2 and 3.",
-      "We have to find any two of them.",
-      "Find the average of 2 and 3: (2 + 3)/2 = 5/2.",
-      "So, 5/2 is a rational number between 2 and 3.",
-      "To find another rational number between 2 and 3, find the average of 5/2 and 3.",
-      "((5/2) + 3)/2 = ((5 + 6)/2)/2 = (11/2)/2 = 11/4."
-     ],
-     "answer": "Hence, two rational numbers between 2 and 3 are 5/2 and 11/4.",
-     "figure": "",
-     "accept": [
-      [
-       "5/2",
-       "11/4"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 5(i)",
-     "question": "If a = 2/3, b = 3/2, c = 5/3 then verify the left distributive property over addition.",
-     "steps": [
-      "Left distributive property: a(b + c) = ab + ac.",
-      "LHS = a(b + c) = (2/3)(3/2 + 5/3).",
-      "= (2/3)((9 + 10)/6) = (2/3)(19/6) = 19/9.",
-      "RHS = ab + ac = (2/3)(3/2) + (2/3)(5/3).",
-      "= 1 + 10/9 = (9 + 10)/9 = 19/9.",
-      "LHS = RHS."
-     ],
-     "answer": "Hence, it is verified that a(b + c) = ab + ac.",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 5(ii)",
-     "question": "If a = 2/3, b = 3/2, c = 5/3 then verify the right distributive property over addition.",
-     "steps": [
-      "Right distributive property: (a + b)c = ac + bc.",
-      "LHS = (a + b)c = (2/3 + 3/2)(5/3).",
-      "= ((4 + 9)/6)(5/3) = (13/6)(5/3) = 65/18.",
-      "RHS = ac + bc = (2/3)(5/3) + (3/2)(5/3).",
-      "= 10/9 + 15/6 = 20/18 + 45/18 = 65/18.",
-      "LHS = RHS."
-     ],
-     "answer": "Hence, it is verified that (a + b)c = ac + bc.",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 6(i)",
-     "question": "Identify the property that justifies the statement: If a > 13 then a + 2 > 15",
-     "steps": [
-      "a > 13.",
-      "Add 2 on both sides.",
-      "a + 2 > 13 + 2.",
-      "a + 2 > 15 (order property with respect to addition)."
-     ],
-     "answer": "Order property with respect to addition.",
-     "figure": "",
-     "accept": [
-      [
-       "order property",
-       "addition"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 6(ii)",
-     "question": "Identify the property that justifies the statement: If 3 < 9 and 6 < 12 then 9 < 21",
-     "steps": [
-      "As 3 < 9 and 6 < 12,",
-      "3 + 6 < 9 + 12.",
-      "9 < 21 (order property with respect to addition)."
-     ],
-     "answer": "Order property with respect to addition.",
-     "figure": "",
-     "accept": [
-      [
-       "order property",
-       "addition"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 6(iii)",
-     "question": "Identify the property that justifies the statement: If 7 > 4 and 5 > 3 then 35 > 12",
-     "steps": [
-      "7 > 4 and 5 > 3.",
-      "7 × 5 > 4 × 3.",
-      "35 > 12 (order property with respect to multiplication)."
-     ],
-     "answer": "Order property with respect to multiplication.",
-     "figure": "",
-     "accept": [
-      [
-       "order property",
-       "multiplication"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Example 6(iv)",
-     "question": "Identify the property that justifies the statement: If −5 < −4 ⇒ 20 > 16",
-     "steps": [
-      "As −5 < −4,",
-      "multiply both sides by −4.",
-      "(−5) × (−4) > (−4) × (−4).",
-      "20 > 16 (order property with respect to multiplication)."
-     ],
-     "answer": "Order property with respect to multiplication.",
-     "figure": "",
-     "accept": [
-      [
-       "order property",
-       "multiplication"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(i)",
      "question": "Identify each of the following as a rational or irrational number: 2.353535",
      "steps": [
-      "2.353535 is a terminating decimal.",
-      "Every terminating decimal is a rational number."
-     ],
-     "answer": "Rational.",
-     "figure": "",
-     "accept": [
-      [
-       "rational"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Ex 1.1 Q1(ii)",
-     "question": "Identify each of the following as a rational or irrational number: 0.6̅",
-     "steps": [
-      "Let x = 0.6̅.",
-      "Then 10x = 6.6̅.",
-      "Subtracting, 10x − x = 6.6̅ − 0.6̅.",
-      "9x = 6.",
-      "x = 6/9 = 2/3.",
-      "Since 0.6̅ can be written as a ratio of integers, it is rational."
+      "2.353535 = 2353535/1000000",
+      "2353535/1000000 is a ratio of two integers.",
+      "∴ 2.353535 is rational."
      ],
      "answer": "Rational",
      "figure": "",
@@ -322,15 +20,38 @@
        "rational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 1.1 Q1(ii)",
+     "question": "Identify each of the following as a rational or irrational number: 0.6̅",
+     "steps": [
+      "Let x = 0.6666…",
+      "10x = 6.6666…",
+      "10x − x = 6.6666… − 0.6666…",
+      "9x = 6",
+      "x = 6/9 = 2/3",
+      "∴ 0.6̅ is rational."
+     ],
+     "answer": "Rational",
+     "figure": "",
+     "accept": [
+      [
+       "rational"
+      ]
+     ],
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(iii)",
      "question": "Identify each of the following as a rational or irrational number: 2.236067…",
      "steps": [
-      "The decimal 2.236067… is non-terminating and non-recurring.",
-      "A non-terminating, non-recurring decimal is irrational."
+      "2.236067… is a non-terminating, non-recurring decimal.",
+      "∴ 2.236067… is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -339,7 +60,8 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -347,7 +69,7 @@
      "question": "Identify each of the following as a rational or irrational number: √7",
      "steps": [
       "7 is not a perfect square.",
-      "Therefore, √7 is irrational."
+      "∴ √7 is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -356,14 +78,16 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(v)",
      "question": "Identify each of the following as a rational or irrational number: e",
      "steps": [
-      "The number e is a known irrational number."
+      "e is a known irrational number.",
+      "∴ e is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -372,14 +96,16 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(vi)",
      "question": "Identify each of the following as a rational or irrational number: π",
      "steps": [
-      "The number π is a known irrational number."
+      "π is a known irrational number.",
+      "∴ π is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -388,17 +114,18 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(vii)",
      "question": "Identify each of the following as a rational or irrational number: 5 + √11",
      "steps": [
-      "11 is not a perfect square, so √11 is irrational.",
+      "√11 is irrational, since 11 is not a perfect square.",
       "5 is rational.",
       "The sum of a rational number and an irrational number is irrational.",
-      "Therefore, 5 + √11 is irrational."
+      "∴ 5 + √11 is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -407,20 +134,22 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(viii)",
      "question": "Identify each of the following as a rational or irrational number: √3 + √13",
      "steps": [
-      "Assume that √3 + √13 is rational.",
-      "Then (√3 + √13)² is rational.",
-      "(√3 + √13)² = 3 + 13 + 2√39 = 16 + 2√39.",
-      "Hence, 2√39 and therefore √39 are rational.",
+      "Suppose √3 + √13 = r, where r is rational.",
+      "Squaring both sides: (√3 + √13)² = r²",
+      "3 + 13 + 2√39 = r²",
+      "√39 = (r² − 16)/2",
+      "Since r is rational, (r² − 16)/2 is rational.",
       "But 39 is not a perfect square, so √39 is irrational.",
       "This is a contradiction.",
-      "Therefore, √3 + √13 is irrational."
+      "∴ √3 + √13 is irrational."
      ],
      "answer": "Irrational",
      "figure": "",
@@ -429,15 +158,16 @@
        "irrational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(ix)",
      "question": "Identify each of the following as a rational or irrational number: 15/4",
      "steps": [
-      "15/4 is a ratio of two integers, and 4 ≠ 0.",
-      "Therefore, 15/4 is rational."
+      "15/4 is of the form p/q, where p = 15 and q = 4.",
+      "Since p and q are integers and q ≠ 0, 15/4 is a rational number."
      ],
      "answer": "Rational",
      "figure": "",
@@ -446,121 +176,133 @@
        "rational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q1(x)",
      "question": "Identify each of the following as a rational or irrational number: (2 − √2)(2 + √2)",
-     "steps": [],
-     "answer": "Irrational",
+     "steps": [
+      "(2 − √2)(2 + √2) = 2² − (√2)²",
+      "= 4 − 2",
+      "= 2",
+      "Since 2 is an integer, it is a rational number."
+     ],
+     "answer": "Rational",
      "figure": "",
-     "accept": [],
-     "checked": false
+     "accept": [
+      [
+       "rational"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"Irrational\"; the checked working above gives this answer."
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(i)",
-     "question": "Represent the following number on number line: √2",
+     "question": "Represent the following numbers on number line: √2",
      "steps": [
-      "Draw a number line and mark O at 0 and A at 1, so OA = 1 unit.",
-      "At A, draw AB perpendicular to the number line and mark AB = 1 unit.",
-      "Join O to B.",
-      "In right triangle OAB, OB² = OA² + AB² = 1² + 1² = 2, so OB = √2.",
-      "With centre O and radius OB, draw an arc cutting the positive number line at P.",
-      "The point P represents √2."
+      "Draw a number line and mark O as 0 and A as 1.",
+      "At A, draw a perpendicular to the number line and mark B so that AB = 1 unit.",
+      "Join O to B. By the Pythagorean theorem, OB = √(1² + 1²) = √2.",
+      "With centre O and radius OB, draw an arc to cut the number line at P.",
+      "Mark P as √2."
      ],
-     "answer": "The point P on the positive number line represents √2.",
-     "figure": "A number line with O at 0 and A at 1. Draw AB perpendicular to the number line with AB = 1, and join O to B. With centre O and radius OB, mark P on the positive number line. The right triangle OAB has hypotenuse OB = √2, so P represents √2.",
+     "answer": "√2 is represented by the point P on the number line.",
+     "figure": "A number line with 0 and 1 marked, and the point √2 marked between 1 and 2.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(ii)",
-     "question": "Represent the following number on number line: √3",
+     "question": "Represent the following numbers on number line: √3",
      "steps": [
-      "Draw a number line and mark O at 0 and A at 1, so OA = 1 unit.",
-      "At A, draw AB perpendicular to the number line and mark AB = 1 unit.",
-      "Join O to B; by Pythagoras' theorem, OB² = 1² + 1² = 2, so OB = √2.",
-      "At B, draw BC perpendicular to OB and mark BC = 1 unit.",
-      "Join O to C; in right triangle OBC, OC² = OB² + BC² = 2 + 1 = 3, so OC = √3.",
-      "With centre O and radius OC, draw an arc cutting the positive number line at P.",
-      "The point P represents √3."
+      "Draw a number line and mark O as 0 and A as 1.",
+      "At A, draw a perpendicular to the number line and mark B so that AB = 1 unit.",
+      "Join O to B. Then OB = √2.",
+      "At B, draw a perpendicular to OB and mark C so that BC = 1 unit.",
+      "Join O to C. By the Pythagorean theorem, OC = √((√2)² + 1²) = √3.",
+      "With centre O and radius OC, draw an arc to cut the number line at P.",
+      "Mark P as √3."
      ],
-     "answer": "The point P on the positive number line represents √3.",
-     "figure": "Construct a right triangle OAB with OA = 1 and AB = 1 perpendicular to OA, giving OB = √2. At B, construct BC = 1 perpendicular to OB, and join O to C, giving OC = √3. With centre O and radius OC, mark P on the positive number line. P represents √3.",
+     "answer": "√3 is represented by the point P on the number line.",
+     "figure": "A number line with 0, 1, 2 and 3 marked, and the point √3 marked between 1 and 2.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(iii)",
-     "question": "Represent the following number on number line: 4 1/3",
+     "question": "Represent the following numbers on number line: 4 1/3",
      "steps": [
-      "Draw a number line and mark consecutive integers, including 4 and 5.",
+      "Draw a number line and mark 4 and 5.",
       "Divide the interval from 4 to 5 into 3 equal parts.",
-      "Starting at 4, mark the first division point to the right.",
-      "Draw an upward arrow at this point and label it 4⅓."
+      "Mark the first division to the right of 4 as 4 1/3."
      ],
-     "answer": "The point 4⅓ on the number line represents 4⅓.",
-     "figure": "Draw a number line with unit intervals and mark the point 4⅓ between 4 and 5, one-third of the way from 4 to 5. Draw an upward arrow at that point.",
+     "answer": "4 1/3 is represented by the point one-third of the way from 4 to 5.",
+     "figure": "A number line with 4 and 5 marked, the interval divided into three equal parts, and 4 1/3 marked at the first division to the right of 4.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(iv)",
-     "question": "Represent the following number on number line: −2 1/7",
+     "question": "Represent the following numbers on number line: −2 1/7",
      "steps": [
-      "Draw a number line and mark consecutive integers, including −3 and −2.",
+      "Draw a number line and mark −3 and −2.",
       "Divide the interval from −3 to −2 into 7 equal parts.",
-      "Starting at −2, mark the first division point to its left.",
-      "Label this point −2⅐."
+      "Starting at −2, move one part to the left and mark the point as −2 1/7."
      ],
-     "answer": "The point −2⅐ on the number line represents −2⅐.",
-     "figure": "Draw a number line with −3 and −2 marked. Divide the interval from −3 to −2 into 7 equal parts. Mark the first division point to the left of −2 and label it −2⅐.",
+     "answer": "−2 1/7 is represented by the point one-seventh of a unit to the left of −2.",
+     "figure": "A number line with −3 and −2 marked, the interval divided into seven equal parts, and −2 1/7 marked at the first division to the left of −2.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(v)",
-     "question": "Represent the following number on number line: 5/8",
+     "question": "Represent the following numbers on number line: 5/8",
      "steps": [
       "Draw a number line and mark 0 and 1.",
       "Divide the interval from 0 to 1 into 8 equal parts.",
-      "Starting at 0, mark the fifth division point to the right.",
-      "Draw an upward arrow at this point and label it ⅝."
+      "Starting at 0, count 5 parts to the right and mark the point as 5/8."
      ],
-     "answer": "The point ⅝ on the number line represents ⅝.",
-     "figure": "Draw a number line with 0 and 1 marked. Divide the interval from 0 to 1 into 8 equal parts. Mark the fifth division point to the right of 0 and draw an upward arrow there; this point represents ⅝.",
+     "answer": "5/8 is represented by the point at the fifth division to the right of 0.",
+     "figure": "A number line with 0 and 1 marked, the interval divided into eight equal parts, and 5/8 marked at the fifth division to the right of 0.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q2(vi)",
-     "question": "Represent the following number on number line: 2 3/4",
+     "question": "Represent the following numbers on number line: 2 3/4",
      "steps": [
       "Draw a number line and mark 2 and 3.",
       "Divide the interval from 2 to 3 into 4 equal parts.",
-      "Starting at 2, mark the third division point to the right.",
-      "Draw an upward arrow at this point and label it 2¾."
+      "Starting at 2, count 3 parts to the right and mark the point as 2 3/4."
      ],
-     "answer": "The point 2¾ on the number line represents 2¾.",
-     "figure": "Draw a number line with 2 and 3 marked. Divide the interval from 2 to 3 into 4 equal parts. Mark the third division point to the right of 2 and draw an upward arrow there; this point represents 2¾.",
+     "answer": "2 3/4 is represented by the point at the third division to the right of 2.",
+     "figure": "A number line with 2 and 3 marked, the interval divided into four equal parts, and 2 3/4 marked at the third division to the right of 2.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q3(i)",
      "question": "Express the following as a rational number p/q where p and q are integers and q ≠ 0: 0.4̅",
      "steps": [
-      "Let x = 0.444…",
-      "Then 10x = 4.444…",
-      "Subtract the first equation from the second: 10x − x = 4.444… − 0.444…",
+      "Let x = 0.444...",
+      "10x = 4.444...",
+      "10x − x = 4.444... − 0.444...",
       "9x = 4",
       "x = 4/9"
      ],
@@ -571,7 +313,8 @@
        "4/9"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -591,7 +334,8 @@
        "37/99"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -611,106 +355,126 @@
        "21/99"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(i)",
      "question": "Name the property used in the following: (a + 4) + b = a + (4 + b)",
      "steps": [
-      "(a + 4) + b = a + (4 + b)",
       "The grouping of the addends is changed without changing their order.",
-      "Associative property over addition"
+      "This is the associative property over addition."
      ],
      "answer": "Associative property over addition",
      "figure": "",
      "accept": [
       [
-       "associative property over addition"
+       "associative",
+       "addition"
       ],
       [
-       "associative property of addition"
+       "associative",
+       "additive"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(ii)",
      "question": "Name the property used in the following: √2 + √3 = √3 + √2",
      "steps": [
-      "√2 + √3 = √3 + √2",
       "The order of the addends is changed.",
-      "Commutative property over addition"
+      "This is the commutative property over addition."
      ],
      "answer": "Commutative property over addition",
      "figure": "",
      "accept": [
       [
-       "commutative property over addition"
+       "commutative",
+       "addition"
       ],
       [
-       "commutative property of addition"
+       "commutative",
+       "additive"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(iii)",
      "question": "Name the property used in the following: x − x = 0",
      "steps": [
-      "x − x = x + (−x)",
-      "x + (−x) = 0",
-      "Additive inverse"
+      "The sum of a number and its additive inverse is zero.",
+      "This is the additive inverse property."
      ],
      "answer": "Additive inverse",
      "figure": "",
      "accept": [
       [
        "additive inverse"
+      ],
+      [
+       "inverse"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(iv)",
      "question": "Name the property used in the following: a(b + c) = ab + ac",
      "steps": [
-      "a(b + c) = ab + ac",
-      "Multiplication is distributed over addition.",
-      "Left distributive property of multiplication over addition"
+      "Multiplication is distributed over the addition inside the brackets.",
+      "This is the left distributive property of multiplication over addition."
      ],
      "answer": "Left distributive property of multiplication over addition",
      "figure": "",
      "accept": [
       [
-       "left distributive property of multiplication over addition"
+       "left distributive",
+       "multiplication",
+       "addition"
       ],
       [
-       "distributive property"
+       "distributive",
+       "multiplication",
+       "addition"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(v)",
      "question": "Name the property used in the following: 16 + 0 = 16",
      "steps": [
-      "16 + 0 = 16",
-      "Adding zero to a number leaves it unchanged.",
-      "Additive identity"
+      "Adding zero to a number leaves the number unchanged.",
+      "This is the additive identity property."
      ],
      "answer": "Additive identity",
      "figure": "",
      "accept": [
       [
        "additive identity"
+      ],
+      [
+       "identity",
+       "addition"
+      ],
+      [
+       "identity",
+       "additive"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -718,8 +482,7 @@
      "question": "Name the property used in the following: 100 × 1 = 100",
      "steps": [
       "100 × 1 = 100",
-      "Multiplying a number by one leaves it unchanged.",
-      "Multiplicative identity"
+      "The property used is the multiplicative identity property."
      ],
      "answer": "Multiplicative identity",
      "figure": "",
@@ -728,256 +491,237 @@
        "multiplicative identity"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(vii)",
      "question": "Name the property used in the following: 4 × (5 × 8) = (4 × 5) × 8",
      "steps": [
-      "The factors are regrouped without changing their order.",
-      "This is the associative property under multiplication."
+      "4 × (5 × 8) = (4 × 5) × 8",
+      "The property used is the associative property under multiplication."
      ],
      "answer": "Associative property under multiplication",
      "figure": "",
      "accept": [
       [
        "associative property under multiplication"
-      ],
-      [
-       "associative"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q4(viii)",
      "question": "Name the property used in the following: ab = ba",
      "steps": [
-      "The order of the factors is changed without changing their product.",
-      "This is the commutative property under multiplication."
+      "ab = ba",
+      "The property used is the commutative property under multiplication."
      ],
      "answer": "Commutative property under multiplication",
      "figure": "",
      "accept": [
       [
        "commutative property under multiplication"
-      ],
-      [
-       "commutative"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(i)",
      "question": "Name the property used in the following: −3 < −1 ⇒ 0 < 2",
      "steps": [
-      "Add 3 to both sides of −3 < −1.",
-      "−3 + 3 < −1 + 3",
-      "0 < 2",
-      "This is the additive property."
+      "−3 < −1",
+      "Adding 3 to both sides gives −3 + 3 < −1 + 3.",
+      "Therefore, 0 < 2.",
+      "The property used is the additive property."
      ],
      "answer": "Additive property",
      "figure": "",
      "accept": [
       [
        "additive property"
-      ],
-      [
-       "addition property"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(ii)",
      "question": "Name the property used in the following: If a < b then 1/a > 1/b",
      "steps": [
-      "Taking reciprocals reverses the inequality for positive a and b.",
-      "This is the reciprocal property."
+      "For non-zero a and b with ab > 0, the reciprocal property gives a < b ⇒ 1/a > 1/b.",
+      "Thus, the stated implication requires the restriction ab > 0.",
+      "Without this restriction, take a = −1 and b = 1: then a < b, but 1/a = −1 and 1/b = 1, so 1/a > 1/b is false."
      ],
-     "answer": "Reciprocal property",
+     "answer": "Reciprocal property, provided ab > 0; without this restriction, the statement is not always true.",
      "figure": "",
      "accept": [
       [
        "reciprocal property"
       ],
       [
-       "reciprocal"
+       "ab>0"
+      ],
+      [
+       "not always true"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(iii)",
      "question": "Name the property used in the following: If a < b then a + c < b + c",
      "steps": [
-      "Add c to both sides of a < b.",
-      "a + c < b + c",
-      "This is the additive property."
+      "If a < b, then a + c < b + c.",
+      "The property used is the additive property."
      ],
      "answer": "Additive property",
      "figure": "",
      "accept": [
       [
        "additive property"
-      ],
-      [
-       "addition property"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(iv)",
      "question": "Name the property used in the following: If ac < bc and c > 0 then a < b",
      "steps": [
-      "Divide both sides of ac < bc by c, where c > 0.",
-      "a < b",
-      "This is the multiplicative property."
+      "If ac < bc and c > 0, divide both sides by c.",
+      "Therefore, a < b.",
+      "The property used is the multiplicative property."
      ],
      "answer": "Multiplicative property",
      "figure": "",
      "accept": [
       [
        "multiplicative property"
-      ],
-      [
-       "multiplication property"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(v)",
      "question": "Name the property used in the following: If ac < bc and c < 0 then a > b",
      "steps": [
-      "Divide both sides of ac < bc by c, where c < 0; the inequality sign reverses.",
-      "a > b",
-      "This is the multiplicative property."
+      "If ac < bc and c < 0, divide both sides by c and reverse the inequality sign.",
+      "Therefore, a > b.",
+      "The property used is the multiplicative property."
      ],
      "answer": "Multiplicative property",
      "figure": "",
      "accept": [
       [
        "multiplicative property"
-      ],
-      [
-       "multiplication property"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q5(vi)",
      "question": "Name the property used in the following: Either a > b or a = b or a < b",
      "steps": [
-      "For any two real numbers a and b, exactly one of a > b, a = b, or a < b is true.",
-      "This is the trichotomy property."
+      "The statement says that for any two real numbers a and b, exactly one of a > b, a = b or a < b is true.",
+      "This property is called the Trichotomy Property."
      ],
      "answer": "Trichotomy property",
      "figure": "",
      "accept": [
       [
-       "trichotomy property"
-      ],
-      [
-       "trichotomy"
+       "trichotomy",
+       "property"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q6(i)",
      "question": "Find two rational numbers between: 1/3 and 1/4",
      "steps": [
-      "Since 1/4 < 1/3, multiply both rational numbers by 36 to obtain equivalent fractions.",
-      "1/4 = 9/36 and 1/3 = 12/36.",
-      "Therefore, 9/36 < 10/36 < 11/36 < 12/36.",
-      "Hence, two rational numbers between 1/3 and 1/4 are 10/36 and 11/36."
+      "The given rational numbers are 1/4 and 1/3, since 1/4 < 1/3.",
+      "A rational number between them is their mean: (1/4 + 1/3)/2 = (3/12 + 4/12)/2 = (7/12)/2 = 7/24.",
+      "Now find the mean of 7/24 and 1/3: (7/24 + 1/3)/2 = (7/24 + 8/24)/2 = (15/24)/2 = 15/48 = 5/16.",
+      "Therefore, 1/4 < 7/24 < 5/16 < 1/3."
      ],
-     "answer": "10/36 and 11/36",
+     "answer": "7/24 and 5/16",
      "figure": "",
      "accept": [
       [
-       "10/36",
-       "11/36"
-      ],
-      [
-       "5/18",
-       "11/36"
-      ],
-      [
        "7/24",
        "5/16"
+      ],
+      [
+       "5/16",
+       "7/24"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q6(ii)",
      "question": "Find two rational numbers between: 3 and 4",
      "steps": [
-      "Write 3 and 4 as fractions with denominator 10.",
-      "3 = 30/10 and 4 = 40/10.",
-      "Therefore, 30/10 < 31/10 < 32/10 < 40/10.",
-      "Hence, two rational numbers between 3 and 4 are 31/10 and 32/10."
+      "A rational number between 3 and 4 is their mean: (3 + 4)/2 = 7/2.",
+      "Now find the mean of 7/2 and 4: (7/2 + 4)/2 = (7/2 + 8/2)/2 = (15/2)/2 = 15/4.",
+      "Therefore, 3 < 7/2 < 15/4 < 4."
      ],
-     "answer": "31/10 and 32/10",
+     "answer": "7/2 and 15/4",
      "figure": "",
      "accept": [
       [
-       "31/10",
-       "32/10"
+       "7/2",
+       "15/4"
       ],
       [
-       "31/10",
-       "33/10"
-      ],
-      [
-       "31/100",
-       "32/100"
+       "15/4",
+       "7/2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.1 Q6(iii)",
      "question": "Find two rational numbers between: 3/5 and 4/5",
      "steps": [
-      "Write 3/5 and 4/5 as equivalent fractions with denominator 15.",
-      "3/5 = 9/15 and 4/5 = 12/15.",
-      "Therefore, 9/15 < 10/15 < 11/15 < 12/15.",
-      "Hence, two rational numbers between 3/5 and 4/5 are 10/15 and 11/15."
+      "A rational number between 3/5 and 4/5 is their mean: (3/5 + 4/5)/2 = (7/5)/2 = 7/10.",
+      "Now find the mean of 7/10 and 4/5: (7/10 + 4/5)/2 = (7/10 + 8/10)/2 = (15/10)/2 = 15/20 = 3/4.",
+      "Therefore, 3/5 < 7/10 < 3/4 < 4/5."
      ],
-     "answer": "10/15 and 11/15",
+     "answer": "7/10 and 3/4",
      "figure": "",
      "accept": [
       [
-       "10/15",
-       "11/15"
+       "7/10",
+       "3/4"
       ],
       [
-       "2/3",
-       "11/15"
-      ],
-      [
-       "16/25",
-       "17/25"
+       "3/4",
+       "7/10"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     }
    ],
    "mcqs": []
@@ -990,8 +734,8 @@
      "source": "Ex 1.2 Q1(i)",
      "question": "Rationalize the denominator of following: 13/(4 + √3)",
      "steps": [
-      "13/(4 + √3) = [13/(4 + √3)] × [(4 − √3)/(4 − √3)].",
-      "= 13(4 − √3)/[(4 + √3)(4 − √3)].",
+      "13/(4 + √3) = 13/(4 + √3) × (4 − √3)/(4 − √3).",
+      "= 13(4 − √3)/((4 + √3)(4 − √3)).",
       "= 13(4 − √3)/(16 − 3).",
       "= 13(4 − √3)/13.",
       "= 4 − √3."
@@ -1000,54 +744,66 @@
      "figure": "",
      "accept": [
       [
-       "4-√3"
+       "4 − √3"
+      ],
+      [
+       "4-sqrt3"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q1(ii)",
      "question": "Rationalize the denominator of following: (√2 + √5)/√3",
      "steps": [
-      "(√2 + √5)/√3 = [(√2 + √5)/√3] × (√3/√3).",
-      "= (√6 + √15)/3.",
-      "Hence, the rationalized form is (√6 + √15)/3."
+      "(√2 + √5)/√3 = (√2 + √5)/√3 × √3/√3.",
+      "= (√6 + √15)/(√3 × √3).",
+      "= (√6 + √15)/3."
      ],
      "answer": "(√6 + √15)/3",
      "figure": "",
      "accept": [
       [
-       "(√6+√15)/3"
+       "(√6 + √15)/3"
+      ],
+      [
+       "(sqrt6+sqrt15)/3"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q1(iii)",
      "question": "Rationalize the denominator of following: (√2 − 1)/√5",
      "steps": [
-      "(√2 − 1)/√5 = [(√2 − 1)/√5] × (√5/√5).",
-      "= (√10 − √5)/5.",
-      "Hence, the rationalized form is (√10 − √5)/5."
+      "(√2 − 1)/√5 = (√2 − 1)/√5 × √5/√5.",
+      "= (√10 − √5)/(√5 × √5).",
+      "= (√10 − √5)/5."
      ],
      "answer": "(√10 − √5)/5",
      "figure": "",
      "accept": [
       [
-       "(√10-√5)/5"
+       "(√10 − √5)/5"
+      ],
+      [
+       "(sqrt10-sqrt5)/5"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q1(iv)",
      "question": "Rationalize the denominator of following: (6 − 4√2)/(6 + 4√2)",
      "steps": [
-      "(6 − 4√2)/(6 + 4√2) = [(6 − 4√2)/(6 + 4√2)] × [(6 − 4√2)/(6 − 4√2)].",
-      "= (6 − 4√2)²/[(6 + 4√2)(6 − 4√2)].",
+      "(6 − 4√2)/(6 + 4√2) = (6 − 4√2)/(6 + 4√2) × (6 − 4√2)/(6 − 4√2).",
+      "= (6 − 4√2)²/((6 + 4√2)(6 − 4√2)).",
       "= (36 − 48√2 + 32)/(36 − 32).",
       "= (68 − 48√2)/4.",
       "= 17 − 12√2."
@@ -1056,71 +812,85 @@
      "figure": "",
      "accept": [
       [
-       "17-12√2"
+       "17 − 12√2"
+      ],
+      [
+       "17-12sqrt2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q1(v)",
      "question": "Rationalize the denominator of following: (√3 − √2)/(√3 + √2)",
      "steps": [
-      "(√3 − √2)/(√3 + √2) = [(√3 − √2)/(√3 + √2)] × [(√3 − √2)/(√3 − √2)].",
-      "= (√3 − √2)²/[(√3 + √2)(√3 − √2)].",
-      "= (3 + 2 − 2√6)/(3 − 2).",
-      "= 5 − 2√6."
+      "Multiply the numerator and denominator by the conjugate of the denominator, √3−√2.",
+      "= ((√3−√2)(√3−√2))/((√3+√2)(√3−√2))",
+      "= (3−2√6+2)/(3−2)",
+      "= (5−2√6)/1"
      ],
-     "answer": "5 − 2√6",
+     "answer": "5−2√6",
      "figure": "",
      "accept": [
       [
-       "5-2√6"
+       "5−2√6"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q1(vi)",
      "question": "Rationalize the denominator of following: 4√3/(√7 + √5)",
      "steps": [
-      "Multiply the numerator and denominator by the conjugate of the denominator:",
-      "= 4√3(√7−√5) / [(√7+√5)(√7−√5)]",
-      "= 4√3(√7−√5) / (7−5)",
-      "= 4√3(√7−√5) / 2",
+      "Multiply the numerator and denominator by the conjugate of the denominator, √7−√5.",
+      "= (4√3(√7−√5))/((√7+√5)(√7−√5))",
+      "= (4√3(√7−√5))/(7−5)",
+      "= (4√3(√7−√5))/2",
       "= 2√3(√7−√5)"
      ],
      "answer": "2√3(√7−√5)",
      "figure": "",
      "accept": [
       [
-       "2√3(√7−√5)"
-      ],
-      [
-       "2√21−2√15"
+       "2√3(√7−√5"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(i)",
      "question": "Simplify the following: (81/16)^(3/4)",
-     "steps": [],
-     "answer": "8/27",
+     "steps": [
+      "(81/16)^(3/4) = ((3⁴)/(2⁴))^(3/4)",
+      "= ((3/2)⁴)^(3/4)",
+      "= (3/2)³",
+      "= 27/8"
+     ],
+     "answer": "27/8",
      "figure": "",
-     "accept": [],
-     "checked": false
+     "accept": [
+      [
+       "27/8"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"8/27\"; the checked working above gives this answer."
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(ii)",
      "question": "Simplify the following: (3/4)^−2 ÷ (4/9)^3 × 16/27",
      "steps": [
-      "(3/4)^(−2) ÷ (4/9)^3 × 16/27",
-      "= (4/3)^2 × (9/4)^3 × 16/27",
+      "(3/4)^(-2) ÷ (4/9)^3 × 16/27",
+      "= (4/3)^2 ÷ (64/729) × 16/27",
       "= 16/9 × 729/64 × 16/27",
+      "= 4 × 27/9",
       "= 12"
      ],
      "answer": "12",
@@ -1130,15 +900,17 @@
        "12"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(iii)",
      "question": "Simplify the following: (0.027)^−1/3",
      "steps": [
-      "(0.027)^(−1/3) = (27/1000)^(−1/3)",
-      "= (3/10)^(−1)",
+      "(0.027)^(-1/3) = (27/1000)^(-1/3)",
+      "= ((3/10)^3)^(-1/3)",
+      "= (3/10)^(-1)",
       "= 10/3"
      ],
      "answer": "10/3",
@@ -1148,14 +920,15 @@
        "10/3"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(iv)",
      "question": "Simplify the following: ⁷√((x¹⁴ × y²¹ × z³⁵)/(y¹⁴z⁷))",
      "steps": [
-      "⁷√[(x¹⁴ × y²¹ × z³⁵)/(y¹⁴z⁷)]",
+      "⁷√((x¹⁴ × y²¹ × z³⁵)/(y¹⁴z⁷))",
       "= ⁷√(x¹⁴ × y⁷ × z²⁸)",
       "= x²yz⁴"
      ],
@@ -1164,21 +937,20 @@
      "accept": [
       [
        "x²yz⁴"
-      ],
-      [
-       "x^2yz^4"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(v)",
      "question": "Simplify the following: (5 · (25)^(n+1) − 25 · 5^(2n))/(5 · 5^(2n+3) − (25)^(n+1))",
      "steps": [
-      "[5·25^(n+1) − 25·5^(2n)] / [5·5^(2n+3) − 25^(n+1)]",
-      "= [5·5^(2n+2) − 5²·5^(2n)] / [5·5^(2n+3) − 5^(2n+2)]",
-      "= [5^(2n+2)(5−1)] / [5^(2n+2)(25−1)]",
+      "(5·25^(n+1) − 25·5^(2n))/(5·5^(2n+3) − 25^(n+1))",
+      "= (5·5^(2n+2) − 5²·5^(2n))/(5·5^(2n+3) − 5^(2n+2))",
+      "= (5^(2n+3) − 5^(2n+2))/(5^(2n+4) − 5^(2n+2))",
+      "= (5^(2n+2)(5−1))/(5^(2n+2)(25−1))",
       "= 4/24",
       "= 1/6"
      ],
@@ -1189,26 +961,42 @@
        "1/6"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(vi)",
      "question": "Simplify the following: (16)^(x+1) + 20(4^(2x))/(2^(x−3) × 8^(x+2))",
-     "steps": [],
-     "answer": "9/2",
+     "steps": [
+      "16^(x+1) + 20(4^(2x))/(2^(x−3) × 8^(x+2))",
+      "= 2^(4x+4) + 20(2^(4x))/(2^(x−3) × 2^(3x+6))",
+      "= 2^(4x+4) + 20(2^(4x))/2^(4x+3)",
+      "= 2^(4x+4) + 20/2³",
+      "= 2^(4x+4) + 5/2"
+     ],
+     "answer": "2^(4x+4) + 5/2",
      "figure": "",
-     "accept": [],
-     "checked": false
+     "accept": [
+      [
+       "2^(4x+4)+5/2"
+      ],
+      [
+       "16^(x+1)+5/2"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"9/2\"; the checked working above gives this answer."
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(vii)",
      "question": "Simplify the following: (64)^−2/3 ÷ (9)^−3/2",
      "steps": [
-      "64^(−2/3) ÷ 9^(−3/2)",
-      "= (1/64^(2/3)) ÷ (1/9^(3/2))",
+      "(64)^(−2/3) ÷ (9)^(−3/2) = (4³)^(−2/3) ÷ (3²)^(−3/2)",
+      "= 4^(−2) ÷ 3^(−3)",
       "= 1/16 ÷ 1/27",
+      "= 1/16 × 27/1",
       "= 27/16"
      ],
      "answer": "27/16",
@@ -1218,17 +1006,18 @@
        "27/16"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(viii)",
      "question": "Simplify the following: (3ⁿ × 9^(n+1))/(3^(n−1) × 9^(n−1))",
      "steps": [
-      "= (3ⁿ × 9ⁿ⁺¹)/(3ⁿ⁻¹ × 9ⁿ⁻¹)",
-      "= 3ⁿ⁻⁽ⁿ⁻¹⁾ × 9⁽ⁿ⁺¹⁾⁻⁽ⁿ⁻¹⁾",
-      "= 3¹ × 9²",
-      "= 3 × 81",
+      "(3ⁿ × 9^(n+1))/(3^(n−1) × 9^(n−1)) = (3ⁿ × (3²)^(n+1))/(3^(n−1) × (3²)^(n−1))",
+      "= (3ⁿ × 3^(2n+2))/(3^(n−1) × 3^(2n−2))",
+      "= 3^(3n+2)/3^(3n−3)",
+      "= 3⁵",
       "= 243"
      ],
      "answer": "243",
@@ -1238,16 +1027,18 @@
        "243"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q2(ix)",
      "question": "Simplify the following: (5^(n+3) − 6 · 5^(n+1))/(9 × 5ⁿ − 4 × 5ⁿ)",
      "steps": [
-      "= [5ⁿ⁺¹(5² − 6)]/[5ⁿ(9 − 4)]",
-      "= (19 × 5ⁿ⁺¹)/(5 × 5ⁿ)",
-      "= (19 × 5ⁿ⁺¹)/5ⁿ⁺¹",
+      "(5^(n+3) − 6 × 5^(n+1))/(9 × 5ⁿ − 4 × 5ⁿ) = [5ⁿ(5³ − 6 × 5)]/[5ⁿ(9 − 4)]",
+      "= [5ⁿ(125 − 30)]/[5ⁿ × 5]",
+      "= (95 × 5ⁿ)/(5 × 5ⁿ)",
+      "= 95/5",
       "= 19"
      ],
      "answer": "19",
@@ -1257,7 +1048,8 @@
        "19"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1265,8 +1057,8 @@
      "question": "If x = 3 + √8 then find the value of: x + 1/x",
      "steps": [
       "x = 3 + √8",
-      "1/x = 1/(3 + √8)",
-      "= (3 − √8)/[(3 + √8)(3 − √8)]",
+      "1/x = 1/(3 + √8) × (3 − √8)/(3 − √8)",
+      "= (3 − √8)/(9 − 8)",
       "= 3 − √8",
       "x + 1/x = (3 + √8) + (3 − √8)",
       "= 6"
@@ -1278,7 +1070,8 @@
        "6"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1286,7 +1079,9 @@
      "question": "If x = 3 + √8 then find the value of: x − 1/x",
      "steps": [
       "x = 3 + √8",
-      "1/x = 3 − √8",
+      "1/x = 1/(3 + √8) × (3 − √8)/(3 − √8)",
+      "= (3 − √8)/(9 − 8)",
+      "= 3 − √8",
       "x − 1/x = (3 + √8) − (3 − √8)",
       "= 2√8"
      ],
@@ -1300,7 +1095,8 @@
        "4√2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1320,7 +1116,8 @@
        "34"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1329,8 +1126,8 @@
      "steps": [
       "x + 1/x = 6",
       "x − 1/x = 2√8",
-      "x² − 1/x² = (x + 1/x)(x − 1/x)",
-      "= 6 × 2√8",
+      "x² − 1/x² = (x − 1/x)(x + 1/x)",
+      "= 2√8 × 6",
       "= 12√8"
      ],
      "answer": "12√8",
@@ -1343,7 +1140,8 @@
        "24√2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1363,17 +1161,19 @@
        "1154"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q3(vi)",
      "question": "If x = 3 + √8 then find the value of: (x − 1/x)²",
      "steps": [
-      "x − 1/x = 2√8",
-      "(x − 1/x)² = (2√8)²",
-      "= 4 × 8",
-      "= 32"
+      "x = 3 + √8",
+      "1/x = 1/(3 + √8) × (3 − √8)/(3 − √8)",
+      "1/x = (3 − √8)/(9 − 8) = 3 − √8",
+      "x − 1/x = (3 + √8) − (3 − √8) = 2√8",
+      "(x − 1/x)² = (2√8)² = 4 × 8 = 32"
      ],
      "answer": "32",
      "figure": "",
@@ -1382,40 +1182,42 @@
        "32"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q4",
      "question": "Find the rational numbers p and q such that (8 − 3√2)/(4 + 3√2) = p + q√2",
      "steps": [
-      "Multiply numerator and denominator by the conjugate of 4 + 3√2.",
       "(8 − 3√2)/(4 + 3√2) = ((8 − 3√2)(4 − 3√2))/((4 + 3√2)(4 − 3√2))",
       "= (32 − 24√2 − 12√2 + 18)/(16 − 18)",
       "= (50 − 36√2)/(−2)",
       "= −25 + 18√2",
-      "Comparing with p + q√2, p = −25 and q = 18."
+      "Comparing with p + q√2, p = −25 and q = 18"
      ],
      "answer": "p = −25, q = 18",
      "figure": "",
      "accept": [
       [
-       "p=-25",
-       "q=18"
+       "p = −25",
+       "q = 18"
+      ],
+      [
+       "−25 + 18√2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q5(i)",
      "question": "Simplify the following: ((25)^(3/2) × (243)^(3/5))/((16)^(5/4) × (8)^(4/3))",
      "steps": [
-      "(25)^(3/2) = (√25)^3 = 5^3 = 125",
-      "(243)^(3/5) = (⁵√243)^3 = 3^3 = 27",
-      "(16)^(5/4) = (⁴√16)^5 = 2^5 = 32",
-      "(8)^(4/3) = (∛8)^4 = 2^4 = 16",
-      "((25)^(3/2) × (243)^(3/5))/((16)^(5/4) × (8)^(4/3)) = (125 × 27)/(32 × 16)",
+      "((25)^(3/2) × (243)^(3/5))/((16)^(5/4) × (8)^(4/3))",
+      "= ((5²)^(3/2) × (3⁵)^(3/5))/((2⁴)^(5/4) × (2³)^(4/3))",
+      "= (5³ × 3³)/(2⁵ × 2⁴)",
       "= 3375/512"
      ],
      "answer": "3375/512",
@@ -1425,20 +1227,19 @@
        "3375/512"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q5(ii)",
      "question": "Simplify the following: (54 × ∛((27)^(2x)))/(9^(x+1) + 216(3^(2x−1)))",
      "steps": [
-      "∛((27)^(2x)) = (27)^(2x/3) = (3^3)^(2x/3) = 3^(2x)",
-      "9^(x+1) = (3^2)^(x+1) = 3^(2x+2) = 9 × 3^(2x)",
-      "216 × 3^(2x−1) = 72 × 3^(2x)",
-      "(54 × ∛((27)^(2x)))/(9^(x+1) + 216 × 3^(2x−1)) = (54 × 3^(2x))/(9 × 3^(2x) + 72 × 3^(2x))",
+      "(54 × ∛((27)^(2x)))/(9^(x+1) + 216(3^(2x−1)))",
+      "= (54 × 3^(2x))/(3^(2x+2) + 216 × 3^(2x−1))",
+      "= (54 × 3^(2x))/(9 × 3^(2x) + 72 × 3^(2x))",
       "= (54 × 3^(2x))/(81 × 3^(2x))",
-      "= 54/81",
-      "= 2/3"
+      "= 54/81 = 2/3"
      ],
      "answer": "2/3",
      "figure": "",
@@ -1447,20 +1248,18 @@
        "2/3"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q5(iii)",
      "question": "Simplify the following: √(((216)^(2/3) × (25)^(1/2))/((0.04)^−3/2))",
      "steps": [
-      "(216)^(2/3) = (∛216)^2 = 6^2 = 36",
-      "(25)^(1/2) = √25 = 5",
-      "0.04 = 1/25",
-      "(0.04)^(−3/2) = (1/25)^(−3/2) = 25^(3/2) = 125",
-      "√(((216)^(2/3) × (25)^(1/2))/((0.04)^(−3/2))) = √((36 × 5)/125)",
-      "= √(180/125)",
-      "= √(36/25)",
+      "√(((216)^(2/3) × (25)^(1/2))/((0.04)^−3/2))",
+      "= √(((6³)^(2/3) × 5)/((1/25)^−3/2))",
+      "= √((36 × 5)/125)",
+      "= √(180/125) = √(36/25)",
       "= 6/5"
      ],
      "answer": "6/5",
@@ -1470,30 +1269,29 @@
        "6/5"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.2 Q5(iv)",
      "question": "Simplify the following: (a^(1/3) + b^(2/3)) × (a^(2/3) − a^(1/3)b^(2/3) + b^(4/3))",
      "steps": [
-      "Let x = a^(1/3) and y = b^(2/3).",
-      "(a^(1/3) + b^(2/3))(a^(2/3) − a^(1/3)b^(2/3) + b^(4/3)) = (x + y)(x^2 − xy + y^2)",
-      "= x^3 + y^3",
-      "= (a^(1/3))^3 + (b^(2/3))^3",
-      "= a + b^2"
+      "(a^(1/3) + b^(2/3)) × (a^(2/3) − a^(1/3)b^(2/3) + b^(4/3))",
+      "Let u = a^(1/3) and v = b^(2/3)",
+      "Then the expression = (u + v)(u² − uv + v²)",
+      "= u³ + v³",
+      "= a + b²"
      ],
      "answer": "a + b²",
      "figure": "",
      "accept": [
       [
-       "a+b^2"
-      ],
-      [
        "a+b²"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     }
    ],
    "mcqs": []
@@ -1502,283 +1300,17 @@
    "number": "1.3",
    "solutions": [
     {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 9",
-     "question": "The sum of two real numbers is 8, and their difference is 2. Find the numbers.",
-     "steps": [
-      "Let a and b be two real numbers then",
-      "a + b = 8 ...(i)",
-      "a − b = 2 ...(ii)",
-      "Add (i) and (ii)",
-      "2a = 10 ⇒ a = 5  put in (ii)",
-      "⇒ 5 − b = 2  ⇒ −b = 2 − 5  ⇒ −b = −3 ⇒ b = 3",
-      "So, 5 and 3 are the required real numbers."
-     ],
-     "answer": "5 and 3",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 10",
-     "question": "Normal human body temperature is 98.6 °F. Convert it into Celsius and Kelvin scale.",
-     "steps": [
-      "Given that °F = 98.6",
-      "So, to convert it into Celsius scale, we use",
-      "°C = 5/9 (F − 32)°",
-      "°C = 5/9 (98.6 − 32)",
-      "= 5/9 (66.6)",
-      "= (0.55)(66.6)",
-      "°C = 37°",
-      "Hence, normal human body temperature at Celsius scale is 37°.",
-      "Now, we convert it into Kelvin scale.",
-      "K = C + 273°",
-      "K = 37° + 273°",
-      "K = 310 kelvin"
-     ],
-     "answer": "Celsius scale is 37°; K = 310 kelvin",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 11",
-     "question": "Hamail purchased a bicycle for Rs. 6590 and sold it for Rs.6850. Find the profit percentage.",
-     "steps": [
-      "Cost Price = CP = Rs. 6590",
-      "Selling Price = SP = Rs. 6850",
-      "Profit = SP − CP",
-      "= 6850 − 6590",
-      "= Rs. 260",
-      "Now, we find the profit percentage.",
-      "Profit % = (profit/CP × 100) %",
-      "= (260 × 100/6590) %",
-      "= 3.94%",
-      "≈ 4%"
-     ],
-     "answer": "≈ 4%",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 12",
-     "question": "Umair bought a book for Rs. 850 and sold it for Rs. 720. What was his loss percentage?",
-     "steps": [
-      "Cost price of book = CP = Rs. 850",
-      "Selling price of book = SP = Rs. 720",
-      "Loss = CP − SP",
-      "= 850 − 720",
-      "= Rs. 130",
-      "Loss percentage = (loss/CP × 100) %",
-      "= (130/850 × 100) %",
-      "= 15.29%"
-     ],
-     "answer": "15.29%",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 13",
-     "question": "Saleem, Nadeem, and Tanveer earned a profit of Rs. 4,50,000 from a business. If their investments in the business are in the ratio 4: 7: 14, find each person’s profit.",
-     "steps": [
-      "Profit earned = Rs. 4,50,000",
-      "Given ratio = 4 : 7 : 14",
-      "Sum of ratios = 4 + 7 + 14",
-      "= 25",
-      "Saleem earned profit = 4/25 × 4,50,000 = Rs. 72,000",
-      "Nadeem earned profit = 7/25 × 4,50,000 = Rs. 126,000",
-      "Tanveer earned profit = 14/25 × 4,50,000 = Rs. 252,000",
-      "Hence, the profit of Saleem is Rs. 72,000, profit of Nadeem is Rs. 126,000 and profit of Tanveer is Rs. 252,000."
-     ],
-     "answer": "Saleem: Rs. 72,000; Nadeem: Rs. 126,000; Tanveer: Rs. 252,000",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXAMPLE",
-     "source": "EXAMPLE 14",
-     "question": "If the simple profit on Rs. 6400 for 12 years is Rs. 3840. Find the rate of profit.",
-     "steps": [
-      "Principal = Rs. 6400",
-      "Simple profit = Rs. 3840",
-      "Time = 12 years",
-      "To find the rate we use the following formula:",
-      "Rate = (amount of profit × 100)/(time × principal)",
-      "= (3840 × 100)/(12 × 6400) = 5%",
-      "Thus, rate of profit is 5%."
-     ],
-     "answer": "5%",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 9",
-     "question": "The sum of two real numbers is 8, and their difference is 2. Find the numbers.",
-     "steps": [
-      "Let a and b be the two real numbers.",
-      "a + b = 8 ...(i)",
-      "a − b = 2 ...(ii)",
-      "Adding (i) and (ii), 2a = 10",
-      "a = 5",
-      "Putting a = 5 in (ii), 5 − b = 2",
-      "−b = 2 − 5",
-      "−b = −3",
-      "b = 3",
-      "So, 5 and 3 are the required real numbers."
-     ],
-     "answer": "The numbers are 5 and 3.",
-     "figure": "",
-     "accept": [
-      [
-       "5",
-       "3"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 10",
-     "question": "Normal human body temperature is 98.6 °F. Convert it into Celsius and Kelvin scale.",
-     "steps": [
-      "Given that °F = 98.6.",
-      "To convert it into Celsius scale, we use °C = (5/9)(F − 32)°.",
-      "°C = (5/9)(98.6 − 32)",
-      "= (5/9)(66.6)",
-      "= (0.55)(66.6)",
-      "°C = 37°",
-      "Hence, normal human body temperature at Celsius scale is 37°.",
-      "Now, we convert it into Kelvin scale.",
-      "K = C + 273°",
-      "K = 37° + 273°",
-      "K = 310 kelvin"
-     ],
-     "answer": "37°C and 310 kelvin",
-     "figure": "",
-     "accept": [
-      [
-       "37",
-       "310"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 11",
-     "question": "Hamail purchased a bicycle for Rs. 6590 and sold it for Rs.6850. Find the profit percentage.",
-     "steps": [
-      "Cost Price = CP = Rs. 6590",
-      "Selling Price = SP = Rs. 6850",
-      "Profit = SP − CP",
-      "= 6850 − 6590",
-      "= Rs. 260",
-      "Profit % = (Profit/CP × 100)%",
-      "= (260/6590 × 100)%",
-      "= 3.94537…%",
-      "≈ 3.95% (to two decimal places)",
-      "≈ 4% (to the nearest whole percent)"
-     ],
-     "answer": "Profit percentage = 3.95% (approximately 4%).",
-     "figure": "",
-     "accept": [
-      [
-       "3.95%"
-      ],
-      [
-       "4%"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 12",
-     "question": "Umair bought a book for Rs. 850 and sold it for Rs. 720. What was his loss percentage?",
-     "steps": [
-      "Cost price of book = CP = Rs. 850",
-      "Selling price of book = SP = Rs. 720",
-      "Loss = CP − SP",
-      "= 850 − 720",
-      "= Rs. 130",
-      "Loss percentage = (loss/CP × 100)%",
-      "= (130/850 × 100)%",
-      "= 15.29%"
-     ],
-     "answer": "Loss percentage = 15.29%.",
-     "figure": "",
-     "accept": [
-      [
-       "15.29%"
-      ]
-     ],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 13",
-     "question": "Saleem, Nadeem, and Tanveer earned a profit of Rs. 4,50,000 from a business. If their investments in the business are in the ratio 4: 7: 14, find each person’s profit.",
-     "steps": [
-      "Profit earned = Rs. 4,50,000",
-      "Given ratio = 4 : 7 : 14",
-      "Sum of ratios = 4 + 7 + 14",
-      "= 25",
-      "Saleem's profit = 4/25 × 4,50,000",
-      "= Rs. 72,000",
-      "Nadeem's profit = 7/25 × 4,50,000",
-      "= Rs. 1,26,000",
-      "Tanveer's profit = 14/25 × 4,50,000",
-      "= Rs. 2,52,000"
-     ],
-     "answer": "Saleem's profit is Rs. 72,000, Nadeem's profit is Rs. 1,26,000 and Tanveer's profit is Rs. 2,52,000.",
-     "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "EXAMPLE 14",
-     "question": "If the simple profit on Rs. 6400 for 12 years is Rs. 3840. Find the rate of profit.",
-     "steps": [
-      "Principal = Rs. 6400",
-      "Simple profit = Rs. 3840",
-      "Time = 12 years",
-      "Rate = (amount of profit × 100)/(time × principal)",
-      "= (3840 × 100)/(12 × 6400)",
-      "= 5%"
-     ],
-     "answer": "Rate of profit = 5%.",
-     "figure": "",
-     "accept": [
-      [
-       "5%"
-      ]
-     ],
-     "checked": true
-    },
-    {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q1",
      "question": "The sum of three consecutive integers is forty-two, find the three integers.",
      "steps": [
-      "Let the first integer be x.",
-      "The three consecutive integers are x, x + 1 and x + 2.",
+      "Let the three consecutive integers be x, x + 1 and x + 2.",
       "Their sum is 42.",
       "x + (x + 1) + (x + 2) = 42",
       "3x + 3 = 42",
-      "3x = 42 − 3",
-      "3x = 39",
-      "x = 13",
-      "The three consecutive integers are 13, 14 and 15."
+      "3x = 42 − 3 = 39",
+      "x = 39/3 = 13",
+      "The three integers are 13, 14 and 15."
      ],
      "answer": "13, 14, 15",
      "figure": "",
@@ -1789,7 +1321,8 @@
        "15"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -1799,52 +1332,51 @@
       "Area of ΔABC = 1/2 × AB × AC",
       "1 + √15 = 1/2 × AB × (√3 + √5)",
       "AB = 2(1 + √15)/(√3 + √5)",
-      "= (1 + √15)(√5 − √3)",
-      "= √5 − √3 + 5√3 − 3√5",
-      "= 4√3 − 2√5 cm"
+      "AB = 2(1 + √15)(√5 − √3)/((√3 + √5)(√5 − √3))",
+      "AB = (1 + √15)(√5 − √3)",
+      "AB = √5 − √3 + 5√3 − 3√5",
+      "AB = 4√3 − 2√5 cm"
      ],
-     "answer": "AB = (4√3 − 2√5) cm.",
-     "figure": "A right-angled triangle ABC, with the right angle at A, AC = (√3 + √5) cm and AB = (4√3 − 2√5) cm.",
+     "answer": "AB = 4√3 − 2√5 cm",
+     "figure": "Right-angled triangle ABC with ∠A = 90°, AC = (√3 + √5) cm and AB perpendicular to AC.",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q3",
      "question": "A rectangle has sides of length 2 + √18 m and (5 − 4/√2) m. Express the area of the rectangle in the form a + b√2, where a and b are integers.",
      "steps": [
-      "Area of rectangle = length × breadth",
-      "= (2 + √18)(5 − 4/√2)",
-      "= (2 + 3√2)(5 − 2√2)",
-      "= 10 − 4√2 + 15√2 − 12",
-      "= 11√2 − 2 m²"
+      "Area of rectangle = (2 + √18)(5 − 4/√2) m²",
+      "= (2 + 3√2)(5 − 2√2) m²",
+      "= 10 − 4√2 + 15√2 − 12 m²",
+      "= (11√2 − 2) m²"
      ],
-     "answer": "Area = (11√2 − 2) m².",
+     "answer": "(11√2 − 2)m²",
      "figure": "",
      "accept": [
       [
        "11√2-2"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q4",
      "question": "Find two numbers whose sum is 68 and difference is 22.",
      "steps": [
-      "Let the greater number be x.",
-      "Then the smaller number = x − 22.",
-      "Their sum is 68.",
-      "x + (x − 22) = 68",
-      "2x − 22 = 68",
-      "2x = 68 + 22",
-      "2x = 90",
+      "Let the two numbers be x and y.",
+      "According to the question, x + y = 68  …(i)",
+      "Also, x − y = 22  …(ii)",
+      "Adding (i) and (ii), 2x = 90",
       "x = 45",
-      "Smaller number = 45 − 22",
-      "= 23"
+      "Putting x = 45 in (i), 45 + y = 68",
+      "y = 23"
      ],
-     "answer": "The two numbers are 45 and 23.",
+     "answer": "45, 23",
      "figure": "",
      "accept": [
       [
@@ -1852,108 +1384,118 @@
        "23"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q5",
      "question": "The weather in Lahore was unusually warm during the summer of 2024. The TV news reported temperature as high as 48°C. By using the formula (°F = 9/5 °C + 32) find the temperature as Fahrenheit scale.",
      "steps": [
-      "Temperature in Celsius = 48°C",
-      "Temperature in Fahrenheit = 9/5 × °C + 32",
-      "= 9/5 × 48 + 32",
+      "Temperature in °C = 48°C",
+      "Temperature in °F = (9/5 × °C) + 32",
+      "= (9/5 × 48) + 32",
       "= 86.4 + 32",
       "= 118.4°F"
      ],
-     "answer": "Temperature = 118.4°F.",
+     "answer": "118.4°F",
      "figure": "",
      "accept": [
       [
        "118.4"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q6",
      "question": "The sum of the ages of the father and son is 72 years. Six years ago, the father’s age was 2 times the age of the son. What was son’s age six years ago?",
      "steps": [
-      "Let the son’s age six years ago be x years.",
-      "Then the father’s age six years ago = 2x years.",
-      "Present age of the son = (x + 6) years.",
-      "Present age of the father = (2x + 6) years.",
-      "According to the question, (x + 6) + (2x + 6) = 72.",
-      "3x + 12 = 72.",
-      "3x = 72 − 12 = 60.",
-      "x = 60 ÷ 3 = 20."
+      "Let the present age of the son be x years.",
+      "Then the present age of the father = (72 − x) years.",
+      "Six years ago, the son’s age = (x − 6) years.",
+      "Six years ago, the father’s age = (72 − x − 6) years.",
+      "According to the question, 72 − x − 6 = 2(x − 6)",
+      "66 − x = 2x − 12",
+      "78 = 3x",
+      "x = 26",
+      "Son’s age six years ago = 26 − 6 = 20 years"
      ],
-     "answer": "The son’s age six years ago was 20 years.",
+     "answer": "20 years",
      "figure": "",
      "accept": [
       [
-       "20"
+       "20 years"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q7",
      "question": "Mirha bought a toy for Rs. 1500 and sold for Rs. 1520. What was her profit percentage?",
      "steps": [
-      "Cost price = Rs. 1500.",
-      "Selling price = Rs. 1520.",
-      "Profit = Selling price − Cost price = 1520 − 1500 = Rs. 20.",
-      "Profit percentage = (Profit ÷ Cost price) × 100.",
-      "= (20 ÷ 1500) × 100.",
-      "= 1.33% (approximately)."
+      "Cost price = Rs. 1500",
+      "Selling price = Rs. 1520",
+      "Profit = Selling price − Cost price",
+      "= 1520 − 1500 = Rs. 20",
+      "Profit percentage = (Profit/Cost price) × 100%",
+      "= (20/1500) × 100%",
+      "= 4/3% = 1.33%"
      ],
-     "answer": "Her profit percentage was 1.33%.",
+     "answer": "1.33%",
      "figure": "",
      "accept": [
       [
        "1.33%"
       ],
       [
-       "1 1/3%"
+       "4/3%"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q8",
      "question": "The annual income of Tayyab is Rs. 9,60,000, while the exempted amount is Rs. 1,30,000. How much tax would he have to pay at the rate of 0.75%?",
      "steps": [
-      "Annual income = Rs. 9,60,000.",
-      "Exempted amount = Rs. 1,30,000.",
-      "Taxable income = Annual income − Exempted amount.",
-      "= 9,60,000 − 1,30,000 = Rs. 8,30,000.",
-      "Tax = (0.75 ÷ 100) × 8,30,000.",
-      "= Rs. 6,225."
+      "Annual income = Rs. 9,60,000",
+      "Exempted amount = Rs. 1,30,000",
+      "Taxable income = 9,60,000 − 1,30,000",
+      "= Rs. 8,30,000",
+      "Tax = 0.75% of Rs. 8,30,000",
+      "= (0.75/100) × 8,30,000",
+      "= Rs. 6,225"
      ],
-     "answer": "He would have to pay Rs. 6,225 as tax.",
+     "answer": "Rs. 6,225",
      "figure": "",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Ex 1.3 Q9",
      "question": "Find the compound markup on Rs. 3,75,000 for one year at the rate of 14% compounded annually.",
      "steps": [
-      "Principal = Rs. 3,75,000.",
-      "Rate = 14% per annum.",
-      "Time = 1 year.",
-      "Compound markup for one year = (Principal × Rate × Time) ÷ 100.",
-      "= (3,75,000 × 14 × 1) ÷ 100.",
-      "= Rs. 52,500."
+      "Principal (P) = Rs. 3,75,000",
+      "Rate (r) = 14% per annum; time (n) = 1 year",
+      "Compound markup = P[(1 + r/100)^n − 1]",
+      "= 3,75,000[(1 + 14/100)^1 − 1]",
+      "= 3,75,000(1.14 − 1)",
+      "= 3,75,000 × 0.14",
+      "= Rs. 52,500"
      ],
-     "answer": "The compound markup is Rs. 52,500.",
+     "answer": "Rs. 52,500",
      "figure": "",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     }
    ],
    "mcqs": []
@@ -1966,163 +1508,186 @@
      "source": "Review Ex 1 Q2(i)",
      "question": "If a = 3/2, b = 5/3 and c = 7/5, then verify that a(b + c) = ab + ac.",
      "steps": [
-      "a(b + c) = 3/2(5/3 + 7/5).",
-      "= 3/2(25/15 + 21/15).",
-      "= 3/2 × 46/15.",
-      "= 23/5.",
-      "ab + ac = (3/2 × 5/3) + (3/2 × 7/5).",
-      "= 5/2 + 21/10.",
-      "= 25/10 + 21/10.",
-      "= 46/10 = 23/5.",
-      "Therefore, a(b + c) = ab + ac."
+      "Given a = 3/2, b = 5/3 and c = 7/5.",
+      "L.H.S. = a(b + c)",
+      "= 3/2(5/3 + 7/5)",
+      "= 3/2(25/15 + 21/15)",
+      "= 3/2 × 46/15",
+      "= 23/5",
+      "R.H.S. = ab + ac",
+      "= (3/2 × 5/3) + (3/2 × 7/5)",
+      "= 5/2 + 21/10",
+      "= 25/10 + 21/10",
+      "= 46/10 = 23/5",
+      "L.H.S. = R.H.S."
      ],
-     "answer": "a(b + c) = ab + ac.",
+     "answer": "a(b + c) = ab + ac",
      "figure": "",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q2(ii)",
      "question": "If a = 3/2, b = 5/3 and c = 7/5, then verify that (a + b)c = ac + bc.",
      "steps": [
-      "(a + b)c = (3/2 + 5/3) × 7/5.",
-      "= (9/6 + 10/6) × 7/5.",
-      "= 19/6 × 7/5.",
-      "= 133/30.",
-      "ac + bc = (3/2 × 7/5) + (5/3 × 7/5).",
-      "= 21/10 + 7/3.",
-      "= 63/30 + 70/30.",
-      "= 133/30.",
-      "Therefore, (a + b)c = ac + bc."
+      "a = 3/2, b = 5/3, c = 7/5",
+      "(a + b)c = (3/2 + 5/3)(7/5)",
+      "= (9/6 + 10/6)(7/5)",
+      "= (19/6)(7/5)",
+      "= 133/30",
+      "ac + bc = (3/2)(7/5) + (5/3)(7/5)",
+      "= 21/10 + 7/3",
+      "= 63/30 + 70/30",
+      "= 133/30",
+      "∴ (a + b)c = ac + bc"
      ],
-     "answer": "(a + b)c = ac + bc.",
+     "answer": "(a + b)c = ac + bc = 133/30",
      "figure": "",
-     "accept": [],
-     "checked": true
+     "accept": [
+      [
+       "133/30"
+      ]
+     ],
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
-     "source": "Review Ex 1 Q3 (addition)",
-     "question": "If a = 4/3, b = 5/2, c = 7/4, then verify the associative property of real numbers w.r.t addition.",
+     "source": "Review Ex 1 Q3",
+     "question": "If a = 4/3, b = 5/2, c = 7/4, then verify the associative property of real numbers w.r.t addition and multiplication.",
      "steps": [
-      "(a + b) + c = (4/3 + 5/2) + 7/4.",
-      "= (8/6 + 15/6) + 7/4.",
-      "= 23/6 + 7/4.",
-      "= 46/12 + 21/12.",
-      "= 67/12.",
-      "a + (b + c) = 4/3 + (5/2 + 7/4).",
-      "= 4/3 + (10/4 + 7/4).",
-      "= 4/3 + 17/4.",
-      "= 16/12 + 51/12.",
-      "= 67/12.",
-      "Therefore, (a + b) + c = a + (b + c)."
+      "a = 4/3, b = 5/2, c = 7/4",
+      "(a + b) + c = (4/3 + 5/2) + 7/4",
+      "= (8/6 + 15/6) + 7/4",
+      "= 23/6 + 7/4",
+      "= 46/12 + 21/12",
+      "= 67/12",
+      "a + (b + c) = 4/3 + (5/2 + 7/4)",
+      "= 4/3 + (10/4 + 7/4)",
+      "= 4/3 + 17/4",
+      "= 16/12 + 51/12",
+      "= 67/12",
+      "∴ (a + b) + c = a + (b + c)",
+      "(ab)c = ((4/3)(5/2))(7/4)",
+      "= (20/6)(7/4)",
+      "= (10/3)(7/4)",
+      "= 70/12",
+      "= 35/6",
+      "a(bc) = (4/3)((5/2)(7/4))",
+      "= (4/3)(35/8)",
+      "= 140/24",
+      "= 35/6",
+      "∴ (ab)c = a(bc)"
      ],
-     "answer": "The associative property of real numbers with respect to addition is verified: (a + b) + c = a + (b + c).",
+     "answer": "(a + b) + c = a + (b + c) = 67/12, and (ab)c = a(bc) = 35/6",
      "figure": "",
-     "accept": [],
-     "checked": true
-    },
-    {
-     "kind": "EXERCISE",
-     "source": "Review Ex 1 Q3 (multiplication)",
-     "question": "If a = 4/3, b = 5/2, c = 7/4, then verify the associative property of real numbers w.r.t multiplication.",
-     "steps": [
-      "(ab)c = (4/3 × 5/2) × 7/4.",
-      "= 20/6 × 7/4.",
-      "= 10/3 × 7/4.",
-      "= 70/12 = 35/6.",
-      "a(bc) = 4/3 × (5/2 × 7/4).",
-      "= 4/3 × 35/8.",
-      "= 140/24 = 35/6.",
-      "Therefore, (ab)c = a(bc)."
+     "accept": [
+      [
+       "67/12",
+       "35/6"
+      ]
      ],
-     "answer": "The associative property of real numbers with respect to multiplication is verified: (ab)c = a(bc).",
-     "figure": "",
-     "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q4",
      "question": "Is 0 a rational number? Explain.",
      "steps": [
-      "A rational number is a number that can be written in the form p/q, where p and q are integers and q ≠ 0.",
-      "0 = 0/1, where 0 and 1 are integers and 1 ≠ 0.",
-      "Therefore, 0 is a rational number."
+      "0 = 0/1",
+      "Here, 0 and 1 are integers and 1 ≠ 0.",
+      "A rational number is a number of the form p/q, where p and q are integers and q ≠ 0.",
+      "∴ 0 is a rational number."
      ],
-     "answer": "Yes, 0 is a rational number because 0 = 0/1.",
+     "answer": "Yes. 0 is a rational number because 0 = 0/1.",
      "figure": "",
      "accept": [
       [
        "0/1"
       ],
       [
-       "zero",
        "rational"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q5",
      "question": "State trichotomy property of real numbers.",
      "steps": [
-      "For any two real numbers a and b, exactly one of the following is true: a < b, a = b, or a > b.",
-      "This is called the trichotomy property of real numbers."
+      "For any two real numbers a and b, exactly one of the following is true:",
+      "a < b, or a = b, or a > b.",
+      "This property is called the trichotomy property of real numbers."
      ],
      "answer": "For any two real numbers a and b, exactly one of a < b, a = b, or a > b is true.",
      "figure": "",
-     "accept": [],
-     "checked": true
+     "accept": [
+      [
+       "exactly one"
+      ],
+      [
+       "a=b"
+      ]
+     ],
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q6",
      "question": "Find two rational numbers between 4 and 5.",
      "steps": [
-      "Write the given numbers with denominators 10: 4 = 40/10 and 5 = 50/10.",
-      "Since 40/10 < 41/10 < 42/10 < 50/10, both 41/10 and 42/10 lie between 4 and 5.",
-      "Therefore, two rational numbers between 4 and 5 are 41/10 and 42/10."
+      "4 = 16/4 and 5 = 20/4",
+      "16/4 < 17/4 < 18/4 < 20/4",
+      "Also, 18/4 = 9/2.",
+      "∴ Two rational numbers between 4 and 5 are 17/4 and 9/2."
      ],
-     "answer": "41/10 and 42/10",
+     "answer": "17/4 and 9/2",
      "figure": "",
      "accept": [
       [
-       "4.1",
-       "4.2"
-      ],
-      [
-       "41/10",
-       "42/10"
-      ],
-      [
        "9/2",
-       "19/4"
+       "17/4"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q7(i)",
      "question": "Simplify the following: ⁵√((x¹⁵ y³⁵)/(z²⁰))",
-     "steps": [],
-     "answer": "(x³y³)/z⁴",
+     "steps": [
+      "⁵√((x¹⁵ y³⁵)/(z²⁰)) = (⁵√(x¹⁵) × ⁵√(y³⁵))/(⁵√(z²⁰))",
+      "= (x³ × y⁷)/z⁴",
+      "= x³y⁷/z⁴"
+     ],
+     "answer": "x³y⁷/z⁴",
      "figure": "",
-     "accept": [],
-     "checked": false
+     "accept": [
+      [
+       "x^3y^7/z^4"
+      ],
+      [
+       "x³y⁷/z⁴"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"(x³y³)/z⁴\"; the checked working above gives this answer."
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q7(ii)",
      "question": "Simplify the following: ∛((27)^(2x))",
      "steps": [
-      "∛((27)^(2x)) = ((27)^(2x))^(1/3).",
-      "= (3³)^(2x/3).",
-      "= 3^(3 × 2x/3).",
-      "= 3^(2x)."
+      "∛((27)^(2x)) = ((27)^(2x))^(1/3)",
+      "= (27^(1/3))^(2x)",
+      "= 3^(2x)"
      ],
      "answer": "3^(2x)",
      "figure": "",
@@ -2131,21 +1696,22 @@
        "3^(2x)"
       ],
       [
-       "3^2x"
+       "3²ˣ"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q7(iii)",
      "question": "Simplify the following: (6(3)^(n+2))/(3^(n+1) − 3^n)",
      "steps": [
-      "6(3)^(n+2)/(3^(n+1) − 3^n) = 6 × 3^n × 3²/(3^n × 3 − 3^n × 1).",
-      "= 6 × 3^n × 9/(3^n(3 − 1)).",
-      "= (54 × 3^n)/(2 × 3^n).",
-      "= 54/2.",
-      "= 27."
+      "6(3)^(n+2) / (3^(n+1) − 3^n)",
+      "= 6(3^n)(3²) / ((3^n)(3 − 1))",
+      "= (6 × 3^n × 9) / (3^n × 2)",
+      "= (6 × 9)/2",
+      "= 27"
      ],
      "answer": "27",
      "figure": "",
@@ -2154,20 +1720,23 @@
        "27"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q8",
      "question": "The sum of three consecutive odd integers is 51. Find the three integers.",
      "steps": [
-      "Let the first odd integer be x.",
+      "Let the smallest odd integer be x.",
       "Then the next two consecutive odd integers are x + 2 and x + 4.",
-      "Their sum is 51: x + (x + 2) + (x + 4) = 51.",
+      "According to the question: x + (x + 2) + (x + 4) = 51.",
       "3x + 6 = 51.",
+      "3x = 51 − 6.",
       "3x = 45.",
       "x = 15.",
-      "The three integers are 15, 17 and 19."
+      "The three consecutive odd integers are 15, 15 + 2, and 15 + 4.",
+      "The three integers are 15, 17, and 19."
      ],
      "answer": "15, 17, 19",
      "figure": "",
@@ -2178,7 +1747,8 @@
        "19"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
@@ -2186,12 +1756,14 @@
      "question": "Abdullah picked up 96 balls and placed them into two buckets. One bucket has twenty-eight more balls than the other bucket. How many balls were in each bucket?",
      "steps": [
       "Let the number of balls in the bucket with fewer balls be x.",
-      "Then the other bucket has x + 28 balls.",
-      "The total number of balls is 96: x + (x + 28) = 96.",
+      "Then the number of balls in the other bucket is x + 28.",
+      "According to the question: x + (x + 28) = 96.",
       "2x + 28 = 96.",
+      "2x = 96 − 28.",
       "2x = 68.",
       "x = 34.",
-      "The other bucket has 34 + 28 = 62 balls."
+      "The number of balls in the other bucket is 34 + 28 = 62.",
+      "The buckets contained 34 balls and 62 balls."
      ],
      "answer": "34, 62",
      "figure": "",
@@ -2201,32 +1773,33 @@
        "62"
       ]
      ],
-     "checked": true
+     "checked": true,
+     "note": ""
     },
     {
      "kind": "EXERCISE",
      "source": "Review Ex 1 Q10",
      "question": "Salma invested Rs. 3,50,000 in a bank, which paid simple profit at the rate of 7 1/4% per annum. After 2 years, the rate was increased to 8% per annum. Find the amount she had at the end of 7 years.",
      "steps": [
-      "Principal, P = Rs. 3,50,000",
-      "Rate for first 2 years, R₁ = 7¼% per annum",
-      "Profit for first 2 years = (P × R₁ × T₁)/100",
-      "= (3,50,000 × 7¼ × 2)/100",
-      "= Rs. 50,750",
-      "Rate for the next 5 years, R₂ = 8% per annum",
-      "Profit for the next 5 years = (P × R₂ × T₂)/100",
-      "= (3,50,000 × 8 × 5)/100",
-      "= Rs. 1,40,000",
-      "Total profit = Rs. 50,750 + Rs. 1,40,000",
-      "= Rs. 1,90,750",
-      "Amount = Principal + Total profit",
-      "= Rs. 3,50,000 + Rs. 1,90,750",
-      "= Rs. 5,40,750"
+      "Principal, P = Rs. 3,50,000.",
+      "For the first 2 years, rate, R₁ = 7¼% per annum.",
+      "Simple profit for the first 2 years, I₁ = (P × T × R₁) / 100.",
+      "I₁ = (3,50,000 × 2 × 7¼) / 100.",
+      "I₁ = Rs. 50,750.",
+      "For the next 5 years, rate, R₂ = 8% per annum.",
+      "Simple profit for the next 5 years, I₂ = (P × T × R₂) / 100.",
+      "I₂ = (3,50,000 × 5 × 8) / 100.",
+      "I₂ = Rs. 1,40,000.",
+      "Total profit = I₁ + I₂.",
+      "Total profit = Rs. 50,750 + Rs. 1,40,000 = Rs. 1,90,750.",
+      "Amount at the end of 7 years = Principal + Total profit.",
+      "Amount = Rs. 3,50,000 + Rs. 1,90,750 = Rs. 5,40,750."
      ],
-     "answer": "The amount at the end of 7 years is Rs. 5,40,750.",
+     "answer": "Rs. 5,40,750",
      "figure": "",
      "accept": [],
-     "checked": true
+     "checked": true,
+     "note": ""
     }
    ],
    "mcqs": [
@@ -2241,10 +1814,10 @@
      ],
      "correctIndex": 2,
      "rationales": [
-      "√7 is not an integer because its square root is not a whole number.",
+      "√7 is not an integer because it lies between 2 and 3.",
       "√7 is not rational because 7 is not a perfect square.",
       "√7 is irrational because 7 is not a perfect square.",
-      "√7 is not natural because it is not a whole number."
+      "√7 is not a natural number because it is not an integer."
      ]
     },
     {
@@ -2258,9 +1831,9 @@
      ],
      "correctIndex": 3,
      "rationales": [
-      "π and e are not natural numbers because neither is a positive whole number.",
-      "π and e are not integers because neither is a whole number or its negative.",
-      "π and e are not rational because neither can be expressed as a ratio of integers.",
+      "π and e are not natural numbers because both are non-integers.",
+      "π and e are not integers because both are non-integers.",
+      "π and e are not rational numbers because both are irrational.",
       "π and e are irrational numbers because neither can be expressed as a ratio of integers."
      ]
     },
@@ -2275,10 +1848,10 @@
      ],
      "correctIndex": 3,
      "rationales": [
-      "For a positive integer n that is not a perfect square, √n is not rational.",
-      "√n is not a natural number because n is not a perfect square.",
-      "√n is not an integer because n is not a perfect square.",
-      "√n is irrational because the square root of a positive integer that is not a perfect square is irrational."
+      "√n is not rational when n is a positive integer that is not a perfect square.",
+      "√n is not a natural number when n is not a perfect square.",
+      "√n is not an integer when n is not a perfect square.",
+      "√n is irrational when n is a positive integer that is not a perfect square."
      ]
     },
     {
@@ -2293,9 +1866,9 @@
      "correctIndex": 3,
      "rationales": [
       "√3 + √5 is not a whole number because it is not an integer.",
-      "√3 + √5 is not an integer because it lies between 3 and 4.",
-      "√3 + √5 is irrational, so it cannot be a rational number.",
-      "√3 + √5 is irrational; if it were rational, squaring it would imply √15 is rational, which is false."
+      "√3 + √5 is not an integer because its value is non-integral.",
+      "√3 + √5 is irrational, so it is not rational.",
+      "√3 + √5 is irrational because the sum of these distinct square roots cannot be rational."
      ]
     },
     {
@@ -2309,10 +1882,10 @@
      ],
      "correctIndex": 0,
      "rationales": [
-      "The statement x = x for every real x is the reflexive property of equality.",
-      "The statement is not called the transitive property, which relates three quantities.",
-      "The statement is not the symmetric property, which says that a = b implies b = a.",
-      "The statement is not the trichotomy property, which says exactly one of a < b, a = b, or a > b holds."
+      "The statement x = x for every real x expresses the reflexive property of equality.",
+      "This is not called the transitive number property; transitivity relates three quantities or expressions.",
+      "The symmetric property states that if x = y, then y = x, rather than simply x = x.",
+      "The trichotomy property says exactly one of x < y, x = y, or x > y holds for any real x and y."
      ]
     },
     {
@@ -2326,27 +1899,10 @@
      ],
      "correctIndex": 1,
      "rationales": [
-      "This is not the trichotomy property, which concerns the three possible comparisons between two real numbers.",
-      "This is the transitive property of inequality: if a > b and b > c, then a > c.",
-      "This is not the additive property, which concerns adding the same quantity to both sides of an inequality.",
-      "This is not the multiplicative property, which concerns multiplying an inequality by a quantity."
-     ]
-    },
-    {
-     "source": "Review Ex 1 Q1(vii)",
-     "stem": "2^x × 8^x = 64 then x =",
-     "options": [
-      "3/2",
-      "3/4",
-      "5/6",
-      "2/3"
-     ],
-     "correctIndex": 1,
-     "rationales": [
-      "Since 2ˣ × 8ˣ = 16ˣ = 64, we have 2⁴ˣ = 2⁶ and x = 3/2.",
-      "Substituting x = 3/4 gives 16ˣ = 8, not 64.",
-      "Substituting x = 5/6 gives 16ˣ = 2^(10/3), not 64.",
-      "Substituting x = 2/3 gives 16ˣ = 2^(8/3), not 64."
+      "The trichotomy property says that exactly one of a < b, a = b, or a > b holds.",
+      "The transitive property of inequalities gives a > c from a > b and b > c.",
+      "The additive property concerns adding the same quantity to both sides of an inequality.",
+      "The multiplicative property concerns multiplying both sides by a quantity, with care about its sign."
      ]
     },
     {
@@ -2358,11 +1914,11 @@
       "transitive",
       "additive"
      ],
-     "correctIndex": 0,
+     "correctIndex": 1,
      "rationales": [
-      "The reflexive property states a = a, not that a = b implies b = a.",
+      "The reflexive property states that a = a, not that equality can be reversed.",
       "The symmetric property states that if a = b, then b = a.",
-      "The transitive property requires a third equality, such as a = b and b = c implying a = c.",
+      "The transitive property would require a third equality, such as a = b and b = c implying a = c.",
       "The additive property concerns adding the same quantity to both sides of an equality."
      ]
     },
@@ -2377,10 +1933,10 @@
      ],
      "correctIndex": 3,
      "rationales": [
-      "√75 + √27 is not √102 because square roots do not combine by adding their radicands.",
-      "√75 + √27 = 5√3 + 3√3 = 8√3, not 9√3.",
-      "√75 + √27 = 8√3, not 5√3.",
-      "√75 + √27 = 5√3 + 3√3 = 8√3."
+      "√75 + √27 simplifies to 5√3 + 3√3, not √102.",
+      "The sum simplifies to 8√3, not 9√3.",
+      "The sum includes 5√3 + 3√3, so it is not 5√3.",
+      "Since √75 = 5√3 and √27 = 3√3, their sum is 8√3."
      ]
     },
     {
@@ -2394,10 +1950,10 @@
      ],
      "correctIndex": 3,
      "rationales": [
-      "The product is 9 − 5 = 4, which is not a prime number.",
+      "The product is 9 − 5 = 4, which is not prime.",
       "The product is 4, which is even rather than odd.",
       "The product is 4, which is rational rather than irrational.",
-      "The product is 9 − 5 = 4, a rational number."
+      "The product is (3 + √5)(3 − √5) = 9 − 5 = 4, a rational number."
      ]
     }
    ]

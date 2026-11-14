@@ -1,0 +1,3266 @@
+{
+ "unit": 3,
+ "sections": [
+  {
+   "number": "3.1",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(i)",
+     "question": "Write the following sets in set builder notation: {1, 4, 9, 16, 25, 36, …, 484}",
+     "steps": [
+      "The given numbers are squares of natural numbers: 1=1², 4=2², 9=3², …, 484=22².",
+      "Thus, x=n², where n∈N and 1≤n≤22."
+     ],
+     "answer": "{x | x = n², n ∈ N ∧ 1 ≤ n ≤ 22}",
+     "figure": "",
+     "accept": [
+      [
+       "x=n^2",
+       "1≤n≤22"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(ii)",
+     "question": "Write the following sets in set builder notation: {2, 4, 8, 16, …, 256}",
+     "steps": [
+      "The given numbers are powers of 2: 2=2¹, 4=2², 8=2³, …, 256=2⁸.",
+      "Thus, x=2ⁿ, where n∈N and 1≤n≤8."
+     ],
+     "answer": "{x | x = 2ⁿ, n ∈ N ∧ 1 ≤ n ≤ 8}",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(iii)",
+     "question": "Write the following sets in set builder notation: {0, ±1, ±2, …, ±1000}",
+     "steps": [
+      "The given set contains all integers from −1000 to 1000, inclusive.",
+      "Thus, x∈Z and −1000≤x≤1000."
+     ],
+     "answer": "{x | x ∈ Z ∧ −1000 ≤ x ≤ 1000}",
+     "figure": "",
+     "accept": [
+      [
+       "x∈Z",
+       "−1000≤x≤1000"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(iv)",
+     "question": "Write the following sets in set builder notation: {6, 12, 18, …, 120}",
+     "steps": [
+      "The given numbers are multiples of 6: 6=6×1, 12=6×2, 18=6×3, …, 120=6×20.",
+      "Thus, x=6n, where n∈N and 1≤n≤20."
+     ],
+     "answer": "{x | x = 6n, n ∈ N ∧ 1 ≤ n ≤ 20}",
+     "figure": "",
+     "accept": [
+      [
+       "x=6n",
+       "1≤n≤20"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(v)",
+     "question": "Write the following sets in set builder notation: {100, 102, 104, …, 400}",
+     "steps": [
+      "The first number is 100 and each successive number increases by 2.",
+      "Write the terms as x=100+2n, where n∈W.",
+      "For the first term, 100=100+2(0), so n=0.",
+      "For the last term, 400=100+2n; hence 2n=300 and n=150.",
+      "Thus, 0≤n≤150."
+     ],
+     "answer": "{x | x = 100 + 2n, n ∈ W ∧ 0 ≤ n ≤ 150}",
+     "figure": "",
+     "accept": [
+      [
+       "x=100+2n",
+       "0≤n≤150"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(vi)",
+     "question": "Write the following sets in set builder notation: {1, 3, 9, 27, 81, …}",
+     "steps": [
+      "The given numbers are powers of 3: 1=3⁰, 3=3¹, 9=3², 27=3³, ….",
+      "Thus, x=3ⁿ, where n∈W."
+     ],
+     "answer": "{x | x = 3ⁿ, n ∈ W}",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(vii)",
+     "question": "Write the following sets in set builder notation: {1, 2, 4, 5, 10, 20, 25, 50, 100}",
+     "steps": [
+      "Each element of the given set divides 100 exactly.",
+      "Thus, x is a divisor of 100."
+     ],
+     "answer": "{x | x is a divisor of 100}",
+     "figure": "",
+     "accept": [
+      [
+       "divisor",
+       "100"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(viii)",
+     "question": "Write the following sets in set builder notation: {5, 10, 15, …, 100}",
+     "steps": [
+      "The given numbers are multiples of 5: 5=5×1, 10=5×2, 15=5×3, …, 100=5×20.",
+      "Thus, x=5n, where n∈N and 1≤n≤20."
+     ],
+     "answer": "{x | x = 5n, n ∈ N ∧ 1 ≤ n ≤ 20}",
+     "figure": "",
+     "accept": [
+      [
+       "x=5n",
+       "1≤n≤20"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q1(ix)",
+     "question": "Write the following sets in set builder notation: The set of all integers between −100 and 1000",
+     "steps": [
+      "An integer between −100 and 1000 is an integer x such that −100 < x < 1000.",
+      "Using set builder notation, the set is {x | x ∈ Z ∧ −100 < x < 1000}."
+     ],
+     "answer": "{x | x ∈ Z ∧ −100 < x < 1000}",
+     "figure": "",
+     "accept": [
+      [
+       "-100<x<1000",
+       "x∈Z"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(i)",
+     "question": "Write each of the following sets in tabular forms: {x | x is a multiple of 3 ∧ x ≤ 36}",
+     "steps": [
+      "The positive multiples of 3 not greater than 36 are 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33 and 36.",
+      "Writing these elements in tabular form gives {3, 6, 9, …, 36}."
+     ],
+     "answer": "{3, 6, 9, …, 36}",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(ii)",
+     "question": "Write each of the following sets in tabular forms: {x | x ∈ R ∧ 2x + 1 = 0}",
+     "steps": [
+      "2x + 1 = 0",
+      "2x = −1",
+      "x = −1/2",
+      "The only element of the set is −1/2.",
+      "In tabular form, the set is {−1/2}."
+     ],
+     "answer": "{−1/2}",
+     "figure": "",
+     "accept": [
+      [
+       "-1/2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(iii)",
+     "question": "Write each of the following sets in tabular forms: {x | x ∈ P ∧ x < 12}",
+     "steps": [
+      "The prime numbers less than 12 are 2, 3, 5, 7 and 11.",
+      "In tabular form, the set is {2, 3, 5, 7, 11}."
+     ],
+     "answer": "{2, 3, 5, 7, 11}",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "3",
+       "5",
+       "7",
+       "11"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(iv)",
+     "question": "Write each of the following sets in tabular forms: {x | x is a divisor of 128}",
+     "steps": [
+      "The positive divisors of 128 are 1, 2, 4, 8, 16, 32, 64 and 128.",
+      "In tabular form, the set is {1, 2, 4, 8, 16, 32, 64, 128}."
+     ],
+     "answer": "{1, 2, 4, 8, 16, 32, 64, 128}",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "2",
+       "4",
+       "8",
+       "16",
+       "32",
+       "64",
+       "128"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(v)",
+     "question": "Write each of the following sets in tabular forms: {x | x = 2ⁿ, n ∈ N ∧ n < 8}",
+     "steps": [
+      "Since n ∈ N and n < 8, n = 1, 2, 3, 4, 5, 6, 7.",
+      "For n = 1, x = 2¹ = 2.",
+      "For n = 2, x = 2² = 4.",
+      "For n = 3, x = 2³ = 8.",
+      "For n = 4, x = 2⁴ = 16.",
+      "For n = 5, x = 2⁵ = 32.",
+      "For n = 6, x = 2⁶ = 64.",
+      "For n = 7, x = 2⁷ = 128.",
+      "In tabular form, the set is {2, 4, 8, 16, 32, 64, 128}."
+     ],
+     "answer": "{2, 4, 8, 16, 32, 64, 128}",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "4",
+       "8",
+       "16",
+       "32",
+       "64",
+       "128"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(vi)",
+     "question": "Write each of the following sets in tabular forms: {x | x ∈ N ∧ x + 4 = 0}",
+     "steps": [
+      "For x ∈ N, x + 4 = 0 gives x = −4.",
+      "Since −4 ∉ N, there is no element in the set.",
+      "In tabular form, the set is {}."
+     ],
+     "answer": "{}",
+     "figure": "",
+     "accept": [
+      [
+       "{}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(vii)",
+     "question": "Write each of the following sets in tabular forms: {x | x ∈ N ∧ x = x}",
+     "steps": [
+      "The condition x = x is true for every natural number x.",
+      "Therefore the set contains all natural numbers.",
+      "In tabular form, the set is {1, 2, 3, 4, 5, …}."
+     ],
+     "answer": "{1, 2, 3, 4, 5, …}",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "2",
+       "3",
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q2(viii)",
+     "question": "Write each of the following sets in tabular forms: {x | x ∈ Z ∧ 3x + 1 = 0}",
+     "steps": [
+      "3x + 1 = 0",
+      "3x = -1",
+      "x = -1/3",
+      "-1/3 ∉ Z",
+      "∴ {x | x ∈ Z ∧ 3x + 1 = 0} = ∅"
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "{}"
+      ],
+      [
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(i)",
+     "question": "Write two proper subsets of each of the following sets: {a, b, c}",
+     "steps": [
+      "{a} ⊂ {a, b, c}",
+      "{b} ⊂ {a, b, c}"
+     ],
+     "answer": "{a}, {b}",
+     "figure": "",
+     "accept": [
+      [
+       "{a}",
+       "{b}"
+      ],
+      [
+       "{b}",
+       "{a}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(ii)",
+     "question": "Write two proper subsets of each of the following sets: {0, 1}",
+     "steps": [
+      "{0} ⊂ {0, 1}",
+      "{1} ⊂ {0, 1}"
+     ],
+     "answer": "{0}, {1}",
+     "figure": "",
+     "accept": [
+      [
+       "{0}",
+       "{1}"
+      ],
+      [
+       "{1}",
+       "{0}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(iii)",
+     "question": "Write two proper subsets of each of the following sets: N",
+     "steps": [
+      "∅ ⊂ N",
+      "{1} ⊂ N"
+     ],
+     "answer": "∅, {1}",
+     "figure": "",
+     "accept": [
+      [
+       "∅",
+       "{1}"
+      ],
+      [
+       "{1}",
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(iv)",
+     "question": "Write two proper subsets of each of the following sets: Z",
+     "steps": [
+      "{0} ⊂ Z",
+      "{1} ⊂ Z"
+     ],
+     "answer": "{0}, {1}",
+     "figure": "",
+     "accept": [
+      [
+       "{0}",
+       "{1}"
+      ],
+      [
+       "{1}",
+       "{0}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(v)",
+     "question": "Write two proper subsets of each of the following sets: Q",
+     "steps": [
+      "0 ∈ Q, so {0} ⊂ Q",
+      "1/2 ∈ Q, so {1/2} ⊂ Q"
+     ],
+     "answer": "{0}, {1/2}",
+     "figure": "",
+     "accept": [
+      [
+       "{0}",
+       "{1/2}"
+      ],
+      [
+       "{1/2}",
+       "{0}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(vi)",
+     "question": "Write two proper subsets of each of the following sets: R",
+     "steps": [
+      "0 ∈ R, so {0} ⊂ R",
+      "1 ∈ R, so {1} ⊂ R"
+     ],
+     "answer": "{0}, {1}",
+     "figure": "",
+     "accept": [
+      [
+       "{0}",
+       "{1}"
+      ],
+      [
+       "{1}",
+       "{0}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q3(vii)",
+     "question": "Write two proper subsets of each of the following sets: {x | x ∈ Q ∧ 0 < x < 2}",
+     "steps": [
+      "0 < 1/2 < 2, so 1/2 ∈ {x | x ∈ Q ∧ 0 < x < 2}",
+      "0 < 1 < 2, so 1 ∈ {x | x ∈ Q ∧ 0 < x < 2}",
+      "Therefore, {1/2} and {1} are proper subsets of {x | x ∈ Q ∧ 0 < x < 2}"
+     ],
+     "answer": "{1/2}, {1}",
+     "figure": "",
+     "accept": [
+      [
+       "{1/2}",
+       "{1}"
+      ],
+      [
+       "{1}",
+       "{1/2}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q4",
+     "question": "Is there any set which has no proper subset? If so, name that set.",
+     "steps": [
+      "The empty set has only one subset, namely the empty set itself.",
+      "A proper subset must be different from the set.",
+      "Therefore, the empty set has no proper subset."
+     ],
+     "answer": "Yes, the empty set { } or ∅.",
+     "figure": "",
+     "accept": [
+      [
+       "yes",
+       "{}"
+      ],
+      [
+       "yes",
+       "∅"
+      ],
+      [
+       "yes",
+       "empty set"
+      ],
+      [
+       "{}"
+      ],
+      [
+       "∅"
+      ],
+      [
+       "empty set"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q5",
+     "question": "What is the difference between {a, b} and {{a, b}}?",
+     "steps": [
+      "The set {a, b} has two elements, a and b.",
+      "The set {{a, b}} has one element, namely the set {a, b}."
+     ],
+     "answer": "{a, b} contains two elements, a and b, while {{a, b}} contains one element, {a, b}.",
+     "figure": "",
+     "accept": [
+      [
+       "{a,b}",
+       "{{a,b}}"
+      ],
+      [
+       "two elements",
+       "one element"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(i)",
+     "question": "What is the number of elements of the power set of each of the following sets? { }",
+     "steps": [
+      "Let A = { }.",
+      "The number of elements of A is n = 0.",
+      "The number of elements of the power set of A is 2ⁿ = 2⁰ = 1."
+     ],
+     "answer": "1",
+     "figure": "",
+     "accept": [
+      [
+       "1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(ii)",
+     "question": "What is the number of elements of the power set of each of the following sets? {0, 1}",
+     "steps": [
+      "Let A = {0, 1}.",
+      "The number of elements of A is n = 2.",
+      "The number of elements of the power set of A is 2ⁿ = 2² = 4."
+     ],
+     "answer": "4",
+     "figure": "",
+     "accept": [
+      [
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(iii)",
+     "question": "What is the number of elements of the power set of each of the following sets? {1, 2, 3, 4, 5, 6, 7}",
+     "steps": [
+      "Let A = {1, 2, 3, 4, 5, 6, 7}.",
+      "The number of elements of A is n = 7.",
+      "The number of elements of the power set of A is 2ⁿ = 2⁷ = 128."
+     ],
+     "answer": "128",
+     "figure": "",
+     "accept": [
+      [
+       "128"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(iv)",
+     "question": "What is the number of elements of the power set of each of the following sets? {0, 1, 2, 3, 4, 5, 6, 7}",
+     "steps": [
+      "Let A = {0, 1, 2, 3, 4, 5, 6, 7}.",
+      "The number of elements of A is n = 8.",
+      "The number of elements of the power set of A is 2ⁿ = 2⁸ = 256."
+     ],
+     "answer": "256",
+     "figure": "",
+     "accept": [
+      [
+       "256"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(v)",
+     "question": "What is the number of elements of the power set of each of the following sets? {a, {b, c}}",
+     "steps": [
+      "Let A = {a, {b, c}}.",
+      "The number of elements of A is n = 2.",
+      "The number of elements of the power set of A is 2ⁿ = 2² = 4."
+     ],
+     "answer": "4",
+     "figure": "",
+     "accept": [
+      [
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q6(vi)",
+     "question": "What is the number of elements of the power set of each of the following sets? {{a, b}, {b, c}, {d, e}}",
+     "steps": [
+      "Let A = {{a, b}, {b, c}, {d, e}}.",
+      "The number of elements of A is n = 3.",
+      "The number of elements of the power set of A is 2ⁿ = 2³ = 8."
+     ],
+     "answer": "8",
+     "figure": "",
+     "accept": [
+      [
+       "8"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q7(i)",
+     "question": "Write down the power set of each of the following sets: {9, 11}",
+     "steps": [
+      "The power set contains all subsets of {9, 11}.",
+      "The subset with no elements is ∅.",
+      "The subsets with one element are {9} and {11}.",
+      "The subset with two elements is {9, 11}.",
+      "Therefore, P({9, 11}) = {∅, {9}, {11}, {9, 11}}."
+     ],
+     "answer": "{∅, {9}, {11}, {9, 11}}",
+     "figure": "",
+     "accept": [
+      [
+       "∅",
+       "{9}",
+       "{11}",
+       "{9,11}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q7(ii)",
+     "question": "Write down the power set of each of the following sets: {+, −, ×, ÷}",
+     "steps": [
+      "The power set contains all subsets of {+, −, ×, ÷}.",
+      "The subset with no elements is ∅.",
+      "The subsets with one element are {+}, {−}, {×}, {÷}.",
+      "The subsets with two elements are {+, −}, {+, ×}, {+, ÷}, {−, ×}, {−, ÷}, {×, ÷}.",
+      "The subsets with three elements are {+, −, ×}, {+, −, ÷}, {+, ×, ÷}, {−, ×, ÷}.",
+      "The subset with four elements is {+, −, ×, ÷}.",
+      "Therefore, P({+, −, ×, ÷}) = {∅, {+}, {−}, {×}, {÷}, {+, −}, {+, ×}, {+, ÷}, {−, ×}, {−, ÷}, {×, ÷}, {+, −, ×}, {+, −, ÷}, {+, ×, ÷}, {−, ×, ÷}, {+, −, ×, ÷}}."
+     ],
+     "answer": "{∅, {+}, {−}, {×}, {÷}, {+, −}, {+, ×}, {+, ÷}, {−, ×}, {−, ÷}, {×, ÷}, {+, −, ×}, {+, −, ÷}, {+, ×, ÷}, {−, ×, ÷}, {+, −, ×, ÷}}",
+     "figure": "",
+     "accept": [
+      [
+       "∅",
+       "{+}",
+       "{−}",
+       "{×}",
+       "{÷}",
+       "{+, −}",
+       "{+, ×}",
+       "{+, ÷}",
+       "{−, ×}",
+       "{−, ÷}",
+       "{×, ÷}",
+       "{+, −, ×}",
+       "{+, −, ÷}",
+       "{+, ×, ÷}",
+       "{−, ×, ÷}",
+       "{+, −, ×, ÷}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q7(iii)",
+     "question": "Write down the power set of each of the following sets: {∅}",
+     "steps": [
+      "The set {∅} has one element, namely ∅.",
+      "Its subsets are the empty set ∅ and the set containing its element, {∅}.",
+      "Therefore, P({∅}) = {∅, {∅}}."
+     ],
+     "answer": "{∅, {∅}}",
+     "figure": "",
+     "accept": [
+      [
+       "∅",
+       "{∅}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.1 Q7(iv)",
+     "question": "Write down the power set of each of the following sets: {a, {b, c}}",
+     "steps": [
+      "The set {a, {b, c}} has two elements: a and {b, c}.",
+      "The subset with no elements is ∅.",
+      "The subsets with one element are {a} and {{b, c}}.",
+      "The subset with two elements is {a, {b, c}}.",
+      "Therefore, P({a, {b, c}}) = {∅, {a}, {{b, c}}, {a, {b, c}}}."
+     ],
+     "answer": "{∅, {a}, {{b, c}}, {a, {b, c}}}",
+     "figure": "",
+     "accept": [
+      [
+       "∅",
+       "{a}",
+       "{{b,c}}",
+       "{a,{b,c}}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "3.2",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q1(i)",
+     "question": "Consider the universal set U = {x | x is multiple of 2 and 0 < x ≤ 30}, A = {x | x is a multiple of 6} and B = {x | x is a multiple of 8}. List all elements of sets A and B in tabular form.",
+     "steps": [
+      "The elements of U are the positive even integers not exceeding 30.",
+      "The multiples of 6 in U are 6, 12, 18, 24, 30.",
+      "Therefore, A = {6, 12, 18, 24, 30}.",
+      "The multiples of 8 in U are 8, 16, 24.",
+      "Therefore, B = {8, 16, 24}."
+     ],
+     "answer": "A = {6, 12, 18, 24, 30}, B = {8, 16, 24}",
+     "figure": "",
+     "accept": [
+      [
+       "A={6,12,18,24,30}",
+       "B={8,16,24}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q1(ii)",
+     "question": "Consider the universal set U = {x | x is multiple of 2 and 0 < x ≤ 30}, A = {x | x is a multiple of 6} and B = {x | x is a multiple of 8}. Find A ∩ B.",
+     "steps": [
+      "A = {6, 12, 18, 24, 30} and B = {8, 16, 24}.",
+      "The only element common to A and B is 24.",
+      "Therefore, A ∩ B = {24}."
+     ],
+     "answer": "A ∩ B = {24}",
+     "figure": "",
+     "accept": [
+      [
+       "A∩B={24}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q1(iii)",
+     "question": "Consider the universal set U = {x | x is multiple of 2 and 0 < x ≤ 30}, A = {x | x is a multiple of 6} and B = {x | x is a multiple of 8}. Draw a Venn diagram.",
+     "steps": [
+      "List the even numbers in U: U = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30}.",
+      "List the elements of A that are in U: A = {6, 12, 18, 24, 30}.",
+      "List the elements of B that are in U: B = {8, 16, 24}.",
+      "Place the common element 24 in the overlapping region A∩B.",
+      "Place the elements 6, 12, 18, 30 in the A-only region and 8, 16 in the B-only region.",
+      "Place the remaining elements 2, 4, 10, 14, 20, 22, 26, 28 inside U but outside both circles."
+     ],
+     "answer": "The Venn diagram has A-only elements {6, 12, 18, 30}, A∩B = {24}, B-only elements {8, 16}, and elements outside A∪B but in U equal to {2, 4, 10, 14, 20, 22, 26, 28}.",
+     "figure": "Rectangle U contains the two overlapping circles A and B. Put 6, 12, 18, 30 in A only; put 24 in A∩B; put 8, 16 in B only; put 2, 4, 10, 14, 20, 22, 26, 28 in U outside both circles.",
+     "accept": [],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"[FIGURE: Venn diagram in U showing A-only elements 6, 12, 18; intersection 24; B-only elements 8, 16; and outside elements 2, 4, 10, 14, 20, 22, 26, 28.]\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q2(i)",
+     "question": "Let U = {x | x is an integer and 0 < x ≤ 150}, G = {x | x = 2^m for integer m} and H = {x | x is a square}. List all elements of sets G and H in tabular form.",
+     "steps": [
+      "The elements of U are the positive integers not exceeding 150.",
+      "For m = 0, 1, 2, 3, 4, 5, 6, 7, we have 2^m = 1, 2, 4, 8, 16, 32, 64, 128.",
+      "The next power, 2^8 = 256, is greater than 150.",
+      "Therefore, G = {1, 2, 4, 8, 16, 32, 64, 128}.",
+      "The squares of positive integers not exceeding 150 are 1^2, 2^2, 3^2, 4^2, 5^2, 6^2, 7^2, 8^2, 9^2, 10^2, 11^2, 12^2.",
+      "Their values are 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144.",
+      "The next square, 13^2 = 169, is greater than 150.",
+      "Therefore, H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}."
+     ],
+     "answer": "G = {1, 2, 4, 8, 16, 32, 64, 128}, H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}",
+     "figure": "",
+     "accept": [
+      [
+       "G={1,2,4,8,16,32,64,128}",
+       "H={1,4,9,16,25,36,49,64,81,100,121,144}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q2(ii)",
+     "question": "Let U = {x | x is an integer and 0 < x ≤ 150}, G = {x | x = 2^m for integer m} and H = {x | x is a square}. Find G ∪ H.",
+     "steps": [
+      "Since x ∈ U, the elements of G are the powers of 2 not greater than 150.",
+      "G = {1, 2, 4, 8, 16, 32, 64, 128}.",
+      "The squares in U are H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+      "G ∪ H = {1, 2, 4, 8, 16, 32, 64, 128} ∪ {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+      "G ∪ H = {1, 2, 4, 8, 9, 16, 25, 32, 36, 49, 64, 81, 100, 121, 128, 144}. "
+     ],
+     "answer": "G ∪ H = {1, 2, 4, 8, 9, 16, 25, 32, 36, 49, 64, 81, 100, 121, 128, 144}.",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "2",
+       "4",
+       "8",
+       "9",
+       "16",
+       "25",
+       "32",
+       "36",
+       "49",
+       "64",
+       "81",
+       "100",
+       "121",
+       "128",
+       "144"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q2(iii)",
+     "question": "Let U = {x | x is an integer and 0 < x ≤ 150}, G = {x | x = 2^m for integer m} and H = {x | x is a square}. Find G ∩ H.",
+     "steps": [
+      "Since x ∈ U, the elements of G are the powers of 2 not greater than 150.",
+      "G = {1, 2, 4, 8, 16, 32, 64, 128}.",
+      "The squares in U are H = {1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144}.",
+      "The common elements of G and H are 1, 4, 16 and 64.",
+      "∴ G ∩ H = {1, 4, 16, 64}."
+     ],
+     "answer": "G ∩ H = {1, 4, 16, 64}.",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "4",
+       "16",
+       "64"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q3(i)",
+     "question": "Consider the sets P = {x | x is a prime number and 0 < x ≤ 20} and Q = {x | x is a divisor of 210 and 0 < x ≤ 20}. Find P ∩ Q.",
+     "steps": [
+      "P = {2, 3, 5, 7, 11, 13, 17, 19}.",
+      "The divisors of 210 which are not greater than 20 are Q = {1, 2, 3, 5, 6, 7, 10, 14, 15}.",
+      "The common elements of P and Q are 2, 3, 5 and 7.",
+      "∴ P ∩ Q = {2, 3, 5, 7}."
+     ],
+     "answer": "P ∩ Q = {2, 3, 5, 7}.",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "3",
+       "5",
+       "7"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q3(ii)",
+     "question": "Consider the sets P = {x | x is a prime number and 0 < x ≤ 20} and Q = {x | x is a divisor of 210 and 0 < x ≤ 20}. Find P ∪ Q.",
+     "steps": [
+      "P = {2, 3, 5, 7, 11, 13, 17, 19}.",
+      "The divisors of 210 which are not greater than 20 are Q = {1, 2, 3, 5, 6, 7, 10, 14, 15}.",
+      "P ∪ Q = {2, 3, 5, 7, 11, 13, 17, 19} ∪ {1, 2, 3, 5, 6, 7, 10, 14, 15}.",
+      "∴ P ∪ Q = {1, 2, 3, 5, 6, 7, 10, 11, 13, 14, 15, 17, 19}."
+     ],
+     "answer": "P ∪ Q = {1, 2, 3, 5, 6, 7, 10, 11, 13, 14, 15, 17, 19}.",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "2",
+       "3",
+       "5",
+       "6",
+       "7",
+       "10",
+       "11",
+       "13",
+       "14",
+       "15",
+       "17",
+       "19"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q4(i)",
+     "question": "Verify the commutative properties of union and intersection for the following pairs of sets: A = {1, 2, 3, 4, 5}, B = {4, 6, 8, 10}.",
+     "steps": [
+      "A ∪ B = {1, 2, 3, 4, 5} ∪ {4, 6, 8, 10}.",
+      "A ∪ B = {1, 2, 3, 4, 5, 6, 8, 10}.",
+      "B ∪ A = {4, 6, 8, 10} ∪ {1, 2, 3, 4, 5}.",
+      "B ∪ A = {1, 2, 3, 4, 5, 6, 8, 10}.",
+      "∴ A ∪ B = B ∪ A.",
+      "A ∩ B = {1, 2, 3, 4, 5} ∩ {4, 6, 8, 10}.",
+      "A ∩ B = {4}.",
+      "B ∩ A = {4, 6, 8, 10} ∩ {1, 2, 3, 4, 5}.",
+      "B ∩ A = {4}.",
+      "∴ A ∩ B = B ∩ A."
+     ],
+     "answer": "A ∪ B = B ∪ A and A ∩ B = B ∩ A.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q4(ii)",
+     "question": "Verify the commutative properties of union and intersection for the following pairs of sets: N, Z.",
+     "steps": [
+      "Since N ⊆ Z, N ∪ Z = Z.",
+      "Also, Z ∪ N = Z.",
+      "∴ N ∪ Z = Z ∪ N.",
+      "Since N ⊆ Z, N ∩ Z = N.",
+      "Also, Z ∩ N = N.",
+      "∴ N ∩ Z = Z ∩ N."
+     ],
+     "answer": "N ∪ Z = Z ∪ N and N ∩ Z = Z ∩ N.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q4(iii)",
+     "question": "Verify the commutative properties of union and intersection for the following pairs of sets: A = {x | x ∈ R ∧ x ≥ 0}, B = R.",
+     "steps": [
+      "A = {x | x ∈ R ∧ x ≥ 0} and B = R.",
+      "Since A ⊆ R, A ∪ B = R.",
+      "Also, B ∪ A = R.",
+      "∴ A ∪ B = B ∪ A.",
+      "Since A ⊆ R, A ∩ B = A.",
+      "Also, B ∩ A = A.",
+      "∴ A ∩ B = B ∩ A."
+     ],
+     "answer": "A ∪ B = B ∪ A and A ∩ B = B ∩ A.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q5",
+     "question": "Let U = {a, b, c, d, e, f, g, h, i, j}, A = {a, b, c, d, g, h}, B = {c, d, e, f, j}. Verify De Morgan's Laws for these sets. Draw Venn diagram.",
+     "steps": [],
+     "answer": "",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q6(i)",
+     "question": "If U = {1, 2, 3, ..., 20} and A = {1, 3, 5, ..., 19}, verify A ∪ A′ = U.",
+     "steps": [
+      "U = {1, 2, 3, ..., 20}",
+      "A = {1, 3, 5, ..., 19}",
+      "A′ = {2, 4, 6, ..., 20}",
+      "A ∪ A′ = {1, 2, 3, ..., 20}",
+      "A ∪ A′ = U"
+     ],
+     "answer": "A ∪ A′ = U",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q6(ii)",
+     "question": "If U = {1, 2, 3, ..., 20} and A = {1, 3, 5, ..., 19}, verify A ∩ U = A.",
+     "steps": [
+      "A = {1, 3, 5, ..., 19}",
+      "U = {1, 2, 3, ..., 20}",
+      "A ∩ U = {1, 3, 5, ..., 19}",
+      "A ∩ U = A"
+     ],
+     "answer": "A ∩ U = A",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q6(iii)",
+     "question": "If U = {1, 2, 3, ..., 20} and A = {1, 3, 5, ..., 19}, verify A ∩ A′ = ∅.",
+     "steps": [
+      "A = {1, 3, 5, ..., 19}",
+      "A′ = {2, 4, 6, ..., 20}",
+      "A ∩ A′ = ∅"
+     ],
+     "answer": "A ∩ A′ = ∅",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q7",
+     "question": "In a class of 55 students, 34 like to play cricket and 30 like to play hockey. Also each student likes to play at least one of the two games. How many students like to play both games?",
+     "steps": [
+      "Let C be the set of students who like cricket and H be the set of students who like hockey.",
+      "n(C ∪ H) = 55",
+      "n(C) = 34, n(H) = 30",
+      "n(C ∪ H) = n(C) + n(H) − n(C ∩ H)",
+      "55 = 34 + 30 − n(C ∩ H)",
+      "n(C ∩ H) = 34 + 30 − 55",
+      "n(C ∩ H) = 9"
+     ],
+     "answer": "9 students like both games.",
+     "figure": "",
+     "accept": [
+      [
+       "9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q8",
+     "question": "In a group of 500 employees, 250 can speak Urdu, 150 can speak English, 50 can speak Punjabi, 40 can speak Urdu and English, 30 can speak both English and Punjabi, and 10 can speak Urdu and Punjabi. How many can speak all three languages?",
+     "steps": [
+      "Let x be the number of employees who speak all three languages.",
+      "The number who speak Urdu and Punjabi is 10, so 0 ≤ x ≤ 10.",
+      "By the inclusion-exclusion formula, |U∪E∪P| = 250 + 150 + 50 − 40 − 30 − 10 + x = 370 + x.",
+      "The question does not state that all 500 employees speak at least one of the three languages, so |U∪E∪P| need not equal 500.",
+      "Thus the given information only restricts x to 0 ≤ x ≤ 10 and does not determine one value."
+     ],
+     "answer": "The number cannot be determined uniquely; it can be any integer from 0 to 10.",
+     "figure": "",
+     "accept": [
+      [
+       "cannot be determined"
+      ],
+      [
+       "0 to 10"
+      ],
+      [
+       "0-10"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"130\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q9",
+     "question": "In sports events, 19 people wear blue shirts, 15 wear green shirts, 3 wear blue and green shirts, 4 wear a cap and blue shirts, and 2 wear a cap and green shirts. The total number of people with either a blue or green shirt or cap is 34. How many people are wearing caps?",
+     "steps": [
+      "Let x be the number of people wearing a cap, blue shirt, and green shirt.",
+      "The number wearing a cap is |C|, and the number in the three-way intersection satisfies 0 ≤ x ≤ 2 because |C∩G| = 2.",
+      "By the inclusion-exclusion formula, 34 = 19 + 15 + |C| − 3 − 4 − 2 + x.",
+      "Therefore, 34 = 25 + |C| + x.",
+      "Hence, |C| = 9 − x.",
+      "Since x may be 0, 1, or 2, the number wearing caps may be 9, 8, or 7; it is not uniquely determined."
+     ],
+     "answer": "The number cannot be determined uniquely; it may be 7, 8, or 9.",
+     "figure": "",
+     "accept": [
+      [
+       "cannot be determined"
+      ],
+      [
+       "7 to 9"
+      ],
+      [
+       "7-9"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"9\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q10",
+     "question": "In a training session,17 participants have laptops, 11 have tablets, 9 have laptops and tablets, 6 have laptops and books, and 4 have both tablets and books. Eight participants have all three items. The total number of participants with laptops, tablets, or books is 35. How many participants have books?",
+     "steps": [
+      "Let L, T, and B denote the sets of participants having laptops, tablets, and books, respectively.",
+      "The three-way intersection L∩T∩B is a subset of L∩B.",
+      "Therefore, |L∩T∩B| ≤ |L∩B|.",
+      "The given numbers require 8 ≤ 6, which is impossible.",
+      "Thus the data are inconsistent, and there is no valid number of participants having books.",
+      "If the inclusion-exclusion formula is applied formally, 35 = 17 + 11 + |B| − 9 − 6 − 4 + 8, giving |B| = 18; this formal result does not remove the contradiction in the data."
+     ],
+     "answer": "The data are inconsistent, so there is no valid answer. Formally applying inclusion-exclusion gives 18 participants with books, but the stated intersections cannot occur.",
+     "figure": "",
+     "accept": [
+      [
+       "no valid answer"
+      ],
+      [
+       "inconsistent"
+      ],
+      [
+       "18"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"18\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q11(a)",
+     "question": "A shopping mall has150 employees labelled 1 to 150, representing the Universal set U. The employees fall into the following categories: Set A: 40 employees with a salary range of 30k–45k, labelled from 50 to 89; Set B: 50 employees with a salary range of 50k–80k, labelled from 101 to 150; Set C: 60 employees with a salary range of 100k–150k, labelled from 1 to 49 and 90 to 100. Find (A′ ∪ B′) ∩ C.",
+     "steps": [
+      "U = {1, 2, 3, ..., 150}",
+      "A = {50, 51, ..., 89}",
+      "B = {101, 102, ..., 150}",
+      "C = {1, 2, ..., 49, 90, 91, ..., 100}",
+      "A ∩ B = ∅",
+      "A′ ∪ B′ = (A ∩ B)′",
+      "A′ ∪ B′ = ∅′ = U",
+      "(A′ ∪ B′) ∩ C = U ∩ C",
+      "(A′ ∪ B′) ∩ C = C"
+     ],
+     "answer": "{1, 2, …, 49, 90, 91, …, 100}",
+     "figure": "",
+     "accept": [
+      [
+       "49",
+       "90",
+       "100"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q11(b)",
+     "question": "A shopping mall has150 employees labelled 1 to 150, representing the Universal set U. The employees fall into the following categories: Set A: 40 employees with a salary range of 30k–45k, labelled from 50 to 89; Set B: 50 employees with a salary range of 50k–80k, labelled from 101 to 150; Set C: 60 employees with a salary range of 100k–150k, labelled from 1 to 49 and 90 to 100. Find n{A ∩ (B′ ∩ C′)}.",
+     "steps": [
+      "A = {50, 51, ..., 89}, B = {101, 102, ..., 150}, C = {1, 2, ..., 49, 90, ..., 100}",
+      "B′ = {1, 2, ..., 100}",
+      "C′ = {50, 51, ..., 89, 101, 102, ..., 150}",
+      "B′ ∩ C′ = {50, 51, ..., 89} = A",
+      "A ∩ (B′ ∩ C′) = A ∩ A = A",
+      "n{A ∩ (B′ ∩ C′)} = n(A) = 40"
+     ],
+     "answer": "40",
+     "figure": "",
+     "accept": [
+      [
+       "40"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q12(a)",
+     "question": "In a secondary school with 125 students participate in at least one of the following sports: cricket, football, or hockey. 60 students play cricket. 70 students play football. 40 students play hockey. 25 students play both cricket and football. 15 students play both football and hockey. 10 students play both cricket and hockey. How many students play all three sports?",
+     "steps": [
+      "Let x be the number of students who play all three sports.",
+      "n(C ∪ F ∪ H) = n(C) + n(F) + n(H) − n(C ∩ F) − n(F ∩ H) − n(C ∩ H) + n(C ∩ F ∩ H)",
+      "125 = 60 + 70 + 40 − 25 − 15 − 10 + x",
+      "125 = 120 + x",
+      "x = 125 − 120 = 5"
+     ],
+     "answer": "5",
+     "figure": "",
+     "accept": [
+      [
+       "5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q12(b)",
+     "question": "In a secondary school with 125 students participate in at least one of the following sports: cricket, football, or hockey. 60 students play cricket. 70 students play football. 40 students play hockey. 25 students play both cricket and football. 15 students play both football and hockey. 10 students play both cricket and hockey. Draw a Venn diagram showing the distribution of sports participation in all the games.",
+     "steps": [
+      "Draw a rectangle and label it U.",
+      "Draw three overlapping circles inside U and label them Cricket (C), Football (F) and Hockey (H).",
+      "Let x be the number of students in the central region common to all three circles.",
+      "125 = 60 + 70 + 40 − 25 − 15 − 10 + x",
+      "125 = 120 + x",
+      "x = 5",
+      "Cricket ∩ Football only = 25 − 5 = 20.",
+      "Football ∩ Hockey only = 15 − 5 = 10.",
+      "Cricket ∩ Hockey only = 10 − 5 = 5.",
+      "Cricket only = 60 − 20 − 5 − 5 = 30.",
+      "Football only = 70 − 20 − 10 − 5 = 35.",
+      "Hockey only = 40 − 5 − 10 − 5 = 20.",
+      "The total in the circles is 30 + 35 + 20 + 20 + 10 + 5 + 5 = 125.",
+      "The number outside the circles is 125 − 125 = 0.",
+      "Write these numbers in their corresponding regions of the Venn diagram."
+     ],
+     "answer": "A Venn diagram showing the distribution of students in Cricket, Football and Hockey.",
+     "figure": "A rectangle represents U. Inside it, three overlapping circles are labelled Cricket, Football and Hockey. The Cricket-only region contains 30, the Football-only region 35, and the Hockey-only region 20. The Cricket-and-Football-only region contains 20, the Football-and-Hockey-only region 10, and the Cricket-and-Hockey-only region 5. The central region common to all three circles contains 5. There are no students outside the circles.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q13(a)",
+     "question": "A survey was conducted in which 130 people were asked about their favourite foods. The survey results showed the following information: 40 people said they liked nihari; 65 people said they liked biryani; 50 people said they liked korma; 20 people said they liked nihari and biryani; 35 people said they liked biryani and korma; 27 people said they liked nihari and korma; 12 people said they liked all three foods nihari, biryani, and korma. At least how many people like nihari, biryani or korma?",
+     "steps": [
+      "Let N, B and K represent the sets of people who like nihari, biryani and korma, respectively.",
+      "n(N ∪ B ∪ K) = n(N) + n(B) + n(K) − n(N ∩ B) − n(B ∩ K) − n(N ∩ K) + n(N ∩ B ∩ K)",
+      "n(N ∪ B ∪ K) = 40 + 65 + 50 − 20 − 35 − 27 + 12",
+      "n(N ∪ B ∪ K) = 155 − 82 + 12 = 85"
+     ],
+     "answer": "85",
+     "figure": "",
+     "accept": [
+      [
+       "85"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q13(b)",
+     "question": "A survey was conducted in which 130 people were asked about their favourite foods. The survey results showed the following information: 40 people said they liked nihari; 65 people said they liked biryani; 50 people said they liked korma; 20 people said they liked nihari and biryani; 35 people said they liked biryani and korma; 27 people said they liked nihari and korma; 12 people said they liked all three foods nihari, biryani, and korma. How many people did not like nihari, biryani, or korma?",
+     "steps": [
+      "From the previous result, n(N ∪ B ∪ K) = 85.",
+      "Number of people who did not like nihari, biryani, or korma = 130 − n(N ∪ B ∪ K)",
+      "= 130 − 85",
+      "= 45"
+     ],
+     "answer": "45",
+     "figure": "",
+     "accept": [
+      [
+       "45"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q13(c)",
+     "question": "A survey was conducted in which 130 people were asked about their favourite foods. The survey results showed the following information: 40 people said they liked nihari; 65 people said they liked biryani; 50 people said they liked korma; 20 people said they liked nihari and biryani; 35 people said they liked biryani and korma; 27 people said they liked nihari and korma; 12 people said they liked all three foods nihari, biryani, and korma. How many people like only one of the following foods: nihari, biryani, or korma?",
+     "steps": [
+      "Only nihari = 40 − 20 − 27 + 12 = 5.",
+      "Only biryani = 65 − 20 − 35 + 12 = 22.",
+      "Only korma = 50 − 27 − 35 + 12 = 0.",
+      "Number who like only one of the foods = 5 + 22 + 0 = 27."
+     ],
+     "answer": "27",
+     "figure": "",
+     "accept": [
+      [
+       "27"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.2 Q13(d)",
+     "question": "A survey was conducted in which 130 people were asked about their favourite foods. The survey results showed the following information: 40 people said they liked nihari; 65 people said they liked biryani; 50 people said they liked korma; 20 people said they liked nihari and biryani; 35 people said they liked biryani and korma; 27 people said they liked nihari and korma; 12 people said they liked all three foods nihari, biryani, and korma. Draw a Venn diagram.",
+     "steps": [
+      "Draw a rectangle and label it U.",
+      "Draw three overlapping circles inside U and label them Nihari (N), Biryani (B) and Korma (K).",
+      "Write 12 in the central region common to all three circles.",
+      "Nihari ∩ Biryani only = 20 − 12 = 8.",
+      "Biryani ∩ Korma only = 35 − 12 = 23.",
+      "Nihari ∩ Korma only = 27 − 12 = 15.",
+      "Nihari only = 40 − 8 − 15 − 12 = 5.",
+      "Biryani only = 65 − 8 − 23 − 12 = 22.",
+      "Korma only = 50 − 23 − 15 − 12 = 0.",
+      "Number who like at least one food = 5 + 22 + 0 + 8 + 23 + 15 + 12 = 85.",
+      "Number outside the circles = 130 − 85 = 45.",
+      "Write these numbers in their corresponding regions of the Venn diagram."
+     ],
+     "answer": "A Venn diagram showing the distribution of people who like Nihari, Biryani and Korma.",
+     "figure": "A rectangle represents the 130 people surveyed. Inside it, three overlapping circles are labelled Nihari, Biryani and Korma. The Nihari-only region contains 5, the Biryani-only region 22, and the Korma-only region 0. The Nihari-and-Biryani-only region contains 8, the Biryani-and-Korma-only region 23, and the Nihari-and-Korma-only region 15. The central region common to all three circles contains 12. The region outside the circles contains 45.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "3.3",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q1(i)",
+     "question": "For A = {1, 2, 3, 4}, find the following relations in A. State the domain and range of each relation: (i) {(x, y) | y = x}",
+     "steps": [
+      "A = {1, 2, 3, 4} and y = x.",
+      "For x = 1, y = 1; hence (x, y) = (1, 1).",
+      "For x = 2, y = 2; hence (x, y) = (2, 2).",
+      "For x = 3, y = 3; hence (x, y) = (3, 3).",
+      "For x = 4, y = 4; hence (x, y) = (4, 4).",
+      "The relation is {(1, 1), (2, 2), (3, 3), (4, 4)}.",
+      "Domain of (i) = {1, 2, 3, 4}.",
+      "Range of (i) = {1, 2, 3, 4}."
+     ],
+     "answer": "{(1, 1), (2, 2), (3, 3), (4, 4)}; Domain of (i) = {1, 2, 3, 4}; Range of (i) = {1, 2, 3, 4}",
+     "figure": "",
+     "accept": [
+      [
+       "(1, 1)",
+       "(2, 2)",
+       "(3, 3)",
+       "(4, 4)",
+       "Domain",
+       "Range"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q1(ii)",
+     "question": "For A = {1, 2, 3, 4}, find the following relations in A. State the domain and range of each relation: (ii) {(x, y) | y + x = 5}",
+     "steps": [
+      "For x = 1, y + 1 = 5, so y = 4; hence (1, 4) belongs to the relation.",
+      "For x = 2, y + 2 = 5, so y = 3; hence (2, 3) belongs to the relation.",
+      "For x = 3, y + 3 = 5, so y = 2; hence (3, 2) belongs to the relation.",
+      "For x = 4, y + 4 = 5, so y = 1; hence (4, 1) belongs to the relation.",
+      "Thus, the relation is {(1, 4), (2, 3), (3, 2), (4, 1)}.",
+      "The first elements of the ordered pairs are 1, 2, 3, 4, so the domain is {1, 2, 3, 4}.",
+      "The second elements of the ordered pairs are 4, 3, 2, 1, so the range is {1, 2, 3, 4}."
+     ],
+     "answer": "Relation = {(1, 4), (2, 3), (3, 2), (4, 1)}; Domain = {1, 2, 3, 4}; Range = {1, 2, 3, 4}.",
+     "figure": "",
+     "accept": [
+      [
+       "(1,4)",
+       "(2,3)",
+       "(3,2)",
+       "(4,1)",
+       "{1,2,3,4}",
+       "domain",
+       "range"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q1(iii)",
+     "question": "For A = {1, 2, 3, 4}, find the following relations in A. State the domain and range of each relation: (iii) {(x, y) | x + y < 5}",
+     "steps": [
+      "For x = 1, x + y < 5 gives 1 + y < 5, so y < 4; thus y = 1, 2, 3.",
+      "For x = 2, x + y < 5 gives 2 + y < 5, so y < 3; thus y = 1, 2.",
+      "For x = 3, x + y < 5 gives 3 + y < 5, so y < 2; thus y = 1.",
+      "For x = 4, x + y < 5 gives 4 + y < 5, so y < 1; there is no such y in A.",
+      "Thus, the relation is {(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (3, 1)}.",
+      "The first elements of the ordered pairs are 1, 2, 3, so the domain is {1, 2, 3}.",
+      "The second elements of the ordered pairs are 1, 2, 3, so the range is {1, 2, 3}."
+     ],
+     "answer": "Relation = {(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (3, 1)}; Domain = {1, 2, 3}; Range = {1, 2, 3}.",
+     "figure": "",
+     "accept": [
+      [
+       "(1,1)",
+       "(1,2)",
+       "(1,3)",
+       "(2,1)",
+       "(2,2)",
+       "(3,1)",
+       "{1,2,3}",
+       "domain",
+       "range"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q1(iv)",
+     "question": "For A = {1, 2, 3, 4}, find the following relations in A. State the domain and range of each relation: (iv) {(x, y) | x + y > 5}",
+     "steps": [
+      "For x = 1, x + y > 5 gives 1 + y > 5, so y > 4; there is no such y in A.",
+      "For x = 2, x + y > 5 gives 2 + y > 5, so y > 3; thus y = 4.",
+      "For x = 3, x + y > 5 gives 3 + y > 5, so y > 2; thus y = 3, 4.",
+      "For x = 4, x + y > 5 gives 4 + y > 5, so y > 1; thus y = 2, 3, 4.",
+      "Thus, the relation is {(2, 4), (3, 3), (3, 4), (4, 2), (4, 3), (4, 4)}.",
+      "The first elements of the ordered pairs are 2, 3, 4, so the domain is {2, 3, 4}.",
+      "The second elements of the ordered pairs are 4, 3, 2, 4, 3, 4, so the range is {2, 3, 4}."
+     ],
+     "answer": "Relation = {(2, 4), (3, 3), (3, 4), (4, 2), (4, 3), (4, 4)}; Domain = {2, 3, 4}; Range = {2, 3, 4}.",
+     "figure": "",
+     "accept": [
+      [
+       "(2,4)",
+       "(3,3)",
+       "(3,4)",
+       "(4,2)",
+       "(4,3)",
+       "(4,4)",
+       "{2,3,4}",
+       "domain",
+       "range"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q2 Fig (1)",
+     "question": "Which of the following diagrams represent functions and of which type? Fig (1): a diagram with left elements 1, 2, 3 and right elements a, b, c, d, joined by arrows.",
+     "steps": [
+      "In Fig. (1), the arrows do not assign exactly one image to every element of the domain.",
+      "Therefore, Fig. (1) does not represent a function."
+     ],
+     "answer": "Fig. (1) does not represent a function.",
+     "figure": "",
+     "accept": [
+      [
+       "not",
+       "function"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q2 Fig (2)",
+     "question": "Which of the following diagrams represent functions and of which type? Fig (2): a diagram with left elements a, b, c and right elements 1, 3, 5, with arrows a → 1, b → 3 and c → 5.",
+     "steps": [
+      "In Fig. (2), each element of the domain has exactly one image.",
+      "Different elements of the domain have different images, so the function is one-one.",
+      "Every element of the codomain is an image, so the function is onto.",
+      "Therefore, Fig. (2) represents a bijective function."
+     ],
+     "answer": "Fig. (2) represents a function, which is a bijective function.",
+     "figure": "",
+     "accept": [
+      [
+       "bijective"
+      ],
+      [
+       "one-one",
+       "onto"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q2 Fig (3)",
+     "question": "Which of the following diagrams represent functions and of which type? Fig (3): a diagram with left elements 1, 2, 3 and right elements a, b, c, with arrows 1 → a, 2 → b and 3 → c.",
+     "steps": [
+      "In Fig. (3), each element of the domain has exactly one image.",
+      "Different elements of the domain have different images, so the function is one-one.",
+      "Every element of the codomain is an image, so the function is onto.",
+      "Therefore, Fig. (3) represents a bijective function."
+     ],
+     "answer": "Fig. (3) represents a function, which is a bijective function.",
+     "figure": "",
+     "accept": [
+      [
+       "bijective"
+      ],
+      [
+       "one-one",
+       "onto"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q2 Fig (4)",
+     "question": "Which of the following diagrams represent functions and of which type? Fig (4): a diagram with left elements l, m, n and right elements x, y, z, with arrows from l and m to x and from n to z.",
+     "steps": [
+      "In Fig. (4), each element of the domain has exactly one image, so the diagram represents a function.",
+      "The elements l and m have the same image x, so the function is not one-one.",
+      "The range is {x, z}, which is a proper subset of the codomain {x, y, z}; hence the function is not onto.",
+      "Therefore, Fig. (4) represents an into function."
+     ],
+     "answer": "Fig. (4) represents a function, which is an into function.",
+     "figure": "",
+     "accept": [
+      [
+       "into"
+      ],
+      [
+       "not",
+       "onto"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(i)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (i) g(0)",
+     "steps": [
+      "g(x) = 3x + 2.",
+      "Substituting x = 0, g(0) = 3(0) + 2.",
+      "Therefore, g(0) = 2."
+     ],
+     "answer": "2",
+     "figure": "",
+     "accept": [
+      [
+       "2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(ii)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (ii) g(−3)",
+     "steps": [
+      "g(x) = 3x + 2",
+      "g(−3) = 3(−3) + 2",
+      "= −9 + 2",
+      "= −7"
+     ],
+     "answer": "−7",
+     "figure": "",
+     "accept": [
+      [
+       "-7"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(iii)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (iii) g(2/3)",
+     "steps": [
+      "g(x) = 3x + 2",
+      "g(2/3) = 3(2/3) + 2",
+      "= 2 + 2",
+      "= 4"
+     ],
+     "answer": "4",
+     "figure": "",
+     "accept": [
+      [
+       "4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(iv)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (iv) h(1)",
+     "steps": [
+      "h(x) = x² + 1",
+      "h(1) = (1)² + 1",
+      "= 1 + 1",
+      "= 2"
+     ],
+     "answer": "2",
+     "figure": "",
+     "accept": [
+      [
+       "2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(v)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (v) h(−4)",
+     "steps": [
+      "h(x) = x² + 1",
+      "h(−4) = (−4)² + 1",
+      "= 16 + 1",
+      "= 17"
+     ],
+     "answer": "17",
+     "figure": "",
+     "accept": [
+      [
+       "17"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q3(vi)",
+     "question": "If g(x) = 3x + 2 and h(x) = x² + 1, then find: (vi) h(−1/2)",
+     "steps": [
+      "h(x) = x² + 1",
+      "h(−1/2) = (−1/2)² + 1",
+      "= 1/4 + 1",
+      "= 5/4"
+     ],
+     "answer": "5/4",
+     "figure": "",
+     "accept": [
+      [
+       "5/4"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q4",
+     "question": "Given that f(x) = ax + b + 1, where a and b are constant numbers. If f(3) = 8 and f(6) = 14, then find the values of a and b.",
+     "steps": [
+      "f(x) = ax + b + 1",
+      "f(3) = 8",
+      "3a + b + 1 = 8",
+      "3a + b = 7  ...(1)",
+      "f(6) = 14",
+      "6a + b + 1 = 14",
+      "6a + b = 13  ...(2)",
+      "Subtracting (1) from (2):",
+      "3a = 6",
+      "a = 2",
+      "Substituting a = 2 in (1):",
+      "3(2) + b = 7",
+      "6 + b = 7",
+      "b = 1"
+     ],
+     "answer": "a = 2, b = 1",
+     "figure": "",
+     "accept": [
+      [
+       "a=2",
+       "b=1"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q5",
+     "question": "Given that g(x) = ax + b + 5, where a and b are constant numbers. If g(−1) = 0 and g(2) = 10, find the values of a and b.",
+     "steps": [
+      "g(x) = ax + b + 5",
+      "g(−1) = 0",
+      "−a + b + 5 = 0",
+      "−a + b = −5  ...(1)",
+      "g(2) = 10",
+      "2a + b + 5 = 10",
+      "2a + b = 5  ...(2)",
+      "Subtracting (1) from (2):",
+      "3a = 10",
+      "a = 10/3",
+      "Substituting a = 10/3 in (1):",
+      "−10/3 + b = −5",
+      "b = −5 + 10/3",
+      "b = −15/3 + 10/3",
+      "b = −5/3"
+     ],
+     "answer": "a = 10/3, b = −5/3",
+     "figure": "",
+     "accept": [
+      [
+       "a=10/3",
+       "b=-5/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q6",
+     "question": "Consider the function defined by f(x) = 5x + 2. If f(x) = 32, find the x value.",
+     "steps": [
+      "f(x) = 5x + 2",
+      "f(x) = 32",
+      "5x + 2 = 32",
+      "5x = 32 − 2",
+      "5x = 30",
+      "x = 30/5",
+      "x = 6"
+     ],
+     "answer": "x = 6",
+     "figure": "",
+     "accept": [
+      [
+       "x=6"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Ex 3.3 Q7",
+     "question": "Consider the function f(x) = cx² + d, where c and d are constant numbers. If f(1) = 6 and f(−2) = 10, then find the values of c and d.",
+     "steps": [
+      "f(1)=6, so c(1)²+d=6.",
+      "c+d=6  ...(1)",
+      "f(−2)=10, so c(−2)²+d=10.",
+      "4c+d=10  ...(2)",
+      "Subtract (1) from (2): (4c+d)−(c+d)=10−6.",
+      "3c=4.",
+      "c=4/3.",
+      "Substitute c=4/3 in (1): 4/3+d=6.",
+      "d=6−4/3=18/3−4/3=14/3."
+     ],
+     "answer": "c = 4/3, d = 14/3",
+     "figure": "",
+     "accept": [
+      [
+       "c=4/3",
+       "d=14/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "3.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(i)",
+     "question": "Write the following set in tabular form: {x | x = 2n, n ∈ N}",
+     "steps": [
+      "Given x=2n, where n∈N and N={1,2,3,...}.",
+      "For n=1, x=2(1)=2.",
+      "For n=2, x=2(2)=4.",
+      "For n=3, x=2(3)=6.",
+      "For n=4, x=2(4)=8.",
+      "For n=5, x=2(5)=10.",
+      "Hence, the set in tabular form is {2, 4, 6, 8, 10, ...}."
+     ],
+     "answer": "{2, 4, 6, 8, 10, ...}",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "4",
+       "6",
+       "8",
+       "10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(ii)",
+     "question": "Write the following set in tabular form: {x | x = 2m + 1, m ∈ N}",
+     "steps": [
+      "Given x=2m+1, where m∈N and N={1,2,3,...}.",
+      "For m=1, x=2(1)+1=3.",
+      "For m=2, x=2(2)+1=5.",
+      "For m=3, x=2(3)+1=7.",
+      "For m=4, x=2(4)+1=9.",
+      "For m=5, x=2(5)+1=11.",
+      "Hence, the set in tabular form is {3, 5, 7, 9, 11, ...}."
+     ],
+     "answer": "{3, 5, 7, 9, 11, ...}",
+     "figure": "",
+     "accept": [
+      [
+       "3",
+       "5",
+       "7",
+       "9",
+       "11"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(iii)",
+     "question": "Write the following set in tabular form: {x | x = 11n, n ∈ W ∧ n < 11}",
+     "steps": [
+      "Given x=11n, where n∈W and n<11.",
+      "Since W={0,1,2,3,...}, the possible values of n are 0,1,2,3,4,5,6,7,8,9,10.",
+      "For n=0, x=11(0)=0.",
+      "For n=1, x=11(1)=11.",
+      "For n=2, x=11(2)=22.",
+      "For n=3, x=11(3)=33.",
+      "For n=4, x=11(4)=44.",
+      "For n=5, x=11(5)=55.",
+      "For n=6, x=11(6)=66.",
+      "For n=7, x=11(7)=77.",
+      "For n=8, x=11(8)=88.",
+      "For n=9, x=11(9)=99.",
+      "For n=10, x=11(10)=110.",
+      "Hence, the set in tabular form is {0, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110}."
+     ],
+     "answer": "{0, 11, 22, 33, 44, 55, 66, 77, 88, 99, 110}",
+     "figure": "",
+     "accept": [
+      [
+       "0",
+       "11",
+       "22",
+       "33",
+       "44",
+       "55",
+       "66",
+       "77",
+       "88",
+       "99",
+       "110"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(iv)",
+     "question": "Write the following set in tabular form: {x | x ∈ E ∧ 4 < x < 6}",
+     "steps": [
+      "The even integers are ..., 2, 4, 6, 8, ... .",
+      "There is no even integer x such that 4<x<6.",
+      "Hence, the set in tabular form is ∅."
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "∅"
+      ],
+      [
+       "empty set"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(v)",
+     "question": "Write the following set in tabular form: {x | x ∈ O ∧ 5 < x < 7}",
+     "steps": [
+      "The odd integers are ..., 3, 5, 7, 9, ... .",
+      "There is no odd integer x such that 5<x<7.",
+      "Hence, the set in tabular form is ∅."
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "∅"
+      ],
+      [
+       "empty set"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(vi)",
+     "question": "Write the following set in tabular form: {x | x ∈ Q ∧ x² = 2}",
+     "steps": [
+      "Let x = p/q, where p and q are integers, q ≠ 0, and p/q is in lowest terms.",
+      "From x² = 2, we get p²/q² = 2.",
+      "Therefore, p² = 2q², so p² is even and p is even.",
+      "Write p = 2k, where k is an integer.",
+      "Substituting gives 4k² = 2q², so q² = 2k² and q is even.",
+      "Thus p and q are both even, contradicting that p/q is in lowest terms.",
+      "Therefore, there is no rational number x such that x² = 2.",
+      "In tabular form, the set is ∅."
+     ],
+     "answer": "∅ (the stated condition has no rational solutions; the supplied book answer {0} does not satisfy x² = 2).",
+     "figure": "",
+     "accept": [
+      [
+       "empty set"
+      ],
+      [
+       "∅"
+      ],
+      [
+       "{}"
+      ]
+     ],
+     "checked": true,
+     "note": "Your textbook's answer key shows \"{0}\"; the checked working above gives this answer."
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(vii)",
+     "question": "Write the following set in tabular form: {x | x ∈ Q ∧ x = −x}",
+     "steps": [
+      "Given x∈Q and x=−x.",
+      "Add x to both sides: x+x=−x+x.",
+      "2x=0.",
+      "x=0.",
+      "Since 0∈Q, the set in tabular form is {0}."
+     ],
+     "answer": "{0}",
+     "figure": "",
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q2(viii)",
+     "question": "Write the following set in tabular form: {x | x ∈ R ∧ x ∉ Q′}",
+     "steps": [
+      "Given set = {x | x ∈ ℝ ∧ x ∉ ℚ′}.",
+      "Since ℚ′ is the set of irrational numbers, x ∉ ℚ′ means x is rational.",
+      "Therefore, the set in tabular form is ℚ."
+     ],
+     "answer": "ℚ",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(i)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A′.",
+     "steps": [
+      "A′ = U − A.",
+      "A′ = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} − {2, 4, 6, 8, 10}.",
+      "Therefore, A′ = {1, 3, 5, 7, 9}."
+     ],
+     "answer": "{1, 3, 5, 7, 9}",
+     "figure": "",
+     "accept": [
+      [
+       "{1,3,5,7,9}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(ii)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of B′.",
+     "steps": [
+      "B′ = U − B.",
+      "B′ = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} − {1, 2, 3, 4, 5}.",
+      "Therefore, B′ = {6, 7, 8, 9, 10}."
+     ],
+     "answer": "{6, 7, 8, 9, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "{6,7,8,9,10}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(iii)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A ∪ B.",
+     "steps": [
+      "A ∪ B = {2, 4, 6, 8, 10} ∪ {1, 2, 3, 4, 5}.",
+      "Taking all distinct members of A and B, A ∪ B = {1, 2, 3, 4, 5, 6, 8, 10}."
+     ],
+     "answer": "{1, 2, 3, 4, 5, 6, 8, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "{1,2,3,4,5,6,8,10}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(iv)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A − B.",
+     "steps": [
+      "A − B is the set of members of A which are not in B.",
+      "A − B = {2, 4, 6, 8, 10} − {1, 2, 3, 4, 5}.",
+      "Therefore, A − B = {6, 8, 10}."
+     ],
+     "answer": "{6, 8, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "{6,8,10}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(v)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A ∩ C.",
+     "steps": [
+      "A ∩ C = {2, 4, 6, 8, 10} ∩ {1, 3, 5, 7, 9}.",
+      "A and C have no common members.",
+      "Therefore, A ∩ C = ∅."
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "∅"
+      ],
+      [
+       "{}"
+      ],
+      [
+       "empty set"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(vi)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A′ ∪ C′.",
+     "steps": [
+      "A′ = U − A = {1, 3, 5, 7, 9}.",
+      "C′ = U − C = {2, 4, 6, 8, 10}.",
+      "A′ ∪ C′ = {1, 3, 5, 7, 9} ∪ {2, 4, 6, 8, 10}.",
+      "Therefore, A′ ∪ C′ = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}."
+     ],
+     "answer": "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "{1,2,3,4,5,6,7,8,9,10}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(vii)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of A′ ∪ C.",
+     "steps": [
+      "A′ = U − A = {1, 3, 5, 7, 9}.",
+      "A′ ∪ C = {1, 3, 5, 7, 9} ∪ {1, 3, 5, 7, 9}.",
+      "Therefore, A′ ∪ C = {1, 3, 5, 7, 9}."
+     ],
+     "answer": "{1, 3, 5, 7, 9}",
+     "figure": "",
+     "accept": [
+      [
+       "{1,3,5,7,9}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q3(viii)",
+     "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, A = {2, 4, 6, 8, 10}, B = {1, 2, 3, 4, 5} and C = {1, 3, 5, 7, 9}. List the members of U′.",
+     "steps": [
+      "The complement of U is the set of elements in the universal set U which are not in U.",
+      "There are no elements in U which are not in U.",
+      "∴ U′ = ∅"
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q4(i)",
+     "question": "Using the Venn diagrams, if necessary, find the single set equal to A′.",
+     "steps": [
+      "A′ = U − A",
+      "= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} − {2, 4, 6, 8, 10}",
+      "= {1, 3, 5, 7, 9}"
+     ],
+     "answer": "{1, 3, 5, 7, 9}",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "3",
+       "5",
+       "7",
+       "9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q4(ii)",
+     "question": "Using the Venn diagrams, if necessary, find the single set equal to A ∩ U.",
+     "steps": [
+      "A ∩ U = {2, 4, 6, 8, 10} ∩ {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+      "= {2, 4, 6, 8, 10}",
+      "= A"
+     ],
+     "answer": "A = {2, 4, 6, 8, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "4",
+       "6",
+       "8",
+       "10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q4(iii)",
+     "question": "Using the Venn diagrams, if necessary, find the single set equal to A ∪ U.",
+     "steps": [
+      "A ∪ U = {2, 4, 6, 8, 10} ∪ {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+      "= {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+      "= U"
+     ],
+     "answer": "U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "1",
+       "2",
+       "3",
+       "4",
+       "5",
+       "6",
+       "7",
+       "8",
+       "9",
+       "10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q4(iv)",
+     "question": "Using the Venn diagrams, if necessary, find the single set equal to A ∪ ∅.",
+     "steps": [
+      "A ∪ ∅ = {2, 4, 6, 8, 10} ∪ ∅",
+      "= {2, 4, 6, 8, 10}",
+      "= A"
+     ],
+     "answer": "A = {2, 4, 6, 8, 10}",
+     "figure": "",
+     "accept": [
+      [
+       "2",
+       "4",
+       "6",
+       "8",
+       "10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q4(v)",
+     "question": "Using the Venn diagrams, if necessary, find the single set equal to ∅ ∩ ∅.",
+     "steps": [
+      "∅ ∩ ∅ = ∅"
+     ],
+     "answer": "∅",
+     "figure": "",
+     "accept": [
+      [
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q5(i)",
+     "question": "Use Venn diagrams to verify: A − B = A ∪ B′.",
+     "steps": [
+      "In a Venn diagram, A − B is the part of A which is outside B.",
+      "Thus, A − B is the region inside A but outside B.",
+      "A ∪ B′ includes all of A and all the region outside B.",
+      "Therefore, A ∪ B′ also includes the region outside both A and B.",
+      "This region is not included in A − B.",
+      "∴ A − B ≠ A ∪ B′ in general."
+     ],
+     "answer": "The given statement is false: A − B ≠ A ∪ B′ in general.",
+     "figure": "Two Venn diagrams inside the universal set U, each with overlapping circles labelled A and B. In the first diagram, shade the part of A outside B to show A − B. In the second diagram, shade all of A and everything outside B to show A ∪ B′. The shaded regions are different: the second includes the part outside both circles, while the first does not.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q5(ii)",
+     "question": "Use Venn diagrams to verify: (A − B)′ ∩ B = B.",
+     "steps": [
+      "A − B is the part of A which is outside B.",
+      "The complement (A − B)′ is all the region in U except the part of A outside B.",
+      "The set B has no part in common with A − B.",
+      "Therefore, every element of B belongs to (A − B)′.",
+      "∴ (A − B)′ ∩ B = B"
+     ],
+     "answer": "(A − B)′ ∩ B = B",
+     "figure": "Draw a universal set U as a rectangle and two overlapping circles labelled A and B. The region A − B is the part of A outside B. Its complement is everything in U except that region. Shade the intersection of this complement with B; the whole of B is shaded, including the overlap and the part of B outside A.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(i)(a)",
+     "question": "Verify Associativity of Union for the sets A = {1, 2, 3, 4}, B = {3, 4, 5, 6, 7, 8}, C = {5, 6, 7, 9, 10}.",
+     "steps": [
+      "A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}.",
+      "(A ∪ B) ∪ C = {1, 2, 3, 4, 5, 6, 7, 8} ∪ {5, 6, 7, 9, 10} = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.",
+      "B ∪ C = {3, 4, 5, 6, 7, 8, 9, 10}.",
+      "A ∪ (B ∪ C) = {1, 2, 3, 4} ∪ {3, 4, 5, 6, 7, 8, 9, 10} = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.",
+      "Therefore, (A ∪ B) ∪ C = A ∪ (B ∪ C)."
+     ],
+     "answer": "(A ∪ B) ∪ C = A ∪ (B ∪ C) = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.",
+     "figure": "",
+     "accept": [
+      [
+       "1,2,3,4,5,6,7,8,9,10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(i)(b)",
+     "question": "Verify Associativity of Union for the sets A = ∅, B = {0}, C = {0, 1, 2}.",
+     "steps": [
+      "A ∪ B = ∅ ∪ {0} = {0}.",
+      "(A ∪ B) ∪ C = {0} ∪ {0, 1, 2} = {0, 1, 2}.",
+      "B ∪ C = {0} ∪ {0, 1, 2} = {0, 1, 2}.",
+      "A ∪ (B ∪ C) = ∅ ∪ {0, 1, 2} = {0, 1, 2}.",
+      "Therefore, (A ∪ B) ∪ C = A ∪ (B ∪ C)."
+     ],
+     "answer": "(A ∪ B) ∪ C = A ∪ (B ∪ C) = {0, 1, 2}.",
+     "figure": "",
+     "accept": [
+      [
+       "0,1,2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(i)(c)",
+     "question": "Verify Associativity of Union for the sets A = N, B = Z, C = Q.",
+     "steps": [
+      "Since N ⊂ Z ⊂ Q, N ∪ Z = Z.",
+      "(N ∪ Z) ∪ Q = Z ∪ Q = Q.",
+      "Since Z ⊂ Q, Z ∪ Q = Q.",
+      "N ∪ (Z ∪ Q) = N ∪ Q = Q.",
+      "Therefore, (N ∪ Z) ∪ Q = N ∪ (Z ∪ Q)."
+     ],
+     "answer": "(N ∪ Z) ∪ Q = N ∪ (Z ∪ Q) = Q.",
+     "figure": "",
+     "accept": [
+      [
+       "Q"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(ii)(a)",
+     "question": "Verify Associativity of intersection for the sets A = {1, 2, 3, 4}, B = {3, 4, 5, 6, 7, 8}, C = {5, 6, 7, 9, 10}.",
+     "steps": [
+      "A ∩ B = {3, 4}.",
+      "(A ∩ B) ∩ C = {3, 4} ∩ {5, 6, 7, 9, 10} = ∅.",
+      "B ∩ C = {5, 6, 7}.",
+      "A ∩ (B ∩ C) = {1, 2, 3, 4} ∩ {5, 6, 7} = ∅.",
+      "Therefore, (A ∩ B) ∩ C = A ∩ (B ∩ C)."
+     ],
+     "answer": "(A ∩ B) ∩ C = A ∩ (B ∩ C) = ∅.",
+     "figure": "",
+     "accept": [
+      [
+       "empty set"
+      ],
+      [
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(ii)(b)",
+     "question": "Verify Associativity of intersection for the sets A = ∅, B = {0}, C = {0, 1, 2}.",
+     "steps": [
+      "A ∩ B = ∅ ∩ {0} = ∅.",
+      "(A ∩ B) ∩ C = ∅ ∩ {0, 1, 2} = ∅.",
+      "B ∩ C = {0} ∩ {0, 1, 2} = {0}.",
+      "A ∩ (B ∩ C) = ∅ ∩ {0} = ∅.",
+      "Therefore, (A ∩ B) ∩ C = A ∩ (B ∩ C)."
+     ],
+     "answer": "(A ∩ B) ∩ C = A ∩ (B ∩ C) = ∅.",
+     "figure": "",
+     "accept": [
+      [
+       "empty set"
+      ],
+      [
+       "∅"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(ii)(c)",
+     "question": "Verify Associativity of intersection for the sets A = N, B = Z, C = Q.",
+     "steps": [
+      "Since N ⊂ Z, N ∩ Z = N.",
+      "(N ∩ Z) ∩ Q = N ∩ Q = N, since N ⊂ Q.",
+      "Since Z ⊂ Q, Z ∩ Q = Z.",
+      "N ∩ (Z ∩ Q) = N ∩ Z = N.",
+      "Therefore, (N ∩ Z) ∩ Q = N ∩ (Z ∩ Q)."
+     ],
+     "answer": "(N ∩ Z) ∩ Q = N ∩ (Z ∩ Q) = N.",
+     "figure": "",
+     "accept": [
+      [
+       "N"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iii)(a)",
+     "question": "Verify Distributivity of Union over intersection for the sets A = {1, 2, 3, 4}, B = {3, 4, 5, 6, 7, 8}, C = {5, 6, 7, 9, 10}.",
+     "steps": [
+      "B ∩ C = {5, 6, 7}.",
+      "A ∪ (B ∩ C) = {1, 2, 3, 4} ∪ {5, 6, 7} = {1, 2, 3, 4, 5, 6, 7}.",
+      "A ∪ B = {1, 2, 3, 4, 5, 6, 7, 8}.",
+      "A ∪ C = {1, 2, 3, 4, 5, 6, 7, 9, 10}.",
+      "(A ∪ B) ∩ (A ∪ C) = {1, 2, 3, 4, 5, 6, 7, 8} ∩ {1, 2, 3, 4, 5, 6, 7, 9, 10} = {1, 2, 3, 4, 5, 6, 7}.",
+      "Therefore, A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)."
+     ],
+     "answer": "A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) = {1, 2, 3, 4, 5, 6, 7}.",
+     "figure": "",
+     "accept": [
+      [
+       "1,2,3,4,5,6,7"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iii)(b)",
+     "question": "Verify Distributivity of Union over intersection for the sets A = ∅, B = {0}, C = {0, 1, 2}.",
+     "steps": [
+      "B ∩ C = {0} ∩ {0, 1, 2} = {0}.",
+      "A ∪ (B ∩ C) = ∅ ∪ {0} = {0}.",
+      "A ∪ B = ∅ ∪ {0} = {0}.",
+      "A ∪ C = ∅ ∪ {0, 1, 2} = {0, 1, 2}.",
+      "(A ∪ B) ∩ (A ∪ C) = {0} ∩ {0, 1, 2} = {0}.",
+      "Therefore, A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)."
+     ],
+     "answer": "A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) = {0}.",
+     "figure": "",
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iii)(c)",
+     "question": "Verify Distributivity of Union over intersection for the sets A = N, B = Z, C = Q.",
+     "steps": [
+      "B ∩ C = Z ∩ Q = Z",
+      "A ∪ (B ∩ C) = N ∪ Z = Z",
+      "A ∪ B = N ∪ Z = Z",
+      "A ∪ C = N ∪ Q = Q",
+      "(A ∪ B) ∩ (A ∪ C) = Z ∩ Q = Z",
+      "Therefore, A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)."
+     ],
+     "answer": "A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iv)(a)",
+     "question": "Verify Distributivity of intersection over union for the sets A = {1, 2, 3, 4}, B = {3, 4, 5, 6, 7, 8}, C = {5, 6, 7, 9, 10}.",
+     "steps": [
+      "B ∪ C = {3, 4, 5, 6, 7, 8, 9, 10}",
+      "A ∩ (B ∪ C) = {1, 2, 3, 4} ∩ {3, 4, 5, 6, 7, 8, 9, 10} = {3, 4}",
+      "A ∩ B = {1, 2, 3, 4} ∩ {3, 4, 5, 6, 7, 8} = {3, 4}",
+      "A ∩ C = {1, 2, 3, 4} ∩ {5, 6, 7, 9, 10} = ∅",
+      "(A ∩ B) ∪ (A ∩ C) = {3, 4} ∪ ∅ = {3, 4}",
+      "Therefore, A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)."
+     ],
+     "answer": "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iv)(b)",
+     "question": "Verify Distributivity of intersection over union for the sets A = ∅, B = {0}, C = {0, 1, 2}.",
+     "steps": [
+      "B ∪ C = {0} ∪ {0, 1, 2} = {0, 1, 2}",
+      "A ∩ (B ∪ C) = ∅ ∩ {0, 1, 2} = ∅",
+      "A ∩ B = ∅ ∩ {0} = ∅",
+      "A ∩ C = ∅ ∩ {0, 1, 2} = ∅",
+      "(A ∩ B) ∪ (A ∩ C) = ∅ ∪ ∅ = ∅",
+      "Therefore, A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)."
+     ],
+     "answer": "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q6(iv)(c)",
+     "question": "Verify Distributivity of intersection over union for the sets A = N, B = Z, C = Q.",
+     "steps": [
+      "B ∪ C = Z ∪ Q = Q",
+      "A ∩ (B ∪ C) = N ∩ Q = N",
+      "A ∩ B = N ∩ Z = N",
+      "A ∩ C = N ∩ Q = N",
+      "(A ∩ B) ∪ (A ∩ C) = N ∪ N = N",
+      "Therefore, A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)."
+     ],
+     "answer": "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q7",
+     "question": "Verify De Morgan's Laws for the following sets: U = {1, 2, 3, ...., 20}, A = {2, 4, 6, ...., 20} and B = {1, 3, 5, ...., 19}.",
+     "steps": [
+      "A′ = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19}",
+      "B′ = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}",
+      "A ∪ B = U",
+      "(A ∪ B)′ = U′ = ∅",
+      "A′ ∩ B′ = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19} ∩ {2, 4, 6, 8, 10, 12, 14, 16, 18, 20} = ∅",
+      "Therefore, (A ∪ B)′ = A′ ∩ B′.",
+      "A ∩ B = ∅",
+      "(A ∩ B)′ = ∅′ = U",
+      "A′ ∪ B′ = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19} ∪ {2, 4, 6, 8, 10, 12, 14, 16, 18, 20} = U",
+      "Therefore, (A ∩ B)′ = A′ ∪ B′."
+     ],
+     "answer": "(A ∪ B)′ = A′ ∩ B′ and (A ∩ B)′ = A′ ∪ B′.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q8",
+     "question": "Consider the set P = {x | x = 5m, m ∈ N} and Q = {x | x = 2m, m ∈ N}. Find P ∩ Q.",
+     "steps": [
+      "P = {5, 10, 15, 20, 25, 30, ...}",
+      "Q = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20, ...}",
+      "The common elements of P and Q are the common multiples of 5 and 2.",
+      "The least common multiple of 5 and 2 is 10.",
+      "Therefore, P ∩ Q = {10, 20, 30, 40, 50, ...}."
+     ],
+     "answer": "{10, 20, 30, 40, 50, ...}",
+     "figure": "",
+     "accept": [
+      [
+       "{10,20,30,40,50,...}"
+      ],
+      [
+       "multiples of 10"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q9(i)",
+     "question": "From suitable properties of union and intersection, deduce the following result: A ∩ (A ∪ B) = A ∪ (A ∩ B).",
+     "steps": [
+      "A ∩ (A ∪ B) = (A ∩ A) ∪ (A ∩ B)  [Distributive law]",
+      "= A ∪ (A ∩ B)  [Idempotent law]",
+      "Therefore, A ∩ (A ∪ B) = A ∪ (A ∩ B)."
+     ],
+     "answer": "A ∩ (A ∪ B) = A ∪ (A ∩ B).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q9(ii)",
+     "question": "From suitable properties of union and intersection, deduce the following result: A ∪ (A ∩ B) = A ∩ (A ∪ B).",
+     "steps": [
+      "A ∪ (A ∩ B) = (A ∪ A) ∩ (A ∪ B)  [Distributive law]",
+      "= A ∩ (A ∪ B)  [Idempotent law]",
+      "Therefore, A ∪ (A ∩ B) = A ∩ (A ∪ B)."
+     ],
+     "answer": "A ∪ (A ∩ B) = A ∩ (A ∪ B).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(i)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find g(0).",
+     "steps": [
+      "g(x) = 7x − 2",
+      "g(0) = 7(0) − 2",
+      "g(0) = 0 − 2",
+      "g(0) = −2"
+     ],
+     "answer": "−2",
+     "figure": "",
+     "accept": [
+      [
+       "-2"
+      ],
+      [
+       "−2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(ii)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find g(−1).",
+     "steps": [
+      "g(x) = 7x − 2",
+      "g(−1) = 7(−1) − 2",
+      "g(−1) = −7 − 2",
+      "g(−1) = −9"
+     ],
+     "answer": "−9",
+     "figure": "",
+     "accept": [
+      [
+       "-9"
+      ],
+      [
+       "−9"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(iii)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find g(−5/3).",
+     "steps": [
+      "g(x) = 7x − 2",
+      "g(−5/3) = 7(−5/3) − 2",
+      "g(−5/3) = −35/3 − 2",
+      "g(−5/3) = −35/3 − 6/3",
+      "g(−5/3) = −41/3"
+     ],
+     "answer": "−41/3",
+     "figure": "",
+     "accept": [
+      [
+       "-41/3"
+      ],
+      [
+       "−41/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(iv)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find s(1).",
+     "steps": [
+      "s(x) = 8x² − 3",
+      "s(1) = 8(1)² − 3",
+      "s(1) = 8 − 3",
+      "s(1) = 5"
+     ],
+     "answer": "5",
+     "figure": "",
+     "accept": [
+      [
+       "5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(v)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find s(−9).",
+     "steps": [
+      "s(x) = 8x² − 3",
+      "s(−9) = 8(−9)² − 3",
+      "s(−9) = 8(81) − 3",
+      "s(−9) = 648 − 3",
+      "s(−9) = 645"
+     ],
+     "answer": "645",
+     "figure": "",
+     "accept": [
+      [
+       "645"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q10(vi)",
+     "question": "If g(x) = 7x − 2 and s(x) = 8x² − 3 find s(7/2).",
+     "steps": [
+      "s(x) = 8x² − 3",
+      "s(7/2) = 8(7/2)² − 3",
+      "s(7/2) = 8(49/4) − 3",
+      "s(7/2) = 98 − 3",
+      "s(7/2) = 95"
+     ],
+     "answer": "95",
+     "figure": "",
+     "accept": [
+      [
+       "95"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q11",
+     "question": "Given that f(x) = ax + b, where a and b are constant numbers. If f(−2) = 3 and f(4) = 10, then find the values of a and b.",
+     "steps": [
+      "f(x) = ax + b",
+      "f(−2) = 3, so −2a + b = 3",
+      "f(4) = 10, so 4a + b = 10",
+      "(4a + b) − (−2a + b) = 10 − 3",
+      "6a = 7",
+      "a = 7/6",
+      "Substituting a = 7/6 in −2a + b = 3:",
+      "−2(7/6) + b = 3",
+      "−7/3 + b = 3",
+      "b = 3 + 7/3",
+      "b = 9/3 + 7/3",
+      "b = 16/3"
+     ],
+     "answer": "a = 7/6, b = 16/3",
+     "figure": "",
+     "accept": [
+      [
+       "a=7/6",
+       "b=16/3"
+      ],
+      [
+       "a = 7/6",
+       "b = 16/3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q12",
+     "question": "Consider the function defined by k(x) = 7x − 5. If k(x) = 100, find the value of x.",
+     "steps": [
+      "k(x) = 7x − 5",
+      "k(x) = 100",
+      "7x − 5 = 100",
+      "7x = 100 + 5",
+      "7x = 105",
+      "x = 105/7",
+      "x = 15"
+     ],
+     "answer": "15",
+     "figure": "",
+     "accept": [
+      [
+       "15"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q13",
+     "question": "Consider the function g(x) = mx² + n, where m and n are constant numbers. If g(4) = 20 and g(0) = 5, find the values of m and n.",
+     "steps": [
+      "g(x)=mx²+n",
+      "g(4)=20, so m(4)²+n=20",
+      "16m+n=20 ...(1)",
+      "g(0)=5, so m(0)²+n=5",
+      "n=5 ...(2)",
+      "Substitute n=5 in (1): 16m+5=20",
+      "16m=15",
+      "m=15/16"
+     ],
+     "answer": "m = 15/16, n = 5",
+     "figure": "",
+     "accept": [
+      [
+       "m=15/16",
+       "n=5"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q14",
+     "question": "A shopping mall has 100 products from various categories labeled 1 to 100, representing the universal set U. The products are categorized as follows:\n- Set A: Electronics, consisting of 30 products labeled from 1 to 30.\n- Set B: Clothing comprises 25 products labeled from 31 to 55.\n- Set C: Beauty Products, comprising 25 products labeled from 76 to 100.\n\nWrite each set in tabular form, and find the union of all three sets.",
+     "steps": [
+      "A={1, 2, 3, ..., 30}",
+      "B={31, 32, 33, ..., 55}",
+      "C={76, 77, 78, ..., 100}",
+      "A∪B∪C={1, 2, 3, ..., 30, 31, 32, ..., 55, 76, 77, ..., 100}"
+     ],
+     "answer": "A = {1, 2, 3, ..., 30}, B = {31, 32, 33, ..., 55}, C = {76, 77, 78, ..., 100}. A ∪ B ∪ C = {1, 2, 3, ..., 30, 31, 32, ..., 55, 76, 77, ..., 100}.",
+     "figure": "",
+     "accept": [
+      [
+       "A={1,2,3,...,30}",
+       "B={31,32,33,...,55}",
+       "C={76,77,78,...,100}",
+       "A∪B∪C={1,2,3,...,30,31,32,...,55,76,77,...,100}"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q15(a)",
+     "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. How many passed either the math or science test?",
+     "steps": [
+      "Let M be the set of students who passed Mathematics and S be the set of students who passed Science.",
+      "n(M∪S)=n(M)+n(S)-n(M∩S)",
+      "n(M∪S)=120+90-60",
+      "n(M∪S)=150"
+     ],
+     "answer": "150 students",
+     "figure": "",
+     "accept": [
+      [
+       "150"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q15(b)",
+     "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. How many did not pass either of the two tests?",
+     "steps": [
+      "Let M be the set of students who passed Mathematics and S be the set of students who passed Science.",
+      "n(M∪S)=120+90-60",
+      "n(M∪S)=150",
+      "Number who did not pass either test = 180-150",
+      "=30"
+     ],
+     "answer": "30 students",
+     "figure": "",
+     "accept": [
+      [
+       "30"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q15(c)",
+     "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. How many passed the science test but not the math test?",
+     "steps": [
+      "Let M be the set of students who passed Mathematics and S be the set of students who passed Science.",
+      "Number who passed Science but not Mathematics = n(S)-n(M∩S)",
+      "=90-60",
+      "=30"
+     ],
+     "answer": "30 students",
+     "figure": "",
+     "accept": [
+      [
+       "30"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q15(d)",
+     "question": "Out of the 180 students who appeared in the annual examination, 120 passed the math test, 90 passed the science test, and 60 passed both the math and science tests. How many failed the science test?",
+     "steps": [
+      "Let S be the set of students who passed Science.",
+      "Number who failed Science = 180-n(S)",
+      "=180-90",
+      "=90"
+     ],
+     "answer": "90 students",
+     "figure": "",
+     "accept": [
+      [
+       "90"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q16(a)",
+     "question": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics:\n- 150 developers like Python.\n- 130 developers like Java.\n- 120 developers like PHP.\n- 70 developers like both Python and Java.\n- 60 developers like both Python and PHP.\n- 50 developers like both Java and PHP.\n- 40 developers like all three languages: Python, Java and PHP.\n\nHow many developers use at least one of these languages?",
+     "steps": [
+      "Let P, J and H be the sets of developers who like Python, Java and PHP, respectively.",
+      "n(P∪J∪H)=n(P)+n(J)+n(H)-n(P∩J)-n(P∩H)-n(J∩H)+n(P∩J∩H)",
+      "n(P∪J∪H)=150+130+120-70-60-50+40",
+      "n(P∪J∪H)=260"
+     ],
+     "answer": "260 developers",
+     "figure": "",
+     "accept": [
+      [
+       "260"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q16(b)",
+     "question": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics:\n- 150 developers like Python.\n- 130 developers like Java.\n- 120 developers like PHP.\n- 70 developers like both Python and Java.\n- 60 developers like both Python and PHP.\n- 50 developers like both Java and PHP.\n- 40 developers like all three languages: Python, Java and PHP.\n\nHow many developers use only one of these languages?",
+     "steps": [
+      "Let P, J and H be the sets of developers who like Python, Java and PHP, respectively.",
+      "Number who like only Python = 150-70-60+40=60",
+      "Number who like only Java = 130-70-50+40=50",
+      "Number who like only PHP = 120-60-50+40=50",
+      "Number who like only one language = 60+50+50",
+      "=160"
+     ],
+     "answer": "160 developers",
+     "figure": "",
+     "accept": [
+      [
+       "160"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q16(c)",
+     "question": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics:\n- 150 developers like Python.\n- 130 developers like Java.\n- 120 developers like PHP.\n- 70 developers like both Python and Java.\n- 60 developers like both Python and PHP.\n- 50 developers like both Java and PHP.\n- 40 developers like all three languages: Python, Java and PHP.\n\nHow many developers do not use any of these languages?",
+     "steps": [
+      "Let P, J and H represent the sets of developers who like Python, Java and PHP, respectively.",
+      "n(P ∪ J ∪ H) = n(P) + n(J) + n(H) − n(P ∩ J) − n(P ∩ H) − n(J ∩ H) + n(P ∩ J ∩ H)",
+      "n(P ∪ J ∪ H) = 150 + 130 + 120 − 70 − 60 − 50 + 40",
+      "n(P ∪ J ∪ H) = 260",
+      "Number of developers who do not use any of these languages = 300 − n(P ∪ J ∪ H)",
+      "Number of developers who do not use any of these languages = 300 − 260 = 40"
+     ],
+     "answer": "40 developers do not use any of these languages.",
+     "figure": "",
+     "accept": [
+      [
+       "40"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Review Ex 3 Q16(d)",
+     "question": "In a software house of a city with 300 software developers, a survey was conducted to determine which programming languages are liked more. The survey revealed the following statistics:\n- 150 developers like Python.\n- 130 developers like Java.\n- 120 developers like PHP.\n- 70 developers like both Python and Java.\n- 60 developers like both Python and PHP.\n- 50 developers like both Java and PHP.\n- 40 developers like all three languages: Python, Java and PHP.\n\nHow many developers use only PHP?",
+     "steps": [
+      "Let P, J and H represent the sets of developers who like Python, Java and PHP, respectively.",
+      "Number of developers who like only PHP = n(H) − n(P ∩ H) − n(J ∩ H) + n(P ∩ J ∩ H)",
+      "Number of developers who like only PHP = 120 − 60 − 50 + 40",
+      "Number of developers who like only PHP = 50"
+     ],
+     "answer": "50 developers use only PHP.",
+     "figure": "",
+     "accept": [
+      [
+       "50"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "Review Ex 3 Q1(i)",
+     "stem": "The set builder form of the set {1, 1/3, 1/5, 1/7, ...} is:",
+     "options": [
+      "(a) {x | x = 1/n, n ∈ W}",
+      "(b) {x | x = 1/(2n + 1), n ∈ W}",
+      "(c) {x | x = 1/(n + 1), n ∈ W}",
+      "(d) {x | x = 2n + 1, n ∈ W}"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This gives reciprocals of all whole numbers, including values not in the set, such as 1/2.",
+      "With n starting at 0, this gives 1, 1/3, 1/5, 1/7, and so on.",
+      "This gives reciprocals of positive integers starting at 1, including 1/2.",
+      "This describes odd positive integers rather than their reciprocals."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(ii)",
+     "stem": "If A = {}, then P(A) is:",
+     "options": [
+      "(a) {}",
+      "(b) {1}",
+      "(c) {{ }}",
+      "(d) ∅"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The power set is not empty because it contains the empty set as a member.",
+      "The power set contains subsets of A, not the number 1.",
+      "The power set of the empty set is the set containing the empty set, written {∅}.",
+      "This denotes the empty set itself, whereas the power set has one member: the empty set."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(iii)",
+     "stem": "If U = {1, 2, 3, 4, 5}, A = {1, 2, 3} and B = {3, 4, 5}, then U − (A ∩ B) is:",
+     "options": [
+      "(a) {1, 2, 4, 5}",
+      "(b) {2, 3}",
+      "(c) {1, 3, 4, 5}",
+      "(d) {1, 2, 3}"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A ∩ B = {3}, so removing it from U leaves {1, 2, 4, 5}.",
+      "This omits 1, 4, and 5, which are in U but not in A ∩ B.",
+      "This incorrectly retains 3, which belongs to A ∩ B and must be removed.",
+      "This is A, not U − (A ∩ B)."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(iv)",
+     "stem": "If A and B are overlapping sets, then n(A − B) is equal to",
+     "options": [
+      "(a) n(A)",
+      "(b) n(B)",
+      "(c) A ∩ B",
+      "(d) n(A) − n(A ∩ B)"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This would hold only if A and B were disjoint, but they overlap.",
+      "The size of A − B is not generally the size of B.",
+      "A ∩ B is a set, not the cardinality of A − B.",
+      "Removing the elements shared with B from A gives n(A − B) = n(A) − n(A ∩ B)."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(v)",
+     "stem": "If A ⊆ B and B − A ≠ ∅, then n(B − A) is equal to",
+     "options": [
+      "(a) 0",
+      "(b) n(B)",
+      "(c) n(A)",
+      "(d) n(B) − n(A)"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "The condition B − A ≠ ∅ means its cardinality is not zero.",
+      "B − A excludes the elements of A, so it need not have as many elements as B.",
+      "B − A consists of elements in B but not in A, not the elements of A.",
+      "Since A ⊆ B, n(B − A) = n(B) − n(A)."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(vi)",
+     "stem": "If n(A ∪ B) = 50, n(A) = 30 and n(B) = 35, then n(A ∩ B) = :",
+     "options": [
+      "(a) 23",
+      "(b) 15",
+      "(c) 9",
+      "(d) 40"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The intersection has 15 elements, not 23.",
+      "By inclusion-exclusion, n(A ∩ B) = 30 + 35 − 50 = 15.",
+      "The given cardinalities do not yield 9; the intersection has 15 elements.",
+      "The intersection cannot have 40 elements when n(A) is only 30."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(vii)",
+     "stem": "If A = {1, 2, 3, 4} and B = {x, y, z}, then cartesian product of A and B contains exactly ______ elements.",
+     "options": [
+      "(a) 13",
+      "(b) 12",
+      "(c) 10",
+      "(d) 6"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The Cartesian product has 4 × 3 = 12 ordered pairs, not 13.",
+      "The product contains 4 × 3 = 12 ordered pairs.",
+      "The product contains 12 ordered pairs, not 10.",
+      "Six is not the product of the sets' cardinalities, 4 and 3."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(viii)",
+     "stem": "If f(x) = x² − 3x + 2, then the value of f(a + 1) is equal to:",
+     "options": [
+      "(a) a + 1",
+      "(b) a² + 1",
+      "(c) a² + 2a + 1",
+      "(d) a² − a"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Substitution gives f(a + 1) = a² − a, not a + 1.",
+      "The substituted expression simplifies to a² − a, not a² + 1.",
+      "This is only (a + 1)² and does not include the remaining terms of f(a + 1).",
+      "Substituting gives (a + 1)² − 3(a + 1) + 2 = a² − a."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(ix)",
+     "stem": "Given that f(x) = 3x + 1, if f(x) = 28, then the value of x is:",
+     "options": [
+      "(a) 9",
+      "(b) 27",
+      "(c) 3",
+      "(d) 18"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Solving 3x + 1 = 28 gives x = 9.",
+      "The value 27 is 28 − 1, but the equation also requires dividing by 3.",
+      "Substituting 3 gives f(3) = 10, not 28.",
+      "Substituting 18 gives f(18) = 55, not 28."
+     ]
+    },
+    {
+     "source": "Review Ex 3 Q1(x)",
+     "stem": "Let A = {1, 2, 3} and B = {a, b} two non-empty sets and f : A → B be a a function defined as f = {(1, a), (2, b), (3, b)}, then which of the following statement is true?",
+     "options": [
+      "(a) f is injective",
+      "(b) f is surjective",
+      "(c) f is bijective",
+      "(d) f is into only"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The function is not injective because both 2 and 3 map to b.",
+      "Both elements of B are attained as outputs, so f is surjective.",
+      "It is not bijective because it is not injective.",
+      "It is not into only because every element of B is attained."
+     ]
+    }
+   ]
+  }
+ ]
+}
