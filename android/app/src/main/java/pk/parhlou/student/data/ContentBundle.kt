@@ -113,6 +113,7 @@ object ContentBundle {
                 accept = s.optJSONArray("accept")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
                 checked = s.optBoolean("checked", true),
                 note = s.optString("note"),
+                bookAnswer = s.optString("bookAnswer"),
             )
         }.orEmpty(),
     )

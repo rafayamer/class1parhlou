@@ -179,7 +179,7 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
         Text(s.source, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
         Text(s.question, style = MaterialTheme.typography.titleMedium)
         if (!s.checked) {
-            Text("Answer (from your textbook): ${s.answer.ifBlank { "see your textbook" }}", style = MaterialTheme.typography.bodyLarge)
+            Text("Answer (from your textbook): ${s.bookAnswer.ifBlank { s.answer }.ifBlank { "see your textbook" }}", style = MaterialTheme.typography.bodyLarge)
             Muted("A step-by-step solution for this question is still being checked. Ask the tutor if you're stuck.")
             return@Sheet
         }
@@ -195,6 +195,8 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
         if (steps >= s.steps.size && steps > 0) {
             if (s.figure.isNotBlank()) Muted("Figure: ${s.figure}")
             if (s.answer.isNotBlank()) Text("Answer: ${s.answer}", style = MaterialTheme.typography.titleMedium)
+            if (s.bookAnswer.isNotBlank()) Text("Book answer: ${s.bookAnswer}", style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
             if (s.note.isNotBlank()) Muted(s.note)
         }
         if (onAskTutor != null) TextButton(

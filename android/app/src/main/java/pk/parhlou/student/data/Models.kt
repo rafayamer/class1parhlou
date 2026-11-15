@@ -71,6 +71,8 @@ data class BookSolution(
     val checked: Boolean,
     /** Shown under the answer, e.g. when the textbook's answer key differs from the checked working. */
     val note: String = "",
+    /** The answer printed in the textbook's answer key for this question, when it has one. */
+    val bookAnswer: String = "",
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */
