@@ -45,6 +45,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flowOf
 import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
+import pk.parhlou.student.ui.screens.SolutionsFinderScreen
+import pk.parhlou.student.ui.screens.SolutionDetailScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
 import pk.parhlou.student.ui.screens.TestsScreen
 import pk.parhlou.student.ui.screens.WelcomeScreen
@@ -115,6 +117,8 @@ object Routes {
     const val HISTORY = "history"
     const val PLANNER = "planner"
     const val WEAK_TOPICS = "weak-topics"
+    const val SOLUTIONS = "solutions"
+    const val SOLUTION = "solution/{module}/{index}"
 }
 
 /** Main destinations shown in the floating pill bar. */
@@ -282,6 +286,7 @@ fun ParhlouApp(
                 onPlanTask = ::openPlanTask,
                 onPlanner = { nav.navigate(Routes.PLANNER) },
                 onHistory = { nav.navigate(Routes.HISTORY) },
+                onSolutions = { nav.navigate(Routes.SOLUTIONS) },
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -343,8 +348,21 @@ fun ParhlouApp(
             )
         } }
         composable(Routes.SUBJECTS) { WithTabBarSpace {
-            SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null)
+            SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
+                onSolutions = { nav.navigate(Routes.SOLUTIONS) })
         } }
+        composable(Routes.SOLUTIONS) {
+            SolutionsFinderScreen(subjects, onOpen = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
+        }
+        composable(Routes.SOLUTION) { entry ->
+            val module = repo.module(entry.arguments?.getString("module").orEmpty())
+            val index = entry.arguments?.getString("index")?.toIntOrNull() ?: -1
+            if (module == null) Missing(nav) else SolutionDetailScreen(
+                module, index,
+                onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
+                onBack = nav.back(),
+            )
+        }
         composable(Routes.SUBJECT) { entry ->
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
             if (subject == null) Missing(nav) else

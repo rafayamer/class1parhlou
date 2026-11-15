@@ -63,7 +63,7 @@ import pk.parhlou.student.ui.components.SecondaryButton
 import pk.parhlou.student.ui.components.Sheet
 import pk.parhlou.student.ui.components.StatusPill
 
-enum class Stage(val label: String) { LEARN("1 Learn"), UNDERSTAND("2 Quiz"), READ("3 Book"), WRITE("4 Write"), IMPROVE("5 Improve") }
+enum class Stage(val label: String) { LEARN("1 Learn"), UNDERSTAND("2 Quiz"), READ("3 Solutions"), WRITE("4 Write"), IMPROVE("5 Improve") }
 
 @Composable
 fun ModuleScreen(

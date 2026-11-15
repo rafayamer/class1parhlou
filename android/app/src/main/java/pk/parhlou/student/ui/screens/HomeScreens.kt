@@ -16,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.filled.PlayCircle
@@ -140,6 +141,8 @@ fun HomeScreen(
     onPlanner: () -> Unit = {},
     onHistory: () -> Unit = {},
     onScan: () -> Unit = {},
+    /** Step-by-step solutions of every textbook question. */
+    onSolutions: () -> Unit = onSubjects,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -237,7 +240,7 @@ fun HomeScreen(
         }
 
         Row(Modifier.appear(5), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Tile("My book", Icons.AutoMirrored.Filled.MenuBook, onSubjects, Modifier.weight(1f))
+            Tile("Solutions", Icons.Filled.Lightbulb, onSolutions, Modifier.weight(1f))
             Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
         }
@@ -490,10 +493,15 @@ fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress
 }
 
 @Composable
-fun SubjectsScreen(repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: (() -> Unit)?) {
+fun SubjectsScreen(
+    repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: (() -> Unit)?,
+    onSolutions: () -> Unit = {},
+) {
     ParhlouScreen("My book", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         if (subjects.isEmpty()) Muted("You haven't chosen any available subjects.")
+        if (subjects.any { s -> s.chapters.any { c -> c.modules.any { it.solutions.isNotEmpty() } } })
+            TaskRow(Icons.Filled.Lightbulb, "Step-by-step solutions", "Every example and exercise question, solved", onSolutions)
         subjects.forEach { s ->
             Card(onClick = { onOpen(s.id) }, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {

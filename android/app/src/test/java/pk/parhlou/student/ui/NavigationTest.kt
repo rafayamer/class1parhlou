@@ -105,6 +105,7 @@ class NavigationTest {
             "Continue" to "Sample — demo content",
             "Ask a question" to "Demo tutor",
             "Journey" to "Journey",
+            "Solutions" to "Step-by-step solutions appear here",
             "Full plan" to "Today's plan",
         )
         launch()
