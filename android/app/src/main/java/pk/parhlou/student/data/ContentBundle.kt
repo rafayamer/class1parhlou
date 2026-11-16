@@ -96,6 +96,7 @@ object ContentBundle {
             Chapter(c.getString("id"), c.getInt("number"), c.getString("title"), c.getJSONArray("modules").list(::readModule), status(c.getString("status")),
                 kit = c.optJSONObject("kit")?.let(::readKit))
         },
+        examDate = o.optString("examDate"), examName = o.optString("examName"),
     )
 
     private fun readModule(m: JSONObject) = Module(
@@ -117,6 +118,8 @@ object ContentBundle {
                 bookAnswer = s.optString("bookAnswer"),
                 inExam = s.optBoolean("inExam", true),
                 why = s.optJSONArray("why")?.strings().orEmpty(),
+                figures = s.optJSONArray("figures")?.strings().orEmpty(),
+                answerFigures = s.optJSONArray("answerFigures")?.strings().orEmpty(),
             )
         }.orEmpty(),
         inExam = m.optBoolean("inExam", true),

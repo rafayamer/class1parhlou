@@ -126,3 +126,11 @@ object Rewards {
         return (lesson + strong + exam).coerceAtMost(5)
     }
 }
+
+/** Days left to the board exam, from the course's approximate exam date. Null when unknown or past. */
+object ExamCountdown {
+    fun daysLeft(examDate: String, today: java.time.LocalDate = java.time.LocalDate.now()): Int? = runCatching {
+        val d = java.time.LocalDate.parse(examDate)
+        java.time.temporal.ChronoUnit.DAYS.between(today, d).toInt().takeIf { it >= 0 }
+    }.getOrNull()
+}

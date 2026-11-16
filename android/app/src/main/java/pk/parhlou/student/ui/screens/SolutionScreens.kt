@@ -166,12 +166,39 @@ private fun QuestionRow(ref: SolutionRef, showWhere: Boolean, onClick: () -> Uni
 
 /** One solution on its own screen. */
 @Composable
-fun SolutionDetailScreen(module: Module, index: Int, onAskTutor: (String) -> Unit, onBack: () -> Unit) {
+fun SolutionDetailScreen(
+    module: Module, index: Int, onAskTutor: (String) -> Unit, onBack: () -> Unit,
+    onOpen: (Int) -> Unit = {}, onHelpful: (Boolean) -> Unit = {},
+) {
     val s = module.solutions.getOrNull(index)
     ParhlouScreen(s?.source ?: "Solution", onBack = onBack) {
         if (s == null) { Muted("This solution is no longer available."); return@ParhlouScreen }
         Muted(module.title)
         SolutionCard(s, "${module.id}-detail-$index", onAskTutor)
+        // Was this helpful? (feedback for improving the course)
+        var voted by rememberSaveable("${module.id}-$index-vote") { mutableStateOf<Boolean?>(null) }
+        Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+            Text(if (voted == null) "Was this solution helpful?" else "Thanks! Your feedback improves Parhlou.",
+                style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+            if (voted == null) {
+                TextButton(onClick = { voted = true; onHelpful(true) }, modifier = Modifier.heightIn(min = 48.dp).testTag("helpful-yes")) { Text("👍 Yes") }
+                TextButton(onClick = { voted = false; onHelpful(false) }, modifier = Modifier.heightIn(min = 48.dp).testTag("helpful-no")) { Text("👎 No") }
+            }
+        }
+        // Similar questions: the rest of the same exercise.
+        val group = solutionGroup(s)
+        val similar = module.solutions.withIndex().filter { (i, x) -> i != index && solutionGroup(x) == group && x.kind == s.kind }.take(5)
+        if (similar.isNotEmpty()) {
+            Text("Similar questions", style = MaterialTheme.typography.titleLarge)
+            similar.forEach { (i, x) ->
+                Card(onClick = { onOpen(i) }, modifier = Modifier.fillMaxWidth().testTag("similar-$i"), shape = RoundedCornerShape(16.dp)) {
+                    Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                        Text(x.source, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
+                        Text(x.question, style = MaterialTheme.typography.bodyLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -187,7 +214,7 @@ private fun StepCard(number: Int, text: String, why: String?, key: String) {
             }
         }
         Column(Modifier.weight(1f)) {
-            Text(text, style = MaterialTheme.typography.bodyLarge)
+            pk.parhlou.student.ui.components.MathText(text, style = MaterialTheme.typography.bodyLarge)
             if (why != null) {
                 if (open) Text("Why: $why", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.secondary)
                 else TextButton(onClick = { open = true }, modifier = Modifier.heightIn(min = 40.dp).testTag("why-$key")) { Text("Why?") }
@@ -204,7 +231,8 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
     Sheet {
         Text(s.source, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
         if (!s.inExam) Muted("Not in this year's exam (smart syllabus) · practice")
-        Text(s.question, style = MaterialTheme.typography.titleMedium)
+        pk.parhlou.student.ui.components.MathText(s.question, style = MaterialTheme.typography.titleMedium)
+        s.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
         if (!s.checked) {
             Text("Answer (from your textbook): ${s.bookAnswer.ifBlank { s.answer }.ifBlank { "see your textbook" }}", style = MaterialTheme.typography.bodyLarge)
             Muted("A step-by-step solution for this question is still being checked. Ask the tutor if you're stuck.")
@@ -226,11 +254,13 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
             ) {
                 Column(Modifier.padding(14.dp)) {
                     Text("Final answer", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
-                    Text(s.answer, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                    pk.parhlou.student.ui.components.MathText(s.answer, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
                 }
             }
             if (s.bookAnswer.isNotBlank()) Text("Book answer: ${s.bookAnswer}", style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
+            if (s.answerFigures.isNotEmpty()) Muted("The book's answer:")
+            s.answerFigures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
             if (s.note.isNotBlank()) Muted(s.note)
         }
         if (onAskTutor != null) TextButton(

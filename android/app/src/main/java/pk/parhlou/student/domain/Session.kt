@@ -24,15 +24,16 @@ sealed interface SessionItem {
         override val instruction = "True or false?"
     }
     data class TypeAnswer(override val id: String, override val noteId: String?, val question: String, val answer: String,
-                          val accept: List<List<String>>, val hint: String?, val solution: List<String>) : SessionItem {
+                          val accept: List<List<String>>, val hint: String?, val solution: List<String>,
+                          val figures: List<String> = emptyList()) : SessionItem {
         override val instruction = "Work it out and type your final answer"
     }
     data class OrderSteps(override val id: String, override val noteId: String?, val question: String, val steps: List<String>,
-                          val shuffled: List<Int>) : SessionItem {
+                          val shuffled: List<Int>, val figures: List<String> = emptyList()) : SessionItem {
         override val instruction = "Put the steps of the solution in order"
     }
     data class NextStep(override val id: String, override val noteId: String?, val question: String, val shown: List<String>,
-                        val options: List<String>, val correct: Int) : SessionItem {
+                        val options: List<String>, val correct: Int, val figures: List<String> = emptyList()) : SessionItem {
         override val instruction = "What is the next step?"
     }
     data class Flashcard(override val id: String, override val noteId: String?, val term: String, val text: String) : SessionItem {
@@ -81,7 +82,7 @@ object SessionBuilder {
         }
         sols.filter { it.kind == SolutionKind.EXERCISE && it.accept.isNotEmpty() && it.steps.size <= 5 && it.inExam }.take(4).forEach { s ->
             pool += SessionItem.TypeAnswer("ty-${module.id}-${s.source}", noteId, "${s.source}: ${s.question}", s.answer, s.accept,
-                s.steps.firstOrNull()?.let { "First step: $it" }, s.steps)
+                s.steps.firstOrNull()?.let { "First step: $it" }, s.steps, s.figures)
         }
         // Order the steps / pick the next step, from worked solutions of 3–6 steps.
         val stepSols = sols.filter { it.steps.size in 3..6 && it.inExam }
@@ -106,7 +107,7 @@ object SessionBuilder {
     private fun orderItem(moduleId: String, s: BookSolution, noteId: String?, rnd: Random): SessionItem.OrderSteps {
         var order = s.steps.indices.shuffled(rnd)
         if (order == s.steps.indices.toList()) order = order.reversed()
-        return SessionItem.OrderSteps("ord-$moduleId-${s.source}", noteId, "${s.source}: ${s.question}", s.steps, order)
+        return SessionItem.OrderSteps("ord-$moduleId-${s.source}", noteId, "${s.source}: ${s.question}", s.steps, order, s.figures)
     }
 
     private fun nextStepItem(moduleId: String, s: BookSolution, others: List<BookSolution>, noteId: String?, rnd: Random): SessionItem.NextStep? {
@@ -115,7 +116,7 @@ object SessionBuilder {
         val wrong = others.filter { it !== s }.flatMap { it.steps }.filter { it != right && it !in s.steps }.distinct().shuffled(rnd).take(2)
         if (wrong.size < 2) return null
         val options = (wrong + right).shuffled(rnd)
-        return SessionItem.NextStep("nx-$moduleId-${s.source}", noteId, "${s.source}: ${s.question}", s.steps.take(k), options, options.indexOf(right))
+        return SessionItem.NextStep("nx-$moduleId-${s.source}", noteId, "${s.source}: ${s.question}", s.steps.take(k), options, options.indexOf(right), s.figures)
     }
 
     /** Marks one answer and explains it. */

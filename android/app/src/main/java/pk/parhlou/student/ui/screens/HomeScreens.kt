@@ -150,6 +150,7 @@ fun HomeScreen(
     /** Opens a guided session: a section id (null = today's pick) and its length in minutes. */
     onStartSession: (String?, Int) -> Unit = { _, _ -> },
     onKit: (String) -> Unit = {},
+    onProgress: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -185,7 +186,10 @@ fun HomeScreen(
         }
 
         val rewards = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis())
-        RewardBar(rewards, Modifier.appear(1))
+        RewardBar(rewards, Modifier.appear(1), onClick = onProgress)
+        val examIn = subjects.firstOrNull()?.let { s -> pk.parhlou.student.domain.ExamCountdown.daysLeft(s.examDate)?.let { it to s.examName } }
+        if (examIn != null) Text("📅 About ${examIn.first} days to your ${examIn.second.ifBlank { "board exam" }}",
+            style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("home-countdown"))
         // Quick actions: tutor, book, scanner
         Row(Modifier.appear(2), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
             Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
@@ -413,6 +417,9 @@ fun ProfileScreen(
     onHistory: () -> Unit = { onPlaceholder("history") },
     versionLabel: String = "",
     onWhatsNew: () -> Unit = {},
+    /** Current reminder setting, e.g. "Every day at 6 pm" or "Off"; tapping cycles through the choices. */
+    reminderLabel: String = "Every day at 6 pm",
+    onReminder: () -> Unit = {},
     accountMessage: String? = null,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
@@ -464,6 +471,7 @@ fun ProfileScreen(
         }
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
+        TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
         TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Coming later", { onPlaceholder("guardian") })
         var confirmDelete by remember { mutableStateOf(false) }
         if (email != null) {

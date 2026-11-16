@@ -319,6 +319,7 @@ const bundle = {
     id: SUBJECT, name: "Mathematics", grade: 9,
     editionLabel: "Mathematics 9 · National Curriculum 2023 · English medium",
     editionVerified: true,
+    examDate: syllabus.examDate, examName: syllabus.examName,
     chapters: units.map((u) => u.chapter),
   },
   notes, quiz, readiness: readiness.slice(0, 12), blueprints, papers, written, mcqs: [],
@@ -333,6 +334,33 @@ if (existsSync(whyFile)) {
     const w = whys[whyKey(c.number, s)];
     if (w && w.length === s.steps.length) s.why = w;
   }
+}
+// Book figures (book-figures.mjs + figure-links.mjs): the diagrams a question needs and the book's answer figures.
+const linksFile = `${ROOT}/figure-links.json`;
+if (existsSync(linksFile)) {
+  const links = JSON.parse(readFileSync(linksFile, "utf8"));
+  const unmark = (t, keep) => t.replace(/\[FIGURE:\s*([^\]]*)\]/g, (_, d) => (keep ? "" : `(Figure: ${d.trim()})`)).replace(/\n{3,}/g, "\n\n").trim();
+  let withFig = 0;
+  for (const c of cleaned.subject.chapters) for (const m of c.modules) for (const s of m.solutions) {
+    const n = c.number;
+    let qf = [], af = [];
+    const ex = /^example\s*(\d+)/i.exec(s.source);
+    if (ex) qf = links.example[`${n}|${ex[1]}`] ?? [];
+    else {
+      const r = /^(?:review\s*ex(?:ercise)?\.?\s*(\d+)|ex(?:ercise)?\.?\s*(\d+(?:\.\d+)?))\s*q\s*(\d+)\s*(?:\(([ivx]+|[a-h])\))?/i.exec(s.source);
+      if (r) {
+        const key = `${n}|${r[1] ? `r${r[1]}` : r[2]}|${r[3]}`;
+        const part = r[4]?.toLowerCase() ?? "";
+        qf = [...(links.question[`${key}|${part}`] ?? []), ...(part ? links.question[`${key}|`] ?? [] : [])];
+        af = [...(links.answer[`${key}|${part}`] ?? []), ...(part ? links.answer[`${key}|`] ?? [] : [])];
+      }
+    }
+    if (qf.length) { s.figures = [...new Set(qf)]; withFig++; }
+    if (af.length) s.answerFigures = [...new Set(af)];
+    s.question = unmark(s.question, qf.length > 0);
+    s.steps = s.steps.map((t) => unmark(t, false));
+  }
+  console.log(`Figures: ${withFig} questions show a book figure`);
 }
 const problems = bundleProblems(cleaned, SUBJECT);
 writeFileSync(OUT, JSON.stringify(cleaned));

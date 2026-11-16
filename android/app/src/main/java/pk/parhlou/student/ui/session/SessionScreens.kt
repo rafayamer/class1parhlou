@@ -186,7 +186,7 @@ private fun FeedbackPanel(fb: Feedback, onAsk: () -> Unit, onContinue: () -> Uni
     Surface(color = color.copy(alpha = 0.14f), modifier = Modifier.fillMaxWidth().testTag(if (fb.correct) "feedback-right" else "feedback-wrong")) {
         Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(fb.title, style = MaterialTheme.typography.headlineSmall, color = color, fontWeight = FontWeight.Bold)
-            fb.correctAnswer?.let { Text("Correct answer: $it", style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.SemiBold) }
+            fb.correctAnswer?.let { pk.parhlou.student.ui.components.MathText("Correct answer: $it", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold)) }
             if (fb.explanation.isNotBlank()) Text(fb.explanation, style = MaterialTheme.typography.bodyMedium)
             Row(verticalAlignment = Alignment.CenterVertically) {
                 TextButton(onClick = onAsk, modifier = Modifier.heightIn(min = 48.dp)) { Text("Ask Ustad") }
@@ -204,7 +204,7 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
     val checked = feedback != null
     when (item) {
         is SessionItem.Mcq -> {
-            Text(item.stem, style = MaterialTheme.typography.titleLarge)
+            pk.parhlou.student.ui.components.MathText(item.stem, style = MaterialTheme.typography.titleLarge)
             item.options.forEachIndexed { i, o ->
                 val chosen = (answer as? SessionAnswer.Choice)?.index == i
                 OptionCard(o, chosen, state = when { !checked -> null; i == item.correct -> true; chosen -> false; else -> null },
@@ -222,7 +222,8 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
             }
         }
         is SessionItem.TypeAnswer -> {
-            Text(item.question, style = MaterialTheme.typography.titleLarge)
+            pk.parhlou.student.ui.components.MathText(item.question, style = MaterialTheme.typography.titleLarge)
+            item.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
             var text by remember(item.id) { mutableStateOf("") }
             var hint by remember(item.id) { mutableStateOf(false) }
             OutlinedTextField(value = text, onValueChange = { text = it; if (it.isNotBlank()) onAnswer(SessionAnswer.Typed(it)) },
@@ -234,7 +235,8 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
             }
         }
         is SessionItem.OrderSteps -> {
-            Text(item.question, style = MaterialTheme.typography.titleMedium)
+            pk.parhlou.student.ui.components.MathText(item.question, style = MaterialTheme.typography.titleMedium)
+            item.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
             var picked by remember(item.id) { mutableStateOf(listOf<Int>()) }
             Text("Your solution", style = MaterialTheme.typography.labelLarge)
             if (picked.isEmpty()) Text("Tap the steps below in the right order.", style = MaterialTheme.typography.bodyMedium,
@@ -256,8 +258,9 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
             }
         }
         is SessionItem.NextStep -> {
-            Text(item.question, style = MaterialTheme.typography.titleMedium)
-            item.shown.forEachIndexed { i, s -> Text("${i + 1}. $s", style = MaterialTheme.typography.bodyLarge) }
+            pk.parhlou.student.ui.components.MathText(item.question, style = MaterialTheme.typography.titleMedium)
+            item.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
+            item.shown.forEachIndexed { i, s -> pk.parhlou.student.ui.components.MathText("${i + 1}. $s", style = MaterialTheme.typography.bodyLarge) }
             Text("${item.shown.size + 1}. ?", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.secondary)
             item.options.forEachIndexed { i, o ->
                 val chosen = (answer as? SessionAnswer.Choice)?.index == i
@@ -308,7 +311,7 @@ private fun OptionCard(text: String, selected: Boolean, state: Boolean?, tag: St
         modifier = modifier.fillMaxWidth().heightIn(min = 56.dp).testTag(tag).graphicsLayer { scaleX = scale; scaleY = scale },
     ) {
         Box(Modifier.padding(horizontal = 16.dp, vertical = 14.dp), contentAlignment = Alignment.CenterStart) {
-            Text(text, style = MaterialTheme.typography.bodyLarge)
+            pk.parhlou.student.ui.components.MathText(text, style = MaterialTheme.typography.bodyLarge)
         }
     }
 }

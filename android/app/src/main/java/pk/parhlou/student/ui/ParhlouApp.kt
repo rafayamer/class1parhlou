@@ -48,6 +48,7 @@ import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SolutionsFinderScreen
 import pk.parhlou.student.ui.screens.ExamKitScreen
 import pk.parhlou.student.ui.screens.todaysModule
+import pk.parhlou.student.ui.screens.ProgressScreen
 import pk.parhlou.student.ui.session.SessionScreen
 import pk.parhlou.student.domain.SessionBuilder
 import pk.parhlou.student.domain.Evidence
@@ -128,6 +129,7 @@ object Routes {
     const val SOLUTIONS = "solutions"
     const val KIT = "kit/{id}"
     const val WHATS_NEW = "whats-new"
+    const val PROGRESS = "progress"
     /** A guided session; module "today" = today's pick. */
     const val SESSION = "session/{module}?min={min}"
     const val SOLUTION = "solution/{module}/{index}"
@@ -170,6 +172,7 @@ fun ParhlouApp(
         return
     }
     val nav = rememberNavController()
+    val reminderHour by store.reminderHour.collectAsState(initial = 18)
     // After an update, "What's new" opens once by itself (a fresh install starts with onboarding instead).
     if (currentBuild > 0) {
         val seen by store.seenBuild.collectAsState(initial = -1)
@@ -313,6 +316,7 @@ fun ParhlouApp(
                 onSolutions = { nav.navigate(Routes.SOLUTIONS) },
                 onStartSession = { m, min -> nav.navigate("session/${m ?: "today"}?min=$min") },
                 onKit = { nav.navigate("kit/$it") },
+                onProgress = { nav.navigate(Routes.PROGRESS) },
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -371,6 +375,12 @@ fun ParhlouApp(
                 onHistory = { nav.navigate(Routes.HISTORY) },
                 versionLabel = versionLabel,
                 onWhatsNew = { nav.navigate(Routes.WHATS_NEW) },
+                reminderLabel = if (reminderHour < 0) "Off" else "Every day at ${hourLabel(reminderHour)}",
+                onReminder = {
+                    val next = REMINDER_CHOICES[(REMINDER_CHOICES.indexOf(reminderHour) + 1) % REMINDER_CHOICES.size]
+                    scope.launch { store.setReminderHour(next) }
+                    runCatching { pk.parhlou.student.update.ReminderWorker.schedule(context.applicationContext, next) }
+                },
                 accountMessage = accountMessage,
             )
         } }
@@ -418,6 +428,11 @@ fun ParhlouApp(
                 )
             }
         }
+        composable(Routes.PROGRESS) {
+            val s = subjects.firstOrNull()
+            ProgressScreen(Rewards.summary(progress.history(), state.minutesPerDay, System.currentTimeMillis()),
+                s?.let { pk.parhlou.student.domain.ExamCountdown.daysLeft(it.examDate) }, s?.examName.orEmpty(), onBack = nav.back())
+        }
         composable(Routes.WHATS_NEW) {
             val context = LocalContext.current
             WhatsNewScreen(remember { WhatsNew.load(context) }, versionLabel, onDone = { nav.popBackStack() })
@@ -432,6 +447,10 @@ fun ParhlouApp(
                 module, index,
                 onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
                 onBack = nav.back(),
+                onOpen = { i -> nav.navigate("solution/${module.id}/$i") },
+                onHelpful = { yes ->
+                    progress.add("sol:${module.id}:${module.solutions.getOrNull(index)?.source.orEmpty()}", Evidence.Helpful(if (yes) 1 else 0))
+                },
             )
         }
         composable(Routes.SUBJECT) { entry ->
@@ -554,3 +573,7 @@ private fun NavHostController.back(): () -> Unit = { popBackStack() }
 @Composable
 private fun Missing(nav: NavHostController) =
     PlaceholderScreen("Not found", "This item isn't available for your board and class.", onBack = { nav.popBackStack() })
+
+/** Daily reminder choices, cycled by tapping the Profile row: 4, 6, 8 and 9 pm, or off. */
+private val REMINDER_CHOICES = listOf(16, 18, 20, 21, -1)
+private fun hourLabel(h: Int) = "${if (h % 12 == 0) 12 else h % 12} ${if (h < 12) "am" else "pm"}"

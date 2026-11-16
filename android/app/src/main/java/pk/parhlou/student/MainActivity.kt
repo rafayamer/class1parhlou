@@ -73,6 +73,10 @@ class MainActivity : ComponentActivity() {
         }
         if (savedInstanceState == null) handleSignInLink(intent)
         UpdateWorker.schedule(applicationContext)
+        // The daily study reminder, at the hour chosen in Profile (6 pm unless changed).
+        lifecycleScope.launch {
+            runCatching { pk.parhlou.student.update.ReminderWorker.schedule(applicationContext, store.reminderHour.first()) }
+        }
         val account = account
         setContent {
             ParhlouTheme { ProvideMotion {

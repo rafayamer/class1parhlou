@@ -14,5 +14,6 @@ Every instruction the founder has given, and where it is delivered. "Update 1", 
 | "Personal tutor feel" | Done | Update 2: Ustad greets you with today's plan, guides every session and cheers at the end; "Ask Ustad" on every answer |
 | "Responsive and interactive" | Done | Update 2: instant feedback, animations, haptics, sounds, confetti. Update 3: tap-everything test (found and fixed dead buttons) |
 | "Real board-like marking assessment" | Done | Update 3: two-part board timing (MCQs 20 min, then subjective); marked script with ticks per marking point, total, grade band and examiner's remarks |
+| "What do you think is missing" | Round 1 done | Update 4: book diagrams (303), maths typesetting, daily reminder, exam countdown, progress screen and badges, similar questions, "Was this helpful?", lighter bar on low-end phones. Rounds 2–5 planned (bite-size lessons, Urdu, past papers, videos, parents and payments) |
 | Upgrade the existing app, do not rebuild (15 Nov brief) | Done | `docs/upgrade-map.md` |
 | Publish the course to students | Waiting for the owner | The full course is saved as a draft. In the owner panel: Content → pb-9-math → **Publish** (automated publishing is blocked by a safety check) |

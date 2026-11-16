@@ -59,7 +59,7 @@ fun ExamKitScreen(chapter: Chapter, onOpenSolution: (moduleId: String, index: In
         if (kit.formulas.isNotEmpty()) KitSection("Formula sheet", null) {
             kit.formulas.forEach { f ->
                 Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                    Text(f.formula, style = MaterialTheme.typography.titleMedium)
+                    pk.parhlou.student.ui.components.MathText(f.formula, style = MaterialTheme.typography.titleMedium)
                     if (f.use.isNotBlank()) Muted(f.use)
                 }
             }

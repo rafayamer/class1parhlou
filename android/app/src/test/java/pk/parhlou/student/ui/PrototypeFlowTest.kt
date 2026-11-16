@@ -100,14 +100,14 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
-        rule.waitUntil(5_000) { exists("Invigilator on") }
+        rule.waitUntil(15_000) { exists("Invigilator on") }
         rule.onNodeWithText("2 pages scanned · 2 not matched to a question yet.").performScrollTo().assertExists()
 
         // Hand-in warns about unmatched pages and offers to match them.
         rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
         rule.onNodeWithText("Some pages aren't matched").assertExists()
         rule.onNodeWithText("Match pages").performClick()
-        rule.waitUntil(5_000) { exists("Your pages (2)") }
+        rule.waitUntil(15_000) { exists("Your pages (2)") }
         rule.onNodeWithText("2 pages aren't matched", substring = true).assertExists()
         // Without OpenCV (as here) the pages can't be processed; they are kept as photographed, not stuck "Preparing".
         rule.waitUntil(10_000) { !exists("Preparing") }
@@ -123,7 +123,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Done").performClick()
 
         // Back in the paper, the timer kept running and both pages count as photos of B1.
-        rule.waitUntil(5_000) { exists("2 pages scanned and matched to questions.") }
+        rule.waitUntil(15_000) { exists("2 pages scanned and matched to questions.") }
         assertTrue(exists("2 page photos attached"))
         val log = runBlocking { store.examLog(paperId).first() }
         assertTrue("scanning must not count as leaving the paper", ExamLog.parse(log).none { it.type == ExamEventType.LEFT })

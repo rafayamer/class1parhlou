@@ -3,6 +3,8 @@ package pk.parhlou.student.ui.screens
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.clickable
+import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -71,8 +73,9 @@ fun todaysModule(subjects: List<Subject>, progress: ProgressStore): Module? {
 
 /** Streak, today's XP against the goal, and level, at the top of Home. */
 @Composable
-fun RewardBar(r: RewardSummary, modifier: Modifier = Modifier) {
-    Row(modifier.fillMaxWidth().testTag("reward-bar"), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+fun RewardBar(r: RewardSummary, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
+    Row(modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).clickable(onClickLabel = "Open your progress", onClick = onClick).testTag("reward-bar"),
+        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         Chip("🔥", "${r.streakDays}", if (r.streakDays == 1) "day streak" else "day streak", if (r.studiedToday) Flame else MaterialTheme.colorScheme.outline,
             "${r.streakDays} day streak" + if (r.freezes > 0) ", ${r.freezes} streak freeze" + (if (r.freezes > 1) "s" else "") else "", Modifier.weight(1f))
         Chip("⚡", "${r.xpToday}/${r.dailyGoalXp}", if (r.goalMet) "goal met!" else "XP today", Gold,

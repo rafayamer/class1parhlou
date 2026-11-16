@@ -66,6 +66,18 @@ val LocalBottomBarSpace = compositionLocalOf { 0.dp }
 val LocalReducedMotion = staticCompositionLocalOf { false }
 
 @Composable
+fun rememberLowEndDevice(): Boolean {
+    val context = LocalContext.current
+    return remember {
+        runCatching {
+            val am = context.getSystemService(android.app.ActivityManager::class.java)
+            val info = android.app.ActivityManager.MemoryInfo().also { am.getMemoryInfo(it) }
+            am.isLowRamDevice || am.memoryClass <= 192 || info.totalMem in 1 until 3_200_000_000L
+        }.getOrDefault(false)
+    }
+}
+
+@Composable
 fun rememberReducedMotion(): Boolean {
     val context = LocalContext.current
     return remember {
@@ -97,6 +109,9 @@ fun Modifier.pressScale(interaction: MutableInteractionSource, pressed: Float = 
 fun Modifier.glassCapsule(backdrop: PrismalBackdrop): Modifier {
     val density = LocalDensity.current
     val tint = MaterialTheme.colorScheme.surface.copy(alpha = 0.82f) // opaque enough to keep the title readable over text
+    // Phones with little memory get a plain frosted capsule: the live blur is the costliest thing the app draws.
+    if (rememberLowEndDevice()) return this.then(
+        Modifier.clip(CircleShape).background(MaterialTheme.colorScheme.surface.copy(alpha = 0.96f)))
     return drawPrismalGlass(
         backdrop = backdrop,
         shape = { PrismalCapsule() },

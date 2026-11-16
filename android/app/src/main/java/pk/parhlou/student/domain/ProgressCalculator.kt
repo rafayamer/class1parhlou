@@ -32,6 +32,8 @@ sealed interface Evidence {
     data object TopicCorrect : Evidence
     /** A guided practice session finished, with the XP it earned (rewards only; never counts as verified progress). */
     data class SessionCompleted(val xp: Int) : Evidence
+    /** "Was this helpful?" on a solution: 1 = yes, 0 = no (feedback for the owner; no effect on progress). */
+    data class Helpful(val yes: Int) : Evidence
 }
 
 /**

@@ -23,6 +23,9 @@ data class Subject(
     val editionLabel: String,
     val editionVerified: Boolean,
     val chapters: List<Chapter>,
+    /** Approximate start of the board exam this course prepares for (ISO date), and its name, e.g. "2027 board exam". */
+    val examDate: String = "",
+    val examName: String = "",
 )
 
 data class Chapter(
@@ -101,6 +104,10 @@ data class BookSolution(
     val inExam: Boolean = true,
     /** One short reason per step ("why this step"), same length as [steps] when present. */
     val why: List<String> = emptyList(),
+    /** Book figures the question needs (ids of images shipped in assets/figures). */
+    val figures: List<String> = emptyList(),
+    /** The book's own answer figure (a number line, graph or construction), when it prints one. */
+    val answerFigures: List<String> = emptyList(),
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */
