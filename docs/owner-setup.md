@@ -8,8 +8,7 @@ These steps are done once by the owner. The automatic safety rules stop the assi
 2. **Save it in GitHub:** open https://github.com/rafayamer/class1parhlou/settings/secrets/actions/new
    - **Name:** `SUPABASE_ACCESS_TOKEN`
    - **Secret:** paste the token → **Add secret**.
-3. **Run the deploy:** open https://github.com/rafayamer/class1parhlou/actions/workflows/deploy-ai.yml → **Run workflow** → branch `claude/confident-planck-dn7fy2` → **Run workflow**. Wait for the green tick (about 1 minute).
-   - From then on, every AI change I push deploys itself.
+3. **Tell me "secret added".** I'll push the next AI change, and GitHub deploys it by itself; watch it at https://github.com/rafayamer/class1parhlou/actions/workflows/deploy-ai.yml (a green tick means it worked). From then on, every AI change deploys itself. (GitHub only shows a "Run workflow" button for workflows on the main branch, and this work is on the `claude/confident-planck-dn7fy2` branch.)
 4. **Check it:** open https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/functions. The function **ai** shows a new version, updated just now.
 
 ## Step 2: Apply the small database change (2 minutes, optional but recommended)
