@@ -72,7 +72,7 @@ export const READ_SCHEMA = obj({ readable: { type: "boolean" }, question: str })
 const num = { type: "number" };
 const point = obj({ x: num, y: num, label: str });
 export const FIGURE_SCHEMA = obj({
-  kind: { type: "string", enum: ["none", "graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table"] },
+  kind: { type: "string", enum: ["none", "graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table", "forces", "circuit"] },
   title: str,
   description: str,
   functions: { type: "array", items: str },
@@ -91,6 +91,9 @@ export const FIGURE_SCHEMA = obj({
   values: { type: "array", items: num },
   headers: { type: "array", items: str },
   rows: { type: "array", items: { type: "array", items: str } },
+  forces: { type: "array", items: obj({ label: str, angle: num, size: num }) },
+  components: { type: "array", items: obj({ type: { type: "string", enum: ["cell", "battery", "resistor", "bulb", "switch", "ammeter", "voltmeter", "coil"] }, label: str }) },
+  arrangement: { type: "string", enum: ["series", "parallel"] },
 });
 
 export const USTAAD_SCHEMA = obj({
@@ -315,6 +318,10 @@ HOW TO ANSWER
     lists of point labels, angles at a point label (right = true for a right angle), circles (centre label, radius).
   venn: up to 3 sets with the elements only in each, both = elements in all of them, outside = rest of the universal set.
   bar / pie: categories with values. table: headers and rows.
+  forces (physics): a free-body or vector diagram: forces as arrows from the body, each with a label ("W = 20 N"), angle in degrees
+    from the +x axis (up = 90, down = 270) and size (relative lengths).
+  circuit (physics): components in order (cell, battery, resistor, bulb, switch, ammeter, voltmeter, coil, each with a label like
+    "2 Ω"), arrangement series or parallel (in parallel, the cell or battery first, then one component per branch).
   title: a short caption; description: one sentence saying what the figure shows (for screen readers).
 - Language: ${t.language}. Style: ${t.style}. Use the student's name sometimes. Never mention any book, website or teacher by name.
 - Be correct above all. Show formulas, substitutions and units. If unsure, say so; never invent textbook pages or past-paper claims.

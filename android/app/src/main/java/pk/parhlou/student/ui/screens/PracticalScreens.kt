@@ -29,13 +29,17 @@ fun PracticalScreen(p: Practical, onBack: () -> Unit, onPrint: (() -> Unit)? = n
         if (!p.checked) {
             Sheet(Modifier.testTag("practical-book")) {
                 Text("In your book", style = MaterialTheme.typography.titleMedium)
+                p.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
                 MathText(p.bookText, style = MaterialTheme.typography.bodyLarge)
             }
             return@ParhlouScreen
         }
         Part("🎯 Aim") { Text(p.aim, style = MaterialTheme.typography.bodyLarge) }
         if (p.apparatus.isNotEmpty()) Part("🧰 Apparatus") { p.apparatus.forEach { Text("• $it", style = MaterialTheme.typography.bodyLarge) } }
-        if (p.diagram.isNotBlank()) Part("✏️ Diagram") { Muted("Draw and label: ${p.diagram}") }
+        if (p.diagram.isNotBlank() || p.figures.isNotEmpty()) Part("✏️ Diagram") {
+            p.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
+            if (p.diagram.isNotBlank()) Muted("Draw and label: ${p.diagram}")
+        }
         Part("📋 Procedure") { p.procedure.forEachIndexed { i, s -> MathText("${i + 1}. $s", style = MaterialTheme.typography.bodyLarge) } }
         if (p.columns.isNotEmpty()) Part("📊 Observations") { ObservationTable(p.columns, p.rows) }
         if (p.calculation.isNotEmpty()) Part("🧮 Calculation") { p.calculation.forEach { MathText(it, style = MaterialTheme.typography.bodyLarge) } }

@@ -1,7 +1,8 @@
 // Figures in Ask Ustaad answers: the model describes a figure as data, the app draws it exactly.
 // This checks a figure before it leaves the server. A figure that doesn't make sense is dropped, never sent half-broken.
 
-export type FigureKind = "graph" | "number_line" | "coordinate" | "geometry" | "venn" | "bar" | "pie" | "table";
+export type FigureKind = "graph" | "number_line" | "coordinate" | "geometry" | "venn" | "bar" | "pie" | "table" | "forces" | "circuit";
+export type Part = "cell" | "battery" | "resistor" | "bulb" | "switch" | "ammeter" | "voltmeter" | "coil";
 export interface Figure {
   kind: FigureKind; title: string; description: string;
   functions: string[]; shade: { expression: string; side: "above" | "below"; strict: boolean } | null;
@@ -15,9 +16,15 @@ export interface Figure {
   sets: { name: string; only: string[] }[]; both: string[]; outside: string[];
   categories: string[]; values: number[];
   headers: string[]; rows: string[][];
+  /** forces: arrows on a body (free-body diagram, vectors): angle in degrees from the +x axis, size relative to the largest. */
+  forces: { label: string; angle: number; size: number }[];
+  /** circuit: components in order around a series loop, or one per branch in parallel (the cell/battery first, outside the branches). */
+  components: { type: Part; label: string }[];
+  arrangement: "series" | "parallel";
 }
+const PARTS: Part[] = ["cell", "battery", "resistor", "bulb", "switch", "ammeter", "voltmeter", "coil"];
 
-const KINDS: FigureKind[] = ["graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table"];
+const KINDS: FigureKind[] = ["graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table", "forces", "circuit"];
 /** Expressions may only use x, numbers, + − * / ^ ( ) and these functions; anything else is refused. */
 const FUNCS = ["sqrt", "abs", "sin", "cos", "tan", "log", "ln", "exp"];
 
@@ -64,6 +71,11 @@ export function toFigure(raw: any): Figure | null {
     both: strs(raw.both, 12, 10), outside: strs(raw.outside, 12, 10),
     categories: strs(raw.categories, 12, 20), values: (Array.isArray(raw.values) ? raw.values : []).filter((v: unknown) => fin(v, -1e6, 1e6)).slice(0, 12),
     headers: strs(raw.headers, 6, 24), rows: (Array.isArray(raw.rows) ? raw.rows : []).slice(0, 12).map((r: unknown) => strs(r, 6, 24)),
+    forces: (Array.isArray(raw.forces) ? raw.forces : []).filter((f: any) => f && fin(f.angle, -360, 360) && fin(f.size, 0.05, 1e6)).slice(0, 6)
+      .map((f: any) => ({ label: str(f.label, 16), angle: f.angle, size: f.size })),
+    components: (Array.isArray(raw.components) ? raw.components : []).filter((c: any) => c && PARTS.includes(c.type)).slice(0, 8)
+      .map((c: any) => ({ type: c.type as Part, label: str(c.label, 12) })),
+    arrangement: raw.arrangement === "parallel" ? "parallel" : "series",
   };
   const sh = raw.shade;
   if (sh && (sh.side === "above" || sh.side === "below")) {
@@ -80,6 +92,9 @@ export function toFigure(raw: any): Figure | null {
     bar: f.categories.length >= 1 && f.categories.length === f.values.length,
     pie: f.categories.length >= 1 && f.categories.length === f.values.length && f.values.every((v) => v >= 0) && f.values.some((v) => v > 0),
     table: f.headers.length >= 1 && f.rows.length >= 1,
+    forces: f.forces.length >= 1,
+    // A circuit needs a source and something to drive.
+    circuit: f.components.some((c) => c.type === "cell" || c.type === "battery") && f.components.some((c) => c.type !== "cell" && c.type !== "battery" && c.type !== "switch"),
   }[k];
   return ok ? f : null;
 }

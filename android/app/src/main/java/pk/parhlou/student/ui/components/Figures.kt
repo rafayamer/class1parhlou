@@ -61,7 +61,11 @@ data class FigureSpec(
     val points: List<Pt>, val segments: List<Seg>, val polygons: List<List<String>>, val angles: List<Ang>, val circles: List<Circ>,
     val intervals: List<Interval>, val sets: List<VennSet>, val both: List<String>, val outside: List<String>,
     val categories: List<String>, val values: List<Double>, val headers: List<String>, val rows: List<List<String>>,
+    /** Physics: arrows on a body (angle in degrees from +x, relative size), and circuit components. */
+    val forces: List<Force> = emptyList(), val components: List<Part> = emptyList(), val parallel: Boolean = false,
 ) {
+    data class Force(val label: String, val angle: Double, val size: Double)
+    data class Part(val type: String, val label: String)
     data class Shade(val expression: String, val above: Boolean, val strict: Boolean)
     data class Pt(val x: Double, val y: Double, val label: String)
     data class Seg(val from: String, val to: String, val label: String)
@@ -77,7 +81,7 @@ data class FigureSpec(
         fun parse(j: JSONObject?): FigureSpec? = runCatching {
             j ?: return null
             val kind = j.getString("kind")
-            if (kind !in setOf("graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table")) return null
+            if (kind !in setOf("graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table", "forces", "circuit")) return null
             FigureSpec(
                 kind, j.optString("title"), j.optString("description"),
                 j.optJSONArray("functions").strings(),
@@ -93,6 +97,9 @@ data class FigureSpec(
                 j.optJSONArray("both").strings(), j.optJSONArray("outside").strings(),
                 j.optJSONArray("categories").strings(), j.optJSONArray("values")?.let { a -> List(a.length()) { a.getDouble(it) } }.orEmpty(),
                 j.optJSONArray("headers").strings(), j.optJSONArray("rows")?.let { a -> List(a.length()) { a.optJSONArray(it).strings() } }.orEmpty(),
+                j.optJSONArray("forces").objects().map { Force(it.optString("label"), it.getDouble("angle"), it.getDouble("size")) },
+                j.optJSONArray("components").objects().map { Part(it.getString("type"), it.optString("label")) },
+                j.optString("arrangement") == "parallel",
             )
         }.getOrNull()
     }
@@ -120,6 +127,8 @@ fun FigureView(f: FigureSpec, modifier: Modifier = Modifier) {
             "pie" -> Canvas(Modifier.fillMaxWidth().height(220.dp)) { pie(f, c, measurer) }
             "venn" -> Canvas(Modifier.fillMaxWidth().aspectRatio(1.35f)) { venn(f, c, measurer) }
             "geometry" -> Canvas(Modifier.fillMaxWidth().aspectRatio(1.2f)) { geometry(f, c, measurer) }
+            "forces" -> Canvas(Modifier.fillMaxWidth().aspectRatio(1.2f)) { forces(f, c, measurer) }
+            "circuit" -> Canvas(Modifier.fillMaxWidth().aspectRatio(1.5f)) { circuit(f, c, measurer) }
             else -> Canvas(Modifier.fillMaxWidth().aspectRatio(1f)) { plane(f, c, measurer) }
         }
     }
@@ -396,3 +405,112 @@ private fun fmt(v: Double): String = if (abs(v - Math.round(v)) < 1e-9) Math.rou
 
 private operator fun Offset.div(d: Float) = Offset(x / d, y / d)
 @Suppress("unused") private fun Rect.unused() = Unit
+
+// ── Physics ─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+/** A free-body (or vector) diagram: the body in the middle and each force as a labelled arrow. */
+private fun DrawScope.forces(f: FigureSpec, c: Colors, m: TextMeasurer) {
+    val centre = Offset(size.width / 2, size.height / 2)
+    val half = minOf(size.width, size.height) * 0.09f
+    drawRect(c.muted.copy(alpha = 0.18f), Offset(centre.x - half, centre.y - half), Size(half * 2, half * 2))
+    drawRect(c.ink, Offset(centre.x - half, centre.y - half), Size(half * 2, half * 2), style = Stroke(3f))
+    val biggest = f.forces.maxOf { it.size }.takeIf { it > 0 } ?: 1.0
+    val reach = minOf(size.width, size.height) * 0.42f
+    f.forces.forEachIndexed { i, force ->
+        val a = Math.toRadians(force.angle)
+        val dir = Offset(kotlin.math.cos(a).toFloat(), -kotlin.math.sin(a).toFloat())
+        val start = centre + dir * half
+        // Lengths follow the sizes, but even a small force is long enough to read.
+        val len = half + (reach - half) * (0.35f + 0.65f * (force.size / biggest).toFloat())
+        val tip = centre + dir * len
+        val colour = c.series[i % c.series.size]
+        drawLine(colour, start, tip, strokeWidth = 5f)
+        val back = dir * -16f
+        val side = Offset(-dir.y, dir.x) * 9f
+        drawPath(Path().apply { moveTo(tip.x, tip.y); lineTo(tip.x + back.x + side.x, tip.y + back.y + side.y); lineTo(tip.x + back.x - side.x, tip.y + back.y - side.y); close() }, colour)
+        // Sideways arrows need room for the label's width.
+        if (force.label.isNotBlank()) label(m, force.label, tip + dir * (18f + 34f * kotlin.math.abs(dir.x)), c.ink, 13, bold = true, center = true)
+    }
+}
+
+/** A circuit diagram: a series loop, or the source with one component per parallel branch. */
+private fun DrawScope.circuit(f: FigureSpec, c: Colors, m: TextMeasurer) {
+    val w = size.width; val h = size.height
+    val wire = { a: Offset, b: Offset -> drawLine(c.ink, a, b, strokeWidth = 3f) }
+    val source = f.components.filter { it.type == "cell" || it.type == "battery" }
+    val others = f.components.filter { it.type != "cell" && it.type != "battery" }
+    val left = w * 0.1f; val right = w * 0.9f; val top = h * 0.18f; val bottom = h * 0.85f
+    if (!f.parallel) {
+        // Source on the bottom wire, everything else spread along the top and the right side.
+        val ordered = source + others
+        val topParts = ordered.drop(source.size).let { it.take(maxOf(1, (it.size + 1) / 2)) }
+        val sideParts = ordered.drop(source.size + topParts.size)
+        wire(Offset(left, top), Offset(right, top)); wire(Offset(right, top), Offset(right, bottom))
+        wire(Offset(right, bottom), Offset(left, bottom)); wire(Offset(left, bottom), Offset(left, top))
+        source.forEachIndexed { i, p -> part(p, Offset(left + (right - left) * (i + 1) / (source.size + 1), bottom), false, c, m) }
+        topParts.forEachIndexed { i, p -> part(p, Offset(left + (right - left) * (i + 1) / (topParts.size + 1), top), false, c, m) }
+        sideParts.forEachIndexed { i, p -> part(p, Offset(right, top + (bottom - top) * (i + 1) / (sideParts.size + 1)), true, c, m) }
+    } else {
+        // Source on the left; each other component on its own branch between two rails.
+        val railL = w * 0.32f
+        val n0 = maxOf(1, others.size)
+        val lastX = railL + (right - railL) * (n0 - 0.5f) / n0
+        wire(Offset(left, top), Offset(lastX, top)); wire(Offset(left, bottom), Offset(lastX, bottom))
+        wire(Offset(left, top), Offset(left, bottom))
+        source.forEachIndexed { i, p -> part(p, Offset(left, top + (bottom - top) * (i + 1) / (source.size + 1)), true, c, m) }
+        val n = maxOf(1, others.size)
+        others.forEachIndexed { i, p ->
+            val x = railL + (right - railL) * (i + 0.5f) / n
+            wire(Offset(x, top), Offset(x, bottom))
+            part(p, Offset(x, (top + bottom) / 2), true, c, m)
+        }
+    }
+}
+
+/** One circuit symbol centred on a wire (the wire is hidden under it); vertical = the wire runs up and down. */
+private fun DrawScope.part(p: FigureSpec.Part, at: Offset, vertical: Boolean, c: Colors, m: TextMeasurer) {
+    val bg = Color.White
+    val s = minOf(size.width, size.height) * 0.07f
+    fun pt(along: Float, across: Float) = if (vertical) Offset(at.x + across, at.y + along) else Offset(at.x + along, at.y + across)
+    val gap = when (p.type) { "battery" -> s * 1.3f; "resistor", "coil" -> s * 1.2f; else -> s }
+    // Clear the wire under the symbol.
+    drawLine(bg, pt(-gap, 0f), pt(gap, 0f), strokeWidth = 6f)
+    val ink = c.ink
+    when (p.type) {
+        "cell", "battery" -> {
+            val cells = if (p.type == "battery") 2 else 1
+            for (k in 0 until cells) {
+                val o = (k - (cells - 1) / 2f) * s * 0.9f
+                drawLine(bg, pt(o - s * 0.3f, 0f), pt(o + s * 0.3f, 0f), strokeWidth = 8f)
+                drawLine(ink, pt(o - s * 0.25f, -s * 0.8f), pt(o - s * 0.25f, s * 0.8f), strokeWidth = 4f)   // long plate (+)
+                drawLine(ink, pt(o + s * 0.25f, -s * 0.4f), pt(o + s * 0.25f, s * 0.4f), strokeWidth = 7f)     // short plate (−)
+            }
+            drawLine(ink, pt(-gap, 0f), pt(-s * 0.25f - (cells - 1) * s * 0.45f, 0f), strokeWidth = 3f)
+            drawLine(ink, pt(s * 0.25f + (cells - 1) * s * 0.45f, 0f), pt(gap, 0f), strokeWidth = 3f)
+        }
+        "resistor" -> {
+            val r = if (vertical) Rect(at.x - s * 0.35f, at.y - s, at.x + s * 0.35f, at.y + s) else Rect(at.x - s, at.y - s * 0.35f, at.x + s, at.y + s * 0.35f)
+            drawRect(bg, r.topLeft, r.size); drawRect(ink, r.topLeft, r.size, style = Stroke(3f))
+            drawLine(ink, pt(-gap, 0f), pt(-s, 0f), strokeWidth = 3f); drawLine(ink, pt(s, 0f), pt(gap, 0f), strokeWidth = 3f)
+        }
+        "coil" -> {
+            for (k in 0 until 4) drawArc(ink, 180f, 180f, false, topLeft = pt(-s + k * s * 0.5f, -s * 0.3f).let { if (vertical) Offset(at.x - s * 0.3f, it.y) else it },
+                size = if (vertical) Size(s * 0.6f, s * 0.5f) else Size(s * 0.5f, s * 0.6f), style = Stroke(3f))
+            drawLine(ink, pt(-gap, 0f), pt(-s, 0f), strokeWidth = 3f); drawLine(ink, pt(s, 0f), pt(gap, 0f), strokeWidth = 3f)
+        }
+        "switch" -> {
+            drawCircle(ink, 4f, pt(-s * 0.7f, 0f)); drawCircle(ink, 4f, pt(s * 0.7f, 0f))
+            drawLine(ink, pt(-s * 0.7f, 0f), pt(s * 0.6f, -s * 0.55f), strokeWidth = 3f)
+            drawLine(ink, pt(-gap, 0f), pt(-s * 0.7f, 0f), strokeWidth = 3f); drawLine(ink, pt(s * 0.7f, 0f), pt(gap, 0f), strokeWidth = 3f)
+        }
+        else -> { // bulb, ammeter, voltmeter: a circle
+            drawCircle(bg, s * 0.62f, at); drawCircle(ink, s * 0.62f, at, style = Stroke(3f))
+            when (p.type) {
+                "bulb" -> { val d = s * 0.42f; drawLine(ink, Offset(at.x - d, at.y - d), Offset(at.x + d, at.y + d), strokeWidth = 3f); drawLine(ink, Offset(at.x - d, at.y + d), Offset(at.x + d, at.y - d), strokeWidth = 3f) }
+                "ammeter" -> label(m, "A", at, ink, 15, bold = true, center = true)
+                "voltmeter" -> label(m, "V", at, ink, 15, bold = true, center = true)
+            }
+        }
+    }
+    if (p.label.isNotBlank()) label(m, p.label, if (vertical) Offset(at.x + s + 16f, at.y) else Offset(at.x, at.y - s - 14f), c.ink, 12, center = true)
+}

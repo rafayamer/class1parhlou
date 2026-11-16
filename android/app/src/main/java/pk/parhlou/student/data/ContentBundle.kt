@@ -110,6 +110,7 @@ object ContentBundle {
         precautions = p.optJSONArray("precautions")?.strings().orEmpty(),
         viva = p.optJSONArray("viva")?.list { v -> v.optString("question") to v.optString("answer") }.orEmpty(),
         bookText = p.optString("bookText"), checked = p.optBoolean("checked"), inExam = p.optBoolean("inExam", true),
+        figures = p.optJSONArray("figures")?.strings().orEmpty(),
     )
 
     private fun readModule(m: JSONObject) = Module(

@@ -51,6 +51,8 @@ data class Practical(
     /** False when the write-up could not be checked: then only the book's text is shown. */
     val checked: Boolean,
     val inExam: Boolean,
+    /** The book's figures for this activity (asset ids). */
+    val figures: List<String> = emptyList(),
 )
 
 data class Chapter(

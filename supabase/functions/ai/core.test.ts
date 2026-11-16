@@ -456,3 +456,13 @@ test("memory: Ustaad's notes never keep contact details and stay short", async (
   const out = await updateMemory("Shy in tests.", [{ role: "student", text: "I want an A+" }], fakeFetch([reply({ summary: "Wants an A+. Shy in tests." })]), "k");
   assert.equal(out.summary, "Wants an A+. Shy in tests.");
 });
+
+test("physics figures: forces and circuits are checked before they reach the app", async () => {
+  const { toFigure } = await import("./figure.ts");
+  const fbd = toFigure({ kind: "forces", title: "Box on a table", forces: [{ label: "W = 20 N", angle: 270, size: 20 }, { label: "R = 20 N", angle: 90, size: 20 }, { label: "bad", angle: 9999, size: 1 }] });
+  assert.equal(fbd?.forces.length, 2);
+  const series = toFigure({ kind: "circuit", components: [{ type: "battery", label: "6 V" }, { type: "resistor", label: "2 Ω" }, { type: "ammeter", label: "" }, { type: "laser", label: "x" }], arrangement: "series" });
+  assert.equal(series?.components.map((c) => c.type).join(","), "battery,resistor,ammeter");
+  assert.equal(toFigure({ kind: "circuit", components: [{ type: "resistor", label: "2 Ω" }] }), null, "no source: not drawn");
+  assert.equal(toFigure({ kind: "forces", forces: [] }), null);
+});

@@ -98,6 +98,38 @@ class FiguresAndSoundsTest {
         }
     }
 
+    private val physicsFigures = listOf(
+        """{"kind":"forces","title":"Book resting on a table","forces":[{"label":"W = 20 N","angle":270,"size":20},{"label":"R = 20 N","angle":90,"size":20},{"label":"F = 5 N","angle":0,"size":5}]}""",
+        """{"kind":"circuit","title":"Series circuit","components":[{"type":"battery","label":"6 V"},{"type":"switch","label":""},{"type":"resistor","label":"2 Ω"},{"type":"bulb","label":""},{"type":"ammeter","label":""}],"arrangement":"series"}""",
+        """{"kind":"circuit","title":"Parallel circuit","components":[{"type":"cell","label":"1.5 V"},{"type":"bulb","label":"L1"},{"type":"bulb","label":"L2"},{"type":"voltmeter","label":""}],"arrangement":"parallel"}""",
+    )
+
+    @Test fun physicsDiagramsAreDrawn() {
+        val specs = physicsFigures.map { FigureSpec.parse(JSONObject(it)) }
+        specs.forEach { assertNotNull(it) }
+        assertEquals(3, specs[0]!!.forces.size)
+        assertTrue(specs[2]!!.parallel)
+        val dir = System.getProperty("parhlou.screenshotDir")
+        var dark by androidx.compose.runtime.mutableStateOf(false)
+        rule.setContent {
+            ParhlouTheme(dark = dark) {
+                Surface { Column(Modifier.width(380.dp).verticalScroll(rememberScrollState()).padding(12.dp)) { specs.forEach { FigureView(it!!, Modifier.padding(bottom = 12.dp)) } } }
+            }
+        }
+        for (d in listOf(false, true)) {
+            dark = d
+            rule.waitForIdle()
+            listOf("forces", "circuit").forEach { assertTrue(it, rule.onAllNodes(androidx.compose.ui.test.hasTestTag("figure-$it"), useUnmergedTree = true).fetchSemanticsNodes().isNotEmpty()) }
+            if (dir != null) {
+                val view = rule.activity.window.decorView
+                val bmp = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+                view.draw(android.graphics.Canvas(bmp))
+                File(dir).mkdirs()
+                File(dir, "physics-figures-${if (d) "dark" else "light"}.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+            }
+        }
+    }
+
     @Test fun everySoundIsBundled() {
         val ctx = ApplicationProvider.getApplicationContext<android.content.Context>()
         Sfx.entries.forEach { s -> ctx.resources.openRawResource(s.res).use { assertTrue("${s.name} is empty", it.available() > 1000) } }

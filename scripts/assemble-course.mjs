@@ -516,9 +516,13 @@ if (existsSync(linksFile)) {
   for (const c of cleaned.subject.chapters) for (const m of c.modules) for (const s of m.solutions) {
     const n = c.number;
     let qf = [], af = [];
-    const ex = /^example\s*(\d+)/i.exec(s.source);
+    const ex = /^example\s*(\d+(?:\.\d+)?)/i.exec(s.source);
     if (ex) qf = links.example[`${n}|${ex[1]}`] ?? [];
-    else {
+    else if (PHY) {
+      // "Numerical 1.3(a)": figures of the part, and of the whole item.
+      const m = /^(.*?)\s*(?:\(([a-h])\))?$/.exec(s.source);
+      qf = [...(links.question[`${n}|${m[1]}|${m[2] ?? ""}`] ?? []), ...(m[2] ? links.question[`${n}|${m[1]}|`] ?? [] : [])];
+    } else {
       const r = /^(?:review\s*ex(?:ercise)?\.?\s*(\d+)|ex(?:ercise)?\.?\s*(\d+(?:\.\d+)?))\s*q\s*(\d+)\s*(?:\(([ivx]+|[a-h])\))?/i.exec(s.source);
       if (r) {
         const key = `${n}|${r[1] ? `r${r[1]}` : r[2]}|${r[3]}`;
@@ -531,6 +535,11 @@ if (existsSync(linksFile)) {
     if (af.length) s.answerFigures = [...new Set(af)];
     s.question = unmark(s.question, qf.length > 0);
     s.steps = s.steps.map((t) => unmark(t, false));
+  }
+  for (const p of cleaned.subject.practicals ?? []) {
+    const f = links.activity?.[p.label] ?? [];
+    if (f.length) p.figures = f;
+    p.bookText = unmark(p.bookText, f.length > 0);
   }
   console.log(`Figures: ${withFig} questions show a book figure`);
 }

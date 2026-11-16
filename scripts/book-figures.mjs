@@ -9,8 +9,9 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, unlinkSync } from "
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { luna, costSoFar } from "./luna-budget.mjs";
+import { S } from "./subject.mjs";
 
-const ROOT = "content/class9-maths";
+const ROOT = S.root;
 const OUT = "android/app/src/main/assets/figures";
 const [pdf] = process.argv.slice(2);
 mkdirSync(OUT, { recursive: true });
@@ -19,14 +20,16 @@ const DPI = 220;
 const num = { type: "number" }, str = { type: "string" };
 const obj = (p) => ({ type: "object", additionalProperties: false, required: Object.keys(p), properties: p });
 const schema = obj({ figures: { type: "array", items: obj({ index: { type: "integer" }, found: { type: "boolean" }, x0: num, y0: num, x1: num, y1: num }) } });
-const PROMPT = `You locate figures (diagrams, graphs, Venn diagrams, number lines, triangles, constructions, tables drawn as pictures) on one
-page of a Class 9 maths textbook. You get the page image and a numbered list of the figures on it, in reading order, each with a
+const PROMPT = `You locate figures (diagrams, graphs, ${S.key === "physics" ? "circuits, ray diagrams, force diagrams, apparatus, photographs" : "Venn diagrams, number lines, triangles, constructions"}, tables drawn as pictures) on one
+page of a Class 9 ${S.short} textbook. You get the page image and a numbered list of the figures on it, in reading order, each with a
 short description. For each, return its bounding box as fractions of the page width and height (x0,y0 = top-left, x1,y1 =
 bottom-right, 0..1), tight around the drawing including its labels but excluding body text and question numbers.
 found = false if you cannot see it on the page.`;
 
 const pages = [];
-for (let p = 1; p <= 288; p++) {
+// (Physics: the first pages are the cover, title and contents; the figures that matter start with Chapter 1.)
+const FIRST = S.key === "physics" ? 5 : 1;
+for (let p = FIRST; p <= 288; p++) {
   const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
   if (!existsSync(f)) continue;
   const figs = [...readFileSync(f, "utf8").matchAll(/\[FIGURE:\s*([^\]]*)\]/g)].map((m) => m[1].trim());
@@ -73,7 +76,7 @@ await Promise.all(Array.from({ length: 5 }, async () => {
       const x = Math.max(0, Math.floor((Math.min(b.x0, b.x1) - pad) * w)), y = Math.max(0, Math.floor((Math.min(b.y0, b.y1) - pad) * h));
       const x2 = Math.min(w, Math.ceil((Math.max(b.x0, b.x1) + pad) * w)), y2 = Math.min(h, Math.ceil((Math.max(b.y0, b.y1) + pad) * h));
       if (x2 - x < 30 || y2 - y < 30) continue;
-      const id = `p${String(p).padStart(3, "0")}-${k + 1}`;
+      const id = `${S.idPrefix}p${String(p).padStart(3, "0")}-${k + 1}`;
       execFileSync("cwebp", ["-quiet", "-q", "80", "-crop", String(x), String(y), String(x2 - x), String(y2 - y), png, "-o", join(OUT, `${id}.webp`)]);
       all.push({ id, page: p, index: k + 1, description: figs[k] });
     }
