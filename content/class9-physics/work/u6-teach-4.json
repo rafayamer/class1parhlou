@@ -1,0 +1,506 @@
+{
+ "note": {
+  "explanation": "Pressure tells us how much normal force acts on each unit of contact area. The same force produces more pressure on a smaller area.",
+  "examples": [
+   "A sharp chopper blade cuts easily because its small contact area produces high pressure.",
+   "An elephant's broad feet spread its weight over a large area, reducing pressure on the ground."
+  ],
+  "checkAnswer": "Pressure increases when the same force acts on a smaller area.",
+  "keywords": [
+   "pressure",
+   "force",
+   "area",
+   "contact area",
+   "pascal",
+   "Pa"
+  ],
+  "simple": "Pressure is force spread over an area. A smaller area means greater pressure for the same force.",
+  "checkQuestion": "If the same force acts on a smaller area, what happens to the pressure?",
+  "title": "Pressure",
+  "steps": [
+   "Write the formula: P = F/A.",
+   "Use the force acting normally on the surface for F.",
+   "Use the contact area for A.",
+   "Calculate pressure and write the unit in pascals (Pa)."
+  ],
+  "answer": "Pressure is the force exerted normally on unit area of an object. Its formula is P = F/A.",
+  "checkAccept": [
+   [
+    "p:increases"
+   ],
+   [
+    "p:greater"
+   ],
+   [
+    "p:higher"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "P = F/A",
+    "P = A/F",
+    "P = F × A",
+    "P = F + A"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation gives pressure when a force acts normally on a surface?",
+   "rationales": [
+    "Correct: pressure is the normal force divided by the area.",
+    "Incorrect: this reverses the force and area in the pressure formula.",
+    "Incorrect: multiplying force by area does not give pressure.",
+    "Incorrect: force and area are divided, not added, to find pressure."
+   ]
+  },
+  {
+   "options": [
+    "N m⁻²",
+    "N m",
+    "kg m⁻³",
+    "m² N⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the SI unit of pressure?",
+   "rationales": [
+    "Correct: the SI unit is N m⁻², called the pascal (Pa).",
+    "Incorrect: N m is a unit of work or energy, not pressure.",
+    "Incorrect: kg m⁻³ is a unit of density.",
+    "Incorrect: m² N⁻¹ is the reciprocal of the pressure unit."
+   ]
+  },
+  {
+   "options": [
+    "Pressure becomes four times as large.",
+    "Pressure becomes half as large.",
+    "Pressure stays the same.",
+    "Pressure becomes one fourth as large."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A force stays the same while its contact area is reduced to one fourth. What happens to the pressure?",
+   "rationales": [
+    "Correct: since P = F/A, reducing the area to one fourth makes the pressure four times as large.",
+    "Incorrect: a smaller area increases pressure rather than reducing it.",
+    "Incorrect: pressure changes when the area changes while force stays fixed.",
+    "Incorrect: reducing area to one fourth makes pressure larger, not smaller."
+   ]
+  },
+  {
+   "options": [
+    "The sharp edge has a smaller contact area, so it produces greater pressure.",
+    "The sharp edge has a larger contact area, so it produces greater pressure.",
+    "The sharp edge reduces the applied force to zero.",
+    "The sharp edge changes pressure into weight."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is a chopper blade made sharp?",
+   "rationales": [
+    "Correct: a small contact area gives high pressure for the force applied.",
+    "Incorrect: a larger area would reduce pressure for the same force.",
+    "Incorrect: sharpening the blade does not make the applied force zero.",
+    "Incorrect: sharpening does not change pressure into weight."
+   ]
+  },
+  {
+   "options": [
+    "A broad foot spreads the force over a larger area and lowers pressure.",
+    "A broad foot concentrates the force on a smaller area and raises pressure.",
+    "A broad foot removes the animal's weight.",
+    "A broad foot changes the SI unit of pressure."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why do heavy animals such as elephants have large, flat feet?",
+   "rationales": [
+    "Correct: a larger contact area reduces the pressure caused by the animal's weight.",
+    "Incorrect: a broad foot increases the contact area instead of concentrating force on a smaller one.",
+    "Incorrect: foot size does not remove an animal's weight.",
+    "Incorrect: an animal's foot size does not change pressure units."
+   ]
+  },
+  {
+   "options": [
+    "The pressure is greater on the smaller contact area.",
+    "The pressure is greater on the larger contact area.",
+    "Both pressures must be zero.",
+    "Pressure does not depend on contact area."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "The same normal force acts on two surfaces, but one contact area is smaller. Where is the pressure greater?",
+   "rationales": [
+    "Correct: the same force divided by a smaller area gives greater pressure.",
+    "Incorrect: a larger area gives less pressure for the same force.",
+    "Incorrect: a non-zero force acting on an area produces pressure.",
+    "Incorrect: pressure depends on area according to P = F/A."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Why heavy animals like an elephant have a large area of the foot?",
+   "finalAnswer": "A large foot area spreads the animal's weight over a larger contact area, so the pressure on the ground is less.",
+   "marks": 2,
+   "source": "Short 6.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:weight"
+      ],
+      [
+       "p:spread"
+      ],
+      [
+       "p:area"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must connect the animal's weight with its large contact area.",
+     "description": "State that the broad feet spread the animal's weight over a large area.",
+     "how": "Explain that the animal's weight acts over the broad area of its feet."
+    },
+    {
+     "accept": [
+      [
+       "p:pressure"
+      ],
+      [
+       "p:less"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must state the effect of increasing the area on pressure.",
+     "description": "Give the result: the pressure on the ground is less.",
+     "how": "Use P = F/A to explain that a larger area gives less pressure for the same force."
+    }
+   ],
+   "modelAnswer": [
+    "A large foot area spreads the animal's weight over a larger contact area.",
+    "Therefore, the pressure on the ground is less."
+   ]
+  },
+  {
+   "text": "Why animals like deer who run fast have a small area of the foot?",
+   "finalAnswer": "A smaller foot area produces greater pressure on the ground for the same force, helping the feet grip the ground firmly when running.",
+   "marks": 2,
+   "source": "Short 6.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:small"
+      ],
+      [
+       "p:area"
+      ],
+      [
+       "p:pressure"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must link the small foot area to pressure.",
+     "description": "State that the small contact area produces greater pressure for the same force.",
+     "how": "Apply P = F/A and explain that reducing A increases P."
+    },
+    {
+     "accept": [
+      [
+       "p:grip"
+      ],
+      [
+       "p:ground"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should relate the pressure effect to running.",
+     "description": "State that the greater pressure helps the feet grip the ground while running.",
+     "how": "Connect the increased pressure with a firmer grip during a run."
+    }
+   ],
+   "modelAnswer": [
+    "A small foot area produces greater pressure on the ground for the same force.",
+    "This helps the feet grip the ground firmly when running."
+   ]
+  },
+  {
+   "text": "Why is it painful to walk bare footed on pebbles?",
+   "finalAnswer": "Pebbles reduce the contact area of the foot. The reaction force then produces high pressure on the foot, which is painful.",
+   "marks": 2,
+   "source": "Short 6.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:contact"
+      ],
+      [
+       "p:area"
+      ],
+      [
+       "p:reduced"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reduced contact area is the reason pressure increases on pebbles.",
+     "description": "State that the contact area is reduced when walking on pebbles.",
+     "how": "Explain that only a small part of the foot contacts the pebbles."
+    },
+    {
+     "accept": [
+      [
+       "p:pressure"
+      ],
+      [
+       "p:painful"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain how the reduced area causes pain.",
+     "description": "State that the pressure becomes high and causes pain.",
+     "how": "Link the high pressure from the reaction force to the painful feeling."
+    }
+   ],
+   "modelAnswer": [
+    "When we walk on pebbles, the contact area of the foot is reduced.",
+    "The pressure due to the reaction force becomes high, so walking is painful."
+   ]
+  },
+  {
+   "text": "Distinguish between force and pressure.",
+   "finalAnswer": "Force is a push or pull and is measured in newtons (N). Pressure is the normal force per unit area and is measured in pascals (Pa).",
+   "marks": 2,
+   "source": "Short 6.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:force"
+      ],
+      [
+       "p:push"
+      ],
+      [
+       "p:newton"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must identify force and its unit.",
+     "description": "Define force as a push or pull and give its unit.",
+     "how": "Write that force is a push or pull measured in newtons (N)."
+    },
+    {
+     "accept": [
+      [
+       "p:pressure"
+      ],
+      [
+       "p:area"
+      ],
+      [
+       "p:pascal"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must distinguish pressure by its area relationship and unit.",
+     "description": "Define pressure as normal force per unit area and give its unit.",
+     "how": "Write that pressure is normal force divided by area and is measured in pascals (Pa)."
+    }
+   ],
+   "modelAnswer": [
+    "Force is a push or pull and is measured in newtons (N).",
+    "Pressure is the normal force per unit area and is measured in pascals (Pa)."
+   ]
+  },
+  {
+   "text": "A brick measures 5 cm × 10 cm × 20 cm. If its mass is 5 kg, calculate the maximum and minimum pressure which the brick can exert on a horizontal surface.",
+   "finalAnswer": "(1 × 10⁴ Pa, 25 × 10² Pa)",
+   "marks": 4,
+   "source": "Numerical 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5*10^-2m",
+       "10*10^-2m",
+       "20*10^-2m"
+      ],
+      [
+       "0.05m",
+       "0.1m",
+       "0.2m"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct SI dimensions are needed to calculate the contact areas in square metres.",
+     "description": "Convert the brick dimensions from centimetres to metres.",
+     "how": "Use 0.05 m, 0.10 m and 0.20 m."
+    },
+    {
+     "accept": [
+      [
+       "50N"
+      ],
+      [
+       "5*10N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pressure requires the force, which here is the brick's weight.",
+     "description": "Calculate the weight as 50 N.",
+     "how": "Use W = mg = 5 × 10 N."
+    },
+    {
+     "accept": [
+      [
+       "0.005m^2",
+       "0.02m^2"
+      ],
+      [
+       "5*10^-3m^2",
+       "2*10^-2m^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The two possible contact areas determine which pressure is maximum and which is minimum.",
+     "description": "Find the smallest and largest face areas.",
+     "how": "Use the face areas 0.005 m² and 0.02 m²."
+    },
+    {
+     "accept": [
+      [
+       "1*10^4Pa",
+       "25*10^2Pa"
+      ],
+      [
+       "10000Pa",
+       "2500Pa"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both pressures and their maximum/minimum order must be correct.",
+     "description": "Give the maximum and minimum pressures in the book's order.",
+     "how": "Use P = F/A: the smaller area gives the maximum pressure and the larger area gives the minimum pressure."
+    }
+   ],
+   "modelAnswer": [
+    "Weight of brick, F = mg = 5 × 10 = 50 N.",
+    "Possible areas = (5 × 10) cm² = 0.005 m² and (10 × 20) cm² = 0.02 m².",
+    "Maximum pressure = F/A = 50/0.005 = 1 × 10⁴ Pa.",
+    "Minimum pressure = F/A = 50/0.02 = 25 × 10² Pa.",
+    "Maximum and minimum pressures are 1 × 10⁴ Pa and 25 × 10² Pa."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "The board may ask you to define pressure, write its formula, or give its SI unit.",
+   "For calculation questions, write P = F/A, use the normal force and contact area, convert area to m², and finish with Pa or N m⁻².",
+   "For explanation questions, state how changing contact area affects pressure when the force stays the same.",
+   "In examples such as sharp blades, thumb pins, pebbles, and broad animal feet, link the contact area to the pressure."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about how the animal's weight is spread over its feet.",
+     "Use P = F/A: what happens to pressure when the area gets larger and the force is unchanged?"
+    ],
+    "accept": [
+     [
+      "p:large",
+      "p:area",
+      "p:less",
+      "p:pressure"
+     ],
+     [
+      "p:spread",
+      "p:weight",
+      "p:lower"
+     ]
+    ],
+    "question": "Why heavy animals like an elephant have a large area of the foot?",
+    "solution": [
+     "A large foot area spreads the animal's weight over a larger contact area.",
+     "Since P = F/A, a larger area gives less pressure for the same weight.",
+     "Therefore, the elephant's feet exert less pressure on the ground."
+    ],
+    "answer": "A large foot area spreads the animal's weight over a larger contact area, so the pressure on the ground is less."
+   },
+   {
+    "hints": [
+     "First find the brick's weight and the areas of its faces.",
+     "Use the smallest area for maximum pressure and the largest area for minimum pressure."
+    ],
+    "accept": [
+     [
+      "1*10^4Pa",
+      "25*10^2Pa"
+     ],
+     [
+      "10000Pa",
+      "2500Pa"
+     ]
+    ],
+    "question": "A brick measures 5 cm × 10 cm × 20 cm. If its mass is 5 kg, calculate the maximum and minimum pressure which the brick can exert on a horizontal surface.",
+    "solution": [
+     "Weight of brick, F = mg = 5 × 10 = 50 N.",
+     "Possible areas = (5 × 10) cm² = 0.005 m² and (10 × 20) cm² = 0.02 m².",
+     "Maximum pressure = F/A = 50/0.005 = 1 × 10⁴ Pa.",
+     "Minimum pressure = F/A = 50/0.02 = 25 × 10² Pa."
+    ],
+    "answer": "Maximum pressure = 1 × 10⁴ Pa; minimum pressure = 25 × 10² Pa."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The brick's weight is the force acting normally on the horizontal surface.",
+     "text": "Weight of brick, F = mg = 5 × 10 = 50 N."
+    },
+    {
+     "why": "The smallest and largest faces give the greatest and least pressure, respectively.",
+     "text": "Possible areas = (5 × 10) cm² = 0.005 m² and (10 × 20) cm² = 0.02 m²."
+    },
+    {
+     "why": "The same force over the smaller area gives the greater pressure.",
+     "text": "Maximum pressure = F/A = 50/0.005 = 1 × 10⁴ Pa."
+    },
+    {
+     "why": "The same force over the larger area gives the smaller pressure.",
+     "text": "Minimum pressure = F/A = 50/0.02 = 25 × 10² Pa."
+    }
+   ],
+   "question": "A brick measures 5 cm × 10 cm × 20 cm. If its mass is 5 kg, calculate the maximum and minimum pressure which the brick can exert on a horizontal surface.",
+   "answer": "Maximum pressure = 1 × 10⁴ Pa; minimum pressure = 25 × 10² Pa."
+  },
+  "explain": [
+   {
+    "title": "Meaning of pressure",
+    "body": "Pressure is defined as the force exerted normally on unit area of an object."
+   },
+   {
+    "title": "Formula and unit",
+    "body": "If F is the force acting normally on a surface of area A, then pressure P on the surface is given by P = F/A. The SI unit is N m⁻² and is called pascal (Pa)."
+   },
+   {
+    "title": "Contact area changes pressure",
+    "body": "The area A on which the force acts is usually referred as contact area. For a certain force, the pressure can be very large if the contact area A is small."
+   },
+   {
+    "title": "Everyday examples",
+    "body": "A sharp chopper edge and the sharp end of a thumb pin have small contact areas, so they produce high pressure. Pebbles also reduce the foot's contact area and make walking painful. Broad, flat elephant feet increase contact area and reduce pressure."
+   }
+  ],
+  "mistakes": [
+   "Writing P = A/F instead of P = F/A.",
+   "Using the wrong face area when finding maximum or minimum pressure: the smallest area gives maximum pressure.",
+   "Forgetting to convert centimetres to metres before calculating area in m².",
+   "Giving the unit as N or m² instead of Pa or N m⁻².",
+   "Saying that a larger contact area increases pressure when the force is unchanged."
+  ]
+ }
+}

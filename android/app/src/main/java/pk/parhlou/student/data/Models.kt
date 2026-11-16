@@ -138,6 +138,8 @@ data class BookSolution(
     val figures: List<String> = emptyList(),
     /** The book's own answer figure (a number line, graph or construction), when it prints one. */
     val answerFigures: List<String> = emptyList(),
+    /** A figure the answer draws (vectors, forces, circuits, graphs), as checked data the app draws itself; "" if none. */
+    val drawn: String = "",
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */

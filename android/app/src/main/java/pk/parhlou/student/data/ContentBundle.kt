@@ -134,6 +134,7 @@ object ContentBundle {
                 why = s.optJSONArray("why")?.strings().orEmpty(),
                 figures = s.optJSONArray("figures")?.strings().orEmpty(),
                 answerFigures = s.optJSONArray("answerFigures")?.strings().orEmpty(),
+                drawn = s.optJSONObject("drawn")?.toString().orEmpty(),
             )
         }.orEmpty(),
         inExam = m.optBoolean("inExam", true),

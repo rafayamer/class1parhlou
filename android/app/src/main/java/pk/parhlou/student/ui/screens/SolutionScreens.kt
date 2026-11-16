@@ -250,7 +250,9 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
         if (verdict == true) StatusPill("Correct!", warning = false)
         s.steps.take(steps).forEachIndexed { i, step -> StepCard(i + 1, step, s.why.getOrNull(i).takeIf { s.why.size == s.steps.size }, "$key-why-$i") }
         if (steps >= s.steps.size && steps > 0) {
-            if (s.figure.isNotBlank()) Muted("Figure: ${s.figure}")
+            val drawn = remember(s.drawn) { pk.parhlou.student.ui.components.FigureSpec.parse(s.drawn.takeIf { it.isNotBlank() }?.let { org.json.JSONObject(it) }) }
+            if (drawn != null) pk.parhlou.student.ui.components.FigureView(drawn)
+            else if (s.figure.isNotBlank()) Muted("Figure: ${s.figure}")
             if (s.answer.isNotBlank()) Surface(
                 color = MaterialTheme.colorScheme.primaryContainer, shape = RoundedCornerShape(16.dp), modifier = Modifier.fillMaxWidth(),
             ) {

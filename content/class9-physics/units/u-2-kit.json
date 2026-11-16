@@ -1,0 +1,569 @@
+{
+ "unit": 2,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 2.5",
+   "MCQ 2.6",
+   "MCQ 2.8",
+   "MCQ 2.9",
+   "MCQ 2.10",
+   "Short 2.6",
+   "Short 2.7",
+   "Short 2.8",
+   "CRQ 2.1",
+   "CRQ 2.3",
+   "CRQ 2.4",
+   "CRQ 2.5",
+   "Comprehensive 2.3",
+   "Comprehensive 2.5",
+   "Comprehensive 2.7",
+   "Numerical 2.5",
+   "Numerical 2.8",
+   "Numerical 2.10"
+  ],
+  "definitions": [
+   {
+    "term": "Scalar",
+    "text": "A scalar is that physical quantity which can be described completely by its magnitude only."
+   },
+   {
+    "term": "Vector",
+    "text": "A vector is that physical quantity which needs magnitude as well as direction to describe it completely."
+   },
+   {
+    "term": "Graphical representation of a vector",
+    "text": "A vector can be represented graphically by drawing a straight line with an arrow head at one end. The length of line represents the magnitude of the vector quantity according to a suitable scale while the direction of arrow indicates the direction of the vector."
+   },
+   {
+    "term": "Head-to-tail rule",
+    "text": "To add a number of vectors, redraw their representative lines such that the head of one line coincides with the tail of the other. The resultant vector is given by a single vector which is directed from the tail of the first vector to the head of the last vector."
+   },
+   {
+    "term": "Rest",
+    "text": "If a body does not change its position with respect to its surroundings, it is said to be at rest."
+   },
+   {
+    "term": "Motion",
+    "text": "If a body continuously changes its position with respect to its surroundings, it is said to be in motion."
+   },
+   {
+    "term": "Distance",
+    "text": "The distance is the length of actual path of the motion."
+   },
+   {
+    "term": "Displacement",
+    "text": "The displacement of an object is a vector quantity whose magnitude is the shortest distance between the initial and final positions of the motion and its direction is from the initial position to the final position."
+   },
+   {
+    "term": "Speed",
+    "text": "For this purpose, we have to find the distance covered in unit time which is known as speed."
+   },
+   {
+    "term": "Average speed",
+    "text": "It is defined as: Average speed = (Total distance covered)/(Total time taken)"
+   },
+   {
+    "term": "Instantaneous speed",
+    "text": "The speed of a vehicle that is shown by its speedometer at any instant is called instantaneous speed."
+   },
+   {
+    "term": "Velocity",
+    "text": "The net displacement of a body in unit time is called velocity."
+   },
+   {
+    "term": "Uniform velocity",
+    "text": "The velocity is said to be uniform if the speed and direction of a moving body does not change."
+   },
+   {
+    "term": "Non-uniform velocity",
+    "text": "If the speed or direction or both of them change, it is known as variable velocity or non-uniform velocity."
+   },
+   {
+    "term": "Acceleration",
+    "text": "Acceleration is defined as the time rate of change of velocity."
+   },
+   {
+    "term": "Deceleration or retardation",
+    "text": "Negative acceleration is also called deceleration or retardation."
+   },
+   {
+    "term": "Uniform acceleration",
+    "text": "If time rate of change of velocity is constant, the acceleration is said to be uniform."
+   },
+   {
+    "term": "Non-uniform acceleration",
+    "text": "If anyone of the magnitude or direction or both of them changes it is called variable or non-uniform acceleration."
+   },
+   {
+    "term": "Distance-time graph",
+    "text": "Distance-time graph shows the relation between distance S and time t taken by a moving body."
+   },
+   {
+    "term": "Speed-time graph",
+    "text": "Suppose we can note the speed of the same car after every one second and record it in the table given below, we can draw the graph between speed v versus time t. This is called speed-time graph."
+   },
+   {
+    "term": "Gradient of a distance-time graph",
+    "text": "Gradient of the distance-Time graph is equal to the average speed of the body."
+   },
+   {
+    "term": "Gradient of a speed-time graph",
+    "text": "Gradient of the speed-Time graph is equal to the average acceleration of the body."
+   },
+   {
+    "term": "Area under a speed-time graph",
+    "text": "The area under the speed-time graph up to the time axis is numerically equal to the distance covered by the object."
+   },
+   {
+    "term": "Gravitational acceleration",
+    "text": "When a body is falling freely under the action of gravity of the Earth, the acceleration acting on it is the gravitational acceleration and is denoted by g."
+   },
+   {
+    "term": "Universal speed limit",
+    "text": "Any object with mass cannot achieve speeds equal to or greater than that of light. This is known as universal speed limit."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "v = S ÷ t",
+    "use": "Speed from distance and time (v in m s⁻¹, S in m, t in s)."
+   },
+   {
+    "formula": "S = v × t",
+    "use": "Distance at constant speed (S in m, v in m s⁻¹, t in s)."
+   },
+   {
+    "formula": "v_av = S ÷ t",
+    "use": "Average speed from total distance and total time (v_av in m s⁻¹, S in m, t in s)."
+   },
+   {
+    "formula": "v_av = d ÷ t",
+    "use": "Average velocity from displacement and time (v_av in m s⁻¹, d in m, t in s)."
+   },
+   {
+    "formula": "a_av = (v_f − v_i) ÷ t = Δv ÷ t",
+    "use": "Average acceleration from velocity change and time (a_av in m s⁻², v_f and v_i in m s⁻¹, Δv in m s⁻¹, t in s)."
+   },
+   {
+    "formula": "v_f = v_i + at",
+    "use": "Final velocity for uniform acceleration (v_f and v_i in m s⁻¹, a in m s⁻², t in s)."
+   },
+   {
+    "formula": "S = v_i t + ½at²",
+    "use": "Distance for straight-line motion with uniform acceleration (S in m, v_i in m s⁻¹, t in s, a in m s⁻²)."
+   },
+   {
+    "formula": "2aS = v_f² − v_i²",
+    "use": "Motion with uniform acceleration when time is not given (a in m s⁻², S in m, v_f and v_i in m s⁻¹)."
+   },
+   {
+    "formula": "Gradient of distance-time graph = ΔS ÷ Δt = average speed",
+    "use": "Find average speed from the slope (ΔS in m, Δt in s; gradient in m s⁻¹)."
+   },
+   {
+    "formula": "Gradient of speed-time graph = Δv ÷ Δt = average acceleration",
+    "use": "Find average acceleration from the slope (Δv in m s⁻¹, Δt in s; gradient in m s⁻²)."
+   },
+   {
+    "formula": "Distance = area under speed-time graph",
+    "use": "Find distance from the graph’s area (distance in m; speed in m s⁻¹; time in s)."
+   },
+   {
+    "formula": "Area of rectangle = v × t",
+    "use": "Distance from a constant-speed graph (area/distance in m, v in m s⁻¹, t in s)."
+   },
+   {
+    "formula": "Area of triangle = ½ × v × t",
+    "use": "Distance when speed rises uniformly from zero (area/distance in m, v in m s⁻¹, t in s)."
+   },
+   {
+    "formula": "v_f = v_i + gt",
+    "use": "Final velocity in free fall (v_f and v_i in m s⁻¹, g in m s⁻², t in s; use g = 10 m s⁻²)."
+   },
+   {
+    "formula": "S = v_i t + ½gt²",
+    "use": "Distance in free fall (S in m, v_i in m s⁻¹, g in m s⁻², t in s; use g = 10 m s⁻²)."
+   },
+   {
+    "formula": "2gS = v_f² − v_i²",
+    "use": "Free-fall motion when time is not given (g in m s⁻², S in m, v_f and v_i in m s⁻¹; use g = 10 m s⁻²)."
+   },
+   {
+    "formula": "1 km h⁻¹ = 5 ÷ 18 m s⁻¹",
+    "use": "Convert speed from km h⁻¹ to m s⁻¹."
+   },
+   {
+    "formula": "c ≈ 3 × 10⁸ m s⁻¹",
+    "use": "Approximate speed of light, the universal speed limit (c in m s⁻¹)."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 2.1",
+    "why": "A core two-mark definition pair from the chapter."
+   },
+   {
+    "ref": "Short 2.3",
+    "why": "A direct rule statement that can be tested for two marks."
+   },
+   {
+    "ref": "Short 2.4",
+    "why": "A likely short question on the chapter’s basic graphs."
+   },
+   {
+    "ref": "CRQ 2.2",
+    "why": "Tests the link between velocity change, acceleration and time."
+   },
+   {
+    "ref": "CRQ 2.6",
+    "why": "A common concept check on velocity and acceleration."
+   },
+   {
+    "ref": "Comprehensive 2.1",
+    "why": "A standard detailed answer with a labelled vector diagram."
+   },
+   {
+    "ref": "Comprehensive 2.2(b)",
+    "why": "A likely comparison question covering scalar and vector quantities."
+   },
+   {
+    "ref": "Comprehensive 2.4",
+    "why": "A core concept that suits a structured answer and diagram."
+   },
+   {
+    "ref": "Comprehensive 2.6",
+    "why": "A standard long-answer proof using rectangle and triangle areas."
+   },
+   {
+    "ref": "Numerical 2.3",
+    "why": "Tests speed conversion and the acceleration formula."
+   },
+   {
+    "ref": "Numerical 2.6",
+    "why": "A standard uniform-acceleration numerical with negative acceleration."
+   },
+   {
+    "ref": "Numerical 2.7",
+    "why": "A likely free-fall numerical requiring two equations of motion."
+   }
+  ],
+  "fullMarks": [
+   "For a definition or rule, write the complete statement, including key words such as magnitude, direction, initial position and final position.",
+   "For a vector diagram, draw and label the axes, choose and show a suitable scale, mark the angle from the correct axis, and put an arrowhead on the representative line.",
+   "For a difference question, compare both quantities clearly on the same points—for example, scalar or vector, and distance or displacement—and include units where useful.",
+   "For a numerical, write the given data in SI units first, then the formula, substitution with units, calculation, and final answer with its unit.",
+   "For acceleration questions, identify initial and final velocities correctly; convert km h⁻¹ to m s⁻¹ before substituting.",
+   "For free-fall questions, state the direction sign convention and use g = 10 m s⁻². A dropped object starts with v_i = 0; for an object thrown upward, g is negative when upward is positive.",
+   "For a graph answer, label both axes with quantity and unit, use an even scale, and show the plotted points or the slope/area used.",
+   "For a graph-area proof, show the relevant rectangle or triangle area and explain that it equals distance; finish with the stated result."
+  ],
+  "mistakes": [
+   "Mistake: Treating distance and displacement as the same. Fix: Distance follows the actual path; displacement is the straight-line change from start to finish and has direction.",
+   "Mistake: Saying speed and velocity are both scalars. Fix: Speed is scalar; velocity is vector because it includes direction.",
+   "Mistake: Adding vectors like ordinary numbers without considering direction. Fix: Use a suitable vector method, such as the head-to-tail rule.",
+   "Mistake: Substituting km h⁻¹ directly into formulas that need SI units. Fix: Convert km h⁻¹ to m s⁻¹ first by multiplying by 5 ÷ 18.",
+   "Mistake: Using v_i as zero for every motion problem. Fix: Use v_i = 0 only when the object starts from rest or is dropped from rest.",
+   "Mistake: Giving deceleration as positive when the chosen positive direction is the direction of motion. Fix: Use the sign convention consistently; braking then gives negative acceleration.",
+   "Mistake: Mixing up graph slope and graph area. Fix: Distance-time slope gives speed; speed-time slope gives acceleration, while speed-time area gives distance."
+  ],
+  "shortTheory": [
+   {
+    "question": "Short 2.1: Define scalar and vector quantities.",
+    "answer": "A scalar is that physical quantity which can be described completely by its magnitude only. A vector is that physical quantity which needs magnitude as well as direction to describe it completely."
+   },
+   {
+    "question": "Short 2.3: State head-to-tail rule for addition of vectors.",
+    "answer": "To add a number of vectors, redraw their representative lines such that the head of one line coincides with the tail of the other. The resultant vector is given by a single vector which is directed from the tail of the first vector to the head of the last vector."
+   },
+   {
+    "question": "Short 2.4: What are distance- time graph and speed-time graph?",
+    "answer": "Distance-time graph shows the relation between distance S and time t taken by a moving body. This is called speed-time graph. [A speed-time graph shows the relation between speed v and time t.]"
+   },
+   {
+    "question": "Define distance and displacement.",
+    "answer": "The distance is the length of actual path of the motion. The displacement of an object is a vector quantity whose magnitude is the shortest distance between the initial and final positions of the motion and its direction is from the initial position to the final position."
+   },
+   {
+    "question": "Define speed and velocity.",
+    "answer": "For this purpose, we have to find the distance covered in unit time which is known as speed. The net displacement of a body in unit time is called velocity."
+   },
+   {
+    "question": "Define acceleration.",
+    "answer": "Acceleration is defined as the time rate of change of velocity."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "phy-w-2-1-t0",
+   "text": "Short 2.1: Define scalar and vector quantities.",
+   "marks": 2,
+   "modelAnswer": [
+    "A scalar is a physical quantity that can be described completely by its magnitude only. A vector is a physical quantity that needs magnitude as well as direction to be described completely."
+   ],
+   "followUp": "Short 2.1: Define scalar and vector quantities.",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "magnitude",
+       "only"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies magnitude alone as the defining feature of a scalar.",
+     "description": "States that a scalar quantity is described completely by its magnitude only.",
+     "how": "Look for both “magnitude” and “only” in the scalar definition."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "magnitude",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies both magnitude and direction as necessary for a vector.",
+     "description": "States that a vector needs magnitude as well as direction to be described completely.",
+     "how": "Look for “magnitude” and “direction” in the vector definition."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-2-1-t1",
+   "text": "Short 2.3: State head-to-tail rule for addition of vectors.",
+   "marks": 2,
+   "modelAnswer": [
+    "To add vectors, redraw their representative lines so the head of one coincides with the tail of the next. The resultant is directed from the tail of the first vector to the head of the last vector."
+   ],
+   "followUp": "Short 2.3: State head-to-tail rule for addition of vectors.",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "head",
+       "tail"
+      ]
+     ],
+     "marks": 1,
+     "why": "States how the representative lines are arranged for vector addition.",
+     "description": "Redraws the vectors so the head of one representative line coincides with the tail of the next.",
+     "how": "Look for the head-to-tail arrangement."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "resultant",
+       "tail",
+       "first",
+       "head",
+       "last"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the direction and endpoints of the resultant vector.",
+     "description": "States that the resultant is directed from the tail of the first vector to the head of the last.",
+     "how": "Look for the resultant and its direction from the first tail to the last head."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-2-1-t2",
+   "text": "Short 2.4: What are distance- time graph and speed-time graph?",
+   "marks": 2,
+   "modelAnswer": [
+    "A distance-time graph shows the relation between distance S and time t. A speed-time graph shows the relation between speed v and time t."
+   ],
+   "followUp": "Short 2.4: What are distance- time graph and speed-time graph?",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "distance",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the quantities whose relation is shown by a distance-time graph.",
+     "description": "States that a distance-time graph shows the relation between distance and time.",
+     "how": "Look for both “distance” and “time”."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "speed",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the quantities whose relation is shown by a speed-time graph.",
+     "description": "States that a speed-time graph shows the relation between speed and time.",
+     "how": "Look for both “speed” and “time”."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-2-1-t3",
+   "text": "Define distance and displacement.",
+   "marks": 2,
+   "modelAnswer": [
+    "Distance is the length of the actual path of motion. Displacement is a vector whose magnitude is the shortest distance between the initial and final positions and whose direction is from the initial position to the final position."
+   ],
+   "followUp": "Define distance and displacement.",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "actual",
+       "path"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines distance using the actual path travelled.",
+     "description": "States that distance is the length of the actual path of motion.",
+     "how": "Look for “actual path” and its length."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "shortest",
+       "initial",
+       "final",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the shortest separation between the endpoints and the direction of displacement.",
+     "description": "States that displacement is a vector whose magnitude is the shortest distance between initial and final positions, directed from initial to final.",
+     "how": "Look for shortest distance, initial and final positions, and direction."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-2-1-t4",
+   "text": "Define speed and velocity.",
+   "marks": 2,
+   "modelAnswer": [
+    "The distance covered in unit time is known as speed. The net displacement of a body in unit time is called velocity."
+   ],
+   "followUp": "Define speed and velocity.",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "distance",
+       "unit",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines speed as distance covered per unit time.",
+     "description": "States that the distance covered in unit time is called speed.",
+     "how": "Look for distance covered and unit time."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "net",
+       "displacement",
+       "unit",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines velocity using net displacement per unit time.",
+     "description": "States that the net displacement of a body in unit time is called velocity.",
+     "how": "Look for net displacement and unit time."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-2-1-t5",
+   "text": "Define acceleration.",
+   "marks": 2,
+   "modelAnswer": [
+    "Acceleration is defined as the time rate of change of velocity."
+   ],
+   "followUp": "Define acceleration.",
+   "noteId": "phy-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "time",
+       "rate",
+       "change",
+       "velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the quantity changing as velocity.",
+     "description": "States that acceleration concerns a change in velocity.",
+     "how": "Look for “change” and “velocity”."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "time",
+       "rate",
+       "change",
+       "velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Specifies that the velocity change is measured with respect to time.",
+     "description": "States that acceleration is the time rate of change of velocity.",
+     "how": "Look for the time rate of change of velocity."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

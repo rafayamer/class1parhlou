@@ -1,0 +1,606 @@
+{
+ "note": {
+  "explanation": "Liquid pressure is caused by the weight of the liquid above a point. It depends on the liquid's density and the depth of the point. Pressure pushes at right angles to a surface.",
+  "examples": [
+   "At the same depth, a denser liquid produces more pressure.",
+   "The lowest hole in a water-filled container has the greatest pressure."
+  ],
+  "checkAnswer": "Pressure increases with depth.",
+  "keywords": [
+   "liquid pressure",
+   "depth",
+   "density",
+   "rho gh",
+   "normal force",
+   "pressure formula"
+  ],
+  "simple": "The deeper you go in a liquid, the more liquid is above you, so the pressure is greater.",
+  "checkQuestion": "What happens to liquid pressure as depth increases?",
+  "title": "Pressure in liquids",
+  "steps": [
+   "Find the depth h below the liquid surface.",
+   "Use the liquid density ρ and gravitational acceleration g.",
+   "Substitute in P = ρgh, using SI units.",
+   "Give pressure in pascals (Pa), or N m⁻²."
+  ],
+  "answer": "P = ρgh",
+  "checkAccept": [
+   [
+    "increases",
+    "depth"
+   ],
+   [
+    "greater",
+    "deeper"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "P = ρgh",
+    "P = ρg/h",
+    "P = gh/ρ",
+    "P = ρh/g"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation gives the pressure at depth h in a liquid of density ρ?",
+   "rationales": [
+    "This is the equation for liquid pressure given in the section.",
+    "Dividing by h does not give the liquid-pressure equation.",
+    "Dividing by density does not give the liquid-pressure equation.",
+    "Dividing by g does not give the liquid-pressure equation."
+   ]
+  },
+  {
+   "options": [
+    "The pressure decreases.",
+    "The pressure stays the same.",
+    "The pressure increases.",
+    "The pressure becomes zero."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What happens to liquid pressure as depth below the surface increases?",
+   "rationales": [
+    "This is opposite to the relationship described in the section.",
+    "Liquid pressure does not stay constant as depth changes.",
+    "The section states that liquid pressure increases with depth.",
+    "Pressure does not become zero merely because depth increases."
+   ]
+  },
+  {
+   "options": [
+    "The liquid's colour",
+    "The liquid's density",
+    "The container's shape",
+    "The area of the container's base"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to P = ρgh, which property of the liquid affects its pressure at a given depth?",
+   "rationales": [
+    "Colour does not appear in the liquid-pressure equation.",
+    "Density is a factor in P = ρgh.",
+    "Container shape does not appear in the equation.",
+    "The base area does not appear in the equation."
+   ]
+  },
+  {
+   "options": [
+    "Parallel to the surface",
+    "At right angle to the surface",
+    "Along the edge of the surface",
+    "In the direction of gravity only"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In which direction does pressure produce force on a surface?",
+   "rationales": [
+    "A force parallel to the surface does not contribute to pressure.",
+    "Pressure produces force at right angle to the surface.",
+    "A force along the edge is parallel to the surface, not normal to it.",
+    "The force direction is set by the surface normal, not always by gravity."
+   ]
+  },
+  {
+   "options": [
+    "The top hole",
+    "The middle hole",
+    "The lowest hole",
+    "All holes have the same pressure"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A container has water and three holes at different heights. At which hole is the liquid pressure greatest?",
+   "rationales": [
+    "The top hole is at the smallest depth, so its pressure is lower.",
+    "The middle hole is deeper than the top one but not the deepest.",
+    "The lowest hole is at the greatest depth, where liquid pressure is highest.",
+    "Pressure is not the same at different depths."
+   ]
+  },
+  {
+   "options": [
+    "N m⁻²",
+    "kg m⁻³",
+    "m s⁻²",
+    "kg m⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the SI unit of pressure?",
+   "rationales": [
+    "N m⁻² is the unit of pressure and is also called the pascal.",
+    "kg m⁻³ is a unit of density.",
+    "m s⁻² is a unit of acceleration.",
+    "kg m⁻² is not the SI unit of pressure."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "EXAMPLE 6.2: Calculate the pressure of column of mercury 76 cm high. Density of mercury is 13.6 × 10³ kg m⁻³.",
+   "finalAnswer": "1.034 × 10⁵ Pa",
+   "marks": 4,
+   "source": "Example 6.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "76×10⁻²m"
+      ],
+      [
+       "0.76m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The height must be in SI units before substitution.",
+     "description": "Convert the height to metres.",
+     "how": "Write h = 76 cm = 76×10⁻² m."
+    },
+    {
+     "accept": [
+      [
+       "ρgh"
+      ],
+      [
+       "13.6×10³",
+       "10",
+       "76×10⁻²"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relationship and values are needed to calculate pressure.",
+     "description": "Use the liquid-pressure equation.",
+     "how": "Substitute into P = ρgh."
+    },
+    {
+     "accept": [
+      [
+       "1.034×10⁵Nm⁻²"
+      ],
+      [
+       "1.034×10⁵Pa"
+      ]
+     ],
+     "marks": 2,
+     "why": "The numerical result and pressure unit complete the calculation.",
+     "description": "Calculate and state the final pressure.",
+     "how": "Give the answer as 1.034 × 10⁵ N m⁻² = 1.034 × 10⁵ Pa."
+    }
+   ],
+   "modelAnswer": [
+    "Density ρ = 13.6 × 10³ kg m⁻³",
+    "Height h = 76cm = 76×10⁻²m",
+    "g = 10 m s⁻²",
+    "As Pressure = ρgh",
+    "∴ P = 13.6 × 10³ kg m⁻³ × 10 m s⁻² × 76 × 10⁻² m",
+    "P = 1.034 × 10⁵ kg m⁻³ × m s⁻² × m",
+    "P = 1.034 × 10⁵ N m⁻²",
+    "P = 1.034 × 10⁵ Pa"
+   ]
+  },
+  {
+   "text": "EXAMPLE 6.3: A cylindrical water tank 2 m deep has been built on the top of a building 20 m high. What will be the pressure of water at the ground floor when the tank is full? Density of water is 1000 kg m⁻³. Take g = 10 m s⁻².",
+   "finalAnswer": "2.2 × 10⁵ Pa",
+   "marks": 4,
+   "source": "Example 6.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2+20=22m"
+      ],
+      [
+       "22m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The water column extends from the tank surface to the ground floor.",
+     "description": "Find the total depth.",
+     "how": "Add the tank depth and building height."
+    },
+    {
+     "accept": [
+      [
+       "ρgh"
+      ],
+      [
+       "22",
+       "1000",
+       "10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The liquid-pressure equation must be used with the given values.",
+     "description": "Substitute the values.",
+     "how": "Use P = ρgh."
+    },
+    {
+     "accept": [
+      [
+       "220000Pa"
+      ],
+      [
+       "2.2×10⁵Pa"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct pressure and unit are the required result.",
+     "description": "Calculate the pressure.",
+     "how": "State P = 220000 Pa = 2.2 × 10⁵ Pa."
+    }
+   ],
+   "modelAnswer": [
+    "Height h = 2 + 20 = 22m",
+    "Density ρ = 1000 kg m⁻³",
+    "g =10 m s⁻²",
+    "P = ρgh = 22 m ×1000 kg m⁻³ ×10 m s⁻²",
+    "= 220000 Pa = 2.2 ×10⁵ Pa"
+   ]
+  },
+  {
+   "text": "Q6.8. What is the relationship between liquid pressure and the depth of the liquid?",
+   "finalAnswer": "Liquid pressure increases with depth.",
+   "marks": 2,
+   "source": "Short 6.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "increases",
+       "depth"
+      ],
+      [
+       "directly",
+       "proportional",
+       "depth"
+      ]
+     ],
+     "marks": 1,
+     "why": "The relationship with depth is the central point of the answer.",
+     "description": "State how pressure changes with depth.",
+     "how": "Say that liquid pressure increases with depth."
+    },
+    {
+     "accept": [
+      [
+       "P=ρgh"
+      ],
+      [
+       "ρgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation supports the stated relationship.",
+     "description": "Give the equation for liquid pressure.",
+     "how": "Write P = ρgh."
+    }
+   ],
+   "modelAnswer": [
+    "Liquid pressure increases with depth.",
+    "P = ρgh, so pressure is directly proportional to depth h."
+   ]
+  },
+  {
+   "text": "Q6.4. How does water pressure one metre below the surface of a swimming pool compare to water pressure one metre below the surface of a very large and deep lake?",
+   "finalAnswer": "The water pressures are equal because the water is at the same depth.",
+   "marks": 2,
+   "source": "CRQ 6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "equal"
+      ],
+      [
+       "same"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison must identify that the pressures are the same.",
+     "description": "Compare the pressures.",
+     "how": "State that they are equal."
+    },
+    {
+     "accept": [
+      [
+       "same depth"
+      ],
+      [
+       "depth",
+       "density"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason follows from pressure depending on depth and liquid density.",
+     "description": "Give the reason.",
+     "how": "Both points are at the same depth in water, so P = ρgh gives the same pressure."
+    }
+   ],
+   "modelAnswer": [
+    "P = ρgh",
+    "The liquid is water in both cases and the depth is 1 m.",
+    "Therefore, the water pressures are equal."
+   ]
+  },
+  {
+   "text": "Q6.5. What will happen to the pressure in all parts of a confined liquid if pressure is increased in one part? Give an example from your daily life where such principle is applied.",
+   "finalAnswer": "The increased pressure is transmitted equally throughout the liquid; this principle is applied in hydraulic brakes.",
+   "marks": 4,
+   "source": "CRQ 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "transmitted",
+       "equally"
+      ],
+      [
+       "equally",
+       "throughout"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must describe what happens throughout the confined liquid.",
+     "description": "State how the pressure change is transmitted.",
+     "how": "Explain that it is transmitted equally throughout the liquid."
+    },
+    {
+     "accept": [
+      [
+       "hydraulic",
+       "brakes"
+      ],
+      [
+       "hydraulic",
+       "press"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant everyday application shows the principle in use.",
+     "description": "Give an application.",
+     "how": "Name hydraulic brakes or a hydraulic press."
+    }
+   ],
+   "modelAnswer": [
+    "The increased pressure is transmitted equally throughout the confined liquid.",
+    "This principle is applied in the hydraulic brake system of automobiles."
+   ]
+  },
+  {
+   "text": "Q6.4. On what factors the pressure of a liquid in a container depend? How is it determined?",
+   "finalAnswer": "Liquid pressure depends on the depth and density of the liquid. It is determined by P = ρgh.",
+   "marks": 4,
+   "source": "Comprehensive 6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "depth"
+      ],
+      [
+       "density"
+      ]
+     ],
+     "marks": 2,
+     "why": "Both factors identified in the section are required.",
+     "description": "Name the factors.",
+     "how": "State that pressure depends on depth and liquid density."
+    },
+    {
+     "accept": [
+      [
+       "P=ρgh"
+      ],
+      [
+       "pressure=ρgh"
+      ]
+     ],
+     "marks": 2,
+     "why": "The equation determines the liquid pressure and gives the calculation method.",
+     "description": "Give the determining equation.",
+     "how": "Write P = ρgh, defining ρ as density, g as gravitational acceleration and h as depth."
+    }
+   ],
+   "modelAnswer": [
+    "The pressure in a liquid depends on the depth and density of the liquid.",
+    "For a liquid of density ρ at depth h,",
+    "P = ρgh",
+    "where g is the acceleration due to gravity."
+   ]
+  },
+  {
+   "text": "Q6.8. Find the water pressure on a deep-sea diver at a depth of 10 m, where the density of sea water is 1030 kg m⁻³.",
+   "finalAnswer": "1.03 × 10⁵ N m⁻²",
+   "marks": 4,
+   "source": "Numerical 6.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "P=ρgh"
+      ],
+      [
+       "ρgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relationship is needed to calculate liquid pressure.",
+     "description": "Write the pressure equation.",
+     "how": "Use P = ρgh."
+    },
+    {
+     "accept": [
+      [
+       "1030",
+       "10",
+       "10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution must use the given density, depth and gravitational acceleration.",
+     "description": "Substitute the values.",
+     "how": "Use ρ = 1030 kg m⁻³, h = 10 m and g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "1.03×10⁵Nm⁻²"
+      ],
+      [
+       "1.03×10⁵Pa"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must have the correct value and pressure unit.",
+     "description": "Calculate and state the pressure.",
+     "how": "Give P = 1.03 × 10⁵ N m⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "Pressure P = ρgh",
+    "P = 1030 kg m⁻³ × 10 m s⁻² × 10 m",
+    "P = 103000 N m⁻²",
+    "P = 1.03 × 10⁵ N m⁻²"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Board questions may ask you to state how pressure changes with depth or to explain why pressure is greater at a lower point.",
+   "For calculations, write P = ρgh, convert depth to metres, substitute values with units, and give the answer in Pa or N m⁻².",
+   "If a question asks which factors affect liquid pressure, name depth and density; the equation also includes gravitational acceleration.",
+   "For force direction, say that pressure produces force at right angle to the surface."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Use the equation P = ρgh.",
+     "Substitute the density, depth and g = 10 m s⁻², then calculate."
+    ],
+    "accept": [
+     [
+      "1.03×10⁵Nm⁻²"
+     ],
+     [
+      "1.03×10⁵Pa"
+     ]
+    ],
+    "question": "Q6.8. Find the water pressure on a deep-sea diver at a depth of 10 m, where the density of sea water is 1030 kg m⁻³.",
+    "solution": [
+     "Pressure P = ρgh",
+     "P = 1030 kg m⁻³ × 10 m s⁻² × 10 m",
+     "P = 103000 N m⁻²",
+     "P = 1.03 × 10⁵ N m⁻²"
+    ],
+    "answer": "1.03 × 10⁵ N m⁻²"
+   },
+   {
+    "hints": [
+     "Compare the depths and the liquids.",
+     "Use P = ρgh: both are water and both points are 1 m below the surface."
+    ],
+    "accept": [
+     [
+      "equal",
+      "same depth"
+     ],
+     [
+      "same",
+      "depth",
+      "water"
+     ]
+    ],
+    "question": "Q6.4. How does water pressure one metre below the surface of a swimming pool compare to water pressure one metre below the surface of a very large and deep lake?",
+    "solution": [
+     "P = ρgh",
+     "The liquid is water in both cases and the depth is 1 m.",
+     "Therefore, the water pressures are equal."
+    ],
+    "answer": "The water pressures are equal because the water is at the same depth."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This converts the given height into the SI unit of metres.",
+     "text": "Height h = 76cm = 76×10⁻²m"
+    },
+    {
+     "why": "These are the density and gravitational acceleration needed in the pressure equation.",
+     "text": "Density ρ = 13.6 × 10³ kg m⁻³; g = 10 m s⁻²"
+    },
+    {
+     "why": "This is the equation for pressure in a liquid.",
+     "text": "As Pressure = ρgh"
+    },
+    {
+     "why": "Substitute the given density, gravity and converted height.",
+     "text": "∴ P = 13.6 × 10³ kg m⁻³ × 10 m s⁻² × 76 × 10⁻² m"
+    },
+    {
+     "why": "Multiplying the values gives the pressure in N m⁻².",
+     "text": "P = 1.034 × 10⁵ N m⁻²"
+    },
+    {
+     "why": "One pascal is equal to one newton per square metre.",
+     "text": "P = 1.034 × 10⁵ Pa"
+    }
+   ],
+   "question": "EXAMPLE 6.2: Calculate the pressure of column of mercury 76 cm high. Density of mercury is 13.6 × 10³ kg m⁻³.",
+   "answer": "1.034 × 10⁵ Pa"
+  },
+  "explain": [
+   {
+    "title": "Pressure comes from the liquid above",
+    "body": "Imagine a patch of area A at depth h. The liquid column above it has volume V = Ah and mass m = ρAh. Its weight acts on that patch."
+   },
+   {
+    "title": "The liquid-pressure equation",
+    "body": "The force from the liquid column is F = mg = ρAhg. Dividing by area gives P = F/A = ρgh. The area cancels, so pressure depends on depth and density, not the patch's area."
+   },
+   {
+    "title": "Greater depth means greater pressure",
+    "body": "Since P = ρgh, for the same liquid and gravity, increasing h increases pressure. That is why water from a lower hole spurts out with greater pressure."
+   },
+   {
+    "title": "Pressure acts normally",
+    "body": "Pressure produces force at right angle to a surface. A force or its component that is parallel to the surface does not contribute to pressure."
+   },
+   {
+    "title": "Pressure in a liquid spreads",
+    "body": "When a water-filled bag is squeezed, water squirts from its holes in different directions. This demonstrates that pressure is transmitted throughout the liquid."
+   }
+  ],
+  "mistakes": [
+   "Using centimetres instead of converting the depth to metres before calculating.",
+   "Forgetting to include density or gravitational acceleration in P = ρgh.",
+   "Using the tank depth alone when a question asks for pressure at a lower level; include the full vertical depth to that point.",
+   "Giving pressure in a force unit such as newtons instead of Pa or N m⁻².",
+   "Saying pressure acts parallel to a surface; pressure produces force at right angle to it."
+  ]
+ }
+}
