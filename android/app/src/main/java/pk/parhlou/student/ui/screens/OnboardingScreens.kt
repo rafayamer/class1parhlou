@@ -123,14 +123,15 @@ private fun ConsentStep(acknowledged: Boolean, onChange: (Boolean) -> Unit) {
     Text("Welcome to your academy", style = MaterialTheme.typography.titleLarge)
     Sheet {
         Text("What we store", style = MaterialTheme.typography.titleMedium)
-        Muted("Your name, class, subjects, your answers and your test results. Photos of answer sheets are kept only for a short time to mark them.")
+        Muted("Your name, class, subjects, answers and results. Chats with Ustaad are kept for 30 days. Photos of answer sheets are kept only to mark them.")
         Text("Who can see it", style = MaterialTheme.typography.titleMedium)
-        Muted("Only you, and a parent or teacher you have linked and verified. Marks are never public.")
+        Muted("You, a parent or teacher you link, and Parhlou's team, who may review your account and chats to keep you safe and improve your lessons. Every review is recorded. Marks are never public.")
+        Text("Staying safe", style = MaterialTheme.typography.titleMedium)
+        Muted("Ustaad only helps with studies. Messages about sex or illegal things are refused and flagged to Parhlou's safety team, who may contact your parent.")
         Text("If you are under 18", style = MaterialTheme.typography.titleMedium)
         Muted("A parent or guardian will be asked to approve your account before paid features are used.")
     }
     CheckRow("I have read this and want to continue", checked = acknowledged, onChange = onChange)
-    Muted("Account sign-in is added when the backend is connected. This build keeps your choices on this phone only.")
 }
 
 @Composable

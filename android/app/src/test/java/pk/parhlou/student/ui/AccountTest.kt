@@ -106,6 +106,12 @@ class AccountTest {
         assertNull(auth.handleRedirect(Uri.parse("https://example.test/other")))
     }
 
+    @Test fun googleSignInComesBackThroughTheSameLink() = runBlocking {
+        assertEquals("https://sb.test/auth/v1/authorize?provider=google&redirect_to=pk.parhlou.student%3A%2F%2Fauth", auth.googleSignInUrl())
+        val r = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth#access_token=link-token&refresh_token=r2&expires_in=3600&provider_token=x"))
+        assertTrue(r is AuthResult.SignedIn)
+    }
+
     @Test fun progressAndSettingsSyncAndRestoreOnANewPhone() = runBlocking {
         auth.verifyCode("ali@example.test", "123456")
         store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.TEST_SERIES, 4, 45, completed = true, name = "Ali"))

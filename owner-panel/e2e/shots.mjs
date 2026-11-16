@@ -32,7 +32,7 @@ try {
       const ctx = await browser.newContext({ viewport, colorScheme: scheme, deviceScaleFactor: 1 });
       await ctx.addInitScript(([k, v]) => localStorage.setItem(k, v), [`sb-${REF}-auth-token`, JSON.stringify(s.session)]);
       const page = await ctx.newPage();
-      for (const p of ["dashboard", "content", "settings", "learners", "ai-log"]) {
+      for (const p of ["dashboard", "content", "settings", "learners", "care", "ai-log"]) {
         await page.goto(`http://localhost:4174/#/${p}`);
         await page.waitForTimeout(2500);
         const wide = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);

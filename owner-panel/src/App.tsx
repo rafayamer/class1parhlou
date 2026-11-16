@@ -7,12 +7,15 @@ import { Content } from "./pages/Content";
 import { Settings } from "./pages/Settings";
 import { Learners } from "./pages/Learners";
 import { AiLog } from "./pages/AiLog";
+import { Care } from "./pages/Care";
+import { Student } from "./pages/Student";
 
 const PAGES = [
   ["dashboard", "Dashboard"],
   ["content", "Content"],
   ["settings", "AI settings"],
   ["learners", "Learners"],
+  ["care", "Student care"],
   ["ai-log", "AI log"],
 ] as const;
 type Page = (typeof PAGES)[number][0];
@@ -27,11 +30,13 @@ export function App() {
   const [owner, setOwner] = useState<"checking" | "yes" | "no">("checking");
   const [problem, setProblem] = useState("");
   const [page, setPage] = useState<Page>(pageFromHash());
+  // "View as student" opens over whichever page it was chosen from.
+  const [viewing, setViewing] = useState<string | null>(null);
 
   useEffect(() => {
     db.auth.getSession().then(({ data }) => setSession(data.session));
     const { data } = db.auth.onAuthStateChange((_e, s) => setSession(s));
-    const onHash = () => setPage(pageFromHash());
+    const onHash = () => { setPage(pageFromHash()); setViewing(null); };
     addEventListener("hashchange", onHash);
     return () => { data.subscription.unsubscribe(); removeEventListener("hashchange", onHash); };
   }, []);
@@ -72,11 +77,14 @@ export function App() {
         </div>
       </nav>
       <main>
+        {viewing ? <Student userId={viewing} onBack={() => setViewing(null)} /> : <>
         {page === "dashboard" && <Dashboard />}
         {page === "content" && <Content />}
         {page === "settings" && <Settings />}
-        {page === "learners" && <Learners />}
+        {page === "learners" && <Learners onView={setViewing} />}
+        {page === "care" && <Care onView={setViewing} />}
         {page === "ai-log" && <AiLog />}
+        </>}
       </main>
     </div>
   );

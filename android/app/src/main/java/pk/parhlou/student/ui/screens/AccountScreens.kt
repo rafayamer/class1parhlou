@@ -48,11 +48,20 @@ fun SignInScreen(
 
     ParhlouScreen("Sign in", onBack = onBack) {
         Text("Save your progress", style = MaterialTheme.typography.titleLarge)
-        Muted("Sign in with your email so your work is saved and you can continue on another phone. No password needed.")
+        Muted("Your work is saved and you can continue on another phone. No password needed.")
         val shown = message ?: error
         if (shown != null) Text(shown, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyLarge)
 
         if (sentTo == null) {
+            val context = androidx.compose.ui.platform.LocalContext.current
+            pk.parhlou.student.ui.components.SecondaryButton("Continue with Google", modifier = Modifier.testTag("signin-google"), onClick = {
+                onName(name.trim())
+                runCatching {
+                    context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(auth.googleSignInUrl()))
+                        .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+                }.onFailure { message = "No browser found to open Google sign-in." }
+            })
+            Muted("or with your email")
             Sheet {
                 OutlinedTextField(
                     value = name, onValueChange = { name = it.take(40) }, singleLine = true,

@@ -58,6 +58,13 @@ class AuthClient(
         return parseSession(JSONObject(text))?.let { save(it) } ?: AuthResult.Failed("Sign-in failed.")
     }
 
+    /**
+     * "Continue with Google": Supabase's Google sign-in page. After the student picks their account, Supabase sends them
+     * back to pk.parhlou.student://auth#access_token=… exactly like the email link, so [handleRedirect] finishes it.
+     * A Google account with the same email as an existing Parhlou account signs in to that same account.
+     */
+    fun googleSignInUrl(): String = "$supabaseUrl/auth/v1/authorize?provider=google&redirect_to=${Uri.encode(REDIRECT)}"
+
     /** Handles the link from the sign-in email: pk.parhlou.student://auth#access_token=...&refresh_token=... */
     suspend fun handleRedirect(uri: Uri): AuthResult? {
         if (uri.scheme != "pk.parhlou.student" || uri.host != "auth") return null
