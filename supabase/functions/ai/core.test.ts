@@ -466,3 +466,18 @@ test("physics figures: forces and circuits are checked before they reach the app
   assert.equal(toFigure({ kind: "circuit", components: [{ type: "resistor", label: "2 Ω" }] }), null, "no source: not drawn");
   assert.equal(toFigure({ kind: "forces", forces: [] }), null);
 });
+
+test("a student with Mathematics and Physics is answered from the right course", async () => {
+  const { pickContent } = await import("./handler.ts");
+  const maths = { subjectId: "pb-9-math", course: { subject: "Mathematics" }, written: [{ id: "w-1" }], mcqs: [],
+    notes: [{ id: "n-1", moduleId: "m-2-1", title: "Common logarithm", keywords: ["logarithm", "characteristic"] }] };
+  const physics = { subjectId: "pb-9-phy", course: { subject: "Physics" }, written: [{ id: "phy-w-1" }], mcqs: [],
+    notes: [{ id: "phy-n-1", moduleId: "phy-m-2-5", title: "Speed and velocity", keywords: ["velocity", "speed", "acceleration"] }] };
+  const both = ["pb-9-math", "pb-9-phy"];
+  assert.equal(pickContent([maths, physics], { subjectIds: both, questionId: "phy-w-1" }).subjectId, "pb-9-phy");
+  assert.equal(pickContent([maths, physics], { subjectIds: both, moduleId: "m-2-1", message: "help" }).subjectId, "pb-9-math");
+  assert.equal(pickContent([maths, physics], { subjectIds: both, message: "What is the acceleration of a car whose velocity changes?" }).subjectId, "pb-9-phy");
+  assert.equal(pickContent([maths, physics], { subjectIds: both, message: "Explain the characteristic of a logarithm" }).subjectId, "pb-9-math");
+  assert.equal(pickContent([maths, physics], { subjectIds: both, message: "physics homework help please" }).subjectId, "pb-9-phy");
+  assert.equal(pickContent([maths, physics], { subjectIds: ["pb-9-math"], message: "velocity" }).subjectId, "pb-9-math");
+});

@@ -6,7 +6,7 @@
 // so they can change without redeploying. The bundled sample is only a fallback.
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import bundled from "./content/sample.json" with { type: "json" };
-import { handle, markMcqs, markRecord, type Content } from "./handler.ts";
+import { handle, markMcqs, markRecord, pickContent, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
 import { PROMPT_VERSION, type Video } from "./core.ts";
 import { DEFAULT_PRICES, creditBalance, grantExpiry, needsMonthlyGrant, priceOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
@@ -41,16 +41,8 @@ async function live(db: any): Promise<Live> {
   return cache;
 }
 
-/** Picks the subject bundle a request is about: by question id, or by the learner's subjects for the tutor. */
-function pick(contents: Content[], body: any): Content {
-  const id = body?.questionId;
-  if (id) {
-    const hit = contents.find((c) => c.written.some((w: any) => w.id === id) || c.mcqs.some((m: any) => m.id === id));
-    if (hit) return hit;
-  }
-  const subjects: string[] = Array.isArray(body?.subjectIds) ? body.subjectIds : [];
-  return contents.find((c) => subjects.includes(c.subjectId)) ?? contents[0];
-}
+/** Picks the subject bundle a request is about (see pickContent). */
+const pick = (contents: Content[], body: any): Content => pickContent(contents, body);
 
 Deno.serve(async (request) => {
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405);

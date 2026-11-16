@@ -211,6 +211,38 @@ const words = (t: string) => (t.toLowerCase().match(/[a-z0-9√²³]+/g) ?? []).
  * The notes a tutor question needs: the topic being continued and the current module's notes first, then the best
  * keyword matches, at most [limit]. Small bundles are sent whole.
  */
+/**
+ * Which subject's course a request is about, for a student with several subjects: the course that has the question,
+ * then the lesson the student is in, then the subject they name, then the course whose notes best match their words
+ * (this message and the chat so far). One subject: that one.
+ */
+export function pickContent<T extends { subjectId: string; notes: any[]; written: any[]; mcqs: any[]; course?: { subject?: string } }>(contents: T[], body: any): T {
+  const id = body?.questionId;
+  if (id) {
+    const hit = contents.find((c) => c.written.some((w: any) => w.id === id) || c.mcqs.some((m: any) => m.id === id));
+    if (hit) return hit;
+  }
+  const subjects: string[] = Array.isArray(body?.subjectIds) ? body.subjectIds : [];
+  const mine = contents.filter((c) => subjects.includes(c.subjectId));
+  if (mine.length <= 1) return mine[0] ?? contents[0];
+  const moduleId = typeof body?.moduleId === "string" ? body.moduleId : "";
+  const inLesson = moduleId && mine.find((c) => c.notes.some((n: any) => n.moduleId === moduleId));
+  if (inLesson) return inLesson;
+  const history = Array.isArray(body?.history) ? body.history.map((h: any) => String(h?.text ?? "")).join(" ") : "";
+  const text = `${String(body?.message ?? body?.question ?? "")} ${history}`;
+  const lower = text.toLowerCase();
+  const named = mine.filter((c) => c.course?.subject && new RegExp(`\\b${c.course.subject.toLowerCase().replace(/s$/, "")}`).test(lower));
+  if (named.length === 1) return named[0];
+  const q = new Set(words(text));
+  const fit = (c: T) => c.notes.reduce((best: number, n: any) => {
+    let sc = 0;
+    for (const k of n.keywords ?? []) { const kw = words(k); if (kw.length && kw.every((w) => q.has(w))) sc += 3; }
+    for (const w of words(n.title ?? "")) if (q.has(w)) sc += 2;
+    return Math.max(best, sc);
+  }, 0);
+  return mine.map((c) => [fit(c), c] as const).sort((a, b) => b[0] - a[0])[0][1];
+}
+
 export function relevantNotes(notes: any[], question: string, ctx: { lastNoteId?: string; moduleId?: string } = {}, limit = 6): any[] {
   if (notes.length <= limit) return notes;
   const q = new Set(words(question));
