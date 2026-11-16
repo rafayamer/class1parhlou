@@ -187,6 +187,17 @@ fun HomeScreen(
                 Text(pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
+        // Ask Ustaad: one big tap, near the top, never covering anything.
+        pk.parhlou.student.ui.components.Chunky(
+            modifier = Modifier.fillMaxWidth().testTag("home-ask"), colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(),
+            shape = RoundedCornerShape(22.dp), onClick = onTutor, contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Icon(Icons.Filled.Forum, contentDescription = null, modifier = Modifier.size(24.dp))
+                Text("Ask Ustaad", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+                Text("📷 💡 📄", style = MaterialTheme.typography.titleMedium)
+            }
+        }
         // Goals: streak, today's XP against the goal, level; and how yesterday's goal went.
         RewardBar(rewards, Modifier.appear(1), onClick = onProgress)
         if (yesterday.xpToday > 0 || yesterday.goalMet) Text(
@@ -203,7 +214,10 @@ fun HomeScreen(
 
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
-        subjects.forEach { s -> SubjectJourneyCard(s, progress, task, go, onSubjects) }
+        // "Do this now" is the plan's first task (a topic to fix comes first), else the next lesson.
+        val first = plan.firstOrNull()?.takeIf { onboarding.pathway != Pathway.TEST_SERIES }
+        val now: Pair<String, () -> Unit> = if (first != null) first.title to { onPlanTask(first) } else task.title to go
+        subjects.forEach { s -> SubjectJourneyCard(s, progress, now.first, now.second, onSubjects) }
 
         Box(Modifier.appear(4)) {
             val titles = remember(repo, subjects) {
@@ -214,19 +228,6 @@ fun HomeScreen(
                 entries = studyEntries(progress.history(), titles))
         }
         TextButton(onClick = onPlanner, modifier = Modifier.heightIn(min = 44.dp)) { Text("Full plan") }
-        Spacer(Modifier.height(64.dp))
-    }
-    // Ask Ustaad is always one tap away.
-    pk.parhlou.student.ui.components.Chunky(
-        modifier = Modifier.align(Alignment.BottomEnd).padding(end = 20.dp, bottom = pk.parhlou.student.ui.components.LocalBottomBarSpace.current + 16.dp)
-            .navigationBarsPadding(),
-        colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(), shape = RoundedCornerShape(28.dp), onClick = onTutor,
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 10.dp),
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Icon(Icons.Filled.Forum, contentDescription = null, modifier = Modifier.size(22.dp))
-            Text("Ask Ustaad", style = MaterialTheme.typography.labelLarge)
-        }
     }
     }
 }
@@ -236,7 +237,7 @@ fun HomeScreen(
  * topic, and the next thing to do. Tapping the card opens the book.
  */
 @Composable
-private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, task: NextTask, go: () -> Unit, onOpen: () -> Unit) {
+private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: String, go: () -> Unit, onOpen: () -> Unit) {
     val modules = s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { c to it } }
     val levels = modules.map { (_, m) -> pk.parhlou.student.domain.Rewards.sectionLevel(progress.evidence(m.id)) }
     val covered = if (modules.isEmpty()) 0 else levels.count { it >= 2 } * 100 / modules.size
@@ -266,7 +267,7 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, task: NextTa
                 JourneyFact("⚠️", weak ?: "—", "work on", Modifier.weight(1f))
             }
             Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-            Text(task.title, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
+            Text(taskTitle, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
             pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
         }
     }
@@ -482,8 +483,8 @@ fun ProfileScreen(
             }
         }
         var feedbackOpen by remember { mutableStateOf(false) }
-        TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = true })
-        if (feedbackOpen) FeedbackDialog(onSend = onSendFeedback, onClose = { feedbackOpen = false })
+        TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
+        if (feedbackOpen) FeedbackBox(onSend = onSendFeedback, onClose = { feedbackOpen = false })
         TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
         TaskRow(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff, "Sounds",
             if (soundOn) "On: taps, right and wrong, rewards" else "Off (vibration only)", onToggleSound)
@@ -542,8 +543,8 @@ fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress
                     .semantics { contentDescription = "$assessed of ${ids.size} modules verified" },
             )
             Text("Verified: $assessed of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
-            Text("Demo-checked: $demoChecked of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
-            Muted("Your rocket moves only on verified marks from the AI examiner. Demo-checked papers are good practice, but they don't move it yet. Watching or reading alone never counts.")
+            Text("Practised: $demoChecked of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
+            Muted("Your rocket moves on marked papers. Watching or reading alone doesn't count.")
         }
     }
 }
@@ -553,7 +554,7 @@ fun SubjectsScreen(
     repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: (() -> Unit)?,
     onSolutions: () -> Unit = {},
 ) {
-    ParhlouScreen("My book", onBack = onBack) {
+    ParhlouScreen("Your books", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         if (subjects.isEmpty()) Muted("You haven't chosen any available subjects.")
         if (subjects.any { s -> s.chapters.any { c -> c.modules.any { it.solutions.isNotEmpty() } } })
@@ -643,32 +644,24 @@ private fun ChoiceChip(text: String, selected: Boolean, modifier: Modifier, onCl
     ) { Text(text, style = MaterialTheme.typography.labelLarge, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center) }
 }
 
-/** Feedback goes straight to the owner's inbox. */
+/** Feedback goes straight to the owner's inbox. It opens in place, under the button. */
 @Composable
-private fun FeedbackDialog(onSend: suspend (String) -> Boolean, onClose: () -> Unit) {
+private fun FeedbackBox(onSend: suspend (String) -> Boolean, onClose: () -> Unit) {
     var text by remember { mutableStateOf("") }
     var state by remember { mutableStateOf(0) } // 0 writing, 1 sending, 2 sent, 3 failed
     val scope = androidx.compose.runtime.rememberCoroutineScope()
-    androidx.compose.material3.AlertDialog(
-        onDismissRequest = onClose,
-        title = { Text(if (state == 2) "Thank you!" else "Send feedback") },
-        text = {
-            when (state) {
-                2 -> Text("We read every message.")
-                else -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    androidx.compose.material3.OutlinedTextField(text, { text = it.take(3000) }, placeholder = { Text("What should we fix or add?") },
-                        minLines = 4, modifier = Modifier.fillMaxWidth().testTag("feedback-text"))
-                    if (state == 3) Text("Couldn't send. Check your internet and try again.", color = MaterialTheme.colorScheme.error)
-                }
-            }
-        },
-        confirmButton = {
-            if (state == 2) TextButton(onClick = onClose) { Text("Done") }
-            else TextButton(enabled = text.isNotBlank() && state != 1, onClick = {
+    Sheet(Modifier.testTag("feedback")) {
+        if (state == 2) {
+            Text("Thank you! We read every message.", style = MaterialTheme.typography.titleMedium)
+            TextButton(onClick = onClose, modifier = Modifier.heightIn(min = 48.dp)) { Text("Done") }
+        } else {
+            androidx.compose.material3.OutlinedTextField(text, { text = it.take(3000) }, placeholder = { Text("What should we fix or add?") },
+                minLines = 3, modifier = Modifier.fillMaxWidth().testTag("feedback-text"))
+            if (state == 3) Text("Couldn't send. Check your internet and try again.", color = MaterialTheme.colorScheme.error)
+            BigButton(if (state == 1) "Sending…" else "Send", enabled = text.isNotBlank() && state != 1, modifier = Modifier.testTag("feedback-send"), onClick = {
                 state = 1
                 scope.launch { state = if (onSend(text.trim())) 2 else 3 }
-            }) { Text(if (state == 1) "Sending…" else "Send") }
-        },
-        dismissButton = { if (state != 2) TextButton(onClick = onClose) { Text("Cancel") } },
-    )
+            })
+        }
+    }
 }

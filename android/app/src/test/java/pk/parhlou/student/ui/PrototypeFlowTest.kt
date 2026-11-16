@@ -61,8 +61,7 @@ class PrototypeFlowTest {
     @Test
     fun tutorAnswersRefusesAndChecks() {
         launch()
-        rule.onNodeWithText("Ask Ustaad").performScrollTo().performClick()
-        rule.onNodeWithText("Demo tutor", substring = true).assertExists()
+        rule.onNodeWithText("Ask Ustaad").performClick()
 
         rule.onNodeWithTag("tutor-input").performTextInput("How do I simplify root 50?")
         rule.onNodeWithContentDescription("Send").performClick()
@@ -97,7 +96,7 @@ class PrototypeFlowTest {
         }
         launch()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
-        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
+        openChapterTest()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
         rule.waitUntil(15_000) { exists("Invigilator on") }
         rule.onNodeWithText("2 pages scanned · 2 not matched to a question yet.").performScrollTo().assertExists()
@@ -132,8 +131,7 @@ class PrototypeFlowTest {
     fun sitPaperThenCheckMasterAndInvigilatorReport() {
         launch()
         rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
-        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
-        rule.onNodeWithText("The invigilator records", substring = true).assertExists()
+        openChapterTest()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
         rule.waitUntil(40_000) { exists("Invigilator on") }
 
@@ -151,7 +149,7 @@ class PrototypeFlowTest {
         // 1 MCQ + 3 (s1) + 2 (s7) confirmed; 3 marks of s3 not checked, never counted as wrong.
         rule.onNodeWithTag("confirmed-marks").assertTextContains("6 / 40")
         rule.onNodeWithText("3 more marks not checked yet").assertExists()
-        rule.onNodeWithText("Demo checker — practice marks, not official board marks").assertExists()
+        rule.onNodeWithText("Marked by Ustaad", substring = true).assertExists()
         rule.onNodeWithText("Invigilator report").assertExists()
         rule.onNodeWithText("Left the paper").assertExists()
         rule.onNodeWithText("On time").assertExists()
@@ -179,7 +177,7 @@ class PrototypeFlowTest {
         }
         launch()
         rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
-        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
+        openChapterTest()
         rule.onNodeWithText("See your result").performScrollTo().performClick()
         rule.waitUntil(10_000) { exists("Confirmed marks") }
         rule.onNodeWithTag("confirmed-marks").assertTextContains("0 / 40")
@@ -197,7 +195,7 @@ class PrototypeFlowTest {
     fun tutorIsLockedWhileAPaperIsRunning() {
         runBlocking { store.appendExamEvent(paperId, ExamEventType.STARTED, System.currentTimeMillis()) }
         launch()
-        rule.onNodeWithText("Ask Ustaad").performScrollTo().performClick()
+        rule.onNodeWithText("Ask Ustaad").performClick()
         rule.onNodeWithText("Ask Ustaad is locked").assertExists()
         rule.onNodeWithTag("tutor-input").assertDoesNotExist()
     }
@@ -209,5 +207,14 @@ class PrototypeFlowTest {
         assertEquals(listOf(Evidence.QuizCompleted(90), Evidence.WrittenSubmitted), restored.evidence("m-1-1"))
         assertEquals(LearningState.READY_FOR_ASSESSMENT, restored.state("m-1-1"))
         assertEquals(1, restored.quizzesCompleted())
+    }
+
+    /** Papers → Chapter → the unit's chapter test. */
+    private fun openChapterTest() {
+        rule.waitUntil(3_000) { exists("Board papers") }
+        rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("paper-$paperId").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Before you start") }
     }
 }

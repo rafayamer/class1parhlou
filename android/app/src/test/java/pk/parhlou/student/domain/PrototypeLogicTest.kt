@@ -70,7 +70,7 @@ class DemoTutorTest {
         assertTrue(r.answer.isNotBlank())
         assertNotNull(r.explanation)
         assertNotNull(r.checkQuestion)
-        assertTrue(r.source!!.contains("not a textbook citation"))
+        assertEquals("From your course notes", r.source)
     }
 
     @Test fun refusesWhatItDoesNotKnowWithoutInventing() {

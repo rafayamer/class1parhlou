@@ -5,6 +5,7 @@ import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.test.core.app.ApplicationProvider
@@ -58,8 +59,6 @@ class AppFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick()
 
         // Module: five-stage rail, honest empty video state, quiz with rationales.
-        rule.onNodeWithText("Sample — demo content").assertExists()
-        rule.onNodeWithText("No teacher video has been linked", substring = true).assertExists()
         rule.onNodeWithText("2 Quiz").performScrollTo().performClick()
         rule.onNodeWithText("Which of these numbers is irrational?").assertExists()
         rule.onNodeWithText("√2").performScrollTo().performClick()
@@ -84,16 +83,16 @@ class AppFlowTest {
 
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Take your readiness check") }
         rule.onNodeWithText("Continue").performScrollTo().performClick()
-        // The chapter test is locked behind the readiness check; the full paper has no questions yet. Both are disabled.
-        val locked = rule.onAllNodes(androidx.compose.ui.test.hasText("Locked until you pass the readiness check.", substring = true))
-        assertEquals(1, locked.fetchSemanticsNodes().size)
-        locked.assertAll(androidx.compose.ui.test.isNotEnabled())
-        // Quarter, half and full mocks are listed but can't be built from Unit 1 alone.
-        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("Needs questions for Units", substring = true))
+        rule.waitUntil(3_000) { rule.onAllNodesWithTextExists("Board papers") }
+        // Papers stay locked behind the quick check: the chapter, half- and full-book papers can't be opened yet.
+        rule.onNodeWithTag("readiness").assertExists()
+        for (tag in listOf("scope-chapter", "scope-half", "scope-full")) rule.onNodeWithTag(tag).assertIsNotEnabled()
+        // Quarter, half and full mocks can't be built from Unit 1 alone; they're named, with nothing to tap.
+        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("needs Unit", substring = true))
         assertEquals(3, notReady.fetchSemanticsNodes().size)
-        notReady.assertAll(androidx.compose.ui.test.hasClickAction().not()) // information only, nothing to tap
-        assertEquals(4, rule.onAllNodes(androidx.compose.ui.test.hasText("Practice pattern — not official", substring = true))
-            .fetchSemanticsNodes().size)
+        notReady.assertAll(androidx.compose.ui.test.hasClickAction().not())
+        // No developer wording on papers.
+        assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("not official", substring = true)).fetchSemanticsNodes().size)
     }
 
     @Test
@@ -109,6 +108,7 @@ class AppFlowTest {
 
         rule.onNodeWithText("Fix: Simplifying square roots").performScrollTo().assertExists()
         rule.onNodeWithText("Full plan").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodesWithTextExists("Today's plan") }
         rule.onNodeWithText("You missed this once recently, last 2 days ago.", substring = true).assertExists()
         rule.onNodeWithText("See 1 weak topic").performScrollTo().performClick()
         rule.onNodeWithText("Missed once · Fix this").performClick()

@@ -55,8 +55,8 @@ class NavigationTest {
     private fun onHome() = exists("Do this now")
     private val screens = mapOf(
         "home" to { onHome() },
-        "subjects" to { !onHome() && exists("Book edition not yet verified") || (!onHome() && exists("My book")) },
-        "tests" to { !onHome() && exists("Readiness check") },
+        "subjects" to { !onHome() && exists("Your books") },
+        "tests" to { !onHome() && exists("Board papers") },
         "profile" to { !onHome() && exists("Clear this phone") },
     )
 
@@ -107,16 +107,14 @@ class NavigationTest {
         rule.onAllNodesWithText("Mathematics · Class 9").onFirst().performTouchInput { click() }
         rule.waitUntil(3_000) { exists("Rational and irrational numbers") }
         rule.onNodeWithContentDescription("Back").performTouchInput { click() }
-        rule.waitUntil(3_000) { exists("Edition") || exists("My book") }
+        rule.waitUntil(3_000) { exists("Your books") }
         tap("home")
     }
 
     @Test fun homeScreenButtonsRespondToTaps() {
         val checks = listOf(
-            "Continue" to "Sample — demo content",
-            "Ask Ustaad" to "Demo tutor",
-            "Journey" to "Journey",
-            "Solutions" to "Step-by-step solutions appear here",
+            "Continue" to "Rational and irrational numbers",
+            "Ask Ustaad" to "Snap a question",
             "Full plan" to "Today's plan",
         )
         launch()
@@ -149,62 +147,16 @@ class NavigationTest {
         org.junit.Assert.assertEquals(1, picked)
     }
 
-    @Test fun weekCalendarDaysRespondToTaps() {
+    @Test fun weekCalendarOpensTheStudyCalendar() {
         runBlocking {
             store.replaceProgress(pk.parhlou.student.domain.EvidenceCodec.line(System.currentTimeMillis(), "m-1-1", pk.parhlou.student.domain.Evidence.QuizCompleted(80)))
         }
         launch()
-        rule.onNodeWithText("Done so far: 1 quiz", substring = true).performScrollTo().assertExists()
-        // Another day of this week: earlier days say what was done, later days that they're coming up.
-        val fmt = java.text.SimpleDateFormat("EEEE d MMMM", java.util.Locale.getDefault())
-        val cal = java.util.Calendar.getInstance()
-        val other = (cal.clone() as java.util.Calendar).apply {
-            add(java.util.Calendar.DAY_OF_MONTH, if (cal.get(java.util.Calendar.DAY_OF_WEEK) == cal.firstDayOfWeek) 1 else -1)
-        }
         // The calendar sits low on Home: lift it clear of the floating tab bar before tapping, as a finger would.
-        liftAboveBar(rule.onNodeWithContentDescription(fmt.format(other.time)).performScrollTo())
-        rule.onNodeWithContentDescription(fmt.format(other.time)).performTouchInput { click() }
-        rule.waitUntil(3_000) { exists("No practice recorded on this day.") || exists("Coming up.") }
-        rule.onNodeWithContentDescription(fmt.format(cal.time)).performTouchInput { click() }
-        liftAboveBar(rule.onNodeWithText("Open today's plan").performScrollTo())
-        rule.onNodeWithText("Open today's plan").performTouchInput { click() }
-        rule.waitUntil(3_000) { exists("Today's plan") && !onHome() }
-    }
-
-    private fun tapCamera() {
-        rule.onNodeWithContentDescription("Scan answer sheets").performTouchInput { click() }
-        rule.waitForIdle()
-    }
-
-    @Test fun homeCameraWithLockedPapersExplainsTheReadinessCheck() {
-        launch()
-        tapCamera()
-        rule.waitUntil(3_000) { exists("Pass the readiness check first") }
-        rule.onNodeWithText("Take the readiness check").performTouchInput { click() }
-        rule.waitUntil(3_000) { !exists("Pass the readiness check first") && !onHome() }
-    }
-
-    @Test fun homeCameraStartsAPaperWithTheScannerOpen() {
-        runBlocking { store.setReadinessPassed(true) }
-        launch()
-        tapCamera()
-        rule.waitUntil(3_000) { exists("Start and scan") }
-        rule.onNodeWithText("Start and scan").performTouchInput { click() }
-        // The scanner is open inside the paper; the camera isn't allowed in tests, so the gallery is offered.
-        rule.waitUntil(5_000) { exists("Scan answer pages") && exists("Add from gallery") }
-        runBlocking { assertEquals(pk.parhlou.student.data.SampleContent.CHAPTER_TEST, store.activeExam.first()) }
-        // Closing the scanner shows the paper, whose timer is running.
-        rule.onNodeWithContentDescription("Close scanner").performTouchInput { click() }
-        rule.waitUntil(3_000) { exists("Invigilator on") }
-    }
-
-    @Test fun homeCameraReopensThePaperInProgress() {
-        runBlocking {
-            store.setReadinessPassed(true)
-            store.appendExamEvent(pk.parhlou.student.data.SampleContent.CHAPTER_TEST, pk.parhlou.student.domain.ExamEventType.STARTED, System.currentTimeMillis())
-        }
-        launch()
-        tapCamera()
-        rule.waitUntil(5_000) { exists("Scan answer pages") && !exists("Start and scan") }
+        liftAboveBar(rule.onNodeWithTag("open-calendar").performScrollTo())
+        rule.onNodeWithTag("open-calendar").performTouchInput { click() }
+        // Today's entry: what was done, how it went and when.
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("study-calendar")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(3_000) { exists("Quiz · Rational and irrational numbers") && exists("80% first try") }
     }
 }

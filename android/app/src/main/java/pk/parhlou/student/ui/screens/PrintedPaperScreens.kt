@@ -93,12 +93,12 @@ fun PrintedPaperScreen(
             Text(blueprint.title, style = MaterialTheme.typography.titleMedium)
             Muted("1. Sit the printed paper with a clock: MCQs on the bubble sheet first, then the subjective part.")
             Muted("2. Scan every page: the bubble sheet and all your answer pages, in any order. Write question numbers like \"Q2 (iii)\" or \"5 b)\" on your answers.")
-            Muted("3. Ustaad reads your handwriting and you check what it read. Then two AI examiners mark it step by step, like board examiners.")
+            Muted("3. Ustaad reads your handwriting and you check what it read. Then it's marked step by step, like the board.")
         }
         if (!readsHandwriting) {
             Sheet {
-                Text("Needs the AI examiner", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
-                Muted("Reading handwriting needs an internet connection to Parhlou's AI examiner. Connect and open this page again.")
+                Text("Needs the internet", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
+                Muted("Reading handwriting needs the internet. Connect and open this page again.")
             }
             return@ParhlouScreen
         }

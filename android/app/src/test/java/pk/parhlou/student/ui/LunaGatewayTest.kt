@@ -65,11 +65,11 @@ class LunaGatewayTest {
         assertEquals(ReplyKind.ANSWER, live.kind)
         assertEquals(listOf("a", "b"), live.steps)
         assertEquals("n-surds", live.noteId)
-        assertTrue(live.source!!.contains("GPT-6 Luna"))
+        assertEquals(pk.parhlou.student.ai.LunaGateway.SOURCE, live.source)
 
         val offline = gateway(200, null).tutor(turn)
         assertEquals("n-surds", offline.noteId)
-        assertTrue(offline.source!!.startsWith("Demo tutor: the AI is offline"))
+        assertEquals("Answered offline from your course notes", offline.source)
     }
 
     @Test fun photosAreSentOnlyToTheRealAi() = runBlocking {

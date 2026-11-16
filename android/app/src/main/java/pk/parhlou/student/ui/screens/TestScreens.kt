@@ -94,52 +94,111 @@ fun TestsScreen(
     onBack: (() -> Unit)?,
     /** Quarter/half/full mocks that can't be built yet (ready ones are already in [blueprints]). */
     pendingMocks: List<MockPaper.NeedsQuestions> = emptyList(),
-    /** Opens "Make my paper" (the AI chooses a full board-pattern paper); null when no board pattern is published. */
+    /** Opens "Make my paper" (a full board-pattern paper); null when no board pattern is published. */
     onMakePaper: (() -> Unit)? = null,
+    /** Textbook exercises ("1.1", "1.2" …) that can be printed as a paper. */
+    exercises: List<String> = emptyList(),
+    /** Prints one exercise as a paper; true = with the worked answers. */
+    onExercisePdf: ((String, Boolean) -> Unit)? = null,
+    attemptsLeft: (String) -> Int = { pk.parhlou.student.domain.PaperAttempts.MAX },
 ) {
+    var picker by rememberSaveable { mutableStateOf("") } // "", "exercise", "chapter"
+    val board = blueprints.filter { it.official }
+    val chapterTests = blueprints.filter { !it.official && it.chapterId != null }
+    val half = blueprints.firstOrNull { it.id == "mock-half" }
+    val mine = blueprints.filter { !it.official && it.chapterId == null && it.id != "mock-half" }
     ParhlouScreen("Papers", onBack = onBack) {
-        if (onMakePaper != null) Sheet(Modifier.testTag("make-paper")) {
-            Text("Make my paper", style = MaterialTheme.typography.titleMedium)
-            Muted("Ustaad picks a full 75-mark paper in the 2027 board pattern from real past-paper questions: the most repeated ones, more from your weak topics, none you've done. Sit it here or print it.")
-            BigButton("Make my paper", onClick = onMakePaper, enabled = readinessPassed)
-            if (!readinessPassed) Muted("Pass the readiness check first.")
+        if (!readinessPassed) Sheet(Modifier.testTag("readiness")) {
+            Text("🔒 Quick check first", style = MaterialTheme.typography.titleMedium)
+            Muted("A short quiz. Pass $READINESS_PASS_PERCENT% to unlock papers.")
+            BigButton("Start the check", onClick = onReadiness)
         }
-        Sheet {
-            Text("Readiness check", style = MaterialTheme.typography.titleMedium)
-            Muted("A short quiz before each paper. Pass mark $READINESS_PASS_PERCENT%. Failing it doesn't use up a paper.")
-            if (readinessPassed) StatusPill("Passed", warning = false)
-            else BigButton("Start readiness check", onClick = onReadiness)
-        }
-        if (blueprints.isEmpty()) Muted("No papers are published for your subjects yet.")
-        blueprints.forEach { b ->
-            val ready = b.id in available
-            pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(b.id) }, enabled = readinessPassed && ready, modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(22.dp)) {
-                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                    Text(b.title, style = MaterialTheme.typography.titleMedium)
-                    Muted("${b.durationMinutes} minutes · ${fmt(b.totalMarks)} marks")
-                    if (b.official) StatusPill("Board pattern", warning = false)
-                    when {
-                        !ready -> Muted("Not available yet: it needs checked questions for every unit.")
-                        !readinessPassed -> Muted("Locked until you pass the readiness check.")
+
+        Text("Board papers", style = MaterialTheme.typography.titleLarge)
+        if (board.isEmpty()) Muted("Coming soon.")
+        board.forEach { PaperCard(it, it.id in available, readinessPassed, attemptsLeft(it.id), onOpen) }
+
+        Text("Make a paper", style = MaterialTheme.typography.titleLarge)
+        val tiles = listOf(
+            Triple("📘", "Exercise", "scope-exercise") to (exercises.isNotEmpty() && onExercisePdf != null),
+            Triple("📗", "Chapter", "scope-chapter") to (readinessPassed && chapterTests.isNotEmpty()),
+            Triple("📙", "Half book", "scope-half") to (readinessPassed && half != null && half.id in available),
+            Triple("📕", "Full book", "scope-full") to (readinessPassed && onMakePaper != null),
+        )
+        tiles.chunked(2).forEach { row ->
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
+                row.forEach { (t, enabled) ->
+                    pk.parhlou.student.ui.components.TapCard(enabled = enabled, modifier = Modifier.weight(1f).testTag(t.third), shape = RoundedCornerShape(20.dp), onClick = {
+                        when (t.third) {
+                            "scope-exercise" -> picker = "exercise"
+                            "scope-chapter" -> picker = "chapter"
+                            "scope-half" -> half?.let { onOpen(it.id) }
+                            else -> onMakePaper?.invoke()
+                        }
+                    }) {
+                        Column(Modifier.padding(14.dp).fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                            Text(t.first, style = MaterialTheme.typography.headlineSmall)
+                            Text(t.second, style = MaterialTheme.typography.titleSmall)
+                        }
                     }
                 }
             }
         }
-        if (pendingMocks.isNotEmpty()) {
-            Text("Mock papers", style = MaterialTheme.typography.titleLarge)
-            pendingMocks.forEach { m ->
-                pk.parhlou.student.ui.components.TapCard(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
-                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text("${m.scope.label} (Units ${m.chapters.first().number}–${m.chapters.last().number})", style = MaterialTheme.typography.titleMedium)
-                        
-                        Muted(
-                            if (m.missing.isNotEmpty()) "Needs questions for ${unitRanges(m.missing.map { it.number })} first."
-                            else "Needs more questions of the right marks before it can be built.",
-                        )
-                    }
-                }
+
+        // The choice opens right under the tiles.
+        if (picker == "exercise") ScopePicker("Choose an exercise", onClose = { picker = "" }) {
+            var chosen by remember { mutableStateOf<String?>(null) }
+            FlowChips(exercises, chosen) { chosen = it }
+            chosen?.let { e ->
+                BigButton("Questions PDF", onClick = { onExercisePdf?.invoke(e, false) }, modifier = Modifier.testTag("exercise-pdf"))
+                pk.parhlou.student.ui.components.SecondaryButton("With answers", onClick = { onExercisePdf?.invoke(e, true) })
             }
+        }
+        if (picker == "chapter") ScopePicker("Choose a chapter", onClose = { picker = "" }) {
+            chapterTests.forEach { b -> PaperCard(b, b.id in available, readinessPassed, attemptsLeft(b.id), onOpen) }
+        }
+
+        if (mine.isNotEmpty()) {
+            Text("My papers", style = MaterialTheme.typography.titleLarge)
+            mine.forEach { PaperCard(it, it.id in available, readinessPassed, attemptsLeft(it.id), onOpen) }
+        }
+        pendingMocks.forEach { m ->
+            Muted("${m.scope.label}: " + if (m.missing.isNotEmpty()) "needs ${unitRanges(m.missing.map { it.number })} first." else "coming soon.")
+        }
+    }
+
+}
+
+/** One paper: its name, then time, marks and tries left. */
+@Composable
+private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, triesLeft: Int, onOpen: (String) -> Unit) {
+    pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(b.id) }, enabled = unlocked && ready, modifier = Modifier.fillMaxWidth().testTag("paper-${b.id}"),
+        shape = RoundedCornerShape(22.dp)) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(b.title, style = MaterialTheme.typography.titleMedium)
+            Muted(if (!ready) "Coming soon" else "⏱ ${b.durationMinutes} min · ${fmt(b.totalMarks)} marks · $triesLeft ${if (triesLeft == 1) "try" else "tries"} left")
+        }
+    }
+}
+
+@Composable
+private fun ScopePicker(title: String, onClose: () -> Unit, content: @Composable () -> Unit) {
+    Sheet(Modifier.testTag("scope-picker")) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text(title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            TextButton(onClick = onClose, modifier = Modifier.heightIn(min = 48.dp)) { Text("Close") }
+        }
+        content()
+    }
+}
+
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+@Composable
+private fun FlowChips(items: List<String>, chosen: String?, onChoose: (String) -> Unit) {
+    androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        items.forEach { e ->
+            androidx.compose.material3.FilterChip(selected = e == chosen, onClick = { onChoose(e) }, label = { Text(e) },
+                modifier = Modifier.heightIn(min = 48.dp).testTag("exercise-$e"))
         }
     }
 }
@@ -196,43 +255,34 @@ fun AssessmentStartScreen(
     ParhlouScreen("Before you start", onBack = onBack) {
         Sheet {
             Text(blueprint.title, style = MaterialTheme.typography.titleLarge)
-            Text("Time: ${blueprint.durationMinutes} minutes", style = MaterialTheme.typography.bodyLarge)
-            Text("Total: ${fmt(blueprint.totalMarks)} marks", style = MaterialTheme.typography.bodyLarge)
-            blueprint.sections.forEach { s ->
-                Muted("${s.type}: answer ${s.attempt} of ${s.count}, ${fmt(s.marksEach)} marks each" +
-                    (s.minutes?.let { " ($it min)" } ?: ""))
-            }
-            if (!blueprint.official) StatusPill("Practice pattern — not an official board paper")
-            StatusPill(
+            Text("⏱ ${blueprint.durationMinutes} min · ${fmt(blueprint.totalMarks)} marks", style = MaterialTheme.typography.bodyLarge)
+            Text(
                 when {
-                    attemptsLeft == 0 -> "All ${pk.parhlou.student.domain.PaperAttempts.MAX} attempts used" + (bestPercent?.let { " · best $it%" } ?: "")
-                    attemptsUsed == 0 -> "${pk.parhlou.student.domain.PaperAttempts.MAX} attempts"
-                    else -> "Attempt ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}" + (bestPercent?.let { " · best so far $it%" } ?: "")
+                    attemptsLeft == 0 -> "All ${pk.parhlou.student.domain.PaperAttempts.MAX} tries used" + (bestPercent?.let { " · best $it%" } ?: "")
+                    attemptsUsed == 0 -> "🔁 ${pk.parhlou.student.domain.PaperAttempts.MAX} tries"
+                    else -> "🔁 Try ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}" + (bestPercent?.let { " · best $it%" } ?: "")
                 },
-                warning = attemptsLeft == 0,
+                style = MaterialTheme.typography.bodyLarge, color = if (attemptsLeft == 0) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
             )
+            var info by remember { mutableStateOf(false) }
+            TextButton(onClick = { info = !info }, modifier = Modifier.heightIn(min = 48.dp).testTag("paper-info")) { Text(if (info) "ⓘ Hide details" else "ⓘ How it works") }
+            if (info) {
+                blueprint.sections.filter { it.count > 0 }.forEach { s ->
+                    Muted("${s.type}: answer ${s.attempt} of ${s.count}, ${fmt(s.marksEach)} marks each" + (s.minutes?.let { " ($it min)" } ?: ""))
+                }
+                Muted("Tap your MCQ choices; type your working or add photos of your pages. Extra answers beyond what's asked aren't counted.")
+                Muted("The timer keeps running if you leave. Ustaad is locked until you hand in.")
+            }
         }
-        Sheet {
-            Text("How it works", style = MaterialTheme.typography.titleMedium)
-            Muted("Tap your choice for each MCQ. For written questions, type your working, or add photos of your pages.")
-            Muted("If you answer more questions than asked, only the first ones are checked.")
-            Muted("Check Master marks your paper as soon as you hand it in. Typed answers are checked now; page photos wait for the AI examiner.")
-        }
-        Sheet {
-            Text("Invigilator", style = MaterialTheme.typography.titleMedium)
-            Muted("The timer keeps running if you close the app. The invigilator records how long you take and each time you leave the paper, then shows you a report. It stays on this phone.")
-            Muted("The AI tutor is locked until you hand in.")
-        }
+        FocusModeCard()
         if (onPrint != null && problems.isEmpty()) {
             Sheet(Modifier.testTag("print-paper")) {
-                Text("Write it on paper, like the real exam", style = MaterialTheme.typography.titleMedium)
-                Muted("Print this paper in the board's layout, with a bubble sheet for the MCQs. Answer on plain paper in any order; " +
-                    "just write the question and part number, like \"Q2 (iii)\" or \"Q5 (b)\". Then scan your pages and the AI examiner " +
-                    "reads your handwriting and marks it step by step, the way board examiners do.")
-                SecondaryButton("Print or share the paper (PDF)", onClick = { onPrint(false) })
-                TextButton(onClick = { onPrint(true) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("With the marking scheme (for parents and teachers)") }
+                Text("✍️ Write it on paper", style = MaterialTheme.typography.titleMedium)
+                Muted("Print → write → scan. Ustaad marks your handwriting.")
+                SecondaryButton("Print the paper (PDF)", onClick = { onPrint(false) })
+                TextButton(onClick = { onPrint(true) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("With marking scheme") }
                 if (onWrittenOnPaper != null && !started && !submitted && attemptsLeft > 0) {
-                    BigButton("I wrote it on paper: scan my answers", onClick = onWrittenOnPaper)
+                    BigButton("Scan my answers", onClick = onWrittenOnPaper)
                 }
             }
         }
@@ -293,6 +343,12 @@ fun ExamScreen(
     LaunchedEffect(id) {
         store.appendExamEvent(id, ExamEventType.STARTED, System.currentTimeMillis())
         while (true) { now = System.currentTimeMillis(); delay(1_000) }
+    }
+    // Do Not Disturb for as long as the paper is open; the phone's own setting comes back on hand-in or leaving.
+    val focusContext = androidx.compose.ui.platform.LocalContext.current
+    DisposableEffect(id) {
+        pk.parhlou.student.ui.FocusMode.on(focusContext)
+        onDispose { pk.parhlou.student.ui.FocusMode.off(focusContext) }
     }
     // Invigilator: note every time the paper leaves the screen (app closed, another app, another screen) and returns.
     val owner = LocalLifecycleOwner.current
@@ -478,7 +534,7 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, label: String
             val scanned = photos.size - added
             Muted(
                 "${photos.size} page photo${if (photos.size == 1) "" else "s"} attached" +
-                    (if (scanned > 0) " ($scanned scanned)" else "") + ". Photos wait for the AI examiner.",
+                    (if (scanned > 0) " ($scanned scanned)" else "") + ". Photos are marked when you're online.",
             )
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -547,5 +603,23 @@ fun ScanChooserScreen(
                 }
             }
         }
+    }
+}
+
+/** Asks once for permission to silence the phone during papers; hidden once it's allowed. */
+@Composable
+private fun FocusModeCard() {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    var allowed by remember { mutableStateOf(pk.parhlou.student.ui.FocusMode.allowed(context)) }
+    val owner = LocalLifecycleOwner.current
+    DisposableEffect(owner) {
+        val o = LifecycleEventObserver { _, e -> if (e == Lifecycle.Event.ON_RESUME) allowed = pk.parhlou.student.ui.FocusMode.allowed(context) }
+        owner.lifecycle.addObserver(o)
+        onDispose { owner.lifecycle.removeObserver(o) }
+    }
+    if (!allowed) Sheet(Modifier.testTag("focus-mode")) {
+        Text("🔕 Silence your phone during papers", style = MaterialTheme.typography.titleMedium)
+        Muted("Do Not Disturb turns on when you start and off when you hand in.")
+        SecondaryButton("Allow", onClick = { pk.parhlou.student.ui.FocusMode.askPermission(context) })
     }
 }

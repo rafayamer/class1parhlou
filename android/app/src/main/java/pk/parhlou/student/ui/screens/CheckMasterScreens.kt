@@ -115,7 +115,7 @@ fun CheckMasterScreen(
             if (r.pending > 0) {
                 Text("${fmt(r.pending)} more marks not checked yet", style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.tertiary)
-                Muted("These are never counted as wrong. Compare with the model answer, retype clearly and re-check. Page photos wait for the AI examiner.")
+                Muted("These are never counted as wrong. Compare with the model answer, retype clearly and re-check. Page photos are marked when you're online.")
             }
             // Board-style grade band and the examiner's remarks.
             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -217,7 +217,7 @@ private fun ExaminerAnalysis(a: PaperAnalysis, report: ExaminerReport?, onPracti
             Muted("Your examiner is writing your analysis…")
             androidx.compose.material3.LinearProgressIndicator(Modifier.fillMaxWidth())
         } else {
-            StatusPill(if (report.byAi) "Written by your AI examiner from your marks" else "Written from your marks", warning = false)
+            StatusPill(if (report.byAi) "Written by Ustaad from your marks" else "Written from your marks", warning = false)
             Text(report.headline, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("analysis-headline"))
             Text(report.summary, style = MaterialTheme.typography.bodyLarge)
         }
@@ -350,8 +350,8 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
         StatusPill(mark.status.label, warning = mark.status != MarkStatus.CHECKED)
     }
     when (mark.examiners) {
-        2 -> Muted("Double-marked: two AI examiners marked this separately and agreed on every step.")
-        3 -> Muted("Double-marked: the two AI examiners disagreed on a step, so a head examiner decided, as in the board.")
+        2 -> Muted("Double-marked: two markers agreed on every step.")
+        3 -> Muted("Double-marked: the two markers disagreed on a step, so a head examiner decided, as in the board.")
         else -> Unit
     }
     when (mark.status) {

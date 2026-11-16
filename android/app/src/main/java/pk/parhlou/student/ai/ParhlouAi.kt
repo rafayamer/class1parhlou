@@ -104,7 +104,7 @@ enum class MarkStatus(val label: String) {
     CHECKED("Checked"),
     PARTLY_CHECKED("Partly checked"),
     COULD_NOT_CHECK("Couldn't check automatically"),
-    WAITING_FOR_AI("Waiting for the AI examiner"),
+    WAITING_FOR_AI("Being marked"),
     NOT_ATTEMPTED("Not attempted"),
 }
 

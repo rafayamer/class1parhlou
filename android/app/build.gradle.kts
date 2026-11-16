@@ -57,6 +57,8 @@ android {
         // Offline Robolectric: pass -ProbolectricDir=/path/with/android-all-instrumented jars
         // where the network blocks Robolectric's own downloader.
         unitTests.all { test ->
+            // Robolectric renders whole screens; the default 512 MB runs out across the full suite.
+            test.maxHeapSize = "2g"
             // -PscreenshotDir=/path renders design screenshots (ScreenshotTest); skipped otherwise.
             project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
             project.findProperty("iconOut")?.let { test.systemProperty("parhlou.iconOut", it.toString()) }

@@ -23,7 +23,7 @@ class AttemptsTest {
 
     @Test fun secondTryOffersASitAgainWithTriesLeft() {
         rule.setContent { ParhlouTheme { AssessmentStartScreen(bp, submittedLog, {}, {}, {}, {}, attemptsUsed = 1, bestPercent = 60) } }
-        rule.onNodeWithText("Attempt 2 of 3 · best so far 60%").assertExists()
+        rule.onNodeWithText("🔁 Try 2 of 3 · best 60%").assertExists()
         rule.onNodeWithText("Sit this paper again (2 tries left)").assertExists()
     }
 

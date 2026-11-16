@@ -267,6 +267,8 @@ fun ParhlouApp(
         } ?: return null
         return PaperPdf.write(java.io.File(dir, "$name.pdf"), b, p, withScheme = action.withAnswers || action.isNotes)
     }
+    // A paper that ended while the app was closed still gives the phone back its own Do Not Disturb setting.
+    LaunchedEffect(Unit) { if (store.activeExam.first() == null) pk.parhlou.student.ui.FocusMode.off(context) }
     val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
     // The plan teaches what the exam examines; sections the smart syllabus leaves out stay open as practice.
     val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
@@ -549,6 +551,18 @@ fun ParhlouApp(
                 onBack = null,
                 pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
                 onMakePaper = if (template != null) ({ nav.navigate(Routes.MAKE_PAPER) }) else null,
+                exercises = remember(subjects) {
+                    subjects.flatMap { it.chapters }.flatMap { c -> c.modules.flatMap { it.solutions } }
+                        .mapNotNull { Regex("""^Ex (\d+\.\d+) """).find(it.source)?.groupValues?.get(1) }.distinct()
+                        .sortedWith(compareBy({ it.substringBefore('.').toInt() }, { it.substringAfter('.').toInt() }))
+                },
+                onExercisePdf = { e, answers ->
+                    scope.launch {
+                        val f = withContext(Dispatchers.IO) { makePdf(pk.parhlou.student.domain.PdfAction("paper_pdf", "exercise", 0, e, answers)) }
+                        if (f != null) shareFile(context, f, "application/pdf", "Exercise $e")
+                    }
+                },
+                attemptsLeft = { id -> (pk.parhlou.student.domain.PaperAttempts.MAX - pk.parhlou.student.domain.PaperAttempts.used(progress.history(), id)).coerceAtLeast(0) },
             )
         } }
         composable(Routes.READINESS) {
