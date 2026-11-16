@@ -1,0 +1,84 @@
+{
+  "_about": "Decisions on the content audit, checked by hand against the printed pages (book PDF pages 22, 98, 185, 246 and the answer key).",
+  "keep": {
+    "Example 8": "Unit 4: printed on p. 69, before Exercise 4.2's pages; the reader only saw p. 71-79.",
+    "Example 9": "Unit 4: printed on p. 70.",
+    "Example 10": "Unit 4: printed on p. 70.",
+    "6.1 Example 8": "A real section 6.1 example; the reader was looking at Exercise 6.2.",
+    "6.1 Example 9": "A real section 6.1 example; the reader was looking at Exercise 6.2.",
+    "11.2 Example 7": "The reader saw only some of section 11.2's pages.",
+    "Review Ex 12 Q12(i)": "The printed question gives only the table, but the book's answer key gives the mean, median and mode, so all three are kept.",
+    "Review Ex 12 Q12(ii)": "The printed question gives only the table, but the book's answer key gives the mean, median and mode, so all three are kept.",
+    "Review Ex 12 Q12(iii)": "The printed question gives only the table, but the book's answer key gives the mean, median and mode, so all three are kept."
+  },
+  "skipAdd": {
+    "Review Ex 10 Q3": "Already in the app as Q3(a) and Q3(b); the shared opening sentence is added to both instead."
+  },
+  "prefix": {
+    "Review Ex 10 Q3(a)": "Sales for a new magazine are expected to grow according to the equation: S = 200000(1 − e^(−0.05t)), where t is given in weeks.",
+    "Review Ex 10 Q3(b)": "Sales for a new magazine are expected to grow according to the equation: S = 200000(1 − e^(−0.05t)), where t is given in weeks."
+  },
+  "mcqs": [
+    {
+      "unit": 1,
+      "label": "Review Ex 1 Q1(vii)",
+      "stem": "2ˣ × 8ˣ = 64 then x =",
+      "options": [
+        "3/2",
+        "3/4",
+        "5/6",
+        "2/3"
+      ],
+      "correctIndex": 0,
+      "rationales": [
+        "2ˣ × 8ˣ = 16ˣ = 2⁴ˣ and 64 = 2⁶, so 4x = 6 and x = 3/2.",
+        "16^(3/4) = 8, not 64.",
+        "16^(5/6) is not 64.",
+        "16^(2/3) is not 64."
+      ],
+      "teacher": "The book's answer key gives (b) 3/4, but 2ˣ × 8ˣ = 64 gives x = 3/2, option (a). The app marks (a)."
+    },
+    {
+      "unit": 5,
+      "label": "Review Ex 5 Q1(viii)",
+      "stem": "(0,0) is solution of inequality:",
+      "options": [
+        "4x + 5y > 8",
+        "3x + y > 6",
+        "−2x + 3y < 0",
+        "x + y > 4"
+      ],
+      "correctIndex": 2,
+      "rationales": [
+        "At (0, 0): 0 > 8 is false.",
+        "At (0, 0): 0 > 6 is false.",
+        "At (0, 0): −2(0) + 3(0) = 0, which lies on the boundary line −2x + 3y = 0. This is the book's answer.",
+        "At (0, 0): 0 > 4 is false."
+      ],
+      "teacher": "As printed, (0, 0) satisfies none of the four (option (c) gives 0 < 0). The answer key gives (c), which is right only if the sign is ≤. The app follows the key."
+    },
+    {
+      "unit": 9,
+      "label": "Review Ex 9 Q1(ix)",
+      "stem": "In a regular hexagon, the ratio of the length of a diagonal to the side length is:",
+      "options": [
+        "√3 : 1",
+        "2 : 1",
+        "3 : 2",
+        "2 : 3"
+      ],
+      "correctIndex": 1,
+      "rationales": [
+        "√3 : 1 is the shorter diagonal; the book means the longest diagonal.",
+        "The longest diagonal of a regular hexagon passes through the centre and equals two sides, so the ratio is 2 : 1.",
+        "3 : 2 does not match any diagonal.",
+        "2 : 3 is upside down and does not match any diagonal."
+      ]
+    }
+  ],
+  "notes": {
+    "Review Ex 12 Q12(i)": "The book's question gives only the table; its answer key finds the mean, median and mode.",
+    "Review Ex 12 Q12(ii)": "The book's question gives only the table; its answer key finds the mean, median and mode.",
+    "Review Ex 12 Q12(iii)": "The book's question gives only the table; its answer key finds the mean, median and mode."
+  }
+}

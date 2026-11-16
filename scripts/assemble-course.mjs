@@ -400,15 +400,31 @@ const cleaned = cleanAll(bundle);
 const auditFile = `${ROOT}/audit-fixes.json`;
 if (existsSync(auditFile)) {
   const fx = JSON.parse(readFileSync(auditFile, "utf8"));
+  // Decisions made by hand on the audit's findings (audit-manual.json): removals that were wrong, added notes and MCQs.
+  const manualFile = `${ROOT}/audit-manual.json`;
+  const man = existsSync(manualFile) ? JSON.parse(readFileSync(manualFile, "utf8")) : {};
+  const removals = (fx.remove ?? []).filter((r) => !(r in (man.keep ?? {})));
   let applied = 0;
   for (const c of cleaned.subject.chapters) for (const m of c.modules) {
     const sec = /^(\d+\.\d+)/.exec(m.title)?.[1] ?? String(c.number);
-    m.solutions = m.solutions.filter((s) => !(fx.remove ?? []).includes(s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source));
+    m.solutions = m.solutions.filter((s) => !removals.includes(s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source));
     for (const s of m.solutions) {
       const k = s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source;
-      if (fx.questions?.[k]) { s.question = fx.questions[k]; applied++; }
+      // Question corrections; some readers filed a question's wording under "stem".
+      const q = fx.questions?.[k] ?? fx.mcq?.[k]?.stem;
+      if (q) { s.question = q; applied++; }
+      const pre = man.prefix?.[k];
+      if (pre && !s.question.startsWith(pre)) { s.question = `${pre}\n${s.question}`; applied++; }
+      if (man.notes?.[k]) s.note = man.notes[k];
       if (fx.steps?.[k]?.length) { s.steps = fx.steps[k]; delete s.why; applied++; }
-      if (fx.answers?.[k]) { s.answer = fx.answers[k]; s.checked = true; }
+      if (fx.answers?.[k] && fx.answers[k] !== s.answer) {
+        s.answer = fx.answers[k]; s.checked = true;
+        // What the app accepts as the student's final answer follows the re-worked answer.
+        s.accept = [[fx.answers[k].replace(/^[A-Za-z]\s*=\s*/, "").trim()]];
+        // A note about the book's key disagreeing no longer applies once the answer agrees with it.
+        const bare = (t) => String(t ?? "").replace(/^[A-Za-z]\s*=\s*/, "").replace(/\s+/g, "");
+        if (s.bookAnswer && bare(s.bookAnswer) === bare(s.answer)) s.note = "";
+      }
     }
   }
   for (const q of [...cleaned.quiz, ...cleaned.papers.flatMap((p) => p.mcqs)]) {
@@ -421,10 +437,22 @@ if (existsSync(auditFile)) {
     const c = cleaned.subject.chapters.find((x) => x.number === a.unit); if (!c) continue;
     const m = c.modules.find((x) => x.title.startsWith(`${String(a.exercise).replace(/^R/, "")} `)) ?? c.modules.at(-1);
     const source = a.kind === "EXAMPLE" ? a.label.replace(/^\d+\.\d+\s+/, "") : a.label;
-    if (a.kind === "MCQ" || m.solutions.some((s) => s.source === source)) continue;
+    // Examples are numbered through the whole unit, and the app groups some book sections into one module, so an
+    // item counts as present if any module of the unit has it.
+    if (a.kind === "MCQ" || a.label in (man.skipAdd ?? {}) || c.modules.some((x) => x.solutions.some((s) => s.source === source))) continue;
     const solved = fx.solved?.[a.label];
     m.solutions.push({ kind: a.kind, source, question: a.text, steps: solved?.steps ?? a.steps ?? [], answer: solved?.answer ?? "", accept: solved?.accept ?? [],
       checked: !!solved || (a.kind === "EXAMPLE" && a.steps?.length > 0), inExam: true, figures: [] });
+    applied++;
+  }
+  // Review MCQs the course was missing, with the answer checked against the book's key (see audit-manual.json).
+  for (const q of man.mcqs ?? []) {
+    const c = cleaned.subject.chapters.find((x) => x.number === q.unit); if (!c) continue;
+    const m = c.modules.at(-1);
+    const id = `b-${q.unit}-r-${q.label.replace(/^.*Q1\(([ivx]+)\)$/, "$1")}`;
+    if (cleaned.quiz.some((x) => x.id === id)) continue;
+    const note = cleaned.notes.find((n) => n.moduleId === m.id)?.id ?? null;
+    cleaned.quiz.push({ id, stem: q.stem, options: q.options, correctIndex: q.correctIndex, rationales: q.rationales, status: "APPROVED", noteId: note, moduleId: m.id });
     applied++;
   }
   console.log(`Content audit: ${applied} corrections applied`);
@@ -440,10 +468,11 @@ for (const c of cleaned.subject.chapters) {
   for (const m of c.modules) {
     m.status = "PUBLISHED";
     for (const s of m.solutions) s.question = devClean(s.question);
+    for (const w of m.writtenQuestions ?? []) { w.text = devClean(w.text); w.followUp = devClean(w.followUp); }
   }
 }
-for (const w of cleaned.written) w.text = devClean(w.text);
-for (const p of cleaned.papers) for (const w of p.written) w.text = devClean(w.text);
+for (const w of cleaned.written) { w.text = devClean(w.text); w.followUp = devClean(w.followUp); }
+for (const p of cleaned.papers) for (const w of p.written) { w.text = devClean(w.text); w.followUp = devClean(w.followUp); }
 for (const q of [...cleaned.quiz, ...cleaned.papers.flatMap((p) => p.mcqs)]) q.stem = devClean(q.stem);
 if (cleaned.subject) cleaned.subject.editionVerified = true;
 // "Why this step?" reasons (step-why.mjs), attached only where they were written for exactly these steps.
