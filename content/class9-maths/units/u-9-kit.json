@@ -1,0 +1,495 @@
+{
+ "unit": 9,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Ex 9.1 Q8-9",
+   "Ex 9.2 Q5",
+   "Ex 9.2 Q8",
+   "Example 13-18",
+   "Ex 9.4",
+   "Review Ex 9 Q1(iv)",
+   "Review Ex 9 Q1(vi)",
+   "Review Ex 9 Q1(vii)",
+   "Review Ex 9 Q1(viii)",
+   "Review Ex 9 Q1(ix)",
+   "Review Ex 9 Q1(x)",
+   "Review Ex 9 Q2",
+   "Review Ex 9 Q4",
+   "Review Ex 9 Q7-9"
+  ],
+  "definitions": [
+   {
+    "term": "Polygon",
+    "text": "Three or more than three-sided closed figure is called polygon."
+   },
+   {
+    "term": "Similar figures",
+    "text": "Similar figures have same shape but not necessarily of same size."
+   },
+   {
+    "term": "Similar polygons",
+    "text": "Two polygons are similar if their corresponding angles are equal and the corresponding sides are proportional (i.e., the ratios of the lengths of corresponding sides are equal). This means that if two polygons are similar, one is a scaled version of the other."
+   },
+   {
+    "term": "Proportionality of sides",
+    "text": "Proportionality of sides means one side is k times of its corresponding side."
+   },
+   {
+    "term": "AA similarity rule for triangles",
+    "text": "If two angles in one triangle are congruent to two corresponding angles in another triangle, the third angle in each triangle must be congruent. Since the angles are the same, the triangles are similar. Similarity symbol is ‘~’."
+   },
+   {
+    "term": "SAS similarity rule for triangles",
+    "text": "If the ratio of two corresponding sides and their included angle are equal, then the triangles are similar."
+   },
+   {
+    "term": "SSS similarity rule for triangles",
+    "text": "If the ratio of all the corresponding sides are equal, then the triangles are similar."
+   },
+   {
+    "term": "Area rule for similar figures",
+    "text": "Hence the ratio of the areas of any two similar figures is equal to the square of the ratio of any two corresponding lengths of the figures."
+   },
+   {
+    "term": "Scale factor for areas",
+    "text": "Since each length is k times of the other, we take ℓ₁/ℓ₂ = k, then A₁/A₂ = k². i.e. Area A₁ is k² times the area A₂. k is called scale factor."
+   },
+   {
+    "term": "Similar solids",
+    "text": "Two solids are said to be similar if they have same shape but possibly different sizes. Two solids are similar if lengths of the corresponding sides are proportional i.e., the ratio of the corresponding lengths are equal."
+   },
+   {
+    "term": "Volume rule for similar solids",
+    "text": "Hence the ratio of the volume of any two similar solids is equal to the cube of the ratio of any two corresponding lengths of the solids."
+   },
+   {
+    "term": "Mass rule for similar solids",
+    "text": "Since mass of a substance is proportional to its volume, the ratio of the mass of two similar solids is equal of to the ratio of their volumes."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "AB/DE = BC/EF = CA/FD",
+    "use": "Use equal corresponding-side ratios to prove triangles are similar."
+   },
+   {
+    "formula": "ℓ₁/ℓ₂ = k",
+    "use": "Use k for the scale factor between corresponding lengths."
+   },
+   {
+    "formula": "A₁/A₂ = (ℓ₁/ℓ₂)² = k²",
+    "use": "Use when finding area ratios or an unknown area of similar figures."
+   },
+   {
+    "formula": "A = base × altitude",
+    "use": "Use to find the area of a parallelogram."
+   },
+   {
+    "formula": "V₁/V₂ = (ℓ₁/ℓ₂)³ = k³",
+    "use": "Use when finding volume ratios or an unknown volume of similar solids."
+   },
+   {
+    "formula": "V₁/V₂ = (r₁/r₂)³ = (h₁/h₂)³",
+    "use": "Use corresponding radii or heights to compare volumes of similar cylinders."
+   },
+   {
+    "formula": "w₁/w₂ = V₁/V₂ = (ℓ₁/ℓ₂)³",
+    "use": "Use to compare masses of similar solids when their lengths are known."
+   },
+   {
+    "formula": "V = πr²h",
+    "use": "Use to calculate the volume of a cylinder."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 9.1 Q2",
+    "why": "A standard proof using proportional corresponding sides to establish triangle similarity."
+   },
+   {
+    "ref": "Ex 9.1 Q4(ii)",
+    "why": "Tests the common parallel-line triangle similarity setup and side proportions."
+   },
+   {
+    "ref": "Ex 9.1 Q5",
+    "why": "A real-life application of similar triangles, suitable for a longer calculation."
+   },
+   {
+    "ref": "Ex 9.1 Q6",
+    "why": "A standard height-and-shadow problem using similar triangles."
+   },
+   {
+    "ref": "Ex 9.2 Q3(a)",
+    "why": "Tests the square relationship between corresponding lengths and areas."
+   },
+   {
+    "ref": "Ex 9.2 Q3(b)",
+    "why": "A likely follow-on part requiring the difference between similar-triangle areas."
+   },
+   {
+    "ref": "Ex 9.2 Q6",
+    "why": "A short, direct question requiring the square root of an area ratio."
+   },
+   {
+    "ref": "Ex 9.2 Q7",
+    "why": "A common application of area ratio to find a corresponding side."
+   },
+   {
+    "ref": "Ex 9.3 Q3(i)",
+    "why": "Tests using the cube root of a volume ratio to find a length ratio."
+   },
+   {
+    "ref": "Ex 9.3 Q3(ii)",
+    "why": "Tests converting a volume ratio into a corresponding base-area ratio."
+   },
+   {
+    "ref": "Ex 9.3 Q5(i)",
+    "why": "A standard longer question applying the square law to similar solids."
+   },
+   {
+    "ref": "Ex 9.3 Q5(ii)",
+    "why": "A standard longer question applying the cube law to similar solids."
+   },
+   {
+    "ref": "Ex 9.3 Q6(i)",
+    "why": "A likely long-question application of the area law to similar tanks."
+   },
+   {
+    "ref": "Ex 9.3 Q6(ii)",
+    "why": "A likely long-question application of the volume law to similar tanks."
+   }
+  ],
+  "fullMarks": [
+   "Start a similarity proof by naming the two figures and matching their corresponding vertices in the correct order, such as ΔABC ~ ΔDEF.",
+   "For a triangle similarity proof, show the matching angles or write all three corresponding side ratios and show that they are equal.",
+   "Keep the order of corresponding figures consistent in every ratio; do not compare a side with a non-corresponding side.",
+   "For area questions, write A₁/A₂ = (ℓ₁/ℓ₂)² before substituting values. For volume questions, write V₁/V₂ = (ℓ₁/ℓ₂)³.",
+   "If an area ratio is given and a length is required, take the square root of the area ratio. If a volume ratio is given and a length is required, take the cube root.",
+   "Show the proportion, substitution and rearrangement as separate steps, then write the final answer clearly.",
+   "Include the correct units in the final answer: cm² or m² for area, and cm³ or m³ for volume."
+  ],
+  "mistakes": [
+   "Using the length ratio directly as the area ratio. Fix: square the corresponding-length ratio.",
+   "Using the square of the length ratio for volumes. Fix: cube the corresponding-length ratio.",
+   "Reversing one ratio but not the others. Fix: keep the same figure first in every numerator and the other figure in every denominator.",
+   "Taking a square root when finding a length from a volume ratio. Fix: take the cube root for volumes.",
+   "Matching sides in the wrong order when writing a triangle similarity statement. Fix: list the corresponding vertices in the same order before forming ratios.",
+   "Leaving off square or cubic units. Fix: write units such as cm² for area and cm³ for volume in the final answer."
+  ],
+  "shortTheory": [
+   {
+    "question": "What are similar figures?",
+    "answer": "Similar figures have same shape but not necessarily of same size."
+   },
+   {
+    "question": "When are two polygons similar?",
+    "answer": "Two polygons are similar if their corresponding angles are equal and the corresponding sides are proportional (i.e., the ratios of the lengths of corresponding sides are equal)."
+   },
+   {
+    "question": "State the rule for the areas of similar figures.",
+    "answer": "Hence the ratio of the areas of any two similar figures is equal to the square of the ratio of any two corresponding lengths of the figures."
+   },
+   {
+    "question": "When are two solids similar?",
+    "answer": "Two solids are said to be similar if they have same shape but possibly different sizes."
+   },
+   {
+    "question": "State the rule for the volumes of similar solids.",
+    "answer": "Hence the ratio of the volume of any two similar solids is equal to the cube of the ratio of any two corresponding lengths of the solids."
+   },
+   {
+    "question": "How are the masses of two similar solids related to their corresponding lengths?",
+    "answer": "Therefore, w₁/w₂ = (ℓ₁/ℓ₂)³"
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-9-1-t0",
+   "text": "What are similar figures?",
+   "marks": 2,
+   "modelAnswer": [
+    "Similar figures have same shape but not necessarily of same size."
+   ],
+   "followUp": "What are similar figures?",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "same shape"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining shared property of similar figures.",
+     "description": "States that similar figures have the same shape.",
+     "how": "Award 1 mark for identifying same shape."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "not necessarily",
+       "same size"
+      ],
+      [
+       "possibly",
+       "different sizes"
+      ],
+      [
+       "different sizes"
+      ],
+      [
+       "not same size"
+      ]
+     ],
+     "marks": 1,
+     "why": "Clarifies that similar figures need not be equal in size.",
+     "description": "States that their sizes may differ.",
+     "how": "Award 1 mark for stating that the figures may have different sizes."
+    }
+   ]
+  },
+  {
+   "id": "w-9-1-t1",
+   "text": "When are two polygons similar?",
+   "marks": 2,
+   "modelAnswer": [
+    "Two polygons are similar if their corresponding angles are equal and the corresponding sides are proportional (i.e., the ratios of the lengths of corresponding sides are equal)."
+   ],
+   "followUp": "When are two polygons similar?",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "corresponding angles",
+       "equal"
+      ],
+      [
+       "corresponding angles",
+       "same"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal corresponding angles are one of the two conditions for polygon similarity.",
+     "description": "States that corresponding angles are equal.",
+     "how": "Award 1 mark for the equal corresponding angles condition."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "corresponding sides",
+       "proportional"
+      ],
+      [
+       "ratios",
+       "corresponding sides",
+       "equal"
+      ],
+      [
+       "lengths",
+       "corresponding sides",
+       "proportional"
+      ]
+     ],
+     "marks": 1,
+     "why": "Proportional corresponding sides are the other condition for polygon similarity.",
+     "description": "States that corresponding sides are proportional, or that their ratios are equal.",
+     "how": "Award 1 mark for the proportional corresponding sides condition."
+    }
+   ]
+  },
+  {
+   "id": "w-9-1-t2",
+   "text": "State the rule for the areas of similar figures.",
+   "marks": 2,
+   "modelAnswer": [
+    "Hence the ratio of the areas of any two similar figures is equal to the square of the ratio of any two corresponding lengths of the figures."
+   ],
+   "followUp": "State the rule for the areas of similar figures.",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ratio",
+       "areas",
+       "similar figures"
+      ],
+      [
+       "areas",
+       "similar figures"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the quantities being compared in the rule.",
+     "description": "States that the rule concerns the ratio of the areas of similar figures.",
+     "how": "Award 1 mark for identifying the ratio of areas of similar figures."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "square",
+       "ratio",
+       "corresponding lengths"
+      ],
+      [
+       "squared",
+       "ratio",
+       "corresponding lengths"
+      ],
+      [
+       "²",
+       "corresponding lengths"
+      ],
+      [
+       "^2",
+       "corresponding lengths"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the square relationship between the area ratio and corresponding-length ratio.",
+     "description": "States that the area ratio equals the square of the ratio of corresponding lengths.",
+     "how": "Award 1 mark for stating that the ratio of corresponding lengths is squared."
+    }
+   ]
+  },
+  {
+   "id": "w-9-1-t3",
+   "text": "When are two solids similar?",
+   "marks": 2,
+   "modelAnswer": [
+    "Two solids are said to be similar if they have same shape but possibly different sizes."
+   ],
+   "followUp": "When are two solids similar?",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "same shape"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining shared property of similar solids.",
+     "description": "States that similar solids have the same shape.",
+     "how": "Award 1 mark for identifying same shape."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "possibly",
+       "different sizes"
+      ],
+      [
+       "different sizes"
+      ],
+      [
+       "may",
+       "different sizes"
+      ],
+      [
+       "not necessarily",
+       "same size"
+      ]
+     ],
+     "marks": 1,
+     "why": "Clarifies that similar solids may differ in size.",
+     "description": "States that the solids may be of different sizes.",
+     "how": "Award 1 mark for stating that their sizes may differ."
+    }
+   ]
+  },
+  {
+   "id": "w-9-1-t5",
+   "text": "How are the masses of two similar solids related to their corresponding lengths?",
+   "marks": 2,
+   "modelAnswer": [
+    "Therefore, w₁/w₂ = (ℓ₁/ℓ₂)³"
+   ],
+   "followUp": "How are the masses of two similar solids related to their corresponding lengths?",
+   "noteId": "n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "w₁/w₂"
+      ],
+      [
+       "w1/w2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the ratio of the two masses in the stated relationship.",
+     "description": "Writes the mass ratio w₁/w₂.",
+     "how": "Award 1 mark for the mass ratio."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(ℓ₁/ℓ₂)³"
+      ],
+      [
+       "(l₁/l₂)³"
+      ],
+      [
+       "(ℓ1/ℓ2)^3"
+      ],
+      [
+       "(l1/l2)^3"
+      ],
+      [
+       "length ratio",
+       "cube"
+      ],
+      [
+       "length ratio",
+       "cubed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows that the mass ratio equals the cube of the corresponding-length ratio.",
+     "description": "Relates the mass ratio to the cube of the corresponding-length ratio.",
+     "how": "Award 1 mark for the cubed length-ratio expression."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 5
+ }
+}

@@ -1,0 +1,725 @@
+{
+ "unit": 1,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 10-14",
+   "Ex 1.3",
+   "Review Ex 1 Q3",
+   "Review Ex 1 Q8-10"
+  ],
+  "definitions": [
+   {
+    "term": "Rational numbers",
+    "text": "We know that the set of rational numbers is defined as Q = {p/q; p, q ∈ Z ∧ q ≠ 0}"
+   },
+   {
+    "term": "Irrational numbers",
+    "text": "and set of irrational numbers (Q') contains those elements which cannot be expressed as quotient of integers."
+   },
+   {
+    "term": "Real numbers",
+    "text": "The set of Real numbers is the union of the set of rational numbers and irrational numbers i,e., R = Q ∪ Q'"
+   },
+   {
+    "term": "Terminating decimal number",
+    "text": "A decimal number with a finite number of digits after the decimal point is called a terminating decimal number."
+   },
+   {
+    "term": "Non-terminating and recurring decimal numbers",
+    "text": "The decimal numbers with an infinitely repeating pattern of digits after the decimal point are called non-terminating and recurring decimal numbers."
+   },
+   {
+    "term": "Irrational decimal numbers",
+    "text": "Non-terminating and non-recurring decimal numbers are known as irrational numbers."
+   },
+   {
+    "term": "Closure property of addition",
+    "text": "a + b ∈ R"
+   },
+   {
+    "term": "Commutative property of addition",
+    "text": "a + b = b + a"
+   },
+   {
+    "term": "Associative property of addition",
+    "text": "a + (b + c) = (a + b) + c"
+   },
+   {
+    "term": "Identity property of addition",
+    "text": "a + 0 = a = 0 + a"
+   },
+   {
+    "term": "Inverse property of addition",
+    "text": "a + (−a) = −a + a = 0"
+   },
+   {
+    "term": "Closure property of multiplication",
+    "text": "ab ∈ R"
+   },
+   {
+    "term": "Commutative property of multiplication",
+    "text": "ab = ba"
+   },
+   {
+    "term": "Associative property of multiplication",
+    "text": "a(bc) = (ab)c"
+   },
+   {
+    "term": "Identity property of multiplication",
+    "text": "a × 1 = 1 × a = a"
+   },
+   {
+    "term": "Inverse property of multiplication",
+    "text": "a × 1/a = 1/a × a = 1"
+   },
+   {
+    "term": "Left distributive property of multiplication over addition",
+    "text": "For all real numbers a, b, c\n\n(i) a(b + c) = ab + ac is called left distributive property of multiplication over addition."
+   },
+   {
+    "term": "Reflexive property of equality",
+    "text": "∀ a ∈ R, a = a"
+   },
+   {
+    "term": "Symmetric property of equality",
+    "text": "∀ a,b ∈ R, a = b ⇒ b = a"
+   },
+   {
+    "term": "Transitive property of equality",
+    "text": "∀ a,b,c ∈ R, a = b ∧ b = c ⇒ a = c"
+   },
+   {
+    "term": "Additive property of equality",
+    "text": "∀ a,b,c ∈ R, a = b ⇒ a + c = b + c"
+   },
+   {
+    "term": "Multiplicative property of equality",
+    "text": "∀ a,b,c ∈ R, a = b ⇒ ac = bc"
+   },
+   {
+    "term": "Cancellation property w.r.t addition",
+    "text": "∀ a,b,c ∈ R, a + c = b + c ⇒ a = b"
+   },
+   {
+    "term": "Cancellation property w.r.t multiplication",
+    "text": "∀ a,b,c ∈ R and c ≠ 0, ac = bc ⇒ a = b"
+   },
+   {
+    "term": "Trichotomy property",
+    "text": "∀ a,b ∈ R, either a = b or a > b or a < b"
+   },
+   {
+    "term": "nᵗʰ root",
+    "text": "If n is a positive integer greater than 1 and a is a real number, then any real number x such that x = ⁿ√a is called nᵗʰ root of a."
+   },
+   {
+    "term": "Radical and index",
+    "text": "Here, √ is called radical and n is the index of radical. A real number under the radical sign is called a radicand."
+   },
+   {
+    "term": "Exponential form of a radical",
+    "text": "Exponential form of x = ⁿ√a is x = (a)^(1/n)."
+   },
+   {
+    "term": "Surd",
+    "text": "An irrational radical with rational radicand is called a surd."
+   },
+   {
+    "term": "Monomial surd",
+    "text": "A surd that contains a single term is called a monomial surd e.g., √5, √7 etc."
+   },
+   {
+    "term": "Binomial surd",
+    "text": "A surd that contains the sum of two monomial surds is called a binomial surd e.g., √3 + √5, √2 + √7 etc."
+   },
+   {
+    "term": "Conjugate surds",
+    "text": "√a + √b and √a − √b are called conjugate surds of each other."
+   },
+   {
+    "term": "Product of conjugate surds",
+    "text": "The product of two conjugate surds is a rational number."
+   },
+   {
+    "term": "Rationalizing a denominator",
+    "text": "To rationalize a denominator of the form a + b√x or a − b√x, we multiply both the numerator and denominator by the conjugate factor."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "Q = {p/q; p, q ∈ Z ∧ q ≠ 0}",
+    "use": "Use to recognize or write a rational number as a quotient of integers."
+   },
+   {
+    "formula": "R = Q ∪ Q'",
+    "use": "Use to show that real numbers consist of rational and irrational numbers."
+   },
+   {
+    "formula": "a + b ∈ R",
+    "use": "Closure of real numbers under addition."
+   },
+   {
+    "formula": "a + b = b + a",
+    "use": "Commutative property of addition."
+   },
+   {
+    "formula": "a + (b + c) = (a + b) + c",
+    "use": "Associative property of addition."
+   },
+   {
+    "formula": "a + 0 = a = 0 + a",
+    "use": "Additive identity."
+   },
+   {
+    "formula": "a + (−a) = −a + a = 0",
+    "use": "Additive inverse."
+   },
+   {
+    "formula": "ab ∈ R",
+    "use": "Closure of real numbers under multiplication."
+   },
+   {
+    "formula": "ab = ba",
+    "use": "Commutative property of multiplication."
+   },
+   {
+    "formula": "a(bc) = (ab)c",
+    "use": "Associative property of multiplication."
+   },
+   {
+    "formula": "a × 1 = 1 × a = a",
+    "use": "Multiplicative identity."
+   },
+   {
+    "formula": "a × 1/a = 1/a × a = 1",
+    "use": "Multiplicative inverse, when a ≠ 0."
+   },
+   {
+    "formula": "a(b + c) = ab + ac",
+    "use": "Left distributive property over addition."
+   },
+   {
+    "formula": "a(b − c) = ab − ac",
+    "use": "Left distributive property over subtraction."
+   },
+   {
+    "formula": "(a + b)c = ac + bc",
+    "use": "Right distributive property over addition."
+   },
+   {
+    "formula": "(a − b)c = ac − bc",
+    "use": "Right distributive property over subtraction."
+   },
+   {
+    "formula": "a = b ⇒ a + c = b + c",
+    "use": "Add the same real number to both sides of an equality."
+   },
+   {
+    "formula": "a = b ⇒ ac = bc",
+    "use": "Multiply both sides of an equality by the same real number."
+   },
+   {
+    "formula": "a + c = b + c ⇒ a = b",
+    "use": "Cancel the same addend from both sides."
+   },
+   {
+    "formula": "ac = bc ⇒ a = b, when c ≠ 0",
+    "use": "Cancel the same non-zero factor from both sides."
+   },
+   {
+    "formula": "Either a = b or a > b or a < b",
+    "use": "Trichotomy: compare any two real numbers."
+   },
+   {
+    "formula": "a > b ⇒ a + c > b + c;  a < b ⇒ a + c < b + c",
+    "use": "Add the same number to both sides of an inequality."
+   },
+   {
+    "formula": "If c > 0: a > b ⇒ ac > bc; a < b ⇒ ac < bc",
+    "use": "Multiply an inequality by a positive number without reversing its sign."
+   },
+   {
+    "formula": "If c < 0: a > b ⇒ ac < bc; a < b ⇒ ac > bc",
+    "use": "Multiply an inequality by a negative number and reverse its sign."
+   },
+   {
+    "formula": "If c > 0: a < b ⇒ a/c < b/c; a > b ⇒ a/c > b/c",
+    "use": "Divide an inequality by a positive number."
+   },
+   {
+    "formula": "If c < 0: a < b ⇒ a/c > b/c; a > b ⇒ a/c < b/c",
+    "use": "Divide an inequality by a negative number and reverse its sign."
+   },
+   {
+    "formula": "If a and b have the same sign: a < b ⇒ 1/a > 1/b; a > b ⇒ 1/a < 1/b",
+    "use": "Compare reciprocals when the numbers have the same sign."
+   },
+   {
+    "formula": "ⁿ√a = a^(1/n)",
+    "use": "Convert a radical to exponential form."
+   },
+   {
+    "formula": "ⁿ√(ab) = ⁿ√a · ⁿ√b",
+    "use": "Split a product inside a radical."
+   },
+   {
+    "formula": "ⁿ√(a/b) = ⁿ√a/ⁿ√b",
+    "use": "Split a quotient inside a radical."
+   },
+   {
+    "formula": "ⁿ√(a^m) = (ⁿ√a)^m",
+    "use": "Move a power in or out of a radical."
+   },
+   {
+    "formula": "(ⁿ√a)^n = (a^(1/n))^n = a",
+    "use": "Raise an nth root to its index."
+   },
+   {
+    "formula": "a^m · a^n = a^(m+n)",
+    "use": "Multiply powers with the same base."
+   },
+   {
+    "formula": "(a^m)^n = a^(mn)",
+    "use": "Raise a power to another power."
+   },
+   {
+    "formula": "(ab)^n = a^n b^n",
+    "use": "Raise a product to a power."
+   },
+   {
+    "formula": "(a/b)^n = a^n/b^n",
+    "use": "Raise a quotient to a power."
+   },
+   {
+    "formula": "a^m/a^n = a^(m−n)",
+    "use": "Divide powers with the same non-zero base."
+   },
+   {
+    "formula": "a^0 = 1",
+    "use": "Evaluate a zero power for a ≠ 0."
+   },
+   {
+    "formula": "a^(−n) = 1/a^n",
+    "use": "Rewrite a negative power as a reciprocal."
+   },
+   {
+    "formula": "(√a + √b)(√a − √b) = a − b",
+    "use": "Multiply conjugates to rationalize a denominator."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 1.1 Q1(iv)",
+    "why": "A common short question testing whether a non-perfect-square root is irrational."
+   },
+   {
+    "ref": "Ex 1.1 Q2(i)",
+    "why": "Standard construction question testing the right-triangle and Pythagoras method."
+   },
+   {
+    "ref": "Ex 1.1 Q3(ii)",
+    "why": "Recurring-decimal conversion is a frequent step-by-step short question."
+   },
+   {
+    "ref": "Ex 1.1 Q4(iv)",
+    "why": "A quick property-identification question; learn the exact property name."
+   },
+   {
+    "ref": "Ex 1.1 Q5(ii)",
+    "why": "Tests the reciprocal order property and its same-sign condition."
+   },
+   {
+    "ref": "Ex 1.1 Q6(i)",
+    "why": "A standard rational-numbers short question using averages or equivalent fractions."
+   },
+   {
+    "ref": "Ex 1.2 Q1(v)",
+    "why": "A typical conjugate-factor question with a surd in the denominator."
+   },
+   {
+    "ref": "Ex 1.2 Q2(i)",
+    "why": "Tests fractional indices and simplifying a power using exact roots."
+   },
+   {
+    "ref": "Ex 1.2 Q2(vii)",
+    "why": "A strong indices question combining negative and fractional exponents."
+   },
+   {
+    "ref": "Ex 1.2 Q3(i)",
+    "why": "A standard multi-step surd question; later parts build on this result."
+   },
+   {
+    "ref": "Ex 1.2 Q3(iii)",
+    "why": "A likely longer part using the identity (x + 1/x)²."
+   },
+   {
+    "ref": "Ex 1.2 Q4",
+    "why": "A standard long question combining rationalization and collecting rational and surd terms."
+   }
+  ],
+  "fullMarks": [
+   "For a rational-or-irrational question, state the reason as well as the answer: terminating or recurring decimals are rational; non-terminating, non-recurring decimals are irrational.",
+   "When converting a recurring decimal to p/q, define x, multiply by 10, 100, or the needed power of 10, subtract to cancel the recurring digits, and finish by writing the fraction.",
+   "For a number-line construction, show the right triangle and its labelled lengths, use the Pythagoras step to obtain the required root, then mark and label the point on the number line.",
+   "When naming a property, give its full name carefully: distinguish commutative from associative, and identify whether a property is for equality or order.",
+   "For rationalization, multiply both numerator and denominator by the conjugate, show the denominator becoming a difference of squares, and simplify the final result.",
+   "For indices and radicals, first rewrite numbers with a common base or as fractional powers; show each index-law step before simplifying.",
+   "In a proof or verification, calculate the LHS and RHS separately, show that they are equal, and end with a clear statement that the property is verified."
+  ],
+  "mistakes": [
+   "Calling a decimal irrational just because it has many digits. Fix: check whether it terminates or has a repeating pattern; only non-terminating, non-recurring decimals are irrational.",
+   "Treating every irrational number as a surd. Fix: a surd must be an irrational radical with a rational radicand; √π is not a surd.",
+   "Confusing the commutative property with the associative property. Fix: commutative changes order; associative changes grouping with brackets.",
+   "Forgetting to reverse an inequality after multiplying or dividing by a negative number. Fix: reverse < to >, or > to <, whenever the multiplier or divisor is negative.",
+   "Using the same surd instead of its conjugate when rationalizing. Fix: change the sign between the two terms, then multiply top and bottom by that conjugate.",
+   "Applying index laws to unlike bases without first rewriting them. Fix: express the terms using a common base before combining powers.",
+   "Giving only a point for a number-line question without showing the construction. Fix: draw and label the triangle or fraction divisions, mark the point, and name the value."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a terminating decimal number.",
+    "answer": "A decimal number with a finite number of digits after the decimal point is called a terminating decimal number."
+   },
+   {
+    "question": "What are non-terminating and recurring decimal numbers?",
+    "answer": "The decimal numbers with an infinitely repeating pattern of digits after the decimal point are called non-terminating and recurring decimal numbers."
+   },
+   {
+    "question": "State the trichotomy property of real numbers.",
+    "answer": "∀ a,b ∈ R, either a = b or a > b or a < b"
+   },
+   {
+    "question": "Define the nᵗʰ root of a number.",
+    "answer": "If n is a positive integer greater than 1 and a is a real number, then any real number x such that x = ⁿ√a is called nᵗʰ root of a."
+   },
+   {
+    "question": "What is a surd?",
+    "answer": "An irrational radical with rational radicand is called a surd."
+   },
+   {
+    "question": "State the rule for rationalizing a denominator of the form a + b√x or a − b√x.",
+    "answer": "To rationalize a denominator of the form a + b√x or a − b√x, we multiply both the numerator and denominator by the conjugate factor."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-1-1-t0",
+   "text": "Define a terminating decimal number.",
+   "marks": 2,
+   "modelAnswer": [
+    "A decimal number with a finite number of digits after the decimal point is called a terminating decimal number."
+   ],
+   "followUp": "Define a terminating decimal number.",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "finite number",
+       "digits",
+       "decimal point"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining condition: only finitely many digits follow the decimal point.",
+     "description": "Finite number of digits after the decimal point.",
+     "how": "Award 1 mark for stating that the digits after the decimal point are finite in number."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "terminating decimal"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the decimal number that satisfies the condition.",
+     "description": "It is called a terminating decimal number.",
+     "how": "Award 1 mark for identifying it as a terminating decimal."
+    }
+   ]
+  },
+  {
+   "id": "w-1-1-t1",
+   "text": "What are non-terminating and recurring decimal numbers?",
+   "marks": 2,
+   "modelAnswer": [
+    "The decimal numbers with an infinitely repeating pattern of digits after the decimal point are called non-terminating and recurring decimal numbers."
+   ],
+   "followUp": "What are non-terminating and recurring decimal numbers?",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "infinitely",
+       "repeating",
+       "pattern",
+       "digits",
+       "decimal point"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the digits after the decimal point form a pattern that repeats infinitely.",
+     "description": "An infinitely repeating pattern of digits after the decimal point.",
+     "how": "Award 1 mark for including the infinite repetition and the digits after the decimal point."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "non-terminating",
+       "recurring"
+      ],
+      [
+       "non terminating",
+       "recurring"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the name of these decimal numbers.",
+     "description": "They are called non-terminating and recurring decimal numbers.",
+     "how": "Award 1 mark for identifying them as non-terminating and recurring decimals."
+    }
+   ]
+  },
+  {
+   "id": "w-1-1-t2",
+   "text": "State the trichotomy property of real numbers.",
+   "marks": 2,
+   "modelAnswer": [
+    "∀ a,b ∈ R, either a = b or a > b or a < b"
+   ],
+   "followUp": "State the trichotomy property of real numbers.",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "a",
+       "b",
+       "real numbers"
+      ],
+      [
+       "a,b∈R"
+      ],
+      [
+       "a,b in R"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the property applies to real numbers a and b.",
+     "description": "For all real numbers a and b.",
+     "how": "Award 1 mark for specifying that a and b are real numbers."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "a=b",
+       "a>b",
+       "a<b"
+      ],
+      [
+       "a equals b",
+       "a greater than b",
+       "a less than b"
+      ]
+     ],
+     "marks": 1,
+     "why": "States all three mutually exhaustive comparisons.",
+     "description": "Either a = b, or a > b, or a < b.",
+     "how": "Award 1 mark for including all three alternatives."
+    }
+   ]
+  },
+  {
+   "id": "w-1-1-t3",
+   "text": "Define the nᵗʰ root of a number.",
+   "marks": 2,
+   "modelAnswer": [
+    "If n is a positive integer greater than 1 and a is a real number, then any real number x such that x = ⁿ√a is called nᵗʰ root of a."
+   ],
+   "followUp": "Define the nᵗʰ root of a number.",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "positive integer",
+       "greater than 1",
+       "real number"
+      ],
+      [
+       "n>1",
+       "integer",
+       "a∈R"
+      ],
+      [
+       "n>1",
+       "integer",
+       "a is real"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the required conditions on n and a.",
+     "description": "n is a positive integer greater than 1, and a is real.",
+     "how": "Award 1 mark for stating that n is an integer greater than 1 and that a is real."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "real number x",
+       "x=ⁿ√a",
+       "nᵗʰ root"
+      ],
+      [
+       "real number x",
+       "x^n=a",
+       "nᵗʰ root"
+      ],
+      [
+       "x=ⁿ√a",
+       "nth root"
+      ],
+      [
+       "x^n=a",
+       "nth root"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the defining relationship and identifies x as an nth root of a.",
+     "description": "A real x satisfying the nth-root relationship is called an nth root of a.",
+     "how": "Award 1 mark for identifying x as the nth root of a using the defining relationship."
+    }
+   ]
+  },
+  {
+   "id": "w-1-1-t4",
+   "text": "What is a surd?",
+   "marks": 2,
+   "modelAnswer": [
+    "An irrational radical with rational radicand is called a surd."
+   ],
+   "followUp": "What is a surd?",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "irrational",
+       "radical"
+      ],
+      [
+       "irrational radical"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the expression as an irrational radical.",
+     "description": "An irrational radical.",
+     "how": "Award 1 mark for stating that the expression is an irrational radical."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "rational",
+       "radicand",
+       "surd"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the rational-radicand condition and names the expression.",
+     "description": "With a rational radicand, it is called a surd.",
+     "how": "Award 1 mark for stating that its radicand is rational and identifying it as a surd."
+    }
+   ]
+  },
+  {
+   "id": "w-1-1-t5",
+   "text": "State the rule for rationalizing a denominator of the form a + b√x or a − b√x.",
+   "marks": 2,
+   "modelAnswer": [
+    "To rationalize a denominator of the form a + b√x or a − b√x, we multiply both the numerator and denominator by the conjugate factor."
+   ],
+   "followUp": "State the rule for rationalizing a denominator of the form a + b√x or a − b√x.",
+   "noteId": "n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "denominator",
+       "a+b√x"
+      ],
+      [
+       "denominator",
+       "a-b√x"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the denominator forms for which the rule applies.",
+     "description": "The denominator is of the form a + b√x or a − b√x.",
+     "how": "Award 1 mark for giving either stated denominator form."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "numerator",
+       "denominator",
+       "conjugate factor"
+      ],
+      [
+       "numerator",
+       "denominator",
+       "conjugate"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the operation used to rationalize the denominator.",
+     "description": "Multiply both numerator and denominator by the conjugate factor.",
+     "how": "Award 1 mark for stating that both numerator and denominator are multiplied by the conjugate."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 8,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

@@ -1,0 +1,1793 @@
+{
+ "unit": 5,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 6-7",
+   "Ex 5.2",
+   "Review Ex 5 Q1(vii)",
+   "Review Ex 5 Q1(ix)",
+   "Review Ex 5 Q1(x)",
+   "Review Ex 5 Q3-5"
+  ],
+  "definitions": [
+   {
+    "term": "Linear equation in one variable",
+    "text": "An equation of the form ax + b = 0 where ‘a’ and ‘b’ are constants, a ≠ 0 and ‘x’ is a variable, is called a linear equation in one variable. In linear equation, the highest power of the variable is always 1."
+   },
+   {
+    "term": "General form of linear equation in one variable",
+    "text": "ax + b = 0 and a ≠ 0 is also called the general form of linear equation in one variable."
+   },
+   {
+    "term": "Solving a linear equation in one variable",
+    "text": "Solving a linear equation in one variable means finding the value of the variable that makes the equation true. To solve the equation, the goal is to isolate the variable on one side of the equation and determine its value."
+   },
+   {
+    "term": "Operations that do not change the order of an inequality",
+    "text": "The following operations will not affect the order of inequality while changing it to simpler equivalent form: (i) Adding or subtracting a constant to each side of it. ii) Multiplying or dividing each side by a positive constant."
+   },
+   {
+    "term": "Effect of multiplying or dividing by a negative constant",
+    "text": "The order of an inequality is changed by multiplying or dividing each side by a negative constant."
+   },
+   {
+    "term": "Linear inequality in two variables",
+    "text": "Generally, a linear inequality in two variables x and y can be one of the following forms: ax + by < c;  ax + by > c;  ax + by ≤ c;  ax + by ≥ c Where a, b, c are constants and a, b are not both zero."
+   },
+   {
+    "term": "Half planes and their boundary",
+    "text": "The regions (i) and (ii) are called half planes and the line ax + by = c is called the boundary of each half plane."
+   },
+   {
+    "term": "Solution of a linear inequality in x and y",
+    "text": "A solution of a linear inequality in x and y is an ordered pair of numbers which satisfies the inequality."
+   },
+   {
+    "term": "Associated or corresponding equation",
+    "text": "Note that the linear equation ax + by = c is called \"associated or corresponding equation\" of each of the above-mentioned inequalities."
+   },
+   {
+    "term": "Solution region for a system of linear inequalities",
+    "text": "The graph of a system of linear inequalities consists of the set of all ordered pairs (x, y) in the xy-plane which simultaneously satisfies all the inequalities in the system. To find the graph of such a system, we draw the graph of each inequality in the system on the same coordinate axes and then take intersection of all the graphs. The common region so obtained is called the solution region for the system of inequalities."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "ax + b = 0, where a ≠ 0",
+    "use": "General form of a linear equation in one variable."
+   },
+   {
+    "formula": "ax + by < c; ax + by > c; ax + by ≤ c; ax + by ≥ c",
+    "use": "General forms of linear inequalities in two variables."
+   },
+   {
+    "formula": "ax + by = c",
+    "use": "Use as the associated equation to draw the boundary line of ax + by <, >, ≤ or ≥ c."
+   },
+   {
+    "formula": "x = 0 to find the y-intercept; y = 0 to find the x-intercept",
+    "use": "Substitute these values in the boundary equation to find two points for drawing its line."
+   },
+   {
+    "formula": "x > a: (a, ∞); x < a: (−∞, a); x ≥ a: [a, ∞); x ≤ a: (−∞, a]",
+    "use": "Write one-variable inequality solutions in interval notation; parentheses mean the endpoint is excluded and square brackets mean it is included."
+   },
+   {
+    "formula": "Multiply or divide both sides by a negative number ⇒ reverse the inequality sign",
+    "use": "Use when isolating the variable if the operation involves a negative number."
+   },
+   {
+    "formula": "Strict inequality (> or <) ⇒ dashed boundary; inequality with equality (≥ or ≤) ⇒ solid boundary",
+    "use": "Choose the correct boundary style when graphing an inequality in the xy-plane."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 5.1 Q1(i)",
+    "why": "A quick, standard linear-equation short question with a single solution to mark."
+   },
+   {
+    "ref": "Ex 5.1 Q1(iii)",
+    "why": "Tests combining like terms and solving with rational coefficients."
+   },
+   {
+    "ref": "Ex 5.1 Q1(v)",
+    "why": "A strong longer equation question requiring a common denominator and careful working."
+   },
+   {
+    "ref": "Review Ex 5 Q2(i)",
+    "why": "A review-style equation testing fractions and isolating the variable."
+   },
+   {
+    "ref": "Ex 5.1 Q2(ii)",
+    "why": "A likely short question combining inequality solving with number-line notation."
+   },
+   {
+    "ref": "Ex 5.1 Q2(v)",
+    "why": "Tests rational coefficients and the correct endpoint and ray on a number line."
+   },
+   {
+    "ref": "Review Ex 5 Q2(iv)",
+    "why": "A review inequality that checks brackets, simplification and the inclusive endpoint."
+   },
+   {
+    "ref": "Ex 5.1 Q3(i)",
+    "why": "A standard graphing question testing intercepts, solid boundary and correct shading."
+   },
+   {
+    "ref": "Ex 5.1 Q3(iii)",
+    "why": "Tests graphing and choosing the correct half-plane using a test point."
+   },
+   {
+    "ref": "Ex 5.1 Q4(i)",
+    "why": "A standard long question on drawing two boundaries and identifying their common region."
+   },
+   {
+    "ref": "Ex 5.1 Q4(iii)",
+    "why": "Useful practice for a two-inequality system with different shading directions."
+   },
+   {
+    "ref": "Ex 5.1 Q4(vi)",
+    "why": "A full graphing question checking both boundary lines and the intersection of solution regions."
+   }
+  ],
+  "fullMarks": [
+   "For a one-variable equation, show the same operation on both sides when adding, subtracting, multiplying or dividing; then state the value of x clearly.",
+   "For an inequality, reverse the inequality sign whenever you multiply or divide both sides by a negative number.",
+   "On a real number line, use an open circle for < or > and a filled circle for ≤ or ≥; draw the ray in the correct direction.",
+   "For a graph in the xy-plane, first write the associated equation, find two points (often the intercepts), and draw the boundary accurately.",
+   "Use a dashed boundary for < or > and a solid boundary for ≤ or ≥, because equality means points on the line are included.",
+   "Test a point not on the boundary, usually (0, 0), in the original inequality; show whether it satisfies the inequality and shade the correct side.",
+   "For a system, graph every inequality on the same labelled axes and shade only the common region that satisfies all inequalities."
+  ],
+  "mistakes": [
+   "Mistake: Keeping the inequality sign the same after dividing or multiplying by a negative number. Fix: Reverse the sign every time you do this.",
+   "Mistake: Using a filled circle for a strict inequality or an open circle for an inequality that includes equality. Fix: Use open for < or > and filled for ≤ or ≥.",
+   "Mistake: Drawing a solid line for every inequality. Fix: Use a dashed line for < or >, and a solid line for ≤ or ≥.",
+   "Mistake: Shading the side of a boundary line without checking it. Fix: Substitute a test point not on the line into the original inequality; shade its side if it works, otherwise shade the opposite side.",
+   "Mistake: Reversing the x- and y-intercepts. Fix: Set y = 0 to find the x-intercept and x = 0 to find the y-intercept; write each point in (x, y) order.",
+   "Mistake: For a system, shading the union of the two regions or leaving both full regions shaded. Fix: The solution is only the overlap that satisfies both inequalities.",
+   "Mistake: Losing a negative sign while removing brackets or combining fractions. Fix: Distribute signs carefully and check the final value in the original equation or inequality."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a linear equation in one variable.",
+    "answer": "An equation of the form ax + b = 0 where ‘a’ and ‘b’ are constants, a ≠ 0 and ‘x’ is a variable, is called a linear equation in one variable. In linear equation, the highest power of the variable is always 1."
+   },
+   {
+    "question": "What is the general form of a linear equation in one variable?",
+    "answer": "ax + b = 0 and a ≠ 0 is also called the general form of linear equation in one variable."
+   },
+   {
+    "question": "State the effect of multiplying or dividing both sides of an inequality by a negative constant.",
+    "answer": "The order of an inequality is changed by multiplying or dividing each side by a negative constant."
+   },
+   {
+    "question": "What are half planes and what is their boundary?",
+    "answer": "The regions (i) and (ii) are called half planes and the line ax + by = c is called the boundary of each half plane."
+   },
+   {
+    "question": "What is a solution of a linear inequality in x and y?",
+    "answer": "A solution of a linear inequality in x and y is an ordered pair of numbers which satisfies the inequality."
+   },
+   {
+    "question": "What is the associated or corresponding equation of a linear inequality?",
+    "answer": "Note that the linear equation ax + by = c is called \"associated or corresponding equation\" of each of the above-mentioned inequalities."
+   },
+   {
+    "question": "How is the boundary line drawn for a strict inequality and for an inequality with equality?",
+    "answer": "The corresponding equation of the inequality is first graphed by using 'dashes' if the inequality involves the symbols > or < and a solid line is drawn if the inequality involves the symbols ≥ or ≤."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-5-2-k0",
+   "text": "Solve and represent the solution on a real line: 12x + 30 = −6 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "12x + 30 = −6",
+    "12x = −6 − 30",
+    "12x = −36",
+    "x = −36/12",
+    "x = −3",
+    "Real line: mark −3 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: 5x + 10 = −5",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "12x=-36"
+      ],
+      [
+       "x=-36/12"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows the equation correctly simplified before solving for x.",
+     "description": "Correctly isolates the variable term.",
+     "how": "Subtract 30 from both sides to obtain 12x = −36."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=-3",
+       "solid point"
+      ],
+      [
+       "x=-3",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the solution and represents it as a single value on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = −3 and draw a solid point at −3."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k1",
+   "text": "Solve and represent the solution on a real line: x/3 + 6 = −12 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "x/3 + 6 = −12",
+    "x/3 = −12 − 6",
+    "x/3 = −18",
+    "x = −18 × 3",
+    "x = −54",
+    "Real line: mark −54 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: x/4 + 3 = −5",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "x/3=-18"
+      ],
+      [
+       "-18"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows the equation correctly simplified before solving for x.",
+     "description": "Correctly isolates the fractional variable term.",
+     "how": "Subtract 6 from both sides to obtain x/3 = −18."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=-54",
+       "solid point"
+      ],
+      [
+       "x=-54",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the solution and represents it as a single value on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = −54 and draw a solid point at −54."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k2",
+   "text": "Solve and represent the solution on a real line: x/2 − 3x/4 = 1/12 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "x/2 − 3x/4 = 1/12",
+    "(2x − 3x)/4 = 1/12",
+    "−x/4 = 1/12",
+    "−x = 4/12",
+    "−x = 1/3",
+    "x = −1/3",
+    "Real line: mark −1/3 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: x/3 − x/2 = 1/6",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "-x/4=1/12"
+      ],
+      [
+       "(2x-3x)/4=1/12"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows the fractions combined correctly, an essential step in solving the equation.",
+     "description": "Combines the like fractional terms correctly.",
+     "how": "Use denominator 4 to obtain (2x − 3x)/4 = 1/12, hence −x/4 = 1/12."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=-1/3",
+       "solid point"
+      ],
+      [
+       "x=-1/3",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the correct value and represents it on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = −1/3 and draw a solid point at −1/3."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k3",
+   "text": "Solve and represent the solution on a real line: 2 = 7 (2x + 4) + 12x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "2 = 7(2x + 4) + 12x",
+    "2 = 14x + 28 + 12x",
+    "2 = 26x + 28",
+    "2 − 28 = 26x",
+    "−26 = 26x",
+    "x = −26/26",
+    "x = −1",
+    "Real line: mark −1 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: 5 = 3 (2x + 1) + 4x",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(iv)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "2=26x+28"
+      ],
+      [
+       "2=14x+28+12x"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows correct expansion and collection of the variable terms.",
+     "description": "Expands and simplifies the equation correctly.",
+     "how": "Expand the bracket and combine like terms to obtain 2 = 26x + 28."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=-1",
+       "solid point"
+      ],
+      [
+       "x=-1",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the correct solution and represents it on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = −1 and draw a solid point at −1."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k4",
+   "text": "Solve and represent the solution on a real line: (2x − 1)/3 − 3x/4 = 5/6 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "(2x − 1)/3 − 3x/4 = 5/6",
+    "4(2x − 1) − 9x = 10",
+    "8x − 4 − 9x = 10",
+    "−x − 4 = 10",
+    "−x = 14",
+    "x = −14",
+    "Real line: mark −14 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: (x + 2)/3 − x/2 = 1/6",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(v)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4(2x-1)-9x=10"
+      ],
+      [
+       "8x-4-9x=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Clears the denominators correctly, allowing the equation to be simplified.",
+     "description": "Correctly removes the fractions and simplifies.",
+     "how": "Multiply through by 12 to obtain 4(2x − 1) − 9x = 10."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=-14",
+       "solid point"
+      ],
+      [
+       "x=-14",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the correct solution and represents it on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = −14 and draw a solid point at −14."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k5",
+   "text": "Solve and represent the solution on a real line: −5x/10 = 9 − 10/5 x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "−5x/10 = 9 − 10x/5",
+    "−x/2 = 9 − 2x",
+    "−x/2 + 2x = 9",
+    "3x/2 = 9",
+    "3x = 18",
+    "x = 6",
+    "Real line: mark 6 with a solid point."
+   ],
+   "followUp": "Solve and represent the solution on a real line: −4x/8 = 6 − 8x/4",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q1(vi)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "-x/2=9-2x"
+      ],
+      [
+       "3x/2=9"
+      ]
+     ],
+     "marks": 1,
+     "why": "Shows the fractions simplified and the variable terms brought together correctly.",
+     "description": "Simplifies the fractions and collects the x-terms.",
+     "how": "Simplify to −x/2 = 9 − 2x, then obtain 3x/2 = 9."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=6",
+       "solid point"
+      ],
+      [
+       "x=6",
+       "real line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the correct solution and represents it on the real line.",
+     "description": "States the solution and marks it on the real line.",
+     "how": "Write x = 6 and draw a solid point at 6."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k7",
+   "text": "Solve each inequality and represent the solution on a real line: −9 > −16 + x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "−9 > −16 + x",
+    "−9 + 16 > −16 + x + 16",
+    "7 > x",
+    "x < 7",
+    "Real line: mark 7 with an open point and shade to the left."
+   ],
+   "followUp": "Solve and represent the solution on a real line: −5 > −11 + x",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q2(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "7>x"
+      ],
+      [
+       "-9+16>-16+x+16"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly adds 16 to both sides and preserves the inequality direction.",
+     "description": "Isolates x and rewrites the inequality in standard form.",
+     "how": "Obtain 7 > x, equivalently x < 7."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x<7",
+       "open point",
+       "left"
+      ],
+      [
+       "x<7",
+       "7",
+       "ray"
+      ]
+     ],
+     "marks": 1,
+     "why": "The open endpoint and leftward ray correctly represent values strictly less than 7.",
+     "description": "States the solution set and represents it on the real line.",
+     "how": "Write x < 7; draw an open point at 7 and shade to the left."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k8",
+   "text": "Solve each inequality and represent the solution on a real line: 3 + 2x ≥ 3 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "3 + 2x ≥ 3",
+    "2x ≥ 0",
+    "x ≥ 0",
+    "On a real line, mark 0 with a closed dot and draw a ray to the right.",
+    "The figure shows all real numbers x ≥ 0."
+   ],
+   "followUp": "Solve and represent on a real line: 5 + 3x ≥ 5.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q2(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "2x≥0"
+      ],
+      [
+       "x≥0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly solving the inequality establishes the solution set.",
+     "description": "Solve the inequality.",
+     "how": "Subtract 3 from both sides and divide by 2 to obtain x ≥ 0."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "0",
+       "closed",
+       "right"
+      ]
+     ],
+     "marks": 1,
+     "why": "The number-line representation must show that 0 is included and all greater values are solutions.",
+     "description": "Show the solution on a real line.",
+     "how": "Place a closed dot at 0 and draw the ray to the right."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k9",
+   "text": "Solve each inequality and represent the solution on a real line: 6(x + 10) ≤ 0 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "6(x + 10) ≤ 0",
+    "x + 10 ≤ 0",
+    "x ≤ −10",
+    "On a real line, mark −10 with a closed dot and draw a ray to the left.",
+    "The figure shows all real numbers x ≤ −10."
+   ],
+   "followUp": "Solve and represent on a real line: 4(x + 7) ≤ 0.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q2(iv)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "x+10≤0"
+      ],
+      [
+       "x≤−10"
+      ],
+      [
+       "x≤-10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly simplifying and solving gives the endpoint and direction of the solution.",
+     "description": "Solve the inequality.",
+     "how": "Divide by 6, then subtract 10 to obtain x ≤ −10."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "−10",
+       "closed",
+       "left"
+      ],
+      [
+       "-10",
+       "closed",
+       "left"
+      ]
+     ],
+     "marks": 1,
+     "why": "The endpoint is included, and all smaller values must be represented.",
+     "description": "Show the solution on a real line.",
+     "how": "Place a closed dot at −10 and draw the ray to the left."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k10",
+   "text": "Solve each inequality and represent the solution on a real line: (5/3)x − 3/4 < −1/12 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "(5/3)x − 3/4 < −1/12",
+    "(5/3)x < −1/12 + 3/4",
+    "(5/3)x < −1/12 + 9/12",
+    "(5/3)x < 8/12 = 2/3",
+    "x < 2/5",
+    "On a real line, mark 2/5 with an open dot and draw a ray to the left.",
+    "The figure shows all real numbers x < 2/5."
+   ],
+   "followUp": "Solve and represent on a real line: (3/2)x − 1/3 < 1/6.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q2(v)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "5/3x<2/3"
+      ],
+      [
+       "x<2/5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly isolating x gives the upper bound for the solution.",
+     "description": "Solve the inequality.",
+     "how": "Add 3/4 to both sides, simplify, and divide by 5/3 to obtain x < 2/5."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "2/5",
+       "open",
+       "left"
+      ]
+     ],
+     "marks": 1,
+     "why": "A strict inequality excludes the endpoint, and the solution lies to its left.",
+     "description": "Show the solution on a real line.",
+     "how": "Place an open dot at 2/5 and draw the ray to the left."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k11",
+   "text": "Solve each inequality and represent the solution on a real line: (1/4)x − 1/2 ≤ −1 + (1/2)x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "(1/4)x − 1/2 ≤ −1 + (1/2)x",
+    "(1/4)x ≤ −1/2 + (1/2)x",
+    "−(1/4)x ≤ −1/2",
+    "Dividing by −1/4 reverses the inequality: x ≥ 2.",
+    "On a real line, mark 2 with a closed dot and draw a ray to the right.",
+    "The figure shows all real numbers x ≥ 2."
+   ],
+   "followUp": "Solve and represent on a real line: (1/3)x − 1 ≤ −2 + (2/3)x.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q2(vi)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "−(1/4)x≤−1/2"
+      ],
+      [
+       "x≥2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly collecting the x-terms and reversing the inequality when dividing by a negative number gives the solution.",
+     "description": "Solve the inequality.",
+     "how": "Collect the x-terms to get −(1/4)x ≤ −1/2, then divide by −1/4 and reverse the inequality."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "2",
+       "closed",
+       "right"
+      ]
+     ],
+     "marks": 1,
+     "why": "The endpoint is included, and the solution contains values greater than 2.",
+     "description": "Show the solution on a real line.",
+     "how": "Place a closed dot at 2 and draw the ray to the right."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k12",
+   "text": "Shade the solution region for the following linear inequalities in xy-plane: 2x + y ≤ 6 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Boundary line: 2x + y = 6.",
+    "If x = 0, then y = 6, giving the point (0, 6).",
+    "If y = 0, then x = 3, giving the point (3, 0).",
+    "Plot (0, 6) and (3, 0), then join them with a solid line.",
+    "The origin (0, 0) satisfies 2x + y ≤ 6.",
+    "Shade the half-plane containing the origin, including the boundary line.",
+    "The finished graph shows the solution region 2x + y ≤ 6."
+   ],
+   "followUp": "Shade the solution region in the xy-plane for  x + y ≤ 4.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q3(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "0,6",
+       "3,0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intercepts determine the correct boundary line.",
+     "description": "Find the intercepts.",
+     "how": "Use the points (0, 6) and (3, 0)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "2x+y=6",
+       "solid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equality gives the boundary, which is included because the inequality is non-strict.",
+     "description": "Draw the boundary line.",
+     "how": "Plot the intercepts and join them with a solid line."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "0,0",
+       "satisfies"
+      ],
+      [
+       "origin",
+       "satisfies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing the origin identifies the half-plane that contains the solutions.",
+     "description": "Select the correct half-plane.",
+     "how": "Verify that the origin satisfies the inequality, so shade the side containing it."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "2x+y≤6",
+       "shade",
+       "origin"
+      ],
+      [
+       "2x+y<=6",
+       "shade",
+       "origin"
+      ]
+     ],
+     "marks": 1,
+     "why": "The completed region must include the boundary and the correct side of it.",
+     "description": "Show the complete solution region.",
+     "how": "Shade the half-plane containing the origin, including the solid boundary line."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k13",
+   "text": "Shade the solution region for the following linear inequalities in xy-plane: 3x + 7y ≥ 21 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Boundary line: 3x + 7y = 21.",
+    "If x = 0, then y = 3, giving the point (0, 3).",
+    "If y = 0, then x = 7, giving the point (7, 0).",
+    "Plot (0, 3) and (7, 0), then join them with a solid line.",
+    "The origin (0, 0) does not satisfy 3x + 7y ≥ 21.",
+    "Shade the half-plane above the line, not containing the origin, including the boundary line.",
+    "The finished graph shows the solution region 3x + 7y ≥ 21."
+   ],
+   "followUp": "Shade the solution region in the xy-plane for 2x + 3y ≥ 12.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q3(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "0,3",
+       "7,0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intercepts determine the correct boundary line.",
+     "description": "Find the intercepts.",
+     "how": "Use the points (0, 3) and (7, 0)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "3x+7y=21",
+       "solid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equality gives the boundary, which is included because the inequality is non-strict.",
+     "description": "Draw the boundary line.",
+     "how": "Plot the intercepts and join them with a solid line."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "0,0",
+       "does not satisfy"
+      ],
+      [
+       "origin",
+       "does not satisfy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing the origin identifies that the solution is on the opposite side of the boundary.",
+     "description": "Select the correct half-plane.",
+     "how": "Verify that the origin does not satisfy the inequality, so shade the side not containing it."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "3x+7y≥21",
+       "shade",
+       "above"
+      ],
+      [
+       "3x+7y>=21",
+       "shade",
+       "above"
+      ]
+     ],
+     "marks": 1,
+     "why": "The completed region must include the boundary and the correct half-plane.",
+     "description": "Show the complete solution region.",
+     "how": "Shade the half-plane above the line, not containing the origin, including the solid boundary."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k14",
+   "text": "Shade the solution region for the following linear inequalities in xy-plane: 3x − 2y ≥ 6 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Boundary line: 3x − 2y = 6.",
+    "If y = 0, then x = 2, giving the point (2, 0).",
+    "If x = 0, then y = −3, giving the point (0, −3).",
+    "Plot (2, 0) and (0, −3), then join them with a solid line.",
+    "The origin (0, 0) does not satisfy 3x − 2y ≥ 6.",
+    "Shade the half-plane below the line, not containing the origin, including the boundary line.",
+    "The finished graph shows the solution region 3x − 2y ≥ 6."
+   ],
+   "followUp": "Shade the solution region in the xy-plane for 2x − y ≥ 4.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q3(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "2,0",
+       "0,−3"
+      ],
+      [
+       "2,0",
+       "0,-3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intercepts determine the correct boundary line.",
+     "description": "Find the intercepts.",
+     "how": "Use the points (2, 0) and (0, −3)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "3x−2y=6",
+       "solid"
+      ],
+      [
+       "3x-2y=6",
+       "solid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equality gives the boundary, which is included because the inequality is non-strict.",
+     "description": "Draw the boundary line.",
+     "how": "Plot the intercepts and join them with a solid line."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "0,0",
+       "does not satisfy"
+      ],
+      [
+       "origin",
+       "does not satisfy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing the origin identifies that the solution lies on the opposite side of the boundary.",
+     "description": "Select the correct half-plane.",
+     "how": "Verify that the origin does not satisfy the inequality, so shade the side not containing it."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "3x−2y≥6",
+       "shade",
+       "below"
+      ],
+      [
+       "3x-2y>=6",
+       "shade",
+       "below"
+      ]
+     ],
+     "marks": 1,
+     "why": "The completed region must include the boundary and the correct half-plane.",
+     "description": "Show the complete solution region.",
+     "how": "Shade below the line, on the side not containing the origin, including the solid boundary."
+    }
+   ]
+  },
+  {
+   "id": "w-5-2-k15",
+   "text": "Shade the solution region for the following linear inequalities in xy-plane: 5x − 4y ≤ 20 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Boundary line: 5x − 4y = 20.",
+    "If y = 0, then x = 4, giving the point (4, 0).",
+    "If x = 0, then y = −5, giving the point (0, −5).",
+    "Plot (4, 0) and (0, −5), then join them with a solid line.",
+    "The origin (0, 0) satisfies 5x − 4y ≤ 20.",
+    "Shade the half-plane above the line, containing the origin, including the boundary line.",
+    "The finished graph shows the solution region 5x − 4y ≤ 20."
+   ],
+   "followUp": "Shade the solution region in the xy-plane for 3x − 2y ≤ 12.",
+   "noteId": "n-5-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 5.1 Q3(iv)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4,0",
+       "0,−5"
+      ],
+      [
+       "4,0",
+       "0,-5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intercepts determine the correct boundary line.",
+     "description": "Find the intercepts.",
+     "how": "Use the points (4, 0) and (0, −5)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "5x−4y=20",
+       "solid"
+      ],
+      [
+       "5x-4y=20",
+       "solid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equality gives the boundary, which is included because the inequality is non-strict.",
+     "description": "Draw the boundary line.",
+     "how": "Plot the intercepts and join them with a solid line."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "0,0",
+       "satisfies"
+      ],
+      [
+       "origin",
+       "satisfies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing the origin identifies the half-plane that contains the solutions.",
+     "description": "Select the correct half-plane.",
+     "how": "Verify that the origin satisfies the inequality, so shade the side containing it."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "5x−4y≤20",
+       "shade",
+       "above"
+      ],
+      [
+       "5x-4y<=20",
+       "shade",
+       "above"
+      ]
+     ],
+     "marks": 1,
+     "why": "The completed region must include the boundary and the correct half-plane.",
+     "description": "Show the complete solution region.",
+     "how": "Shade above the line, on the side containing the origin, including the solid boundary."
+    }
+   ]
+  },
+  {
+   "id": "w-5-4-k24",
+   "text": "Solve and represent their solutions on real line: (x + 5)/3 = 1 − x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "(x + 5)/3 = 1 − x",
+    "x + 5 = 3 − 3x",
+    "4x = 3 − 5",
+    "4x = −2",
+    "x = −2/4",
+    "x = −1/2",
+    "Draw a straight number line with arrows at both ends.",
+    "Mark −1, −1/2, and 0 at equal intervals, with 0 to the right of −1.",
+    "Place a solid point at −1/2.",
+    "The point representing the solution is −1/2."
+   ],
+   "followUp": "Solve and represent the solution on the real line: (x + 2)/4 = 2 − x",
+   "noteId": "n-5-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 5 Q2(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "x+5=3−3x"
+      ]
+     ],
+     "marks": 1,
+     "why": "Clearing the denominator gives an equivalent equation to solve.",
+     "description": "Clears the denominator and obtains an equivalent equation.",
+     "how": "Show that multiplying both sides by 3 gives x + 5 = 3 − 3x."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "4x=−2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Collecting the x-terms and constants correctly leads to the value of x.",
+     "description": "Collects like terms to obtain 4x = −2.",
+     "how": "Show the rearrangement and the resulting equation 4x = −2."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "x=−1/2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The value of x is the solution of the equation.",
+     "description": "States the correct solution.",
+     "how": "Give x = −1/2."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "number line",
+       "arrows",
+       "−1",
+       "−1/2",
+       "0",
+       "solid point"
+      ]
+     ],
+     "marks": 1,
+     "why": "The point must be plotted at the correct location on the real line.",
+     "description": "Completes the number line representation.",
+     "how": "Draw a number line with arrows at both ends; show −1, −1/2, and 0 at equal intervals, with a solid point at −1/2."
+    }
+   ]
+  },
+  {
+   "id": "w-5-4-k25",
+   "text": "Solve and represent their solutions on real line: (2x + 1)/3 + 1/2 = 1 − (x − 1)/3 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "(2x + 1)/3 + 1/2 = 1 − (x − 1)/3",
+    "Multiply both sides by 6.",
+    "2(2x + 1) + 3 = 6 − 2(x − 1)",
+    "4x + 2 + 3 = 6 − 2x + 2",
+    "4x + 5 = 8 − 2x",
+    "6x = 3",
+    "x = 3/6",
+    "x = 1/2",
+    "Draw a straight number line with arrows at both ends.",
+    "Mark 0, 1/2, and 1 at equal intervals, with 1 to the right of 0.",
+    "Place a solid point at 1/2.",
+    "The point representing the solution is 1/2."
+   ],
+   "followUp": "Solve and represent the solution on the real line: (x + 1)/2 + 1/3 = 2 − (x − 2)/3",
+   "noteId": "n-5-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 5 Q2(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "2(2x+1)+3=6−2(x−1)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Multiplying by the common denominator removes the fractions while preserving the equation.",
+     "description": "Clears the fractions correctly.",
+     "how": "Multiply both sides by 6 to obtain 2(2x + 1) + 3 = 6 − 2(x − 1)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "6x=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct simplification and collection of terms are needed to isolate x.",
+     "description": "Simplifies and collects like terms.",
+     "how": "Show the equivalent equation 6x = 3."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "x=1/2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The value of x is the solution of the equation.",
+     "description": "States the correct solution.",
+     "how": "Give x = 1/2."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "number line",
+       "arrows",
+       "0",
+       "1/2",
+       "1",
+       "solid point"
+      ]
+     ],
+     "marks": 1,
+     "why": "The point must be plotted at the correct location on the real line.",
+     "description": "Completes the number line representation.",
+     "how": "Draw a number line with arrows at both ends; show 0, 1/2, and 1 at equal intervals, with a solid point at 1/2."
+    }
+   ]
+  },
+  {
+   "id": "w-5-4-k26",
+   "text": "Solve and represent their solutions on real line: 3x + 7 < 16 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "3x + 7 < 16",
+    "3x + 7 − 7 < 16 − 7",
+    "3x < 9",
+    "3x/3 < 9/3",
+    "x < 3",
+    "Draw a number line with an open circle at 3.",
+    "Shade the line to the left of 3 and extend it with an arrow.",
+    "The solution is all real numbers less than 3; 3 is not included."
+   ],
+   "followUp": "Solve and represent the solution on the real line: 4x + 5 < 17",
+   "noteId": "n-5-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 5 Q2(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "3x<9"
+      ]
+     ],
+     "marks": 1,
+     "why": "Subtracting 7 from both sides preserves the inequality and simplifies it.",
+     "description": "Subtracts 7 from both sides correctly.",
+     "how": "Obtain 3x < 9."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x<3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by the positive number 3 keeps the inequality direction unchanged.",
+     "description": "Divides both sides by 3 correctly.",
+     "how": "State x < 3."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "x<3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final inequality identifies the complete solution set.",
+     "description": "States the solution set.",
+     "how": "Give x < 3."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "number line",
+       "open circle",
+       "3",
+       "left",
+       "arrow"
+      ]
+     ],
+     "marks": 1,
+     "why": "An open endpoint excludes 3, and shading left shows all values less than 3.",
+     "description": "Completes the number line representation.",
+     "how": "Mark an open circle at 3 and shade to the left, with an arrow extending left."
+    }
+   ]
+  },
+  {
+   "id": "w-5-4-k27",
+   "text": "Solve and represent their solutions on real line: 5(x − 3) ≥ 26x − (10x + 4) Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "5(x − 3) ≥ 26x − (10x + 4)",
+    "5x − 15 ≥ 26x − 10x − 4",
+    "5x − 15 ≥ 16x − 4",
+    "5x − 16x ≥ −4 + 15",
+    "−11x ≥ 11",
+    "Divide both sides by −11 and reverse the inequality sign.",
+    "x ≤ −1",
+    "Draw a number line with a closed circle at −1.",
+    "Shade the line to the left of −1 and extend it with an arrow.",
+    "The solution is all real numbers less than or equal to −1."
+   ],
+   "followUp": "Solve and represent the solution on the real line: 4(x − 2) ≥ 18x − (7x + 3)",
+   "noteId": "n-5-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 5 Q2(iv)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "5x−15≥16x−4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Expanding and simplifying both sides gives an equivalent inequality.",
+     "description": "Expands and simplifies correctly.",
+     "how": "Obtain 5x − 15 ≥ 16x − 4."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "−11x≥11"
+      ]
+     ],
+     "marks": 1,
+     "why": "Collecting like terms correctly sets up the final division.",
+     "description": "Collects the x-terms and constants correctly.",
+     "how": "Obtain −11x ≥ 11."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "x≤−1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by a negative number reverses the inequality sign.",
+     "description": "States the correct solution, with the inequality direction reversed.",
+     "how": "Give x ≤ −1."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "number line",
+       "closed circle",
+       "−1",
+       "left",
+       "arrow"
+      ],
+      [
+       "number line",
+       "filled circle",
+       "−1",
+       "left",
+       "arrow"
+      ]
+     ],
+     "marks": 1,
+     "why": "A closed or filled endpoint includes −1, and shading left shows all values less than or equal to −1.",
+     "description": "Completes the number line representation.",
+     "how": "Mark a closed or filled circle at −1 and shade to the left, with an arrow extending left."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t0",
+   "text": "Define a linear equation in one variable.",
+   "marks": 2,
+   "modelAnswer": [
+    "An equation of the form ax + b = 0 where ‘a’ and ‘b’ are constants, a ≠ 0 and ‘x’ is a variable, is called a linear equation in one variable. In linear equation, the highest power of the variable is always 1."
+   ],
+   "followUp": "Define a linear equation in one variable.",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ax+b=0",
+       "a≠0"
+      ],
+      [
+       "ax+b=0",
+       "a!=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The defining algebraic form and the non-zero condition on its coefficient are essential.",
+     "description": "Gives the form ax + b = 0 with a ≠ 0.",
+     "how": "Award for stating the form and that a is non-zero; the coefficients are constants may also be stated here or with the variable condition in the next point."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "variable",
+       "highest power",
+       "1"
+      ],
+      [
+       "variable",
+       "power",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "A linear equation in one variable has a variable whose highest power is 1.",
+     "description": "Identifies x as a variable and states that its highest power is 1.",
+     "how": "Award for the variable and the statement about its highest power."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t1",
+   "text": "What is the general form of a linear equation in one variable?",
+   "marks": 2,
+   "modelAnswer": [
+    "ax + b = 0 and a ≠ 0 is also called the general form of linear equation in one variable."
+   ],
+   "followUp": "What is the general form of a linear equation in one variable?",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ax+b=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation ax + b = 0 is the required general form.",
+     "description": "States the form ax + b = 0.",
+     "how": "Award for giving the equation form."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "a≠0"
+      ],
+      [
+       "a!=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficient a must be non-zero for this to be the general form of a linear equation in one variable.",
+     "description": "States that a ≠ 0.",
+     "how": "Award for the non-zero condition on a."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t2",
+   "text": "State the effect of multiplying or dividing both sides of an inequality by a negative constant.",
+   "marks": 2,
+   "modelAnswer": [
+    "The order of an inequality is changed by multiplying or dividing each side by a negative constant."
+   ],
+   "followUp": "State the effect of multiplying or dividing both sides of an inequality by a negative constant.",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "multiplying",
+       "dividing",
+       "negative",
+       "constant"
+      ],
+      [
+       "multiplication",
+       "division",
+       "negative",
+       "constant"
+      ]
+     ],
+     "marks": 1,
+     "why": "The stated effect applies when each side is multiplied or divided by a negative constant.",
+     "description": "Identifies multiplying or dividing each side by a negative constant.",
+     "how": "Award for identifying the operation and the negative constant."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "order",
+       "changed"
+      ],
+      [
+       "order",
+       "reversed"
+      ]
+     ],
+     "marks": 1,
+     "why": "The order of the inequality changes under that operation.",
+     "description": "States that the order of the inequality is changed.",
+     "how": "Award for stating that the inequality order changes or reverses."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t3",
+   "text": "What are half planes and what is their boundary?",
+   "marks": 2,
+   "modelAnswer": [
+    "The regions (i) and (ii) are called half planes and the line ax + by = c is called the boundary of each half plane."
+   ],
+   "followUp": "What are half planes and what is their boundary?",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "half planes"
+      ],
+      [
+       "half-planes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The two regions are identified as half planes.",
+     "description": "Names regions (i) and (ii) as half planes.",
+     "how": "Award for identifying the regions as half planes."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "ax+by=c",
+       "boundary"
+      ]
+     ],
+     "marks": 1,
+     "why": "The line ax + by = c is the boundary of each half plane.",
+     "description": "Identifies ax + by = c as the boundary line.",
+     "how": "Award for giving the line and stating that it is the boundary."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t4",
+   "text": "What is a solution of a linear inequality in x and y?",
+   "marks": 2,
+   "modelAnswer": [
+    "A solution of a linear inequality in x and y is an ordered pair of numbers which satisfies the inequality."
+   ],
+   "followUp": "What is a solution of a linear inequality in x and y?",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ordered pair",
+       "numbers"
+      ],
+      [
+       "ordered pair",
+       "number"
+      ]
+     ],
+     "marks": 1,
+     "why": "A solution is an ordered pair of numbers.",
+     "description": "Identifies a solution as an ordered pair of numbers.",
+     "how": "Award for stating that the solution is an ordered pair."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "satisfies",
+       "inequality"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ordered pair must satisfy the given inequality.",
+     "description": "States that the ordered pair satisfies the inequality.",
+     "how": "Award for stating the required condition on the pair."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t5",
+   "text": "What is the associated or corresponding equation of a linear inequality?",
+   "marks": 2,
+   "modelAnswer": [
+    "Note that the linear equation ax + by = c is called \"associated or corresponding equation\" of each of the above-mentioned inequalities."
+   ],
+   "followUp": "What is the associated or corresponding equation of a linear inequality?",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ax+by=c"
+      ]
+     ],
+     "marks": 1,
+     "why": "The associated or corresponding equation is ax + by = c.",
+     "description": "Gives the equation ax + by = c.",
+     "how": "Award for stating the equation."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "associated"
+      ],
+      [
+       "corresponding"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation is named the associated or corresponding equation of the inequalities.",
+     "description": "Names it as the associated or corresponding equation.",
+     "how": "Award for either designation."
+    }
+   ]
+  },
+  {
+   "id": "w-5-1-t6",
+   "text": "How is the boundary line drawn for a strict inequality and for an inequality with equality?",
+   "marks": 2,
+   "modelAnswer": [
+    "The corresponding equation of the inequality is first graphed by using 'dashes' if the inequality involves the symbols > or < and a solid line is drawn if the inequality involves the symbols ≥ or ≤."
+   ],
+   "followUp": "How is the boundary line drawn for a strict inequality and for an inequality with equality?",
+   "noteId": "n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       ">",
+       "dashes"
+      ],
+      [
+       "<",
+       "dashes"
+      ],
+      [
+       ">",
+       "dashed"
+      ],
+      [
+       "<",
+       "dashed"
+      ]
+     ],
+     "marks": 1,
+     "why": "A strict inequality uses a dashed graph of its corresponding equation.",
+     "description": "States that the boundary is dashed for > or <.",
+     "how": "Award for linking either strict inequality symbol to a dashed line."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "≥",
+       "solid line"
+      ],
+      [
+       "≤",
+       "solid line"
+      ],
+      [
+       ">=",
+       "solid line"
+      ],
+      [
+       "<=",
+       "solid line"
+      ]
+     ],
+     "marks": 1,
+     "why": "An inequality that includes equality uses a solid line.",
+     "description": "States that the boundary is solid for ≥ or ≤.",
+     "how": "Award for linking either inequality symbol with equality to a solid line."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 0,
+  "writtenBuilt": 26
+ }
+}

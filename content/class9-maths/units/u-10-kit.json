@@ -1,0 +1,1515 @@
+{
+ "unit": 10,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 12-15",
+   "Ex 10.2",
+   "Review Ex 10 Q3",
+   "Review Ex 10 Q5-7"
+  ],
+  "definitions": [
+   {
+    "term": "Linear function",
+    "text": "A linear function is a mathematical expression that represents a straight-line relationship between two variables. Its general form is f(x) = mx + c, where “m” is the slope or gradient of the line, indicating how steep it is and “c” is the y-intercept (the point where the line crosses the y-axis). It can also be written as y = mx + c."
+   },
+   {
+    "term": "Quadratic function",
+    "text": "A quadratic function is a type of polynomial function that involves x² term. Its general form is:\ny = ax² + bx + c\nWhere a, b, c are constants and a ≠ 0."
+   },
+   {
+    "term": "Graph of a quadratic function",
+    "text": "The graph of a quadratic function is always a parabola.\n• If a > 0, then the parabola opens upward like “∪”.\n• If a < 0, then the parabola opens downward like “∩”."
+   },
+   {
+    "term": "Cubic function",
+    "text": "A cubic function is a type of polynomial function of degree 3. Its standard form is:\ny = ax³ + bx² + cx + d\nWhere a, b, c, d are constants and a ≠ 0."
+   },
+   {
+    "term": "Reciprocal function",
+    "text": "A reciprocal function is a function of the form:\ny = a/x\nWhere a is any real number and x ≠ 0."
+   },
+   {
+    "term": "Asymptote",
+    "text": "An asymptote is a line that a graph approaches but never touches."
+   },
+   {
+    "term": "Exponential function",
+    "text": "An exponential function is a mathematical function of the form:\ny = ka^x\nWhere a, k are constants, x is variable and a > 1."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "y = f(x)",
+    "use": "Shows that the output y depends on the input x."
+   },
+   {
+    "formula": "f(x) = mx + c, or y = mx + c",
+    "use": "Use for a straight-line function; m is the gradient and c is the y-intercept."
+   },
+   {
+    "formula": "y = ax² + bx + c, a ≠ 0",
+    "use": "Use for a quadratic function; its graph is a parabola."
+   },
+   {
+    "formula": "y = ax³ + bx² + cx + d, a ≠ 0",
+    "use": "Use for a cubic function."
+   },
+   {
+    "formula": "y = a/x, x ≠ 0",
+    "use": "Use for a reciprocal function."
+   },
+   {
+    "formula": "y = kaˣ, a > 1",
+    "use": "Use for the exponential function form in this unit."
+   },
+   {
+    "formula": "y = axⁿ",
+    "use": "Use for power-function graphs; n may be a positive integer, negative integer or rational number (for x > 0)."
+   },
+   {
+    "formula": "Gradient = (Change in y)/(Change in x) = Δy/Δx = (y₂ − y₁)/(x₂ − x₁)",
+    "use": "Use to find the gradient between two points, including two points chosen on a tangent."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 10.1 Q1(i)",
+    "why": "A typical short graph question testing a straight-line table and plotting."
+   },
+   {
+    "ref": "Ex 10.1 Q2(ii)",
+    "why": "A standard parabola question that tests accurate values and a smooth curve."
+   },
+   {
+    "ref": "Ex 10.1 Q2(i)",
+    "why": "A good long-graph choice because it specifies an interval and needs several plotted points."
+   },
+   {
+    "ref": "Ex 10.1 Q2(iii)",
+    "why": "Tests cubic graphing over a stated interval and careful handling of negative x-values."
+   },
+   {
+    "ref": "Ex 10.1 Q3(i)",
+    "why": "A representative exponential growth graph."
+   },
+   {
+    "ref": "Ex 10.1 Q3(ii)",
+    "why": "A likely contrast with growth, testing a decreasing exponential graph."
+   },
+   {
+    "ref": "Ex 10.1 Q3(iii)",
+    "why": "Tests reciprocal branches and the vertical asymptote at x = 3."
+   },
+   {
+    "ref": "Ex 10.1 Q3(iv)",
+    "why": "A standard shifted reciprocal graph with two branches."
+   },
+   {
+    "ref": "Ex 10.1 Q3(v)",
+    "why": "Tests the square-root graph and its restricted input values."
+   },
+   {
+    "ref": "Ex 10.1 Q3(vii)",
+    "why": "Tests a negative power and the two-branch reciprocal-style shape."
+   },
+   {
+    "ref": "Review Ex 10 Q2(i)",
+    "why": "A strong interval-based exponential question with values on both sides of zero."
+   },
+   {
+    "ref": "Review Ex 10 Q4(ii)",
+    "why": "A standard downward-opening parabola across a specified interval."
+   }
+  ],
+  "fullMarks": [
+   "Write the function and the given x-interval first. Make a clear table of x-values and correctly calculated matching y-values.",
+   "Choose a sensible, even scale on both axes, label the axes with the variables, and write the scale beside the graph.",
+   "Plot each coordinate carefully. For two functions on one set of axes, use different symbols or colours and identify each graph clearly.",
+   "Join linear-function points with a ruler. Join quadratic and cubic points with a smooth curve; do not connect them with sharp straight segments.",
+   "For reciprocal graphs, do not plot an undefined input such as x = 0 or x = 3. Show the branches approaching the asymptotes without touching them.",
+   "For exponential graphs, include points on both sides of x = 0 where the interval allows, and draw a smooth curve that approaches but does not meet the horizontal axis.",
+   "For square-root graphs, use only x-values for which the function is defined. Write the final graph description or requested conclusion clearly."
+  ],
+  "mistakes": [
+   "Substituting a negative x-value without brackets can give the wrong result. Replace x with (−number), especially when squaring or cubing.",
+   "Using unequal or unclear axis scales makes the graph inaccurate. State the scale and keep equal intervals consistent on each axis.",
+   "Joining plotted quadratic or cubic points with straight segments makes the curve look wrong. Draw one smooth curve through the points.",
+   "Plotting a reciprocal function at an excluded x-value gives an undefined result. Leave that input out and show the graph approaching its asymptote.",
+   "Treating y = 5^(−x) as increasing confuses the negative exponent. Check a few values: the graph decreases as x increases.",
+   "Using negative x-values for y = x^(1/2) gives values outside the real-number graph. Use x ≥ 0.",
+   "Leaving a graph without labelled axes or a stated scale can lose presentation marks. Label both axes and identify each plotted function."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a linear function.",
+    "answer": "A linear function is a mathematical expression that represents a straight-line relationship between two variables. Its general form is f(x) = mx + c, where “m” is the slope or gradient of the line, indicating how steep it is and “c” is the y-intercept (the point where the line crosses the y-axis). It can also be written as y = mx + c."
+   },
+   {
+    "question": "Define a quadratic function.",
+    "answer": "A quadratic function is a type of polynomial function that involves x² term. Its general form is:\ny = ax² + bx + c\nWhere a, b, c are constants and a ≠ 0."
+   },
+   {
+    "question": "State the shape of the graph of a quadratic function and how its direction depends on a.",
+    "answer": "The graph of a quadratic function is always a parabola.\n• If a > 0, then the parabola opens upward like “∪”.\n• If a < 0, then the parabola opens downward like “∩”."
+   },
+   {
+    "question": "Define a cubic function.",
+    "answer": "A cubic function is a type of polynomial function of degree 3. Its standard form is:\ny = ax³ + bx² + cx + d\nWhere a, b, c, d are constants and a ≠ 0."
+   },
+   {
+    "question": "Define a reciprocal function.",
+    "answer": "A reciprocal function is a function of the form:\ny = a/x\nWhere a is any real number and x ≠ 0."
+   },
+   {
+    "question": "What is an asymptote?",
+    "answer": "An asymptote is a line that a graph approaches but never touches."
+   },
+   {
+    "question": "Define an exponential function.",
+    "answer": "An exponential function is a mathematical function of the form:\ny = ka^x\nWhere a, k are constants, x is variable and a > 1."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-10-1-k0",
+   "text": "Sketch the graph of the following linear functions: y = 3x − 5. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "Table of values:",
+    "x:  0,  1,  2",
+    "y: −5, −2,  1",
+    "Plot (0, −5), (1, −2) and (2, 1) on labelled axes and join them with a straight line.",
+    "The finished graph is the line y = 3x − 5, rising from left to right."
+   ],
+   "followUp": "Sketch the graph of y = 2x + 1. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q1(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(0,-5)",
+       "(1,-2)",
+       "(2,1)"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct set of points is needed to plot the line.",
+     "description": "Correct table of values or three ordered pairs.",
+     "how": "Write the values of y for x = 0, 1 and 2, or give the corresponding ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "y=3x-5",
+       "(0,-5)",
+       "(1,-2)",
+       "(2,1)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The plotted points must form the required straight-line graph.",
+     "description": "Correct completed graph.",
+     "how": "Plot the points on labelled axes and join them with a straight line, extending it in both directions."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k1",
+   "text": "Sketch the graph of the following linear functions: y = −2x + 8. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "Table of values:",
+    "x:  0,  2,  4",
+    "y:  8,  4,  0",
+    "Plot (0, 8), (2, 4) and (4, 0) on labelled axes and join them with a straight line.",
+    "The finished graph is the line y = −2x + 8, falling from left to right."
+   ],
+   "followUp": "Sketch the graph of y = −x + 6. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q1(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(0,8)",
+       "(2,4)",
+       "(4,0)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct points are needed to plot the line accurately.",
+     "description": "Correct table of values or three ordered pairs.",
+     "how": "Write the values of y for x = 0, 2 and 4, or give the corresponding ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "y=-2x+8",
+       "(0,8)",
+       "(2,4)",
+       "(4,0)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The plotted points must form the required straight-line graph.",
+     "description": "Correct completed graph.",
+     "how": "Plot the points on labelled axes and join them with a straight line, extending it in both directions."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k2",
+   "text": "Sketch the graph of the following linear functions: y = 0.5x − 1. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 2,
+   "modelAnswer": [
+    "Table of values:",
+    "x:  0,  2,  4",
+    "y: −1,  0,  1",
+    "Plot (0, −1), (2, 0) and (4, 1) on labelled axes and join them with a straight line.",
+    "The finished graph is the line y = 0.5x − 1, rising from left to right."
+   ],
+   "followUp": "Sketch the graph of y = 0.5x + 2. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q1(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(0,-1)",
+       "(2,0)",
+       "(4,1)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct points are needed to plot the line accurately.",
+     "description": "Correct table of values or three ordered pairs.",
+     "how": "Write the values of y for x = 0, 2 and 4, or give the corresponding ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "y=0.5x-1",
+       "(0,-1)",
+       "(2,0)",
+       "(4,1)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The plotted points must form the required straight-line graph.",
+     "description": "Correct completed graph.",
+     "how": "Plot the points on labelled axes and join them with a straight line, extending it in both directions."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k3",
+   "text": "Plot the graph of the following quadratic and cubic functions: y = x³ + 2x² − 5x − 6; −3.5 ≤ x ≤ 2.5 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Table of values:",
+    "x: −3.5, −3, −2.5, −2, −1.5, −1, −0.5, 0, 0.5, 1, 1.5, 2, 2.5",
+    "y: −6.875, 0, 3.375, 4, 2.625, 0, −3.125, −6, −7.875, −8, −5.625, 0, 9.625",
+    "Plot (−3.5, −6.875), (−3, 0), (−2.5, 3.375), (−2, 4), (−1.5, 2.625), (−1, 0), (−0.5, −3.125), (0, −6), (0.5, −7.875), (1, −8), (1.5, −5.625), (2, 0) and (2.5, 9.625) on labelled axes.",
+    "Join the points with a smooth cubic curve for −3.5 ≤ x ≤ 2.5.",
+    "The finished graph crosses the x-axis at (−3, 0), (−1, 0) and (2, 0)."
+   ],
+   "followUp": "Plot the graph of y = x³ − 2x² − 5x + 6 for −2.5 ≤ x ≤ 3.5. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q2(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-3.5,-6.875)",
+       "(-3,0)",
+       "(-2.5,3.375)",
+       "(-2,4)",
+       "(-1.5,2.625)",
+       "(-1,0)",
+       "(-0.5,-3.125)",
+       "(0,-6)",
+       "(0.5,-7.875)",
+       "(1,-8)",
+       "(1.5,-5.625)",
+       "(2,0)",
+       "(2.5,9.625)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The table supplies the points needed to draw the cubic accurately over the stated interval.",
+     "description": "Correct table of values for the given interval.",
+     "how": "Calculate the y-values for the listed x-values and record the resulting ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(-3,0)",
+       "(-1,0)",
+       "(2,0)",
+       "labelled axes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Plotting the points and intercepts on axes locates the curve correctly.",
+     "description": "Key points plotted in the correct positions on labelled axes.",
+     "how": "Plot the ordered pairs from the table, including the x-intercepts."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "cubic",
+       "-3.5",
+       "2.5",
+       "(-3,0)",
+       "(-1,0)",
+       "(2,0)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The finished curve must have the correct cubic shape and stay within the stated domain.",
+     "description": "Correct smooth cubic graph over the stated interval.",
+     "how": "Join the plotted points with a smooth cubic curve, keeping it within the specified x-range."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k5",
+   "text": "Plot the graph of the following quadratic and cubic functions: y = x³ + 3x² + 2x; −2.5 ≤ x ≤ 0.5 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Table of values:",
+    "x: −2.5, −2, −1.5, −1, −0.5, 0, 0.5",
+    "y: −1.875, 0, 0.375, 0, −0.375, 0, 1.875",
+    "Plot (−2.5, −1.875), (−2, 0), (−1.5, 0.375), (−1, 0), (−0.5, −0.375), (0, 0) and (0.5, 1.875) on labelled axes.",
+    "Join the points with a smooth cubic curve for −2.5 ≤ x ≤ 0.5.",
+    "The finished graph crosses the x-axis at (−2, 0), (−1, 0) and (0, 0)."
+   ],
+   "followUp": "Plot the graph of y = x³ + 2x² − x; −2.5 ≤ x ≤ 1.5. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q2(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2.5,-1.875)",
+       "(-2,0)",
+       "(-1.5,0.375)",
+       "(-1,0)",
+       "(-0.5,-0.375)",
+       "(0,0)",
+       "(0.5,1.875)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The table supplies the points needed to construct the curve over the full interval.",
+     "description": "Correct table of values for the given interval.",
+     "how": "Calculate and record the ordered pairs for each listed x-value."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(-2,0)",
+       "(-1,0)",
+       "(0,0)",
+       "labelled axes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intercepts help place the curve accurately.",
+     "description": "Points and intercepts plotted correctly on labelled axes.",
+     "how": "Plot the ordered pairs, including the three x-intercepts."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "cubic",
+       "-2.5",
+       "0.5",
+       "(-2,0)",
+       "(-1,0)",
+       "(0,0)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The smooth curve must follow the plotted points and respect the domain.",
+     "description": "Correct smooth cubic graph over the stated interval.",
+     "how": "Join the plotted points with a smooth cubic curve within the given x-range."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k7",
+   "text": "Plot the graph of the following functions: y = 4^x Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Table of values:",
+    "x: −2, −1, 0, 1, 2",
+    "y: 1/16, 1/4, 1, 4, 16",
+    "Plot (−2, 1/16), (−1, 1/4), (0, 1), (1, 4) and (2, 16) on labelled axes.",
+    "Join the points with a smooth increasing exponential curve that approaches the x-axis as x decreases."
+   ],
+   "followUp": "Plot the graph of y = 3^x. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2,1/16)",
+       "(-1,1/4)",
+       "(0,1)",
+       "(1,4)",
+       "(2,16)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The table gives the points needed to plot the exponential curve.",
+     "description": "Correct table of values.",
+     "how": "Evaluate 4^x for the listed x-values and record the ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(0,1)",
+       "(1,4)",
+       "(2,16)",
+       "labelled axes"
+      ]
+     ],
+     "marks": 1,
+     "why": "These plotted points show the curve’s position and increasing behaviour.",
+     "description": "Key points plotted correctly on labelled axes.",
+     "how": "Plot the ordered pairs from the table on labelled axes."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "increasing",
+       "exponential",
+       "1/16",
+       "1/4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The finished curve must be increasing and approach the x-axis towards the left.",
+     "description": "Correct smooth exponential graph.",
+     "how": "Join the plotted points with a smooth increasing curve that approaches the x-axis as x decreases."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k8",
+   "text": "Plot the graph of the following functions: y = 5^(−x) Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 5^(−x), use the following table:",
+    "x: −2, −1, 0, 1, 2",
+    "y: 25, 5, 1, 1/5, 1/25",
+    "Plot (−2, 25), (−1, 5), (0, 1), (1, 1/5) and (2, 1/25) on labelled coordinate axes.",
+    "Join the points with a smooth decreasing curve above the x-axis, approaching but not touching it.",
+    "The graph is a decreasing exponential curve."
+   ],
+   "followUp": "Plot the graph of y = 2^(−x). Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2,25)",
+       "(-1,5)",
+       "(0,1)",
+       "(1,1/5)",
+       "(2,1/25)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The values give the points needed to plot the function accurately.",
+     "description": "Correct table of values and corresponding plotted points.",
+     "how": "Give and plot the five correct points, or provide an equivalent correct table."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "labelled",
+       "coordinate axes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The axes provide the coordinate reference for the graph.",
+     "description": "Coordinate axes are drawn and labelled.",
+     "how": "Show the x-axis and y-axis clearly and label them."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "decreasing",
+       "above",
+       "x-axis"
+      ]
+     ],
+     "marks": 1,
+     "why": "The curve must have the correct exponential shape and approach the x-axis without meeting it.",
+     "description": "Correct completed graph: a smooth decreasing curve through the points, remaining above and approaching the x-axis.",
+     "how": "Draw a smooth decreasing curve through the points, staying above and approaching the x-axis."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k9",
+   "text": "Plot the graph of the following functions: y = 1/(x − 3), x ≠ 3 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 1/(x − 3), x ≠ 3, use the following table:",
+    "x: 1, 2, 5/2, 7/2, 4, 5",
+    "y: −1/2, −1, −2, 2, 1, 1/2",
+    "Plot (1, −1/2), (2, −1), (5/2, −2), (7/2, 2), (4, 1) and (5, 1/2) on labelled axes.",
+    "Draw the asymptotes x = 3 and y = 0, then draw a smooth branch on each side through the plotted points, approaching both asymptotes.",
+    "The graph has two branches, with vertical asymptote x = 3 and horizontal asymptote y = 0."
+   ],
+   "followUp": "Plot the graph of y = 1/(x − 2), x ≠ 2. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(iii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(1,-1/2)",
+       "(2,-1)",
+       "(5/2,-2)",
+       "(7/2,2)",
+       "(4,1)",
+       "(5,1/2)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The plotted points establish both branches and their positions.",
+     "description": "Correct table of values and plotted points on both sides of x = 3.",
+     "how": "Give and plot the six correct points, or provide an equivalent correct table."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=3",
+       "y=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The asymptotes determine how the branches approach the excluded line and the horizontal axis.",
+     "description": "Both asymptotes are shown and labelled.",
+     "how": "Show x = 3 and y = 0 as asymptotes."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "branches",
+       "x=3",
+       "y=0",
+       "(5/2,-2)",
+       "(7/2,2)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct branches complete the graph and show the function's behaviour.",
+     "description": "Completed graph has two smooth branches approaching both asymptotes.",
+     "how": "Draw both smooth branches through their corresponding points, approaching but not meeting the asymptotes."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k10",
+   "text": "Plot the graph of the following functions: y = 2/x + 3, x ≠ 0 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 2/x + 3, x ≠ 0, use the following table:",
+    "x: −2, −1, −1/2, 1/2, 1, 2",
+    "y: 2, 1, −1, 7, 5, 4",
+    "Plot (−2, 2), (−1, 1), (−1/2, −1), (1/2, 7), (1, 5) and (2, 4) on labelled axes.",
+    "Draw smooth branches through the points, approaching x = 0 and y = 3.",
+    "The graph is a hyperbola with asymptotes x = 0 and y = 3."
+   ],
+   "followUp": "Plot the graph of y = 1/x + 2, x ≠ 0. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(iv)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2,2)",
+       "(-1,1)",
+       "(-1/2,-1)",
+       "(1/2,7)",
+       "(1,5)",
+       "(2,4)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The points locate both branches of the translated reciprocal graph.",
+     "description": "Correct table of values and plotted points.",
+     "how": "Give and plot the six correct points, or provide an equivalent correct table."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x=0",
+       "y=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The asymptotes show the graph's limiting behaviour near the y-axis and at large x-values.",
+     "description": "The asymptotes x = 0 and y = 3 are identified.",
+     "how": "Show the y-axis as x = 0 and the horizontal asymptote y = 3."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "branches",
+       "x=0",
+       "y=3",
+       "(−1,1)",
+       "(1,5)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The smooth branches must pass through the plotted points and approach the asymptotes.",
+     "description": "Correct completed graph of the function.",
+     "how": "Draw smooth branches through the points, approaching the stated asymptotes."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k11",
+   "text": "Plot the graph of the following functions: y = x^(1/2) Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Since y = x^(1/2) = √x, use non-negative values of x.",
+    "x: 0, 1, 4, 9",
+    "y: 0, 1, 2, 3",
+    "Plot (0, 0), (1, 1), (4, 2) and (9, 3) on the x-axis and y-axis, labelled accordingly.",
+    "Join the points with a smooth increasing curve beginning at the origin.",
+    "The graph is the increasing curve y = √x."
+   ],
+   "followUp": "Plot the graph of y = x^(1/2) for 0 ≤ x ≤ 16.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(v)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(0,0)",
+       "(1,1)",
+       "(4,2)",
+       "(9,3)"
+      ]
+     ],
+     "marks": 2,
+     "why": "These values provide the points needed to plot the square-root curve.",
+     "description": "Correct table of values and plotted points.",
+     "how": "Earn 2 marks by giving and plotting the four correct points."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x-axis",
+       "y-axis",
+       "origin"
+      ]
+     ],
+     "marks": 1,
+     "why": "The axes establish the graph’s position, and the curve starts at the origin.",
+     "description": "Axes are shown and labelled; the curve begins at the origin.",
+     "how": "Earn 1 mark for showing the labelled axes and starting the curve at (0, 0)."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "increasing",
+       "(1,1)",
+       "(4,2)",
+       "(9,3)"
+      ]
+     ],
+     "marks": 1,
+     "why": "A smooth increasing curve through the plotted points completes the graph.",
+     "description": "Correct completed graph of y = √x.",
+     "how": "Earn 1 mark for drawing the smooth increasing curve through the plotted points."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k12",
+   "text": "Plot the graph of the following functions: y = 3x^(1/3) Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 3x^(1/3), use the following table:",
+    "x: −8, −1, 0, 1, 8",
+    "y: −6, −3, 0, 3, 6",
+    "Plot (−8, −6), (−1, −3), (0, 0), (1, 3) and (8, 6) on coordinate axes labelled x, y, x′ and y′.",
+    "Join the points with a smooth increasing curve.",
+    "The graph passes through all five plotted points, including the origin."
+   ],
+   "followUp": "Plot the graph of y = 2x^(1/3).",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(vi)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-8,-6)",
+       "(-1,-3)",
+       "(0,0)",
+       "(1,3)",
+       "(8,6)"
+      ]
+     ],
+     "marks": 2,
+     "why": "These points provide the values and shape needed to plot the cube-root function.",
+     "description": "Correct table of values and plotted points.",
+     "how": "Earn 2 marks by giving and plotting the five correct points."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x",
+       "y",
+       "x′",
+       "y′"
+      ]
+     ],
+     "marks": 1,
+     "why": "The axis labels establish the coordinate directions for the graph.",
+     "description": "Coordinate axes are drawn and labelled.",
+     "how": "Earn 1 mark for showing and labelling x, y, x′ and y′."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "increasing",
+       "(-8,-6)",
+       "(0,0)",
+       "(8,6)"
+      ]
+     ],
+     "marks": 1,
+     "why": "A smooth increasing curve through the plotted points completes the graph.",
+     "description": "Correct completed graph of y = 3x^(1/3).",
+     "how": "Earn 1 mark for drawing the smooth increasing curve through the plotted points."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-k13",
+   "text": "Plot the graph of the following functions: y = 2x^(−2) Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Rewrite y = 2x^(−2) as y = 2/x², where x ≠ 0.",
+    "x: −2, 2, −1, 1, −1/2, 1/2",
+    "y: 1/2, 1/2, 2, 2, 8, 8",
+    "Plot (−2, 1/2), (2, 1/2), (−1, 2), (1, 2), (−1/2, 8) and (1/2, 8) on coordinate axes labelled x, y, x′ and y′.",
+    "Draw two smooth branches, one on each side of the y-axis. Both branches lie above the x-axis and approach x = 0 and y = 0 without touching them.",
+    "The graph is symmetric about the y-axis, with asymptotes x = 0 and y = 0."
+   ],
+   "followUp": "Plot the graph of y = 1/x², x ≠ 0.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 10.1 Q3(vii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2,1/2)",
+       "(2,1/2)",
+       "(-1,2)",
+       "(1,2)",
+       "(-1/2,8)",
+       "(1/2,8)"
+      ]
+     ],
+     "marks": 2,
+     "why": "These points locate both branches and show their symmetry about the y-axis.",
+     "description": "Correct table of values and plotted points.",
+     "how": "Earn 2 marks by giving and plotting the six correct points."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x",
+       "y",
+       "x′",
+       "y′"
+      ]
+     ],
+     "marks": 1,
+     "why": "Labelled axes provide the reference for the two branches and their asymptotes.",
+     "description": "Coordinate axes are drawn and labelled.",
+     "how": "Earn 1 mark for showing and labelling x, y, x′ and y′."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "two",
+       "branches",
+       "above",
+       "x=0",
+       "y=0",
+       "symmetric"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both branches must lie above the x-axis, be symmetric about the y-axis, and approach the asymptotes without touching them.",
+     "description": "Correct completed graph with two branches above the x-axis, symmetric about the y-axis.",
+     "how": "Earn 1 mark for drawing both smooth branches through the plotted points and approaching x = 0 and y = 0."
+    }
+   ]
+  },
+  {
+   "id": "w-10-3-k14",
+   "text": "Plot the graph of the following functions: y = 3^(−x) for x from −2 to 4 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 3^(−x), −2 ≤ x ≤ 4, use the following table:",
+    "x: −2, −1, 0, 1, 2, 3, 4",
+    "y: 9, 3, 1, 1/3, 1/9, 1/27, 1/81",
+    "Plot (−2, 9), (−1, 3), (0, 1), (1, 1/3), (2, 1/9), (3, 1/27) and (4, 1/81) on the x-axis and y-axis.",
+    "Join the points with a smooth decreasing curve over −2 ≤ x ≤ 4.",
+    "The graph approaches the x-axis as x increases."
+   ],
+   "followUp": "Plot the graph of y = 2^(−x) for x from −2 to 4.",
+   "noteId": "n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 10 Q2(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-2,9)",
+       "(-1,3)",
+       "(0,1)",
+       "(1,1/3)",
+       "(2,1/9)",
+       "(3,1/27)",
+       "(4,1/81)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The table gives the function values throughout the specified interval.",
+     "description": "Correct table of values and plotted points for −2 ≤ x ≤ 4.",
+     "how": "Earn 2 marks by giving and plotting all seven correct points."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x-axis",
+       "y-axis",
+       "−2 ≤ x ≤ 4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The graph must use coordinate axes and cover the full specified interval.",
+     "description": "Axes and stated x-interval are represented.",
+     "how": "Earn 1 mark for plotting on labelled axes from x = −2 to x = 4."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "smooth",
+       "decreasing",
+       "(-2,9)",
+       "(0,1)",
+       "(4,1/81)"
+      ]
+     ],
+     "marks": 1,
+     "why": "A smooth decreasing curve through the plotted values completes the requested graph.",
+     "description": "Correct completed graph on the interval.",
+     "how": "Earn 1 mark for joining the points with a smooth decreasing curve."
+    }
+   ]
+  },
+  {
+   "id": "w-10-3-k15",
+   "text": "Plot the graph of the following functions: y = 2/x, x ≠ 0 Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 2/x, x ≠ 0, use the following table:",
+    "x: −4, −2, −1, 1, 2, 4",
+    "y: −1/2, −1, −2, 2, 1, 1/2",
+    "Plot (−4, −1/2), (−2, −1), (−1, −2), (1, 2), (2, 1) and (4, 1/2) on the x-axis and y-axis.",
+    "Join the points in each quadrant with smooth curves approaching the axes.",
+    "The graph is a hyperbola with one branch in the first quadrant and the other in the third quadrant; the x-axis and y-axis are its asymptotes."
+   ],
+   "followUp": "Plot the graph of y = 3/x, x ≠ 0.",
+   "noteId": "n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 10 Q2(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-4,-1/2)",
+       "(-2,-1)",
+       "(-1,-2)",
+       "(1,2)",
+       "(2,1)",
+       "(4,1/2)"
+      ]
+     ],
+     "marks": 2,
+     "why": "These points locate each branch in its correct quadrant.",
+     "description": "Correct table of values and plotted points.",
+     "how": "Earn 2 marks by giving and plotting the six correct points."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "x-axis",
+       "y-axis",
+       "asymptotes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coordinate axes are the asymptotes approached by the two branches.",
+     "description": "Axes are shown and identified as the asymptotes.",
+     "how": "Earn 1 mark for showing the coordinate axes and identifying them as asymptotes."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "first",
+       "third",
+       "smooth",
+       "x-axis",
+       "y-axis",
+       "asymptotes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct two-branch shape in the first and third quadrants completes the graph.",
+     "description": "Correct completed hyperbola approaching both axes.",
+     "how": "Earn 1 mark for drawing smooth branches through the plotted points in the first and third quadrants, approaching but not touching the axes."
+    }
+   ]
+  },
+  {
+   "id": "w-10-3-k16",
+   "text": "Plot the graph of following for x from −5 to 5: y = x² − 3. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = x² − 3, calculate y for each integer x from −5 to 5.",
+    "x: −5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5",
+    "y: 22, 13, 6, 1, −2, −3, −2, 1, 6, 13, 22",
+    "The ordered pairs are (−5, 22), (−4, 13), (−3, 6), (−2, 1), (−1, −2), (0, −3), (1, −2), (2, 1), (3, 6), (4, 13) and (5, 22).",
+    "Plot these points with x on the horizontal axis and y on the vertical axis, and join them with a smooth curve.",
+    "The graph is an upward-opening parabola with vertex (0, −3), symmetric about the y-axis."
+   ],
+   "followUp": "Plot the graph of y = x² + 2 for x from −5 to 5.",
+   "noteId": "n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 10 Q4(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-5,22)",
+       "(-4,13)",
+       "(-3,6)",
+       "(-2,1)",
+       "(-1,-2)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The values for negative x establish the left-hand portion of the curve.",
+     "description": "Correct values for x = −5 to −1.",
+     "how": "Earn this mark by giving the five correct ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(0,-3)",
+       "(1,-2)",
+       "(2,1)",
+       "(3,6)",
+       "(4,13)",
+       "(5,22)"
+      ]
+     ],
+     "marks": 1,
+     "why": "These values complete the table and show the curve’s symmetry.",
+     "description": "Correct values for x = 0 to 5.",
+     "how": "Earn this mark by giving the six correct ordered pairs."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "parabola",
+       "upward",
+       "vertex (0,-3)",
+       "symmetric",
+       "y-axis"
+      ]
+     ],
+     "marks": 2,
+     "why": "Plotting the points and joining them correctly gives the required graph.",
+     "description": "Correct completed graph.",
+     "how": "Earn both marks for plotting the values with x horizontal and y vertical, then drawing a smooth upward-opening parabola with vertex (0, −3), symmetric about the y-axis."
+    }
+   ]
+  },
+  {
+   "id": "w-10-3-k17",
+   "text": "Plot the graph of following for x from −5 to 5: y = 15 − x². Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "For y = 15 − x², calculate y for each integer x from −5 to 5.",
+    "x: −5, −4, −3, −2, −1, 0, 1, 2, 3, 4, 5",
+    "y: −10, −1, 6, 11, 14, 15, 14, 11, 6, −1, −10",
+    "The ordered pairs are (−5, −10), (−4, −1), (−3, 6), (−2, 11), (−1, 14), (0, 15), (1, 14), (2, 11), (3, 6), (4, −1) and (5, −10).",
+    "Plot these points with x on the horizontal axis and y on the vertical axis, and join them with a smooth curve.",
+    "The graph is a downward-opening parabola with vertex (0, 15), symmetric about the y-axis."
+   ],
+   "followUp": "Plot the graph of y = 12 − x² for x from −5 to 5.",
+   "noteId": "n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Review Ex 10 Q4(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(-5,-10)",
+       "(-4,-1)",
+       "(-3,6)",
+       "(-2,11)",
+       "(-1,14)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The values for negative x establish the left-hand portion of the curve.",
+     "description": "Correct values for x = −5 to −1.",
+     "how": "Earn this mark by giving the five correct ordered pairs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(0,15)",
+       "(1,14)",
+       "(2,11)",
+       "(3,6)",
+       "(4,-1)",
+       "(5,-10)"
+      ]
+     ],
+     "marks": 1,
+     "why": "These values complete the table and show the curve’s symmetry.",
+     "description": "Correct values for x = 0 to 5.",
+     "how": "Earn this mark by giving the six correct ordered pairs."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "parabola",
+       "downward",
+       "vertex (0,15)",
+       "symmetric",
+       "y-axis"
+      ]
+     ],
+     "marks": 2,
+     "why": "Plotting the points and joining them correctly gives the required graph.",
+     "description": "Correct completed graph.",
+     "how": "Earn both marks for plotting the values with x horizontal and y vertical, then drawing a smooth downward-opening parabola with vertex (0, 15), symmetric about the y-axis."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t0",
+   "text": "Define a linear function.",
+   "marks": 2,
+   "modelAnswer": [
+    "A linear function is a mathematical expression that represents a straight-line relationship between two variables.",
+    "Its general form is f(x) = mx + c, where m is the slope or gradient and c is the y-intercept. It can also be written as y = mx + c."
+   ],
+   "followUp": "Define a linear function.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "straight",
+       "variables"
+      ],
+      [
+       "linear",
+       "variables"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining straight-line relationship between two variables.",
+     "description": "States that a linear function represents a straight-line relationship between two variables.",
+     "how": "Look for a reference to a straight relationship or linear relationship, and to variables (or an equivalent statement)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "f(x)=mx+c"
+      ],
+      [
+       "y=mx+c"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the general form of a linear function.",
+     "description": "Gives the form f(x) = mx + c or y = mx + c.",
+     "how": "Check that the expression has a variable term with coefficient m and constant c."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t1",
+   "text": "Define a quadratic function.",
+   "marks": 2,
+   "modelAnswer": [
+    "A quadratic function is a type of polynomial function that involves an x² term. Its general form is y = ax² + bx + c, where a, b, c are constants and a ≠ 0."
+   ],
+   "followUp": "Define a quadratic function.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "polynomial",
+       "degree 2"
+      ],
+      [
+       "x^2",
+       "term"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies a quadratic function as a polynomial of degree 2 or as involving an x² term.",
+     "description": "States that a quadratic function is a polynomial function involving an x² term.",
+     "how": "Look for the term x² or an explicit reference to degree 2 and polynomial."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "ax^2+bx+c",
+       "a≠0"
+      ],
+      [
+       "y=ax^2+bx+c",
+       "a≠0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the standard form and the condition that the leading coefficient is nonzero.",
+     "description": "Gives y = ax² + bx + c, where a ≠ 0.",
+     "how": "Check for the quadratic expression and the condition a ≠ 0."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t2",
+   "text": "State the shape of the graph of a quadratic function and how its direction depends on a.",
+   "marks": 2,
+   "modelAnswer": [
+    "The graph of a quadratic function is always a parabola.",
+    "If a > 0, it opens upward (∪); if a < 0, it opens downward (∩)."
+   ],
+   "followUp": "State the shape of the graph of a quadratic function and how its direction depends on a.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "parabola"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the characteristic graph shape of a quadratic function.",
+     "description": "States that the graph is a parabola.",
+     "how": "Look for the word “parabola.”"
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "a>0",
+       "upward",
+       "a<0",
+       "downward"
+      ],
+      [
+       "a>0",
+       "∪",
+       "a<0",
+       "∩"
+      ]
+     ],
+     "marks": 1,
+     "why": "States how the sign of a determines the direction in which the parabola opens.",
+     "description": "States that a > 0 gives an upward-opening parabola and a < 0 gives a downward-opening parabola.",
+     "how": "Check that both sign cases are matched with their correct directions."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t3",
+   "text": "Define a cubic function.",
+   "marks": 2,
+   "modelAnswer": [
+    "A cubic function is a type of polynomial function of degree 3. Its standard form is y = ax³ + bx² + cx + d, where a, b, c, d are constants and a ≠ 0."
+   ],
+   "followUp": "Define a cubic function.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "polynomial",
+       "degree 3"
+      ],
+      [
+       "cubic",
+       "degree 3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies a cubic function by its degree.",
+     "description": "States that a cubic function is a polynomial function of degree 3.",
+     "how": "Look for “polynomial” and degree 3, or an equivalent statement that it is cubic of degree 3."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "ax^3+bx^2+cx+d",
+       "a≠0"
+      ],
+      [
+       "y=ax^3+bx^2+cx+d",
+       "a≠0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the standard cubic form and the nonzero leading-coefficient condition.",
+     "description": "Gives y = ax³ + bx² + cx + d, where a ≠ 0.",
+     "how": "Check for the cubic expression and the condition a ≠ 0."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t4",
+   "text": "Define a reciprocal function.",
+   "marks": 2,
+   "modelAnswer": [
+    "A reciprocal function is a function of the form y = a/x, where a is any real number and x ≠ 0."
+   ],
+   "followUp": "Define a reciprocal function.",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "y=a/x"
+      ],
+      [
+       "a/x"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the defining form of a reciprocal function.",
+     "description": "States that a reciprocal function has the form y = a/x.",
+     "how": "Look for y equal to a divided by x."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "real",
+       "x≠0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the stated restriction on x and the allowed type of a.",
+     "description": "States that a is real and x ≠ 0.",
+     "how": "Check for both the real-number condition on a and the nonzero condition on x."
+    }
+   ]
+  },
+  {
+   "id": "w-10-1-t5",
+   "text": "What is an asymptote?",
+   "marks": 2,
+   "modelAnswer": [
+    "An asymptote is a line that a graph approaches but never touches."
+   ],
+   "followUp": "What is an asymptote?",
+   "noteId": "n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "line",
+       "graph",
+       "approaches"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies an asymptote as a line that the graph approaches.",
+     "description": "States that an asymptote is a line approached by a graph.",
+     "how": "Look for the words “line,” “graph,” and “approaches,” or equivalent wording."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "never",
+       "touches"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the defining condition that the graph does not touch the asymptote.",
+     "description": "States that the graph never touches the line.",
+     "how": "Look for “never touches” or an equivalent statement."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 0,
+  "writtenBuilt": 22
+ }
+}

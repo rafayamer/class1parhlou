@@ -3,6 +3,7 @@
 //   node --experimental-strip-types scripts/assemble-course.mjs [out.json]
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { bundleProblems } from "../owner-panel/src/validate.ts";
+import { isExcluded } from "./syllabus.mjs";
 
 const ROOT = "content/class9-maths";
 const OUT = process.argv[2] ?? `${ROOT}/bundle.json`;
@@ -16,6 +17,11 @@ for (let u = 1; u <= 13; u++) {
 if (!units.length) throw new Error("no built units");
 
 const norm = (s) => s.toLowerCase().replace(/\s+/g, " ").trim();
+// The exam students sit next: the smart syllabus says what it leaves out (kept as practice, never in tests or papers).
+const syllabus = JSON.parse(readFileSync(`${ROOT}/syllabus-2027.json`, "utf8"));
+const EXAM = "2027 exam";
+const pools = new Map(); // unit number → examinable { mcqs, shorts, fours }
+const audit = [];
 const notes = [], quiz = [], written = [], blueprints = [], papers = [], readiness = [];
 
 /**
@@ -23,16 +29,27 @@ const notes = [], quiz = [], written = [], blueprints = [], papers = [], readine
  * "SOLUTION:", then the book's working up to the next example, exercise, heading or box.
  */
 function examplesFrom(text) {
-  const lines = text.split("\n").map((l) => l.trim()).filter((l) => l && !/^PAGE\s+\d+$/i.test(l));
+  const lines = text.split("\n").map((l) => l.trim().replace(/\*\*/g, "")).filter((l) => l && !/^PAGE\s+\d+$/i.test(l));
   const out = [];
-  let cur = null, inSolution = false;
-  const end = (l) => /^EXAMPLE\s+\d+/i.test(l) || /^#{0,4}\s*(REVIEW\s+)?EXERCISE\b/i.test(l) || /^#{1,4}\s/.test(l) || /^(REMEMBER|NOTE|KEY FACT)\s*:/i.test(l);
+  let cur = null, inSolution = false, inBox = false;
+  const box = (l) => /^(REMEMBER|NOTE|KEY FACT|DO YOU KNOW|KEEP IN MIND)\b\s*:?/i.test(l);
+  const end = (l) => /^EXAMPLE\s+\d+/i.test(l) || /^#{0,4}\s*(REVIEW\s+)?EXERCISE\b/i.test(l) || /^#{1,4}\s/.test(l);
+  const solutionLine = /^\**(SOLUTION|PROOF)\**\s*:?\**\s*(.*)$/i;
+  // A box printed in the middle of an example (a note, "remember", "keep in mind") is skipped, up to the solution or
+  // the next line that clearly continues the working.
+  const resumes = (l) => solutionLine.test(l) || /^[⇒=∴(]/.test(l) || /^(thus|therefore|hence|now|but|from|let|so|since|then)\b/i.test(l);
   for (const l of lines) {
-    if (cur && end(l)) { out.push(cur); cur = null; inSolution = false; }
+    if (cur && end(l)) { out.push(cur); cur = null; inSolution = false; inBox = false; }
     const head = /^EXAMPLE\s+(\d+)\s*:?\s*(.*)$/i.exec(l);
-    if (head) { cur = { label: `Example ${head[1]}`, question: head[2] ? [head[2]] : [], steps: [] }; continue; }
+    if (head) { cur = { label: `Example ${head[1]}`, question: head[2] ? [head[2]] : [], steps: [] }; inBox = false; continue; }
     if (!cur) continue;
-    const sol = /^\**SOLUTION\**\s*:?\**\s*(.*)$/i.exec(l);
+    if (box(l)) {
+      if (!inSolution && !cur.question.length) continue;
+      inBox = true; continue;
+    }
+    if (inBox) { if (!resumes(l)) continue; inBox = false; }
+    const sol = solutionLine.exec(l)?.slice(1);
+    if (sol) sol[0] = sol[1];
     if (sol) { inSolution = true; if (sol[1]) cur.steps.push(sol[1]); continue; }
     (inSolution ? cur.steps : cur.question).push(l.replace(/\s+$/, ""));
   }
@@ -60,6 +77,18 @@ function cleanMaths(s) {
 const cleanAll = (v) => typeof v === "string" ? cleanMaths(v) : Array.isArray(v) ? v.map(cleanAll)
   : v && typeof v === "object" ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, /^(id|noteId|moduleId|chapterId|blueprintId|subjectId)$/.test(k) ? x : cleanAll(x)])) : v;
 
+/** An 8-mark long question from two 4-mark parts, as the board sets them: (a) and (b). */
+function longOf(id, a, b) {
+  return {
+    id, text: `(a) ${a.text}\n(b) ${b.text}`, marks: 8,
+    modelAnswer: [...a.modelAnswer.map((l, k) => (k === 0 ? `(a) ${l}` : l)), ...b.modelAnswer.map((l, k) => (k === 0 ? `(b) ${l}` : l))],
+    followUp: a.followUp, noteId: a.noteId, matching: "method",
+    rubric: [...a.rubric.map((c) => ({ ...c, id: `a${c.id}`, description: `(a) ${c.description}` })),
+             ...b.rubric.map((c) => ({ ...c, id: `b${c.id}`, description: `(b) ${c.description}` }))],
+  };
+}
+
+const bookPages = Array.from({ length: 261 }, (_, i) => { const f = `${ROOT}/pages/p${String(i + 1).padStart(3, "0")}.md`; return existsSync(f) ? readFileSync(f, "utf8") : ""; });
 const coverage = [];
 for (const u of units) {
   const outlineFile = `${ROOT}/work/u${u.chapter.number}-outline.json`;
@@ -91,6 +120,65 @@ for (const u of units) {
   for (const m of [...u.chapter.modules].reverse()) {
     m.solutions = m.solutions.filter((x) => { const k = `${x.kind}|${norm(x.question)}`; if (kept.has(k)) return false; kept.add(k); return true; });
   }
+  // Answers aligned with the textbook's key (align-answers.mjs), and what the exam leaves out.
+  const n0 = u.chapter.number;
+  const alignFile = `${ROOT}/units/u-${n0}-align.json`;
+  const aligned = existsSync(alignFile) ? JSON.parse(readFileSync(alignFile, "utf8")) : null;
+  const alignBy = new Map((aligned?.items ?? []).map((a) => [a.source, a]));
+  const unitOut = syllabus.excludedUnits.includes(n0);
+  for (const m of u.chapter.modules) {
+    m.inExam = !unitOut && !syllabus.excludedModules.includes(m.id);
+    m.solutions = m.solutions.map((x) => {
+      let y = { ...x, inExam: !isExcluded(syllabus, n0, x.source) };
+      const a = x.kind === "EXERCISE" ? alignBy.get(x.source) : null;
+      if (a) {
+        y.bookAnswer = a.bookAnswer ?? "";
+        y.note = a.note ?? y.note;
+        if (a.replace) y = { ...y, ...a.replace };
+      }
+      return y;
+    });
+  }
+  // A question the independent set has and we lack entirely (part labels differ between solution sets, so compare questions).
+  const ourKeys = u.chapter.modules.flatMap((m) => m.solutions.map((x) => x.source.toLowerCase().replace(/review\s*exercise/g, "reviewex").replace(/exercise/g, "ex").replace(/[^a-z0-9.()]/g, "")));
+  const missingQuestions = [...new Set((aligned?.inIndependentNotOurs ?? []).map((k) => /^(.*?q\d+)/.exec(k)?.[1] ?? k))]
+    .filter((q) => !ourKeys.some((r) => r === q || (r.startsWith(q) && !/\d/.test(r[q.length] ?? ""))));
+  // Only a question the book itself prints counts as missing (part labels and headings differ between solution sets);
+  // question 1 of a review exercise (and of Logic's single exercise) is multiple choice and lives in the quiz.
+  const printed = (q) => {
+    const m = /^(reviewex(\d+)|ex(\d+(?:\.\d+)?))q(\d+)$/.exec(q);
+    if (!m) return true;
+    if (Number(m[4]) === 1 && (m[2] || !m[3].includes("."))) return false;
+    const heading = m[2] ? new RegExp(`REVIEW EXERCISE\\s*${m[2]}\\b`, "i") : new RegExp(`EXERCISE\\s*${m[3].replace(".", "\\.")}(?![\\d.])`, "i");
+    const text = bookPages.join("\n");
+    const at = text.search(heading);
+    if (at < 0) return true;
+    const rest = text.slice(at + 10);
+    const stop = rest.search(/\n\s*#*\s*(REVIEW )?EXERCISE\s*\d|\n#{1,2} \d+\.\d/);
+    return new RegExp(`(^|\\n)\\s*(Q\\s*)?${m[4]}\\.`).test(stop < 0 ? rest : rest.slice(0, stop));
+  };
+  if (aligned) audit.push({ unit: n0, counts: aligned.counts, gaps: aligned.numberingGaps.filter((g) => printed(g.replace(/\s/g, ""))).filter((g) => !ourKeys.some((r) => r.startsWith(g.replace(/\s/g, "")) && !/\d/.test(r[g.replace(/\s/g, "").length] ?? ""))), missing: missingQuestions.filter(printed),
+    flagged: aligned.items.filter((i) => i.status !== "matches key" && i.status !== "confirmed" && i.status !== "no key") });
+  // Worked examples must run 1…N without gaps.
+  const exNums = u.chapter.modules.flatMap((m) => m.solutions.filter((x) => x.kind === "EXAMPLE").map((x) => Number(/\d+/.exec(x.source)?.[0] ?? 0)));
+  const exMissing = exNums.length ? Array.from({ length: Math.max(...exNums) }, (_, i) => i + 1).filter((k) => !exNums.includes(k)) : [];
+  if (exMissing.length) audit.push({ unit: n0, examplesMissing: exMissing });
+
+  // Exam kit and, for graph/construction units, board-style written questions (exam-kit.mjs).
+  const kitFile = `${ROOT}/units/u-${n0}-kit.json`;
+  if (existsSync(kitFile)) {
+    const kit = JSON.parse(readFileSync(kitFile, "utf8"));
+    u.chapter.kit = { ...kit.kit, examLabel: EXAM };
+    const have = new Set(u.written.map((w) => w.id));
+    u.written.push(...kit.written.filter((w) => !have.has(w.id)));
+    for (const m of u.chapter.modules) {
+      if (m.writtenQuestions.length >= 3) continue;
+      const pos = m.id.split("-")[2];
+      const extra = kit.written.filter((w) => w.id.startsWith(`w-${n0}-${pos}-k`)).slice(0, 3 - m.writtenQuestions.length).map(({ source, ...w }) => w);
+      m.writtenQuestions = [...m.writtenQuestions, ...extra];
+    }
+  }
+
   if (sol) {
     const ex = u.chapter.modules.flatMap((m) => m.solutions.filter((x) => x.kind === "EXERCISE"));
     coverage.push(`Unit ${u.chapter.number}: ${u.chapter.modules.reduce((n, m) => n + m.solutions.filter((x) => x.kind === "EXAMPLE").length, 0)} examples, ${ex.length} exercise questions (${ex.filter((x) => x.checked).length} with checked step-by-step solutions)`);
@@ -110,6 +198,9 @@ for (const u of units) {
   }
   notes.push(...u.notes);
   quiz.push(...unitQuiz);
+  const examinableModule = (id) => { const m = u.chapter.modules.find((x) => x.id === id); return m ? m.inExam : true; };
+  const moduleOfWritten = (w) => { const k = /^w-(\d+)-(\d+)/.exec(w.id); return k ? `m-${k[1]}-${k[2]}` : null; };
+  const inExamWritten = new Set(u.written.filter((w) => !unitOut && examinableModule(moduleOfWritten(w)) && !(w.source && isExcluded(syllabus, n0, w.source))).map((w) => w.id));
   const unitWritten = u.written.map(({ source, ...w }) => w);
   written.push(...unitWritten);
 
@@ -125,22 +216,18 @@ for (const u of units) {
 
   // Chapter test (practice pattern): MCQs, short (2 marks) and long (8 marks = two 4-mark parts).
   const n = u.chapter.number;
-  const mcqs = unitQuiz.filter((q) => q.status === "APPROVED").concat(unitQuiz.filter((q) => q.status !== "APPROVED")).slice(0, 12);
-  const shorts = unitWritten.filter((w) => w.marks === 2).slice(0, 9);
-  const fours = unitWritten.filter((w) => w.marks === 4);
+  // Only what the exam examines (a unit the exam leaves out keeps its whole test, as practice).
+  const examQuiz = unitOut ? unitQuiz : unitQuiz.filter((q) => examinableModule(q.moduleId));
+  const examWritten = unitOut ? unitWritten : unitWritten.filter((w) => inExamWritten.has(w.id));
+  const mcqs = examQuiz.filter((q) => q.status === "APPROVED").concat(examQuiz.filter((q) => q.status !== "APPROVED")).slice(0, 12);
+  const shorts = examWritten.filter((w) => w.marks === 2).slice(0, 9);
+  const fours = examWritten.filter((w) => w.marks === 4);
+  if (!unitOut) pools.set(n, {
+    mcqs: examQuiz.filter((q) => q.status === "APPROVED").concat(examQuiz.filter((q) => q.status !== "APPROVED")),
+    shorts: examWritten.filter((w) => w.marks === 2), fours,
+  });
   const longs = [];
-  for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) {
-    const a = fours[i], b = fours[i + 1];
-    longs.push({
-      id: `L-${n}-${longs.length + 1}`,
-      text: `(a) ${a.text}\n(b) ${b.text}`,
-      marks: 8,
-      modelAnswer: [...a.modelAnswer.map((l, k) => (k === 0 ? `(a) ${l}` : l)), ...b.modelAnswer.map((l, k) => (k === 0 ? `(b) ${l}` : l))],
-      followUp: a.followUp, noteId: a.noteId, matching: "method",
-      rubric: [...a.rubric.map((c) => ({ ...c, id: `a${c.id}`, description: `(a) ${c.description}` })),
-               ...b.rubric.map((c) => ({ ...c, id: `b${c.id}`, description: `(b) ${c.description}` }))],
-    });
-  }
+  for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
   written.push(...longs.map((l) => ({ ...l, section: 0, number: 0 })));
   if (mcqs.length >= 5 && shorts.length >= 3) {
     const sections = [{ type: "MCQ", count: mcqs.length, attempt: mcqs.length, marksEach: 1, minutes: null }];
@@ -149,7 +236,7 @@ for (const u of units) {
     if (longs.length) sections.push({ type: "Long questions", count: longs.length, attempt: longs.length > 1 ? longs.length - 1 : 1, marksEach: 8, minutes: null });
     const total = sections.reduce((s, x) => s + x.attempt * x.marksEach, 0);
     const id = `ch-${n}-test`;
-    blueprints.push({ id, title: `Unit ${n} test: ${u.chapter.title}`, durationMinutes: total >= 35 ? 90 : 60, totalMarks: total, official: false, chapterId: u.chapter.id, sections });
+    blueprints.push({ id, title: `Unit ${n} test: ${u.chapter.title}${unitOut ? ` (not in the ${EXAM})` : ""}`, durationMinutes: total >= 35 ? 90 : 60, totalMarks: total, official: false, chapterId: u.chapter.id, sections });
     papers.push({
       blueprintId: id, mcqs,
       written: [...shorts.map((w, i) => ({ ...w, section: 1, number: i + 1 })), ...longs.map((w, i) => ({ ...w, section: 2, number: i + 1 }))],
@@ -159,6 +246,64 @@ for (const u of units) {
   const r = unitQuiz.find((q) => q.status === "APPROVED") ?? unitQuiz[0];
   if (r) readiness.push(r);
 }
+
+// ── Board papers: the full 75-mark paper exactly as the 2027 instructions lay it out ───────────────────────
+function boardPapers() {
+  const P = syllabus.paper;
+  const made = [];
+  for (const [k, set] of ["A", "B", "C"].entries()) {
+    const pick = (list, count, salt) => {
+      if (list.length < count) return null;
+      const start = (k * count + salt) % list.length;
+      return Array.from({ length: count }, (_, j) => list[(start + j) % list.length]);
+    };
+    const problems = [];
+    const mcqs = [];
+    for (const [unit, count] of Object.entries(P.objective.mcqsPerUnit)) {
+      const got = pick(pools.get(Number(unit))?.mcqs ?? [], count, 0);
+      if (got) mcqs.push(...got); else problems.push(`Unit ${unit}: not enough MCQs`);
+    }
+    const sections = [{ type: "MCQ", count: mcqs.length, attempt: mcqs.length, marksEach: 1, minutes: P.objective.minutes }];
+    const writtenOut = [];
+    for (const sq of P.short) {
+      const qs = [];
+      for (const [unit, count] of Object.entries(sq.perUnit)) {
+        const got = pick(pools.get(Number(unit))?.shorts ?? [], count, 0);
+        if (got) qs.push(...got); else problems.push(`Q${sq.q}: Unit ${unit} has too few 2-mark questions`);
+      }
+      const units = Object.keys(sq.perUnit).join(", ");
+      sections.push({ type: `Q${sq.q} Short questions (Units ${units})`, count: qs.length, attempt: sq.attempt, marksEach: 2, minutes: null });
+      writtenOut.push(qs.map((w) => ({ ...w })));
+    }
+    for (const part of P.long) {
+      const qs = [];
+      for (const q of part.questions) {
+        const fourFrom = (units, salt) => {
+          const opts = units.filter((u) => (pools.get(u)?.fours.length ?? 0) > 0);
+          if (!opts.length) return null;
+          const u = opts[(k + salt) % opts.length];
+          const list = pools.get(u).fours;
+          return list[(k + salt) % list.length];
+        };
+        const a = fourFrom(q.a, 0), b = fourFrom(q.b, 1);
+        if (!a || !b) { problems.push(`Q${q.q}: no 4-mark question for part ${a ? "b" : "a"}`); continue; }
+        qs.push(longOf(`BP-${set}-Q${q.q}`, a, b));
+      }
+      sections.push({ type: `Part ${part.part}: long questions (Q${part.questions.map((q) => q.q).join(", Q")})`, count: qs.length,
+        attempt: part.attempt, marksEach: 8, minutes: null });
+      writtenOut.push(qs);
+    }
+    const total = sections.reduce((s, x) => s + x.attempt * x.marksEach, 0);
+    if (problems.length || total !== P.totalMarks) { console.log(`Board paper ${set} not made: ${problems.join("; ") || `total ${total}`}`); continue; }
+    const id = `board-2027-${set.toLowerCase()}`;
+    blueprints.push({ id, title: `Board paper ${set} (2027 pattern, 75 marks)`, durationMinutes: P.minutes, totalMarks: P.totalMarks, official: true, chapterId: null, sections });
+    for (const l of writtenOut.slice(P.short.length).flat()) written.push({ ...l, section: 0, number: 0 });
+    papers.push({ blueprintId: id, mcqs, written: writtenOut.flatMap((qs, i) => qs.map((w, j) => ({ ...w, section: i + 1, number: j + 1 }))) });
+    made.push(set);
+  }
+  return made;
+}
+const boardMade = boardPapers();
 
 const bundle = {
   format: 1,
@@ -184,4 +329,7 @@ if (problems.length) {
   for (const p of problems.slice(0, 40)) console.log(`  ${p.where}: ${p.message}`);
   process.exit(1);
 }
+console.log(`Board papers (2027 pattern): ${boardMade.join(", ") || "none"}`);
+writeFileSync(`${ROOT}/work/audit.json`, JSON.stringify(audit, null, 1));
+for (const a of audit) if (a.examplesMissing || a.gaps?.length || a.missing?.length) console.log(`Audit unit ${a.unit}: ${JSON.stringify({ examplesMissing: a.examplesMissing, gaps: a.gaps, missing: a.missing })}`);
 console.log("All publishing checks pass.");

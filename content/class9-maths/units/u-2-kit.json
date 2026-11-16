@@ -1,0 +1,517 @@
+{
+ "unit": 2,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 12-15",
+   "Ex 2.4",
+   "Review Ex 2 Q1(iv)",
+   "Review Ex 2 Q1(ix)",
+   "Review Ex 2 Q1(x)",
+   "Review Ex 2 Q6(ii)",
+   "Review Ex 2 Q6(iii)",
+   "Review Ex 2 Q7-10"
+  ],
+  "definitions": [
+   {
+    "term": "Scientific notation",
+    "text": "A method used to express very large or very small numbers in a more manageable form is known as Scientific notation. It is commonly used in science, engineering and mathematics to simplify complex calculations."
+   },
+   {
+    "term": "Scientific notation form",
+    "text": "A number in scientific notation is written as:\na × 10ⁿ, where 1 ≤ a < 10 and n ∈ Z\nHere “a” is called the coefficient or base number."
+   },
+   {
+    "term": "Rule for the sign of the exponent in scientific notation",
+    "text": "If the number is greater than 1 then n is positive and if the number is less than 1 then n is negative."
+   },
+   {
+    "term": "Rule for converting scientific notation to ordinary notation",
+    "text": "If exponent is positive then the decimal will move to the right.\nIf exponent is negative then the decimal will move to the left."
+   },
+   {
+    "term": "Logarithm of a real number",
+    "text": "The relationship between logarithmic form and exponential form is given below:\n\nlog_b x = y  ⇔  bʸ = x where b > 0, x > 0 and b ≠ 1"
+   },
+   {
+    "term": "Common logarithm",
+    "text": "The common logarithm is the logarithm with a base of 10. It is written as log_10 or simply as log (when no base is mentioned, it is usually assumed to be base 10)."
+   },
+   {
+    "term": "Characteristic",
+    "text": "The characteristic is the integral part of the logarithm. It tells us how big or small the number is."
+   },
+   {
+    "term": "Rule for finding the characteristic of a number greater than 1",
+    "text": "Characteristic = number of digits to the left of the decimal point − 1"
+   },
+   {
+    "term": "Rule for finding the characteristic of a number less than 1",
+    "text": "Characteristic = − (number of zeros between the decimal point and the first non-zero digit + 1)"
+   },
+   {
+    "term": "Rule for writing a negative characteristic",
+    "text": "When the characteristic is negative, we write it with bar."
+   },
+   {
+    "term": "Mantissa",
+    "text": "The mantissa is the decimal part of the logarithm. It represents the \"fractional\" component and is always positive."
+   },
+   {
+    "term": "Logarithm as characteristic and mantissa",
+    "text": "log (Number) = Characteristic + Mantissa"
+   },
+   {
+    "term": "Antilogarithm",
+    "text": "An antilogarithm is the inverse operation of a logarithm. An antilogarithm helps to find a number whose logarithmic value is given."
+   },
+   {
+    "term": "Antilogarithm relationship",
+    "text": "If log_b x = y ⇔ b^y = x then the process of finding x is called antilogarithm of y."
+   },
+   {
+    "term": "Natural logarithm",
+    "text": "The natural logarithm is the logarithm with base e, where e is a mathematical constant approximately equal to 2.71828. It is denoted as ln."
+   },
+   {
+    "term": "Product Law",
+    "text": "The logarithm of the product is the sum of the logarithms of the factors."
+   },
+   {
+    "term": "Quotient Law",
+    "text": "The logarithm of a quotient is the difference between the logarithms of the numerator and the denominator."
+   },
+   {
+    "term": "Power Law",
+    "text": "The logarithm of a number raised to a power is the product of the power and the logarithm of the base number."
+   },
+   {
+    "term": "Change of Base Law",
+    "text": "This law allows to change the base of a logarithm from “b” to any other base “a”."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "a × 10ⁿ, where 1 ≤ a < 10 and n ∈ Z",
+    "use": "Write a number in scientific notation."
+   },
+   {
+    "formula": "log_b x = y ⇔ bʸ = x, where b > 0, x > 0 and b ≠ 1",
+    "use": "Convert between logarithmic and exponential forms."
+   },
+   {
+    "formula": "Common logarithm: log x = log₁₀ x",
+    "use": "Use when a logarithm has no base written."
+   },
+   {
+    "formula": "Characteristic = number of digits to the left of the decimal point − 1",
+    "use": "Find the characteristic when the number is greater than 1."
+   },
+   {
+    "formula": "Characteristic = −(number of zeros between the decimal point and the first non-zero digit + 1)",
+    "use": "Find the characteristic when the number is less than 1; write it with a bar."
+   },
+   {
+    "formula": "log(Number) = Characteristic + Mantissa",
+    "use": "Combine the characteristic and table mantissa to write a common logarithm."
+   },
+   {
+    "formula": "log_b(xy) = log_b x + log_b y",
+    "use": "Expand the logarithm of a product."
+   },
+   {
+    "formula": "log_b(x/y) = log_b x − log_b y",
+    "use": "Expand the logarithm of a quotient."
+   },
+   {
+    "formula": "log_b(xⁿ) = n × log_b x",
+    "use": "Bring a power in the argument to the front."
+   },
+   {
+    "formula": "log_b x = (log_a x)/(log_a b)",
+    "use": "Change the base of a logarithm."
+   },
+   {
+    "formula": "log_b 1 = 0; log_b b = 1",
+    "use": "Evaluate logarithms of 1 or of the base."
+   },
+   {
+    "formula": "ln x = log_e x; e ≈ 2.71828",
+    "use": "Recognize or write a natural logarithm."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 2.1 Q1(i)",
+    "why": "A standard short question testing the coefficient and positive exponent."
+   },
+   {
+    "ref": "Ex 2.1 Q1(iii)",
+    "why": "Tests the common decimal-shift and negative-exponent case."
+   },
+   {
+    "ref": "Ex 2.1 Q2(iii)",
+    "why": "A quick short question on moving the decimal left."
+   },
+   {
+    "ref": "Ex 2.1 Q4",
+    "why": "A useful application-style question combining large numbers and scientific notation."
+   },
+   {
+    "ref": "Ex 2.2 Q1(v)",
+    "why": "Checks conversion of a fractional, negative exponent into logarithmic form."
+   },
+   {
+    "ref": "Ex 2.2 Q2(v)",
+    "why": "Tests logarithmic-to-exponential conversion with a negative exponent."
+   },
+   {
+    "ref": "Ex 2.2 Q3(iv)",
+    "why": "A common short question on solving a logarithmic equation by conversion."
+   },
+   {
+    "ref": "Ex 2.3 Q1(v)",
+    "why": "Tests counting zeros and writing a negative characteristic with a bar."
+   },
+   {
+    "ref": "Ex 2.3 Q2(vi)",
+    "why": "A strong table question requiring both a negative characteristic and a positive mantissa."
+   },
+   {
+    "ref": "Ex 2.3 Q3(iii)",
+    "why": "Tests how changing the decimal position changes the characteristic."
+   },
+   {
+    "ref": "Ex 2.3 Q4(iv)",
+    "why": "A standard antilogarithm question with a negative logarithm and bar characteristic."
+   },
+   {
+    "ref": "Review Ex 2 Q6(i)",
+    "why": "A direct, likely short question applying the logarithm-exponential relationship."
+   }
+  ],
+  "fullMarks": [
+   "For scientific notation, first move the decimal until the coefficient is at least 1 but less than 10; then count the places and write the power of 10.",
+   "Check the exponent sign: moving the decimal left to make scientific notation gives a positive exponent for numbers greater than 1; numbers less than 1 have a negative exponent.",
+   "For ordinary notation, show the decimal-point movement and place enough zeros so the decimal moves exactly the number of places shown by the exponent.",
+   "When changing forms of a logarithm, identify the base, result and exponent correctly: log_b x = y means bʸ = x.",
+   "For characteristic questions, show the digit or zero count. Write a negative characteristic with a bar, such as 2̅, so it is not confused with a negative mantissa.",
+   "For logarithm-table questions, show the characteristic, table row and column, mean difference if needed, and the final combined logarithm.",
+   "For finding x from log x, show how you make a negative mantissa positive, state the characteristic and mantissa, then show the antilog and decimal-point placement.",
+   "For scientific-notation answers involving a measured quantity, retain the unit given in the question, such as metres per second or km."
+  ],
+  "mistakes": [
+   "Using a positive exponent for a number smaller than 1 in scientific notation. Fix: move the decimal to make the coefficient between 1 and 10, then use a negative exponent.",
+   "Writing a coefficient of 10 or more in scientific notation. Fix: adjust the decimal until 1 ≤ a < 10 and update the exponent.",
+   "Moving the decimal in the wrong direction when converting to ordinary notation. Fix: a positive exponent moves it right; a negative exponent moves it left.",
+   "Mixing up the base, result and exponent when converting logarithmic and exponential forms. Fix: in log_b x = y, write bʸ = x.",
+   "Counting the decimal point itself as a zero when finding a characteristic below 1. Fix: count only the zeros between the decimal point and the first non-zero digit, then add 1.",
+   "Writing a negative characteristic as an ordinary negative decimal and making the mantissa negative too. Fix: use bar notation for the characteristic and keep the mantissa positive.",
+   "Placing the decimal point incorrectly in an antilogarithm answer. Fix: use the characteristic to place the decimal relative to the first non-zero digit in the table value."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define scientific notation.",
+    "answer": "A method used to express very large or very small numbers in a more manageable form is known as Scientific notation. It is commonly used in science, engineering and mathematics to simplify complex calculations."
+   },
+   {
+    "question": "State the relationship between logarithmic form and exponential form.",
+    "answer": "log_b x = y ⇔ bʸ = x where b > 0, x > 0 and b ≠ 1"
+   },
+   {
+    "question": "What is a common logarithm?",
+    "answer": "The common logarithm is the logarithm with a base of 10. It is written as log_10 or simply as log (when no base is mentioned, it is usually assumed to be base 10)."
+   },
+   {
+    "question": "Define the characteristic of a logarithm.",
+    "answer": "The characteristic is the integral part of the logarithm. It tells us how big or small the number is."
+   },
+   {
+    "question": "Define the mantissa of a logarithm.",
+    "answer": "The mantissa is the decimal part of the logarithm. It represents the \"fractional\" component and is always positive."
+   },
+   {
+    "question": "What is an antilogarithm?",
+    "answer": "An antilogarithm is the inverse operation of a logarithm. An antilogarithm helps to find a number whose logarithmic value is given."
+   },
+   {
+    "question": "What is a natural logarithm?",
+    "answer": "The natural logarithm is the logarithm with base e, where e is a mathematical constant approximately equal to 2.71828. It is denoted as ln."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-2-1-t0",
+   "text": "Define scientific notation.",
+   "marks": 2,
+   "modelAnswer": [
+    "A method used to express very large or very small numbers in a more manageable form is known as Scientific notation. It is commonly used in science, engineering and mathematics to simplify complex calculations."
+   ],
+   "followUp": "Define scientific notation.",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "method",
+       "express",
+       "large"
+      ],
+      [
+       "method",
+       "express",
+       "small"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the purpose of scientific notation.",
+     "description": "A method for expressing very large or very small numbers.",
+     "how": "Award for identifying that it is a method used to express large or small numbers; either size qualifies if paired with expressing numbers as a method. The statement need not use the exact textbook wording yet. The second point covers expressing them in a manageable form and naming the method scientific notation. Do not award this point for merely saying it is used in science or mathematics; that is an application, not the definition’s key purpose."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "manageable",
+       "scientific notation"
+      ]
+     ],
+     "marks": 1,
+     "why": "Completes the definition by stating the form’s purpose and name.",
+     "description": "It expresses numbers in a more manageable form and is known as scientific notation.",
+     "how": "Award when the answer identifies a manageable form and names scientific notation. Accept equivalent wording such as easier-to-handle form. The first point covers the method and the very large or very small numbers it expresses; this point completes the definition."
+    }
+   ]
+  },
+  {
+   "id": "w-2-1-t2",
+   "text": "What is a common logarithm?",
+   "marks": 2,
+   "modelAnswer": [
+    "The common logarithm is the logarithm with a base of 10. It is written as log_10 or simply as log (when no base is mentioned, it is usually assumed to be base 10)."
+   ],
+   "followUp": "What is a common logarithm?",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "base",
+       "10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining base of a common logarithm.",
+     "description": "A common logarithm has base 10.",
+     "how": "Award for stating that the base is 10. The second point covers its notation or the convention when the base is omitted."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "log_10"
+      ],
+      [
+       "log",
+       "assumed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the notation for a common logarithm or the usual omitted-base convention.",
+     "description": "It is written log₁₀ or log; an unmarked log is usually understood to have base 10.",
+     "how": "Award for either log₁₀ notation or stating that log without a base is assumed to mean base 10. The first point covers the defining base itself."
+    }
+   ]
+  },
+  {
+   "id": "w-2-1-t3",
+   "text": "Define the characteristic of a logarithm.",
+   "marks": 2,
+   "modelAnswer": [
+    "The characteristic is the integral part of the logarithm. It tells us how big or small the number is."
+   ],
+   "followUp": "Define the characteristic of a logarithm.",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "integral",
+       "part"
+      ]
+     ],
+     "marks": 1,
+     "why": "States which part of a logarithm is its characteristic.",
+     "description": "The characteristic is the integral part of a logarithm.",
+     "how": "Award for identifying the characteristic as the integral part (integer part). The second point covers what it tells us about the number."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "big",
+       "small"
+      ]
+     ],
+     "marks": 1,
+     "why": "States what the characteristic indicates about the number.",
+     "description": "It tells us how big or small the number is.",
+     "how": "Award when the answer says the characteristic indicates the number’s size, such as how big or small it is. The first point covers its definition as the integral part."
+    }
+   ]
+  },
+  {
+   "id": "w-2-1-t4",
+   "text": "Define the mantissa of a logarithm.",
+   "marks": 2,
+   "modelAnswer": [
+    "The mantissa is the decimal part of the logarithm. It represents the \"fractional\" component and is always positive."
+   ],
+   "followUp": "Define the mantissa of a logarithm.",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "decimal",
+       "part"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies which part of a logarithm is its mantissa.",
+     "description": "The mantissa is the decimal part of a logarithm.",
+     "how": "Award for identifying the mantissa as the decimal part. The second point covers its fractional meaning and positive value."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "fractional",
+       "positive"
+      ],
+      [
+       "fractional",
+       "always positive"
+      ]
+     ],
+     "marks": 1,
+     "why": "Describes the mantissa as fractional and states that it is positive.",
+     "description": "It represents the fractional component and is always positive.",
+     "how": "Award when the answer identifies the mantissa as the fractional component and states that it is always positive. The first point covers its definition as the decimal part."
+    }
+   ]
+  },
+  {
+   "id": "w-2-1-t5",
+   "text": "What is an antilogarithm?",
+   "marks": 2,
+   "modelAnswer": [
+    "An antilogarithm is the inverse operation of a logarithm. An antilogarithm helps to find a number whose logarithmic value is given."
+   ],
+   "followUp": "What is an antilogarithm?",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "inverse",
+       "operation"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the antilogarithm as the inverse of a logarithm.",
+     "description": "An antilogarithm is the inverse operation of a logarithm.",
+     "how": "Award for stating that an antilogarithm is the inverse operation of a logarithm. The second point covers what it is used to find."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "find",
+       "number",
+       "logarithmic value"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the antilogarithm finds the number from its logarithmic value.",
+     "description": "It helps find a number whose logarithmic value is given.",
+     "how": "Award when the answer says it finds a number from a given logarithmic value. The first point covers its inverse-operation relationship."
+    }
+   ]
+  },
+  {
+   "id": "w-2-1-t6",
+   "text": "What is a natural logarithm?",
+   "marks": 2,
+   "modelAnswer": [
+    "The natural logarithm is the logarithm with base e, where e is a mathematical constant approximately equal to 2.71828. It is denoted as ln."
+   ],
+   "followUp": "What is a natural logarithm?",
+   "noteId": "n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "base",
+       "e"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the base of a natural logarithm.",
+     "description": "A natural logarithm has base e.",
+     "how": "Award for stating that its base is e. The second point covers the notation ln and the stated approximate value of e."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "ln",
+       "2.71828"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the notation ln and the stated approximate value of e.",
+     "description": "It is denoted ln, where e is approximately 2.71828.",
+     "how": "Award when the answer gives both ln notation and e ≈ 2.71828. The first point covers the defining base."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

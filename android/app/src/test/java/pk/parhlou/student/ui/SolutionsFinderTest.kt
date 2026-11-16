@@ -21,6 +21,12 @@ import pk.parhlou.student.data.Module
 import pk.parhlou.student.data.ReviewStatus
 import pk.parhlou.student.data.SolutionKind
 import pk.parhlou.student.data.Subject
+import pk.parhlou.student.data.ExamKit
+import pk.parhlou.student.data.KitDefinition
+import pk.parhlou.student.data.KitFormula
+import pk.parhlou.student.data.KitImportant
+import pk.parhlou.student.data.KitShortTheory
+import pk.parhlou.student.ui.screens.ExamKitScreen
 import pk.parhlou.student.ui.screens.SolutionDetailScreen
 import pk.parhlou.student.ui.screens.SolutionsFinderScreen
 import pk.parhlou.student.ui.screens.solutionGroup
@@ -78,6 +84,26 @@ class SolutionsFinderTest {
         rule.onNodeWithTag("solution-search").performTextInput("evaluate 1000")
         rule.onNodeWithText("Evaluate log 1000.").assertExists()
         rule.onAllNodesWithText("Write 2^5 = 32 in logarithmic form.").assertCountEquals(0)
+    }
+
+    @Test fun examKitOpensImportantQuestionsAndShowsExclusions() {
+        val kit = ExamKit(
+            inExam = true, examLabel = "2027 exam", excluded = listOf("Ex 2.4"),
+            definitions = listOf(KitDefinition("Logarithm", "If aˣ = y then x = logₐ y.")),
+            formulas = listOf(KitFormula("log(mn) = log m + log n", "product law")),
+            important = listOf(KitImportant("Ex 2.3 Q5", "Standard short question")),
+            fullMarks = listOf("Write the formula first."), mistakes = listOf("Forgetting the characteristic."),
+            shortTheory = listOf(KitShortTheory("Define logarithm.", "If aˣ = y then x = logₐ y.")),
+        )
+        val chapter = subjects[0].chapters[0].copy(kit = kit)
+        var opened: Pair<String, Int>? = null
+        rule.setContent { ParhlouTheme { ExamKitScreen(chapter, onOpenSolution = { m, i -> opened = m to i }, onBack = {}) } }
+        rule.onNodeWithText("Left out of the 2027 exam").assertExists()
+        rule.onNodeWithText("Learn word for word").assertExists()
+        rule.onNodeWithText("Write 2^5 = 32 in logarithmic form.").performScrollTo().performClick()
+        assertEquals("u2-1" to 2, opened)
+        rule.onNodeWithText("Show answer").performScrollTo().performClick()
+        rule.onAllNodesWithText("If aˣ = y then x = logₐ y.").assertCountEquals(2)
     }
 
     @Test fun detailRevealsStepsAndAsksTutor() {

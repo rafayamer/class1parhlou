@@ -1,0 +1,489 @@
+{
+ "unit": 13,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 11-13",
+   "Ex 13.2 Q5-8",
+   "Review Ex 13 Q1(v)",
+   "Review Ex 13 Q2(ii)",
+   "Review Ex 13 Q3-7"
+  ],
+  "definitions": [
+   {
+    "term": "Probability",
+    "text": "Hence, Probability is the chance of occurrence of a particular event."
+   },
+   {
+    "term": "Experiment",
+    "text": "The process which generates results e.g., tossing a coin, rolling a dice, etc. is called an experiment."
+   },
+   {
+    "term": "Outcomes",
+    "text": "The results of an experiment are called outcomes e.g., the possible outcomes of tossing a coin are head or tail, the possible outcomes of rolling a dice are 1, 2, 3, 4, 5, or 6."
+   },
+   {
+    "term": "Favourable Outcome",
+    "text": "An outcome which represents how many times we expect the things to be happened e.g., while tossing a coin, there is 1 favourable outcome of getting head or tail. While rolling a dice, there are 3 favourable outcomes of getting multiples of 2 i.e. {2, 4, 6}"
+   },
+   {
+    "term": "Sample Space",
+    "text": "The set of all possible outcomes of an experiment is called sample space. It is denoted by ‘S’ e.g., while tossing a coin, the sample space will be S = {H, T}. While rolling a dice, the sample space will be S = {1, 2, 3, 4, 5, 6}."
+   },
+   {
+    "term": "Sample point",
+    "text": "Each element of the sample space is called sample point."
+   },
+   {
+    "term": "Event",
+    "text": "The set of results of an experiment is called an event e.g., while rolling a dice getting even number is an event i.e., A = {2, 4, 6}; n(A) = 3."
+   },
+   {
+    "term": "Certain event",
+    "text": "An event which is sure to occur. The probability of sure event is 1."
+   },
+   {
+    "term": "Impossible event",
+    "text": "An event cannot occur in any trial. The probability of this event is 0."
+   },
+   {
+    "term": "Likely event",
+    "text": "An event which will probably occur. It has greater chance to occur."
+   },
+   {
+    "term": "Unlikely event",
+    "text": "An event which will not probably occur. It has less chance to occur."
+   },
+   {
+    "term": "Equally likely events",
+    "text": "The events which have equal chance of occurrence. The probability of these events is 0.5."
+   },
+   {
+    "term": "Complement of an event",
+    "text": "The probability of not getting head while tossing a coin is known as the complement of that event."
+   },
+   {
+    "term": "Relative frequency",
+    "text": "Relative frequency tells us how often a specific event occurs relative to the total number of frequency event or trials."
+   },
+   {
+    "term": "Expected frequency",
+    "text": "Expected frequency is a measure that estimate how often an event should be occurred depended on probability."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "P(A) = n(A) ÷ n(S)",
+    "use": "Use for equally likely outcomes; divide favourable outcomes by all possible outcomes."
+   },
+   {
+    "formula": "0 ≤ P(A) ≤ 1",
+    "use": "Use to check that a probability is within its possible range."
+   },
+   {
+    "formula": "P(A′) = 1 − P(A)",
+    "use": "Use to find the probability that event A does not occur."
+   },
+   {
+    "formula": "P(A) + P(A′) = 1",
+    "use": "Use when an event and its complement make up all outcomes."
+   },
+   {
+    "formula": "Relative frequency = x ÷ N, where N = Σf",
+    "use": "Use for the relative frequency of an outcome with frequency x; N is the total frequency."
+   },
+   {
+    "formula": "Sum of relative frequencies = 1 or approximately 1",
+    "use": "Use as a check after calculating all relative frequencies."
+   },
+   {
+    "formula": "Expected frequency = N × P(A)",
+    "use": "Use to estimate how many times an event occurs in N trials."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 13.1 Q1",
+    "why": "A straightforward single-event question that checks outcome counting and the basic probability formula."
+   },
+   {
+    "ref": "Ex 13.1 Q2(ii)",
+    "why": "Tests careful counting of ordered pairs that satisfy a condition on two dice."
+   },
+   {
+    "ref": "Ex 13.1 Q3(i)",
+    "why": "Checks counting repeated letters and the total number of letters."
+   },
+   {
+    "ref": "Ex 13.1 Q4",
+    "why": "Practises both a single-event probability and its complement."
+   },
+   {
+    "ref": "Ex 13.1 Q6",
+    "why": "A short, direct application of the complement rule."
+   },
+   {
+    "ref": "Ex 13.1 Q7(i)",
+    "why": "Checks combined outcomes from a coin and a die."
+   },
+   {
+    "ref": "Ex 13.1 Q8(i)",
+    "why": "A standard playing-card question requiring correct total and favourable counts."
+   },
+   {
+    "ref": "Ex 13.2 Q1",
+    "why": "Provides practice finding the total frequency and each relative frequency from a table."
+   },
+   {
+    "ref": "Ex 13.2 Q2",
+    "why": "Tests relative frequency calculations across several outcomes in a frequency table."
+   },
+   {
+    "ref": "Ex 13.2 Q3",
+    "why": "Another likely table-based short question on relative frequency, with frequencies totalling 100."
+   },
+   {
+    "ref": "Ex 13.2 Q4(i)",
+    "why": "Checks using survey frequencies to calculate a percentage."
+   },
+   {
+    "ref": "Review Ex 13 Q2(i)",
+    "why": "A direct definition question suited to a short-answer part."
+   }
+  ],
+  "fullMarks": [
+   "Start by naming the event, such as “Let A be the event of getting a consonant,” then write the event outcomes.",
+   "For one die, show the sample space and its total outcomes before counting favourable outcomes.",
+   "For a pair of dice, treat the results as ordered pairs and use 36 total outcomes; do not count (2, 5) and (5, 2) as the same outcome.",
+   "Show the favourable outcomes or clearly count them, then write n(A), n(S), and substitute into P(A) = n(A) ÷ n(S).",
+   "For “not” questions, identify the event first and show the complement calculation using P(A′) = 1 − P(A).",
+   "For relative frequency, add the frequencies to find N, divide each frequency by N, and label the resulting table clearly.",
+   "For expected frequency, write the number of trials N and the event probability first, then show N × P(A) and finish with a sentence answering the question."
+  ],
+  "mistakes": [
+   "Using only the different labels in a word instead of counting repeated letters. Fix: count every letter position in the word for the total and favourable outcomes.",
+   "Treating two-dice results as unordered pairs. Fix: keep the dice order fixed; for example, (2, 5) and (5, 2) are different outcomes.",
+   "Forgetting that “at least” includes the stated number. Fix: list all values equal to or greater than the number given.",
+   "Finding the probability of an event but not its complement when the question asks “not.” Fix: calculate 1 − P(A) and state the requested probability.",
+   "Using the frequency of one category as the total when calculating relative frequency. Fix: add all frequencies first to get N = Σf.",
+   "Reporting a percentage as a relative frequency without converting it to a decimal or fraction. Fix: give frequency ÷ total as a fraction or decimal, and label a percentage clearly if requested.",
+   "Multiplying the probability by the event count instead of the number of trials for expected frequency. Fix: use expected frequency = N × P(A), where N is the total number of trials."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define probability.",
+    "answer": "Hence, Probability is the chance of occurrence of a particular event."
+   },
+   {
+    "question": "Define experiment.",
+    "answer": "The process which generates results e.g., tossing a coin, rolling a dice, etc. is called an experiment."
+   },
+   {
+    "question": "What is a sample space?",
+    "answer": "The set of all possible outcomes of an experiment is called sample space. It is denoted by ‘S’ e.g., while tossing a coin, the sample space will be S = {H, T}. While rolling a dice, the sample space will be S = {1, 2, 3, 4, 5, 6}."
+   },
+   {
+    "question": "Define an event.",
+    "answer": "The set of results of an experiment is called an event e.g., while rolling a dice getting even number is an event i.e., A = {2, 4, 6}; n(A) = 3."
+   },
+   {
+    "question": "Define relative frequency.",
+    "answer": "Relative frequency tells us how often a specific event occurs relative to the total number of frequency event or trials."
+   },
+   {
+    "question": "Define expected frequency.",
+    "answer": "Expected frequency is a measure that estimate how often an event should be occurred depended on probability."
+   },
+   {
+    "question": "State the rule for the probability of an event not occurring.",
+    "answer": "The sum of the probability of an event “A” and the probability of an event not occurring “A” is always “1”"
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-13-1-t0",
+   "text": "Define probability.",
+   "marks": 2,
+   "modelAnswer": [
+    "Hence, Probability is the chance of occurrence of a particular event."
+   ],
+   "followUp": "Define probability.",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "chance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies probability as a chance or likelihood.",
+     "description": "Probability refers to a chance.",
+     "how": "Award this mark for identifying it as a chance."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "occurrence",
+       "particular",
+       "event"
+      ]
+     ],
+     "marks": 1,
+     "why": "Specifies that the chance concerns the occurrence of a particular event.",
+     "description": "The chance concerns a particular event occurring.",
+     "how": "Award this mark when the answer refers to occurrence of a particular event."
+    }
+   ]
+  },
+  {
+   "id": "w-13-1-t1",
+   "text": "Define experiment.",
+   "marks": 2,
+   "modelAnswer": [
+    "The process which generates results e.g., tossing a coin, rolling a dice, etc. is called an experiment."
+   ],
+   "followUp": "Define experiment.",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "process",
+       "generates",
+       "results"
+      ],
+      [
+       "process",
+       "produces",
+       "results"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the defining feature of an experiment: it generates results.",
+     "description": "An experiment is a process that generates results.",
+     "how": "Award this mark for describing a process that generates or produces results."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "experiment"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly names the process as an experiment.",
+     "description": "The process is called an experiment.",
+     "how": "Award this mark when the answer identifies the term experiment."
+    }
+   ]
+  },
+  {
+   "id": "w-13-1-t2",
+   "text": "What is a sample space?",
+   "marks": 2,
+   "modelAnswer": [
+    "The set of all possible outcomes of an experiment is called sample space. It is denoted by ‘S’ e.g., while tossing a coin, the sample space will be S = {H, T}. While rolling a dice, the sample space will be S = {1, 2, 3, 4, 5, 6}."
+   ],
+   "followUp": "What is a sample space?",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "set",
+       "all",
+       "possible",
+       "outcomes"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that a sample space contains all possible outcomes.",
+     "description": "A sample space is a set of all possible outcomes.",
+     "how": "Award this mark for including that it is a set containing all possible outcomes."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "sample space"
+      ],
+      [
+       "denoted",
+       "S"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the set as the sample space or gives its notation.",
+     "description": "The set is called the sample space, denoted by S.",
+     "how": "Award this mark for naming the sample space or stating its notation."
+    }
+   ]
+  },
+  {
+   "id": "w-13-1-t3",
+   "text": "Define an event.",
+   "marks": 2,
+   "modelAnswer": [
+    "The set of results of an experiment is called an event e.g., while rolling a dice getting even number is an event i.e., A = {2, 4, 6}; n(A) = 3."
+   ],
+   "followUp": "Define an event.",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "set",
+       "results",
+       "experiment"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that an event is a set of results from an experiment.",
+     "description": "An event consists of results of an experiment.",
+     "how": "Award this mark for describing an event as a set of experiment results."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "event"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly names the set of results as an event.",
+     "description": "The set is called an event.",
+     "how": "Award this mark when the answer identifies the term event."
+    }
+   ]
+  },
+  {
+   "id": "w-13-1-t4",
+   "text": "Define relative frequency.",
+   "marks": 2,
+   "modelAnswer": [
+    "Relative frequency tells us how often a specific event occurs relative to the total number of frequency event or trials."
+   ],
+   "followUp": "Define relative frequency.",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "how often",
+       "specific",
+       "event",
+       "occurs"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that relative frequency describes how often a specific event occurs.",
+     "description": "It describes how often a specific event occurs.",
+     "how": "Award this mark for stating how often the particular event occurs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "relative",
+       "total",
+       "frequency"
+      ],
+      [
+       "relative",
+       "total",
+       "trials"
+      ]
+     ],
+     "marks": 1,
+     "why": "Relates the event's frequency to the total frequency or number of trials.",
+     "description": "It is measured relative to the total frequency or trials.",
+     "how": "Award this mark when the answer compares the event frequency with the total frequency or trials."
+    }
+   ]
+  },
+  {
+   "id": "w-13-1-t6",
+   "text": "State the rule for the probability of an event not occurring.",
+   "marks": 2,
+   "modelAnswer": [
+    "The sum of the probability of an event “A” and the probability of an event not occurring “A” is always “1”"
+   ],
+   "followUp": "State the rule for the probability of an event not occurring.",
+   "noteId": "n-13-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "probability",
+       "A"
+      ],
+      [
+       "probability",
+       "not occurring"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the probabilities of an event and its not occurring.",
+     "description": "The rule concerns an event and the event not occurring.",
+     "how": "Award this mark for referring to both the event and its non-occurrence probabilities."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "sum",
+       "1"
+      ],
+      [
+       "total",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the sum of these probabilities is 1.",
+     "description": "Their sum is 1.",
+     "how": "Award this mark when the answer gives their sum as 1."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

@@ -1,0 +1,729 @@
+{
+ "unit": 3,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 5",
+   "Example 7-11",
+   "Ex 3.2 Q9",
+   "Ex 3.2 Q11-13",
+   "Ex 3.3",
+   "Review Ex 3 Q1(vii)",
+   "Review Ex 3 Q1(viii)",
+   "Review Ex 3 Q1(ix)",
+   "Review Ex 3 Q1(x)",
+   "Review Ex 3 Q10-16"
+  ],
+  "definitions": [
+   {
+    "term": "Mathematical pattern",
+    "text": "A mathematical pattern is a predictable arrangement of numbers, shapes, or symbols that follows a specific rule or relationship."
+   },
+   {
+    "term": "Mathematical structure",
+    "text": "A mathematical structure is typically a rule of a numerical, geometric and logical relationship that holds consistency within a specific domain."
+   },
+   {
+    "term": "Set",
+    "text": "A set is described as a well-defined collection of distinct objects, numbers or elements, so that we may be able to decide whether the object belongs to the collection or not."
+   },
+   {
+    "term": "Descriptive form",
+    "text": "A set may be described in words."
+   },
+   {
+    "term": "Tabular form",
+    "text": "A set may be described by listing its elements within brackets."
+   },
+   {
+    "term": "Set-builder method",
+    "text": "It is sometimes more convenient or useful to employ the method of set-builder notation in specifying sets. This is done by using a symbol or letter for an arbitrary set member and stating the property common to all the members."
+   },
+   {
+    "term": "Natural numbers (N)",
+    "text": "N = The set of natural numbers = {1, 2, 3, …}"
+   },
+   {
+    "term": "Whole numbers (W)",
+    "text": "W = The set of whole numbers = {0, 1, 2, …}"
+   },
+   {
+    "term": "Integers (Z)",
+    "text": "Z = The set of integers = {0, ±1, ±2, …}"
+   },
+   {
+    "term": "Odd integers (O)",
+    "text": "O = The set of odd integers = {±1, ±3, ±5, …}"
+   },
+   {
+    "term": "Even integers (E)",
+    "text": "E = The set of even integers = {0, ±2, ±4, …}"
+   },
+   {
+    "term": "Prime numbers (P)",
+    "text": "P = The set of prime numbers = {2, 3, 5, 7, 11, 13, 17, …}"
+   },
+   {
+    "term": "Rational numbers (Q)",
+    "text": "Q = The set of all rational numbers = {x | x = p/q where p, q ∈ Z and q ≠ 0}"
+   },
+   {
+    "term": "Irrational numbers (Q′)",
+    "text": "Q′ = The set of all irrational numbers = {x | x ≠ p/q, where p, q ∈ Z and q ≠ 0}"
+   },
+   {
+    "term": "Real numbers (R)",
+    "text": "R = The set of all real numbers = Q ∪ Q′"
+   },
+   {
+    "term": "Singleton set",
+    "text": "A set with only one element is called a singleton set."
+   },
+   {
+    "term": "Empty set",
+    "text": "The set with no elements (zero number of elements) is called an empty set, null set, or Void set."
+   },
+   {
+    "term": "Equal sets",
+    "text": "Two sets A and B are equal if they have exactly the same elements or if every element of set A is an element of set B."
+   },
+   {
+    "term": "Equivalent sets",
+    "text": "Two sets A and B are equivalent if they have the same number of elements."
+   },
+   {
+    "term": "Subset",
+    "text": "If every element of a set A is an element of set B, then A is a subset of B."
+   },
+   {
+    "term": "Proper subset",
+    "text": "If A is a subset of B and B contains at least one element that is not an element of A, then A is said to be a proper subset of B."
+   },
+   {
+    "term": "Improper subset",
+    "text": "If A is a subset of B and A = B, then we say that A is an improper subset of B."
+   },
+   {
+    "term": "Universal set",
+    "text": "The set that contains all objects or elements under consideration is called the universal set or the universe of discourse."
+   },
+   {
+    "term": "Power set",
+    "text": "The power set of a set S denoted by P(S) is the set containing all the possible subsets of S."
+   },
+   {
+    "term": "Union of two sets",
+    "text": "The union of two sets A and B, denoted by A∪B, is the set of all elements which belong to A or B."
+   },
+   {
+    "term": "Intersection of two sets",
+    "text": "The intersection of two sets A and B, denoted by A ∩ B, is the set of all elements that belong to both A and B."
+   },
+   {
+    "term": "Disjoint sets",
+    "text": "If the intersection of two sets is the empty set, the sets are said to be disjoint."
+   },
+   {
+    "term": "Overlapping sets",
+    "text": "If the intersection of two sets is non-empty but neither is a subset of the other, the sets are called overlapping sets"
+   },
+   {
+    "term": "Difference of two sets",
+    "text": "The difference between the sets A and B denoted by A−B, consists of all the elements that belong to A but do not belong to B."
+   },
+   {
+    "term": "Complement of a set",
+    "text": "The complement of a set A, denoted by A' or A^c relative to the universal set U is the set of all elements of U, which do not belong to A."
+   },
+   {
+    "term": "Cardinality of a set",
+    "text": "The cardinality of a set is defined as the total number of elements of a set."
+   },
+   {
+    "term": "Principle of inclusion and exclusion for two sets",
+    "text": "Let A and B be finite sets, then\nn(A ∪ B) = n(A) + n(B) − n(A ∩ B)\nand A ∪ B and A ∩ B are also finite."
+   },
+   {
+    "term": "Principle of inclusion and exclusion for three sets",
+    "text": "If A, B and C are finite sets, then\nn(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A ∩ B) − n(A ∩ C) − n(B ∩ C) + n(A ∩ B ∩ C)\nand A ∪ B ∪ C, A ∩ B, A ∩ C, B ∩ C and A ∩ B ∩ C are also finite."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "A ⊆ B iff ∀ x ∈ A ⇒ x ∈ B",
+    "use": "Use to show that A is a subset of B."
+   },
+   {
+    "formula": "n(P(S)) = 2ᵐ, where n(S) = m",
+    "use": "Use to find the number of subsets of a finite set."
+   },
+   {
+    "formula": "A ∪ B = {x | x ∈ A ∨ x ∈ B}",
+    "use": "Use to list elements in A, in B, or in both."
+   },
+   {
+    "formula": "A ∩ B = {x | x ∈ A ∧ x ∈ B}",
+    "use": "Use to list elements common to both sets."
+   },
+   {
+    "formula": "A − B = {x | x ∈ A ∧ x ∉ B}",
+    "use": "Use to find elements in A but not in B."
+   },
+   {
+    "formula": "A' = {x | x ∈ U ∧ x ∉ A} = U − A",
+    "use": "Use to find the complement of A in the stated universal set U."
+   },
+   {
+    "formula": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B)",
+    "use": "Use for the total in either of two finite sets."
+   },
+   {
+    "formula": "n(A ∪ B ∪ C) = n(A) + n(B) + n(C) − n(A ∩ B) − n(A ∩ C) − n(B ∩ C) + n(A ∩ B ∩ C)",
+    "use": "Use for the total in at least one of three finite sets."
+   },
+   {
+    "formula": "n(A ∪ B) = n(A) + n(B), when A ∩ B = ∅",
+    "use": "Use when the two sets are disjoint."
+   },
+   {
+    "formula": "n(A − B) = n(A) − n(A ∩ B)",
+    "use": "Use to count the elements in A but not in B."
+   },
+   {
+    "formula": "A ∪ B = B ∪ A",
+    "use": "Commutative property of union."
+   },
+   {
+    "formula": "A ∩ B = B ∩ A",
+    "use": "Commutative property of intersection."
+   },
+   {
+    "formula": "A ∪ (B ∪ C) = (A ∪ B) ∪ C",
+    "use": "Associative property of union."
+   },
+   {
+    "formula": "A ∩ (B ∩ C) = (A ∩ B) ∩ C",
+    "use": "Associative property of intersection."
+   },
+   {
+    "formula": "A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)",
+    "use": "Distributivity of union over intersection."
+   },
+   {
+    "formula": "A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)",
+    "use": "Distributivity of intersection over union."
+   },
+   {
+    "formula": "(A ∪ B)′ = A′ ∩ B′",
+    "use": "First of De Morgan’s Laws."
+   },
+   {
+    "formula": "(A ∩ B)′ = A′ ∪ B′",
+    "use": "Second of De Morgan’s Laws."
+   },
+   {
+    "formula": "A ∪ B = B when A ⊆ B; A ∩ B = A when A ⊆ B",
+    "use": "Use when one set is contained in the other."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 3.1 Q1(i)",
+    "why": "A standard short question testing square numbers and an upper bound."
+   },
+   {
+    "ref": "Ex 3.1 Q2(v)",
+    "why": "Tests converting a condition into a finite roster without missing an endpoint."
+   },
+   {
+    "ref": "Ex 3.1 Q6(vi)",
+    "why": "A common short question checking how to count elements that are themselves sets."
+   },
+   {
+    "ref": "Ex 3.1 Q7(iv)",
+    "why": "A useful power-set question that tests correct handling of nested braces."
+   },
+   {
+    "ref": "Ex 3.2 Q4(i)",
+    "why": "A direct practice question for showing both commutative laws by listing sets."
+   },
+   {
+    "ref": "Ex 3.2 Q5",
+    "why": "A strong long-question choice combining complements, both laws, and a Venn diagram."
+   },
+   {
+    "ref": "Ex 3.2 Q7",
+    "why": "A standard two-set inclusion-exclusion word problem."
+   },
+   {
+    "ref": "Ex 3.2 Q8",
+    "why": "Tests the three-set inclusion-exclusion formula and careful substitution."
+   },
+   {
+    "ref": "Ex 3.2 Q10",
+    "why": "A likely longer three-set problem; it requires accounting for the triple overlap."
+   },
+   {
+    "ref": "Review Ex 3 Q3(vi)",
+    "why": "A good short question on complements and union with a clearly given universal set."
+   },
+   {
+    "ref": "Review Ex 3 Q6(i)(a)",
+    "why": "A standard verification question where both grouped unions must be shown equal."
+   },
+   {
+    "ref": "Review Ex 3 Q7",
+    "why": "Combines both De Morgan laws with complements in a finite universal set."
+   }
+  ],
+  "fullMarks": [
+   "For a set-builder answer, state both the type of elements and every needed condition or bound; do not leave the set unlimited when the question gives an endpoint.",
+   "For tabular form, list each distinct element once inside braces. Use ∅ for no elements; do not confuse ∅ with {0}.",
+   "For power-set questions, count the elements of the original set first. Treat a set written as an element, such as {b, c}, as one element when counting.",
+   "For complements, write or identify the universal set U first, then list only the elements of U that are not in the given set.",
+   "For a Venn-diagram answer, draw and label the rectangle U and every circle. Fill the shared regions first, then the exclusive regions, and show elements outside the circles if required.",
+   "For verification questions, calculate both sides separately, show the resulting sets, and finish with the equality statement.",
+   "For word problems, define the sets and write the known cardinalities before applying inclusion-exclusion. Show the substitution and arithmetic, then finish with a sentence answering the question.",
+   "Cardinality answers count elements or people, not set notation; include the appropriate unit or context in the final sentence."
+  ],
+  "mistakes": [
+   "Writing {0} for the empty set. Fix: {0} contains one element; use ∅ or {} when there are no elements.",
+   "Treating repeated elements as extra elements in a set or in its cardinality. Fix: list each distinct element only once.",
+   "Counting {b, c} as two elements in {a, {b, c}}. Fix: the inner set {b, c} is one element of the outer set.",
+   "Finding a complement without using the stated universal set. Fix: write U first and subtract the given set from U.",
+   "Reversing a set difference, or assuming A − B = B − A. Fix: A − B keeps elements in A that are not in B; order matters.",
+   "In inclusion-exclusion for three sets, subtracting pairwise overlaps but forgetting to add the triple overlap back. Fix: use the full formula and check that the final triple term is added.",
+   "In a Venn diagram, putting pairwise intersection totals directly into the pair-only regions when they include the triple intersection. Fix: subtract the triple intersection from each pair total before filling pair-only regions."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a set.",
+    "answer": "A set is described as a well-defined collection of distinct objects, numbers or elements, so that we may be able to decide whether the object belongs to the collection or not."
+   },
+   {
+    "question": "What is a proper subset?",
+    "answer": "If A is a subset of B and B contains at least one element that is not an element of A, then A is said to be a proper subset of B."
+   },
+   {
+    "question": "Define the power set of a set S.",
+    "answer": "The power set of a set S denoted by P(S) is the set containing all the possible subsets of S."
+   },
+   {
+    "question": "Define the union of two sets.",
+    "answer": "The union of two sets A and B, denoted by A∪B, is the set of all elements which belong to A or B."
+   },
+   {
+    "question": "Define the intersection of two sets.",
+    "answer": "The intersection of two sets A and B, denoted by A ∩ B, is the set of all elements that belong to both A and B."
+   },
+   {
+    "question": "What are disjoint sets?",
+    "answer": "If the intersection of two sets is the empty set, the sets are said to be disjoint."
+   },
+   {
+    "question": "State De Morgan’s Laws.",
+    "answer": "(A ∪ B)′ = A′ ∩ B′\n(A ∩ B)′ = A′ ∪ B′"
+   },
+   {
+    "question": "State the principle of inclusion and exclusion for two finite sets.",
+    "answer": "Let A and B be finite sets, then\nn(A ∪ B) = n(A) + n(B) − n(A ∩ B)\nand A ∪ B and A ∩ B are also finite."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-3-1-t0",
+   "text": "Define a set.",
+   "marks": 2,
+   "modelAnswer": [
+    "A set is described as a well-defined collection of distinct objects, numbers or elements, so that we may be able to decide whether the object belongs to the collection or not."
+   ],
+   "followUp": "Define a set.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "well-defined",
+       "collection",
+       "distinct"
+      ],
+      [
+       "well defined",
+       "collection",
+       "distinct"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the defining feature of a set as a well-defined collection of distinct objects.",
+     "description": "A set is a well-defined collection of distinct objects.",
+     "how": "Award 1 mark for stating that a set is a well-defined collection of distinct objects, numbers or elements."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "decide",
+       "belongs",
+       "not"
+      ],
+      [
+       "decide",
+       "whether",
+       "belongs"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that membership in the collection can be determined.",
+     "description": "It must be possible to decide whether an object belongs to the collection.",
+     "how": "Award 1 mark for stating that it can be decided whether an object belongs to the collection or not."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t1",
+   "text": "What is a proper subset?",
+   "marks": 2,
+   "modelAnswer": [
+    "If A is a subset of B and B contains at least one element that is not an element of A, then A is said to be a proper subset of B."
+   ],
+   "followUp": "What is a proper subset?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "A",
+       "subset",
+       "B"
+      ],
+      [
+       "A⊆B"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the subset relationship required for a proper subset.",
+     "description": "A is a subset of B.",
+     "how": "Award 1 mark for stating that A is a subset of B."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "B",
+       "element",
+       "not",
+       "A"
+      ],
+      [
+       "at least one",
+       "not",
+       "A"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that B contains an element that is not in A.",
+     "description": "B contains at least one element that is not an element of A.",
+     "how": "Award 1 mark for stating that B has at least one element not in A."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t2",
+   "text": "Define the power set of a set S.",
+   "marks": 2,
+   "modelAnswer": [
+    "The power set of a set S denoted by P(S) is the set containing all the possible subsets of S."
+   ],
+   "followUp": "Define the power set of a set S.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "power set"
+      ],
+      [
+       "P(S)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the power set and its notation.",
+     "description": "The power set of S is denoted by P(S).",
+     "how": "Award 1 mark for identifying the power set of S and/or giving its notation P(S)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "all",
+       "possible",
+       "subsets",
+       "S"
+      ]
+     ],
+     "marks": 1,
+     "why": "States what the power set contains.",
+     "description": "It contains all possible subsets of S.",
+     "how": "Award 1 mark for stating that P(S) contains all possible subsets of S."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t3",
+   "text": "Define the union of two sets.",
+   "marks": 2,
+   "modelAnswer": [
+    "The union of two sets A and B, denoted by A∪B, is the set of all elements which belong to A or B."
+   ],
+   "followUp": "Define the union of two sets.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "A∪B"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the notation for the union of A and B.",
+     "description": "The union of A and B is denoted by A∪B.",
+     "how": "Award 1 mark for giving A∪B as the notation for the union."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "elements",
+       "A",
+       "or",
+       "B"
+      ],
+      [
+       "elements",
+       "A",
+       "B",
+       "either"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the union contains elements belonging to either set.",
+     "description": "It is the set of all elements which belong to A or B.",
+     "how": "Award 1 mark for stating that the union contains all elements belonging to A or B."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t4",
+   "text": "Define the intersection of two sets.",
+   "marks": 2,
+   "modelAnswer": [
+    "The intersection of two sets A and B, denoted by A ∩ B, is the set of all elements that belong to both A and B."
+   ],
+   "followUp": "Define the intersection of two sets.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "A∩B"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the notation for the intersection of A and B.",
+     "description": "The intersection of A and B is denoted by A∩B.",
+     "how": "Award 1 mark for giving A∩B as the notation for the intersection."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "elements",
+       "both",
+       "A",
+       "B"
+      ],
+      [
+       "elements",
+       "A",
+       "and",
+       "B"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the intersection contains only elements common to both sets.",
+     "description": "It is the set of all elements that belong to both A and B.",
+     "how": "Award 1 mark for stating that the intersection contains all elements belonging to both A and B."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t5",
+   "text": "What are disjoint sets?",
+   "marks": 2,
+   "modelAnswer": [
+    "If the intersection of two sets is the empty set, the sets are said to be disjoint."
+   ],
+   "followUp": "What are disjoint sets?",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "intersection",
+       "empty set"
+      ],
+      [
+       "∩",
+       "∅"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the condition that the intersection is empty.",
+     "description": "The intersection of the two sets is the empty set.",
+     "how": "Award 1 mark for stating that the intersection of the sets is empty."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "disjoint"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names sets satisfying this condition.",
+     "description": "Such sets are said to be disjoint.",
+     "how": "Award 1 mark for identifying the sets as disjoint."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t6",
+   "text": "State De Morgan’s Laws.",
+   "marks": 2,
+   "modelAnswer": [
+    "(A ∪ B)′ = A′ ∩ B′",
+    "(A ∩ B)′ = A′ ∪ B′"
+   ],
+   "followUp": "State De Morgan’s Laws.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(A∪B)′=A′∩B′"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the first of De Morgan’s Laws.",
+     "description": "The complement of A∪B equals A′∩B′.",
+     "how": "Award 1 mark for stating (A∪B)′ = A′∩B′."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(A∩B)′=A′∪B′"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the second of De Morgan’s Laws.",
+     "description": "The complement of A∩B equals A′∪B′.",
+     "how": "Award 1 mark for stating (A∩B)′ = A′∪B′."
+    }
+   ]
+  },
+  {
+   "id": "w-3-1-t7",
+   "text": "State the principle of inclusion and exclusion for two finite sets.",
+   "marks": 2,
+   "modelAnswer": [
+    "Let A and B be finite sets, then n(A ∪ B) = n(A) + n(B) − n(A ∩ B)",
+    "and A ∪ B and A ∩ B are also finite."
+   ],
+   "followUp": "State the principle of inclusion and exclusion for two finite sets.",
+   "noteId": "n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "n(A∪B)=n(A)+n(B)−n(A∩B)"
+      ],
+      [
+       "n(A∪B)=n(A)+n(B)-n(A∩B)"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the inclusion-exclusion formula for two finite sets.",
+     "description": "n(A∪B) = n(A) + n(B) − n(A∩B).",
+     "how": "Award 1 mark for stating the formula for the cardinality of the union."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "A∪B",
+       "A∩B",
+       "finite"
+      ],
+      [
+       "union",
+       "intersection",
+       "finite"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the union and intersection are finite.",
+     "description": "A∪B and A∩B are also finite.",
+     "how": "Award 1 mark for stating that both the union and intersection are finite."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 8
+ }
+}

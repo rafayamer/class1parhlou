@@ -1,0 +1,1298 @@
+{
+ "unit": 11,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 10-12",
+   "Ex 11.2",
+   "Review Ex 11 Q1(x)",
+   "Review Ex 11 Q2-8"
+  ],
+  "definitions": [
+   {
+    "term": "Scalene triangle",
+    "text": "Scalene triangle: All sides are of different length."
+   },
+   {
+    "term": "Isosceles triangle",
+    "text": "Isosceles triangles: Two sides are of equal length."
+   },
+   {
+    "term": "Equilateral triangle",
+    "text": "Equilateral triangle: All sides of equal length."
+   },
+   {
+    "term": "Acute angled triangle",
+    "text": "Acute angled triangle: All angles are of measure less than 90⁰."
+   },
+   {
+    "term": "Obtuse angled triangle",
+    "text": "Obtuse angled triangle: One angle is of measure greater than 90⁰."
+   },
+   {
+    "term": "Right angled triangle",
+    "text": "Right angled triangle: One angle is of measure equal to 90⁰."
+   },
+   {
+    "term": "Triangle",
+    "text": "A triangle is a closed figure having three sides and three angles."
+   },
+   {
+    "term": "Triangle Inequality Theorem",
+    "text": "The sum of the measure of any two sides of a triangle is always greater than the measure of the third side."
+   },
+   {
+    "term": "Ambiguous Case (SSA)",
+    "text": "The Ambiguous Case (SSA) occurs when we are given two sides and the angle opposite one of these is less than 90°."
+   },
+   {
+    "term": "Perpendicular Bisector",
+    "text": "A perpendicular bisector is a line that intersects a line segment at right angle and dividing it into two equal parts. In other words, it intersects the line segment at its midpoint and forms right angles (90°) with it."
+   },
+   {
+    "term": "Median",
+    "text": "A median of a triangle is a line segment that joins a vertex to the midpoint of the side that is opposite to that vertex."
+   },
+   {
+    "term": "Point of concurrency",
+    "text": "A point of concurrency is the single point where three or more lines, rays or line segments intersect or meet in a geometric figure. This concept is commonly used in triangles, where several important types of points of concurrency exist."
+   },
+   {
+    "term": "Circumcentre",
+    "text": "The point of concurrency of perpendicular bisector of the sides of a triangle is called circumcentre."
+   },
+   {
+    "term": "Centroid",
+    "text": "The point of concurrency of the medians of a triangle is called centroid of the triangle."
+   },
+   {
+    "term": "Angle bisector of a triangle",
+    "text": "An angle bisector of a triangle is a line or ray that divides an angle into two equal parts, creating two smaller angles that are congruent (each having half the measure of the original angle)."
+   },
+   {
+    "term": "Incentre",
+    "text": "The point of concurrency of the angle bisectors of a triangle is called incentre of the triangle."
+   },
+   {
+    "term": "Altitude",
+    "text": "Altitude is a ray drawn perpendicular from a vertex to the opposite side of the triangle. There are three altitudes of the triangle which meet at a single point i.e. the altitudes of a triangle are concurrent."
+   },
+   {
+    "term": "Locus",
+    "text": "A locus (plural loci) is a set of points that follow a given rule. In geometry, loci are often used to define the positions of points relative to one another or to other geometric figures. Some common types of loci along with detailed explanations will be discussed."
+   },
+   {
+    "term": "Equidistant",
+    "text": "Equidistant: Let A be a fixed point and B be a set of points. If A is at equal distance from all points of B, then A is said to be equidistant from B."
+   },
+   {
+    "term": "Circle as a locus",
+    "text": "The locus of a point whose distance is constant from a fixed point is called a circle."
+   },
+   {
+    "term": "Parallel lines as a locus",
+    "text": "The locus of a point whose distance from a fixed line is constant are parallel lines, ℓ and m e. g. the locus of a point P whose distance is 2.5 cm from a fixed line AB are parallel lines at a distance of 2.5 cm from AB."
+   },
+   {
+    "term": "Perpendicular bisector as a locus",
+    "text": "The locus of a point whose distance from two fixed points is constant is called a perpendicular bisector."
+   },
+   {
+    "term": "Angle bisector as a locus",
+    "text": "The locus of a point whose distance is constant from two intersecting lines is called an angle bisector."
+   },
+   {
+    "term": "Intersection of loci",
+    "text": "If two or more loci intersect at a point P, then P satisfies all given conditions of the loci."
+   },
+   {
+    "term": "Ambiguous-case construction rule for an obtuse opposite angle",
+    "text": "If the given angle opposite to the given side is obtuse, only one triangle is possible."
+   },
+   {
+    "term": "Ambiguous-case construction rule when the acute-angle example has EF = 3 cm",
+    "text": "• If mE̅F̅ > 3cm, two triangles are possible.\n\n• If mE̅F̅ = 3cm, only one triangle is possible.\n\n• If mE̅F̅ < 3cm, no triangle is possible."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "a + b > c, a + c > b, b + c > a",
+    "use": "Check whether three given side lengths can form a triangle."
+   },
+   {
+    "formula": "Fixed distance from a fixed point → circle",
+    "use": "Draw the locus of points at a constant distance from one point."
+   },
+   {
+    "formula": "Fixed distance from a fixed line → two parallel lines",
+    "use": "Draw the locus on both sides of a line at the stated distance."
+   },
+   {
+    "formula": "Equidistant from two fixed points → perpendicular bisector",
+    "use": "Draw the locus of points equally far from two points."
+   },
+   {
+    "formula": "Equidistant from two intersecting lines → angle bisector",
+    "use": "Draw the locus of points equally far from the two lines."
+   },
+   {
+    "formula": "For the acute-angle example: EF > 3 cm → 2 triangles; EF = 3 cm → 1 triangle; EF < 3 cm → no triangle",
+    "use": "Decide the number of possible triangles in the given 6 cm, 30° SSA construction."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 11.1 Q1(i)",
+    "why": "Standard three-side triangle construction followed by verifying perpendicular-bisector concurrency."
+   },
+   {
+    "ref": "Ex 11.1 Q1(ii)",
+    "why": "Tests construction with two sides and their included obtuse angle, plus circumcentre verification."
+   },
+   {
+    "ref": "Ex 11.1 Q2(i)",
+    "why": "A common construction type: one side and two angles, followed by the three medians."
+   },
+   {
+    "ref": "Ex 11.1 Q2(ii)",
+    "why": "Tests the one-side-and-two-angles construction and the centroid formed by concurrent medians."
+   },
+   {
+    "ref": "Ex 11.1 Q3(i)",
+    "why": "A standard angle-bisector construction and concurrency question."
+   },
+   {
+    "ref": "Ex 11.1 Q3(ii)",
+    "why": "Checks angle construction with a large obtuse angle and verifies the incentre."
+   },
+   {
+    "ref": "Ex 11.1 Q4",
+    "why": "A likely construction question requiring all three altitudes and identification of the orthocentre."
+   },
+   {
+    "ref": "Ex 11.1 Q5(i)",
+    "why": "Directly tests the SSA ambiguous case and whether the measurements produce more than one triangle."
+   },
+   {
+    "ref": "Ex 11.1 Q5(ii)",
+    "why": "Another SSA-style construction prompt; check the stated measurements carefully before deciding the case."
+   }
+  ],
+  "fullMarks": [
+   "Write the given measurements first, then name the triangle you are constructing.",
+   "For a construction, show the compass arcs or angle rays clearly; do not rely only on a finished-looking sketch.",
+   "Label every vertex, side length, angle and midpoint used in the construction.",
+   "When drawing a perpendicular bisector, show that the arcs from both endpoints intersect above and below the side, then join their intersections.",
+   "For concurrency questions, draw all three required lines or rays and mark their common point; state that they are concurrent and name the point (circumcentre, centroid, incentre or orthocentre).",
+   "For an altitude, show the right-angle mark where it meets the opposite side or its extension. Extend the side if the perpendicular falls outside the triangle.",
+   "For an ambiguous-case question, compare the given side with the perpendicular distance from the vertex to the ray, then state clearly whether zero, one or two triangles are possible.",
+   "Use centimetres for construction lengths and degrees for angles, and finish with a sentence identifying the required triangle, locus or centre."
+  ],
+  "mistakes": [
+   "Using the wrong two sides or angle when constructing a triangle. Mark the given sides and included or opposite angle before drawing.",
+   "Drawing a perpendicular bisector through an endpoint instead of through the midpoint at 90°. Use equal-radius arcs from both endpoints and join the arc intersections.",
+   "Confusing a median with a perpendicular bisector. A median joins a vertex to the opposite side’s midpoint; it does not have to meet that side at 90°.",
+   "Drawing only one altitude or median when the question asks to verify concurrency. Draw all three and mark their common point.",
+   "Calling every triangle centre the same name. Perpendicular bisectors meet at the circumcentre, medians at the centroid, angle bisectors at the incentre and altitudes at the orthocentre.",
+   "In an SSA ambiguous case, assuming there is always one triangle. Draw the ray and the arc from the opposite vertex, then count their intersections.",
+   "Leaving the final construction unlabeled or not stating the result. Label points and write a concluding sentence naming the triangle, concurrency point or number of possible triangles."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a locus.",
+    "answer": "A locus (plural loci) is a set of points that follow a given rule."
+   },
+   {
+    "question": "State the Triangle Inequality Theorem.",
+    "answer": "The sum of the measure of any two sides of a triangle is always greater than the measure of the third side."
+   },
+   {
+    "question": "Define a median of a triangle.",
+    "answer": "A median of a triangle is a line segment that joins a vertex to the midpoint of the side that is opposite to that vertex."
+   },
+   {
+    "question": "What is the circumcentre of a triangle?",
+    "answer": "The point of concurrency of perpendicular bisector of the sides of a triangle is called circumcentre."
+   },
+   {
+    "question": "What is the incentre of a triangle?",
+    "answer": "The point of concurrency of the angle bisectors of a triangle is called incentre of the triangle."
+   },
+   {
+    "question": "What is the orthocentre of a triangle?",
+    "answer": "The point of concurrency of the altitudes of the triangle is called orthocentre."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-11-4-k0",
+   "text": "Construct △ABC with the given measurements and verify that the perpendicular bisectors of the triangle are concurrent: m AB = 5 cm, m BC = 6 cm and m AC = 7 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw AB = 5 cm.",
+    "With centre A and radius 7 cm, draw an arc; with centre B and radius 6 cm, draw an arc intersecting it at C.",
+    "Join AC and BC to obtain △ABC.",
+    "Construct the perpendicular bisectors of AB and BC; mark their intersection O.",
+    "Construct the perpendicular bisector of AC and verify that it passes through O.",
+    "Thus, the perpendicular bisectors are concurrent at O, the circumcentre, and OA = OB = OC."
+   ],
+   "followUp": "Construct △PQR with PQ = 4 cm, QR = 5 cm and PR = 6 cm, and verify that its perpendicular bisectors are concurrent. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q1(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "5 cm",
+       "6 cm",
+       "7 cm"
+      ],
+      [
+       "AB=5",
+       "BC=6",
+       "AC=7"
+      ]
+     ],
+     "marks": 1,
+     "why": "The side lengths determine the required triangle.",
+     "description": "Construct △ABC with the three given side lengths.",
+     "how": "Draw AB = 5 cm, then locate C using arcs of radius 7 cm from A and 6 cm from B."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "perpendicular bisector",
+       "AB",
+       "BC"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of two perpendicular bisectors locates the candidate circumcentre.",
+     "description": "Construct two perpendicular bisectors and mark their intersection O.",
+     "how": "Use equal-radius compass arcs to construct the perpendicular bisectors of AB and BC; label their intersection O."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "AC",
+       "O"
+      ]
+     ],
+     "marks": 1,
+     "why": "Checking the third perpendicular bisector verifies concurrency.",
+     "description": "Verify that the perpendicular bisector of AC passes through O.",
+     "how": "Construct the perpendicular bisector of AC and show that it passes through O."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "concurrent",
+       "circumcentre"
+      ],
+      [
+       "OA=OB=OC"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states the verified result and identifies the point of concurrency.",
+     "description": "State the result of the verification.",
+     "how": "Conclude that the perpendicular bisectors meet at O, the circumcentre; OA = OB = OC."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k1",
+   "text": "Construct △ABC with the given measurements and verify that the perpendicular bisectors of the triangle are concurrent: m AB = 7.1 cm, m∠B = 135° and m BC = 6.5 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw AB = 7.1 cm.",
+    "At B, construct ∠ABX = 135° and mark C on ray BX such that BC = 6.5 cm.",
+    "Join AC to obtain △ABC.",
+    "Construct the perpendicular bisectors of AB and BC; mark their intersection O.",
+    "Construct the perpendicular bisector of AC and verify that it passes through O.",
+    "Thus, the perpendicular bisectors are concurrent at O, the circumcentre."
+   ],
+   "followUp": "Construct △XYZ with XY = 6 cm, ∠Y = 120° and YZ = 5 cm, and verify that its perpendicular bisectors are concurrent. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q1(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "7.1 cm",
+       "135°",
+       "6.5 cm"
+      ],
+      [
+       "AB=7.1",
+       "B=135",
+       "BC=6.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given side lengths and angle determine the triangle.",
+     "description": "Construct the triangle using the given measurements.",
+     "how": "Draw AB = 7.1 cm, construct the 135° angle at B, and mark C on its ray so BC = 6.5 cm."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "perpendicular bisector",
+       "AB",
+       "BC"
+      ]
+     ],
+     "marks": 1,
+     "why": "Two perpendicular bisectors establish the candidate point of concurrency.",
+     "description": "Construct two perpendicular bisectors and mark their intersection O.",
+     "how": "Construct the perpendicular bisectors of AB and BC and label their intersection O."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "AC",
+       "O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third bisector passing through O confirms concurrency.",
+     "description": "Verify that the perpendicular bisector of AC passes through O.",
+     "how": "Construct the perpendicular bisector of AC and show that it passes through O."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "concurrent",
+       "circumcentre"
+      ],
+      [
+       "concurrent",
+       "circumcenter"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion identifies the verified point of concurrency.",
+     "description": "State the result of the verification.",
+     "how": "Conclude that the perpendicular bisectors are concurrent at O, the circumcentre."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k2",
+   "text": "Construct △LMN of the following measurements and verify that the medians of the triangle are concurrent: m LM = 4.9 cm, m∠L = 51° and m∠M = 38°. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw LM = 4.9 cm.",
+    "At L, construct an angle of 51° with LM; at M, construct an angle of 38° with ML on the same side of LM.",
+    "Mark the intersection of the two rays as N and join LN and MN.",
+    "Construct and mark the midpoints of LM, MN and NL.",
+    "Join each vertex to the midpoint of its opposite side to draw the three medians; mark the intersection of two as G.",
+    "Verify that the third median passes through G. Thus, the medians are concurrent at G, the centroid."
+   ],
+   "followUp": "Construct △ABC with AB = 6 cm, ∠A = 50° and ∠B = 60°, and verify that its medians are concurrent. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q2(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4.9 cm",
+       "51°",
+       "38°"
+      ],
+      [
+       "LM=4.9",
+       "L=51",
+       "M=38"
+      ]
+     ],
+     "marks": 1,
+     "why": "These measurements determine △LMN.",
+     "description": "Construct △LMN from the given side and angles.",
+     "how": "Draw LM = 4.9 cm and construct the 51° and 38° rays at L and M on the same side of LM; their intersection is N."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "midpoint",
+       "LM"
+      ],
+      [
+       "midpoint",
+       "MN"
+      ],
+      [
+       "midpoint",
+       "NL"
+      ]
+     ],
+     "marks": 1,
+     "why": "A median must join a vertex to the midpoint of the opposite side.",
+     "description": "Mark the three side midpoints.",
+     "how": "Find and mark the midpoints of LM, MN and NL."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "median",
+       "G"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of two medians gives the point to test against the third.",
+     "description": "Draw the medians and mark the intersection of two as G.",
+     "how": "Join each vertex to the midpoint of its opposite side, then label the intersection of two medians G."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "third median",
+       "G"
+      ],
+      [
+       "concurrent",
+       "centroid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third median passing through G verifies the result and identifies the centroid.",
+     "description": "State the concurrency result.",
+     "how": "Show that the third median also passes through G; conclude that the medians are concurrent at G, the centroid."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k3",
+   "text": "Construct △LMN of the following measurements and verify that the medians of the triangle are concurrent: m MN = 4.8 cm, m∠N = 30° and m LM = 8.1 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw MN = 4.8 cm.",
+    "At N, construct a 30° ray on one side of MN.",
+    "With centre M and radius 8.1 cm, draw an arc to meet the ray at L; join LM to obtain △LMN.",
+    "Construct and mark the midpoints of LM, MN and NL.",
+    "Join each vertex to the midpoint of its opposite side to draw the three medians; mark the intersection of two as G.",
+    "Verify that the third median passes through G. Thus, the medians are concurrent at G, the centroid."
+   ],
+   "followUp": "Construct △PQR with QR = 5 cm, ∠R = 40° and PQ = 7 cm, then verify that its medians are concurrent. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q2(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4.8 cm",
+       "30°",
+       "8.1 cm"
+      ],
+      [
+       "MN=4.8",
+       "N=30",
+       "LM=8.1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given side, angle and side determine the required triangle.",
+     "description": "Construct △LMN from the given measurements.",
+     "how": "Draw MN = 4.8 cm, construct a 30° ray at N, and locate L on it 8.1 cm from M."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "midpoint",
+       "LM"
+      ],
+      [
+       "midpoint",
+       "MN"
+      ],
+      [
+       "midpoint",
+       "NL"
+      ]
+     ],
+     "marks": 1,
+     "why": "The medians must end at the midpoints of the opposite sides.",
+     "description": "Mark the three side midpoints.",
+     "how": "Find and mark the midpoints of LM, MN and NL."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "median",
+       "G"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of two medians gives the point to check against the third.",
+     "description": "Draw the medians and label their intersection G.",
+     "how": "Join every vertex to the midpoint of its opposite side and mark the intersection of two medians G."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "third median",
+       "G"
+      ],
+      [
+       "concurrent",
+       "centroid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third median passing through G verifies concurrency.",
+     "description": "State the verified result.",
+     "how": "Show that the third median passes through G and conclude that the medians are concurrent at the centroid."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k4",
+   "text": "Verify that the angle bisectors of △ABC are concurrent with the following measurement: m AB = 4.5 cm, m∠A = 45° and m AC = 5.3 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw AB = 4.5 cm.",
+    "At A, construct ∠BAX = 45° and mark C on ray AX such that AC = 5.3 cm; join BC.",
+    "Construct the bisectors of ∠A and ∠B and mark their intersection I.",
+    "Construct the bisector of ∠C and verify that it passes through I.",
+    "Thus, the angle bisectors of △ABC are concurrent at I, the incentre."
+   ],
+   "followUp": "Verify that the angle bisectors of △PQR are concurrent when PQ = 5 cm, ∠P = 60° and PR = 6 cm.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q3(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4.5 cm",
+       "45°",
+       "5.3 cm"
+      ],
+      [
+       "AB=4.5",
+       "45°",
+       "AC=5.3"
+      ]
+     ],
+     "marks": 1,
+     "why": "These measurements determine the triangle to be constructed.",
+     "description": "Construct △ABC using the given measurements.",
+     "how": "Draw AB = 4.5 cm, construct ∠A = 45°, mark C so AC = 5.3 cm, and join BC."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "bisectors",
+       "A",
+       "B",
+       "I"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of two angle bisectors gives the candidate point of concurrency.",
+     "description": "Construct the bisectors of ∠A and ∠B and mark their intersection I.",
+     "how": "Bisect ∠A and ∠B, then label their intersection I."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "bisector",
+       "C",
+       "I"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third angle bisector passing through I verifies concurrency.",
+     "description": "Check that the bisector of ∠C also passes through I.",
+     "how": "Construct the bisector of ∠C and verify that it passes through I."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "concurrent",
+       "incentre"
+      ],
+      [
+       "concurrent",
+       "incenter"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states the result and identifies the point of concurrency.",
+     "description": "State the verified result.",
+     "how": "Conclude that the three angle bisectors are concurrent at I, the incentre."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k5",
+   "text": "Verify that the angle bisectors of △ABC are concurrent with the following measurement: m AB = 6 cm, m∠A = 150° and m∠B = 60°.",
+   "marks": 2,
+   "modelAnswer": [
+    "∠A + ∠B = 150° + 60° = 210°.",
+    "The sum of the interior angles of a triangle is 180°, but 210° > 180°.",
+    "Therefore, △ABC cannot be constructed and its angle bisectors cannot be verified."
+   ],
+   "followUp": "Can a triangle have angles 110° and 80°? Give a reason for your answer.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q3(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "150°+60°=210°"
+      ],
+      [
+       "210°"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sum of the given angles can be compared with the triangle angle sum.",
+     "description": "Add the two given angles.",
+     "how": "Calculate 150° + 60° = 210°."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "210°>180°",
+       "cannot be constructed"
+      ],
+      [
+       "no such triangle",
+       "210°"
+      ]
+     ],
+     "marks": 1,
+     "why": "A triangle's interior angles sum to 180°, so these measurements are impossible.",
+     "description": "State that the triangle cannot be constructed and hence cannot be verified.",
+     "how": "Explain that 210° exceeds 180°; therefore no such triangle exists."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k6",
+   "text": "Given the measurements of △DEF : m DE = 4.8 cm, m EF = 4 cm and m∠E = 45°, draw altitudes of △DEF and find orthocentre. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw EF = 4 cm.",
+    "At E, construct an angle of 45° with EF; mark D on its ray so DE = 4.8 cm, then join DF.",
+    "Through D, draw a perpendicular to EF; through F, draw a perpendicular to DE.",
+    "Mark the intersection of these altitudes H.",
+    "Through E, draw a perpendicular to DF and verify that it passes through H.",
+    "Thus, H is the orthocentre of △DEF."
+   ],
+   "followUp": "Draw the altitudes of △PQR where PQ = 5 cm, QR = 6 cm and ∠Q = 60°, and mark its orthocentre. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q4",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "4.8 cm",
+       "4 cm",
+       "45°"
+      ],
+      [
+       "DE=4.8",
+       "EF=4",
+       "E=45"
+      ]
+     ],
+     "marks": 1,
+     "why": "These measurements determine △DEF.",
+     "description": "Construct △DEF from the given measurements.",
+     "how": "Draw EF = 4 cm, construct a 45° angle at E, mark D on its ray so DE = 4.8 cm, and join DF."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "D",
+       "perpendicular",
+       "EF"
+      ],
+      [
+       "F",
+       "perpendicular",
+       "DE"
+      ]
+     ],
+     "marks": 1,
+     "why": "Altitudes are perpendiculars from vertices to their opposite sides.",
+     "description": "Draw two altitudes of △DEF.",
+     "how": "Through D draw a perpendicular to EF, and through F draw a perpendicular to DE."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "H",
+       "altitudes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of two altitudes locates the orthocentre.",
+     "description": "Mark the intersection of the altitudes as H.",
+     "how": "Label the intersection of the two altitudes H."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "E",
+       "perpendicular",
+       "DF",
+       "H"
+      ],
+      [
+       "orthocentre",
+       "H"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third altitude passing through H verifies the orthocentre.",
+     "description": "Verify and identify the orthocentre.",
+     "how": "Draw the perpendicular from E to DF and verify it passes through H; state that H is the orthocentre."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k7",
+   "text": "Construct the following triangles and find whether there exists any ambiguous case: △BCD ; m BC = 5 cm, m∠B = 62° and m CD = 4.7 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "Draw BC = 5 cm and construct a 62° ray at B.",
+    "With centre C and radius 4.7 cm, draw an arc that meets the ray at two points, D₁ and D₂.",
+    "Join CD₁ and CD₂ to obtain two triangles, △BCD₁ and △BCD₂.",
+    "Both triangles satisfy the given measurements. Therefore, there are two possible triangles and the case is ambiguous."
+   ],
+   "followUp": "Construct △PQR with PQ = 6 cm, ∠P = 50° and QR = 4 cm. Determine whether the measurements give an ambiguous case. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q5(i)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "5 cm",
+       "62°",
+       "4.7 cm"
+      ],
+      [
+       "BC=5",
+       "B=62",
+       "CD=4.7"
+      ]
+     ],
+     "marks": 1,
+     "why": "The measurements specify the known side, angle, and radius used in the construction.",
+     "description": "Draw the known side and angle, then use the remaining side length.",
+     "how": "Draw BC = 5 cm, construct a 62° ray at B, and draw an arc centred at C with radius 4.7 cm."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "two points",
+       "D₁",
+       "D₂"
+      ],
+      [
+       "arc",
+       "ray",
+       "D₁",
+       "D₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "Two intersections of the arc with the ray give two possible positions for D.",
+     "description": "Show that the arc meets the ray in two points.",
+     "how": "Mark both intersections of the radius-4.7 cm arc with the ray as D₁ and D₂."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "two triangles",
+       "BCD₁",
+       "BCD₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both resulting triangles satisfy the given measurements.",
+     "description": "Identify the two possible triangles.",
+     "how": "Join each of D₁ and D₂ to C to obtain △BCD₁ and △BCD₂."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "two possible triangles",
+       "ambiguous case"
+      ],
+      [
+       "two triangles",
+       "ambiguous"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the requested conclusion from the two valid constructions.",
+     "description": "State whether the case is ambiguous.",
+     "how": "Conclude that there are two possible triangles, so this is an ambiguous case."
+    }
+   ]
+  },
+  {
+   "id": "w-11-4-k8",
+   "text": "Construct the following triangles and find whether there exists any ambiguous case: △KLM ; m LM = 6 cm, m∠M = 42° and m LN = 5 cm. Draw it on paper and photograph your work, or type your table of values / measurements.",
+   "marks": 4,
+   "modelAnswer": [
+    "The given length LN = 5 cm involves point N, which is not a vertex of △KLM.",
+    "No condition is given to locate K, so the information is insufficient to construct △KLM.",
+    "Therefore, the stated data are inconsistent, and no conclusion about an ambiguous case can be determined."
+   ],
+   "followUp": "Construct △ABC with AB = 6 cm, ∠A = 30° and BC = 4 cm. Determine whether there is an ambiguous case.",
+   "noteId": "n-11-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "Ex 11.1 Q5(ii)",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "LN=5cm",
+       "not a vertex"
+      ],
+      [
+       "LN=5",
+       "N is not a vertex"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognising that the given length refers to N identifies the inconsistency in the stated triangle data.",
+     "description": "Identify that LN includes a point not named as a vertex of △KLM.",
+     "how": "State that N is not a vertex of △KLM, or otherwise explain that LN is not a side of the stated triangle."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "no condition",
+       "locate K"
+      ]
+     ],
+     "marks": 1,
+     "why": "The information gives no position for vertex K.",
+     "description": "Explain that no condition locates vertex K.",
+     "how": "State that K cannot be located from the stated measurements."
+    },
+    {
+     "id": "c",
+     "accept": [
+      [
+       "insufficient",
+       "construct",
+       "KLM"
+      ]
+     ],
+     "marks": 1,
+     "why": "Without consistent data locating the vertices, the requested construction cannot be completed.",
+     "description": "Conclude that the stated information is insufficient to construct △KLM.",
+     "how": "State that △KLM cannot be constructed from the given data."
+    },
+    {
+     "id": "d",
+     "accept": [
+      [
+       "inconsistent",
+       "no conclusion",
+       "ambiguous case"
+      ]
+     ],
+     "marks": 1,
+     "why": "This resolves the question about an ambiguous case using the inconsistency in the given data.",
+     "description": "Give the final conclusion about the ambiguous case.",
+     "how": "State that the data are inconsistent and do not allow an ambiguous-case conclusion."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t0",
+   "text": "Define a locus.",
+   "marks": 2,
+   "modelAnswer": [
+    "A locus (plural loci) is a set of points that follow a given rule."
+   ],
+   "followUp": "Define a locus.",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "set",
+       "points"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies what a locus consists of.",
+     "description": "States that a locus is a set of points.",
+     "how": "Award for naming a set of points as the locus."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "follow",
+       "rule"
+      ],
+      [
+       "given",
+       "rule"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the condition that characterises the points in the set.",
+     "description": "States that the points follow a given rule.",
+     "how": "Award for indicating that the points obey or satisfy a rule."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t1",
+   "text": "State the Triangle Inequality Theorem.",
+   "marks": 2,
+   "modelAnswer": [
+    "The sum of the measure of any two sides of a triangle is always greater than the measure of the third side."
+   ],
+   "followUp": "State the Triangle Inequality Theorem.",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "any",
+       "two",
+       "sides"
+      ],
+      [
+       "two",
+       "sides"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the pair of triangle sides being considered.",
+     "description": "States that the theorem applies to any two sides of a triangle.",
+     "how": "Award for specifying a pair of sides, with the general condition that the choice may be any pair."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "sum",
+       "greater",
+       "third",
+       "side"
+      ],
+      [
+       "greater",
+       "third",
+       "side"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the required comparison with the remaining side.",
+     "description": "States that the sum of those two sides is greater than the third side.",
+     "how": "Award for the strict greater-than relationship between the sum and the third side."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t2",
+   "text": "Define a median of a triangle.",
+   "marks": 2,
+   "modelAnswer": [
+    "A median of a triangle is a line segment that joins a vertex to the midpoint of the side that is opposite to that vertex."
+   ],
+   "followUp": "Define a median of a triangle.",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "line",
+       "segment"
+      ],
+      [
+       "segment"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the median as a line segment.",
+     "description": "States that a median is a line segment joining a vertex.",
+     "how": "Award for identifying a segment and its connection to a vertex."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "vertex",
+       "midpoint",
+       "opposite",
+       "side"
+      ],
+      [
+       "vertex",
+       "midpoint",
+       "opposite"
+      ]
+     ],
+     "marks": 1,
+     "why": "Specifies the segment’s endpoints and the side involved.",
+     "description": "States that the segment joins the vertex to the midpoint of the opposite side.",
+     "how": "Award for identifying the midpoint as lying on the side opposite the vertex."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t3",
+   "text": "What is the circumcentre of a triangle?",
+   "marks": 2,
+   "modelAnswer": [
+    "The point of concurrency of perpendicular bisector of the sides of a triangle is called circumcentre."
+   ],
+   "followUp": "What is the circumcentre of a triangle?",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "point",
+       "concurrency"
+      ],
+      [
+       "point"
+      ],
+      [
+       "intersection"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the circumcentre as a point where lines meet.",
+     "description": "States that the circumcentre is a point of concurrency.",
+     "how": "Award for identifying it as the common point or intersection."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "perpendicular",
+       "bisector",
+       "sides"
+      ],
+      [
+       "perpendicular",
+       "bisectors",
+       "sides"
+      ],
+      [
+       "perpendicular",
+       "bisector"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies which lines concur at the circumcentre.",
+     "description": "States that the perpendicular bisectors of the sides concur there.",
+     "how": "Award for naming the perpendicular bisectors of the triangle’s sides."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t4",
+   "text": "What is the incentre of a triangle?",
+   "marks": 2,
+   "modelAnswer": [
+    "The point of concurrency of the angle bisectors of a triangle is called incentre of the triangle."
+   ],
+   "followUp": "What is the incentre of a triangle?",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "point",
+       "concurrency"
+      ],
+      [
+       "point"
+      ],
+      [
+       "intersection"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the incentre as a point where lines meet.",
+     "description": "States that the incentre is a point of concurrency.",
+     "how": "Award for identifying it as the common point or intersection."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "angle",
+       "bisectors",
+       "triangle"
+      ],
+      [
+       "angle",
+       "bisector",
+       "triangle"
+      ],
+      [
+       "angle",
+       "bisectors"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies which lines concur at the incentre.",
+     "description": "States that the angle bisectors of the triangle concur there.",
+     "how": "Award for naming the triangle’s angle bisectors."
+    }
+   ]
+  },
+  {
+   "id": "w-11-1-t5",
+   "text": "What is the orthocentre of a triangle?",
+   "marks": 2,
+   "modelAnswer": [
+    "The point of concurrency of the altitudes of the triangle is called orthocentre."
+   ],
+   "followUp": "What is the orthocentre of a triangle?",
+   "noteId": "n-11-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "point",
+       "concurrency"
+      ],
+      [
+       "point"
+      ],
+      [
+       "intersection"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the orthocentre as a point where lines meet.",
+     "description": "States that the orthocentre is a point of concurrency.",
+     "how": "Award for identifying it as the common point or intersection."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "altitudes",
+       "triangle"
+      ],
+      [
+       "altitude",
+       "triangle"
+      ],
+      [
+       "altitudes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies which lines concur at the orthocentre.",
+     "description": "States that the altitudes of the triangle concur there.",
+     "how": "Award for naming the triangle’s altitudes."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 0,
+  "writtenBuilt": 15
+ }
+}

@@ -93,7 +93,8 @@ object ContentBundle {
     fun readSubject(o: JSONObject) = Subject(
         o.getString("id"), o.getString("name"), o.getInt("grade"), o.getString("editionLabel"), o.getBoolean("editionVerified"),
         o.getJSONArray("chapters").list { c ->
-            Chapter(c.getString("id"), c.getInt("number"), c.getString("title"), c.getJSONArray("modules").list(::readModule), status(c.getString("status")))
+            Chapter(c.getString("id"), c.getInt("number"), c.getString("title"), c.getJSONArray("modules").list(::readModule), status(c.getString("status")),
+                kit = c.optJSONObject("kit")?.let(::readKit))
         },
     )
 
@@ -114,8 +115,21 @@ object ContentBundle {
                 checked = s.optBoolean("checked", true),
                 note = s.optString("note"),
                 bookAnswer = s.optString("bookAnswer"),
+                inExam = s.optBoolean("inExam", true),
             )
         }.orEmpty(),
+        inExam = m.optBoolean("inExam", true),
+    )
+
+    private fun readKit(k: JSONObject) = ExamKit(
+        inExam = k.optBoolean("inExam", true), examLabel = k.optString("examLabel"),
+        excluded = k.optJSONArray("excluded")?.strings().orEmpty(),
+        definitions = k.optJSONArray("definitions")?.list { KitDefinition(it.optString("term"), it.optString("text")) }.orEmpty(),
+        formulas = k.optJSONArray("formulas")?.list { KitFormula(it.optString("formula"), it.optString("use")) }.orEmpty(),
+        important = k.optJSONArray("important")?.list { KitImportant(it.optString("ref"), it.optString("why")) }.orEmpty(),
+        fullMarks = k.optJSONArray("fullMarks")?.strings().orEmpty(),
+        mistakes = k.optJSONArray("mistakes")?.strings().orEmpty(),
+        shortTheory = k.optJSONArray("shortTheory")?.list { KitShortTheory(it.optString("question"), it.optString("answer")) }.orEmpty(),
     )
 
     private fun readLesson(l: JSONObject) = Lesson(

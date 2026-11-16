@@ -46,6 +46,7 @@ import kotlinx.coroutines.flow.flowOf
 import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SolutionsFinderScreen
+import pk.parhlou.student.ui.screens.ExamKitScreen
 import pk.parhlou.student.ui.screens.SolutionDetailScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
 import pk.parhlou.student.ui.screens.TestsScreen
@@ -118,6 +119,7 @@ object Routes {
     const val PLANNER = "planner"
     const val WEAK_TOPICS = "weak-topics"
     const val SOLUTIONS = "solutions"
+    const val KIT = "kit/{id}"
     const val SOLUTION = "solution/{module}/{index}"
 }
 
@@ -200,7 +202,8 @@ fun ParhlouApp(
     val blueprints = chapterBlueprints + readyMocks.values.map { it.blueprint }
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper
     val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
-    val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
+    // The plan teaches what the exam examines; sections the smart syllabus leaves out stay open as practice.
+    val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
     fun plan() = StudyPlanner.plan(
         planModules, progress.history(), { noteTitles[it] },
         blueprints.filter { paperOf(it.id) != null }.map { it.id to it.title },
@@ -366,7 +369,14 @@ fun ParhlouApp(
         composable(Routes.SUBJECT) { entry ->
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
             if (subject == null) Missing(nav) else
-                SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back())
+                SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
+                    onOpenKit = { nav.navigate("kit/$it") })
+        }
+        composable(Routes.KIT) { entry ->
+            val id = entry.arguments?.getString("id").orEmpty()
+            val chapter = subjects.flatMap { it.chapters }.firstOrNull { it.id == id }
+            if (chapter == null) Missing(nav) else
+                ExamKitScreen(chapter, onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
         }
         composable(Routes.MODULE) { entry ->
             val id = entry.arguments?.getString("id").orEmpty()

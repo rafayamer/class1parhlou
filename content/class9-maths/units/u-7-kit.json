@@ -1,0 +1,648 @@
+{
+ "unit": 7,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Ex 7.1 Q6",
+   "Ex 7.1 Q9-10",
+   "Ex 7.2 Q2(iii)",
+   "Ex 7.2 Q2(iv)",
+   "Ex 7.2 Q12-13",
+   "Example 14-20",
+   "Ex 7.3",
+   "Review Ex 7 Q4-10"
+  ],
+  "definitions": [
+   {
+    "term": "Coordinate axes",
+    "text": "The two lines are called coordinate axes. The horizontal line x'Ox is called the x-axis and the vertical line y'Oy is called the y-axis."
+   },
+   {
+    "term": "Abscissa and ordinate",
+    "text": "The first component of the ordered pair (x, y) is called x-coordinate or abscissa and the second component is called y-coordinate or ordinate of P."
+   },
+   {
+    "term": "Two dimensional rectangular (or Cartesian) coordinate system",
+    "text": "This method of pairing off in a one-to-one fashion the points in a plane with ordered pairs of real numbers is called the two dimensional rectangular (or Cartesian) coordinate system."
+   },
+   {
+    "term": "Quadrants",
+    "text": "The coordinate axes divide the plane into four equal parts called quadrants. They are defined as follows:\n\nQuadrant I: All points (x, y) with x > 0, y > 0\n\nQuadrant II: All points (x, y) with x < 0, y > 0\n\nQuadrant III:All points (x, y) with x < 0, y < 0\n\nQuadrant IV:All points (x, y) with x > 0, y < 0"
+   },
+   {
+    "term": "Graph of a point",
+    "text": "The point P in the plane that corresponds to an ordered pair (x, y) is called the graph."
+   },
+   {
+    "term": "Points on the coordinate axes",
+    "text": "The points on x-axis are of the form (a, 0) and the points on y-axis are of the form (0, b)."
+   },
+   {
+    "term": "Non-negative distance",
+    "text": "The distance is always taken to be non-negative. It is not a directed distance from A to B."
+   },
+   {
+    "term": "Midpoint formula",
+    "text": "The midpoint formula is used in geometry to find central point between two given points in a coordinate plane. This formula is particularly useful when you need to divide a line segment into two equal halves or parts."
+   },
+   {
+    "term": "Inclination of a line",
+    "text": "The angle α (0° < α < 180°) is measured counterclockwise from positive x-axis to a non-horizontal straight line ℓ is called the inclination of ℓ."
+   },
+   {
+    "term": "Slope or gradient",
+    "text": "The measure of steepness (ratio of rise to the run) is termed as slope or gradient of the inclined path and is denoted by m.\n\nm = rise/run = y/x = tan α"
+   },
+   {
+    "term": "Slope of a non-vertical line",
+    "text": "In analytical geometry, slope or gradient m of a non-vertical straight line with α as its inclination is defined by: m = tan α."
+   },
+   {
+    "term": "Theorem 1: Slope through two points",
+    "text": "If a non-vertical line ℓ with inclination α passes through two points P(x₁, y₁) and Q(x₂, y₂), then the slope or gradient m of ℓ is given by\n\nm = (y₂ − y₁)/(x₂ − x₁) = tan α"
+   },
+   {
+    "term": "Horizontal and vertical line slopes",
+    "text": "If ℓ is horizontal, its slope is zero and if ℓ is vertical then its slope is undefined."
+   },
+   {
+    "term": "Collinearity rule using slopes",
+    "text": "If slope of AB = slope of BC, then the points A, B and C are collinear."
+   },
+   {
+    "term": "Theorem 2: Parallel and perpendicular lines",
+    "text": "The two lines ℓ₁ and ℓ₂ with slopes m₁ and m₂ respectively are:\n\n(i) parallel iff m₁ = m₂\n\n(ii) perpendicular iff m₁ = −1/m₂\n\nor m₁m₂ = −1"
+   },
+   {
+    "term": "Equation of a horizontal line",
+    "text": "All the points on the line ℓ parallel to x-axis remain at a constant distance (say a) from x-axis. Therefore, each point on the line has its distance from x-axis equal to a, which is its y-coordinate (ordinate). So, all the points on this line satisfy the equation: y = a"
+   },
+   {
+    "term": "Equation of a vertical line",
+    "text": "All the points on the line ℓ parallel to y-axis remain at a constant distance (say b) from y-axis. Each point on the line has its distance from y-axis equal to b, which is its x-coordinate (abscissa). So, all the points on this line satisfy the equation: x = b"
+   },
+   {
+    "term": "Theorem 3: Slope-intercept form",
+    "text": "Equation of a non-vertical straight line with slope m and y-intercept c is given by:\n\ny = mx + c"
+   },
+   {
+    "term": "Theorem 4: Point-slope form",
+    "text": "Equation of a non-vertical straight line ℓ with slope m and passing through a point Q (x₁, y₁) is given by:\n\ny − y₁ = m (x − x₁)"
+   },
+   {
+    "term": "Symmetric form",
+    "text": "We have m = (y − y₁)/(x − x₁) = tan α, where α is the inclination of the line.\n\n(y − y₁)/(x − x₁) = sin α/cos α or (x − x₁)/cos α = (y − y₁)/sin α = r(say)\n\nThis is called symmetric form of equation of the line."
+   },
+   {
+    "term": "Theorem 5: Two-point form",
+    "text": "Equation of a non-vertical straight line passing through two points Q(x₁, y₁) and R(x₂, y₂) is:\n\ny − y₁ = (y₂ − y₁)/(x₂ − x₁)(x − x₁)\n\nor\n\ny − y₂ = (y₂ − y₁)/(x₂ − x₁)(x − x₂)"
+   },
+   {
+    "term": "Theorem 6: Intercept form",
+    "text": "Equation of a line whose non-zero x and y-intercepts are a and b respectively is:\n\nx/a + y/b = 1"
+   },
+   {
+    "term": "Theorem 7: Normal form",
+    "text": "An equation of a non-vertical straight-line ℓ, such that length of the perpendicular from the origin to ℓ is p and α is the inclination of this perpendicular, is\n\nx cos α + y sin α = p"
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "d = |AB| = √((x₂ − x₁)² + (y₂ − y₁)²)",
+    "use": "Find the distance between two points."
+   },
+   {
+    "formula": "M = ((x₁ + x₂)/2, (y₁ + y₂)/2)",
+    "use": "Find the midpoint of a line segment."
+   },
+   {
+    "formula": "m = rise/run = tan α",
+    "use": "Relate the slope to the line's steepness or inclination."
+   },
+   {
+    "formula": "m = (y₂ − y₁)/(x₂ − x₁) = tan α",
+    "use": "Find the slope through two points; x₂ ≠ x₁."
+   },
+   {
+    "formula": "m₁ = m₂",
+    "use": "Check whether two lines are parallel."
+   },
+   {
+    "formula": "m₁m₂ = −1",
+    "use": "Check whether two lines are perpendicular."
+   },
+   {
+    "formula": "y = a",
+    "use": "Write the equation of a horizontal line."
+   },
+   {
+    "formula": "x = b",
+    "use": "Write the equation of a vertical line."
+   },
+   {
+    "formula": "y = mx + c",
+    "use": "Use when the slope and y-intercept are known."
+   },
+   {
+    "formula": "y − y₁ = m(x − x₁)",
+    "use": "Write a line equation when one point and its slope are known."
+   },
+   {
+    "formula": "(x − x₁)/cos α = (y − y₁)/sin α = r",
+    "use": "Write the symmetric form when a point and inclination are known."
+   },
+   {
+    "formula": "y − y₁ = ((y₂ − y₁)/(x₂ − x₁))(x − x₁)",
+    "use": "Write the line equation through two points."
+   },
+   {
+    "formula": "(y₂ − y₁)x − (x₂ − x₁)y + (x₁y₂ − x₂y₁) = 0",
+    "use": "Write the two-point line equation in general form."
+   },
+   {
+    "formula": "x/a + y/b = 1",
+    "use": "Write a line equation when its non-zero intercepts are a and b."
+   },
+   {
+    "formula": "x cos α + y sin α = p",
+    "use": "Use normal form when the perpendicular distance p and its inclination α are known."
+   },
+   {
+    "formula": "ax + by + c = 0",
+    "use": "Recognise the general equation of a straight line; a and b are not both zero."
+   },
+   {
+    "formula": "m = −a/b, c₁ = −c/b",
+    "use": "Convert ax + by + c = 0 to y = mx + c₁ when b ≠ 0."
+   },
+   {
+    "formula": "x/(−c/a) + y/(−c/b) = 1",
+    "use": "Convert ax + by + c = 0 to intercept form when the intercepts exist."
+   },
+   {
+    "formula": "(ax + by)/(±√(a² + b²)) = −c/(±√(a² + b²))",
+    "use": "Convert the general equation to normal form; choose the sign so the right-hand side is positive."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 7.1 Q2(i)",
+    "why": "A standard distance-formula question with signed coordinates."
+   },
+   {
+    "ref": "Ex 7.1 Q3(i)(a)",
+    "why": "Tests accurate substitution and handling of negative coordinates."
+   },
+   {
+    "ref": "Ex 7.1 Q3(ii)(b)",
+    "why": "A typical midpoint-formula short question."
+   },
+   {
+    "ref": "Ex 7.1 Q5(i)",
+    "why": "A standard multi-step distance proof worth practising."
+   },
+   {
+    "ref": "Ex 7.1 Q5(iii)",
+    "why": "Tests using distances to verify a quadrilateral property."
+   },
+   {
+    "ref": "Ex 7.1 Q7",
+    "why": "A likely long-question skill using equal slopes."
+   },
+   {
+    "ref": "Ex 7.1 Q8",
+    "why": "Combines the midpoint and distance formulas."
+   },
+   {
+    "ref": "Ex 7.2 Q1(i)",
+    "why": "Covers both slope calculation and inclination."
+   },
+   {
+    "ref": "Ex 7.2 Q2(i)",
+    "why": "A standard collinearity proof using slopes."
+   },
+   {
+    "ref": "Ex 7.2 Q4",
+    "why": "A common proof question using perpendicular slopes."
+   },
+   {
+    "ref": "Ex 7.2 Q6(f)",
+    "why": "Tests finding a line equation from two points."
+   },
+   {
+    "ref": "Ex 7.2 Q7",
+    "why": "Combines midpoint, perpendicular slope, and point-slope form."
+   },
+   {
+    "ref": "Ex 7.2 Q10(a)",
+    "why": "A strong long-question practice for converting standard forms."
+   }
+  ],
+  "fullMarks": [
+   "For a distance question, write the distance formula first, substitute both coordinates with brackets, simplify the squares, and give the non-negative answer. Add units when the question gives units.",
+   "For a midpoint, show the average of the x-coordinates and the average of the y-coordinates separately, then write the ordered pair in brackets.",
+   "For slope questions, state which points are (x₁, y₁) and (x₂, y₂), substitute carefully, and include the inclination if asked. State that a vertical line has undefined slope.",
+   "To prove lines are parallel or perpendicular, calculate both slopes and write the comparison explicitly: m₁ = m₂ or m₁m₂ = −1.",
+   "For collinearity, calculate two slopes using a shared point and finish by stating that equal slopes show the three points are collinear.",
+   "For a line equation, identify the given point, slope, intercept, or intercepts first; use the matching form, simplify, and state that the resulting equation is required.",
+   "For a triangle proof, calculate and label the relevant side lengths or slopes, show the required equality or product, and finish with the triangle property being proved."
+  ],
+  "mistakes": [
+   "Using the same sign order in the numerator and the opposite sign order in the denominator when calculating slope. Fix: use (y₂ − y₁)/(x₂ − x₁), keeping each point's coordinates together.",
+   "Treating a vertical line as having slope zero. Fix: horizontal lines have slope zero; vertical lines have undefined slope.",
+   "Forgetting brackets around negative coordinates in distance calculations. Fix: substitute a negative coordinate in parentheses before squaring.",
+   "Dividing only one coordinate by 2 in the midpoint formula. Fix: average x-coordinates together and y-coordinates together.",
+   "Claiming lines are perpendicular because their slopes are negative, without checking the product. Fix: show m₁m₂ = −1.",
+   "Using y = mx + c for a vertical line. Fix: a vertical line has equation x = b, where b is its fixed x-coordinate.",
+   "Giving an equation without a concluding statement or leaving a distance without units when units are given. Fix: state the required result clearly and include the correct units."
+  ],
+  "shortTheory": [
+   {
+    "question": "What are the x-coordinate and y-coordinate of a point called?",
+    "answer": "The first component of the ordered pair (x, y) is called x-coordinate or abscissa and the second component is called y-coordinate or ordinate of P."
+   },
+   {
+    "question": "State the forms of points lying on the coordinate axes.",
+    "answer": "The points on x-axis are of the form (a, 0) and the points on y-axis are of the form (0, b)."
+   },
+   {
+    "question": "Define the inclination of a line.",
+    "answer": "The angle α (0° < α < 180°) is measured counterclockwise from positive x-axis to a non-horizontal straight line ℓ is called the inclination of ℓ."
+   },
+   {
+    "question": "How is the slope of a non-vertical line defined in terms of its inclination?",
+    "answer": "In analytical geometry, slope or gradient m of a non-vertical straight line with α as its inclination is defined by: m = tan α."
+   },
+   {
+    "question": "State the condition for two lines to be parallel or perpendicular.",
+    "answer": "The two lines ℓ₁ and ℓ₂ with slopes m₁ and m₂ respectively are:\n(i) parallel iff m₁ = m₂\n(ii) perpendicular iff m₁ = −1/m₂\nor m₁m₂ = −1"
+   },
+   {
+    "question": "State the slope-intercept form of the equation of a straight line.",
+    "answer": "Equation of a non-vertical straight line with slope m and y-intercept c is given by:\ny = mx + c"
+   },
+   {
+    "question": "State the general equation of a straight line.",
+    "answer": "A linear equation in two variables x and y is:\nax + by + c = 0 ...(i)\nwhere a, b and c are constants and a and b are not simultaneously zero.\nThe equation (i) represents a straight line and is called the general equation of a straight line."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-7-1-t0",
+   "text": "What are the x-coordinate and y-coordinate of a point called?",
+   "marks": 2,
+   "modelAnswer": [
+    "The first component of the ordered pair (x, y) is called x-coordinate or abscissa and the second component is called y-coordinate or ordinate of P."
+   ],
+   "followUp": "What are the x-coordinate and y-coordinate of a point called?",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "x-coordinate"
+      ],
+      [
+       "abscissa"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the name of the first component.",
+     "description": "First component: x-coordinate or abscissa.",
+     "how": "Award for either accepted name."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "y-coordinate"
+      ],
+      [
+       "ordinate"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the name of the second component.",
+     "description": "Second component: y-coordinate or ordinate.",
+     "how": "Award for either accepted name."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t1",
+   "text": "State the forms of points lying on the coordinate axes.",
+   "marks": 2,
+   "modelAnswer": [
+    "The points on x-axis are of the form (a, 0) and the points on y-axis are of the form (0, b)."
+   ],
+   "followUp": "State the forms of points lying on the coordinate axes.",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "(a,0)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the form of a point on the x-axis.",
+     "description": "Points on the x-axis have the form (a, 0).",
+     "how": "Award for the correct ordered pair."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "(0,b)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the form of a point on the y-axis.",
+     "description": "Points on the y-axis have the form (0, b).",
+     "how": "Award for the correct ordered pair."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t2",
+   "text": "Define the inclination of a line.",
+   "marks": 2,
+   "modelAnswer": [
+    "The angle α (0° < α < 180°) is measured counterclockwise from positive x-axis to a non-horizontal straight line ℓ is called the inclination of ℓ."
+   ],
+   "followUp": "Define the inclination of a line.",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "0°<α<180°"
+      ],
+      [
+       "0<α<180"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the specified range of the angle.",
+     "description": "The inclination angle α satisfies 0° < α < 180°.",
+     "how": "Award for the correct angle range."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "counterclockwise",
+       "positive x-axis",
+       "line"
+      ],
+      [
+       "counterclockwise",
+       "positive x axis",
+       "line"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the direction and reference axis used to measure inclination.",
+     "description": "The angle is measured counterclockwise from the positive x-axis to the line.",
+     "how": "Award when the direction, starting axis, and line are stated."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t3",
+   "text": "How is the slope of a non-vertical line defined in terms of its inclination?",
+   "marks": 2,
+   "modelAnswer": [
+    "In analytical geometry, slope or gradient m of a non-vertical straight line with α as its inclination is defined by: m = tan α."
+   ],
+   "followUp": "How is the slope of a non-vertical line defined in terms of its inclination?",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "non-vertical",
+       "inclination"
+      ],
+      [
+       "nonvertical",
+       "inclination"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the type of line and the angle used in the definition.",
+     "description": "The definition applies to a non-vertical line with inclination α.",
+     "how": "Award when both conditions are present."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "m=tanα"
+      ],
+      [
+       "m=tan(alpha)"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the relationship defining the slope.",
+     "description": "The slope is m = tan α.",
+     "how": "Award for the correct formula."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t4",
+   "text": "State the condition for two lines to be parallel or perpendicular.",
+   "marks": 2,
+   "modelAnswer": [
+    "The two lines ℓ₁ and ℓ₂ with slopes m₁ and m₂ respectively are:",
+    "(i) parallel iff m₁ = m₂; (ii) perpendicular iff m₁ = −1/m₂ or m₁m₂ = −1."
+   ],
+   "followUp": "State the condition for two lines to be parallel or perpendicular.",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "parallel",
+       "m1=m2"
+      ],
+      [
+       "m1=m2"
+      ],
+      [
+       "parallel",
+       "m₁=m₂"
+      ],
+      [
+       "m₁=m₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the condition for two lines to be parallel.",
+     "description": "The lines are parallel iff their slopes are equal.",
+     "how": "Award for the equal-slope condition."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "perpendicular",
+       "m1=-1/m2"
+      ],
+      [
+       "m1=-1/m2"
+      ],
+      [
+       "perpendicular",
+       "m1m2=-1"
+      ],
+      [
+       "m1m2=-1"
+      ],
+      [
+       "m₁=-1/m₂"
+      ],
+      [
+       "m₁m₂=-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the condition for two lines to be perpendicular.",
+     "description": "The lines are perpendicular iff m₁ = −1/m₂, equivalently m₁m₂ = −1.",
+     "how": "Award for either equivalent condition."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t5",
+   "text": "State the slope-intercept form of the equation of a straight line.",
+   "marks": 2,
+   "modelAnswer": [
+    "Equation of a non-vertical straight line with slope m and y-intercept c is given by: y = mx + c"
+   ],
+   "followUp": "State the slope-intercept form of the equation of a straight line.",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "slope",
+       "m",
+       "y-intercept",
+       "c"
+      ],
+      [
+       "gradient",
+       "m",
+       "y-intercept",
+       "c"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the slope and y-intercept represented by the parameters.",
+     "description": "The line has slope m and y-intercept c.",
+     "how": "Award when both parameter meanings are stated."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "y=mx+c"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the slope-intercept equation.",
+     "description": "The equation is y = mx + c.",
+     "how": "Award for the correct formula."
+    }
+   ]
+  },
+  {
+   "id": "w-7-1-t6",
+   "text": "State the general equation of a straight line.",
+   "marks": 2,
+   "modelAnswer": [
+    "A linear equation in two variables x and y is: ax + by + c = 0 ...(i), where a, b and c are constants and a and b are not simultaneously zero.",
+    "The equation (i) represents a straight line and is called the general equation of a straight line."
+   ],
+   "followUp": "State the general equation of a straight line.",
+   "noteId": "n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ax+by+c=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the general linear equation in two variables.",
+     "description": "The general equation is ax + by + c = 0.",
+     "how": "Award for the correct equation form."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "a",
+       "b",
+       "not simultaneously zero"
+      ],
+      [
+       "a",
+       "b",
+       "not both zero"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the required condition on the coefficients.",
+     "description": "a, b and c are constants, and a and b are not simultaneously zero.",
+     "how": "Award when the constants and nonzero-coefficient condition are stated."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 3,
+  "importantDropped": 0,
+  "writtenBuilt": 7
+ }
+}

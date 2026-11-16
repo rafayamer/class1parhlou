@@ -155,6 +155,7 @@ private fun QuestionRow(ref: SolutionRef, showWhere: Boolean, onClick: () -> Uni
                 style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
             Text(ref.solution.question, style = MaterialTheme.typography.bodyLarge, maxLines = 3, overflow = TextOverflow.Ellipsis)
             if (!ref.solution.checked) Muted("Answer from your textbook")
+            if (!ref.solution.inExam) Muted("Not in this year's exam · practice")
         }
     }
 }
@@ -177,6 +178,7 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
     var verdict by rememberSaveable("$key-verdict") { mutableStateOf<Boolean?>(null) }
     Sheet {
         Text(s.source, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
+        if (!s.inExam) Muted("Not in this year's exam (smart syllabus) · practice")
         Text(s.question, style = MaterialTheme.typography.titleMedium)
         if (!s.checked) {
             Text("Answer (from your textbook): ${s.bookAnswer.ifBlank { s.answer }.ifBlank { "see your textbook" }}", style = MaterialTheme.typography.bodyLarge)

@@ -1,0 +1,615 @@
+{
+ "unit": 4,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Example 26-30",
+   "Ex 4.4",
+   "Review Ex 4 Q1(vi)",
+   "Review Ex 4 Q4-5"
+  ],
+  "definitions": [
+   {
+    "term": "Common factor",
+    "text": "In algebra, a common factor is an expression that divides two or more expressions exactly."
+   },
+   {
+    "term": "Trinomial factoring",
+    "text": "Trinomial factoring is converting trinomial expression as a product of two binomial expressions."
+   },
+   {
+    "term": "Trinomial and binomial",
+    "text": "A trinomial is an expression with three terms and binomial is an expression with two terms."
+   },
+   {
+    "term": "Quadratic expression",
+    "text": "An expression having degree 2 is called a quadratic expression."
+   },
+   {
+    "term": "HCF",
+    "text": "The HCF of two or more algebraic expressions refers to the greatest algebraic expression which divides them without leaving a remainder."
+   },
+   {
+    "term": "LCM",
+    "text": "The LCM of two or more algebraic expressions is the smallest expression that is divisible by each of the given expressions."
+   },
+   {
+    "term": "Sum of cubes",
+    "text": "The expression a³ + b³ is a sum of cubes and it can be factorized using the following identity:"
+   },
+   {
+    "term": "Difference of cubes",
+    "text": "The expression a³ − b³ is a difference of cubes and it can be factorized using the following identity:"
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "x² + px + q = (x + m)(x + n), where m + n = p and mn = q",
+    "use": "Factor a monic quadratic by finding two numbers with the required sum and product."
+   },
+   {
+    "formula": "ax² + bx + c = ax² + mx + nx + c, where m + n = b and mn = ac",
+    "use": "Split the middle term when the coefficient of x² is not 1, then factor by grouping."
+   },
+   {
+    "formula": "a² − b² = (a − b)(a + b)",
+    "use": "Factor a difference of two squares."
+   },
+   {
+    "formula": "(a + b)² = a² + 2ab + b²",
+    "use": "Recognize or expand a perfect-square trinomial with a positive middle term."
+   },
+   {
+    "formula": "(a − b)² = a² − 2ab + b²",
+    "use": "Recognize or expand a perfect-square trinomial with a negative middle term."
+   },
+   {
+    "formula": "a⁴ + a²b² + b⁴ = (a² − ab + b²)(a² + ab + b²)",
+    "use": "Factor a quartic expression in this symmetric form."
+   },
+   {
+    "formula": "a⁴ + b⁴ = (a² − √2ab + b²)(a² + √2ab + b²)",
+    "use": "Factor a sum of fourth powers using difference of squares."
+   },
+   {
+    "formula": "(a + b)³ = a³ + 3a²b + 3ab² + b³",
+    "use": "Recognize a cube with a positive binomial."
+   },
+   {
+    "formula": "(a − b)³ = a³ − 3a²b + 3ab² − b³",
+    "use": "Recognize a cube with a negative binomial."
+   },
+   {
+    "formula": "a³ + b³ = (a + b)(a² − ab + b²)",
+    "use": "Factor the sum of two cubes."
+   },
+   {
+    "formula": "a³ − b³ = (a − b)(a² + ab + b²)",
+    "use": "Factor the difference of two cubes."
+   },
+   {
+    "formula": "LCM = Common factors × Non-common factors",
+    "use": "Find an LCM after factorizing the expressions and identifying the factors needed."
+   },
+   {
+    "formula": "LCM × HCF = p(x) × q(x)",
+    "use": "Find a missing polynomial or the product of two polynomials when their LCM and HCF are known."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 4.1 Q4(i)",
+    "why": "Standard quadratic with a leading coefficient greater than 1; shows middle-term splitting."
+   },
+   {
+    "ref": "Ex 4.1 Q4(viii)",
+    "why": "Tests rearranging terms and handling a negative leading coefficient."
+   },
+   {
+    "ref": "Ex 4.2 Q1(iii)",
+    "why": "A common quartic pattern that uses adding and subtracting a suitable square."
+   },
+   {
+    "ref": "Ex 4.2 Q2(i)",
+    "why": "Good practice in pairing factors and reducing a four-factor expression."
+   },
+   {
+    "ref": "Ex 4.2 Q2(iii)",
+    "why": "Tests substitution of a repeated quadratic expression before factorizing."
+   },
+   {
+    "ref": "Ex 4.2 Q2(v)",
+    "why": "A longer question that tests choosing useful pairs and grouping."
+   },
+   {
+    "ref": "Ex 4.2 Q3(ii)",
+    "why": "Recognizing a perfect cube is a frequent short-question skill."
+   },
+   {
+    "ref": "Ex 4.2 Q4(iii)",
+    "why": "Tests rewriting powers as cubes and applying the difference-of-cubes identity."
+   },
+   {
+    "ref": "Ex 4.3 Q1(iv)",
+    "why": "A standard HCF question requiring complete factorization of both expressions."
+   },
+   {
+    "ref": "Ex 4.3 Q2(ii)",
+    "why": "Useful practice for showing polynomial division steps in an HCF question."
+   },
+   {
+    "ref": "Ex 4.3 Q3(iv)",
+    "why": "A strong LCM question combining several factorization identities."
+   },
+   {
+    "ref": "Ex 4.3 Q4",
+    "why": "A standard longer application of the LCM–HCF relationship."
+   }
+  ],
+  "fullMarks": [
+   "For a common-factor question, take out the greatest factor shared by every term first; check that dividing each term by it leaves the correct bracket.",
+   "For a trinomial, show the two numbers you chose and check their product and sum before splitting the middle term.",
+   "For ax² + bx + c, show the product ac, split bx into two terms, then factor by grouping. Do not skip straight to the answer.",
+   "For quartic and four-binomial products, show the useful pairing or substitution, factor the simpler expression, and substitute back into the original variable.",
+   "For HCF and LCM questions, factorize every expression completely. Use only common factors for the HCF; for the LCM include each factor to the greatest power needed.",
+   "For a division-method HCF question, write the polynomial division steps clearly and state the last non-zero remainder as the HCF.",
+   "For questions using LCM × HCF = product, write the relationship first, substitute the given expressions, and simplify before stating the answer.",
+   "Keep signs and powers clear in every factor, and finish with a labelled final statement such as “Hence, HCF = …” or “Hence, the factorization is …”."
+  ],
+  "mistakes": [
+   "Choosing two numbers for a monic trinomial that add to the constant instead of multiplying to it. Fix: check that their product is q and their sum is p.",
+   "For ax² + bx + c, splitting the middle term using numbers whose sum is b but whose product is not ac. Fix: check both conditions before grouping.",
+   "For a sum of cubes, using the difference-of-cubes signs in the second factor. Fix: a³ + b³ has a + b first and a² − ab + b² second.",
+   "For a difference of cubes, writing a² − ab + b² as the second factor. Fix: a³ − b³ uses a − b and then a² + ab + b².",
+   "Finding an HCF by including factors that are not shared by every expression. Fix: keep only the common factors, using the smallest power shared.",
+   "Finding an LCM by using only the common factors. Fix: include all factors needed to make the LCM divisible by every given expression, using the greatest power required.",
+   "Stopping after substituting y or another temporary expression. Fix: replace the substitution with the original expression in the final factorized answer."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a common factor.",
+    "answer": "In algebra, a common factor is an expression that divides two or more expressions exactly."
+   },
+   {
+    "question": "What is trinomial factoring?",
+    "answer": "Trinomial factoring is converting trinomial expression as a product of two binomial expressions."
+   },
+   {
+    "question": "What is a trinomial? What is a binomial?",
+    "answer": "A trinomial is an expression with three terms and binomial is an expression with two terms."
+   },
+   {
+    "question": "When is an expression called a quadratic expression?",
+    "answer": "An expression having degree 2 is called a quadratic expression."
+   },
+   {
+    "question": "Define the HCF of algebraic expressions.",
+    "answer": "The HCF of two or more algebraic expressions refers to the greatest algebraic expression which divides them without leaving a remainder."
+   },
+   {
+    "question": "Define the LCM of algebraic expressions.",
+    "answer": "The LCM of two or more algebraic expressions is the smallest expression that is divisible by each of the given expressions."
+   },
+   {
+    "question": "State the relationship between the LCM and HCF of two polynomials.",
+    "answer": "The relationship between LCM and HCF can be expressed as follows:\n\nLCM × HCF = p(x) × q(x)\n\nWhere,  p(x) = 1st polynomial  \n     q(x) = 2nd polynomial"
+   },
+   {
+    "question": "State the identities for the sum and difference of cubes.",
+    "answer": "a³ + b³ = (a + b)(a² − ab + b²)\n\na³ − b³ = (a − b)(a² + ab + b²)"
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-4-1-t0",
+   "text": "Define a common factor.",
+   "marks": 2,
+   "modelAnswer": [
+    "In algebra, a common factor is an expression that divides two or more expressions exactly."
+   ],
+   "followUp": "Define a common factor.",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "expression"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies what a common factor is.",
+     "description": "It is an expression.",
+     "how": "Award for identifying an expression as the kind of object being described."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "divides",
+       "two or more",
+       "exactly"
+      ],
+      [
+       "divides",
+       "two or more",
+       "without leaving a remainder"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the defining divisibility condition.",
+     "description": "It divides two or more expressions exactly.",
+     "how": "Award when the answer states that it divides at least two expressions with no remainder."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t1",
+   "text": "What is trinomial factoring?",
+   "marks": 2,
+   "modelAnswer": [
+    "Trinomial factoring is converting trinomial expression as a product of two binomial expressions."
+   ],
+   "followUp": "What is trinomial factoring?",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "trinomial",
+       "converting"
+      ],
+      [
+       "trinomial",
+       "factorisation"
+      ],
+      [
+       "trinomial",
+       "factoring"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the process as converting or factoring a trinomial.",
+     "description": "It converts or factors a trinomial expression.",
+     "how": "Award for identifying the trinomial as the expression being converted or factored."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "product",
+       "two",
+       "binomial"
+      ],
+      [
+       "product",
+       "2",
+       "binomial"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the form produced by trinomial factoring.",
+     "description": "The result is a product of two binomial expressions.",
+     "how": "Award when the answer says the trinomial becomes a product of two binomials."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t2",
+   "text": "What is a trinomial? What is a binomial?",
+   "marks": 2,
+   "modelAnswer": [
+    "A trinomial is an expression with three terms and binomial is an expression with two terms."
+   ],
+   "followUp": "What is a trinomial? What is a binomial?",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "trinomial",
+       "three",
+       "terms"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the term count defining a trinomial.",
+     "description": "A trinomial has three terms.",
+     "how": "Award when the answer identifies a trinomial as an expression with three terms."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "binomial",
+       "two",
+       "terms"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the term count defining a binomial.",
+     "description": "A binomial has two terms.",
+     "how": "Award when the answer identifies a binomial as an expression with two terms."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t3",
+   "text": "When is an expression called a quadratic expression?",
+   "marks": 2,
+   "modelAnswer": [
+    "An expression having degree 2 is called a quadratic expression."
+   ],
+   "followUp": "When is an expression called a quadratic expression?",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "degree",
+       "2"
+      ],
+      [
+       "degree 2"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the defining degree.",
+     "description": "The expression has degree 2.",
+     "how": "Award when the answer gives degree 2 as the condition."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "expression",
+       "quadratic"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the expression meeting that condition.",
+     "description": "It is called a quadratic expression.",
+     "how": "Award when the answer identifies it as a quadratic expression."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t4",
+   "text": "Define the HCF of algebraic expressions.",
+   "marks": 2,
+   "modelAnswer": [
+    "The HCF of two or more algebraic expressions refers to the greatest algebraic expression which divides them without leaving a remainder."
+   ],
+   "followUp": "Define the HCF of algebraic expressions.",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "greatest",
+       "algebraic expression"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the HCF as the greatest algebraic expression.",
+     "description": "It is the greatest algebraic expression.",
+     "how": "Award for stating that the HCF is greatest among the algebraic expressions that divide the given expressions."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "divides",
+       "two or more",
+       "without leaving a remainder"
+      ],
+      [
+       "divides",
+       "them",
+       "without leaving a remainder"
+      ],
+      [
+       "divides",
+       "them",
+       "without",
+       "remainder"
+      ]
+     ],
+     "marks": 1,
+     "why": "States what the HCF must divide and the remainder condition.",
+     "description": "It divides the given expressions without leaving a remainder.",
+     "how": "Award when the answer says it divides the expressions exactly, with no remainder."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t5",
+   "text": "Define the LCM of algebraic expressions.",
+   "marks": 2,
+   "modelAnswer": [
+    "The LCM of two or more algebraic expressions is the smallest expression that is divisible by each of the given expressions."
+   ],
+   "followUp": "Define the LCM of algebraic expressions.",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "smallest",
+       "expression"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the LCM as the smallest expression.",
+     "description": "It is the smallest expression.",
+     "how": "Award for stating that the LCM is the smallest expression with the required divisibility property."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "divisible",
+       "each",
+       "given expressions"
+      ],
+      [
+       "divisible",
+       "each",
+       "expressions"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the divisibility condition for the LCM.",
+     "description": "It is divisible by each given expression.",
+     "how": "Award when the answer says the LCM is divisible by every given expression."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t6",
+   "text": "State the relationship between the LCM and HCF of two polynomials.",
+   "marks": 2,
+   "modelAnswer": [
+    "The relationship between LCM and HCF can be expressed as follows: LCM × HCF = p(x) × q(x), where p(x) = 1st polynomial and q(x) = 2nd polynomial."
+   ],
+   "followUp": "State the relationship between the LCM and HCF of two polynomials.",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "LCM×HCF=p(x)×q(x)"
+      ],
+      [
+       "LCM",
+       "HCF",
+       "p(x)",
+       "q(x)"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the relationship as the product formula.",
+     "description": "LCM × HCF = p(x) × q(x).",
+     "how": "Award for the formula relating the LCM and HCF to the two polynomials."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "p(x)",
+       "1st polynomial",
+       "q(x)",
+       "2nd polynomial"
+      ],
+      [
+       "p(x)",
+       "first polynomial",
+       "q(x)",
+       "second polynomial"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies p(x) and q(x) as the first and second polynomials.",
+     "description": "p(x) is the 1st polynomial and q(x) is the 2nd polynomial.",
+     "how": "Award when both symbols are correctly identified with their respective polynomials."
+    }
+   ]
+  },
+  {
+   "id": "w-4-1-t7",
+   "text": "State the identities for the sum and difference of cubes.",
+   "marks": 2,
+   "modelAnswer": [
+    "a³ + b³ = (a + b)(a² − ab + b²)",
+    "a³ − b³ = (a − b)(a² + ab + b²)"
+   ],
+   "followUp": "State the identities for the sum and difference of cubes.",
+   "noteId": "n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "a^3+b^3",
+       "(a+b)",
+       "a^2-ab+b^2"
+      ],
+      [
+       "a^3+b^3",
+       "(a+b)",
+       "a²−ab+b²"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the identity for the sum of cubes.",
+     "description": "a³ + b³ = (a + b)(a² − ab + b²).",
+     "how": "Award for the correct sum-of-cubes identity, including both factors."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "a^3-b^3",
+       "(a-b)",
+       "a^2+ab+b^2"
+      ],
+      [
+       "a^3-b^3",
+       "(a-b)",
+       "a²+ab+b²"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the identity for the difference of cubes.",
+     "description": "a³ − b³ = (a − b)(a² + ab + b²).",
+     "how": "Award for the correct difference-of-cubes identity, including both factors."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 8
+ }
+}

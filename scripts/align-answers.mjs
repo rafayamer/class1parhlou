@@ -165,10 +165,31 @@ const compareSchema = obj({ items: arr(obj({ id: str, key: str, keyReadsAgree: b
 
 const ARBITER = `You are the chief examiner for Class 9 Mathematics (Punjab board). Sources disagree about the final answer to the question below.
 Solve it yourself carefully and completely from the question as printed, then say which final answer is right.
+When page images are attached, read the question from the printed page yourself (our transcription may contain a misread).
 winner: "ours", "key", "indep" or "none" (none = none of them is right, or the question is ambiguous/misprinted).
 correctAnswer: the right final answer in the book's form. keyMisprint: true if the printed key is wrong.
+keyApplies: false when the given key answer clearly belongs to a different question or part (for example it answers a
+neighbouring part, or is a number that is not even the kind of answer this question asks for); then keyMisprint is false.
+questionAsPrinted: when a page image shows the question differs from our transcription, the question exactly as printed (one part,
+stating what to do, plain Unicode maths); otherwise "".
 reason: one or two sentences a student could understand (no source names; say "your textbook's answer key").`;
-const arbiterSchema = obj({ items: arr(obj({ id: str, winner: enumOf("ours", "key", "indep", "none"), correctAnswer: str, keyMisprint: bool, reason: str })) });
+const arbiterSchema = obj({ items: arr(obj({ id: str, winner: enumOf("ours", "key", "indep", "none"), correctAnswer: str, keyMisprint: bool, keyApplies: bool, questionAsPrinted: str, reason: str })) });
+
+// Book pages that hold an exercise, from the page transcriptions: the page with its heading up to the next heading.
+const PAGE_TEXT = Array.from({ length: 261 }, (_, i) => { const f = join(ROOT, "pages", `p${String(i + 1).padStart(3, "0")}.md`); return existsSync(f) ? readFileSync(f, "utf8") : ""; });
+function exercisePages(source) {
+  const m = /^(review\s*ex)\s*(\d+)|^ex\s*(\d+(?:\.\d+)?)/i.exec(source.trim());
+  if (!m) return [];
+  const heading = m[1] ? new RegExp(`REVIEW EXERCISE\\s*${m[2]}\\b`, "i") : new RegExp(`(^|\\n)\\s*#*\\s*EXERCISE\\s*${m[3].replace(".", "\\.")}(?![\\d.])`, "i");
+  const start = PAGE_TEXT.findIndex((t) => heading.test(t));
+  if (start < 0) return [];
+  const pages = [start + 1];
+  for (let p = start + 1; p < PAGE_TEXT.length && pages.length < 3; p++) {
+    if (/(^|\n)\s*#*\s*(REVIEW )?EXERCISE\s*\d|(^|\n)#{1,2} \d+\.\d/.test(PAGE_TEXT[p])) break;
+    pages.push(p + 1);
+  }
+  return pages;
+}
 
 const SOLVE = `You are a Class 9 maths teacher in Punjab writing model solutions exactly the way the textbook teaches (its method, notation and
 layout), so a student copying your solution earns full marks in the board exam.
@@ -243,10 +264,23 @@ async function alignUnit(unit, key) {
     return !c.key && c.oursMatchesIndep === "no";
   });
   const verdicts = new Map();
-  for (let b = 0; b < disputes.length; b += 6) {
-    const batch = disputes.slice(b, b + 6).map((x) => ({ id: x.id, question: x.question, ours: { steps: x.steps, finalAnswer: x.answer },
-      key: cmp.get(x.id).key, indep: rows[Number(x.id)].indep }));
-    const out = await cached(`arb-u${unit}-${b / 6 + 1}`, () => structured("arbiter", `u${unit} arb ${b / 6 + 1}`, ARBITER, JSON.stringify(batch), arbiterSchema, { effort: "high" }));
+  const arbInput = (x) => ({ id: x.id, source: x.source, question: x.question, ours: { steps: x.steps, finalAnswer: x.answer },
+    key: cmp.get(x.id).key, indep: rows[Number(x.id)].indep });
+  // When the key and the independent solution agree against us, our reading of the question itself may be wrong:
+  // those go one at a time with the printed exercise pages attached.
+  const twoAgainst = (x) => cmp.get(x.id).indepMatchesKey === "yes" && cmp.get(x.id).oursMatchesKey === "no";
+  const plain = disputes.filter((x) => !twoAgainst(x));
+  for (let b = 0; b < plain.length; b += 6) {
+    const batch = plain.slice(b, b + 6).map(arbInput);
+    const ids = batch.map((x) => x.id).join("-");
+    const out = await cached(`arb3-u${unit}-${ids}`, () => structured("arbiter", `u${unit} arb ${ids}`, ARBITER, JSON.stringify(batch), arbiterSchema, { effort: "high" }));
+    for (const v of out.items) verdicts.set(v.id, v);
+  }
+  for (const x of disputes.filter(twoAgainst)) {
+    const pages = exercisePages(x.source);
+    const out = await cached(`arb3-u${unit}-p${x.id}`, () => structured("arbiter", `u${unit} arb page ${x.id}`, ARBITER, [{ role: "user", content: [
+      { type: "input_text", text: JSON.stringify([arbInput(x)]) + (pages.length ? `\nPrinted textbook pages holding this exercise follow (book PDF pages ${pages.join(", ")}).` : "") },
+      ...pages.map((p) => image(render(bookPdf, p, 150)))] }], arbiterSchema, { effort: "high" }));
     for (const v of out.items) verdicts.set(v.id, v);
   }
 
@@ -254,10 +288,10 @@ async function alignUnit(unit, key) {
   const redo = disputes.filter((x) => { const v = verdicts.get(x.id); return v && v.winner !== "ours" && v.winner !== "none"; });
   const fixed = new Map();
   for (let b = 0; b < redo.length; b += 6) {
-    const batch = redo.slice(b, b + 6).map((x) => ({ id: x.id, question: x.question, target: verdicts.get(x.id).correctAnswer }));
-    const out = await cached(`fix-u${unit}-${b / 6 + 1}`, () => structured("solutions", `u${unit} fix ${b / 6 + 1}`, SOLVE, JSON.stringify(batch), solveSchema, { maxTokens: 40000 }));
-    const chk = await cached(`fixchk-u${unit}-${b / 6 + 1}`, () => structured("solution_check", `u${unit} fixchk ${b / 6 + 1}`, CHECK,
-      JSON.stringify(out.items.map((s) => ({ id: s.id, question: items[Number(s.id)].question, candidateSteps: s.steps, candidateFinalAnswer: s.finalAnswer }))), checkSchema));
+    const batch = redo.slice(b, b + 6).map((x) => ({ id: x.id, question: verdicts.get(x.id).questionAsPrinted || x.question, target: verdicts.get(x.id).correctAnswer }));
+    const out = await cached(`fix3-u${unit}-${redo.slice(b, b + 6).map((x) => x.id).join("-")}`, () => structured("solutions", `u${unit} fix ${b / 6 + 1}`, SOLVE, JSON.stringify(batch), solveSchema, { maxTokens: 40000 }));
+    const chk = await cached(`fixchk3-u${unit}-${redo.slice(b, b + 6).map((x) => x.id).join("-")}`, () => structured("solution_check", `u${unit} fixchk ${b / 6 + 1}`, CHECK,
+      JSON.stringify(out.items.map((s) => ({ id: s.id, question: verdicts.get(s.id).questionAsPrinted || items[Number(s.id)].question, candidateSteps: s.steps, candidateFinalAnswer: s.finalAnswer }))), checkSchema));
     const ok = new Map(chk.items.map((c) => [c.id, c]));
     for (const s of out.items) if (ok.get(s.id)?.candidateCorrect) fixed.set(s.id, s);
   }
@@ -266,7 +300,7 @@ async function alignUnit(unit, key) {
   const result = [];
   for (const x of items) {
     const c = cmp.get(x.id), v = verdicts.get(x.id), f = fixed.get(x.id);
-    const bookAnswer = c?.key ?? "";
+    const bookAnswer = v && v.keyApplies === false ? "" : (c?.key ?? "");
     let status, note = x.note, replace = null;
     if (!c) status = "not compared";
     else if (!disputes.includes(x)) status = bookAnswer ? "matches key" : (c.oursMatchesIndep === "yes" ? "confirmed" : "no key");
@@ -277,7 +311,8 @@ async function alignUnit(unit, key) {
     } else if (f) {
       status = v.keyMisprint ? "corrected (key misprint)" : "corrected";
       note = v.keyMisprint && bookAnswer ? `Your textbook's answer key shows ${bookAnswer}. ${v.reason}` : "";
-      replace = { steps: f.steps, answer: f.finalAnswer, figure: f.figure, accept: f.accept, checked: true };
+      replace = { steps: f.steps, answer: f.finalAnswer, figure: f.figure, accept: f.accept, checked: true,
+        ...(v.questionAsPrinted ? { question: v.questionAsPrinted } : {}) };
     } else {
       status = "unresolved";
       note = bookAnswer ? "" : x.note;

@@ -1,0 +1,549 @@
+{
+ "unit": 12,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Ex 12.1 Q8",
+   "Example 19-20",
+   "Ex 12.2 Q11(ii)",
+   "Ex 12.2 Q13-20",
+   "Review Ex 12 Q7",
+   "Review Ex 12 Q12"
+  ],
+  "definitions": [
+   {
+    "term": "Information handling",
+    "text": "Information handling is the process of collecting, organizing, summarizing, analyzing and interpreting numerical data."
+   },
+   {
+    "term": "Data",
+    "text": "So, the collection of meaningful information in the form of facts and numerical figures is known as data."
+   },
+   {
+    "term": "Discrete data",
+    "text": "It can take only some specific values. whole numbers are used to write discrete data. e.g., number of books sold by a shopkeeper, number of patients visited a hospital in a week etc. This data is only obtained by counting."
+   },
+   {
+    "term": "Continuous data",
+    "text": "It can take every possible value in a given interval. Decimal numbers are used to write continuous data. The data is only obtained by measuring e.g., the mass of students in class i.e., 28.5 kg, 26.5 kg, 27.5 kg etc."
+   },
+   {
+    "term": "Ungrouped data",
+    "text": "Data which is not arranged in any systematic order (groups or classes) is called ungrouped data."
+   },
+   {
+    "term": "Grouped data",
+    "text": "If we arrange the above given data in groups or classes, then it is called grouped data."
+   },
+   {
+    "term": "Range",
+    "text": "Range is the difference between the greatest value and the smallest value i.e., Range = Xₘₐₓ − Xₘᵢₙ"
+   },
+   {
+    "term": "Frequency",
+    "text": "The number of times a value occurs in a data is called the frequency of that value. It is denoted by “f”."
+   },
+   {
+    "term": "Histogram (with equal class limits)",
+    "text": "This is a graph of adjacent rectangles constructed on xy plane. A histogram is similar to bar graph but it is constructed for a frequency distribution. In a histogram, the values of the data (classes) are represented along the horizontal axis and the frequencies are shown by bars perpendicular to the horizontal axis. Bars of equal width are used to represent individual classes of frequency table."
+   },
+   {
+    "term": "Frequency polygon",
+    "text": "A frequency polygon is a closed geometrical figure used to display a frequency distribution graphically. A line graph of a frequency distribution is known as frequency polygon in which frequencies are plotted against their midpoints."
+   },
+   {
+    "term": "Midpoint (class mark)",
+    "text": "Midpoint is the average value of the lower and upper class limits. Midpoint is also known as class mark."
+   },
+   {
+    "term": "Measure of central tendency",
+    "text": "The measure that gives the centre of the data is called measure of central tendency. Therefore, measure of central tendency is used to find out the middle or central value of a data set."
+   },
+   {
+    "term": "Arithmetic mean",
+    "text": "It is defined as a value of variable which is obtained by dividing the sum of all the values (observations) by their number of observations."
+   },
+   {
+    "term": "Median",
+    "text": "Median is the middle most value in an arranged (ascending or descending order) data set. Median is the value which divides the data into two equal parts i.e., 50% data is before the median and 50% data after it. Median is denoted by X̃."
+   },
+   {
+    "term": "Mode",
+    "text": "In a data the values (observation) which appears or occurs most often is called mode of the data. It is the most common value. Mode is denoted by X̂."
+   },
+   {
+    "term": "Weighted mean",
+    "text": "Arithmetic Mean is used when all the observations are given equal importance / weight but there are certain situations in which the different observations get different weights. In this situation, weighted mean denoted by X̄_w is preferred."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "Range = Xₘₐₓ − Xₘᵢₙ",
+    "use": "Find the spread from the smallest to the greatest value."
+   },
+   {
+    "formula": "Size of class = Range ÷ Number of classes",
+    "use": "Choose a class size when making a grouped frequency table."
+   },
+   {
+    "formula": "Class boundaries = x ± h/2",
+    "use": "Find class boundaries from midpoints; h is the difference between consecutive midpoints."
+   },
+   {
+    "formula": "Adjusted frequency = Class frequency ÷ Class width",
+    "use": "Set rectangle heights for a histogram with unequal class widths."
+   },
+   {
+    "formula": "Midpoint = (Lower class limit + Upper class limit) ÷ 2",
+    "use": "Find the class mark for a frequency polygon or grouped mean."
+   },
+   {
+    "formula": "X̄ = (x₁ + x₂ + x₃ + ... + xₙ) ÷ n = Σx ÷ n",
+    "use": "Find the arithmetic mean of ungrouped data."
+   },
+   {
+    "formula": "x̄ = Σfx ÷ Σf",
+    "use": "Find the mean of grouped data using class midpoints x and frequencies f."
+   },
+   {
+    "formula": "X̄ = A + ΣD ÷ n",
+    "use": "Find the mean of ungrouped data using deviations D = x − A."
+   },
+   {
+    "formula": "X̄ = A + ΣfD ÷ Σf",
+    "use": "Find the mean of grouped data using deviations D = x − A."
+   },
+   {
+    "formula": "Median = ((n + 1) ÷ 2)ᵗʰ observation",
+    "use": "Find the median of arranged ungrouped data when n is odd."
+   },
+   {
+    "formula": "Median = 1/2 [((n ÷ 2)ᵗʰ observation + ((n + 2) ÷ 2)ᵗʰ observation)]",
+    "use": "Find the median of arranged ungrouped data when n is even."
+   },
+   {
+    "formula": "Median (X̃) = ℓ + (h ÷ f)(n ÷ 2 − c)",
+    "use": "Find the median of grouped data after locating the median class."
+   },
+   {
+    "formula": "Mode = ℓ + ((fₘ − f₁) ÷ ((fₘ − f₁) + (fₘ − f₂))) × h",
+    "use": "Find the mode of grouped data using the modal class and its neighbouring frequencies."
+   },
+   {
+    "formula": "X̄_w = ΣWX ÷ ΣW",
+    "use": "Find a mean when observations have different weights."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Ex 12.1 Q2",
+    "why": "Good practice for constructing a grouped frequency table by the tally method."
+   },
+   {
+    "ref": "Ex 12.1 Q3",
+    "why": "Combines a frequency table with a frequency polygon, a common multi-step question."
+   },
+   {
+    "ref": "Ex 12.1 Q4",
+    "why": "Tests grouping raw data and drawing a histogram."
+   },
+   {
+    "ref": "Ex 12.1 Q5",
+    "why": "A standard frequency-polygon-on-histogram graph question."
+   },
+   {
+    "ref": "Ex 12.1 Q7",
+    "why": "Tests a histogram with unequal class widths and adjusted frequencies."
+   },
+   {
+    "ref": "Review Ex 12 Q3(a)",
+    "why": "A full frequency-table task with six classes, suitable for a longer question."
+   },
+   {
+    "ref": "Review Ex 12 Q4",
+    "why": "Practises the combined histogram and frequency polygon for unequal class widths."
+   },
+   {
+    "ref": "Ex 12.2 Q3(i)",
+    "why": "A common short calculation of the mean from raw data."
+   },
+   {
+    "ref": "Ex 12.2 Q4(i)",
+    "why": "Grouped mean by both direct and short methods is a standard multi-part question."
+   },
+   {
+    "ref": "Ex 12.2 Q11(i)",
+    "why": "Grouped median and mode are likely long-question calculations."
+   },
+   {
+    "ref": "Review Ex 12 Q10",
+    "why": "Tests the grouped mean by the short method."
+   },
+   {
+    "ref": "Review Ex 12 Q11",
+    "why": "A compact raw-data question testing both median and mode."
+   }
+  ],
+  "fullMarks": [
+   "For a frequency table, show the range and class-size calculation first; then make clear columns for class limits, tally marks, frequency and class boundaries when required.",
+   "For a histogram, label both axes, mark class boundaries on the horizontal axis, use a stated scale and draw adjoining rectangles. For unequal class widths, calculate and use adjusted frequencies.",
+   "For a frequency polygon, show the midpoint calculation, plot each midpoint against its frequency, join the points with straight lines and extend both ends to the x-axis.",
+   "For a grouped mean, include columns for midpoint x and fx (or deviation D and fD); show Σf and Σfx (or ΣfD) before substituting into the formula.",
+   "For an ungrouped median, arrange all values in ascending or descending order and state the observation position before giving the answer. For even n, average the two middle observations.",
+   "For a grouped median, show the cumulative-frequency column, identify the median class and state ℓ, h, f, n and c before substitution.",
+   "For a grouped mode, identify the modal class and clearly state ℓ, h, fₘ, f₁ and f₂. Finish with a sentence giving the answer and its units when the data has units."
+  ],
+  "mistakes": [
+   "Using class limits instead of class boundaries on a histogram when the classes are written in inclusive form. Find the boundaries first, such as 24–28 becoming 23.5–28.5.",
+   "Drawing gaps between histogram bars. Histogram rectangles for continuous classes must touch.",
+   "Using the original frequencies as rectangle heights for unequal-width classes. Divide each frequency by its class width to get the adjusted frequency.",
+   "Plotting class limits instead of midpoints for a frequency polygon. Calculate and plot the midpoint of every class.",
+   "Finding the median before arranging raw data, or choosing the wrong middle position. Arrange the values first and then use the odd- or even-number formula.",
+   "Using the wrong cumulative frequency in the grouped-median formula. Use c as the cumulative frequency before the median class, not the cumulative frequency of that class.",
+   "Mixing up the modal-class frequency and its neighbouring frequencies. Use fₘ for the modal class, f₁ for the class before it and f₂ for the class after it."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define frequency distribution.",
+    "answer": "A distribution or table that represents classes or groups along with their respective class frequencies is called frequency distribution. In other words, the various items of data are classified into certain groups or classes and the number of items lying in each group or class is put against that group or class. The data organised and summarized in this way is known as frequency distribution."
+   },
+   {
+    "question": "Define histogram for unequal class limits.",
+    "answer": "These proportional heights are also called adjusted frequencies."
+   },
+   {
+    "question": "Define mean.",
+    "answer": "It is defined as a value of variable which is obtained by dividing the sum of all the values (observations) by their number of observations."
+   },
+   {
+    "question": "Define median.",
+    "answer": "Median is the middle most value in an arranged (ascending or descending order) data set. Median is the value which divides the data into two equal parts i.e., 50% data is before the median and 50% data after it. Median is denoted by X̃."
+   },
+   {
+    "question": "Define mode.",
+    "answer": "In a data the values (observation) which appears or occurs most often is called mode of the data. It is the most common value. Mode is denoted by X̂."
+   },
+   {
+    "question": "State how to find the midpoint of a class.",
+    "answer": "Midpoint is the average value of the lower and upper class limits. Midpoint is also known as class mark."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "w-12-1-t0",
+   "text": "Define frequency distribution.",
+   "marks": 2,
+   "modelAnswer": [
+    "A distribution or table that represents classes or groups along with their respective class frequencies is called frequency distribution. In other words, the various items of data are classified into certain groups or classes and the number of items lying in each group or class is put against that group or class. The data organised and summarized in this way is known as frequency distribution."
+   ],
+   "followUp": "Define frequency distribution.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "classes",
+       "frequencies"
+      ],
+      [
+       "groups",
+       "frequencies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies classes or groups and their corresponding frequencies as the components of a frequency distribution.",
+     "description": "Classes or groups are associated with their respective frequencies.",
+     "how": "Award 1 mark for stating that a frequency distribution lists classes/groups along with their frequencies. Accept equivalent wording such as class frequencies or group frequencies."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "number",
+       "items",
+       "each",
+       "group"
+      ],
+      [
+       "items",
+       "each",
+       "class"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the number of observations in each group or class is recorded against it.",
+     "description": "The count of items in each class or group is shown against that class or group.",
+     "how": "Award 1 mark for explaining that the number of items in each group/class is put against it."
+    }
+   ]
+  },
+  {
+   "id": "w-12-1-t1",
+   "text": "Define histogram for unequal class limits.",
+   "marks": 2,
+   "modelAnswer": [
+    "These proportional heights are also called adjusted frequencies."
+   ],
+   "followUp": "Define histogram for unequal class limits.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "proportional",
+       "heights"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the quantities being named as proportional heights.",
+     "description": "The heights are proportional.",
+     "how": "Award 1 mark for identifying the heights as proportional."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "adjusted",
+       "frequencies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the name assigned to these proportional heights.",
+     "description": "They are called adjusted frequencies.",
+     "how": "Award 1 mark for stating the term adjusted frequencies."
+    }
+   ]
+  },
+  {
+   "id": "w-12-1-t2",
+   "text": "Define mean.",
+   "marks": 2,
+   "modelAnswer": [
+    "It is defined as a value of variable which is obtained by dividing the sum of all the values (observations) by their number of observations."
+   ],
+   "followUp": "Define mean.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "sum",
+       "values"
+      ],
+      [
+       "sum",
+       "observations"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the sum of all observations as the numerator in the mean.",
+     "description": "The values or observations are added.",
+     "how": "Award 1 mark for stating that the sum of the values/observations is used."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "dividing",
+       "number",
+       "observations"
+      ],
+      [
+       "sum",
+       "÷",
+       "number",
+       "observations"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the sum is divided by the number of observations.",
+     "description": "The sum is divided by the number of observations.",
+     "how": "Award 1 mark for giving the divisor as the number of observations."
+    }
+   ]
+  },
+  {
+   "id": "w-12-1-t3",
+   "text": "Define median.",
+   "marks": 2,
+   "modelAnswer": [
+    "Median is the middle most value in an arranged (ascending or descending order) data set. Median is the value which divides the data into two equal parts i.e., 50% data is before the median and 50% data after it. Median is denoted by X̃."
+   ],
+   "followUp": "Define median.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "middle",
+       "arranged"
+      ],
+      [
+       "middle",
+       "ascending"
+      ],
+      [
+       "middle",
+       "descending"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the median as the middle value after the data have been arranged.",
+     "description": "The median is the middle value in an arranged data set.",
+     "how": "Award 1 mark for stating that the median is the middle value in data arranged in order."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "two",
+       "equal",
+       "parts"
+      ],
+      [
+       "50%",
+       "before",
+       "after"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the equivalent idea that the median divides the data into two equal halves.",
+     "description": "The median divides the data into two equal parts, with 50% on either side.",
+     "how": "Award 1 mark for stating that the median divides the data into two equal parts or that 50% of the data is before and 50% after it."
+    }
+   ]
+  },
+  {
+   "id": "w-12-1-t4",
+   "text": "Define mode.",
+   "marks": 2,
+   "modelAnswer": [
+    "In a data the values (observation) which appears or occurs most often is called mode of the data. It is the most common value. Mode is denoted by X̂."
+   ],
+   "followUp": "Define mode.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "observation",
+       "often"
+      ],
+      [
+       "value",
+       "often"
+      ],
+      [
+       "occurs",
+       "often"
+      ],
+      [
+       "appears",
+       "often"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the mode by how frequently an observation or value occurs.",
+     "description": "The mode is the value or observation that occurs most often.",
+     "how": "Award 1 mark for stating that the mode is the value/observation occurring most often."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "most",
+       "common",
+       "value"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the equivalent description of the mode as the most common value.",
+     "description": "The mode is the most common value.",
+     "how": "Award 1 mark for describing the mode as the most common value."
+    }
+   ]
+  },
+  {
+   "id": "w-12-1-t5",
+   "text": "State how to find the midpoint of a class.",
+   "marks": 2,
+   "modelAnswer": [
+    "Midpoint is the average value of the lower and upper class limits. Midpoint is also known as class mark."
+   ],
+   "followUp": "State how to find the midpoint of a class.",
+   "noteId": "n-12-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "average",
+       "lower",
+       "upper",
+       "limits"
+      ],
+      [
+       "average",
+       "lower",
+       "upper",
+       "class"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the midpoint as the average of the lower and upper class limits.",
+     "description": "The midpoint is the average of the lower and upper class limits.",
+     "how": "Award 1 mark for stating that the lower and upper class limits are averaged."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "class",
+       "mark"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the alternate name for the midpoint.",
+     "description": "The midpoint is also called the class mark.",
+     "how": "Award 1 mark for identifying the midpoint as the class mark."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 2,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

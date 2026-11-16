@@ -98,8 +98,10 @@ sealed interface NextTask {
 }
 
 fun nextTask(subjects: List<Subject>, pathway: Pathway?, progress: ProgressStore): NextTask {
-    val modules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { m -> Triple(s, c, m) } } }
-    if (modules.isEmpty()) return NextTask.Nothing
+    val all = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { m -> Triple(s, c, m) } } }
+    if (all.isEmpty()) return NextTask.Nothing
+    // Sections the exam leaves out stay available, but the next step always points at examined content.
+    val modules = all.filter { it.third.inExam }.ifEmpty { all }
     if (pathway == Pathway.TEST_SERIES) {
         return NextTask.OpenTests("Take your readiness check", "Test Series: a short quiz unlocks your next paper.")
     }
@@ -514,7 +516,7 @@ fun SubjectsScreen(
 }
 
 @Composable
-fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (String) -> Unit, onBack: () -> Unit) {
+fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (String) -> Unit, onBack: () -> Unit, onOpenKit: (String) -> Unit = {}) {
     // Current chapter = first one with modules not yet assessed; it starts expanded (PRD §6).
     val current = subject.chapters.firstOrNull { c ->
         c.modules.any { progress.state(it.id) !in setOf(LearningState.ASSESSED, LearningState.MASTERED) }
@@ -532,6 +534,7 @@ fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (Stri
                     Column(Modifier.weight(1f)) {
                         Text("Unit ${c.number}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         Text(c.title, style = MaterialTheme.typography.titleMedium)
+                        if (c.kit?.inExam == false) StatusPill("Not in the ${c.kit.examLabel.ifBlank { "exam" }}", warning = true)
                     }
                     IconButton(onClick = { expanded = if (open) expanded - c.id else expanded + c.id }) {
                         Icon(if (open) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
@@ -542,11 +545,17 @@ fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (Stri
                     if (c.modules.isEmpty()) {
                         Muted("Not published yet. This unit has no reviewed lessons.")
                     }
+                    if (c.kit != null) TextButton(onClick = { onOpenKit(c.id) }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
+                        Text("Exam kit: definitions, formulas, important questions", modifier = Modifier.weight(1f))
+                    }
                     c.modules.forEach { m ->
                         HorizontalDivider()
                         Box(Modifier.fillMaxWidth()) {
                             TextButton(onClick = { onOpenModule(m.id) }, modifier = Modifier.fillMaxWidth()) {
-                                Text("${m.position}. ${m.title}", modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+                                Column(Modifier.weight(1f)) {
+                                    Text("${m.position}. ${m.title}", style = MaterialTheme.typography.bodyLarge)
+                                    if (!m.inExam && c.kit?.inExam != false) Muted("Not in the ${c.kit?.examLabel?.ifBlank { null } ?: "exam"} · practice")
+                                }
                                 StatusPill(progress.state(m.id).label, warning = false)
                             }
                         }

@@ -31,7 +31,29 @@ data class Chapter(
     val title: String,
     val modules: List<Module>,
     val status: ReviewStatus,
+    /** The unit's exam kit (definitions, formulas, important questions, full-marks writing, mistakes). */
+    val kit: ExamKit? = null,
 )
+
+/** Everything a student needs to revise one unit for the board exam. */
+data class ExamKit(
+    /** False when the current exam's smart syllabus leaves the whole unit out. */
+    val inExam: Boolean,
+    val examLabel: String,
+    /** What the smart syllabus leaves out of this unit, e.g. "Ex 1.3", "Example 10-14". */
+    val excluded: List<String>,
+    val definitions: List<KitDefinition>,
+    val formulas: List<KitFormula>,
+    val important: List<KitImportant>,
+    val fullMarks: List<String>,
+    val mistakes: List<String>,
+    val shortTheory: List<KitShortTheory>,
+)
+
+data class KitDefinition(val term: String, val text: String)
+data class KitFormula(val formula: String, val use: String)
+data class KitImportant(val ref: String, val why: String)
+data class KitShortTheory(val question: String, val answer: String)
 
 /** A book reference is only shown when it has been checked against the official edition. */
 data class BookReference(val text: String, val verified: Boolean)
@@ -52,6 +74,8 @@ data class Module(
     val lesson: Lesson? = null,
     /** Every worked example and exercise question of this section, with step-by-step solutions. */
     val solutions: List<BookSolution> = emptyList(),
+    /** False when the current exam's smart syllabus leaves this section out (still available as practice). */
+    val inExam: Boolean = true,
 )
 
 enum class SolutionKind { EXAMPLE, EXERCISE }
@@ -73,6 +97,8 @@ data class BookSolution(
     val note: String = "",
     /** The answer printed in the textbook's answer key for this question, when it has one. */
     val bookAnswer: String = "",
+    /** False when the current exam's smart syllabus leaves this question out. */
+    val inExam: Boolean = true,
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */

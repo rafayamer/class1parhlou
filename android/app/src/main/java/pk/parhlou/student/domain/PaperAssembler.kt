@@ -73,7 +73,8 @@ object PaperAssembler {
         return out
     }
 
-    /** Pattern used for mock papers: the reported board layout (unconfirmed until the official scheme is supplied). */
+    /** Totals of the official 2027 paper (15 MCQs; 27 short, 18 attempted; 5 long, 3 attempted). The full board papers with the
+     * official per-unit layout are published with the course; these quarter and half mocks are practice. */
     fun boardPattern(duration: Int = 150) = PaperBlueprint(
         id = "pattern", title = "pattern", durationMinutes = duration, totalMarks = 75.0,
         sections = listOf(
