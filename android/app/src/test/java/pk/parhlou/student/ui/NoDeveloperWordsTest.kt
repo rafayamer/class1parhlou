@@ -9,7 +9,7 @@ import java.io.File
  * "unverified" notes. This scans every string the app shows (Kotlin string literals and string resources).
  */
 class NoDeveloperWordsTest {
-    private val banned = Regex("""gpt|luna|\bdemo|sample —|not official|unverified|ai examiner|lorem|\btodo\b|fixme""", RegexOption.IGNORE_CASE)
+    private val banned = Regex("""gpt|luna|\bdemo|sample —|not official|unverified|ai examiner|in this build|not connected|lorem|\btodo\b|fixme""", RegexOption.IGNORE_CASE)
     private val literal = Regex(""""((?:[^"\\]|\\.)*)"""")
     private val template = Regex("""\$\{[^}]*}|\$[A-Za-z_][A-Za-z0-9_]*""")
 

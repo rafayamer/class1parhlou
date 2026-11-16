@@ -447,14 +447,6 @@ fun ProfileScreen(
             Stat("Modules assessed", "${progress.assessedCount(ids)}", Modifier.weight(1f))
             Stat("Papers handed in", progress.papersSubmitted.toString(), Modifier.weight(1f))
         }
-        pk.parhlou.student.ui.components.TapCard(containerColor = MaterialTheme.colorScheme.primaryContainer,
-            shape = RoundedCornerShape(24.dp), modifier = Modifier.fillMaxWidth()) {
-            Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                Text("Your plan", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
-                Text("One monthly plan: PKR 3,999. Not connected in this build; access will come only from a verified Google Play subscription.",
-                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
-            }
-        }
         if (accountsAvailable) {
             Sheet {
                 Text("Account", style = MaterialTheme.typography.titleMedium)

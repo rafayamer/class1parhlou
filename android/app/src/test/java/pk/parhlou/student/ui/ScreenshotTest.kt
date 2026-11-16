@@ -51,44 +51,41 @@ class ScreenshotTest {
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
         rule.waitUntil(5_000) { exists("Do this now") }
         save("1-home-$mode")
+        rule.onNodeWithText("Your journey").performScrollTo()
+        save("1b-home-journey-$mode")
 
-        // AI tutor conversation
-        rule.onNodeWithText("Ask Ustaad").performScrollTo().performClick()
+        // Ask Ustaad: four starts, then an answer.
+        rule.onNodeWithTag("home-ask").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Snap a question") }
         save("2-tutor-$mode")
         rule.onNodeWithTag("tutor-input").performTextInput("How do I simplify root 50?")
         rule.onNodeWithContentDescription("Send").performClick()
-        rule.waitUntil(5_000) { exists("largest perfect-square factor") }
-        rule.onNodeWithText("Show each step").performScrollTo().performClick()
-        rule.waitUntil(5_000) { exists("Split it") }
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("ustaad-reply")).fetchSemanticsNodes().isNotEmpty() }
         save("3-tutor-chat-$mode")
         rule.onNodeWithContentDescription("Back").performClick()
 
-        // Lesson module and quiz
-        rule.onNodeWithText("Books").performClick()
-        rule.onNodeWithText("Mathematics · Class 9").performClick(); save("4-units-$mode")
-        rule.onNodeWithText("1. Rational and irrational numbers").performClick()
-        rule.onNodeWithText("2 Quiz").performClick()
-        rule.onNodeWithText("√9").performClick(); save("5-quiz-$mode")
-        rule.onNodeWithContentDescription("Back").performClick()
+        // Books: every subject, each with its own path.
+        rule.onNodeWithTag("tab-subjects").performClick()
+        rule.waitUntil(3_000) { exists("Your books") }
+        save("4-books-$mode")
+        rule.onNodeWithText("Mathematics · Class 9").performClick()
+        rule.waitUntil(3_000) { exists("Rational and irrational numbers") }
+        save("4b-book-path-$mode")
         rule.onNodeWithContentDescription("Back").performClick()
 
-        // Sit the chapter test, then Check Master and the invigilator report
-        rule.onAllNodes(hasText("Papers")).onFirst().performClick()
-        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
+        // Papers: board papers, make a paper, then a chapter test.
+        rule.onNodeWithTag("tab-tests").performClick()
+        rule.waitUntil(3_000) { exists("Board papers") }
+        save("5-papers-$mode")
+        rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
+        rule.onNodeWithTag("scope-picker").performScrollTo()
+        save("5b-papers-chapter-$mode")
+        rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Before you start") }
+        save("6-paper-start-$mode")
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
         rule.waitUntil(5_000) { exists("Invigilator on") }
-        rule.onNodeWithTag("mcq-p1-3").performScrollTo().performClick()
-        save("6-paper-$mode")
-        rule.onNodeWithTag("mcq-p2-0").performScrollTo().performClick()
-        rule.onNodeWithTag("answer-s1").performScrollTo().performTextInput("0.45 = 45/100 = 9/20, both integers, so it is rational")
-        rule.onNodeWithTag("answer-s3").performScrollTo().performTextInput("about a third I think")
-        rule.onNodeWithTag("answer-s7").performScrollTo().performTextInput("root 98 = 7 root 2, final answer 6 root 2")
-        save("7-paper-written-$mode")
-        rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
-        rule.waitUntil(10_000) { exists("Confirmed marks") }
-        save("8-checkmaster-$mode")
-        rule.onNodeWithTag("result-s7").performScrollTo()
-        save("9-checkmaster-question-$mode")
+        save("7-paper-$mode")
     }
 
     /** The screens added for plans, weak topics, mock papers, the scanner and the profile. */
@@ -125,31 +122,24 @@ class ScreenshotTest {
         }
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
         rule.waitUntil(5_000) { exists("Do this now") }
-        rule.onNodeWithText("Today's tasks").performScrollTo()
-        save("10-home-plan-$mode")
-        rule.onNodeWithText("Open today's plan").performScrollTo().performClick()
+        rule.onNodeWithText("Full plan").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Today's plan") }
         save("11-plan-$mode")
-        rule.onNodeWithText("See 2 weak topics").performScrollTo().performClick()
-        save("12-weak-topics-$mode")
-        rule.onNodeWithContentDescription("Back").performClick()
         rule.onNodeWithContentDescription("Back").performClick()
 
-        rule.onAllNodes(hasText("Papers")).onFirst().performClick()
-        rule.onNodeWithText("Mock papers").performScrollTo()
-        save("13-papers-mocks-$mode")
-        rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
-        rule.onNodeWithText("Start paper").performScrollTo().performClick()
-        rule.waitUntil(5_000) { exists("Invigilator on") }
-        rule.onNodeWithText("Answers on paper").performScrollTo()
-        save("14-paper-scan-card-$mode")
-        rule.onNodeWithText("Scan or review pages").performScrollTo().performClick()
-        rule.waitUntil(5_000) { exists("Your pages (2)") }
-        save("15-scan-review-$mode")
-        rule.onNodeWithText("Done").performClick()
-        rule.onNodeWithContentDescription("Back").performClick()
-        rule.onNodeWithContentDescription("Back").performClick()
-        rule.onAllNodes(hasText("Profile")).onFirst().performClick()
+        rule.onNodeWithTag("tab-profile").performClick()
+        rule.waitUntil(3_000) { exists("Send feedback") }
         save("16-profile-$mode")
+        rule.onNodeWithText("Send feedback").performScrollTo().performClick()
+        rule.onNodeWithTag("feedback").performScrollTo()
+        save("17-feedback-$mode")
+
+        // The study calendar (last: a sheet stays open in tests).
+        rule.onNodeWithTag("tab-home").performClick()
+        rule.waitUntil(3_000) { exists("Do this now") }
+        rule.onNodeWithTag("open-calendar").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("study-calendar")).fetchSemanticsNodes().isNotEmpty() }
+        save("10-calendar-$mode")
     }
 
     @Test fun moreLight() = shootMore(false)
