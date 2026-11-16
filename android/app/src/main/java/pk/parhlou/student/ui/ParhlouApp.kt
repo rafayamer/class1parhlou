@@ -521,6 +521,8 @@ fun ParhlouApp(
                     onResult = { nav.navigate("checked/${b.id}") },
                     onReset = { scope.launch { desk.reset(paper) } },
                     onBack = nav.back(),
+                    attemptsUsed = pk.parhlou.student.domain.PaperAttempts.used(progress.history(), b.id),
+                    bestPercent = pk.parhlou.student.domain.PaperAttempts.best(progress.history(), b.id),
                 )
             }
         }

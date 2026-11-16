@@ -173,8 +173,12 @@ fun AssessmentStartScreen(
     onResult: () -> Unit,
     onReset: () -> Unit,
     onBack: () -> Unit,
+    /** Hand-ins so far and the best score, for the 3-attempt rule. */
+    attemptsUsed: Int = 0,
+    bestPercent: Int? = null,
 ) {
     val problems = BlueprintValidator.problems(blueprint)
+    val attemptsLeft = (pk.parhlou.student.domain.PaperAttempts.MAX - attemptsUsed).coerceAtLeast(0)
     val started = ExamLog.startedAt(examLog) != null
     val submitted = ExamLog.isSubmitted(examLog)
     ParhlouScreen("Before you start", onBack = onBack) {
@@ -187,6 +191,14 @@ fun AssessmentStartScreen(
                     (s.minutes?.let { " ($it min)" } ?: ""))
             }
             if (!blueprint.official) StatusPill("Practice pattern — not an official board paper")
+            StatusPill(
+                when {
+                    attemptsLeft == 0 -> "All ${pk.parhlou.student.domain.PaperAttempts.MAX} attempts used" + (bestPercent?.let { " · best $it%" } ?: "")
+                    attemptsUsed == 0 -> "${pk.parhlou.student.domain.PaperAttempts.MAX} attempts"
+                    else -> "Attempt ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}" + (bestPercent?.let { " · best so far $it%" } ?: "")
+                },
+                warning = attemptsLeft == 0,
+            )
         }
         Sheet {
             Text("How it works", style = MaterialTheme.typography.titleMedium)
@@ -209,15 +221,24 @@ fun AssessmentStartScreen(
             submitted -> {
                 BigButton("See your result", onClick = onResult)
                 var confirm by remember { mutableStateOf(false) }
-                if (!confirm) SecondaryButton("Sit this paper again", onClick = { confirm = true })
+                if (attemptsLeft == 0) Sheet(Modifier.testTag("attempts-used")) {
+                    Text("No attempts left", style = MaterialTheme.typography.titleMedium)
+                    Muted("You've sat this paper ${pk.parhlou.student.domain.PaperAttempts.MAX} times" + (bestPercent?.let { "; your best score, $it%, stands" } ?: "") +
+                        ". Move on to the next paper; your weak topics from it are already in your plan.")
+                }
+                else if (!confirm) SecondaryButton("Sit this paper again ($attemptsLeft ${if (attemptsLeft == 1) "try" else "tries"} left)", onClick = { confirm = true })
                 else Sheet {
                     Text("Start again?", style = MaterialTheme.typography.titleMedium)
-                    Muted("Your answers, photos and report for this paper will be removed from this phone.")
+                    Muted("Your answers, photos and report for this paper will be removed from this phone. This uses attempt ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}.")
                     BigButton("Yes, clear and start again", onClick = { confirm = false; onReset() })
                     SecondaryButton("Cancel", onClick = { confirm = false })
                 }
             }
             started -> BigButton("Continue your paper", onClick = onStart, enabled = problems.isEmpty())
+            attemptsLeft == 0 -> Sheet(Modifier.testTag("attempts-used")) {
+                Text("No attempts left", style = MaterialTheme.typography.titleMedium)
+                Muted("You've used all ${pk.parhlou.student.domain.PaperAttempts.MAX} attempts at this paper" + (bestPercent?.let { "; your best score is $it%" } ?: "") + ".")
+            }
             else -> BigButton("Start paper", onClick = onStart, enabled = problems.isEmpty())
         }
     }

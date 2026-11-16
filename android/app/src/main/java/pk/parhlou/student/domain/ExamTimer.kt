@@ -34,3 +34,25 @@ data class PaperPhases(val startedAtMillis: Long, val objectiveMinutes: Int?, va
     fun subjectiveOpen(now: Long): Boolean = !objectiveOpen(now)
     fun objectiveClock(): ExamClock = ExamClock(startedAtMillis, objectiveMinutes ?: 0)
 }
+
+/** Every paper can be sat [MAX] times; after that it locks and the best score stands. */
+object PaperAttempts {
+    const val MAX = 3
+
+    /** One entry per hand-in of [paperId], oldest first: its score in percent, or null while it waits for marking. */
+    fun scores(history: List<LoggedEvidence>, paperId: String): List<Int?> =
+        history.filter { it.key == "paper:$paperId" }.mapNotNull {
+            when (val e = it.evidence) {
+                is Evidence.ExamMarked -> Score(e.percent)
+                is Evidence.DemoCheckedExam -> Score(e.percent)
+                Evidence.ExamPendingReview -> Score(null)
+                else -> null
+            }
+        }.map { it.percent }
+
+    private data class Score(val percent: Int?)
+
+    fun used(history: List<LoggedEvidence>, paperId: String): Int = scores(history, paperId).size
+    fun left(history: List<LoggedEvidence>, paperId: String): Int = (MAX - used(history, paperId)).coerceAtLeast(0)
+    fun best(history: List<LoggedEvidence>, paperId: String): Int? = scores(history, paperId).filterNotNull().maxOrNull()
+}
