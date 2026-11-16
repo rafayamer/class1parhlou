@@ -1,0 +1,538 @@
+{
+ "note": {
+  "explanation": "Efficiency compares the useful energy a system gives out with the energy put into it. Percentage efficiency is this ratio multiplied by 100. Some input energy is always wasted, so a real system cannot be 100% efficient.",
+  "examples": [
+   "If useful output energy is 1200 J and input energy is 2000 J, efficiency = 1200/2000 = 0.6, or 60%.",
+   "A system with 100% efficiency would have output equal to input; your textbook calls this an ideal machine."
+  ],
+  "checkAnswer": "Efficiency = (useful output energy / total input energy) × 100 = (300 J / 500 J) × 100 = 60%.",
+  "keywords": [
+   "efficiency",
+   "useful output",
+   "input energy",
+   "percentage efficiency",
+   "wasted energy",
+   "ideal machine"
+  ],
+  "simple": "Efficiency tells you what fraction of the input energy becomes useful output. Some energy is wasted, so the useful output is less than the input.",
+  "checkQuestion": "A machine has a total input energy of 500 J and useful output energy of 300 J. What is its percentage efficiency?",
+  "title": "Efficiency of a working system",
+  "steps": [
+   "Identify the total input energy.",
+   "Identify the useful output energy.",
+   "Use Percentage Efficiency = (Useful output energy / Total input energy) × 100.",
+   "Substitute the values and calculate."
+  ],
+  "answer": "Percentage efficiency = (Useful output energy / Total input energy) × 100.",
+  "checkAccept": [
+   [
+    "60%"
+   ],
+   [
+    "0.6",
+    "60"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The useful output energy divided by the total input energy",
+    "The total input energy divided by the useful output energy",
+    "The useful output energy multiplied by the total input energy",
+    "The wasted energy divided by the useful output energy"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which expression gives the efficiency of a working system?",
+   "rationales": [
+    "This is the definition of efficiency given in your textbook.",
+    "This reverses the input and output in the efficiency ratio.",
+    "Efficiency is a ratio, not the product of these energies.",
+    "Wasted energy is not the numerator in the definition of efficiency."
+   ]
+  },
+  {
+   "options": [
+    "60%",
+    "40%",
+    "150%",
+    "2400%"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A system receives 2000 J of input energy and gives 1200 J of useful output energy. What is its percentage efficiency?",
+   "rationales": [
+    "(1200/2000) × 100 = 60%.",
+    "This is not the ratio of useful output to input multiplied by 100.",
+    "This would mean the output exceeds the input, which is not the stated situation.",
+    "This results from using the energies incorrectly in the percentage calculation."
+   ]
+  },
+  {
+   "options": [
+    "Energy output is always less than energy input.",
+    "Energy output is always greater than energy input.",
+    "Energy output is always equal to energy input.",
+    "Energy output is unrelated to energy input."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does your textbook say about energy output in a working system?",
+   "rationales": [
+    "Some input energy is wasted, so output is less than input.",
+    "A system cannot produce more energy than it receives.",
+    "Equal output and input would mean 100% efficiency, which real systems do not achieve.",
+    "Output is related to the input energy supplied to the system."
+   ]
+  },
+  {
+   "options": [
+    "35%",
+    "25%",
+    "80%",
+    "15%"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "According to the efficiency table in this section, what is the average efficiency of an electric motor?",
+   "rationales": [
+    "35% is the listed average efficiency of a diesel engine.",
+    "25% is the listed average efficiency of a petrol engine.",
+    "80% is the listed average efficiency of an electric motor.",
+    "15% is the listed average efficiency of a bicycle."
+   ]
+  },
+  {
+   "options": [
+    "An ideal machine",
+    "A perpetual energy machine",
+    "A real machine with energy losses",
+    "A machine whose output energy is less than its input energy"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a machine with output equal to input called in this section?",
+   "rationales": [
+    "Your textbook calls a machine with output equal to input an ideal machine.",
+    "A perpetual energy machine is a hypothetical machine that would work indefinitely without an external energy source.",
+    "A real machine with energy losses has output less than input.",
+    "This describes a real system with less than 100% efficiency, not output equal to input."
+   ]
+  },
+  {
+   "options": [
+    "It would have to generate more energy than it consumes.",
+    "It would have to waste all its input energy as heat.",
+    "It would have to convert its output energy back into input energy.",
+    "It would have to use a greater input energy than any real machine."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is a perpetual energy machine impossible according to this section?",
+   "rationales": [
+    "It would effectively produce energy from nothing, which is impossible.",
+    "Wasting all input energy would prevent the machine from doing useful work, but that is not the reason stated for impossibility.",
+    "The section does not define a perpetual machine in this way.",
+    "This does not explain why a perpetual machine is impossible."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A block weighing 120 N is dragged up a slope with a force of 100 N to lift it up a height of 10 m. If the slope is 20 m long, calculate the efficiency of the system.",
+   "finalAnswer": "60%",
+   "marks": 5,
+   "source": "Example 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "100",
+       "20",
+       "2000"
+      ]
+     ],
+     "marks": 1,
+     "why": "The total input energy is the work done on the block.",
+     "description": "Find the work done to pull the block along the slope.",
+     "how": "Use work = force × distance = 100 N × 20 m = 2000 J."
+    },
+    {
+     "accept": [
+      [
+       "120",
+       "10",
+       "1200"
+      ]
+     ],
+     "marks": 1,
+     "why": "The useful output energy is the gravitational potential energy gained.",
+     "description": "Calculate the useful output energy.",
+     "how": "Use useful output energy = wh = 120 N × 10 m = 1200 J."
+    },
+    {
+     "accept": [
+      [
+       "1200",
+       "2000",
+       "100"
+      ]
+     ],
+     "marks": 2,
+     "why": "The percentage efficiency requires the useful output divided by the total input, multiplied by 100.",
+     "description": "Set up and evaluate the percentage efficiency.",
+     "how": "Use (useful output energy / total input energy) × 100 = (1200/2000) × 100."
+    },
+    {
+     "accept": [
+      [
+       "60%"
+      ],
+      [
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must state the system's percentage efficiency.",
+     "description": "Give the answer as a percentage.",
+     "how": "State 60%."
+    }
+   ],
+   "modelAnswer": [
+    "Weight of block W = 120 N",
+    "Force applied F = 100 N",
+    "Distance S = 20 m",
+    "Height h = 10 m",
+    "% Efficiency = ?",
+    "Work done to lift the block up is:",
+    "W = F × S = 100 N × 20 m = 2000 J",
+    "Now, total input energy = work done on the block = 2000 J",
+    "Useful output energy = Gravitational potential energy gained = wh",
+    "= 120 N × 10 m = 1200 J",
+    "Percentage Efficiency = Useful output energy / Total input energy × 100",
+    "= 1200 J / 2000 J × 100 = 60%"
+   ]
+  },
+  {
+   "text": "Define efficiency of a working system. Why a system cannot have 100% efficiency?",
+   "finalAnswer": "The ratio of useful output energy to the total input energy is called the efficiency of a working system. A system cannot have 100% efficiency because some energy is always wasted as heat during energy conversion, so the output energy is less than the input energy.",
+   "marks": 2,
+   "source": "Short Q5.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "useful output energy",
+       "total input energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must identify the useful output and total input energies and their ratio.",
+     "description": "Define efficiency.",
+     "how": "State that efficiency is the ratio of useful output energy to total input energy."
+    },
+    {
+     "accept": [
+      [
+       "heat"
+      ],
+      [
+       "wasted",
+       "energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must give the reason real systems cannot reach 100% efficiency.",
+     "description": "Explain why efficiency cannot be 100%.",
+     "how": "State that some energy is inevitably wasted as heat, making output less than input."
+    }
+   ],
+   "modelAnswer": [
+    "The ratio of useful output energy to the total input energy is called the efficiency of a working system.",
+    "During any conversion of energy, some energy is wasted in the form of heat.",
+    "The energy output is always less than the energy input; therefore, a system cannot have an efficiency of 100%."
+   ]
+  },
+  {
+   "text": "Explain what is meant by efficiency of a machine. How is it calculated? Why there is a limit for the efficiency of a machine?",
+   "finalAnswer": "Efficiency is the ratio of useful output energy to total input energy. Percentage efficiency = (useful output energy / total input energy) × 100. Efficiency is limited because some energy is inevitably wasted as heat during conversion, so output is less than input and a real machine cannot have 100% efficiency.",
+   "marks": 4,
+   "source": "Comprehensive Q5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "useful output energy",
+       "total input energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The meaning of efficiency is the central definition being tested.",
+     "description": "Define efficiency.",
+     "how": "Give the ratio of useful output energy to total input energy."
+    },
+    {
+     "accept": [
+      [
+       "useful output energy",
+       "total input energy",
+       "100"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculation method must show how to express the ratio as a percentage.",
+     "description": "State how percentage efficiency is calculated.",
+     "how": "Write (useful output energy / total input energy) × 100."
+    },
+    {
+     "accept": [
+      [
+       "heat"
+      ],
+      [
+       "wasted",
+       "energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Energy loss explains why the efficiency of a machine is limited.",
+     "description": "Explain the energy loss.",
+     "how": "State that some energy is wasted as heat during energy conversion."
+    },
+    {
+     "accept": [
+      [
+       "output",
+       "less",
+       "input"
+      ],
+      [
+       "cannot",
+       "100%"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion connects energy loss to the limit on machine efficiency.",
+     "description": "State the limit on efficiency.",
+     "how": "Conclude that output is less than input and a real machine cannot be 100% efficient."
+    }
+   ],
+   "modelAnswer": [
+    "The ratio of useful output energy to the total input energy is called the efficiency of a working system.",
+    "Percentage Efficiency = (Useful output energy / Total input energy) × 100",
+    "During any conversion of energy, some energy is wasted in the form of heat.",
+    "The energy output is always less than the energy input, so a system cannot have an efficiency of 100%."
+   ]
+  },
+  {
+   "text": "A box of mass 10 kg is pushed up along a ramp 15 m long with a force of 80 N. If the box rises up a height of 5 m, what is the efficiency of the system?",
+   "finalAnswer": "41.7%",
+   "marks": 5,
+   "source": "Numerical Q5.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "80",
+       "15",
+       "1200"
+      ]
+     ],
+     "marks": 1,
+     "why": "The input energy is the work done pushing the box along the ramp.",
+     "description": "Calculate the total input energy.",
+     "how": "Use work done = force × distance = 80 N × 15 m = 1200 J."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "10",
+       "5",
+       "500"
+      ]
+     ],
+     "marks": 1,
+     "why": "The useful output energy is the gravitational potential energy gained by the box.",
+     "description": "Calculate the useful output energy.",
+     "how": "Use mgh = 10 kg × 10 m s⁻² × 5 m = 500 J."
+    },
+    {
+     "accept": [
+      [
+       "500",
+       "1200",
+       "100"
+      ]
+     ],
+     "marks": 2,
+     "why": "Efficiency is calculated from useful output energy divided by input energy, multiplied by 100.",
+     "description": "Calculate the percentage efficiency.",
+     "how": "Use (500/1200) × 100 = 41.7%."
+    },
+    {
+     "accept": [
+      [
+       "41.7%"
+      ],
+      [
+       "41.67%"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must give the efficiency as a percentage.",
+     "description": "State the final answer.",
+     "how": "Give 41.7%."
+    }
+   ],
+   "modelAnswer": [
+    "Total input energy = work done on the box",
+    "= F × distance = 80 N × 15 m = 1200 J",
+    "Useful output energy = gravitational potential energy gained",
+    "= mgh = 10 kg × 10 m s⁻² × 5 m = 500 J",
+    "Percentage Efficiency = (Useful output energy / Total input energy) × 100",
+    "= (500 J / 1200 J) × 100 = 41.7%"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Efficiency can be tested as a definition, a written explanation, or a numerical calculation; learn both the ratio and percentage formula.",
+   "For numerical questions, show the input energy and useful output energy separately before substituting into the percentage formula.",
+   "In a written explanation, state that some energy is wasted as heat and that output is therefore less than input.",
+   "Include the percentage sign in a percentage-efficiency answer, and use consistent energy units such as joules."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Identify what energy is useful output and what energy is total input.",
+     "Calculate work done along the ramp for input, mgh for useful output, then divide useful output by input and multiply by 100."
+    ],
+    "accept": [
+     [
+      "41.7%"
+     ],
+     [
+      "41.67%"
+     ]
+    ],
+    "question": "A box of mass 10 kg is pushed up along a ramp 15 m long with a force of 80 N. If the box rises up a height of 5 m, what is the efficiency of the system?",
+    "solution": [
+     "Total input energy = work done on the box",
+     "= F × distance = 80 N × 15 m = 1200 J",
+     "Useful output energy = gravitational potential energy gained",
+     "= mgh = 10 kg × 10 m s⁻² × 5 m = 500 J",
+     "Percentage Efficiency = (Useful output energy / Total input energy) × 100",
+     "= (500 J / 1200 J) × 100 = 41.7%"
+    ],
+    "answer": "41.7%"
+   },
+   {
+    "hints": [
+     "State the ratio that defines efficiency.",
+     "For the reason, think about what happens to some energy during any conversion."
+    ],
+    "accept": [
+     [
+      "useful output energy",
+      "total input energy",
+      "heat"
+     ],
+     [
+      "output",
+      "less",
+      "input",
+      "wasted"
+     ]
+    ],
+    "question": "Define efficiency of a working system. Why a system cannot have 100% efficiency?",
+    "solution": [
+     "The ratio of useful output energy to the total input energy is called the efficiency of a working system.",
+     "During any conversion of energy, some energy is wasted in the form of heat.",
+     "The energy output is always less than the energy input; therefore, a system cannot have an efficiency of 100%."
+    ],
+    "answer": "Efficiency is the ratio of useful output energy to total input energy. A system cannot have 100% efficiency because some energy is wasted as heat, making its output less than its input."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These quantities identify the given force, distance and height used in the calculation.",
+     "text": "Weight of block W = 120 N"
+    },
+    {
+     "why": "This is the force applied along the slope.",
+     "text": "Force applied F = 100 N"
+    },
+    {
+     "why": "The slope length is the distance travelled by the block.",
+     "text": "Distance S = 20 m"
+    },
+    {
+     "why": "This height is used to find the useful gravitational potential energy gained.",
+     "text": "Height h = 10 m"
+    },
+    {
+     "why": "The question asks for efficiency as a percentage.",
+     "text": "% Efficiency = ?"
+    },
+    {
+     "why": "The input energy is the work done while pulling the block along the slope.",
+     "text": "Work done to lift the block up is:"
+    },
+    {
+     "why": "Work done equals force multiplied by the distance moved in the direction of the force.",
+     "text": "W = F × S = 100 N × 20 m = 2000 J"
+    },
+    {
+     "why": "This identifies the calculated work as the system's total input energy.",
+     "text": "Now, total input energy = work done on the block = 2000 J"
+    },
+    {
+     "why": "The useful output is the gravitational potential energy gained by the block.",
+     "text": "Useful output energy = Gravitational potential energy gained = wh"
+    },
+    {
+     "why": "Weight multiplied by vertical height gives the useful output energy.",
+     "text": "= 120 N × 10 m = 1200 J"
+    },
+    {
+     "why": "This is the percentage-efficiency formula.",
+     "text": "Percentage Efficiency = Useful output energy / Total input energy × 100"
+    },
+    {
+     "why": "Substituting output and input gives the percentage efficiency.",
+     "text": "= 1200 J / 2000 J × 100 = 60%"
+    }
+   ],
+   "question": "A block weighing 120 N is dragged up a slope with a force of 100 N to lift it up a height of 10 m. If the slope is 20 m long, calculate the efficiency of the system.",
+   "answer": "60%"
+  },
+  "explain": [
+   {
+    "title": "What efficiency means",
+    "body": "The ratio of useful output energy and the total input energy is called the efficiency of a working system. Input energy is the energy available for conversion; output energy is the energy converted into the required useful form."
+   },
+   {
+    "title": "Percentage efficiency",
+    "body": "To express efficiency as a percentage, multiply the ratio of useful output energy to total input energy by 100. It can also be calculated using useful power output and total power input."
+   },
+   {
+    "title": "Why efficiency is below 100%",
+    "body": "Energy output is always less than energy input because some energy is wasted as heat during conversion. The losses in a working machine are inevitable, so a real system cannot have 100% efficiency."
+   },
+   {
+    "title": "Perpetual energy machines",
+    "body": "A perpetual machine is hypothetical: it would work indefinitely without an external source of energy. This is impossible because it would have to produce energy from nothing, while real machines lose energy as heat through friction and air resistance."
+   }
+  ],
+  "mistakes": [
+   "Reversing the ratio: use useful output energy divided by total input energy.",
+   "Using the slope distance to calculate useful gravitational potential energy; use the vertical height for mgh or wh.",
+   "Forgetting to multiply by 100 when the question asks for percentage efficiency.",
+   "Leaving out the percentage sign or mixing energy units in one calculation.",
+   "Claiming that a real machine can have 100% efficiency; some energy is always wasted as heat."
+  ]
+ }
+}

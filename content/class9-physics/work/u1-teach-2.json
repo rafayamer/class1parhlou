@@ -1,0 +1,562 @@
+{
+ "note": {
+  "explanation": "Base quantities are the chosen starting quantities. A derived quantity is described using one or more base quantities. Measurements compare an unknown quantity with a standard, and every measurement needs both a number and a unit.",
+  "examples": [
+   "Distance and time are base quantities; speed depends on distance and time, so speed is derived.",
+   "Density is described in terms of mass and volume, so density is derived."
+  ],
+  "checkAnswer": "Speed is derived because it depends on distance and time, which are base quantities.",
+  "keywords": [
+   "base quantities",
+   "derived quantities",
+   "measurement",
+   "standard",
+   "unit",
+   "speed",
+   "density"
+  ],
+  "simple": "Base quantities are the starting quantities. Derived quantities are made from them. A measurement needs a number and a unit.",
+  "checkQuestion": "Why is speed a derived quantity?",
+  "title": "Base and Derived Quantities",
+  "steps": [
+   "Identify the quantity being described.",
+   "Check whether it is one of the chosen base quantities or is described using base quantities.",
+   "If it depends on one or more base quantities, call it a derived quantity.",
+   "For any measurement, include both the number and the unit."
+  ],
+  "answer": "Base quantities are chosen quantities used as a starting point. Derived quantities are described in terms of one or more base quantities. A measurement is a comparison with a standard and consists of a number and a unit.",
+  "checkAccept": [
+   [
+    "speed",
+    "derived",
+    "distance",
+    "time"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A quantity chosen to play a key role",
+    "A quantity described using base quantities",
+    "A number written without a unit",
+    "A standard used only for measuring time"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes a base quantity?",
+   "rationales": [
+    "Correct: the textbook says scientists selected some quantities to play a key role and called them base quantities.",
+    "This describes a derived quantity.",
+    "A measurement without a unit is meaningless; it is not a base quantity.",
+    "A standard for measuring time is not the definition of a base quantity."
+   ]
+  },
+  {
+   "options": [
+    "A quantity described in terms of one or more base quantities",
+    "A quantity that cannot be measured",
+    "A quantity that has no unit",
+    "A standard quantity used for comparison"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a derived physical quantity?",
+   "rationales": [
+    "Correct: this is the textbook definition of derived physical quantities.",
+    "Derived quantities can be measured; this is not their definition.",
+    "Measurements of derived quantities also need units.",
+    "This describes the role of a standard in measurement, not a derived quantity."
+   ]
+  },
+  {
+   "options": [
+    "A comparison of an unknown quantity with a widely accepted standard quantity",
+    "A comparison of two unknown quantities",
+    "Writing a number without a unit",
+    "Choosing any convenient object as a unit"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which option gives the textbook definition of measurement?",
+   "rationales": [
+    "Correct: measurement compares an unknown quantity with a widely accepted standard quantity.",
+    "The definition requires comparison with a standard, not merely with another unknown quantity.",
+    "A number without a unit does not make a meaningful measurement.",
+    "A unit needs to be a standard, not just any convenient object."
+   ]
+  },
+  {
+   "options": [
+    "A number and a unit",
+    "A number and an instrument",
+    "A unit and a physical object",
+    "A standard and a physical object"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What are the two parts of a measurement?",
+   "rationales": [
+    "Correct: a measurement consists of a number and a unit.",
+    "An instrument may be used to measure, but it is not one of the two parts of the measurement.",
+    "A physical object is not a required part of the written measurement.",
+    "A standard is used for comparison but is not one of the two parts of the measurement."
+   ]
+  },
+  {
+   "options": [
+    "It depends on distance and time",
+    "It is a standard unit",
+    "It is compared directly with a standard",
+    "It is a physical object"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is speed a derived quantity?",
+   "rationales": [
+    "Correct: the textbook says speed depends on distance and time, which are base quantities.",
+    "Speed is a quantity, not a standard unit.",
+    "This describes part of measurement, not why speed is derived.",
+    "Speed is a measurable quantity, not a physical object."
+   ]
+  },
+  {
+   "options": [
+    "A unit is a standard of measurement",
+    "A unit is the number in a measurement",
+    "A unit is an unknown quantity",
+    "A unit is a measuring instrument"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a unit of measurement?",
+   "rationales": [
+    "Correct: the textbook identifies the standard of measurement as a unit.",
+    "The number is the other part of a measurement.",
+    "A unit is a standard, not the unknown quantity being measured.",
+    "An instrument may help measure, but it is not the unit."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is measurement? Name its two parts.",
+   "finalAnswer": "A measurement is a process of comparison of an unknown quantity with a widely accepted standard quantity. Its two parts are a number and a unit.",
+   "marks": 2,
+   "source": "Short Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "comparison",
+       "unknown quantity",
+       "standard quantity"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition explains what measurement means.",
+     "description": "State that measurement compares an unknown quantity with a widely accepted standard quantity.",
+     "how": "Write the comparison with the unknown quantity and standard quantity."
+    },
+    {
+     "accept": [
+      [
+       "number",
+       "unit"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question asks for both parts of a measurement.",
+     "description": "Name the two parts.",
+     "how": "Write both number and unit."
+    }
+   ],
+   "modelAnswer": [
+    "A measurement is a process of comparison of an unknown quantity with a widely accepted standard quantity.",
+    "Its two parts are a number and a unit."
+   ]
+  },
+  {
+   "text": "Why do we need a standard unit for measurements?",
+   "finalAnswer": "A standard unit ensures that measurements made by different people give the same result and avoids confusion.",
+   "marks": 2,
+   "source": "Short Q1.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "same result"
+      ],
+      [
+       "same measurements"
+      ]
+     ],
+     "marks": 1,
+     "why": "A standard makes measurements consistent between people.",
+     "description": "Explain that different people can get the same measurement.",
+     "how": "State that using a standard unit gives the same result."
+    },
+    {
+     "accept": [
+      [
+       "confusion"
+      ],
+      [
+       "avoid confusion"
+      ]
+     ],
+     "marks": 1,
+     "why": "The textbook explains that standards prevent confusion caused by different-sized hands, arms, or steps.",
+     "description": "Explain that standard units avoid confusion.",
+     "how": "Link the standard to avoiding differing measurements."
+    }
+   ],
+   "modelAnswer": [
+    "A standard unit ensures that measurements made by different people give the same result.",
+    "It avoids confusion caused by measurements using different-sized hands, arms or steps."
+   ]
+  },
+  {
+   "text": "Write the name of 3 base quantities and 3 derived quantities.",
+   "finalAnswer": "Base quantities: length, mass and time. Derived quantities: speed, volume and density.",
+   "marks": 2,
+   "source": "Short Q1.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "length",
+       "mass",
+       "time"
+      ],
+      [
+       "distance",
+       "mass",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify three base quantities.",
+     "description": "Give three suitable base quantities.",
+     "how": "Name length, mass and time, or use distance for length."
+    },
+    {
+     "accept": [
+      [
+       "speed",
+       "volume",
+       "density"
+      ],
+      [
+       "speed",
+       "density",
+       "volume"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify three derived quantities.",
+     "description": "Give three suitable derived quantities.",
+     "how": "Name speed, volume and density."
+    }
+   ],
+   "modelAnswer": [
+    "Base quantities: length, mass and time.",
+    "Derived quantities: speed, volume and density."
+   ]
+  },
+  {
+   "text": "Why might a standard system of measurement be helpful to a tailor?",
+   "finalAnswer": "A standard system lets a tailor take and use measurements consistently, helping clothes fit correctly and avoiding confusion between different people.",
+   "marks": 4,
+   "source": "CRQ Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "standard",
+       "measurement"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should connect the tailor's work to measuring.",
+     "description": "Identify that a tailor uses measurements.",
+     "how": "Mention measuring a person or clothing."
+    },
+    {
+     "accept": [
+      [
+       "consistent"
+      ],
+      [
+       "same"
+      ]
+     ],
+     "marks": 1,
+     "why": "A standard system allows measurements to be repeated consistently.",
+     "description": "Explain consistency of measurements.",
+     "how": "Say that the same standard gives consistent results."
+    },
+    {
+     "accept": [
+      [
+       "fit"
+      ],
+      [
+       "fitting"
+      ]
+     ],
+     "marks": 1,
+     "why": "Consistent measurements help the garment fit.",
+     "description": "State the practical benefit for making clothes.",
+     "how": "Link accurate, consistent measurements to correct fitting."
+    },
+    {
+     "accept": [
+      [
+       "confusion"
+      ],
+      [
+       "different people"
+      ]
+     ],
+     "marks": 1,
+     "why": "Standard measurements can be understood and used by others without confusion.",
+     "description": "State that standards reduce confusion when measurements are shared.",
+     "how": "Mention avoiding confusion or allowing others to use the measurements."
+    }
+   ],
+   "modelAnswer": [
+    "A tailor uses measurements to make clothes for different people.",
+    "A standard system makes the measurements consistent and easy to use.",
+    "This helps the clothes fit correctly.",
+    "It also avoids confusion when measurements are shared or used by another person."
+   ]
+  },
+  {
+   "text": "Why a standard unit is needed to measure a quantity correctly?",
+   "finalAnswer": "A standard unit is needed so that measurements by any person give the same result and do not cause confusion.",
+   "marks": 2,
+   "source": "CRQ Q1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "same result"
+      ],
+      [
+       "same measurement"
+      ]
+     ],
+     "marks": 1,
+     "why": "A standard unit makes results comparable and consistent.",
+     "description": "State that different people should obtain the same measurement.",
+     "how": "Mention the same result for any person."
+    },
+    {
+     "accept": [
+      [
+       "confusion"
+      ],
+      [
+       "avoid confusion"
+      ]
+     ],
+     "marks": 1,
+     "why": "Standards prevent confusion caused by varying personal measures.",
+     "description": "State that a standard avoids confusion.",
+     "how": "Explain that units based on different people's body sizes may differ."
+    }
+   ],
+   "modelAnswer": [
+    "A standard unit is needed so that measurements by any person give the same result.",
+    "It avoids confusion caused by using different personal measures."
+   ]
+  },
+  {
+   "text": "What is meant by base and derived quantities? Give the names and symbols of SI base units.",
+   "finalAnswer": "Base quantities are quantities selected to play a key role. Derived quantities are described in terms of one or more base quantities. The SI base units are metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol) and candela (cd).",
+   "marks": 5,
+   "source": "Comprehensive Q1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "base quantities",
+       "key role",
+       "derived quantities",
+       "one or more base quantities"
+      ]
+     ],
+     "marks": 2,
+     "why": "Both kinds of quantity must be defined correctly.",
+     "description": "Define base and derived quantities.",
+     "how": "State that base quantities are selected to play a key role and derived quantities are described using one or more base quantities."
+    },
+    {
+     "accept": [
+      [
+       "metre",
+       "m",
+       "kilogram",
+       "kg",
+       "second",
+       "s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The names and symbols of the base units must be supplied.",
+     "description": "Give the SI units for length, mass and time.",
+     "how": "Write metre (m), kilogram (kg) and second (s)."
+    },
+    {
+     "accept": [
+      [
+       "ampere",
+       "A",
+       "kelvin",
+       "K",
+       "mole",
+       "mol",
+       "candela",
+       "cd"
+      ]
+     ],
+     "marks": 1,
+     "why": "The remaining SI base units complete the required list.",
+     "description": "Give the SI units for electric current, temperature, amount of substance and luminous intensity.",
+     "how": "Write ampere (A), kelvin (K), mole (mol) and candela (cd)."
+    },
+    {
+     "accept": [
+      [
+       "candela",
+       "cd",
+       "ampere",
+       "A",
+       "kelvin",
+       "K",
+       "mole",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final mark checks that the full set of seven SI base units is present.",
+     "description": "Complete the list with all seven correct names and symbols.",
+     "how": "Check that no SI base unit or symbol is missing."
+    }
+   ],
+   "modelAnswer": [
+    "Base quantities are quantities selected to play a key role.",
+    "Derived quantities are quantities described in terms of one or more base quantities.",
+    "The SI base units are metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol) and candela (cd)."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is likely to be tested with short definitions, examples, or a question asking you to distinguish base and derived quantities.",
+   "For a definition question, include the key wording: derived quantities are described in terms of one or more base quantities.",
+   "For a measurement question, state both its definition and its two parts: a number and a unit.",
+   "When asked why a standard unit is needed, explain that it gives consistent results for different people and avoids confusion."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Remember what a measurement compares.",
+     "Then name the two parts that every measurement contains."
+    ],
+    "accept": [
+     [
+      "comparison",
+      "unknown quantity",
+      "standard quantity",
+      "number",
+      "unit"
+     ]
+    ],
+    "question": "What is measurement? Name its two parts.",
+    "solution": [
+     "A measurement is a process of comparison of an unknown quantity with a widely accepted standard quantity.",
+     "Its two parts are a number and a unit."
+    ],
+    "answer": "A measurement is a process of comparison of an unknown quantity with a widely accepted standard quantity. Its two parts are a number and a unit."
+   },
+   {
+    "hints": [
+     "Use the textbook's examples of quantities that depend on other quantities.",
+     "Distance, time and mass are base examples; speed, volume and density are derived examples."
+    ],
+    "accept": [
+     [
+      "length",
+      "mass",
+      "time",
+      "speed",
+      "volume",
+      "density"
+     ],
+     [
+      "distance",
+      "mass",
+      "time",
+      "speed",
+      "volume",
+      "density"
+     ]
+    ],
+    "question": "Write the name of 3 base quantities and 3 derived quantities.",
+    "solution": [
+     "Base quantities: length, mass and time.",
+     "Derived quantities: speed, volume and density."
+    ],
+    "answer": "Base quantities: length, mass and time. Derived quantities: speed, volume and density."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The textbook identifies distance and time as base quantities in its example of speed.",
+     "text": "Distance and time are base quantities."
+    },
+    {
+     "why": "The textbook says speed depends on distance and time.",
+     "text": "Speed depends on distance and time."
+    },
+    {
+     "why": "A quantity described using base quantities fits the definition of a derived quantity.",
+     "text": "Therefore, speed is a derived quantity."
+    },
+    {
+     "why": "The textbook also explains density using mass and volume.",
+     "text": "Density is described in terms of mass and volume, so density is a derived quantity."
+    }
+   ],
+   "question": "Using the examples in your textbook, identify why speed and density are derived quantities.",
+   "answer": "Speed depends on the base quantities distance and time. Density is described in terms of mass and volume. Therefore, both are derived quantities."
+  },
+  "explain": [
+   {
+    "title": "Base quantities",
+    "body": "Scientists have selected arbitrarily some quantities to play a key role. They are called base quantities."
+   },
+   {
+    "title": "Derived quantities",
+    "body": "All the quantities which can be described in terms of one or more base quantities are called derived physical quantities. For example, speed depends on distance and time, and density is described in terms of mass and volume."
+   },
+   {
+    "title": "Measurement and units",
+    "body": "A measurement is a process of comparison of an unknown quantity with a widely accepted standard quantity. The standard of measurement is called a unit."
+   },
+   {
+    "title": "Two parts of a measurement",
+    "body": "A measurement consists of two parts, a number and a unit. A measurement without unit is meaningless."
+   }
+  ],
+  "mistakes": [
+   "Calling speed a base quantity instead of a derived quantity; speed depends on distance and time.",
+   "Giving examples without labelling which are base and which are derived.",
+   "Writing only a number for a measurement and leaving out its unit.",
+   "Saying a standard unit is needed only for convenience; explain that it helps different people obtain the same result and prevents confusion."
+  ]
+ }
+}

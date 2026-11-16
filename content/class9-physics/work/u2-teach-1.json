@@ -1,0 +1,666 @@
+{
+ "note": {
+  "explanation": "Scalars are fully described by magnitude only. Vectors need both magnitude and direction. A vector can be shown by a straight line with an arrow: its length shows magnitude according to a scale, and the arrow shows direction.",
+  "examples": [
+   "5 kg of mass is a scalar: the magnitude and unit describe it completely.",
+   "A velocity of 25 m s⁻¹ towards north is a vector: it has magnitude and direction."
+  ],
+  "checkAnswer": "A vector has magnitude and direction.",
+  "keywords": [
+   "scalar",
+   "vector",
+   "magnitude",
+   "direction",
+   "arrow",
+   "scale"
+  ],
+  "simple": "A scalar tells you how much. A vector tells you how much and which way.",
+  "checkQuestion": "What two things are needed to describe a vector completely?",
+  "title": "Scalars, vectors and their representation",
+  "steps": [
+   "Identify whether the quantity needs direction as well as magnitude.",
+   "For a scalar, give its magnitude and unit.",
+   "For a vector, give its magnitude, unit and direction.",
+   "To draw a vector, choose a scale and draw a line with an arrow in the required direction."
+  ],
+  "answer": "A scalar has magnitude only; a vector has magnitude and direction.",
+  "checkAccept": [
+   [
+    "magnitude",
+    "direction"
+   ],
+   [
+    "size",
+    "direction"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Mass",
+    "Displacement",
+    "Force",
+    "Velocity"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which quantity is a scalar?",
+   "rationales": [
+    "Mass is a scalar because it is described by magnitude only.",
+    "Displacement is a vector because it has magnitude and direction.",
+    "Force is a vector because it has magnitude and direction.",
+    "Velocity is a vector because it has magnitude and direction."
+   ]
+  },
+  {
+   "options": [
+    "Temperature",
+    "Weight",
+    "Acceleration",
+    "Velocity"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which quantity can be completely described by magnitude only?",
+   "rationales": [
+    "Temperature is a scalar and does not need a direction.",
+    "Weight is a vector because it is a force with a direction.",
+    "Acceleration is a vector because its direction is needed.",
+    "Velocity is a vector because its direction is needed."
+   ]
+  },
+  {
+   "options": [
+    "Magnitude only",
+    "Direction only",
+    "Magnitude and direction",
+    "A number without a unit"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What information is needed to describe a vector completely?",
+   "rationales": [
+    "Magnitude only is enough for a scalar, not a vector.",
+    "Direction alone does not tell how large the vector is.",
+    "A vector needs both magnitude and direction.",
+    "A number without a unit does not fully specify a physical quantity."
+   ]
+  },
+  {
+   "options": [
+    "The length of the line",
+    "The arrowhead",
+    "The origin",
+    "The angle label alone"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In a graphical representation of a vector, what represents its magnitude?",
+   "rationales": [
+    "The line length represents magnitude according to the chosen scale.",
+    "The arrowhead indicates the vector's direction.",
+    "The origin is a reference point and does not show magnitude.",
+    "An angle can specify direction but does not by itself represent magnitude."
+   ]
+  },
+  {
+   "options": [
+    "A straight line without an arrow",
+    "A straight line with an arrowhead",
+    "A circle around the origin",
+    "A point on the x-axis"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which drawing is used to represent a vector graphically?",
+   "rationales": [
+    "A line without an arrow does not show the vector's direction.",
+    "A straight line with an arrowhead shows magnitude by length and direction by the arrow.",
+    "A circle around the origin is not the stated graphical representation of a vector.",
+    "A point on the x-axis does not show a vector's magnitude and direction."
+   ]
+  },
+  {
+   "options": [
+    "100 N = 1 cm",
+    "100 N = 10 cm",
+    "1 N = 100 cm",
+    "350 N = 1 cm"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A suitable scale for drawing a 350 N force as a 3.5 cm line is:",
+   "rationales": [
+    "At this scale, 350 N is represented by 3.5 cm.",
+    "This scale would make the 350 N line 35 cm long.",
+    "This scale would make the line far too long.",
+    "This scale would represent 350 N with only 1 cm."
+   ]
+  },
+  {
+   "options": [
+    "From east towards north",
+    "From north towards east",
+    "From west towards south",
+    "From south towards west"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In Example 2.1, the 60° angle for the velocity vector is drawn:",
+   "rationales": [
+    "This describes an angle measured from east, not the direction specified in the example.",
+    "The example says to draw the angle starting from north towards east.",
+    "This is not the direction stated in Example 2.1.",
+    "This is not the direction stated in Example 2.1."
+   ]
+  },
+  {
+   "options": [
+    "A single vector with the same effect as the combined vectors",
+    "The length of the longest vector",
+    "The sum of magnitudes only, regardless of direction",
+    "A vector that always points along the x-axis"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a resultant vector?",
+   "rationales": [
+    "A resultant is a single vector with the same effect as the combined vectors.",
+    "The longest vector alone is not necessarily the resultant.",
+    "Vector addition must take directions into consideration.",
+    "A resultant can point in any direction, not only along the x-axis."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Draw the velocity vector v; a velocity of 300 m s⁻¹ at an angle of 60° to the east of north.",
+   "finalAnswer": "3 cm line from north towards east at 60°; arrowhead at P",
+   "marks": 4,
+   "source": "Example 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "N",
+       "S",
+       "E",
+       "W"
+      ]
+     ],
+     "marks": 1,
+     "why": "The perpendicular compass directions establish the reference directions.",
+     "description": "Draw the reference directions.",
+     "how": "Show the north-south and east-west lines."
+    },
+    {
+     "accept": [
+      [
+       "100 m/s=1 cm"
+      ],
+      [
+       "300 m/s=3 cm"
+      ]
+     ],
+     "marks": 1,
+     "why": "A suitable scale converts the stated velocity magnitude into a line length.",
+     "description": "Choose and apply the scale.",
+     "how": "Use the textbook scale and calculate the 3 cm length."
+    },
+    {
+     "accept": [
+      [
+       "60°",
+       "north",
+       "east"
+      ]
+     ],
+     "marks": 1,
+     "why": "The angle and its reference direction determine the vector's orientation.",
+     "description": "Draw the line in the required direction.",
+     "how": "Draw the 3 cm line from north towards east at 60°."
+    },
+    {
+     "accept": [
+      [
+       "arrowhead",
+       "3 cm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The arrowhead completes the vector representation and indicates its direction.",
+     "description": "Give the final vector representation.",
+     "how": "Put an arrowhead at P; the OP line represents vector v."
+    }
+   ],
+   "modelAnswer": [
+    "Draw two mutually perpendicular lines indicating N, S, E & W.",
+    "Select a suitable scale. If 100 m s⁻¹ = 1 cm, then 300 m s⁻¹ are represented by 3 cm line.",
+    "Draw 3 cm line OP at an Angle of 60° starting from N towards E.",
+    "Make an arrow head at the end of line OP. The OP is the vector v."
+   ]
+  },
+  {
+   "text": "Draw a force vector F having magnitude of 350 N and acting at an angle of 60° with x-axis.",
+   "finalAnswer": "3.5 cm line OQ at 60° with x-axis; arrowhead at Q",
+   "marks": 4,
+   "source": "Example 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "x-axis",
+       "y-axis"
+      ]
+     ],
+     "marks": 1,
+     "why": "Reference axes are needed to specify the direction.",
+     "description": "Draw the axes.",
+     "how": "Draw perpendicular x-axis and y-axis lines."
+    },
+    {
+     "accept": [
+      [
+       "100 N=1 cm"
+      ],
+      [
+       "350 N=3.5 cm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The scale gives the vector's correct length.",
+     "description": "Apply a suitable scale.",
+     "how": "Use 100 N = 1 cm to obtain a line of 3.5 cm."
+    },
+    {
+     "accept": [
+      [
+       "3.5 cm",
+       "60°",
+       "x-axis"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct line length and angle represent the stated magnitude and direction.",
+     "description": "Draw OQ at the required angle.",
+     "how": "Draw a 3.5 cm line at 60° with the x-axis."
+    },
+    {
+     "accept": [
+      [
+       "arrow head",
+       "OQ",
+       "vector F"
+      ],
+      [
+       "arrowhead",
+       "OQ",
+       "vector F"
+      ]
+     ],
+     "marks": 1,
+     "why": "The arrowhead identifies the direction and completes the vector.",
+     "description": "State the completed vector.",
+     "how": "Put an arrowhead at Q; OQ is vector F."
+    }
+   ],
+   "modelAnswer": [
+    "Draw horizontal and vertical lines to represent x-axis and y-axis.",
+    "Scale: If 100 N = 1 cm, then 350 N = 3.5 cm.",
+    "Draw 3.5 cm line OQ at an angle of 60° with x-axis.",
+    "Make an arrow head at the end of the line OQ. The OQ is the vector F."
+   ]
+  },
+  {
+   "text": "Define scalar and vector quantities.",
+   "finalAnswer": "A scalar has magnitude only; a vector needs magnitude and direction.",
+   "marks": 2,
+   "source": "Short 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "scalar",
+       "magnitude",
+       "!direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The defining feature of a scalar is that magnitude alone describes it completely.",
+     "description": "Define scalar quantity.",
+     "how": "State that a scalar is described completely by magnitude only."
+    },
+    {
+     "accept": [
+      [
+       "vector",
+       "magnitude",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both magnitude and direction are essential to the definition of a vector.",
+     "description": "Define vector quantity.",
+     "how": "State that a vector needs magnitude as well as direction."
+    }
+   ],
+   "modelAnswer": [
+    "A scalar is that physical quantity which can be described completely by its magnitude only.",
+    "A vector is that physical quantity which needs magnitude as well as direction to describe it completely."
+   ]
+  },
+  {
+   "text": "Give 5 examples each for scalar and vector quantities.",
+   "finalAnswer": "Scalars: distance, length, time, speed, energy; vectors: displacement, velocity, acceleration, weight, force.",
+   "marks": 2,
+   "source": "Short 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "distance",
+       "length",
+       "time",
+       "speed",
+       "energy"
+      ],
+      [
+       "distance",
+       "time",
+       "mass",
+       "energy",
+       "temperature"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples must be correctly identified as scalar quantities.",
+     "description": "Give five scalar examples.",
+     "how": "List any five valid scalars from the textbook."
+    },
+    {
+     "accept": [
+      [
+       "displacement",
+       "velocity",
+       "acceleration",
+       "weight",
+       "force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples must be correctly identified as vector quantities.",
+     "description": "Give five vector examples.",
+     "how": "List displacement, velocity, acceleration, weight and force."
+    }
+   ],
+   "modelAnswer": [
+    "Scalar quantities: distance, length, time, speed and energy.",
+    "Vector quantities: displacement, velocity, acceleration, weight and force."
+   ]
+  },
+  {
+   "text": "State head-to-tail rule for addition of vectors.",
+   "finalAnswer": "Place the head of one representative line at the tail of the next; the resultant runs from the first tail to the last head.",
+   "marks": 2,
+   "source": "Short 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "head",
+       "tail",
+       "coincides"
+      ]
+     ],
+     "marks": 1,
+     "why": "The vectors must be arranged head-to-tail to use this graphical addition rule.",
+     "description": "State how to arrange the vectors.",
+     "how": "Say that the head of one line coincides with the tail of the other."
+    },
+    {
+     "accept": [
+      [
+       "resultant",
+       "tail",
+       "head"
+      ]
+     ],
+     "marks": 1,
+     "why": "The resultant's direction and endpoints are the key conclusion of the rule.",
+     "description": "State how to draw the resultant.",
+     "how": "Draw it from the tail of the first line to the head of the last."
+    }
+   ],
+   "modelAnswer": [
+    "To add a number of vectors, redraw their representative lines such that the head of one line coincides with the tail of the other.",
+    "The resultant vector is given by a single vector which is directed from the tail of the first vector to the head of the last vector."
+   ]
+  },
+  {
+   "text": "The vector quantities are sometimes written in scalar notation (not bold face). How is the direction indicated?",
+   "finalAnswer": "The direction is indicated by an arrow over the letter or by stating the direction separately.",
+   "marks": 2,
+   "source": "Short 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "arrow",
+       "over",
+       "letter"
+      ],
+      [
+       "arrowhead",
+       "over",
+       "letter"
+      ]
+     ],
+     "marks": 1,
+     "why": "An arrow over the symbol marks it as a vector in written notation.",
+     "description": "Explain vector notation.",
+     "how": "State that a small arrow is written over the letter."
+    },
+    {
+     "accept": [
+      [
+       "direction",
+       "stated"
+      ],
+      [
+       "direction",
+       "separately"
+      ]
+     ],
+     "marks": 1,
+     "why": "When needed, the direction must still be made clear in the answer.",
+     "description": "State how direction is shown in words.",
+     "how": "Give an example such as towards north."
+    }
+   ],
+   "modelAnswer": [
+    "A vector is written as the letter with a small arrow over it.",
+    "Its direction can also be stated in words, for example, towards north."
+   ]
+  },
+  {
+   "text": "How a vector can be represented graphically? Explain.",
+   "finalAnswer": "Draw a straight line with an arrowhead; its length represents magnitude to a chosen scale and the arrow indicates direction.",
+   "marks": 4,
+   "source": "Comprehensive 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "straight line",
+       "arrowhead"
+      ],
+      [
+       "line",
+       "arrow head"
+      ]
+     ],
+     "marks": 1,
+     "why": "A vector is graphically represented by a directed line.",
+     "description": "State the basic drawing.",
+     "how": "Describe a straight line with an arrowhead at one end."
+    },
+    {
+     "accept": [
+      [
+       "length",
+       "magnitude"
+      ]
+     ],
+     "marks": 1,
+     "why": "The line length carries the magnitude information.",
+     "description": "Explain the line length.",
+     "how": "State that its length represents magnitude."
+    },
+    {
+     "accept": [
+      [
+       "suitable scale"
+      ],
+      [
+       "scale"
+      ]
+     ],
+     "marks": 1,
+     "why": "A scale connects the drawn length to the physical magnitude.",
+     "description": "Explain the scale.",
+     "how": "Mention that the line length represents magnitude according to a suitable scale."
+    },
+    {
+     "accept": [
+      [
+       "arrow",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The arrow shows the vector's direction.",
+     "description": "Explain the arrow.",
+     "how": "State that the arrowhead indicates direction."
+    }
+   ],
+   "modelAnswer": [
+    "A vector can be represented graphically by drawing a straight line with an arrow head at one end.",
+    "The length of line represents the magnitude of the vector quantity according to a suitable scale.",
+    "The direction of arrow indicates the direction of the vector."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask for the definitions of scalar and vector; include the words magnitude only for scalar and magnitude as well as direction for vector.",
+   "For a graphical vector question, show the reference axes, state the scale, calculate the line length, mark the given angle and direction, and add an arrowhead.",
+   "For head-to-tail addition, marks are awarded for correct placement of the vectors and for drawing the resultant from the first tail to the last head.",
+   "When asked for examples, give quantities from the correct category; do not classify velocity or force as scalars."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what must be placed together when two representative lines are joined.",
+     "The resultant begins at the first vector's tail and ends at the last vector's head."
+    ],
+    "accept": [
+     [
+      "head",
+      "tail",
+      "resultant",
+      "first",
+      "last"
+     ],
+     [
+      "head-to-tail",
+      "first tail",
+      "last head"
+     ]
+    ],
+    "question": "State head-to-tail rule for addition of vectors.",
+    "solution": [
+     "Redraw the representative lines so that the head of one line coincides with the tail of the other.",
+     "Draw a single resultant vector from the tail of the first vector to the head of the last vector."
+    ],
+    "answer": "Place the head of one representative line at the tail of the next; the resultant runs from the first tail to the last head."
+   },
+   {
+    "hints": [
+     "Use the scale given in Example 2.2: 100 N is represented by 1 cm.",
+     "Find the line length for 350 N, then draw it at 60° to the x-axis and add an arrowhead."
+    ],
+    "accept": [
+     [
+      "3.5 cm",
+      "60°",
+      "x-axis",
+      "arrowhead"
+     ],
+     [
+      "350 N=3.5 cm",
+      "60°",
+      "OQ"
+     ]
+    ],
+    "question": "Draw a force vector F having magnitude of 350 N and acting at an angle of 60° with x-axis.",
+    "solution": [
+     "Draw horizontal and vertical lines to represent x-axis and y-axis.",
+     "Use the scale 100 N = 1 cm.",
+     "350 N = 3.5 cm.",
+     "Draw 3.5 cm line OQ at an angle of 60° with x-axis.",
+     "Make an arrow head at the end of the line OQ; OQ is the vector F."
+    ],
+    "answer": "Draw a 3.5 cm line OQ at 60° with the x-axis and put an arrowhead at Q."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The perpendicular compass directions provide reference lines for the vector's direction.",
+     "text": "Draw two mutually perpendicular lines indicating N, S, E & W."
+    },
+    {
+     "why": "The scale converts the given velocity magnitude into a line length that can be drawn.",
+     "text": "Select a suitable scale. If 100 m s⁻¹ = 1 cm, then 300 m s⁻¹ are represented by 3 cm line."
+    },
+    {
+     "why": "The angle and its starting direction set the vector's correct orientation.",
+     "text": "Draw 3 cm line OP at an Angle of 60° starting from N towards E."
+    },
+    {
+     "why": "The arrowhead indicates direction, completing the graphical vector.",
+     "text": "Make an arrow head at the end of line OP. The OP is the vector v."
+    }
+   ],
+   "question": "Draw the velocity vector v; a velocity of 300 m s⁻¹ at an angle of 60° to the east of north.",
+   "answer": "Draw a 3 cm line OP from north towards east at 60° and put an arrowhead at P; OP is vector v."
+  },
+  "explain": [
+   {
+    "title": "Scalars",
+    "body": "A scalar is that physical quantity which can be described completely by its magnitude only. Magnitude includes a number and an appropriate unit. Distance, length, time, speed, energy and temperature are examples of scalars. Scalar quantities can be added up like numbers."
+   },
+   {
+    "title": "Vectors",
+    "body": "A vector is that physical quantity which needs magnitude as well as direction to describe it completely. Displacement, velocity, acceleration, weight and force are examples of vectors. Their directions must be considered when vectors are added."
+   },
+   {
+    "title": "Drawing a vector",
+    "body": "A vector is drawn as a straight line with an arrowhead at one end. The length represents magnitude according to a suitable scale, while the arrow indicates direction. To specify direction, use reference axes and measure the angle from the appropriate axis."
+   },
+   {
+    "title": "Adding vectors graphically",
+    "body": "For the head-to-tail rule, redraw the representative lines so the head of one meets the tail of the next. The resultant is a single vector from the tail of the first vector to the head of the last vector."
+   }
+  ],
+  "mistakes": [
+   "Writing only a number and unit for a vector while leaving out its direction.",
+   "Treating speed, mass or temperature as a vector; these are scalars.",
+   "Drawing a vector without an arrowhead, so its direction is not shown.",
+   "Choosing a scale but drawing a line whose length does not match the stated magnitude.",
+   "Measuring an angle from the wrong reference direction.",
+   "For head-to-tail addition, drawing the resultant from the wrong endpoints or ignoring vector directions."
+  ]
+ }
+}

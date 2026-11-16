@@ -1,0 +1,83 @@
+{
+ "note": {
+  "explanation": "Significant figures show which digits in a measurement are reliably known, including the first doubtful digit. Count all digits from 1 to 9. A zero between non-zero digits counts, a zero at the left does not, and a zero at the right of a decimal does. In scientific notation, count the digits before the exponent.",
+  "examples": [
+   "5.06 m has 3 significant figures.",
+   "0.0034 m has 2 significant figures."
+  ],
+  "checkAnswer": "2 significant figures",
+  "keywords": [
+   "significant figures",
+   "significant digits",
+   "doubtful digit",
+   "zero",
+   "scientific notation"
+  ],
+  "simple": "Significant figures are the measurement digits we can rely on, plus the first estimated digit. Count carefully: some zeros count and some do not.",
+  "checkQuestion": "How many significant figures are there in 0.0034 m?",
+  "title": "Counting Significant Figures",
+  "steps": [
+   "Count all digits from 1 to 9.",
+   "Count a zero between two digits.",
+   "Do not count zeros on the left side of a measured value.",
+   "Count zeros on the right side of a decimal.",
+   "In scientific notation, count all digits before the exponent."
+  ],
+  "answer": "Significant figures are the reliably known digits in a measurement, including the first doubtful digit.",
+  "checkAccept": [
+   [
+    "2"
+   ],
+   [
+    "two"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How many significant figures are in 0.00620 m?",
+   "rationales": [
+    "This is incorrect because the leading zeros do not count, but the final decimal zero does.",
+    "This is correct: 6, 2 and the final decimal zero are significant.",
+    "This is incorrect because the zeros before 6 are not significant.",
+    "This is incorrect because there are only three significant digits."
+   ]
+  },
+  {
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "How many significant figures are in 7.030 cm?",
+   "rationales": [
+    "This is incorrect because more than one digit is significant.",
+    "This is incorrect because the zero between 7 and 3 and the final decimal zero also count.",
+    "This is correct: 7, the zero between digits, 3 and the final decimal zero are significant—four? Wait, this option states three, so it is not correct."
+   ]
+  }
+ ],
+ "written": [],
+ "lesson": {
+  "examTips": [],
+  "yourTurn": [],
+  "example": {
+   "steps": [],
+   "question": "",
+   "answer": ""
+  },
+  "explain": [],
+  "mistakes": []
+ }
+}

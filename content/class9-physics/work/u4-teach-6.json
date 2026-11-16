@@ -1,0 +1,682 @@
+{
+ "note": {
+  "explanation": "A body is balanced when the total clockwise moment about a point equals the total anticlockwise moment about that point. A moment is calculated by multiplying the force by its perpendicular distance from the pivot.",
+  "examples": [
+   "A 10 N force acting 0.2 m from a pivot makes a moment of 10 × 0.2 = 2 N m.",
+   "If a 30 N force acts 0.4 m from a pivot, its moment is 30 × 0.4 = 12 N m."
+  ],
+  "checkAnswer": "The clockwise and anticlockwise moments are equal.",
+  "keywords": [
+   "moment",
+   "pivot",
+   "clockwise",
+   "anticlockwise",
+   "balanced",
+   "force",
+   "distance"
+  ],
+  "simple": "Think of a seesaw: a smaller force can balance a larger one if it acts farther from the pivot.",
+  "checkQuestion": "What must be equal for a body to balance about a point?",
+  "title": "Principle of Moments",
+  "steps": [
+   "Choose the pivot or point about which the body turns.",
+   "Work out each moment using force × perpendicular distance from the pivot.",
+   "Separate the moments that turn clockwise from those that turn anticlockwise.",
+   "For balance, set total clockwise moments equal to total anticlockwise moments.",
+   "Solve the equation and include the correct unit."
+  ],
+  "answer": "When a body is in balanced position, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point.",
+  "checkAccept": [
+   [
+    "clockwise",
+    "anticlockwise"
+   ],
+   [
+    "equal",
+    "moments"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "12 N m clockwise",
+    "12 N m anticlockwise",
+    "3 N m clockwise",
+    "3 N m anticlockwise"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A 4 N force acts perpendicular to a bar at a distance of 3 m from its pivot. What is the magnitude of its moment?",
+   "rationales": [
+    "This is correct because moment = force × perpendicular distance = 4 × 3 = 12 N m; the force's turning direction is clockwise in the stated arrangement.",
+    "The magnitude is 12 N m, but the stated arrangement turns clockwise, not anticlockwise.",
+    "This is incorrect because it does not equal 4 × 3.",
+    "This is incorrect because it does not equal 4 × 3 and gives the wrong direction."
+   ]
+  },
+  {
+   "options": [
+    "Clockwise moment is greater",
+    "Anticlockwise moment is greater",
+    "The total clockwise and anticlockwise moments are equal",
+    "There are no moments"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A beam is in rotational balance about a pivot. Which statement must be true?",
+   "rationales": [
+    "This would make the beam turn clockwise rather than remain balanced.",
+    "This would make the beam turn anticlockwise rather than remain balanced.",
+    "This is correct: in a balanced position, total clockwise and anticlockwise moments are equal.",
+    "A beam can have moments acting on it while still being balanced."
+   ]
+  },
+  {
+   "options": [
+    "2 N m",
+    "6 N m",
+    "8 N m",
+    "12 N m"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force of 2 N acts perpendicular to a lever at a distance of 3 m from the pivot. What is the moment?",
+   "rationales": [
+    "This is incorrect because the force and distance must be multiplied.",
+    "This is correct because 2 × 3 = 6 N m.",
+    "This is incorrect because it is not the product of 2 N and 3 m.",
+    "This is incorrect because it doubles the correct product."
+   ]
+  },
+  {
+   "options": [
+    "0.25 m",
+    "0.5 m",
+    "1 m",
+    "2 m"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A 12 N force balances a 6 N force acting 2 m from a pivot on the opposite side. How far from the pivot should the 12 N force act?",
+   "rationales": [
+    "This distance would give a 3 N m moment, which is too small.",
+    "This distance would give a 6 N m moment, which is too small.",
+    "This is correct because 12 × d = 6 × 2, so d = 1 m.",
+    "This distance would give a 24 N m moment, which is too large."
+   ]
+  },
+  {
+   "options": [
+    "A force acting through the pivot",
+    "A force acting 0.5 m from the pivot",
+    "A force acting 1 m from the pivot",
+    "A force acting 2 m from the pivot"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which force produces zero moment about a pivot?",
+   "rationales": [
+    "This is correct because the perpendicular distance from the pivot is zero.",
+    "This force has a non-zero perpendicular distance and can produce a moment.",
+    "This force has a non-zero perpendicular distance and can produce a moment.",
+    "This force has a non-zero perpendicular distance and can produce a moment."
+   ]
+  },
+  {
+   "options": [
+    "2 N m",
+    "6 N m",
+    "10 N m",
+    "20 N m"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A 5 N force acts perpendicular to a rod 2 m from its pivot. What is the moment of the force?",
+   "rationales": [
+    "This is incorrect because 5 × 2 is not 2.",
+    "This is incorrect because 5 × 2 is not 6.",
+    "This is correct because moment = force × distance = 5 × 2 = 10 N m.",
+    "This is incorrect because it is twice the correct product."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A metre stick is pinned at its one end O on a table so that it can rotate freely. One force of magnitude 18 N is applied perpendicular to the length of the stick at its free end. Another force of magnitude 60N is acting at an angle of 30° with the stick as shown in Fig. 4.13(a). At what distance from the end of stick that is pinned should the second force act such that the stick does not rotate?",
+   "finalAnswer": "0.6 m",
+   "marks": 4,
+   "source": "Example 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "60",
+       "cos",
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "Resolving the force identifies the component parallel to the stick, which produces no torque.",
+     "description": "Resolve the 60 N force into components.",
+     "how": "State the components as 60 cos 30° = 51.96 N and 60 sin 30° = 30 N."
+    },
+    {
+     "accept": [
+      [
+       "30",
+       "18",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Only the perpendicular component contributes to the moment.",
+     "description": "Identify the balancing torque equation.",
+     "how": "Use 30 N × d = 18 N × 1 m."
+    },
+    {
+     "accept": [
+      [
+       "d=0.6"
+      ],
+      [
+       "d=18/30"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the moment equation gives the required distance.",
+     "description": "Calculate the distance.",
+     "how": "Show d = (18 × 1)/30."
+    },
+    {
+     "accept": [
+      [
+       "0.6 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct final distance completes the calculation.",
+     "description": "Give the final answer with unit.",
+     "how": "Write 0.6 m."
+    }
+   ],
+   "modelAnswer": [
+    "F_x = 60 N × cos 30° = 60 N × 0.866 = 51.96 N",
+    "F_y = 60 N × sin 30° = 60 N × 0.5 = 30 N",
+    "As the component F_x passes through the axis of rotation, its torque is zero.",
+    "30 N × d = 18 N × 1 m",
+    "d = (18 N × 1 m)/30 N = 0.6 m"
+   ]
+  },
+  {
+   "text": "Two weights are hanging from a metre rule at the positions as shown in the given figure. If the metre rule is balanced at its centre of gravity (C. G), find the unknown weight w. The weight w hangs 40 cm to the left of C. G and the 4 N weight hangs 30 cm to the right.",
+   "finalAnswer": "3 N",
+   "marks": 2,
+   "source": "Numerical 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "w×40",
+       "4×30"
+      ],
+      [
+       "40w",
+       "120"
+      ]
+     ],
+     "marks": 1,
+     "why": "The moments on opposite sides of the pivot must be set equal.",
+     "description": "Set the moments equal.",
+     "how": "Use w × 40 = 4 × 30."
+    },
+    {
+     "accept": [
+      [
+       "3 N"
+      ],
+      [
+       "w=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct weight follows from solving the moment equation.",
+     "description": "Give the unknown weight.",
+     "how": "Calculate w = 120/40 = 3 N."
+    }
+   ],
+   "modelAnswer": [
+    "Total anticlockwise moments = Total clockwise moments",
+    "w × 40 cm = 4 N × 30 cm",
+    "w = (4 N × 30 cm)/40 cm",
+    "w = 3 N"
+   ]
+  },
+  {
+   "text": "A see-saw is balanced with two children sitting near either end. Child A weighs 30 kg and sits 2 metres away from the pivot, while child B weighs 40 kg and sits 1.5 metres from the pivot. Calculate the total moment on each side and determine if the sea-saw is in equilibrium.",
+   "finalAnswer": "(60 N)",
+   "marks": 4,
+   "source": "Numerical 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30×2",
+       "40×1.5"
+      ],
+      [
+       "60",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each side's moment is found from force or stated weight multiplied by its distance from the pivot.",
+     "description": "Calculate the moment on each side.",
+     "how": "Calculate 30 × 2 and 40 × 1.5; both give 60 in the given numerical convention."
+    },
+    {
+     "accept": [
+      [
+       "equal"
+      ],
+      [
+       "60",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal moments show that neither side has a greater turning effect.",
+     "description": "Compare the two moments.",
+     "how": "State that both sides have a moment of 60."
+    },
+    {
+     "accept": [
+      [
+       "equilibrium"
+      ],
+      [
+       "balanced"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion follows from the equality of clockwise and anticlockwise moments.",
+     "description": "State whether the seesaw is balanced.",
+     "how": "Say that the seesaw is in equilibrium."
+    },
+    {
+     "accept": [
+      [
+       "60 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This matches the printed answer for the exercise item.",
+     "description": "Give the printed answer.",
+     "how": "Write (60 N)."
+    }
+   ],
+   "modelAnswer": [
+    "Moment on side A = 30 × 2 = 60",
+    "Moment on side B = 40 × 1.5 = 60",
+    "The moments on both sides are equal, so the see-saw is in equilibrium.",
+    "Answer = (60 N)"
+   ]
+  },
+  {
+   "text": "A crowbar is used to lift a box as shown in the given figure. If the downward force of 250 N is applied at the end of the bar, how much weight does the other end bear? The crowbar itself has negligible weight. The box is 5 cm from the support and the applied force is 30 cm from the support.",
+   "finalAnswer": "1500 N",
+   "marks": 4,
+   "source": "Numerical 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "250×30",
+       "w×5"
+      ],
+      [
+       "7500",
+       "5w"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bar is balanced when the moments about the support are equal.",
+     "description": "Set the moments about the support equal.",
+     "how": "Use 250 × 30 = W × 5."
+    },
+    {
+     "accept": [
+      [
+       "w=7500/5"
+      ],
+      [
+       "1500"
+      ]
+     ],
+     "marks": 1,
+     "why": "Solving the equation gives the force borne at the other end.",
+     "description": "Solve for the unknown weight.",
+     "how": "Calculate W = (250 × 30)/5."
+    },
+    {
+     "accept": [
+      [
+       "1500 N"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct final force with its unit is required.",
+     "description": "State the final answer.",
+     "how": "Write 1500 N."
+    }
+   ],
+   "modelAnswer": [
+    "Total clockwise moments = Total anticlockwise moments",
+    "250 N × 30 cm = W × 5 cm",
+    "W = (250 N × 30 cm)/5 cm",
+    "W = 1500 N"
+   ]
+  },
+  {
+   "text": "A 30 cm long spanner is used to open the nut of a car. If the torque required for it is 150 N m, how much force F should be applied on the spanner as shown in the figure given below.",
+   "finalAnswer": "500 N",
+   "marks": 2,
+   "source": "Numerical 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "150",
+       "0.3",
+       "F"
+      ],
+      [
+       "F×0.3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The torque equation links the required torque to force and lever arm.",
+     "description": "Set up the torque equation.",
+     "how": "Use 150 N m = F × 0.3 m."
+    },
+    {
+     "accept": [
+      [
+       "500 N"
+      ],
+      [
+       "F=500"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force is obtained by dividing torque by the lever arm.",
+     "description": "Give the force.",
+     "how": "Calculate F = 150/0.3 = 500 N."
+    }
+   ],
+   "modelAnswer": [
+    "Torque = F × distance",
+    "150 N m = F × 0.3 m",
+    "F = 150 N m/0.3 m = 500 N"
+   ]
+  },
+  {
+   "text": "A signboard is suspended by means of two vertical wires as shown in the given figure. If the weight of the board is 200 N, what is the tension in the strings?",
+   "finalAnswer": "(100 N, 100 N)",
+   "marks": 2,
+   "source": "Numerical 4.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "t1+t2=200"
+      ],
+      [
+       "t1",
+       "t2",
+       "200"
+      ]
+     ],
+     "marks": 1,
+     "why": "The upward tensions together balance the board's downward weight.",
+     "description": "Use the vertical force balance and symmetry.",
+     "how": "The two equal tensions add to 200 N."
+    },
+    {
+     "accept": [
+      [
+       "100 N",
+       "100 N"
+      ],
+      [
+       "t1=100",
+       "t2=100"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct equal tensions complete the answer.",
+     "description": "Give both tensions.",
+     "how": "Write (100 N, 100 N)."
+    }
+   ],
+   "modelAnswer": [
+    "The signboard is balanced and the wires are equally spaced from its centre.",
+    "T_1 = T_2",
+    "T_1 + T_2 = 200 N",
+    "T_1 = T_2 = 100 N",
+    "Answer = (100 N, 100 N)"
+   ]
+  },
+  {
+   "text": "One girl of 30 kg mass sits 1.6 m from the axis of a see-saw. Another girl of mass 40 kg wants to sit on the other side, so that the see-saw may remain in equilibrium. How far away from the axis, the other girl may sit?",
+   "finalAnswer": "1.2 m",
+   "marks": 2,
+   "source": "Numerical 4.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30×1.6",
+       "40×d"
+      ],
+      [
+       "48",
+       "40d"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equilibrium requires the moments on the two sides of the axis to be equal.",
+     "description": "Set the moments equal.",
+     "how": "Use 30 × 1.6 = 40 × d."
+    },
+    {
+     "accept": [
+      [
+       "1.2 m"
+      ],
+      [
+       "d=1.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Solving the moment equation gives the required seating distance.",
+     "description": "State the distance.",
+     "how": "Calculate d = 48/40 = 1.2 m."
+    }
+   ],
+   "modelAnswer": [
+    "Total anticlockwise moments = Total clockwise moments",
+    "30 × 1.6 m = 40 × d",
+    "d = (30 × 1.6 m)/40",
+    "d = 1.2 m"
+   ]
+  },
+  {
+   "text": "Explain the principle of moments with an example.",
+   "finalAnswer": "When a body is in balanced position, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point.",
+   "marks": 4,
+   "source": "Comprehensive 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clockwise",
+       "anticlockwise",
+       "equal"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition must state the balance between the two directions of turning.",
+     "description": "State the principle of moments.",
+     "how": "Write that the sum of clockwise moments equals the sum of anticlockwise moments about any point when the body is balanced."
+    },
+    {
+     "accept": [
+      [
+       "force",
+       "distance"
+      ],
+      [
+       "w1",
+       "l1"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example should show how the moments are calculated.",
+     "description": "Give a suitable example and moment equation.",
+     "how": "For the metre rule, show w_1 × l_1 + w_2 × l_2 = w_3 × l_3."
+    },
+    {
+     "accept": [
+      [
+       "w1×l1+w2×l2=w3×l3"
+      ],
+      [
+       "anticlockwise",
+       "clockwise"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation demonstrates the principle in a balanced example.",
+     "description": "Connect the example to balance.",
+     "how": "Identify the left weights as anticlockwise moments and the right weight as a clockwise moment."
+    }
+   ],
+   "modelAnswer": [
+    "When a body is in balanced position, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point.",
+    "Moment = force × perpendicular distance from the point.",
+    "For the balanced metre rule, w_1 × l_1 + w_2 × l_2 = w_3 × l_3.",
+    "The weights w_1 and w_2 produce anticlockwise moments, and w_3 produces a clockwise moment.",
+    "Therefore, total anticlockwise moments = total clockwise moments."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "The principle may be tested as a definition, an explanation with an example, or a numerical problem involving a pivot, lever, spanner, see-saw, or metre rule.",
+   "For a numerical, show the pivot, identify clockwise and anticlockwise moments, and write the balanced-moment equation before substituting values.",
+   "Use the perpendicular distance from the pivot. Include units in the final answer, such as N m for moment and m for distance.",
+   "For full working marks, show the rearrangement and calculation, not just the final answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "The metre rule is balanced, so the moments on its two sides are equal.",
+     "Use w × 40 cm = 4 N × 30 cm, then solve for w."
+    ],
+    "accept": [
+     [
+      "3 N"
+     ],
+     [
+      "w=3"
+     ]
+    ],
+    "question": "Two weights are hanging from a metre rule at the positions as shown in the given figure. If the metre rule is balanced at its centre of gravity (C. G), find the unknown weight w. The weight w hangs 40 cm to the left of C. G and the 4 N weight hangs 30 cm to the right.",
+    "solution": [
+     "Total anticlockwise moments = Total clockwise moments",
+     "w × 40 cm = 4 N × 30 cm",
+     "w = (4 N × 30 cm)/40 cm",
+     "w = 3 N"
+    ],
+    "answer": "3 N"
+   },
+   {
+    "hints": [
+     "The spanner's length is the distance from the pivot to where the force is applied.",
+     "Convert 30 cm to 0.3 m, then use torque = force × distance."
+    ],
+    "accept": [
+     [
+      "500 N"
+     ],
+     [
+      "F=500"
+     ]
+    ],
+    "question": "A 30 cm long spanner is used to open the nut of a car. If the torque required for it is 150 N m, how much force F should be applied on the spanner as shown in the figure given below.",
+    "solution": [
+     "Torque = F × distance",
+     "150 N m = F × 0.3 m",
+     "F = 150 N m/0.3 m = 500 N"
+    ],
+    "answer": "500 N"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The component along the stick passes through the rotation axis, so it has no lever arm and makes no torque.",
+     "text": "F_x = 60 N × cos 30° = 60 N × 0.866 = 51.96 N"
+    },
+    {
+     "why": "The perpendicular component is the part of the force that can turn the stick.",
+     "text": "F_y = 60 N × sin 30° = 60 N × 0.5 = 30 N"
+    },
+    {
+     "why": "A force whose line of action passes through the axis has zero torque.",
+     "text": "As the component F_x passes through the axis of rotation, its torque is zero."
+    },
+    {
+     "why": "For the stick not to rotate, the opposite torques must balance.",
+     "text": "The stick will not rotate when these two torques balance each other, i.e τ₁ = τ₂ or F_y × d = F_y′ × d′"
+    },
+    {
+     "why": "Substituting the perpendicular forces and their distances gives an equation for d.",
+     "text": "30 N × d = 18 N × 1 m"
+    },
+    {
+     "why": "Dividing by 30 N gives the distance from the pinned end.",
+     "text": "d = (18 N × 1 m)/30 N = 0.6 m"
+    }
+   ],
+   "question": "A metre stick is pinned at its one end O on a table so that it can rotate freely. One force of magnitude 18 N is applied perpendicular to the length of the stick at its free end. Another force of magnitude 60N is acting at an angle of 30° with the stick as shown in Fig. 4.13(a). At what distance from the end of stick that is pinned should the second force act such that the stick does not rotate?",
+   "answer": "0.6 m"
+  },
+  "explain": [
+   {
+    "title": "Moment of a force",
+    "body": "A force can make a body turn about a point. In this example, each weight's moment is its weight multiplied by its distance from the centre of gravity."
+   },
+   {
+    "title": "Turning directions",
+    "body": "Name each moment clockwise or anticlockwise about the pivot. In Activity 4.2, w_1 and w_2 turn the rule anticlockwise, while w_3 turns it clockwise."
+   },
+   {
+    "title": "Principle of moments",
+    "body": "When a body is in balanced position, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point."
+   },
+   {
+    "title": "Using the rule",
+    "body": "For a balanced metre rule, add the moments on each side and set the totals equal: w_1 × l_1 + w_2 × l_2 = w_3 × l_3."
+   }
+  ],
+  "mistakes": [
+   "Using the full force at an angle instead of resolving it and using the component perpendicular to the stick.",
+   "Using the distance from the end of the object rather than the distance from the pivot.",
+   "Adding clockwise and anticlockwise moments together instead of setting their totals equal for balance.",
+   "Forgetting to convert centimetres to metres when the answer is required in N m.",
+   "Giving a numerical answer without a unit."
+  ]
+ }
+}

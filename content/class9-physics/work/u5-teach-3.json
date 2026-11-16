@@ -1,0 +1,627 @@
+{
+ "note": {
+  "explanation": "As a body falls, its potential energy changes into kinetic energy. If air resistance is negligible, the total energy stays the same.",
+  "examples": [
+   "At point B, the body has potential energy mg(h − x) and kinetic energy mgx.",
+   "Just before the body reaches the ground, its potential energy is zero and its kinetic energy is mgh."
+  ],
+  "checkAnswer": "At B, E_p = mg(h − x), E_k = mgx, and total energy = mgh.",
+  "keywords": [
+   "conservation",
+   "potential energy",
+   "kinetic energy",
+   "falling body",
+   "waste energy"
+  ],
+  "simple": "Energy changes form, but the total amount does not disappear. A falling object changes potential energy into kinetic energy.",
+  "checkQuestion": "At point B, what are the body's potential energy, kinetic energy, and total energy?",
+  "title": "Conservation of Energy",
+  "steps": [
+   "At A, the body is at rest and has potential energy mgh.",
+   "As it falls to B, it loses potential energy and gains kinetic energy.",
+   "At B, E_p = mg(h − x) and E_k = mgx.",
+   "Add the two forms: E = mg(h − x) + mgx = mgh.",
+   "Just before reaching the ground, E_p = 0 and E_k = mgh."
+  ],
+  "answer": "The total energy remains mgh while the body falls, assuming air resistance is negligible.",
+  "checkAccept": [
+   [
+    "mg(h-x)",
+    "mgx",
+    "mgh"
+   ],
+   [
+    "mg(h − x)",
+    "mgx",
+    "mgh"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Potential energy changes into kinetic energy, while total energy stays constant.",
+    "Kinetic energy changes into potential energy, while total energy becomes zero.",
+    "Potential energy is destroyed as the body falls.",
+    "The body gains energy from the ground while falling."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A body falls freely from a height. Which statement best describes its energy transformation?",
+   "rationales": [
+    "Correct: as the body falls, potential energy changes into kinetic energy and the total remains constant.",
+    "Incorrect: a falling body generally loses potential energy and gains kinetic energy.",
+    "Incorrect: the conservation principle says energy is not destroyed.",
+    "Incorrect: the body's energy transformation occurs during the fall, not because the ground supplies energy."
+   ]
+  },
+  {
+   "options": [
+    "mgh",
+    "mgx",
+    "mg(h − x)",
+    "0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A body of mass m is at rest at height h above the ground. What is its total energy?",
+   "rationales": [
+    "Correct: at rest its kinetic energy is zero, so its total energy is its potential energy mgh.",
+    "Incorrect: mgx is the kinetic energy at point B in the section's falling-body example.",
+    "Incorrect: mg(h − x) is the potential energy at point B, not the initial total energy.",
+    "Incorrect: the body has gravitational potential energy because it is raised above the ground."
+   ]
+  },
+  {
+   "options": [
+    "mg(h − x)",
+    "mgx",
+    "mgh",
+    "0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In the textbook's falling-body example, what is the potential energy at point B, which is x metres above the ground?",
+   "rationales": [
+    "Correct: point B is h − x metres below A, so its height above the ground is h − x and its potential energy is mg(h − x).",
+    "Incorrect: mgx is the kinetic energy gained by the body at B.",
+    "Incorrect: mgh is the body's total energy, not its potential energy at B.",
+    "Incorrect: point B is still above the ground, so the body still has potential energy."
+   ]
+  },
+  {
+   "options": [
+    "mgx",
+    "mg(h − x)",
+    "mgh",
+    "0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In the textbook's falling-body example, what is the kinetic energy at point B?",
+   "rationales": [
+    "Correct: the loss of potential energy appears as a gain in kinetic energy, giving E_k = mgx.",
+    "Incorrect: mg(h − x) is the potential energy at B.",
+    "Incorrect: mgh is the total energy, not the kinetic energy at B alone.",
+    "Incorrect: the falling body has gained speed by point B, so its kinetic energy is not zero."
+   ]
+  },
+  {
+   "options": [
+    "mgh",
+    "mg(h − x)",
+    "mgx",
+    "0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Just before a falling body reaches the ground, what is its kinetic energy if air resistance is negligible?",
+   "rationales": [
+    "Correct: just before impact, all of its initial potential energy mgh has changed into kinetic energy.",
+    "Incorrect: this is the potential energy at point B, not the kinetic energy just before impact.",
+    "Incorrect: this is the kinetic energy at point B, not at ground level.",
+    "Incorrect: the body is moving just before impact, so its kinetic energy is not zero."
+   ]
+  },
+  {
+   "options": [
+    "It is dissipated as heat and sound in the environment.",
+    "It is destroyed completely.",
+    "It becomes potential energy again while the body is still falling.",
+    "It remains stored as kinetic energy after the body has stopped."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to the section, what happens to the body's energy when it hits the ground?",
+   "rationales": [
+    "Correct: the section says the energy is dissipated as heat and sound in the environment.",
+    "Incorrect: energy is not destroyed; it is transformed into other forms.",
+    "Incorrect: the section describes the energy as being dissipated on hitting the ground.",
+    "Incorrect: once the body has stopped, its energy is no longer retained as kinetic energy."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Explain the law of conservation of energy with the help of an example of a body falling from a certain height in terms of its potential energy and kinetic energy.",
+   "finalAnswer": "During the fall, potential energy changes into kinetic energy, but the total energy remains mgh (assuming air resistance is negligible).",
+   "marks": 4,
+   "source": "Comprehensive 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "cannot be created",
+       "!destroyed"
+      ],
+      [
+       "cannot be destroyed",
+       "!created"
+      ]
+     ],
+     "marks": 1,
+     "why": "The statement of the law is essential to the explanation.",
+     "description": "State the conservation principle.",
+     "how": "Write that energy cannot be created or destroyed, but may change from one form to another."
+    },
+    {
+     "accept": [
+      [
+       "mgh",
+       "E_k=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial state establishes the body's starting energy.",
+     "description": "Describe the body at height h.",
+     "how": "State that at A the body has E_p = mgh and E_k = 0."
+    },
+    {
+     "accept": [
+      [
+       "mg(h-x)",
+       "mgx"
+      ],
+      [
+       "mg(h − x)",
+       "mgx"
+      ]
+     ],
+     "marks": 1,
+     "why": "These expressions show the change between potential and kinetic energy during the fall.",
+     "description": "Explain the energy at an intermediate point.",
+     "how": "At B, give E_p = mg(h − x) and E_k = mgx."
+    },
+    {
+     "accept": [
+      [
+       "total energy",
+       "mgh"
+      ],
+      [
+       "E=mgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final conclusion demonstrates conservation of the total energy.",
+     "description": "State the conserved total.",
+     "how": "Show that the sum of the two forms remains mgh."
+    }
+   ],
+   "modelAnswer": [
+    "Energy cannot be created or destroyed; it may be transformed from one form to another, but the total amount of energy never changes.",
+    "At A, E_p = mgh and E_k = 0.",
+    "At B, E_p = mg(h − x) and E_k = mgx.",
+    "Total energy at B: E = mg(h − x) + mgx = mgh.",
+    "Just before reaching the ground, E_p = 0 and E_k = mgh.",
+    "Thus, during the fall, potential energy changes into kinetic energy, but the total energy remains mgh, assuming air resistance is negligible."
+   ]
+  },
+  {
+   "text": "Describe the energy changes when a ball smashes a window pane while playing cricket on a street.",
+   "finalAnswer": "The ball's kinetic energy is transferred to the window pane and changes into the energy of breaking the glass, sound, and heat.",
+   "marks": 4,
+   "source": "Constructed Response 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "kinetic energy"
+      ],
+      [
+       "moving ball"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ball is moving before impact, so it possesses kinetic energy.",
+     "description": "Identify the ball's energy before impact.",
+     "how": "State that the moving ball has kinetic energy."
+    },
+    {
+     "accept": [
+      [
+       "transferred",
+       "window"
+      ],
+      [
+       "ball",
+       "window"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ball transfers energy to the pane when it hits it.",
+     "description": "Explain the transfer at impact.",
+     "how": "State that the ball's energy is transferred to the window pane."
+    },
+    {
+     "accept": [
+      [
+       "break",
+       "glass"
+      ],
+      [
+       "breaking",
+       "glass"
+      ]
+     ],
+     "marks": 1,
+     "why": "The transferred energy causes the pane to break.",
+     "description": "Name the useful visible effect.",
+     "how": "Explain that the pane's energy is involved in breaking the glass."
+    },
+    {
+     "accept": [
+      [
+       "sound",
+       "heat"
+      ],
+      [
+       "sound"
+      ]
+     ],
+     "marks": 1,
+     "why": "Some energy is dissipated to the surroundings during the collision.",
+     "description": "Include other energy forms produced.",
+     "how": "Mention sound and heat produced during impact."
+    }
+   ],
+   "modelAnswer": [
+    "Before impact, the moving ball possesses kinetic energy.",
+    "When the ball hits the window, energy is transferred from the ball to the window pane.",
+    "This energy causes the glass to break.",
+    "Some energy is also dissipated as sound and heat."
+   ]
+  },
+  {
+   "text": "A ball of mass 160 g is thrown vertically upward. The ball reaches a height of 20 m. Find the potential energy gained by the ball at this height.",
+   "finalAnswer": "32 J",
+   "marks": 5,
+   "source": "Numerical 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "m=0.16kg"
+      ],
+      [
+       "160g",
+       "0.16"
+      ]
+     ],
+     "marks": 1,
+     "why": "Mass must be expressed in kilograms for the calculation.",
+     "description": "Convert the mass.",
+     "how": "Use m = 160 g = 0.16 kg."
+    },
+    {
+     "accept": [
+      [
+       "E_p=mgh"
+      ],
+      [
+       "mgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the gravitational potential energy relation used in the section.",
+     "description": "Choose the relation.",
+     "how": "Write E_p = mgh."
+    },
+    {
+     "accept": [
+      [
+       "0.16",
+       "10",
+       "20"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution uses the given mass and height and g = 10 m s⁻².",
+     "description": "Substitute values.",
+     "how": "Use E_p = 0.16 × 10 × 20."
+    },
+    {
+     "accept": [
+      [
+       "32J"
+      ],
+      [
+       "32",
+       "J"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct value and unit complete the calculation.",
+     "description": "Give the final answer.",
+     "how": "Evaluate the expression and state the answer in joules."
+    }
+   ],
+   "modelAnswer": [
+    "m = 160 g = 0.16 kg",
+    "E_p = mgh",
+    "E_p = 0.16 × 10 × 20",
+    "E_p = 32 J"
+   ]
+  },
+  {
+   "text": "A 0.14 kg ball is thrown vertically upward with an initial velocity of 35 m s⁻¹. Find the maximum height reached by the ball.",
+   "finalAnswer": "61.25 m",
+   "marks": 5,
+   "source": "Numerical 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1/2mv^2=mgh"
+      ],
+      [
+       "0.5mv^2=mgh"
+      ],
+      [
+       "kinetic energy",
+       "potential energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "At maximum height, the initial kinetic energy has changed into potential energy.",
+     "description": "Apply conservation of energy.",
+     "how": "Equate the initial kinetic energy to the gained potential energy."
+    },
+    {
+     "accept": [
+      [
+       "h=v^2/2g"
+      ],
+      [
+       "h=35^2/20"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the energy equation isolates the height.",
+     "description": "Rearrange and substitute.",
+     "how": "Use h = v²/(2g), with v = 35 m s⁻¹ and g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "1225/20"
+      ],
+      [
+       "61.25"
+      ]
+     ],
+     "marks": 1,
+     "why": "This evaluates the substituted expression correctly.",
+     "description": "Calculate the height.",
+     "how": "Evaluate 35²/20."
+    },
+    {
+     "accept": [
+      [
+       "61.25m"
+      ],
+      [
+       "61.25",
+       "m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final height and its unit must be clearly stated.",
+     "description": "Give the final answer.",
+     "how": "State the maximum height as 61.25 m."
+    }
+   ],
+   "modelAnswer": [
+    "At maximum height, kinetic energy changes into potential energy.",
+    "½mv² = mgh",
+    "h = v²/(2g)",
+    "h = 35²/(2 × 10)",
+    "h = 61.25 m"
+   ]
+  },
+  {
+   "text": "A girl is swinging on a swing. At the lowest point of her swing, she is 1.2 m from the ground, and at the highest point she is 2.0 m from the ground. What is her maximum velocity and where?",
+   "finalAnswer": "4 m s⁻¹, at the lowest position",
+   "marks": 5,
+   "source": "Numerical 5.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2.0-1.2"
+      ],
+      [
+       "0.8"
+      ]
+     ],
+     "marks": 1,
+     "why": "The height difference determines the change in gravitational potential energy.",
+     "description": "Find the height change.",
+     "how": "Calculate 2.0 m − 1.2 m = 0.8 m."
+    },
+    {
+     "accept": [
+      [
+       "potential energy",
+       "kinetic energy"
+      ],
+      [
+       "mgh=1/2mv^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Conservation of energy converts the lost potential energy into kinetic energy.",
+     "description": "Set the energy changes equal.",
+     "how": "Use mgh = ½mv²."
+    },
+    {
+     "accept": [
+      [
+       "v=sqrt(2gh)"
+      ],
+      [
+       "v=sqrt(20*0.8)"
+      ],
+      [
+       "v=4"
+      ]
+     ],
+     "marks": 1,
+     "why": "This calculation gives the speed at the lowest point.",
+     "description": "Calculate the speed.",
+     "how": "Cancel m and use v = √(2gh), with g = 10 m s⁻² and h = 0.8 m."
+    },
+    {
+     "accept": [
+      [
+       "4m/s",
+       "lowest"
+      ],
+      [
+       "4m s-1",
+       "lowest"
+      ],
+      [
+       "4",
+       "lowest position"
+      ]
+     ],
+     "marks": 2,
+     "why": "The maximum speed and its position must both be stated.",
+     "description": "Give the final answer.",
+     "how": "State that her maximum velocity is 4 m s⁻¹ at the lowest position."
+    }
+   ],
+   "modelAnswer": [
+    "Height difference = 2.0 − 1.2 = 0.8 m",
+    "At the lowest position, the loss of potential energy becomes kinetic energy.",
+    "mgh = ½mv²",
+    "v = √(2gh) = √(2 × 10 × 0.8)",
+    "v = 4 m s⁻¹, at the lowest position"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A comprehensive question may ask you to state the law and explain it using a falling body. Write the energy expressions at the top, at an intermediate point, and just before the ground.",
+   "For numerical questions involving a change in height, show the energy relation before substituting values, and include the correct SI unit in your final answer.",
+   "Use the assumption of negligible air resistance when explaining why mechanical energy stays constant during a fall."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First convert the ball's mass from grams to kilograms.",
+     "Use E_p = mgh and take g = 10 m s⁻²."
+    ],
+    "accept": [
+     [
+      "32J"
+     ],
+     [
+      "32",
+      "J"
+     ]
+    ],
+    "question": "A ball of mass 160 g is thrown vertically upward. The ball reaches a height of 20 m. Find the potential energy gained by the ball at this height.",
+    "solution": [
+     "m = 160 g = 0.16 kg",
+     "E_p = mgh",
+     "E_p = 0.16 × 10 × 20",
+     "E_p = 32 J"
+    ],
+    "answer": "32 J"
+   },
+   {
+    "hints": [
+     "At the highest point, the ball's kinetic energy has changed into potential energy.",
+     "Use ½mv² = mgh, cancel m, and take g = 10 m s⁻²."
+    ],
+    "accept": [
+     [
+      "61.25m"
+     ],
+     [
+      "61.25",
+      "m"
+     ]
+    ],
+    "question": "A 0.14 kg ball is thrown vertically upward with an initial velocity of 35 m s⁻¹. Find the maximum height reached by the ball.",
+    "solution": [
+     "At maximum height, kinetic energy changes into potential energy.",
+     "½mv² = mgh",
+     "h = v²/(2g)",
+     "h = 35²/(2 × 10)",
+     "h = 61.25 m"
+    ],
+    "answer": "61.25 m"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "At A the body is at height h and is initially at rest.",
+     "text": "At A, E_p = mgh and E_k = 0."
+    },
+    {
+     "why": "As the body falls, its height above the ground becomes h − x.",
+     "text": "At B, E_p = mg(h − x)."
+    },
+    {
+     "why": "The loss of potential energy appears as a gain in kinetic energy.",
+     "text": "At B, E_k = mgx."
+    },
+    {
+     "why": "Adding both forms shows that the total energy has not changed.",
+     "text": "E = mg(h − x) + mgx = mgh."
+    },
+    {
+     "why": "At ground level the potential energy is zero, so all the energy is kinetic just before impact.",
+     "text": "Just before reaching the ground, E_p = 0 and E_k = mgh."
+    }
+   ],
+   "question": "A body of mass m is at rest at height h above the ground and is allowed to fall to the ground. Describe its potential energy and kinetic energy during the fall, assuming air resistance is negligible.",
+   "answer": "Its potential energy changes into kinetic energy, while its total energy remains mgh."
+  },
+  "explain": [
+   {
+    "title": "The law of conservation of energy",
+    "body": "Energy cannot be created or destroyed. It may be transformed from one form to another, but the total amount of energy never changes."
+   },
+   {
+    "title": "Energy during a fall",
+    "body": "At the top, a body at rest has potential energy mgh and no kinetic energy. As it falls, potential energy decreases while kinetic energy increases. At point B, their sum is mg(h − x) + mgx = mgh."
+   },
+   {
+    "title": "Energy at the ground and waste energy",
+    "body": "Just before hitting the ground, the body's potential energy is zero and its kinetic energy is mgh. On impact, energy is dissipated as heat and sound. During energy transfers, some energy may become waste energy because work is done against friction; it is not available for useful work."
+   }
+  ],
+  "mistakes": [
+   "Do not say that energy is destroyed when it changes form; the total amount remains the same.",
+   "Do not confuse the body's height above the ground, h − x at B, with the distance it has fallen, x.",
+   "At B, do not swap the expressions: potential energy is mg(h − x), while kinetic energy is mgx.",
+   "At the ground, potential energy is zero, but kinetic energy is not zero just before impact.",
+   "For a conservation-of-energy numerical, state the energy relation and use consistent units before calculating."
+  ]
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "13:4",
+   "figure": "        → F\n     ┌────────┐\n     │        │\n     └────────┘\n        ← F\n        ↕ d\n\nThe two equal, opposite, parallel forces act along different lines of action.",
+   "steps": [
+    "Draw a rigid body and mark two equal, parallel forces, F, acting in opposite directions along different lines of action.",
+    "Show that the resultant force is zero: F − F = 0.",
+    "The forces form a couple. If the perpendicular distance between their lines of action is d, the resultant torque (moment of the couple) is Fd, which is not zero.",
+    "Thus, the resultant force is zero but the resultant torque is not zero."
+   ],
+   "finalAnswer": "Equal and opposite forces acting along different lines of action have zero resultant force but a non-zero resultant torque."
+  },
+  {
+   "accept": [
+    [
+     "600",
+     "N",
+     "m"
+    ],
+    [
+     "60",
+     "N"
+    ]
+   ],
+   "id": "13:22",
+   "figure": "",
+   "steps": [
+    "Given: Mass of child A = 30 kg; distance of child A from pivot = 2 m; mass of child B = 40 kg; distance of child B from pivot = 1.5 m; g = 10 N/kg.",
+    "Required: Moment on each side and whether the see-saw is in equilibrium.",
+    "Formula: Moment = Force × perpendicular distance; Weight = mass × g.",
+    "For child A: Weight = 30 kg × 10 N/kg = 300 N.",
+    "Moment on A's side = 300 N × 2 m = 600 N·m.",
+    "For child B: Weight = 40 kg × 10 N/kg = 400 N.",
+    "Moment on B's side = 400 N × 1.5 m = 600 N·m.",
+    "The moments are equal and act in opposite directions, so the see-saw is in equilibrium.",
+    "The supplied book answer is 60 N; this does not agree with the SI calculation and is not a moment unit. The calculated moment on each side is 600 N·m."
+   ],
+   "finalAnswer": "60 N (as printed in the book; the SI-calculated moment is 600 N·m on each side)."
+  }
+ ]
+}

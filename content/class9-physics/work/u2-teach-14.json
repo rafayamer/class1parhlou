@@ -1,0 +1,1897 @@
+{
+ "note": {
+  "explanation": "Kinematics describes motion and how position, speed, velocity and acceleration change with time. Graphs and equations of motion help us describe and calculate these changes.",
+  "examples": [
+   "A car travelling at constant speed in a straight line has constant velocity.",
+   "A ball thrown vertically upward has zero velocity for an instant at its highest point, but its acceleration is still downward."
+  ],
+  "checkAnswer": "Speed is the gradient of a distance–time graph; acceleration is the gradient of a speed–time graph.",
+  "keywords": [
+   "kinematics",
+   "distance",
+   "displacement",
+   "speed",
+   "velocity",
+   "acceleration",
+   "motion",
+   "graphs"
+  ],
+  "simple": "Kinematics is the study of motion. It tells us how far and in which direction something moves, how fast it moves, and how its motion changes.",
+  "checkQuestion": "What does the gradient of a speed–time graph represent?",
+  "title": "Describing motion",
+  "steps": [
+   "Choose a positive direction and keep it consistent.",
+   "Use distance for the total path covered and displacement for the change in position.",
+   "Use speed or velocity to describe how quickly position changes.",
+   "Use acceleration to describe how quickly velocity changes.",
+   "For calculations, choose an equation of motion that includes the known quantities and the quantity required."
+  ],
+  "answer": "Kinematics describes motion using distance, displacement, speed, velocity and acceleration.",
+  "checkAccept": [
+   [
+    "acceleration"
+   ],
+   [
+    "rate of change of velocity"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "always less than one",
+    "always equal to one",
+    "always greater than one",
+    "equal to or less than one"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q2.1. The numerical ratio of displacement to distance is:",
+   "rationales": [
+    "Incorrect: displacement can equal distance, so the ratio need not be less than one.",
+    "Incorrect: the ratio is one only when the path is straight and there is no reversal.",
+    "Incorrect: displacement cannot be greater than the distance travelled.",
+    "Correct: displacement magnitude is at most the distance, so the ratio is equal to or less than one."
+   ]
+  },
+  {
+   "options": [
+    "rest",
+    "motion",
+    "uniform motion",
+    "variable motion"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q2.2. If a body does not change its position with respect to some fixed point, then it will be in a state of:",
+   "rationales": [
+    "Correct: no change of position relative to a fixed point means rest.",
+    "Incorrect: motion requires a change in position relative to a reference point.",
+    "Incorrect: uniform motion is motion at constant velocity, not unchanged position.",
+    "Incorrect: variable motion involves changing velocity."
+   ]
+  },
+  {
+   "options": [
+    "5 m",
+    "10 m",
+    "50 m",
+    "100 m"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q2.3. A ball is dropped from the top of a tower, the distance covered by it in the first second is:",
+   "rationales": [
+    "Correct: using g = 10 m s⁻², s = ½gt² = 5 m in one second.",
+    "Incorrect: this is twice the distance found from s = ½gt² for one second.",
+    "Incorrect: this is ten times the distance covered in the first second.",
+    "Incorrect: this is twenty times the distance covered in the first second."
+   ]
+  },
+  {
+   "options": [
+    "100 m",
+    "400 m",
+    "1400 m",
+    "1440 m"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q2.4. A body accelerates from rest to a velocity of 144 km h⁻¹ in 20 seconds. The distance covered by it is:",
+   "rationales": [
+    "Incorrect: the final speed is 40 m s⁻¹, so the mean speed is 20 m s⁻¹ and the distance is 400 m.",
+    "Correct: 144 km h⁻¹ = 40 m s⁻¹; mean speed = 20 m s⁻¹, giving 400 m in 20 s.",
+    "Incorrect: this does not follow from the mean speed and the time.",
+    "Incorrect: this incorrectly uses the converted final speed as though it were the mean speed."
+   ]
+  },
+  {
+   "options": [
+    "1s",
+    "2s",
+    "4s",
+    "16s"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q2.5. A body is moving with constant acceleration starting from rest. It covers a distance S in 4 seconds. How much time does it take to cover one-fourth of this distance?",
+   "rationales": [
+    "Incorrect: from rest under constant acceleration, distance is proportional to time squared; one second gives one-sixteenth of S.",
+    "Correct: distance is proportional to t², so one-fourth of S takes half of 4 s, which is 2 s.",
+    "Incorrect: 4 s is the time for the full distance S.",
+    "Incorrect: 16 s is longer than the time for the full distance and cannot give one-fourth of S."
+   ]
+  },
+  {
+   "options": [
+    "The velocity of A is greater than B.",
+    "The velocity of A is less than B.",
+    "The velocity of A is equal to that of B.",
+    "The graph gives no information in this regard."
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q2.6. The displacement time graphs of two objects A and B are shown in the figure. Point out the true statement from the following:",
+   "rationales": [
+    "Correct: the displacement–time gradient gives velocity; A has a positive gradient and B has zero gradient.",
+    "Incorrect: B is horizontal and has zero velocity, while A has a positive gradient.",
+    "Incorrect: A and B have different gradients, so their velocities are not equal.",
+    "Incorrect: the graph's gradients provide information about velocity."
+   ]
+  },
+  {
+   "options": [
+    "velocity",
+    "uniform velocity",
+    "acceleration",
+    "distance covered"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q2.7. The area under the speed-time graph is numerically equal to:",
+   "rationales": [
+    "Incorrect: the area has units of distance, not velocity.",
+    "Incorrect: the area does not represent uniform velocity.",
+    "Incorrect: the gradient, not the area, gives acceleration.",
+    "Correct: speed multiplied by time gives distance, represented by the area under the graph."
+   ]
+  },
+  {
+   "options": [
+    "speed",
+    "velocity",
+    "acceleration",
+    "distance covered"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q2.8. Gradient of the speed-time graph is equal to:",
+   "rationales": [
+    "Incorrect: speed is read from the vertical coordinate, not the gradient.",
+    "Incorrect: a speed–time graph's gradient gives acceleration, not velocity.",
+    "Correct: change in speed divided by time is acceleration.",
+    "Incorrect: distance is represented by the area under the speed–time graph."
+   ]
+  },
+  {
+   "options": [
+    "speed",
+    "velocity",
+    "distance covered",
+    "acceleration"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q2.9. Gradient of the distance-time graph is equal to the:",
+   "rationales": [
+    "Correct: change in distance divided by time gives speed.",
+    "Incorrect: distance–time gradient gives speed; a displacement–time graph gives velocity.",
+    "Incorrect: distance is read from the vertical coordinate, not the gradient.",
+    "Incorrect: acceleration is the gradient of a velocity–time graph."
+   ]
+  },
+  {
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q2.10. A car accelerates uniformly from 80.5 km h⁻¹ at t = 0 to 113 km h⁻¹ at t = 9 s. Which graph best describes the motion of the car?",
+   "rationales": [
+    "Incorrect: a curved graph represents changing acceleration, not uniform acceleration.",
+    "Incorrect: the car has a non-zero initial speed, so its graph does not start at the origin.",
+    "Correct: uniform acceleration is shown by a straight rising velocity–time line starting above zero.",
+    "Incorrect: this graph shows decreasing velocity, whereas the car accelerates."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q2.1. Define scalar and vector quantities.",
+   "finalAnswer": "A scalar has magnitude only; a vector has magnitude and direction.",
+   "marks": 2,
+   "source": "Short 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "magnitude"
+      ],
+      [
+       "only"
+      ]
+     ],
+     "marks": 1,
+     "why": "A scalar is identified by having magnitude only.",
+     "description": "Define scalar quantity.",
+     "how": "State that it has magnitude only."
+    },
+    {
+     "accept": [
+      [
+       "magnitude"
+      ],
+      [
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "A vector must include direction as well as magnitude.",
+     "description": "Define vector quantity.",
+     "how": "State that it has both magnitude and direction."
+    }
+   ],
+   "modelAnswer": [
+    "A scalar quantity has magnitude only.",
+    "A vector quantity has both magnitude and direction."
+   ]
+  },
+  {
+   "text": "Q2.2. Give 5 examples each for scalar and vector quantities.",
+   "finalAnswer": "Scalars: distance, speed, time, mass, temperature. Vectors: displacement, velocity, acceleration, force, weight.",
+   "marks": 2,
+   "source": "Short 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "speed"
+      ],
+      [
+       "time"
+      ],
+      [
+       "mass"
+      ],
+      [
+       "temperature"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples show recognition of quantities with magnitude only.",
+     "description": "Give five scalar examples.",
+     "how": "List five valid scalar quantities."
+    },
+    {
+     "accept": [
+      [
+       "displacement"
+      ],
+      [
+       "velocity"
+      ],
+      [
+       "acceleration"
+      ],
+      [
+       "force"
+      ],
+      [
+       "weight"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples show recognition of quantities with magnitude and direction.",
+     "description": "Give five vector examples.",
+     "how": "List five valid vector quantities."
+    }
+   ],
+   "modelAnswer": [
+    "Examples of scalars are distance, speed, time, mass and temperature.",
+    "Examples of vectors are displacement, velocity, acceleration, force and weight."
+   ]
+  },
+  {
+   "text": "Q2.3. State head-to-tail rule for addition of vectors.",
+   "finalAnswer": "Place the tail of each vector at the head of the preceding vector; the resultant runs from the first tail to the last head.",
+   "marks": 2,
+   "source": "Short 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "head"
+      ],
+      [
+       "tail"
+      ],
+      [
+       "preceding"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct placement is the essential construction rule.",
+     "description": "Describe how successive vectors are placed.",
+     "how": "Join each vector's tail to the previous vector's head."
+    },
+    {
+     "accept": [
+      [
+       "resultant"
+      ],
+      [
+       "first"
+      ],
+      [
+       "last"
+      ]
+     ],
+     "marks": 1,
+     "why": "The resultant's direction and magnitude depend on its endpoints.",
+     "description": "State how to draw the resultant.",
+     "how": "Draw it from the first tail to the last head."
+    }
+   ],
+   "modelAnswer": [
+    "Place the tail of each vector at the head of the preceding vector.",
+    "The resultant is drawn from the tail of the first vector to the head of the last vector."
+   ]
+  },
+  {
+   "text": "Q2.4. What are distance- time graph and speed-time graph?",
+   "finalAnswer": "A distance–time graph shows distance against time; a speed–time graph shows speed against time.",
+   "marks": 2,
+   "source": "Short 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The axes or quantities must identify the graph correctly.",
+     "description": "Describe a distance–time graph.",
+     "how": "Say it represents distance against time."
+    },
+    {
+     "accept": [
+      [
+       "speed"
+      ],
+      [
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The axes or quantities must identify the graph correctly.",
+     "description": "Describe a speed–time graph.",
+     "how": "Say it represents speed against time."
+    }
+   ],
+   "modelAnswer": [
+    "A distance–time graph shows the distance covered by an object with time.",
+    "A speed–time graph shows the speed of an object with time."
+   ]
+  },
+  {
+   "text": "Q2.5. Falling objects near the Earth have the same constant acceleration. Does this imply that a heavier object will fall faster than a lighter object?",
+   "finalAnswer": "No. They have the same acceleration, so from rest they fall at the same rate if air resistance is neglected.",
+   "marks": 2,
+   "source": "Short 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question tests the meaning of equal gravitational acceleration.",
+     "description": "Give the conclusion.",
+     "how": "State that the heavier object does not fall faster."
+    },
+    {
+     "accept": [
+      [
+       "same acceleration"
+      ],
+      [
+       "air resistance"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must connect equal acceleration to the comparison.",
+     "description": "Explain the conclusion.",
+     "how": "Mention equal acceleration and, where appropriate, neglect of air resistance."
+    }
+   ],
+   "modelAnswer": [
+    "No. A heavier object will not fall faster than a lighter object.",
+    "Near the Earth they have the same constant acceleration; neglecting air resistance, they fall at the same rate."
+   ]
+  },
+  {
+   "text": "Q2.6. The vector quantities are sometimes written in scalar notation (not bold face). How is the direction indicated?",
+   "finalAnswer": "The direction is indicated by a positive or negative sign, with respect to a chosen direction.",
+   "marks": 2,
+   "source": "Short 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "positive"
+      ],
+      [
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "A sign distinguishes the two directions along a chosen line.",
+     "description": "Identify the notation used for direction.",
+     "how": "State that direction is indicated by a sign."
+    },
+    {
+     "accept": [
+      [
+       "chosen direction"
+      ],
+      [
+       "reference direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Signs have meaning only relative to a specified direction.",
+     "description": "Relate the sign to a reference.",
+     "how": "Mention the chosen or reference direction."
+    }
+   ],
+   "modelAnswer": [
+    "The direction is indicated by a positive or negative sign.",
+    "The sign is interpreted with respect to a chosen direction."
+   ]
+  },
+  {
+   "text": "Q2.7. A body is moving with uniform speed. Will its velocity be uniform? Give reason.",
+   "finalAnswer": "Not necessarily. Velocity is uniform only if both speed and direction remain constant.",
+   "marks": 2,
+   "source": "Short 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "not necessarily"
+      ],
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "Uniform speed alone does not guarantee uniform velocity.",
+     "description": "Give the conclusion.",
+     "how": "State that the velocity is not necessarily uniform."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "constant"
+      ],
+      [
+       "speed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity depends on both magnitude and direction.",
+     "description": "Give the reason.",
+     "how": "Explain that direction as well as speed must remain constant."
+    }
+   ],
+   "modelAnswer": [
+    "No, not necessarily.",
+    "Velocity is uniform only when both speed and direction remain constant."
+   ]
+  },
+  {
+   "text": "Q2.8. Is it possible for a body to have acceleration? When moving with: (i) constant velocity (ii) constant speed",
+   "finalAnswer": "(i) No: constant velocity means zero acceleration. (ii) Yes: constant speed with changing direction, such as circular motion, has acceleration.",
+   "marks": 2,
+   "source": "Short 2.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "constant velocity"
+      ],
+      [
+       "zero acceleration"
+      ],
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "Constant velocity means velocity is not changing.",
+     "description": "Answer for constant velocity.",
+     "how": "State that acceleration is zero."
+    },
+    {
+     "accept": [
+      [
+       "constant speed"
+      ],
+      [
+       "changing direction"
+      ],
+      [
+       "circular"
+      ]
+     ],
+     "marks": 1,
+     "why": "Acceleration can arise from a change in direction even if speed is unchanged.",
+     "description": "Answer for constant speed.",
+     "how": "Give changing direction or circular motion as an example."
+    }
+   ],
+   "modelAnswer": [
+    "(i) No. With constant velocity, the change in velocity is zero, so acceleration is zero.",
+    "(ii) Yes. A body moving at constant speed in a changing direction, as in circular motion, has acceleration."
+   ]
+  },
+  {
+   "text": "Q2.1. Distance and displacement may or may not be equal in magnitude. Explain this statement.",
+   "finalAnswer": "They are equal when motion is along a straight line in one direction. Otherwise, displacement magnitude is less than distance.",
+   "marks": 4,
+   "source": "CRQ 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "displacement"
+      ],
+      [
+       "equal"
+      ]
+     ],
+     "marks": 2,
+     "why": "The equal case depends on the path taken.",
+     "description": "Explain when their magnitudes are equal.",
+     "how": "State that a straight path in one direction gives equality."
+    },
+    {
+     "accept": [
+      [
+       "less"
+      ],
+      [
+       "path"
+      ],
+      [
+       "direction"
+      ]
+     ],
+     "marks": 2,
+     "why": "A changed path or direction makes the total path longer than the net change in position.",
+     "description": "Explain when they are unequal.",
+     "how": "State that displacement magnitude is less than distance when the path is not a straight one-way path."
+    }
+   ],
+   "modelAnswer": [
+    "Distance is the total length of the path travelled, while displacement is the change in position in a specified direction.",
+    "If an object moves along a straight line in one direction, distance and displacement are equal in magnitude.",
+    "If the object changes direction or follows a curved path, the distance is greater than the magnitude of the displacement."
+   ]
+  },
+  {
+   "text": "Q2.2. When a bullet is fired, its velocity with which it leaves the barrel is called the muzzle velocity of the gun. The muzzle velocity of one gun with a longer barrel is lesser than that of another gun with a shorter barrel. In which gun is the acceleration of the bullet larger? Explain your answer.",
+   "finalAnswer": "The shorter-barrel gun has the larger acceleration, assuming the bullets start from rest and accelerate over the barrel length.",
+   "marks": 4,
+   "source": "CRQ 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "shorter"
+      ],
+      [
+       "barrel"
+      ]
+     ],
+     "marks": 2,
+     "why": "The conclusion must identify the gun with the larger acceleration.",
+     "description": "Identify the gun.",
+     "how": "Choose the gun with the shorter barrel."
+    },
+    {
+     "accept": [
+      [
+       "v²=2as"
+      ],
+      [
+       "v^2=2as"
+      ],
+      [
+       "acceleration"
+      ],
+      [
+       "distance"
+      ]
+     ],
+     "marks": 2,
+     "why": "Acceleration depends on the change in velocity over the distance travelled in the barrel.",
+     "description": "Justify the comparison.",
+     "how": "Use v² = u² + 2as with u = 0, or explain that smaller muzzle speed over a shorter distance corresponds to larger acceleration in the stated comparison."
+    }
+   ],
+   "modelAnswer": [
+    "For a bullet starting from rest, v² = u² + 2as and u = 0, so a = v²/(2s).",
+    "The question states that the longer-barrel gun has the smaller muzzle velocity; the acceleration comparison depends on both v² and barrel length.",
+    "With the usual textbook assumption that the compared muzzle velocities and barrel lengths give the shorter-barrel case the larger value of v²/(2s), the bullet's acceleration is larger in the shorter-barrel gun."
+   ]
+  },
+  {
+   "text": "Q2.3. For a complete trip, average velocity was calculated. Its value came out to be positive. Is it possible that its instantaneous velocity at any time during the trip had the negative value? Give justification of your answer.",
+   "finalAnswer": "Yes. The object may move in the negative direction for part of the trip and still have positive net displacement and average velocity.",
+   "marks": 4,
+   "source": "CRQ 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct conclusion is that a negative instantaneous velocity is possible.",
+     "description": "Give the conclusion.",
+     "how": "Answer yes."
+    },
+    {
+     "accept": [
+      [
+       "negative direction"
+      ],
+      [
+       "net displacement"
+      ],
+      [
+       "positive"
+      ],
+      [
+       "average velocity"
+      ]
+     ],
+     "marks": 3,
+     "why": "Average velocity depends on total displacement, not the direction of motion at every instant.",
+     "description": "Justify the conclusion.",
+     "how": "Explain that a brief negative velocity can coexist with positive total displacement."
+    }
+   ],
+   "modelAnswer": [
+    "Yes, it is possible.",
+    "The object may move in the negative direction during part of the trip.",
+    "If its total displacement for the complete trip is positive, its average velocity is positive even though its instantaneous velocity was negative at some time."
+   ]
+  },
+  {
+   "text": "Q2.4. A ball is thrown vertically upward with velocity v. It returns to the ground in time T. Which of the following graphs correctly represents the motion? Explain your reasoning.",
+   "finalAnswer": "Graph (c): velocity decreases linearly from +v to −v, becoming zero at T/2.",
+   "marks": 4,
+   "source": "CRQ 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "(c)"
+      ],
+      [
+       "c"
+      ]
+     ],
+     "marks": 1,
+     "why": "The graph must match upward-positive motion under constant downward acceleration.",
+     "description": "Select the graph.",
+     "how": "Identify graph (c)."
+    },
+    {
+     "accept": [
+      [
+       "positive"
+      ],
+      [
+       "negative"
+      ],
+      [
+       "zero"
+      ],
+      [
+       "T/2"
+      ]
+     ],
+     "marks": 3,
+     "why": "Velocity changes continuously under gravity and reverses sign after the top point.",
+     "description": "Explain the graph shape.",
+     "how": "State that velocity is +v initially, zero at the highest point, and negative on the way down."
+    }
+   ],
+   "modelAnswer": [
+    "Graph (c) is correct.",
+    "Taking upward as positive, the initial velocity is +v and the acceleration due to gravity is constant and downward.",
+    "The velocity therefore decreases linearly, becomes zero at the highest point at T/2, and is negative as the ball returns to the ground."
+   ]
+  },
+  {
+   "text": "Q2.5. The figure given below shows the distance - time graph for the travel of a cyclist. Find the velocities for the segments a, b and c.",
+   "finalAnswer": "a = 20 km h⁻¹; b = 0 km h⁻¹; c = −12 km h⁻¹.",
+   "marks": 4,
+   "source": "CRQ 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "20 km/h"
+      ],
+      [
+       "20 km h⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Segment a's gradient gives its velocity.",
+     "description": "Find velocity for segment a.",
+     "how": "Calculate the slope from (0,0) to (6,2) using minutes and kilometres, then convert to km h⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0 km/h"
+      ],
+      [
+       "0 km h⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "A horizontal distance–time segment has zero gradient.",
+     "description": "Find velocity for segment b.",
+     "how": "State zero."
+    },
+    {
+     "accept": [
+      [
+       "-12 km/h"
+      ],
+      [
+       "−12 km h⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "The falling segment has a negative gradient and must retain its direction sign.",
+     "description": "Find velocity for segment c.",
+     "how": "Calculate its negative slope and convert to km h⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Velocity is the gradient of a distance–time graph.",
+    "For segment a: v = (2.0 − 0) km / (6 − 0) min = ⅓ km min⁻¹ = 20 km h⁻¹.",
+    "For segment b: v = 0 km / 4 min = 0 km h⁻¹.",
+    "For segment c: v = (0 − 2.0) km / (20 − 10) min = −0.2 km min⁻¹ = −12 km h⁻¹."
+   ]
+  },
+  {
+   "text": "Q2.6. Is it possible that the velocity of an object is zero at an instant of time, but its acceleration is not zero? If yes, give an example of such a case.",
+   "finalAnswer": "Yes. A ball thrown vertically upward has zero velocity at its highest point but non-zero downward acceleration due to gravity.",
+   "marks": 4,
+   "source": "CRQ 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question tests whether instantaneous velocity and acceleration must vanish together.",
+     "description": "Give the conclusion.",
+     "how": "Answer yes."
+    },
+    {
+     "accept": [
+      [
+       "highest point"
+      ],
+      [
+       "vertically upward"
+      ],
+      [
+       "gravity"
+      ],
+      [
+       "acceleration"
+      ]
+     ],
+     "marks": 3,
+     "why": "The example must show zero velocity while acceleration remains non-zero.",
+     "description": "Give and explain an example.",
+     "how": "Use a ball at the highest point of its vertical motion and identify gravity as its acceleration."
+    }
+   ],
+   "modelAnswer": [
+    "Yes.",
+    "For example, a ball thrown vertically upward has zero velocity for an instant at its highest point.",
+    "Its acceleration is still the non-zero acceleration due to gravity, directed downward."
+   ]
+  },
+  {
+   "text": "Q2.1. How a vector can be represented graphically? Explain.",
+   "finalAnswer": "Represent a vector by a directed line segment: its length shows magnitude and its arrowhead shows direction.",
+   "marks": 4,
+   "source": "Comprehensive 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "line segment"
+      ],
+      [
+       "length"
+      ],
+      [
+       "magnitude"
+      ]
+     ],
+     "marks": 2,
+     "why": "The drawn length represents the vector's magnitude.",
+     "description": "Explain how magnitude is represented.",
+     "how": "State that the line length is proportional to magnitude."
+    },
+    {
+     "accept": [
+      [
+       "arrow"
+      ],
+      [
+       "direction"
+      ]
+     ],
+     "marks": 2,
+     "why": "A vector diagram must show the vector's direction.",
+     "description": "Explain how direction is represented.",
+     "how": "State that the arrowhead shows direction."
+    }
+   ],
+   "modelAnswer": [
+    "A vector is represented graphically by a directed line segment.",
+    "The length of the line, drawn to a suitable scale, represents the magnitude of the vector.",
+    "The arrowhead represents its direction."
+   ]
+  },
+  {
+   "text": "Q2.2(a). Differentiate between: rest and motion",
+   "finalAnswer": "Rest: position does not change with time relative to a reference point. Motion: position changes with time relative to a reference point.",
+   "marks": 2,
+   "source": "Comprehensive 2.2(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "rest"
+      ],
+      [
+       "position"
+      ],
+      [
+       "does not change"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rest is defined by an unchanged position relative to a reference point.",
+     "description": "Define rest.",
+     "how": "State that position does not change with time relative to a reference point."
+    },
+    {
+     "accept": [
+      [
+       "motion"
+      ],
+      [
+       "position"
+      ],
+      [
+       "changes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Motion is defined by a change in position relative to a reference point.",
+     "description": "Define motion.",
+     "how": "State that position changes with time relative to a reference point."
+    }
+   ],
+   "modelAnswer": [
+    "At rest, a body's position does not change with time relative to a reference point.",
+    "In motion, a body's position changes with time relative to a reference point."
+   ]
+  },
+  {
+   "text": "Q2.2(b). Differentiate between: speed and velocity",
+   "finalAnswer": "Speed is distance travelled per unit time and is scalar; velocity is displacement per unit time and is vector.",
+   "marks": 2,
+   "source": "Comprehensive 2.2(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "scalar"
+      ],
+      [
+       "speed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Speed is based on distance and has no direction.",
+     "description": "Describe speed.",
+     "how": "State distance per unit time and scalar."
+    },
+    {
+     "accept": [
+      [
+       "displacement"
+      ],
+      [
+       "vector"
+      ],
+      [
+       "velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity is based on displacement and includes direction.",
+     "description": "Describe velocity.",
+     "how": "State displacement per unit time and vector."
+    }
+   ],
+   "modelAnswer": [
+    "Speed is the distance travelled per unit time; it is a scalar quantity.",
+    "Velocity is the displacement per unit time; it is a vector quantity."
+   ]
+  },
+  {
+   "text": "Q2.3. Describe different types of motion. Also give examples.",
+   "finalAnswer": "Translatory motion: a body changes position from place to place; rotatory motion: a body spins about an axis; vibratory motion: a body moves to and fro about a mean position.",
+   "marks": 4,
+   "source": "Comprehensive 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "translatory"
+      ],
+      [
+       "place"
+      ],
+      [
+       "example"
+      ]
+     ],
+     "marks": 1,
+     "why": "A valid type and description show understanding of translatory motion.",
+     "description": "Describe translatory motion with an example.",
+     "how": "Give a suitable example such as a moving car."
+    },
+    {
+     "accept": [
+      [
+       "rotatory"
+      ],
+      [
+       "axis"
+      ],
+      [
+       "example"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rotation is motion about an axis.",
+     "description": "Describe rotatory motion with an example.",
+     "how": "Give a suitable example such as a rotating fan."
+    },
+    {
+     "accept": [
+      [
+       "vibratory"
+      ],
+      [
+       "to and fro"
+      ],
+      [
+       "mean position"
+      ],
+      [
+       "example"
+      ]
+     ],
+     "marks": 2,
+     "why": "Vibration is repeated to-and-fro motion about a mean position.",
+     "description": "Describe vibratory motion with an example.",
+     "how": "Give a suitable example such as a swinging pendulum."
+    }
+   ],
+   "modelAnswer": [
+    "Translatory motion: a body moves from one place to another; for example, a car moving along a road.",
+    "Rotatory motion: a body rotates about an axis; for example, a rotating fan.",
+    "Vibratory motion: a body moves to and fro about a mean position; for example, a swinging pendulum."
+   ]
+  },
+  {
+   "text": "Q2.4. Explain the difference between distance and displacement.",
+   "finalAnswer": "Distance is the total path length and is scalar. Displacement is the change in position in a specified direction and is vector.",
+   "marks": 4,
+   "source": "Comprehensive 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "total"
+      ],
+      [
+       "path"
+      ],
+      [
+       "scalar"
+      ]
+     ],
+     "marks": 2,
+     "why": "Distance counts the entire path and has no direction.",
+     "description": "Explain distance.",
+     "how": "State that it is total path length and scalar."
+    },
+    {
+     "accept": [
+      [
+       "change in position"
+      ],
+      [
+       "direction"
+      ],
+      [
+       "vector"
+      ]
+     ],
+     "marks": 2,
+     "why": "Displacement is the directed change from initial to final position.",
+     "description": "Explain displacement.",
+     "how": "State that it is change in position with direction and vector."
+    }
+   ],
+   "modelAnswer": [
+    "Distance is the total length of the path travelled by an object. It is a scalar quantity.",
+    "Displacement is the change in position of an object in a specified direction. It is a vector quantity.",
+    "Distance is always greater than or equal to the magnitude of displacement."
+   ]
+  },
+  {
+   "text": "Q2.6. Prove that the area under speed-time graph is equal to the distance covered by an object.",
+   "finalAnswer": "Area under a speed–time graph equals speed × time, which equals distance; for changing speed, the total area gives the total distance.",
+   "marks": 4,
+   "source": "Comprehensive 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "area"
+      ],
+      [
+       "speed"
+      ],
+      [
+       "time"
+      ]
+     ],
+     "marks": 2,
+     "why": "The graph area must be related to speed multiplied by elapsed time.",
+     "description": "Show the constant-speed case.",
+     "how": "Use the rectangular area: speed × time."
+    },
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "total area"
+      ],
+      [
+       "changing speed"
+      ]
+     ],
+     "marks": 2,
+     "why": "The result must extend to the distance covered over the whole graph.",
+     "description": "State the general result.",
+     "how": "Explain that the total area under the graph gives total distance."
+    }
+   ],
+   "modelAnswer": [
+    "For constant speed, the area under the speed–time graph is the area of a rectangle.",
+    "Area = length × breadth = time × speed.",
+    "Since distance = speed × time, the area under the graph is equal to the distance covered.",
+    "For changing speed, the areas of the portions of the graph are added; their total is the total distance covered."
+   ]
+  },
+  {
+   "text": "Q2.7. How equations of motion can be applied to the bodies moving under the action of gravity?",
+   "finalAnswer": "Use the equations of motion with acceleration a = g, taking downward as positive or upward as positive consistently; for upward-positive motion, a = −g.",
+   "marks": 4,
+   "source": "Comprehensive 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "equations of motion"
+      ],
+      [
+       "g"
+      ],
+      [
+       "acceleration"
+      ]
+     ],
+     "marks": 2,
+     "why": "Gravity supplies the constant acceleration needed in the equations.",
+     "description": "Identify the acceleration used.",
+     "how": "Substitute acceleration due to gravity, g."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "positive"
+      ],
+      [
+       "negative"
+      ],
+      [
+       "sign"
+      ]
+     ],
+     "marks": 2,
+     "why": "The sign of g depends on the chosen positive direction.",
+     "description": "Explain sign convention.",
+     "how": "State that the direction convention must be consistent."
+    }
+   ],
+   "modelAnswer": [
+    "For a body moving under gravity, use the equations of motion with acceleration due to gravity, g.",
+    "If downward is chosen positive, a = g; if upward is chosen positive, a = −g.",
+    "Choose the appropriate equation and substitute the known values using the same sign convention throughout."
+   ]
+  },
+  {
+   "text": "Q2.2. A car is moving with an average speed of 72 km h⁻¹. How much time will it take to cover a distance of 360 km?",
+   "finalAnswer": "5 h",
+   "marks": 5,
+   "source": "Numerical 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "t=d/v"
+      ],
+      [
+       "time=distance/speed"
+      ],
+      [
+       "360/72"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct relationship is needed to calculate time.",
+     "description": "Choose the relationship.",
+     "how": "Use time = distance ÷ speed."
+    },
+    {
+     "accept": [
+      [
+       "360/72"
+      ],
+      [
+       "5 h"
+      ],
+      [
+       "5h"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct substitution and arithmetic lead to the result.",
+     "description": "Calculate time.",
+     "how": "Substitute 360 km and 72 km h⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "5 h"
+      ],
+      [
+       "5h"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value must include the correct unit.",
+     "description": "Give final answer with unit.",
+     "how": "Write 5 h."
+    }
+   ],
+   "modelAnswer": [
+    "Average speed = 72 km h⁻¹, distance = 360 km.",
+    "Time = distance / speed.",
+    "Time = 360 km / 72 km h⁻¹ = 5 h.",
+    "Answer: 5 h"
+   ]
+  },
+  {
+   "text": "Q2.3. A truck starts from rest. It reaches a velocity of 90 km h⁻¹ in 50 seconds. Find its average acceleration.",
+   "finalAnswer": "0.5 m s⁻²",
+   "marks": 5,
+   "source": "Numerical 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "90 km/h"
+      ],
+      [
+       "25 m/s"
+      ],
+      [
+       "25 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity must be converted to SI units before calculating acceleration.",
+     "description": "Convert velocity.",
+     "how": "Convert 90 km h⁻¹ to 25 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "a=(v-u)/t"
+      ],
+      [
+       "(v-u)/t"
+      ],
+      [
+       "25/50"
+      ]
+     ],
+     "marks": 2,
+     "why": "Average acceleration is change in velocity divided by time.",
+     "description": "Set up and substitute.",
+     "how": "Use a = (v − u)/t with u = 0."
+    },
+    {
+     "accept": [
+      [
+       "0.5 m/s^2"
+      ],
+      [
+       "0.5 m s⁻²"
+      ]
+     ],
+     "marks": 2,
+     "why": "The numerical result and acceleration unit must both be correct.",
+     "description": "Give the result.",
+     "how": "Write 0.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "u = 0, v = 90 km h⁻¹ = 25 m s⁻¹, t = 50 s.",
+    "a = (v − u)/t.",
+    "a = (25 − 0) m s⁻¹ / 50 s = 0.5 m s⁻².",
+    "Answer: 0.5 m s⁻²"
+   ]
+  },
+  {
+   "text": "Q2.4. A car passes a green traffic signal while moving with a velocity of 5 m s⁻¹. It then accelerates to 1.5 m s⁻². What is the velocity of car after 5 seconds?",
+   "finalAnswer": "12.5 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v=u+at"
+      ],
+      [
+       "u+at"
+      ],
+      [
+       "5+1.5×5"
+      ],
+      [
+       "5+1.5*5"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first equation of motion relates the given velocity, acceleration and time.",
+     "description": "Select and substitute in the equation.",
+     "how": "Use v = u + at with u = 5 m s⁻¹, a = 1.5 m s⁻², t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "12.5 m/s"
+      ],
+      [
+       "12.5 m s⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "The substitution must be evaluated correctly.",
+     "description": "Calculate final velocity.",
+     "how": "Evaluate 5 + 1.5(5)."
+    },
+    {
+     "accept": [
+      [
+       "12.5 m/s"
+      ],
+      [
+       "12.5 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer needs the correct velocity unit.",
+     "description": "State answer with unit.",
+     "how": "Write 12.5 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "u = 5 m s⁻¹, a = 1.5 m s⁻², t = 5 s.",
+    "v = u + at.",
+    "v = 5 + (1.5)(5) = 12.5 m s⁻¹.",
+    "Answer: 12.5 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q2.5. A motorcycle initially travelling at 18 km h⁻¹ accelerates at constant rate of 2 m s⁻². How far will the motorcycle go in 10 seconds?",
+   "finalAnswer": "150 m",
+   "marks": 5,
+   "source": "Numerical 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "18 km/h"
+      ],
+      [
+       "5 m/s"
+      ],
+      [
+       "5 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Initial velocity must be expressed in compatible units.",
+     "description": "Convert initial velocity.",
+     "how": "Convert 18 km h⁻¹ to 5 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "s=ut+1/2at^2"
+      ],
+      [
+       "s=ut+½at²"
+      ],
+      [
+       "5×10"
+      ],
+      [
+       "2×10^2"
+      ]
+     ],
+     "marks": 2,
+     "why": "The displacement equation uses the known initial velocity, acceleration and time.",
+     "description": "Select and substitute.",
+     "how": "Use s = ut + ½at²."
+    },
+    {
+     "accept": [
+      [
+       "150 m"
+      ],
+      [
+       "150m"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct arithmetic and a distance unit are required.",
+     "description": "Give final distance.",
+     "how": "Evaluate to 150 m."
+    }
+   ],
+   "modelAnswer": [
+    "u = 18 km h⁻¹ = 5 m s⁻¹, a = 2 m s⁻², t = 10 s.",
+    "s = ut + ½at².",
+    "s = (5)(10) + ½(2)(10)² = 50 + 100 = 150 m.",
+    "Answer: 150 m"
+   ]
+  },
+  {
+   "text": "Q2.6. A wagon is moving on the road with a velocity of 54 km h⁻¹. Brakes are applied suddenly. The wagon covers a distance of 25 m before stopping. Determine the acceleration of the wagon.",
+   "finalAnswer": "−4.5 m s⁻²",
+   "marks": 5,
+   "source": "Numerical 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "54 km/h"
+      ],
+      [
+       "15 m/s"
+      ],
+      [
+       "15 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Initial speed must be converted to SI units.",
+     "description": "Convert initial velocity.",
+     "how": "Convert 54 km h⁻¹ to 15 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "v²=u²+2as"
+      ],
+      [
+       "v^2=u^2+2as"
+      ],
+      [
+       "0=15²+2a(25)"
+      ],
+      [
+       "0=15^2+2a(25)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The equation without time connects the known velocities and displacement to acceleration.",
+     "description": "Set up the equation.",
+     "how": "Use v² = u² + 2as with v = 0."
+    },
+    {
+     "accept": [
+      [
+       "-4.5 m/s^2"
+      ],
+      [
+       "−4.5 m s⁻²"
+      ]
+     ],
+     "marks": 2,
+     "why": "The negative sign shows retardation and the unit must be correct.",
+     "description": "Give acceleration.",
+     "how": "State −4.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "u = 54 km h⁻¹ = 15 m s⁻¹, v = 0, s = 25 m.",
+    "v² = u² + 2as.",
+    "0² = 15² + 2(a)(25).",
+    "a = −225/50 = −4.5 m s⁻².",
+    "Answer: −4.5 m s⁻²"
+   ]
+  },
+  {
+   "text": "Q2.7. A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+   "finalAnswer": "3 s, 30 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "s=1/2gt²"
+      ],
+      [
+       "s=½gt²"
+      ],
+      [
+       "45=5t²"
+      ]
+     ],
+     "marks": 2,
+     "why": "The distance equation determines the time for a dropped object starting from rest.",
+     "description": "Find time.",
+     "how": "Use s = ½gt² with g = 10 m s⁻² and s = 45 m."
+    },
+    {
+     "accept": [
+      [
+       "v=gt"
+      ],
+      [
+       "v=u+gt"
+      ],
+      [
+       "30 m/s"
+      ],
+      [
+       "30 m s⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "The velocity follows from the acceleration and fall time.",
+     "description": "Find final velocity.",
+     "how": "Use v = gt with t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "3 s"
+      ],
+      [
+       "30 m/s"
+      ],
+      [
+       "30 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both requested quantities must include suitable units.",
+     "description": "State both answers.",
+     "how": "Give 3 s and 30 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "For a dropped stone, u = 0, g = 10 m s⁻², s = 45 m.",
+    "s = ½gt²; 45 = ½(10)t², so t² = 9 and t = 3 s.",
+    "v = u + gt = 0 + (10)(3) = 30 m s⁻¹ downward.",
+    "Answer: 3 s, 30 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q2.8. A car travels 10 km with an average velocity of 20 m s⁻¹. Then it travels in the same direction through a diversion at an average velocity of 4 m s⁻¹ for the next 0.8 km. Determine the average velocity of the car for the total journey.",
+   "finalAnswer": "15.4 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "10000/20"
+      ],
+      [
+       "10 km"
+      ],
+      [
+       "800/4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Segment times are required to find the total journey time.",
+     "description": "Find segment times.",
+     "how": "Use time = distance/velocity for both parts."
+    },
+    {
+     "accept": [
+      [
+       "10800"
+      ],
+      [
+       "10000+800"
+      ],
+      [
+       "500+200"
+      ]
+     ],
+     "marks": 2,
+     "why": "The total displacement and total time must be combined for average velocity.",
+     "description": "Combine journey quantities.",
+     "how": "Add the distances in the same direction and add the times."
+    },
+    {
+     "accept": [
+      [
+       "15.4 m/s"
+      ],
+      [
+       "15.4 m s⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "Average velocity must be computed and stated with a unit.",
+     "description": "Calculate the average velocity.",
+     "how": "Divide total displacement by total time."
+    }
+   ],
+   "modelAnswer": [
+    "For the first part, t₁ = 10000 m / 20 m s⁻¹ = 500 s.",
+    "For the second part, t₂ = 800 m / 4 m s⁻¹ = 200 s.",
+    "Total displacement = 10000 + 800 = 10800 m; total time = 500 + 200 = 700 s.",
+    "Average velocity = total displacement / total time = 10800/700 = 15.4 m s⁻¹.",
+    "Answer: 15.4 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q2.9. A ball is dropped from the top of a tower. The ball reaches the ground in 5 seconds. Find the height of the tower and the velocity of the ball with which it strikes the ground.",
+   "finalAnswer": "125 m, 50 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "s=1/2gt²"
+      ],
+      [
+       "s=½gt²"
+      ],
+      [
+       "5×25"
+      ],
+      [
+       "5(25)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The displacement equation gives the height from the fall time.",
+     "description": "Find the height.",
+     "how": "Use s = ½gt² with g = 10 m s⁻² and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "v=gt"
+      ],
+      [
+       "v=u+gt"
+      ],
+      [
+       "50 m/s"
+      ],
+      [
+       "50 m s⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "The impact velocity follows from constant gravitational acceleration.",
+     "description": "Find impact velocity.",
+     "how": "Use v = gt."
+    },
+    {
+     "accept": [
+      [
+       "125 m"
+      ],
+      [
+       "50 m/s"
+      ],
+      [
+       "50 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both requested results need correct values and units.",
+     "description": "State both answers.",
+     "how": "Give 125 m and 50 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "u = 0, g = 10 m s⁻², t = 5 s.",
+    "Height: s = ½gt² = ½(10)(5)² = 125 m.",
+    "Impact velocity: v = u + gt = 0 + (10)(5) = 50 m s⁻¹ downward.",
+    "Answer: 125 m, 50 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q2.10. A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+   "finalAnswer": "30 m s⁻¹, 46 m",
+   "marks": 5,
+   "source": "Numerical 2.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v=u-gt"
+      ],
+      [
+       "0=u-10×3"
+      ],
+      [
+       "30 m/s"
+      ],
+      [
+       "30 m s⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "At the highest point, final velocity is zero and the time determines the initial velocity.",
+     "description": "Find initial velocity.",
+     "how": "Use v = u − gt with v = 0 and t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "s=ut-1/2gt²"
+      ],
+      [
+       "s=ut−½gt²"
+      ],
+      [
+       "30×3"
+      ],
+      [
+       "45 m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The upward displacement is found from the motion equation.",
+     "description": "Find rise above the launch point.",
+     "how": "Use s = ut − ½gt²."
+    },
+    {
+     "accept": [
+      [
+       "46 m"
+      ],
+      [
+       "30 m/s"
+      ],
+      [
+       "30 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The launch height must be added to the rise, and both final values must be stated.",
+     "description": "State answers from ground and launch.",
+     "how": "Add 1 m to the rise and give the initial velocity."
+    }
+   ],
+   "modelAnswer": [
+    "At the highest point, v = 0, t = 3 s and g = 10 m s⁻².",
+    "v = u − gt; 0 = u − (10)(3), so u = 30 m s⁻¹.",
+    "Rise above launch point: s = ut − ½gt² = (30)(3) − ½(10)(3)² = 45 m.",
+    "Height above ground = 45 + 1 = 46 m.",
+    "Answer: 30 m s⁻¹, 46 m"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Section A tests key facts and graph meanings; revise which graph gradient gives speed, velocity or acceleration, and which graph area gives distance.",
+   "Short answers commonly ask for definitions, examples and a brief reason. Include the defining feature, such as direction for a vector.",
+   "For graph questions, identify the axes and interpret the gradient or area before giving the answer.",
+   "For numericals, write the known quantities, convert to compatible units, state the equation, substitute values with units and give the final answer with its unit.",
+   "In motion under gravity, write the chosen positive direction and use the sign of g consistently. Marks are commonly awarded for the equation, substitution, working and final answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First convert the initial speed to m s⁻¹.",
+     "Use s = ut + ½at², with u = 5 m s⁻¹, a = 2 m s⁻² and t = 10 s."
+    ],
+    "accept": [
+     [
+      "150 m"
+     ],
+     [
+      "150m"
+     ]
+    ],
+    "question": "Q2.5. A motorcycle initially travelling at 18 km h⁻¹ accelerates at constant rate of 2 m s⁻². How far will the motorcycle go in 10 seconds?",
+    "solution": [
+     "u = 18 km h⁻¹ = 5 m s⁻¹, a = 2 m s⁻², t = 10 s.",
+     "s = ut + ½at².",
+     "s = (5)(10) + ½(2)(10)² = 50 + 100 = 150 m.",
+     "Answer: 150 m"
+    ],
+    "answer": "150 m"
+   },
+   {
+    "hints": [
+     "A dropped object starts from rest; use g = 10 m s⁻².",
+     "Use s = ½gt² to find time, then v = gt to find the velocity."
+    ],
+    "accept": [
+     [
+      "3 s"
+     ],
+     [
+      "30 m/s"
+     ],
+     [
+      "30 m s⁻¹"
+     ]
+    ],
+    "question": "Q2.7. A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+    "solution": [
+     "For a dropped stone, u = 0, g = 10 m s⁻², s = 45 m.",
+     "s = ½gt²; 45 = ½(10)t², so t² = 9 and t = 3 s.",
+     "v = u + gt = 0 + (10)(3) = 30 m s⁻¹ downward.",
+     "Answer: 3 s, 30 m s⁻¹"
+    ],
+    "answer": "3 s, 30 m s⁻¹"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "List the starting velocity, acceleration and elapsed time so the suitable equation is clear.",
+     "text": "Given: u = 5 m s⁻¹, a = 1.5 m s⁻², t = 5 s."
+    },
+    {
+     "why": "This equation connects the known quantities to the required final velocity.",
+     "text": "Formula: v = u + at."
+    },
+    {
+     "why": "Substitute the values with their units, then calculate the change in velocity.",
+     "text": "Substitution: v = 5 m s⁻¹ + (1.5 m s⁻²)(5 s) = 12.5 m s⁻¹."
+    },
+    {
+     "why": "The result is stated with the correct unit for velocity.",
+     "text": "Answer: 12.5 m s⁻¹"
+    }
+   ],
+   "question": "Q2.4. A car passes a green traffic signal while moving with a velocity of 5 m s⁻¹. It then accelerates to 1.5 m s⁻². What is the velocity of car after 5 seconds?",
+   "answer": "12.5 m s⁻¹"
+  },
+  "explain": [
+   {
+    "title": "Scalars and vectors",
+    "body": "A scalar has magnitude only. A vector has both magnitude and direction. Distance and speed are scalars; displacement, velocity and acceleration are vectors."
+   },
+   {
+    "title": "Distance and displacement",
+    "body": "Distance is the total path travelled. Displacement is the change in position in a specified direction. Displacement magnitude cannot be greater than distance."
+   },
+   {
+    "title": "Speed, velocity and acceleration",
+    "body": "Speed is distance per unit time. Velocity is displacement per unit time. Acceleration is the change in velocity per unit time."
+   },
+   {
+    "title": "Motion graphs",
+    "body": "The gradient of a distance–time graph gives speed; the gradient of a displacement–time graph gives velocity. The gradient of a speed–time graph gives acceleration, and its area gives distance."
+   },
+   {
+    "title": "Equations of motion",
+    "body": "For constant acceleration, use v = u + at, s = ut + ½at², or v² = u² + 2as. For motion under gravity, use g as the acceleration and keep the chosen direction and signs consistent."
+   }
+  ],
+  "mistakes": [
+   "Treating distance and displacement as identical even when direction changes.",
+   "Calling velocity uniform just because speed is constant; direction must also stay constant.",
+   "Reading the gradient of a speed–time graph as distance; distance is the area under that graph.",
+   "Forgetting to convert km h⁻¹ to m s⁻¹ before using SI units in an equation.",
+   "Using the wrong sign for gravity or braking acceleration.",
+   "Leaving units out of a numerical answer or omitting the direction when it matters."
+  ]
+ }
+}

@@ -1,0 +1,590 @@
+{
+ "note": {
+  "explanation": "Within the elastic limit, a spring’s extension or compression is directly proportional to the force applied to it. The spring constant tells us how stiff the spring is.",
+  "examples": [
+   "If a 10 N force stretches a spring by 0.02 m, k = F/x = 10/0.02 = 500 N m⁻¹.",
+   "For a spring with k = 200 N m⁻¹ stretched by 0.03 m, F = kx = 200 × 0.03 = 6 N."
+  ],
+  "checkAnswer": "F = kx, so F = 300 × 0.02 = 6 N.",
+  "keywords": [
+   "Hooke",
+   "spring",
+   "extension",
+   "force",
+   "stiffness",
+   "spring constant"
+  ],
+  "simple": "A stiffer spring needs more force for the same stretch.",
+  "checkQuestion": "A spring with k = 300 N m⁻¹ is stretched by 0.02 m. What force is applied?",
+  "title": "Hooke’s law and spring constant",
+  "steps": [
+   "Write the relation: F = kx.",
+   "Substitute the force and extension, using extension in metres.",
+   "To find k, use k = F/x; to find F, use F = kx.",
+   "Give the unit of k as N m⁻¹."
+  ],
+  "answer": "F = kx; the spring constant is k = F/x and is measured in N m⁻¹.",
+  "checkAccept": [
+   [
+    "6 N"
+   ],
+   [
+    "6N"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "F = k/x",
+    "F = kx",
+    "F = x/k",
+    "F = k + x"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Within the elastic limit, a spring has spring constant k and extension x. Which expression gives the applied force F?",
+   "rationales": [
+    "This incorrectly divides k by x instead of multiplying k by x.",
+    "This is Hooke’s law and correctly relates force, spring constant and extension.",
+    "This does not follow from Hooke’s law.",
+    "Hooke’s law uses multiplication, not addition."
+   ]
+  },
+  {
+   "options": [
+    "N",
+    "N m⁻¹",
+    "m N⁻¹",
+    "N m"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of spring constant?",
+   "rationales": [
+    "The newton is a unit of force, not spring constant.",
+    "Since k = F/x, its unit is N m⁻¹.",
+    "This is the reciprocal of the required unit.",
+    "N m is a unit of work or energy, not spring constant."
+   ]
+  },
+  {
+   "options": [
+    "The spring constant",
+    "The mass of the spring",
+    "The length of the spring before loading",
+    "The time taken for one oscillation"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the gradient of a force-extension graph represent?",
+   "rationales": [
+    "The gradient is force divided by extension, which equals k.",
+    "Mass is not obtained from the gradient of this graph.",
+    "The original length is not the gradient of a force-extension graph.",
+    "The graph does not show the time for an oscillation."
+   ]
+  },
+  {
+   "options": [
+    "It becomes less stiff",
+    "It becomes more stiff",
+    "Its extension must become zero",
+    "Its elastic limit disappears"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Spring A has a greater spring constant than spring B. What does this tell us?",
+   "rationales": [
+    "A greater spring constant indicates greater, not lower, stiffness.",
+    "The textbook states that the greater the spring constant, the greater the stiffness.",
+    "A greater spring constant does not mean that extension is always zero.",
+    "The value of k does not mean the elastic limit disappears."
+   ]
+  },
+  {
+   "options": [
+    "The graph is a straight line through the origin",
+    "The graph is a horizontal line",
+    "The graph is a circle",
+    "The graph is a straight line that does not pass through the origin"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the shape of a force-against-extension graph for a spring within its elastic limit?",
+   "rationales": [
+    "Force is directly proportional to extension, so the graph is a straight line through the origin.",
+    "A horizontal line would mean force stays unchanged as extension changes.",
+    "A circular graph does not represent direct proportionality.",
+    "Direct proportionality gives a line through the origin."
+   ]
+  },
+  {
+   "options": [
+    "The spring always returns to its original length",
+    "The spring is permanently deformed and the graph is no longer linear",
+    "The spring constant becomes zero",
+    "The spring stops exerting a force"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What may happen when the applied load exceeds a spring’s elastic limit?",
+   "rationales": [
+    "Beyond the elastic limit, the spring does not necessarily return to its original length.",
+    "The textbook states that exceeding the elastic limit permanently deforms the spring and its graph is no longer linear.",
+    "Exceeding the elastic limit does not mean the spring constant becomes zero.",
+    "The spring does not necessarily stop exerting a force."
+   ]
+  },
+  {
+   "options": [
+    "The spring stretches more for the same force",
+    "The spring stretches less for the same force",
+    "The graph becomes a vertical line",
+    "The spring’s extension is independent of force"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A spring is replaced with a stiffer spring while the same force is applied. What happens to its extension, within the elastic limit?",
+   "rationales": [
+    "For the same force, a stiffer spring has less extension.",
+    "Since x = F/k, a larger k gives a smaller extension for the same force.",
+    "A stiffer spring does not make the graph vertical.",
+    "Hooke’s law says extension remains proportional to force within the elastic limit."
+   ]
+  },
+  {
+   "options": [
+    "A straight thin wire",
+    "A wooden block",
+    "A liquid in a container",
+    "A stone that is broken by the load"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to this section, besides a spring, Hooke’s law also holds for which object within its elastic limit?",
+   "rationales": [
+    "The section says Hooke’s law also holds for a straight thin wire within its elastic limit.",
+    "The section does not identify a wooden block as an example of Hooke’s law here.",
+    "A liquid in a container is not the example given for Hooke’s law in this section.",
+    "A broken stone is not an elastic object following the stated spring relation."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is Hooke's law? Does an object remain elastic beyond elastic limit? Give reason.",
+   "finalAnswer": "Within the elastic limit, the extension or compression of a spring is directly proportional to the applied force: F ∝ x or F = kx. An object does not remain elastic beyond its elastic limit because it becomes permanently deformed and no longer follows the linear force-extension relation.",
+   "marks": 2,
+   "source": "Short 6.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "directly proportional",
+       "F=kx"
+      ],
+      [
+       "F∝x"
+      ]
+     ],
+     "marks": 1,
+     "why": "The law and its condition are the key definition.",
+     "description": "State Hooke’s law within the elastic limit.",
+     "how": "Write that extension or compression is directly proportional to applied force, and give F = kx."
+    },
+    {
+     "accept": [
+      [
+       "permanently deformed"
+      ],
+      [
+       "no longer linear"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason explains what changes beyond the elastic limit.",
+     "description": "Say whether elasticity remains beyond the elastic limit and give the reason.",
+     "how": "State that the object is permanently deformed and no longer follows the linear relation."
+    }
+   ],
+   "modelAnswer": [
+    "Within the elastic limit, the extension or compression of a spring is directly proportional to the applied force.",
+    "F ∝ x or F = kx.",
+    "Beyond the elastic limit, the object becomes permanently deformed and no longer follows the linear force-extension relation."
+   ]
+  },
+  {
+   "text": "For each arrangement, complete the table by determining: (i) the total extension in terms of x. (ii) the spring constant in terms of k. Arrangement: Two springs arranged vertically in series, hanging from a fixed support, with a load labelled L at the bottom; two springs arranged in parallel between a fixed support and a horizontal bar, with a load labelled L hanging from the bar.",
+   "finalAnswer": "Series: total extension = 2x; spring constant = k/2. Parallel: total extension = x/2; spring constant = 2k.",
+   "marks": 4,
+   "source": "CRQ 6.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2x"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each series spring carries the load and extends by x.",
+     "description": "Give the total extension for the series arrangement.",
+     "how": "Add the two extensions, x + x = 2x."
+    },
+    {
+     "accept": [
+      [
+       "k/2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The effective stiffness of two identical springs in series is lower.",
+     "description": "Give the spring constant for the series arrangement.",
+     "how": "Use k_arrangement = L/(2x) = k/2."
+    },
+    {
+     "accept": [
+      [
+       "x/2"
+      ]
+     ],
+     "marks": 1,
+     "why": "In parallel, each identical spring shares half of the load and has the same extension.",
+     "description": "Give the total extension for the parallel arrangement.",
+     "how": "Each spring carries L/2, so its extension is half of x."
+    },
+    {
+     "accept": [
+      [
+       "2k"
+      ]
+     ],
+     "marks": 1,
+     "why": "The combined stiffness of identical parallel springs adds.",
+     "description": "Give the spring constant for the parallel arrangement.",
+     "how": "Add the two spring constants: k + k = 2k."
+    }
+   ],
+   "modelAnswer": [
+    "For one spring, L = kx.",
+    "Series: each spring carries L, so each extends by x.",
+    "Total extension in series = x + x = 2x.",
+    "k_series = L/(2x) = k/2.",
+    "Parallel: the two identical springs share the load equally, so each carries L/2.",
+    "Extension in parallel = (L/2)/k = x/2.",
+    "k_parallel = L/(x/2) = 2k."
+   ]
+  },
+  {
+   "text": "Springs are made of steel instead of iron. Why?",
+   "finalAnswer": "Steel is more elastic than iron: it returns to its original shape more readily when the deforming force is removed, provided its elastic limit is not exceeded.",
+   "marks": 2,
+   "source": "CRQ 6.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "steel",
+       "more elastic",
+       "iron"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison identifies the material preferred for springs.",
+     "description": "State which material is more elastic.",
+     "how": "Say that steel is more elastic than iron."
+    },
+    {
+     "accept": [
+      [
+       "returns",
+       "original shape"
+      ],
+      [
+       "elastic limit"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason connects elasticity to a spring’s repeated use.",
+     "description": "Explain the relevant elastic behaviour.",
+     "how": "Mention that steel returns to its original shape after the force is removed, if its elastic limit is not exceeded."
+    }
+   ],
+   "modelAnswer": [
+    "Steel is more elastic than iron.",
+    "It returns to its original shape more readily when the deforming force is removed, provided its elastic limit is not exceeded."
+   ]
+  },
+  {
+   "text": "What is Hooke’s law? Give three applications of this law.",
+   "finalAnswer": "Within the elastic limit, the extension or compression of a spring is directly proportional to the applied force: F ∝ x or F = kx. Applications include spring scales, the balance wheel of mechanical clocks and galvanometers.",
+   "marks": 5,
+   "source": "Comprehensive 6.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "within",
+       "elastic limit",
+       "directly proportional",
+       "F=kx"
+      ],
+      [
+       "F∝x"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition and elastic-limit condition establish the principle.",
+     "description": "State Hooke’s law.",
+     "how": "Give the direct proportionality and write F = kx or F ∝ x, within the elastic limit."
+    },
+    {
+     "accept": [
+      [
+       "spring scale"
+      ],
+      [
+       "spring balance"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is one named application from the section.",
+     "description": "Name one application.",
+     "how": "Name spring scales or spring balances."
+    },
+    {
+     "accept": [
+      [
+       "balance wheel"
+      ],
+      [
+       "mechanical clock"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is a second distinct application from the section.",
+     "description": "Name another application.",
+     "how": "Name the balance wheel in a mechanical clock."
+    },
+    {
+     "accept": [
+      [
+       "galvanometer"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is a third distinct application from the section.",
+     "description": "Name the third application.",
+     "how": "Name a galvanometer."
+    }
+   ],
+   "modelAnswer": [
+    "Within the elastic limit, the extension or compression of a spring is directly proportional to the applied force.",
+    "F ∝ x or F = kx.",
+    "Applications include:",
+    "(i) Spring scales use spring extension or compression to determine weight.",
+    "(ii) The balance wheel of a mechanical clock uses a spring to control its back-and-forth motion.",
+    "(iii) A galvanometer uses a hair spring to provide electrical connections and restore the pointer to zero."
+   ]
+  },
+  {
+   "text": "A spring is stretched 20 mm by a load of 40 N. Calculate the value of spring constant. If an object causes an extension of 16 mm, what will be its weight?",
+   "finalAnswer": "2 kN m⁻¹, 32 N",
+   "marks": 5,
+   "source": "Numerical 6.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.020m"
+      ],
+      [
+       "20mm",
+       "0.020"
+      ]
+     ],
+     "marks": 1,
+     "why": "Converting extension to metres is needed for the SI unit of spring constant.",
+     "description": "Convert the first extension to metres.",
+     "how": "Write 20 mm = 0.020 m."
+    },
+    {
+     "accept": [
+      [
+       "40/0.020"
+      ],
+      [
+       "2000Nm^-1"
+      ],
+      [
+       "2kNm^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The spring constant must be found using k = F/x.",
+     "description": "Calculate the spring constant.",
+     "how": "Use k = 40/0.020 = 2000 N m⁻¹ = 2 kN m⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.016m"
+      ],
+      [
+       "16mm",
+       "0.016"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second extension must be expressed in metres before calculating the force.",
+     "description": "Convert the second extension to metres.",
+     "how": "Write 16 mm = 0.016 m."
+    },
+    {
+     "accept": [
+      [
+       "2000*0.016"
+      ],
+      [
+       "32N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Using F = kx links the second extension to its weight.",
+     "description": "Calculate the weight using Hooke’s law.",
+     "how": "Use F = 2000 × 0.016."
+    },
+    {
+     "accept": [
+      [
+       "2kNm^-1",
+       "32N"
+      ],
+      [
+       "2000Nm^-1",
+       "32N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both final values and their units must be reported correctly.",
+     "description": "Give the final answers.",
+     "how": "State k = 2 kN m⁻¹ and weight = 32 N."
+    }
+   ],
+   "modelAnswer": [
+    "Extension, x = 20 mm = 0.020 m.",
+    "Spring constant, k = F/x.",
+    "k = 40/0.020 = 2000 N m⁻¹ = 2 kN m⁻¹.",
+    "For an extension of 16 mm, x = 0.016 m.",
+    "F = kx = 2000 × 0.016 = 32 N.",
+    "Spring constant = 2 kN m⁻¹; weight = 32 N."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask you to state Hooke’s law; include the condition “within the elastic limit” and write F ∝ x or F = kx.",
+   "In a numerical, first convert extension from millimetres to metres, then show the formula, substitution, calculation and unit.",
+   "For a force-extension graph, mention that the straight-line part passes through the origin and that its gradient represents the spring constant.",
+   "When asked for applications, name specific devices from the section and state briefly how the spring is used."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "In a series arrangement, the same load acts through each spring.",
+     "For parallel springs, the identical springs share the load equally; use k = L/x for the combined arrangement."
+    ],
+    "accept": [
+     [
+      "2x",
+      "k/2",
+      "x/2",
+      "2k"
+     ]
+    ],
+    "question": "For each arrangement, complete the table by determining: (i) the total extension in terms of x. (ii) the spring constant in terms of k. Arrangement: Two springs arranged vertically in series, hanging from a fixed support, with a load labelled L at the bottom; two springs arranged in parallel between a fixed support and a horizontal bar, with a load labelled L hanging from the bar.",
+    "solution": [
+     "For one spring, L = kx.",
+     "Series: each spring carries load L, so each extends by x.",
+     "Total extension in series = x + x = 2x.",
+     "k_series = L/(2x) = k/2.",
+     "Parallel: the identical springs share load L equally, so each carries L/2.",
+     "Extension in parallel = (L/2)/k = x/2.",
+     "k_parallel = L/(x/2) = 2k."
+    ],
+    "answer": "Series: extension = 2x and spring constant = k/2. Parallel: extension = x/2 and spring constant = 2k."
+   },
+   {
+    "hints": [
+     "Convert millimetres to metres before using the formula.",
+     "Find k from k = F/x, then use F = kx for the second extension."
+    ],
+    "accept": [
+     [
+      "2kNm^-1",
+      "32N"
+     ],
+     [
+      "2000Nm^-1",
+      "32N"
+     ]
+    ],
+    "question": "A spring is stretched 20 mm by a load of 40 N. Calculate the value of spring constant. If an object causes an extension of 16 mm, what will be its weight?",
+    "solution": [
+     "Extension, x = 20 mm = 0.020 m.",
+     "k = F/x = 40/0.020 = 2000 N m⁻¹ = 2 kN m⁻¹.",
+     "For the second extension, x = 16 mm = 0.016 m.",
+     "F = kx = 2000 × 0.016 = 32 N."
+    ],
+    "answer": "Spring constant = 2 kN m⁻¹; weight = 32 N."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The spring constant formula uses extension in metres, so convert millimetres first.",
+     "text": "Extension, x = 20 mm = 0.020 m."
+    },
+    {
+     "why": "Rearrange Hooke’s law, F = kx, to find the spring constant.",
+     "text": "k = F/x = 40/0.020 = 2000 N m⁻¹ = 2 kN m⁻¹."
+    },
+    {
+     "why": "The second extension must also be converted to metres before using F = kx.",
+     "text": "For the second extension, x = 16 mm = 0.016 m."
+    },
+    {
+     "why": "Substitute the known spring constant and extension to find the weight.",
+     "text": "F = kx = 2000 × 0.016 = 32 N."
+    }
+   ],
+   "question": "A spring is stretched 20 mm by a load of 40 N. Calculate the value of spring constant. If an object causes an extension of 16 mm, what will be its weight?",
+   "answer": "Spring constant = 2 kN m⁻¹; weight = 32 N."
+  },
+  "explain": [
+   {
+    "title": "Hooke’s law",
+    "body": "If a force F is applied on a spring to stretch or compress it, the extension or compression x has been found directly proportional to the applied force within the elastic limit. Thus, F ∝ x or F = kx or k = F/x."
+   },
+   {
+    "title": "Spring constant and stiffness",
+    "body": "where k is the constant of proportionality and is known as spring constant. In fact, it is a measure of stiffness of the spring. The greater the value of spring constant, the greater will be the stiffness or strength of the spring. Its unit is N m⁻¹."
+   },
+   {
+    "title": "Force-extension graph",
+    "body": "A graph of force against extension is a straight line passing through the origin. The gradient or slope of force-extension graph is a measure of spring constant k. If the load exceeds the elastic limit, the spring is permanently deformed and the graph will no longer remain linear."
+   },
+   {
+    "title": "Applications",
+    "body": "Springs are used in spring scales, the balance wheel of mechanical clocks and galvanometers. A spring scale measures weight from extension or compression; a clock spring controls back-and-forth motion; and a galvanometer’s hair spring helps restore its pointer to zero."
+   }
+  ],
+  "mistakes": [
+   "Forgetting to state that Hooke’s law applies only within the elastic limit.",
+   "Using millimetres directly instead of converting extension to metres in a calculation for k in N m⁻¹.",
+   "Writing the spring constant unit as N instead of N m⁻¹.",
+   "Confusing the force-extension graph’s gradient with its intercept; its gradient represents k.",
+   "Saying a spring remains elastic beyond its elastic limit; beyond that limit it may be permanently deformed."
+  ]
+ }
+}

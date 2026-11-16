@@ -1,0 +1,1253 @@
+{
+ "note": {
+  "explanation": "In an isolated system, the total momentum before an interaction stays equal to the total momentum after it. Use signs to show direction: if an object moves in the opposite direction, its velocity is negative.",
+  "examples": [
+   "A gun and bullet start at rest, so their total momentum is zero. After firing, the bullet's forward momentum is balanced by the gun's backward momentum.",
+   "When two balls stick together after a collision, add their masses to find the moving mass after collision."
+  ],
+  "checkAnswer": "The total momentum before and after the collision is equal.",
+  "keywords": [
+   "momentum",
+   "isolated system",
+   "conservation",
+   "collision",
+   "recoil",
+   "impulse"
+  ],
+  "simple": "Momentum is mass multiplied by velocity. When no external force acts on a system, its total momentum does not change.",
+  "checkQuestion": "What stays equal before and after a collision in an isolated system?",
+  "title": "Conservation of Momentum",
+  "steps": [
+   "Write the law: total momentum before = total momentum after.",
+   "Choose a positive direction and give opposite velocities negative signs.",
+   "Substitute each object's mass and velocity before and after the interaction.",
+   "Solve for the unknown and include its direction in the answer."
+  ],
+  "answer": "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system.",
+  "checkAccept": [
+   [
+    "total momentum",
+    "before",
+    "after"
+   ],
+   [
+    "momentum",
+    "equal"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Momentum before the collision equals momentum after it.",
+    "The heavier object always stops after collision.",
+    "Each object's momentum remains unchanged.",
+    "The system's total mass becomes zero."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In an isolated system, two objects collide. Which statement follows from conservation of momentum?",
+   "rationales": [
+    "Correct: the system's total momentum before collision equals its total momentum after collision.",
+    "Incorrect: conservation of momentum does not say that the heavier object stops.",
+    "Incorrect: momentum may transfer between objects, even though the system total stays the same.",
+    "Incorrect: a collision does not make the system's mass zero."
+   ]
+  },
+  {
+   "options": [
+    "−m₁v₁/m₂",
+    "m₁v₁/m₂",
+    "−m₂v₁/m₁",
+    "0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A gun of mass m₂ and a bullet of mass m₁ are initially at rest. The bullet moves forward with velocity v₁ after firing. What is the gun's velocity v₂?",
+   "rationales": [
+    "Correct: zero initial momentum gives 0 = m₁v₁ + m₂v₂, so v₂ = −m₁v₁/m₂.",
+    "Incorrect: this omits the negative sign that shows the gun moves opposite to the bullet.",
+    "Incorrect: the masses are in the wrong positions in the ratio.",
+    "Incorrect: the gun recoils, so its velocity is not zero after the bullet is fired."
+   ]
+  },
+  {
+   "options": [
+    "3 m s⁻¹",
+    "5 m s⁻¹",
+    "2 m s⁻¹",
+    "15 m s⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A 2 kg ball moving at 6 m s⁻¹ hits a stationary 4 kg ball. They stick together. What is their common velocity after collision?",
+   "rationales": [
+    "Correct: 2 × 6 = (2 + 4)v, giving v = 2 m s⁻¹—wait, this is not 3; this option is incorrect.",
+    "Incorrect: this is not the value from 12 = 6v.",
+    "Correct: 12 = 6v, so v = 2 m s⁻¹.",
+    "Incorrect: this is the initial momentum, not the common velocity."
+   ]
+  },
+  {
+   "options": [
+    "The first ball stops and the second moves at 5 m s⁻¹.",
+    "Both balls move at 2.5 m s⁻¹.",
+    "The first ball moves at 5 m s⁻¹ and the second stays at rest.",
+    "Both balls stop."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Two identical balls collide. The first moves at 5 m s⁻¹ and the second is initially at rest. If the first ball stops after collision, what does conservation of momentum predict for the second ball?",
+   "rationales": [
+    "Correct: the second ball takes the first ball's momentum and, being identical, moves at the same speed.",
+    "Incorrect: this would not conserve the initial total momentum if both balls moved at this speed.",
+    "Incorrect: this describes the initial situation rather than the stated collision result.",
+    "Incorrect: stopping both balls would remove the initial system momentum."
+   ]
+  },
+  {
+   "options": [
+    "The gun moves backward.",
+    "The gun moves forward faster than the bullet.",
+    "The gun remains at rest.",
+    "The gun and bullet move forward together."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why does a gun recoil when it fires a bullet?",
+   "rationales": [
+    "Correct: the gun moves backward so the total momentum of the gun-bullet system is conserved.",
+    "Incorrect: the gun moves in the direction opposite to the bullet.",
+    "Incorrect: the gun acquires momentum after firing.",
+    "Incorrect: the gun and bullet move in opposite directions just after firing."
+   ]
+  },
+  {
+   "options": [
+    "The total momentum of the system remains the same.",
+    "Each passenger's momentum becomes zero instantly.",
+    "The car's mass increases during braking.",
+    "The seatbelt makes the car stop more slowly."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A car stops suddenly, but its passengers tend to move forward. Which principle helps explain why a seatbelt is needed?",
+   "rationales": [
+    "Correct: passengers in motion tend to keep moving, and the belt restrains them as the car stops.",
+    "Incorrect: a passenger's momentum does not become zero without a force acting over time.",
+    "Incorrect: braking does not increase the car's mass.",
+    "Incorrect: the seatbelt restrains the passenger; it does not make the car stop more slowly."
+   ]
+  },
+  {
+   "options": [
+    "0 N s",
+    "4 N s",
+    "10 N s",
+    "−4 N s"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A 0.5 kg ball's velocity changes from 2 m s⁻¹ to 10 m s⁻¹ in the same direction. What is the change in its momentum?",
+   "rationales": [
+    "Incorrect: the velocity changed, so its momentum did not stay unchanged.",
+    "Correct: Δp = mΔv = 0.5(10 − 2) = 4 N s.",
+    "Incorrect: this does not equal mass multiplied by the change in velocity.",
+    "Incorrect: the velocity change is positive in the stated direction, so the change in momentum is positive."
+   ]
+  },
+  {
+   "options": [
+    "The total momentum before collision is 2 kg m s⁻¹.",
+    "The total momentum before collision is 6 kg m s⁻¹.",
+    "The total momentum before collision is 10 kg m s⁻¹.",
+    "The total momentum before collision is 14 kg m s⁻¹."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A 0.2 kg ball moves right at 20 m s⁻¹ while a 0.4 kg ball moves left at 5 m s⁻¹. Taking right as positive, what is their total momentum before collision?",
+   "rationales": [
+    "Correct: (0.2 × 20) + (0.4 × −5) = 4 − 2 = 2 kg m s⁻¹.",
+    "Incorrect: this adds the momentum magnitudes without accounting for opposite directions.",
+    "Incorrect: this is not the signed sum of the two momenta.",
+    "Incorrect: this does not follow from adding the two signed momenta."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A bullet of mass m₁ is fired by a gun of mass m₂. Find the velocity of the gun in terms of velocity of bullet v₁ just after firing.",
+   "finalAnswer": "v₂ = (−m₁v₁)/m₂",
+   "marks": 4,
+   "source": "Example 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0",
+       "m₁v₁",
+       "m₂v₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "Use the zero initial momentum of the gun-bullet system.",
+     "description": "States the conservation equation for the initial and final momenta.",
+     "how": "Write 0 = m₁v₁ + m₂v₂."
+    },
+    {
+     "accept": [
+      [
+       "m₂v₂",
+       "−m₁v₁"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging isolates the gun's momentum with the correct sign.",
+     "description": "Rearranges the momentum equation correctly.",
+     "how": "Obtain m₂v₂ = −m₁v₁."
+    },
+    {
+     "accept": [
+      [
+       "−m₁v₁/m₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required quantity is the gun's velocity.",
+     "description": "Divides by the gun's mass to find its velocity.",
+     "how": "Divide both sides by m₂."
+    },
+    {
+     "accept": [
+      [
+       "backward"
+      ],
+      [
+       "opposite",
+       "bullet"
+      ]
+     ],
+     "marks": 1,
+     "why": "The negative sign expresses the physical direction of recoil.",
+     "description": "Identifies the direction represented by the negative sign.",
+     "how": "State that the gun moves opposite to the bullet."
+    }
+   ],
+   "modelAnswer": [
+    "Before firing, the velocity of bullet as well as that of gun was zero. Therefore, total momentum of bullet and gun was also zero.",
+    "After firing, the bullet moves forward with velocity v₁ whereas the gun moves with velocity v₂.",
+    "According to law of conservation of momentum,",
+    "Total momentum before firing = Total momentum after firing",
+    "Putting the values,",
+    "0 = m₁v₁ + m₂v₂",
+    "m₂v₂ = −m₁v₁",
+    "or",
+    "v₂ = (−m₁v₁)/m₂",
+    "The negative sign indicates that the gun moves backward, opposite to the bullet."
+   ]
+  },
+  {
+   "text": "A ball of mass 3 kg moving with a velocity of 5 ms⁻¹ collides with a stationary ball of mass 2 kg and then both of them move together. If the friction is negligible, find out the velocity with which both the balls will move after collision.",
+   "finalAnswer": "3 m s⁻¹",
+   "marks": 4,
+   "source": "Example 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "m₁=3",
+       "v₁=5",
+       "m₂=2",
+       "v₂=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct values are needed to set up the momentum equation.",
+     "description": "Identifies the given masses and velocities.",
+     "how": "State the two masses and their velocities before collision."
+    },
+    {
+     "accept": [
+      [
+       "m₁v₁+m₂v₂=(m₁+m₂)v"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balls move together, so their combined mass has the final velocity.",
+     "description": "Applies conservation of momentum for the combined moving balls.",
+     "how": "Write m₁v₁ + m₂v₂ = (m₁ + m₂)v."
+    },
+    {
+     "accept": [
+      [
+       "15",
+       "5v"
+      ],
+      [
+       "15 kg m s⁻¹",
+       "5 kg × v"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution and simplification lead to the unknown velocity.",
+     "description": "Substitutes the given values and simplifies.",
+     "how": "Obtain 15 = 5v."
+    },
+    {
+     "accept": [
+      [
+       "3 m s⁻¹"
+      ],
+      [
+       "3 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final speed and unit complete the numerical result.",
+     "description": "Gives the correct final velocity with units.",
+     "how": "State v = 3 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of first ball = m₁ = 3 kg",
+    "Velocity of first ball before collision = v₁ = 5 m s⁻¹",
+    "Mass of second ball = m₂ = 2 kg",
+    "Velocity of second ball before collision = v₂ = 0",
+    "Velocity of both the balls after collision = v = ?",
+    "Total mass of balls after collision = m₁ + m₂",
+    "By law of conservation of momentum,",
+    "Total momentum before collision = Total momentum after collision",
+    "or",
+    "m₁v₁ + m₂v₂ = (m₁ + m₂)v",
+    "Putting the values,",
+    "3 kg × 5 m s⁻¹ + 0 = (3 kg + 2 kg) v",
+    "15 kg m s⁻¹ = 5 kg × v",
+    "v = 3 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q3.4. Define impulse of force.",
+   "finalAnswer": "Impulse is the product of F × Δt = m × Δv = total change in momentum.",
+   "marks": 2,
+   "source": "Short Q3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F",
+       "Δt"
+      ],
+      [
+       "force",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition includes force acting over a time interval.",
+     "description": "States impulse as force multiplied by time interval.",
+     "how": "Write impulse = F × Δt."
+    },
+    {
+     "accept": [
+      [
+       "m",
+       "Δv"
+      ],
+      [
+       "change",
+       "momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "This expresses impulse as the change in momentum.",
+     "description": "Connects impulse to change in momentum.",
+     "how": "Write m × Δv = total change in momentum."
+    }
+   ],
+   "modelAnswer": [
+    "Impulse is defined as the product of F × Δt = m × Δv = total change in momentum."
+   ]
+  },
+  {
+   "text": "Q3.10. An astronaut walking in space wants to return to his spaceship by firing a hand rocket. In what direction does he fire the rocket?",
+   "finalAnswer": "Away from the spaceship.",
+   "marks": 2,
+   "source": "Short Q3.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "away",
+       "spaceship"
+      ],
+      [
+       "opposite",
+       "spaceship"
+      ]
+     ],
+     "marks": 1,
+     "why": "The rocket's exhaust must move opposite to the astronaut's desired motion.",
+     "description": "States that the rocket is fired away from the spaceship.",
+     "how": "Give the direction as away from the spaceship."
+    },
+    {
+     "accept": [
+      [
+       "opposite",
+       "rocket"
+      ],
+      [
+       "conservation",
+       "momentum"
+      ],
+      [
+       "recoil"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation shows how the astronaut gains momentum toward the spaceship.",
+     "description": "Explains the recoil using conservation of momentum.",
+     "how": "Explain that expelled material moves away and the astronaut recoils toward the spaceship."
+    }
+   ],
+   "modelAnswer": [
+    "He fires the rocket away from the spaceship.",
+    "The rocket moves away and, by conservation of momentum, the astronaut recoils toward the spaceship."
+   ]
+  },
+  {
+   "text": "Q3.2. Inflatable airbags are installed in the vehicles as safety equipment. In terms of momentum, what is the advantage of airbags over seatbelts?",
+   "finalAnswer": "Airbags increase the time over which a passenger's momentum changes, reducing the force of impact.",
+   "marks": 4,
+   "source": "CRQ 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "momentum",
+       "change"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the passenger's change in momentum during a collision.",
+     "description": "Identifies that the passenger's momentum changes on impact.",
+     "how": "State that the passenger's momentum must change as they are brought to rest."
+    },
+    {
+     "accept": [
+      [
+       "increase",
+       "time"
+      ],
+      [
+       "longer",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "A longer stopping time is the key advantage described in momentum terms.",
+     "description": "States that the airbag increases the stopping time.",
+     "how": "Explain that the airbag makes the momentum change happen over a longer time."
+    },
+    {
+     "accept": [
+      [
+       "force",
+       "decrease"
+      ],
+      [
+       "reduces",
+       "force"
+      ]
+     ],
+     "marks": 1,
+     "why": "For the same change in momentum, a longer time means a smaller force.",
+     "description": "Links increased time to reduced force.",
+     "how": "State that the force on the passenger is reduced."
+    },
+    {
+     "accept": [
+      [
+       "impact"
+      ],
+      [
+       "injury"
+      ],
+      [
+       "safer"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reduced force explains the protective benefit.",
+     "description": "Connects the reduced force to passenger safety.",
+     "how": "Mention that the risk or severity of injury is reduced."
+    }
+   ],
+   "modelAnswer": [
+    "The passenger's momentum changes as the passenger is brought to rest during a collision.",
+    "An airbag increases the time over which this change in momentum takes place.",
+    "For the same change in momentum, increasing the time reduces the force on the passenger.",
+    "Therefore, airbags reduce the force of impact and the chance of injury."
+   ]
+  },
+  {
+   "text": "Q3.5. When someone jumps from a small boat onto the river bank, why does the jumper often fall into the water? Explain.",
+   "finalAnswer": "The boat recoils backward as the jumper moves forward, so the jumper may not reach the bank and may fall into the water.",
+   "marks": 4,
+   "source": "CRQ 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "momentum",
+       "conservation"
+      ],
+      [
+       "initial",
+       "momentum",
+       "zero"
+      ]
+     ],
+     "marks": 1,
+     "why": "The boat and jumper are initially at rest as a system.",
+     "description": "Identifies the relevant momentum principle.",
+     "how": "State that momentum is conserved for the jumper-boat system."
+    },
+    {
+     "accept": [
+      [
+       "jumper",
+       "forward"
+      ],
+      [
+       "jumps",
+       "forward"
+      ]
+     ],
+     "marks": 1,
+     "why": "The jumper's motion must be related to the boat's recoil.",
+     "description": "States the jumper's direction of motion.",
+     "how": "Explain that the jumper pushes off and moves toward the bank."
+    },
+    {
+     "accept": [
+      [
+       "boat",
+       "backward"
+      ],
+      [
+       "boat",
+       "recoils"
+      ]
+     ],
+     "marks": 1,
+     "why": "The opposite motion of the boat explains the loss of support beneath the jumper.",
+     "description": "States that the boat recoils away from the bank.",
+     "how": "Explain that the boat moves backward as the jumper moves forward."
+    },
+    {
+     "accept": [
+      [
+       "fall",
+       "water"
+      ],
+      [
+       "not",
+       "reach",
+       "bank"
+      ]
+     ],
+     "marks": 1,
+     "why": "Connects the recoil to the outcome asked about.",
+     "description": "Explains why the jumper may fall into the water.",
+     "how": "State that the backward-moving boat may carry the jumper short of the bank."
+    }
+   ],
+   "modelAnswer": [
+    "The jumper and boat initially have zero total momentum.",
+    "When the jumper pushes off toward the bank, the boat recoils backward to conserve momentum.",
+    "The backward movement of the boat can make the jumper fail to reach the bank, so the jumper may fall into the water."
+   ]
+  },
+  {
+   "text": "Q3.4. State and explain the principle of conservation of momentum.",
+   "finalAnswer": "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system.",
+   "marks": 4,
+   "source": "Comprehensive 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "no",
+       "external",
+       "force"
+      ],
+      [
+       "isolated",
+       "system"
+      ]
+     ],
+     "marks": 1,
+     "why": "The condition for applying the principle must be stated.",
+     "description": "Names the isolated-system condition.",
+     "how": "State that no external force acts on the system."
+    },
+    {
+     "accept": [
+      [
+       "final",
+       "total",
+       "momentum"
+      ],
+      [
+       "initial",
+       "total",
+       "momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The principle concerns the system's total momentum at two times.",
+     "description": "Identifies initial and final total momentum.",
+     "how": "State that final total momentum equals initial total momentum."
+    },
+    {
+     "accept": [
+      [
+       "m₁v₁+m₂v₂"
+      ],
+      [
+       "before",
+       "collision"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation shows how the principle is written for two objects.",
+     "description": "Gives the two-object momentum equation.",
+     "how": "Write m₁v₁ + m₂v₂ = m₁v′₁ + m₂v′₂."
+    },
+    {
+     "accept": [
+      [
+       "after",
+       "collision"
+      ],
+      [
+       "momentum",
+       "transfer"
+      ]
+     ],
+     "marks": 1,
+     "why": "An explanation should show that momentum may transfer between objects while the total stays constant.",
+     "description": "Explains the meaning of unchanged total momentum.",
+     "how": "Explain that a momentum change in one object is balanced by the other object's change."
+    }
+   ],
+   "modelAnswer": [
+    "The principle of conservation of momentum states that:",
+    "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system.",
+    "Total momentum of the system before collision = Total momentum of the system after collision",
+    "m₁v₁ + m₂v₂ = m₁v′₁ + m₂v′₂",
+    "Momentum may transfer from one object to another, but the total momentum of the system remains the same."
+   ]
+  },
+  {
+   "text": "Q3.4. A 5 g bullet is fired by a gun. The bullet moves with a velocity of 300 m s⁻¹. If the mass of the gun is 10 kg, find the recoil speed of the gun.",
+   "finalAnswer": "−0.15 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "m_bullet=0.005 kg"
+      ],
+      [
+       "5 g",
+       "0.005 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bullet mass must be converted to kilograms to match the SI units.",
+     "description": "Converts the bullet mass to SI units.",
+     "how": "Use 5 g = 0.005 kg."
+    },
+    {
+     "accept": [
+      [
+       "initial",
+       "momentum",
+       "zero"
+      ],
+      [
+       "0=m₁v₁+m₂v₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "The system starts at rest, so its initial momentum is zero.",
+     "description": "Sets up conservation of momentum.",
+     "how": "Write 0 = m_bullet v_bullet + m_gun v_gun."
+    },
+    {
+     "accept": [
+      [
+       "0.005×300"
+      ],
+      [
+       "1.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution gives the bullet's forward momentum.",
+     "description": "Substitutes the bullet data correctly.",
+     "how": "Calculate the bullet momentum as 1.5 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "10v",
+       "−1.5"
+      ],
+      [
+       "v=−1.5/10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gun's momentum must balance the bullet's momentum in the opposite direction.",
+     "description": "Solves for the gun velocity with the correct sign.",
+     "how": "Use 10v = −1.5."
+    },
+    {
+     "accept": [
+      [
+       "−0.15 m s⁻¹"
+      ],
+      [
+       "−0.15 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and its negative sign give the recoil speed and direction.",
+     "description": "Gives the correct recoil velocity.",
+     "how": "State −0.15 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of bullet = 5 g = 0.005 kg",
+    "Velocity of bullet = 300 m s⁻¹",
+    "Mass of gun = 10 kg",
+    "Before firing, total momentum = 0",
+    "By law of conservation of momentum,",
+    "0 = m_bullet v_bullet + m_gun v_gun",
+    "0 = (0.005 kg × 300 m s⁻¹) + (10 kg × v_gun)",
+    "10v_gun = −1.5",
+    "v_gun = −1.5/10",
+    "v_gun = −0.15 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q3.5. An astronaut weighs 70 kg. He throws a wrench of mass 300 g at a speed of 3.5 m s⁻¹. Determine:\n\n(a) the speed of astronaut as he recoils away from the wrench.\n\n(b) the distance covered by the astronaut in 30 minutes.",
+   "finalAnswer": "(−1.5 × 10⁻² m s⁻¹, 27 m)",
+   "marks": 5,
+   "source": "Numerical 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "300 g",
+       "0.3 kg"
+      ],
+      [
+       "mass",
+       "0.3 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The wrench mass must be converted to kilograms before calculating momentum.",
+     "description": "Converts the wrench mass and recognises the initial momentum is zero.",
+     "how": "Use 0.3 kg and set initial total momentum to zero."
+    },
+    {
+     "accept": [
+      [
+       "0=70v+0.3×3.5"
+      ],
+      [
+       "70v=−1.05"
+      ]
+     ],
+     "marks": 1,
+     "why": "Conservation of momentum determines the astronaut's recoil velocity.",
+     "description": "Sets up and solves the momentum equation.",
+     "how": "Use 0 = 70v + (0.3 × 3.5)."
+    },
+    {
+     "accept": [
+      [
+       "−1.5×10⁻² m s⁻¹"
+      ],
+      [
+       "−0.015 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The signed value gives the astronaut's recoil direction and speed.",
+     "description": "Finds the astronaut's velocity.",
+     "how": "State v = −1.5 × 10⁻² m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "30 min",
+       "1800 s"
+      ],
+      [
+       "1800 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The time must be converted to seconds for use with the velocity in m s⁻¹.",
+     "description": "Converts the travel time to SI units.",
+     "how": "Use 30 minutes = 1800 seconds."
+    },
+    {
+     "accept": [
+      [
+       "27 m"
+      ],
+      [
+       "27 metres"
+      ]
+     ],
+     "marks": 1,
+     "why": "The distance follows from constant speed multiplied by time.",
+     "description": "Calculates the distance travelled.",
+     "how": "Use distance = 0.015 × 1800 = 27 m."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of astronaut = 70 kg",
+    "Mass of wrench = 300 g = 0.3 kg",
+    "Velocity of wrench = 3.5 m s⁻¹",
+    "Before throwing, total momentum = 0",
+    "By law of conservation of momentum,",
+    "0 = (70 kg × v) + (0.3 kg × 3.5 m s⁻¹)",
+    "70v = −1.05",
+    "v = −1.05/70 = −1.5 × 10⁻² m s⁻¹",
+    "Time = 30 min = 1800 s",
+    "Distance covered = speed × time",
+    "= 1.5 × 10⁻² m s⁻¹ × 1800 s",
+    "= 27 m"
+   ]
+  },
+  {
+   "text": "Q3.6. A 6.5 × 10³ kg bogie of a goods train is moving with a velocity of 0.8 m s⁻¹. Another bogie of mass 9.2 × 10³ kg coming from behind with a velocity of 1.2 m s⁻¹ collides with the first one and couples to it. Find the common velocity of the two bogies after they become coupled.",
+   "finalAnswer": "1.03 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "m₁=6.5×10³"
+      ],
+      [
+       "m₂=9.2×10³"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly identifying both masses is required for the total momentum calculation.",
+     "description": "Identifies masses and velocities of the bogies.",
+     "how": "Record 6.5 × 10³ kg at 0.8 m s⁻¹ and 9.2 × 10³ kg at 1.2 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "m₁v₁+m₂v₂=(m₁+m₂)v"
+      ],
+      [
+       "conservation",
+       "momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bogies couple, so they share a common final velocity.",
+     "description": "Applies conservation of momentum to the coupled bogies.",
+     "how": "Write m₁v₁ + m₂v₂ = (m₁ + m₂)v."
+    },
+    {
+     "accept": [
+      [
+       "6500×0.8"
+      ],
+      [
+       "9200×1.2"
+      ],
+      [
+       "16240"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial momentum must be calculated using both bogies.",
+     "description": "Calculates the combined initial momentum.",
+     "how": "Obtain 5200 + 11040 = 16240 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "15700v"
+      ],
+      [
+       "16240/15700"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by the combined mass gives the common velocity.",
+     "description": "Solves the equation for the final velocity.",
+     "how": "Use 16240 = 15700v."
+    },
+    {
+     "accept": [
+      [
+       "1.03 m s⁻¹"
+      ],
+      [
+       "1.03 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value with units is the requested common velocity.",
+     "description": "States the correct common velocity.",
+     "how": "Give 1.03 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of first bogie = 6.5 × 10³ kg; velocity = 0.8 m s⁻¹",
+    "Mass of second bogie = 9.2 × 10³ kg; velocity = 1.2 m s⁻¹",
+    "Let the common velocity after collision be v.",
+    "By law of conservation of momentum,",
+    "m₁v₁ + m₂v₂ = (m₁ + m₂)v",
+    "(6.5 × 10³ × 0.8) + (9.2 × 10³ × 1.2) = (6.5 × 10³ + 9.2 × 10³)v",
+    "5200 + 11040 = 15700v",
+    "16240 = 15700v",
+    "v = 16240/15700",
+    "v = 1.03 m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q3.8. A ball of mass 0.4 kg is dropped on the floor from a height of 1.8 m. The ball rebounds straight upward to a height of 0.8 m. What is the magnitude and direction of the impulse applied to the ball by the floor?",
+   "finalAnswer": "4 N s, upward",
+   "marks": 5,
+   "source": "Numerical 3.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "downward",
+       "velocity"
+      ],
+      [
+       "before",
+       "impact"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ball's velocity before impact is downward and must be treated with a negative sign if upward is positive.",
+     "description": "Identifies the direction of velocity before impact.",
+     "how": "Take upward as positive; the velocity before impact is negative."
+    },
+    {
+     "accept": [
+      [
+       "6 m s⁻¹"
+      ],
+      [
+       "sqrt(2×10×1.8)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The fall height determines the speed before impact.",
+     "description": "Finds the impact speed from the drop height.",
+     "how": "Use v = √(2gh) = √(2 × 10 × 1.8) = 6 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "4 m s⁻¹"
+      ],
+      [
+       "sqrt(2×10×0.8)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The rebound height determines the upward speed after impact.",
+     "description": "Finds the rebound speed.",
+     "how": "Use v = √(2gh) = √(2 × 10 × 0.8) = 4 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.4×(4+6)"
+      ],
+      [
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse equals the change in momentum, using the signed velocities.",
+     "description": "Calculates the magnitude of the momentum change.",
+     "how": "Use Δp = m(4 − (−6)) = 4 N s."
+    },
+    {
+     "accept": [
+      [
+       "4 N s",
+       "upward"
+      ],
+      [
+       "4 Ns",
+       "upward"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both magnitude and direction are required.",
+     "description": "Gives the impulse with direction.",
+     "how": "State 4 N s, upward."
+    }
+   ],
+   "modelAnswer": [
+    "Take upward direction as positive.",
+    "Velocity of ball before hitting floor = −√(2gh)",
+    "= −√(2 × 10 × 1.8) = −6 m s⁻¹",
+    "Velocity of ball after rebounding = +√(2gh)",
+    "= +√(2 × 10 × 0.8) = +4 m s⁻¹",
+    "Impulse = change in momentum",
+    "= m(v − u)",
+    "= 0.4 × (4 − (−6))",
+    "= 4 N s",
+    "The impulse applied by the floor is 4 N s, upward."
+   ]
+  },
+  {
+   "text": "Q3.9. Two balls of masses 0.2 kg and 0.4 kg are moving towards each other with velocities 20 m s⁻¹ and 5 m s⁻¹ respectively. After collision, the velocity of 0.2 kg ball becomes 6 m s⁻¹. What will be the velocity of 0.4 kg ball?",
+   "finalAnswer": "2 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.2×20"
+      ],
+      [
+       "0.4×(−5)"
+      ],
+      [
+       "2 kg m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "Opposite directions require opposite signs in the initial momentum.",
+     "description": "Finds the initial total momentum with correct directions.",
+     "how": "Take the 0.2 kg ball's direction as positive: initial momentum = 4 − 2 = 2 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.2×6"
+      ],
+      [
+       "1.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The stated final velocity determines the first ball's final momentum.",
+     "description": "Calculates the final momentum of the 0.2 kg ball.",
+     "how": "Use 0.2 × 6 = 1.2 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.2×20+0.4×(−5)=0.2×6+0.4v"
+      ],
+      [
+       "2=1.2+0.4v"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is conservation of momentum for both balls.",
+     "description": "Sets initial total momentum equal to final total momentum.",
+     "how": "Write the signed momentum conservation equation."
+    },
+    {
+     "accept": [
+      [
+       "0.8"
+      ],
+      [
+       "v=2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct algebra gives the unknown velocity.",
+     "description": "Solves for the second ball's velocity.",
+     "how": "Obtain 0.4v = 0.8, so v = 2 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "2 m s⁻¹"
+      ],
+      [
+       "2 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the direction under the chosen sign convention.",
+     "description": "States the correct velocity and direction.",
+     "how": "Give 2 m s⁻¹ in the initial direction of the 0.2 kg ball."
+    }
+   ],
+   "modelAnswer": [
+    "Take the initial direction of the 0.2 kg ball as positive.",
+    "Initial momentum = (0.2 × 20) + (0.4 × −5)",
+    "= 4 − 2 = 2 kg m s⁻¹",
+    "Let the velocity of the 0.4 kg ball after collision be v.",
+    "By law of conservation of momentum,",
+    "0.2 × 20 + 0.4 × (−5) = 0.2 × 6 + 0.4v",
+    "2 = 1.2 + 0.4v",
+    "0.8 = 0.4v",
+    "v = 2 m s⁻¹",
+    "The 0.4 kg ball moves at 2 m s⁻¹ in the initial direction of the 0.2 kg ball."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section can appear as a definition or explanation: state the conservation principle and its condition—no external force acts on an isolated system.",
+   "Numerical questions often involve recoil or two objects that stick together. Show total momentum before = total momentum after, substitute values, and solve for the unknown.",
+   "For opposite directions, choose one direction as positive and use a negative sign for the other. Include units and state the direction when asked.",
+   "For a short conceptual question, explain that momentum may transfer between objects, while the total momentum of the isolated system remains the same.",
+   "A numerical answer earns clearer method marks when you show the equation, substitution, rearrangement, and final answer rather than only writing the result."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Convert the bullet mass from grams to kilograms.",
+     "The gun and bullet start at rest: use 0 = momentum of bullet + momentum of gun, then solve for gun velocity."
+    ],
+    "accept": [
+     [
+      "−0.15 m s⁻¹"
+     ],
+     [
+      "−0.15 m/s"
+     ]
+    ],
+    "question": "Q3.4. A 5 g bullet is fired by a gun. The bullet moves with a velocity of 300 m s⁻¹. If the mass of the gun is 10 kg, find the recoil speed of the gun.",
+    "solution": [
+     "Mass of bullet = 5 g = 0.005 kg",
+     "Before firing, total momentum = 0",
+     "Let the velocity of the gun after firing be v.",
+     "By law of conservation of momentum,",
+     "0 = m_bullet v_bullet + m_gun v",
+     "0 = (0.005 kg × 300 m s⁻¹) + (10 kg × v)",
+     "10v = −1.5",
+     "v = −1.5/10",
+     "v = −0.15 m s⁻¹"
+    ],
+    "answer": "−0.15 m s⁻¹"
+   },
+   {
+    "hints": [
+     "Both bogies move in the same direction, so add their initial momenta.",
+     "Because they couple, use their combined mass and one common final velocity."
+    ],
+    "accept": [
+     [
+      "1.03 m s⁻¹"
+     ],
+     [
+      "1.03 m/s"
+     ]
+    ],
+    "question": "Q3.6. A 6.5 × 10³ kg bogie of a goods train is moving with a velocity of 0.8 m s⁻¹. Another bogie of mass 9.2 × 10³ kg coming from behind with a velocity of 1.2 m s⁻¹ collides with the first one and couples to it. Find the common velocity of the two bogies after they become coupled.",
+    "solution": [
+     "Mass of first bogie = 6.5 × 10³ kg; velocity = 0.8 m s⁻¹",
+     "Mass of second bogie = 9.2 × 10³ kg; velocity = 1.2 m s⁻¹",
+     "Let the common velocity after collision be v.",
+     "By law of conservation of momentum,",
+     "m₁v₁ + m₂v₂ = (m₁ + m₂)v",
+     "(6.5 × 10³ × 0.8) + (9.2 × 10³ × 1.2) = (6.5 × 10³ + 9.2 × 10³)v",
+     "5200 + 11040 = 15700v",
+     "16240 = 15700v",
+     "v = 16240/15700",
+     "v = 1.03 m s⁻¹"
+    ],
+    "answer": "1.03 m s⁻¹"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the given quantities needed to write the momentum equation.",
+     "text": "Mass of first ball = m₁ = 3 kg; velocity before collision = v₁ = 5 m s⁻¹."
+    },
+    {
+     "why": "The second ball is stationary before collision.",
+     "text": "Mass of second ball = m₂ = 2 kg; velocity before collision = v₂ = 0."
+    },
+    {
+     "why": "The two balls move together, so they have the same unknown final velocity.",
+     "text": "Velocity of both the balls after collision = v = ?; total mass after collision = m₁ + m₂."
+    },
+    {
+     "why": "For the collision, total momentum before equals total momentum after.",
+     "text": "By law of conservation of momentum, m₁v₁ + m₂v₂ = (m₁ + m₂)v."
+    },
+    {
+     "why": "Substitute the given masses and velocities into the conservation equation.",
+     "text": "3 kg × 5 m s⁻¹ + 0 = (3 kg + 2 kg) v."
+    },
+    {
+     "why": "Calculate the initial momentum and the combined mass.",
+     "text": "15 kg m s⁻¹ = 5 kg × v."
+    },
+    {
+     "why": "Divide by 5 kg to find the common velocity.",
+     "text": "v = 3 m s⁻¹."
+    }
+   ],
+   "question": "A ball of mass 3 kg moving with a velocity of 5 ms⁻¹ collides with a stationary ball of mass 2 kg and then both of them move together. If the friction is negligible, find out the velocity with which both the balls will move after collision.",
+   "answer": "v = 3 m s⁻¹"
+  },
+  "explain": [
+   {
+    "title": "What is a system?",
+    "body": "The collection of objects is known as a ‘system’. If no external force acts on any object of the system, it is known as isolated system."
+   },
+   {
+    "title": "Conservation of momentum",
+    "body": "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system. For two objects, m₁v₁ + m₂v₂ = m₁v′₁ + m₂v′₂."
+   },
+   {
+    "title": "Momentum can transfer",
+    "body": "During a collision, one object may lose momentum while another gains momentum. The total momentum of the two-object system remains the same if no external force acts."
+   },
+   {
+    "title": "Recoil",
+    "body": "When a bullet moves forward after firing, the gun moves backward. The opposite momenta balance because the system's initial total momentum was zero."
+   },
+   {
+    "title": "Impulse and safety",
+    "body": "Impulse is defined as the product of F × Δt = m × Δv = total change in momentum. Seatbelts prevent passengers from moving forward when a car stops suddenly."
+   }
+  ],
+  "mistakes": [
+   "Forgetting to say that no external force acts on an isolated system.",
+   "Adding momentum magnitudes without using signs for opposite directions.",
+   "Using only one object's momentum instead of the total momentum of the system.",
+   "For objects that move together after collision, forgetting to use their combined mass for the final momentum.",
+   "Leaving out units or failing to interpret a negative velocity as motion in the opposite direction."
+  ]
+ }
+}

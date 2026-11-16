@@ -1,0 +1,452 @@
+{
+ "note": {
+  "explanation": "A speed-time graph shows how an object's speed changes with time. The area between the graph and the time axis gives the distance covered. For constant speed, this area is a rectangle; for speed increasing uniformly from zero, it is a triangle.",
+  "examples": [
+   "At a constant speed of 5 m/s for 4 s, the distance is the rectangular area: 5 × 4 = 20 m.",
+   "If speed increases uniformly from 0 to 6 m/s in 3 s, the distance is the triangular area: 1/2 × 6 × 3 = 9 m."
+  ],
+  "checkAnswer": "12 m",
+  "keywords": [
+   "area",
+   "speed-time graph",
+   "distance",
+   "rectangle",
+   "triangle",
+   "base",
+   "perpendicular"
+  ],
+  "simple": "Think of the area under a speed-time graph as the distance travelled. Find the area of the shape below the graph and above the time axis.",
+  "checkQuestion": "An object moves at a constant speed of 4 m/s for 3 s. What distance does it cover?",
+  "title": "Finding Distance from a Speed-Time Graph",
+  "steps": [
+   "Identify the shape under the speed-time graph.",
+   "Find its area using the correct formula.",
+   "The area is numerically equal to the distance covered."
+  ],
+  "answer": "The area under a speed-time graph up to the time axis is numerically equal to the distance covered by the object.",
+  "checkAccept": [
+   [
+    "12"
+   ],
+   [
+    "4*3"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Distance covered",
+    "Acceleration",
+    "Time taken",
+    "Average speed"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the area between a speed-time graph and the time axis represent?",
+   "rationales": [
+    "Correct: the area under a speed-time graph is numerically equal to the distance covered.",
+    "Incorrect: acceleration is represented by the gradient of a speed-time graph.",
+    "Incorrect: time is read from the horizontal axis, not found from the area.",
+    "Incorrect: average speed is not represented by the area under the graph."
+   ]
+  },
+  {
+   "options": [
+    "A rectangle",
+    "A triangle",
+    "A circle",
+    "A trapezium"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "An object moves at constant speed for a time interval. What shape is formed under its speed-time graph?",
+   "rationales": [
+    "Correct: constant speed is shown by a horizontal line, making a rectangle with the time axis.",
+    "Incorrect: a triangle is formed when speed rises uniformly from zero.",
+    "Incorrect: a circle is not the shape formed by this graph.",
+    "Incorrect: a trapezium is not formed when speed stays constant."
+   ]
+  },
+  {
+   "options": [
+    "1/2 × speed × time",
+    "speed + time",
+    "speed ÷ time",
+    "speed × time × 2"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "An object speeds up uniformly from zero. Which expression gives the triangular area under its speed-time graph?",
+   "rationales": [
+    "Correct: the triangle's area is 1/2 × base × perpendicular, here 1/2 × time × speed.",
+    "Incorrect: adding speed and time does not give the area of the triangle.",
+    "Incorrect: dividing speed by time does not give the triangular area.",
+    "Incorrect: multiplying speed and time by 2 is not the triangle-area formula."
+   ]
+  },
+  {
+   "options": [
+    "18 m",
+    "6 m",
+    "9 m",
+    "3 m"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Speed increases uniformly from 0 to 6 m/s in 3 s. What distance is covered?",
+   "rationales": [
+    "Incorrect: 18 m is the rectangular area, not the triangular area.",
+    "Incorrect: 6 m is not the area of the triangle.",
+    "Correct: distance = 1/2 × 6 × 3 = 9 m.",
+    "Incorrect: 3 m is not the area of the triangle."
+   ]
+  },
+  {
+   "options": [
+    "The distance covered is zero",
+    "The distance covered is equal to the rectangular area",
+    "The acceleration must be zero",
+    "The time interval is zero"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A horizontal speed-time line lies above the time axis. What does the area below it represent?",
+   "rationales": [
+    "Incorrect: the area is not zero because both speed and time are non-zero.",
+    "Correct: the area of the rectangle under the line gives the distance covered.",
+    "Incorrect: the area rule does not say that acceleration must be zero in every graph situation.",
+    "Incorrect: the graph shows a time interval, not zero time."
+   ]
+  },
+  {
+   "options": [
+    "The base of the triangle",
+    "The perpendicular of the triangle",
+    "The area of the triangle",
+    "The distance covered"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "For an object speeding up uniformly from zero during time t, which triangle dimension corresponds to t?",
+   "rationales": [
+    "Correct: time t is the horizontal base of the triangle in the speed-time graph.",
+    "Incorrect: the perpendicular represents the final speed v.",
+    "Incorrect: t is a dimension of the triangle, not its area.",
+    "Incorrect: distance is numerically equal to the area, not to t alone."
+   ]
+  },
+  {
+   "options": [
+    "The area under the graph is numerically equal to distance",
+    "The area under the graph is numerically equal to acceleration",
+    "The area under the graph is numerically equal to time",
+    "The area under the graph is numerically equal to speed"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement gives the general rule for the area under a speed-time graph?",
+   "rationales": [
+    "Correct: the textbook states that this area is numerically equal to the distance covered.",
+    "Incorrect: acceleration is related to the gradient of a speed-time graph.",
+    "Incorrect: time is shown on the horizontal axis and is not the general area result.",
+    "Incorrect: speed is shown on the vertical axis and is not the general area result."
+   ]
+  },
+  {
+   "options": [
+    "0 m",
+    "8 m",
+    "16 m",
+    "4 m"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "An object moves at a constant speed of 4 m/s for 2 s. What distance does it cover?",
+   "rationales": [
+    "Incorrect: the object is moving for a non-zero time at a non-zero speed.",
+    "Correct: the rectangular area is 4 × 2 = 8 m.",
+    "Incorrect: this is twice the correct distance.",
+    "Incorrect: this is the speed value, not the distance covered."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "The distance-time graph shows the motion of three cyclists. (a) What does each line on the graph represent? (b) Which cyclist travelled the most distance? (c) Which cyclist travelled at the greatest speed? the lowest speed? at constant speed?",
+   "finalAnswer": "(a) Each line represents the motion of one cyclist. (b) Cyclist A. (c) Greatest speed: A; lowest speed: B when its line is horizontal; constant speed: A and C.",
+   "marks": 4,
+   "source": "Mini Exercise 2.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "motion",
+       "cyclist"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each line must be identified as showing a cyclist's motion.",
+     "description": "State what each line represents.",
+     "how": "Explain that each line shows how the distance of one cyclist changes with time."
+    },
+    {
+     "accept": [
+      [
+       "cyclist A"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cyclist that reaches the greatest distance must be identified.",
+     "description": "Name the cyclist who travelled the most distance.",
+     "how": "Read the greatest distance from the graph."
+    },
+    {
+     "accept": [
+      [
+       "greatest speed",
+       "A"
+      ],
+      [
+       "fastest",
+       "A"
+      ]
+     ],
+     "marks": 1,
+     "why": "The steepest distance-time line represents the greatest speed.",
+     "description": "Identify the cyclist with the greatest speed.",
+     "how": "Compare the steepness of the lines."
+    },
+    {
+     "accept": [
+      [
+       "lowest speed",
+       "B",
+       "constant speed",
+       "A",
+       "C"
+      ],
+      [
+       "slowest",
+       "B",
+       "constant speed",
+       "A",
+       "C"
+      ]
+     ],
+     "marks": 1,
+     "why": "The horizontal part means B is stopped, while straight rising lines A and C show constant speeds.",
+     "description": "Identify the lowest speed and the cyclists travelling at constant speed.",
+     "how": "Use the horizontal segment to identify zero speed and the straight rising lines to identify constant speed."
+    }
+   ],
+   "modelAnswer": [
+    "Each line represents how the distance of one cyclist changes with time.",
+    "Cyclist A travelled the most distance.",
+    "Cyclist A travelled at the greatest speed; cyclist B has the lowest speed while its line is horizontal.",
+    "Cyclists A and C travelled at constant speed because their distance-time lines are straight."
+   ]
+  },
+  {
+   "text": "Prove that the area under speed-time graph is equal to the distance covered by an object.",
+   "finalAnswer": "The area under a speed-time graph up to the time axis is numerically equal to the distance covered by the object.",
+   "marks": 5,
+   "source": "Comprehensive 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "speed",
+       "time",
+       "rectangle"
+      ]
+     ],
+     "marks": 1,
+     "why": "The constant-speed case establishes the area rule for a rectangle.",
+     "description": "Relate the rectangle's dimensions to speed and time.",
+     "how": "State that the rectangle has height v and base t."
+    },
+    {
+     "accept": [
+      [
+       "v*t"
+      ],
+      [
+       "speed*time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The rectangle area must be calculated correctly.",
+     "description": "Calculate the rectangular area.",
+     "how": "Use area = v × t."
+    },
+    {
+     "accept": [
+      [
+       "average speed",
+       "1/2",
+       "v"
+      ]
+     ],
+     "marks": 1,
+     "why": "For uniform increase from zero, the triangle area matches distance found from average speed.",
+     "description": "Show the average-speed method for uniformly increasing speed.",
+     "how": "Use average speed = (0 + v)/2 = 1/2 v, then multiply by t."
+    },
+    {
+     "accept": [
+      [
+       "triangle",
+       "1/2",
+       "v*t"
+      ],
+      [
+       "triangle",
+       "1/2",
+       "v",
+       "t"
+      ]
+     ],
+     "marks": 1,
+     "why": "The triangular area must be calculated using its base and perpendicular.",
+     "description": "Calculate the triangular area.",
+     "how": "Use area = 1/2 × v × t."
+    },
+    {
+     "accept": [
+      [
+       "area under",
+       "speed-time graph",
+       "distance covered"
+      ],
+      [
+       "numerically equal",
+       "distance"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final statement is the result being proved.",
+     "description": "State the general result.",
+     "how": "Conclude that the area under the speed-time graph is numerically equal to distance covered."
+    }
+   ],
+   "modelAnswer": [
+    "For constant speed v during time t, the area under the speed-time graph is the area of a rectangle.",
+    "Area of rectangle = v × t.",
+    "Distance covered = speed × time = v × t.",
+    "For speed increasing uniformly from 0 to v in time t, average speed = (0 + v)/2 = 1/2 v.",
+    "Distance covered = average speed × time = 1/2 v × t.",
+    "Area of triangle = 1/2 (perpendicular × base) = 1/2 (v × t).",
+    "Thus, the area under the speed-time graph up to the time axis is numerically equal to the distance covered by the object."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to state or prove what the area under a speed-time graph represents.",
+   "For constant speed, show the rectangular area as v × t and connect it to distance = speed × time.",
+   "For speed increasing uniformly from zero, identify the triangle and use area = 1/2 × base × perpendicular.",
+   "Write the conclusion clearly: the area is numerically equal to distance covered."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the area under the graph as a distance.",
+     "The area is numerically equal to the distance covered."
+    ],
+    "accept": [
+     [
+      "distance covered"
+     ],
+     [
+      "distance"
+     ]
+    ],
+    "question": "The area under the speed-time graph is numerically equal to:",
+    "solution": [
+     "The area under a speed-time graph up to the time axis is numerically equal to the distance covered by the object.",
+     "Therefore, the correct answer is distance covered."
+    ],
+    "answer": "Distance covered."
+   },
+   {
+    "hints": [
+     "For constant speed, the area under the graph is a rectangle.",
+     "For uniform increase from zero, the area is a triangle; compare each area with the distance formula."
+    ],
+    "accept": [
+     [
+      "area under",
+      "speed-time graph",
+      "distance covered"
+     ],
+     [
+      "numerically equal",
+      "distance"
+     ]
+    ],
+    "question": "Prove that the area under speed-time graph is equal to the distance covered by an object.",
+    "solution": [
+     "For constant speed v during time t, the area under the speed-time graph is the area of a rectangle.",
+     "Area of rectangle = v × t.",
+     "Distance covered = speed × time = v × t.",
+     "For speed increasing uniformly from 0 to v in time t, average speed = (0 + v)/2 = 1/2 v.",
+     "Distance covered = average speed × time = 1/2 v × t.",
+     "Area of triangle = 1/2 (perpendicular × base) = 1/2 (v × t).",
+     "Thus, the area under the speed-time graph up to the time axis is numerically equal to the distance covered by the object."
+    ],
+    "answer": "The area under a speed-time graph up to the time axis is numerically equal to the distance covered by the object."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The horizontal dimension of the triangle is the time interval, and its vertical dimension is the final speed.",
+     "text": "The base of the triangle is equal to t and the perpendicular is equal to v."
+    },
+    {
+     "why": "The average speed during a uniform increase from zero is half the final speed.",
+     "text": "v_av = (0 + v)/2 = 1/2 v"
+    },
+    {
+     "why": "Distance is average speed multiplied by time.",
+     "text": "Distance covered = average speed × time = 1/2 v × t."
+    },
+    {
+     "why": "The area formula for a triangle uses half the product of its base and perpendicular.",
+     "text": "Area of a triangle = 1/2 (perpendicular × base)"
+    },
+    {
+     "why": "Substituting the graph's dimensions gives the same value as the distance covered.",
+     "text": "= 1/2 (v × t)"
+    },
+    {
+     "why": "This establishes the distance-area result for this uniformly increasing speed graph.",
+     "text": "The area is numerically equal to the distance covered by the object."
+    }
+   ],
+   "question": "Show that the area under a speed-time graph for an object whose speed increases uniformly from 0 to v in time t is equal to the distance covered.",
+   "answer": "Area of triangle = 1/2 (v × t) = distance covered."
+  },
+  "explain": [
+   {
+    "title": "Constant speed makes a rectangle",
+    "body": "When speed stays at v for time t, the graph forms a rectangle. Its area is v × t, which is also distance = speed × time."
+   },
+   {
+    "title": "Uniformly increasing speed makes a triangle",
+    "body": "When speed rises uniformly from zero to v in time t, the graph forms a triangle. Its area is 1/2 × v × t. The average speed is 1/2 v, so distance is also 1/2 v × t."
+   },
+   {
+    "title": "Remember the key definition",
+    "body": "The area under the speed-time graph up to the time axis is numerically equal to the distance covered by the object."
+   }
+  ],
+  "mistakes": [
+   "Do not use the rectangle formula for a triangular area; include the factor 1/2.",
+   "Do not confuse the graph's base and perpendicular: time is on the horizontal axis and speed is on the vertical axis.",
+   "Do not call the area acceleration; the area under a speed-time graph represents distance.",
+   "Include a concluding statement that the area is numerically equal to distance covered."
+  ]
+ }
+}

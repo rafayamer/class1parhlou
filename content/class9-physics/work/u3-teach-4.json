@@ -1,0 +1,779 @@
+{
+ "note": {
+  "explanation": "Newton’s laws explain how forces affect motion. The first law describes how an object resists a change in its motion, the second law links force to mass and acceleration, and the third law says forces between two interacting bodies are equal and opposite.",
+  "examples": [
+   "When a bus stops suddenly, passengers tend to move forward because their bodies tend to keep moving.",
+   "When a gun fires a bullet forward, the gun recoils backward."
+  ],
+  "checkAnswer": "The forces are equal and opposite, but they act on different bodies, so they do not balance each other.",
+  "keywords": [
+   "Newton's laws",
+   "inertia",
+   "net force",
+   "acceleration",
+   "action reaction",
+   "force pairs"
+  ],
+  "simple": "A force can change motion. Objects resist changes to their motion, and when two objects interact, each pushes or pulls the other.",
+  "checkQuestion": "Why do action and reaction forces not balance each other?",
+  "title": "Newton’s Laws of Motion",
+  "steps": [
+   "Use the first law to describe what happens when no net external force acts.",
+   "Use F = ma when a question gives mass and acceleration, or asks for force.",
+   "For the third law, identify the two interacting bodies and state the equal, opposite forces acting on them."
+  ],
+  "answer": "Newton’s first law describes inertia; the second law is F = ma; the third law says that every action has an equal and opposite reaction.",
+  "checkAccept": [
+   [
+    "different bodies",
+    "equal and opposite"
+   ],
+   [
+    "act on two",
+    "different bodies"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The book remains at rest unless an external force acts on it.",
+    "The book moves faster because it has mass.",
+    "The table pushes the book forward.",
+    "The book has no inertia."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A book rests on a table. Which statement best describes this using Newton’s first law?",
+   "rationales": [
+    "This is correct: without an external force changing its state, the book remains at rest.",
+    "Mass does not make an object speed up by itself; a net force is needed for acceleration.",
+    "The table supports the book, but that force does not push it forward.",
+    "The book has inertia because it has mass."
+   ]
+  },
+  {
+   "options": [
+    "The bus stops, so passengers tend to keep moving forward.",
+    "The bus stops, so passengers tend to move backward.",
+    "The passengers have no inertia while seated.",
+    "The road exerts an upward force on the passengers."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why do passengers tend to bend forward when a moving bus stops suddenly?",
+   "rationales": [
+    "This is correct: their bodies tend to maintain their state of motion because of inertia.",
+    "The passengers’ bodies tend to continue forward, not backward.",
+    "Passengers still have inertia because they have mass.",
+    "An upward force from the road does not explain the forward movement."
+   ]
+  },
+  {
+   "options": [
+    "2 m s⁻²",
+    "4 m s⁻²",
+    "8 m s⁻²",
+    "16 m s⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A net force of 12 N acts on a 3 kg object. What acceleration does it produce?",
+   "rationales": [
+    "This is incorrect: F/m is not 2 for the given values.",
+    "This is correct: a = F/m = 12/3 = 4 m s⁻².",
+    "This is incorrect: it does not follow from a = F/m.",
+    "This is incorrect: it does not follow from a = F/m."
+   ]
+  },
+  {
+   "options": [
+    "4 N",
+    "12 N",
+    "24 N",
+    "48 N"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What net force is needed to give a 6 kg body an acceleration of 4 m s⁻²?",
+   "rationales": [
+    "This is incorrect: it is not the product of mass and acceleration.",
+    "This is incorrect: it does not equal 6 × 4.",
+    "This is correct: F = ma = 6 × 4 = 24 N.",
+    "This is incorrect: it is twice the required force."
+   ]
+  },
+  {
+   "options": [
+    "The forces act on the same body in the same direction.",
+    "The forces act on different bodies in opposite directions.",
+    "The forces act on the same body in opposite directions.",
+    "The action force is always greater than the reaction force."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement correctly describes an action-reaction pair?",
+   "rationales": [
+    "This is incorrect: the forces in an action-reaction pair are not both on the same body.",
+    "This is correct: the forces are equal and opposite and act on two different bodies.",
+    "This is incorrect: although opposite, the paired forces do not act on the same body.",
+    "This is incorrect: the forces are equal in magnitude."
+   ]
+  },
+  {
+   "options": [
+    "The astronaut moves in the same direction as the wrench.",
+    "The astronaut moves in the opposite direction to the wrench.",
+    "The astronaut remains at rest because the forces cancel on him.",
+    "The wrench and astronaut both move in the same direction."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "An astronaut throws a wrench in space. In which direction does the astronaut move?",
+   "rationales": [
+    "This is incorrect: the astronaut moves opposite to the wrench’s direction.",
+    "This is correct: the wrench and astronaut exert equal and opposite forces on each other.",
+    "The forces act on different bodies, so they do not cancel on the astronaut.",
+    "This is incorrect: their motions are in opposite directions."
+   ]
+  },
+  {
+   "options": [
+    "The body’s mass",
+    "The body’s velocity",
+    "The body’s inertia",
+    "The body’s direction"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which property of a body is measured by its mass?",
+   "rationales": [
+    "Mass is the measure of inertia; it is not the property being measured here.",
+    "Velocity describes motion, not resistance to a change in motion.",
+    "This is correct: the greater the mass, the greater the inertia.",
+    "Direction alone is not measured by mass."
+   ]
+  },
+  {
+   "options": [
+    "Only its speed can change.",
+    "Only its direction can change.",
+    "Its speed, direction, or both can change.",
+    "Its mass must change."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What change in velocity can a force produce?",
+   "rationales": [
+    "A force can change speed, but it can also change direction.",
+    "A force can change direction, but it can also change speed.",
+    "This is correct: velocity is a vector, so its magnitude, direction, or both may change.",
+    "A force does not have to change the body's mass."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What kind of changes in motion may be produced by a force?",
+   "finalAnswer": "A force may change the magnitude of velocity, its direction, or both.",
+   "marks": 2,
+   "source": "Short 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "magnitude",
+       "velocity"
+      ],
+      [
+       "speed"
+      ]
+     ],
+     "marks": 1,
+     "why": "A force may change how fast a body moves.",
+     "description": "Identifies a change in velocity magnitude or speed.",
+     "how": "State that the magnitude of velocity, or speed, may change."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "both"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity is a vector, so its direction may also change.",
+     "description": "Identifies a change in direction or both magnitude and direction.",
+     "how": "State that direction, or both magnitude and direction, may change."
+    }
+   ],
+   "modelAnswer": [
+    "A force may change the magnitude of velocity, its direction, or both.",
+    "Final answer: A force may change the magnitude of velocity, its direction, or both."
+   ]
+  },
+  {
+   "text": "An object moves with constant velocity in free space. How long will the object continue to move with this velocity?",
+   "finalAnswer": "It will continue forever with constant velocity, provided no force acts on it.",
+   "marks": 2,
+   "source": "Short 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "forever"
+      ],
+      [
+       "p:indefinit"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first law predicts continued uniform motion in the absence of an external force.",
+     "description": "States that the motion continues without an end.",
+     "how": "Answer that it continues forever or indefinitely."
+    },
+    {
+     "accept": [
+      [
+       "no force"
+      ],
+      [
+       "no external force"
+      ],
+      [
+       "constant velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "The unchanged motion depends on there being no force to change it.",
+     "description": "Links the continued motion to the absence of a force.",
+     "how": "Mention that no force acts on the object."
+    }
+   ],
+   "modelAnswer": [
+    "In free space, no force acts on the object.",
+    "According to Newton’s first law, it continues with constant velocity forever.",
+    "Final answer: It will continue forever with constant velocity, provided no force acts on it."
+   ]
+  },
+  {
+   "text": "Why has not Newton's first law been proved on the Earth?",
+   "finalAnswer": "Because friction acts on moving bodies on the Earth and changes their motion.",
+   "marks": 2,
+   "source": "Short 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Friction is an external opposing force present in ordinary motion on Earth.",
+     "description": "Identifies friction as the relevant force.",
+     "how": "Name friction."
+    },
+    {
+     "accept": [
+      [
+       "changes",
+       "motion"
+      ],
+      [
+       "stop"
+      ],
+      [
+       "opposing force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Friction prevents observing motion that remains unchanged with no force acting.",
+     "description": "Explains how friction affects the body's motion.",
+     "how": "Explain that friction slows or stops moving bodies."
+    }
+   ],
+   "modelAnswer": [
+    "On the Earth, friction acts on moving bodies.",
+    "This opposing force changes their motion and eventually brings them to rest.",
+    "Final answer: Newton’s first law cannot be proved directly on the Earth because friction acts on moving bodies and changes their motion."
+   ]
+  },
+  {
+   "text": "When sitting in a car which suddenly accelerates from rest, you are pushed back into the seat, why?",
+   "finalAnswer": "Because of inertia, the body tends to maintain its state of rest as the car starts moving forward.",
+   "marks": 2,
+   "source": "Short 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inertia"
+      ]
+     ],
+     "marks": 1,
+     "why": "Inertia is the body's tendency to maintain its state of rest or uniform motion.",
+     "description": "Names inertia.",
+     "how": "Use the term inertia."
+    },
+    {
+     "accept": [
+      [
+       "state of rest"
+      ],
+      [
+       "remain at rest"
+      ]
+     ],
+     "marks": 1,
+     "why": "The car moves forward while the body tends to remain at rest.",
+     "description": "Explains the body's tendency when the car accelerates.",
+     "how": "State that the body tends to remain at rest as the car moves forward."
+    }
+   ],
+   "modelAnswer": [
+    "When the car starts moving forward, the body tends to maintain its state of rest.",
+    "This tendency is inertia, so the person is pushed back against the seat.",
+    "Final answer: The body tends to maintain its state of rest because of inertia."
+   ]
+  },
+  {
+   "text": "The force expressed in Newton's second law is a net force. Why is it so?",
+   "finalAnswer": "Because the acceleration of a body is produced by the resultant force acting on it; balanced forces give zero net force and no acceleration.",
+   "marks": 2,
+   "source": "Short 3.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "resultant force"
+      ],
+      [
+       "net force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton’s second law relates acceleration to the total unbalanced force.",
+     "description": "Identifies the resultant or net force as the force responsible for acceleration.",
+     "how": "State that acceleration is caused by the resultant force."
+    },
+    {
+     "accept": [
+      [
+       "balanced forces",
+       "zero"
+      ],
+      [
+       "no acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "Balanced forces cancel and therefore do not produce acceleration.",
+     "description": "Explains the effect of balanced forces.",
+     "how": "State that balanced forces produce zero net force and no acceleration."
+    }
+   ],
+   "modelAnswer": [
+    "The acceleration of a body is produced by the resultant force acting on it.",
+    "Balanced forces cancel, giving zero net force and no acceleration.",
+    "Final answer: The force in Newton’s second law is a net force because only the resultant force produces acceleration."
+   ]
+  },
+  {
+   "text": "A horse refuses to pull a cart. The horse argues, “according to Newton's third law, whatever force I exert on the cart, the cart will exert an equal and opposite force on me. Since the net force will be zero, therefore, I have no chance of accelerating (pulling) the cart.” What is wrong with this reasoning?",
+   "finalAnswer": "The horse’s force on the cart and the cart’s reaction force on the horse act on different bodies, so they do not cancel on one body. The ground also exerts a forward frictional force on the horse, which can make the horse and cart accelerate.",
+   "marks": 4,
+   "source": "CRQ 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "different bodies"
+      ],
+      [
+       "cart",
+       "horse"
+      ]
+     ],
+     "marks": 1,
+     "why": "Action and reaction forces act on different bodies.",
+     "description": "Identifies the two bodies on which the paired forces act.",
+     "how": "State that one force acts on the cart and the other on the horse."
+    },
+    {
+     "accept": [
+      [
+       "do not cancel"
+      ],
+      [
+       "not balance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Forces on different bodies cannot cancel each other on one body.",
+     "description": "Rejects the claim that the two forces make the net force zero.",
+     "how": "Explain that the action and reaction do not cancel."
+    },
+    {
+     "accept": [
+      [
+       "ground",
+       "friction"
+      ],
+      [
+       "frictional force"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ground's frictional force on the horse enables forward motion.",
+     "description": "Identifies the forward force exerted by the ground.",
+     "how": "Mention friction between the horse's feet and the ground."
+    },
+    {
+     "accept": [
+      [
+       "accelerate"
+      ],
+      [
+       "pull",
+       "cart"
+      ]
+     ],
+     "marks": 1,
+     "why": "A non-zero resultant force on the horse-cart system can accelerate it.",
+     "description": "Concludes that the horse can pull the cart.",
+     "how": "State that the horse and cart can accelerate."
+    }
+   ],
+   "modelAnswer": [
+    "The horse’s force on the cart and the cart’s reaction force on the horse act on different bodies.",
+    "Therefore, these two forces do not cancel each other on one body.",
+    "The ground exerts a forward frictional force on the horse.",
+    "This force can accelerate the horse and cart.",
+    "Final answer: The horse’s reasoning is wrong because action and reaction act on different bodies, and the ground’s forward frictional force can make the horse and cart accelerate."
+   ]
+  },
+  {
+   "text": "Describe Newton's laws of motion.",
+   "finalAnswer": "First law: A body continues its state of rest or of uniform motion in a straight line unless acted upon by some external force. Second law: If a net external force acts upon a body, it accelerates the body in the direction of force; the acceleration is directly proportional to force and inversely proportional to mass, so F = ma. Third law: For every action, there is always an equal and opposite reaction.",
+   "marks": 4,
+   "source": "Comprehensive 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "state of rest",
+       "uniform motion",
+       "external force"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first law describes the motion of a body when no external force changes it.",
+     "description": "States Newton’s first law.",
+     "how": "Include rest or uniform straight-line motion and the external-force condition."
+    },
+    {
+     "accept": [
+      [
+       "net external force",
+       "accelerates"
+      ],
+      [
+       "F=ma"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second law relates net force to acceleration.",
+     "description": "States the second law and its relation.",
+     "how": "State that force produces acceleration and write F = ma."
+    },
+    {
+     "accept": [
+      [
+       "directly proportional",
+       "inversely proportional"
+      ],
+      [
+       "force",
+       "mass",
+       "acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "The proportionalities describe how acceleration depends on force and mass.",
+     "description": "Includes the force and mass dependence of acceleration.",
+     "how": "State that acceleration increases with force and decreases with mass."
+    },
+    {
+     "accept": [
+      [
+       "equal",
+       "opposite reaction"
+      ],
+      [
+       "every action"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third law describes the paired forces in an interaction.",
+     "description": "States Newton’s third law.",
+     "how": "State that every action has an equal and opposite reaction."
+    }
+   ],
+   "modelAnswer": [
+    "Newton’s first law: A body continues its state of rest or of uniform motion in a straight line unless acted upon by some external force.",
+    "Newton’s second law: A net external force accelerates a body in the direction of the force; acceleration is directly proportional to force and inversely proportional to mass.",
+    "Therefore, F = ma.",
+    "Newton’s third law: For every action, there is always an equal and opposite reaction.",
+    "Final answer: Newton’s laws are the law of inertia, F = ma for a net force, and the law of equal and opposite action and reaction."
+   ]
+  },
+  {
+   "text": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find:\n\n(a) the acceleration produced in the block.\n\n(b) the velocity of block after 5 seconds.",
+   "finalAnswer": "(0.5 m s⁻², 2.5 m s⁻¹)",
+   "marks": 5,
+   "source": "Numerical 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=ma"
+      ],
+      [
+       "a=F/m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second law provides the method for finding acceleration.",
+     "description": "Chooses the correct second-law relationship.",
+     "how": "Write F = ma or rearrange it as a = F/m."
+    },
+    {
+     "accept": [
+      [
+       "5/10"
+      ],
+      [
+       "0.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substituting the given force and mass gives the acceleration.",
+     "description": "Calculates the acceleration correctly.",
+     "how": "Substitute F = 5 N and m = 10 kg."
+    },
+    {
+     "accept": [
+      [
+       "v=u+at"
+      ],
+      [
+       "v=0+0.5*5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The velocity after the time interval follows from the acceleration.",
+     "description": "Uses the equation of motion with the correct initial velocity and time.",
+     "how": "Use v = u + at, with u = 0 and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "2.5"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final velocity and both requested results must be accurate and include units.",
+     "description": "Gives the final acceleration and velocity.",
+     "how": "State 0.5 m s⁻² and 2.5 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m = 10 kg, F = 5 N, u = 0, t = 5 s.",
+    "(a) F = ma",
+    "a = F/m = 5/10",
+    "a = 0.5 m s⁻²",
+    "(b) v = u + at",
+    "v = 0 + (0.5)(5)",
+    "v = 2.5 m s⁻¹",
+    "Final answer: (0.5 m s⁻², 2.5 m s⁻¹)"
+   ]
+  },
+  {
+   "text": "What force is required to increase the velocity of 800 kg car from 10 m s⁻¹ to 30 m s⁻¹ in 10 seconds?",
+   "finalAnswer": "1600 N",
+   "marks": 5,
+   "source": "Numerical 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "a=(v-u)/t"
+      ],
+      [
+       "30-10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration is found from the change in velocity over time.",
+     "description": "Finds acceleration from the given velocities and time.",
+     "how": "Use a = (v − u)/t."
+    },
+    {
+     "accept": [
+      [
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct acceleration is needed before applying the second law.",
+     "description": "Calculates acceleration as 2 m s⁻².",
+     "how": "Evaluate (30 − 10)/10."
+    },
+    {
+     "accept": [
+      [
+       "F=ma"
+      ],
+      [
+       "800*2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton’s second law connects the car’s mass and acceleration to force.",
+     "description": "Applies F = ma.",
+     "how": "Substitute m = 800 kg and a = 2 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "1600"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final force must be correct and expressed in newtons.",
+     "description": "Gives the required force.",
+     "how": "State 1600 N."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m = 800 kg, u = 10 m s⁻¹, v = 30 m s⁻¹, t = 10 s.",
+    "a = (v − u)/t",
+    "a = (30 − 10)/10 = 2 m s⁻²",
+    "F = ma",
+    "F = 800 × 2 = 1600 N",
+    "Final answer: 1600 N"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short-answer questions often ask for the first law, inertia, or the kinds of velocity change caused by a force. Give the definition clearly and include the key condition.",
+   "For a second-law numerical, write F = ma, substitute values with SI units, and show the final answer with the correct unit.",
+   "For third-law questions, name both interacting bodies and say the forces are equal and opposite but act on different bodies.",
+   "In longer answers about the laws, state each law accurately and include F = ma for the second law."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about velocity as a vector.",
+     "A force may change velocity's magnitude, direction, or both."
+    ],
+    "accept": [
+     [
+      "magnitude",
+      "direction"
+     ],
+     [
+      "speed",
+      "direction"
+     ],
+     [
+      "both"
+     ]
+    ],
+    "question": "What kind of changes in motion may be produced by a force?",
+    "solution": [
+     "Velocity is a vector quantity.",
+     "A force may change its magnitude, direction, or both.",
+     "Answer: A force may change the magnitude of velocity, its direction, or both."
+    ],
+    "answer": "A force may change the magnitude of velocity, its direction, or both."
+   },
+   {
+    "hints": [
+     "First use Newton’s second law to find acceleration.",
+     "Then use v = u + at; the block starts from rest."
+    ],
+    "accept": [
+     [
+      "0.5",
+      "2.5"
+     ]
+    ],
+    "question": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find:\n\n(a) the acceleration produced in the block.\n\n(b) the velocity of block after 5 seconds.",
+    "solution": [
+     "Given: m = 10 kg, F = 5 N, u = 0, t = 5 s.",
+     "(a) F = ma",
+     "a = F/m = 5/10 = 0.5 m s⁻²",
+     "(b) v = u + at",
+     "v = 0 + (0.5)(5) = 2.5 m s⁻¹",
+     "Answer: (0.5 m s⁻², 2.5 m s⁻¹)"
+    ],
+    "answer": "(0.5 m s⁻², 2.5 m s⁻¹)"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the quantities given in the question, and the block starts from rest.",
+     "text": "Given: m = 10 kg, F = 5 N, u = 0, t = 5 s."
+    },
+    {
+     "why": "Newton’s second law relates the net force, mass, and acceleration.",
+     "text": "(a) F = ma"
+    },
+    {
+     "why": "Rearranging the equation gives acceleration, and substitution gives its value.",
+     "text": "a = F/m = 5/10 = 0.5 m s⁻²"
+    },
+    {
+     "why": "This equation gives the velocity after a known time when acceleration is constant.",
+     "text": "(b) v = u + at"
+    },
+    {
+     "why": "Substituting u = 0, a = 0.5 m s⁻², and t = 5 s gives the final velocity.",
+     "text": "v = 0 + (0.5)(5) = 2.5 m s⁻¹"
+    }
+   ],
+   "question": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find:\n\n(a) the acceleration produced in the block.\n\n(b) the velocity of block after 5 seconds.",
+   "answer": "(0.5 m s⁻², 2.5 m s⁻¹)"
+  },
+  "explain": [
+   {
+    "title": "Newton’s first law and inertia",
+    "body": "Your textbook states: “A body continues its state of rest or of uniform motion in a straight line unless acted upon by some external force.” This means an object does not change its motion by itself. The property of a body to maintain its state of rest or of uniform motion in a straight line is called inertia. Mass measures inertia: a greater mass means greater inertia."
+   },
+   {
+    "title": "Newton’s second law",
+    "body": "Your textbook states that if a net external force acts on a body, it accelerates in the direction of the force. Acceleration is directly proportional to force and inversely proportional to mass. The relation is F = ma. One newton produces an acceleration of 1 m s⁻² in a body of mass 1 kg."
+   },
+   {
+    "title": "Force changes velocity",
+    "body": "A force can produce acceleration or deceleration and so change velocity. Because velocity is a vector, the change may be in its magnitude, direction, or both."
+   },
+   {
+    "title": "Newton’s third law",
+    "body": "Your textbook states: “For every action, there is always an equal and opposite reaction.” The two forces act on different bodies, so they do not balance each other. For example, when a gun fires a bullet forward, the gun recoils backward."
+   }
+  ],
+  "mistakes": [
+   "Do not say that action and reaction cancel each other; they act on different bodies.",
+   "Use the net or resultant force in F = ma, not just one force when other forces also act.",
+   "Do not confuse inertia with force; inertia is a property of a body and depends on its mass.",
+   "When using F = ma, write the units: force in newtons, mass in kilograms, and acceleration in m s⁻².",
+   "Do not claim that a force can only change speed; it can change direction too."
+  ]
+ }
+}

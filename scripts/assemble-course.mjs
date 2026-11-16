@@ -370,16 +370,16 @@ function modelPaper() {
   for (const part of P.long) {
     const qs = part.questions.map((q) => {
       const [a, b] = ["a", "b"].map((x) => { const w = writtenBy.get(slots.get(`${q.q}|${x}`)?.id); if (!w) missing.push(`Q${q.q}(${x})`); return w; });
-      return a && b ? longOf(`MP-2027-Q${q.q}`, a, b) : null;
+      return a && b ? longOf(`${IDP}MP-2027-Q${q.q}`, a, b) : null;
     });
-    sections.push({ type: `Part ${part.part}: long questions (Q${part.questions.map((q) => q.q).join(", Q")})`, count: qs.length, attempt: part.attempt, marksEach: 8, minutes: null });
+    sections.push({ type: `Part ${part.part}: long questions (Q${part.questions.map((q) => q.q).join(", Q")})`, count: qs.length, attempt: part.attempt, marksEach: LONG.total, minutes: null });
     writtenOut.push(qs);
   }
   if (missing.length) return `missing ${missing.join(", ")}`;
   const total = sections.reduce((s, x) => s + x.attempt * x.marksEach, 0);
   if (total !== P.totalMarks) return `total ${total}`;
-  const id = "model-2027";
-  blueprints.push({ id, title: "Official model paper 2027 (75 marks)", durationMinutes: P.minutes, totalMarks: P.totalMarks, official: true, chapterId: null, sections });
+  const id = `${IDP}model-2027`;
+  blueprints.push({ id, title: PHY ? `Official model paper (${P.totalMarks} marks)` : "Official model paper 2027 (75 marks)", durationMinutes: P.minutes, totalMarks: P.totalMarks, official: true, chapterId: null, sections });
   for (const l of writtenOut.slice(P.short.length).flat()) written.push({ ...l, section: 0, number: 0 });
   papers.push({ blueprintId: id, mcqs, written: writtenOut.flatMap((qs, i) => qs.map((w, j) => ({ ...w, section: i + 1, number: j + 1 }))) });
   return "made";
@@ -420,9 +420,10 @@ if (existsSync(auditFile)) {
   let applied = 0;
   for (const c of cleaned.subject.chapters) for (const m of c.modules) {
     const sec = /^(\d+\.\d+)/.exec(m.title)?.[1] ?? String(c.number);
-    m.solutions = m.solutions.filter((s) => !removals.includes(s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source));
+    // (Mathematics examples are labelled with their section; Physics labels are already unique: "Example 2.3".)
+    m.solutions = m.solutions.filter((s) => !removals.includes(s.kind === "EXAMPLE" && !PHY ? `${sec} ${s.source}` : s.source));
     for (const s of m.solutions) {
-      const k = s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source;
+      const k = s.kind === "EXAMPLE" && !PHY ? `${sec} ${s.source}` : s.source;
       // Question corrections; some readers filed a question's wording under "stem".
       const q = fx.questions?.[k] ?? fx.mcq?.[k]?.stem;
       if (q) { s.question = q; applied++; }
@@ -511,7 +512,7 @@ if (existsSync(whyFile)) {
 const linksFile = `${ROOT}/figure-links.json`;
 if (existsSync(linksFile)) {
   const links = JSON.parse(readFileSync(linksFile, "utf8"));
-  const unmark = (t, keep) => t.replace(/\[FIGURE:\s*([^\]]*)\]/g, (_, d) => (keep ? "" : `(Figure: ${d.trim()})`)).replace(/\n{3,}/g, "\n\n").trim();
+  const unmark = (t, keep) => t.replace(/\[FIGURE[^:\]]*:\s*([^\]]*)\]/g, (_, d) => (keep ? "" : `(Figure: ${d.trim()})`)).replace(/\n{3,}/g, "\n\n").trim();
   let withFig = 0;
   for (const c of cleaned.subject.chapters) for (const m of c.modules) for (const s of m.solutions) {
     const n = c.number;

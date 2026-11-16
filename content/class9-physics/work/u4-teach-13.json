@@ -1,0 +1,491 @@
+{
+ "note": {
+  "explanation": "Centripetal force keeps an object moving in a circular path at constant speed. Its direction is towards the centre of the circle, while the object's velocity is along the tangent. For example, tension in a string keeps a whirled stone moving in a circle, and Earth's gravity keeps a satellite in orbit.",
+  "examples": [
+   "A string provides the centripetal force for a stone being whirled in a circle.",
+   "Earth's gravitational pull provides the centripetal force for a satellite orbiting Earth."
+  ],
+  "checkAnswer": "The force acts towards the centre; the velocity is along the tangent, so they are perpendicular.",
+  "keywords": [
+   "centripetal force",
+   "circular motion",
+   "radius",
+   "velocity",
+   "tangent",
+   "tension",
+   "gravity"
+  ],
+  "simple": "Centripetal force is the inward pull that keeps an object going around a circle instead of flying off in a straight line.",
+  "checkQuestion": "In circular motion, which way does centripetal force act compared with the object's velocity?",
+  "title": "Centripetal Force",
+  "steps": [
+   "Write the relation: F_c = mv²/r.",
+   "Convert mass to kilograms and identify the speed and radius.",
+   "Substitute the values into the relation.",
+   "Calculate the force and write its unit, newtons (N)."
+  ],
+  "answer": "Centripetal force is the force that keeps an object moving in a circle at constant speed. It acts towards the centre and is perpendicular to the object's velocity.",
+  "checkAccept": [
+   [
+    "centre",
+    "perpendicular"
+   ],
+   [
+    "inward",
+    "perpendicular"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Towards the centre of the circle",
+    "Along the tangent to the circle",
+    "Away from the centre of the circle",
+    "In the direction of the object's velocity"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In uniform circular motion, what is the direction of centripetal force?",
+   "rationales": [
+    "This is correct: centripetal force is always directed towards the centre.",
+    "The tangent gives the direction of velocity, not centripetal force.",
+    "Centripetal force points inward, not away from the centre.",
+    "Velocity is along the tangent and is perpendicular to centripetal force."
+   ]
+  },
+  {
+   "options": [
+    "mv²/r",
+    "mr/v²",
+    "mv/r²",
+    "mvr"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which relation gives the magnitude of centripetal force?",
+   "rationales": [
+    "This is correct: the textbook relation is F_c = mv²/r.",
+    "This is not the centripetal-force relation; the speed and radius are placed incorrectly.",
+    "This is not the textbook relation; the powers of speed and radius are incorrect.",
+    "This is not the textbook relation; radius is multiplied rather than divided."
+   ]
+  },
+  {
+   "options": [
+    "The velocity is along the radius",
+    "The velocity is along the tangent to the circle",
+    "The velocity points towards the centre",
+    "The velocity points away from the centre"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "At any point on a circular path, in which direction does the object's velocity act?",
+   "rationales": [
+    "The radius points towards the centre and is not the direction of velocity.",
+    "This is correct: velocity acts along the tangent to the circular path.",
+    "This describes the direction of centripetal force, not velocity.",
+    "Velocity is tangent to the path, not directed away from its centre."
+   ]
+  },
+  {
+   "options": [
+    "The tension in the string",
+    "The stone's weight only",
+    "The stone's speed",
+    "The length of the tangent"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What provides the centripetal force when a stone is whirled in a circle on a string?",
+   "rationales": [
+    "This is correct: tension in the string pulls the stone towards the centre.",
+    "The textbook example identifies string tension as the centripetal force; gravity is neglected there.",
+    "Speed is a property of the motion, not the force supplying the inward pull.",
+    "The tangent indicates the velocity direction and does not provide the inward force."
+   ]
+  },
+  {
+   "options": [
+    "The Moon's speed",
+    "Earth's gravity",
+    "The Moon's distance from Earth alone",
+    "The Moon's velocity along its orbit"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What supplies the centripetal force that keeps the Moon in orbit around Earth?",
+   "rationales": [
+    "Speed alone does not provide the force needed to keep the Moon in its orbit.",
+    "This is correct: Earth's gravitational pull supplies the necessary centripetal force.",
+    "Distance alone is not a force and cannot supply centripetal force.",
+    "Velocity describes the Moon's motion; Earth's gravity supplies the inward force."
+   ]
+  },
+  {
+   "options": [
+    "Friction between the clothes and drum wall",
+    "The water molecules' weight",
+    "The holes in the drum",
+    "The air inside the drum"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In a rapidly rotating washing-machine dryer, what provides centripetal force to the clothes?",
+   "rationales": [
+    "This is correct: friction between the clothes and drum walls provides the needed centripetal force.",
+    "The textbook explanation identifies friction with the drum wall, not weight, as the source.",
+    "The holes let water escape but do not provide the clothes' centripetal force.",
+    "The textbook explanation does not identify the air as the source of the centripetal force."
+   ]
+  },
+  {
+   "options": [
+    "Increasing the radius increases centripetal force",
+    "Increasing the speed increases centripetal force",
+    "Centripetal force is independent of mass",
+    "Centripetal force is always zero at constant speed"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "For an object of fixed mass moving in a circle of fixed radius, what happens to centripetal force if its speed increases?",
+   "rationales": [
+    "At fixed mass and speed, a greater radius gives a smaller force because F_c = mv²/r.",
+    "This is correct: centripetal force is proportional to the square of speed.",
+    "The relation includes mass, so centripetal force depends on mass.",
+    "A constant speed in a circular path still requires centripetal force to change the direction of motion."
+   ]
+  },
+  {
+   "options": [
+    "The water molecules receive a larger centripetal force than the clothes",
+    "The water molecules cannot get the required centripetal force to move in circular paths",
+    "The drum stops rotating when the water reaches the holes",
+    "The water molecules move towards the centre of the drum"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Why can water escape through the holes of a rapidly rotating dryer drum?",
+   "rationales": [
+    "The textbook explanation says the free water molecules cannot get the required centripetal force.",
+    "This is correct: without the required inward force, the water molecules escape through the holes.",
+    "The drum continues rotating; its rotation is what helps separate water from the clothes.",
+    "The water escapes through the holes rather than gathering at the centre."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A 150 g stone attached to a string is whirled in a horizontal circle at a constant speed of 8 m s⁻¹. The length of string is 1.2 m. Calculate the centripetal force acting on the stone. Neglect effects of gravity.",
+   "finalAnswer": "8 N",
+   "marks": 4,
+   "source": "Example 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.15 kg"
+      ],
+      [
+       "150 g=0.15 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass must be in kilograms before using the relation.",
+     "description": "Convert the mass to kilograms.",
+     "how": "Write 150 g = 0.15 kg."
+    },
+    {
+     "accept": [
+      [
+       "F_c=mv²/r"
+      ],
+      [
+       "mv²/r"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relation is needed to find centripetal force.",
+     "description": "State the centripetal-force relation.",
+     "how": "Use F_c = mv²/r."
+    },
+    {
+     "accept": [
+      [
+       "(0.15×8²)/1.2"
+      ],
+      [
+       "0.15×64/1.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution shows how the given values are used.",
+     "description": "Substitute the mass, speed and radius.",
+     "how": "Put m = 0.15 kg, v = 8 m s⁻¹ and r = 1.2 m into the relation."
+    },
+    {
+     "accept": [
+      [
+       "8 N"
+      ],
+      [
+       "8"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and unit give the calculated force.",
+     "description": "Give the final force.",
+     "how": "Calculate and state the answer in newtons."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of stone = m = 150 g = 0.15 kg",
+    "Speed of stone = v = 8 m s⁻¹",
+    "Radius of circle = r = 1.2 m",
+    "Centripetal force = F_c = ?",
+    "Using Eq.4.11,",
+    "F_c = mv²/r",
+    "Putting the values,",
+    "F_c = (0.15 kg × (8 m s⁻¹)²)/1.2 m = 8 N"
+   ]
+  },
+  {
+   "text": "How can you prove that the centripetal force always acts perpendicular to velocity?",
+   "finalAnswer": "Centripetal force acts along the radius towards the centre, while velocity acts along the tangent; the radius and tangent are perpendicular.",
+   "marks": 2,
+   "source": "Short 4.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "radius",
+       "centre"
+      ],
+      [
+       "towards",
+       "centre"
+      ]
+     ],
+     "marks": 1,
+     "why": "The inward direction of centripetal force must be identified.",
+     "description": "State the direction of centripetal force.",
+     "how": "Explain that it acts along the radius towards the centre."
+    },
+    {
+     "accept": [
+      [
+       "tangent",
+       "perpendicular"
+      ],
+      [
+       "velocity",
+       "perpendicular"
+      ]
+     ],
+     "marks": 1,
+     "why": "The perpendicular relationship follows from the tangent direction of velocity.",
+     "description": "Compare the force direction with velocity.",
+     "how": "State that velocity is along the tangent and the tangent is perpendicular to the radius."
+    }
+   ],
+   "modelAnswer": [
+    "At any point on a circular path, centripetal force acts along the radius towards the centre.",
+    "The velocity of the object acts along the tangent to the circle.",
+    "The tangent is perpendicular to the radius; therefore, centripetal force is perpendicular to velocity."
+   ]
+  },
+  {
+   "text": "A car travels at the same speed around two curves with different radii. For which radius the car experiences more centripetal force? Prove your answer.",
+   "finalAnswer": "The car experiences more centripetal force on the curve with the smaller radius.",
+   "marks": 4,
+   "source": "CRQ 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F_c=mv²/r"
+      ],
+      [
+       "mv²/r"
+      ]
+     ],
+     "marks": 1,
+     "why": "The centripetal-force relation is the basis of the comparison.",
+     "description": "Write the relation for centripetal force.",
+     "how": "State F_c = mv²/r."
+    },
+    {
+     "accept": [
+      [
+       "same",
+       "speed"
+      ],
+      [
+       "constant",
+       "v²"
+      ]
+     ],
+     "marks": 1,
+     "why": "With the same car speed, mass and speed squared are unchanged.",
+     "description": "Identify what stays fixed.",
+     "how": "Explain that the mass and speed are the same for the two curves."
+    },
+    {
+     "accept": [
+      [
+       "inversely",
+       "radius"
+      ],
+      [
+       "smaller",
+       "greater"
+      ]
+     ],
+     "marks": 1,
+     "why": "The denominator shows that force increases when radius decreases.",
+     "description": "Compare the effect of radius.",
+     "how": "Explain that F_c is inversely proportional to r."
+    },
+    {
+     "accept": [
+      [
+       "smaller",
+       "radius"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion must answer which curve produces greater force.",
+     "description": "Give the final comparison.",
+     "how": "State that the smaller-radius curve gives more centripetal force."
+    }
+   ],
+   "modelAnswer": [
+    "Centripetal force, F_c = mv²/r",
+    "For the same car, m and v are constant on both curves.",
+    "Therefore, F_c is inversely proportional to r.",
+    "Hence, the car experiences more centripetal force on the curve with the smaller radius."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask for the definition of centripetal force or its direction. Give the textbook definition and state that it is directed towards the centre.",
+   "A numerical question may ask you to calculate centripetal force using F_c = mv²/r. Show the mass conversion, substitution, calculation and unit.",
+   "For a comparison question involving two radii at the same speed, state that F_c is inversely proportional to r and identify the smaller radius as giving the greater force.",
+   "For a question about perpendicular directions, identify the radius as the direction of centripetal force and the tangent as the direction of velocity."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with the relation for centripetal force.",
+     "With the same car, the mass and speed stay the same, so compare the radii in F_c = mv²/r."
+    ],
+    "accept": [
+     [
+      "smaller",
+      "radius"
+     ],
+     [
+      "smaller",
+      "curve"
+     ]
+    ],
+    "question": "A car travels at the same speed around two curves with different radii. For which radius the car experiences more centripetal force? Prove your answer.",
+    "solution": [
+     "Centripetal force, F_c = mv²/r",
+     "For the same car, m and v are constant on both curves.",
+     "Therefore, F_c is inversely proportional to r.",
+     "Hence, the car experiences more centripetal force on the curve with the smaller radius."
+    ],
+    "answer": "The car experiences more centripetal force on the curve with the smaller radius."
+   },
+   {
+    "hints": [
+     "Centripetal force points towards the centre of the circle.",
+     "Velocity is along the tangent; compare the tangent with the radius."
+    ],
+    "accept": [
+     [
+      "perpendicular",
+      "velocity"
+     ],
+     [
+      "radius",
+      "tangent",
+      "perpendicular"
+     ]
+    ],
+    "question": "How can you prove that the centripetal force always acts perpendicular to velocity?",
+    "solution": [
+     "At any point on a circular path, centripetal force acts along the radius towards the centre.",
+     "The velocity of the object acts along the tangent to the circle.",
+     "The tangent is perpendicular to the radius; therefore, centripetal force is perpendicular to velocity."
+    ],
+    "answer": "Centripetal force acts along the radius towards the centre, while velocity acts along the tangent; the radius and tangent are perpendicular."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The mass must be written in kilograms for the calculation.",
+     "text": "Mass of stone = m = 150 g = 0.15 kg"
+    },
+    {
+     "why": "This gives the speed to substitute into the formula.",
+     "text": "Speed of stone = v = 8 m s⁻¹"
+    },
+    {
+     "why": "The string length is the radius of the circular path.",
+     "text": "Radius of circle = r = 1.2 m"
+    },
+    {
+     "why": "This identifies the quantity the question asks us to calculate.",
+     "text": "Centripetal force = F_c = ?"
+    },
+    {
+     "why": "This points to the equation used in the textbook.",
+     "text": "Using Eq.4.11,"
+    },
+    {
+     "why": "This is the relation for centripetal force.",
+     "text": "F_c = mv²/r"
+    },
+    {
+     "why": "Now put the known values into the relation.",
+     "text": "Putting the values,"
+    },
+    {
+     "why": "Substitution and calculation give the force in newtons.",
+     "text": "F_c = (0.15 kg × (8 m s⁻¹)²)/1.2 m = 8 N"
+    }
+   ],
+   "question": "A 150 g stone attached to a string is whirled in a horizontal circle at a constant speed of 8 m s⁻¹. The length of string is 1.2 m. Calculate the centripetal force acting on the stone. Neglect effects of gravity.",
+   "answer": "8 N"
+  },
+  "explain": [
+   {
+    "title": "Meaning of centripetal force",
+    "body": "The force that causes an object to move in a circle at constant speed is called the centripetal force. It points towards the centre of the circle."
+   },
+   {
+    "title": "The relation",
+    "body": "For mass m moving at uniform speed v in a circle of radius r, use F_c = mv²/r. Convert mass to kilograms, substitute the values and give the answer in newtons."
+   },
+   {
+    "title": "Force and velocity directions",
+    "body": "Centripetal force acts along the radius towards the centre. Velocity acts along the tangent to the circle. A radius and a tangent at the point of contact are perpendicular."
+   },
+   {
+    "title": "Sources of centripetal force",
+    "body": "The force can come from different sources. String tension keeps a whirled stone in a circle; Earth's gravity keeps the Moon and satellites in orbit; friction between clothes and a dryer drum helps keep the clothes moving in a circle."
+   }
+  ],
+  "mistakes": [
+   "Using the mass in grams instead of converting it to kilograms.",
+   "Using r² in the denominator or forgetting to square the speed; the relation is F_c = mv²/r.",
+   "Saying that centripetal force acts along the tangent. It acts towards the centre; velocity is along the tangent.",
+   "Leaving out the unit N when giving a calculated force.",
+   "In a comparison question, saying that the larger radius gives more force. At the same mass and speed, the smaller radius gives more force."
+  ]
+ }
+}

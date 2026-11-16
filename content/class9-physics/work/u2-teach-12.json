@@ -1,0 +1,604 @@
+{
+ "note": {
+  "explanation": "For motion under gravity, use the equations of motion with acceleration due to gravity, g = 10 m s⁻², as used for the answers in your textbook. Choose positive and negative directions consistently, then substitute the known quantities.",
+  "examples": [],
+  "checkAnswer": "t = 3 s; v_f = 30 m s⁻¹ downward.",
+  "keywords": [
+   "gravity",
+   "acceleration",
+   "equations of motion",
+   "initial velocity",
+   "final velocity",
+   "free fall"
+  ],
+  "simple": "Gravity changes an object's velocity as it falls or rises. Use the motion equations and give quantities the correct signs.",
+  "checkQuestion": "A stone is dropped from rest and falls for 3 s. Take g = 10 m s⁻². What is its final velocity?",
+  "title": "Solving problems for motion under gravity",
+  "steps": [
+   "Write down the known quantities and the quantity to find.",
+   "Choose a positive direction and assign signs to the other quantities.",
+   "Select the equation containing the known quantities and the unknown.",
+   "Substitute the values, calculate, and write the answer with its unit."
+  ],
+  "answer": "Use the equations of motion with acceleration due to gravity and a consistent choice of signs.",
+  "checkAccept": [
+   [
+    "30 m s^-1 downward"
+   ],
+   [
+    "30 m/s downward"
+   ],
+   [
+    "30 downward"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "v_f = v_i + at",
+    "S = v_i t + 1/2 at²",
+    "2aS = v_f² − v_i²",
+    "S = v_f + v_i"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation is most directly used to find final velocity when initial velocity, acceleration and time are known?",
+   "rationales": [
+    "This is the equation relating final velocity to initial velocity, acceleration and time.",
+    "This equation relates displacement to initial velocity, acceleration and time.",
+    "This equation relates acceleration and displacement to the two velocities.",
+    "This is not one of the equations of motion given in the section."
+   ]
+  },
+  {
+   "options": [
+    "Acceleration is uniform.",
+    "Acceleration continually changes.",
+    "The body must be at rest.",
+    "The body must move in a circle."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which condition is assumed when applying the equations of motion in this section?",
+   "rationales": [
+    "Uniform acceleration is one of the stated assumptions.",
+    "Changing acceleration would not satisfy the stated assumption of uniform acceleration.",
+    "The equations can be used for moving bodies as well as bodies starting from rest.",
+    "The section assumes motion along a straight line, not motion in a circle."
+   ]
+  },
+  {
+   "options": [
+    "Take the direction of initial velocity as positive.",
+    "Always take upward as positive.",
+    "Always take downward as positive.",
+    "Take the direction of acceleration as positive."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to the sign convention in this section, which direction is taken as positive?",
+   "rationales": [
+    "The stated convention takes the direction of initial velocity as positive.",
+    "Upward is not always positive; the sign depends on the initial-velocity direction.",
+    "Downward is not always positive; the sign depends on the initial-velocity direction.",
+    "The section specifies the direction of initial velocity, not acceleration, as positive."
+   ]
+  },
+  {
+   "options": [
+    "−10 m s⁻²",
+    "+10 m s⁻²",
+    "0 m s⁻²",
+    "−5 m s⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A ball is thrown vertically upward. If upward is the positive direction, what is its acceleration during its flight? Take g = 10 m s⁻².",
+   "rationales": [
+    "Gravity acts downward, opposite to the chosen positive upward direction.",
+    "This sign would represent acceleration upward, not the acceleration due to gravity.",
+    "The ball accelerates due to gravity even while it is moving upward.",
+    "The magnitude of gravitational acceleration is 10 m s⁻² here, not 5 m s⁻²."
+   ]
+  },
+  {
+   "options": [
+    "v_f = 0",
+    "v_f = v_i",
+    "a = 0",
+    "t = 0"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "At the highest point reached by a ball thrown vertically upward, which statement is true for the instant at the top?",
+   "rationales": [
+    "The ball is momentarily at rest at the highest point, so its instantaneous velocity is zero.",
+    "Its velocity has changed from its initial upward value to zero.",
+    "Its acceleration is still due to gravity and is not zero.",
+    "Time has passed while the ball travelled upward, so t is not zero."
+   ]
+  },
+  {
+   "options": [
+    "S = v_i t + 1/2 at²",
+    "v_f = v_i + at",
+    "2aS = v_f² − v_i²",
+    "S = at"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation is suitable for finding displacement when initial velocity, acceleration and time are known?",
+   "rationales": [
+    "This equation gives displacement from initial velocity, acceleration and time.",
+    "This equation gives final velocity, not displacement.",
+    "This equation can find displacement if the velocities and acceleration are known, but it does not use time.",
+    "This is not one of the equations of motion given in the section."
+   ]
+  },
+  {
+   "options": [
+    "The acceleration is negative.",
+    "The acceleration is positive.",
+    "The acceleration is zero.",
+    "The acceleration changes to zero when the object stops."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A stone is dropped and downward is chosen as positive. What sign should be used for its acceleration?",
+   "rationales": [
+    "Gravity acts downward, in the chosen positive direction; therefore this option is false.",
+    "Gravity acts in the chosen positive direction, so the acceleration is positive.",
+    "A falling stone has gravitational acceleration, so its acceleration is not zero.",
+    "The stone's acceleration due to gravity does not become zero as it falls."
+   ]
+  },
+  {
+   "options": [
+    "2aS = v_f² − v_i²",
+    "v_f = v_i + at",
+    "S = v_i t + 1/2 at²",
+    "a = v_f + v_i"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation can be used when time is not given and the known quantities include acceleration, displacement and the two velocities?",
+   "rationales": [
+    "This equation relates acceleration, displacement and both velocities without using time.",
+    "This equation contains time, so it is not the suitable choice when time is not given.",
+    "This equation also contains time.",
+    "This is not an equation of motion from the section."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "How equations of motion can be applied to the bodies moving under the action of gravity?",
+   "finalAnswer": "Use the equations of motion with acceleration due to gravity, taking signs according to the direction of initial velocity.",
+   "marks": 5,
+   "source": "Comprehensive Q2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_f=v_i+at"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should identify the equations used for motion.",
+     "description": "State the first equation of motion.",
+     "how": "Write v_f = v_i + at."
+    },
+    {
+     "accept": [
+      [
+       "S=v_i t+1/2at^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "More than one equation may be needed to solve a gravity problem.",
+     "description": "State the displacement equation.",
+     "how": "Write S = v_i t + 1/2 at²."
+    },
+    {
+     "accept": [
+      [
+       "2aS=v_f^2-v_i^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "This completes the set of equations given in the section.",
+     "description": "State the third equation of motion.",
+     "how": "Write 2aS = v_f² − v_i²."
+    },
+    {
+     "accept": [
+      [
+       "gravity"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration in these problems is due to gravity.",
+     "description": "Identify the acceleration as acceleration due to gravity.",
+     "how": "Use a = g, with its direction represented by the appropriate sign."
+    },
+    {
+     "accept": [
+      [
+       "initial velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "A consistent sign convention is necessary for a correct result.",
+     "description": "State the direction convention.",
+     "how": "Take the direction of initial velocity as positive and quantities in the opposite direction as negative."
+    }
+   ],
+   "modelAnswer": [
+    "Use the equations of motion: v_f = v_i + at.",
+    "S = v_i t + 1/2 at².",
+    "2aS = v_f² − v_i².",
+    "For motion under gravity, put a = g, with its sign set by the direction of acceleration.",
+    "Take the direction of initial velocity as positive; quantities in the opposite direction are negative."
+   ]
+  },
+  {
+   "text": "A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+   "finalAnswer": "(3 s, 30 m s⁻¹)",
+   "marks": 5,
+   "source": "Numerical Q2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0"
+      ],
+      [
+       "u=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "A dropped stone starts from rest.",
+     "description": "Identify the initial velocity.",
+     "how": "Write v_i = 0."
+    },
+    {
+     "accept": [
+      [
+       "g=10"
+      ],
+      [
+       "a=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration due to gravity is needed in the calculations.",
+     "description": "Use the gravitational acceleration and displacement.",
+     "how": "Take a = 10 m s⁻² downward and S = 45 m downward."
+    },
+    {
+     "accept": [
+      [
+       "t=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The time must be found from the displacement equation.",
+     "description": "Calculate the time to reach the ground.",
+     "how": "Substitute into S = v_i t + 1/2 at² to obtain t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "v_f=30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question asks for the velocity just before impact as well as the time.",
+     "description": "Calculate the final velocity.",
+     "how": "Use v_f = v_i + at to obtain v_f = 30 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "3 s",
+       "30 m s^-1"
+      ],
+      [
+       "3s",
+       "30m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both requested values and their units must be reported.",
+     "description": "Give the final pair of answers.",
+     "how": "Write 3 s and 30 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: S = 45 m, v_i = 0, a = 10 m s⁻².",
+    "S = v_i t + 1/2 at².",
+    "45 = 0 + 1/2(10)t².",
+    "t² = 9, so t = 3 s.",
+    "v_f = v_i + at.",
+    "v_f = 0 + 10(3) = 30 m s⁻¹.",
+    "Answer: (3 s, 30 m s⁻¹)."
+   ]
+  },
+  {
+   "text": "A ball is dropped from the top of a tower. The ball reaches the ground in 5 seconds. Find the height of the tower and the velocity of the ball with which it strikes the ground.",
+   "finalAnswer": "(125 m, 50 m s⁻¹)",
+   "marks": 5,
+   "source": "Numerical Q2.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0"
+      ],
+      [
+       "u=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "A dropped ball starts from rest.",
+     "description": "Identify the initial velocity and time.",
+     "how": "Write v_i = 0 and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "a=10"
+      ],
+      [
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation needs the ball's acceleration.",
+     "description": "Use acceleration due to gravity.",
+     "how": "Take a = 10 m s⁻² downward."
+    },
+    {
+     "accept": [
+      [
+       "S=125"
+      ]
+     ],
+     "marks": 1,
+     "why": "The height is the displacement while the ball falls.",
+     "description": "Find the height.",
+     "how": "Use S = v_i t + 1/2 at² to obtain S = 125 m."
+    },
+    {
+     "accept": [
+      [
+       "v_f=50"
+      ]
+     ],
+     "marks": 1,
+     "why": "The impact velocity is the second quantity requested.",
+     "description": "Find the velocity just before impact.",
+     "how": "Use v_f = v_i + at to obtain v_f = 50 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "125 m",
+       "50 m s^-1"
+      ],
+      [
+       "125m",
+       "50m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both results and units are needed for the complete answer.",
+     "description": "State the final answers.",
+     "how": "Write 125 m and 50 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: v_i = 0, t = 5 s, a = 10 m s⁻².",
+    "S = v_i t + 1/2 at².",
+    "S = 0(5) + 1/2(10)(5)² = 125 m.",
+    "v_f = v_i + at.",
+    "v_f = 0 + 10(5) = 50 m s⁻¹.",
+    "Answer: (125 m, 50 m s⁻¹)."
+   ]
+  },
+  {
+   "text": "A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+   "finalAnswer": "(30 m s⁻¹, 46 m)",
+   "marks": 5,
+   "source": "Numerical Q2.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_f=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "At the highest point, the ball's instantaneous velocity is zero.",
+     "description": "Identify the final velocity at the highest point.",
+     "how": "Write v_f = 0."
+    },
+    {
+     "accept": [
+      [
+       "a=-10"
+      ],
+      [
+       "g=-10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gravity acts opposite to the initial upward velocity.",
+     "description": "Assign the sign of acceleration.",
+     "how": "Taking upward as positive, use a = −10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "v_i=30"
+      ],
+      [
+       "u=30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial velocity is one of the requested answers.",
+     "description": "Calculate the initial velocity.",
+     "how": "Use v_f = v_i + at with t = 3 s to get v_i = 30 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "S=45"
+      ]
+     ],
+     "marks": 1,
+     "why": "The rise above the launch point must be added to the launch height.",
+     "description": "Find the ball's upward displacement.",
+     "how": "Use S = v_i t + 1/2 at² to get S = 45 m."
+    },
+    {
+     "accept": [
+      [
+       "30 m s^-1",
+       "46 m"
+      ],
+      [
+       "30m/s",
+       "46m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must give both the initial velocity and the height above the ground.",
+     "description": "Give the final pair of answers.",
+     "how": "Add 1 m to the 45 m rise and state 30 m s⁻¹ and 46 m."
+    }
+   ],
+   "modelAnswer": [
+    "Taking upward as positive: v_f = 0, t = 3 s, a = −10 m s⁻².",
+    "v_f = v_i + at.",
+    "0 = v_i + (−10)(3), so v_i = 30 m s⁻¹.",
+    "S = v_i t + 1/2 at².",
+    "S = 30(3) + 1/2(−10)(3)² = 45 m.",
+    "Height above ground = 45 + 1 = 46 m.",
+    "Answer: (30 m s⁻¹, 46 m)."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Gravity questions are commonly set as numerical problems asking for time, displacement, velocity or acceleration.",
+   "Write the known quantities first, including their signs and units, before choosing an equation.",
+   "Show the equation, substitution and calculation; a correct final answer alone may not earn all working marks.",
+   "At the highest point of an upward journey, use v_f = 0 for that instant; acceleration due to gravity is still present."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "The ball is dropped, so its initial velocity is zero.",
+     "Take downward as positive. Use S = v_i t + 1/2 at² to find the height, then v_f = v_i + at."
+    ],
+    "accept": [
+     [
+      "125 m",
+      "50 m s^-1"
+     ],
+     [
+      "125m",
+      "50m/s"
+     ]
+    ],
+    "question": "A ball is dropped from the top of a tower. The ball reaches the ground in 5 seconds. Find the height of the tower and the velocity of the ball with which it strikes the ground.",
+    "solution": [
+     "Given: v_i = 0, t = 5 s, a = 10 m s⁻² downward.",
+     "S = v_i t + 1/2 at².",
+     "S = 0(5) + 1/2(10)(5)² = 125 m.",
+     "v_f = v_i + at.",
+     "v_f = 0 + 10(5) = 50 m s⁻¹.",
+     "Answer: (125 m, 50 m s⁻¹)."
+    ],
+    "answer": "(125 m, 50 m s⁻¹)"
+   },
+   {
+    "hints": [
+     "At the highest point, the ball's velocity is zero.",
+     "Take upward as positive, so gravity is −10 m s⁻². Find the rise, then add the 1 m starting height."
+    ],
+    "accept": [
+     [
+      "30 m s^-1",
+      "46 m"
+     ],
+     [
+      "30m/s",
+      "46m"
+     ]
+    ],
+    "question": "A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+    "solution": [
+     "Taking upward as positive: v_f = 0, t = 3 s, a = −10 m s⁻².",
+     "v_f = v_i + at.",
+     "0 = v_i + (−10)(3), so v_i = 30 m s⁻¹.",
+     "S = v_i t + 1/2 at².",
+     "S = 30(3) + 1/2(−10)(3)² = 45 m.",
+     "Height above ground = 45 + 1 = 46 m.",
+     "Answer: (30 m s⁻¹, 46 m)."
+    ],
+    "answer": "(30 m s⁻¹, 46 m)"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "A dropped stone starts from rest, and we take downward as positive for this calculation.",
+     "text": "Given: S = 45 m, v_i = 0, a = 10 m s⁻²."
+    },
+    {
+     "why": "This equation contains the known displacement, initial velocity and acceleration, as well as the unknown time.",
+     "text": "S = v_i t + 1/2 at²."
+    },
+    {
+     "why": "Substituting the known values gives the time taken to reach the ground.",
+     "text": "45 = 0 + 1/2(10)t²; therefore t = 3 s."
+    },
+    {
+     "why": "This equation uses the time just found to calculate the impact velocity.",
+     "text": "v_f = v_i + at = 0 + 10(3) = 30 m s⁻¹."
+    }
+   ],
+   "question": "A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+   "answer": "(3 s, 30 m s⁻¹)"
+  },
+  "explain": [
+   {
+    "title": "The equations of motion",
+    "body": "Your textbook gives these three equations: v_f = v_i + at; S = v_i t + 1/2 at²; 2aS = v_f² − v_i². Choose the equation that contains the quantities you know and the one you need to find."
+   },
+   {
+    "title": "Assumptions",
+    "body": "Your textbook states: “Motion is always considered along a straight line”; “Only the magnitudes of vector quantities are used”; and “Acceleration is assumed to be uniform.” Make sure the situation fits these assumptions when using the equations."
+   },
+   {
+    "title": "Direction and signs",
+    "body": "Your textbook states: “The direction of initial velocity is taken as positive. Other quantities which are in the direction of initial velocity are taken as positive. The quantities in the direction opposite to the initial velocity are taken as negative.” For a dropped object, choose a consistent direction for the calculation and give gravity the matching sign."
+   },
+   {
+    "title": "Motion upward",
+    "body": "For a ball thrown upward, take upward as positive. Gravity then has a negative sign. At the highest point, the ball's velocity is zero for an instant, but its acceleration is still due to gravity."
+   }
+  ],
+  "mistakes": [
+   "Using a positive sign for gravity when it acts opposite to the chosen positive direction.",
+   "Forgetting that a dropped object starts with v_i = 0.",
+   "Setting acceleration to zero at the highest point instead of setting the instantaneous velocity to zero.",
+   "Mixing units or leaving units out of the final answers.",
+   "Using an equation without showing substitution and working."
+  ]
+ }
+}

@@ -1,0 +1,442 @@
+{
+ "note": {
+  "explanation": "A force can be split into two perpendicular components: one along the x-axis and one along the y-axis. If these components are known, use Pythagoras to find the force’s magnitude and the tangent ratio to find its direction.",
+  "examples": [
+   "If F_x = 3 N and F_y = 4 N, then F = √(3² + 4²) = 5 N.",
+   "For the same components, θ = tan⁻¹(4/3) ≈ 53.1°."
+  ],
+  "checkAnswer": "F = 5 N; θ ≈ 53.1°",
+  "keywords": [
+   "force components",
+   "perpendicular components",
+   "magnitude",
+   "direction",
+   "Pythagorean theorem",
+   "tangent"
+  ],
+  "simple": "The x- and y-components are the horizontal and vertical parts of a force. Join them at a right angle: Pythagoras gives the force’s size, and tan⁻¹ gives its angle.",
+  "checkQuestion": "If F_x = 3 N and F_y = 4 N, what are the magnitude and direction of the force measured from the positive x-axis?",
+  "title": "Finding a Force from Its Perpendicular Components",
+  "steps": [
+   "Use F = √(F_x² + F_y²) to find the magnitude.",
+   "Use θ = tan⁻¹(F_y/F_x) to find the direction.",
+   "State the magnitude in newtons and the angle with its reference direction."
+  ],
+  "answer": "F = √(F_x² + F_y²), and θ = tan⁻¹(F_y/F_x).",
+  "checkAccept": [
+   [
+    "F=5 N",
+    "θ=53.1"
+   ],
+   [
+    "5 N",
+    "53.1"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "5 N",
+    "7 N",
+    "12 N",
+    "25 N"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Two perpendicular components of a force are 3 N and 4 N. What is the magnitude of the force?",
+   "rationales": [
+    "Correct: F = √(3² + 4²) = 5 N.",
+    "Incorrect: 7 N is the sum of the component magnitudes, not their perpendicular resultant.",
+    "Incorrect: 12 N is not obtained by applying Pythagoras to the components.",
+    "Incorrect: 25 is the squared magnitude, not the magnitude in newtons."
+   ]
+  },
+  {
+   "options": [
+    "F sin θ",
+    "F cos θ",
+    "F tan θ",
+    "F/ cos θ"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force F makes an angle θ with the horizontal x-axis. Which expression gives its x-component?",
+   "rationales": [
+    "Incorrect: F sin θ gives the y-component for an angle measured from the x-axis.",
+    "Correct: The x-component is F_x = F cos θ.",
+    "Incorrect: F tan θ is not the expression for either component.",
+    "Incorrect: Dividing by cos θ does not give the x-component."
+   ]
+  },
+  {
+   "options": [
+    "F sin θ",
+    "F cos θ",
+    "F tan θ",
+    "F/ sin θ"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A force F makes an angle θ with the horizontal x-axis. Which expression gives its y-component?",
+   "rationales": [
+    "Correct: The y-component is F_y = F sin θ.",
+    "Incorrect: F cos θ gives the x-component for an angle measured from the x-axis.",
+    "Incorrect: F tan θ is not the expression for the y-component.",
+    "Incorrect: Dividing by sin θ does not give the y-component."
+   ]
+  },
+  {
+   "options": [
+    "F_x + F_y",
+    "√(F_x² + F_y²)",
+    "F_x² + F_y²",
+    "F_x/F_y"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which equation gives the magnitude of a force from its perpendicular components?",
+   "rationales": [
+    "Incorrect: Adding the magnitudes directly does not apply the Pythagorean theorem.",
+    "Correct: The magnitude is F = √(F_x² + F_y²).",
+    "Incorrect: This is the square of the magnitude, not the magnitude itself.",
+    "Incorrect: This ratio is not a formula for the magnitude."
+   ]
+  },
+  {
+   "options": [
+    "tan⁻¹(F_x/F_y)",
+    "sin⁻¹(F_y/F_x)",
+    "tan⁻¹(F_y/F_x)",
+    "cos⁻¹(F_y/F_x)"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which equation gives the angle θ of a force from its perpendicular components?",
+   "rationales": [
+    "Incorrect: This reverses the component ratio and gives the wrong angle.",
+    "Incorrect: The section gives the direction using the tangent ratio, not this sine ratio.",
+    "Correct: The direction is θ = tan⁻¹(F_y/F_x).",
+    "Incorrect: The section does not use this cosine ratio to determine the direction."
+   ]
+  },
+  {
+   "options": [
+    "100 N",
+    "138.6 N",
+    "160 N",
+    "80 N"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "A 160 N force acts at 60° to the horizontal. What is its x-component? Use cos 60° = 0.5.",
+   "rationales": [
+    "Incorrect: 100 N is not 160 × cos 60°.",
+    "Incorrect: 138.6 N is the y-component, found using sin 60°.",
+    "Incorrect: 160 N is the whole force, not its x-component.",
+    "Correct: F_x = F cos θ = 160 × 0.5 = 80 N."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A force of 160 N is acting on a wooden box at an angle of 60° with the horizontal direction. Determine the values of its x and y components.",
+   "finalAnswer": "F_x = 80 N, F_y = 138.6 N",
+   "marks": 4,
+   "source": "Example 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sin 60°=0.866",
+       "cos 60°=0.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The trigonometric ratios are needed to evaluate the components.",
+     "description": "Use the given angle to obtain the sine and cosine values.",
+     "how": "State sin 60° = 0.866 and cos 60° = 0.5."
+    },
+    {
+     "accept": [
+      [
+       "F_x=F cos θ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct component relation earns the method mark.",
+     "description": "Set up the x-component.",
+     "how": "Write F_x = F cos θ."
+    },
+    {
+     "accept": [
+      [
+       "F_y=F sin θ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct component relation earns the method mark.",
+     "description": "Set up the y-component.",
+     "how": "Write F_y = F sin θ."
+    },
+    {
+     "accept": [
+      [
+       "F_x=80 N",
+       "F_y=138.6 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both component values must be calculated correctly.",
+     "description": "Give the final x- and y-components.",
+     "how": "Obtain F_x = 160 × 0.5 = 80 N and F_y = 160 × 0.866 = 138.6 N."
+    }
+   ],
+   "modelAnswer": [
+    "Magnitude of force F = 160 N",
+    "Angle θ = 60°",
+    "Using calculator, sin θ = sin 60° = 0.866",
+    "cos θ = cos 60° = 0.5",
+    "x-component is given by Eq. (4.2): F_x = F cos θ",
+    "Putting the values, F_x = 160 N × 0.5 = 80 N",
+    "y-component is given by Eq. (4.3): F_y = F sin θ",
+    "Putting the values, F_y = 160 N × 0.866 = 138.6 N",
+    "F_x = 80 N, F_y = 138.6 N"
+   ]
+  },
+  {
+   "text": "What are rectangular components of a vector and their values?",
+   "finalAnswer": "They are the perpendicular x- and y-components of a vector; F_x = F cos θ and F_y = F sin θ.",
+   "marks": 2,
+   "source": "Short Q4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "perpendicular",
+       "x",
+       "y"
+      ],
+      [
+       "horizontal",
+       "vertical"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the two perpendicular component directions.",
+     "description": "Define rectangular components.",
+     "how": "State that they are the x- and y-components, along perpendicular axes."
+    },
+    {
+     "accept": [
+      [
+       "F_x=F cos θ",
+       "F_y=F sin θ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The component values are found from the correct equations.",
+     "description": "Give the component equations.",
+     "how": "Write F_x = F cos θ and F_y = F sin θ, where θ is measured from the x-axis."
+    }
+   ],
+   "modelAnswer": [
+    "The rectangular components of a vector are its two perpendicular components along the x- and y-axes.",
+    "For a vector F making an angle θ with the x-axis: F_x = F cos θ",
+    "F_y = F sin θ"
+   ]
+  },
+  {
+   "text": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+   "finalAnswer": "(173.2 N, 100 N)",
+   "marks": 4,
+   "source": "Numerical Q4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F_x=F cos θ",
+       "F_y=F sin θ"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct equations show the method for resolving the force.",
+     "description": "Write the component equations.",
+     "how": "Use F_x = F cos θ and F_y = F sin θ."
+    },
+    {
+     "accept": [
+      [
+       "cos 30°=0.866",
+       "sin 30°=0.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct trigonometric values are required for substitution.",
+     "description": "Evaluate the ratios for 30°.",
+     "how": "Use cos 30° = 0.866 and sin 30° = 0.5."
+    },
+    {
+     "accept": [
+      [
+       "200×0.866=173.2"
+      ],
+      [
+       "200×0.5=100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution and arithmetic must be shown for the components.",
+     "description": "Substitute the force and trigonometric values.",
+     "how": "Calculate 200 × 0.866 and 200 × 0.5."
+    },
+    {
+     "accept": [
+      [
+       "173.2 N",
+       "100 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both final components must agree with the answer key.",
+     "description": "State the x- and y-components with units.",
+     "how": "Give the components as 173.2 N and 100 N, respectively."
+    }
+   ],
+   "modelAnswer": [
+    "Magnitude of force F = 200 N",
+    "Angle θ = 30°",
+    "Using calculator, cos θ = cos 30° = 0.866",
+    "sin θ = sin 30° = 0.5",
+    "x-component is given by Eq. (4.2): F_x = F cos θ",
+    "F_x = 200 N × 0.866 = 173.2 N",
+    "y-component is given by Eq. (4.3): F_y = F sin θ",
+    "F_y = 200 N × 0.5 = 100 N",
+    "(173.2 N, 100 N)"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section can be tested by an MCQ asking which formula gives a component, magnitude, or direction.",
+   "A numerical may give a force and its angle, then ask for the x- and y-components. Show the cosine and sine values, write each component equation, substitute, and include N in both answers.",
+   "If the perpendicular components are given, show the Pythagorean calculation for the magnitude and use θ = tan⁻¹(F_y/F_x) for the direction.",
+   "Keep the component labels clear: for an angle measured from the horizontal x-axis, cosine gives the x-component and sine gives the y-component."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "For the x-component use F_x = F cos θ; for the y-component use F_y = F sin θ.",
+     "Use cos 30° = 0.866 and sin 30° = 0.5, then multiply each by 200 N."
+    ],
+    "accept": [
+     [
+      "173.2 N",
+      "100 N"
+     ]
+    ],
+    "question": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+    "solution": [
+     "Magnitude of force F = 200 N",
+     "Angle θ = 30°",
+     "Using calculator, cos θ = cos 30° = 0.866",
+     "sin θ = sin 30° = 0.5",
+     "x-component is given by Eq. (4.2): F_x = F cos θ",
+     "F_x = 200 N × 0.866 = 173.2 N",
+     "y-component is given by Eq. (4.3): F_y = F sin θ",
+     "F_y = 200 N × 0.5 = 100 N"
+    ],
+    "answer": "(173.2 N, 100 N)"
+   },
+   {
+    "hints": [
+     "Rectangular components are at right angles to each other.",
+     "For an angle θ measured from the x-axis, use F_x = F cos θ and F_y = F sin θ."
+    ],
+    "accept": [
+     [
+      "perpendicular",
+      "F_x=F cos θ",
+      "F_y=F sin θ"
+     ],
+     [
+      "horizontal",
+      "vertical",
+      "F_x=F cos θ",
+      "F_y=F sin θ"
+     ]
+    ],
+    "question": "What are rectangular components of a vector and their values?",
+    "solution": [
+     "The rectangular components of a vector are its two perpendicular components along the x- and y-axes.",
+     "For a vector F making an angle θ with the x-axis: F_x = F cos θ",
+     "F_y = F sin θ"
+    ],
+    "answer": "They are the perpendicular x- and y-components of a vector; F_x = F cos θ and F_y = F sin θ."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the force and angle given in the question.",
+     "text": "Magnitude of force F = 160 N"
+    },
+    {
+     "why": "The angle is measured from the horizontal direction.",
+     "text": "Angle θ = 60°"
+    },
+    {
+     "why": "The sine ratio is used to calculate the y-component.",
+     "text": "Using calculator, sin θ = sin 60° = 0.866"
+    },
+    {
+     "why": "The cosine ratio is used to calculate the x-component.",
+     "text": "cos θ = cos 60° = 0.5"
+    },
+    {
+     "why": "For an angle measured from the x-axis, the x-component uses cosine.",
+     "text": "x-component is given by Eq. (4.2): F_x = F cos θ"
+    },
+    {
+     "why": "Substitute the force and cosine value to find the horizontal component.",
+     "text": "Putting the values, F_x = 160 N × 0.5 = 80 N"
+    },
+    {
+     "why": "The y-component uses the sine of the angle.",
+     "text": "y-component is given by Eq. (4.3): F_y = F sin θ"
+    },
+    {
+     "why": "Substitute the force and sine value to find the vertical component.",
+     "text": "Putting the values, F_y = 160 N × 0.866 = 138.6 N"
+    }
+   ],
+   "question": "A force of 160 N is acting on a wooden box at an angle of 60° with the horizontal direction. Determine the values of its x and y components.",
+   "answer": "F_x = 80 N, F_y = 138.6 N"
+  },
+  "explain": [
+   {
+    "title": "A force has two perpendicular components",
+    "body": "“The magnitude and direction of a force can be found if its perpendicular components are known.” These components are along the x- and y-directions."
+   },
+   {
+    "title": "Find the magnitude",
+    "body": "“Applying Pythagorean theorem to the right angled triangle OAC (Fig. 4.11-b).” The book gives F² = F_x² + F_y², so F = √(F_x² + F_y²)."
+   },
+   {
+    "title": "Find the direction",
+    "body": "“The direction of F is given by tan θ = F_y/F_x” or θ = tan⁻¹(F_y/F_x). Use a table of trigonometric ratios or a calculator to determine θ."
+   },
+   {
+    "title": "Resolve a force at an angle",
+    "body": "When θ is measured from the horizontal x-axis, use F_x = F cos θ and F_y = F sin θ. The cosine gives the horizontal part; the sine gives the vertical part."
+   }
+  ],
+  "mistakes": [
+   "Swapping sine and cosine: with θ measured from the horizontal x-axis, use cosine for F_x and sine for F_y.",
+   "Adding perpendicular component magnitudes directly instead of using F = √(F_x² + F_y²).",
+   "Forgetting the square root when calculating the magnitude.",
+   "Using F_x/F_y instead of F_y/F_x in θ = tan⁻¹(F_y/F_x).",
+   "Leaving out units such as N from component answers."
+  ]
+ }
+}

@@ -1,0 +1,874 @@
+{
+ "note": {
+  "explanation": "In physics, work is done when a force moves an object through a distance. Only the part of the force in the direction of the object's motion does work. Work is measured in joules.",
+  "examples": [
+   "A force of 10 N moves an object 3 m in the same direction: W = FS = 10 × 3 = 30 J.",
+   "A person carries a bag horizontally at a steady height. The supporting force is vertical and the displacement is horizontal, so the work done by that force is zero."
+  ],
+  "checkAnswer": "Zero joules; the force and displacement are perpendicular.",
+  "keywords": [
+   "work",
+   "force",
+   "displacement",
+   "joule",
+   "angle",
+   "force-distance graph"
+  ],
+  "simple": "A force does work only when it moves something in the force's direction. A force sideways to the motion, or no movement at all, means no work by that force.",
+  "checkQuestion": "A force holds a bag upward while the bag moves horizontally. How much work does this force do?",
+  "title": "Work done by a force",
+  "steps": [
+   "Identify the force, the distance moved and the angle between them.",
+   "Use W = FS when the force and displacement are in the same direction.",
+   "Use W = FS cos θ when the force makes an angle θ with the direction of motion.",
+   "Give the answer in joules (J)."
+  ],
+  "answer": "Work is the product of the magnitude of force and the distance covered in the direction of force.",
+  "checkAccept": [
+   [
+    "0 J"
+   ],
+   [
+    "zero",
+    "perpendicular"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "12 J",
+    "4 J",
+    "0 J",
+    "48 J"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A force of 4 N moves an object 3 m in the direction of the force. How much work is done?",
+   "rationales": [
+    "This is correct because W = FS = 4 × 3 = 12 J.",
+    "This is incorrect because it does not equal the product of force and distance.",
+    "This is incorrect because the object moves in the direction of the applied force.",
+    "This is incorrect because it multiplies by an extra factor of 4."
+   ]
+  },
+  {
+   "options": [
+    "The force is zero",
+    "The displacement is zero",
+    "The object has a large mass",
+    "The force acts for a long time"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force acts on an object, but the object does not move. What is the work done by that force?",
+   "rationales": [
+    "This is incorrect because a force can be non-zero even when no work is done.",
+    "This is correct because W = FS, and zero displacement makes the work zero.",
+    "This is incorrect because mass alone does not determine work.",
+    "This is incorrect because time alone does not determine work in this definition."
+   ]
+  },
+  {
+   "options": [
+    "FS",
+    "FS sin θ",
+    "FS cos θ",
+    "F/S"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A force F acts at an angle θ to the direction of motion over distance S. Which expression gives the work done?",
+   "rationales": [
+    "This is incorrect unless the force is entirely along the direction of motion.",
+    "This is incorrect because the component along the motion is F cos θ.",
+    "This is correct because only the force component F cos θ acts along the displacement.",
+    "This is incorrect because force divided by distance is not work."
+   ]
+  },
+  {
+   "options": [
+    "0 J",
+    "FS",
+    "F + S",
+    "F/S"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A force acts perpendicular to an object's displacement. What is the work done by this force?",
+   "rationales": [
+    "This is correct because cos 90° = 0 in W = FS cos θ.",
+    "This is incorrect because it would apply if force and displacement were in the same direction.",
+    "This is incorrect because work is not the sum of force and distance.",
+    "This is incorrect because force divided by distance is not work."
+   ]
+  },
+  {
+   "options": [
+    "newton",
+    "joule",
+    "metre",
+    "watt"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of work?",
+   "rationales": [
+    "This is incorrect because a newton is the SI unit of force.",
+    "This is correct because the SI unit of work is the joule (J).",
+    "This is incorrect because a metre is a unit of distance.",
+    "This is incorrect because a watt is a unit of power."
+   ]
+  },
+  {
+   "options": [
+    "The slope of a force-distance graph",
+    "The area under a force-distance graph",
+    "The highest force shown on the graph",
+    "The distance axis alone"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "For a force-distance graph, what represents the work done by the force?",
+   "rationales": [
+    "This is incorrect because the slope does not generally give the work.",
+    "This is correct because the area under the force-distance curve represents work done.",
+    "This is incorrect because force alone does not include the distance moved.",
+    "This is incorrect because distance alone does not include the force."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A person does 200 J of work in pushing a carton through a distance of 5 metres. How much force is applied by him?",
+   "finalAnswer": "40 N",
+   "marks": 2,
+   "source": "Example 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "W=FS"
+      ],
+      [
+       "F=W/S"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The correct work equation must be selected and rearranged.",
+     "description": "Use and rearrange the work equation.",
+     "how": "Write W = F × S, so F = W/S."
+    },
+    {
+     "accept": [
+      [
+       "200/5"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The given values must be substituted correctly.",
+     "description": "Substitute work and distance.",
+     "how": "Put W = 200 J and S = 5 m into F = W/S."
+    },
+    {
+     "accept": [
+      [
+       "40 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical result and its unit complete the answer.",
+     "description": "Give the correct force.",
+     "how": "Calculate and state 40 N."
+    }
+   ],
+   "modelAnswer": [
+    "Work done W = 200 J; distance S = 5 m.",
+    "From W = F × S, F = W/S.",
+    "F = 200 J/5 m = 40 N."
+   ]
+  },
+  {
+   "text": "Find the work done by a 65 N force in pulling the suitcase (Fig. 5.8) for a distance of 20 metres.",
+   "finalAnswer": "1125.8 J",
+   "marks": 4,
+   "source": "Example 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=65 N"
+      ],
+      [
+       "S=20 m"
+      ],
+      [
+       "θ=30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force, distance and angle from the figure are needed.",
+     "description": "Identify the given values.",
+     "how": "State F = 65 N, S = 20 m and θ = 30°."
+    },
+    {
+     "accept": [
+      [
+       "W=FS cosθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The angled-force equation accounts for the component along the motion.",
+     "description": "Choose the angled-force equation.",
+     "how": "Write W = FS cos θ."
+    },
+    {
+     "accept": [
+      [
+       "65×20×0.866"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution and use of cos 30° are required.",
+     "description": "Substitute the values.",
+     "how": "Use W = 65 × 20 × 0.866."
+    },
+    {
+     "accept": [
+      [
+       "1125.8 J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and joule unit state the work done.",
+     "description": "Give the final answer.",
+     "how": "State 1125.8 J."
+    }
+   ],
+   "modelAnswer": [
+    "Force applied F = 65 N; distance covered S = 20 m; θ = 30°.",
+    "Using Eq. 5.2, W = FS cos 30°.",
+    "W = 65 N × 20 m × 0.866.",
+    "W = 1125.8 Nm = 1125.8 J."
+   ]
+  },
+  {
+   "text": "What is the work done on an object that remains at rest when a force is applied on it?",
+   "finalAnswer": "Zero work is done because the displacement is zero.",
+   "marks": 2,
+   "source": "Short 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0 J"
+      ],
+      [
+       "zero work"
+      ]
+     ],
+     "marks": 1,
+     "why": "The work is zero when the object does not move.",
+     "description": "State the work done.",
+     "how": "Answer that the work done is zero."
+    },
+    {
+     "accept": [
+      [
+       "displacement",
+       "zero"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation connects the result to W = FS.",
+     "description": "Explain why.",
+     "how": "State that the displacement is zero."
+    }
+   ],
+   "modelAnswer": [
+    "Work done W = F × S.",
+    "Since the object remains at rest, S = 0.",
+    "Therefore, W = 0 J."
+   ]
+  },
+  {
+   "text": "Define work and its SI unit.",
+   "finalAnswer": "Work is the product of the magnitude of force and the distance covered in the direction of force. Its SI unit is the joule (J).",
+   "marks": 2,
+   "source": "Short 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "product",
+       "force",
+       "distance",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must include force and distance in the force's direction.",
+     "description": "Define work.",
+     "how": "Give the textbook definition of work."
+    },
+    {
+     "accept": [
+      [
+       "joule"
+      ],
+      [
+       "J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The SI unit is an essential part of the answer.",
+     "description": "Name the SI unit.",
+     "how": "State joule (J)."
+    }
+   ],
+   "modelAnswer": [
+    "Work is the product of the magnitude of force and the distance covered in the direction of force.",
+    "The SI unit of work is joule (J)."
+   ]
+  },
+  {
+   "text": "A man rowing boat upstream is at rest with respect to the shore. Is he doing work?",
+   "finalAnswer": "No mechanical work is done on the boat because it has no displacement with respect to the shore.",
+   "marks": 4,
+   "source": "CRQ 5.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "no",
+       "work"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must decide whether work is done on the boat.",
+     "description": "State the conclusion.",
+     "how": "Say no mechanical work is done on the boat."
+    },
+    {
+     "accept": [
+      [
+       "at rest"
+      ],
+      [
+       "no displacement"
+      ]
+     ],
+     "marks": 2,
+     "why": "Work depends on displacement of the object in the question.",
+     "description": "Explain using the boat's motion.",
+     "how": "State that the boat has no displacement relative to the shore."
+    },
+    {
+     "accept": [
+      [
+       "W=FS"
+      ],
+      [
+       "S=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The work equation shows why zero displacement gives zero work.",
+     "description": "Connect the explanation to the equation.",
+     "how": "Use W = FS and S = 0."
+    }
+   ],
+   "modelAnswer": [
+    "Work done W = F × S.",
+    "The boat is at rest with respect to the shore, so its displacement S = 0.",
+    "Therefore, no mechanical work is done on the boat."
+   ]
+  },
+  {
+   "text": "A force of 20 N acting at an angle of 60° to the horizontal is used to pull a box through a distance of 3 m across a floor. How much work is done?",
+   "finalAnswer": "30 J",
+   "marks": 5,
+   "source": "Numerical 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "W=FS cosθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force is at an angle to the displacement.",
+     "description": "Choose the correct equation.",
+     "how": "Write W = FS cos θ."
+    },
+    {
+     "accept": [
+      [
+       "20",
+       "3",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "All given values must be placed in the equation.",
+     "description": "Substitute the values.",
+     "how": "Use F = 20 N, S = 3 m and θ = 60°."
+    },
+    {
+     "accept": [
+      [
+       "cos60=0.5"
+      ],
+      [
+       "cos60"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cosine of the angle gives the force component along the motion.",
+     "description": "Evaluate the angle factor.",
+     "how": "Use cos 60° = 0.5."
+    },
+    {
+     "accept": [
+      [
+       "30 J"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct work value and unit are the final result.",
+     "description": "Give the final answer.",
+     "how": "Calculate and state 30 J."
+    }
+   ],
+   "modelAnswer": [
+    "W = FS cos θ.",
+    "W = 20 N × 3 m × cos 60°.",
+    "W = 20 × 3 × 0.5.",
+    "W = 30 J."
+   ]
+  },
+  {
+   "text": "A body moves a distance of 5 metres in a straight line under the action of a force of 8 newtons. If the work done is 20 joules, find the angle which the force makes with the direction of motion of the body.",
+   "finalAnswer": "60°",
+   "marks": 5,
+   "source": "Numerical 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "W=FS cosθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The angled-force equation relates work to the unknown angle.",
+     "description": "Write the work equation.",
+     "how": "Start with W = FS cos θ."
+    },
+    {
+     "accept": [
+      [
+       "20=8×5 cosθ"
+      ],
+      [
+       "cosθ=20/(8×5)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution and rearrangement are needed to find the angle.",
+     "description": "Substitute and rearrange.",
+     "how": "Obtain cos θ = 20/(8 × 5)."
+    },
+    {
+     "accept": [
+      [
+       "cosθ=0.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "This value identifies the angle through the cosine ratio.",
+     "description": "Evaluate the ratio.",
+     "how": "Calculate cos θ = 0.5."
+    },
+    {
+     "accept": [
+      [
+       "60°"
+      ],
+      [
+       "60"
+      ]
+     ],
+     "marks": 2,
+     "why": "The angle must be stated as the final answer.",
+     "description": "Give the angle.",
+     "how": "State θ = 60°."
+    }
+   ],
+   "modelAnswer": [
+    "W = FS cos θ.",
+    "20 J = 8 N × 5 m × cos θ.",
+    "cos θ = 20/(8 × 5) = 0.5.",
+    "θ = 60°."
+   ]
+  },
+  {
+   "text": "A person pushes a lawn mower with a force of 50 N making an angle of 45° with the horizontal. If the mower is moved through a distance of 20 m, how much work is done?",
+   "finalAnswer": "707 J",
+   "marks": 5,
+   "source": "Numerical 5.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "W=FS cosθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force is inclined to the direction of motion.",
+     "description": "Choose the equation.",
+     "how": "Use W = FS cos θ."
+    },
+    {
+     "accept": [
+      [
+       "50",
+       "20",
+       "45"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution must use the stated force, distance and angle.",
+     "description": "Substitute the given values.",
+     "how": "Put in 50 N, 20 m and 45°."
+    },
+    {
+     "accept": [
+      [
+       "cos45=0.707"
+      ],
+      [
+       "cos45"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cosine gives the component of the force along the horizontal displacement.",
+     "description": "Use the angle value.",
+     "how": "Use cos 45° = 0.707."
+    },
+    {
+     "accept": [
+      [
+       "707 J"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final work value and unit complete the numerical answer.",
+     "description": "State the answer.",
+     "how": "Calculate and state 707 J."
+    }
+   ],
+   "modelAnswer": [
+    "W = FS cos θ.",
+    "W = 50 N × 20 m × cos 45°.",
+    "W = 50 × 20 × 0.707.",
+    "W = 707 J."
+   ]
+  },
+  {
+   "text": "Calculate the work done in (i) Pushing a 5 kg box up a frictionless inclined plane 10 m long that makes an angle of 30° with the horizontal.",
+   "finalAnswer": "250 J",
+   "marks": 5,
+   "source": "Numerical 5.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=mg sin30"
+      ],
+      [
+       "F=25 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The component of the box's weight along the plane determines the force needed.",
+     "description": "Find the force along the plane.",
+     "how": "Use F = mg sin 30° = 25 N, taking g = 10 m/s²."
+    },
+    {
+     "accept": [
+      [
+       "W=FS"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force and motion are along the plane.",
+     "description": "Use the work equation.",
+     "how": "Write W = FS."
+    },
+    {
+     "accept": [
+      [
+       "25×10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force and distance must be substituted correctly.",
+     "description": "Substitute the values.",
+     "how": "Use F = 25 N and S = 10 m."
+    },
+    {
+     "accept": [
+      [
+       "250 J"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct work and unit give the required result.",
+     "description": "State the final answer.",
+     "how": "Calculate and state 250 J."
+    }
+   ],
+   "modelAnswer": [
+    "Force along the plane F = mg sin 30°.",
+    "F = 5 kg × 10 m/s² × 0.5 = 25 N.",
+    "Work done W = FS.",
+    "W = 25 N × 10 m = 250 J."
+   ]
+  },
+  {
+   "text": "Calculate the work done in (ii) Lifting the box vertically up from the ground to the top of the inclined plane.",
+   "finalAnswer": "250 J",
+   "marks": 5,
+   "source": "Numerical 5.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "h=10 sin30"
+      ],
+      [
+       "h=5 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The vertical height is needed for the lifting distance.",
+     "description": "Find the vertical height.",
+     "how": "Use h = 10 sin 30° = 5 m."
+    },
+    {
+     "accept": [
+      [
+       "F=mg"
+      ],
+      [
+       "50 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lifting force equals the box's weight.",
+     "description": "Find the lifting force.",
+     "how": "Use F = mg = 5 × 10 = 50 N."
+    },
+    {
+     "accept": [
+      [
+       "W=Fh"
+      ],
+      [
+       "50×5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Work is force multiplied by vertical distance here.",
+     "description": "Calculate the work.",
+     "how": "Use W = 50 × 5."
+    },
+    {
+     "accept": [
+      [
+       "250 J"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final work and unit complete the answer.",
+     "description": "State the final answer.",
+     "how": "Give 250 J."
+    }
+   ],
+   "modelAnswer": [
+    "Height h = 10 sin 30° = 5 m.",
+    "Force needed F = mg = 5 kg × 10 m/s² = 50 N.",
+    "Work done W = Fh.",
+    "W = 50 N × 5 m = 250 J."
+   ]
+  },
+  {
+   "text": "A force F acts through a distance L on a body. The force is then increased to 2F that further acts through 2L. Sketch a force-displacement graph and calculate the total work done.",
+   "finalAnswer": "5FL or 5 units",
+   "marks": 5,
+   "source": "Numerical 5.13",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "area",
+       "force",
+       "displacement"
+      ],
+      [
+       "work=area"
+      ]
+     ],
+     "marks": 1,
+     "why": "Work is represented by the area under a force-distance graph.",
+     "description": "Use the graph-area method.",
+     "how": "State that work equals the area under the force-displacement graph."
+    },
+    {
+     "accept": [
+      [
+       "FL"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first constant-force section contributes an area FL.",
+     "description": "Calculate the first section's work.",
+     "how": "Use F × L = FL."
+    },
+    {
+     "accept": [
+      [
+       "2F×2L"
+      ],
+      [
+       "4FL"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second section contributes work at force 2F over distance 2L.",
+     "description": "Calculate the second section's work.",
+     "how": "Use 2F × 2L = 4FL."
+    },
+    {
+     "accept": [
+      [
+       "5FL"
+      ],
+      [
+       "5 units"
+      ]
+     ],
+     "marks": 2,
+     "why": "Adding both areas gives the total work.",
+     "description": "Give the total work.",
+     "how": "Add FL + 4FL = 5FL."
+    }
+   ],
+   "modelAnswer": [
+    "Work done is the area under the force-displacement graph.",
+    "First part: W₁ = F × L = FL.",
+    "Second part: W₂ = 2F × 2L = 4FL.",
+    "Total work = W₁ + W₂ = FL + 4FL = 5FL or 5 units."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask for the definition of work or its SI unit. Include both force and distance in the force's direction in the definition.",
+   "Numerical questions commonly give force, distance and sometimes an angle. Write W = FS for the same direction, or W = FS cos θ for an angled force, then substitute values and include J.",
+   "For a force-distance graph, the work is the area under the graph. For a constant force, this area is a rectangle of area F × S.",
+   "State clearly when work is zero: either there is no displacement or the force is perpendicular to the displacement."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "The force is not in the same direction as the box's motion.",
+     "Use W = FS cos θ, with cos 60° = 0.5."
+    ],
+    "accept": [
+     [
+      "30 J"
+     ]
+    ],
+    "question": "A force of 20 N acting at an angle of 60° to the horizontal is used to pull a box through a distance of 3 m across a floor. How much work is done?",
+    "solution": [
+     "W = FS cos θ.",
+     "W = 20 N × 3 m × cos 60°.",
+     "W = 20 × 3 × 0.5.",
+     "W = 30 J."
+    ],
+    "answer": "30 J"
+   },
+   {
+    "hints": [
+     "First write W = FS cos θ.",
+     "Rearrange to find cos θ, then use the angle whose cosine is 0.5."
+    ],
+    "accept": [
+     [
+      "60°"
+     ],
+     [
+      "60"
+     ]
+    ],
+    "question": "A body moves a distance of 5 metres in a straight line under the action of a force of 8 newtons. If the work done is 20 joules, find the angle which the force makes with the direction of motion of the body.",
+    "solution": [
+     "W = FS cos θ.",
+     "20 J = 8 N × 5 m × cos θ.",
+     "cos θ = 20/(8 × 5) = 0.5.",
+     "θ = 60°."
+    ],
+    "answer": "60°"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the given force, distance and angle shown in the question's figure.",
+     "text": "Force applied F = 65 N; distance covered S = 20 m; θ = 30°."
+    },
+    {
+     "why": "The force is at an angle, so only its component in the direction of motion does work.",
+     "text": "Using Eq. 5.2, W = FS cos 30°."
+    },
+    {
+     "why": "Substituting the values and cos 30° = 0.866 gives the work in newton-metres.",
+     "text": "W = 65 N × 20 m × 0.866."
+    },
+    {
+     "why": "A newton-metre is equal to a joule.",
+     "text": "W = 1125.8 Nm = 1125.8 J."
+    }
+   ],
+   "question": "Find the work done by a 65 N force in pulling the suitcase (Fig. 5.8) for a distance of 20 metres.",
+   "answer": "1125.8 J"
+  },
+  "explain": [
+   {
+    "title": "When is work done?",
+    "body": "Work is said to be done when a force acts on an object and moves it through some distance. The textbook defines work as: “Work is defined as the product of magnitude of force and the distance covered in the direction of force.”"
+   },
+   {
+    "title": "Work in the same direction",
+    "body": "When force and distance are in the same direction, use W = F × S. If an object does not move, its displacement is zero and no work is done by the force."
+   },
+   {
+    "title": "A force at an angle",
+    "body": "Only the component F cos θ acts along the motion. Therefore, W = FS cos θ. At 90°, cos 90° = 0, so a perpendicular force does no work."
+   },
+   {
+    "title": "Work, graphs and units",
+    "body": "Work is a scalar quantity, so it has magnitude but no direction. The area under a force-distance graph represents work. The SI unit is the joule: 1 J = 1 N m."
+   }
+  ],
+  "mistakes": [
+   "Using W = FS when the force is at an angle; use W = FS cos θ instead.",
+   "Using the full force instead of its component along the displacement.",
+   "Saying that work is done simply because a force is applied, even when there is no displacement.",
+   "Forgetting that a perpendicular force does zero work.",
+   "Leaving out the unit J, or writing the wrong unit for work.",
+   "Treating work as a vector; work is a scalar quantity."
+  ]
+ }
+}

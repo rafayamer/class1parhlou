@@ -1,0 +1,957 @@
+{
+ "note": {
+  "explanation": "Acceleration tells us how quickly velocity changes. A change in velocity may be a change in speed, direction, or both.",
+  "examples": [
+   "A car speeds up from rest: its velocity increases, so it has positive acceleration.",
+   "A moving car brakes and slows down: its velocity decreases, so it has negative acceleration."
+  ],
+  "checkAnswer": "Acceleration is the change in velocity divided by the time taken: a_av = (v_f − v_i)/t.",
+  "keywords": [
+   "acceleration",
+   "velocity",
+   "deceleration",
+   "retardation",
+   "uniform acceleration",
+   "m s^-2"
+  ],
+  "simple": "Acceleration is how quickly velocity changes. If velocity gets smaller, acceleration is negative.",
+  "checkQuestion": "A body changes velocity from 4 m s⁻¹ to 10 m s⁻¹ in 3 s. What is its average acceleration?",
+  "title": "Acceleration",
+  "steps": [
+   "Find the change in velocity: v_f − v_i.",
+   "Divide the change in velocity by the time taken: a_av = (v_f − v_i)/t.",
+   "Write the answer in m s⁻²."
+  ],
+  "answer": "2 m s⁻²",
+  "checkAccept": [
+   [
+    "2 m s^-2"
+   ],
+   [
+    "2"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "2 m s⁻²",
+    "4 m s⁻²",
+    "6 m s⁻²",
+    "8 m s⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A cyclist's velocity changes from 3 m s⁻¹ to 15 m s⁻¹ in 6 s. What is the average acceleration?",
+   "rationales": [
+    "Correct: (15 − 3)/6 = 2 m s⁻².",
+    "This is the velocity change divided by 3 s, not 6 s.",
+    "This does not equal the velocity change divided by the time.",
+    "This is the velocity change without dividing by the time."
+   ]
+  },
+  {
+   "options": [
+    "m s⁻¹",
+    "m s⁻²",
+    "m² s⁻¹",
+    "s m⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of acceleration?",
+   "rationales": [
+    "This is the SI unit of velocity, not acceleration.",
+    "Correct: acceleration is change in velocity per time, so its unit is m s⁻².",
+    "This is not the unit obtained from velocity divided by time.",
+    "This is not the SI unit of acceleration."
+   ]
+  },
+  {
+   "options": [
+    "The velocity is increasing.",
+    "The velocity is decreasing.",
+    "The body is at rest.",
+    "The body is moving in a circle."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In the direction of motion, what does negative acceleration indicate?",
+   "rationales": [
+    "Increasing velocity in the direction of motion indicates positive acceleration.",
+    "Correct: the textbook describes negative acceleration when velocity is decreasing.",
+    "Being at rest alone does not tell us whether acceleration is zero or non-zero.",
+    "Circular motion may involve acceleration, but it does not define negative acceleration."
+   ]
+  },
+  {
+   "options": [
+    "a_av = (v_f − v_i)/t",
+    "a_av = (v_f + v_i)/t",
+    "a_av = t/(v_f − v_i)",
+    "a_av = v_f − v_i"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which equation gives average acceleration?",
+   "rationales": [
+    "Correct: average acceleration is change in velocity divided by time taken.",
+    "Adding the velocities does not give the change in velocity.",
+    "This puts time over the velocity change, so it is the reciprocal of the required relationship.",
+    "This gives the change in velocity but does not divide by time."
+   ]
+  },
+  {
+   "options": [
+    "The acceleration is uniform.",
+    "The acceleration is variable or non-uniform.",
+    "The body has no velocity.",
+    "The body must be at rest."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is acceleration called when the time rate of change of velocity is constant?",
+   "rationales": [
+    "Correct: constant time rate of change of velocity is uniform acceleration.",
+    "Variable or non-uniform acceleration applies when magnitude or direction, or both, changes.",
+    "A body can have velocity while its acceleration is uniform.",
+    "Uniform acceleration does not mean that the body is at rest."
+   ]
+  },
+  {
+   "options": [
+    "3 m s⁻²",
+    "−3 m s⁻²",
+    "6 m s⁻²",
+    "−6 m s⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A car moving at 18 m s⁻¹ slows uniformly to 6 m s⁻¹ in 4 s. What is its average acceleration?",
+   "rationales": [
+    "This gives the magnitude but misses the negative sign for decreasing velocity.",
+    "Correct: (6 − 18)/4 = −3 m s⁻².",
+    "This is not the velocity change divided by the time.",
+    "This is not the velocity change divided by the time."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A plane starts running from rest on a run-way as shown in the figure below. It accelerates down the run-way and after 20 seconds attains a velocity of 252 km h⁻¹. Determine the average acceleration of the plane.",
+   "finalAnswer": "3.5 m s⁻²",
+   "marks": 4,
+   "source": "Example 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "v_f=70"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial and final velocities are needed to find the change in velocity.",
+     "description": "Identify the velocities and convert the final velocity to SI units.",
+     "how": "State v_i = 0 and convert 252 km h⁻¹ to 70 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "a_av=(v_f-v_i)/t"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relationship earns the method mark.",
+     "description": "Use the average acceleration equation.",
+     "how": "Write a_av = (v_f − v_i)/t."
+    },
+    {
+     "accept": [
+      [
+       "(70-0)/20"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substituting the correct values demonstrates the calculation.",
+     "description": "Substitute the velocities and time.",
+     "how": "Use (70 − 0)/20."
+    },
+    {
+     "accept": [
+      [
+       "3.5 m s^-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final numerical result and unit complete the solution.",
+     "description": "Give the final acceleration.",
+     "how": "State 3.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 0",
+    "Final velocity = v_f = 252 km h⁻¹",
+    "v_f = (252 × 10³ m)/(60 × 60 s) = 70 m s⁻¹",
+    "Time taken = t = 20 s",
+    "Average acceleration = a_av = ?",
+    "Using a_av = (v_f − v_i)/t",
+    "Putting the values",
+    "a_av = (70 m s⁻¹ − 0)/(20 s)",
+    "a_av = 3.5 m s⁻²"
+   ]
+  },
+  {
+   "text": "The muzzle velocity of one gun with a longer barrel is lesser than that of another gun with a shorter barrel. In which gun is the acceleration of the bullet larger? Explain your answer.",
+   "finalAnswer": "The acceleration cannot be determined from muzzle velocity alone; the time taken or barrel distance is also needed.",
+   "marks": 4,
+   "source": "CRQ 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "acceleration=(v_f-v_i)/t"
+      ],
+      [
+       "a=(v_f-v_i)/t"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration relationship identifies the additional information required.",
+     "description": "State the relationship for average acceleration.",
+     "how": "Write acceleration as change in velocity divided by time."
+    },
+    {
+     "accept": [
+      [
+       "!time",
+       "!distance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Muzzle velocity alone does not specify how long the acceleration acts or the distance over which it acts.",
+     "description": "Recognise what information is missing.",
+     "how": "Explain that time or the acceleration distance is not given."
+    },
+    {
+     "accept": [
+      [
+       "cannot be determined"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct conclusion follows because the given comparison of final velocities is insufficient.",
+     "description": "Give and justify the conclusion.",
+     "how": "State that the larger acceleration cannot be identified from the information provided."
+    }
+   ],
+   "modelAnswer": [
+    "Average acceleration = change in velocity/time taken",
+    "The muzzle velocity gives the final velocity, but the time taken (or the distance over which the bullet accelerates) is not given.",
+    "Therefore, the acceleration cannot be determined from muzzle velocity alone."
+   ]
+  },
+  {
+   "text": "Is it possible that the velocity of an object is zero at an instant of time, but its acceleration is not zero? If yes, give an example of such a case.",
+   "finalAnswer": "Yes. At the highest point of a ball thrown vertically upward, its instantaneous velocity is zero, but its acceleration is g downward.",
+   "marks": 4,
+   "source": "CRQ 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question asks whether this situation can occur.",
+     "description": "Answer yes or no.",
+     "how": "State that it is possible."
+    },
+    {
+     "accept": [
+      [
+       "highest point"
+      ],
+      [
+       "top"
+      ]
+     ],
+     "marks": 1,
+     "why": "The highest point of an upward throw is a valid example.",
+     "description": "Give an example.",
+     "how": "Refer to a ball thrown vertically upward."
+    },
+    {
+     "accept": [
+      [
+       "v=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The example must identify the instant when the velocity is zero.",
+     "description": "State the velocity at that instant.",
+     "how": "Say that the velocity is momentarily zero at the highest point."
+    },
+    {
+     "accept": [
+      [
+       "g downward"
+      ],
+      [
+       "acceleration downward"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gravity continues to produce acceleration even when the ball's velocity is momentarily zero.",
+     "description": "Give the acceleration.",
+     "how": "State that acceleration due to gravity is downward."
+    }
+   ],
+   "modelAnswer": [
+    "Yes.",
+    "A ball thrown vertically upward has zero velocity at its highest point.",
+    "Its acceleration is still g downward due to gravity."
+   ]
+  },
+  {
+   "text": "A truck starts from rest. It reaches a velocity of 90 km h⁻¹ in 50 seconds. Find its average acceleration.",
+   "finalAnswer": "0.5 m s⁻²",
+   "marks": 4,
+   "source": "Numerical 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "v_f=25"
+      ]
+     ],
+     "marks": 1,
+     "why": "The velocities must be known in consistent units.",
+     "description": "Identify and convert the velocities.",
+     "how": "Use v_i = 0 and convert 90 km h⁻¹ to 25 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "a=(v_f-v_i)/t"
+      ],
+      [
+       "a_av=(v_f-v_i)/t"
+      ]
+     ],
+     "marks": 1,
+     "why": "The average acceleration equation is the required method.",
+     "description": "Write the acceleration equation.",
+     "how": "Use a_av = (v_f − v_i)/t."
+    },
+    {
+     "accept": [
+      [
+       "(25-0)/50"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution earns the calculation mark.",
+     "description": "Substitute the values.",
+     "how": "Substitute 25 m s⁻¹, 0, and 50 s."
+    },
+    {
+     "accept": [
+      [
+       "0.5 m s^-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the correct unit.",
+     "description": "Give the final acceleration.",
+     "how": "State 0.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 0",
+    "Final velocity = v_f = 90 km h⁻¹ = 25 m s⁻¹",
+    "Time taken = t = 50 s",
+    "Using a_av = (v_f − v_i)/t",
+    "a_av = (25 − 0)/50",
+    "a_av = 0.5 m s⁻²"
+   ]
+  },
+  {
+   "text": "A car passes a green traffic signal while moving with a velocity of 5 m s⁻¹. It then accelerates to 1.5 m s⁻². What is the velocity of car after 5 seconds?",
+   "finalAnswer": "12.5 m s⁻¹",
+   "marks": 4,
+   "source": "Numerical 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=5",
+       "a=1.5",
+       "t=5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The known quantities must be identified before using the equation.",
+     "description": "Identify the given values.",
+     "how": "State v_i = 5 m s⁻¹, a = 1.5 m s⁻², and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "v_f=v_i+at"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the constant-acceleration equation given in the section.",
+     "description": "Write the equation.",
+     "how": "Use v_f = v_i + at."
+    },
+    {
+     "accept": [
+      [
+       "5+1.5*5"
+      ],
+      [
+       "5+1.5x5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substituting the given values leads to the required final velocity.",
+     "description": "Substitute the values.",
+     "how": "Use v_f = 5 + (1.5 × 5)."
+    },
+    {
+     "accept": [
+      [
+       "12.5 m s^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical answer and velocity unit are required.",
+     "description": "Give the final velocity.",
+     "how": "State 12.5 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 5 m s⁻¹",
+    "Acceleration = a = 1.5 m s⁻²",
+    "Time taken = t = 5 s",
+    "Using v_f = v_i + at",
+    "v_f = 5 + (1.5 × 5)",
+    "v_f = 12.5 m s⁻¹"
+   ]
+  },
+  {
+   "text": "A motorcycle initially travelling at 18 km h⁻¹ accelerates at constant rate of 2 m s⁻². How far will the motorcycle go in 10 seconds?",
+   "finalAnswer": "150 m",
+   "marks": 5,
+   "source": "Numerical 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial velocity must be converted to SI units.",
+     "description": "Convert the initial velocity.",
+     "how": "Convert 18 km h⁻¹ to 5 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "s=v_it+1/2at^2"
+      ],
+      [
+       "s=ut+1/2at^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The displacement equation is appropriate for constant acceleration.",
+     "description": "Write the equation for distance.",
+     "how": "Use s = v_i t + ½at²."
+    },
+    {
+     "accept": [
+      [
+       "5*10+1/2*2*10^2"
+      ],
+      [
+       "5x10+1/2x2x10^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution uses the converted velocity, acceleration, and time.",
+     "description": "Substitute the values.",
+     "how": "Put v_i = 5 m s⁻¹, a = 2 m s⁻², and t = 10 s into the equation."
+    },
+    {
+     "accept": [
+      [
+       "50+100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Evaluating the two terms gives the distance travelled.",
+     "description": "Evaluate the expression.",
+     "how": "Calculate 50 + 100."
+    },
+    {
+     "accept": [
+      [
+       "150 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct final distance and unit complete the solution.",
+     "description": "Give the final answer.",
+     "how": "State 150 m."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 18 km h⁻¹ = 5 m s⁻¹",
+    "Acceleration = a = 2 m s⁻²",
+    "Time taken = t = 10 s",
+    "Using s = v_i t + ½at²",
+    "s = (5 × 10) + (½ × 2 × 10²)",
+    "s = 50 + 100",
+    "s = 150 m"
+   ]
+  },
+  {
+   "text": "A wagon is moving on the road with a velocity of 54 km h⁻¹. Brakes are applied suddenly. The wagon covers a distance of 25 m before stopping. Determine the acceleration of the wagon.",
+   "finalAnswer": "-4.5 m s⁻²",
+   "marks": 5,
+   "source": "Numerical 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=15",
+       "v_f=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial velocity must be converted and the stopping velocity identified.",
+     "description": "State the initial and final velocities.",
+     "how": "Convert 54 km h⁻¹ to 15 m s⁻¹ and use v_f = 0."
+    },
+    {
+     "accept": [
+      [
+       "s=25"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given distance is required for the constant-acceleration calculation.",
+     "description": "Identify the displacement.",
+     "how": "Use s = 25 m."
+    },
+    {
+     "accept": [
+      [
+       "v_f^2=v_i^2+2as"
+      ]
+     ],
+     "marks": 1,
+     "why": "This equation connects the velocities, acceleration, and distance.",
+     "description": "Write the equation.",
+     "how": "Use v_f² = v_i² + 2as."
+    },
+    {
+     "accept": [
+      [
+       "a=(0^2-15^2)/(2*25)"
+      ],
+      [
+       "a=(0-225)/50"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution correctly gives a negative acceleration for the slowing wagon.",
+     "description": "Substitute and solve for acceleration.",
+     "how": "Rearrange for a and substitute the known values."
+    },
+    {
+     "accept": [
+      [
+       "-4.5 m s^-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The negative sign and correct unit show that the wagon is decelerating.",
+     "description": "Give the final acceleration.",
+     "how": "State −4.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 54 km h⁻¹ = 15 m s⁻¹",
+    "Final velocity = v_f = 0",
+    "Distance = s = 25 m",
+    "Using v_f² = v_i² + 2as",
+    "0² = 15² + 2a(25)",
+    "a = (0 − 225)/50",
+    "a = −4.5 m s⁻²"
+   ]
+  },
+  {
+   "text": "A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+   "finalAnswer": "3 s, 30 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "A dropped stone starts from rest and accelerates due to gravity.",
+     "description": "Identify the initial conditions.",
+     "how": "Use v_i = 0 and g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "s=1/2gt^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "This equation relates the fall distance to the time for a body starting from rest.",
+     "description": "Set up the distance equation.",
+     "how": "Use s = ½gt²."
+    },
+    {
+     "accept": [
+      [
+       "45=5t^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution allows the time to be calculated.",
+     "description": "Substitute the height and gravity.",
+     "how": "Put s = 45 m and g = 10 m s⁻² into the equation."
+    },
+    {
+     "accept": [
+      [
+       "t=3 s"
+      ],
+      [
+       "3 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question asks for the time taken to reach the ground.",
+     "description": "Give the time.",
+     "how": "State t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "30 m s^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final velocity is also required.",
+     "description": "Give the velocity just before impact.",
+     "how": "Use v_f = gt = 30 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 0",
+    "Acceleration due to gravity = g = 10 m s⁻²",
+    "Distance = s = 45 m",
+    "Using s = ½gt²",
+    "45 = ½ × 10 × t²",
+    "t² = 9",
+    "t = 3 s",
+    "Using v_f = gt",
+    "v_f = 10 × 3 = 30 m s⁻¹"
+   ]
+  },
+  {
+   "text": "A ball is dropped from the top of a tower. The ball reaches the ground in 5 seconds. Find the height of the tower and the velocity of the ball with which it strikes the ground.",
+   "finalAnswer": "125 m, 50 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "t=5",
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "These are the initial conditions for the falling ball.",
+     "description": "Identify the given values.",
+     "how": "Use v_i = 0, t = 5 s, and g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "s=1/2gt^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "This gives the distance fallen from rest.",
+     "description": "Write the distance equation.",
+     "how": "Use s = ½gt²."
+    },
+    {
+     "accept": [
+      [
+       "125 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculated distance is the tower's height.",
+     "description": "Find the height.",
+     "how": "Substitute t = 5 s and g = 10 m s⁻² to obtain 125 m."
+    },
+    {
+     "accept": [
+      [
+       "v_f=gt"
+      ]
+     ],
+     "marks": 1,
+     "why": "This relates the final velocity to the time during free fall.",
+     "description": "Use the velocity equation.",
+     "how": "Use v_f = gt."
+    },
+    {
+     "accept": [
+      [
+       "50 m s^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final velocity and its unit complete the answer.",
+     "description": "Give the velocity at impact.",
+     "how": "State 50 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Initial velocity = v_i = 0",
+    "Time taken = t = 5 s",
+    "Acceleration due to gravity = g = 10 m s⁻²",
+    "Using s = ½gt²",
+    "s = ½ × 10 × 5² = 125 m",
+    "Height of the tower = 125 m",
+    "Using v_f = gt",
+    "v_f = 10 × 5 = 50 m s⁻¹"
+   ]
+  },
+  {
+   "text": "A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+   "finalAnswer": "30 m s⁻¹, 46 m",
+   "marks": 5,
+   "source": "Numerical 2.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_f=0",
+       "t=3",
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "At the highest point the ball's velocity is zero, and the time and gravity are given.",
+     "description": "Identify the values at the highest point.",
+     "how": "Use v_f = 0, t = 3 s, and g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "v_f=v_i-gt"
+      ],
+      [
+       "0=v_i-10*3"
+      ]
+     ],
+     "marks": 1,
+     "why": "This equation gives the launch velocity from the velocity at the highest point.",
+     "description": "Set up the velocity equation.",
+     "how": "Use the upward direction as positive and gravity as negative."
+    },
+    {
+     "accept": [
+      [
+       "30 m s^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial velocity is one part of the requested answer.",
+     "description": "Find the initial velocity.",
+     "how": "State 30 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "s=v_it-1/2gt^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "This calculates the rise above the launch point.",
+     "description": "Calculate the height gained.",
+     "how": "Use s = v_i t − ½gt²."
+    },
+    {
+     "accept": [
+      [
+       "46 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "Adding the 1 m launch height gives the height above ground.",
+     "description": "Give the maximum height above the ground.",
+     "how": "Add the rise of 45 m to the initial height of 1 m."
+    }
+   ],
+   "modelAnswer": [
+    "At the highest point, final velocity = v_f = 0",
+    "Time taken = t = 3 s",
+    "Acceleration due to gravity = g = 10 m s⁻² downward",
+    "Using v_f = v_i − gt",
+    "0 = v_i − (10 × 3)",
+    "v_i = 30 m s⁻¹",
+    "Using s = v_i t − ½gt²",
+    "s = (30 × 3) − (½ × 10 × 3²) = 45 m",
+    "Height above the ground = 45 + 1 = 46 m"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "The board may ask you to define acceleration or distinguish positive acceleration, negative acceleration, and deceleration.",
+   "In numerical questions, write the given values first and convert km h⁻¹ to m s⁻¹ before using an equation.",
+   "For average acceleration, use a_av = (v_f − v_i)/t and include m s⁻² in the answer.",
+   "For constant acceleration, v_f = v_i + at is useful when the question asks for final velocity, initial velocity, acceleration, or time.",
+   "A negative answer for acceleration is important when velocity decreases; do not remove its minus sign."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start by changing 90 km h⁻¹ into m s⁻¹.",
+     "Use a_av = (v_f − v_i)/t; starting from rest means v_i = 0."
+    ],
+    "accept": [
+     [
+      "0.5 m s^-2"
+     ]
+    ],
+    "question": "A truck starts from rest. It reaches a velocity of 90 km h⁻¹ in 50 seconds. Find its average acceleration.",
+    "solution": [
+     "Initial velocity = v_i = 0",
+     "Final velocity = v_f = 90 km h⁻¹ = 25 m s⁻¹",
+     "Time taken = t = 50 s",
+     "Using a_av = (v_f − v_i)/t",
+     "a_av = (25 − 0)/50",
+     "a_av = 0.5 m s⁻²"
+    ],
+    "answer": "0.5 m s⁻²"
+   },
+   {
+    "hints": [
+     "Identify v_i, a, and t from the question.",
+     "Use the constant-acceleration equation v_f = v_i + at."
+    ],
+    "accept": [
+     [
+      "12.5 m s^-1"
+     ]
+    ],
+    "question": "A car passes a green traffic signal while moving with a velocity of 5 m s⁻¹. It then accelerates to 1.5 m s⁻². What is the velocity of car after 5 seconds?",
+    "solution": [
+     "Initial velocity = v_i = 5 m s⁻¹",
+     "Acceleration = a = 1.5 m s⁻²",
+     "Time taken = t = 5 s",
+     "Using v_f = v_i + at",
+     "v_f = 5 + (1.5 × 5)",
+     "v_f = 12.5 m s⁻¹"
+    ],
+    "answer": "12.5 m s⁻¹"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The plane starts from rest, so its initial velocity is zero.",
+     "text": "Initial velocity = v_i = 0"
+    },
+    {
+     "why": "This is the final velocity given in the question.",
+     "text": "Final velocity = v_f = 252 km h⁻¹"
+    },
+    {
+     "why": "Acceleration in SI units requires the velocity in m s⁻¹.",
+     "text": "= (252 × 10³ m)/(60 × 60 s) = 70 m s⁻¹"
+    },
+    {
+     "why": "The question gives the time taken as 20 seconds.",
+     "text": "Time taken = t = 20 s"
+    },
+    {
+     "why": "This identifies the quantity to be found.",
+     "text": "Average acceleration = a_av = ?"
+    },
+    {
+     "why": "Average acceleration is change in velocity divided by time taken.",
+     "text": "Using a_av = (v_f − v_i)/t"
+    },
+    {
+     "why": "Now insert the known velocities and time.",
+     "text": "Putting the values"
+    },
+    {
+     "why": "Substituting the values gives the acceleration calculation.",
+     "text": "a_av = (70 m s⁻¹ − 0)/(20 s)"
+    },
+    {
+     "why": "Dividing the change in velocity by 20 seconds gives the average acceleration.",
+     "text": "a_av = 3.5 m s⁻²"
+    }
+   ],
+   "question": "A plane starts running from rest on a run-way as shown in the figure below. It accelerates down the run-way and after 20 seconds attains a velocity of 252 km h⁻¹. Determine the average acceleration of the plane.",
+   "answer": "3.5 m s⁻²"
+  },
+  "explain": [
+   {
+    "title": "What acceleration means",
+    "body": "Acceleration is defined as the time rate of change of velocity. In other words, it tells how quickly velocity changes."
+   },
+   {
+    "title": "Positive and negative acceleration",
+    "body": "The acceleration is positive if the velocity is increasing and it is negative if the velocity is decreasing. Negative acceleration is also called deceleration or retardation."
+   },
+   {
+    "title": "Acceleration has direction",
+    "body": "Acceleration is a vector quantity like velocity, but the direction of acceleration is that of change of velocity. A change in velocity can occur in magnitude, direction, or both."
+   },
+   {
+    "title": "Average acceleration",
+    "body": "If a body is moving with an initial velocity v_i and after some time t its velocity changes to v_f, the change in velocity is Δv = v_f − v_i that occurs in time t. In this case, rate of change of velocity i.e., acceleration will be average acceleration. Use a_av = (v_f − v_i)/t, and write the SI unit as m s⁻²."
+   },
+   {
+    "title": "Uniform and non-uniform acceleration",
+    "body": "If time rate of change of velocity is constant, the acceleration is said to be uniform. If anyone of the magnitude or direction or both of them changes it is called variable or non-uniform acceleration."
+   }
+  ],
+  "mistakes": [
+   "Using km h⁻¹ directly in an equation when the other values are in SI units; convert it to m s⁻¹ first.",
+   "Reversing the subtraction in v_f − v_i, which can give the wrong sign.",
+   "Leaving out the minus sign when a body is slowing down.",
+   "Writing m s⁻¹ instead of the acceleration unit m s⁻².",
+   "Using v_f = v_i + at without checking that acceleration is constant."
+  ]
+ }
+}

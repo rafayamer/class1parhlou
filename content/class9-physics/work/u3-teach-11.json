@@ -1,0 +1,2449 @@
+{
+ "note": {
+  "explanation": "A force can change an object's motion. Newton's laws explain how forces affect motion, while momentum and impulse help us study collisions and recoil. Friction opposes motion between surfaces.",
+  "examples": [
+   "A 10 kg block pushed by a 5 N force has acceleration 0.5 m s⁻².",
+   "When a gun fires a bullet forward, the gun recoils backward."
+  ],
+  "checkAnswer": "The block accelerates at 0.5 m s⁻².",
+  "keywords": [
+   "force",
+   "inertia",
+   "momentum",
+   "impulse",
+   "friction",
+   "Newton's laws"
+  ],
+  "simple": "A force is a push or pull that can change motion. Momentum depends on mass and velocity.",
+  "checkQuestion": "What is the acceleration of a 10 kg block when a 5 N force acts on it?",
+  "title": "Dynamics: forces, motion and momentum",
+  "steps": [
+   "Find the resultant force acting on the object.",
+   "Use F = ma to find acceleration, or use momentum change where appropriate.",
+   "For collisions in an isolated system, equate total momentum before and after.",
+   "Include units and direction in the final answer."
+  ],
+  "answer": "Dynamics studies forces and their effects on motion.",
+  "checkAccept": [
+   [
+    "0.5 m s^-2"
+   ],
+   [
+    "0.5 m/s^2"
+   ],
+   [
+    "0.5"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "inertia",
+    "velocity",
+    "momentum",
+    "reaction"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q3.1. When we kick a stone, we get hurt. This is due to:",
+   "rationales": [
+    "Inertia is resistance to a change in motion; it is not the force that causes the hurt here.",
+    "Velocity describes motion and does not explain the force on the foot.",
+    "Momentum is mass times velocity, not the paired force responsible for the hurt.",
+    "The stone exerts an equal and opposite reaction force on the foot."
+   ]
+  },
+  {
+   "options": [
+    "the resultant force on it begins to decrease.",
+    "the resultant force on it is zero.",
+    "the resultant force on it begins to increase.",
+    "the resultant force is at right angle to its tangential velocity."
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q3.2. An object will continue its motion with constant acceleration until:",
+   "rationales": [
+    "A decrease in resultant force changes acceleration, since acceleration is proportional to net force.",
+    "Zero resultant force means zero acceleration, not continued constant non-zero acceleration.",
+    "An increase in resultant force changes acceleration.",
+    "A force at right angles changes the direction of motion; this is not the stated condition for constant acceleration."
+   ]
+  },
+  {
+   "options": [
+    "Friction",
+    "Air resistance",
+    "Electrostatic force",
+    "Tension in the string"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.3. Which of the following is a non-contact force?",
+   "rationales": [
+    "Friction requires surfaces to touch.",
+    "Air resistance acts through collisions with air and is a contact force.",
+    "Electrostatic force can act without physical contact.",
+    "Tension is transmitted through a taut string in contact."
+   ]
+  },
+  {
+   "options": [
+    "p′ = p",
+    "p′ = −p",
+    "p′ = 2p",
+    "p′ = −2p"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q3.4. A ball with initial momentum p hits a solid wall and bounces back with the same velocity. Its momentum p′ after collision will be:",
+   "rationales": [
+    "Momentum in the same direction would not describe a bounce back.",
+    "The velocity reverses while its magnitude stays the same, so momentum is −p.",
+    "Twice the initial momentum has the wrong magnitude.",
+    "The momentum change is −2p, but the final momentum is −p."
+   ]
+  },
+  {
+   "options": [
+    "v",
+    "−v",
+    "0",
+    "−1/2"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.5. A particle of mass m moving with a velocity v collides with another particle of the same mass at rest. The velocity of the first particle after collision is:",
+   "rationales": [
+    "This would mean the first particle is unchanged, as if there were no collision.",
+    "This would reverse its velocity and does not give the expected exchange of velocities for equal masses.",
+    "For an elastic collision of equal masses, the moving particle transfers its velocity to the one initially at rest.",
+    "This is not a velocity and is not the result for equal-mass particles."
+   ]
+  },
+  {
+   "options": [
+    "Newton's first law of motion",
+    "Newton's second law of motion",
+    "Newton's third law of motion",
+    "None of these"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.6. Conservation of linear momentum is equivalent to:",
+   "rationales": [
+    "The first law describes inertia and constant velocity when net force is zero.",
+    "The second law relates net force to rate of change of momentum.",
+    "For an isolated interacting system, equal and opposite interaction forces lead to conserved total momentum.",
+    "This is not correct because the principle is equivalent to the third law."
+   ]
+  },
+  {
+   "options": [
+    "5 N",
+    "−10 N",
+    "−12 N",
+    "−15 N"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.7. An object with a mass of 5 kg moves at constant velocity of 10 m s⁻¹. A constant force then acts for 5 seconds on the object and gives it a velocity of 2 m s⁻¹ in the opposite direction. The force acting on the object is:",
+   "rationales": [
+    "This is not the force obtained from the change in velocity.",
+    "The velocity change is −12 m s⁻¹, giving a force of −12 N, not −10 N.",
+    "F = m(v−u)/t = 5(−2−10)/5 = −12 N.",
+    "This does not follow from the stated momentum change and time."
+   ]
+  },
+  {
+   "options": [
+    "magnitude of force",
+    "time interval",
+    "product of force and time",
+    "none of these"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.8. A large force acts on an object for a very short interval of time. In this case, it is easy to determine:",
+   "rationales": [
+    "The very short interaction makes the exact force difficult to measure.",
+    "The short interval is difficult to determine precisely.",
+    "The impulse, the product of force and time, can be determined from the change in momentum.",
+    "This is not correct because the force-time product can be found."
+   ]
+  },
+  {
+   "options": [
+    "decreases temperature",
+    "acts as ball bearings",
+    "prevents direct contact of the surfaces",
+    "provides rolling friction"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q3.9. A lubricant is usually introduced between two surfaces to decrease friction. The lubricant:",
+   "rationales": [
+    "Lower temperature is not the defining action by which a lubricant reduces friction.",
+    "Lubricant is not itself a set of ball bearings.",
+    "A lubricant layer separates surfaces and reduces direct contact and friction.",
+    "Lubricant does not reduce friction by providing rolling friction."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q3.1. What kind of changes in motion may be produced by a force?",
+   "finalAnswer": "A force may change an object's speed, direction of motion, or shape.",
+   "marks": 2,
+   "source": "Short 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "speed"
+      ],
+      [
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "A force can change how fast an object moves.",
+     "description": "Identifies a change in speed or direction.",
+     "how": "State that force can change speed or direction of motion."
+    },
+    {
+     "accept": [
+      [
+       "shape"
+      ]
+     ],
+     "marks": 1,
+     "why": "A force can also deform an object.",
+     "description": "Mentions change of shape.",
+     "how": "Add that force may change an object's shape."
+    }
+   ],
+   "modelAnswer": [
+    "A force may change the speed or direction of motion of an object.",
+    "A force may also change its shape."
+   ]
+  },
+  {
+   "text": "Q3.2. Give 5 examples of contact forces.",
+   "finalAnswer": "Examples include friction, air resistance, tension, normal reaction and muscular force.",
+   "marks": 2,
+   "source": "Short 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "friction",
+       "air resistance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples show that contact forces act through physical interaction.",
+     "description": "Gives at least two valid examples.",
+     "how": "Name contact forces such as friction and air resistance."
+    },
+    {
+     "accept": [
+      [
+       "tension",
+       "normal reaction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Several appropriate examples are required.",
+     "description": "Gives three further valid examples.",
+     "how": "Add tension, normal reaction and muscular force."
+    }
+   ],
+   "modelAnswer": [
+    "Five examples of contact forces are friction, air resistance, tension, normal reaction and muscular force."
+   ]
+  },
+  {
+   "text": "Q3.3. An object moves with constant velocity in free space. How long will the object continue to move with this velocity?",
+   "finalAnswer": "It will continue indefinitely, unless an external resultant force acts on it.",
+   "marks": 2,
+   "source": "Short 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "indefinitely"
+      ],
+      [
+       "forever"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's first law predicts continued uniform motion.",
+     "description": "States that the motion continues indefinitely.",
+     "how": "Say that it continues indefinitely."
+    },
+    {
+     "accept": [
+      [
+       "external resultant force"
+      ]
+     ],
+     "marks": 1,
+     "why": "The condition for changing the motion must be clear.",
+     "description": "States the condition that could change the motion.",
+     "how": "Add that an external resultant force is needed to change it."
+    }
+   ],
+   "modelAnswer": [
+    "It will continue to move with constant velocity indefinitely.",
+    "It will change its motion only if an external resultant force acts on it."
+   ]
+  },
+  {
+   "text": "Q3.4. Define impulse of force.",
+   "finalAnswer": "Impulse is the product of force and the time for which it acts; it equals the change in momentum.",
+   "marks": 2,
+   "source": "Short 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "force",
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse is defined using force and its time of action.",
+     "description": "Gives the force-time definition.",
+     "how": "State that impulse is force multiplied by time."
+    },
+    {
+     "accept": [
+      [
+       "change in momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse is also equal to momentum change.",
+     "description": "Connects impulse with momentum change.",
+     "how": "State that impulse equals change in momentum."
+    }
+   ],
+   "modelAnswer": [
+    "Impulse of force is the product of force and the time for which it acts.",
+    "Impulse equals the change in momentum."
+   ]
+  },
+  {
+   "text": "Q3.5. Why has not Newton's first law been proved on the Earth?",
+   "finalAnswer": "Because friction and other external forces act on objects on Earth, so a perfectly force-free situation cannot be obtained.",
+   "marks": 2,
+   "source": "Short 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Friction is an important unavoidable force in ordinary terrestrial situations.",
+     "description": "Identifies friction or other external forces.",
+     "how": "Mention that friction and other forces act on objects."
+    },
+    {
+     "accept": [
+      [
+       "perfectly force-free"
+      ],
+      [
+       "no resultant force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains why the ideal condition of the law is difficult to demonstrate.",
+     "description": "Explains that an ideal force-free test cannot be made.",
+     "how": "Conclude that a perfectly force-free situation cannot be obtained."
+    }
+   ],
+   "modelAnswer": [
+    "On Earth, friction and other external forces act on objects.",
+    "Therefore, a perfectly force-free situation required to prove the first law cannot be obtained."
+   ]
+  },
+  {
+   "text": "Q3.6. When sitting in a car which suddenly accelerates from rest, you are pushed back into the seat, why?",
+   "finalAnswer": "Because of inertia, the body tends to remain at rest while the car and seat move forward.",
+   "marks": 2,
+   "source": "Short 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inertia"
+      ]
+     ],
+     "marks": 1,
+     "why": "Inertia explains the body's resistance to a change in motion.",
+     "description": "Names inertia.",
+     "how": "State that the effect is due to inertia."
+    },
+    {
+     "accept": [
+      [
+       "remain at rest"
+      ]
+     ],
+     "marks": 1,
+     "why": "Describes the body's motion relative to the accelerating car.",
+     "description": "Explains why the seat seems to push the person backward.",
+     "how": "Say that the body tends to remain at rest as the car moves forward."
+    }
+   ],
+   "modelAnswer": [
+    "Due to inertia, the body tends to remain at rest when the car suddenly starts moving forward.",
+    "The seat moves forward against the body, so the person feels pushed back."
+   ]
+  },
+  {
+   "text": "Q3.7. The force expressed in Newton's second law is a net force. Why is it so?",
+   "finalAnswer": "Because only the resultant of all forces produces acceleration; balanced forces have zero resultant and no acceleration.",
+   "marks": 2,
+   "source": "Short 3.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "resultant"
+      ],
+      [
+       "net force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's second law applies to the combined effect of forces.",
+     "description": "Identifies the force as the resultant.",
+     "how": "State that the law uses the resultant or net force."
+    },
+    {
+     "accept": [
+      [
+       "acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must link net force with change in motion.",
+     "description": "Explains the role of the net force.",
+     "how": "Explain that balanced forces give no acceleration."
+    }
+   ],
+   "modelAnswer": [
+    "Only the resultant (net) force produces acceleration.",
+    "If the forces are balanced, their resultant is zero and there is no acceleration."
+   ]
+  },
+  {
+   "text": "Q3.8. How can you show that rolling friction is lesser than the sliding friction?",
+   "finalAnswer": "Pull a block with a spring balance, first sliding and then rolling it on rollers; the smaller rolling force shows rolling friction is less.",
+   "marks": 2,
+   "source": "Short 3.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "spring balance"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison needs a way to measure the pulling force.",
+     "description": "Describes a measurement method.",
+     "how": "Use a spring balance to pull the block."
+    },
+    {
+     "accept": [
+      [
+       "rollers"
+      ],
+      [
+       "rolling friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "A comparison of the two cases establishes which friction is smaller.",
+     "description": "Compares rolling and sliding forces.",
+     "how": "Compare sliding with rolling on rollers and identify the smaller reading."
+    }
+   ],
+   "modelAnswer": [
+    "Pull a block across a surface with a spring balance and note the reading while it slides.",
+    "Place rollers beneath it and pull it again; the smaller reading shows rolling friction is less than sliding friction."
+   ]
+  },
+  {
+   "text": "Q3.9. Define terminal velocity of an object.",
+   "finalAnswer": "Terminal velocity is the constant maximum velocity reached when the resistive force balances the object's weight, giving zero resultant force.",
+   "marks": 2,
+   "source": "Short 3.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "constant"
+      ],
+      [
+       "maximum velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Terminal velocity is a steady limiting speed.",
+     "description": "Defines it as a constant limiting velocity.",
+     "how": "State that it is the constant maximum velocity."
+    },
+    {
+     "accept": [
+      [
+       "resistive force",
+       "weight"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balance of forces explains why the speed becomes constant.",
+     "description": "Gives the force-balance condition.",
+     "how": "Explain that resistance balances weight, so resultant force is zero."
+    }
+   ],
+   "modelAnswer": [
+    "Terminal velocity is the constant maximum velocity of an object falling through a fluid.",
+    "At this velocity, resistive force balances the object's weight and the resultant force is zero."
+   ]
+  },
+  {
+   "text": "Q3.10. An astronaut walking in space wants to return to his spaceship by firing a hand rocket. In what direction does he fire the rocket?",
+   "finalAnswer": "He fires the rocket away from the spaceship so that the reaction pushes him towards it.",
+   "marks": 2,
+   "source": "Short 3.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "away from the spaceship"
+      ]
+     ],
+     "marks": 1,
+     "why": "The direction of expelled gas or thrust must be identified.",
+     "description": "Gives the firing direction.",
+     "how": "Fire the rocket away from the spaceship."
+    },
+    {
+     "accept": [
+      [
+       "towards it"
+      ],
+      [
+       "toward it"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's third law explains the astronaut's opposite motion.",
+     "description": "Gives the astronaut's resulting direction.",
+     "how": "State that the reaction pushes him toward the spaceship."
+    }
+   ],
+   "modelAnswer": [
+    "He fires the rocket away from the spaceship.",
+    "The reaction force pushes the astronaut towards the spaceship."
+   ]
+  },
+  {
+   "text": "Q3.1. Two ice skaters weighing 60kg and 80 kg push off against each other on a frictionless ice track. The 60 kg skater gains a velocity of 4 ms⁻¹. Considering all the relevant calculations involved, explain how Newton's third law applies to this situation.",
+   "finalAnswer": "The 80 kg skater moves at 3 m s⁻¹ in the opposite direction; the skaters exert equal and opposite forces on each other.",
+   "marks": 5,
+   "source": "CRQ 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "equal and opposite forces"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the action-reaction pair required by Newton's third law.",
+     "description": "States the third-law force pair.",
+     "how": "Identify equal and opposite forces during the push."
+    },
+    {
+     "accept": [
+      [
+       "240 kg m s^-1"
+      ],
+      [
+       "240"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first skater's momentum establishes the system's momentum change.",
+     "description": "Calculates the first skater's momentum.",
+     "how": "Calculate 60 × 4 = 240 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "3 m s^-1"
+      ],
+      [
+       "3 m/s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The second skater must gain equal momentum in the opposite direction.",
+     "description": "Calculates the second skater's velocity with direction.",
+     "how": "Use 80v = 240 to obtain 3 m s⁻¹ opposite."
+    },
+    {
+     "accept": [
+      [
+       "opposite direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Direction is essential to the momentum and force relationship.",
+     "description": "Concludes the directions are opposite.",
+     "how": "State that the 80 kg skater moves opposite to the 60 kg skater."
+    }
+   ],
+   "modelAnswer": [
+    "By Newton's third law, the skaters exert equal and opposite forces on each other.",
+    "Momentum of the 60 kg skater = 60 × 4 = 240 kg m s⁻¹.",
+    "Initially the total momentum is zero, so the 80 kg skater gains 240 kg m s⁻¹ in the opposite direction.",
+    "80v = 240, so v = 3 m s⁻¹.",
+    "The 80 kg skater moves at 3 m s⁻¹ opposite to the 60 kg skater."
+   ]
+  },
+  {
+   "text": "Q3.2. Inflatable airbags are installed in the vehicles as safety equipment. In terms of momentum, what is the advantage of airbags over seatbelts?",
+   "finalAnswer": "An airbag increases the time taken for momentum to become zero, so the rate of change of momentum and the force on the passenger are smaller.",
+   "marks": 4,
+   "source": "CRQ 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "momentum"
+      ],
+      [
+       "change in momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must frame the safety benefit using momentum.",
+     "description": "Identifies the passenger's momentum change.",
+     "how": "Explain that the passenger's momentum is brought to zero."
+    },
+    {
+     "accept": [
+      [
+       "time"
+      ],
+      [
+       "longer time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse depends on the time over which momentum changes.",
+     "description": "States that the airbag lengthens the stopping time.",
+     "how": "Mention the increased time taken to stop."
+    },
+    {
+     "accept": [
+      [
+       "rate of change of momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "A longer time lowers momentum change per unit time.",
+     "description": "Links longer time to reduced force.",
+     "how": "State that the rate of momentum change is reduced."
+    },
+    {
+     "accept": [
+      [
+       "force"
+      ],
+      [
+       "smaller"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reduced force is the practical safety advantage.",
+     "description": "States the reduced force on the passenger.",
+     "how": "Conclude that the force and injury risk are reduced."
+    }
+   ],
+   "modelAnswer": [
+    "The passenger's momentum must change to zero in a collision.",
+    "An airbag increases the time over which this change occurs.",
+    "Therefore, the rate of change of momentum is smaller.",
+    "The force acting on the passenger is reduced compared with a sudden stop."
+   ]
+  },
+  {
+   "text": "Q3.3. A horse refuses to pull a cart. The horse argues, “according to Newton's third law, whatever force I exert on the cart, the cart will exert an equal and opposite force on me. Since the net force will be zero, therefore, I have no chance of accelerating (pulling) the cart.” What is wrong with this reasoning?",
+   "finalAnswer": "The action and reaction forces act on different bodies, so they do not cancel on either body; the horse pushes the ground backward and the ground's friction pushes the horse forward.",
+   "marks": 5,
+   "source": "CRQ 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "different bodies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Action and reaction forces cannot cancel on one object.",
+     "description": "Identifies the error in treating the forces as a single-body pair.",
+     "how": "State that the two forces act on different bodies."
+    },
+    {
+     "accept": [
+      [
+       "ground"
+      ]
+     ],
+     "marks": 2,
+     "why": "The ground interaction provides the forward force needed by the horse.",
+     "description": "Explains the horse-ground interaction.",
+     "how": "Explain that the horse pushes backward on the ground."
+    },
+    {
+     "accept": [
+      [
+       "friction",
+       "forward"
+      ]
+     ],
+     "marks": 1,
+     "why": "The forward ground force is what accelerates the horse-cart system.",
+     "description": "Identifies forward friction from the ground.",
+     "how": "State that ground friction pushes the horse forward."
+    },
+    {
+     "accept": [
+      [
+       "cart"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reasoning must resolve how the horse can pull the cart.",
+     "description": "Connects the horse's forward motion to pulling the cart.",
+     "how": "Conclude that the horse can pull the cart when the external ground force acts."
+    }
+   ],
+   "modelAnswer": [
+    "The horse's force on the cart and the cart's force on the horse act on different bodies.",
+    "Therefore, these action-reaction forces do not cancel each other on one body.",
+    "The horse pushes the ground backward with its feet.",
+    "The ground exerts a forward frictional force on the horse.",
+    "This external force enables the horse to move forward and pull the cart."
+   ]
+  },
+  {
+   "text": "Q3.4. When a cricket ball hits high, a fielder tries to catch it. While holding the ball he/she draws hands backward. Why?",
+   "finalAnswer": "Drawing the hands backward increases the time for the ball's momentum to become zero, reducing the force on the hands.",
+   "marks": 4,
+   "source": "CRQ 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "momentum"
+      ],
+      [
+       "change in momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ball must be brought to rest, changing its momentum.",
+     "description": "Identifies the momentum change.",
+     "how": "State that the ball's momentum is reduced to zero."
+    },
+    {
+     "accept": [
+      [
+       "increases the time"
+      ],
+      [
+       "longer time"
+      ]
+     ],
+     "marks": 1,
+     "why": "The backward movement extends the stopping interval.",
+     "description": "Explains the increased stopping time.",
+     "how": "Say that drawing hands back increases stopping time."
+    },
+    {
+     "accept": [
+      [
+       "force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse relates momentum change and time to force.",
+     "description": "Links time and force.",
+     "how": "Explain that the force is reduced."
+    },
+    {
+     "accept": [
+      [
+       "hands"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reduced force explains the practical benefit to the catcher.",
+     "description": "States the safety or comfort benefit.",
+     "how": "Conclude that less force acts on the hands."
+    }
+   ],
+   "modelAnswer": [
+    "The ball's momentum has to become zero when it is caught.",
+    "Drawing the hands backward increases the time over which its momentum changes.",
+    "The rate of change of momentum, and hence the force, becomes smaller.",
+    "This helps prevent injury to the fielder's hands."
+   ]
+  },
+  {
+   "text": "Q3.5. When someone jumps from a small boat onto the river bank, why does the jumper often fall into the water? Explain.",
+   "finalAnswer": "When the jumper pushes the boat backward, the boat recoils away from the bank; the jumper may lose support and fall into the water.",
+   "marks": 4,
+   "source": "CRQ 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "pushes the boat backward"
+      ]
+     ],
+     "marks": 1,
+     "why": "The jumper's push initiates the boat's recoil.",
+     "description": "Describes the action on the boat.",
+     "how": "State that the jumper pushes the boat backward."
+    },
+    {
+     "accept": [
+      [
+       "recoils"
+      ],
+      [
+       "moves backward"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reaction force moves the boat away.",
+     "description": "Describes the boat's reaction motion.",
+     "how": "Explain that the boat moves away from the bank."
+    },
+    {
+     "accept": [
+      [
+       "support"
+      ]
+     ],
+     "marks": 1,
+     "why": "The moving boat changes the support beneath the jumper.",
+     "description": "Explains the loss of stable footing.",
+     "how": "Mention that the jumper loses support or footing."
+    },
+    {
+     "accept": [
+      [
+       "water"
+      ]
+     ],
+     "marks": 1,
+     "why": "Completes the consequence asked in the question.",
+     "description": "States why the jumper falls.",
+     "how": "Conclude that the jumper may fall into the water."
+    }
+   ],
+   "modelAnswer": [
+    "As the jumper leaps, he pushes the boat backward.",
+    "By Newton's third law, the boat moves backward away from the bank.",
+    "The boat moves under the jumper and his support shifts.",
+    "He may therefore lose his footing and fall into the water."
+   ]
+  },
+  {
+   "text": "Q3.6. Imagine that if friction vanishes suddenly from everything, then what could be the scenario of daily life activities?",
+   "finalAnswer": "Walking, gripping, writing and braking would become impossible or very difficult; objects would keep sliding because there would be no friction to oppose motion.",
+   "marks": 5,
+   "source": "CRQ 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "walking"
+      ]
+     ],
+     "marks": 1,
+     "why": "Walking depends on friction between feet and ground.",
+     "description": "Gives one affected daily activity.",
+     "how": "Mention that walking becomes difficult or impossible."
+    },
+    {
+     "accept": [
+      [
+       "gripping"
+      ],
+      [
+       "writing"
+      ]
+     ],
+     "marks": 1,
+     "why": "Several ordinary actions rely on friction.",
+     "description": "Gives another friction-dependent activity.",
+     "how": "Mention gripping, writing or holding objects."
+    },
+    {
+     "accept": [
+      [
+       "braking"
+      ]
+     ],
+     "marks": 1,
+     "why": "Vehicles need friction to slow or stop.",
+     "description": "Explains an effect on transport.",
+     "how": "State that vehicles could not brake normally."
+    },
+    {
+     "accept": [
+      [
+       "sliding"
+      ]
+     ],
+     "marks": 1,
+     "why": "Without friction, motion would not be opposed at surfaces.",
+     "description": "Describes continued sliding.",
+     "how": "Explain that objects would keep sliding."
+    },
+    {
+     "accept": [
+      [
+       "no friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The scenario must connect the effects to the removal of friction.",
+     "description": "Connects consequences to vanished friction.",
+     "how": "Relate the examples to the absence of friction."
+    }
+   ],
+   "modelAnswer": [
+    "Without friction between the feet and ground, walking would be very difficult or impossible.",
+    "We could not grip objects properly, and writing would be difficult.",
+    "Tyres and brakes would not provide the friction needed to stop vehicles.",
+    "Objects would continue sliding because no friction would oppose their motion.",
+    "Thus, many ordinary activities would become impossible or unsafe."
+   ]
+  },
+  {
+   "text": "Q3.1. Explain the concept of force by practical examples.",
+   "finalAnswer": "Force is a push or pull that can change an object's state of rest or motion, its direction or shape; examples include kicking a ball and pushing a cart.",
+   "marks": 5,
+   "source": "Comprehensive 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "push"
+      ],
+      [
+       "pull"
+      ]
+     ],
+     "marks": 1,
+     "why": "Force must be described as an interaction.",
+     "description": "Defines force as a push or pull.",
+     "how": "Give the push-or-pull meaning."
+    },
+    {
+     "accept": [
+      [
+       "motion"
+      ],
+      [
+       "rest"
+      ]
+     ],
+     "marks": 1,
+     "why": "Force can change an object's state of motion.",
+     "description": "Explains its effect on motion.",
+     "how": "State that force may change rest or motion."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "shape"
+      ]
+     ],
+     "marks": 1,
+     "why": "Other effects of force demonstrate the concept fully.",
+     "description": "Includes direction or shape change.",
+     "how": "Mention change of direction or shape."
+    },
+    {
+     "accept": [
+      [
+       "ball"
+      ],
+      [
+       "cart"
+      ]
+     ],
+     "marks": 1,
+     "why": "Practical examples illustrate the definition.",
+     "description": "Gives a practical example.",
+     "how": "Give an example such as kicking a ball or pushing a cart."
+    },
+    {
+     "accept": [
+      [
+       "force"
+      ]
+     ],
+     "marks": 1,
+     "why": "A complete response ties examples back to the concept.",
+     "description": "Presents a clear concluding concept.",
+     "how": "Use the examples to show that force changes motion or shape."
+    }
+   ],
+   "modelAnswer": [
+    "A force is a push or pull acting on an object.",
+    "It may change the object's state of rest or motion, speed, direction or shape.",
+    "For example, a force applied by a foot can set a stationary football in motion.",
+    "A push can move a cart, while a force can also stop or turn a moving object.",
+    "These examples show that force changes motion or shape."
+   ]
+  },
+  {
+   "text": "Q3.2. Describe Newton's laws of motion.",
+   "finalAnswer": "The first law describes inertia; the second relates net force to rate of change of momentum; the third states that action and reaction forces are equal and opposite.",
+   "marks": 5,
+   "source": "Comprehensive 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inertia"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first law is the law of inertia.",
+     "description": "States the first law.",
+     "how": "Explain uniform motion continues unless a resultant force acts."
+    },
+    {
+     "accept": [
+      [
+       "net force",
+       "acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second law quantifies force and motion change.",
+     "description": "States the second law in force form.",
+     "how": "Give F = ma or the equivalent momentum form."
+    },
+    {
+     "accept": [
+      [
+       "rate of change of momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the general statement of the second law.",
+     "description": "Gives the momentum formulation.",
+     "how": "State that net force is proportional to momentum change per time."
+    },
+    {
+     "accept": [
+      [
+       "equal and opposite"
+      ]
+     ],
+     "marks": 1,
+     "why": "The third law describes interaction force pairs.",
+     "description": "States the third law.",
+     "how": "Say action and reaction are equal and opposite."
+    },
+    {
+     "accept": [
+      [
+       "different bodies"
+      ]
+     ],
+     "marks": 1,
+     "why": "Action and reaction do not cancel because they act separately.",
+     "description": "Clarifies where the pair acts.",
+     "how": "Add that the forces act on different bodies."
+    }
+   ],
+   "modelAnswer": [
+    "Newton's first law: An object remains at rest or continues moving with constant velocity unless acted upon by a resultant force; this is the law of inertia.",
+    "Newton's second law: The net force on an object is proportional to the rate of change of its momentum and acts in that direction; for constant mass, F = ma.",
+    "Newton's third law: To every action there is an equal and opposite reaction.",
+    "The action and reaction forces act on different bodies.",
+    "These laws describe inertia, the effect of resultant force, and interactions between bodies."
+   ]
+  },
+  {
+   "text": "Q3.3. Define momentum and express Newton's 2nd law of motion in terms of change in momentum.",
+   "finalAnswer": "Momentum is the product of mass and velocity, p = mv. The net force is equal to the rate of change of momentum, F = Δp/Δt.",
+   "marks": 5,
+   "source": "Comprehensive 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "mass",
+       "velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both quantities define momentum.",
+     "description": "Defines momentum.",
+     "how": "State that momentum is mass multiplied by velocity."
+    },
+    {
+     "accept": [
+      [
+       "p=mv"
+      ],
+      [
+       "p=mv"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation expresses the definition mathematically.",
+     "description": "Gives the momentum equation.",
+     "how": "Write p = mv."
+    },
+    {
+     "accept": [
+      [
+       "rate of change of momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is Newton's second law in its general form.",
+     "description": "States the law in words.",
+     "how": "Relate net force to momentum change per time."
+    },
+    {
+     "accept": [
+      [
+       "delta p/delta t"
+      ],
+      [
+       "change in momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation makes the time dependence explicit.",
+     "description": "Writes the force equation.",
+     "how": "Write F = Δp/Δt."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Force and momentum change are vector quantities.",
+     "description": "Gives the direction relationship.",
+     "how": "State that force acts in the direction of momentum change."
+    }
+   ],
+   "modelAnswer": [
+    "Momentum is the product of mass and velocity: p = mv.",
+    "Newton's second law states that the net force is equal to the rate of change of momentum.",
+    "F = change in momentum / time taken.",
+    "F = Δp/Δt.",
+    "The force acts in the direction of the change in momentum."
+   ]
+  },
+  {
+   "text": "Q3.4. State and explain the principle of conservation of momentum.",
+   "finalAnswer": "When no external resultant force acts on a system, its total momentum remains constant; total momentum before interaction equals total momentum after interaction.",
+   "marks": 5,
+   "source": "Comprehensive 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "external resultant force"
+      ]
+     ],
+     "marks": 1,
+     "why": "The principle applies to an isolated system.",
+     "description": "States the condition.",
+     "how": "Specify that no external resultant force acts."
+    },
+    {
+     "accept": [
+      [
+       "total momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conserved quantity must be identified.",
+     "description": "Names what is conserved.",
+     "how": "State that total momentum is conserved."
+    },
+    {
+     "accept": [
+      [
+       "constant"
+      ],
+      [
+       "remains constant"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains the meaning of conservation.",
+     "description": "States that the total does not change.",
+     "how": "Say it remains constant."
+    },
+    {
+     "accept": [
+      [
+       "before"
+      ],
+      [
+       "after"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison across an interaction expresses the principle.",
+     "description": "Compares momentum before and after.",
+     "how": "State that total momentum before equals total momentum after."
+    },
+    {
+     "accept": [
+      [
+       "isolated system"
+      ],
+      [
+       "system"
+      ]
+     ],
+     "marks": 1,
+     "why": "The scope of the principle must be clear.",
+     "description": "Applies the rule to the system as a whole.",
+     "how": "Explain that it applies to the interacting system."
+    }
+   ],
+   "modelAnswer": [
+    "For an isolated system on which no external resultant force acts, the total momentum remains constant.",
+    "Thus, total momentum before interaction equals total momentum after interaction.",
+    "Momentum may transfer between objects, but the total momentum of the system is unchanged."
+   ]
+  },
+  {
+   "text": "Q3.5. Describe the motion of a block on a table taking into account the friction between the two surfaces. What is the static friction and kinetic friction?",
+   "finalAnswer": "Static friction prevents a block from starting to move and adjusts up to a limiting value; kinetic friction acts when surfaces slide over one another and opposes their relative motion.",
+   "marks": 5,
+   "source": "Comprehensive 3.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "opposes"
+      ],
+      [
+       "friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Friction's direction and general effect must be explained.",
+     "description": "Describes friction opposing relative motion.",
+     "how": "State that friction acts opposite to motion or its tendency."
+    },
+    {
+     "accept": [
+      [
+       "static friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question specifically asks for static friction.",
+     "description": "Identifies static friction.",
+     "how": "Name and define static friction."
+    },
+    {
+     "accept": [
+      [
+       "at rest"
+      ],
+      [
+       "prevent"
+      ]
+     ],
+     "marks": 1,
+     "why": "Static friction acts before sliding begins.",
+     "description": "Explains its role before motion.",
+     "how": "Say it prevents the block from starting to slide."
+    },
+    {
+     "accept": [
+      [
+       "kinetic friction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The other named friction type must be defined.",
+     "description": "Identifies kinetic friction.",
+     "how": "Name kinetic friction."
+    },
+    {
+     "accept": [
+      [
+       "slide"
+      ],
+      [
+       "sliding"
+      ]
+     ],
+     "marks": 1,
+     "why": "Kinetic friction applies during relative sliding.",
+     "description": "Explains when kinetic friction acts.",
+     "how": "State that it acts while surfaces slide."
+    }
+   ],
+   "modelAnswer": [
+    "When a horizontal force is applied to a block on a table, friction acts along the surface opposite to the tendency of motion.",
+    "Static friction acts while the block is at rest and prevents it from starting to slide.",
+    "It increases as needed up to a maximum limiting value.",
+    "When the block slides, kinetic friction acts between the surfaces.",
+    "Kinetic friction opposes the relative sliding motion."
+   ]
+  },
+  {
+   "text": "Q3.6. Explain the effect of friction on the motion of vehicles in context of tyre surface and braking force.",
+   "finalAnswer": "Friction between tyres and road provides grip for starting, turning and braking; rough tyre treads improve grip, and braking friction opposes motion to slow or stop the vehicle.",
+   "marks": 5,
+   "source": "Comprehensive 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "friction",
+       "tyres",
+       "road"
+      ]
+     ],
+     "marks": 1,
+     "why": "The tyre-road interaction is the central frictional effect.",
+     "description": "Identifies friction between tyre and road.",
+     "how": "State that friction acts between tyres and the road."
+    },
+    {
+     "accept": [
+      [
+       "grip"
+      ]
+     ],
+     "marks": 1,
+     "why": "Grip enables controlled vehicle motion.",
+     "description": "Explains tyre grip.",
+     "how": "Explain that friction provides grip."
+    },
+    {
+     "accept": [
+      [
+       "turning"
+      ],
+      [
+       "starting"
+      ]
+     ],
+     "marks": 1,
+     "why": "Friction supports everyday vehicle movement.",
+     "description": "Gives a movement effect.",
+     "how": "Mention starting or turning."
+    },
+    {
+     "accept": [
+      [
+       "braking"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question specifically asks about braking force.",
+     "description": "Explains braking.",
+     "how": "State that braking friction opposes motion."
+    },
+    {
+     "accept": [
+      [
+       "slow"
+      ],
+      [
+       "stop"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the outcome of braking friction.",
+     "description": "States the effect on vehicle motion.",
+     "how": "Conclude that braking slows or stops the vehicle."
+    }
+   ],
+   "modelAnswer": [
+    "Friction between tyres and the road gives a vehicle grip.",
+    "This grip allows it to start moving and turn without skidding.",
+    "Tyre treads help maintain grip with the road.",
+    "When brakes are applied, friction produces a force opposite to the motion.",
+    "This braking force slows down or stops the vehicle."
+   ]
+  },
+  {
+   "text": "Q3.1(a). A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find the acceleration produced in the block.",
+   "finalAnswer": "0.5 m s⁻²",
+   "marks": 5,
+   "source": "Numerical 3.1(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=ma"
+      ],
+      [
+       "a=F/m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct law links force, mass and acceleration.",
+     "description": "Selects the formula.",
+     "how": "Use F = ma."
+    },
+    {
+     "accept": [
+      [
+       "5 N"
+      ],
+      [
+       "10 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution uses the given data.",
+     "description": "Identifies the quantities to substitute.",
+     "how": "Use F = 5 N and m = 10 kg."
+    },
+    {
+     "accept": [
+      [
+       "5/10"
+      ],
+      [
+       "0.5"
+      ]
+     ],
+     "marks": 2,
+     "why": "The calculation determines acceleration.",
+     "description": "Calculates the acceleration.",
+     "how": "Evaluate a = 5/10 = 0.5."
+    },
+    {
+     "accept": [
+      [
+       "m s^-2"
+      ],
+      [
+       "m/s^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Acceleration requires the correct unit.",
+     "description": "Gives the final result with unit.",
+     "how": "Write 0.5 m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m = 10 kg, F = 5 N.",
+    "Formula: F = ma, so a = F/m.",
+    "Substitution: a = 5 N / 10 kg.",
+    "a = 0.5 m s⁻²."
+   ]
+  },
+  {
+   "text": "Q3.1(b). A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find the velocity of block after 5 seconds.",
+   "finalAnswer": "2.5 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.1(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "a=0.5"
+      ],
+      [
+       "0.5 m s^-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration from the preceding part is needed.",
+     "description": "Uses the acceleration.",
+     "how": "Use a = 0.5 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "v=u+at"
+      ],
+      [
+       "v=at"
+      ]
+     ],
+     "marks": 1,
+     "why": "The constant-acceleration relation gives final velocity.",
+     "description": "Selects the velocity formula.",
+     "how": "Use v = u + at."
+    },
+    {
+     "accept": [
+      [
+       "u=0"
+      ],
+      [
+       "5 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct initial velocity and time are needed.",
+     "description": "Substitutes initial conditions and time.",
+     "how": "Use u = 0 and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "2.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The substitution must be evaluated correctly.",
+     "description": "Calculates velocity.",
+     "how": "Find v = 0 + 0.5 × 5."
+    },
+    {
+     "accept": [
+      [
+       "m s^-1"
+      ],
+      [
+       "m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity must be reported with its unit.",
+     "description": "Gives final answer with unit.",
+     "how": "Write 2.5 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: u = 0, a = 0.5 m s⁻², t = 5 s.",
+    "Formula: v = u + at.",
+    "Substitution: v = 0 + (0.5 m s⁻²)(5 s).",
+    "v = 2.5 m s⁻¹."
+   ]
+  },
+  {
+   "text": "Q3.2. The mass of a person is 80 kg. What will be his weight on the Earth? What will be his weight on the Moon? The value of acceleration due to gravity of Moon is 1.6 m s⁻².",
+   "finalAnswer": "800 N on Earth; 128 N on the Moon",
+   "marks": 5,
+   "source": "Numerical 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "W=mg"
+      ],
+      [
+       "weight=mg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Weight is calculated from mass and gravitational acceleration.",
+     "description": "Selects the weight formula.",
+     "how": "Use W = mg."
+    },
+    {
+     "accept": [
+      [
+       "10 m s^-2"
+      ],
+      [
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The textbook Earth value is needed for the first calculation.",
+     "description": "Uses Earth's gravitational acceleration.",
+     "how": "Use g = 10 m s⁻² on Earth."
+    },
+    {
+     "accept": [
+      [
+       "800 N"
+      ],
+      [
+       "800n"
+      ]
+     ],
+     "marks": 1,
+     "why": "The Earth weight must be calculated correctly.",
+     "description": "Calculates Earth weight.",
+     "how": "Find 80 × 10 = 800 N."
+    },
+    {
+     "accept": [
+      [
+       "1.6 m s^-2"
+      ],
+      [
+       "1.6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given lunar acceleration is required.",
+     "description": "Uses Moon gravity.",
+     "how": "Use g = 1.6 m s⁻² on the Moon."
+    },
+    {
+     "accept": [
+      [
+       "128 N"
+      ],
+      [
+       "128n"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lunar weight and unit complete the answer.",
+     "description": "Calculates Moon weight.",
+     "how": "Find 80 × 1.6 = 128 N."
+    }
+   ],
+   "modelAnswer": [
+    "Formula: W = mg.",
+    "On Earth, W = 80 kg × 10 m s⁻² = 800 N.",
+    "On the Moon, W = 80 kg × 1.6 m s⁻² = 128 N.",
+    "Answer: 800 N on Earth and 128 N on the Moon."
+   ]
+  },
+  {
+   "text": "Q3.3. What force is required to increase the velocity of 800 kg car from 10 m s⁻¹ to 30 m s⁻¹ in 10 seconds?",
+   "finalAnswer": "1600 N",
+   "marks": 5,
+   "source": "Numerical 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "a=(v-u)/t"
+      ],
+      [
+       "acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "The velocity change over time gives acceleration.",
+     "description": "Finds or states the acceleration formula.",
+     "how": "Use a = (v − u)/t."
+    },
+    {
+     "accept": [
+      [
+       "30"
+      ],
+      [
+       "10"
+      ],
+      [
+       "10 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given final and initial speeds and time must be used.",
+     "description": "Substitutes the given values.",
+     "how": "Use v = 30, u = 10 and t = 10 s."
+    },
+    {
+     "accept": [
+      [
+       "2 m s^-2"
+      ],
+      [
+       "2 m/s^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration must be evaluated before force.",
+     "description": "Calculates acceleration.",
+     "how": "Find a = 2 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "F=ma"
+      ],
+      [
+       "800 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's second law converts acceleration to force.",
+     "description": "Uses the force law and mass.",
+     "how": "Use F = ma with m = 800 kg."
+    },
+    {
+     "accept": [
+      [
+       "1600 N"
+      ],
+      [
+       "1600n"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct force with unit is the required result.",
+     "description": "Gives final answer.",
+     "how": "Calculate 800 × 2 = 1600 N."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m = 800 kg, u = 10 m s⁻¹, v = 30 m s⁻¹, t = 10 s.",
+    "a = (v − u)/t = (30 − 10)/10 = 2 m s⁻².",
+    "Formula: F = ma.",
+    "F = 800 kg × 2 m s⁻² = 1600 N."
+   ]
+  },
+  {
+   "text": "Q3.4. A 5 g bullet is fired by a gun. The bullet moves with a velocity of 300 m s⁻¹. If the mass of the gun is 10 kg, find the recoil speed of the gun.",
+   "finalAnswer": "−0.15 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.005 kg"
+      ],
+      [
+       "5 g"
+      ]
+     ],
+     "marks": 1,
+     "why": "Bullet mass must be in SI units for the momentum calculation.",
+     "description": "Converts or identifies bullet mass.",
+     "how": "Convert 5 g to 0.005 kg."
+    },
+    {
+     "accept": [
+      [
+       "initial momentum=0"
+      ],
+      [
+       "initial momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gun-bullet system starts at rest.",
+     "description": "States initial total momentum.",
+     "how": "Use initial momentum zero."
+    },
+    {
+     "accept": [
+      [
+       "0.005*300"
+      ],
+      [
+       "1.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bullet's momentum determines the gun's recoil momentum.",
+     "description": "Calculates bullet momentum.",
+     "how": "Find bullet momentum = 1.5 kg m s⁻¹ forward."
+    },
+    {
+     "accept": [
+      [
+       "opposite"
+      ],
+      [
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gun recoils opposite to the bullet.",
+     "description": "Uses momentum conservation and direction.",
+     "how": "Set gun momentum equal to the negative bullet momentum."
+    },
+    {
+     "accept": [
+      [
+       "-0.15 m s^-1"
+      ],
+      [
+       "-0.15 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The recoil speed and sign are the final required result.",
+     "description": "Gives the answer with direction and unit.",
+     "how": "Write −0.15 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m bullet = 5 g = 0.005 kg, v bullet = 300 m s⁻¹, m gun = 10 kg.",
+    "Initial total momentum = 0.",
+    "By conservation of momentum: 0 = (0.005 kg)(300 m s⁻¹) + (10 kg)v gun.",
+    "v gun = −1.5/10 = −0.15 m s⁻¹.",
+    "The recoil speed is 0.15 m s⁻¹ backward (velocity = −0.15 m s⁻¹)."
+   ]
+  },
+  {
+   "text": "Q3.5(a). An astronaut weighs 70 kg. He throws a wrench of mass 300 g at a speed of 3.5 m s⁻¹. Determine the speed of astronaut as he recoils away from the wrench.",
+   "finalAnswer": "−1.5 × 10⁻² m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.5(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.3 kg"
+      ],
+      [
+       "300 g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The wrench mass must be expressed in SI units.",
+     "description": "Converts wrench mass.",
+     "how": "Convert 300 g to 0.3 kg."
+    },
+    {
+     "accept": [
+      [
+       "initial momentum=0"
+      ],
+      [
+       "initial momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The astronaut and wrench begin at rest together.",
+     "description": "States the initial momentum.",
+     "how": "Use initial momentum zero."
+    },
+    {
+     "accept": [
+      [
+       "0.3*3.5"
+      ],
+      [
+       "1.05"
+      ]
+     ],
+     "marks": 1,
+     "why": "The wrench momentum determines the astronaut's opposite momentum.",
+     "description": "Calculates wrench momentum.",
+     "how": "Find 0.3 × 3.5 = 1.05 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "70 kg"
+      ],
+      [
+       "70"
+      ]
+     ],
+     "marks": 1,
+     "why": "Astronaut mass is needed to convert recoil momentum to velocity.",
+     "description": "Uses astronaut mass.",
+     "how": "Use m astronaut = 70 kg."
+    },
+    {
+     "accept": [
+      [
+       "-1.5e-2 m s^-1"
+      ],
+      [
+       "-0.015 m s^-1"
+      ],
+      [
+       "-0.015 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The signed recoil velocity and unit finish the calculation.",
+     "description": "Gives final recoil velocity.",
+     "how": "Calculate v = −1.05/70 = −1.5 × 10⁻² m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m wrench = 300 g = 0.3 kg, v wrench = 3.5 m s⁻¹, m astronaut = 70 kg.",
+    "Initial momentum = 0.",
+    "By conservation of momentum: 0 = (0.3 kg)(3.5 m s⁻¹) + (70 kg)v astronaut.",
+    "v astronaut = −1.05/70 = −0.015 m s⁻¹.",
+    "v astronaut = −1.5 × 10⁻² m s⁻¹."
+   ]
+  },
+  {
+   "text": "Q3.5(b). An astronaut weighs 70 kg. He throws a wrench of mass 300 g at a speed of 3.5 m s⁻¹. Determine the distance covered by the astronaut in 30 minutes.",
+   "finalAnswer": "27 m",
+   "marks": 5,
+   "source": "Numerical 3.5(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1.5e-2 m s^-1"
+      ],
+      [
+       "0.015 m s^-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The recoil speed from part (a) is used.",
+     "description": "Uses the astronaut's recoil speed.",
+     "how": "Use speed = 1.5 × 10⁻² m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "30 min"
+      ],
+      [
+       "1800 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "Time must be converted to seconds for SI units.",
+     "description": "Converts time.",
+     "how": "Use 30 min = 1800 s."
+    },
+    {
+     "accept": [
+      [
+       "s=vt"
+      ],
+      [
+       "distance=vt"
+      ]
+     ],
+     "marks": 1,
+     "why": "Uniform motion distance depends on speed and time.",
+     "description": "Selects distance relation.",
+     "how": "Use distance = speed × time."
+    },
+    {
+     "accept": [
+      [
+       "27"
+      ]
+     ],
+     "marks": 1,
+     "why": "The multiplication must be correct.",
+     "description": "Calculates distance.",
+     "how": "Calculate 0.015 × 1800."
+    },
+    {
+     "accept": [
+      [
+       "27 m"
+      ],
+      [
+       "27m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer needs a distance unit.",
+     "description": "Gives result with unit.",
+     "how": "Write 27 m."
+    }
+   ],
+   "modelAnswer": [
+    "From part (a), the astronaut's speed = 1.5 × 10⁻² m s⁻¹.",
+    "Time = 30 min = 30 × 60 = 1800 s.",
+    "Distance = speed × time.",
+    "Distance = 1.5 × 10⁻² m s⁻¹ × 1800 s = 27 m."
+   ]
+  },
+  {
+   "text": "Q3.6. A 6.5 × 10³ kg bogie of a goods train is moving with a velocity of 0.8 m s⁻¹. Another bogie of mass 9.2 × 10³ kg coming from behind with a velocity of 1.2 m s⁻¹ collides with the first one and couples to it. Find the common velocity of the two bogies after they become coupled.",
+   "finalAnswer": "1.03 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "momentum conserved"
+      ],
+      [
+       "conservation of momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coupled collision is solved with momentum conservation.",
+     "description": "Chooses the conservation principle.",
+     "how": "State that momentum is conserved."
+    },
+    {
+     "accept": [
+      [
+       "6.5*10^3"
+      ],
+      [
+       "6500"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first bogie's momentum contribution must be included.",
+     "description": "Uses first mass and speed.",
+     "how": "Substitute 6.5 × 10³ kg and 0.8 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "9.2*10^3"
+      ],
+      [
+       "9200"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second bogie's momentum contribution must be included.",
+     "description": "Uses second mass and speed.",
+     "how": "Substitute 9.2 × 10³ kg and 1.2 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "(m1u1+m2u2)/(m1+m2)"
+      ],
+      [
+       "(5200+11040)/15700"
+      ]
+     ],
+     "marks": 1,
+     "why": "The common velocity uses total momentum divided by combined mass.",
+     "description": "Sets up the combined velocity calculation.",
+     "how": "Divide total initial momentum by total mass."
+    },
+    {
+     "accept": [
+      [
+       "1.03 m s^-1"
+      ],
+      [
+       "1.03 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The common velocity with unit is the final result.",
+     "description": "Gives final velocity.",
+     "how": "Report 1.03 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: m₁ = 6.5 × 10³ kg, u₁ = 0.8 m s⁻¹; m₂ = 9.2 × 10³ kg, u₂ = 1.2 m s⁻¹.",
+    "By conservation of momentum, (m₁u₁ + m₂u₂) = (m₁ + m₂)v.",
+    "v = [(6.5 × 10³)(0.8) + (9.2 × 10³)(1.2)] / [(6.5 + 9.2) × 10³].",
+    "v = (5200 + 11040)/15700 = 1.03 m s⁻¹."
+   ]
+  },
+  {
+   "text": "Q3.7. A cyclist weighing 55 kg rides a bicycle of mass 5 kg. He starts from rest and applies a force of 90 N for 8 seconds. Then he continues at a constant speed for another 8 seconds. Calculate the total distance travelled by the cyclist.",
+   "finalAnswer": "144 m",
+   "marks": 5,
+   "source": "Numerical 3.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "60 kg"
+      ],
+      [
+       "55+5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cyclist and bicycle move together, so their total mass is used.",
+     "description": "Finds combined mass.",
+     "how": "Add 55 kg and 5 kg."
+    },
+    {
+     "accept": [
+      [
+       "a=f/m"
+      ],
+      [
+       "90/60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Force and combined mass determine acceleration.",
+     "description": "Calculates acceleration.",
+     "how": "Use a = 90/60 = 1.5 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "48 m"
+      ],
+      [
+       "0.5*1.5*64"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first 8 seconds' distance follows from acceleration from rest.",
+     "description": "Calculates distance during acceleration.",
+     "how": "Use s = ½at² = 48 m."
+    },
+    {
+     "accept": [
+      [
+       "12 m s^-1"
+      ],
+      [
+       "12 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The speed at the end of acceleration is used for the remaining time.",
+     "description": "Finds constant speed and remaining distance.",
+     "how": "Find v = 1.5 × 8 = 12 m s⁻¹ and distance = 96 m."
+    },
+    {
+     "accept": [
+      [
+       "144 m"
+      ],
+      [
+       "144m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The total distance combines both stages.",
+     "description": "Gives total distance.",
+     "how": "Add 48 m + 96 m = 144 m."
+    }
+   ],
+   "modelAnswer": [
+    "Total mass = 55 kg + 5 kg = 60 kg.",
+    "a = F/m = 90 N/60 kg = 1.5 m s⁻².",
+    "Distance in first 8 s: s₁ = ½at² = ½(1.5)(8²) = 48 m.",
+    "Speed after 8 s: v = u + at = 0 + (1.5)(8) = 12 m s⁻¹.",
+    "Distance in next 8 s: s₂ = vt = 12 × 8 = 96 m.",
+    "Total distance = 48 m + 96 m = 144 m."
+   ]
+  },
+  {
+   "text": "Q3.8. A ball of mass 0.4 kg is dropped on the floor from a height of 1.8 m. The ball rebounds straight upward to a height of 0.8 m. What is the magnitude and direction of the impulse applied to the ball by the floor?",
+   "finalAnswer": "4 N s, upward",
+   "marks": 5,
+   "source": "Numerical 3.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sqrt(2gh)"
+      ],
+      [
+       "v^2=u^2+2as"
+      ]
+     ],
+     "marks": 1,
+     "why": "The speeds before and after impact follow from the drop and rebound heights.",
+     "description": "Chooses the motion relation for speeds.",
+     "how": "Use v = √(2gh) for each height."
+    },
+    {
+     "accept": [
+      [
+       "6 m s^-1"
+      ],
+      [
+       "6 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The impact speed from 1.8 m is required.",
+     "description": "Finds downward speed before impact.",
+     "how": "Calculate √(2 × 10 × 1.8) = 6 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "4 m s^-1"
+      ],
+      [
+       "4 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The rebound speed from 0.8 m is required.",
+     "description": "Finds upward speed after impact.",
+     "how": "Calculate √(2 × 10 × 0.8) = 4 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "4*(4+6)"
+      ],
+      [
+       "4*10"
+      ],
+      [
+       "40"
+      ]
+     ],
+     "marks": 1,
+     "why": "Impulse is change in momentum, with downward and upward velocities opposite.",
+     "description": "Calculates the momentum change.",
+     "how": "Take upward positive: Δp = 0.4[4 − (−6)] = 4 N s."
+    },
+    {
+     "accept": [
+      [
+       "4 N s, upward"
+      ],
+      [
+       "4 Ns upward"
+      ],
+      [
+       "4 N s upward"
+      ]
+     ],
+     "marks": 1,
+     "why": "Magnitude and direction are both required.",
+     "description": "Reports the impulse and direction.",
+     "how": "Give 4 N s upward."
+    }
+   ],
+   "modelAnswer": [
+    "Take upward as positive and use g = 10 m s⁻².",
+    "Speed before impact: v₁ = √(2gh₁) = √(2 × 10 × 1.8) = 6 m s⁻¹ downward.",
+    "Speed after rebound: v₂ = √(2gh₂) = √(2 × 10 × 0.8) = 4 m s⁻¹ upward.",
+    "Impulse = change in momentum = m(v₂ − v₁).",
+    "Impulse = 0.4[4 − (−6)] = 4 N s, upward."
+   ]
+  },
+  {
+   "text": "Q3.9. Two balls of masses 0.2 kg and 0.4 kg are moving towards each other with velocities 20 m s⁻¹ and 5 m s⁻¹ respectively. After collision, the velocity of 0.2 kg ball becomes 6 m s⁻¹. What will be the velocity of 0.4 kg ball?",
+   "finalAnswer": "2 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 3.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "opposite"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balls move towards each other, so a consistent sign convention matters.",
+     "description": "Sets directions for velocities.",
+     "how": "Choose the 0.2 kg ball's initial direction as positive."
+    },
+    {
+     "accept": [
+      [
+       "0.2*20"
+      ],
+      [
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Initial momentum of the first ball is needed.",
+     "description": "Calculates initial momentum contribution.",
+     "how": "Use 0.2 × 20 = 4 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.4*(-5)"
+      ],
+      [
+       "-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second ball moves in the opposite direction initially.",
+     "description": "Includes signed second-ball momentum.",
+     "how": "Use 0.4 × (−5) = −2 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.2*6"
+      ],
+      [
+       "1.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first ball's final momentum is needed to solve the second velocity.",
+     "description": "Uses final momentum of first ball.",
+     "how": "Use 0.2 × 6 = 1.2 kg m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "2 m s^-1"
+      ],
+      [
+       "2 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second ball's final velocity is the requested result.",
+     "description": "Gives final velocity.",
+     "how": "Apply momentum conservation to obtain 2 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Take the initial direction of the 0.2 kg ball as positive.",
+    "Initial momentum = (0.2)(20) + (0.4)(−5) = 2 kg m s⁻¹.",
+    "Let v be the final velocity of the 0.4 kg ball.",
+    "By conservation of momentum: 2 = (0.2)(6) + (0.4)v.",
+    "2 = 1.2 + 0.4v, so v = 2 m s⁻¹."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Section A tests definitions, directions, laws and quick substitutions; learn the concepts as well as the formulae.",
+   "Short questions usually earn marks for a precise definition or a brief cause-and-effect explanation.",
+   "Constructed and comprehensive answers earn marks for naming the law, explaining the force or momentum change, and applying it to the situation.",
+   "For numericals, show the given values, formula, substitution, calculation and final unit. Use signs to show direction in momentum questions.",
+   "For multi-stage motion, calculate each stage separately and add the distances."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Convert the wrench mass from grams to kilograms.",
+     "Use conservation of momentum: initial momentum is zero, so astronaut momentum is opposite to wrench momentum."
+    ],
+    "accept": [
+     [
+      "-0.015 m s^-1"
+     ],
+     [
+      "-1.5e-2 m s^-1"
+     ],
+     [
+      "-0.015 m/s"
+     ]
+    ],
+    "question": "A 5 g bullet is fired by a gun. The bullet moves with a velocity of 300 m s⁻¹. If the mass of the gun is 10 kg, find the recoil speed of the gun.",
+    "solution": [
+     "Given: bullet mass = 5 g = 0.005 kg; bullet velocity = 300 m s⁻¹; gun mass = 10 kg.",
+     "Initial momentum = 0.",
+     "By conservation of momentum: 0 = (0.005)(300) + 10v gun.",
+     "v gun = −1.5/10 = −0.15 m s⁻¹."
+    ],
+    "answer": "−0.15 m s⁻¹"
+   },
+   {
+    "hints": [
+     "Find the total mass of the cyclist and bicycle, then calculate acceleration using F = ma.",
+     "Find distance in the first 8 s using s = ½at²; then find the distance in the next 8 s at constant speed."
+    ],
+    "accept": [
+     [
+      "144 m"
+     ],
+     [
+      "144m"
+     ]
+    ],
+    "question": "A cyclist weighing 55 kg rides a bicycle of mass 5 kg. He starts from rest and applies a force of 90 N for 8 seconds. Then he continues at a constant speed for another 8 seconds. Calculate the total distance travelled by the cyclist.",
+    "solution": [
+     "Total mass = 55 + 5 = 60 kg.",
+     "a = F/m = 90/60 = 1.5 m s⁻².",
+     "Distance during first 8 s: s₁ = ½at² = ½ × 1.5 × 8² = 48 m.",
+     "Speed after 8 s: v = u + at = 0 + 1.5 × 8 = 12 m s⁻¹.",
+     "Distance during next 8 s = vt = 12 × 8 = 96 m.",
+     "Total distance = 48 + 96 = 144 m."
+    ],
+    "answer": "144 m"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The given values identify the object and the applied force.",
+     "text": "Given: m = 10 kg, F = 5 N, u = 0, t = 5 s."
+    },
+    {
+     "why": "Newton's second law relates the net force to acceleration.",
+     "text": "Formula: F = ma, so a = F/m."
+    },
+    {
+     "why": "Substitution with units gives the acceleration in SI units.",
+     "text": "a = 5 N / 10 kg = 0.5 m s⁻²."
+    },
+    {
+     "why": "The constant-acceleration relation gives the velocity after five seconds.",
+     "text": "v = u + at = 0 + (0.5 m s⁻²)(5 s) = 2.5 m s⁻¹."
+    }
+   ],
+   "question": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find (a) the acceleration produced in the block and (b) the velocity of block after 5 seconds.",
+   "answer": "(a) 0.5 m s⁻²; (b) 2.5 m s⁻¹"
+  },
+  "explain": [
+   {
+    "title": "Force and motion",
+    "body": "A force is a push or pull that can change an object's motion or shape. The resultant force is the combined effect of all forces on the object."
+   },
+   {
+    "title": "Newton's laws",
+    "body": "The first law describes inertia. The second law relates net force to the rate of change of momentum (and gives F = ma for constant mass). The third law says action and reaction are equal and opposite and act on different bodies."
+   },
+   {
+    "title": "Momentum and impulse",
+    "body": "Momentum is p = mv. Impulse is force multiplied by the time for which it acts, and equals the change in momentum. Increasing the time of a collision reduces the force for the same momentum change."
+   },
+   {
+    "title": "Conservation of momentum",
+    "body": "If no external resultant force acts on a system, total momentum remains constant. In a collision, calculate the signed momentum before and after."
+   },
+   {
+    "title": "Friction",
+    "body": "Friction opposes relative motion or its tendency. Static friction acts before sliding starts; kinetic friction acts during sliding. Rolling friction is less than sliding friction, and tyre-road friction provides grip and braking."
+   }
+  ],
+  "mistakes": [
+   "Using the mass of only the cyclist or vehicle instead of the combined moving mass.",
+   "Forgetting to convert grams to kilograms or minutes to seconds.",
+   "Ignoring direction signs in recoil and collision problems.",
+   "Confusing impulse with force; impulse is force multiplied by time and equals momentum change.",
+   "Writing an answer without units, or using a velocity unit for acceleration.",
+   "Treating action and reaction forces as cancelling even though they act on different bodies.",
+   "Adding the wrong distances in a motion problem with separate acceleration and constant-speed stages."
+  ]
+ }
+}

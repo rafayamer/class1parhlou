@@ -1,0 +1,371 @@
+{
+ "note": {
+  "explanation": "Every measurement has some uncertainty, because an instrument cannot measure beyond the precision allowed by its smallest division. For an analogue scale, the maximum uncertainty is usually half the smallest division. Repeated readings and an average can reduce uncertainty.",
+  "examples": [
+   "A metre rule has a smallest division of 0.1 cm, so the maximum uncertainty is ±0.05 cm.",
+   "If a digital instrument's last digit fluctuates, that fluctuation shows uncertainty in the reading."
+  ],
+  "checkAnswer": "The maximum uncertainty is ±0.05 cm.",
+  "keywords": [
+   "uncertainty",
+   "least count",
+   "digital scale",
+   "average reading",
+   "significant figures"
+  ],
+  "simple": "A measurement is not perfectly exact. The instrument limits how certain the reading can be.",
+  "checkQuestion": "A scale has a smallest division of 0.1 cm. What is the maximum uncertainty?",
+  "title": "Uncertainty in a Measurement",
+  "steps": [
+   "Find the instrument's smallest division.",
+   "For the metre-rule example, divide 0.1 cm by 2.",
+   "State the maximum uncertainty as ±0.05 cm."
+  ],
+  "answer": "For a metre rule with 0.1 cm smallest divisions, the maximum uncertainty is ±0.05 cm.",
+  "checkAccept": [
+   [
+    "±0.05 cm"
+   ],
+   [
+    "0.05 cm"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "±0.1 cm",
+    "±0.05 cm",
+    "±0.01 cm",
+    "±0.5 cm"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A metre rule has a smallest division of 0.1 cm. What is the maximum uncertainty in a reading?",
+   "rationales": [
+    "This is the full smallest division, not half of it.",
+    "The maximum uncertainty is half the smallest division: 0.1 cm ÷ 2 = 0.05 cm.",
+    "This is smaller than half the smallest division.",
+    "This is greater than the smallest division of the rule."
+   ]
+  },
+  {
+   "options": [
+    "The instrument's smallest division",
+    "The mass of the object",
+    "The length of the scale",
+    "The number of readings taken"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What sets a limit to the accuracy that can be achieved with a measuring instrument?",
+   "rationales": [
+    "The smallest division of the instrument limits the degree of accuracy possible.",
+    "The object's mass does not determine the instrument's scale resolution.",
+    "The total length of the scale does not set the precision of each reading.",
+    "The number of readings can help reduce uncertainty but does not set the instrument's scale limit."
+   ]
+  },
+  {
+   "options": [
+    "The first digit",
+    "The last digit",
+    "The unit symbol",
+    "Every digit changes equally"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "On a digital instrument, uncertainty is often shown by fluctuation in which part of the reading?",
+   "rationales": [
+    "The first digit is not usually the digit that fluctuates to show uncertainty.",
+    "The last digit commonly fluctuates and indicates the uncertain part of the digital reading.",
+    "A unit symbol does not fluctuate as part of the measured value.",
+    "The textbook describes fluctuation in the last digit, not equal changes in every digit."
+   ]
+  },
+  {
+   "options": [
+    "Take one reading only",
+    "Take several readings and find their average",
+    "Round every reading up",
+    "Use a larger unit"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How can uncertainty in a short time interval be reduced?",
+   "rationales": [
+    "One reading does not use repeated measurements to reduce uncertainty.",
+    "Taking multiple readings and finding the average can reduce uncertainty.",
+    "Rounding every reading up introduces a bias rather than reducing uncertainty.",
+    "Changing the unit does not itself reduce uncertainty."
+   ]
+  },
+  {
+   "options": [
+    "Counting objects",
+    "Measuring a wire's diameter",
+    "Measuring a time interval",
+    "Measuring a length"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which activity is excluded from the textbook's statement that measurements have inevitable uncertainty?",
+   "rationales": [
+    "The text says uncertainty applies whenever a physical quantity is measured except counting.",
+    "A wire's diameter is measured and can have uncertainty.",
+    "A time interval is measured and can have uncertainty.",
+    "A length is measured and can have uncertainty."
+   ]
+  },
+  {
+   "options": [
+    "They show the uncertainty or accuracy of a measured quantity conveniently",
+    "They remove all uncertainty from a measurement",
+    "They change the instrument's smallest division",
+    "They are used only for digital instruments"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why are significant figures useful in measurements?",
+   "rationales": [
+    "The textbook says significant figures conveniently indicate uncertainty or accuracy in a measured value.",
+    "Significant figures do not make any measurement perfectly certain.",
+    "Writing significant figures does not change the instrument's scale.",
+    "Significant figures are not restricted to digital instruments."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Which reading out of A, B and C shows the correct length and why?",
+   "finalAnswer": "Reading B, 6.0 cm, is correct because the eye is in line with the mark.",
+   "marks": 2,
+   "source": "Short 1.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "b"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct viewing position avoids a misleading reading.",
+     "description": "Identifies reading B.",
+     "how": "Choose B from the three readings."
+    },
+    {
+     "accept": [
+      [
+       "6.0 cm",
+       "eye",
+       "line"
+      ],
+      [
+       "6 cm",
+       "eye",
+       "line"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason explains how to obtain the correct scale reading.",
+     "description": "Gives the reading and explains that the eye is in line with the mark.",
+     "how": "State 6.0 cm and explain that the eye is level with the reading mark."
+    }
+   ],
+   "modelAnswer": [
+    "Reading B shows 6.0 cm.",
+    "The eye is in line with the mark, so this is the correct reading."
+   ]
+  },
+  {
+   "text": "Why is it better to place the object close to the metre scale?",
+   "finalAnswer": "It reduces parallax error and helps give a more reliable reading.",
+   "marks": 2,
+   "source": "CRQ 1.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "parallax"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognising parallax identifies the source of the reading error.",
+     "description": "Names parallax error.",
+     "how": "State that placing the object close to the scale reduces parallax error."
+    },
+    {
+     "accept": [
+      [
+       "reliable"
+      ],
+      [
+       "accurate"
+      ],
+      [
+       "correct"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose is to make the measured reading more dependable.",
+     "description": "Links reduced parallax to a better reading.",
+     "how": "Explain that reducing parallax helps obtain a more reliable or accurate reading."
+    }
+   ],
+   "modelAnswer": [
+    "Place the object close to the metre scale.",
+    "This reduces parallax error and helps give a more reliable reading."
+   ]
+  },
+  {
+   "text": "State the number of significant digits in each measurement.\n(a) 0.0045 m (b) 2.047 m (c) 3.40 m (d) 3.420 × 10⁴ m",
+   "finalAnswer": "(a) 2 (b) 4 (c) 3 (d) 4",
+   "marks": 2,
+   "source": "Numerical 1.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "a",
+       "2",
+       "b",
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly identifying significant digits in these values is part of the requested count.",
+     "description": "Gives the counts for (a) and (b).",
+     "how": "Count the significant digits as 2 for (a) and 4 for (b)."
+    },
+    {
+     "accept": [
+      [
+       "c",
+       "3",
+       "d",
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the counts for both remaining measurements.",
+     "description": "Gives the counts for (c) and (d).",
+     "how": "Count the significant digits as 3 for (c) and 4 for (d)."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 0.0045 m has 2 significant digits.",
+    "(b) 2.047 m has 4 significant digits.",
+    "(c) 3.40 m has 3 significant digits.",
+    "(d) 3.420 × 10⁴ m has 4 significant digits.",
+    "Answer: (a) 2 (b) 4 (c) 3 (d) 4"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section can be tested with a short-answer question asking what uncertainty is or how to reduce it.",
+   "For an analogue instrument question, state the smallest division first, then halve it to find the maximum uncertainty.",
+   "For a digital reading, mention that uncertainty is reflected by fluctuation in the last digit.",
+   "In a significant-figures question, give the number of significant digits for every value, including values written in scientific notation."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Look at the readings shown for A, B and C.",
+     "Choose the position where the eye is level with the mark."
+    ],
+    "accept": [
+     [
+      "b",
+      "6.0 cm",
+      "eye",
+      "line"
+     ],
+     [
+      "b",
+      "6 cm",
+      "eye",
+      "line"
+     ]
+    ],
+    "question": "Which reading out of A, B and C shows the correct length and why?",
+    "solution": [
+     "The readings shown are 5.9 cm, 6.0 cm and 6.1 cm.",
+     "The correct reading is the one taken with the eye in line with the mark.",
+     "Reading B is 6.0 cm."
+    ],
+    "answer": "Reading B, 6.0 cm, is correct because the eye is in line with the mark."
+   },
+   {
+    "hints": [
+     "Count only the digits that are significant in each measurement.",
+     "Zeros before the first non-zero digit do not count; a final zero after a decimal point does count."
+    ],
+    "accept": [
+     [
+      "a",
+      "2",
+      "b",
+      "4",
+      "c",
+      "3",
+      "d",
+      "4"
+     ]
+    ],
+    "question": "State the number of significant digits in each measurement.\n(a) 0.0045 m (b) 2.047 m (c) 3.40 m (d) 3.420 × 10⁴ m",
+    "solution": [
+     "(a) In 0.0045 m, the significant digits are 4 and 5: 2 significant digits.",
+     "(b) In 2.047 m, the zero between non-zero digits counts: 4 significant digits.",
+     "(c) In 3.40 m, the final zero after the decimal point counts: 3 significant digits.",
+     "(d) In 3.420 × 10⁴ m, count the digits in 3.420: 4 significant digits.",
+     "Answer: (a) 2 (b) 4 (c) 3 (d) 4"
+    ],
+    "answer": "(a) 2 (b) 4 (c) 3 (d) 4"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The smallest division is 0.1 cm, so its midpoint divides it into two equal parts.",
+     "text": "The metre rule is calibrated in millimetres, so its smallest division is 0.1 cm."
+    },
+    {
+     "why": "The end of the line lies between the 10.3 cm and 10.4 cm marks, so the reading is decided by its position relative to the midpoint.",
+     "text": "If the end does not touch or cross the midpoint, record the previous division; if it touches or has crossed the midpoint, record the next division."
+    },
+    {
+     "why": "The maximum uncertainty is half of the smallest division.",
+     "text": "Maximum uncertainty = 0.1 cm ÷ 2 = ±0.05 cm."
+    }
+   ],
+   "question": "A straight line is measured with a metre rule calibrated in millimetres. Its end lies between 10.3 cm and 10.4 cm. How is the reading chosen, and what is the maximum uncertainty?",
+   "answer": "Choose the previous or next division according to whether the endpoint is before or at/past the midpoint. The maximum uncertainty is ±0.05 cm."
+  },
+  "explain": [
+   {
+    "title": "Measurements are not perfect",
+    "body": "There is no such thing as a perfect measurement. Whenever a physical quantity is measured except counting, there is inevitably some uncertainty about its determined value due to some instrument. The instrument's smallest division limits how accurately you can read it."
+   },
+   {
+    "title": "Uncertainty on an analogue scale",
+    "body": "For the metre-rule example, the smallest division is 0.1 cm. The maximum uncertainty is half of this, or ±0.05 cm. Use the midpoint convention: record the previous division if the endpoint is before the midpoint, and the next division if it touches or crosses the midpoint."
+   },
+   {
+    "title": "Digital readings and repeated readings",
+    "body": "With digital scale, this is reflected in fluctuation of the last digit. For small lengths or short time intervals, take multiple readings and find their average to reduce uncertainty."
+   },
+   {
+    "title": "Significant figures",
+    "body": "The uncertainty or accuracy in the value of a measured quantity can be indicated conveniently by using significant figures."
+   }
+  ],
+  "mistakes": [
+   "Using the whole smallest division instead of half of it when stating the maximum uncertainty.",
+   "Ignoring the midpoint convention when deciding whether to record the previous or next division.",
+   "Treating every digit on a digital display as equally certain instead of noticing fluctuation in the last digit.",
+   "Using just one reading when several readings and their average could reduce uncertainty.",
+   "Counting leading zeros as significant digits."
+  ]
+ }
+}

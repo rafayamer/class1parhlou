@@ -1,0 +1,544 @@
+{
+ "note": {
+  "explanation": "Mass tells us how much matter an object contains and stays the same everywhere. Weight is the gravitational force on the object, so it can change when gravitational field strength changes.",
+  "examples": [
+   "A person with a mass of 80 kg has a weight of 800 N on Earth when g = 10 N kg⁻¹.",
+   "The same person has a weight of 128 N on the Moon when g = 1.6 m s⁻²."
+  ],
+  "checkAnswer": "Mass is measured in kilograms and stays the same; weight is a gravitational force measured in newtons and can change with g.",
+  "keywords": [
+   "mass",
+   "weight",
+   "gravity",
+   "gravitational field",
+   "kilogram",
+   "newton"
+  ],
+  "simple": "Mass is how much matter is in something. Weight is the pull of gravity on it.",
+  "checkQuestion": "What is the weight of a 2 kg object where g = 10 N kg⁻¹?",
+  "title": "Mass and Weight",
+  "steps": [
+   "Write the relation: w = mg.",
+   "Put in the mass and the value of g.",
+   "Multiply to find the weight, and give the answer in newtons."
+  ],
+  "answer": "Weight is the gravitational force acting on an object: w = mg.",
+  "checkAccept": [
+   [
+    "20 N"
+   ],
+   [
+    "w=20 N"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The quantity of matter in a body",
+    "The gravitational force on a body",
+    "The space occupied by a body",
+    "The speed of a body"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes the mass of a body?",
+   "rationales": [
+    "This is the simplest definition of mass given in your textbook.",
+    "This describes weight, not mass.",
+    "This describes volume, not mass.",
+    "Speed describes motion and is not mass."
+   ]
+  },
+  {
+   "options": [
+    "newton (N)",
+    "kilogram (kg)",
+    "metre (m)",
+    "joule (J)"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of mass?",
+   "rationales": [
+    "A newton is the SI unit of force and weight.",
+    "The kilogram is the SI unit of mass.",
+    "A metre is the SI unit of length.",
+    "A joule is the SI unit of energy."
+   ]
+  },
+  {
+   "options": [
+    "A scalar quantity that remains the same everywhere",
+    "A vector quantity that always has the same value everywhere",
+    "A scalar quantity that changes with altitude",
+    "A force measured in kilograms"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about mass is correct?",
+   "rationales": [
+    "Mass is scalar and remains the same everywhere.",
+    "Mass is not a vector, and weight—not mass—varies with location.",
+    "Mass does not change with altitude.",
+    "Kilogram is the unit of mass, but mass is not a force."
+   ]
+  },
+  {
+   "options": [
+    "The force with which Earth attracts a body towards its centre",
+    "The quantity of matter in a body",
+    "The force acting on unit area",
+    "The acceleration of a body"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the weight of an object?",
+   "rationales": [
+    "This is the textbook definition of the weight of an object.",
+    "This describes mass.",
+    "This describes pressure, not weight.",
+    "Acceleration is not weight."
+   ]
+  },
+  {
+   "options": [
+    "w = m/g",
+    "w = mg",
+    "w = g/m",
+    "w = m + g"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which equation gives the weight w of a body of mass m in a gravitational field of strength g?",
+   "rationales": [
+    "Dividing mass by g does not give the weight relation.",
+    "Weight is the product of mass and gravitational field strength.",
+    "This is not the weight relation.",
+    "Weight is not found by adding mass and field strength."
+   ]
+  },
+  {
+   "options": [
+    "ordinary balance",
+    "spring balance",
+    "metre rule",
+    "stopwatch"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which instrument can be used to measure weight?",
+   "rationales": [
+    "An ordinary balance is used to measure mass.",
+    "A spring balance can be used to measure weight.",
+    "A metre rule measures length.",
+    "A stopwatch measures time."
+   ]
+  },
+  {
+   "options": [
+    "It is a scalar quantity.",
+    "It is the quantity of matter in a body.",
+    "It is directed towards the centre of Earth.",
+    "It is measured in kilograms."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which feature distinguishes weight from mass?",
+   "rationales": [
+    "Mass is scalar; weight is a vector.",
+    "This describes mass.",
+    "Weight is a vector directed downward, towards Earth's centre.",
+    "Kilogram is the unit of mass, not weight."
+   ]
+  },
+  {
+   "options": [
+    "It varies because gravitational field strength varies from place to place.",
+    "It varies because the amount of matter in the object changes.",
+    "It remains the same because it is measured in newtons.",
+    "It varies because mass is a vector."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why can an object's weight change from one place to another?",
+   "rationales": [
+    "Weight depends on g, and g varies from place to place and with altitude.",
+    "The object's mass does not change just because it moves to another place.",
+    "Being measured in newtons does not make weight constant.",
+    "Mass is a scalar, not a vector."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A 10 kg block moves on a frictionless horizontal surface with an acceleration of 2 m s⁻². What is the force acting on the block?",
+   "finalAnswer": "20 N",
+   "marks": 2,
+   "source": "Example 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=ma"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The correct law connects force, mass and acceleration.",
+     "description": "Select Newton's second law.",
+     "how": "Write F = ma."
+    },
+    {
+     "accept": [
+      [
+       "10 kg",
+       "2 m s⁻²"
+      ],
+      [
+       "10",
+       "2"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The given values must be substituted correctly.",
+     "description": "Substitute the mass and acceleration.",
+     "how": "Use m = 10 kg and a = 2 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "20 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result and its unit complete the calculation.",
+     "description": "Give the correct force.",
+     "how": "Calculate 10 × 2 and state the answer in newtons."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of a block = m = 10 kg",
+    "Acceleration = a = 2 m s⁻²",
+    "Force = F = ?",
+    "By Newton's second law of motion, F = ma",
+    "Putting the values, F = 10 kg × 2 m s⁻² = 20 kg m s⁻² = 20 N"
+   ]
+  },
+  {
+   "text": "A force of 7500 N is applied to move a truck of mass 3000 kg. Find the acceleration produced in the truck. How long will it take to accelerate the truck from 36 km h⁻¹ to 72 km h⁻¹ speed?",
+   "finalAnswer": "2.5 m s⁻²; 4 s",
+   "marks": 4,
+   "source": "Example 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "36 km h⁻¹",
+       "10 m s⁻¹",
+       "72 km h⁻¹",
+       "20 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The speeds must be converted to SI units before using the motion equation.",
+     "description": "Convert both speeds to metres per second.",
+     "how": "Show that 36 km h⁻¹ = 10 m s⁻¹ and 72 km h⁻¹ = 20 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "a=F/m",
+       "2.5 m s⁻²"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's second law gives the truck's acceleration.",
+     "description": "Calculate acceleration from force and mass.",
+     "how": "Use a = F/m = 7500/3000."
+    },
+    {
+     "accept": [
+      [
+       "t=(v_f−v_i)/a"
+      ],
+      [
+       "t=(20−10)/2.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first equation of motion is needed to find the time.",
+     "description": "Use the first equation of motion.",
+     "how": "Rearrange v_f = v_i + at to find t."
+    },
+    {
+     "accept": [
+      [
+       "4 s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final time must be calculated correctly and include its unit.",
+     "description": "State the time.",
+     "how": "Evaluate (20 − 10)/2.5."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of truck = m = 3000 kg",
+    "Force applied = F = 7500 N",
+    "Acceleration = a = ?",
+    "Initial speed = v_i = 36 km h⁻¹",
+    "36 × 1000 m / (60 × 60 s) = 10 m s⁻¹",
+    "Final speed = v_f = 72 km h⁻¹ = 72 × 1000 m / (60 × 60 s) = 20 m s⁻¹",
+    "Time = t = ?",
+    "By Newton's second law, F = ma",
+    "or a = F/m",
+    "Putting the values, a = 7500 N / 3000 kg = 2.5 m s⁻²",
+    "Now, using first equation of motion, v_f = v_i + at",
+    "or t = (v_f − v_i)/a",
+    "Putting the values, t = (20 m s⁻¹ − 10 m s⁻¹) / 2.5 m s⁻² = 4 s"
+   ]
+  },
+  {
+   "text": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find:\n\n(a) the acceleration produced in the block.\n\n(b) the velocity of block after 5 seconds.",
+   "finalAnswer": "(0.5 m s⁻², 2.5 m s⁻¹)",
+   "marks": 4,
+   "source": "Numerical 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=ma"
+      ]
+     ],
+     "marks": 1,
+     "why": "Newton's second law is the method for finding the acceleration.",
+     "description": "Set up the force relation.",
+     "how": "Use a = F/m."
+    },
+    {
+     "accept": [
+      [
+       "0.5 m s⁻²"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acceleration must follow from the given force and mass.",
+     "description": "Find the acceleration.",
+     "how": "Calculate 5/10."
+    },
+    {
+     "accept": [
+      [
+       "v=u+at"
+      ],
+      [
+       "v=0+0.5×5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The motion equation uses the acceleration and elapsed time to find velocity.",
+     "description": "Use the first equation of motion.",
+     "how": "Take u = 0 and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "2.5 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final velocity and unit must be correct.",
+     "description": "State the velocity after 5 seconds.",
+     "how": "Evaluate 0.5 × 5."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of block = m = 10 kg",
+    "Force applied = F = 5 N",
+    "By Newton's second law, F = ma",
+    "a = F/m = 5 N / 10 kg = 0.5 m s⁻²",
+    "Initial velocity = u = 0 m s⁻¹",
+    "Time = t = 5 s",
+    "Using first equation of motion, v = u + at",
+    "v = 0 + (0.5 × 5) = 2.5 m s⁻¹"
+   ]
+  },
+  {
+   "text": "The mass of a person is 80 kg. What will be his weight on the Earth? What will be his weight on the Moon? The value of acceleration due to gravity of Moon is 1.6 m s⁻².",
+   "finalAnswer": "(800 N, 128 N)",
+   "marks": 4,
+   "source": "Numerical 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "w=mg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The weight relation is needed for both locations.",
+     "description": "Write the equation for weight.",
+     "how": "Use w = mg."
+    },
+    {
+     "accept": [
+      [
+       "g=10 N kg⁻¹"
+      ],
+      [
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The textbook gives Earth's gravitational field strength as 10 N kg⁻¹.",
+     "description": "Use the value of g for Earth.",
+     "how": "Substitute m = 80 kg and g = 10 N kg⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "800 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the correct weight on Earth.",
+     "description": "Calculate Earth's weight.",
+     "how": "Find 80 × 10."
+    },
+    {
+     "accept": [
+      [
+       "128 N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the correct weight on the Moon.",
+     "description": "Calculate the Moon's weight.",
+     "how": "Find 80 × 1.6."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of person = m = 80 kg",
+    "Weight on Earth = w = mg",
+    "w = 80 kg × 10 N kg⁻¹ = 800 N",
+    "Acceleration due to gravity on Moon = g = 1.6 m s⁻²",
+    "Weight on Moon = w = mg",
+    "w = 80 kg × 1.6 m s⁻² = 128 N"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask you to define mass or weight, state its unit, or distinguish between the two.",
+   "For a weight numerical, write w = mg, substitute the mass and the correct value of g, and give the answer in newtons.",
+   "Use g = 10 N kg⁻¹ for Earth as stated in this section, and use any different value of g supplied in the question.",
+   "In a longer numerical, show the formula, substitution, calculation and unit; these working steps can earn marks even if an arithmetic slip occurs."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Use Newton's second law to find the acceleration.",
+     "The block starts from rest, so use v = u + at with u = 0."
+    ],
+    "accept": [
+     [
+      "0.5 m s⁻²",
+      "2.5 m s⁻¹"
+     ],
+     [
+      "0.5",
+      "2.5"
+     ]
+    ],
+    "question": "A 10 kg block is placed on a smooth horizontal surface. A horizontal force of 5 N is applied to the block. Find:\n\n(a) the acceleration produced in the block.\n\n(b) the velocity of block after 5 seconds.",
+    "solution": [
+     "Mass of block = m = 10 kg",
+     "Force applied = F = 5 N",
+     "By Newton's second law, F = ma",
+     "a = F/m = 5 N / 10 kg = 0.5 m s⁻²",
+     "Initial velocity = u = 0 m s⁻¹",
+     "Time = t = 5 s",
+     "Using first equation of motion, v = u + at",
+     "v = 0 + (0.5 × 5) = 2.5 m s⁻¹"
+    ],
+    "answer": "(0.5 m s⁻², 2.5 m s⁻¹)"
+   },
+   {
+    "hints": [
+     "Use w = mg for both places.",
+     "For Earth use g = 10 N kg⁻¹; for the Moon use the given g = 1.6 m s⁻²."
+    ],
+    "accept": [
+     [
+      "800 N",
+      "128 N"
+     ],
+     [
+      "800",
+      "128"
+     ]
+    ],
+    "question": "The mass of a person is 80 kg. What will be his weight on the Earth? What will be his weight on the Moon? The value of acceleration due to gravity of Moon is 1.6 m s⁻².",
+    "solution": [
+     "Mass of person = m = 80 kg",
+     "Weight on Earth = w = mg",
+     "w = 80 kg × 10 N kg⁻¹ = 800 N",
+     "Acceleration due to gravity on Moon = g = 1.6 m s⁻²",
+     "Weight on Moon = w = mg",
+     "w = 80 kg × 1.6 m s⁻² = 128 N"
+    ],
+    "answer": "(800 N, 128 N)"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Listing the known quantities and unknown helps us choose the correct relation.",
+     "text": "Mass of a block = m = 10 kg"
+    },
+    {
+     "why": "The acceleration is the second given quantity needed in Newton's second law.",
+     "text": "Acceleration = a = 2 m s⁻²"
+    },
+    {
+     "why": "The question asks us to find the force.",
+     "text": "Force = F = ?"
+    },
+    {
+     "why": "Newton's second law relates force to mass and acceleration.",
+     "text": "By Newton's second law of motion, F = ma"
+    },
+    {
+     "why": "Substituting and multiplying gives the force in newtons.",
+     "text": "Putting the values, F = 10 kg × 2 m s⁻² = 20 kg m s⁻² = 20 N"
+    }
+   ],
+   "question": "A 10 kg block moves on a frictionless horizontal surface with an acceleration of 2 m s⁻². What is the force acting on the block?",
+   "answer": "20 N"
+  },
+  "explain": [
+   {
+    "title": "Mass",
+    "body": "The simplest definition of mass is that it is a measure of the quantity of matter in a body. Scientifically, mass is a scalar quantity and remains the same everywhere. Its SI unit is kilogram (kg), and an ordinary balance measures mass."
+   },
+   {
+    "title": "Scientific definition of mass",
+    "body": "The characteristic of a body which determines the magnitude of acceleration produced when a certain force acts upon it is known as mass of the body."
+   },
+   {
+    "title": "Weight",
+    "body": "Weight is a gravitational force acting on the object. It is a vector quantity directed downward, towards the centre of the Earth. The weight of an object is equal to the force with which the Earth attracts the body towards its centre."
+   },
+   {
+    "title": "Gravitational field and weight",
+    "body": "The gravitational field is a space around a mass in which another mass experiences a force due to gravitational attraction. The gravitational field strength is defined as the gravitational force acting on unit mass. Weight is given by w = mg, where g is the gravitational field strength. Its value is 10 N kg⁻¹. Since g varies from place to place and with altitude, weight can change; mass stays the same. Weight is measured in newtons (N) using a spring balance."
+   }
+  ],
+  "mistakes": [
+   "Do not say that an object's weight is measured in kilograms; kilograms are the unit of mass and newtons are the unit of weight.",
+   "Do not treat mass and weight as the same quantity: mass is scalar and stays the same, while weight is a vector force that depends on g.",
+   "Do not use Earth's value of g when a question gives a different value, such as the Moon's gravitational acceleration.",
+   "Do not omit the unit N from a calculated weight."
+  ]
+ }
+}

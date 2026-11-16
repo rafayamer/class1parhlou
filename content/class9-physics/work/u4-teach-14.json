@@ -1,0 +1,2017 @@
+{
+ "note": {
+  "explanation": "For a force to turn a body, its turning effect (torque) depends on the force and its perpendicular distance from the pivot. A body is in complete equilibrium when both the resultant force and the resultant torque are zero.",
+  "examples": [
+   "A 10 N force acting 0.5 m from a pivot at right angles produces torque 10 × 0.5 = 5 N m.",
+   "A 200 N force at 30° to the horizontal has components Fx = 200 cos 30° = 173.2 N and Fy = 200 sin 30° = 100 N."
+  ],
+  "checkAnswer": "Both the resultant force and the resultant torque must be zero.",
+  "keywords": [
+   "torque",
+   "moment",
+   "equilibrium",
+   "components",
+   "stability",
+   "centre of gravity"
+  ],
+  "simple": "A force can push or pull an object, and it can also make the object turn. How strongly it turns depends on how big the force is and how far from the pivot it acts.",
+  "checkQuestion": "What two conditions must be satisfied for complete equilibrium?",
+  "title": "Turning Effects of Force",
+  "steps": [
+   "Resolve a force into components using Fx = F cos θ and Fy = F sin θ when θ is measured from the x-axis.",
+   "For torque, use τ = rF sin θ, where r is the distance from the pivot to the point of application of force.",
+   "For a balanced body, clockwise moments equal anticlockwise moments.",
+   "For complete equilibrium, ΣF = 0 and Στ = 0.",
+   "For circular motion, centripetal force is Fc = mv²/r and acts perpendicular to the velocity."
+  ],
+  "answer": "Complete equilibrium requires zero resultant force and zero resultant torque.",
+  "checkAccept": [
+   [
+    "ΣF=0",
+    "Στ=0"
+   ],
+   [
+    "resultant force=0",
+    "resultant torque=0"
+   ],
+   [
+    "both",
+    "zero"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "1 N",
+    "between 1 N and 7 N",
+    "5 N",
+    "7 N"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q4.1. A particle is simultaneously acted upon by two forces of 4 and 3 newtons. The net force on the particle is:",
+   "rationales": [
+    "This is not always the resultant because the forces need not act in the same direction.",
+    "This is correct because the resultant magnitude can range from the difference, 1 N, to the sum, 7 N.",
+    "This is the resultant only if the two forces are perpendicular, which is not specified.",
+    "This is the resultant only if the two forces act in the same direction."
+   ]
+  },
+  {
+   "options": [
+    "F",
+    "F sin60°",
+    "F cos60°",
+    "F tan60°"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q4.2. A force F is making an angle of 60° with x-axis. Its y-component is equal to:",
+   "rationales": [
+    "The full force is not its y-component when it is inclined to the x-axis.",
+    "This is correct because the component perpendicular to the x-axis is F sin 60°.",
+    "This gives the x-component, not the y-component.",
+    "This is not the formula for a force component."
+   ]
+  },
+  {
+   "options": [
+    "moment arm",
+    "couple",
+    "couple arm",
+    "torque"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.3. Moment of force is called:",
+   "rationales": [
+    "A moment arm is a distance, not the turning effect of a force.",
+    "A couple is a pair of equal and opposite forces that produces rotation.",
+    "A couple arm is the perpendicular distance between the forces of a couple.",
+    "This is correct because torque is another name for the moment of a force."
+   ]
+  },
+  {
+   "options": [
+    "Σ F = 0 and Σ τ = 0",
+    "Σ F = 0 and Σ τ ≠ 0",
+    "Σ F ≠ 0 and Σ τ = 0",
+    "Σ F ≠ 0 and Σ τ ≠ 0"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q4.4. If F_1 and F_2 are the forces acting on a body and τ is the torque produced in it, the body will be completely in equilibrium, when:",
+   "rationales": [
+    "This is correct because complete equilibrium requires both zero resultant force and zero resultant torque.",
+    "A nonzero resultant torque would make the body rotate.",
+    "A nonzero resultant force would make the body accelerate linearly.",
+    "Both nonzero resultants mean the body is not in equilibrium."
+   ]
+  },
+  {
+   "options": [
+    "loses",
+    "gains",
+    "neither loses nor gains",
+    "not certain"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q4.5. A Shopkeeper sells his articles by a balance having unequal arms of the pans. If he puts the weights in the pan having shorter arm, then the customer.",
+   "rationales": [
+    "This is correct because the goods in the longer-arm pan need less weight to balance the weights on the shorter arm, so the customer receives less than the stated amount.",
+    "The unequal arms do not make the customer receive extra goods in this arrangement.",
+    "The balance is unfair because the arms are unequal.",
+    "The shorter arm makes the result predictable: the customer loses."
+   ]
+  },
+  {
+   "options": [
+    "law of conservation of momentum",
+    "Newton’s second law of motion",
+    "principle of moments",
+    "Newton’s third law of motion"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.6. A man walks on a tight rope. He balances himself by holding a bamboo stick horizontally. It is an application of:",
+   "rationales": [
+    "Conservation of momentum does not explain the balancing effect of the horizontal stick.",
+    "Newton’s second law relates resultant force to acceleration, rather than this balancing method.",
+    "This is correct because the stick helps balance turning effects about the rope.",
+    "Newton’s third law concerns action-reaction force pairs, not the balancing principle described."
+   ]
+  },
+  {
+   "options": [
+    "at the highest position",
+    "at the lowest position",
+    "at any position",
+    "outside the body"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q4.7. In stable equilibrium, the centre of gravity of the body lies:",
+   "rationales": [
+    "A high centre of gravity does not describe stable equilibrium.",
+    "This is correct because a stable body has its centre of gravity at its lowest possible position.",
+    "The position of the centre of gravity matters to stability.",
+    "The centre of gravity need not be outside a body, and this is not the stable-equilibrium condition."
+   ]
+  },
+  {
+   "options": [
+    "lies always inside the body",
+    "lies always outside the body",
+    "lies always on the surface of the body",
+    "may lie within , outside or on the surface"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.8. The centre of mass of a body:",
+   "rationales": [
+    "The centre of mass can be outside the material of a shaped body, such as a ring.",
+    "It is not always outside; many bodies have their centre of mass inside.",
+    "It is not always on the surface.",
+    "This is correct because its position depends on the body's shape and mass distribution."
+   ]
+  },
+  {
+   "options": [
+    "stable equilibrium",
+    "unstable equilibrium",
+    "neutral equilibrium",
+    "none of these"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q4.9. A cylinder resting on its circular base is in:",
+   "rationales": [
+    "This is correct because a small displacement raises its centre of gravity and it tends to return to its original position.",
+    "Unstable equilibrium occurs when a small displacement makes the body move farther from its original position.",
+    "Neutral equilibrium occurs when displacement does not change the centre-of-gravity height.",
+    "The cylinder on its base is an example of stable equilibrium."
+   ]
+  },
+  {
+   "options": [
+    "rF",
+    "rF cos θ",
+    "mv²/r",
+    "mv/r²"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.10. Centripetal force is given by:",
+   "rationales": [
+    "This is not the formula for centripetal force.",
+    "This expression is not the standard centripetal-force formula.",
+    "This is correct because centripetal force equals mass times speed squared divided by radius.",
+    "This has the wrong dependence on speed and radius."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q4.1. Define like and unlike parallel forces.",
+   "finalAnswer": "Like parallel forces act in the same direction; unlike parallel forces act in opposite directions.",
+   "marks": 2,
+   "source": "Short 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "same direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The direction relation defines like parallel forces.",
+     "description": "Define like parallel forces.",
+     "how": "State that they act in the same direction."
+    },
+    {
+     "accept": [
+      [
+       "opposite direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The direction relation distinguishes unlike parallel forces.",
+     "description": "Define unlike parallel forces.",
+     "how": "State that they act in opposite directions."
+    }
+   ],
+   "modelAnswer": [
+    "Like parallel forces act in the same direction.",
+    "Unlike parallel forces act in opposite directions."
+   ]
+  },
+  {
+   "text": "Q4.2. What are rectangular components of a vector and their values?",
+   "finalAnswer": "For a vector F at angle θ to the x-axis, Fx = F cos θ and Fy = F sin θ.",
+   "marks": 2,
+   "source": "Short 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "perpendicular",
+       "components"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rectangular components are the perpendicular components along coordinate axes.",
+     "description": "Explain rectangular components.",
+     "how": "State that they are perpendicular components along the x- and y-axes."
+    },
+    {
+     "accept": [
+      [
+       "Fx=Fcosθ",
+       "Fysinθ"
+      ],
+      [
+       "Fcosθ",
+       "Fsinθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The component formulae give the required values.",
+     "description": "Give the component values.",
+     "how": "Use Fx = F cos θ and Fy = F sin θ when θ is measured from the x-axis."
+    }
+   ],
+   "modelAnswer": [
+    "Rectangular components of a vector are its components along two mutually perpendicular axes.",
+    "If F makes an angle θ with the x-axis, then Fx = F cos θ and Fy = F sin θ."
+   ]
+  },
+  {
+   "text": "Q4.3. What is the line of action of a force?",
+   "finalAnswer": "The line of action of a force is the straight line along which the force acts.",
+   "marks": 2,
+   "source": "Short 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "straight line"
+      ],
+      [
+       "force acts"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct definition identifies the direction and path of action of the force.",
+     "description": "Define the line of action.",
+     "how": "State that it is the straight line along which the force acts."
+    }
+   ],
+   "modelAnswer": [
+    "The line of action of a force is the straight line along which the force acts."
+   ]
+  },
+  {
+   "text": "Q4.4. Define moment of a force. Prove that τ = rF sinθ, where θ is angle between r and F.",
+   "finalAnswer": "τ = rF sinθ",
+   "marks": 4,
+   "source": "Short 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "turning effect"
+      ],
+      [
+       "moment"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition identifies the physical effect being measured.",
+     "description": "Define moment of force.",
+     "how": "Describe it as the turning effect of a force about a pivot."
+    },
+    {
+     "accept": [
+      [
+       "r sinθ"
+      ],
+      [
+       "perpendicular distance"
+      ]
+     ],
+     "marks": 1,
+     "why": "The perpendicular distance from the pivot is the moment arm.",
+     "description": "Identify the moment arm.",
+     "how": "Show that the perpendicular distance is r sin θ."
+    },
+    {
+     "accept": [
+      [
+       "τ=F×r sinθ"
+      ],
+      [
+       "τ=rFsinθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "Torque is force multiplied by its perpendicular distance from the pivot.",
+     "description": "Apply the moment relation.",
+     "how": "Write τ = F × perpendicular distance."
+    },
+    {
+     "accept": [
+      [
+       "τ=rFsinθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final expression is the result to be proved.",
+     "description": "State the proved relation.",
+     "how": "Substitute the perpendicular distance r sin θ."
+    }
+   ],
+   "modelAnswer": [
+    "The moment of a force is its turning effect about a pivot.",
+    "Let r be the distance from the pivot to the point where force F is applied.",
+    "The perpendicular distance from the pivot to the line of action of F is r sin θ.",
+    "Moment of force, τ = force × perpendicular distance.",
+    "Therefore, τ = F(r sin θ) = rF sin θ."
+   ]
+  },
+  {
+   "text": "Q4.6. Identify the state of equilibrium in each case in the figure given below.",
+   "finalAnswer": "(a) Stable equilibrium; (b) unstable equilibrium; (c) neutral equilibrium.",
+   "marks": 2,
+   "source": "Short 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "stable"
+      ],
+      [
+       "unstable"
+      ],
+      [
+       "neutral"
+      ]
+     ],
+     "marks": 2,
+     "why": "The three cases test recognition of the three states of equilibrium.",
+     "description": "Identify the equilibrium states.",
+     "how": "Name stable, unstable and neutral equilibrium for (a), (b) and (c), respectively."
+    }
+   ],
+   "modelAnswer": [
+    "(a) The cone resting on its circular base is in stable equilibrium.",
+    "(b) The ball on top of the dome is in unstable equilibrium.",
+    "(c) The cylinder lying horizontally on its side is in neutral equilibrium."
+   ]
+  },
+  {
+   "text": "Q4.7. Give an example of the body which is moving yet in equilibrium.",
+   "finalAnswer": "A body moving with constant velocity is in dynamic equilibrium.",
+   "marks": 2,
+   "source": "Short 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "constant velocity"
+      ],
+      [
+       "dynamic equilibrium"
+      ]
+     ],
+     "marks": 2,
+     "why": "Constant velocity means zero acceleration and zero resultant force.",
+     "description": "Give an example of moving equilibrium.",
+     "how": "Give a body moving with constant velocity and identify dynamic equilibrium."
+    }
+   ],
+   "modelAnswer": [
+    "A body moving with constant velocity is an example of a body that is moving yet in equilibrium.",
+    "It is in dynamic equilibrium because its acceleration and resultant force are zero."
+   ]
+  },
+  {
+   "text": "Q4.8. Define centre of mass and centre of gravity of a body.",
+   "finalAnswer": "The centre of mass is the point at which the whole mass of a body may be considered concentrated; the centre of gravity is the point through which the body's weight acts.",
+   "marks": 2,
+   "source": "Short 4.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "whole mass"
+      ],
+      [
+       "concentrated"
+      ]
+     ],
+     "marks": 1,
+     "why": "This describes the centre of mass.",
+     "description": "Define centre of mass.",
+     "how": "State that the body's whole mass may be considered concentrated there."
+    },
+    {
+     "accept": [
+      [
+       "weight acts"
+      ],
+      [
+       "weight"
+      ]
+     ],
+     "marks": 1,
+     "why": "The line of action of the body's weight passes through the centre of gravity.",
+     "description": "Define centre of gravity.",
+     "how": "State that it is the point through which the body's weight acts."
+    }
+   ],
+   "modelAnswer": [
+    "The centre of mass of a body is the point at which its whole mass may be considered concentrated.",
+    "The centre of gravity of a body is the point through which its whole weight acts."
+   ]
+  },
+  {
+   "text": "Q4.9. What are two basic principles of stability in physics which are applied in designing balancing toys and racing cars?",
+   "finalAnswer": "A lower centre of gravity and a wider base of support increase stability.",
+   "marks": 2,
+   "source": "Short 4.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "lower centre of gravity"
+      ],
+      [
+       "low centre of gravity"
+      ]
+     ],
+     "marks": 1,
+     "why": "A lower centre of gravity makes toppling less likely.",
+     "description": "State the first stability principle.",
+     "how": "Give a low centre of gravity."
+    },
+    {
+     "accept": [
+      [
+       "wider base"
+      ],
+      [
+       "wide base"
+      ]
+     ],
+     "marks": 1,
+     "why": "A wide base makes it harder for the line of action of weight to fall outside the support.",
+     "description": "State the second stability principle.",
+     "how": "Give a wide base of support."
+    }
+   ],
+   "modelAnswer": [
+    "Stability is increased by keeping the centre of gravity low.",
+    "Stability is also increased by making the base of support wide."
+   ]
+  },
+  {
+   "text": "Q4.10. How can you prove that the centripetal force always acts perpendicular to velocity?",
+   "finalAnswer": "Centripetal force is perpendicular to velocity because it changes the direction of velocity, not its magnitude.",
+   "marks": 2,
+   "source": "Short 4.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "direction of velocity"
+      ],
+      [
+       "changes direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force in circular motion changes the direction of motion.",
+     "description": "Explain the effect of centripetal force.",
+     "how": "State that it changes the direction of velocity."
+    },
+    {
+     "accept": [
+      [
+       "perpendicular"
+      ],
+      [
+       "90"
+      ]
+     ],
+     "marks": 1,
+     "why": "A force that changes direction without changing speed acts perpendicular to velocity.",
+     "description": "State the direction relation.",
+     "how": "Conclude that centripetal force is perpendicular to velocity."
+    }
+   ],
+   "modelAnswer": [
+    "In uniform circular motion, the speed remains constant but the direction of velocity changes continuously.",
+    "The force producing this change in direction acts perpendicular to the velocity.",
+    "Therefore, centripetal force is always perpendicular to velocity."
+   ]
+  },
+  {
+   "text": "Q4.1. A car travels at the same speed around two curves with different radii. For which radius the car experiences more centripetal force? Prove your answer.",
+   "finalAnswer": "The car experiences more centripetal force on the curve with the smaller radius; Fc = mv²/r.",
+   "marks": 4,
+   "source": "CRQ 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Fc=mv^2/r"
+      ],
+      [
+       "mv²/r"
+      ]
+     ],
+     "marks": 1,
+     "why": "The centripetal-force formula is needed to compare the curves.",
+     "description": "State the formula.",
+     "how": "Write Fc = mv²/r."
+    },
+    {
+     "accept": [
+      [
+       "same speed"
+      ],
+      [
+       "v constant"
+      ]
+     ],
+     "marks": 1,
+     "why": "At the same speed, mass and speed do not change between the cases.",
+     "description": "Identify what stays fixed.",
+     "how": "Note that m and v are the same for the car in both curves."
+    },
+    {
+     "accept": [
+      [
+       "inversely proportional"
+      ],
+      [
+       "smaller radius"
+      ]
+     ],
+     "marks": 1,
+     "why": "The formula shows force increases as radius decreases.",
+     "description": "Compare the radii.",
+     "how": "Explain the inverse relation between Fc and r."
+    },
+    {
+     "accept": [
+      [
+       "more centripetal force"
+      ],
+      [
+       "smaller radius"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion answers which curve requires greater force.",
+     "description": "Give the conclusion.",
+     "how": "Choose the curve with the smaller radius."
+    }
+   ],
+   "modelAnswer": [
+    "Centripetal force, Fc = mv²/r.",
+    "The car has the same mass and speed on both curves, so m and v² are constant.",
+    "Therefore, Fc is inversely proportional to r.",
+    "The car experiences more centripetal force on the curve with the smaller radius."
+   ]
+  },
+  {
+   "text": "Q4.2. A ripe mango does not normally fall from the tree. But when the branch of the tree is shaken, the mango falls down easily. Can you tell the reason?",
+   "finalAnswer": "The mango tends to remain at rest due to inertia when the branch is shaken; the stalk is disturbed and may break, so the mango falls.",
+   "marks": 4,
+   "source": "CRQ 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inertia"
+      ]
+     ],
+     "marks": 1,
+     "why": "Inertia explains why the mango resists the sudden motion of the branch.",
+     "description": "Identify the principle involved.",
+     "how": "Name inertia."
+    },
+    {
+     "accept": [
+      [
+       "remain at rest"
+      ],
+      [
+       "resists motion"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mango tends to remain in its original state when the branch moves suddenly.",
+     "description": "Explain the mango's response.",
+     "how": "State that it tends to remain at rest as the branch is shaken."
+    },
+    {
+     "accept": [
+      [
+       "stalk"
+      ],
+      [
+       "stem"
+      ]
+     ],
+     "marks": 1,
+     "why": "The connection to the branch is what is strained by the sudden motion.",
+     "description": "Explain what happens at the attachment.",
+     "how": "Mention that the stalk is disturbed or strained."
+    },
+    {
+     "accept": [
+      [
+       "falls"
+      ],
+      [
+       "break"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result of the disturbed or broken stalk is that the mango falls.",
+     "description": "State the outcome.",
+     "how": "Conclude that the mango falls when its stalk breaks or loses support."
+    }
+   ],
+   "modelAnswer": [
+    "A mango tends to remain at rest because of inertia.",
+    "When the branch is shaken suddenly, the branch moves but the mango resists this change in its state of rest.",
+    "This strains or breaks the mango's stalk.",
+    "The mango then falls down."
+   ]
+  },
+  {
+   "text": "Q4.3. Discuss the concepts of stability and centre of gravity in relation to objects toppling over. Provide an example where an object’s centre of gravity affects its stability, and explain how altering its base of support can influence stability.",
+   "finalAnswer": "An object topples when the line of action of its weight falls outside its base of support; a low centre of gravity and a wider base make it more stable.",
+   "marks": 4,
+   "source": "CRQ 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "centre of gravity"
+      ],
+      [
+       "line of action"
+      ]
+     ],
+     "marks": 1,
+     "why": "The centre of gravity determines where the body's weight acts.",
+     "description": "Connect weight and centre of gravity.",
+     "how": "Explain that the line of action of weight passes through the centre of gravity."
+    },
+    {
+     "accept": [
+      [
+       "outside"
+      ],
+      [
+       "base of support"
+      ]
+     ],
+     "marks": 1,
+     "why": "A body topples when the weight line falls beyond its supporting base.",
+     "description": "Explain toppling.",
+     "how": "State that toppling occurs when the line of action falls outside the base."
+    },
+    {
+     "accept": [
+      [
+       "low centre of gravity"
+      ],
+      [
+       "lower centre of gravity"
+      ]
+     ],
+     "marks": 1,
+     "why": "A low centre of gravity improves stability.",
+     "description": "Give an example or principle about centre of gravity.",
+     "how": "Explain how lowering the centre of gravity makes an object less likely to topple."
+    },
+    {
+     "accept": [
+      [
+       "wider base"
+      ],
+      [
+       "wide base"
+      ]
+     ],
+     "marks": 1,
+     "why": "A wider support makes it harder for the weight line to pass outside the base.",
+     "description": "Explain the effect of changing the base.",
+     "how": "State that widening the base increases stability."
+    }
+   ],
+   "modelAnswer": [
+    "The centre of gravity is the point through which the weight of an object acts.",
+    "An object topples when the line of action of its weight falls outside its base of support.",
+    "For example, a racing car is made low so that its centre of gravity is low, which improves stability.",
+    "A wider base of support also makes an object more stable because the line of action of its weight is less likely to fall outside the base."
+   ]
+  },
+  {
+   "text": "Q4.4. Why an accelerated body cannot be considered in equilibrium?",
+   "finalAnswer": "An accelerated body has a non-zero resultant force, so it is not in equilibrium.",
+   "marks": 2,
+   "source": "CRQ 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "accelerated"
+      ],
+      [
+       "acceleration"
+      ]
+     ],
+     "marks": 1,
+     "why": "Acceleration signals that the body's velocity is changing.",
+     "description": "Relate acceleration to force.",
+     "how": "State that an accelerated body has acceleration."
+    },
+    {
+     "accept": [
+      [
+       "resultant force"
+      ],
+      [
+       "ΣF"
+      ],
+      [
+       "not zero"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equilibrium requires zero resultant force.",
+     "description": "Explain why equilibrium fails.",
+     "how": "Use Newton's second law to state that its resultant force is nonzero."
+    }
+   ],
+   "modelAnswer": [
+    "An accelerated body has a non-zero resultant force according to Newton's second law.",
+    "Since a body in equilibrium must have zero resultant force, an accelerated body cannot be in equilibrium."
+   ]
+  },
+  {
+   "text": "Q4.5. Two boxes of the same weight but different heights are lying on the floor of a truck. If the truck makes a sudden stop, which box is more likely to tumble over? Why?",
+   "finalAnswer": "The taller box is more likely to tumble because its centre of gravity is higher and the sudden stop creates a greater turning effect about its base.",
+   "marks": 4,
+   "source": "CRQ 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "taller box"
+      ],
+      [
+       "higher box"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify which of the two boxes topples more readily.",
+     "description": "Choose the box.",
+     "how": "Name the taller box."
+    },
+    {
+     "accept": [
+      [
+       "centre of gravity"
+      ],
+      [
+       "higher"
+      ]
+     ],
+     "marks": 1,
+     "why": "The taller box has a higher centre of gravity.",
+     "description": "Compare centres of gravity.",
+     "how": "Explain that the taller box's centre of gravity is higher."
+    },
+    {
+     "accept": [
+      [
+       "turning effect"
+      ],
+      [
+       "torque"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sudden stop produces a turning tendency about the base.",
+     "description": "Explain the toppling effect.",
+     "how": "Mention the turning effect about the base."
+    },
+    {
+     "accept": [
+      [
+       "topple"
+      ],
+      [
+       "less stable"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must connect the higher centre of gravity to greater toppling risk.",
+     "description": "State the stability conclusion.",
+     "how": "Conclude that the taller box is less stable and more likely to tumble."
+    }
+   ],
+   "modelAnswer": [
+    "The taller box is more likely to tumble over.",
+    "Its centre of gravity is higher than that of the shorter box.",
+    "When the truck stops suddenly, the box tends to continue moving and a turning effect acts about its base.",
+    "The higher centre of gravity makes the taller box less stable."
+   ]
+  },
+  {
+   "text": "Q4.1. Explain the principle of moments with an example.",
+   "finalAnswer": "For a body in rotational equilibrium, the sum of clockwise moments about a pivot equals the sum of anticlockwise moments.",
+   "marks": 4,
+   "source": "Comprehensive 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clockwise moments"
+      ],
+      [
+       "anticlockwise moments"
+      ]
+     ],
+     "marks": 2,
+     "why": "The equality of opposite moments is the principle of moments.",
+     "description": "State the principle.",
+     "how": "State that clockwise moments equal anticlockwise moments in equilibrium."
+    },
+    {
+     "accept": [
+      [
+       "pivot"
+      ],
+      [
+       "turning effect"
+      ]
+     ],
+     "marks": 1,
+     "why": "Moments are taken about a pivot or axis.",
+     "description": "Identify the reference point.",
+     "how": "Say that the moments are considered about a pivot."
+    },
+    {
+     "accept": [
+      [
+       "see-saw"
+      ],
+      [
+       "balanced ruler"
+      ],
+      [
+       "balance"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example demonstrates the principle in use.",
+     "description": "Give an example.",
+     "how": "Use a balanced see-saw or ruler and explain the equal moments."
+    }
+   ],
+   "modelAnswer": [
+    "The principle of moments states that for a body in rotational equilibrium, the sum of clockwise moments about a pivot equals the sum of anticlockwise moments about that pivot.",
+    "For example, a balanced see-saw has a clockwise moment on one side and an equal anticlockwise moment on the other side.",
+    "Thus, the resultant torque on the see-saw is zero."
+   ]
+  },
+  {
+   "text": "Q4.2. Describe how could you determine the centre of gravity of an irregular shaped lamina experimentally.",
+   "finalAnswer": "Suspend the lamina from two different points and draw the vertical plumb-line each time; their intersection is the centre of gravity.",
+   "marks": 4,
+   "source": "Comprehensive 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "suspend"
+      ],
+      [
+       "hang"
+      ]
+     ],
+     "marks": 1,
+     "why": "Suspending the lamina lets it settle with its centre of gravity vertically below the suspension point.",
+     "description": "Describe the first action.",
+     "how": "Suspend the lamina freely from a point."
+    },
+    {
+     "accept": [
+      [
+       "plumb line"
+      ],
+      [
+       "vertical line"
+      ]
+     ],
+     "marks": 1,
+     "why": "The plumb-line marks the vertical through the centre of gravity.",
+     "description": "Mark the vertical.",
+     "how": "Use a plumb-line and draw its direction on the lamina."
+    },
+    {
+     "accept": [
+      [
+       "different point"
+      ],
+      [
+       "second point"
+      ]
+     ],
+     "marks": 1,
+     "why": "A second suspension gives another line that also passes through the centre of gravity.",
+     "description": "Repeat the experiment.",
+     "how": "Suspend the lamina from a second point and draw another vertical."
+    },
+    {
+     "accept": [
+      [
+       "intersection"
+      ],
+      [
+       "cross"
+      ]
+     ],
+     "marks": 1,
+     "why": "The intersection of the vertical lines locates the centre of gravity.",
+     "description": "Identify the result.",
+     "how": "Mark the intersection as the centre of gravity."
+    }
+   ],
+   "modelAnswer": [
+    "Make a small hole near the edge of the irregular lamina and suspend it freely from that point.",
+    "Suspend a plumb-line from the same point and draw the vertical line on the lamina.",
+    "Suspend the lamina from another point and draw a second vertical line using the plumb-line.",
+    "The intersection of the two lines gives the centre of gravity of the lamina."
+   ]
+  },
+  {
+   "text": "Q4.3. State and explain two conditions of equilibrium.",
+   "finalAnswer": "The resultant force must be zero and the resultant torque must be zero.",
+   "marks": 4,
+   "source": "Comprehensive 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ΣF=0"
+      ],
+      [
+       "resultant force"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first condition prevents linear acceleration.",
+     "description": "State and explain the first condition.",
+     "how": "State that the vector sum of forces is zero, so there is no linear acceleration."
+    },
+    {
+     "accept": [
+      [
+       "Στ=0"
+      ],
+      [
+       "resultant torque"
+      ]
+     ],
+     "marks": 2,
+     "why": "The second condition prevents angular acceleration.",
+     "description": "State and explain the second condition.",
+     "how": "State that the sum of torques is zero, so there is no angular acceleration."
+    }
+   ],
+   "modelAnswer": [
+    "First condition: The resultant force acting on the body must be zero, ΣF = 0.",
+    "This condition prevents linear acceleration.",
+    "Second condition: The resultant torque acting on the body must be zero, Στ = 0.",
+    "This condition prevents angular acceleration."
+   ]
+  },
+  {
+   "text": "Q4.4. How the stability of an object can be improved? Give a few examples to support your answer.",
+   "finalAnswer": "Stability can be improved by lowering the centre of gravity and widening the base of support.",
+   "marks": 4,
+   "source": "Comprehensive 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "lower centre of gravity"
+      ],
+      [
+       "low centre of gravity"
+      ]
+     ],
+     "marks": 1,
+     "why": "A lower centre of gravity makes toppling less likely.",
+     "description": "Give the first method.",
+     "how": "Explain that lowering the centre of gravity improves stability."
+    },
+    {
+     "accept": [
+      [
+       "wide base"
+      ],
+      [
+       "wider base"
+      ]
+     ],
+     "marks": 1,
+     "why": "A wide base provides a larger region of support.",
+     "description": "Give the second method.",
+     "how": "Explain that widening the base increases stability."
+    },
+    {
+     "accept": [
+      [
+       "racing car"
+      ],
+      [
+       "balancing toy"
+      ],
+      [
+       "stool"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example should show how the design uses the stability principles.",
+     "description": "Give an example.",
+     "how": "Name a racing car or balancing toy designed with a low centre of gravity."
+    },
+    {
+     "accept": [
+      [
+       "stable"
+      ],
+      [
+       "less likely to topple"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect the design changes with their effect.",
+     "description": "Explain the result.",
+     "how": "State that these changes make the object less likely to topple."
+    }
+   ],
+   "modelAnswer": [
+    "The stability of an object can be improved by lowering its centre of gravity.",
+    "It can also be improved by widening its base of support.",
+    "For example, racing cars are made low and wide to increase their stability.",
+    "A balancing toy is also designed so that its centre of gravity is low, making it less likely to topple."
+   ]
+  },
+  {
+   "text": "Q4.1. A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+   "finalAnswer": "(173.2 N, 100 N)",
+   "marks": 5,
+   "source": "Numerical 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Fx=Fcos30"
+      ],
+      [
+       "Fy=Fsin30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct component relations are needed before substitution.",
+     "description": "Choose component formulae.",
+     "how": "Use Fx = F cos 30° and Fy = F sin 30°."
+    },
+    {
+     "accept": [
+      [
+       "200cos30"
+      ],
+      [
+       "200sin30"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution places the given force and angle into each component formula.",
+     "description": "Substitute the given values.",
+     "how": "Substitute F = 200 N and θ = 30°."
+    },
+    {
+     "accept": [
+      [
+       "173.2N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The x-component must be evaluated correctly.",
+     "description": "Calculate x-component.",
+     "how": "Evaluate 200 cos 30°."
+    },
+    {
+     "accept": [
+      [
+       "100N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The y-component must be evaluated correctly.",
+     "description": "Calculate y-component.",
+     "how": "Evaluate 200 sin 30°."
+    },
+    {
+     "accept": [
+      [
+       "173.2N",
+       "100N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final ordered pair with units gives both requested components.",
+     "description": "Give the final answer.",
+     "how": "State (173.2 N, 100 N)."
+    }
+   ],
+   "modelAnswer": [
+    "Given: F = 200 N, θ = 30°",
+    "Fx = F cos θ = 200 cos 30° = 173.2 N",
+    "Fy = F sin θ = 200 sin 30° = 100 N",
+    "Answer: (173.2 N, 100 N)"
+   ]
+  },
+  {
+   "text": "Q4.2. A force of 300 N is applied perpendicularly at the knob of a door to open it as shown in the given figure. If the knob is 1.2 m away from the hinge, what is the torque applied? Is it positive or negative torque?",
+   "finalAnswer": "(360 N m, positive)",
+   "marks": 5,
+   "source": "Numerical 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "τ=rF"
+      ],
+      [
+       "τ=rFsin90"
+      ]
+     ],
+     "marks": 1,
+     "why": "The torque formula accounts for force and distance from the hinge.",
+     "description": "Select the formula.",
+     "how": "Use τ = rF sin θ."
+    },
+    {
+     "accept": [
+      [
+       "1.2m",
+       "300N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution uses the stated lever arm and force.",
+     "description": "Substitute the values.",
+     "how": "Use r = 1.2 m, F = 300 N and θ = 90°."
+    },
+    {
+     "accept": [
+      [
+       "360"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical torque is 1.2 × 300.",
+     "description": "Calculate the torque.",
+     "how": "Evaluate the product to obtain 360."
+    },
+    {
+     "accept": [
+      [
+       "N m"
+      ],
+      [
+       "Nm"
+      ]
+     ],
+     "marks": 1,
+     "why": "Torque is measured in newton metres.",
+     "description": "Give the unit.",
+     "how": "Write N m."
+    },
+    {
+     "accept": [
+      [
+       "positive"
+      ],
+      [
+       "360Nm",
+       "positive"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sign must agree with the stated direction of rotation in the textbook figure and answer.",
+     "description": "Give the sign and final answer.",
+     "how": "State that the torque is positive."
+    }
+   ],
+   "modelAnswer": [
+    "Given: F = 300 N, r = 1.2 m, θ = 90°",
+    "τ = rF sin θ",
+    "τ = (1.2 m)(300 N) sin 90°",
+    "τ = 360 N m",
+    "Answer: (360 N m, positive)"
+   ]
+  },
+  {
+   "text": "Q4.3. Two weights are hanging from a metre rule at the positions as shown in the given figure. If the metre rule is balanced at its centre of gravity (C. G), find the unknown weight w.",
+   "finalAnswer": "3 N",
+   "marks": 5,
+   "source": "Numerical 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clockwise moment"
+      ],
+      [
+       "anticlockwise moment"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced metre rule uses the principle of moments.",
+     "description": "Set up the principle.",
+     "how": "Equate clockwise and anticlockwise moments."
+    },
+    {
+     "accept": [
+      [
+       "w×40"
+      ],
+      [
+       "4×30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct lever arms must be measured from the centre of gravity.",
+     "description": "Use the given distances.",
+     "how": "Set w × 40 cm = 4 N × 30 cm."
+    },
+    {
+     "accept": [
+      [
+       "w=120/40"
+      ],
+      [
+       "w=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the moment equation gives the unknown weight.",
+     "description": "Solve for w.",
+     "how": "Divide 4 × 30 by 40."
+    },
+    {
+     "accept": [
+      [
+       "3N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the correct value of the unknown weight.",
+     "description": "Give the final value.",
+     "how": "State w = 3 N."
+    },
+    {
+     "accept": [
+      [
+       "3N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must include the correct force unit.",
+     "description": "Include the unit in the final answer.",
+     "how": "Write 3 N."
+    }
+   ],
+   "modelAnswer": [
+    "For balance, anticlockwise moment = clockwise moment.",
+    "w × 40 cm = 4 N × 30 cm",
+    "w = (4 × 30)/40",
+    "w = 3 N",
+    "Answer: 3 N"
+   ]
+  },
+  {
+   "text": "Q4.4. A see-saw is balanced with two children sitting near either end. Child A weighs 30 kg and sits 2 metres away from the pivot, while child B weighs 40 kg and sits 1.5 metres from the pivot. Calculate the total moment on each side and determine if the sea-saw is in equilibrium.",
+   "finalAnswer": "60 N",
+   "marks": 5,
+   "source": "Numerical 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30×2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The left-side moment is calculated from Child A's weight value and distance.",
+     "description": "Calculate Child A's moment.",
+     "how": "Use 30 × 2."
+    },
+    {
+     "accept": [
+      [
+       "40×1.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The right-side moment is calculated from Child B's weight value and distance.",
+     "description": "Calculate Child B's moment.",
+     "how": "Use 40 × 1.5."
+    },
+    {
+     "accept": [
+      [
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both products must be evaluated correctly.",
+     "description": "Find each moment.",
+     "how": "Obtain 60 on each side."
+    },
+    {
+     "accept": [
+      [
+       "equal"
+      ],
+      [
+       "60",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal opposite moments establish rotational balance.",
+     "description": "Compare the moments.",
+     "how": "State that the moments are equal."
+    },
+    {
+     "accept": [
+      [
+       "60N"
+      ],
+      [
+       "equilibrium"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer follows the printed answer key and states the equilibrium conclusion.",
+     "description": "Give the final answer.",
+     "how": "State that the see-saw is balanced and give the printed answer, 60 N."
+    }
+   ],
+   "modelAnswer": [
+    "Moment on Child A's side = 30 × 2 = 60",
+    "Moment on Child B's side = 40 × 1.5 = 60",
+    "The moments on the two sides are equal.",
+    "Therefore, the see-saw is in equilibrium.",
+    "Answer: 60 N"
+   ]
+  },
+  {
+   "text": "Q4.5. A crowbar is used to lift a box as shown in the given figure. If the downward force of 250 N is applied at the end of the bar, how much weight does the other end bear? The crowbar itself has negligible weight.",
+   "finalAnswer": "1500 N",
+   "marks": 5,
+   "source": "Numerical 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clockwise moment"
+      ],
+      [
+       "anticlockwise moment"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lever is analysed by balancing moments about its support.",
+     "description": "Set up the principle of moments.",
+     "how": "Equate the moments about the support."
+    },
+    {
+     "accept": [
+      [
+       "W×5"
+      ],
+      [
+       "250×30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct distances from the support are used.",
+     "description": "Substitute lever arms and force.",
+     "how": "Set W × 5 cm = 250 N × 30 cm."
+    },
+    {
+     "accept": [
+      [
+       "W=250×30/5"
+      ],
+      [
+       "W=1500"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct rearrangement gives the load.",
+     "description": "Solve for the weight.",
+     "how": "Divide 250 × 30 by 5."
+    },
+    {
+     "accept": [
+      [
+       "1500N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculated load is 1500 N.",
+     "description": "State the result.",
+     "how": "Give 1500."
+    },
+    {
+     "accept": [
+      [
+       "1500N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the force unit.",
+     "description": "Give the final answer with units.",
+     "how": "Write 1500 N."
+    }
+   ],
+   "modelAnswer": [
+    "Let the weight lifted be W.",
+    "For balance about the support, W × 5 cm = 250 N × 30 cm.",
+    "W = (250 × 30)/5",
+    "W = 1500 N",
+    "Answer: 1500 N"
+   ]
+  },
+  {
+   "text": "Q4.6. A 30 cm long spanner is used to open the nut of a car. If the torque required for it is 150 N m, how much force F should be applied on the spanner as shown in the figure given below.",
+   "finalAnswer": "500 N",
+   "marks": 5,
+   "source": "Numerical 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "τ=rF"
+      ],
+      [
+       "F=τ/r"
+      ]
+     ],
+     "marks": 1,
+     "why": "The torque relation connects the required torque to the applied force.",
+     "description": "Choose the relation.",
+     "how": "Use τ = rF for a perpendicular force."
+    },
+    {
+     "accept": [
+      [
+       "30cm=0.3m"
+      ],
+      [
+       "0.3m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lever arm must be expressed in metres to match N m.",
+     "description": "Convert the spanner length.",
+     "how": "Convert 30 cm to 0.3 m."
+    },
+    {
+     "accept": [
+      [
+       "150/0.3"
+      ],
+      [
+       "F=150/0.3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution and rearrangement determine the force.",
+     "description": "Substitute values.",
+     "how": "Calculate F = 150 N m/0.3 m."
+    },
+    {
+     "accept": [
+      [
+       "500"
+      ]
+     ],
+     "marks": 1,
+     "why": "The arithmetic gives the required force.",
+     "description": "Calculate the force.",
+     "how": "Evaluate 150/0.3."
+    },
+    {
+     "accept": [
+      [
+       "500N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the force unit.",
+     "description": "Give the final answer.",
+     "how": "Write 500 N."
+    }
+   ],
+   "modelAnswer": [
+    "Given: τ = 150 N m, r = 30 cm = 0.3 m",
+    "τ = rF",
+    "F = τ/r = 150 N m/0.3 m",
+    "F = 500 N",
+    "Answer: 500 N"
+   ]
+  },
+  {
+   "text": "Q4.7. A 5 N ball hanging from a rope is pulled to the right by a horizontal force F. The rope makes an angle of 60° with the ceiling, as shown in the given figure. Determine the magnitude of force F and tension T in the string.",
+   "finalAnswer": "(2.9 N, 5.8 N)",
+   "marks": 5,
+   "source": "Numerical 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Tsin60=5"
+      ],
+      [
+       "Tcos30=5"
+      ]
+     ],
+     "marks": 1,
+     "why": "Vertical equilibrium relates the vertical tension component to the ball's weight.",
+     "description": "Resolve tension vertically.",
+     "how": "Use T sin 60° = 5 N."
+    },
+    {
+     "accept": [
+      [
+       "T=5/sin60"
+      ],
+      [
+       "5.8"
+      ]
+     ],
+     "marks": 1,
+     "why": "Solving the vertical equation gives the tension.",
+     "description": "Find the tension.",
+     "how": "Calculate T = 5/sin 60°."
+    },
+    {
+     "accept": [
+      [
+       "F=Tcos60"
+      ],
+      [
+       "F=Tsin30"
+      ]
+     ],
+     "marks": 1,
+     "why": "Horizontal equilibrium relates the applied force to the horizontal tension component.",
+     "description": "Resolve tension horizontally.",
+     "how": "Use F = T cos 60°."
+    },
+    {
+     "accept": [
+      [
+       "2.9N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The horizontal force is approximately 2.9 N.",
+     "description": "Give the force.",
+     "how": "Calculate F using the horizontal component."
+    },
+    {
+     "accept": [
+      [
+       "2.9N",
+       "5.8N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ordered final values and units must match the answer key.",
+     "description": "Give both final answers.",
+     "how": "State (2.9 N, 5.8 N)."
+    }
+   ],
+   "modelAnswer": [
+    "For vertical equilibrium, T sin 60° = 5 N.",
+    "T = 5 N/sin 60° = 5.8 N.",
+    "For horizontal equilibrium, F = T cos 60°.",
+    "F = 5.8 N × cos 60° = 2.9 N.",
+    "Answer: (2.9 N, 5.8 N)"
+   ]
+  },
+  {
+   "text": "Q4.8. A signboard is suspended by means of two steel wires as shown in the given figure. If the weight of the board is 200 N, what is the tension in the strings?",
+   "finalAnswer": "(100 N, 100 N)",
+   "marks": 5,
+   "source": "Numerical 4.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "T1+T2=200"
+      ],
+      [
+       "T1+T2=W"
+      ]
+     ],
+     "marks": 1,
+     "why": "Vertical force balance relates the two tensions to the board's weight.",
+     "description": "Write vertical equilibrium.",
+     "how": "Use T1 + T2 = 200 N."
+    },
+    {
+     "accept": [
+      [
+       "equal distances"
+      ],
+      [
+       "symmetry"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal positions on either side mean the load is shared equally.",
+     "description": "Use the symmetry of the arrangement.",
+     "how": "Note that the wires are equally distant from the centre."
+    },
+    {
+     "accept": [
+      [
+       "T1=T2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal distances from the centre give equal tensions.",
+     "description": "Set the tensions equal.",
+     "how": "Write T1 = T2."
+    },
+    {
+     "accept": [
+      [
+       "100N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each wire supports half the total weight.",
+     "description": "Calculate each tension.",
+     "how": "Divide 200 N by 2."
+    },
+    {
+     "accept": [
+      [
+       "100N",
+       "100N"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both final tensions must be stated with units.",
+     "description": "Give the final answer.",
+     "how": "State (100 N, 100 N)."
+    }
+   ],
+   "modelAnswer": [
+    "For vertical equilibrium, T1 + T2 = 200 N.",
+    "The two wires are equally distant from the centre, so T1 = T2.",
+    "2T1 = 200 N",
+    "T1 = 100 N and T2 = 100 N",
+    "Answer: (100 N, 100 N)"
+   ]
+  },
+  {
+   "text": "Q4.9. One girl of 30 kg mass sits 1.6 m from the axis of a see-saw. Another girl of mass 40 kg wants to sit on the other side, so that the see-saw may remain in equilibrium. How far away from the axis, the other girl may sit?",
+   "finalAnswer": "1.2 m",
+   "marks": 5,
+   "source": "Numerical 4.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clockwise moment"
+      ],
+      [
+       "anticlockwise moment"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equilibrium requires the moments on both sides to balance.",
+     "description": "Set up the moments.",
+     "how": "Equate the two moments about the axis."
+    },
+    {
+     "accept": [
+      [
+       "30×1.6"
+      ],
+      [
+       "40×x"
+      ]
+     ],
+     "marks": 1,
+     "why": "The moment expressions must use each mass and its distance.",
+     "description": "Write the moment equation.",
+     "how": "Set 30 × 1.6 = 40 × x."
+    },
+    {
+     "accept": [
+      [
+       "x=30×1.6/40"
+      ],
+      [
+       "x=48/40"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct rearrangement isolates the unknown distance.",
+     "description": "Solve the equation.",
+     "how": "Divide 30 × 1.6 by 40."
+    },
+    {
+     "accept": [
+      [
+       "1.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The arithmetic gives the required distance.",
+     "description": "Calculate the distance.",
+     "how": "Evaluate 48/40."
+    },
+    {
+     "accept": [
+      [
+       "1.2m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the distance unit.",
+     "description": "Give the final answer.",
+     "how": "Write 1.2 m."
+    }
+   ],
+   "modelAnswer": [
+    "For equilibrium, clockwise moment = anticlockwise moment.",
+    "30 × 1.6 = 40 × x",
+    "x = (30 × 1.6)/40",
+    "x = 1.2 m",
+    "Answer: 1.2 m"
+   ]
+  },
+  {
+   "text": "Q4.10. Find the tension in each string as shown in the given figure, if the block weighs 150 N.",
+   "finalAnswer": "(86.6 N, 173.2 N)",
+   "marks": 5,
+   "source": "Numerical 4.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Tsin60=150"
+      ]
+     ],
+     "marks": 1,
+     "why": "Vertical equilibrium balances the vertical component of the slanting tension with the block's weight.",
+     "description": "Write the vertical balance.",
+     "how": "Use T_slant sin 60° = 150 N."
+    },
+    {
+     "accept": [
+      [
+       "T=150/sin60"
+      ],
+      [
+       "173.2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Solving gives the tension in the slanting string.",
+     "description": "Calculate the slanting-string tension.",
+     "how": "Evaluate 150/sin 60°."
+    },
+    {
+     "accept": [
+      [
+       "Thorizontal=Tcos60"
+      ],
+      [
+       "Tcos60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Horizontal equilibrium balances the horizontal component of the slanting tension.",
+     "description": "Write the horizontal balance.",
+     "how": "Use T_horizontal = T_slant cos 60°."
+    },
+    {
+     "accept": [
+      [
+       "86.6N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The horizontal string tension is 86.6 N.",
+     "description": "Calculate the horizontal tension.",
+     "how": "Evaluate 173.2 cos 60°."
+    },
+    {
+     "accept": [
+      [
+       "86.6N",
+       "173.2N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ordered values and units must match the printed answer.",
+     "description": "Give the final answer.",
+     "how": "State (86.6 N, 173.2 N)."
+    }
+   ],
+   "modelAnswer": [
+    "For vertical equilibrium, T_slant sin 60° = 150 N.",
+    "T_slant = 150 N/sin 60° = 173.2 N.",
+    "For horizontal equilibrium, T_horizontal = T_slant cos 60°.",
+    "T_horizontal = 173.2 N × cos 60° = 86.6 N.",
+    "Answer: (86.6 N, 173.2 N)"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Section A can test definitions, formulae, equilibrium, stability and force components; learn the key statements and distinguish each condition carefully.",
+   "Short questions often ask for a definition, a formula with a brief proof, or an explanation of a daily-life example. Write the relevant definition or principle and then apply it.",
+   "For a moment question, show the pivot, perpendicular distance and the clockwise/anticlockwise moment equation to earn working marks.",
+   "For numerical questions, write the given values, formula, substitution with units, calculation and final answer with the correct unit.",
+   "For force components, use the angle's reference axis correctly: if θ is from the x-axis, Fx = F cos θ and Fy = F sin θ.",
+   "For complete equilibrium questions, state both conditions: ΣF = 0 and Στ = 0."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Resolve the force into horizontal and vertical components.",
+     "For an angle measured from the horizontal, use Fx = F cos 30° and Fy = F sin 30°."
+    ],
+    "accept": [
+     [
+      "173.2N",
+      "100N"
+     ]
+    ],
+    "question": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+    "solution": [
+     "Given: F = 200 N, θ = 30°",
+     "Fx = F cos θ = 200 cos 30° = 173.2 N",
+     "Fy = F sin θ = 200 sin 30° = 100 N",
+     "Answer: (173.2 N, 100 N)"
+    ],
+    "answer": "(173.2 N, 100 N)"
+   },
+   {
+    "hints": [
+     "A balanced metre rule has equal clockwise and anticlockwise moments about its centre of gravity.",
+     "Use w × 40 cm = 4 N × 30 cm, then solve for w."
+    ],
+    "accept": [
+     [
+      "3N"
+     ]
+    ],
+    "question": "Two weights are hanging from a metre rule at the positions as shown in the given figure. If the metre rule is balanced at its centre of gravity (C. G), find the unknown weight w.",
+    "solution": [
+     "For balance, anticlockwise moment = clockwise moment.",
+     "w × 40 cm = 4 N × 30 cm",
+     "w = (4 × 30)/40",
+     "w = 3 N",
+     "Answer: 3 N"
+    ],
+    "answer": "3 N"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The force acts perpendicular to the door, so the angle between the lever arm and force is 90°.",
+     "text": "Given: F = 300 N, r = 1.2 m, θ = 90°"
+    },
+    {
+     "why": "Torque is the moment arm multiplied by the force component perpendicular to it.",
+     "text": "τ = rF sin θ"
+    },
+    {
+     "why": "Substituting the given force, distance and angle keeps the units visible.",
+     "text": "τ = (1.2 m)(300 N) sin 90°"
+    },
+    {
+     "why": "Since sin 90° = 1, the product gives the torque magnitude.",
+     "text": "τ = 360 N m"
+    },
+    {
+     "why": "The exercise answer identifies the torque as positive for the shown direction.",
+     "text": "Answer: (360 N m, positive)"
+    }
+   ],
+   "question": "A force of 300 N is applied perpendicularly at the knob of a door to open it as shown in the given figure. If the knob is 1.2 m away from the hinge, what is the torque applied? Is it positive or negative torque?",
+   "answer": "(360 N m, positive)"
+  },
+  "explain": [
+   {
+    "title": "Vectors and components",
+    "body": "A force can be split into two perpendicular rectangular components. For a force F making angle θ with the x-axis, Fx = F cos θ and Fy = F sin θ. Like parallel forces act in the same direction; unlike parallel forces act in opposite directions."
+   },
+   {
+    "title": "Moment and torque",
+    "body": "The moment of a force is its turning effect about a pivot. It is found by multiplying the force by the perpendicular distance from the pivot to its line of action: τ = rF sin θ. A force acting farther from the pivot has a greater turning effect."
+   },
+   {
+    "title": "Equilibrium",
+    "body": "A body is in complete equilibrium when the resultant force is zero and the resultant torque is zero: ΣF = 0 and Στ = 0. For a balanced lever, clockwise moments equal anticlockwise moments."
+   },
+   {
+    "title": "Centre of gravity and stability",
+    "body": "A body is more stable when its centre of gravity is lower and its base of support is wider. It topples when the line of action of its weight falls outside its base."
+   },
+   {
+    "title": "Circular motion",
+    "body": "Centripetal force keeps a body moving in a circular path and is given by Fc = mv²/r. It acts perpendicular to the velocity, changing the velocity's direction."
+   }
+  ],
+  "mistakes": [
+   "Do not swap the sine and cosine components: for an angle measured from the x-axis, x uses cosine and y uses sine.",
+   "Use the perpendicular distance from the pivot when calculating a moment; do not automatically use the full distance if the force is inclined.",
+   "Do not confuse the moment arm (a distance) with the moment or torque (a turning effect).",
+   "For complete equilibrium, checking only the forces is not enough; the resultant torque must also be zero.",
+   "In a moments equation, measure both lever arms from the same pivot and keep units consistent.",
+   "Write the correct unit: force is measured in N, distance in m, and torque in N m.",
+   "For stability, remember that a high centre of gravity and a narrow base make toppling more likely."
+  ]
+ }
+}

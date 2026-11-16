@@ -1,0 +1,625 @@
+{
+ "note": {
+  "explanation": "Speed tells how much distance is covered per unit time. Velocity also tells the direction of motion, so it depends on displacement rather than distance. For example, a car moving north at 70 km h⁻¹ has speed 70 km h⁻¹ and velocity 70 km h⁻¹ north.",
+  "examples": [],
+  "checkAnswer": "Direction",
+  "keywords": [
+   "speed",
+   "velocity",
+   "average speed",
+   "displacement",
+   "instantaneous speed",
+   "scalar",
+   "vector"
+  ],
+  "simple": "Speed tells how fast something moves. Velocity tells how fast it moves and in which direction.",
+  "checkQuestion": "What extra information does velocity give that speed does not?",
+  "title": "Speed and Velocity",
+  "steps": [
+   "For average speed, divide total distance by total time.",
+   "For average velocity, divide displacement by time.",
+   "Give the direction when stating velocity."
+  ],
+  "answer": "Average speed is total distance divided by total time. Average velocity is displacement divided by time and has a direction.",
+  "checkAccept": [
+   [
+    "direction"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A scalar quantity",
+    "A vector quantity",
+    "A quantity that always has direction",
+    "The displacement covered per unit time"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes speed?",
+   "rationales": [
+    "Speed is scalar because it has magnitude but no direction.",
+    "Speed is not a vector; velocity is a vector quantity.",
+    "Speed does not include direction.",
+    "Displacement per unit time describes average velocity."
+   ]
+  },
+  {
+   "options": [
+    "Total distance divided by total time",
+    "Total time divided by total distance",
+    "Displacement divided by total distance",
+    "Total distance multiplied by total time"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How is average speed calculated?",
+   "rationales": [
+    "Average speed is total distance covered divided by total time taken.",
+    "This reverses the quantities in the average-speed formula.",
+    "This is not the definition of average speed.",
+    "Multiplying distance by time does not give average speed."
+   ]
+  },
+  {
+   "options": [
+    "Distance covered in one second",
+    "The speed shown by a speedometer at any instant",
+    "Total distance divided by total time",
+    "Displacement divided by total time"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is instantaneous speed?",
+   "rationales": [
+    "This describes speed as a rate, not instantaneous speed specifically.",
+    "Instantaneous speed is the speed shown by a vehicle's speedometer at any instant.",
+    "This is average speed.",
+    "This gives average velocity."
+   ]
+  },
+  {
+   "options": [
+    "Distance",
+    "Displacement",
+    "Time",
+    "Speed"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which quantity is used to calculate average velocity?",
+   "rationales": [
+    "Distance is used to calculate average speed.",
+    "Average velocity is displacement divided by time.",
+    "Time is the denominator in the average-velocity formula, not the quantity in its numerator.",
+    "Speed is not used to define average velocity."
+   ]
+  },
+  {
+   "options": [
+    "Its speed must be changing",
+    "Its direction must be changing",
+    "Its velocity must be constant",
+    "It must be at rest"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A car moves around a circular road at constant speed. Why is its velocity changing?",
+   "rationales": [
+    "The question states that the speed is constant.",
+    "Velocity changes when its direction changes, even if its speed stays constant.",
+    "Velocity is not constant when its direction changes.",
+    "A car travelling around the road is moving, not at rest."
+   ]
+  },
+  {
+   "options": [
+    "The speed and direction do not change",
+    "Only the speed does not change",
+    "Only the direction does not change",
+    "The body covers equal distances in different directions"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When is a body's velocity uniform?",
+   "rationales": [
+    "Uniform velocity requires both speed and direction to remain unchanged.",
+    "Unchanging speed alone does not ensure uniform velocity because direction may change.",
+    "Unchanging direction alone does not ensure uniform velocity because speed may change.",
+    "A change of direction means the velocity is not uniform."
+   ]
+  },
+  {
+   "options": [
+    "m s⁻¹",
+    "m s",
+    "s m⁻¹",
+    "m² s⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is an SI unit of velocity?",
+   "rationales": [
+    "Metres per second is an SI unit of velocity.",
+    "Metre-second is not a unit of velocity.",
+    "Seconds per metre is the reciprocal of a velocity unit.",
+    "Square metres per second is not a unit of velocity."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "EXAMPLE 2.3: An eagle dives to the ground along a 300 m path with an average speed of 60 m s⁻¹. How long does it take to cover this distance?",
+   "finalAnswer": "5 s",
+   "marks": 4,
+   "source": "Example 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "S=300"
+      ],
+      [
+       "300m"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying the given distance sets up the calculation.",
+     "description": "State the total distance covered.",
+     "how": "Write S = 300 m."
+    },
+    {
+     "accept": [
+      [
+       "v_av=60"
+      ],
+      [
+       "60m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given average speed is needed with the distance.",
+     "description": "State the average speed.",
+     "how": "Write v_av = 60 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "t=S/v_av"
+      ],
+      [
+       "300/60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Using the rearranged average-speed equation gives the time.",
+     "description": "Choose and substitute into the equation.",
+     "how": "Use t = S/v_av and substitute the values."
+    },
+    {
+     "accept": [
+      [
+       "5s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and unit complete the answer.",
+     "description": "Give the time taken.",
+     "how": "State 5 s."
+    }
+   ],
+   "modelAnswer": [
+    "Total distance covered = S = 300 m",
+    "Average speed = v_av = 60 m s⁻¹",
+    "Total time taken = t = ?",
+    "Using the equation v_av = S/t",
+    "or t = S/v_av",
+    "putting the values t = 300 m/(60 m s⁻¹) = 5 s"
+   ]
+  },
+  {
+   "text": "Q2.7. A body is moving with uniform speed. Will its velocity be uniform? Give reason.",
+   "finalAnswer": "Not necessarily; its direction may change, so its velocity may change.",
+   "marks": 2,
+   "source": "Short 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "not necessarily"
+      ],
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "Uniform speed alone does not establish uniform velocity.",
+     "description": "Give the conclusion.",
+     "how": "State that the velocity is not necessarily uniform."
+    },
+    {
+     "accept": [
+      [
+       "direction"
+      ],
+      [
+       "change"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity depends on direction as well as speed.",
+     "description": "Explain the role of direction.",
+     "how": "Explain that a direction change changes velocity even if speed stays uniform."
+    }
+   ],
+   "modelAnswer": [
+    "No, not necessarily.",
+    "Uniform speed does not ensure uniform velocity because the direction of motion may change."
+   ]
+  },
+  {
+   "text": "Q2.3. For a complete trip, average velocity was calculated. Its value came out to be positive. Is it possible that its instantaneous velocity at any time during the trip had the negative value? Give justification of your answer.",
+   "finalAnswer": "Yes. The body may move in the negative direction during part of the trip while its total displacement, and hence its average velocity, is positive.",
+   "marks": 4,
+   "source": "CRQ 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question asks whether this situation is possible.",
+     "description": "State whether it is possible.",
+     "how": "Answer yes."
+    },
+    {
+     "accept": [
+      [
+       "instantaneous velocity"
+      ],
+      [
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the velocity that may be negative.",
+     "description": "Identify the possible instantaneous motion.",
+     "how": "State that instantaneous velocity may be negative during part of the trip."
+    },
+    {
+     "accept": [
+      [
+       "positive displacement"
+      ],
+      [
+       "total displacement"
+      ]
+     ],
+     "marks": 1,
+     "why": "Average velocity depends on the net displacement for the complete trip.",
+     "description": "Relate average velocity to total displacement.",
+     "how": "Explain that total displacement can remain positive."
+    },
+    {
+     "accept": [
+      [
+       "average velocity"
+      ],
+      [
+       "positive"
+      ]
+     ],
+     "marks": 1,
+     "why": "The justification must connect the net displacement to the stated positive average velocity.",
+     "description": "Complete the explanation.",
+     "how": "State that positive total displacement over the trip gives positive average velocity."
+    }
+   ],
+   "modelAnswer": [
+    "Yes, it is possible.",
+    "The body may move in the negative direction during part of the trip, so its instantaneous velocity may be negative.",
+    "If its total displacement for the complete trip is positive, its average velocity will still be positive."
+   ]
+  },
+  {
+   "text": "Q2.2 (b). Differentiate between speed and velocity.",
+   "finalAnswer": "Speed is a scalar quantity: it is distance covered per unit time. Velocity is a vector quantity: it is displacement per unit time and has the direction of displacement.",
+   "marks": 4,
+   "source": "Comprehensive 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "scalar"
+      ]
+     ],
+     "marks": 1,
+     "why": "The scalar or vector nature is a key difference.",
+     "description": "State the nature of speed.",
+     "how": "Identify speed as a scalar quantity."
+    },
+    {
+     "accept": [
+      [
+       "distance"
+      ],
+      [
+       "time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Speed is defined using distance and time.",
+     "description": "Give the basis of speed.",
+     "how": "State that speed is distance covered per unit time."
+    },
+    {
+     "accept": [
+      [
+       "vector"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity has direction and is a vector quantity.",
+     "description": "State the nature of velocity.",
+     "how": "Identify velocity as a vector quantity."
+    },
+    {
+     "accept": [
+      [
+       "displacement"
+      ],
+      [
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Velocity is based on displacement and includes direction.",
+     "description": "Give the basis and directional information of velocity.",
+     "how": "State that velocity is displacement per unit time and has direction."
+    }
+   ],
+   "modelAnswer": [
+    "Speed is a scalar quantity; it has magnitude but no direction.",
+    "Speed = distance covered/time taken.",
+    "Velocity is a vector quantity; it has both magnitude and direction.",
+    "Average velocity = displacement/time, and its direction is the direction of displacement."
+   ]
+  },
+  {
+   "text": "Q2.2. A car is moving with an average speed of 72 km h⁻¹. How much time will it take to cover a distance of 360 km?",
+   "finalAnswer": "5 h",
+   "marks": 2,
+   "source": "Numerical 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "t=S/v"
+      ],
+      [
+       "360/72"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the speed equation gives the required time.",
+     "description": "Use the average-speed relationship.",
+     "how": "Write t = S/v and substitute the given values."
+    },
+    {
+     "accept": [
+      [
+       "5h"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must have the correct value and unit.",
+     "description": "Give the time.",
+     "how": "State 5 h."
+    }
+   ],
+   "modelAnswer": [
+    "Average speed = v = 72 km h⁻¹",
+    "Distance = S = 360 km",
+    "Using v = S/t, t = S/v",
+    "t = 360 km/(72 km h⁻¹) = 5 h"
+   ]
+  },
+  {
+   "text": "Q2.8. A car travels 10 km with an average velocity of 20 m s⁻¹. Then it travels in the same direction through a diversion at an average velocity of 4 m s⁻¹ for the next 0.8 km. Determine the average velocity of the car for the total journey.",
+   "finalAnswer": "15.4 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "10000m"
+      ],
+      [
+       "10km"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first distance must be expressed consistently with the speed units.",
+     "description": "Convert the first distance.",
+     "how": "Use 10 km = 10000 m."
+    },
+    {
+     "accept": [
+      [
+       "500s"
+      ],
+      [
+       "10000/20"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first time is found from distance divided by velocity.",
+     "description": "Find the first travel time.",
+     "how": "Calculate 10000/20 = 500 s."
+    },
+    {
+     "accept": [
+      [
+       "200s"
+      ],
+      [
+       "800/4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second distance and velocity give the second travel time.",
+     "description": "Find the second travel time.",
+     "how": "Calculate 800/4 = 200 s."
+    },
+    {
+     "accept": [
+      [
+       "10800/700"
+      ],
+      [
+       "total displacement/total time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Average velocity uses the total displacement and total time.",
+     "description": "Set up the total average velocity.",
+     "how": "Add the distances and times, then divide total displacement by total time."
+    },
+    {
+     "accept": [
+      [
+       "15.4m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be correctly evaluated and include a unit.",
+     "description": "Give the total average velocity.",
+     "how": "State 15.4 m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "First distance = 10 km = 10000 m",
+    "First average velocity = 20 m s⁻¹",
+    "Time for first part = 10000/20 = 500 s",
+    "Second distance = 0.8 km = 800 m",
+    "Second average velocity = 4 m s⁻¹",
+    "Time for second part = 800/4 = 200 s",
+    "Total displacement = 10000 m + 800 m = 10800 m",
+    "Total time = 500 s + 200 s = 700 s",
+    "Average velocity = total displacement/total time",
+    "Average velocity = 10800/700 = 15.4 m s⁻¹"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask you to define speed, average speed, instantaneous speed, velocity, or uniform velocity. Write the definition clearly and include the correct quantity: distance for speed, displacement for velocity.",
+   "For a numerical question, write the known values, choose the equation, substitute with units, and state the final answer with its unit.",
+   "In a speed-and-velocity comparison, earn marks by stating that speed is scalar and velocity is vector, then explaining distance versus displacement and the role of direction.",
+   "For motion on a curved path, remember that velocity changes if direction changes, even when speed stays constant."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with the relationship between speed, distance, and time.",
+     "Rearrange v = S/t to make t the subject, then substitute 360 km and 72 km h⁻¹."
+    ],
+    "accept": [
+     [
+      "5h"
+     ]
+    ],
+    "question": "Q2.2. A car is moving with an average speed of 72 km h⁻¹. How much time will it take to cover a distance of 360 km?",
+    "solution": [
+     "Average speed = v = 72 km h⁻¹",
+     "Distance = S = 360 km",
+     "Using v = S/t, t = S/v",
+     "t = 360 km/(72 km h⁻¹) = 5 h"
+    ],
+    "answer": "5 h"
+   },
+   {
+    "hints": [
+     "Because both parts are in the same direction, add their distances to get total displacement.",
+     "Find each time using t = distance/velocity, then divide total displacement by total time."
+    ],
+    "accept": [
+     [
+      "15.4m/s"
+     ]
+    ],
+    "question": "Q2.8. A car travels 10 km with an average velocity of 20 m s⁻¹. Then it travels in the same direction through a diversion at an average velocity of 4 m s⁻¹ for the next 0.8 km. Determine the average velocity of the car for the total journey.",
+    "solution": [
+     "First distance = 10 km = 10000 m",
+     "Time for first part = 10000/20 = 500 s",
+     "Second distance = 0.8 km = 800 m",
+     "Time for second part = 800/4 = 200 s",
+     "Total displacement = 10000 m + 800 m = 10800 m",
+     "Total time = 500 s + 200 s = 700 s",
+     "Average velocity = total displacement/total time",
+     "Average velocity = 10800/700 = 15.4 m s⁻¹"
+    ],
+    "answer": "15.4 m s⁻¹"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This identifies the distance given in the question.",
+     "text": "Total distance covered = S = 300 m"
+    },
+    {
+     "why": "This records the given average speed.",
+     "text": "Average speed = v_av = 60 m s⁻¹"
+    },
+    {
+     "why": "The question asks us to find the time.",
+     "text": "Total time taken = t = ?"
+    },
+    {
+     "why": "This is the definition of average speed rearranged to find time.",
+     "text": "Using the equation v_av = S/t"
+    },
+    {
+     "why": "Making t the subject lets us substitute the known distance and speed.",
+     "text": "or t = S/v_av"
+    },
+    {
+     "why": "Substituting the values gives the time with its unit.",
+     "text": "putting the values t = 300 m/(60 m s⁻¹) = 5 s"
+    }
+   ],
+   "question": "An eagle dives to the ground along a 300 m path with an average speed of 60 m s⁻¹. How long does it take to cover this distance?",
+   "answer": "5 s"
+  },
+  "explain": [
+   {
+    "title": "Speed",
+    "body": "We are often interested to know how fast a body is moving. For this purpose, we have to find the distance covered in unit time which is known as speed. If a body covers a distance S in time t, its speed v will be written as: Speed = Distance/Time  v = S/t or S = vt. The speed is a scalar quantity."
+   },
+   {
+    "title": "Average and instantaneous speed",
+    "body": "The speed of a vehicle that is shown by its speedometer at any instant is called instantaneous speed. Practically we make use of the average speed. It is defined as: Average speed = (Total distance covered)/(Total time taken) or v_av = S/t"
+   },
+   {
+    "title": "Velocity",
+    "body": "The net displacement of a body in unit time is called velocity. Average velocity = Displacement/Time or vector v_av = vector d/t. Velocity is a vector quantity. The direction of velocity vector v is the same as that of displacement vector d."
+   },
+   {
+    "title": "Uniform and non-uniform velocity",
+    "body": "The velocity is said to be uniform if the speed and direction of a moving body does not change. If the speed or direction or both of them change, it is known as variable velocity or non-uniform velocity."
+   }
+  ],
+  "mistakes": [
+   "Using distance instead of displacement when finding average velocity.",
+   "Forgetting that velocity includes direction, while speed does not.",
+   "Assuming that constant speed always means constant velocity; direction may still change.",
+   "Reversing the speed formula when finding time; use t = S/v.",
+   "Leaving out units from numerical answers."
+  ]
+ }
+}

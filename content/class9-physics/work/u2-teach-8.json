@@ -1,0 +1,337 @@
+{
+ "note": {
+  "explanation": "The gradient of a distance-time graph tells you the average speed during a time interval. Find it by dividing the change in distance by the change in time.",
+  "examples": [
+   "If distance changes by 12 m in 3 s, gradient = 12/3 = 4 m s⁻¹.",
+   "A horizontal distance-time line has gradient 0, so the body is at rest."
+  ],
+  "checkAnswer": "Average speed is 5 m s⁻¹.",
+  "keywords": [
+   "gradient",
+   "slope",
+   "distance-time graph",
+   "average speed",
+   "change in distance",
+   "change in time"
+  ],
+  "simple": "Gradient tells you how much distance changes for each unit of time.",
+  "checkQuestion": "A body covers 15 m in 3 s. What is the gradient of its distance-time graph?",
+  "title": "Gradient of a Distance-Time Graph",
+  "steps": [
+   "Find the change in distance: S₂ − S₁.",
+   "Find the change in time: t₂ − t₁.",
+   "Divide the change in distance by the change in time.",
+   "Write the result with suitable units."
+  ],
+  "answer": "The gradient of a distance-time graph is equal to the average speed of the body.",
+  "checkAccept": [
+   [
+    "5 m s⁻¹"
+   ],
+   [
+    "5 m/s"
+   ],
+   [
+    "5"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Average speed during the time interval",
+    "Distance covered during the time interval",
+    "Acceleration during the time interval",
+    "Time taken during the interval"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the gradient of a distance-time graph represent?",
+   "rationales": [
+    "Correct: gradient is change in distance divided by change in time, which is average speed.",
+    "Incorrect: distance is the vertical change, not the gradient itself.",
+    "Incorrect: acceleration is represented by the gradient of a speed-time graph.",
+    "Incorrect: time is the horizontal change, not the gradient itself."
+   ]
+  },
+  {
+   "options": [
+    "(S₂ − S₁)/(t₂ − t₁)",
+    "(t₂ − t₁)/(S₂ − S₁)",
+    "S₂ − S₁",
+    "t₂ − t₁"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which expression gives the gradient between two points on a distance-time graph?",
+   "rationales": [
+    "Correct: gradient is the change in distance divided by the change in time.",
+    "Incorrect: this reverses the distance and time changes.",
+    "Incorrect: this gives only the change in distance.",
+    "Incorrect: this gives only the change in time."
+   ]
+  },
+  {
+   "options": [
+    "m s⁻¹",
+    "m s",
+    "s m⁻¹",
+    "m²"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the SI unit of the gradient of a distance-time graph when distance is measured in metres and time in seconds?",
+   "rationales": [
+    "Correct: metres divided by seconds gives m s⁻¹.",
+    "Incorrect: m s is the product of the units, not distance divided by time.",
+    "Incorrect: s m⁻¹ is the reciprocal unit.",
+    "Incorrect: m² is an area unit."
+   ]
+  },
+  {
+   "options": [
+    "Zero",
+    "Positive",
+    "Negative",
+    "It cannot be found"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the gradient of a horizontal line on a distance-time graph?",
+   "rationales": [
+    "Correct: the distance does not change, so change in distance and gradient are zero.",
+    "Incorrect: a positive gradient would mean distance is increasing with time.",
+    "Incorrect: a negative gradient would mean the plotted distance is decreasing with time.",
+    "Incorrect: a horizontal line has a measurable gradient of zero."
+   ]
+  },
+  {
+   "options": [
+    "The steeper line has the greater average speed",
+    "The less steep line has the greater average speed",
+    "Both lines must have equal average speed",
+    "Neither line gives information about average speed"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Two straight rising lines are drawn on the same distance-time graph. What does a steeper line indicate?",
+   "rationales": [
+    "Correct: a steeper distance-time line has a greater gradient and therefore greater average speed.",
+    "Incorrect: a less steep line has a smaller gradient.",
+    "Incorrect: the lines can have different gradients and speeds.",
+    "Incorrect: the gradients show the average speeds."
+   ]
+  },
+  {
+   "options": [
+    "The object moves back toward its starting position",
+    "The object is at rest",
+    "The object moves forward at constant speed",
+    "The object has constant acceleration"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "On a distance-time graph, what does a straight line with a negative gradient indicate?",
+   "rationales": [
+    "Correct: the plotted distance decreases as time increases, indicating motion back toward the starting point.",
+    "Incorrect: a body at rest is represented by a horizontal line with zero gradient.",
+    "Incorrect: forward motion with increasing distance has a positive gradient.",
+    "Incorrect: a straight line indicates constant gradient, not constant acceleration."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "The figure given below shows the distance - time graph for the travel of a cyclist. Find the velocities for the segments a, b and c.\n\n[FIGURE: Distance - time graph with vertical axis labelled “Distance → S (km)” and horizontal axis labelled “Time → t (min)”. The vertical scale is 0 to 2.0 in increments of 0.2; the horizontal scale is 0 to 20 in increments of 2. Segment a rises from (0, 0) to (6, 2.0), segment b is horizontal from (6, 2.0) to (10, 2.0), and segment c falls from (10, 2.0) to (20, 0).]",
+   "finalAnswer": "a = 20 km h⁻¹; b = 0 km h⁻¹; c = −12 km h⁻¹",
+   "marks": 5,
+   "source": "CRQ 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2/6"
+      ],
+      [
+       "1/3 km/min"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gradient must be calculated from the change in distance divided by the change in time.",
+     "description": "Correct method for segment a",
+     "how": "Use (2.0 − 0)/(6 − 0) for segment a."
+    },
+    {
+     "accept": [
+      [
+       "0/4"
+      ],
+      [
+       "0 km/min"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cyclist's plotted distance does not change on segment b.",
+     "description": "Correct gradient for segment b",
+     "how": "Show that the distance change over the 4-minute interval is zero."
+    },
+    {
+     "accept": [
+      [
+       "-2/10"
+      ],
+      [
+       "-0.2 km/min"
+      ]
+     ],
+     "marks": 1,
+     "why": "The falling line has a negative gradient because the plotted distance decreases as time passes.",
+     "description": "Correct method for segment c",
+     "how": "Use (0 − 2.0)/(20 − 10) for segment c."
+    },
+    {
+     "accept": [
+      [
+       "20 km h⁻¹"
+      ],
+      [
+       "0 km h⁻¹"
+      ],
+      [
+       "-12 km h⁻¹"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final velocities must have the correct values, units, and sign for the direction shown by each segment.",
+     "description": "Correct final velocities",
+     "how": "Convert the gradients from km/min to km/h and keep the negative sign for segment c."
+    }
+   ],
+   "modelAnswer": [
+    "Gradient = (change in distance)/(change in time)",
+    "For segment a: (2.0 − 0)/(6 − 0) = 1/3 km min⁻¹ = 20 km h⁻¹",
+    "For segment b: (2.0 − 2.0)/(10 − 6) = 0 km min⁻¹ = 0 km h⁻¹",
+    "For segment c: (0 − 2.0)/(20 − 10) = −0.2 km min⁻¹ = −12 km h⁻¹",
+    "Therefore, a = 20 km h⁻¹; b = 0 km h⁻¹; c = −12 km h⁻¹."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to state what the gradient of a distance-time graph represents; write that it is the average speed.",
+   "For a graph calculation, select two points on the segment and show (S₂ − S₁)/(t₂ − t₁). Marks are commonly awarded for the correct changes, division, and final answer with units.",
+   "A horizontal segment has zero gradient. A falling segment has a negative gradient, so keep its sign when the question asks for velocity."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Use the distance change divided by the time change.",
+     "The line is horizontal, so its distance change is zero."
+    ],
+    "accept": [
+     [
+      "0 m s⁻¹"
+     ],
+     [
+      "0 m/s"
+     ],
+     [
+      "0"
+     ]
+    ],
+    "question": "A distance-time graph is a horizontal straight line. What is the gradient, and what does it tell you about the object's motion?",
+    "solution": [
+     "Gradient = (change in distance)/(change in time)",
+     "The change in distance is zero for a horizontal line.",
+     "Therefore, gradient = 0.",
+     "The object is at rest."
+    ],
+    "answer": "Gradient = 0; the object is at rest."
+   },
+   {
+    "hints": [
+     "Use the coordinates at the start and end of the segment.",
+     "Divide the distance change by the time change: (24 − 4)/(5 − 1)."
+    ],
+    "accept": [
+     [
+      "5 m s⁻¹"
+     ],
+     [
+      "5 m/s"
+     ],
+     [
+      "5"
+     ]
+    ],
+    "question": "A straight segment of a distance-time graph goes from (1 s, 4 m) to (5 s, 24 m). Find its gradient and the average speed.",
+    "solution": [
+     "Gradient = (S₂ − S₁)/(t₂ − t₁)",
+     "Gradient = (24 − 4)/(5 − 1)",
+     "Gradient = 20/4 = 5 m s⁻¹",
+     "Average speed = 5 m s⁻¹"
+    ],
+    "answer": "Gradient = 5 m s⁻¹; average speed = 5 m s⁻¹."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The two chosen times identify the start and end of the time interval on the graph.",
+     "text": "Select any two values of time t₁ and t₂."
+    },
+    {
+     "why": "The horizontal distance between the two vertical lines gives the time interval.",
+     "text": "Draw two vertical dotted lines at t₁ and t₂ on x-axis."
+    },
+    {
+     "why": "These points show the distances corresponding to the selected times.",
+     "text": "These lines meet the graph at points P and Q."
+    },
+    {
+     "why": "The horizontal lines let you read the two distances from the vertical axis.",
+     "text": "From these points draw horizontal lines to meet y-axis at S₁ and S₂ respectively."
+    },
+    {
+     "why": "The gradient is the rise in distance divided by the run in time.",
+     "text": "Slope = (S₂ − S₁)/(t₂ − t₁) = S/t"
+    },
+    {
+     "why": "The book relates distance divided by time to average speed.",
+     "text": "From Eq. (2.1), S/t = v_av, the average speed during the time interval t."
+    },
+    {
+     "why": "This gives the meaning of the graph's gradient.",
+     "text": "Gradient of the distance-Time graph is equal to the average speed of the body."
+    }
+   ],
+   "question": "Using the distance-time graph in Fig. 2.18, show what its gradient represents.",
+   "answer": "Gradient of the distance-time graph is equal to the average speed of the body."
+  },
+  "explain": [
+   {
+    "title": "What is gradient?",
+    "body": "The gradient is the measure of slope of a line. On a distance-time graph, it tells us how quickly distance changes as time passes."
+   },
+   {
+    "title": "How to find the gradient",
+    "body": "Choose two points on the graph. The distance change is S₂ − S₁, and the time change is t₂ − t₁. Divide the distance change by the time change: gradient = (S₂ − S₁)/(t₂ − t₁)."
+   },
+   {
+    "title": "What the gradient means",
+    "body": "The book shows that S/t = v_av, the average speed during the time interval t. Therefore, the gradient of a distance-time graph is equal to the average speed of the body."
+   },
+   {
+    "title": "Reading the shape",
+    "body": "A steeper rising line means a greater average speed. A horizontal segment has zero gradient. If the plotted distance falls as time increases, the gradient is negative."
+   }
+  ],
+  "mistakes": [
+   "Dividing the change in time by the change in distance instead of distance by time.",
+   "Using only one point instead of finding changes between two points.",
+   "Forgetting the units, such as m s⁻¹ or km h⁻¹.",
+   "Dropping the negative sign for a segment where the plotted distance decreases.",
+   "Calling the gradient distance itself instead of average speed."
+  ]
+ }
+}

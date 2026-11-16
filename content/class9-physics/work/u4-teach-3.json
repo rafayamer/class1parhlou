@@ -1,0 +1,500 @@
+{
+ "note": {
+  "explanation": "Torque tells us how strongly a force tends to turn an object. It depends on both the size of the force and its moment arm. For example, a door is easier to open when you push at its handle rather than near its hinge. A spanner turns a nut more easily when you apply force farther from the nut.",
+  "examples": [
+   "A door handle is placed far from the hinge so a smaller force can turn the door.",
+   "A force of 400 N applied at the end of a 0.25 m spanner produces a torque of 100 N m."
+  ],
+  "checkAnswer": "The moment arm is 0.4 m.",
+  "keywords": [
+   "torque",
+   "moment of force",
+   "moment arm",
+   "line of action",
+   "couple"
+  ],
+  "simple": "Torque is the turning effect of a force. A bigger force or a longer moment arm gives a greater turning effect.",
+  "checkQuestion": "A force of 20 N acts perpendicularly at a moment arm of 0.4 m. What is the moment arm?",
+  "title": "Torque and the moment arm",
+  "steps": [
+   "Identify the force and its perpendicular distance from the axis.",
+   "Use τ = F × ℓ.",
+   "Multiply the force by the moment arm.",
+   "Give the torque in newton metres (N m)."
+  ],
+  "answer": "Torque is the product of the force and the moment arm: τ = F × ℓ.",
+  "checkAccept": [
+   [
+    "0.4 m"
+   ],
+   [
+    "0.4"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Force multiplied by moment arm",
+    "Force divided by moment arm",
+    "Moment arm divided by force",
+    "Force multiplied by time"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the magnitude of the torque when a force acts perpendicularly to its moment arm?",
+   "rationales": [
+    "This is correct because torque is the product of force and moment arm.",
+    "This is incorrect because torque is not found by dividing force by moment arm.",
+    "This is incorrect because the moment arm is not divided by force.",
+    "This is incorrect because force multiplied by time is not the definition of torque."
+   ]
+  },
+  {
+   "options": [
+    "The distance from the axis to the point where the force is applied",
+    "The perpendicular distance from the line of action of the force to the axis of rotation",
+    "The length of the rotating object",
+    "The distance travelled by the object"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes the moment arm of a force?",
+   "rationales": [
+    "This is not always the moment arm because the distance must be perpendicular to the line of action.",
+    "This is correct because the moment arm is the perpendicular distance from the force’s line of action to the axis.",
+    "This is incorrect because the object's full length need not be the perpendicular distance.",
+    "This is incorrect because the moment arm is a distance from the axis, not the distance travelled."
+   ]
+  },
+  {
+   "options": [
+    "The force is zero",
+    "The moment arm is zero",
+    "The body has no mass",
+    "The force acts at the greatest distance from the axis"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "When is the torque of a force zero?",
+   "rationales": [
+    "This is not the only condition for zero torque; a non-zero force can also have zero torque.",
+    "This is correct because torque is zero when the moment arm is zero.",
+    "This is incorrect because torque does not become zero merely because the body has no mass.",
+    "This is incorrect because a greater moment arm generally gives greater torque."
+   ]
+  },
+  {
+   "options": [
+    "Clockwise",
+    "Anticlockwise",
+    "Both clockwise and anticlockwise",
+    "Neither direction"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to the sign convention in this section, which torque is positive?",
+   "rationales": [
+    "This is incorrect because clockwise torque is taken as negative.",
+    "This is correct because a force tending to produce anticlockwise rotation gives positive torque.",
+    "This is incorrect because a particular torque is assigned a direction according to the rotation it tends to produce.",
+    "This is incorrect because a force can produce a turning effect in either rotational direction."
+   ]
+  },
+  {
+   "options": [
+    "Two equal and opposite parallel forces acting at different points",
+    "Two equal forces acting at the same point in the same direction",
+    "One force acting through the axis of rotation",
+    "Two unequal forces acting along the same line"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which pair of forces forms a couple?",
+   "rationales": [
+    "This is correct because equal and opposite parallel forces at different points form a couple.",
+    "This is incorrect because forces at the same point in the same direction do not form a couple.",
+    "This is incorrect because one force through the axis is not a pair of forces forming a couple.",
+    "This is incorrect because a couple consists of equal and opposite parallel forces."
+   ]
+  },
+  {
+   "options": [
+    "N",
+    "N m",
+    "m/s",
+    "kg m"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of torque?",
+   "rationales": [
+    "This is incorrect because the newton is the unit of force, not torque.",
+    "This is correct because torque is force multiplied by distance, so its SI unit is newton metre.",
+    "This is incorrect because metre per second is a unit of speed.",
+    "This is incorrect because kilogram metre is not the SI unit of torque."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A spanner 25 cm long is used to open a nut. If a force of 400 N is applied at the end of a spanner shown in Fig. 4.10, what is the torque acting on the nut?",
+   "finalAnswer": "100 N m",
+   "marks": 2,
+   "source": "Example 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.25 m"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The length must be expressed in metres for the SI torque unit.",
+     "description": "Convert the spanner length to metres.",
+     "how": "Write 25 cm = 0.25 m."
+    },
+    {
+     "accept": [
+      [
+       "τ=F×ℓ"
+      ],
+      [
+       "τ=400×0.25"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The torque relation is the required method.",
+     "description": "Use the torque formula and substitute the values.",
+     "how": "Write τ = F × ℓ and substitute 400 N and 0.25 m."
+    },
+    {
+     "accept": [
+      [
+       "100 N m"
+      ],
+      [
+       "100 Nm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and unit complete the numerical answer.",
+     "description": "Give the correct torque.",
+     "how": "Calculate 400 × 0.25 and state the result in N m."
+    }
+   ],
+   "modelAnswer": [
+    "Length of spanner ℓ = 25 cm = 0.25 m",
+    "Force F = 400 N",
+    "τ = F × ℓ",
+    "τ = 400 N × 0.25 m = 100 N m"
+   ]
+  },
+  {
+   "text": "Q4.3. What is the line of action of a force?",
+   "finalAnswer": "The line along which the force acts is called the line of action of the force.",
+   "marks": 2,
+   "source": "Short Q4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "line along which"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must identify the line associated with the force.",
+     "description": "State what the line represents.",
+     "how": "Say that it is the line along which the force acts."
+    },
+    {
+     "accept": [
+      [
+       "force acts"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect that line directly to the force.",
+     "description": "Give the complete definition.",
+     "how": "Complete the definition by stating that the force acts along this line."
+    }
+   ],
+   "modelAnswer": [
+    "The line along which the force acts is called the line of action of the force."
+   ]
+  },
+  {
+   "text": "Q4.4. Define moment of a force. Prove that τ = rF sinθ, where θ is angle between r and F.",
+   "finalAnswer": "Moment of a force is the product of the force and the moment arm; τ = rF sinθ.",
+   "marks": 4,
+   "source": "Short Q4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "product of the force"
+      ],
+      [
+       "moment arm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition of moment of force is needed before the proof.",
+     "description": "Define moment of force.",
+     "how": "State that it is the product of the force and the moment arm."
+    },
+    {
+     "accept": [
+      [
+       "F sinθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "Only the component of force perpendicular to r produces the turning effect.",
+     "description": "Identify the perpendicular component of force.",
+     "how": "Use the perpendicular component F sinθ."
+    },
+    {
+     "accept": [
+      [
+       "rF sinθ"
+      ]
+     ],
+     "marks": 2,
+     "why": "Combining the perpendicular component with the distance gives the required relation.",
+     "description": "Show the torque relation and state the result.",
+     "how": "Use τ = r × F sinθ and simplify to τ = rF sinθ."
+    }
+   ],
+   "modelAnswer": [
+    "Moment of a force or torque is defined as the product of the force and the moment arm.",
+    "The component of F perpendicular to r is F sinθ.",
+    "τ = r × F sinθ",
+    "τ = rF sinθ"
+   ]
+  },
+  {
+   "text": "Q4.2. A force of 300 N is applied perpendicularly at the knob of a door to open it as shown in the given figure. If the knob is 1.2 m away from the hinge, what is the torque applied? Is it positive or negative torque?",
+   "finalAnswer": "360 N m, positive",
+   "marks": 5,
+   "source": "Numerical Q4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "τ=F×ℓ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The torque formula is the correct method for a perpendicular force.",
+     "description": "Write the torque formula.",
+     "how": "Use τ = F × ℓ."
+    },
+    {
+     "accept": [
+      [
+       "300 N"
+      ],
+      [
+       "1.2 m"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correctly identifying both given values is needed for substitution.",
+     "description": "Substitute the force and moment arm.",
+     "how": "Use F = 300 N and ℓ = 1.2 m."
+    },
+    {
+     "accept": [
+      [
+       "360 N m",
+       "positive"
+      ],
+      [
+       "360 Nm",
+       "positive"
+      ]
+     ],
+     "marks": 2,
+     "why": "Both the magnitude, unit and sign are required for the complete answer.",
+     "description": "State the torque and its sign.",
+     "how": "Calculate 300 × 1.2 and give the positive torque as indicated by the exercise answer."
+    }
+   ],
+   "modelAnswer": [
+    "Force F = 300 N",
+    "Moment arm ℓ = 1.2 m",
+    "τ = F × ℓ",
+    "τ = 300 N × 1.2 m = 360 N m",
+    "The torque is positive."
+   ]
+  },
+  {
+   "text": "Q4.6. A 30 cm long spanner is used to open the nut of a car. If the torque required for it is 150 N m, how much force F should be applied on the spanner as shown in the figure given below.",
+   "finalAnswer": "500 N",
+   "marks": 5,
+   "source": "Numerical Q4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30 cm=0.30 m"
+      ],
+      [
+       "0.30 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The moment arm must be in metres to use the SI units consistently.",
+     "description": "Convert the spanner length to metres.",
+     "how": "Write 30 cm = 0.30 m."
+    },
+    {
+     "accept": [
+      [
+       "τ=F×ℓ"
+      ],
+      [
+       "F=τ/ℓ"
+      ]
+     ],
+     "marks": 2,
+     "why": "Rearranging the torque relation gives the required force.",
+     "description": "Rearrange the torque formula and substitute.",
+     "how": "Use F = τ ÷ ℓ with τ = 150 N m and ℓ = 0.30 m."
+    },
+    {
+     "accept": [
+      [
+       "500 N"
+      ],
+      [
+       "500N"
+      ]
+     ],
+     "marks": 2,
+     "why": "The calculated force with its unit is the required final answer.",
+     "description": "Give the force.",
+     "how": "Calculate 150 ÷ 0.30 and state the answer in newtons."
+    }
+   ],
+   "modelAnswer": [
+    "Length of spanner ℓ = 30 cm = 0.30 m",
+    "Torque τ = 150 N m",
+    "τ = F × ℓ",
+    "F = τ ÷ ℓ",
+    "F = 150 N m ÷ 0.30 m = 500 N"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short questions asking for the definitions of line of action, moment arm, torque or couple. Learn the textbook definitions accurately.",
+   "For torque numericals, write τ = F × ℓ, show the force and moment arm with units, and give the answer in N m.",
+   "Convert lengths from centimetres to metres before calculating torque.",
+   "When asked for the sign, state whether the force tends to cause clockwise or anticlockwise rotation; anticlockwise is positive and clockwise is negative.",
+   "For a force at an angle, identify the perpendicular force component or perpendicular moment arm before using the torque relation."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Use the torque formula for a force acting perpendicularly.",
+     "Multiply 300 N by the 1.2 m moment arm, then state the sign given in the exercise answer."
+    ],
+    "accept": [
+     [
+      "360 N m",
+      "positive"
+     ],
+     [
+      "360 Nm",
+      "positive"
+     ]
+    ],
+    "question": "Q4.2. A force of 300 N is applied perpendicularly at the knob of a door to open it as shown in the given figure. If the knob is 1.2 m away from the hinge, what is the torque applied? Is it positive or negative torque?",
+    "solution": [
+     "Force F = 300 N",
+     "Moment arm ℓ = 1.2 m",
+     "τ = F × ℓ",
+     "τ = 300 N × 1.2 m = 360 N m",
+     "The torque is positive."
+    ],
+    "answer": "360 N m, positive"
+   },
+   {
+    "hints": [
+     "Change 30 cm into metres.",
+     "Rearrange τ = F × ℓ to find F, then substitute the torque and length."
+    ],
+    "accept": [
+     [
+      "500 N"
+     ],
+     [
+      "500N"
+     ]
+    ],
+    "question": "Q4.6. A 30 cm long spanner is used to open the nut of a car. If the torque required for it is 150 N m, how much force F should be applied on the spanner as shown in the figure given below.",
+    "solution": [
+     "Length of spanner ℓ = 30 cm = 0.30 m",
+     "Torque τ = 150 N m",
+     "τ = F × ℓ",
+     "F = τ ÷ ℓ",
+     "F = 150 N m ÷ 0.30 m = 500 N"
+    ],
+    "answer": "500 N"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The distance must be converted to metres so the torque is found in SI units.",
+     "text": "Length of Spanner ℓ = 25 cm = 0.25 m"
+    },
+    {
+     "why": "This records the force given in the question.",
+     "text": "Force = F = 400 N"
+    },
+    {
+     "why": "This identifies the quantity that we need to calculate.",
+     "text": "Torque τ = ?"
+    },
+    {
+     "why": "The textbook defines torque as force multiplied by moment arm.",
+     "text": "From Eq. (4.1), τ = F × ℓ"
+    },
+    {
+     "why": "Substituting the force and moment arm gives the torque.",
+     "text": "Putting the values, τ = 400 N × 0.25 m =100 N m"
+    }
+   ],
+   "question": "A spanner 25 cm long is used to open a nut. If a force of 400 N is applied at the end of a spanner shown in Fig. 4.10, what is the torque acting on the nut?",
+   "answer": "100 N m"
+  },
+  "explain": [
+   {
+    "title": "Rigid body and axis of rotation",
+    "body": "If the distance between two points of the body remains the same under the action of a force, it is called a rigid body. During rotation, the body turns about an axis of rotation."
+   },
+   {
+    "title": "Line of action and moment arm",
+    "body": "The line along which the force acts is called the line of action of the force. The perpendicular distance of the line of action of a force from the axis of rotation is known as moment arm of the force or simply moment arm."
+   },
+   {
+    "title": "Moment of force or torque",
+    "body": "Moment of a force or torque is defined as the product of the force and the moment arm. Its magnitude is τ = F×ℓ, and its SI unit is newton metre (N m)."
+   },
+   {
+    "title": "Torque direction and couple",
+    "body": "Torque is positive if the force tends to produce an anticlockwise rotation and negative if it tends to produce a clockwise rotation. When two equal and opposite parallel forces act at two different points of the same body, they form a couple."
+   }
+  ],
+  "mistakes": [
+   "Using the full distance to the point of force instead of the perpendicular moment arm.",
+   "Forgetting to change centimetres into metres before calculating torque.",
+   "Giving torque in newtons instead of newton metres (N m).",
+   "Mixing up the sign convention: anticlockwise is positive and clockwise is negative.",
+   "Forgetting that torque is zero if the line of action passes through the axis of rotation."
+  ]
+ }
+}

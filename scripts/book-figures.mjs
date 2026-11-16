@@ -32,7 +32,7 @@ const FIRST = S.key === "physics" ? 5 : 1;
 for (let p = FIRST; p <= 288; p++) {
   const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
   if (!existsSync(f)) continue;
-  const figs = [...readFileSync(f, "utf8").matchAll(/\[FIGURE:\s*([^\]]*)\]/g)].map((m) => m[1].trim());
+  const figs = [...readFileSync(f, "utf8").matchAll(/\[FIGURE[^:\]]*:\s*([^\]]*)\]/g)].map((m) => m[1].trim());
   if (figs.length) pages.push({ p, figs });
 }
 

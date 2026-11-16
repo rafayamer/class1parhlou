@@ -1,0 +1,384 @@
+{
+ "note": {
+  "explanation": "A force can be split into perpendicular x- and y-components. If the force F makes an angle θ with the x-axis, use cosine for the x-component and sine for the y-component.",
+  "examples": [
+   "For F = 200 N at 30° to the x-axis: F_x = 200 cos 30° = 173.2 N.",
+   "For the same force: F_y = 200 sin 30° = 100 N."
+  ],
+  "checkAnswer": "F_x = F cos θ; F_y = F sin θ. For 200 N at 30°: F_x = 173.2 N and F_y = 100 N.",
+  "keywords": [
+   "resolution",
+   "component",
+   "rectangular components",
+   "x-component",
+   "y-component",
+   "sine",
+   "cosine"
+  ],
+  "simple": "Think of the force as the hypotenuse of a right-angled triangle. Its horizontal part uses cosine, and its vertical part uses sine.",
+  "checkQuestion": "A force of 10 N makes an angle of 30° with the x-axis. What are its x- and y-components?",
+  "title": "Resolving a Force into Components",
+  "steps": [
+   "Identify F and the angle θ it makes with the x-axis.",
+   "Use F_x = F cos θ.",
+   "Use F_y = F sin θ.",
+   "Substitute the values and calculate each component."
+  ],
+  "answer": "The x-component is found using cosine, and the y-component is found using sine.",
+  "checkAccept": [
+   [
+    "F_x=8.66",
+    "F_y=5"
+   ],
+   [
+    "8.66",
+    "5"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "6 N",
+    "8 N",
+    "10 N",
+    "12 N"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force of 10 N makes an angle of 37° with the x-axis. Using cos 37° = 0.8, what is its x-component?",
+   "rationales": [
+    "This is incorrect because the x-component is not 6 N for the given cosine value.",
+    "This is correct because F_x = F cos θ = 10 × 0.8 = 8 N.",
+    "This is incorrect because 10 N is the magnitude of the full force, not its x-component at 37°.",
+    "This is incorrect because the component cannot be greater than the force magnitude in this case."
+   ]
+  },
+  {
+   "options": [
+    "F cos θ",
+    "F sin θ",
+    "F tan θ",
+    "F ÷ sin θ"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force F makes an angle θ with the x-axis. Which expression gives its y-component?",
+   "rationales": [
+    "This is incorrect because F cos θ gives the x-component when θ is measured from the x-axis.",
+    "This is correct because F_y = F sin θ.",
+    "This is incorrect because tangent gives the ratio of the perpendicular to the base, not the component directly.",
+    "This is incorrect because dividing by sin θ does not give the y-component."
+   ]
+  },
+  {
+   "options": [
+    "A component is the effective value of a vector in a given direction.",
+    "A component is always larger than the original vector.",
+    "A component is the angle between two vectors.",
+    "A component is the point where a vector begins."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes a component of a vector?",
+   "rationales": [
+    "This is correct because a component gives the effective value of a vector in a chosen direction.",
+    "This is incorrect because a component is not larger than the original vector.",
+    "This is incorrect because an angle is not a vector component.",
+    "This is incorrect because the starting point of a vector is not its component."
+   ]
+  },
+  {
+   "options": [
+    "F_x and F_y are parallel.",
+    "F_x and F_y are perpendicular.",
+    "F_x is always equal to F_y.",
+    "F_x and F_y point in the same direction."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the relationship between the rectangular components of a vector?",
+   "rationales": [
+    "This is incorrect because rectangular components act along perpendicular axes.",
+    "This is correct because the x- and y-components are perpendicular to each other.",
+    "This is incorrect because their magnitudes depend on the force and its angle.",
+    "This is incorrect because the components act in different, perpendicular directions."
+   ]
+  },
+  {
+   "options": [
+    "0 N",
+    "5 N",
+    "10 N",
+    "20 N"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A 20 N force acts at 90° to the x-axis. What is its x-component?",
+   "rationales": [
+    "This is correct because F_x = 20 cos 90° = 0 N.",
+    "This is incorrect because the x-component is zero when the force is perpendicular to the x-axis.",
+    "This is incorrect because 10 N is not obtained from the cosine of 90°.",
+    "This is incorrect because the whole force points along the y-axis, not the x-axis."
+   ]
+  },
+  {
+   "options": [
+    "sin θ = base/hypotenuse",
+    "sin θ = perpendicular/hypotenuse",
+    "sin θ = hypotenuse/perpendicular",
+    "sin θ = perpendicular/base"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In a right-angled triangle, which ratio represents sin θ?",
+   "rationales": [
+    "This is incorrect because base/hypotenuse represents cosine θ.",
+    "This is correct because sin θ is perpendicular/hypotenuse.",
+    "This is incorrect because it reverses the sine ratio.",
+    "This is incorrect because perpendicular/base represents tan θ."
+   ]
+  },
+  {
+   "options": [
+    "F_x = F and F_y = 0",
+    "F_x = 0 and F_y = F",
+    "F_x = F/2 and F_y = F/2",
+    "F_x = F and F_y = F"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A force F points straight along the positive y-axis. What are its rectangular components?",
+   "rationales": [
+    "This is incorrect because the force has no x-direction component.",
+    "This is correct because the full force lies along the y-axis and its x-component is zero.",
+    "This is incorrect because the force is not at an angle that divides it equally between the axes.",
+    "This is incorrect because the component magnitudes cannot both equal the full force in this direction."
+   ]
+  },
+  {
+   "options": [
+    "The x-component is greater than the y-component.",
+    "The y-component is greater than the x-component.",
+    "The two components are equal.",
+    "Both components are zero."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A force makes an angle of 45° with the x-axis. How do the magnitudes of its x- and y-components compare?",
+   "rationales": [
+    "This is incorrect because sine and cosine have equal values at 45°.",
+    "This is incorrect because sine and cosine have equal values at 45°.",
+    "This is correct because F cos 45° = F sin 45°.",
+    "This is incorrect because a non-zero force at 45° has non-zero components."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are rectangular components of a vector and their values?",
+   "finalAnswer": "The rectangular components are the perpendicular x- and y-components: F_x = F cos θ and F_y = F sin θ.",
+   "marks": 2,
+   "source": "Short 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "perpendicular",
+       "F_x"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies the rectangular components as perpendicular components along the x- and y-directions.",
+     "description": "Identify the rectangular components.",
+     "how": "State that they are the perpendicular x- and y-components."
+    },
+    {
+     "accept": [
+      [
+       "F_x=Fcosθ",
+       "F_y=Fsinθ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The component formulae are the required values in terms of F and θ.",
+     "description": "Give the component values.",
+     "how": "Write F_x = F cos θ and F_y = F sin θ."
+    }
+   ],
+   "modelAnswer": [
+    "The rectangular components of a vector are its perpendicular x- and y-components.",
+    "F_x = F cos θ",
+    "F_y = F sin θ"
+   ]
+  },
+  {
+   "text": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+   "finalAnswer": "(173.2 N, 100 N)",
+   "marks": 4,
+   "source": "Numerical 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F_x=Fcos30°"
+      ]
+     ],
+     "marks": 1,
+     "why": "The horizontal component must use cosine because the angle is measured from the horizontal.",
+     "description": "Set up the x-component.",
+     "how": "Use F_x = F cos 30°."
+    },
+    {
+     "accept": [
+      [
+       "F_y=Fsin30°"
+      ]
+     ],
+     "marks": 1,
+     "why": "The vertical component must use sine for an angle measured from the horizontal.",
+     "description": "Set up the y-component.",
+     "how": "Use F_y = F sin 30°."
+    },
+    {
+     "accept": [
+      [
+       "200cos30°",
+       "200sin30°"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substituting the given force and angle shows the method is applied to this question.",
+     "description": "Substitute the given values.",
+     "how": "Put F = 200 N and θ = 30° into both formulae."
+    },
+    {
+     "accept": [
+      [
+       "173.2",
+       "100"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final component magnitudes must be correct.",
+     "description": "Give the correct final answer.",
+     "how": "State the x- and y-components with their units."
+    }
+   ],
+   "modelAnswer": [
+    "F_x = F cos θ",
+    "F_x = 200 cos 30° = 200 × 0.866 = 173.2 N",
+    "F_y = F sin θ",
+    "F_y = 200 sin 30° = 200 × 0.5 = 100 N",
+    "Answer: (173.2 N, 100 N)"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask you to define rectangular components and state their values; name both components and write both formulae.",
+   "A numerical question may give a force and its angle with the horizontal and ask for its x- and y-components.",
+   "Show the formula before substituting values. Use F_x = F cos θ and F_y = F sin θ when θ is measured from the x-axis.",
+   "Include units in numerical answers and give the x-component and y-component in the order asked."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "The components are along the x- and y-axes and are perpendicular.",
+     "Use F_x = F cos θ and F_y = F sin θ."
+    ],
+    "accept": [
+     [
+      "F_x=Fcosθ",
+      "F_y=Fsinθ"
+     ],
+     [
+      "F_x=Fcos",
+      "F_y=Fsin"
+     ]
+    ],
+    "question": "What are rectangular components of a vector and their values?",
+    "solution": [
+     "The rectangular components are the perpendicular components along the x- and y-axes.",
+     "F_x = F cos θ",
+     "F_y = F sin θ"
+    ],
+    "answer": "The rectangular components are the perpendicular x- and y-components: F_x = F cos θ and F_y = F sin θ."
+   },
+   {
+    "hints": [
+     "The horizontal component uses cosine; the vertical component uses sine.",
+     "Substitute F = 200 N and θ = 30° into F_x = F cos θ and F_y = F sin θ."
+    ],
+    "accept": [
+     [
+      "173.2",
+      "100"
+     ],
+     [
+      "F_x=173.2",
+      "F_y=100"
+     ]
+    ],
+    "question": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+    "solution": [
+     "F_x = F cos θ",
+     "F_x = 200 cos 30° = 200 × 0.866 = 173.2 N",
+     "F_y = F sin θ",
+     "F_y = 200 sin 30° = 200 × 0.5 = 100 N"
+    ],
+    "answer": "(173.2 N, 100 N)"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The force is at an angle to the horizontal, so resolve it into the x- and y-components.",
+     "text": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force."
+    },
+    {
+     "why": "The x-component is adjacent to the angle, so use cosine.",
+     "text": "F_x = F cos θ"
+    },
+    {
+     "why": "Substitute the force and angle, using cos 30° = 0.866.",
+     "text": "F_x = 200 cos 30° = 200 × 0.866 = 173.2 N"
+    },
+    {
+     "why": "The y-component is opposite the angle, so use sine.",
+     "text": "F_y = F sin θ"
+    },
+    {
+     "why": "Substitute the force and angle, using sin 30° = 0.5.",
+     "text": "F_y = 200 sin 30° = 200 × 0.5 = 100 N"
+    }
+   ],
+   "question": "A force of 200 N is acting on a cart at an angle of 30° with the horizontal direction. Find the x and y-components of the force.",
+   "answer": "(173.2 N, 100 N)"
+  },
+  "explain": [
+   {
+    "title": "Resolution of a force",
+    "body": "To divide a force into its components is known as resolution of a force. The components add together to give the original force."
+   },
+   {
+    "title": "What a component means",
+    "body": "A component of a vector is its effective value in a given direction. For example, the x-component tells how much of the vector acts along the x-axis."
+   },
+   {
+    "title": "Rectangular components",
+    "body": "A force is often resolved into two components that are perpendicular to each other. These are called its perpendicular or rectangular components."
+   },
+   {
+    "title": "The component formulae",
+    "body": "When a force F makes an angle θ with the x-axis, its components are F_x = F cos θ and F_y = F sin θ. Use the angle as measured from the x-axis."
+   }
+  ],
+  "mistakes": [
+   "Swapping sine and cosine: when θ is measured from the x-axis, use cosine for F_x and sine for F_y.",
+   "Giving only one component when the question asks for both x- and y-components.",
+   "Leaving out units in a numerical answer.",
+   "Using a calculator in the wrong angle mode; these questions use degrees."
+  ]
+ }
+}

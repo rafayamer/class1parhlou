@@ -79,7 +79,7 @@ for (let p = 1; p <= (S.key === "physics" ? 0 : LAST); p++) {
     // Walk the line's tokens in order: parts and figures.
     const rest = line.replace(/^(?:Q\s*)?\d{1,2}\.\s*/, "");
     let lineStartsWithPart = false;
-    for (const t of rest.matchAll(/\[FIGURE:[^\]]*\]|\((i{1,3}|iv|vi{0,3}|ix|x{1,3}|[a-h])\)/g)) {
+    for (const t of rest.matchAll(/\[FIGURE[^\]]*\]|\((i{1,3}|iv|vi{0,3}|ix|x{1,3}|[a-h])\)/g)) {
       if (t[0].startsWith("[FIGURE")) {
         figIndex++;
         const id = byPage.get(`${p}-${figIndex}`);

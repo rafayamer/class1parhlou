@@ -1,0 +1,1100 @@
+{
+ "note": {
+  "explanation": "Kinetic energy is the energy a body has because it is moving. Potential energy is stored energy due to a body's position or deformation. Near the Earth, a raised body's gravitational potential energy is found using Eₚ = mgh.",
+  "examples": [
+   "A moving truck has kinetic energy.",
+   "A block held above the ground has gravitational potential energy."
+  ],
+  "checkAnswer": "The body's gravitational potential energy is 60 J.",
+  "keywords": [
+   "energy",
+   "kinetic energy",
+   "potential energy",
+   "motion",
+   "mass",
+   "velocity",
+   "height",
+   "joule"
+  ],
+  "simple": "Energy is the ability to do work. Motion gives a body kinetic energy; height or deformation can give it potential energy.",
+  "checkQuestion": "What is the gravitational potential energy of a 2 kg body raised 3 m? Take g = 10 m s⁻².",
+  "title": "Kinetic and potential energy",
+  "steps": [
+   "Choose the correct relation: Eₖ = ½mv² for motion, or Eₚ = mgh for a raised body.",
+   "Write the given values in SI units.",
+   "Substitute the values into the relation.",
+   "Calculate the answer and write the unit joule (J)."
+  ],
+  "answer": "Energy is the ability of a body to do work. Kinetic energy is due to motion; potential energy is due to position or deformation.",
+  "checkAccept": [
+   [
+    "60 J",
+    "60"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The energy a body possesses by virtue of its motion",
+    "The energy a body possesses by virtue of its position",
+    "The rate of doing work",
+    "The force acting on a body"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes kinetic energy?",
+   "rationales": [
+    "This is the definition of kinetic energy in your textbook.",
+    "This describes potential energy, not kinetic energy.",
+    "This describes power.",
+    "Force is not a form of energy."
+   ]
+  },
+  {
+   "options": [
+    "kg m s⁻¹",
+    "joule",
+    "newton",
+    "watt"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the SI unit of energy?",
+   "rationales": [
+    "This is the unit of momentum.",
+    "Energy is measured in joules (J).",
+    "A newton is the SI unit of force.",
+    "A watt is the SI unit of power."
+   ]
+  },
+  {
+   "options": [
+    "½mv",
+    "mv²",
+    "½mv²",
+    "mgh"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which expression gives the kinetic energy of a body of mass m moving with velocity v?",
+   "rationales": [
+    "This expression is missing the square on velocity and the factor ½.",
+    "This expression is missing the factor ½.",
+    "This is the kinetic-energy relation derived in your textbook.",
+    "This gives gravitational potential energy for a body at height h."
+   ]
+  },
+  {
+   "options": [
+    "½mv²",
+    "mgh",
+    "F/t",
+    "mg"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A body of mass m is raised through height h. Which expression gives its gravitational potential energy?",
+   "rationales": [
+    "This is the expression for kinetic energy.",
+    "The work done in lifting the body is mgh, stored as potential energy.",
+    "This is not the relation for potential energy.",
+    "This gives the body's weight, not its energy."
+   ]
+  },
+  {
+   "options": [
+    "It doubles.",
+    "It becomes four times as great.",
+    "It becomes half as great.",
+    "It does not change."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "If the speed of a moving body is doubled while its mass stays the same, what happens to its kinetic energy?",
+   "rationales": [
+    "Kinetic energy depends on the square of speed, so it does not merely double.",
+    "Since Eₖ = ½mv², doubling v multiplies Eₖ by 2² = 4.",
+    "Doubling speed increases, rather than reduces, kinetic energy.",
+    "The kinetic energy changes when the speed changes."
+   ]
+  },
+  {
+   "options": [
+    "It is a vector quantity.",
+    "It is a scalar quantity.",
+    "It has no SI unit.",
+    "It is measured in newtons."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement about energy is correct?",
+   "rationales": [
+    "Your textbook states that energy is scalar, not vector.",
+    "Energy, like work, is a scalar quantity.",
+    "Energy has the SI unit joule.",
+    "Energy is measured in joules; newtons measure force."
+   ]
+  },
+  {
+   "options": [
+    "Chemical energy",
+    "Elastic potential energy",
+    "Kinetic energy",
+    "Gravitational potential energy"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What form of energy is stored in a compressed spring?",
+   "rationales": [
+    "Chemical energy is stored in chemicals, such as those in a battery.",
+    "A compressed or stretched spring stores elastic potential energy.",
+    "Kinetic energy is the energy of motion.",
+    "Gravitational potential energy is associated with position relative to the Earth."
+   ]
+  },
+  {
+   "options": [
+    "The energy transferred to an object when work is done on it",
+    "The distance travelled by an object",
+    "The force needed to stop an object",
+    "The time taken to do work"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When work is done on a body, what happens to energy?",
+   "rationales": [
+    "Energy is transferred to the body on which work is done.",
+    "Distance is not energy.",
+    "A stopping force may be used to determine kinetic energy, but it is not what energy means.",
+    "Time is not energy."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "A truck of mass 3000 kg is moving on a road with uniform velocity of 54 km h⁻¹. Determine its kinetic energy.",
+   "finalAnswer": "337500 J = 337.5 kJ",
+   "marks": 4,
+   "source": "Example 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3000 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly identifying the mass is needed for substitution.",
+     "description": "State the mass.",
+     "how": "Write m = 3000 kg."
+    },
+    {
+     "accept": [
+      [
+       "15 m/s"
+      ],
+      [
+       "15 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The velocity must be in SI units.",
+     "description": "Convert the velocity.",
+     "how": "Write 54 km h⁻¹ = 15 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "1/2",
+       "3000",
+       "15^2"
+      ],
+      [
+       "337500"
+      ]
+     ],
+     "marks": 1,
+     "why": "Using the kinetic-energy relation and substituting correctly earns the method mark.",
+     "description": "Apply Eₖ = ½mv².",
+     "how": "Substitute m = 3000 kg and v = 15 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "337500 J"
+      ],
+      [
+       "337.5 kJ"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct final value with a unit is essential.",
+     "description": "Give the final answer.",
+     "how": "State 337500 J = 337.5 kJ."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of the truck m = 3000 kg",
+    "Velocity v = 54 km h⁻¹ = 15 m s⁻¹",
+    "Kinetic energy Eₖ = ?",
+    "Eₖ = ½mv² = ½ × 3000 kg × (15)² m² s⁻²",
+    "Eₖ = 337500 J = 337.5 kJ"
+   ]
+  },
+  {
+   "text": "A ball of mass 180 g was thrown vertically upward to a height of 12 m. Find the potential energy gained by the ball.",
+   "finalAnswer": "21.6 J",
+   "marks": 4,
+   "source": "Example 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.18 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Mass must be converted to kilograms before substitution.",
+     "description": "Convert the mass.",
+     "how": "Write 180 g = 0.18 kg."
+    },
+    {
+     "accept": [
+      [
+       "E_p=mgh"
+      ],
+      [
+       "mgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relation sets up the calculation.",
+     "description": "Choose the potential-energy relation.",
+     "how": "Use Eₚ = mgh."
+    },
+    {
+     "accept": [
+      [
+       "0.18",
+       "10",
+       "12"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution of the given values earns the method mark.",
+     "description": "Substitute m, g and h.",
+     "how": "Use m = 0.18 kg, g = 10 m s⁻² and h = 12 m."
+    },
+    {
+     "accept": [
+      [
+       "21.6 J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final potential energy must be correct and include its unit.",
+     "description": "State the final answer.",
+     "how": "Write 21.6 J."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of ball m = 180 g = 0.18 kg",
+    "Height h = 12 m",
+    "P.E. gained Eₚ = ?",
+    "g = 10 m s⁻²",
+    "From Eq. (5.4) Eₚ = mgh",
+    "Putting the values",
+    "Eₚ = 0.18 kg × 10 m s⁻² × 12 m = 21.6 J"
+   ]
+  },
+  {
+   "text": "What is the potential energy of a body of mass m when it is raised through a height?",
+   "finalAnswer": "Eₚ = mgh",
+   "marks": 2,
+   "source": "Short 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "mgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The expression is the essential result.",
+     "description": "Give the relation.",
+     "how": "Write Eₚ = mgh."
+    },
+    {
+     "accept": [
+      [
+       "gravitational potential energy"
+      ],
+      [
+       "height"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying the quantities shows what the expression represents.",
+     "description": "Explain the symbols.",
+     "how": "State that m is mass, g is gravitational acceleration and h is height."
+    }
+   ],
+   "modelAnswer": [
+    "The potential energy of a body of mass m raised through height h is",
+    "Eₚ = mgh"
+   ]
+  },
+  {
+   "text": "Find an expression for the kinetic energy of a moving body.",
+   "finalAnswer": "Eₖ = ½mv²",
+   "marks": 2,
+   "source": "Short 5.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "E_k=1/2mv^2"
+      ],
+      [
+       "1/2mv^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final relation is the required expression.",
+     "description": "State the expression.",
+     "how": "Write Eₖ = ½mv²."
+    },
+    {
+     "accept": [
+      [
+       "mass"
+      ],
+      [
+       "velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the symbols clarifies the physical meaning of the relation.",
+     "description": "Identify the symbols.",
+     "how": "State that m is mass and v is velocity."
+    }
+   ],
+   "modelAnswer": [
+    "The kinetic energy of a moving body is",
+    "Eₖ = ½mv²",
+    "where m is the mass and v is the velocity of the body."
+   ]
+  },
+  {
+   "text": "Can the kinetic energy of a body ever be negative?",
+   "finalAnswer": "No; kinetic energy cannot be negative because Eₖ = ½mv², and mass and the square of velocity are non-negative.",
+   "marks": 2,
+   "source": "CRQ 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must correctly state whether negative kinetic energy is possible.",
+     "description": "Give the conclusion.",
+     "how": "Answer no."
+    },
+    {
+     "accept": [
+      [
+       "1/2mv^2"
+      ],
+      [
+       "square of velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "The relation explains why kinetic energy cannot be negative.",
+     "description": "Give the reason.",
+     "how": "Use Eₖ = ½mv² and note that v² cannot be negative."
+    }
+   ],
+   "modelAnswer": [
+    "No.",
+    "Eₖ = ½mv², and mass and the square of velocity are non-negative; therefore, kinetic energy cannot be negative."
+   ]
+  },
+  {
+   "text": "Which one has the greater kinetic energy: an object travelling with a velocity v or an object twice as heavy travelling with a velocity of 1/2 v?",
+   "finalAnswer": "The object twice as heavy travelling at ½v has the greater kinetic energy; it has twice the kinetic energy of the first object.",
+   "marks": 2,
+   "source": "CRQ 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "twice as heavy"
+      ],
+      [
+       "second object"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison must identify the object with greater kinetic energy.",
+     "description": "Identify the greater kinetic energy.",
+     "how": "Choose the object twice as heavy and moving at ½v."
+    },
+    {
+     "accept": [
+      [
+       "twice"
+      ],
+      [
+       "2 times"
+      ]
+     ],
+     "marks": 1,
+     "why": "Comparing the calculated energies supports the conclusion.",
+     "description": "Show the comparison.",
+     "how": "Compare ½mv² with ½(2m)(v/2)² = ½ of the first object's energy? Correct this by calculating the ratio."
+    }
+   ],
+   "modelAnswer": [
+    "For the first object, Eₖ₁ = ½mv².",
+    "For the second object, Eₖ₂ = ½(2m)(½v)² = ¼mv².",
+    "Therefore, Eₖ₁ is greater; the first object has twice the kinetic energy of the second."
+   ]
+  },
+  {
+   "text": "A car is moving along a curved road at constant speed. Does its kinetic energy change?",
+   "finalAnswer": "No. Its kinetic energy does not change because its mass and speed remain constant.",
+   "marks": 2,
+   "source": "CRQ 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "The conclusion answers the question directly.",
+     "description": "State whether kinetic energy changes.",
+     "how": "Answer no."
+    },
+    {
+     "accept": [
+      [
+       "constant speed"
+      ],
+      [
+       "mass and speed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Kinetic energy depends on mass and speed, not direction of travel.",
+     "description": "Explain why.",
+     "how": "State that mass and speed remain constant, so Eₖ = ½mv² stays constant."
+    }
+   ],
+   "modelAnswer": [
+    "No.",
+    "Eₖ = ½mv². Since the mass and speed of the car remain constant, its kinetic energy does not change."
+   ]
+  },
+  {
+   "text": "Comment on the statement: “An object has one joule of potential energy.”",
+   "finalAnswer": "Potential energy is measured relative to a chosen position or reference level; the statement needs a reference position to be meaningful.",
+   "marks": 2,
+   "source": "CRQ 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "reference position"
+      ],
+      [
+       "reference level"
+      ]
+     ],
+     "marks": 1,
+     "why": "Potential energy depends on the position chosen for comparison.",
+     "description": "Mention the reference.",
+     "how": "State that a reference position or level must be specified."
+    },
+    {
+     "accept": [
+      [
+       "one joule"
+      ],
+      [
+       "meaningful"
+      ]
+     ],
+     "marks": 1,
+     "why": "This completes the comment on the given statement.",
+     "description": "Explain the statement's limitation.",
+     "how": "Say that without the reference position, the statement is incomplete."
+    }
+   ],
+   "modelAnswer": [
+    "Potential energy depends on the position of the object relative to a chosen reference level.",
+    "Therefore, the statement is incomplete unless the reference position is specified."
+   ]
+  },
+  {
+   "text": "While playing cricket on a street, the ball smashes a window pane. Describe the energy changes in this event.",
+   "finalAnswer": "The moving ball's kinetic energy is transferred to the window pane when it hits it, doing work and breaking the pane.",
+   "marks": 2,
+   "source": "CRQ 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "kinetic energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ball is moving, so its energy before impact is kinetic energy.",
+     "description": "Identify the ball's energy.",
+     "how": "State that the moving ball has kinetic energy."
+    },
+    {
+     "accept": [
+      [
+       "transferred"
+      ],
+      [
+       "window pane"
+      ]
+     ],
+     "marks": 1,
+     "why": "Energy transfer explains how the ball can break the pane.",
+     "description": "Describe the transfer.",
+     "how": "State that the ball transfers energy to the pane on impact and does work on it."
+    }
+   ],
+   "modelAnswer": [
+    "The moving ball has kinetic energy.",
+    "When it strikes the window pane, energy is transferred to the pane and the ball does work to break it."
+   ]
+  },
+  {
+   "text": "What is meant by kinetic energy? State its unit. Describe how it is determined.",
+   "finalAnswer": "Kinetic energy is the energy that a body possesses by virtue of its motion. Its SI unit is the joule (J). It is determined by applying an opposing force to stop the body; the work done by that force equals the body's kinetic energy, Eₖ = ½mv².",
+   "marks": 4,
+   "source": "Comprehensive 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "by virtue of its motion"
+      ],
+      [
+       "energy of motion"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition is a core part of the question.",
+     "description": "Define kinetic energy.",
+     "how": "State that it is energy possessed by a body by virtue of its motion."
+    },
+    {
+     "accept": [
+      [
+       "joule"
+      ],
+      [
+       "J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct SI unit is required.",
+     "description": "State the unit.",
+     "how": "Write joule (J)."
+    },
+    {
+     "accept": [
+      [
+       "opposing force"
+      ],
+      [
+       "stop"
+      ]
+     ],
+     "marks": 1,
+     "why": "This describes the textbook method for determining kinetic energy.",
+     "description": "Describe the stopping method.",
+     "how": "Explain that an opposing force stops the moving body."
+    },
+    {
+     "accept": [
+      [
+       "E_k=1/2mv^2"
+      ],
+      [
+       "work done equals kinetic energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The work-energy link and final relation complete the answer.",
+     "description": "Give the relation.",
+     "how": "State that the stopping work equals kinetic energy and Eₖ = ½mv²."
+    }
+   ],
+   "modelAnswer": [
+    "The kinetic energy of a body is the energy that a body possesses by virtue of its motion.",
+    "Its SI unit is joule (J).",
+    "An opposite force can be applied on the body to stop its motion.",
+    "The work done by this force is equal to the kinetic energy of the body.",
+    "Eₖ = ½mv²"
+   ]
+  },
+  {
+   "text": "A body of mass 20 kg is at rest. A 40 N force acts on it for 5 seconds. What is the kinetic energy of the body at the end of this time?",
+   "finalAnswer": "1000 J",
+   "marks": 5,
+   "source": "Numerical 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "a=f/m=2"
+      ],
+      [
+       "2 m s⁻²"
+      ]
+     ],
+     "marks": 1,
+     "why": "Finding acceleration is needed to determine the final speed.",
+     "description": "Find acceleration.",
+     "how": "Use a = F/m = 40/20 = 2 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "u=0"
+      ],
+      [
+       "10 m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial rest condition and resulting speed are needed.",
+     "description": "Find final velocity.",
+     "how": "Use v = u + at = 0 + 2 × 5 = 10 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "1/2mv^2"
+      ],
+      [
+       "1/2*20*10^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution into the kinetic-energy relation earns the method mark.",
+     "description": "Set up kinetic energy.",
+     "how": "Use Eₖ = ½mv²."
+    },
+    {
+     "accept": [
+      [
+       "1000"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct calculation is required.",
+     "description": "Calculate the energy.",
+     "how": "Evaluate the substituted expression."
+    },
+    {
+     "accept": [
+      [
+       "1000 J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must include the correct unit.",
+     "description": "Give the final answer.",
+     "how": "Write 1000 J."
+    }
+   ],
+   "modelAnswer": [
+    "Mass m = 20 kg",
+    "Force F = 40 N",
+    "Time t = 5 s",
+    "Initial velocity u = 0 m s⁻¹",
+    "Acceleration a = F/m = 40/20 = 2 m s⁻²",
+    "Final velocity v = u + at = 0 + 2 × 5 = 10 m s⁻¹",
+    "Eₖ = ½mv² = ½ × 20 × (10)² = 1000 J"
+   ]
+  },
+  {
+   "text": "A ball of mass 160 g is thrown vertically upward. The ball reaches a height of 20 m. Find the potential energy gained by the ball at this height.",
+   "finalAnswer": "32 J",
+   "marks": 5,
+   "source": "Numerical 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.16 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass must be expressed in SI units.",
+     "description": "Convert the mass.",
+     "how": "Write 160 g = 0.16 kg."
+    },
+    {
+     "accept": [
+      [
+       "E_p=mgh"
+      ],
+      [
+       "mgh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct relation is needed for gravitational potential energy.",
+     "description": "Choose the relation.",
+     "how": "Use Eₚ = mgh."
+    },
+    {
+     "accept": [
+      [
+       "g=10"
+      ],
+      [
+       "10 m s⁻²"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gravitational acceleration used in this textbook problem must be stated.",
+     "description": "Use the value of g.",
+     "how": "Take g = 10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "0.16",
+       "10",
+       "20"
+      ]
+     ],
+     "marks": 1,
+     "why": "Substitution of the given mass and height is needed.",
+     "description": "Substitute values.",
+     "how": "Put m = 0.16 kg, g = 10 m s⁻² and h = 20 m."
+    },
+    {
+     "accept": [
+      [
+       "32 J"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value and unit must be correct.",
+     "description": "State the answer.",
+     "how": "Write 32 J."
+    }
+   ],
+   "modelAnswer": [
+    "Mass m = 160 g = 0.16 kg",
+    "Height h = 20 m",
+    "g = 10 m s⁻²",
+    "Eₚ = mgh",
+    "Eₚ = 0.16 kg × 10 m s⁻² × 20 m = 32 J"
+   ]
+  },
+  {
+   "text": "A 0.14 kg ball is thrown vertically upward with an initial velocity of 35 m s⁻¹. Find the maximum height reached by the ball.",
+   "finalAnswer": "61.25 m",
+   "marks": 5,
+   "source": "Numerical 5.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "E_k=1/2mv^2"
+      ],
+      [
+       "1/2*0.14*35^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The initial kinetic energy must be found from the given velocity.",
+     "description": "Write the kinetic-energy expression.",
+     "how": "Use Eₖ = ½mv²."
+    },
+    {
+     "accept": [
+      [
+       "85.75 J"
+      ],
+      [
+       "85.75"
+      ]
+     ],
+     "marks": 1,
+     "why": "This energy is transferred into gravitational potential energy at the maximum height.",
+     "description": "Find the initial kinetic energy.",
+     "how": "Calculate ½ × 0.14 × 35² = 85.75 J."
+    },
+    {
+     "accept": [
+      [
+       "E_p=mgh"
+      ],
+      [
+       "mgh=85.75"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equating the energies provides the method for finding height.",
+     "description": "Relate potential energy to the initial kinetic energy.",
+     "how": "At maximum height, use mgh = 85.75 J."
+    },
+    {
+     "accept": [
+      [
+       "85.75/(0.14*10)"
+      ],
+      [
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct substitution and rearrangement produce the height.",
+     "description": "Solve for h.",
+     "how": "Use h = 85.75/(0.14 × 10)."
+    },
+    {
+     "accept": [
+      [
+       "61.25 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final height must match the answer key.",
+     "description": "Give the final answer.",
+     "how": "Write 61.25 m."
+    }
+   ],
+   "modelAnswer": [
+    "Mass m = 0.14 kg",
+    "Initial velocity v = 35 m s⁻¹",
+    "At maximum height, kinetic energy is changed into potential energy.",
+    "½mv² = mgh",
+    "h = v²/(2g) = 35²/(2 × 10)",
+    "h = 61.25 m"
+   ]
+  },
+  {
+   "text": "A girl is swinging on a swing. At the lowest point of her swing, she is 1.2 m from the ground, and at the highest point she is 2.0 m from the ground. What is her maximum velocity and where?",
+   "finalAnswer": "4 m s⁻¹, at the lowest position",
+   "marks": 5,
+   "source": "Numerical 5.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2.0-1.2"
+      ],
+      [
+       "0.8 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The height difference gives the fall in gravitational potential energy.",
+     "description": "Find the height difference.",
+     "how": "Calculate 2.0 m − 1.2 m = 0.8 m."
+    },
+    {
+     "accept": [
+      [
+       "mgh"
+      ],
+      [
+       "potential energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "The change in potential energy supplies the kinetic energy.",
+     "description": "Relate the energy change.",
+     "how": "Equate mgh to ½mv²."
+    },
+    {
+     "accept": [
+      [
+       "v^2=2gh"
+      ],
+      [
+       "2*10*0.8"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the energy equation gives the speed.",
+     "description": "Find the speed relation.",
+     "how": "Use v² = 2gh."
+    },
+    {
+     "accept": [
+      [
+       "4 m/s"
+      ],
+      [
+       "4 m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical maximum velocity must be correct.",
+     "description": "Calculate the velocity.",
+     "how": "Evaluate v = √(2 × 10 × 0.8) = 4 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "lowest position"
+      ],
+      [
+       "lowest point"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must state where the speed is maximum.",
+     "description": "State the position.",
+     "how": "Write that the maximum velocity occurs at the lowest position."
+    }
+   ],
+   "modelAnswer": [
+    "Height difference h = 2.0 m − 1.2 m = 0.8 m",
+    "At the highest point, the energy is potential energy; at the lowest point, this change is kinetic energy.",
+    "mgh = ½mv²",
+    "v² = 2gh = 2 × 10 × 0.8 = 16",
+    "v = 4 m s⁻¹",
+    "The maximum velocity is 4 m s⁻¹, at the lowest position."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short questions asking for the definitions of energy, kinetic energy and potential energy, their SI unit, or the expressions Eₖ = ½mv² and Eₚ = mgh.",
+   "Numerical questions commonly test converting mass or velocity to SI units, substituting into an energy formula, and giving the answer with the correct unit.",
+   "For a kinetic-energy derivation, show that the work done to stop a moving body equals its kinetic energy, then reach Eₖ = ½mv².",
+   "For gravitational potential energy, show that the lifting work is wh and use w = mg to obtain Eₚ = mgh.",
+   "In comparisons, remember that kinetic energy depends on the square of speed, while gravitational potential energy depends on height."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First change the ball's mass from grams to kilograms.",
+     "Use Eₚ = mgh, with g = 10 m s⁻²."
+    ],
+    "accept": [
+     [
+      "32 J"
+     ],
+     [
+      "32"
+     ]
+    ],
+    "question": "A ball of mass 160 g is thrown vertically upward. The ball reaches a height of 20 m. Find the potential energy gained by the ball at this height.",
+    "solution": [
+     "Mass m = 160 g = 0.16 kg",
+     "Height h = 20 m",
+     "g = 10 m s⁻²",
+     "Eₚ = mgh",
+     "Eₚ = 0.16 kg × 10 m s⁻² × 20 m = 32 J"
+    ],
+    "answer": "32 J"
+   },
+   {
+    "hints": [
+     "Find the acceleration from a = F/m.",
+     "Use v = u + at, then substitute the final velocity into Eₖ = ½mv²."
+    ],
+    "accept": [
+     [
+      "1000 J"
+     ],
+     [
+      "1000"
+     ]
+    ],
+    "question": "A body of mass 20 kg is at rest. A 40 N force acts on it for 5 seconds. What is the kinetic energy of the body at the end of this time?",
+    "solution": [
+     "Mass m = 20 kg",
+     "Force F = 40 N",
+     "Time t = 5 s",
+     "Initial velocity u = 0 m s⁻¹",
+     "Acceleration a = F/m = 40/20 = 2 m s⁻²",
+     "Final velocity v = u + at = 0 + 2 × 5 = 10 m s⁻¹",
+     "Eₖ = ½mv² = ½ × 20 × (10)² = 1000 J"
+    ],
+    "answer": "1000 J"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Changing grams to kilograms puts the mass in SI units.",
+     "text": "Mass of ball m = 180 g = 0.18 kg"
+    },
+    {
+     "why": "This gives the height needed in the potential-energy calculation.",
+     "text": "Height h = 12 m"
+    },
+    {
+     "why": "This identifies the quantity that must be calculated.",
+     "text": "P.E. gained Eₚ = ?"
+    },
+    {
+     "why": "The textbook uses this value of gravitational acceleration in the example.",
+     "text": "g = 10 m s⁻²"
+    },
+    {
+     "why": "This is the relation for gravitational potential energy.",
+     "text": "From Eq. (5.4) Eₚ = mgh"
+    },
+    {
+     "why": "Putting the known values into the relation allows the energy to be calculated.",
+     "text": "Putting the values"
+    },
+    {
+     "why": "Multiplying the values gives the gained potential energy in joules.",
+     "text": "Eₚ = 0.18 kg × 10 m s⁻² × 12 m = 21.6 J"
+    }
+   ],
+   "question": "A ball of mass 180 g was thrown vertically upward to a height of 12 m. Find the potential energy gained by the ball.",
+   "answer": "21.6 J"
+  },
+  "explain": [
+   {
+    "title": "Energy",
+    "body": "Energy can be defined as the ability of a body to do work. Energy is a scalar quantity, and its SI unit is joule (J). When work is done, energy is transferred to the body on which the work is done."
+   },
+   {
+    "title": "Kinetic energy",
+    "body": "The kinetic energy of a body is the energy that a body possesses by virtue of its motion. The work needed to stop a moving body equals its kinetic energy. For mass m and velocity v, Eₖ = ½mv²."
+   },
+   {
+    "title": "Potential energy",
+    "body": "Potential energy is defined as the energy that a body possesses by virtue of its position or deformation. A raised body has gravitational potential energy because work was done to lift it."
+   },
+   {
+    "title": "Gravitational potential energy",
+    "body": "The work done to lift a body at constant velocity is its weight multiplied by the height: Eₚ = wh. Since w = mg, the relation becomes Eₚ = mgh."
+   }
+  ],
+  "mistakes": [
+   "Using grams instead of kilograms, or km h⁻¹ instead of m s⁻¹, in an energy calculation.",
+   "Forgetting that velocity is squared in Eₖ = ½mv².",
+   "Using Eₚ = mgh but leaving out g or the height.",
+   "Writing an answer without its unit, or confusing joules (energy) with newtons (force).",
+   "Assuming that a change in direction changes kinetic energy when speed and mass stay constant.",
+   "When comparing kinetic energies, forgetting that a change in speed is squared."
+  ]
+ }
+}

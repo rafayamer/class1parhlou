@@ -1,0 +1,664 @@
+{
+ "unit": 3,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 3.4",
+   "MCQ 3.7",
+   "MCQ 3.8",
+   "Short 3.7",
+   "Short 3.8",
+   "Short 3.10",
+   "CRQ 3.3",
+   "Comprehensive 3.6",
+   "Numerical 3.5",
+   "Numerical 3.6",
+   "Numerical 3.8",
+   "Numerical 3.9"
+  ],
+  "definitions": [
+   {
+    "term": "Force",
+    "text": "A common concept of a force is a push or a pull that starts, stops or changes the magnitude and direction of velocity of a body."
+   },
+   {
+    "term": "Contact force",
+    "text": "A contact force is a force that is exerted by one object on the other at the point of contact."
+   },
+   {
+    "term": "Friction",
+    "text": "It is the force that resists motion when the surface of one object comes in contact with the surface of another."
+   },
+   {
+    "term": "Drag force",
+    "text": "The drag force is the resistant force caused by the motion of a body through a fluid. It acts opposite to the relative motion of any object moving with respect to surrounding fluid."
+   },
+   {
+    "term": "Thrust",
+    "text": "It is an upward force exerted by a liquid on an object immersed in it."
+   },
+   {
+    "term": "Normal force",
+    "text": "It is the force of reaction exerted by the surface on an object lying on it. This force acts outward and perpendicular to the surface. It is also called the support force upon the object."
+   },
+   {
+    "term": "Air resistance",
+    "text": "It is the resistance (opposition) offered by air when an object falls through it."
+   },
+   {
+    "term": "Tension force",
+    "text": "It is the force experienced by a rope when a person or load pulls it."
+   },
+   {
+    "term": "Elastic force",
+    "text": "It is a force that brings certain materials back to their original shape after being deformed."
+   },
+   {
+    "term": "Non-contact force",
+    "text": "A non-contact force is defined as the force between two objects which are not in physical contact."
+   },
+   {
+    "term": "Newton's law of gravitation",
+    "text": "Every object in the universe attracts every other object with a force that is directly proportional to the product of their masses and inversely proportional to the square of the distance between them. This is known as Newton's law of gravitation."
+   },
+   {
+    "term": "Fundamental forces",
+    "text": "There are four fundamental forces in nature. These are:\n\n1. Gravitational force\n2. Electromagnetic force\n3. Strong nuclear force\n4. Weak nuclear force"
+   },
+   {
+    "term": "Newton's first law of motion",
+    "text": "A body continues its state of rest or of uniform motion in a straight line unless acted upon by some external force."
+   },
+   {
+    "term": "Force (definition from Newton's first law)",
+    "text": "Force is an agency which changes or tends to change the state of rest or of uniform motion of a body."
+   },
+   {
+    "term": "Inertia",
+    "text": "The property of a body to maintain its state of rest or of uniform motion in a straight line is called inertia."
+   },
+   {
+    "term": "Newton's second law of motion",
+    "text": "If a net external force acts upon a body, it accelerates the body in the direction of force. The magnitude of acceleration is directly proportional to the magnitude of force and is inversely proportional to the mass of the body."
+   },
+   {
+    "term": "One newton",
+    "text": "One newton is the force which produces an acceleration of 1 m s⁻² in a body of mass 1 kg."
+   },
+   {
+    "term": "Newton's third law of motion",
+    "text": "For every action, there is always\nan equal and opposite reaction."
+   },
+   {
+    "term": "Newton's third law (alternative statement)",
+    "text": "If one body exerts a force on a second body,\nthe second body also exerts an equal and\nopposite force on the first body."
+   },
+   {
+    "term": "Mass",
+    "text": "The characteristic of a body which determines the magnitude of acceleration produced when a certain force acts upon it is known as mass of the body."
+   },
+   {
+    "term": "Weight",
+    "text": "The weight of an object is equal to the force with which the Earth attracts the body towards its centre."
+   },
+   {
+    "term": "Gravitational field",
+    "text": "The gravitational field is a space around a mass in which another mass experiences a force due to gravitational attraction."
+   },
+   {
+    "term": "Gravitational field strength",
+    "text": "The gravitational field strength is defined as the gravitational force acting on unit mass."
+   },
+   {
+    "term": "Static friction",
+    "text": "This opposing force is the static friction F_s."
+   },
+   {
+    "term": "Kinetic friction",
+    "text": "When the block is sliding, friction still exists. It is known as kinetic friction."
+   },
+   {
+    "term": "Terminal velocity",
+    "text": "This constant velocity achieved by an object is called its terminal velocity."
+   },
+   {
+    "term": "Rolling friction",
+    "text": "When an object rolls over a surface, the friction produced is called rolling friction."
+   },
+   {
+    "term": "Momentum",
+    "text": "The momentum of a moving body is the product of its mass and velocity."
+   },
+   {
+    "term": "Impulse",
+    "text": "When a large force F acts on an object for a short interval of time, the impulse of the force is defined as the total change in momentum of the object."
+   },
+   {
+    "term": "Newton's second law in terms of momentum",
+    "text": "The rate of change of momentum of a body is equal to the force acting on it."
+   },
+   {
+    "term": "Principle of conservation of momentum",
+    "text": "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "F = G(m₁ × m₂) ÷ r²  (F in N, G in N m² kg⁻², m₁ and m₂ in kg, r in m)",
+    "use": "Gravitational force between two masses."
+   },
+   {
+    "formula": "w = m × g  (w in N, m in kg, g in m s⁻² or N kg⁻¹)",
+    "use": "Find an object's weight from its mass and local gravitational field strength."
+   },
+   {
+    "formula": "g = w ÷ m  (g in N kg⁻¹ or m s⁻², w in N, m in kg)",
+    "use": "Find gravitational field strength from weight and mass."
+   },
+   {
+    "formula": "F = m × a  (F in N, m in kg, a in m s⁻²)",
+    "use": "Find the net force, mass or acceleration using Newton's second law."
+   },
+   {
+    "formula": "1 N = 1 kg m s⁻²",
+    "use": "Convert between the newton and its SI base units."
+   },
+   {
+    "formula": "a = Δv ÷ Δt = (v_f − v_i) ÷ Δt  (a in m s⁻², velocities in m s⁻¹, Δt in s)",
+    "use": "Find average acceleration from the change in velocity and time."
+   },
+   {
+    "formula": "v_f = v_i + a × t  (velocities in m s⁻¹, a in m s⁻², t in s)",
+    "use": "Find final velocity or time when acceleration is constant."
+   },
+   {
+    "formula": "p = m × v  (p in kg m s⁻¹ or N s, m in kg, v in m s⁻¹)",
+    "use": "Find the momentum of a moving object."
+   },
+   {
+    "formula": "F × Δt = m × Δv = m × (v_f − v_i) = Δp  (F in N, Δt in s, m in kg, velocities in m s⁻¹, Δp in kg m s⁻¹ or N s)",
+    "use": "Find impulse or the change in momentum during a force acting for a time."
+   },
+   {
+    "formula": "F = Δp ÷ Δt = m × (v_f − v_i) ÷ Δt  (F in N, Δp in kg m s⁻¹, Δt in s, m in kg, velocities in m s⁻¹)",
+    "use": "Find average force from the rate of change of momentum."
+   },
+   {
+    "formula": "m₁v₁ + m₂v₂ = m₁v′₁ + m₂v′₂  (masses in kg, velocities in m s⁻¹, momentum in kg m s⁻¹)",
+    "use": "Apply conservation of momentum to two objects before and after an interaction."
+   },
+   {
+    "formula": "m₁v₁ + m₂v₂ = (m₁ + m₂)v  (masses in kg, velocities in m s⁻¹)",
+    "use": "Find the shared velocity when two objects stick together after collision."
+   },
+   {
+    "formula": "v₂ = −(m₁ × v₁) ÷ m₂  (masses in kg, velocities in m s⁻¹)",
+    "use": "Find recoil velocity when a stationary gun-object system separates; the minus sign shows opposite direction."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 3.1",
+    "why": "Likely 2-mark concept question about force changing velocity."
+   },
+   {
+    "ref": "Short 3.4",
+    "why": "A direct definition question and a key momentum topic."
+   },
+   {
+    "ref": "Short 3.6",
+    "why": "Standard application of inertia and Newton's first law."
+   },
+   {
+    "ref": "Short 3.9",
+    "why": "A direct, easy-to-test definition from friction and air resistance."
+   },
+   {
+    "ref": "CRQ 3.1",
+    "why": "Tests action–reaction and conservation of momentum with a calculation."
+   },
+   {
+    "ref": "CRQ 3.2",
+    "why": "Common application of impulse and increasing collision time."
+   },
+   {
+    "ref": "CRQ 3.4",
+    "why": "A standard explanation using impulse, momentum change and force."
+   },
+   {
+    "ref": "Numerical 3.1(a)",
+    "why": "A straightforward F = ma numerical commonly used to test basic method and units."
+   },
+   {
+    "ref": "Numerical 3.3",
+    "why": "A standard multi-step numerical using acceleration and Newton's second law."
+   },
+   {
+    "ref": "Numerical 3.4",
+    "why": "A common conservation-of-momentum and recoil numerical; tests unit conversion and direction."
+   }
+  ],
+  "fullMarks": [
+   "For a law or definition, write the complete statement accurately; for Newton's laws and conservation of momentum, do not leave out conditions such as 'net external force' or 'isolated system'.",
+   "For numericals, write the given data first, convert all quantities to SI units, state the formula, substitute values with units, and give the final answer with its unit.",
+   "For momentum and recoil problems, choose a positive direction and keep velocity signs consistent; show that a negative answer means motion in the opposite direction.",
+   "In force questions, use the net/resultant force in F = ma, and make clear which object each force acts on.",
+   "For impulse and momentum-change questions, show the initial and final velocities and calculate Δv as v_f − v_i; include the contact time when calculating force.",
+   "For conservation-of-momentum problems, write total momentum before = total momentum after before substituting numbers.",
+   "For a free-body diagram, represent the object clearly, draw force arrows from it, point each arrow in the correct direction, and label every force.",
+   "End explanation answers with a direct conclusion that links the physical idea to the situation—for example, increased stopping time means less average force for the same change in momentum."
+  ],
+  "mistakes": [
+   "Writing a mass in newtons or a weight in kilograms loses marks. Use kg for mass and N for weight.",
+   "Using the mass in grams directly in a formula: convert grams to kilograms first, such as 5 g = 0.005 kg.",
+   "Treating action and reaction as forces that cancel on one object. They act on different objects; identify the object each force acts on.",
+   "Leaving out the minus sign in recoil or collision calculations. Choose a direction as positive and explain that a negative velocity means the opposite direction.",
+   "Using the applied force instead of the net force in F = ma. Account for opposing forces when they are present.",
+   "For impulse problems, using v_i − v_f instead of v_f − v_i or forgetting the time interval when finding force. Write the signed change in velocity carefully.",
+   "Saying that terminal velocity means the object has stopped. It is still falling, but at constant velocity because air resistance balances its weight."
+  ],
+  "shortTheory": [
+   {
+    "question": "What changes in velocity can a force produce?",
+    "answer": "As velocity is a vector quantity, so the change may be in its magnitude, direction or in both of them."
+   },
+   {
+    "question": "State Newton's first law of motion.",
+    "answer": "A body continues its state of rest or of uniform motion in a straight line unless acted upon by some external force."
+   },
+   {
+    "question": "Define impulse of force.",
+    "answer": "When a large force F acts on an object for a short interval of time, the impulse of the force is defined as the total change in momentum of the object."
+   },
+   {
+    "question": "Why are you pushed back into your seat when a car suddenly accelerates from rest?",
+    "answer": "On the other hand, when the bus starts moving quickly from rest, the passengers are pushed back against the seat. This time, the tendency of passengers is to retain their state of rest."
+   },
+   {
+    "question": "Define terminal velocity.",
+    "answer": "This constant velocity achieved by an object is called its terminal velocity."
+   },
+   {
+    "question": "State the principle of conservation of momentum.",
+    "answer": "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system."
+   },
+   {
+    "question": "Give five examples of contact forces.",
+    "answer": "Friction, drag, thrust, normal force and air resistance."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "phy-w-3-1-t0",
+   "text": "What changes in velocity can a force produce?",
+   "marks": 2,
+   "modelAnswer": [
+    "As velocity is a vector quantity, so the change may be in its magnitude, direction or in both of them."
+   ],
+   "followUp": "What changes in velocity can a force produce?",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "vector"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises the key condition that velocity is a vector quantity.",
+     "description": "Velocity is a vector quantity.",
+     "how": "Award 1 mark for identifying velocity as a vector quantity; accept an equivalent statement that velocity has magnitude and direction."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "magnitude",
+       "direction"
+      ],
+      [
+       "both"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the possible ways a force can change velocity.",
+     "description": "The change may be in magnitude, direction, or both.",
+     "how": "Award 1 mark for stating that the change can be in magnitude and direction, or in both."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-3-1-t2",
+   "text": "Define impulse of force.",
+   "marks": 2,
+   "modelAnswer": [
+    "When a large force F acts on an object for a short interval of time, the impulse of the force is defined as the total change in momentum of the object."
+   ],
+   "followUp": "Define impulse of force.",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "force",
+       "short interval"
+      ],
+      [
+       "force",
+       "short time"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies that impulse concerns a force acting for a short duration.",
+     "description": "A large force acts for a short interval of time.",
+     "how": "Award 1 mark for mentioning a force acting over a short time interval."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "change in momentum"
+      ],
+      [
+       "total change",
+       "momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the defining quantity for impulse.",
+     "description": "Impulse is the total change in the object's momentum.",
+     "how": "Award 1 mark for defining impulse as the change in momentum."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-3-1-t3",
+   "text": "Why are you pushed back into your seat when a car suddenly accelerates from rest?",
+   "marks": 2,
+   "modelAnswer": [
+    "On the other hand, when the bus starts moving quickly from rest, the passengers are pushed back against the seat. This time, the tendency of passengers is to retain their state of rest."
+   ],
+   "followUp": "Why are you pushed back into your seat when a car suddenly accelerates from rest?",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "starts moving",
+       "rest"
+      ],
+      [
+       "accelerates",
+       "rest"
+      ],
+      [
+       "suddenly",
+       "rest"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies that the vehicle starts moving suddenly from rest.",
+     "description": "The car starts moving quickly from rest.",
+     "how": "Award 1 mark for stating that the vehicle suddenly starts or accelerates from rest."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "retain",
+       "rest"
+      ],
+      [
+       "tendency",
+       "rest"
+      ],
+      [
+       "inertia"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains the backward push using the passengers' tendency to remain at rest.",
+     "description": "Passengers tend to retain their state of rest and are pushed back against the seat.",
+     "how": "Award 1 mark for attributing the effect to the tendency to remain at rest or to inertia."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-3-1-t4",
+   "text": "Define terminal velocity.",
+   "marks": 2,
+   "modelAnswer": [
+    "This constant velocity achieved by an object is called its terminal velocity."
+   ],
+   "followUp": "Define terminal velocity.",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "constant velocity"
+      ],
+      [
+       "constant speed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the constant nature of the velocity.",
+     "description": "The object achieves a constant velocity.",
+     "how": "Award 1 mark for stating that the object reaches a constant velocity."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "terminal velocity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the constant velocity correctly.",
+     "description": "This constant velocity is called terminal velocity.",
+     "how": "Award 1 mark for naming it terminal velocity."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-3-1-t5",
+   "text": "State the principle of conservation of momentum.",
+   "marks": 2,
+   "modelAnswer": [
+    "If no external force acts on an isolated system, the final total momentum of the system is equal to the initial total momentum of the system."
+   ],
+   "followUp": "State the principle of conservation of momentum.",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "no external force"
+      ],
+      [
+       "isolated system"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the condition under which momentum is conserved.",
+     "description": "No external force acts on an isolated system.",
+     "how": "Award 1 mark for stating that the system is isolated or that no external force acts."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "final total momentum",
+       "initial total momentum"
+      ],
+      [
+       "final momentum",
+       "initial momentum"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that total momentum remains unchanged.",
+     "description": "The final total momentum equals the initial total momentum.",
+     "how": "Award 1 mark for stating that final momentum equals initial momentum."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-3-1-t6",
+   "text": "Give five examples of contact forces.",
+   "marks": 2,
+   "modelAnswer": [
+    "Friction, drag, thrust, normal force and air resistance."
+   ],
+   "followUp": "Give five examples of contact forces.",
+   "noteId": "phy-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "friction",
+       "drag"
+      ],
+      [
+       "friction",
+       "thrust"
+      ],
+      [
+       "friction",
+       "normal force"
+      ],
+      [
+       "friction",
+       "air resistance"
+      ],
+      [
+       "drag",
+       "thrust"
+      ],
+      [
+       "drag",
+       "normal force"
+      ],
+      [
+       "drag",
+       "air resistance"
+      ],
+      [
+       "thrust",
+       "normal force"
+      ],
+      [
+       "thrust",
+       "air resistance"
+      ],
+      [
+       "normal force",
+       "air resistance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives examples of contact forces.",
+     "description": "Names at least two contact forces.",
+     "how": "Award 1 mark for any two correct examples from friction, drag, thrust, normal force and air resistance."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "friction",
+       "drag",
+       "thrust"
+      ],
+      [
+       "friction",
+       "drag",
+       "normal force"
+      ],
+      [
+       "friction",
+       "drag",
+       "air resistance"
+      ],
+      [
+       "friction",
+       "thrust",
+       "normal force"
+      ],
+      [
+       "friction",
+       "thrust",
+       "air resistance"
+      ],
+      [
+       "friction",
+       "normal force",
+       "air resistance"
+      ],
+      [
+       "drag",
+       "thrust",
+       "normal force"
+      ],
+      [
+       "drag",
+       "thrust",
+       "air resistance"
+      ],
+      [
+       "drag",
+       "normal force",
+       "air resistance"
+      ],
+      [
+       "thrust",
+       "normal force",
+       "air resistance"
+      ]
+     ],
+     "marks": 1,
+     "why": "Completes the requested list of five contact-force examples.",
+     "description": "Names the remaining examples to give all five: friction, drag, thrust, normal force and air resistance.",
+     "how": "Award 1 mark for a list containing all five correct examples in total."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 3,
+  "writtenBuilt": 6
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "procedure": [
+  "Suspend a helical spring from the iron stand beside the vertical scale.",
+  "Adjust the pointer so that it does not touch the scale but can move up and down freely along it.",
+  "Note the pointer position with no load to use as the initial position.",
+  "Place a 50 g slotted weight in the hanger and note the pointer position on the scale.",
+  "Repeat the loading step, increasing the load by 50 g each time, and note the pointer position for each load.",
+  "Find the extension for each load by subtracting the initial pointer position from the loaded pointer position.",
+  "Calculate the force for each load using F = mg.",
+  "Draw a graph between force F along the y-axis and extension x along the x-axis.",
+  "Observe the shape of the graph and find the slope of the straight line."
+ ],
+ "aim": "To investigate the relationship between the force applied to a helical spring and its extension.",
+ "viva": [
+  {
+   "question": "What is a helical spring?",
+   "answer": "A spring of helical or spiral shape is called a helical spring."
+  },
+  {
+   "question": "What is the shape of the force-extension graph?",
+   "answer": "It is a straight line through the origin, while the spring remains within its elastic limit."
+  },
+  {
+   "question": "What does the straight-line graph show?",
+   "answer": "It shows that force is directly proportional to extension."
+  },
+  {
+   "question": "What does the slope of the force-extension graph represent?",
+   "answer": "It represents the spring constant, k, in N/m."
+  },
+  {
+   "question": "What happens to the graph for a stiffer spring with a higher k?",
+   "answer": "Its slope is greater, so a greater force is needed for the same extension."
+  },
+  {
+   "question": "How can an unknown weight be found using this experiment?",
+   "answer": "Measure its extension, find its force from F = kx, then find its mass using m = F/g."
+  }
+ ],
+ "calculation": [
+  "For a 50 g load: m = 0.050 kg.",
+  "Force, F = mg = 0.050 kg × 9.8 m/s² = 0.49 N.",
+  "Using the readings, the extension for each load is the loaded pointer position minus the initial pointer position.",
+  "Slope, k = ΔF/Δx = (2.45 N − 0 N)/(0.050 m − 0 m) = 49 N/m."
+ ],
+ "apparatus": [
+  "Helical spring with attached pointer",
+  "Slotted weights",
+  "Hanger",
+  "Half-metre rule or scale",
+  "Iron stand"
+ ],
+ "table": {
+  "rows": [
+   [
+    "50",
+    "0.050",
+    "0.49",
+    "11.0",
+    "1.0"
+   ],
+   [
+    "100",
+    "0.100",
+    "0.98",
+    "12.0",
+    "2.0"
+   ],
+   [
+    "150",
+    "0.150",
+    "1.47",
+    "13.0",
+    "3.0"
+   ],
+   [
+    "200",
+    "0.200",
+    "1.96",
+    "14.0",
+    "4.0"
+   ],
+   [
+    "250",
+    "0.250",
+    "2.45",
+    "15.0",
+    "5.0"
+   ]
+  ],
+  "columns": [
+   "Load (g)",
+   "Mass (kg)",
+   "Force, F (N)",
+   "Pointer position (cm)",
+   "Extension, x (cm)"
+  ]
+ },
+ "diagram": "Draw a helical spring suspended from a labelled iron stand, with a pointer beside a vertical scale and a hanger carrying slotted weights; label the spring, pointer, scale, stand, hanger and slotted weights.",
+ "title": "Force and extension of a helical spring",
+ "precautions": [
+  "Keep the pointer close to, but not touching, the scale.",
+  "Read the pointer at eye level to avoid parallax error.",
+  "Add the weights gently and wait for the spring to stop oscillating before taking a reading.",
+  "Increase the load by equal amounts and do not load the spring beyond its elastic limit."
+ ],
+ "result": "The force-extension graph is a straight line, showing that force is directly proportional to extension within the elastic limit. The spring constant from the sample readings is 49 N/m."
+}

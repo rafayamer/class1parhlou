@@ -15,8 +15,12 @@ import { tmpdir } from "node:os";
 import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAll, matchesAny, SYNTAX } from "./textmatch.mjs";
 import { isExcluded } from "./syllabus.mjs";
+import { S } from "./subject.mjs";
+const PHY = S.key === "physics";
+// The latest official model paper: Mathematics 2027; Physics 2026 (the 2027 one is not published yet).
+const MODEL_TAG = PHY ? "Official model paper (2026)" : "Official model paper 2027";
 
-const ROOT = "content/class9-maths";
+const ROOT = S.root;
 const WORK = join(ROOT, "work", "pp");
 mkdirSync(WORK, { recursive: true });
 const [srcDir, modelPaper] = process.argv.slice(2);
@@ -45,9 +49,9 @@ async function pool(items, n, fn) {
 
 // ── 1. Read every page ───────────────────────────────────────────────────────────────────────────────────
 const BOARDS = { BWP: "Bahawalpur", DGK: "DG Khan", FBD: "Faisalabad", GUJ: "Gujranwala", GRW: "Gujranwala", LHR: "Lahore", MTN: "Multan", RWP: "Rawalpindi", SGD: "Sargodha", SWL: "Sahiwal" };
-const READ = `You read one page of a Punjab board (Pakistan) Mathematics exam paper. Pages are bilingual: copy the ENGLISH text only.
+const READ = `You read one page of a Punjab board (Pakistan) ${S.name} exam paper. Pages are bilingual: copy the ENGLISH text only.
 List every question on the page. label: its number as printed, e.g. "Q1(iv)", "Q2(iii)", "Q5(a)". kind: MCQ (four options),
-SHORT (a short question in Q2–Q4, 2 marks) or LONG (a part of Q5–Q9, usually 4 marks). text: the question exactly, in plain Unicode
+SHORT (a short question in Q2–Q4, 2 marks) or LONG (a part of a long question, Q5 onwards${PHY ? "; part (a) is usually 4 marks and part (b), often a numerical, 5 marks" : ", usually 4 marks"}). text: the question exactly, in plain Unicode
 maths (√, ², ×, ÷, π, θ, matrices as [[a, b], [c, d]], fractions as a/b with brackets); describe any figure in one bracketed line
 [Figure: …]. options: the four MCQ options in order (empty for others). marks: as printed (MCQ 1).
 Also read the header: board (city), year, class (9 or 10), group (I or II, "" if unknown), part (OBJECTIVE or SUBJECTIVE).
@@ -77,7 +81,7 @@ if (modelPaper && existsSync(modelPaper)) papers.push({ file: modelPaper, key: "
 const pages = papers.flatMap((p) => {
   const n = Number(/Pages:\s+(\d+)/.exec(execFileSync("pdfinfo", [p.file]).toString())[1]);
   return Array.from({ length: n }, (_, i) => ({ paper: p, page: i + 1 }));
-}).filter((x) => !(x.paper.model && x.page < 5)); // the model paper's first pages are the syllabus, not the paper
+}).filter((x) => !(x.paper.model && !PHY && x.page < 5)); // the Mathematics model paper's first pages are the syllabus, not the paper
 console.log(`${papers.length} papers, ${pages.length} pages`);
 
 const raw = [];
@@ -88,7 +92,7 @@ await pool(pages, 16, async ({ paper, page }) => {
     for (const q of r.questions) {
       if (!q.text.trim()) continue;
       raw.push({ ...q, paperKey: paper.key, page, klass: paper.klass, year: paper.year || r.year, board: paper.board || r.board, group: r.group, model: !!paper.model,
-        tag: paper.model ? "Official model paper 2027" : `${paper.board || r.board} ${paper.year || r.year}${r.group ? ` (Group ${r.group})` : ""}${paper.klass === 10 ? " · Class 10 paper" : ""}` });
+        tag: paper.model ? MODEL_TAG : `${paper.board || r.board} ${paper.year || r.year}${r.group ? ` (Group ${r.group})` : ""}${paper.klass === 10 ? " · Class 10 paper" : ""}` });
     }
   } catch (e) { console.log(`${paper.key} p${page}: ${e.message}`); }
 });
@@ -98,10 +102,15 @@ raw.sort((a, b) => a.paperKey.localeCompare(b.paperKey) || a.page - b.page ||
 console.log(`read ${raw.length} questions. $${costSoFar().toFixed(3)}`);
 
 // ── 2. Classify against the new book and the 2027 syllabus ───────────────────────────────────────────────────
-const sections = bundle.subject.chapters.flatMap((c) => c.modules.map((m) => ({ id: m.id, unit: c.number, label: `Unit ${c.number} · ${m.title}` })));
+const sections = bundle.subject.chapters.flatMap((c) => c.modules.map((m) => ({ id: m.id, unit: c.number, label: `${S.unitWord} ${c.number} · ${m.title}` })));
 const exampleSources = new Map();
 for (const c of bundle.subject.chapters) for (const m of c.modules) m.solutions.forEach((s, i) => exampleSources.set(`${c.number}|${s.source}`, { m, i, s }));
-const CLASSIFY = `You map old Punjab board exam questions onto the NEW Class 9 Mathematics textbook (National Curriculum 2023).
+const CLASSIFY = PHY ? `You map old Punjab board exam questions onto the NEW Class 9 Physics textbook (National Curriculum 2023).
+For each question: section = the new book's section that teaches it, exactly as written in the list, or "" if the new book does not
+teach it (e.g. gravitation, transfer of heat, anything not in the list). bookSource = the textbook exercise item or example it repeats
+or very closely resembles, exactly as in that section's list (e.g. "Numerical 2.3", "Short 1.4", "Example 3.2"), or "".
+Sections and their book questions:
+${sections.map((s) => s.label).join("\n")}` : `You map old Punjab board exam questions onto the NEW Class 9 Mathematics textbook (National Curriculum 2023).
 For each question: section = the new book's section that teaches it, exactly as written in the list, or "" if the new book does not
 teach it (e.g. matrices, complex numbers, congruent triangles proofs, Pythagoras proofs, theorems on areas, ratio and proportion
 variation, partial fractions — anything not in the list). bookSource = the textbook exercise or example it repeats or very closely
@@ -147,13 +156,13 @@ const kept = all.filter(inSyllabus);
 console.log(`${kept.length} questions are on topics in the new book and the 2027 syllabus. $${costSoFar().toFixed(3)}`);
 
 // ── 3. Solve and write marking schemes ───────────────────────────────────────────────────────────────────────
-const MCQ = `For each multiple-choice question from a Punjab board Class 9/10 Mathematics paper: correctIndex = the right option (0-based)
+const MCQ = `For each multiple-choice question from a Punjab board Class 9/10 ${S.name} paper: correctIndex = the right option (0-based)
 after solving it yourself; rationales = one short sentence for EVERY option saying why it is right or wrong. If no option is correct
 or the question is broken, set correctIndex to -1.`;
 const mcqSchema = obj({ items: arr(obj({ id: str, correctIndex: int, rationales: arr(str) })) });
-const WRITE = `You write board-exam model answers and marking schemes for Punjab board Class 9 Mathematics questions.
+const WRITE = `You write board-exam model answers and marking schemes for Punjab board Class 9 ${S.name} questions.
 For each item: modelAnswer = the full answer a top student writes, one line per step (when a checked textbook solution is given,
-follow its method and final answer); marks = 2 for a short question, 4 for a long-question part; rubric = 2–4 marking points whose marks
+follow its method and final answer)${PHY ? "; for numericals: given data in SI units, formula, substitution with units, answer with unit; for theory: the textbook's points" : ""}; marks = as given (2 for a short question, ${PHY ? "4 or 5" : "4"} for a long-question part); rubric = 2–4 marking points whose marks
 add up to the question's marks, each with description, why, how and accept patterns (key results the model answer contains; never
 patterns a blank answer would match); followUp = one similar practice question. For a drawing (graph, construction) the model answer
 lists the table of values or construction steps with every measurement.
@@ -176,7 +185,7 @@ for (let b = 0; b < mcqs.length; b += 15) {
     const y = c.items.find((z) => z.id === x.id);
     const q = mcqs.find((z) => z.id === x.id);
     if (!q || !y || x.correctIndex < 0 || x.correctIndex !== y.correctIndex || x.rationales.length !== q.options.length) continue;
-    outMcqs.push({ id: `pp-${q.id}`, stem: q.text, options: q.options, correctIndex: x.correctIndex, rationales: x.rationales,
+    outMcqs.push({ id: `${S.idPrefix}pp-${q.id}`, stem: q.text, options: q.options, correctIndex: x.correctIndex, rationales: x.rationales,
       moduleId: q.moduleId, tags: q.tags, count: q.count, year: q.year, klass: q.klass, labels: q.labels });
   }
 }
@@ -185,7 +194,7 @@ const outWritten = [];
 for (let b = 0; b < written.length; b += 8) {
   const batch = written.slice(b, b + 8).map((q) => {
     const book = q.bookSource ? exampleSources.get(`${q.unit}|${q.bookSource}`)?.s : null;
-    return { id: q.id, marks: q.kind === "SHORT" ? 2 : 4, question: q.text, checkedTextbookSolution: book && book.checked ? { steps: book.steps, answer: book.answer } : null };
+    return { id: q.id, marks: q.kind === "SHORT" ? 2 : PHY && q.marks === 5 ? 5 : 4, question: q.text, checkedTextbookSolution: book && book.checked ? { steps: book.steps, answer: book.answer } : null };
   });
   const r = await cached(`write-${b / 8}`, () => structured("write", `write ${b / 8}`, WRITE, JSON.stringify(batch), writeSchema, "medium", 40000));
   let items = r.items.map((w) => ({ ...w, marks: batch.find((x) => x.id === w.id)?.marks ?? 0 }));
@@ -198,11 +207,11 @@ for (let b = 0; b < written.length; b += 8) {
   }
   for (const w of items.filter(rubricOk)) {
     const q = written.find((z) => z.id === w.id);
-    outWritten.push({ id: `pp-${q.id}`, text: q.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp,
+    outWritten.push({ id: `${S.idPrefix}pp-${q.id}`, text: q.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp,
       rubric: w.rubric.map((c, k) => ({ id: String.fromCharCode(97 + k), ...c })), moduleId: q.moduleId, tags: q.tags,
       count: q.count, kind: q.kind, bookSource: q.bookSource, year: q.year, klass: q.klass, labels: q.labels });
   }
 }
 const out = { mcqs: outMcqs, written: outWritten, stats: { pages: pages.length, read: raw.length, distinct: all.length, kept: kept.length } };
 writeFileSync(join(ROOT, "pastpapers.json"), JSON.stringify(out, null, 1));
-console.log(`past-paper bank: ${outMcqs.length} MCQs, ${outWritten.length} written (${outWritten.filter((w) => w.marks === 2).length} short, ${outWritten.filter((w) => w.marks === 4).length} long parts). $${costSoFar().toFixed(3)}`);
+console.log(`past-paper bank: ${outMcqs.length} MCQs, ${outWritten.length} written (${outWritten.filter((w) => w.marks === 2).length} short, ${outWritten.filter((w) => w.marks >= 4).length} long parts). $${costSoFar().toFixed(3)}`);

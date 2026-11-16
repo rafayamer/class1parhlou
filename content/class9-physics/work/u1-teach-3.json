@@ -1,0 +1,1079 @@
+{
+ "note": {
+  "explanation": "SI units give people around the world a common way to measure. Base units are the starting units; derived units are made from them. Prefixes show powers of ten, making very large or very small measurements easier to write.",
+  "examples": [
+   "Area = length × breadth = metre × metre = square metre = m².",
+   "5000 mm = 5000/1000 m = 5 m."
+  ],
+  "checkAnswer": "The unit of area is the square metre, m².",
+  "keywords": [
+   "SI units",
+   "base units",
+   "derived units",
+   "prefixes",
+   "metre",
+   "kilogram"
+  ],
+  "simple": "Think of base units as the basic building blocks. Derived units combine those blocks, and prefixes tell you how many powers of ten a unit represents.",
+  "checkQuestion": "What is the SI unit and symbol for mass?",
+  "title": "SI units and prefixes",
+  "steps": [
+   "Name the physical quantity and identify its unit.",
+   "For a derived unit, write how the quantity is made from other quantities.",
+   "Replace each quantity with its SI base unit.",
+   "For a prefix, replace it with its power of ten and convert."
+  ],
+  "answer": "The SI unit of mass is the kilogram (kg).",
+  "checkAccept": [
+   [
+    "kilogram",
+    "kg"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "metre (m)",
+    "kilogram (kg)",
+    "newton (N)",
+    "second (s)"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which of these is an SI base unit?",
+   "rationales": [
+    "Metre is the SI base unit for length, but it is not the unit asked for here.",
+    "Kilogram is one of the seven SI base units.",
+    "Newton is a derived SI unit for force.",
+    "Second is an SI base unit for time, but not the correct option here."
+   ]
+  },
+  {
+   "options": [
+    "cubic metre (m³)",
+    "pascal (Pa)",
+    "kelvin (K)",
+    "coulomb (C)"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which SI unit is used for temperature?",
+   "rationales": [
+    "Cubic metre is a derived unit of volume.",
+    "Pascal is a derived unit of pressure.",
+    "Kelvin is the SI base unit for temperature.",
+    "Coulomb is a derived unit of electric charge."
+   ]
+  },
+  {
+   "options": [
+    "m²",
+    "m s⁻¹",
+    "kg",
+    "m³"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which symbol represents the SI unit of speed?",
+   "rationales": [
+    "m² is the symbol for square metre, the unit of area.",
+    "m s⁻¹ means metre per second, the SI unit of speed.",
+    "kg is the SI base unit of mass.",
+    "m³ is the symbol for cubic metre, the unit of volume."
+   ]
+  },
+  {
+   "options": [
+    "A",
+    "cd",
+    "mol",
+    "K"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which symbol represents the SI base unit of electric current?",
+   "rationales": [
+    "A is the symbol for ampere, the SI base unit of electric current.",
+    "cd is the symbol for candela, the unit of intensity of light.",
+    "mol is the symbol for mole, the unit of amount of substance.",
+    "K is the symbol for kelvin, the unit of temperature."
+   ]
+  },
+  {
+   "options": [
+    "10⁻³",
+    "10⁻⁶",
+    "10³",
+    "10⁶"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "The prefix milli represents which power of ten?",
+   "rationales": [
+    "Milli represents one thousandth, or 10⁻³.",
+    "Micro represents 10⁻⁶, not milli.",
+    "Kilo represents 10³.",
+    "Mega represents 10⁶."
+   ]
+  },
+  {
+   "options": [
+    "3 km",
+    "300 m",
+    "0.3 km",
+    "30 km"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Convert 300 m to kilometres.",
+   "rationales": [
+    "3 km is ten times the given distance.",
+    "300 m has not been converted to kilometres.",
+    "300 m = 300/1000 km = 0.3 km.",
+    "30 km is one hundred times the given distance."
+   ]
+  },
+  {
+   "options": [
+    "m s⁻¹",
+    "m²",
+    "N",
+    "kg"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which of these is the SI unit of area?",
+   "rationales": [
+    "m s⁻¹ is the SI unit of speed.",
+    "m² is the SI unit of area.",
+    "N is the symbol for newton, the unit of force.",
+    "kg is the SI base unit of mass."
+   ]
+  },
+  {
+   "options": [
+    "2 × 10⁻³ s",
+    "2 × 10⁻⁶ s",
+    "2 × 10³ s",
+    "2 × 10⁻⁹ s"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is 2000 μs expressed in seconds?",
+   "rationales": [
+    "2000 μs = 2000 × 10⁻⁶ s = 2 × 10⁻³ s.",
+    "This is too small by a factor of 1000.",
+    "This is too large by a factor of 10⁶.",
+    "This is too small by a factor of 10⁶."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "5000 mm",
+   "finalAnswer": "5 m",
+   "marks": 2,
+   "source": "Example 1.3 (i)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5000/1000 m"
+      ],
+      [
+       "5 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The millimetre-to-metre conversion must use 1000 mm per metre.",
+     "description": "Convert millimetres to metres.",
+     "how": "Divide 5000 mm by 1000."
+    },
+    {
+     "accept": [
+      [
+       "5 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final converted value and unit must be correct.",
+     "description": "Give the final answer.",
+     "how": "Write 5 m."
+    }
+   ],
+   "modelAnswer": [
+    "5000 mm = 5000/1000 m",
+    "= 5 m"
+   ]
+  },
+  {
+   "text": "50000 cm",
+   "finalAnswer": "500 m",
+   "marks": 2,
+   "source": "Example 1.3 (ii)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "50000/100 m"
+      ],
+      [
+       "500 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The centimetre-to-metre conversion must use 100 cm per metre.",
+     "description": "Convert centimetres to metres.",
+     "how": "Divide 50000 cm by 100."
+    },
+    {
+     "accept": [
+      [
+       "500 m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final converted value and unit must be correct.",
+     "description": "Give the final answer.",
+     "how": "Write 500 m."
+    }
+   ],
+   "modelAnswer": [
+    "50000 cm = 50000/100 m",
+    "= 500 m"
+   ]
+  },
+  {
+   "text": "3000g",
+   "finalAnswer": "3 kg",
+   "marks": 2,
+   "source": "Example 1.3 (iii)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3000/1000 kg"
+      ],
+      [
+       "3 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gram-to-kilogram conversion must use 1000 g per kilogram.",
+     "description": "Convert grams to kilograms.",
+     "how": "Divide 3000 g by 1000."
+    },
+    {
+     "accept": [
+      [
+       "3 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final converted value and unit must be correct.",
+     "description": "Give the final answer.",
+     "how": "Write 3 kg."
+    }
+   ],
+   "modelAnswer": [
+    "3000g = 3000/1000 kg",
+    "= 3 kg"
+   ]
+  },
+  {
+   "text": "2000 μs",
+   "finalAnswer": "2 ms",
+   "marks": 2,
+   "source": "Example 1.3 (iv)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2000 × 10⁻⁶ s"
+      ],
+      [
+       "2 × 10⁻³ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The microsecond prefix must be replaced by 10⁻⁶ seconds.",
+     "description": "Convert microseconds to seconds.",
+     "how": "Multiply 2000 by 10⁻⁶ s."
+    },
+    {
+     "accept": [
+      [
+       "2 × 10⁻³ s"
+      ],
+      [
+       "2 ms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final value must be correctly expressed in seconds or milliseconds.",
+     "description": "Give the final answer.",
+     "how": "Write 2 × 10⁻³ s = 2 ms."
+    }
+   ],
+   "modelAnswer": [
+    "2000 μs = 2000 × 10⁻⁶ s",
+    "= 2 × 10⁻³ s",
+    "= 2 ms"
+   ]
+  },
+  {
+   "text": "Q1.6. Write the name and symbols of all SI base units.",
+   "finalAnswer": "metre (m), kilogram (kg), second (s), kelvin (K), ampere (A), candela (cd), mole (mol)",
+   "marks": 4,
+   "source": "Short Q1.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "metre",
+       "m",
+       "kilogram",
+       "kg",
+       "second",
+       "s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The units and symbols for length, mass and time are required.",
+     "description": "Give the first three SI base units.",
+     "how": "Write metre (m), kilogram (kg) and second (s)."
+    },
+    {
+     "accept": [
+      [
+       "kelvin",
+       "K",
+       "ampere",
+       "A"
+      ]
+     ],
+     "marks": 1,
+     "why": "The units and symbols for temperature and electric current are required.",
+     "description": "Give two more SI base units.",
+     "how": "Write kelvin (K) and ampere (A)."
+    },
+    {
+     "accept": [
+      [
+       "candela",
+       "cd",
+       "mole",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The units and symbols for intensity of light and amount of substance are required.",
+     "description": "Give the last two SI base units.",
+     "how": "Write candela (cd) and mole (mol)."
+    },
+    {
+     "accept": [
+      [
+       "metre",
+       "kilogram",
+       "second",
+       "kelvin",
+       "ampere",
+       "candela",
+       "mole",
+       "m",
+       "kg",
+       "s",
+       "K",
+       "A",
+       "cd",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must include all seven correctly paired unit names and symbols.",
+     "description": "Complete the full list.",
+     "how": "Check that all seven SI base units and their symbols are present."
+    }
+   ],
+   "modelAnswer": [
+    "Length: metre (m)",
+    "Mass: kilogram (kg)",
+    "Time: second (s)",
+    "Temperature: kelvin (K)",
+    "Electric current: ampere (A)",
+    "Intensity of light: candela (cd)",
+    "Amount of substance: mole (mol)"
+   ]
+  },
+  {
+   "text": "Q1.7. Why prefix is used? Name three sub-multiple and three multiple prefixes with their symbols.",
+   "finalAnswer": "Prefixes make very large and very small quantities easier to write. Sub-multiples: milli (m), centi (c), micro (μ). Multiples: kilo (k), mega (M), giga (G).",
+   "marks": 4,
+   "source": "Short Q1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "easier"
+      ],
+      [
+       "large"
+      ],
+      [
+       "small"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose of prefixes must be stated.",
+     "description": "Explain why prefixes are used.",
+     "how": "Say they make large and small quantities easier to write."
+    },
+    {
+     "accept": [
+      [
+       "milli",
+       "m",
+       "centi",
+       "c",
+       "micro",
+       "μ"
+      ]
+     ],
+     "marks": 1,
+     "why": "Three sub-multiple prefixes and symbols are needed.",
+     "description": "Name three sub-multiples.",
+     "how": "Give milli, centi and micro with their symbols."
+    },
+    {
+     "accept": [
+      [
+       "kilo",
+       "k",
+       "mega",
+       "M",
+       "giga",
+       "G"
+      ]
+     ],
+     "marks": 1,
+     "why": "Three multiple prefixes and symbols are needed.",
+     "description": "Name three multiples.",
+     "how": "Give kilo, mega and giga with their symbols."
+    },
+    {
+     "accept": [
+      [
+       "milli",
+       "centi",
+       "micro",
+       "kilo",
+       "mega",
+       "giga",
+       "m",
+       "c",
+       "μ",
+       "k",
+       "M",
+       "G"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include all six prefixes with their symbols.",
+     "description": "Check the complete response.",
+     "how": "Ensure each prefix is paired with its correct symbol."
+    }
+   ],
+   "modelAnswer": [
+    "Prefixes are used to make very large and very small quantities easier to write.",
+    "Sub-multiples: milli (m), centi (c), micro (μ).",
+    "Multiples: kilo (k), mega (M), giga (G)."
+   ]
+  },
+  {
+   "text": "Q1.8. What is meant by:  (a) 5 pm  (b) 15 ns  (c) 6 μm  (d) 5 fs",
+   "finalAnswer": "(a) 5 × 10⁻¹² m  (b) 15 × 10⁻⁹ s  (c) 6 × 10⁻⁶ m  (d) 5 × 10⁻¹⁵ s",
+   "marks": 4,
+   "source": "Short Q1.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5 × 10⁻¹² m"
+      ],
+      [
+       "15 × 10⁻⁹ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pico- and nano-prefix meanings must be applied correctly.",
+     "description": "Convert (a) and (b).",
+     "how": "Use p = 10⁻¹² and n = 10⁻⁹."
+    },
+    {
+     "accept": [
+      [
+       "6 × 10⁻⁶ m"
+      ],
+      [
+       "5 × 10⁻¹⁵ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The micro- and femto-prefix meanings must be applied correctly.",
+     "description": "Convert (c) and (d).",
+     "how": "Use μ = 10⁻⁶ and f = 10⁻¹⁵."
+    },
+    {
+     "accept": [
+      [
+       "m"
+      ],
+      [
+       "s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct base units must be retained for each quantity.",
+     "description": "Include units.",
+     "how": "Use metres for lengths and seconds for times."
+    },
+    {
+     "accept": [
+      [
+       "5 × 10⁻¹² m",
+       "15 × 10⁻⁹ s",
+       "6 × 10⁻⁶ m",
+       "5 × 10⁻¹⁵ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "All four answers must be correct to earn the final mark.",
+     "description": "Give all four converted quantities.",
+     "how": "Check each prefix and unit against the question."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 5 pm = 5 × 10⁻¹² m",
+    "(b) 15 ns = 15 × 10⁻⁹ s",
+    "(c) 6 μm = 6 × 10⁻⁶ m",
+    "(d) 5 fs = 5 × 10⁻¹⁵ s"
+   ]
+  },
+  {
+   "text": "Q1.1. What is meant by base and derived quantities? Give the names and symbols of SI base units.",
+   "finalAnswer": "Base quantities are independent quantities; derived quantities are obtained from base quantities. SI base units: metre (m), kilogram (kg), second (s), kelvin (K), ampere (A), candela (cd), mole (mol).",
+   "marks": 5,
+   "source": "Comprehensive Q1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "independent"
+      ],
+      [
+       "base quantities"
+      ]
+     ],
+     "marks": 1,
+     "why": "The meaning of base quantities must be explained.",
+     "description": "Define base quantities.",
+     "how": "State that they are independent and are not derived from other quantities."
+    },
+    {
+     "accept": [
+      [
+       "derived"
+      ],
+      [
+       "base quantities"
+      ]
+     ],
+     "marks": 1,
+     "why": "The meaning of derived quantities must be explained.",
+     "description": "Define derived quantities.",
+     "how": "State that they are obtained from base quantities."
+    },
+    {
+     "accept": [
+      [
+       "metre",
+       "m",
+       "kilogram",
+       "kg",
+       "second",
+       "s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first three SI base units and symbols are required.",
+     "description": "List metre, kilogram and second.",
+     "how": "Give their correct symbols."
+    },
+    {
+     "accept": [
+      [
+       "kelvin",
+       "K",
+       "ampere",
+       "A",
+       "candela",
+       "cd",
+       "mole",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The remaining SI base units and symbols are required.",
+     "description": "List the other four SI base units.",
+     "how": "Give kelvin, ampere, candela and mole with their symbols."
+    },
+    {
+     "accept": [
+      [
+       "metre",
+       "kilogram",
+       "second",
+       "kelvin",
+       "ampere",
+       "candela",
+       "mole",
+       "m",
+       "kg",
+       "s",
+       "K",
+       "A",
+       "cd",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final mark requires the complete correct list.",
+     "description": "Check all seven base units.",
+     "how": "Ensure no SI base unit or symbol is missing."
+    }
+   ],
+   "modelAnswer": [
+    "Base quantities are independent quantities and cannot be derived from other quantities.",
+    "Derived quantities are obtained from base quantities.",
+    "The SI base units are:",
+    "Length: metre (m); mass: kilogram (kg); time: second (s); temperature: kelvin (K); electric current: ampere (A); intensity of light: candela (cd); amount of substance: mole (mol)."
+   ]
+  },
+  {
+   "text": "Q1.2. Give three examples of derived unit in SI. How are they derived from base units? Describe briefly.",
+   "finalAnswer": "Area: m² = m × m; volume: m³ = m × m × m; speed: m s⁻¹ = m/s.",
+   "marks": 5,
+   "source": "Comprehensive Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "area",
+       "m²",
+       "m × m"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example must show how a derived unit is built from base units.",
+     "description": "Give area and its derivation.",
+     "how": "Show area = length × breadth = m × m = m²."
+    },
+    {
+     "accept": [
+      [
+       "volume",
+       "m³",
+       "m × m × m"
+      ]
+     ],
+     "marks": 1,
+     "why": "A second correctly derived SI unit is required.",
+     "description": "Give volume and its derivation.",
+     "how": "Show volume = length × breadth × height = m³."
+    },
+    {
+     "accept": [
+      [
+       "speed",
+       "m s⁻¹",
+       "m/s"
+      ]
+     ],
+     "marks": 1,
+     "why": "A third derived SI unit is required.",
+     "description": "Give speed and its derivation.",
+     "how": "Show speed = distance/time = m/s."
+    },
+    {
+     "accept": [
+      [
+       "base units"
+      ],
+      [
+       "derived"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should connect the examples to base units.",
+     "description": "Explain the relationship.",
+     "how": "State that derived units are expressed in terms of base units."
+    },
+    {
+     "accept": [
+      [
+       "m²",
+       "m³",
+       "m s⁻¹"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must give three correct derived units and symbols.",
+     "description": "Check the final units.",
+     "how": "Include m², m³ and m s⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Area = length × breadth",
+    "= metre × metre",
+    "= square metre = m²",
+    "Volume = length × breadth × height",
+    "= metre × metre × metre = m³",
+    "Speed = distance/time",
+    "= metre/second = m s⁻¹"
+   ]
+  },
+  {
+   "text": "Q1.1. Calculate the number of seconds in a (a) day (b) week (c) month and state your answers using SI prefixes.",
+   "finalAnswer": "(a) 86.4 ks  (b) 604.8 ks  (c) 2.592 Ms",
+   "marks": 5,
+   "source": "Numerical Q1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "24 × 60 × 60"
+      ],
+      [
+       "7 × 24 × 60 × 60"
+      ],
+      [
+       "30 × 24 × 60 × 60"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculation must use the correct number of days, hours, minutes and seconds.",
+     "description": "Set up the time conversions.",
+     "how": "Use 24 hours per day, 60 minutes per hour, 60 seconds per minute and 30 days per month."
+    },
+    {
+     "accept": [
+      [
+       "86400 s"
+      ],
+      [
+       "86.4 ks"
+      ]
+     ],
+     "marks": 1,
+     "why": "A day must be converted correctly to seconds and then a suitable prefix.",
+     "description": "Calculate one day.",
+     "how": "Find 86400 s = 86.4 ks."
+    },
+    {
+     "accept": [
+      [
+       "604800 s"
+      ],
+      [
+       "604.8 ks"
+      ]
+     ],
+     "marks": 1,
+     "why": "A week must be converted correctly and expressed with a prefix.",
+     "description": "Calculate one week.",
+     "how": "Find 604800 s = 604.8 ks."
+    },
+    {
+     "accept": [
+      [
+       "2592000 s"
+      ],
+      [
+       "2.592 Ms"
+      ]
+     ],
+     "marks": 1,
+     "why": "A 30-day month must be converted correctly and expressed with a prefix.",
+     "description": "Calculate one month.",
+     "how": "Find 2592000 s = 2.592 Ms."
+    },
+    {
+     "accept": [
+      [
+       "86.4 ks",
+       "604.8 ks",
+       "2.592 Ms"
+      ]
+     ],
+     "marks": 1,
+     "why": "All three final answers must match the required SI-prefix form.",
+     "description": "State the final answers.",
+     "how": "Give the day, week and month results in order."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 1 day = 24 × 60 × 60 s = 86400 s = 86.4 ks",
+    "(b) 1 week = 7 × 24 × 60 × 60 s = 604800 s = 604.8 ks",
+    "(c) 1 month = 30 × 24 × 60 × 60 s = 2592000 s = 2.592 Ms"
+   ]
+  },
+  {
+   "text": "Q1.2. State the answers of problem 1.1 in scientific notation.",
+   "finalAnswer": "[8.64 × 10⁴ s, 6.048 × 10⁵ s, 2.592 × 10⁶ s]",
+   "marks": 2,
+   "source": "Numerical Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "8.64 × 10⁴ s"
+      ],
+      [
+       "6.048 × 10⁵ s"
+      ],
+      [
+       "2.592 × 10⁶ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The day, week and month values must be written as powers of ten.",
+     "description": "Write the three values in scientific notation.",
+     "how": "Convert the answers of problem 1.1 into seconds in scientific notation."
+    },
+    {
+     "accept": [
+      [
+       "8.64 × 10⁴ s",
+       "6.048 × 10⁵ s",
+       "2.592 × 10⁶ s"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final set must contain all three correct answers with seconds.",
+     "description": "Give the final answer set.",
+     "how": "State the values in day, week and month order."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 8.64 × 10⁴ s",
+    "(b) 6.048 × 10⁵ s",
+    "(c) 2.592 × 10⁶ s"
+   ]
+  },
+  {
+   "text": "Q1.7. Write in scientific notation: (a) 0.0035 m  (b) 206.4 × 10² m",
+   "finalAnswer": "(a) 3.5 × 10⁻³ m  (b) 2.064 × 10⁴ m",
+   "marks": 2,
+   "source": "Numerical Q1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3.5 × 10⁻³ m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The decimal must be placed to give a coefficient between 1 and 10.",
+     "description": "Write (a) in scientific notation.",
+     "how": "Move the decimal three places right and use 10⁻³."
+    },
+    {
+     "accept": [
+      [
+       "2.064 × 10⁴ m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The second value must be normalized and its exponent adjusted correctly.",
+     "description": "Write (b) in scientific notation.",
+     "how": "Rewrite 206.4 as 2.064 × 10², then combine powers to get 2.064 × 10⁴ m."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 0.0035 m = 3.5 × 10⁻³ m",
+    "(b) 206.4 × 10² m = 2.064 × 10² × 10² m = 2.064 × 10⁴ m"
+   ]
+  },
+  {
+   "text": "Q1.8. Write using correct prefixes: (a) 5.0 × 10⁴ cm  (b) 580 × 10² g  (c) 45 × 10⁻⁴ s",
+   "finalAnswer": "(a) 0.5 km  (b) 58 kg  (c) 4.5 ms",
+   "marks": 4,
+   "source": "Numerical Q1.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.5 km"
+      ]
+     ],
+     "marks": 1,
+     "why": "The centimetre quantity must be converted correctly to a convenient SI prefix.",
+     "description": "Convert (a).",
+     "how": "Change centimetres to metres, then express the result in kilometres."
+    },
+    {
+     "accept": [
+      [
+       "58 kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The gram quantity must be converted correctly to kilograms.",
+     "description": "Convert (b).",
+     "how": "Convert grams to kilograms using 1000 g = 1 kg."
+    },
+    {
+     "accept": [
+      [
+       "4.5 ms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The time quantity must be expressed using the correct prefix.",
+     "description": "Convert (c).",
+     "how": "Rewrite 45 × 10⁻⁴ s as 4.5 × 10⁻³ s = 4.5 ms."
+    },
+    {
+     "accept": [
+      [
+       "0.5 km",
+       "58 kg",
+       "4.5 ms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include all three correct values and units.",
+     "description": "Give the complete answer.",
+     "how": "Check the prefix and unit in each part."
+    }
+   ],
+   "modelAnswer": [
+    "(a) 5.0 × 10⁴ cm = 500 m = 0.5 km",
+    "(b) 580 × 10² g = 58000 g = 58 kg",
+    "(c) 45 × 10⁻⁴ s = 4.5 × 10⁻³ s = 4.5 ms"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short-answer questions may ask you to list the seven SI base units, explain why prefixes are used, or interpret a prefixed measurement.",
+   "Numerical questions commonly ask you to convert between units or express an answer using a suitable SI prefix or scientific notation.",
+   "For method marks, show the conversion factor and intermediate step, then write the final value with its unit.",
+   "Be careful with powers of ten: kilo is 10³, milli is 10⁻³, micro is 10⁻⁶ and nano is 10⁻⁹."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with the seven physical quantities in Table 1.2.",
+     "Write each quantity with its unit name and symbol: length, mass, time, temperature, electric current, intensity of light and amount of substance."
+    ],
+    "accept": [
+     [
+      "metre",
+      "m",
+      "kilogram",
+      "kg",
+      "second",
+      "s",
+      "kelvin",
+      "K",
+      "ampere",
+      "A",
+      "candela",
+      "cd",
+      "mole",
+      "mol"
+     ]
+    ],
+    "question": "Q1.6. Write the name and symbols of all SI base units.",
+    "solution": [
+     "Length: metre (m)",
+     "Mass: kilogram (kg)",
+     "Time: second (s)",
+     "Temperature: kelvin (K)",
+     "Electric current: ampere (A)",
+     "Intensity of light: candela (cd)",
+     "Amount of substance: mole (mol)"
+    ],
+    "answer": "metre (m), kilogram (kg), second (s), kelvin (K), ampere (A), candela (cd), mole (mol)"
+   },
+   {
+    "hints": [
+     "Recall the prefixes pico, nano, micro and femto.",
+     "Replace each prefix with its power of ten: p = 10⁻¹², n = 10⁻⁹, μ = 10⁻⁶ and f = 10⁻¹⁵."
+    ],
+    "accept": [
+     [
+      "5 × 10⁻¹² m",
+      "15 × 10⁻⁹ s",
+      "6 × 10⁻⁶ m",
+      "5 × 10⁻¹⁵ s"
+     ]
+    ],
+    "question": "Q1.8. What is meant by:  (a) 5 pm  (b) 15 ns  (c) 6 μm  (d) 5 fs",
+    "solution": [
+     "(a) 5 pm = 5 × 10⁻¹² m",
+     "(b) 15 ns = 15 × 10⁻⁹ s",
+     "(c) 6 μm = 6 × 10⁻⁶ m",
+     "(d) 5 fs = 5 × 10⁻¹⁵ s"
+    ],
+    "answer": "(a) 5 × 10⁻¹² m  (b) 15 × 10⁻⁹ s  (c) 6 × 10⁻⁶ m  (d) 5 × 10⁻¹⁵ s"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "There are 1000 millimetres in one metre, so divide by 1000 to change millimetres to metres.",
+     "text": "5000 mm = 5000/1000 m"
+    },
+    {
+     "why": "The division gives the converted value in metres.",
+     "text": "= 5 m"
+    }
+   ],
+   "question": "Convert 5000 mm into metres.",
+   "answer": "5 m"
+  },
+  "explain": [
+   {
+    "title": "SI helps everyone measure in a common way",
+    "body": "SI is the international system of units. Using it helps scientists share and compare observations and results easily."
+   },
+   {
+    "title": "The seven base units",
+    "body": "The seven base units are metre (m), kilogram (kg), second (s), kelvin (K), ampere (A), candela (cd) and mole (mol). Their values are fixed with reference to international standards."
+   },
+   {
+    "title": "Derived units come from base units",
+    "body": "The units which can be expressed in terms of base units are called derived units. For example, area is measured in square metres (m²), and speed in metres per second (m s⁻¹)."
+   },
+   {
+    "title": "Prefixes show powers of ten",
+    "body": "Prefixes are the words or symbols added before SI units, such as milli, centi and kilo. They make very large or small quantities more convenient to write."
+   },
+   {
+    "title": "Convert carefully",
+    "body": "Use the prefix value to convert a measurement. For example, 3000 g = 3000/1000 kg = 3 kg. Keep the unit in your answer."
+   }
+  ],
+  "mistakes": [
+   "Mixing up unit symbols, such as writing K for kilo instead of kelvin; symbols are case-sensitive.",
+   "Forgetting that prefixes represent powers of ten, or using the wrong exponent when converting.",
+   "Changing the number but leaving out the unit in the final answer.",
+   "Confusing base units with derived units: kilogram is a base unit, while newton and pascal are derived units.",
+   "Writing a prefix symbol with the wrong case, such as M for milli instead of m."
+  ]
+ }
+}

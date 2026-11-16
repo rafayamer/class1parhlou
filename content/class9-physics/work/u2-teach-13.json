@@ -1,0 +1,707 @@
+{
+ "note": {
+  "explanation": "For free fall, use the equations of motion with acceleration replaced by g. Take g = 10 m s⁻² downward as positive. If an object is thrown upward, take g = −10 m s⁻².",
+  "examples": [
+   "A body dropped from rest for 3 s falls 45 m: S = 0 × 3 + ½ × 10 × 3² = 45 m.",
+   "An arrow thrown upward at 30 m s⁻¹ takes 3 s to reach its highest point: 0 = 30 − 10t, so t = 3 s."
+  ],
+  "checkAnswer": "For a body dropped from rest, vᵢ = 0 and g = 10 m s⁻² downward.",
+  "keywords": [
+   "free fall",
+   "gravity",
+   "gravitational acceleration",
+   "g",
+   "initial velocity",
+   "highest point"
+  ],
+  "simple": "A freely falling object speeds up because Earth’s gravity pulls it downward. Use g = 10 m s⁻², and choose signs to match the direction of motion.",
+  "checkQuestion": "A stone is dropped from rest. What is its initial velocity, and which way is g positive?",
+  "title": "Using equations for free fall",
+  "steps": [
+   "Write down the known values, including the direction of motion.",
+   "Use vᵢ = 0 if the object is released from rest.",
+   "Take g as positive downward; for an object thrown upward, take g as negative.",
+   "Choose the equation of motion that contains the unknown you need.",
+   "Substitute the values and give the answer with its unit."
+  ],
+  "answer": "For a freely falling object released from rest, vᵢ = 0 and g = +10 m s⁻² when downward is positive.",
+  "checkAccept": [
+   [
+    "v_i=0",
+    "10",
+    "downward"
+   ],
+   [
+    "vi=0",
+    "10",
+    "downward"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "10 m",
+    "5 m",
+    "20 m",
+    "40 m"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A stone is dropped from rest. How far does it fall in the first second? Take g = 10 m s⁻².",
+   "rationales": [
+    "This is not correct; substituting t = 1 s into S = ½gt² does not give 10 m.",
+    "Correct: S = ½ × 10 × 1² = 5 m.",
+    "This is not correct; it is twice the distance found using S = ½gt².",
+    "This is not correct; it is eight times the distance found using S = ½gt²."
+   ]
+  },
+  {
+   "options": [
+    "0 m s⁻¹",
+    "10 m s⁻¹ downward",
+    "5 m s⁻¹ downward",
+    "20 m s⁻¹ downward"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A body is dropped from rest. What is its velocity after 1 s? Take downward as positive and g = 10 m s⁻².",
+   "rationales": [
+    "This is not correct; gravity changes the body's velocity during the second.",
+    "Correct: v_f = v_i + gt = 0 + 10 × 1 = 10 m s⁻¹ downward.",
+    "This is not correct; 5 m is the distance fallen in 1 s, not the velocity.",
+    "This is not correct; in 1 s the change in velocity is 10 m s⁻¹, not 20 m s⁻¹."
+   ]
+  },
+  {
+   "options": [
+    "3 s",
+    "2 s",
+    "4 s",
+    "5 s"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A ball is thrown vertically upward at 30 m s⁻¹. How long does it take to reach its highest point? Take g = −10 m s⁻².",
+   "rationales": [
+    "Correct: at the highest point v_f = 0, so 0 = 30 − 10t and t = 3 s.",
+    "This is not correct; substituting t = 2 s gives a velocity that is still upward.",
+    "This is not correct; the ball would already have reached its highest point after 3 s.",
+    "This is not correct; it does not follow from v_f = v_i + gt with v_f = 0."
+   ]
+  },
+  {
+   "options": [
+    "45 m",
+    "30 m",
+    "90 m",
+    "15 m"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A ball is thrown vertically upward at 30 m s⁻¹. What maximum height does it rise above its starting point? Take g = −10 m s⁻².",
+   "rationales": [
+    "Correct: 2gS = v_f² − v_i² gives S = (0 − 30²) ÷ (2 × −10) = 45 m.",
+    "This is not correct; 30 is the initial velocity, not the maximum height.",
+    "This is not correct; it is twice the height obtained from the third equation of motion.",
+    "This is not correct; it is half the height obtained from the third equation of motion."
+   ]
+  },
+  {
+   "options": [
+    "9.8 m s⁻² upward",
+    "10 m s⁻² downward",
+    "10 m s⁻² upward",
+    "The acceleration depends on the object's mass"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to this section, what value and direction are used for gravitational acceleration in calculations?",
+   "rationales": [
+    "This is not correct; the section uses 10 m s⁻² for convenience and gravity acts downward.",
+    "Correct: use g = 10 m s⁻², acting downward.",
+    "This is not correct; gravity acts downward, not upward.",
+    "This is not correct; this section states that free-fall acceleration is the same for all objects."
+   ]
+  },
+  {
+   "options": [
+    "The initial velocity is zero.",
+    "The final velocity is zero.",
+    "The acceleration is zero.",
+    "The gravitational acceleration is positive downward."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A body is thrown vertically upward. Which condition applies at the highest point?",
+   "rationales": [
+    "This is not correct; the object is thrown upward with an initial velocity.",
+    "Correct: the object's velocity is momentarily zero at the highest point.",
+    "This is not correct; gravity still acts, so the acceleration is not zero.",
+    "This is not correct; for upward motion the section takes gravitational acceleration as negative."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "An iron bob is dropped from the top of a tower. It reaches the ground in 4 seconds. Find: (a) the height of the tower (b) the velocity of the ball as it strikes the ground.",
+   "finalAnswer": "(a) 80 m (b) 40 m s⁻¹",
+   "marks": 5,
+   "source": "Example 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "g=10",
+       "t=4"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly identifying the initial conditions and acceleration sets the sign convention and values.",
+     "description": "State the known values for the falling body.",
+     "how": "Write vᵢ = 0, g = 10 m s⁻² and t = 4 s."
+    },
+    {
+     "accept": [
+      [
+       "S=0x4+1/2x10x4^2",
+       "80m"
+      ],
+      [
+       "S=80m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The height is found using the second equation of motion.",
+     "description": "Find the height of the tower.",
+     "how": "Substitute in S = vᵢt + ½gt² and obtain 80 m."
+    },
+    {
+     "accept": [
+      [
+       "v_f=0+10x4",
+       "40m/s"
+      ],
+      [
+       "v_f=40m/s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The impact velocity is found using the first equation of motion.",
+     "description": "Find the velocity as the ball strikes the ground.",
+     "how": "Use v_f = vᵢ + gt and obtain 40 m s⁻¹ downward."
+    }
+   ],
+   "modelAnswer": [
+    "For freely falling body: vᵢ = 0, g = 10 m s⁻², t = 4 s, S = h = ?, v_f = ?",
+    "(a) According to second equation of motion, S = vᵢt + ½gt²",
+    "Putting the values, h = 0 × 4 + ½ × 10 × (4)² = 80 m",
+    "(b) From the first equation of motion, v_f = vᵢ + gt",
+    "Putting the values, v_f = 0 + 10 × 4 = 40 m s⁻¹ downward",
+    "Answer: (a) 80 m (b) 40 m s⁻¹ downward"
+   ]
+  },
+  {
+   "text": "An arrow is thrown vertically upward with the help of a bow. The velocity of the arrow when it leaves the bow is 30 m s⁻¹. Determine time to reach the highest point? Also, find the maximum height attained by the arrow.",
+   "finalAnswer": "3 s; 45 m",
+   "marks": 5,
+   "source": "Example 2.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=30",
+       "v_f=0",
+       "g=-10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The upward direction requires gravitational acceleration to be negative, and velocity is zero at the highest point.",
+     "description": "Identify the velocities and acceleration with the correct signs.",
+     "how": "State vᵢ = 30 m s⁻¹, v_f = 0 and g = −10 m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "t=(0-30)/-10",
+       "3s"
+      ],
+      [
+       "t=3s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first equation gives the time to the highest point.",
+     "description": "Calculate the time using the first equation of motion.",
+     "how": "Use v_f = vᵢ + gt to obtain t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "S=(0-30^2)/(2x-10)",
+       "45m"
+      ],
+      [
+       "S=45m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The third equation of motion gives the maximum upward displacement.",
+     "description": "Calculate the maximum height.",
+     "how": "Use 2gS = v_f² − vᵢ² to obtain 45 m."
+    }
+   ],
+   "modelAnswer": [
+    "Here, acceleration will be taken as negative, for the arrow is thrown vertically upward.",
+    "Initial velocity = vᵢ = 30 m s⁻¹; final velocity = v_f = 0; acceleration = g = −10 m s⁻²",
+    "From first equation of motion: v_f = vᵢ + gt",
+    "t = (v_f − vᵢ)/(−g)",
+    "Putting the values, t = (0 − 30)/−10 = 3 s",
+    "Now from the third equation of motion: 2gS = v_f² − vᵢ²",
+    "S = (v_f² − vᵢ²)/2(−g)",
+    "Putting the values, h = (0 − 30²)/(2 × 10) = 45 m",
+    "Answer: time = 3 s; maximum height = 45 m"
+   ]
+  },
+  {
+   "text": "Falling objects near the Earth have the same constant acceleration. Does this imply that a heavier object will fall faster than a lighter object?",
+   "finalAnswer": "No. A heavier object will not fall faster; freely falling objects have the same acceleration due to gravity.",
+   "marks": 2,
+   "source": "Short 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "!yes",
+       "no"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must correctly state whether the heavier object falls faster.",
+     "description": "Give a clear yes or no.",
+     "how": "State that it does not imply the heavier object falls faster."
+    },
+    {
+     "accept": [
+      [
+       "same acceleration"
+      ],
+      [
+       "equal acceleration"
+      ],
+      [
+       "g=10"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must connect the conclusion to the shared gravitational acceleration.",
+     "description": "Explain using free-fall acceleration.",
+     "how": "State that freely falling objects have the same acceleration due to gravity."
+    }
+   ],
+   "modelAnswer": [
+    "No. Freely falling objects near Earth have the same constant acceleration due to gravity, so a heavier object does not fall faster than a lighter object."
+   ]
+  },
+  {
+   "text": "How equations of motion can be applied to the bodies moving under the action of gravity?",
+   "finalAnswer": "Replace a with g in the equations of motion; take g positive downward and take quantities in the opposite direction as negative. For a body released from rest, vᵢ = 0; for a body thrown upward, g is negative and v_f = 0 at the highest point.",
+   "marks": 4,
+   "source": "Comprehensive 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "replace",
+       "g"
+      ],
+      [
+       "a=g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equations must be adapted to gravitational acceleration.",
+     "description": "Explain how to adapt the equations of motion.",
+     "how": "Say that a is replaced by g."
+    },
+    {
+     "accept": [
+      [
+       "g",
+       "positive",
+       "downward"
+      ]
+     ],
+     "marks": 1,
+     "why": "A clear downward-positive sign convention prevents sign errors.",
+     "description": "State the sign convention for downward motion.",
+     "how": "Take g positive downward and opposite-direction quantities as negative."
+    },
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "released"
+      ],
+      [
+       "initial velocity",
+       "zero"
+      ]
+     ],
+     "marks": 1,
+     "why": "A released body starts from rest.",
+     "description": "State the initial velocity for a body released from a height.",
+     "how": "Write that vᵢ = 0 when it is released."
+    },
+    {
+     "accept": [
+      [
+       "g",
+       "negative",
+       "highest point",
+       "v_f=0"
+      ],
+      [
+       "upward",
+       "negative",
+       "v_f=0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Upward motion requires the opposite sign for gravity and has zero velocity at its highest point.",
+     "description": "State the conditions for a body thrown upward.",
+     "how": "Say g is negative and v_f = 0 at the highest point."
+    }
+   ],
+   "modelAnswer": [
+    "Since freely falling bodies move vertically downwards in a straight line with uniform acceleration g, the three equations of motion can be applied.",
+    "Replace acceleration a by gravitational acceleration g in the equations of motion:",
+    "v_f = v_i + gt",
+    "S = v_i t + ½gt²",
+    "2gS = v_f² − v_i²",
+    "Take g positive downward; quantities opposite to the acceleration are negative.",
+    "For a body released from a height, vᵢ = 0.",
+    "For a body thrown vertically upward, g is negative and v_f = 0 at the highest point."
+   ]
+  },
+  {
+   "text": "A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+   "finalAnswer": "3 s, 30 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "g=10",
+       "S=45"
+      ]
+     ],
+     "marks": 1,
+     "why": "The known values and direction establish the correct free-fall setup.",
+     "description": "State the initial conditions and known distance.",
+     "how": "Write vᵢ = 0, g = 10 m s⁻² and S = 45 m."
+    },
+    {
+     "accept": [
+      [
+       "45=1/2x10xt^2",
+       "t=3s"
+      ],
+      [
+       "t=3s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The second equation of motion determines the fall time.",
+     "description": "Find the time taken to reach the ground.",
+     "how": "Use S = vᵢt + ½gt² and obtain 3 s."
+    },
+    {
+     "accept": [
+      [
+       "v_f=0+10x3",
+       "30m/s"
+      ],
+      [
+       "v_f=30m/s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first equation of motion determines the velocity just before impact.",
+     "description": "Find the velocity before hitting the ground.",
+     "how": "Use v_f = vᵢ + gt and obtain 30 m s⁻¹ downward."
+    }
+   ],
+   "modelAnswer": [
+    "For freely falling body: vᵢ = 0, g = 10 m s⁻², S = 45 m, t = ?, v_f = ?",
+    "According to second equation of motion, S = vᵢt + ½gt²",
+    "45 = 0 × t + ½ × 10 × t²",
+    "t² = 9, so t = 3 s",
+    "From the first equation of motion, v_f = vᵢ + gt",
+    "v_f = 0 + 10 × 3 = 30 m s⁻¹ downward",
+    "Answer: 3 s, 30 m s⁻¹"
+   ]
+  },
+  {
+   "text": "A ball is dropped from the top of a tower. The ball reaches the ground in 5 seconds. Find the height of the tower and the velocity of the ball with which it strikes the ground.",
+   "finalAnswer": "125 m, 50 m s⁻¹",
+   "marks": 5,
+   "source": "Numerical 2.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_i=0",
+       "g=10",
+       "t=5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The body is dropped, so it starts from rest, and the given time sets the calculation.",
+     "description": "State the known values.",
+     "how": "Write vᵢ = 0, g = 10 m s⁻² and t = 5 s."
+    },
+    {
+     "accept": [
+      [
+       "S=0x5+1/2x10x5^2",
+       "125m"
+      ],
+      [
+       "S=125m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The second equation gives the tower's height.",
+     "description": "Calculate the height.",
+     "how": "Use S = vᵢt + ½gt² to obtain 125 m."
+    },
+    {
+     "accept": [
+      [
+       "v_f=0+10x5",
+       "50m/s"
+      ],
+      [
+       "v_f=50m/s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first equation gives the ball's velocity at impact.",
+     "description": "Calculate the striking velocity.",
+     "how": "Use v_f = vᵢ + gt to obtain 50 m s⁻¹ downward."
+    }
+   ],
+   "modelAnswer": [
+    "For freely falling body: vᵢ = 0, g = 10 m s⁻², t = 5 s, S = h = ?, v_f = ?",
+    "According to second equation of motion, S = vᵢt + ½gt²",
+    "h = 0 × 5 + ½ × 10 × (5)² = 125 m",
+    "From the first equation of motion, v_f = vᵢ + gt",
+    "v_f = 0 + 10 × 5 = 50 m s⁻¹ downward",
+    "Answer: 125 m, 50 m s⁻¹"
+   ]
+  },
+  {
+   "text": "A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+   "finalAnswer": "30 m s⁻¹, 46 m",
+   "marks": 5,
+   "source": "Numerical 2.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "v_f=0",
+       "g=-10",
+       "t=3"
+      ]
+     ],
+     "marks": 1,
+     "why": "At the highest point velocity is zero and gravity is negative for upward motion.",
+     "description": "Set the upward-motion values and signs.",
+     "how": "Write v_f = 0, g = −10 m s⁻² and t = 3 s."
+    },
+    {
+     "accept": [
+      [
+       "v_i=30m/s"
+      ],
+      [
+       "v_i=30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first equation gives the initial velocity from the time to the highest point.",
+     "description": "Find the initial velocity.",
+     "how": "Use v_f = vᵢ + gt to obtain 30 m s⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "S=45m"
+      ],
+      [
+       "h=45m"
+      ]
+     ],
+     "marks": 2,
+     "why": "The third equation gives the ball's upward displacement from its launch point.",
+     "description": "Find the rise above the point where it was hit.",
+     "how": "Use 2gS = v_f² − vᵢ² to obtain 45 m."
+    },
+    {
+     "accept": [
+      [
+       "45+1=46",
+       "46m"
+      ],
+      [
+       "46m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The launch point is already 1 m above the ground, so it must be added to the upward displacement.",
+     "description": "Find the maximum height above the ground.",
+     "how": "Add 1 m to 45 m to obtain 46 m."
+    }
+   ],
+   "modelAnswer": [
+    "For the ball moving vertically upward: v_f = 0, g = −10 m s⁻², t = 3 s, vᵢ = ?, S = ?",
+    "From first equation of motion, v_f = vᵢ + gt",
+    "0 = vᵢ + (−10 × 3), so vᵢ = 30 m s⁻¹",
+    "Now from the third equation of motion, 2gS = v_f² − vᵢ²",
+    "S = (0 − 30²)/(2 × −10) = 45 m",
+    "Height above ground = 45 m + 1 m = 46 m",
+    "Answer: 30 m s⁻¹, 46 m"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A numerical may describe an object dropped from a height and ask for its height, time, or impact velocity. Write the known values first, then show the equation and substitution.",
+   "For an object released from rest, state vᵢ = 0. Use g = 10 m s⁻² downward, as in your textbook.",
+   "For an object thrown upward, use g = −10 m s⁻² and v_f = 0 at the highest point.",
+   "Marks are commonly earned for the correct sign convention, choosing the suitable equation, substituting values, and giving a final answer with units.",
+   "Include the direction in a velocity answer when it is useful, such as downward or upward."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "What is the initial velocity of a stone that is dropped?",
+     "Use S = vᵢt + ½gt² to find the time, then v_f = vᵢ + gt for its velocity."
+    ],
+    "accept": [
+     [
+      "3s",
+      "30m/s"
+     ],
+     [
+      "3",
+      "30"
+     ]
+    ],
+    "question": "A stone is dropped from a height of 45 m. How long will it take to reach the ground? What will be its velocity just before hitting the ground?",
+    "solution": [
+     "For freely falling body: vᵢ = 0, g = 10 m s⁻², S = 45 m, t = ?, v_f = ?",
+     "According to second equation of motion, S = vᵢt + ½gt²",
+     "45 = 0 × t + ½ × 10 × t²",
+     "t² = 9, so t = 3 s",
+     "From the first equation of motion, v_f = vᵢ + gt",
+     "v_f = 0 + 10 × 3 = 30 m s⁻¹ downward"
+    ],
+    "answer": "3 s; 30 m s⁻¹ downward"
+   },
+   {
+    "hints": [
+     "At the highest point, what is the ball's final velocity, and what sign should g have for upward motion?",
+     "First use v_f = vᵢ + gt to find vᵢ; then use 2gS = v_f² − vᵢ² and add the 1 m starting height."
+    ],
+    "accept": [
+     [
+      "30m/s",
+      "46m"
+     ],
+     [
+      "30",
+      "46"
+     ]
+    ],
+    "question": "A cricket ball is hit so that it travels straight up in the air. An observer notes that it took 3 seconds to reach the highest point. What was the initial velocity of the ball? If the ball was hit 1 m above the ground, how high did it rise from the ground?",
+    "solution": [
+     "For the ball moving vertically upward: v_f = 0, g = −10 m s⁻², t = 3 s, vᵢ = ?, S = ?",
+     "From first equation of motion, v_f = vᵢ + gt",
+     "0 = vᵢ + (−10 × 3), so vᵢ = 30 m s⁻¹",
+     "Now from the third equation of motion, 2gS = v_f² − vᵢ²",
+     "S = (0 − 30²)/(2 × −10) = 45 m",
+     "Height above ground = 45 m + 1 m = 46 m"
+    ],
+    "answer": "30 m s⁻¹; 46 m"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The arrow moves upward, so gravitational acceleration acts in the opposite direction and is negative.",
+     "text": "Here, acceleration will be taken as negative, for the arrow is thrown vertically upward."
+    },
+    {
+     "why": "At the highest point the arrow momentarily stops before coming down.",
+     "text": "Initial velocity = vᵢ = 30 m s⁻¹; final velocity = v_f = 0; acceleration = g = −10 m s⁻²"
+    },
+    {
+     "why": "The first equation of motion connects initial velocity, final velocity, acceleration and time.",
+     "text": "From first equation of motion: v_f = vᵢ + gt"
+    },
+    {
+     "why": "Rearranging this equation makes time the subject.",
+     "text": "t = (v_f − vᵢ)/−g"
+    },
+    {
+     "why": "Substituting the values gives the time to reach the highest point.",
+     "text": "Putting the values, t = (0 − 30 m s⁻¹)/−10 m s⁻² = 3 s"
+    },
+    {
+     "why": "The third equation connects the two velocities with the displacement without needing time.",
+     "text": "Now from the third equation of motion: 2gS = v_f² − vᵢ²"
+    },
+    {
+     "why": "Rearrange the equation to make height the subject, using the negative acceleration for upward motion.",
+     "text": "S = (v_f² − vᵢ²)/2(−g)"
+    },
+    {
+     "why": "Substitution gives the maximum height above the launch point.",
+     "text": "Putting the values h = (0 − (30)² m² s⁻²)/(2 × 10 m s⁻²) = 45 m"
+    }
+   ],
+   "question": "An arrow is thrown vertically upward with the help of a bow. The velocity of the arrow when it leaves the bow is 30 m s⁻¹. Determine time to reach the highest point? Also, find the maximum height attained by the arrow.",
+   "answer": "Time to reach the highest point = 3 s; maximum height = 45 m."
+  },
+  "explain": [
+   {
+    "title": "Gravitational acceleration",
+    "body": "Your textbook defines it this way: “When a body is falling freely under the action of gravity of the Earth, the acceleration acting on it is the gravitational acceleration and is denoted by g.” It also states: “The direction of gravitational acceleration is always downwards. Its value is 9.8 m s⁻², but for convenience we shall use the value of g as 10 m s⁻².”"
+   },
+   {
+    "title": "Equations for freely falling bodies",
+    "body": "The three equations of motion are used with a replaced by g: v_f = v_i + gt; S = v_i t + ½gt²; 2gS = v_f² − v_i². Choose the equation that includes the unknown you need."
+   },
+   {
+    "title": "Choose signs carefully",
+    "body": "Use g as positive when downward is positive. Quantities in the opposite direction are negative. If a body is released from a height, vᵢ = 0. If it is thrown vertically upward, g is negative and the final velocity at the highest point is zero."
+   },
+   {
+    "title": "Objects fall with the same acceleration",
+    "body": "Your textbook states: “Acceleration of free fall g is 10 m s⁻² for all objects.” The section also notes that light and heavier objects fall side by side through a vacuum."
+   }
+  ],
+  "mistakes": [
+   "Using g = +10 m s⁻² for a body thrown upward; in that case use g = −10 m s⁻².",
+   "Forgetting that a body released from rest has vᵢ = 0.",
+   "Using a non-zero final velocity at the highest point; there v_f = 0.",
+   "Giving a velocity without a unit or using the wrong unit; velocity is measured in m s⁻¹ and acceleration in m s⁻².",
+   "Forgetting that the stated height for an upward-thrown object may be the rise above its starting point, not its height above the ground."
+  ]
+ }
+}

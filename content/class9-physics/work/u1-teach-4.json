@@ -1,0 +1,945 @@
+{
+ "note": {
+  "explanation": "Scientific notation writes a number as a value from 1 to 9 multiplied by a power of 10. The power shows how far, and in which direction, the decimal point moved.",
+  "examples": [
+   "138,000,000 = 1.38 × 10⁸",
+   "0.000000000052 = 5.2 × 10⁻¹¹"
+  ],
+  "checkAnswer": "5.2 × 10⁻⁴",
+  "keywords": [
+   "scientific notation",
+   "decimal point",
+   "positive exponent",
+   "negative exponent",
+   "powers of 10",
+   "prefix"
+  ],
+  "simple": "Move the decimal point until one non-zero digit is left of it. Moving left gives a positive power; moving right gives a negative power.",
+  "checkQuestion": "Write 0.00052 in scientific notation.",
+  "title": "Writing numbers in scientific notation",
+  "steps": [
+   "Move the decimal point until one non-zero digit remains on the left.",
+   "Count the places the decimal point moved.",
+   "Use that count as the exponent of 10: positive if the decimal moved left, negative if it moved right."
+  ],
+  "answer": "A number written as a number from 1 to 9 multiplied by a power of 10.",
+  "checkAccept": [
+   [
+    "5.2",
+    "10^-4"
+   ],
+   [
+    "5.2",
+    "10⁻⁴"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "4.6 × 10⁻⁵",
+    "4.6 × 10⁵",
+    "46 × 10⁻⁶",
+    "0.46 × 10⁻⁴"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Write 0.000046 in scientific notation.",
+   "rationales": [
+    "Correct: the decimal moves five places right, so the exponent is −5.",
+    "Incorrect: the decimal moves right, so the exponent is negative.",
+    "Incorrect: 46 is not between 1 and 9, and this expression equals 4.6 × 10⁻⁵ but is not normalized scientific notation.",
+    "Incorrect: the coefficient is less than 1, so it is not in scientific notation."
+   ]
+  },
+  {
+   "options": [
+    "7.2 × 10⁶",
+    "7.2 × 10⁻⁶",
+    "72 × 10⁵",
+    "0.72 × 10⁷"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Write 7,200,000 in scientific notation.",
+   "rationales": [
+    "Correct: the decimal moves six places left.",
+    "Incorrect: a move to the left gives a positive exponent.",
+    "Incorrect: the coefficient must be between 1 and 9.",
+    "Incorrect: the coefficient must be between 1 and 9."
+   ]
+  },
+  {
+   "options": [
+    "3.5 × 10⁻³",
+    "3.5 × 10³",
+    "35 × 10⁻⁴",
+    "0.35 × 10⁻²"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the scientific notation of 0.0035?",
+   "rationales": [
+    "Correct: the decimal moves three places right, giving an exponent of −3.",
+    "Incorrect: the exponent should be negative because the decimal moves right.",
+    "Incorrect: 35 is not between 1 and 9.",
+    "Incorrect: 0.35 is not between 1 and 9."
+   ]
+  },
+  {
+   "options": [
+    "2.4 × 10⁸",
+    "2.4 × 10⁻⁸",
+    "24 × 10⁷",
+    "0.24 × 10⁹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Evaluate (3 × 10⁴)(8 × 10³) and write the answer in scientific notation.",
+   "rationales": [
+    "Correct: multiply 3 by 8 and add the powers, then normalize 24 × 10⁷.",
+    "Incorrect: the powers are added, not made negative.",
+    "Incorrect: this is equivalent in value but is not normalized scientific notation.",
+    "Incorrect: the coefficient is less than 1, so it is not normalized scientific notation."
+   ]
+  },
+  {
+   "options": [
+    "4 × 10⁵",
+    "4 × 10⁻⁵",
+    "4 × 10⁹",
+    "4 × 10⁻⁹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Evaluate (8 × 10⁷) ÷ (2 × 10²).",
+   "rationales": [
+    "Correct: divide the coefficients and subtract the powers: 4 × 10⁵.",
+    "Incorrect: dividing powers requires subtracting exponents, giving a positive 5.",
+    "Incorrect: the powers should be subtracted, not added.",
+    "Incorrect: the exponent should be positive after subtracting 2 from 7."
+   ]
+  },
+  {
+   "options": [
+    "6.4 × 10⁻³ m",
+    "6.4 × 10³ m",
+    "6.4 × 10⁻⁴ m",
+    "6.4 × 10⁻² m"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A length is 0.0064 m. Which is its scientific notation?",
+   "rationales": [
+    "Correct: the decimal moves three places right, so the exponent is −3.",
+    "Incorrect: moving right gives a negative exponent.",
+    "Incorrect: the decimal moves three places, not four.",
+    "Incorrect: the decimal moves three places, not two."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Solve the following: (a) 5.123 × 10⁴ m + 3.28 × 10⁵ m",
+   "finalAnswer": "3.7923 × 10⁵ m",
+   "marks": 4,
+   "source": "Example 1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "32.8",
+       "10^4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The powers of 10 must be made the same before adding.",
+     "description": "Rewrite the second term with power 10⁴.",
+     "how": "Write 3.28 × 10⁵ as 32.8 × 10⁴."
+    },
+    {
+     "accept": [
+      [
+       "5.123",
+       "32.8",
+       "37.923"
+      ]
+     ],
+     "marks": 1,
+     "why": "Only coefficients with matching powers are added.",
+     "description": "Add the coefficients.",
+     "how": "Calculate 5.123 + 32.8 = 37.923."
+    },
+    {
+     "accept": [
+      [
+       "37.923",
+       "10^4"
+      ]
+     ],
+     "marks": 1,
+     "why": "This preserves the value before normalizing the coefficient.",
+     "description": "Combine the coefficient and common power.",
+     "how": "Write 37.923 × 10⁴."
+    },
+    {
+     "accept": [
+      [
+       "3.7923",
+       "10^5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must be in scientific notation.",
+     "description": "Give the correct final answer.",
+     "how": "Normalize to 3.7923 × 10⁵ m."
+    }
+   ],
+   "modelAnswer": [
+    "5.123 × 10⁴ m + 3.28 × 10⁵ m",
+    "= 5.123 × 10⁴ m + 32.8 × 10⁴ m",
+    "= (5.123 + 32.8) 10⁴ m",
+    "= 37.923 × 10⁴ m",
+    "= 3.7923 × 10⁵ m"
+   ]
+  },
+  {
+   "text": "Find the value of each of the following quantities: (a) (4 × 10³ kg) (6 × 10⁶ m)",
+   "finalAnswer": "2.4 × 10¹⁰ kg m",
+   "marks": 4,
+   "source": "Example 1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "24",
+       "10^9"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficients are multiplied and the powers of 10 are combined.",
+     "description": "Multiply coefficients and add exponents.",
+     "how": "Calculate (4 × 6) × 10⁽³⁺⁶⁾."
+    },
+    {
+     "accept": [
+      [
+       "24",
+       "10^9"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the combined product before normalizing.",
+     "description": "Write the product with units.",
+     "how": "Write 24 × 10⁹ kg m."
+    },
+    {
+     "accept": [
+      [
+       "2.4",
+       "10^10"
+      ]
+     ],
+     "marks": 2,
+     "why": "Scientific notation requires a coefficient from 1 to 9.",
+     "description": "Give the normalized final answer.",
+     "how": "Convert 24 × 10⁹ to 2.4 × 10¹⁰ kg m."
+    }
+   ],
+   "modelAnswer": [
+    "(4 × 10³ kg) (6 × 10⁶ m) = (4 × 6) × 10⁽³⁺⁶⁾ kg m",
+    "= 24 × 10⁹ kg m",
+    "= 2.4 × 10¹⁰ kg m"
+   ]
+  },
+  {
+   "text": "State the answers of problem 1.1 in scientific notation. (a) day",
+   "finalAnswer": "8.64 × 10⁴ s",
+   "marks": 2,
+   "source": "Numerical 1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "86400"
+      ],
+      [
+       "86.4",
+       "10^3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The day must first be represented as a number of seconds.",
+     "description": "Express one day in seconds.",
+     "how": "Use 24 × 60 × 60 = 86,400 s."
+    },
+    {
+     "accept": [
+      [
+       "8.64",
+       "10^4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must be written in scientific notation.",
+     "description": "Give the correct final answer.",
+     "how": "Write 86,400 s as 8.64 × 10⁴ s."
+    }
+   ],
+   "modelAnswer": [
+    "1 day = 24 × 60 × 60 s",
+    "= 86,400 s",
+    "= 8.64 × 10⁴ s"
+   ]
+  },
+  {
+   "text": "Solve the following addition or subtraction. State your answers in scientific notation. (a) 4 × 10⁻⁴ kg + 3 × 10⁻⁵ kg",
+   "finalAnswer": "4.3 × 10⁻⁴ kg",
+   "marks": 4,
+   "source": "Numerical 1.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.3",
+       "10^-4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The powers must match before adding coefficients.",
+     "description": "Rewrite the second term with power 10⁻⁴.",
+     "how": "Write 3 × 10⁻⁵ as 0.3 × 10⁻⁴."
+    },
+    {
+     "accept": [
+      [
+       "4",
+       "0.3",
+       "4.3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficients are added after matching powers.",
+     "description": "Add the coefficients.",
+     "how": "Calculate 4 + 0.3 = 4.3."
+    },
+    {
+     "accept": [
+      [
+       "4.3",
+       "10^-4"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer must preserve the unit and scientific notation.",
+     "description": "Give the correct final answer.",
+     "how": "Write 4.3 × 10⁻⁴ kg."
+    }
+   ],
+   "modelAnswer": [
+    "4 × 10⁻⁴ kg + 3 × 10⁻⁵ kg",
+    "= 4 × 10⁻⁴ kg + 0.3 × 10⁻⁴ kg",
+    "= (4 + 0.3) 10⁻⁴ kg",
+    "= 4.3 × 10⁻⁴ kg"
+   ]
+  },
+  {
+   "text": "Solve the following addition or subtraction. State your answers in scientific notation. (b) 5.4 × 10⁻⁶ m − 3.2 × 10⁻⁵ m",
+   "finalAnswer": "− 2.66 × 10⁻⁵ m",
+   "marks": 4,
+   "source": "Numerical 1.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.54",
+       "10^-5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The powers must match before subtracting coefficients.",
+     "description": "Rewrite the first term with power 10⁻⁵.",
+     "how": "Write 5.4 × 10⁻⁶ as 0.54 × 10⁻⁵."
+    },
+    {
+     "accept": [
+      [
+       "0.54",
+       "3.2",
+       "-2.66"
+      ]
+     ],
+     "marks": 1,
+     "why": "The subtraction order determines the negative sign.",
+     "description": "Subtract the coefficients correctly.",
+     "how": "Calculate 0.54 − 3.2 = −2.66."
+    },
+    {
+     "accept": [
+      [
+       "-2.66",
+       "10^-5"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer must be in scientific notation and include the unit.",
+     "description": "Give the correct final answer.",
+     "how": "Write −2.66 × 10⁻⁵ m."
+    }
+   ],
+   "modelAnswer": [
+    "5.4 × 10⁻⁶ m − 3.2 × 10⁻⁵ m",
+    "= 0.54 × 10⁻⁵ m − 3.2 × 10⁻⁵ m",
+    "= (0.54 − 3.2) 10⁻⁵ m",
+    "= − 2.66 × 10⁻⁵ m"
+   ]
+  },
+  {
+   "text": "Solve the following multiplication or division. State your answers in scientific notation. (a) (5 × 10⁴ m) × (3 × 10⁻² m)",
+   "finalAnswer": "1.5 × 10³ m²",
+   "marks": 4,
+   "source": "Numerical 1.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "15",
+       "10^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical coefficients are multiplied.",
+     "description": "Multiply the coefficients.",
+     "how": "Calculate 5 × 3 = 15."
+    },
+    {
+     "accept": [
+      [
+       "10^2"
+      ],
+      [
+       "4",
+       "-2",
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "For multiplication, powers of 10 are added.",
+     "description": "Combine the powers of 10.",
+     "how": "Calculate 10⁴ × 10⁻² = 10²."
+    },
+    {
+     "accept": [
+      [
+       "15",
+       "10^2",
+       "m^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both lengths are multiplied, so the unit becomes square metres.",
+     "description": "Combine the product and units.",
+     "how": "Write 15 × 10² m²."
+    },
+    {
+     "accept": [
+      [
+       "1.5",
+       "10^3",
+       "m^2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final coefficient must be between 1 and 9.",
+     "description": "Give the correct final answer.",
+     "how": "Normalize to 1.5 × 10³ m²."
+    }
+   ],
+   "modelAnswer": [
+    "(5 × 10⁴ m) × (3 × 10⁻² m)",
+    "= (5 × 3) × 10⁽⁴⁺⁽⁻²⁾⁾ m²",
+    "= 15 × 10² m²",
+    "= 1.5 × 10³ m²"
+   ]
+  },
+  {
+   "text": "Solve the following multiplication or division. State your answers in scientific notation. (b) (6 × 10⁸ kg)/(3 × 10⁴ m³)",
+   "finalAnswer": "2.0 × 10⁴ kg m⁻³",
+   "marks": 4,
+   "source": "Numerical 1.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "6/3"
+      ],
+      [
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical coefficients are divided.",
+     "description": "Divide the coefficients.",
+     "how": "Calculate 6 ÷ 3 = 2."
+    },
+    {
+     "accept": [
+      [
+       "10^4"
+      ],
+      [
+       "8",
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "For division, the exponent in the denominator is subtracted.",
+     "description": "Subtract the powers of 10.",
+     "how": "Calculate 10⁸ ÷ 10⁴ = 10⁴."
+    },
+    {
+     "accept": [
+      [
+       "kg",
+       "m^-3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by cubic metres gives the unit kg m⁻³.",
+     "description": "Write the resulting unit.",
+     "how": "Use kg m⁻³."
+    },
+    {
+     "accept": [
+      [
+       "2.0",
+       "10^4",
+       "kg",
+       "m^-3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include scientific notation and units.",
+     "description": "Give the correct final answer.",
+     "how": "Write 2.0 × 10⁴ kg m⁻³."
+    }
+   ],
+   "modelAnswer": [
+    "(6 × 10⁸ kg)/(3 × 10⁴ m³)",
+    "= 6/3 × 10⁽⁸⁻⁴⁾ kg m⁻³",
+    "= 2 × 10⁴ kg m⁻³",
+    "= 2.0 × 10⁴ kg m⁻³"
+   ]
+  },
+  {
+   "text": "Calculate the following and state your answer in scientific notation. ((3 × 10² kg) × (4.0 km))/(5 × 10² s²)",
+   "finalAnswer": "2.4 × 10³ kg m s⁻²",
+   "marks": 5,
+   "source": "Numerical 1.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "4.0",
+       "10^3",
+       "m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The distance must be expressed in metres to match the required SI result.",
+     "description": "Convert kilometres to metres.",
+     "how": "Use 4.0 km = 4.0 × 10³ m."
+    },
+    {
+     "accept": [
+      [
+       "3",
+       "4.0",
+       "12"
+      ],
+      [
+       "10^5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerator requires multiplying coefficients and adding powers.",
+     "description": "Calculate the numerator.",
+     "how": "Multiply 3 × 4.0 and combine 10² with 10³."
+    },
+    {
+     "accept": [
+      [
+       "12/5"
+      ],
+      [
+       "2.4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerator coefficient is divided by the denominator coefficient.",
+     "description": "Divide the coefficients.",
+     "how": "Calculate 12 ÷ 5 = 2.4."
+    },
+    {
+     "accept": [
+      [
+       "10^3"
+      ],
+      [
+       "5",
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The powers in the denominator must be subtracted from those in the numerator.",
+     "description": "Combine the powers and units.",
+     "how": "Simplify the power of 10 and the units to kg m s⁻²."
+    },
+    {
+     "accept": [
+      [
+       "2.4",
+       "10^3",
+       "kg",
+       "m",
+       "s^-2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be normalized and include the correct SI unit.",
+     "description": "Give the correct final answer.",
+     "how": "Write 2.4 × 10³ kg m s⁻²."
+    }
+   ],
+   "modelAnswer": [
+    "((3 × 10² kg) × (4.0 km))/(5 × 10² s²)",
+    "= ((3 × 10² kg) × (4.0 × 10³ m))/(5 × 10² s²)",
+    "= (12 × 10⁵ kg m)/(5 × 10² s²)",
+    "= 2.4 × 10³ kg m s⁻²"
+   ]
+  },
+  {
+   "text": "Write in scientific notation: (a) 0.0035 m",
+   "finalAnswer": "3.5 × 10⁻³ m",
+   "marks": 2,
+   "source": "Numerical 1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficient must be between 1 and 9.",
+     "description": "Place the decimal point after the first non-zero digit.",
+     "how": "Write the coefficient as 3.5."
+    },
+    {
+     "accept": [
+      [
+       "3.5",
+       "10^-3",
+       "m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The decimal point moved three places right, giving a negative exponent.",
+     "description": "Give the correct final answer.",
+     "how": "Write 3.5 × 10⁻³ m."
+    }
+   ],
+   "modelAnswer": [
+    "0.0035 m = 3.5 × 10⁻³ m"
+   ]
+  },
+  {
+   "text": "Write in scientific notation: (b) 206.4 × 10² m",
+   "finalAnswer": "2.064 × 10⁴ m",
+   "marks": 2,
+   "source": "Numerical 1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2.064"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficient must be from 1 to 9.",
+     "description": "Normalize the coefficient.",
+     "how": "Write 206.4 as 2.064 × 10²."
+    },
+    {
+     "accept": [
+      [
+       "2.064",
+       "10^4",
+       "m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The powers combine to give the correct scientific notation.",
+     "description": "Give the correct final answer.",
+     "how": "Combine 10² × 10² to obtain 2.064 × 10⁴ m."
+    }
+   ],
+   "modelAnswer": [
+    "206.4 × 10² m",
+    "= 2.064 × 10² × 10² m",
+    "= 2.064 × 10⁴ m"
+   ]
+  },
+  {
+   "text": "Light year is a unit of distance used in Astronomy. It is the distance covered by light in one year. Taking the speed of light as 3.0 × 10⁸ m s⁻¹, calculate the distance.",
+   "finalAnswer": "9.46 × 10¹⁵ m",
+   "marks": 5,
+   "source": "Numerical 1.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "365",
+       "24",
+       "60",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "The time for one year must be calculated in seconds.",
+     "description": "Convert one year to seconds.",
+     "how": "Use 365 × 24 × 60 × 60 s."
+    },
+    {
+     "accept": [
+      [
+       "3.0",
+       "10^8",
+       "365",
+       "24",
+       "60",
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Distance is calculated by multiplying speed by time.",
+     "description": "Set up distance = speed × time.",
+     "how": "Multiply 3.0 × 10⁸ m s⁻¹ by the number of seconds in a year."
+    },
+    {
+     "accept": [
+      [
+       "9.4608",
+       "10^15"
+      ]
+     ],
+     "marks": 2,
+     "why": "The multiplication gives the distance travelled in metres.",
+     "description": "Calculate the distance.",
+     "how": "Obtain 9.4608 × 10¹⁵ m."
+    },
+    {
+     "accept": [
+      [
+       "9.46",
+       "10^15",
+       "m"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer is rounded to the textbook answer.",
+     "description": "Give the correct final answer.",
+     "how": "Write 9.46 × 10¹⁵ m."
+    }
+   ],
+   "modelAnswer": [
+    "1 year = 365 × 24 × 60 × 60 s",
+    "Distance = speed × time",
+    "= (3.0 × 10⁸) × (365 × 24 × 60 × 60) m",
+    "= 9.46 × 10¹⁵ m"
+   ]
+  },
+  {
+   "text": "Express the density of mercury given as 13.6 g cm⁻³ in kg m⁻³.",
+   "finalAnswer": "1.36 × 10⁴ kg m⁻³",
+   "marks": 4,
+   "source": "Numerical 1.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "13.6",
+       "10^-3",
+       "kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "Grams must be converted into kilograms.",
+     "description": "Convert the mass unit.",
+     "how": "Use 1 g = 10⁻³ kg."
+    },
+    {
+     "accept": [
+      [
+       "cm^-3"
+      ],
+      [
+       "10^6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The cubic centimetre unit must be converted to cubic metres.",
+     "description": "Convert the volume unit.",
+     "how": "Use 1 cm³ = 10⁻⁶ m³."
+    },
+    {
+     "accept": [
+      [
+       "13.6",
+       "10^3"
+      ],
+      [
+       "13600"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both unit conversions determine the numerical value in SI units.",
+     "description": "Combine the converted units and value.",
+     "how": "Convert 13.6 g cm⁻³ to kg m⁻³."
+    },
+    {
+     "accept": [
+      [
+       "1.36",
+       "10^4",
+       "kg",
+       "m^-3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be in scientific notation with SI units.",
+     "description": "Give the correct final answer.",
+     "how": "Write 1.36 × 10⁴ kg m⁻³."
+    }
+   ],
+   "modelAnswer": [
+    "13.6 g cm⁻³ = 13.6 × 10⁻³ kg / 10⁻⁶ m³",
+    "= 13.6 × 10³ kg m⁻³",
+    "= 1.36 × 10⁴ kg m⁻³"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is commonly tested with short numerical problems: write a number in scientific notation, or add, subtract, multiply, or divide numbers in scientific notation.",
+   "For addition and subtraction, show that the powers of 10 have been made the same before combining coefficients.",
+   "For multiplication, multiply the coefficients and add the exponents; for division, divide the coefficients and subtract the exponents.",
+   "Show the normalization step when a coefficient is not between 1 and 9, and include the final unit. These working steps can earn marks even if the final arithmetic has an error."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Compare the powers of 10 first.",
+     "Rewrite both terms with power 10⁻⁴, then add the coefficients."
+    ],
+    "accept": [
+     [
+      "4.3",
+      "10^-4",
+      "kg"
+     ],
+     [
+      "4.3",
+      "10⁻⁴",
+      "kg"
+     ]
+    ],
+    "question": "Solve the following addition or subtraction. State your answers in scientific notation. (a) 4 × 10⁻⁴ kg + 3 × 10⁻⁵ kg",
+    "solution": [
+     "4 × 10⁻⁴ kg + 3 × 10⁻⁵ kg",
+     "= 4 × 10⁻⁴ kg + 0.3 × 10⁻⁴ kg",
+     "= (4 + 0.3) 10⁻⁴ kg",
+     "= 4.3 × 10⁻⁴ kg"
+    ],
+    "answer": "4.3 × 10⁻⁴ kg"
+   },
+   {
+    "hints": [
+     "Multiply the numerical parts and deal with the powers separately.",
+     "Add the exponents 4 and −2, then normalize the coefficient."
+    ],
+    "accept": [
+     [
+      "1.5",
+      "10^3",
+      "m^2"
+     ],
+     [
+      "1.5",
+      "10³",
+      "m²"
+     ]
+    ],
+    "question": "Solve the following multiplication or division. State your answers in scientific notation. (a) (5 × 10⁴ m) × (3 × 10⁻² m)",
+    "solution": [
+     "(5 × 10⁴ m) × (3 × 10⁻² m)",
+     "= (5 × 3) × 10⁽⁴⁺⁽⁻²⁾⁾ m²",
+     "= 15 × 10² m²",
+     "= 1.5 × 10³ m²"
+    ],
+    "answer": "1.5 × 10³ m²"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the expression given in the example.",
+     "text": "5.123 × 10⁴ m + 3.28 × 10⁵ m"
+    },
+    {
+     "why": "Addition is easier when both terms have the same power of 10; 3.28 × 10⁵ equals 32.8 × 10⁴.",
+     "text": "= 5.123 × 10⁴ m + 32.8 × 10⁴ m"
+    },
+    {
+     "why": "With equal powers, add the coefficients and keep the common power.",
+     "text": "= (5.123 + 32.8) 10⁴ m"
+    },
+    {
+     "why": "This is the sum of the coefficients before the answer is normalized.",
+     "text": "= 37.923 × 10⁴ m"
+    },
+    {
+     "why": "Scientific notation needs a coefficient from 1 to 9, so move the decimal one place left and increase the exponent by 1.",
+     "text": "= 3.7923 × 10⁵ m"
+    }
+   ],
+   "question": "Solve the following: (a) 5.123 × 10⁴ m + 3.28 × 10⁵ m",
+   "answer": "3.7923 × 10⁵ m"
+  },
+  "explain": [
+   {
+    "title": "What scientific notation means",
+    "body": "It is short way of representing very large or very small numbers. The numerical part of the quantity is written as a number from 1 to 9 multiplied by whole number powers of 10."
+   },
+   {
+    "title": "Writing a large number",
+    "body": "To write numbers using scientific notation, move the decimal point until only one non-zero digit remains on the left. Count the places moved: moving the decimal to the left gives a positive exponent of 10. For example, 138,000,000 km = 1.38 × 10⁸ km."
+   },
+   {
+    "title": "Writing a small number",
+    "body": "For a small number, move the decimal point to the right until one non-zero digit remains on the left. The number of places moved to the right is expressed as a negative exponent of 10. For example, 0.000,000,000,052 m = 5.2 × 10⁻¹¹ m."
+   },
+   {
+    "title": "Calculating with powers of 10",
+    "body": "For addition or subtraction, first write the terms with the same power of 10. For multiplication, multiply the coefficients and add the exponents. For division, divide the coefficients and subtract the denominator exponent from the numerator exponent."
+   }
+  ],
+  "mistakes": [
+   "Using a positive exponent when the decimal point moved to the right, or a negative exponent when it moved to the left.",
+   "Adding or subtracting coefficients before making the powers of 10 equal.",
+   "Forgetting to add exponents in multiplication or subtract exponents in division.",
+   "Leaving a coefficient such as 24 or 0.35 in the final answer instead of normalizing it to a value from 1 to 9.",
+   "Dropping the unit or giving an incorrect unit after multiplying or dividing quantities."
+  ]
+ }
+}
