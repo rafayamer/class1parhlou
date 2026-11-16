@@ -52,6 +52,35 @@ object PaperPdf {
         return file
     }
 
+    /** Revision notes as a PDF: a title, then headed sections of short paragraphs (definitions, formulas, solved questions). */
+    fun notes(file: File, title: String, sections: List<Pair<String, List<String>>>): File {
+        val doc = PdfDocument()
+        var page: PdfDocument.Page? = null
+        drawNotes(object : PageSink {
+            override fun start(number: Int, width: Int, height: Int): Canvas =
+                doc.startPage(PdfDocument.PageInfo.Builder(width, height, number).create()).also { page = it }.canvas
+            override fun finish() { page?.let { doc.finishPage(it) }; page = null }
+        }, title, sections)
+        file.parentFile?.mkdirs()
+        file.outputStream().use { doc.writeTo(it) }
+        doc.close()
+        return file
+    }
+
+    fun drawNotes(sink: PageSink, title: String, sections: List<Pair<String, List<String>>>) {
+        val w = Writer(sink, title, "NOTES")
+        w.newPage()
+        w.text("MATHEMATICS (CLASS 9) · ${title.uppercase()}", bold = true, size = 13f, center = true)
+        w.space(6f)
+        sections.filter { it.second.isNotEmpty() }.forEach { (heading, items) ->
+            w.heading(heading)
+            items.forEach { w.block(listOf(math(clean(it)) to Style.Q)) }
+        }
+        w.space(14f)
+        w.text("— End of notes —", size = 10f, color = MUTED, center = true)
+        w.finish()
+    }
+
     fun draw(sink: PageSink, blueprint: PaperBlueprint, paper: PaperContent, withScheme: Boolean = false) {
         val code = code(blueprint, paper)
         val w = Writer(sink, blueprint.title, code)
@@ -180,8 +209,17 @@ object PaperPdf {
             c.drawText("P", M + 6.5f, 28.5f, TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 15f; typeface = Typeface.DEFAULT_BOLD; color = LEAF })
             c.drawText("Parhlou", M + 30f, 29f, TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 17f; typeface = Typeface.DEFAULT_BOLD; color = Color.WHITE })
             val right = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 9.5f; color = Color.WHITE; textAlign = Paint.Align.RIGHT }
-            c.drawText("Board-style practice paper · Class 9 Mathematics", W - M, 22f, right)
+            val notes = code == "NOTES"
+            c.drawText(if (notes) "Revision notes · Class 9 Mathematics" else "Board-style practice paper · Class 9 Mathematics", W - M, 22f, right)
             c.drawText(paperTitle.take(70), W - M, 35f, right)
+            if (notes) {
+                val foot = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 8f; color = MUTED }
+                c.drawLine(M, H - 34f, W - M, H - 34f, Paint().apply { color = LIME; strokeWidth = 1.5f })
+                c.drawText("Parhlou · revision notes", M, H - 22f, foot)
+                c.drawText("Page $number", W - M, H - 22f, TextPaint(foot).apply { textAlign = Paint.Align.RIGHT })
+                y = 64f
+                return
+            }
             // Roll number boxes, as on the board paper.
             val small = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 10f; color = INK }
             c.drawText("Roll No.", M, 70f, small)

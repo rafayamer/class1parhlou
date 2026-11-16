@@ -41,7 +41,8 @@ data class MyPaper(val blueprint: PaperBlueprint, val paper: PaperContent, val w
 /**
  * Builds a full board-pattern paper for one student. The template (an official board paper) fixes the slots: how many MCQs and
  * short questions come from each unit, and which units each long question tests. Every slot gets a shortlist from the whole
- * question bank, best first: board questions that came most often, the student's weak topics, questions not seen before.
+ * question bank, best first: the questions that came most often in board papers, then ones the student hasn't seen.
+ * It follows the exam, not the student: a paper never leans towards a student's weak topics.
  * The AI then chooses from the shortlist; without the AI the top of each shortlist is used.
  */
 object PaperPicker {
@@ -55,11 +56,11 @@ object PaperPicker {
         val topicOfNote: (String?) -> String,
     )
 
-    fun slots(template: PaperBlueprint, templatePaper: PaperContent, bank: Bank, weakNotes: Set<String>, seen: Set<String>, seed: Long): List<PickSlot> {
+    fun slots(template: PaperBlueprint, templatePaper: PaperContent, bank: Bank, seen: Set<String>, seed: Long): List<PickSlot> {
         val rnd = Random(seed)
         val jitter = mutableMapOf<String, Double>()
         fun score(id: String, note: String?, pastPapers: Int) =
-            minOf(pastPapers, 8) * 1.5 + (if (note in weakNotes) 4.0 else 0.0) - (if (id in seen) 3.0 else 0.0) + jitter.getOrPut(id) { rnd.nextDouble() * 1.2 }
+            minOf(pastPapers, 8) * 1.5 - (if (id in seen) 3.0 else 0.0) + jitter.getOrPut(id) { rnd.nextDouble() * 1.2 }
         fun cand(id: String, note: String?, pastPapers: Int) = PickCandidate(id, bank.topicOfNote(note), id in seen, score(id, note, pastPapers))
         val out = mutableListOf<PickSlot>()
         templatePaper.mcqs.groupBy { bank.unitOfNote(it.noteId ?: it.moduleId) }.forEach { (unit, qs) ->

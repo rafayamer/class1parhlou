@@ -246,6 +246,27 @@ fun ParhlouApp(
     }.associateBy { it.blueprint.id }
     val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint }
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
+    // "Make me a paper / notes" from Ask Ustaad: built from the course on the phone, never invented.
+    fun makePdf(action: pk.parhlou.student.domain.PdfAction): java.io.File? {
+        val chapters = subjects.flatMap { it.chapters }
+        val dir = java.io.File(context.cacheDir, "papers")
+        val name = action.label.lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-')
+        if (action.isNotes && action.scope != "exercise") {
+            val sections = pk.parhlou.student.domain.PdfContent.notes(chapters, pk.parhlou.student.domain.PdfContent.units(chapters, action))
+            return if (sections.isEmpty()) null else PaperPdf.notes(java.io.File(dir, "$name.pdf"), action.label, sections)
+        }
+        val (b, p) = when (action.scope) {
+            "exercise" -> pk.parhlou.student.domain.PdfContent.exercisePaper(chapters, action.exercise)
+            "unit" -> chapters.firstOrNull { it.number == action.unit }?.let { c ->
+                chapterBlueprints.firstOrNull { it.chapterId == c.id }?.let { b -> repo.paper(b.id)?.let { b to it } } }
+            "half" -> readyMocks.values.firstOrNull { it.scope == MockScope.HALF }?.let { it.blueprint to it.paper }
+            else -> template?.let { t -> repo.paper(t.id)?.let { tp ->
+                val slots = PaperPicker.slots(t, tp, bank, emptySet(), System.currentTimeMillis())
+                PaperPicker.build("full-${System.currentTimeMillis()}", "Full-book paper (2027 pattern)", t, tp, slots, PaperPicker.localPick(slots), bank, false)
+                    ?.let { it.blueprint to it.paper } } }
+        } ?: return null
+        return PaperPdf.write(java.io.File(dir, "$name.pdf"), b, p, withScheme = action.withAnswers || action.isNotes)
+    }
     val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
     // The plan teaches what the exam examines; sections the smart syllabus leaves out stay open as practice.
     val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
@@ -375,7 +396,8 @@ fun ParhlouApp(
                 profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
                 moduleOf = { repo.module(it) }, noteTitle = { noteTitles[it] },
                 onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") },
-                onMyUstaad = { nav.navigate(Routes.MY_USTAAD) })
+                onMyUstaad = { nav.navigate(Routes.MY_USTAAD) },
+                makePdf = { action -> withContext(Dispatchers.IO) { makePdf(action) } })
             }
         }
         composable(Routes.MY_USTAAD) {
@@ -593,7 +615,7 @@ fun ParhlouApp(
                     val seen = history.map { it.key }.filter { it.startsWith(ProgressStore.PAPER_PREFIX) }
                         .mapNotNull { paperOf(it.removePrefix(ProgressStore.PAPER_PREFIX)) }
                         .flatMap { p -> p.mcqs.map { it.id } + p.written.map { it.id } }.toSet()
-                    val slots = PaperPicker.slots(t, tPaper, bank, weakTopics().map { it.noteId }.toSet(), seen, System.currentTimeMillis())
+                    val slots = PaperPicker.slots(t, tPaper, bank, seen, System.currentTimeMillis())
                     val profile = StudentProfile.build(state, subjects, history, prefs, { noteTitles[it] }).summary()
                     val aiPick = if (ai.readsPhotos) ai.pickPaper(slots, profile) else null
                     val n = myPapers.size + 1

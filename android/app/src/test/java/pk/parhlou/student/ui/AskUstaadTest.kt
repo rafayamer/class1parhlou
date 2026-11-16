@@ -75,10 +75,14 @@ class AskUstaadTest {
         rule.onNodeWithTag("tutor-input").performTextInput("log x = 4.3561, find x")
         rule.onNodeWithContentDescription("Send").performClick()
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("ustaad-solution")).fetchSemanticsNodes().isNotEmpty() }
-        rule.onNodeWithText("From your textbook · Ex 2.3 Q4(v) · checked").assertExists()
+        rule.onNodeWithText("📘 From your book").assertExists()
+        // The answer shows first; the working opens on a tap.
+        rule.onNodeWithText("x = 22700").assertExists()
+        rule.onNodeWithText("Book answer: x = 2270").assertDoesNotExist()
+        rule.onNodeWithTag("ustaad-steps").performScrollTo().performClick()
         rule.onNodeWithText("Book answer: x = 2270").assertExists()
         rule.onNodeWithTag("video-abc123XYZ_-").performScrollTo().assertExists()
-        rule.onNodeWithText("Open the checked textbook solution").performScrollTo().performClick()
+        rule.onNodeWithText("Open in your book").performScrollTo().performClick()
         assertEquals("m-2-3" to 0, opened)
         assertEquals("Name: Ayesha.", ai.requests[0].profile)
         // A follow-up carries the conversation so far.
@@ -86,6 +90,24 @@ class AskUstaadTest {
         rule.waitUntil(5_000) { ai.requests.size == 2 }
         assertEquals(2, ai.requests[1].history.size)
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Sure, here is a simpler way.", substring = true)).fetchSemanticsNodes().isNotEmpty() }
+    }
+
+    @Test fun askingForAPaperGivesAPdfToOpen() {
+        val action = pk.parhlou.student.domain.PdfAction("paper_pdf", "unit", 2, "", false)
+        val ai = FakeAi(listOf(UstaadAnswer("CHAT", "Here's your paper.", action = action)))
+        var asked: pk.parhlou.student.domain.PdfAction? = null
+        rule.setContent { ParhlouTheme { TutorScreen(ai, setOf("pb-9-math"), null, examActive = false, onBack = {},
+            makePdf = { asked = it; null }) } }
+        rule.onNodeWithTag("start-paper").performClick()
+        rule.onNodeWithTag("tutor-input").performTextInput("2")
+        rule.onNodeWithContentDescription("Send").performClick()
+        assertEquals("Make me a PDF paper on Unit 2", ai.requests.single().message)
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("ustaad-pdf")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithText("Unit 2 paper").assertExists()
+        rule.onNodeWithTag("ustaad-pdf-open").performScrollTo().performClick()
+        rule.waitUntil(5_000) { asked != null }
+        assertEquals(action, asked)
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Couldn't make this one", substring = true)).fetchSemanticsNodes().isNotEmpty() }
     }
 
     @Test fun answersWithoutVideosOfferAYouTubeSearch() {

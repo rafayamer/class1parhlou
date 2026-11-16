@@ -164,6 +164,8 @@ fun TutorScreen(
     noteTitle: (String) -> String? = { null },
     onOpenSolution: (String, Int) -> Unit = { _, _ -> },
     onMyUstaad: () -> Unit = {},
+    /** Builds the paper or notes PDF a student asked for; null where PDFs can't be made. */
+    makePdf: (suspend (pk.parhlou.student.domain.PdfAction) -> java.io.File?)? = null,
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -171,7 +173,10 @@ fun TutorScreen(
     var chatId by rememberSaveable { mutableStateOf("c${System.currentTimeMillis()}") }
     var chats by remember { mutableStateOf<List<UstaadChat>>(emptyList()) }
     var showChats by rememberSaveable { mutableStateOf(false) }
-    var input by rememberSaveable { mutableStateOf("") }
+    var field by rememberSaveable(stateSaver = androidx.compose.ui.text.input.TextFieldValue.Saver) { mutableStateOf(androidx.compose.ui.text.input.TextFieldValue("")) }
+    val input = field.text
+    // Starter buttons fill the box with the cursor at the end, ready for the student to finish the sentence.
+    fun setInput(t: String) { field = androidx.compose.ui.text.input.TextFieldValue(t, androidx.compose.ui.text.TextRange(t.length)) }
     var photo by remember { mutableStateOf<String?>(null) }
     var thinking by remember { mutableStateOf(false) }
     var photoMenu by remember { mutableStateOf(false) }
@@ -258,13 +263,13 @@ fun TutorScreen(
                         }
                     }
                     OutlinedTextField(
-                        value = input, onValueChange = { input = it },
+                        value = field, onValueChange = { field = it },
                         placeholder = { Text(if (photo != null) "Add a note (optional)…" else "Ask Ustaad anything…") },
                         shape = RoundedCornerShape(24.dp), maxLines = 4,
                         modifier = Modifier.weight(1f).testTag("tutor-input"),
                     )
                     IconButton(
-                        onClick = { val t = input.trim(); val p = photo; input = ""; photo = null; send(t, p, t.ifBlank { "" }) },
+                        onClick = { val t = input.trim(); val p = photo; setInput(""); photo = null; send(t, p, t.ifBlank { "" }) },
                         enabled = (input.isNotBlank() || photo != null) && !thinking,
                         colors = IconButtonDefaults.filledIconButtonColors(
                             containerColor = MaterialTheme.colorScheme.primaryContainer, contentColor = MaterialTheme.colorScheme.onPrimaryContainer),
@@ -274,14 +279,13 @@ fun TutorScreen(
             }
         }),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-            StatusPill(ai.label, warning = false)
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.weight(1f))
-            TextButton(onClick = { showChats = !showChats }, modifier = Modifier.heightIn(min = 48.dp).testTag("ustaad-chats")) {
-                Icon(Icons.Filled.History, null); Text(" Chats")
+            IconButton(onClick = { showChats = !showChats }, modifier = Modifier.size(48.dp).testTag("ustaad-chats")) {
+                Icon(Icons.Filled.History, contentDescription = "Your chats")
             }
-            TextButton(onClick = { messages.clear(); chatId = "c${System.currentTimeMillis()}"; showChats = false }, modifier = Modifier.heightIn(min = 48.dp)) {
-                Icon(Icons.Filled.Add, null); Text(" New")
+            IconButton(onClick = { messages.clear(); chatId = "c${System.currentTimeMillis()}"; showChats = false }, modifier = Modifier.size(48.dp)) {
+                Icon(Icons.Filled.Add, contentDescription = "New chat")
             }
         }
 
@@ -318,23 +322,31 @@ fun TutorScreen(
             Box(Modifier.fillMaxWidth().padding(top = 8.dp), contentAlignment = Alignment.Center) { Ustad(120.dp, UstadMood.HAPPY) }
             Text("Assalam-o-Alaikum${if (studentName.isNotBlank()) ", $studentName" else ""}!", style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center)
-            Muted("Ask me anything, or snap a photo of a question and I'll solve it step by step, the way your exam wants it.")
-            pk.parhlou.student.ui.components.TapCard(onClick = { photoMenu = true }, modifier = Modifier.fillMaxWidth().testTag("ustaad-photo-start"), shape = RoundedCornerShape(20.dp)) {
-                Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                    Icon(Icons.Filled.PhotoCamera, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(32.dp))
-                    Column {
-                        Text("Snap a question", style = MaterialTheme.typography.titleMedium)
-                        Muted("From your book, a guess paper or a school test")
+            // Four big starts; everything else is just typing.
+            val starts = listOf(
+                Triple("📷", "Snap a question", "ustaad-photo-start") to { photoMenu = true },
+                Triple("💡", "Explain a topic", "start-explain") to { setInput("Explain ") },
+                Triple("📄", "Make me a paper", "start-paper") to { setInput("Make me a PDF paper on Unit ") },
+                Triple("❓", "Quiz me", "start-quiz") to { send("Quiz me on what I studied last") },
+            )
+            starts.chunked(2).forEach { row ->
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
+                    row.forEach { (t, go) ->
+                        pk.parhlou.student.ui.components.TapCard(onClick = go, modifier = Modifier.weight(1f).testTag(t.third), shape = RoundedCornerShape(20.dp)) {
+                            Column(Modifier.padding(14.dp).fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                                Text(t.first, style = MaterialTheme.typography.headlineSmall)
+                                Text(t.second, style = MaterialTheme.typography.titleSmall)
+                            }
+                        }
                     }
                 }
             }
-            starters.forEach { s -> AssistChip(onClick = { send(s) }, label = { Text(s) }, modifier = Modifier.heightIn(min = 48.dp)) }
-            TextButton(onClick = onMyUstaad, modifier = Modifier.heightIn(min = 48.dp)) { Text("What Ustaad knows about you →") }
+
         }
 
         messages.forEachIndexed { i, m ->
             if (m.role == "student") StudentBubble(m)
-            else m.answer?.let { a -> UstaadBubble(a, moduleOf, onOpenSolution, latest = i == messages.lastIndex && !thinking, onSuggestion = { send(it) }) }
+            else m.answer?.let { a -> UstaadBubble(a, moduleOf, onOpenSolution, latest = i == messages.lastIndex && !thinking, onSuggestion = { send(it) }, makePdf = makePdf) }
         }
         if (thinking) Thinking()
     }
@@ -367,11 +379,14 @@ private fun Thinking() {
 
 /** Ustaad's message: chat text, or the full Chegg-style answer card. */
 @Composable
-private fun UstaadBubble(a: UstaadAnswer, moduleOf: (String) -> Module?, onOpenSolution: (String, Int) -> Unit, latest: Boolean, onSuggestion: (String) -> Unit) {
+private fun UstaadBubble(a: UstaadAnswer, moduleOf: (String) -> Module?, onOpenSolution: (String, Int) -> Unit, latest: Boolean, onSuggestion: (String) -> Unit,
+                         makePdf: (suspend (pk.parhlou.student.domain.PdfAction) -> java.io.File?)? = null) {
+    val unsafe = a.safety.startsWith("UNSAFE")
     Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().testTag("ustaad-reply")) {
-        Ustad(36.dp, if (a.kind == "SOLUTION") UstadMood.CHEER else UstadMood.HAPPY)
+        Ustad(36.dp, when { unsafe -> UstadMood.CROSS; a.safety == "SELF_HARM" -> UstadMood.SAD; a.kind == "SOLUTION" -> UstadMood.CHEER; else -> UstadMood.HAPPY })
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             if (a.reply.isNotBlank()) RichText(a.reply)
+            if (a.action != null && makePdf != null) PdfCard(a.action, makePdf)
             if (a.kind == "SOLUTION" || a.questionAsRead.isNotBlank() && a.steps.isNotEmpty()) SolutionCardView(a, moduleOf, onOpenSolution)
             if (a.kind != "SOLUTION" && a.concept.isNotBlank()) Section("Understand the topic", a.concept)
             FigureSpec.parse(a.figure.takeIf { it.isNotBlank() }?.let { org.json.JSONObject(it) })?.let { FigureView(it) }
@@ -388,27 +403,35 @@ private fun UstaadBubble(a: UstaadAnswer, moduleOf: (String) -> Module?, onOpenS
 private fun SolutionCardView(a: UstaadAnswer, moduleOf: (String) -> Module?, onOpenSolution: (String, Int) -> Unit) {
     val bookSolution = a.book?.let { b -> moduleOf(b.moduleId)?.solutions?.getOrNull(b.index) }
     Sheet(Modifier.testTag("ustaad-solution")) {
-        if (a.book != null) StatusPill("From your textbook · ${a.book.source} · checked", warning = false)
-        else StatusPill("Worked by Ustaad. Check with your teacher if unsure", warning = true)
+        if (a.book != null) Text("📘 From your book", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
         if (a.topic.isNotBlank()) Text(a.topic, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
         if (a.questionAsRead.isNotBlank()) {
             Text("Question", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             MathText(a.questionAsRead, style = MaterialTheme.typography.titleMedium)
         }
         bookSolution?.figures?.forEach { BookFigure(it) }
-        a.steps.forEachIndexed { i, s -> AnswerStep(i + 1, s.text, s.why) }
+        // The answer first; the working folds open, so the card stays short.
+        var stepsOpen by remember(a) { mutableStateOf(a.finalAnswer.isBlank()) }
         if (a.finalAnswer.isNotBlank()) Surface(color = MaterialTheme.colorScheme.primaryContainer, shape = RoundedCornerShape(14.dp), modifier = Modifier.fillMaxWidth()) {
             Column(Modifier.padding(12.dp)) {
                 Text("Final answer", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
                 MathText(a.finalAnswer, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
             }
         }
-        if (bookSolution != null && bookSolution.bookAnswer.isNotBlank()) Muted("Book answer: ${bookSolution.bookAnswer}")
-        if (a.concept.isNotBlank()) Section("Understand the topic", a.concept)
-        if (a.examTip.isNotBlank()) Section("Exam tip", a.examTip)
-        if (a.checkQuestion.isNotBlank()) Section("Check yourself", a.checkQuestion)
+        if (a.steps.isNotEmpty()) {
+            if (stepsOpen) a.steps.forEachIndexed { i, s -> AnswerStep(i + 1, s.text, s.why) }
+            TextButton(onClick = { stepsOpen = !stepsOpen }, modifier = Modifier.heightIn(min = 48.dp).testTag("ustaad-steps")) {
+                Text(if (stepsOpen) "Hide steps" else "Show ${a.steps.size} steps")
+            }
+        }
+        if (stepsOpen) {
+            if (bookSolution != null && bookSolution.bookAnswer.isNotBlank()) Muted("Book answer: ${bookSolution.bookAnswer}")
+            if (a.concept.isNotBlank()) Section("💡 Idea", a.concept)
+            if (a.examTip.isNotBlank()) Section("🎯 Exam tip", a.examTip)
+            if (a.checkQuestion.isNotBlank()) Section("✍️ Try this", a.checkQuestion)
+        }
         if (a.book != null) TextButton(onClick = { onOpenSolution(a.book.moduleId, a.book.index) }, modifier = Modifier.heightIn(min = 48.dp)) {
-            Text("Open the checked textbook solution")
+            Text("Open in your book")
         }
     }
 }
@@ -530,4 +553,29 @@ private fun Line(text: String, modifier: Modifier) {
         }
         append(text.substring(i))
     }, style = MaterialTheme.typography.bodyLarge, modifier = modifier)
+}
+
+/** "Here's your paper": builds the PDF the student asked for and opens the share sheet to print, save or send it. */
+@Composable
+private fun PdfCard(action: pk.parhlou.student.domain.PdfAction, make: suspend (pk.parhlou.student.domain.PdfAction) -> java.io.File?) {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var state by remember(action) { mutableStateOf(0) } // 0 ready, 1 making, 2 failed
+    Sheet(Modifier.testTag("ustaad-pdf")) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text("📄", style = MaterialTheme.typography.headlineMedium)
+            Column(Modifier.weight(1f)) {
+                Text(action.label, style = MaterialTheme.typography.titleMedium)
+                Muted(if (state == 2) "Couldn't make this one. Try another unit or exercise." else "PDF · print or share")
+            }
+        }
+        pk.parhlou.student.ui.components.BigButton(if (state == 1) "Making…" else "Open PDF", enabled = state != 1, modifier = Modifier.testTag("ustaad-pdf-open"), onClick = {
+            state = 1
+            scope.launch {
+                val f = runCatching { make(action) }.getOrNull()
+                state = if (f == null) 2 else 0
+                if (f != null) runCatching { pk.parhlou.student.ui.shareFile(context, f, "application/pdf", action.label) }
+            }
+        })
+    }
 }

@@ -50,6 +50,10 @@ data class UstaadAnswer(
     val intent: String = "",
     /** A graph, number line, diagram, chart or table to draw, as the server checked it (JSON), or "". */
     val figure: String = "",
+    /** A paper or notes PDF the student asked for; the app builds it from the course. */
+    val action: pk.parhlou.student.domain.PdfAction? = null,
+    /** STUDY, OFF_TOPIC, UNSAFE_SEXUAL, UNSAFE_ILLEGAL or SELF_HARM, as the server judged the message. */
+    val safety: String = "",
 ) {
     fun toJson(): JSONObject = JSONObject().put("kind", kind).put("reply", reply).put("questionAsRead", questionAsRead).put("topic", topic)
         .put("steps", JSONArray(steps.map { JSONObject().put("text", it.text).put("why", it.why) }))
@@ -58,6 +62,7 @@ data class UstaadAnswer(
         .put("book", book?.let { JSONObject().put("moduleId", it.moduleId).put("index", it.index).put("source", it.source).put("section", it.section) } ?: JSONObject.NULL)
         .put("videos", JSONArray(videos.map { JSONObject().put("id", it.id).put("title", it.title).put("channel", it.channel).put("thumbnail", it.thumbnail) }))
         .put("intent", intent).put("figure", if (figure.isBlank()) JSONObject.NULL else JSONObject(figure))
+        .put("action", action?.toJson() ?: JSONObject.NULL).put("safety", safety)
 
     companion object {
         /** Reads a gateway reply (or a saved one). Null when it isn't a valid answer. */
@@ -76,7 +81,8 @@ data class UstaadAnswer(
             return UstaadAnswer(kind, reply, r.optString("questionAsRead"), r.optString("topic"), steps, r.optString("finalAnswer"),
                 r.optString("concept"), r.optString("examTip"), r.optString("checkQuestion"), list("suggestions"), r.optString("videoQuery"), book, videos,
                 r.optString("noteId"), r.optString("intent"),
-                r.optJSONObject("figure")?.takeIf { pk.parhlou.student.ui.components.FigureSpec.parse(it) != null }?.toString().orEmpty())
+                r.optJSONObject("figure")?.takeIf { pk.parhlou.student.ui.components.FigureSpec.parse(it) != null }?.toString().orEmpty(),
+                pk.parhlou.student.domain.PdfAction.parse(r.optJSONObject("action")), r.optString("safety"))
         }
     }
 }

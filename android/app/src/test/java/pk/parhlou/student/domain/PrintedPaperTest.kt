@@ -123,7 +123,7 @@ class PrintedPaperTest {
     )
 
     @Test fun slotsFollowTheBoardPatternAndShortlistTheBestFirst() {
-        val slots = PaperPicker.slots(board, template, bank, weakNotes = setOf("u2"), seen = setOf("x2"), seed = 1)
+        val slots = PaperPicker.slots(board, template, bank, seen = setOf("x2"), seed = 1)
         assertEquals(listOf("MCQ · Unit 1", "MCQ · Unit 2", "S1 · Unit 1", "L4-1 · Unit 1"), slots.map { it.slot })
         assertEquals(listOf(1, 1, 2, 1), slots.map { it.count })
         // Most repeated board question first; nothing from another unit; Q5 comes only from the other papers' Q5.
@@ -135,7 +135,7 @@ class PrintedPaperTest {
     }
 
     @Test fun aPickedPaperKeepsTheTemplatesPlacesAndIsSaved() {
-        val slots = PaperPicker.slots(board, template, bank, emptySet(), emptySet(), seed = 2)
+        val slots = PaperPicker.slots(board, template, bank, emptySet(), seed = 2)
         val pick = PaperPicker.localPick(slots)
         val all = pick.chosen.values.flatten()
         assertEquals(all.size, all.toSet().size)
@@ -149,7 +149,7 @@ class PrintedPaperTest {
     }
 
     @Test fun anAiPickIsUsedOnlyIfItFitsEverySlot() {
-        val slots = PaperPicker.slots(board, template, bank, emptySet(), emptySet(), seed = 3)
+        val slots = PaperPicker.slots(board, template, bank, emptySet(), seed = 3)
         fun reply(vararg slotPicks: Pair<String, List<String>>) = JSONObject().put("summary", "Chosen for you").put("slots",
             org.json.JSONArray(slotPicks.map { (s, ids) -> JSONObject().put("slot", s).put("picks", org.json.JSONArray(ids.map { JSONObject().put("id", it).put("why", "Came in 6 papers") })) }))
         val good = PaperPick.parse(reply("MCQ · Unit 1" to listOf("a1"), "MCQ · Unit 2" to listOf("b1"), "S1 · Unit 1" to listOf("x1", "x2"), "L4-1 · Unit 1" to listOf("BP-B-Q5")), slots)!!
