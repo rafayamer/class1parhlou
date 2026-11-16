@@ -67,6 +67,17 @@ class NavigationTest {
     }
 
     /** Scrolls [text] into view clear of the floating tab bar, like a student would, then taps it. */
+    private fun liftAboveBar(node: androidx.compose.ui.test.SemanticsNodeInteraction) {
+        val bounds = node.fetchSemanticsNode().boundsInRoot
+        val rootHeight = rule.onRoot().fetchSemanticsNode().boundsInRoot.height
+        val barTop = rootHeight - with(rule.density) { 120.dp.toPx() }
+        if (bounds.bottom > barTop) {
+            val lift = bounds.bottom - barTop
+            rule.onRoot().performTouchInput { swipe(Offset(centerX, centerY), Offset(centerX, centerY - lift), 400) }
+            rule.waitForIdle()
+        }
+    }
+
     private fun tapAboveBar(text: String) {
         val node = rule.onNodeWithText(text).performScrollTo()
         val bounds = node.fetchSemanticsNode().boundsInRoot
@@ -150,10 +161,13 @@ class NavigationTest {
         val other = (cal.clone() as java.util.Calendar).apply {
             add(java.util.Calendar.DAY_OF_MONTH, if (cal.get(java.util.Calendar.DAY_OF_WEEK) == cal.firstDayOfWeek) 1 else -1)
         }
-        rule.onNodeWithContentDescription(fmt.format(other.time)).performScrollTo().performTouchInput { click() }
+        // The calendar sits low on Home: lift it clear of the floating tab bar before tapping, as a finger would.
+        liftAboveBar(rule.onNodeWithContentDescription(fmt.format(other.time)).performScrollTo())
+        rule.onNodeWithContentDescription(fmt.format(other.time)).performTouchInput { click() }
         rule.waitUntil(3_000) { exists("No practice recorded on this day.") || exists("Coming up.") }
         rule.onNodeWithContentDescription(fmt.format(cal.time)).performTouchInput { click() }
-        rule.onNodeWithText("Open today's plan").performScrollTo().performTouchInput { click() }
+        liftAboveBar(rule.onNodeWithText("Open today's plan").performScrollTo())
+        rule.onNodeWithText("Open today's plan").performTouchInput { click() }
         rule.waitUntil(3_000) { exists("Today's plan") && !onHome() }
     }
 

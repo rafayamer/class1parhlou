@@ -49,6 +49,7 @@ class LocalStore(private val context: Context) {
         val synced = intPreferencesKey("synced_lines")
         val seenBuild = intPreferencesKey("whats_new_seen_build")
         val askedNotify = booleanPreferencesKey("asked_notifications")
+        val sound = booleanPreferencesKey("sound_on")
     }
 
     val onboarding: Flow<OnboardingState> = context.dataStore.data.map { it.toOnboarding() }
@@ -99,6 +100,10 @@ class LocalStore(private val context: Context) {
     /** Build whose "What's new" the student has seen (0 = never). */
     val seenBuild: Flow<Int> = context.dataStore.data.map { it[K.seenBuild] ?: 0 }
     suspend fun markSeen(build: Int) { context.dataStore.edit { it[K.seenBuild] = build } }
+
+    /** Sounds in guided sessions (on by default). */
+    val soundOn: Flow<Boolean> = context.dataStore.data.map { it[K.sound] ?: true }
+    suspend fun setSound(on: Boolean) { context.dataStore.edit { it[K.sound] = on } }
 
     /** Whether the app already asked for permission to post notifications (asked once). */
     val askedNotifications: Flow<Boolean> = context.dataStore.data.map { it[K.askedNotify] ?: false }

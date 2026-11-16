@@ -83,7 +83,7 @@ class AppFlowTest {
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
 
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Take your readiness check") }
-        rule.onNodeWithText("Continue").performClick()
+        rule.onNodeWithText("Continue").performScrollTo().performClick()
         // The chapter test is locked behind the readiness check; the full paper has no questions yet. Both are disabled.
         val locked = rule.onAllNodes(androidx.compose.ui.test.hasText("Locked until you pass the readiness check.", substring = true))
         assertEquals(1, locked.fetchSemanticsNodes().size)

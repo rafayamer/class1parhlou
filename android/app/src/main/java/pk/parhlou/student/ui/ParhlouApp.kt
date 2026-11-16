@@ -47,6 +47,11 @@ import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SolutionsFinderScreen
 import pk.parhlou.student.ui.screens.ExamKitScreen
+import pk.parhlou.student.ui.screens.todaysModule
+import pk.parhlou.student.ui.session.SessionScreen
+import pk.parhlou.student.domain.SessionBuilder
+import pk.parhlou.student.domain.Evidence
+import pk.parhlou.student.domain.Rewards
 import pk.parhlou.student.ui.screens.WhatsNew
 import pk.parhlou.student.ui.screens.WhatsNewScreen
 import pk.parhlou.student.ui.screens.SolutionDetailScreen
@@ -123,6 +128,8 @@ object Routes {
     const val SOLUTIONS = "solutions"
     const val KIT = "kit/{id}"
     const val WHATS_NEW = "whats-new"
+    /** A guided session; module "today" = today's pick. */
+    const val SESSION = "session/{module}?min={min}"
     const val SOLUTION = "solution/{module}/{index}"
 }
 
@@ -304,6 +311,8 @@ fun ParhlouApp(
                 onPlanner = { nav.navigate(Routes.PLANNER) },
                 onHistory = { nav.navigate(Routes.HISTORY) },
                 onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                onStartSession = { m, min -> nav.navigate("session/${m ?: "today"}?min=$min") },
+                onKit = { nav.navigate("kit/$it") },
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -369,6 +378,46 @@ fun ParhlouApp(
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
                 onSolutions = { nav.navigate(Routes.SOLUTIONS) })
         } }
+        composable(
+            Routes.SESSION,
+            arguments = listOf(androidx.navigation.navArgument("min") { type = androidx.navigation.NavType.IntType; defaultValue = 10 }),
+        ) { entry ->
+            val requested = entry.arguments?.getString("module").orEmpty()
+            val minutes = entry.arguments?.getInt("min") ?: 10
+            val module = remember(requested) {
+                if (requested == "today") todaysModule(subjects, progress) else repo.module(requested)
+            }
+            if (module == null) Missing(nav) else {
+                val chapter = subjects.flatMap { it.chapters }.firstOrNull { c -> c.modules.any { it.id == module.id } }
+                val noteId = remember(module.id) { subjectIds.flatMap { repo.notes(it) }.firstOrNull { it.moduleId == module.id }?.id }
+                val items = remember(module.id, minutes) {
+                    SessionBuilder.build(module, repo.moduleQuiz(module.id, 40), chapter?.kit, minutes,
+                        seed = System.currentTimeMillis() / 3_600_000, noteId = noteId)
+                }
+                val sound by store.soundOn.collectAsState(initial = true)
+                SessionScreen(
+                    title = "Unit ${chapter?.number ?: ""} · ${module.title}",
+                    items = items,
+                    soundOn = sound,
+                    onToggleSound = { scope.launch { store.setSound(!sound) } },
+                    onAnswered = { item, right ->
+                        item.noteId?.let { progress.add(it, if (right) Evidence.TopicCorrect else Evidence.TopicMissed) }
+                    },
+                    onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
+                    streakAfter = { r ->
+                        val s = Rewards.summary(progress.history(), state.minutesPerDay, System.currentTimeMillis())
+                        val days = if (s.studiedToday) s.streakDays else s.streakDays + 1
+                        "🔥 $days-day streak · ${s.xpToday + r.xp}/${s.dailyGoalXp} XP today"
+                    },
+                    onFinished = { r ->
+                        progress.add(module.id, Evidence.QuizCompleted(r.accuracy))
+                        progress.add("session", Evidence.SessionCompleted(r.xp))
+                        nav.popBackStack()
+                    },
+                    onClose = { nav.popBackStack() },
+                )
+            }
+        }
         composable(Routes.WHATS_NEW) {
             val context = LocalContext.current
             WhatsNewScreen(remember { WhatsNew.load(context) }, versionLabel, onDone = { nav.popBackStack() })

@@ -30,6 +30,8 @@ sealed interface Evidence {
     data object TopicMissed : Evidence
     /** The topic was answered correctly later (logged under key "topic:<noteId>"). */
     data object TopicCorrect : Evidence
+    /** A guided practice session finished, with the XP it earned (rewards only; never counts as verified progress). */
+    data class SessionCompleted(val xp: Int) : Evidence
 }
 
 /**

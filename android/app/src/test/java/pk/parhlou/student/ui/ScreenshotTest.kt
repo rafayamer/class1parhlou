@@ -53,7 +53,7 @@ class ScreenshotTest {
         save("1-home-$mode")
 
         // AI tutor conversation
-        rule.onNodeWithText("Ask a question").performClick()
+        rule.onNodeWithText("Ask a question").performScrollTo().performClick()
         save("2-tutor-$mode")
         rule.onNodeWithTag("tutor-input").performTextInput("How do I simplify root 50?")
         rule.onNodeWithContentDescription("Send").performClick()

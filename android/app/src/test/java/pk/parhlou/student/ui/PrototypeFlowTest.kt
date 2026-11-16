@@ -61,7 +61,7 @@ class PrototypeFlowTest {
     @Test
     fun tutorAnswersRefusesAndChecks() {
         launch()
-        rule.onNodeWithText("Ask a question").performClick()
+        rule.onNodeWithText("Ask a question").performScrollTo().performClick()
         rule.onNodeWithText("Demo tutor", substring = true).assertExists()
 
         rule.onNodeWithTag("tutor-input").performTextInput("How do I simplify root 50?")
@@ -97,7 +97,7 @@ class PrototypeFlowTest {
             scan.add(pk.parhlou.scanner.Photo(f, 30, 40, null))
         }
         launch()
-        rule.onNodeWithText("Continue").performClick()
+        rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
         rule.waitUntil(5_000) { exists("Invigilator on") }
@@ -132,7 +132,7 @@ class PrototypeFlowTest {
     @Test
     fun sitPaperThenCheckMasterAndInvigilatorReport() {
         launch()
-        rule.onNodeWithText("Continue").performClick() // Test Series: Continue opens the papers
+        rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("The invigilator records", substring = true).assertExists()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
@@ -179,7 +179,7 @@ class PrototypeFlowTest {
             store.saveFirstResult(paperId, mapOf("s3" to 0.0, "mcq" to 0.0, "total" to 0.0))
         }
         launch()
-        rule.onNodeWithText("Continue").performClick() // Test Series: Continue opens the papers
+        rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("See your result").performScrollTo().performClick()
         rule.waitUntil(10_000) { exists("Confirmed marks") }
@@ -198,7 +198,7 @@ class PrototypeFlowTest {
     fun tutorIsLockedWhileAPaperIsRunning() {
         runBlocking { store.appendExamEvent(paperId, ExamEventType.STARTED, System.currentTimeMillis()) }
         launch()
-        rule.onNodeWithText("Ask a question").performClick()
+        rule.onNodeWithText("Ask a question").performScrollTo().performClick()
         rule.onNodeWithText("Tutor locked").assertExists()
         rule.onNodeWithTag("tutor-input").assertIsNotEnabled()
     }

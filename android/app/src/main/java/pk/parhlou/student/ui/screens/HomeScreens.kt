@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.filled.PlayCircle
 import androidx.compose.material.icons.filled.SmartToy
 import androidx.compose.material3.Button
+import androidx.compose.ui.platform.testTag
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -146,6 +147,9 @@ fun HomeScreen(
     onScan: () -> Unit = {},
     /** Step-by-step solutions of every textbook question. */
     onSolutions: () -> Unit = onSubjects,
+    /** Opens a guided session: a section id (null = today's pick) and its length in minutes. */
+    onStartSession: (String?, Int) -> Unit = { _, _ -> },
+    onKit: (String) -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -180,16 +184,8 @@ fun HomeScreen(
             }
         }
 
-        Text(
-            buildAnnotatedString {
-                append("Ready to\n")
-                withStyle(SpanStyle(color = MaterialTheme.colorScheme.onSurfaceVariant)) { append("study ") }
-                append("today?")
-            },
-            style = MaterialTheme.typography.displaySmall,
-            modifier = Modifier.appear(1),
-        )
-
+        val rewards = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis())
+        RewardBar(rewards, Modifier.appear(1))
         // Quick actions: tutor, book, scanner
         Row(Modifier.appear(2), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
             Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
@@ -200,6 +196,37 @@ fun HomeScreen(
             QuickIcon(Icons.AutoMirrored.Filled.MenuBook, "Open my book", onSubjects)
             QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", onScan)
         }
+
+        val today = todaysModule(subjects, progress)
+        if (today != null) Card(
+            shape = RoundedCornerShape(28.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+            modifier = Modifier.appear(1).fillMaxWidth(),
+        ) {
+            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                pk.parhlou.student.ui.components.UstadSays(
+                    when {
+                        rewards.goalMet -> "Daily goal done. Shabash! One more session keeps it fresh: ${today.title}."
+                        rewards.streakDays >= 2 && !rewards.studiedToday -> "${rewards.streakDays}-day streak! Let's keep it alive with ${today.title}."
+                        rewards.studiedToday -> "Nice work today. Next up: ${today.title}."
+                        else -> "Assalam-o-Alaikum! Today we practise ${today.title}. One question at a time."
+                    },
+                )
+                Button(
+                    onClick = { onStartSession(null, onboarding.minutesPerDay) },
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("start-session"),
+                ) { Text("Start today's session", style = MaterialTheme.typography.titleMedium) }
+                androidx.compose.material3.OutlinedButton(
+                    onClick = { onStartSession(null, 5) },
+                    shape = RoundedCornerShape(16.dp),
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("busy-day"),
+                ) { Text("Busy day? 5-minute session") }
+            }
+        }
+
+
+        LearningPath(subjects, progress, today?.id, onStart = { onStartSession(it, onboarding.minutesPerDay) }, onKit = onKit)
 
         // Hero: the one thing to do now, with assessed progress
         Card(
@@ -247,6 +274,7 @@ fun HomeScreen(
             Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
             Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
         }
+
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("Today's tasks", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
