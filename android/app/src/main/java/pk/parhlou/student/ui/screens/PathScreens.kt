@@ -106,10 +106,10 @@ private fun Chip(icon: String, value: String, label: String, color: Color, descr
  * each ring fills to 5 levels as the section is mastered. Any step can be opened.
  */
 @Composable
-fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: String?, onStart: (String) -> Unit, onKit: (String) -> Unit) {
+fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: String?, onStart: (String) -> Unit, onKit: (String) -> Unit, showAllDefault: Boolean = false) {
     val chapters = subjects.flatMap { it.chapters }
     val currentChapter = chapters.firstOrNull { c -> c.modules.any { it.id == current } }?.id
-    var showAll by rememberSaveable { mutableStateOf(false) }
+    var showAll by rememberSaveable { mutableStateOf(showAllDefault) }
     val shown = if (showAll) chapters else {
         val i = chapters.indexOfFirst { it.id == currentChapter }.coerceAtLeast(0)
         chapters.drop(i).take(1)

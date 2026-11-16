@@ -1,7 +1,7 @@
 // Maps an app request to a Luna task. The app sends ids and the student's own text only;
 // questions, answer keys and rubrics are looked up here, on the server.
 import { runExaminer, type PaperReportTask, type PickPaperTask, type ReadScriptTask } from "./examiner.ts";
-import { runTask, type BookRef, type Fetch, type Task, type Turn, type UstaadReply, type Usage, type Video } from "./core.ts";
+import { SAFETY_REPLIES, runTask, type BookRef, type Fetch, type Task, type Turn, type UstaadReply, type Usage, type Video } from "./core.ts";
 
 export interface Content { course: any; subjectId: string; notes: any[]; written: any[]; mcqs: any[] }
 export interface Limits { maxImages: number; maxImageChars: number; maxTextChars: number }
@@ -144,7 +144,11 @@ export function bookMatch(content: Content, text: string): (BookRef & { moduleId
   return best && best.score >= 0.72 ? best : null;
 }
 
-export interface Extras { videos?: (query: string) => Promise<Video[]>; photoQuotaLeft?: number }
+export interface Extras {
+  videos?: (query: string) => Promise<Video[]>; photoQuotaLeft?: number;
+  /** Records a safety flag for the owner (category, the student's message). */
+  flag?: (category: string, message: string) => Promise<void>;
+}
 
 export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey: string, quotaLeft: number, extras: Extras = {}): Promise<Outcome> {
   const task = toTask(req, content);
@@ -254,6 +258,14 @@ async function ustaad(task: Extract<Task, { task: "ustaad" }>, content: Content,
   const run = await runTask(task, fetchFn, apiKey);
   add({ ...run.usage, task: usage?.task ?? "ustaad" });
   const result = run.result as UstaadReply;
+  // Unsafe messages: a fixed reply written by the server (never the model's), no videos, figures or PDFs, and a flag.
+  if (result.safety && result.safety !== "STUDY" && result.safety !== "OFF_TOPIC") {
+    Object.assign(result, { kind: "OFF_TOPIC", reply: SAFETY_REPLIES[result.safety], steps: [], finalAnswer: "", concept: "", examTip: "", checkQuestion: "",
+      suggestions: result.safety === "SELF_HARM" ? ["I'll talk to someone", "Help me with my studies"] : ["Help me with my studies"],
+      videoQuery: "", figure: null, action: null, questionAsRead: "" });
+    await extras.flag?.(result.safety, task.questionAsRead ?? task.message);
+    return { status: 200, body: { result, model: run.usage.model, promptVersion: run.usage.promptVersion }, usage: { ...usage!, ok: run.usage.ok } };
+  }
   if (match && (result.kind === "SOLUTION" || result.kind === "CHAT")) {
     result.book = { source: match.source, section: match.section, moduleId: match.moduleId, index: match.index } as any;
     if (!result.topic) result.topic = match.section;

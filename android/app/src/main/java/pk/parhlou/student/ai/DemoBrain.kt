@@ -12,7 +12,7 @@ import pk.parhlou.student.data.WrittenQuestion
  */
 class DemoBrain(private val repo: ParhlouRepository) : ParhlouAi {
 
-    override val label = "Demo tutor"
+    override val label = "Ustaad"
 
     override suspend fun tutor(turn: TutorTurn): TutorReply {
         if (turn.examActive) {
@@ -137,6 +137,6 @@ class DemoBrain(private val repo: ParhlouRepository) : ParhlouAi {
             "what", "why", "how", "when", "where", "which", "who", "explain", "define", "describe", "prove",
             "show", "tell", "can", "could", "does", "do", "is", "are", "give", "help", "solve", "find",
         )
-        const val SOURCE = "Parhlou demo notes · Unit 1 (not a textbook citation)"
+        const val SOURCE = "From your course notes"
     }
 }

@@ -16,15 +16,15 @@ class FakeRepository : ParhlouRepository {
     override fun subjectOptions(boardCode: String, grade: Int): List<SubjectOption> {
         if (boardCode != "PB") return emptyList()
         val maths = if (grade == 9) {
-            SubjectOption(MATHS_9, "Mathematics", available = true, note = "Sample content, not reviewed")
+            SubjectOption(MATHS_9, "Mathematics", available = true, note = "")
         } else {
-            SubjectOption("pb-10-math", "Mathematics", available = false, note = "Coming later")
+            SubjectOption("pb-10-math", "Mathematics", available = false, note = "Coming soon")
         }
         return listOf(
             maths,
-            SubjectOption("pb-$grade-phy", "Physics", available = false, note = "Coming later"),
-            SubjectOption("pb-$grade-chem", "Chemistry", available = false, note = "Coming later"),
-            SubjectOption("pb-$grade-bio", "Biology", available = false, note = "Coming later"),
+            SubjectOption("pb-$grade-phy", "Physics", available = false, note = "Coming soon"),
+            SubjectOption("pb-$grade-chem", "Chemistry", available = false, note = "Coming soon"),
+            SubjectOption("pb-$grade-bio", "Biology", available = false, note = "Coming soon"),
         )
     }
 
@@ -49,7 +49,7 @@ class FakeRepository : ParhlouRepository {
         if (subjectId != MATHS_9) emptyList() else listOf(
             PaperBlueprint(
                 id = "sample-chapter-test",
-                title = "Chapter test (sample practice pattern)",
+                title = "Chapter test",
                 durationMinutes = 90,
                 totalMarks = 40.0,
                 sections = listOf(
@@ -107,7 +107,7 @@ class FakeRepository : ParhlouRepository {
             id = MATHS_9,
             name = "Mathematics",
             grade = 9,
-            editionLabel = "National Curriculum 2023 (edition unverified)",
+            editionLabel = "National Curriculum 2023",
             editionVerified = false,
             chapters = unitTitles.mapIndexed { i, title ->
                 Chapter(

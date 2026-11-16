@@ -386,3 +386,73 @@ test("paper_report: weak topics must be the paper's own; numbers come from the a
   const empty: any = await handleReq({ task: "paper_report", facts: "" }, content, fakeFetch([]), "k", 10);
   assert.equal(empty.status, 400);
 });
+
+// ── Credits, safety, PDF requests, memory ─────────────────────────────────────────────────────────────────────────
+import { creditBalance, needsMonthlyGrant, priceOf, whatsLeft, grantExpiry, DEFAULT_PRICES } from "./credits.ts";
+
+test("credits: oldest grant is spent first, unused credits carry over, and expire after 4 months", () => {
+  const jan = "2027-01-01T00:00:00Z", feb = "2027-02-01T00:00:00Z";
+  const rows: any[] = [
+    { kind: "grant", amount: 1000, created_at: jan, expires_at: grantExpiry(new Date(jan), 4) },
+    { kind: "spend", amount: 300, created_at: "2027-01-20T00:00:00Z", expires_at: null },
+    { kind: "grant", amount: 1000, created_at: feb, expires_at: grantExpiry(new Date(feb), 4) },
+    { kind: "spend", amount: 900, created_at: "2027-02-10T00:00:00Z", expires_at: null },  // 700 from January's, 200 from February's
+  ];
+  assert.equal(creditBalance(rows, new Date("2027-02-15T00:00:00Z")).balance, 800);
+  // January's grant is used up anyway; in June February's grant (800 left) has expired too.
+  assert.equal(creditBalance(rows, new Date("2027-06-02T00:00:00Z")).balance, 0);
+  // Unused credits carry over: two untouched grants add up while both are valid.
+  const two: any[] = [rows[0], rows[2]];
+  assert.equal(creditBalance(two, new Date("2027-03-01T00:00:00Z")).balance, 2000);
+  assert.equal(creditBalance(two, new Date("2027-05-02T00:00:00Z")).balance, 1000); // January's expired on 1 May
+  assert.equal(creditBalance(rows, new Date("2027-02-15T00:00:00Z")).resetsOn, "2027-03-01");
+  assert.equal(needsMonthlyGrant(rows, new Date("2027-02-15T00:00:00Z")), false);
+  assert.equal(needsMonthlyGrant(rows, new Date("2027-03-01T08:00:00Z")), true);
+});
+
+test("credits: each request has a price by what it does; leftovers are shown as things you can still do", () => {
+  assert.deepEqual(priceOf({ task: "ustaad", image: "data:..." }, DEFAULT_PRICES), { task: "photo", credits: 3 });
+  assert.deepEqual(priceOf({ task: "ustaad" }, DEFAULT_PRICES), { task: "chat", credits: 1 });
+  assert.deepEqual(priceOf({ task: "mark_written", handwritten: true }, DEFAULT_PRICES), { task: "mark_handwritten", credits: 2 });
+  assert.deepEqual(priceOf({ task: "videos" }, DEFAULT_PRICES), { task: "videos", credits: 0 });
+  assert.deepEqual(priceOf({ task: "mark_mcqs" }, DEFAULT_PRICES).credits, 0);
+  const left = whatsLeft(420, DEFAULT_PRICES);
+  assert.equal(left.chat, 420);
+  assert.equal(left.photo, 140);
+  assert.equal(left.videos, undefined);
+});
+
+test("safety: unsafe messages get the server's own reply, are flagged, and get no help; off-topic is nudged back", async () => {
+  const flags: any[] = [];
+  const out: any = await handleReq({ task: "ustaad", subjectIds: ["pb-9-math"], message: "something illegal", history: [] }, bookContent,
+    fakeFetch([ustaadReply({ kind: "CHAT", safety: "UNSAFE_ILLEGAL", reply: "model text that must not be shown" })]), "k", 10,
+    { flag: async (c, m) => { flags.push([c, m]); } });
+  assert.match(out.body.result.reply, /recorded and Parhlou's safety team can see it/);
+  assert.doesNotMatch(out.body.result.reply, /model text/);
+  assert.deepEqual(out.body.result.steps, []);
+  assert.deepEqual(flags, [["UNSAFE_ILLEGAL", "something illegal"]]);
+  const harm: any = await handleReq({ task: "ustaad", subjectIds: ["pb-9-math"], message: "x", history: [] }, bookContent,
+    fakeFetch([ustaadReply({ kind: "CHAT", safety: "SELF_HARM" })]), "k", 10, { flag: async () => {} });
+  assert.match(harm.body.result.reply, /0311-7786264/);
+  const off: any = await handleReq({ task: "ustaad", subjectIds: ["pb-9-math"], message: "who will win the match?", history: [] }, bookContent,
+    fakeFetch([ustaadReply({ kind: "OFF_TOPIC", safety: "OFF_TOPIC", reply: "Let's get back to logs. Your exam is close!" })]), "k", 10, { flag: async () => { throw new Error("no flag for off-topic"); } });
+  assert.equal(off.body.result.reply, "Let's get back to logs. Your exam is close!");
+});
+
+test("PDF requests are used only when they name something the app can build", async () => {
+  const { toAction } = await import("./core.ts");
+  assert.deepEqual(toAction({ type: "paper_pdf", scope: "half", unit: 0, exercise: "", with_answers: true }),
+    { type: "paper_pdf", scope: "half", unit: 0, exercise: "", withAnswers: true });
+  assert.equal(toAction({ type: "paper_pdf", scope: "unit", unit: 0, exercise: "", with_answers: false }), null);
+  assert.equal(toAction({ type: "paper_pdf", scope: "exercise", unit: 3, exercise: "drop table", with_answers: false }), null);
+  assert.equal(toAction({ type: "none", scope: "none", unit: 0, exercise: "", with_answers: false }), null);
+  assert.equal(toAction({ type: "notes_pdf", scope: "exercise", unit: 3, exercise: "3.2", with_answers: false })?.exercise, "3.2");
+});
+
+test("memory: Ustaad's notes never keep contact details and stay short", async () => {
+  const { cleanMemory, updateMemory } = await import("./examiner.ts");
+  assert.equal(cleanMemory("Mail me at a.b@c.pk or 0321-1234567. Target 70/75."), "Mail me at [email removed] or [number removed]. Target 70/75.");
+  assert.equal(cleanMemory("x".repeat(3000)).length, 1500);
+  const out = await updateMemory("Shy in tests.", [{ role: "student", text: "I want an A+" }], fakeFetch([reply({ summary: "Wants an A+. Shy in tests." })]), "k");
+  assert.equal(out.summary, "Wants an A+. Shy in tests.");
+});

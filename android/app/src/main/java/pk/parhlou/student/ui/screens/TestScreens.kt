@@ -118,7 +118,7 @@ fun TestsScreen(
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text(b.title, style = MaterialTheme.typography.titleMedium)
                     Muted("${b.durationMinutes} minutes · ${fmt(b.totalMarks)} marks")
-                    StatusPill(if (b.official) "Official pattern" else "Practice pattern — not official")
+                    if (b.official) StatusPill("Board pattern", warning = false)
                     when {
                         !ready -> Muted("Not available yet: it needs checked questions for every unit.")
                         !readinessPassed -> Muted("Locked until you pass the readiness check.")
@@ -132,7 +132,7 @@ fun TestsScreen(
                 pk.parhlou.student.ui.components.TapCard(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text("${m.scope.label} (Units ${m.chapters.first().number}–${m.chapters.last().number})", style = MaterialTheme.typography.titleMedium)
-                        StatusPill("Practice pattern — not official")
+                        
                         Muted(
                             if (m.missing.isNotEmpty()) "Needs questions for ${unitRanges(m.missing.map { it.number })} first."
                             else "Needs more questions of the right marks before it can be built.",

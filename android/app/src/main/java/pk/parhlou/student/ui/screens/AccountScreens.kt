@@ -115,7 +115,7 @@ fun HistoryScreen(history: List<pk.parhlou.student.domain.LoggedEvidence>, title
         when (val ev = e.evidence) {
             is pk.parhlou.student.domain.Evidence.QuizCompleted -> e to "Quiz · ${titleOf(e.key)} · first try ${ev.firstTryPercent}%"
             is pk.parhlou.student.domain.Evidence.DemoCheckedExam ->
-                if (e.key.startsWith(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX)) e to "Paper · ${titleOf(e.key)} · ${ev.percent}% (demo-checked)" else null
+                if (e.key.startsWith(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX)) e to "Paper · ${titleOf(e.key)} · ${ev.percent}%" else null
             is pk.parhlou.student.domain.Evidence.ExamMarked ->
                 if (e.key.startsWith(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX)) e to "Paper · ${titleOf(e.key)} · ${ev.percent}% (AI-marked)" else null
             pk.parhlou.student.domain.Evidence.WrittenSubmitted -> e to "Written practice · ${titleOf(e.key)}"

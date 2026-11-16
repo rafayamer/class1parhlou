@@ -9,7 +9,7 @@ enum class LearningState(val label: String) {
     PENDING_REVIEW("Marking pending"),
     REPAIR_REQUIRED("Needs repair"),
     /** Marked by the on-phone demo checker: useful practice, but not verified evidence. */
-    DEMO_CHECKED("Demo-checked"),
+    DEMO_CHECKED("Practised"),
     ASSESSED("Assessed"),
     MASTERED("Mastered"),
 }

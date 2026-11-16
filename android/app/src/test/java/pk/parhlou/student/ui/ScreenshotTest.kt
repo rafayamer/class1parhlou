@@ -64,7 +64,7 @@ class ScreenshotTest {
         rule.onNodeWithContentDescription("Back").performClick()
 
         // Lesson module and quiz
-        rule.onNodeWithText("Book").performClick()
+        rule.onNodeWithText("Books").performClick()
         rule.onNodeWithText("Mathematics · Class 9").performClick(); save("4-units-$mode")
         rule.onNodeWithText("1. Rational and irrational numbers").performClick()
         rule.onNodeWithText("2 Quiz").performClick()

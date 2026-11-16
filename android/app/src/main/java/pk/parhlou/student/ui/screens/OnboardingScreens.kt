@@ -139,7 +139,7 @@ private fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChan
     repo.boards().forEach { b ->
         ChoiceCard(
             title = b.name,
-            subtitle = if (b.available) null else "Coming later",
+            subtitle = if (b.available) null else "Coming soon",
             selected = state.boardCode == b.code,
             enabled = b.available,
             onClick = { onChange(state.copy(boardCode = b.code, subjectIds = emptySet())) },
@@ -163,7 +163,7 @@ private fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChan
                 ChoiceCard("English", selected = state.medium == "English", onClick = { onChange(state.copy(medium = "English")) })
             }
             Column(Modifier.weight(1f)) {
-                ChoiceCard("Urdu", subtitle = "Coming later", selected = false, enabled = false, onClick = {})
+                ChoiceCard("Urdu", subtitle = "Coming soon", selected = false, enabled = false, onClick = {})
             }
         }
     }

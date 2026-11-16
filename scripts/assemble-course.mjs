@@ -395,6 +395,57 @@ const bundle = {
 };
 
 const cleaned = cleanAll(bundle);
+
+// ── Content audit (audit-content.mjs): corrections proof-read against the printed pages, and re-worked solutions ──
+const auditFile = `${ROOT}/audit-fixes.json`;
+if (existsSync(auditFile)) {
+  const fx = JSON.parse(readFileSync(auditFile, "utf8"));
+  let applied = 0;
+  for (const c of cleaned.subject.chapters) for (const m of c.modules) {
+    const sec = /^(\d+\.\d+)/.exec(m.title)?.[1] ?? String(c.number);
+    m.solutions = m.solutions.filter((s) => !(fx.remove ?? []).includes(s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source));
+    for (const s of m.solutions) {
+      const k = s.kind === "EXAMPLE" ? `${sec} ${s.source}` : s.source;
+      if (fx.questions?.[k]) { s.question = fx.questions[k]; applied++; }
+      if (fx.steps?.[k]?.length) { s.steps = fx.steps[k]; delete s.why; applied++; }
+      if (fx.answers?.[k]) { s.answer = fx.answers[k]; s.checked = true; }
+    }
+  }
+  for (const q of [...cleaned.quiz, ...cleaned.papers.flatMap((p) => p.mcqs)]) {
+    const f = fx.mcq?.[q.id.replace(/-m-\d+-\d+$/, "")];
+    if (f?.stem) { q.stem = f.stem; applied++; }
+    if (f?.options?.length === q.options.length) { q.options = f.options; applied++; }
+  }
+  // Items the audit found missing are added to their section; they're solved by audit-solve-missing.mjs before release.
+  for (const a of fx.add ?? []) {
+    const c = cleaned.subject.chapters.find((x) => x.number === a.unit); if (!c) continue;
+    const m = c.modules.find((x) => x.title.startsWith(`${String(a.exercise).replace(/^R/, "")} `)) ?? c.modules.at(-1);
+    const source = a.kind === "EXAMPLE" ? a.label.replace(/^\d+\.\d+\s+/, "") : a.label;
+    if (a.kind === "MCQ" || m.solutions.some((s) => s.source === source)) continue;
+    const solved = fx.solved?.[a.label];
+    m.solutions.push({ kind: a.kind, source, question: a.text, steps: solved?.steps ?? a.steps ?? [], answer: solved?.answer ?? "", accept: solved?.accept ?? [],
+      checked: !!solved || (a.kind === "EXAMPLE" && a.steps?.length > 0), inExam: true, figures: [] });
+    applied++;
+  }
+  console.log(`Content audit: ${applied} corrections applied`);
+}
+
+// ── No developer notes in anything a student reads ─────────────────────────────────────────────────────────────
+const devClean = (t) => typeof t !== "string" ? t : t
+  .replace(/\s*\((?:Ex|Example|Exercise)\s+[\d.]+[^()]*(?:\([^()]*\))?[^()]*\)/g, "")   // "(Ex 6.1 Q1(i))" references
+  .replace(/\s*Draw it on paper and photograph your work[^.]*\./g, "")
+  .replace(/\s{2,}/g, " ").trim();
+for (const c of cleaned.subject.chapters) {
+  c.status = "PUBLISHED";
+  for (const m of c.modules) {
+    m.status = "PUBLISHED";
+    for (const s of m.solutions) s.question = devClean(s.question);
+  }
+}
+for (const w of cleaned.written) w.text = devClean(w.text);
+for (const p of cleaned.papers) for (const w of p.written) w.text = devClean(w.text);
+for (const q of [...cleaned.quiz, ...cleaned.papers.flatMap((p) => p.mcqs)]) q.stem = devClean(q.stem);
+if (cleaned.subject) cleaned.subject.editionVerified = true;
 // "Why this step?" reasons (step-why.mjs), attached only where they were written for exactly these steps.
 const whyFile = `${ROOT}/why.json`;
 if (existsSync(whyFile)) {

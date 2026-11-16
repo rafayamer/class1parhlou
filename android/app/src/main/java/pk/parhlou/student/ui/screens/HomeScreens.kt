@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material.icons.filled.Forum
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.automirrored.filled.VolumeOff
@@ -168,114 +170,113 @@ fun HomeScreen(
         }
     }
 
+    val rewards = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis())
+    val yesterday = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis() - 86_400_000L)
+    val today = todaysModule(subjects, progress)
+    Box(Modifier.fillMaxSize()) {
     ParhlouScreen(title = null) {
         UpdateBanner()
-        // Greeting row
+        // Ustaad greets the student; his mood follows the streak.
         Row(Modifier.appear(0).fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            CircleIcon(Icons.Filled.Person, size = 44.dp)
+            pk.parhlou.student.ui.components.Ustad(56.dp, pk.parhlou.student.ui.components.moodFor(rewards))
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Text(if (onboarding.name.isBlank()) "Hello!" else "Hello, ${onboarding.name}!", style = MaterialTheme.typography.titleLarge)
-                Text("Ready for today's maths?", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(if (onboarding.name.isBlank()) "Assalam-o-Alaikum!" else "Assalam-o-Alaikum, ${onboarding.name}!", style = MaterialTheme.typography.titleLarge)
+                Text(pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            pk.parhlou.student.ui.components.RoundIconButton(Icons.Filled.Notifications, "Notifications", { onPlaceholder("profile") })
         }
-
-        val rewards = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis())
+        // Goals: streak, today's XP against the goal, level; and how yesterday's goal went.
         RewardBar(rewards, Modifier.appear(1), onClick = onProgress)
-        val examIn = subjects.firstOrNull()?.let { s -> pk.parhlou.student.domain.ExamCountdown.daysLeft(s.examDate)?.let { it to s.examName } }
-        if (examIn != null) Text("📅 About ${examIn.first} days to your ${examIn.second.ifBlank { "board exam" }}",
-            style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("home-countdown"))
-        // Quick actions: tutor, book, scanner
-        Row(Modifier.appear(2).fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            QuickTile(Icons.Filled.Forum, "Ask Ustaad", null, onTutor, Modifier.weight(1f))
-            QuickTile(Icons.AutoMirrored.Filled.MenuBook, "My book", "Open my book", onSubjects, Modifier.weight(1f))
-            QuickTile(Icons.Filled.PhotoCamera, "Scan", "Scan answer sheets", onScan, Modifier.weight(1f))
+        if (yesterday.xpToday > 0 || yesterday.goalMet) Text(
+            if (yesterday.goalMet) "✅ Yesterday's goal done (${yesterday.xpToday} XP)" else "Yesterday: ${yesterday.xpToday} of ${yesterday.dailyGoalXp} XP",
+            style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+
+        // Today's session.
+        if (today != null) Sheet(Modifier.appear(2)) {
+            Text("Today", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            Text(today.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), style = MaterialTheme.typography.titleMedium)
+            BigButton("Start today's session", onClick = { onStartSession(null, onboarding.minutesPerDay) }, modifier = Modifier.testTag("start-session"))
+            TextButton(onClick = { onStartSession(null, 5) }, modifier = Modifier.heightIn(min = 44.dp).testTag("busy-day")) { Text("Busy day? 5 minutes") }
         }
 
-        val today = todaysModule(subjects, progress)
-        if (today != null) pk.parhlou.student.ui.components.Chunky(
-            modifier = Modifier.appear(1).fillMaxWidth(), shape = RoundedCornerShape(24.dp),
-        ) {
-            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                pk.parhlou.student.ui.components.UstadSays(
-                    when {
-                        rewards.goalMet -> "Daily goal done. Shabash! One more session keeps it fresh: ${today.title}."
-                        rewards.streakDays >= 2 && !rewards.studiedToday -> "${rewards.streakDays}-day streak! Let's keep it alive with ${today.title}."
-                        rewards.studiedToday -> "Nice work today. Next up: ${today.title}."
-                        else -> "Assalam-o-Alaikum! Today we practise ${today.title}. One question at a time."
-                    },
-                )
-                BigButton("Start today's session", onClick = { onStartSession(null, onboarding.minutesPerDay) }, modifier = Modifier.testTag("start-session"))
-                SecondaryButton("Busy day? 5-minute session", onClick = { onStartSession(null, 5) }, modifier = Modifier.testTag("busy-day"))
-            }
-        }
-
-
-        LearningPath(subjects, progress, today?.id, onStart = { onStartSession(it, onboarding.minutesPerDay) }, onKit = onKit)
-
-        // Hero: the one thing to do now, with assessed progress
-        pk.parhlou.student.ui.components.Chunky(
-            modifier = Modifier.appear(3).fillMaxWidth(), shape = RoundedCornerShape(24.dp),
-            colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(), contentPadding = PaddingValues(20.dp),
-        ) {
-            Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        Text("Do this now", color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.75f),
-                            style = MaterialTheme.typography.labelMedium)
-                        Text(task.title, color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.titleLarge)
-                        Text(task.reason, color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.8f),
-                            style = MaterialTheme.typography.bodyMedium)
-                    }
-                    Spacer(Modifier.width(12.dp))
-                    ProgressRing(
-                        fraction = if (moduleIds.isEmpty()) 0f else assessed / moduleIds.size.toFloat(),
-                        label = "$assessed/${moduleIds.size}",
-                        description = "$assessed of ${moduleIds.size} modules assessed",
-                        track = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.18f),
-                        progress = MaterialTheme.colorScheme.primaryContainer,
-                        textColor = MaterialTheme.colorScheme.onPrimary,
-                    )
-                }
-                pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
-            }
-        }
+        // Your journey: one card per subject (book).
+        Text("Your journey", style = MaterialTheme.typography.titleLarge)
+        subjects.forEach { s -> SubjectJourneyCard(s, progress, task, go, onSubjects) }
 
         Box(Modifier.appear(4)) {
-            WeekStrip(onboarding.studyDaysPerWeek, progress.history(), tasksToday = plan.size, onPlan = onPlanner, onHistory = onHistory)
-        }
-
-        Row(Modifier.appear(5), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Tile("Solutions", Icons.Filled.Lightbulb, onSolutions, Modifier.weight(1f))
-            Tile("Papers", Icons.Filled.Quiz, onTests, Modifier.weight(1f))
-            Tile("Journey", Icons.Filled.RocketLaunch, onJourney, Modifier.weight(1f))
-        }
-
-
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Today's tasks", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
-            androidx.compose.material3.TextButton(onClick = onPlanner) { Text("Full plan") }
-        }
-        if (plan.isEmpty()) {
-            TaskRow(Icons.Filled.PlayCircle, "Lesson", "${onboarding.minutesPerDay} min planned today", go)
-            TaskRow(Icons.AutoMirrored.Filled.MenuBook, "Read from your book", "Book references for each module", onSubjects)
-        } else plan.filterNot { it.target == (task as? NextTask.OpenModule)?.moduleId }.take(3).forEach { t ->
-            TaskRow(t.kind.icon(), t.title, t.reason, onClick = { onPlanTask(t) })
-        }
-
-        subjects.forEach { s ->
-            Sheet {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
-                    SampleBadge()
-                }
-                val ids = s.chapters.flatMap { c -> c.modules.map { it.id } }
-                Muted("${progress.assessedCount(ids)} verified · ${progress.demoCheckedCount(ids)} demo-checked · ${ids.size} modules available")
-                if (!s.editionVerified) Muted("Book edition not yet verified: ${s.editionLabel}")
+            val titles = remember(repo, subjects) {
+                val papers = subjects.flatMap { repo.blueprints(it.id) }.associate { it.id to it.title };
+                { key: String -> repo.module(key)?.title ?: papers[key.removePrefix(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX)] ?: "practice" }
             }
+            WeekStrip(onboarding.studyDaysPerWeek, progress.history(), tasksToday = plan.size, onPlan = onPlanner, onHistory = onHistory,
+                entries = studyEntries(progress.history(), titles))
         }
-        Spacer(Modifier.height(8.dp))
+        TextButton(onClick = onPlanner, modifier = Modifier.heightIn(min = 44.dp)) { Text("Full plan") }
+        Spacer(Modifier.height(64.dp))
+    }
+    // Ask Ustaad is always one tap away.
+    pk.parhlou.student.ui.components.Chunky(
+        modifier = Modifier.align(Alignment.BottomEnd).padding(end = 20.dp, bottom = pk.parhlou.student.ui.components.LocalBottomBarSpace.current + 16.dp)
+            .navigationBarsPadding(),
+        colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(), shape = RoundedCornerShape(28.dp), onClick = onTutor,
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 10.dp),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Icon(Icons.Filled.Forum, contentDescription = null, modifier = Modifier.size(22.dp))
+            Text("Ask Ustaad", style = MaterialTheme.typography.labelLarge)
+        }
+    }
+    }
+}
+
+/**
+ * One subject on Home: how much of its path is done, the marks the student is heading for, the weakest and strongest
+ * topic, and the next thing to do. Tapping the card opens the book.
+ */
+@Composable
+private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, task: NextTask, go: () -> Unit, onOpen: () -> Unit) {
+    val modules = s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { c to it } }
+    val levels = modules.map { (_, m) -> pk.parhlou.student.domain.Rewards.sectionLevel(progress.evidence(m.id)) }
+    val covered = if (modules.isEmpty()) 0 else levels.count { it >= 2 } * 100 / modules.size
+    // Expected marks: from paper results when there are any, else from how well each section is known.
+    val papers = progress.history().filter { it.key.startsWith(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX) }
+        .mapNotNull { (it.evidence as? pk.parhlou.student.domain.Evidence.DemoCheckedExam)?.percent ?: (it.evidence as? pk.parhlou.student.domain.Evidence.ExamMarked)?.percent }
+    val pct = if (papers.isNotEmpty()) papers.takeLast(3).average() else if (levels.isEmpty()) 0.0 else levels.average() / 5 * 100
+    val started = papers.isNotEmpty() || levels.any { it > 0 }
+    val ranked = modules.zip(levels).filter { it.second > 0 || papers.isNotEmpty() }
+    val weak = modules.zip(levels).minByOrNull { it.second }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
+    val strong = ranked.maxByOrNull { it.second }?.takeIf { it.second >= 2 }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
+    val examIn = pk.parhlou.student.domain.ExamCountdown.daysLeft(s.examDate)
+    pk.parhlou.student.ui.components.Chunky(modifier = Modifier.fillMaxWidth().testTag("journey-${s.id}"), shape = RoundedCornerShape(22.dp), onClick = onOpen) {
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Column(Modifier.weight(1f)) {
+                    Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium)
+                    if (examIn != null) Text("📅 $examIn days to the exam", style = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("home-countdown"))
+                }
+                ProgressRing(covered / 100f, "$covered%", "$covered% of the path done", MaterialTheme.colorScheme.surfaceVariant,
+                    MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onSurface, size = 64.dp)
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+                JourneyFact("🎯", if (started) "${(pct * 0.75).toInt().coerceIn(0, 75)}/75" else "—", "expected", Modifier.weight(1f))
+                JourneyFact("💪", strong ?: "—", "strong", Modifier.weight(1f))
+                JourneyFact("⚠️", weak ?: "—", "work on", Modifier.weight(1f))
+            }
+            Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
+            Text(task.title, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
+            pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
+        }
+    }
+}
+
+@Composable
+private fun JourneyFact(icon: String, value: String, label: String, modifier: Modifier) {
+    Column(modifier.clip(RoundedCornerShape(14.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(8.dp),
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        Text("$icon $value", style = MaterialTheme.typography.labelLarge, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+            overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+        Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
 
@@ -311,7 +312,10 @@ private fun WeekStrip(
     tasksToday: Int,
     onPlan: () -> Unit,
     onHistory: () -> Unit,
+    entries: List<StudyEntry> = emptyList(),
 ) {
+    var calendarDay by remember { mutableStateOf<Long?>(null) }
+    calendarDay?.let { StudyCalendarSheet(entries, it, onDismiss = { calendarDay = null }) }
     // Seven days starting on the week's first day; tap a day to see what was done (or what's planned).
     val days = remember {
         val cal = java.util.Calendar.getInstance().apply {
@@ -332,7 +336,7 @@ private fun WeekStrip(
     Sheet {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("This week", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
-            Muted("$studyDays study days planned")
+            TextButton(onClick = { calendarDay = System.currentTimeMillis() }, modifier = Modifier.heightIn(min = 44.dp).testTag("open-calendar")) { Text("📅 Calendar") }
         }
         Row(Modifier.fillMaxWidth().selectableGroup(), horizontalArrangement = Arrangement.SpaceBetween) {
             days.forEachIndexed { i, start ->
@@ -340,7 +344,7 @@ private fun WeekStrip(
                 val isSelected = i == selected
                 Column(
                     Modifier.clip(RoundedCornerShape(14.dp))
-                        .selectable(selected = isSelected, role = Role.Tab) { selected = i }
+                        .selectable(selected = isSelected, role = Role.Tab) { selected = i; calendarDay = start }
                         .padding(horizontal = 4.dp, vertical = 2.dp)
                         .semantics { contentDescription = longName.format(java.util.Date(start)) },
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -549,16 +553,26 @@ fun SubjectsScreen(
 }
 
 @Composable
-fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (String) -> Unit, onBack: () -> Unit, onOpenKit: (String) -> Unit = {}) {
+fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (String) -> Unit, onBack: () -> Unit, onOpenKit: (String) -> Unit = {},
+                  onStartSession: (String) -> Unit = onOpenModule, onSolutions: () -> Unit = {}) {
     // Current chapter = first one with modules not yet assessed; it starts expanded (PRD §6).
     val current = subject.chapters.firstOrNull { c ->
         c.modules.any { progress.state(it.id) !in setOf(LearningState.ASSESSED, LearningState.MASTERED) }
     } ?: subject.chapters.first()
     var expanded by remember { mutableStateOf(setOf(current.id)) }
 
+    // A book has one place to learn: its path. "Units" lists every section; "Solutions" finds any textbook question.
+    var view by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(0) }
     ParhlouScreen("${subject.name} ${subject.grade}", onBack = onBack) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Muted(subject.editionLabel)
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            listOf("Path", "Units").forEachIndexed { i, t ->
+                ChoiceChip(t, view == i, Modifier.weight(1f)) { view = i }
+            }
+            ChoiceChip("Solutions", false, Modifier.weight(1f), onSolutions)
+        }
+        if (view == 0) {
+            LearningPath(listOf(subject), progress, todaysModule(listOf(subject), progress)?.id, onStart = onStartSession, onKit = onOpenKit, showAllDefault = true)
+            return@ParhlouScreen
         }
         subject.chapters.forEach { c ->
             val open = c.id in expanded
@@ -597,4 +611,17 @@ fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (Stri
             }
         }
     }
+}
+
+/** A segment of a two- or three-way switch: teal when chosen. */
+@Composable
+private fun ChoiceChip(text: String, selected: Boolean, modifier: Modifier, onClick: () -> Unit) {
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    pk.parhlou.student.ui.components.Chunky(
+        modifier = modifier,
+        colors = if (selected) pk.parhlou.student.ui.components.ChunkyColors(MaterialTheme.colorScheme.primaryContainer, brand.lip, MaterialTheme.colorScheme.onPrimaryContainer, MaterialTheme.colorScheme.primary)
+        else pk.parhlou.student.ui.components.ChunkyDefaults.plain(),
+        shape = RoundedCornerShape(14.dp), lip = 3.dp, onClick = onClick, contentPadding = PaddingValues(vertical = 10.dp),
+        contentAlignment = Alignment.Center,
+    ) { Text(text, style = MaterialTheme.typography.labelLarge, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center) }
 }

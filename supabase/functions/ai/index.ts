@@ -9,11 +9,14 @@ import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
 import { PROMPT_VERSION, type Video } from "./core.ts";
+import { DEFAULT_PRICES, creditBalance, grantExpiry, needsMonthlyGrant, priceOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
+import { updateMemory } from "./examiner.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
 
-interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number }
+interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number;
+  monthlyCredits: number; creditMonths: number; prices: Prices }
 let cache: Live | null = null;
 
 async function live(db: any): Promise<Live> {
@@ -31,6 +34,9 @@ async function live(db: any): Promise<Live> {
     perInstall: Number(setting("daily_calls_per_install", 300)),
     total: Number(setting("daily_calls_total", 2000)),
     photosPerDay: Number(setting("daily_photo_questions", 20)),
+    monthlyCredits: Number(setting("monthly_credits", 1000)),
+    creditMonths: Number(setting("credit_months", 4)),
+    prices: { ...DEFAULT_PRICES, ...(setting("credit_prices", {}) as Prices) },
   };
   return cache;
 }
@@ -79,12 +85,32 @@ Deno.serve(async (request) => {
   let body: unknown;
   try { body = await request.json(); } catch { return json({ error: "BAD_REQUEST" }, 400); }
 
+  // ── Credits: the month's grant is given on the first request of the month; each request costs its price. ──────
+  // (Before the credits table exists, everything works as before, without credits.)
+  const credits = await creditState(db, caller, userId, settings);
+  if ((body as any)?.task === "credits") {
+    return json({ result: credits ? { balance: credits.balance, resetsOn: credits.resetsOn, monthly: settings.monthlyCredits,
+      prices: settings.prices, left: whatsLeft(credits.balance, settings.prices) } : null });
+  }
+  if ((body as any)?.task === "feedback") {
+    const text = String((body as any)?.text ?? "").trim().slice(0, 3000);
+    if (!text) return json({ error: "BAD_REQUEST" }, 400);
+    const { error } = await db.from("feedback").insert({ holder: caller, user_id: userId, text,
+      screen: String((body as any)?.screen ?? "").slice(0, 80) || null, app_version: String((body as any)?.appVersion ?? "").slice(0, 40) || null });
+    return error ? json({ error: "NOT_AVAILABLE" }, 503) : json({ result: { ok: true } });
+  }
+  const price = priceOf(body, settings.prices);
+  if (credits && price.credits > 0 && credits.balance < price.credits) {
+    return json({ error: "CREDITS_USED_UP", resetsOn: credits.resetsOn }, 402);
+  }
+
   // Lesson videos the student asked for ("Watch a lesson on this topic"): a cached YouTube search, no AI call.
   if ((body as any)?.task === "videos") {
     const q = String((body as any)?.query ?? "").replace(/[^\p{L}\p{N} .,'+-]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 120);
     if (q.length < 3) return json({ error: "BAD_REQUEST" }, 400);
     if ((mine ?? 0) >= settings.perInstall) return json({ error: "QUOTA_LIMIT" }, 429);
     const found = await videos(db, `class 9 maths ${q}`.slice(0, 120));
+    if (credits && price.credits > 0) await spend(db, caller, userId, price);
     await db.from("ai_usage").insert({ caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
     return json({ result: { videos: found } });
   }
@@ -108,8 +134,19 @@ Deno.serve(async (request) => {
       .eq("caller", caller).eq("task", "ustaad_photo").gte("created_at", since);
     photoQuotaLeft = settings.photosPerDay - (photos ?? 0);
   }
+  // Ask Ustaad remembers the student: his summary of them is added to what the phone sends about them.
+  const isUstaad = (body as any)?.task === "ustaad";
+  const memory = isUstaad ? await loadMemory(db, caller) : null;
+  if (memory?.summary) (body as any).profile = `${String((body as any).profile ?? "").slice(0, 1200)}\nWhat Ustaad remembers: ${memory.summary}`;
   const outcome = await handle(body, pick(settings.contents, body), (url, init) => fetch(url, init), apiKey, settings.perInstall - (mine ?? 0),
-    { videos: (q) => videos(db, q), photoQuotaLeft });
+    { videos: (q) => videos(db, q), photoQuotaLeft,
+      flag: async (category, message) => { try { await db.from("safety_flags").insert({ holder: caller, user_id: userId, category, excerpt: message.slice(0, 500) }); } catch { /* table not created yet */ } } });
+  if (outcome.usage?.ok && credits && price.credits > 0) await spend(db, caller, userId, price);
+  if (isUstaad && outcome.status === 200) {
+    const reply = (outcome.body as any)?.result;
+    await saveChat(db, caller, userId, memory, String((body as any)?.message ?? "") || "(sent a photo of a question)",
+      [reply?.reply, reply?.finalAnswer ? `Final answer: ${reply.finalAnswer}` : ""].filter(Boolean).join("\n"), apiKey);
+  }
   if (outcome.usage) {
     await db.from("ai_usage").insert({
       caller, task: outcome.usage.task, model: outcome.usage.model, prompt_version: outcome.usage.promptVersion,
@@ -141,6 +178,60 @@ async function videos(db: any, query: string): Promise<Video[]> {
 }
 
 const SCRIPT_PAGES_PER_DAY = 60;
+
+// ── Credits ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+async function creditState(db: any, holder: string, userId: string | null, s: Live): Promise<{ balance: number; resetsOn: string } | null> {
+  try {
+    const since = new Date(Date.now() - (s.creditMonths + 1) * 31 * 86_400_000).toISOString();
+    const { data, error } = await db.from("credit_ledger").select("kind,amount,created_at,expires_at").eq("holder", holder).gte("created_at", since);
+    if (error) return null; // table not created yet: credits are off
+    let rows: LedgerRow[] = data ?? [];
+    const now = new Date();
+    if (needsMonthlyGrant(rows, now) && s.monthlyCredits > 0) {
+      const g = { holder, user_id: userId, kind: "grant", amount: s.monthlyCredits, expires_at: grantExpiry(now, s.creditMonths) };
+      await db.from("credit_ledger").insert(g);
+      rows = [...rows, { kind: "grant", amount: g.amount, created_at: now.toISOString(), expires_at: g.expires_at }];
+    }
+    return creditBalance(rows, now);
+  } catch { return null; }
+}
+async function spend(db: any, holder: string, userId: string | null, p: { task: string; credits: number }) {
+  try { await db.from("credit_ledger").insert({ holder, user_id: userId, kind: "spend", amount: p.credits, task: p.task }); } catch { /* best effort */ }
+}
+
+// ── Memory and saved chats (kept 30 days, at most 200 messages a student) ─────────────────────────────────────────
+async function loadMemory(db: any, holder: string): Promise<{ summary: string; messagesSince: number } | null> {
+  try {
+    const { data, error } = await db.from("student_memory").select("summary,messages_since").eq("holder", holder).maybeSingle();
+    if (error) return null;
+    return { summary: data?.summary ?? "", messagesSince: data?.messages_since ?? 0 };
+  } catch { return null; }
+}
+async function saveChat(db: any, holder: string, userId: string | null, memory: { summary: string; messagesSince: number } | null,
+                        student: string, ustaad: string, apiKey: string) {
+  if (memory === null) return; // tables not created yet
+  try {
+    await db.from("chat_messages").insert([
+      { holder, user_id: userId, role: "student", text: student.slice(0, 4000) },
+      { holder, user_id: userId, role: "ustaad", text: ustaad.slice(0, 4000) || "…" },
+    ]);
+    // Keep chats small: 30 days, and the newest 200 messages.
+    await db.from("chat_messages").delete().eq("holder", holder).lt("created_at", new Date(Date.now() - 30 * 86_400_000).toISOString());
+    const { data: cut } = await db.from("chat_messages").select("id").eq("holder", holder).order("id", { ascending: false }).range(200, 200);
+    if (cut?.[0]?.id) await db.from("chat_messages").delete().eq("holder", holder).lte("id", cut[0].id);
+    // Every 10 messages, Ustaad updates what he knows about the student.
+    let since = memory.messagesSince + 1;
+    let summary = memory.summary;
+    if (since >= 10) {
+      const { data: recent } = await db.from("chat_messages").select("role,text").eq("holder", holder).order("id", { ascending: false }).limit(20);
+      const out = await updateMemory(memory.summary, (recent ?? []).reverse(), (u, i) => fetch(u, i), apiKey);
+      await db.from("ai_usage").insert({ caller: holder, task: "memory_update", model: out.usage.model, prompt_version: out.usage.promptVersion,
+        input_tokens: out.usage.inputTokens, output_tokens: out.usage.outputTokens, attempts: 1, ok: out.usage.ok });
+      if (out.summary) { summary = out.summary; since = 0; }
+    }
+    await db.from("student_memory").upsert({ holder, user_id: userId, summary, messages_since: since, updated_at: new Date().toISOString() });
+  } catch { /* chats are a convenience; never fail the reply */ }
+}
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });

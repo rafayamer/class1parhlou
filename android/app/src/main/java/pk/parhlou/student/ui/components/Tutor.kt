@@ -25,54 +25,150 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-enum class UstadMood { HAPPY, THINKING, CHEER }
+/** Ustaad's moods: he cheers good work, waits patiently, worries when the streak breaks and gets a little cross if it stays broken. */
+enum class UstadMood { HAPPY, THINKING, CHEER, SAD, CROSS }
+
+/** How Ustaad feels about the student's streak today. */
+fun moodFor(r: pk.parhlou.student.domain.RewardSummary): UstadMood {
+    val away = r.week.dropLast(1).reversed().takeWhile { it == 0 }.count() // days since the last study day, before today
+    val everStudied = r.totalXp > 0
+    return when {
+        r.goalMet -> UstadMood.CHEER
+        r.studiedToday || r.streakDays > 0 -> UstadMood.HAPPY
+        !everStudied -> UstadMood.HAPPY
+        away >= 3 -> UstadMood.CROSS
+        else -> UstadMood.SAD
+    }
+}
+
+/** One short line from Ustaad that matches his mood. */
+fun moodLine(r: pk.parhlou.student.domain.RewardSummary): String = when (moodFor(r)) {
+    UstadMood.CHEER -> "Goal done today. Shabash!"
+    UstadMood.HAPPY -> if (r.streakDays >= 2) "🔥 ${r.streakDays}-day streak. Keep it going!" else "Ready for today's maths?"
+    UstadMood.SAD -> "Your streak broke. Let's start a new one today."
+    UstadMood.CROSS -> "It's been a few days. Come back, one lesson today!"
+    UstadMood.THINKING -> "Let's think it through."
+}
 
 /**
- * Ustad, Parhlou's tutor character: an original drawing (a kind teacher with a cap and round glasses), drawn in code
- * so it scales and follows the theme. It bobs gently unless the phone asks for reduced motion.
+ * Ustaad, Parhlou's tutor: a young Pakistani maths teacher (short dark hair, trimmed beard, round glasses, white collar
+ * and teal waistcoat), drawn in code with soft shading so it stays sharp at any size and works as the app icon.
+ * He blinks now and then, and his eyebrows and mouth show his [mood]. Motion stops when the phone asks for less motion.
  */
 @Composable
-fun Ustad(size: Dp = 56.dp, mood: UstadMood = UstadMood.HAPPY, modifier: Modifier = Modifier) {
-    val reduced = LocalReducedMotion.current
-    val bob = rememberBob(reduced, 1400)
-    val skin = Color(0xFFE2B48C)
-    val cap = MaterialTheme.colorScheme.primary
-    val ink = Color(0xFF2B2B2B)
-    val beard = Color(0xFF5A4636)
-    val accent = MaterialTheme.colorScheme.primaryContainer
-    Canvas(
-        modifier
-            .size(size)
-            .graphicsLayer { translationY = -bob * 3f * density }
-            .semantics { contentDescription = "Ustaad, your tutor" },
-    ) {
-        val w = this.size.width
-        val c = Offset(w / 2, w * 0.56f)
-        val r = w * 0.36f
-        // Shoulders
-        drawArc(accent, 180f, 180f, useCenter = true, topLeft = Offset(w * 0.12f, w * 0.84f), size = Size(w * 0.76f, w * 0.4f))
-        // Face and beard
-        drawCircle(skin, r, c)
-        drawArc(beard, 20f, 140f, useCenter = false, topLeft = Offset(c.x - r, c.y - r * 0.9f), size = Size(r * 2, r * 2),
-            style = Stroke(width = r * 0.28f))
-        // Cap (topi)
-        drawArc(cap, 180f, 180f, useCenter = true, topLeft = Offset(c.x - r * 1.02f, c.y - r * 1.12f), size = Size(r * 2.04f, r * 1.2f))
-        // Glasses
-        val eyeY = c.y - r * 0.05f
-        val lens = r * 0.27f
-        val stroke = Stroke(width = r * 0.07f)
-        drawCircle(ink, lens, Offset(c.x - r * 0.38f, eyeY), style = stroke)
-        drawCircle(ink, lens, Offset(c.x + r * 0.38f, eyeY), style = stroke)
-        drawLine(ink, Offset(c.x - r * 0.11f, eyeY), Offset(c.x + r * 0.11f, eyeY), strokeWidth = r * 0.06f)
-        drawCircle(ink, r * 0.07f, Offset(c.x - r * 0.38f, eyeY))
-        drawCircle(ink, r * 0.07f, Offset(c.x + r * 0.38f, eyeY))
-        // Mouth
-        val mouthTop = Offset(c.x - r * 0.3f, c.y + r * 0.18f)
-        when (mood) {
-            UstadMood.HAPPY -> drawArc(ink, 20f, 140f, useCenter = false, topLeft = mouthTop, size = Size(r * 0.6f, r * 0.4f), style = Stroke(r * 0.07f))
-            UstadMood.CHEER -> drawArc(ink, 0f, 180f, useCenter = true, topLeft = mouthTop, size = Size(r * 0.6f, r * 0.5f))
-            UstadMood.THINKING -> drawLine(ink, Offset(c.x - r * 0.2f, c.y + r * 0.42f), Offset(c.x + r * 0.22f, c.y + r * 0.36f), strokeWidth = r * 0.07f)
+fun Ustad(size: Dp = 56.dp, mood: UstadMood = UstadMood.HAPPY, modifier: Modifier = Modifier, animate: Boolean = true) {
+    val reduced = LocalReducedMotion.current || !animate
+    val bob = rememberBob(reduced, 1400, times = 3)
+    val blink = androidx.compose.runtime.remember { androidx.compose.animation.core.Animatable(0f) }
+    androidx.compose.runtime.LaunchedEffect(reduced) {
+        if (reduced) return@LaunchedEffect
+        repeat(4) {
+            kotlinx.coroutines.delay(2200L + it * 900L)
+            blink.animateTo(1f, tween(70)); blink.animateTo(0f, tween(110))
         }
+    }
+    val waistcoat = MaterialTheme.colorScheme.primary
+    Canvas(
+        modifier.size(size).graphicsLayer { translationY = -bob * 2f * density }
+            .semantics { contentDescription = "Ustaad, your tutor" },
+    ) { drawUstaad(this.size.width, mood, blink.value, waistcoat) }
+}
+
+/** The drawing itself, also used to make the launcher icon. [w] is the square's side in pixels. */
+fun androidx.compose.ui.graphics.drawscope.DrawScope.drawUstaad(w: Float, mood: UstadMood, blink: Float = 0f, waistcoat: Color = Color(0xFF0B8A8A)) {
+    val skin = Color(0xFFE0AC84); val skinShade = Color(0xFFC98E66); val skinLight = Color(0xFFF0C6A2)
+    val hair = Color(0xFF231A15); val ink = Color(0xFF231A15); val lip = Color(0xFFB0624E)
+    val cx = w / 2; val cy = w * 0.46f
+    val fw = w * 0.30f; val fh = w * 0.36f  // half width and half height of the face
+    // Body: shoulders in a teal waistcoat over a white collar.
+    drawRoundRect(waistcoat, Offset(w * 0.14f, w * 0.80f), Size(w * 0.72f, w * 0.34f), androidx.compose.ui.geometry.CornerRadius(w * 0.2f))
+    val collar = androidx.compose.ui.graphics.Path().apply {
+        moveTo(cx - w * 0.12f, w * 0.80f); lineTo(cx, w * 0.93f); lineTo(cx + w * 0.12f, w * 0.80f); close()
+    }
+    drawPath(collar, Color.White)
+    // Neck.
+    drawRect(skinShade, Offset(cx - w * 0.09f, cy + fh * 0.7f), Size(w * 0.18f, w * 0.14f))
+    // Ears.
+    drawOval(skinShade, Offset(cx - fw - w * 0.06f, cy - w * 0.05f), Size(w * 0.10f, w * 0.15f))
+    drawOval(skinShade, Offset(cx + fw - w * 0.04f, cy - w * 0.05f), Size(w * 0.10f, w * 0.15f))
+    // Face with soft shading (light from the top left).
+    drawOval(androidx.compose.ui.graphics.Brush.radialGradient(listOf(skinLight, skin, skinShade), center = Offset(cx - fw * 0.3f, cy - fh * 0.35f), radius = fw * 2.1f),
+        Offset(cx - fw, cy - fh), Size(fw * 2, fh * 2))
+    // Trimmed beard along the jaw and chin.
+    val beard = androidx.compose.ui.graphics.Path().apply {
+        moveTo(cx - fw * 0.97f, cy + fh * 0.18f)
+        cubicTo(cx - fw * 0.92f, cy + fh * 1.08f, cx + fw * 0.92f, cy + fh * 1.08f, cx + fw * 0.97f, cy + fh * 0.18f)
+        cubicTo(cx + fw * 0.80f, cy + fh * 0.58f, cx + fw * 0.38f, cy + fh * 0.74f, cx, cy + fh * 0.72f)
+        cubicTo(cx - fw * 0.38f, cy + fh * 0.74f, cx - fw * 0.80f, cy + fh * 0.58f, cx - fw * 0.97f, cy + fh * 0.18f)
+        close()
+    }
+    drawPath(beard, hair.copy(alpha = 0.85f))
+    // Moustache: two soft strokes above the lip.
+    for (side in listOf(-1f, 1f)) drawArc(hair, if (side < 0) 200f else 200f, 140f, false,
+        Offset(cx + (if (side < 0) -fw * 0.40f else 0f), cy + fh * 0.33f), Size(fw * 0.40f, fh * 0.16f), style = Stroke(w * 0.022f))
+    // Hair: a neat short cut with a side parting.
+    val top = androidx.compose.ui.graphics.Path().apply {
+        moveTo(cx - fw * 1.03f, cy - fh * 0.12f)
+        cubicTo(cx - fw * 1.12f, cy - fh * 1.28f, cx + fw * 1.12f, cy - fh * 1.32f, cx + fw * 1.03f, cy - fh * 0.12f)
+        // Hairline: a side parting on his right, a soft fringe sweeping across the forehead.
+        cubicTo(cx + fw * 0.95f, cy - fh * 0.55f, cx + fw * 0.55f, cy - fh * 0.80f, cx + fw * 0.15f, cy - fh * 0.72f)
+        cubicTo(cx - fw * 0.25f, cy - fh * 0.64f, cx - fw * 0.65f, cy - fh * 0.66f, cx - fw * 0.88f, cy - fh * 0.45f)
+        cubicTo(cx - fw * 0.98f, cy - fh * 0.32f, cx - fw * 1.0f, cy - fh * 0.2f, cx - fw * 1.03f, cy - fh * 0.12f)
+        close()
+    }
+    drawPath(top, hair)
+    drawArc(Color.White.copy(alpha = 0.18f), 200f, 60f, false, Offset(cx - fw * 0.8f, cy - fh * 1.05f), Size(fw * 1.2f, fh * 0.9f),
+        style = Stroke(w * 0.012f))
+    // Eyebrows: raised when happy, lowered inward when cross, tilted up inward when sad.
+    val browY = cy - fh * 0.30f
+    val (inner, outer) = when (mood) {
+        UstadMood.CROSS -> fh * 0.10f to -fh * 0.06f
+        UstadMood.SAD -> -fh * 0.10f to fh * 0.04f
+        UstadMood.CHEER -> -fh * 0.10f to -fh * 0.10f
+        UstadMood.THINKING -> -fh * 0.02f to -fh * 0.12f
+        UstadMood.HAPPY -> -fh * 0.04f to -fh * 0.04f
+    }
+    for (side in listOf(-1f, 1f)) {
+        drawLine(hair, Offset(cx + side * fw * 0.14f, browY + inner), Offset(cx + side * fw * 0.66f, browY + outer), strokeWidth = w * 0.035f,
+            cap = androidx.compose.ui.graphics.StrokeCap.Round)
+    }
+    // Eyes: whites, iris, pupil and a light spot; the lids close when he blinks.
+    val eyeY = cy - fh * 0.08f
+    for (side in listOf(-1f, 1f)) {
+        val ex = cx + side * fw * 0.40f
+        val open = (1f - blink).coerceIn(0.08f, 1f) * (if (mood == UstadMood.CHEER) 0.75f else 1f)
+        drawOval(Color.White, Offset(ex - w * 0.055f, eyeY - w * 0.035f * open), Size(w * 0.11f, w * 0.07f * open))
+        if (open > 0.3f) {
+            drawCircle(Color(0xFF4A3426), w * 0.028f, Offset(ex, eyeY))
+            drawCircle(ink, w * 0.014f, Offset(ex, eyeY))
+            drawCircle(Color.White, w * 0.007f, Offset(ex + w * 0.010f, eyeY - w * 0.010f))
+        }
+    }
+    // Round glasses.
+    for (side in listOf(-1f, 1f)) drawCircle(Color(0xFF1B1B1B), w * 0.085f, Offset(cx + side * fw * 0.40f, eyeY), style = Stroke(w * 0.016f))
+    drawLine(Color(0xFF1B1B1B), Offset(cx - fw * 0.13f, eyeY), Offset(cx + fw * 0.13f, eyeY), strokeWidth = w * 0.014f)
+    // Nose.
+    drawArc(skinShade, 30f, 120f, false, Offset(cx - w * 0.035f, cy + fh * 0.05f), Size(w * 0.07f, w * 0.05f), style = Stroke(w * 0.014f))
+    // Cheeks glow when he is pleased.
+    if (mood == UstadMood.HAPPY || mood == UstadMood.CHEER) for (side in listOf(-1f, 1f))
+        drawCircle(Color(0xFFE8857A).copy(alpha = 0.28f), w * 0.045f, Offset(cx + side * fw * 0.62f, cy + fh * 0.22f))
+    // Mouth.
+    val my = cy + fh * 0.55f
+    when (mood) {
+        UstadMood.CHEER -> {
+            val p = androidx.compose.ui.graphics.Path().apply {
+                moveTo(cx - fw * 0.36f, my - fh * 0.04f); quadraticTo(cx, my + fh * 0.36f, cx + fw * 0.36f, my - fh * 0.04f); close()
+            }
+            drawPath(p, Color(0xFF6B2A22)); drawRect(Color.White, Offset(cx - fw * 0.26f, my - fh * 0.02f), Size(fw * 0.52f, fh * 0.07f))
+        }
+        UstadMood.HAPPY -> drawArc(lip, 15f, 150f, false, Offset(cx - fw * 0.30f, my - fh * 0.14f), Size(fw * 0.60f, fh * 0.26f), style = Stroke(w * 0.024f,
+            cap = androidx.compose.ui.graphics.StrokeCap.Round))
+        UstadMood.SAD -> drawArc(lip, 200f, 140f, false, Offset(cx - fw * 0.24f, my + fh * 0.02f), Size(fw * 0.48f, fh * 0.22f), style = Stroke(w * 0.022f,
+            cap = androidx.compose.ui.graphics.StrokeCap.Round))
+        UstadMood.CROSS -> drawLine(lip, Offset(cx - fw * 0.22f, my + fh * 0.06f), Offset(cx + fw * 0.22f, my + fh * 0.02f), strokeWidth = w * 0.024f,
+            cap = androidx.compose.ui.graphics.StrokeCap.Round)
+        UstadMood.THINKING -> drawLine(lip, Offset(cx - fw * 0.14f, my + fh * 0.04f), Offset(cx + fw * 0.22f, my), strokeWidth = w * 0.022f,
+            cap = androidx.compose.ui.graphics.StrokeCap.Round)
     }
 }
 

@@ -96,6 +96,14 @@ export const FIGURE_SCHEMA = obj({
 export const USTAAD_SCHEMA = obj({
   kind: { type: "string", enum: ["SOLUTION", "CHAT", "UNREADABLE", "OFF_TOPIC"] },
   intent: { type: "string", enum: ["SOLVE", "CONCEPT", "CHAT"] },
+  safety: { type: "string", enum: ["STUDY", "OFF_TOPIC", "UNSAFE_SEXUAL", "UNSAFE_ILLEGAL", "SELF_HARM"] },
+  action: obj({
+    type: { type: "string", enum: ["none", "paper_pdf", "notes_pdf"] },
+    scope: { type: "string", enum: ["none", "exercise", "unit", "half", "full"] },
+    unit: { type: "integer" },
+    exercise: str,
+    with_answers: { type: "boolean" },
+  }),
   question_as_read: str,
   topic: str,
   reply: str,
@@ -281,6 +289,15 @@ HOW TO ANSWER
 - question_as_read: the question you are answering (from the photo or the message), "" for plain chat.
 - topic: the matching section from this list, exactly as written, or "": ${t.sections.join(" | ")}
 - suggestions: 3 short follow-ups the student might tap next (e.g. "Explain more simply", "Give me a similar question").
+- safety: STUDY for school study; OFF_TOPIC for anything else that is harmless (games, films, chit-chat); UNSAFE_SEXUAL for
+  anything sexual; UNSAFE_ILLEGAL for drugs, weapons, cheating in exams, hacking, violence or other illegal things; SELF_HARM if the
+  student talks about hurting themselves. For OFF_TOPIC: one or two warm sentences bringing them back to studying, with real
+  motivation (their goals, how far they've come). For the UNSAFE and SELF_HARM categories give no details at all; the server
+  writes the reply.
+- action: when the student asks you to MAKE them a paper, test, worksheet or notes as a PDF (e.g. "make me a half-book paper",
+  "PDF of exercise 3.2", "give me unit 2 notes"), set type paper_pdf or notes_pdf, scope exercise/unit/half/full, unit (the
+  unit number, 0 if none), exercise (e.g. "3.2", else ""), with_answers (true if they ask for answers or a marking scheme);
+  reply in one short sentence ("Here's your paper."). Otherwise type "none", scope "none", unit 0, exercise "", with_answers false.
 - intent: SOLVE when the student wants a question solved, answered, its steps shown or their working checked; CONCEPT when they
   want to understand an idea or topic (explain, why, what is, how does it work, teach me); CHAT for anything else.
   For SOLVE: answer the question directly with full working (from the textbook's checked solution when one is given, else
@@ -325,7 +342,29 @@ export interface UstaadReply {
   /** SOLVE, CONCEPT or CHAT: lesson videos are found only for CONCEPT questions. */
   intent?: "SOLVE" | "CONCEPT" | "CHAT";
   figure?: Figure | null;
+  safety?: "STUDY" | "OFF_TOPIC" | "UNSAFE_SEXUAL" | "UNSAFE_ILLEGAL" | "SELF_HARM";
+  /** A PDF the app should make for the student ("make me a paper"). */
+  action?: PdfAction | null;
 }
+export interface PdfAction { type: "paper_pdf" | "notes_pdf"; scope: "exercise" | "unit" | "half" | "full"; unit: number; exercise: string; withAnswers: boolean }
+
+/** A PDF request is used only if it names something the app can build. */
+export function toAction(a: any): PdfAction | null {
+  if (!a || (a.type !== "paper_pdf" && a.type !== "notes_pdf")) return null;
+  if (!["exercise", "unit", "half", "full"].includes(a.scope)) return null;
+  const unit = Number.isInteger(a.unit) && a.unit >= 0 && a.unit <= 30 ? a.unit : 0;
+  const exercise = typeof a.exercise === "string" && /^\d{1,2}(\.\d{1,2})?$/.test(a.exercise.trim()) ? a.exercise.trim() : "";
+  if (a.scope === "unit" && unit === 0) return null;
+  if (a.scope === "exercise" && !exercise) return null;
+  return { type: a.type, scope: a.scope, unit, exercise, withAnswers: a.with_answers === true };
+}
+
+/** What Ustaad says, written by the server, when a message is unsafe. It never repeats or discusses the content. */
+export const SAFETY_REPLIES = {
+  UNSAFE_SEXUAL: "I can't help with that. This has been recorded and Parhlou's safety team can see it. Let's get back to your studies; you have big things to do.",
+  UNSAFE_ILLEGAL: "I can't help with anything illegal or harmful. This has been recorded and Parhlou's safety team can see it. Let's put that energy into your studies.",
+  SELF_HARM: "I'm really sorry you're feeling this way. You matter, and you don't have to face this alone. Please talk to a parent, a teacher or someone you trust today. You can call the Umang helpline on 0311-7786264, and in an emergency call 1122.",
+} as const;
 export interface Video { id: string; title: string; channel: string; thumbnail: string }
 
 /** Validates an Ask Ustaad reply; topic must be one of the course's sections. */
@@ -345,6 +384,8 @@ export function toUstaadReply(raw: any, sections: string[]): UstaadReply | null 
     // Videos only for questions about understanding a concept, never for "solve this".
     intent: ["SOLVE", "CONCEPT", "CHAT"].includes(raw.intent) ? raw.intent : (raw.kind === "SOLUTION" ? "SOLVE" : "CHAT"),
     videoQuery: raw.intent === "CONCEPT" ? s(raw.video_query, 120) : "", book: null, videos: [],
+    safety: ["STUDY", "OFF_TOPIC", "UNSAFE_SEXUAL", "UNSAFE_ILLEGAL", "SELF_HARM"].includes(raw.safety) ? raw.safety : "STUDY",
+    action: toAction(raw.action),
     figure: raw.figure && raw.figure.kind !== "none" ? toFigure(raw.figure) : null,
   };
 }

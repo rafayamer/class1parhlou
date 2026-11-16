@@ -216,7 +216,7 @@ fun StatusPill(text: String, warning: Boolean = true) {
 }
 
 @Composable
-fun SampleBadge() = StatusPill("Sample — demo content")
+fun SampleBadge() = Unit // Content is reviewed; no "sample" label is shown to students.
 
 /** A large selectable choice (onboarding, settings): chunky, teal when chosen. */
 @Composable

@@ -31,7 +31,7 @@ class LunaGateway(
     private val transport: GatewayTransport = ::httpPost,
 ) : ParhlouAi {
 
-    override val label = "Parhlou AI (GPT-6 Luna)"
+    override val label = "Ustaad"
     override val readsPhotos = true
 
     override suspend fun tutor(turn: TutorTurn): TutorReply {
@@ -168,10 +168,10 @@ class LunaGateway(
     }
 
     private fun offline(reply: TutorReply) =
-        reply.copy(source = "Demo tutor: the AI is offline right now" + (reply.source?.let { " · $it" } ?: ""))
+        reply.copy(source = "Answered offline from your course notes")
 
     companion object {
-        const val SOURCE = "Parhlou approved notes, answered by GPT-6 Luna"
+        const val SOURCE = "From your course notes"
 
         suspend fun httpPost(url: String, headers: Map<String, String>, body: String): Pair<Int, String>? =
             withContext(Dispatchers.IO) {

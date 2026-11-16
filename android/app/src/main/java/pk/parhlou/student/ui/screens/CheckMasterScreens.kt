@@ -66,7 +66,7 @@ import pk.parhlou.student.ui.components.SecondaryButton
 import pk.parhlou.student.ui.components.Sheet
 import pk.parhlou.student.ui.components.StatusPill
 
-const val DEMO_CHECKER_LABEL = "Demo checker — practice marks, not official board marks"
+const val DEMO_CHECKER_LABEL = "Marked by Ustaad"
 
 /** Short label for a paper question: section letter plus number, e.g. "B3". */
 /** The board's numbering ("Q2 (iii)", "Q5") when the paper is known; otherwise section letter and number. */
@@ -356,7 +356,7 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
     }
     when (mark.status) {
         MarkStatus.WAITING_FOR_AI ->
-            Muted("$photos page photo${if (photos == 1) "" else "s"} saved. The demo checker can't read handwriting, so these marks wait for the AI examiner. Type your working to have it checked now.")
+            Muted("$photos page photo${if (photos == 1) "" else "s"} saved. They're marked when you're online.")
         MarkStatus.COULD_NOT_CHECK ->
             Muted("The checker couldn't recognise the marking points in what you typed. That doesn't mean it is wrong. Compare with the model answer, then retype it clearly and re-check.")
         else -> Unit

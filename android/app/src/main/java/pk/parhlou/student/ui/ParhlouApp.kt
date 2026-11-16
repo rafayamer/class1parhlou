@@ -151,7 +151,7 @@ object Routes {
 /** Main destinations shown in the floating pill bar. */
 private val navItems = listOf(
     NavItem(Routes.HOME, "Home", Icons.Filled.Home),
-    NavItem(Routes.SUBJECTS, "Book", Icons.AutoMirrored.Filled.MenuBook),
+    NavItem(Routes.SUBJECTS, "Books", Icons.AutoMirrored.Filled.MenuBook),
     NavItem(Routes.TESTS, "Papers", Icons.Filled.Quiz),
     NavItem(Routes.PROFILE, "Profile", Icons.Filled.Person),
 )
@@ -494,7 +494,9 @@ fun ParhlouApp(
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
             if (subject == null) Missing(nav) else
                 SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
-                    onOpenKit = { nav.navigate("kit/$it") })
+                    onOpenKit = { nav.navigate("kit/$it") },
+                    onStartSession = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
+                    onSolutions = { nav.navigate(Routes.SOLUTIONS) })
         }
         composable(Routes.KIT) { entry ->
             val id = entry.arguments?.getString("id").orEmpty()
