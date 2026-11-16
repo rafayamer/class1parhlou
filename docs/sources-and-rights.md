@@ -53,6 +53,18 @@ Search results seen (third-party, not sources of content):
 | Rights | Founder's statement: full permission to use the content (D-022). Not named in the app. |
 | Transcription | Each page read with GPT-6 Luna vision into `content/class9-maths/pages/` (faithful transcription; cost in `cost-log.jsonl`) |
 
+## 2d. Class 9 Physics textbook and exam documents used for content (2026-11-16)
+
+| Item | Detail |
+|---|---|
+| Book | Physics 9, English medium, Punjab Curriculum and Textbook Board, National Curriculum 2023 ("Experimental Edition", author Prof. (Rtd.) Muhammad Nisar), 9 chapters, 200 pages. Downloaded from a mirror of the board's PDF (taleem360, "9th Class Physics New SNC Punjab Textbook PDF") because the board's site was under maintenance. SHA-256 `9e88506668dda855790bb4ed192eabe4b1817fd7575b882c8c57fef06c03e68c`, 38,034,638 bytes |
+| Newest printing (for the audit) | The PECTAA printing of the same book with the 2026-27 smart syllabus marked (taleem360, "9th Class Physics Smart Syllabus 2027 Marked Book PDF (ALP)"), 206 pages: the same pages, two syllabus pages first. SHA-256 `f810f3d6d59c07b0423d1153f81ef2a6631114b199d0684bc245c26439e76dde`. Proof-readers compared the app with these newest pages |
+| Smart syllabus and paper pattern | PECTAA "Smart Syllabus (ALP) for Physics-9" and "Pairing Scheme / Instructions for Preparation of Exam Paper of Physics Class-9 for Annual Examination 2026" (revised), with the official model paper, from PECTAA's "Revised smart syllabus for Class 9" PDF (taleem360 mirror, 65 pages). The 2026-27 exclusions (PECTAA notification No. PECTAA/C&C Unit/2026/1238, 06.11.2026) match it item for item. The 2027 paper scheme for Physics is not published yet; the 2026 one (60 marks) is used |
+| Past papers | 53 Punjab board Class 9 Physics papers, 2018–2024 (old book), from ustad360.com; used only where the new book and the 2027 syllabus teach the topic |
+| Practicals | No official practical list for the new book was found online; the practicals are the book's own 21 activities |
+| Rights | Founder's statement: full permission to use the content (D-022), as for Mathematics. Not named in the app. |
+| Transcription | Each page read with GPT-6 Luna vision into `content/class9-physics/pages/` (cost in `content/class9-physics/cost-log.jsonl`) |
+
 ## 3. Teacher videos
 
 No videos registered yet. Each future entry needs: channel/teacher, URL, unit/module mapping, edition checked against, embed availability, transcript rights (default: **none** — no caption scraping), date checked, replacement plan.
