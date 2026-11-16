@@ -25,6 +25,9 @@ import pk.parhlou.student.ui.components.ParhlouScreen
 import pk.parhlou.student.ui.components.SecondaryButton
 import pk.parhlou.student.ui.components.Sheet
 
+/** Google sign-in is built (AuthClient.googleSignInUrl) but paused until the founder sets up the Google provider. */
+const val GOOGLE_SIGN_IN = false
+
 /**
  * Email sign-in. The email holds a sign-in link that opens the app; a code typed here also works when the
  * email shows one. "Use without an account" keeps everything on this phone only.
@@ -54,14 +57,14 @@ fun SignInScreen(
 
         if (sentTo == null) {
             val context = androidx.compose.ui.platform.LocalContext.current
-            pk.parhlou.student.ui.components.SecondaryButton("Continue with Google", modifier = Modifier.testTag("signin-google"), onClick = {
+            if (GOOGLE_SIGN_IN) pk.parhlou.student.ui.components.SecondaryButton("Continue with Google", modifier = Modifier.testTag("signin-google"), onClick = {
                 onName(name.trim())
                 runCatching {
                     context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(auth.googleSignInUrl()))
                         .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
                 }.onFailure { message = "No browser found to open Google sign-in." }
             })
-            Muted("or with your email")
+            if (GOOGLE_SIGN_IN) Muted("or with your email")
             Sheet {
                 OutlinedTextField(
                     value = name, onValueChange = { name = it.take(40) }, singleLine = true,

@@ -11,7 +11,10 @@ This turns on the monthly Ustaad allowance, Ustaad's memory, saved chats (30 day
 2. Open https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new → paste → **Run**. It should say "Success. No rows returned".
 3. In the owner panel, open **Student care**. It should show "No safety flags" and an empty feedback list.
 
-### B. Google sign-in (10 minutes, optional)
+### B. Google sign-in (paused)
+
+Paused for now: the app hides the "Continue with Google" button (`GOOGLE_SIGN_IN = false` in `AccountScreens.kt`). When you want it, do these steps and ask me to switch it on.
+
 
 1. **Google Cloud:** go to https://console.cloud.google.com/apis/credentials (the Parhlou project) → **Create credentials → OAuth client ID**.
    - If asked, set up the consent screen first: User type **External**, app name **Parhlou**, your support email → **Save**.
