@@ -368,3 +368,14 @@ fun UpdateBanner() {
         }
     }
 }
+
+/** "Came in Lahore 2023 (Group I) · +2 more": where a question appeared in board exams. Nothing for book-only questions. */
+@Composable
+fun PastPaperTag(papers: List<String>, modifier: Modifier = Modifier) {
+    if (papers.isEmpty()) return
+    val text = "📋 Came in " + papers.first() + if (papers.size > 1) " · +${papers.size - 1} more" else ""
+    Surface(shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.secondaryContainer, modifier = modifier) {
+        Text(text, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp))
+    }
+}

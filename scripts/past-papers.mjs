@@ -81,17 +81,20 @@ const pages = papers.flatMap((p) => {
 console.log(`${papers.length} papers, ${pages.length} pages`);
 
 const raw = [];
-await pool(pages, 6, async ({ paper, page }) => {
+await pool(pages, 16, async ({ paper, page }) => {
   try {
     const r = await cached(`read-${paper.key}-p${page}`, () => structured("read", `${paper.key} p${page}`, READ, [{ role: "user", content: [
       { type: "input_text", text: `Exam paper page. File name: ${paper.key}.` }, { type: "input_image", image_url: render(paper.file, page), detail: "high" }] }], readSchema));
     for (const q of r.questions) {
       if (!q.text.trim()) continue;
-      raw.push({ ...q, klass: paper.klass, year: paper.year || r.year, board: paper.board || r.board, group: r.group, model: !!paper.model,
+      raw.push({ ...q, paperKey: paper.key, page, klass: paper.klass, year: paper.year || r.year, board: paper.board || r.board, group: r.group, model: !!paper.model,
         tag: paper.model ? "Official model paper 2027" : `${paper.board || r.board} ${paper.year || r.year}${r.group ? ` (Group ${r.group})` : ""}${paper.klass === 10 ? " · Class 10 paper" : ""}` });
     }
   } catch (e) { console.log(`${paper.key} p${page}: ${e.message}`); }
 });
+// Pages finish in any order; a fixed order keeps the later cached stages stable across runs.
+raw.sort((a, b) => a.paperKey.localeCompare(b.paperKey) || a.page - b.page ||
+  String(a.label).localeCompare(String(b.label), undefined, { numeric: true }));
 console.log(`read ${raw.length} questions. $${costSoFar().toFixed(3)}`);
 
 // ── 2. Classify against the new book and the 2027 syllabus ───────────────────────────────────────────────────
@@ -113,7 +116,8 @@ for (const q of raw) {
   const k = `${q.kind}|${norm(q.text)}|${q.options.map(norm).join("|")}`;
   const e = uniq.get(k);
   if (e) { if (!e.tags.includes(q.tag)) e.tags.push(q.tag); e.count++; }
-  else uniq.set(k, { ...q, id: `q${uniq.size}`, tags: [q.tag], count: 1 });
+  else uniq.set(k, { ...q, id: `q${uniq.size}`, tags: [q.tag], count: 1, labels: [] });
+  uniq.get(k).labels.push({ tag: q.tag, label: q.label, model: q.model });
 }
 const all = [...uniq.values()];
 console.log(`${all.length} distinct questions`);
@@ -173,7 +177,7 @@ for (let b = 0; b < mcqs.length; b += 15) {
     const q = mcqs.find((z) => z.id === x.id);
     if (!q || !y || x.correctIndex < 0 || x.correctIndex !== y.correctIndex || x.rationales.length !== q.options.length) continue;
     outMcqs.push({ id: `pp-${q.id}`, stem: q.text, options: q.options, correctIndex: x.correctIndex, rationales: x.rationales,
-      moduleId: q.moduleId, tags: q.tags, count: q.count, year: q.year, klass: q.klass });
+      moduleId: q.moduleId, tags: q.tags, count: q.count, year: q.year, klass: q.klass, labels: q.labels });
   }
 }
 const written = kept.filter((q) => q.kind !== "MCQ");
@@ -196,7 +200,7 @@ for (let b = 0; b < written.length; b += 8) {
     const q = written.find((z) => z.id === w.id);
     outWritten.push({ id: `pp-${q.id}`, text: q.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp,
       rubric: w.rubric.map((c, k) => ({ id: String.fromCharCode(97 + k), ...c })), moduleId: q.moduleId, tags: q.tags,
-      count: q.count, kind: q.kind, bookSource: q.bookSource, year: q.year, klass: q.klass });
+      count: q.count, kind: q.kind, bookSource: q.bookSource, year: q.year, klass: q.klass, labels: q.labels });
   }
 }
 const out = { mcqs: outMcqs, written: outWritten, stats: { pages: pages.length, read: raw.length, distinct: all.length, kept: kept.length } };

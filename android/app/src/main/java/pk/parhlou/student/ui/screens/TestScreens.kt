@@ -406,6 +406,7 @@ fun ExamScreen(
 private fun McqCard(number: Int, q: McqQuestion, chosen: Int?, enabled: Boolean, onChoose: (Int) -> Unit) {
     Sheet {
         Text("$number. ${q.stem}", style = MaterialTheme.typography.titleMedium)
+        pk.parhlou.student.ui.components.PastPaperTag(q.pastPapers)
         q.options.forEachIndexed { i, option ->
             Row(
                 Modifier.fillMaxWidth().heightIn(min = 48.dp)
@@ -439,6 +440,7 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalS
             Spacer(Modifier.width(8.dp))
             Text("[${fmt(q.marks)}]", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
+        pk.parhlou.student.ui.components.PastPaperTag(q.pastPapers)
         OutlinedTextField(
             value = text ?: saved ?: "",
             onValueChange = { new -> text = new; scope.launch { store.saveDraft(key, new) } },

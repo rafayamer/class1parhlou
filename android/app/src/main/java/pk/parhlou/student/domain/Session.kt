@@ -16,7 +16,7 @@ sealed interface SessionItem {
     val instruction: String
 
     data class Mcq(override val id: String, override val noteId: String?, val stem: String, val options: List<String>,
-                   val correct: Int, val rationales: List<String>) : SessionItem {
+                   val correct: Int, val rationales: List<String>, val pastPapers: List<String> = emptyList()) : SessionItem {
         override val instruction = "Choose the correct answer"
     }
     data class TrueFalse(override val id: String, override val noteId: String?, val statement: String, val isTrue: Boolean,
@@ -73,7 +73,7 @@ object SessionBuilder {
                 val opt = if (pickTrue) q.sampleCorrectIndex else q.options.indices.filter { it != q.sampleCorrectIndex }.random(rnd)
                 pool += SessionItem.TrueFalse("tf-${q.id}", q.noteId ?: noteId, "${q.stem.trimEnd(':', ' ')}: ${q.options[opt]}", pickTrue,
                     q.rationales.getOrElse(opt) { "" })
-            } else pool += SessionItem.Mcq("mcq-${q.id}", q.noteId ?: noteId, q.stem, q.options, q.sampleCorrectIndex, q.rationales)
+            } else pool += SessionItem.Mcq("mcq-${q.id}", q.noteId ?: noteId, q.stem, q.options, q.sampleCorrectIndex, q.rationales, q.pastPapers)
         }
         // Type the answer: the lesson's practice questions and short book questions with a typed answer.
         module.lesson?.yourTurn?.forEachIndexed { i, p ->

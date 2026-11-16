@@ -204,6 +204,7 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
     val checked = feedback != null
     when (item) {
         is SessionItem.Mcq -> {
+            pk.parhlou.student.ui.components.PastPaperTag(item.pastPapers)
             pk.parhlou.student.ui.components.MathText(item.stem, style = MaterialTheme.typography.titleLarge)
             item.options.forEachIndexed { i, o ->
                 val chosen = (answer as? SessionAnswer.Choice)?.index == i

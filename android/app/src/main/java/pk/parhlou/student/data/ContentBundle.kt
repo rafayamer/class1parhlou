@@ -165,12 +165,14 @@ object ContentBundle {
         },
         followUp = q.getString("followUp"), noteId = q.textOrNull("noteId"),
         section = q.optInt("section", 0), number = q.optInt("number", 0),
+        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(),
     )
 
     fun readMcq(q: JSONObject) = McqQuestion(
         q.getString("id"), q.getString("stem"), q.getJSONArray("options").strings(), q.getInt("correctIndex"),
         q.getJSONArray("rationales").strings(), status(q.optString("status")), q.textOrNull("noteId"),
         moduleId = if (q.has("moduleId")) q.textOrNull("moduleId") else null,
+        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(),
     )
 
     fun readNote(n: JSONObject) = ConceptNote(

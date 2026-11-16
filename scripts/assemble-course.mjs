@@ -24,6 +24,8 @@ const syllabus = JSON.parse(readFileSync(`${ROOT}/syllabus-2027.json`, "utf8"));
 const EXAM = "2027 exam";
 const pools = new Map(); // unit number → examinable { mcqs, shorts, fours }
 const audit = [];
+// Past-paper question bank (past-papers.mjs).
+const pastPapers = existsSync(`${ROOT}/pastpapers.json`) ? JSON.parse(readFileSync(`${ROOT}/pastpapers.json`, "utf8")) : null;
 const notes = [], quiz = [], written = [], blueprints = [], papers = [], readiness = [];
 
 /**
@@ -190,9 +192,18 @@ for (const u of units) {
     coverage.push(`Unit ${u.chapter.number}: ${u.chapter.modules.reduce((n, m) => n + m.solutions.filter((x) => x.kind === "EXAMPLE").length, 0)} examples, ${ex.length} exercise questions (${ex.filter((x) => x.checked).length} with checked step-by-step solutions)`);
   } else coverage.push(`Unit ${u.chapter.number}: full solutions not built yet`);
 
-  // MCQs: no repeated stems within a unit; the book's own come first.
+  // Practice comes from past papers (D-027): board MCQs first (most repeated first), then the book's own review MCQs;
+  // MCQs written for the course are used only where a section still has fewer than 5.
+  const noteOf = (moduleId) => u.notes.find((x) => x.moduleId === moduleId)?.id ?? null;
+  const ppMcqs = (pastPapers?.mcqs ?? []).filter((q) => q.moduleId?.startsWith(`m-${n0}-`))
+    .sort((a, b) => b.count - a.count || b.year - a.year)
+    .map((q) => ({ id: q.id, stem: q.stem, options: q.options, correctIndex: q.correctIndex, rationales: q.rationales,
+      status: "APPROVED", noteId: noteOf(q.moduleId), moduleId: q.moduleId, tags: q.tags }));
   const seen = new Set();
-  const ordered = [...u.quiz.filter((q) => q.id.startsWith("b-")), ...u.quiz.filter((q) => !q.id.startsWith("b-"))];
+  const realFirst = [...ppMcqs, ...u.quiz.filter((q) => q.id.startsWith("b-"))];
+  const made = u.quiz.filter((q) => !q.id.startsWith("b-"));
+  const fill = made.filter((q) => realFirst.filter((x) => x.moduleId === q.moduleId).length < 5);
+  const ordered = [...realFirst, ...fill];
   const unitQuiz = ordered.filter((q) => !seen.has(norm(q.stem)) && seen.add(norm(q.stem)));
   // A module left with fewer than 5 questions after removing repeats keeps its own copies (Logic's sub-lessons share MCQs).
   for (const m of u.chapter.modules) {
@@ -204,10 +215,16 @@ for (const u of units) {
   }
   notes.push(...u.notes);
   quiz.push(...unitQuiz);
+  // Written practice: past-paper questions first (most repeated first), then the book's exercise questions.
+  const ppWritten = (pastPapers?.written ?? []).filter((w) => w.moduleId?.startsWith(`m-${n0}-`))
+    .sort((a, b) => b.count - a.count || b.year - a.year)
+    .map((w) => ({ id: w.id, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp, noteId: noteOf(w.moduleId),
+      section: 0, number: 0, matching: "method", rubric: w.rubric, tags: w.tags, source: w.bookSource || "", ppModule: w.moduleId }));
+  u.written = [...ppWritten, ...u.written];
   const examinableModule = (id) => { const m = u.chapter.modules.find((x) => x.id === id); return m ? m.inExam : true; };
-  const moduleOfWritten = (w) => { const k = /^w-(\d+)-(\d+)/.exec(w.id); return k ? `m-${k[1]}-${k[2]}` : null; };
+  const moduleOfWritten = (w) => { if (w.ppModule) return w.ppModule; const k = /^w-(\d+)-(\d+)/.exec(w.id); return k ? `m-${k[1]}-${k[2]}` : null; };
   const inExamWritten = new Set(u.written.filter((w) => !unitOut && examinableModule(moduleOfWritten(w)) && !(w.source && isExcluded(syllabus, n0, w.source))).map((w) => w.id));
-  const unitWritten = u.written.map(({ source, ...w }) => w);
+  const unitWritten = u.written.map(({ source, ppModule, ...w }) => w);
   written.push(...unitWritten);
 
   // Recap: two quick questions from the previous module, asked at the start of each lesson.
@@ -311,6 +328,51 @@ function boardPapers() {
 }
 const boardMade = boardPapers();
 
+// ── The official 2027 model paper, question for question (D-027) ─────────────────────────────────────────────
+// Built only when every one of its questions came through the past-paper pipeline; otherwise it is left out and logged.
+function modelPaper() {
+  if (!pastPapers) return "no past-paper bank";
+  const P = syllabus.paper;
+  const ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"];
+  const place = (label) => { const m = /(\d+)\s*\(?\s*([a-z]+)\s*\)?/i.exec(label ?? ""); return m ? `${Number(m[1])}|${m[2].toLowerCase()}` : null; };
+  const slots = new Map();
+  for (const it of [...pastPapers.mcqs, ...pastPapers.written]) for (const l of it.labels ?? []) if (l.model && place(l.label)) slots.set(place(l.label), it);
+  const quizBy = new Map(quiz.map((q) => [q.id, q])), quizByStem = new Map(quiz.map((q) => [norm(q.stem), q]));
+  const writtenBy = new Map(written.map((w) => [w.id, w]));
+  const missing = [];
+  const mcqs = ROMAN.slice(0, P.objective.marks ?? 15).map((r) => {
+    const it = slots.get(`1|${r}`);
+    const q = it && (quizBy.get(it.id) ?? quizByStem.get(norm(it.stem)));
+    if (!q) missing.push(`Q1(${r})`);
+    return q;
+  });
+  const sections = [{ type: "MCQ", count: mcqs.length, attempt: mcqs.length, marksEach: 1, minutes: P.objective.minutes }];
+  const writtenOut = [];
+  for (const sq of P.short) {
+    const n = Object.values(sq.perUnit).reduce((a, b) => a + b, 0);
+    const qs = ROMAN.slice(0, n).map((r) => { const w = writtenBy.get(slots.get(`${sq.q}|${r}`)?.id); if (!w) missing.push(`Q${sq.q}(${r})`); return w; });
+    sections.push({ type: `Q${sq.q} Short questions`, count: qs.length, attempt: sq.attempt, marksEach: 2, minutes: null });
+    writtenOut.push(qs);
+  }
+  for (const part of P.long) {
+    const qs = part.questions.map((q) => {
+      const [a, b] = ["a", "b"].map((x) => { const w = writtenBy.get(slots.get(`${q.q}|${x}`)?.id); if (!w) missing.push(`Q${q.q}(${x})`); return w; });
+      return a && b ? longOf(`MP-2027-Q${q.q}`, a, b) : null;
+    });
+    sections.push({ type: `Part ${part.part}: long questions (Q${part.questions.map((q) => q.q).join(", Q")})`, count: qs.length, attempt: part.attempt, marksEach: 8, minutes: null });
+    writtenOut.push(qs);
+  }
+  if (missing.length) return `missing ${missing.join(", ")}`;
+  const total = sections.reduce((s, x) => s + x.attempt * x.marksEach, 0);
+  if (total !== P.totalMarks) return `total ${total}`;
+  const id = "model-2027";
+  blueprints.push({ id, title: "Official model paper 2027 (75 marks)", durationMinutes: P.minutes, totalMarks: P.totalMarks, official: true, chapterId: null, sections });
+  for (const l of writtenOut.slice(P.short.length).flat()) written.push({ ...l, section: 0, number: 0 });
+  papers.push({ blueprintId: id, mcqs, written: writtenOut.flatMap((qs, i) => qs.map((w, j) => ({ ...w, section: i + 1, number: j + 1 }))) });
+  return "made";
+}
+const modelMade = modelPaper();
+
 const bundle = {
   format: 1,
   subjectId: SUBJECT,
@@ -373,6 +435,7 @@ if (problems.length) {
   process.exit(1);
 }
 console.log(`Board papers (2027 pattern): ${boardMade.join(", ") || "none"}`);
+console.log(`Official model paper 2027: ${modelMade}`);
 writeFileSync(`${ROOT}/work/audit.json`, JSON.stringify(audit, null, 1));
 for (const a of audit) if (a.examplesMissing || a.gaps?.length || a.missing?.length) console.log(`Audit unit ${a.unit}: ${JSON.stringify({ examplesMissing: a.examplesMissing, gaps: a.gaps, missing: a.missing })}`);
 console.log("All publishing checks pass.");

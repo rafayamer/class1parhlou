@@ -151,6 +151,8 @@ data class McqQuestion(
     val noteId: String? = null,
     /** The module whose quiz this question belongs to (module quizzes only). */
     val moduleId: String? = null,
+    /** Board papers this question came in, e.g. "Lahore 2023 (Group I)". Empty for book-only questions. */
+    val pastPapers: List<String> = emptyList(),
 )
 
 /** One marking point of a rubric. [accept] lists alternative pattern groups; see ai/TextMatch.kt for the syntax. */
@@ -175,6 +177,8 @@ data class WrittenQuestion(
     /** Index of the blueprint section this question belongs to (papers only). */
     val section: Int = 0,
     val number: Int = 0,
+    /** Board papers this question came in, e.g. "Lahore 2023 (Group I)". Empty for book-only questions. */
+    val pastPapers: List<String> = emptyList(),
 )
 
 /** The questions of one published paper. */
