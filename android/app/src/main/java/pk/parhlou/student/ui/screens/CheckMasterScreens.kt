@@ -50,6 +50,7 @@ import pk.parhlou.student.data.WrittenQuestion
 import pk.parhlou.student.domain.ExamLog
 import pk.parhlou.student.domain.IntegrityReport
 import pk.parhlou.student.domain.Invigilator
+import pk.parhlou.student.domain.BoardMarking
 import pk.parhlou.student.domain.PaperResult
 import pk.parhlou.student.domain.PaperSubmission
 import pk.parhlou.student.domain.WrittenOutcome
@@ -102,6 +103,19 @@ fun CheckMasterScreen(
                 Text("${fmt(r.pending)} more marks not checked yet", style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.tertiary)
                 Muted("These are never counted as wrong. Compare with the model answer, retype clearly and re-check. Page photos wait for the AI examiner.")
+            }
+            // Board-style grade band and the examiner's remarks.
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Surface(shape = RoundedCornerShape(14.dp), color = MaterialTheme.colorScheme.primaryContainer) {
+                    Text("Grade ${BoardMarking.grade(r.percent)}", style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer, modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp).testTag("grade"))
+                }
+                Text("${r.percent}%" + if (r.percent >= 33) " · pass" else " · below the 33% pass mark", style = MaterialTheme.typography.titleMedium)
+            }
+            val remarks = BoardMarking.remarks(r, ::questionLabel)
+            if (remarks.isNotEmpty()) {
+                Text("Examiner's remarks", style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("examiner-remarks"))
+                remarks.forEach { Text("•  $it", style = MaterialTheme.typography.bodyMedium) }
             }
             val firstTotal = first["total"]
             if (firstTotal != null && firstTotal != r.confirmed) Muted("At your first hand-in: ${fmt(firstTotal)} / ${fmt(r.total)}")

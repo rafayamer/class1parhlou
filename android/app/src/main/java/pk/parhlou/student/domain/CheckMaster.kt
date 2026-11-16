@@ -96,3 +96,34 @@ object CheckMaster {
                 .map { it.id }
         }.toSet()
 }
+
+/** Board-style grade and examiner's remarks for a marked paper. */
+object BoardMarking {
+    /** Punjab boards' grade bands (pass mark 33%). */
+    fun grade(percent: Int): String = when {
+        percent >= 80 -> "A+"
+        percent >= 70 -> "A"
+        percent >= 60 -> "B"
+        percent >= 50 -> "C"
+        percent >= 40 -> "D"
+        percent >= 33 -> "E"
+        else -> "F"
+    }
+
+    /** The marking points that cost the most marks, as an examiner would write them in the margin. */
+    fun remarks(result: PaperResult, label: (pk.parhlou.student.data.WrittenQuestion) -> String, max: Int = 4): List<String> {
+        val lost = result.written.filter { it.counted }.flatMap { o ->
+            o.mark.criteria.filter { it.status == pk.parhlou.student.ai.CriterionStatus.NOT_FOUND && o.answer.isNotBlank() }
+                .map { c -> Triple(o, c, c.max - c.awarded) }
+        }.sortedByDescending { it.third }
+        val notes = lost.take(max).map { (o, c, m) ->
+            "Q ${label(o.question)}: −${if (m % 1.0 == 0.0) m.toInt().toString() else m.toString()} for \"${c.description}\". ${c.how}"
+        }.toMutableList()
+        val wrongMcq = result.mcq.count { it.chosen != null && !it.correct }
+        val blankMcq = result.mcq.count { it.chosen == null }
+        if (wrongMcq > 0) notes += "MCQs: $wrongMcq wrong. Revise the reasons shown under each one."
+        if (blankMcq > 0) notes += "MCQs: $blankMcq left blank. There is no negative marking, so always choose an answer."
+        if (notes.isEmpty() && result.percent >= 80) notes += "Excellent paper. Keep writing every step and the final statement."
+        return notes
+    }
+}

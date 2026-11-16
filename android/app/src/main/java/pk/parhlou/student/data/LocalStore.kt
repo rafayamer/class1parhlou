@@ -35,6 +35,7 @@ class LocalStore(private val context: Context) {
         fun examLog(id: String) = stringPreferencesKey("exam_log_$id")
         fun examMcq(id: String) = stringPreferencesKey("exam_mcq_$id")
         fun examFirst(id: String) = stringPreferencesKey("exam_first_$id")
+        fun objectiveIn(id: String) = androidx.datastore.preferences.core.longPreferencesKey("exam_objective_in_$id")
         val activeExam = stringPreferencesKey("active_exam")
         val progress = stringPreferencesKey("progress_log")
         val readiness = booleanPreferencesKey("readiness_passed")
@@ -97,6 +98,10 @@ class LocalStore(private val context: Context) {
     /** The paper currently being sat, if any. The tutor stays locked while this is set. */
     val activeExam: Flow<String?> = context.dataStore.data.map { it[K.activeExam] }
 
+    /** When the objective part of a two-part paper was handed in early (null = not yet). */
+    fun objectiveHandedIn(paperId: String): Flow<Long?> = context.dataStore.data.map { it[K.objectiveIn(paperId)] }
+    suspend fun handInObjective(paperId: String, at: Long) { context.dataStore.edit { it[K.objectiveIn(paperId)] = at } }
+
     /** Build whose "What's new" the student has seen (0 = never). */
     val seenBuild: Flow<Int> = context.dataStore.data.map { it[K.seenBuild] ?: 0 }
     suspend fun markSeen(build: Int) { context.dataStore.edit { it[K.seenBuild] = build } }
@@ -135,7 +140,7 @@ class LocalStore(private val context: Context) {
     /** Clears one paper so it can be sat again. Progress evidence already recorded is kept. */
     suspend fun resetExam(paperId: String, draftKeys: List<String>) {
         context.dataStore.edit { p ->
-            p.remove(K.examLog(paperId)); p.remove(K.examMcq(paperId)); p.remove(K.examFirst(paperId))
+            p.remove(K.examLog(paperId)); p.remove(K.examMcq(paperId)); p.remove(K.examFirst(paperId)); p.remove(K.objectiveIn(paperId))
             if (p[K.activeExam] == paperId) p.remove(K.activeExam)
             draftKeys.forEach { p.remove(K.draft(it)) }
         }

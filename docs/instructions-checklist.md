@@ -12,7 +12,7 @@ Every instruction the founder has given, and where it is delivered. "Update 1", 
 | "Show in app what changes this build includes" | Done | Update 1: "What's new" opens after every update, and is in Profile; the GitHub release notes say the same |
 | "Duolingo-like experience and guided study" | Done | Update 2: learning path, one-question-at-a-time sessions (6 question types), XP, streak with freezes, daily goal, levels, badges, 5-minute busy-day session |
 | "Personal tutor feel" | Done | Update 2: Ustad greets you with today's plan, guides every session and cheers at the end; "Ask Ustad" on every answer |
-| "Responsive and interactive" | Mostly done | Update 2: instant feedback, animations, haptics, sounds, confetti. Update 3: a tap-everything test and polish |
-| "Real board-like marking assessment" | Planned | Update 3: two-phase paper timing; marked script with examiner ticks, total out of 75 and grade |
+| "Responsive and interactive" | Done | Update 2: instant feedback, animations, haptics, sounds, confetti. Update 3: tap-everything test (found and fixed dead buttons) |
+| "Real board-like marking assessment" | Done | Update 3: two-part board timing (MCQs 20 min, then subjective); marked script with ticks per marking point, total, grade band and examiner's remarks |
 | Upgrade the existing app, do not rebuild (15 Nov brief) | Done | `docs/upgrade-map.md` |
 | Publish the course to students | Waiting for the owner | The full course is saved as a draft. In the owner panel: Content → pb-9-math → **Publish** (automated publishing is blocked by a safety check) |

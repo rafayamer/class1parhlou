@@ -91,7 +91,7 @@ class AppFlowTest {
         // Quarter, half and full mocks are listed but can't be built from Unit 1 alone.
         val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("Needs questions for Units", substring = true))
         assertEquals(3, notReady.fetchSemanticsNodes().size)
-        notReady.assertAll(androidx.compose.ui.test.isNotEnabled())
+        notReady.assertAll(androidx.compose.ui.test.hasClickAction().not()) // information only, nothing to tap
         assertEquals(4, rule.onAllNodes(androidx.compose.ui.test.hasText("Practice pattern — not official", substring = true))
             .fetchSemanticsNodes().size)
     }

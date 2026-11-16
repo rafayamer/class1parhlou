@@ -68,6 +68,7 @@ import pk.parhlou.student.data.PaperContent
 import pk.parhlou.student.data.WrittenQuestion
 import pk.parhlou.student.domain.BlueprintValidator
 import pk.parhlou.student.domain.ExamClock
+import pk.parhlou.student.domain.PaperPhases
 import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.ExamLog
 import pk.parhlou.student.domain.MockPaper
@@ -120,7 +121,7 @@ fun TestsScreen(
         if (pendingMocks.isNotEmpty()) {
             Text("Mock papers", style = MaterialTheme.typography.titleLarge)
             pendingMocks.forEach { m ->
-                Card(onClick = {}, enabled = false, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
+                Card(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text("${m.scope.label} (Units ${m.chapters.first().number}–${m.chapters.last().number})", style = MaterialTheme.typography.titleMedium)
                         StatusPill("Practice pattern — not official")
@@ -312,7 +313,23 @@ fun ExamScreen(
         }
 
         val choices by store.mcqChoices(id).collectAsState(initial = emptyMap())
+        val objectiveIn by store.objectiveHandedIn(id).collectAsState(initial = null)
+        val phases = PaperPhases(startedAt, blueprint.sections.firstOrNull()?.minutes?.takeIf { paper.written.isNotEmpty() }, objectiveIn)
+        val objectiveOpen = phases.objectiveOpen(now) && !locked
+        if (phases.twoParts) Sheet(Modifier.testTag("paper-phase")) {
+            if (objectiveOpen) {
+                Text("Part 1 · Objective (MCQs)", style = MaterialTheme.typography.titleMedium)
+                Text("${phases.objectiveClock().label(now)} left for the MCQs", style = MaterialTheme.typography.titleLarge)
+                Muted("As in the exam hall, the MCQ sheet is collected when its time ends. Then the subjective part opens.")
+                TextButton(onClick = { appScope.launch { store.handInObjective(id, System.currentTimeMillis()) } },
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("hand-in-objective")) { Text("Hand in MCQs and start the subjective part") }
+            } else {
+                Text("Part 2 · Subjective", style = MaterialTheme.typography.titleMedium)
+                Muted("The MCQ sheet has been collected (${choices.size} of ${paper.mcqs.size} answered). Answer the written questions below.")
+            }
+        }
         blueprint.sections.forEachIndexed { index, section ->
+            if (phases.twoParts && index > 0 && objectiveOpen) return@forEachIndexed
             val letter = 'A' + index
             Text("Section $letter · ${section.type}", style = MaterialTheme.typography.titleLarge)
             Muted(
@@ -321,7 +338,7 @@ fun ExamScreen(
             )
             if (index == 0) {
                 paper.mcqs.forEachIndexed { i, q ->
-                    McqCard(i + 1, q, choices[q.id], enabled = !locked) { option ->
+                    McqCard(i + 1, q, choices[q.id], enabled = !locked && (!phases.twoParts || objectiveOpen)) { option ->
                         appScope.launch { store.saveMcqChoice(id, q.id, option) }
                     }
                 }

@@ -301,8 +301,8 @@ fun ParhlouApp(
             HomeScreen(
                 repo = repo, onboarding = state, progress = progress,
                 onOpenModule = { nav.navigate("module/$it") },
-                onSubjects = { nav.navigate(Routes.SUBJECTS) },
-                onTests = { nav.navigate(Routes.TESTS) },
+                onSubjects = { goTop(Routes.SUBJECTS) },
+                onTests = { goTop(Routes.TESTS) },
                 onJourney = { nav.navigate(Routes.JOURNEY) },
                 onTutor = { openTutor(null) },
                 onPlaceholder = { nav.navigate("soon/$it") },
@@ -401,7 +401,7 @@ fun ParhlouApp(
                     soundOn = sound,
                     onToggleSound = { scope.launch { store.setSound(!sound) } },
                     onAnswered = { item, right ->
-                        item.noteId?.let { progress.add(it, if (right) Evidence.TopicCorrect else Evidence.TopicMissed) }
+                        item.noteId?.let { progress.add(pk.parhlou.student.domain.TOPIC_PREFIX + it, if (right) Evidence.TopicCorrect else Evidence.TopicMissed) }
                     },
                     onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
                     streakAfter = { r ->
