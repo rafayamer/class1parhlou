@@ -262,7 +262,8 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
                     MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onSurface, size = 64.dp)
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                JourneyFact("🎯", if (started) "${(pct * 0.75).toInt().coerceIn(0, 75)}/75" else "—", "expected", Modifier.weight(1f))
+                val outOf = pk.parhlou.student.domain.PaperAssembler.patternFor(s.id).totalMarks.toInt()
+                JourneyFact("🎯", if (started) "${(pct * outOf / 100).toInt().coerceIn(0, outOf)}/$outOf" else "—", "expected", Modifier.weight(1f))
                 JourneyFact("💪", strong ?: "—", "strong", Modifier.weight(1f))
                 JourneyFact("⚠️", weak ?: "—", "work on", Modifier.weight(1f))
             }

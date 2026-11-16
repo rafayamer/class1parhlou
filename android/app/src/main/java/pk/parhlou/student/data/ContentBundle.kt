@@ -228,9 +228,21 @@ class BundleRepository(
     private val base: ParhlouRepository,
 ) : ParhlouRepository {
     private val modules = subject.chapters.flatMap { it.modules }
+    val subjectId: String get() = subject.id
+
+    /** The same course on top of another repository, so several subjects' bundles stack into one repository. */
+    fun over(newBase: ParhlouRepository) = BundleRepository(version, subject, notes, quiz, readiness, blueprints, papers, newBase)
+
+    companion object {
+        /** Every subject's bundle in one repository; the packed content is the bottom layer. */
+        fun stack(bundles: Collection<BundleRepository>, base: ParhlouRepository): ParhlouRepository =
+            bundles.fold(base) { below, b -> b.over(below) }
+    }
 
     override fun boards() = base.boards()
-    override fun subjectOptions(boardCode: String, grade: Int) = base.subjectOptions(boardCode, grade)
+    // A subject becomes selectable as soon as its course is on the phone.
+    override fun subjectOptions(boardCode: String, grade: Int) =
+        base.subjectOptions(boardCode, grade).map { if (it.id == subject.id) it.copy(available = true, note = "") else it }
     override fun subject(id: String) = if (id == subject.id) subject else base.subject(id)
     override fun module(id: String) = modules.firstOrNull { it.id == id } ?: base.module(id)
     override fun chapterOf(moduleId: String) = subject.chapters.firstOrNull { c -> c.modules.any { it.id == moduleId } } ?: base.chapterOf(moduleId)

@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import pk.parhlou.student.domain.PaperPdf
+import pk.parhlou.student.data.FakeRepository
 import pk.parhlou.student.domain.PaperPicker
 import pk.parhlou.student.ui.screens.MakePaperScreen
 import pk.parhlou.student.ui.screens.PrintedPaperScreen
@@ -225,47 +226,73 @@ fun ParhlouApp(
     val subjectIds = state.subjectIds.toList()
     val subjects = subjectIds.mapNotNull { repo.subject(it) }
     val chapterBlueprints = subjectIds.flatMap { repo.blueprints(it) }
-    // Quarter/half/full mocks built from each chapter's published questions; never from partial content.
-    val mocks = remember(repo, subjectIds) {
-        subjects.flatMap { s ->
+    // Each subject has its own papers: chapter tests, mocks in its own board pattern, a board-paper template and a question bank.
+    class SubjectPapers(val subject: pk.parhlou.student.data.Subject, val blueprints: List<pk.parhlou.student.data.PaperBlueprint>,
+                        val mocks: List<MockPaper>, val template: pk.parhlou.student.data.PaperBlueprint?, val bank: PaperPicker.Bank)
+    val perSubject = remember(repo, subjectIds) {
+        subjects.associate { s ->
+            val own = repo.blueprints(s.id)
             val pool = s.chapters.associate { c ->
-                val papers = chapterBlueprints.filter { it.chapterId == c.id }.mapNotNull { repo.paper(it.id) }
+                val papers = own.filter { it.chapterId == c.id }.mapNotNull { repo.paper(it.id) }
                 c.id to PaperContent("pool-${c.id}", papers.flatMap { it.mcqs }, papers.flatMap { it.written })
             }
-            MockScope.entries.map { PaperAssembler.assemble(it, s.chapters, pool, PaperAssembler.boardPattern()) }
+            val prefix = if (s.id == FakeRepository.MATHS_9) "" else s.id.substringAfterLast('-') + "-"
+            val mocks = MockScope.entries.map { PaperAssembler.assemble(it, s.chapters, pool, PaperAssembler.patternFor(s.id), prefix) }
+            s.id to SubjectPapers(s, own, mocks, own.firstOrNull { it.official && it.chapterId == null && it.id.contains("board-") },
+                questionBank(repo, listOf(s), own))
         }
     }
-    val readyMocks = mocks.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id }
-    // "Make my paper": full 2027-pattern papers the AI chose for this student, kept on the phone.
-    val template = chapterBlueprints.firstOrNull { it.official && it.chapterId == null && it.id.startsWith("board-") }
-    val bank = remember(repo, subjectIds) { questionBank(repo, subjects, chapterBlueprints) }
+    // The subject whose papers the Papers tab shows (and "make me a paper" uses); the first subject by default.
+    var paperSubjectId by rememberSaveable { mutableStateOf<String?>(null) }
+    val paperSubject = perSubject[paperSubjectId] ?: perSubject.values.firstOrNull()
+    val mocks = paperSubject?.mocks.orEmpty()
+    val readyMocks = perSubject.values.flatMap { it.mocks }.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id }
+    // "Make my paper": full board-pattern papers chosen for this student, kept on the phone.
+    val template = paperSubject?.template
+    val bank = paperSubject?.bank ?: questionBank(repo, subjects, chapterBlueprints)
     val myPapersJson by store.draft(MY_PAPERS).collectAsState(initial = "")
-    val myPapers = remember(myPapersJson, bank, template) {
-        if (template == null || myPapersJson.isBlank()) emptyList()
-        else runCatching { org.json.JSONArray(myPapersJson).let { a -> (0 until a.length()).mapNotNull { PaperPicker.fromJson(a.getString(it), template, bank) } } }.getOrDefault(emptyList())
+    // Each saved paper belongs to the subject whose template and question bank can read it back.
+    val myPapers = remember(myPapersJson, perSubject) {
+        if (myPapersJson.isBlank()) emptyList()
+        else runCatching { org.json.JSONArray(myPapersJson).let { a -> (0 until a.length()).mapNotNull { i ->
+            perSubject.values.firstNotNullOfOrNull { sp -> sp.template?.let { t -> PaperPicker.fromJson(a.getString(i), t, sp.bank) } }
+        } } }.getOrDefault(emptyList())
     }.associateBy { it.blueprint.id }
     val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint }
+    /** The papers the Papers tab lists: only the chosen subject's. */
+    val shownBlueprints = paperSubject?.let { sp ->
+        val ids = (sp.blueprints.map { it.id } + sp.mocks.filterIsInstance<MockPaper.Ready>().map { it.blueprint.id }).toSet()
+        myPapers.values.filter { m -> sp.template != null && PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) != null }.map { it.blueprint } +
+            blueprints.filter { it.id in ids }
+    } ?: blueprints
+    /** The subject a paper belongs to, by name, for its printed header. */
+    fun subjectNameOf(blueprintId: String): String = perSubject.values.firstOrNull { sp ->
+        sp.blueprints.any { it.id == blueprintId } || sp.mocks.any { (it as? MockPaper.Ready)?.blueprint?.id == blueprintId } ||
+            (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
+    }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
     // "Make me a paper / notes" from Ask Ustaad: built from the course on the phone, never invented.
     fun makePdf(action: pk.parhlou.student.domain.PdfAction): java.io.File? {
-        val chapters = subjects.flatMap { it.chapters }
+        // The subject the student named, else the one chosen on the Papers tab.
+        val sp = perSubject.values.firstOrNull { it.subject.name.equals(action.subject, ignoreCase = true) } ?: paperSubject
+        val chapters = sp?.subject?.chapters.orEmpty()
         val dir = java.io.File(context.cacheDir, "papers")
         val name = action.label.lowercase().replace(Regex("[^a-z0-9]+"), "-").trim('-')
         if (action.isNotes && action.scope != "exercise") {
             val sections = pk.parhlou.student.domain.PdfContent.notes(chapters, pk.parhlou.student.domain.PdfContent.units(chapters, action))
-            return if (sections.isEmpty()) null else PaperPdf.notes(java.io.File(dir, "$name.pdf"), action.label, sections)
+            return if (sections.isEmpty()) null else PaperPdf.notes(java.io.File(dir, "$name.pdf"), action.label, sections, sp?.subject?.name ?: "Mathematics")
         }
         val (b, p) = when (action.scope) {
             "exercise" -> pk.parhlou.student.domain.PdfContent.exercisePaper(chapters, action.exercise)
             "unit" -> chapters.firstOrNull { it.number == action.unit }?.let { c ->
                 chapterBlueprints.firstOrNull { it.chapterId == c.id }?.let { b -> repo.paper(b.id)?.let { b to it } } }
-            "half" -> readyMocks.values.firstOrNull { it.scope == MockScope.HALF }?.let { it.blueprint to it.paper }
-            else -> template?.let { t -> repo.paper(t.id)?.let { tp ->
-                val slots = PaperPicker.slots(t, tp, bank, emptySet(), System.currentTimeMillis())
-                PaperPicker.build("full-${System.currentTimeMillis()}", "Full-book paper (2027 pattern)", t, tp, slots, PaperPicker.localPick(slots), bank, false)
+            "half" -> sp?.mocks?.filterIsInstance<MockPaper.Ready>()?.firstOrNull { it.scope == MockScope.HALF }?.let { it.blueprint to it.paper }
+            else -> sp?.template?.let { t -> repo.paper(t.id)?.let { tp ->
+                val slots = PaperPicker.slots(t, tp, sp.bank, emptySet(), System.currentTimeMillis())
+                PaperPicker.build("full-${System.currentTimeMillis()}", "Full-book paper (2027 pattern)", t, tp, slots, PaperPicker.localPick(slots), sp.bank, false)
                     ?.let { it.blueprint to it.paper } } }
         } ?: return null
-        return PaperPdf.write(java.io.File(dir, "$name.pdf"), b, p, withScheme = action.withAnswers || action.isNotes)
+        return PaperPdf.write(java.io.File(dir, "$name.pdf"), b, p, withScheme = action.withAnswers || action.isNotes, subject = sp?.subject?.name ?: "Mathematics")
     }
     // A paper that ended while the app was closed still gives the phone back its own Do Not Disturb setting.
     LaunchedEffect(Unit) { if (store.activeExam.first() == null) pk.parhlou.student.ui.FocusMode.off(context) }
@@ -543,23 +570,30 @@ fun ParhlouApp(
         }
         composable(Routes.TESTS) { WithTabBarSpace {
             TestsScreen(
-                blueprints = blueprints,
-                available = blueprints.filter { paperOf(it.id) != null }.map { it.id }.toSet(),
+                blueprints = shownBlueprints,
+                available = shownBlueprints.filter { paperOf(it.id) != null }.map { it.id }.toSet(),
                 readinessPassed = readinessPassed,
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
                 pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
                 onMakePaper = if (template != null) ({ nav.navigate(Routes.MAKE_PAPER) }) else null,
-                exercises = remember(subjects) {
-                    subjects.flatMap { it.chapters }.flatMap { c -> c.modules.flatMap { it.solutions } }
+                exercises = remember(paperSubject) {
+                    val chapters = paperSubject?.subject?.chapters.orEmpty()
+                    val dotted = chapters.flatMap { c -> c.modules.flatMap { it.solutions } }
                         .mapNotNull { Regex("""^Ex (\d+\.\d+) """).find(it.source)?.groupValues?.get(1) }.distinct()
                         .sortedWith(compareBy({ it.substringBefore('.').toInt() }, { it.substringAfter('.').toInt() }))
+                    // Subjects with one exercise per chapter (Physics): each chapter's exercise.
+                    dotted.ifEmpty { chapters.filter { c -> c.modules.any { m -> m.solutions.any { it.kind == pk.parhlou.student.data.SolutionKind.EXERCISE } } }.map { "${it.number}" } }
                 },
+                exerciseLabel = if (paperSubject?.subject?.id == FakeRepository.MATHS_9 || paperSubject == null) "Exercise" else "Chapter exercise",
+                subjects = subjects.map { it.id to it.name },
+                selectedSubject = paperSubject?.subject?.id,
+                onSubject = { paperSubjectId = it },
                 onExercisePdf = { e, answers ->
                     scope.launch {
                         val f = withContext(Dispatchers.IO) { makePdf(pk.parhlou.student.domain.PdfAction("paper_pdf", "exercise", 0, e, answers)) }
-                        if (f != null) shareFile(context, f, "application/pdf", "Exercise $e")
+                        if (f != null) shareFile(context, f, "application/pdf", if ('.' in e) "Exercise $e" else "Chapter $e exercise")
                     }
                 },
                 attemptsLeft = { id -> (pk.parhlou.student.domain.PaperAttempts.MAX - pk.parhlou.student.domain.PaperAttempts.used(progress.history(), id)).coerceAtLeast(0) },
@@ -588,7 +622,7 @@ fun ParhlouApp(
                     onPrint = { withScheme ->
                         scope.launch {
                             val file = withContext(Dispatchers.IO) {
-                                PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}${if (withScheme) "-scheme" else ""}.pdf"), b, paper, withScheme)
+                                PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}${if (withScheme) "-scheme" else ""}.pdf"), b, paper, withScheme, subjectNameOf(b.id))
                             }
                             shareFile(context, file, "application/pdf", "Print or share your paper")
                         }

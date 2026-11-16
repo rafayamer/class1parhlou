@@ -12,12 +12,14 @@ import pk.parhlou.student.data.WrittenQuestion
  * A PDF the student asked Ustaad for: a paper ("make me a half-book paper") or notes ("unit 2 notes"), for one exercise,
  * one unit, the first half of the book or the whole book, with or without answers.
  */
-data class PdfAction(val type: String, val scope: String, val unit: Int, val exercise: String, val withAnswers: Boolean) {
+data class PdfAction(val type: String, val scope: String, val unit: Int, val exercise: String, val withAnswers: Boolean,
+                     /** The subject the student named ("Physics"), or "" for the one in view. */
+                     val subject: String = "") {
     val isNotes get() = type == "notes_pdf"
 
     /** "Exercise 3.2 paper", "Unit 2 notes with answers". */
     val label: String get() = when (scope) {
-        "exercise" -> "Exercise $exercise"
+        "exercise" -> if ('.' in exercise) "Exercise $exercise" else "Chapter $exercise exercise"
         "unit" -> "Unit $unit"
         "half" -> "Half-book"
         else -> "Full-book"
@@ -32,12 +34,12 @@ data class PdfAction(val type: String, val scope: String, val unit: Int, val exe
             val unit = o.optInt("unit", 0).coerceIn(0, 30)
             val exercise = o.optString("exercise").trim().takeIf { Regex("""\d{1,2}(\.\d{1,2})?""").matches(it) }.orEmpty()
             if (scope == "unit" && unit == 0 || scope == "exercise" && exercise.isEmpty()) return null
-            return PdfAction(type, scope, unit, exercise, o.optBoolean("withAnswers", o.optBoolean("with_answers")))
+            return PdfAction(type, scope, unit, exercise, o.optBoolean("withAnswers", o.optBoolean("with_answers")), o.optString("subject"))
         }
     }
 
     fun toJson(): org.json.JSONObject = org.json.JSONObject().put("type", type).put("scope", scope).put("unit", unit)
-        .put("exercise", exercise).put("withAnswers", withAnswers)
+        .put("exercise", exercise).put("withAnswers", withAnswers).put("subject", subject)
 }
 
 /** Builds the papers and notes behind [PdfAction]s from the published course. */
@@ -50,15 +52,20 @@ object PdfContent {
      * with the book's checked working as the marking scheme. Null when the exercise isn't in the course.
      */
     fun exercisePaper(chapters: List<Chapter>, exercise: String): Pair<PaperBlueprint, PaperContent>? {
+        // "3.2" is a Mathematics exercise; a bare chapter number ("3") is a Physics end-of-chapter exercise.
+        val whole = '.' !in exercise
         val prefix = "Ex $exercise Q"
-        val sols = chapters.flatMap { c -> c.modules.flatMap { it.solutions } }
-            .filter { it.kind == SolutionKind.EXERCISE && it.source.startsWith(prefix) }
+        val sols = if (whole) chapters.filter { it.number == exercise.toIntOrNull() }.flatMap { c -> c.modules.flatMap { it.solutions } }
+            .filter { it.kind == SolutionKind.EXERCISE }
+        else chapters.flatMap { c -> c.modules.flatMap { it.solutions } }.filter { it.kind == SolutionKind.EXERCISE && it.source.startsWith(prefix) }
         if (sols.isEmpty()) return null
-        val byQ = sols.groupBy { it.source.removePrefix(prefix).takeWhile { ch -> ch.isDigit() }.toIntOrNull() ?: 0 }.toSortedMap()
+        // Physics items are "Numerical 1.3(a)": the question is everything before the part letter.
+        val qOf = { src: String -> if (whole) src.substringBefore('(').trim() else src.removePrefix(prefix).takeWhile { ch -> ch.isDigit() } }
+        val byQ = sols.groupBy { qOf(it.source) }.let { g -> g.keys.toList().associateWith { g.getValue(it) } }
         val id = "exercise-${exercise.replace('.', '-')}"
         val written = byQ.entries.mapIndexed { i, (_, parts) ->
             val single = parts.size == 1
-            val text = parts.joinToString("\n") { s ->
+            val text = (if (whole && !single) "${parts.first().source.substringBefore('(').trim()}\n" else "") + parts.joinToString("\n") { s ->
                 val part = Regex("""\(([ivx]+|[a-z])\)$""").find(s.source)?.value
                 if (single || part == null) s.question else "$part  ${s.question}"
             }
@@ -68,7 +75,7 @@ object PdfContent {
             }
             WrittenQuestion("$id-q${i + 1}", text, 4.0, answer, listOf(RubricCriterion("r1", "Correct method and answer", 4.0, emptyList(), "", "")), "", section = 1, number = i + 1)
         }
-        val blueprint = PaperBlueprint(id, "Exercise $exercise", durationMinutes = maxOf(20, written.size * 10), totalMarks = written.size * 4.0,
+        val blueprint = PaperBlueprint(id, if (whole) "Chapter $exercise exercise" else "Exercise $exercise", durationMinutes = maxOf(20, written.size * 10), totalMarks = written.size * 4.0,
             sections = listOf(BlueprintSection("MCQ", 0, 0, 1.0), BlueprintSection("Exercise questions", written.size, written.size, 4.0)), official = false)
         return blueprint to PaperContent(id, emptyList(), written)
     }

@@ -86,7 +86,9 @@ class MainActivity : ComponentActivity() {
                 val sounds = pk.parhlou.student.ui.components.rememberSoundBoard(soundOn)
                 androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.components.LocalSounds provides sounds) {
                 val scope = rememberCoroutineScope()
-                var repo by remember { mutableStateOf<ParhlouRepository>(packed) }
+                // One live bundle per subject (Mathematics, Physics, …), stacked over the content packed in the app.
+                var bundles by remember { mutableStateOf<Map<String, BundleRepository>>(emptyMap()) }
+                val repo = remember(bundles) { BundleRepository.stack(bundles.values, packed) }
                 var update by remember { mutableStateOf<UpdateInfo?>(null) }
                 var installing by remember { mutableStateOf(false) }
                 var ready by remember { mutableStateOf(false) }
@@ -95,10 +97,9 @@ class MainActivity : ComponentActivity() {
 
                 // Live content and update check: on open and every time the app comes back to the front.
                 LifecycleEventEffect(Lifecycle.Event.ON_START) {
-                    scope.launch {
-                        val subject = FakeRepository.MATHS_9
-                        if (repo === packed) remote.cached(subject)?.let { repo = it }
-                        remote.refresh(subject, (repo as? BundleRepository)?.version)?.let { repo = it }
+                    for (subject in FakeRepository.LIVE_SUBJECTS) scope.launch {
+                        if (subject !in bundles) remote.cached(subject)?.let { b -> bundles = bundles + (subject to b) }
+                        remote.refresh(subject, bundles[subject]?.version)?.let { b -> bundles = bundles + (subject to b) }
                     }
                     // New builds download in the background, so "Install" is instant.
                     scope.launch {

@@ -132,7 +132,7 @@ class AskUstaadTest {
         val onboarding = OnboardingState(true, "PB", 9, "English", setOf("pb-9-math"), null, 5, 30, completed = true, name = "Ayesha")
         val p = StudentProfile.build(onboarding, emptyList(), h, prefs, { if (it == "n-log") "Common logarithm" else null }, now)
         val s = p.summary()
-        assertTrue(s, s.contains("Ayesha") && s.contains("Common logarithm") && s.contains("Urdu") && s.contains("70 out of 75"))
+        assertTrue(s, s.contains("Ayesha") && s.contains("Common logarithm") && s.contains("Urdu") && s.contains("70% in every subject"))
         assertTrue(s.length <= 1200)
         val fresh = StudentProfile.build(onboarding, emptyList(), h, prefs.copy(forgetBefore = now), { "Common logarithm" }, now)
         assertTrue(fresh.weak.isEmpty())

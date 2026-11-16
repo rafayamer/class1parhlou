@@ -46,9 +46,10 @@ data class StudentProfile(
             return StudentProfile(
                 name = onboarding.name,
                 classLine = "Class ${onboarding.grade ?: 9}, ${if (onboarding.boardCode == "PB" || onboarding.boardCode == null) "Punjab" else onboarding.boardCode} board, ${onboarding.medium ?: "English"} medium" +
-                    (subject?.let { ", studying ${it.name}" } ?: ""),
+                    (if (subjects.isNotEmpty()) ", studying ${subjects.joinToString(" and ") { it.name }}" else ""),
                 exam = exam,
-                target = prefs.targetMarks.takeIf { it > 0 }?.let { "$it out of 75 in Mathematics" },
+                // Targets are a percentage in every subject (older builds stored marks out of 75 in Mathematics).
+                target = prefs.targetMarks.takeIf { it > 0 }?.let { if (it in setOf(70, 80, 90, 100)) "$it% in every subject" else "$it out of 75 in Mathematics" },
                 level = r.level, streak = r.streakDays, strong = strong, weak = weak, prefs = prefs,
             )
         }

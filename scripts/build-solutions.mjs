@@ -7,8 +7,10 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAny, SYNTAX } from "./textmatch.mjs";
+import { S } from "./subject.mjs";
+const PHY = S.key === "physics";
 
-const ROOT = "content/class9-maths";
+const ROOT = S.root;
 const UNIT = Number(process.argv[2]);
 const outline = JSON.parse(readFileSync(join(ROOT, "work", `u${UNIT}-outline.json`), "utf8"));
 const cache = (name) => join(ROOT, "work", `u${UNIT}-sol-${name}.json`);
@@ -30,7 +32,25 @@ const arr = (i) => ({ type: "array", items: i });
 
 // ── Count what the book contains, straight from the page text (no AI) ─────────────────────────────────────
 const ROMAN = /\((?:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii|xiii|xiv|xv|xvi|xvii|xviii|xix|xx)\)/g;
+// Physics: exercise items are "Q1.4." in Sections B–E (Section A is the MCQs), parts are (a), (b) …; examples "EXAMPLE 1.2:".
+function physicsCounts(text) {
+  let section = "", items = 0, parts = 0, inItem = 0, examples = 0;
+  const close = () => { if (inItem !== null) parts += Math.max(1, inItem); };
+  let open = false;
+  for (const raw of text.split("\n")) {
+    const line = raw.trim();
+    if (/^EXAMPLE\s+\d+(\.\d+)?\s*:?/i.test(line)) examples++;
+    const sec = /^#{0,4}\s*SECTION\s+([A-E])\b/i.exec(line);
+    if (sec) { if (open) close(); open = false; section = sec[1].toUpperCase(); continue; }
+    if (!"BCDE".includes(section) || !section) continue;
+    if (/^Q?\d{1,2}\.\d{1,2}\.\s/.test(line)) { if (open) close(); open = true; items++; inItem = 0; continue; }
+    if (open) inItem += (line.match(/(^|\s)\([a-h]\)\s/g) ?? []).length;
+  }
+  if (open) close();
+  return { examples, exerciseItems: parts };
+}
 function bookCounts(text) {
+  if (PHY) return physicsCounts(text);
   const lines = text.split("\n");
   let inExercise = false, questions = 0, parts = 0, partsInQuestion = 0, examples = 0;
   const close = () => { parts += Math.max(1, partsInQuestion); partsInQuestion = 0; };
@@ -48,7 +68,17 @@ function bookCounts(text) {
 }
 
 // ── 1. Inventory: every example, exercise part and MCQ, verbatim ──────────────────────────────────────────
-const INVENTORY = `You list EVERYTHING in one section of a Pakistani Class 9 Mathematics textbook, copying the book's words exactly.
+const INVENTORY = PHY ? `You list EVERYTHING in one section of a Pakistani Class 9 Physics textbook (Punjab, National Curriculum 2023), copying the book's words exactly.
+- examples: EVERY worked example (each block starting "EXAMPLE n.m:"), label "Example n.m", with its question, the BOOK'S OWN solution copied as one
+  line per step (given data, formula, substitution, result with unit) and its final answer with unit. Worked examples are NEVER exercise items.
+- exercise: ONLY items of the end-of-chapter exercise Sections B–E (if this text contains them): EVERY item and EVERY part separately
+  ((a), (b), … each its own item). "question" must be complete on its own (the item's instruction plus the part).
+  "source": "Short n.m" (Section B), "CRQ n.m" (Section C), "Comprehensive n.m" (Section D), "Numerical n.m" (Section E), adding the part
+  letter when there are parts, e.g. "Numerical 1.3(a)".
+  bookAnswer: for numericals, the answer printed after the problem ("ANSWER:") for that part, exactly; else "".
+  drawing: true if the answer needs a diagram, graph, circuit or table drawn.
+- mcqs: EVERY item of Section A, stem and options verbatim (without the option letters), source "MCQ n.m", answerIndex -1 (the book prints no key).
+If this text has no end-of-chapter exercise, exercise and mcqs are empty. Do not skip anything and do not merge parts. Do not solve anything.` : `You list EVERYTHING in one section of a Pakistani Class 9 Mathematics textbook, copying the book's words exactly.
 - examples: EVERY worked example (each block starting "EXAMPLE n:", including all its parts), with its question, the BOOK'S OWN solution
   copied as one line per step, and its final answer. Worked examples are NEVER exercise items.
 - exercise: ONLY questions printed after an "EXERCISE" heading (or in the review exercise): EVERY question and EVERY part separately ((i), (ii), ... each its own item). "question" must be complete on its own:
@@ -64,8 +94,10 @@ const invSchema = obj({
 });
 const sections = [];
 for (const [i, sec] of outline.sections.entries()) {
-  const expected = bookCounts(sec.text);
-  const input = `UNIT ${UNIT} ${outline.unitTitle}, SECTION ${sec.number} ${sec.title}\n\nSECTION TEXT:\n${sec.text}\n\nANSWER KEY:\n${sec.bookAnswers || "(none printed)"}`;
+  const expected = bookCounts(sec.text.split("\n\nCHAPTER EXERCISE (pick only")[0]);
+  // A Physics section's text ends with the chapter exercise (for teaching); its items are listed once, in the exercise module.
+  const own = sec.text.split("\n\nCHAPTER EXERCISE (pick only")[0];
+  const input = `${S.unitWord.toUpperCase()} ${UNIT} ${outline.unitTitle}, SECTION ${sec.number} ${sec.title}\n\nSECTION TEXT:\n${own}\n\nANSWER KEY:\n${PHY ? "(numerical answers are printed in the text after each problem as ANSWER:)" : sec.bookAnswers || "(none printed)"}`;
   let inv = await stage(`inv-${i + 1}`, () => structured("section_inventory", INVENTORY, input, invSchema));
   // Too few items against the page count: ask once more, saying how many the pages show.
   if (expected.exerciseItems && inv.exercise.length < expected.exerciseItems * 0.9) {
@@ -74,12 +106,23 @@ for (const [i, sec] of outline.sections.entries()) {
   }
   // Anything labelled "Example" belongs with the examples (it keeps its checked solution below).
   inv = { ...inv, exercise: inv.exercise.filter((q) => !/^example/i.test(q.source)), strayExamples: inv.exercise.filter((q) => /^example/i.test(q.source)) };
+  // Physics: only the exercise module may hold exercise items and MCQs (sections teach; the chapter exercise is listed once).
+  if (PHY && !sec.review) inv = { ...inv, exercise: [], mcqs: [], strayExamples: inv.strayExamples };
   sections.push({ sec, inv, expected });
   console.log(`  ${sec.number}: ${inv.examples.length}/${expected.examples} examples, ${inv.exercise.length}/${expected.exerciseItems} exercise parts, ${inv.mcqs.length} MCQs. $${costSoFar().toFixed(3)}`);
 }
 
 // ── 2. Solve every exercise item in the book's method ─────────────────────────────────────────────────────
-const SOLVE = `You are a Class 9 maths teacher in Punjab writing model solutions exactly the way the textbook teaches (its method, notation and
+const SOLVE = PHY ? `You are a Class 9 physics teacher in Punjab writing model answers exactly the way the textbook teaches, so a student copying
+your answer earns full marks in the board exam.
+For a NUMERICAL: steps = "Given: …" (each quantity with its unit, converted to SI where needed), "Required: …", the formula, the substitution
+with units, the working, and the result; finalAnswer = the value WITH its unit, in the form the question asks (scientific notation, prefix,
+significant figures), and it must agree with bookAnswer when given.
+For a THEORY item (short answer, constructed response, comprehensive): steps = the answer as the textbook would accept it, one point per line,
+using the book's definitions and wording (include a formula or an example where the book does); finalAnswer = a one-line summary of the answer.
+For a drawing item, describe the diagram/graph step by step and put what the finished figure shows in "figure", else "".
+accept = patterns that recognise a correct typed final answer for numericals (value and unit); an empty list for theory and drawings.
+${SYNTAX}` : `You are a Class 9 maths teacher in Punjab writing model solutions exactly the way the textbook teaches (its method, notation and
 layout), so a student copying your solution earns full marks in the board exam.
 For each item: steps = the full working, one line per step (no skipped steps); finalAnswer = the final result (must agree with bookAnswer when given);
 for a drawing item, describe each construction/plotting step and put what the finished figure shows in "figure", else "".
@@ -87,7 +130,12 @@ For a proof, the steps are the proof and finalAnswer is the statement proved.
 accept = patterns that recognise a correct typed final answer (empty list for drawings and proofs).
 ${SYNTAX}`;
 const solveSchema = obj({ items: arr(obj({ id: str, steps: strs, finalAnswer: str, figure: str, accept: arr(strs) })) });
-const CHECK = `You are an independent Class 9 maths examiner. For each item, solve it yourself without trusting the candidate, then judge:
+const CHECK = PHY ? `You are an independent Class 9 physics examiner (Punjab board). For each item, answer it yourself without trusting the candidate, then judge:
+- candidateCorrect: the candidate's working and final answer are correct and complete physics (numericals: right formula, right substitution,
+  right value AND unit; theory: every point is scientifically correct and the answer covers what the question asks, as the textbook teaches it).
+- matchesBook: the candidate's final answer agrees with the book's printed answer in value and unit (true when no book answer is given).
+${S.checkRules}
+problem: one sentence on what is wrong, or "".` : `You are an independent Class 9 maths examiner. For each item, solve it yourself without trusting the candidate, then judge:
 - candidateCorrect: the candidate's working and final answer are mathematically correct and complete (for proofs: the proof is valid; for drawings: the steps would produce a correct figure).
 - matchesBook: the candidate's final answer agrees with the book's answer (true when no book answer is given).
 Answers from four-figure log tables or rounded as asked are equivalent within that precision; decimals agreeing to 3 significant figures are equivalent.
@@ -138,7 +186,16 @@ for (let b = 0; b < bookMcqs.length; b += 15) {
   for (const m of out.items) mcqOut.set(m.id, m);
 }
 
-// MCQs where the solver disagrees with the book's key: a separate examiner decides which option is right.
+// Physics prints no MCQ key: a second, independent pass answers every MCQ, and the two must agree (else the examiner rules below).
+if (PHY) {
+  for (let b = 0; b < bookMcqs.length; b += 15) {
+    const batch = bookMcqs.slice(b, b + 15);
+    const out = await stage(`mcq2-${b / 15 + 1}`, () => structured("mcq_answers", `You are an independent Class 9 physics examiner. For each multiple-choice item, work out the correct option yourself (0-based correctIndex).`,
+      JSON.stringify(batch.map(({ id, stem, options }) => ({ id, stem, options }))), obj({ items: arr(obj({ id: str, correctIndex: int })) }), 16000));
+    for (const m of out.items) { const q = bookMcqs.find((x) => x.id === m.id); if (q) q.answerIndex = m.correctIndex; }
+  }
+}
+// MCQs where the solver disagrees with the book's key (or, in Physics, with the second pass): a separate examiner decides.
 const disputed = bookMcqs.filter((q) => q.answerIndex >= 0 && mcqOut.get(q.id) && mcqOut.get(q.id).correctIndex !== q.answerIndex);
 const ruling = new Map();
 if (disputed.length) {

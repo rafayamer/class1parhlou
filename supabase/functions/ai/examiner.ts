@@ -56,7 +56,7 @@ segments: one per answer on the page, top to bottom.
 - crossed_out: true when the student struck the whole segment through. A single line struck through inside a segment is
   written as ~~like this~~ in text, so the examiner can ignore it. rough_work: true for work marked or boxed as rough work.
 - legible: how well this segment can be read. Never fill in words or numbers you cannot see; write [?] for unreadable parts.
-- text: everything the student wrote for it, line by line, in plain Unicode maths (√, ², ×, ÷, π, θ, fractions as (a)/(b)),
+- text: everything the student wrote for it, line by line, in plain Unicode maths and units (√, ², ×, ÷, π, θ, m s⁻¹, fractions as (a)/(b)),
   keeping the student's own steps, mistakes and final answer. Describe a drawn figure in one bracketed line.
 mcq: for a BUBBLE_SHEET, one entry per question number 1–${t.mcqCount}: the circle the student filled in (shaded or inked over
 its letter); MULTIPLE if two or more are filled or

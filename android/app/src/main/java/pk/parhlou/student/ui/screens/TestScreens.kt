@@ -101,13 +101,25 @@ fun TestsScreen(
     /** Prints one exercise as a paper; true = with the worked answers. */
     onExercisePdf: ((String, Boolean) -> Unit)? = null,
     attemptsLeft: (String) -> Int = { pk.parhlou.student.domain.PaperAttempts.MAX },
+    /** The student's subjects (id to name); with more than one, a switch picks whose papers are shown. */
+    subjects: List<Pair<String, String>> = emptyList(),
+    selectedSubject: String? = null,
+    onSubject: (String) -> Unit = {},
+    /** "Exercise" for Mathematics (exercises 1.1, 1.2 …); "Chapter exercise" for subjects with one exercise per chapter. */
+    exerciseLabel: String = "Exercise",
 ) {
     var picker by rememberSaveable { mutableStateOf("") } // "", "exercise", "chapter"
     val board = blueprints.filter { it.official }
     val chapterTests = blueprints.filter { !it.official && it.chapterId != null }
-    val half = blueprints.firstOrNull { it.id == "mock-half" }
-    val mine = blueprints.filter { !it.official && it.chapterId == null && it.id != "mock-half" }
+    val half = blueprints.firstOrNull { it.id.endsWith("mock-half") }
+    val mine = blueprints.filter { !it.official && it.chapterId == null && !it.id.endsWith("mock-half") }
     ParhlouScreen("Papers", onBack = onBack) {
+        if (subjects.size > 1) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            subjects.forEach { (id, name) ->
+                androidx.compose.material3.FilterChip(selected = id == selectedSubject, onClick = { onSubject(id) }, label = { Text(name) },
+                    modifier = Modifier.heightIn(min = 48.dp).testTag("papers-subject-$id"))
+            }
+        }
         if (!readinessPassed) Sheet(Modifier.testTag("readiness")) {
             Text("🔒 Quick check first", style = MaterialTheme.typography.titleMedium)
             Muted("A short quiz. Pass $READINESS_PASS_PERCENT% to unlock papers.")
@@ -120,7 +132,7 @@ fun TestsScreen(
 
         Text("Make a paper", style = MaterialTheme.typography.titleLarge)
         val tiles = listOf(
-            Triple("📘", "Exercise", "scope-exercise") to (exercises.isNotEmpty() && onExercisePdf != null),
+            Triple("📘", exerciseLabel, "scope-exercise") to (exercises.isNotEmpty() && onExercisePdf != null),
             Triple("📗", "Chapter", "scope-chapter") to (readinessPassed && chapterTests.isNotEmpty()),
             Triple("📙", "Half book", "scope-half") to (readinessPassed && half != null && half.id in available),
             Triple("📕", "Full book", "scope-full") to (readinessPassed && onMakePaper != null),
@@ -197,7 +209,7 @@ private fun ScopePicker(title: String, onClose: () -> Unit, content: @Composable
 private fun FlowChips(items: List<String>, chosen: String?, onChoose: (String) -> Unit) {
     androidx.compose.foundation.layout.FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         items.forEach { e ->
-            androidx.compose.material3.FilterChip(selected = e == chosen, onClick = { onChoose(e) }, label = { Text(e) },
+            androidx.compose.material3.FilterChip(selected = e == chosen, onClick = { onChoose(e) }, label = { Text(if ('.' in e) e else "Chapter $e") },
                 modifier = Modifier.heightIn(min = 48.dp).testTag("exercise-$e"))
         }
     }

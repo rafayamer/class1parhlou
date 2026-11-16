@@ -38,14 +38,14 @@ object PaperPdf {
     /** Where pages are drawn: a PDF in the app; plain bitmaps in tests, so the layout can be looked at. */
     interface PageSink { fun start(number: Int, width: Int, height: Int): Canvas; fun finish() }
 
-    fun write(file: File, blueprint: PaperBlueprint, paper: PaperContent, withScheme: Boolean = false): File {
+    fun write(file: File, blueprint: PaperBlueprint, paper: PaperContent, withScheme: Boolean = false, subject: String = "Mathematics"): File {
         val doc = PdfDocument()
         var page: PdfDocument.Page? = null
         draw(object : PageSink {
             override fun start(number: Int, width: Int, height: Int): Canvas =
                 doc.startPage(PdfDocument.PageInfo.Builder(width, height, number).create()).also { page = it }.canvas
             override fun finish() { page?.let { doc.finishPage(it) }; page = null }
-        }, blueprint, paper, withScheme)
+        }, blueprint, paper, withScheme, subject)
         file.parentFile?.mkdirs()
         file.outputStream().use { doc.writeTo(it) }
         doc.close()
@@ -53,24 +53,24 @@ object PaperPdf {
     }
 
     /** Revision notes as a PDF: a title, then headed sections of short paragraphs (definitions, formulas, solved questions). */
-    fun notes(file: File, title: String, sections: List<Pair<String, List<String>>>): File {
+    fun notes(file: File, title: String, sections: List<Pair<String, List<String>>>, subject: String = "Mathematics"): File {
         val doc = PdfDocument()
         var page: PdfDocument.Page? = null
         drawNotes(object : PageSink {
             override fun start(number: Int, width: Int, height: Int): Canvas =
                 doc.startPage(PdfDocument.PageInfo.Builder(width, height, number).create()).also { page = it }.canvas
             override fun finish() { page?.let { doc.finishPage(it) }; page = null }
-        }, title, sections)
+        }, title, sections, subject)
         file.parentFile?.mkdirs()
         file.outputStream().use { doc.writeTo(it) }
         doc.close()
         return file
     }
 
-    fun drawNotes(sink: PageSink, title: String, sections: List<Pair<String, List<String>>>) {
-        val w = Writer(sink, title, "NOTES")
+    fun drawNotes(sink: PageSink, title: String, sections: List<Pair<String, List<String>>>, subject: String = "Mathematics") {
+        val w = Writer(sink, title, "NOTES", subject)
         w.newPage()
-        w.text("MATHEMATICS (CLASS 9) · ${title.uppercase()}", bold = true, size = 13f, center = true)
+        w.text("${subject.uppercase()} (CLASS 9) · ${title.uppercase()}", bold = true, size = 13f, center = true)
         w.space(6f)
         sections.filter { it.second.isNotEmpty() }.forEach { (heading, items) ->
             w.heading(heading)
@@ -81,9 +81,9 @@ object PaperPdf {
         w.finish()
     }
 
-    fun draw(sink: PageSink, blueprint: PaperBlueprint, paper: PaperContent, withScheme: Boolean = false) {
+    fun draw(sink: PageSink, blueprint: PaperBlueprint, paper: PaperContent, withScheme: Boolean = false, subject: String = "Mathematics") {
         val code = code(blueprint, paper)
-        val w = Writer(sink, blueprint.title, code)
+        val w = Writer(sink, blueprint.title, code, subject)
         val numbering = BoardNumbering(blueprint)
         val objective = blueprint.sections.firstOrNull()
         val mcqMarks = (objective?.attempt ?: paper.mcqs.size) * (objective?.marksEach ?: 1.0)
@@ -189,7 +189,7 @@ object PaperPdf {
 
     private enum class Style { Q, Part, Opt, Right, Scheme }
 
-    private class Writer(private val sink: PageSink, private val paperTitle: String, private val code: String) {
+    private class Writer(private val sink: PageSink, private val paperTitle: String, private val code: String, private val subject: String = "Mathematics") {
         private var page: Canvas? = null
         private var number = 0
         var y = M
@@ -210,7 +210,7 @@ object PaperPdf {
             c.drawText("Parhlou", M + 30f, 29f, TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 17f; typeface = Typeface.DEFAULT_BOLD; color = Color.WHITE })
             val right = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 9.5f; color = Color.WHITE; textAlign = Paint.Align.RIGHT }
             val notes = code == "NOTES"
-            c.drawText(if (notes) "Revision notes · Class 9 Mathematics" else "Board-style practice paper · Class 9 Mathematics", W - M, 22f, right)
+            c.drawText(if (notes) "Revision notes · Class 9 $subject" else "Board-style practice paper · Class 9 $subject", W - M, 22f, right)
             c.drawText(paperTitle.take(70), W - M, 35f, right)
             if (notes) {
                 val foot = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 8f; color = MUTED }
@@ -274,7 +274,7 @@ object PaperPdf {
 
         fun title(main: String, left: String, right: String) {
             val c = canvas()
-            text("MATHEMATICS (CLASS 9) · $main", bold = true, size = 13f, center = true)
+            text("${subject.uppercase()} (CLASS 9) · $main", bold = true, size = 13f, center = true)
             val p = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textSize = 10.5f; color = INK; typeface = Typeface.DEFAULT_BOLD }
             c.drawText(left, M, y + 8f, p)
             c.drawText(right, W - M, y + 8f, TextPaint(p).apply { textAlign = Paint.Align.RIGHT })

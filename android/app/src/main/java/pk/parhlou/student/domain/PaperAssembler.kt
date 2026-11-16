@@ -32,7 +32,9 @@ object PaperAssembler {
         scope: MockScope,
         chapters: List<Chapter>,
         pool: Map<String, PaperContent>,            // chapter id → its published questions
-        pattern: PaperBlueprint,                     // sections: [MCQ, short, long]
+        pattern: PaperBlueprint,                     // sections: [MCQ, short, long…]
+        /** Keeps each subject's mock ids apart ("" for Mathematics, whose ids predate other subjects). */
+        idPrefix: String = "",
     ): MockPaper {
         val inScope = chapters.sortedBy { it.number }.let { all ->
             all.take(maxOf(1, Math.ceil(all.size * scope.share).toInt()))
@@ -50,7 +52,7 @@ object PaperAssembler {
             writtenSections.mapIndexed { i, qs -> qs.size to pattern.sections[i + 1].count }
         if (shortages.any { (have, need) -> have < need }) return MockPaper.NeedsQuestions(scope, inScope, emptyList())
 
-        val id = "mock-${scope.name.lowercase()}"
+        val id = "${idPrefix}mock-${scope.name.lowercase()}"
         val written = writtenSections.flatMapIndexed { i, qs ->
             qs.mapIndexed { n, q -> q.copy(section = i + 1, number = n + 1) }
         }
@@ -72,6 +74,21 @@ object PaperAssembler {
         }
         return out
     }
+
+    /** The board pattern of a subject's paper (Mathematics 75 marks; Physics 60 marks). */
+    fun patternFor(subjectId: String): PaperBlueprint = if (subjectId.endsWith("-phy")) physicsPattern() else boardPattern()
+
+    /** Physics 9 (PECTAA): 12 MCQs; three short-answer questions, 5 of 8 parts each (2 marks); 2 of 3 long questions,
+     * each (a) 4 marks + (b) 5 marks = 9. 60 marks, 2 hours. */
+    fun physicsPattern(duration: Int = 120) = PaperBlueprint(
+        id = "pattern", title = "pattern", durationMinutes = duration, totalMarks = 60.0,
+        sections = listOf(
+            BlueprintSection("MCQ", count = 12, attempt = 12, marksEach = 1.0, minutes = 15),
+            BlueprintSection("Short questions", count = 24, attempt = 15, marksEach = 2.0),
+            BlueprintSection("Long questions", count = 3, attempt = 2, marksEach = 9.0),
+        ),
+        official = false,
+    )
 
     /** Totals of the official 2027 paper (15 MCQs; 27 short, 18 attempted; 5 long, 3 attempted). The full board papers with the
      * official per-unit layout are published with the course; these quarter and half mocks are practice. */

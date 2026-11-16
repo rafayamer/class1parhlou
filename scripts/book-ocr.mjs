@@ -1,26 +1,17 @@
 // Reads textbook pages with GPT-6 Luna's vision and writes a faithful Markdown transcription per page.
-// Usage: node --use-env-proxy scripts/book-ocr.mjs <book.pdf> <firstPage> <lastPage> [outDir]
+// Usage: SUBJECT=physics node --use-env-proxy scripts/book-ocr.mjs <book.pdf> <firstPage> <lastPage> [outDir]
 // Pages already transcribed are skipped. Every call's cost is logged and the run stops at the budget cap.
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { costSoFar, luna } from "./luna-budget.mjs";
+import { S } from "./subject.mjs";
 
-const [pdf, first, last, outDir = "content/class9-maths/pages"] = process.argv.slice(2);
+const [pdf, first, last, outDir = `${S.root}/pages`] = process.argv.slice(2);
 mkdirSync(outDir, { recursive: true });
 
-const INSTRUCTIONS = `You transcribe one page of a Pakistani Class 9 Mathematics textbook (Punjab, English medium) exactly.
-Rules:
-- Copy every word, number and symbol exactly as printed, in reading order. Do not summarise, correct, solve or add anything.
-- Write maths in plain Unicode: √, ∛, ², ³, ×, ÷, ±, ≠, ≤, ≥, ∈, ∉, ⊆, ⊂, ∪, ∩, ∅, →, ⇒, ⇔, ∧, ∨, ~, θ, π, ∞, |x|, log x, log_b x.
-  Fractions as a/b, with brackets when a or b has more than one term: (x + 1)/(x − 2). Powers that are not simple digits as a^(n+1).
-  Matrices as [[a, b], [c, d]]. Sets with braces.
-- Use Markdown: '#' for unit titles, '##' for numbered sections (e.g. '## 1.1.2 Decimal Representation'), '###' for sub-headings.
-- Mark these blocks on their own line exactly: 'EXAMPLE <n>:' , 'SOLUTION:' , 'EXERCISE <x.y>' , 'Q<n>.' for exercise questions with '(i)', '(ii)' parts,
-  'MCQ <n>.' with options '(a) ... (b) ... (c) ... (d) ...', 'ANSWERS' for answer sections, 'REMEMBER:' / 'NOTE:' / 'KEY FACT:' for boxes.
-- Tables as Markdown tables. For a picture or diagram write [FIGURE: one-line description of what it shows].
-- Ignore page headers ('Mathematics - 9', 'Unit – N: ...'), the 'NOT FOR SALE' footer and any website watermark; but put the printed page number on the first line as 'PAGE <n>'.`;
+const INSTRUCTIONS = S.ocr;
 
 async function readPage(n) {
   const out = join(outDir, `p${String(n).padStart(3, "0")}.md`);

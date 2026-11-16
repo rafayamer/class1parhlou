@@ -57,11 +57,11 @@ fun MyUstaadScreen(profile: StudentProfile, onChange: (UstaadPrefs) -> Unit, onB
                     FilterChip(selected = p.style == s, onClick = { onChange(p.copy(style = s)) }, label = { Text(s) }, modifier = Modifier.heightIn(min = 48.dp))
                 }
             }
-            Text("Target in Mathematics (out of 75)", style = MaterialTheme.typography.titleSmall)
+            Text("Your target in every subject", style = MaterialTheme.typography.titleSmall)
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                listOf(50, 60, 70, 75).forEach { t ->
+                listOf(70, 80, 90, 100).forEach { t ->
                     FilterChip(selected = p.targetMarks == t, onClick = { onChange(p.copy(targetMarks = if (p.targetMarks == t) 0 else t)) },
-                        label = { Text("$t") }, modifier = Modifier.heightIn(min = 48.dp))
+                        label = { Text("$t%") }, modifier = Modifier.heightIn(min = 48.dp).testTag("target-$t"))
                 }
             }
         }

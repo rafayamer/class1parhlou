@@ -7,8 +7,9 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import { join } from "node:path";
 import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAny, SYNTAX } from "./textmatch.mjs";
+import { S } from "./subject.mjs";
 
-const ROOT = "content/class9-maths";
+const ROOT = S.root;
 const UNIT = Number(process.argv[2]);
 if (!UNIT) throw new Error("usage: build-unit.mjs <unit number>");
 mkdirSync(join(ROOT, "work"), { recursive: true });
@@ -42,9 +43,13 @@ const arr = (items) => ({ type: "array", items });
 // ── Pages of this unit ────────────────────────────────────────────────────────────────────────────────────
 const pageFiles = readdirSync(join(ROOT, "pages")).filter((f) => /^p\d+\.md$/.test(f)).sort();
 const pages = pageFiles.map((f) => ({ n: Number(f.slice(1, 4)), text: readFileSync(join(ROOT, "pages", f), "utf8") }));
-const unitStart = (u) => pages.find((p) => new RegExp(`^#\\s*Unit\\s*${u}\\b`, "mi").test(p.text))?.n;
+const unitStart = (u) => pages.find((p) => S.unitHeading(u).test(p.text))?.n;
 // The answer key at the back starts at the first page headed ANSWERS after the last unit begins.
-const answersStart = pages.find((p) => p.n > (unitStart(13) ?? 0) && /^\s*#*\s*ANSWERS\s*$/m.test(p.text))?.n ?? 9999;
+// (Maths only; Physics prints each numerical's answer right after it.) Physics ends at the bibliography/glossary instead.
+const lastUnit = Math.max(...[...Array(30).keys()].filter((u) => u && unitStart(u)));
+const answersStart = S.answerKeyAtBack
+  ? pages.find((p) => p.n > (unitStart(lastUnit) ?? 0) && /^\s*#*\s*ANSWERS\s*$/m.test(p.text))?.n ?? 9999
+  : pages.find((p) => p.n > (unitStart(lastUnit) ?? 0) && S.backMatter.test(p.text))?.n ?? 9999;
 const start = unitStart(UNIT);
 if (!start) throw new Error(`Unit ${UNIT} heading not found in the transcription`);
 const nextStart = Math.min(unitStart(UNIT + 1) ?? answersStart, answersStart);
@@ -60,13 +65,13 @@ let titleNext = false;
 for (const p of unitPages) {
   for (const line of p.text.split("\n")) {
     const trimmed = line.trim();
-    const t = /^#\s*Unit\s*\d+\s*[:\-–]?\s*(.*)$/i.exec(trimmed);
+    const t = /^#\s*(?:Unit|Chapter)\s*\d+\s*[:\-–]?\s*(.*)$/i.exec(trimmed);
     if (t && !unitTitle && !titleNext) { unitTitle = t[1].trim(); titleNext = !unitTitle; continue; }
     // Some units print their title on the line after "Unit N".
     if (titleNext && trimmed && !/^PAGE\s+\d+/i.test(trimmed)) { unitTitle = trimmed.replace(/^#+\s*/, ""); titleNext = false; continue; }
     const main = mainHeading.exec(trimmed);
     if (main) sections.push({ number: main[1], title: main[2].replace(/[.\s]+$/, ""), pages: [p.n], text: [] });
-    else if (/^#{0,4}\s*REVIEW EXERCISE/i.test(trimmed)) sections.push({ number: `${UNIT}.R`, title: "Unit review", pages: [p.n], text: [], review: true });
+    else if (S.reviewHeading.test(trimmed) && !sections.some((x) => x.review)) sections.push({ number: `${UNIT}.R`, title: S.answerKeyAtBack ? "Unit review" : S.reviewTitle(UNIT), pages: [p.n], text: [], review: true });
     if (!sections.length) sections.push({ number: `${UNIT}.0`, title: "Introduction", pages: [p.n], text: [] });
     const cur = sections[sections.length - 1];
     if (!cur.pages.includes(p.n)) cur.pages.push(p.n);
@@ -116,6 +121,9 @@ for (const p of pages.filter((pg) => pg.n >= answersStart)) {
   }
 }
 
+// Physics has one exercise at the end of the chapter; every section sees it, to pick the items that test that section.
+const chapterExercise = S.answerKeyAtBack ? "" : (sections.find((x) => x.review)?.text.join("\n") ?? "");
+
 const outline = {
   unitTitle: unitTitle || `Unit ${UNIT}`,
   sections: sections.map((s) => {
@@ -126,8 +134,10 @@ const outline = {
     return {
       number: s.number, title: s.title, review: !!s.review,
       bookPages: nums.length > 1 ? `${nums[0]}–${nums[nums.length - 1]}` : nums[0],
-      exercise: exercises.map((e) => `Exercise ${e}`).join(", ") || (s.review ? `Review Exercise ${UNIT}` : ""),
-      text, bookAnswers: keyLines.join("\n"),
+      exercise: S.answerKeyAtBack ? (exercises.map((e) => `Exercise ${e}`).join(", ") || (s.review ? `Review Exercise ${UNIT}` : ""))
+        : (s.review ? `Chapter ${UNIT} exercise` : ""),
+      text: !s.review && chapterExercise ? `${text}\n\nCHAPTER EXERCISE (pick only the items that test this section):\n${chapterExercise}` : text,
+      bookAnswers: S.answerKeyAtBack ? keyLines.join("\n") : "(answers to numericals are printed in the exercise text after each problem, as ANSWER:)",
     };
   }),
 };
@@ -146,7 +156,7 @@ Write teaching material that follows the BOOK'S method and notation exactly (stu
 - examTips: how this topic is asked and marked in the board paper (which kind of question, what earns the marks). mistakes: common mistakes that lose marks.
 - note: a tutor note for this section (title, 4–8 keywords students might type, a direct answer, an explanation, a simpler explanation, 1–2 examples, steps, a check question with its answer and accept patterns).
 - mcqs: 6 to 10 MCQs on this section: the book's own MCQs if the text has any (verbatim, with the book's answer, fromBook true), otherwise new board-style MCQs (fromBook false); 4 options, exactly one correct, and a one-sentence reason for EVERY option (why it is right or wrong).
-- written: up to 14 of this section's exercise questions (verbatim, one part per item, stating what to do, e.g. "Rationalise the denominator: 3/(√5 − √2)"; include "source" like "Ex ${UNIT}.1 Q2(iii)"). Skip questions that need a drawing or a number line. Give marks 2 for a short question (one or two steps) and 4 for a longer one. modelAnswer: the solution as the book would accept it, one line per step, ending with the final answer; finalAnswer must equal the book's answer key when it gives one. rubric: 2–4 marking points whose marks add up to the question's marks, each with "why" (why it matters) and "how" (how to earn it) and accept patterns that the model answer satisfies; the last point is the correct final answer.
+- written: up to 14 of this section's exercise questions (verbatim, one part per item, stating what to do, e.g. "Rationalise the denominator: 3/(√5 − √2)"; include "source" like ${S.sourceExample(UNIT)}). Skip questions that need a drawing or a number line. Give marks ${S.writtenMarks.length > 2 ? "2 for a short question, 4 for a longer one and 5 for a long numerical or descriptive answer" : "2 for a short question (one or two steps) and 4 for a longer one"}. modelAnswer: the solution as the book would accept it, one line per step, ending with the final answer; finalAnswer must equal the book's answer key when it gives one. rubric: 2–4 marking points whose marks add up to the question's marks, each with "why" (why it matters) and "how" (how to earn it) and accept patterns that the model answer satisfies; the last point is the correct final answer.
 ${SYNTAX}`;
 
 const teachSchema = obj({
@@ -164,22 +174,18 @@ const teachSchema = obj({
 
 const modules = [];
 for (const [i, sec] of outline.sections.entries()) {
-  const brief = sec.review
-    ? "This is the unit's REVIEW EXERCISE. mcqs: include ALL its multiple-choice items verbatim with the book's answers (fromBook true), up to 15. written: its other questions (verbatim). explain: 4–6 cards summarising the whole unit. example: one review question solved step by step. yourTurn: two review questions."
-    : "This is one main section of the unit, with its sub-sections, examples and exercise.";
-  const input = `${brief}\n\nUNIT: ${UNIT} ${outline.unitTitle}\nSECTION: ${sec.number} ${sec.title} (printed pages ${sec.bookPages})\n\nSECTION TEXT (verbatim from the book):\n${sec.text}\n\nBOOK ANSWER KEY for this section's exercises (finalAnswer must agree with it):\n${sec.bookAnswers || "(none printed)"}`;
+  const brief = sec.review ? S.reviewBrief : S.sectionBrief;
+  const input = `${brief}\n\n${S.unitWord.toUpperCase()}: ${UNIT} ${outline.unitTitle}\nSECTION: ${sec.number} ${sec.title} (printed pages ${sec.bookPages})\n\nSECTION TEXT (verbatim from the book):\n${sec.text}\n\nBOOK ANSWER KEY for this section's exercises (finalAnswer must agree with it):\n${sec.bookAnswers || "(none printed)"}`;
   const taught = await stage(`teach-${i + 1}`, () => structured("section_lesson", TEACH, input, teachSchema, 40000));
   modules.push({ sec, taught });
   console.log(`  taught ${sec.number}: ${taught.mcqs.length} MCQs, ${taught.written.length} written. $${costSoFar().toFixed(3)}`);
 }
 
 // ── C. Independent check of every answer ──────────────────────────────────────────────────────────────────
-const CHECK = `You are an independent Class 9 maths examiner. Solve each item yourself, carefully, WITHOUT trusting any given key.
+const CHECK = `You are an independent ${S.examiner}. Solve each item yourself, carefully, WITHOUT trusting any given key.
 For MCQs return the index (0-based) of the correct option. For written items return your final answer, then say whether the
-candidate final answer is mathematically equivalent to yours (same value/set/expression/statement; ignore formatting).
-Precision: answers found with four-figure log/antilog tables, or rounded as the question asks, are equivalent when they agree to
-the precision those methods give (e.g. log 0.0876 = −1.0575 from tables vs −1.0580 exactly: equivalent; 0.02675 vs 0.020675: NOT
-equivalent). Decimals that agree to 3 significant figures are equivalent unless the question demands more.`;
+candidate final answer is equivalent to yours (same value/set/expression/statement; ignore formatting).
+${S.checkRules}`;
 const checkSchema = obj({
   mcqs: arr(obj({ id: str, correctIndex: { type: "integer" } })),
   written: arr(obj({ id: str, myAnswer: str, candidateEquivalent: { type: "boolean" } })),
@@ -219,16 +225,17 @@ ${SYNTAX}`, JSON.stringify(toRepair), obj({ items: arr(obj({ id: str, rubric: ar
 // ── D. Keep only what passed, and assemble the unit ───────────────────────────────────────────────────────
 const report = { unit: UNIT, title: outline.unitTitle, dropped: [] };
 const near = (a, b) => Math.abs(a - b) < 1e-9;
-const chapter = { id: `u-${UNIT}`, number: UNIT, title: outline.unitTitle, status: "SAMPLE_UNREVIEWED", modules: [] };
+const P = S.idPrefix;
+const chapter = { id: `${P}u-${UNIT}`, number: UNIT, title: outline.unitTitle, status: "SAMPLE_UNREVIEWED", modules: [] };
 const notes = [], quiz = [], written = [];
 for (const [i, m] of modules.entries()) {
-  const mid = `m-${UNIT}-${i + 1}`, nid = `n-${UNIT}-${i + 1}`;
+  const mid = `${P}m-${UNIT}-${i + 1}`, nid = `${P}n-${UNIT}-${i + 1}`;
   const t = m.taught;
   const agreed = new Map(m.check.mcqs.map((c) => [Number(c.id.slice(1)), c.correctIndex]));
   t.mcqs.forEach((q, k) => {
     const valid = q.options.length >= 2 && q.rationales.length === q.options.length && q.correctIndex >= 0 && q.correctIndex < q.options.length;
     if (!valid || agreed.get(k) !== q.correctIndex) { report.dropped.push(`MCQ ${mid}#${k}: ${valid ? "independent check disagreed" : "malformed"}`); return; }
-    quiz.push({ id: `q-${UNIT}-${i + 1}-${k + 1}`, stem: q.stem, options: q.options, correctIndex: q.correctIndex, rationales: q.rationales,
+    quiz.push({ id: `${P}q-${UNIT}-${i + 1}-${k + 1}`, stem: q.stem, options: q.options, correctIndex: q.correctIndex, rationales: q.rationales,
       status: q.fromBook ? "APPROVED" : "SAMPLE_UNREVIEWED", noteId: nid, moduleId: mid });
   });
   const okWritten = new Set(m.check.written.filter((c) => c.candidateEquivalent).map((c) => Number(c.id.slice(1))));
@@ -240,23 +247,23 @@ for (const [i, m] of modules.entries()) {
     const model = w.modelAnswer.join("\n");
     const problems = [];
     if (!okWritten.has(k)) problems.push("independent check disagreed");
-    if (![2, 4].includes(w.marks) || !near(sum, w.marks)) problems.push(`marks ${sum}/${w.marks}`);
+    if (!S.writtenMarks.includes(w.marks) || !near(sum, w.marks)) problems.push(`marks ${sum}/${w.marks}`);
     if (rubric.some((c) => !c.accept.length || !matchesAny(model, c.accept))) problems.push("model answer misses a marking point");
     if (rubric.some((c) => c.accept.length && matchesAny("", c.accept))) problems.push("blank answer would score");
     if (problems.length) { report.dropped.push(`Written ${mid}#${k} (${w.source}): ${problems.join(", ")}`); return; }
-    moduleWritten.push({ id: `w-${UNIT}-${i + 1}-${k + 1}`, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer,
+    moduleWritten.push({ id: `${P}w-${UNIT}-${i + 1}-${k + 1}`, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer,
       followUp: t.lesson.yourTurn[0]?.question ?? "", noteId: nid, section: 0, number: 0, matching: "method", rubric, source: w.source });
   });
   written.push(...moduleWritten);
-  notes.push({ id: nid, subjectId: "pb-9-math", moduleId: mid, title: t.note.title, keywords: t.note.keywords, answer: t.note.answer,
+  notes.push({ id: nid, subjectId: S.id, moduleId: mid, title: t.note.title, keywords: t.note.keywords, answer: t.note.answer,
     explanation: t.note.explanation, simple: t.note.simple, examples: t.note.examples, steps: t.note.steps,
     checkQuestion: t.note.checkQuestion, checkAnswer: t.note.checkAnswer, checkAccept: t.note.checkAccept });
   const yourTurn = t.lesson.yourTurn.filter((p) => p.accept.length && matchesAny(p.answer, p.accept) && !matchesAny("", p.accept));
   if (yourTurn.length < t.lesson.yourTurn.length) report.dropped.push(`Your-turn ${mid}: ${t.lesson.yourTurn.length - yourTurn.length} with unusable answer patterns`);
   chapter.modules.push({
-    id: mid, position: i + 1, title: m.sec.review ? `Unit ${UNIT} review` : `${m.sec.number} ${m.sec.title}`, status: "SAMPLE_UNREVIEWED", video: null,
-    bookReference: { text: `Your textbook, Unit ${UNIT}${m.sec.review ? ", review exercise" : `, section ${m.sec.number}`}, pages ${m.sec.bookPages}${m.sec.exercise ? `; ${m.sec.exercise}` : ""}`, verified: true },
-    readingTasks: [m.sec.review ? `Revise Unit ${UNIT} and attempt Review Exercise ${UNIT} (pages ${m.sec.bookPages}).` : `Read section ${m.sec.number} (pages ${m.sec.bookPages}) in your textbook.`,
+    id: mid, position: i + 1, title: m.sec.review ? S.reviewTitle(UNIT) : `${m.sec.number} ${m.sec.title}`, status: "SAMPLE_UNREVIEWED", video: null,
+    bookReference: { text: `Your textbook, ${S.unitWord} ${UNIT}${m.sec.review ? (S.answerKeyAtBack ? ", review exercise" : ", end-of-chapter exercise") : `, section ${m.sec.number}`}, pages ${m.sec.bookPages}${m.sec.exercise ? `; ${m.sec.exercise}` : ""}`, verified: true },
+    readingTasks: [m.sec.review ? `Revise ${S.unitWord} ${UNIT} and attempt ${S.answerKeyAtBack ? `Review Exercise ${UNIT}` : "the end-of-chapter exercise"} (pages ${m.sec.bookPages}).` : `Read section ${m.sec.number} (pages ${m.sec.bookPages}) in your textbook.`,
       ...(m.sec.exercise && !m.sec.review ? [`Solve ${m.sec.exercise} in your notebook.`] : [])],
     writtenQuestions: moduleWritten.slice(0, 3),
     lesson: { ...t.lesson, yourTurn },

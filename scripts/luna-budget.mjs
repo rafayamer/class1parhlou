@@ -1,9 +1,12 @@
 // Spend tracking for content generation. Prices are per million tokens (GPT-6 Luna, as published Nov 2026).
-import { appendFileSync, existsSync, readFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { S } from "./subject.mjs";
 
-const LOG = process.env.COST_LOG ?? "content/class9-maths/cost-log.jsonl";
+// Each subject keeps its own cost log, so each has its own budget.
+const LOG = process.env.COST_LOG ?? `${S.root}/cost-log.jsonl`;
+mkdirSync(S.root, { recursive: true });
 export const PRICE = { input: 0.10, cachedInput: 0.01, output: 0.50 };
-export const CAP = Number(process.env.BUDGET_USD ?? 10);
+export const CAP = Number(process.env.BUDGET_USD ?? (S.key === "physics" ? 15 : 10));
 
 export function costOf(usage) {
   if (!usage) return 0;
