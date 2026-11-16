@@ -46,7 +46,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           cp android/app/build/outputs/apk/debug/app-debug.apk parhlou.apk
+          # Release notes = the newest entry of the in-app "What's new" page, so both always say the same.
+          python3 -c "
+          import json
+          n = json.load(open('android/app/src/main/assets/whats-new.json'))[0]
+          lines = ['## ' + n['title'], ''] + ['- ' + c for c in n['changes']]
+          if n.get('yourRequests'): lines += ['', '### Your requests in this update', ''] + ['- ' + r for r in n['yourRequests']]
+          lines += ['', 'Automatic prototype build of ${{ github.sha }}. Not a Play Store release.']
+          open('notes.md', 'w').write(chr(10).join(lines))
+          "
           gh release create "build-${{ github.run_number }}" parhlou.apk \
             --title "Parhlou prototype build ${{ github.run_number }}" \
-            --notes "Automatic prototype build of ${{ github.sha }}. Not a Play Store release." \
+            --notes-file notes.md \
             --target "${{ github.sha }}" --latest
