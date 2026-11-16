@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
@@ -86,10 +87,15 @@ fun RewardBar(r: RewardSummary, modifier: Modifier = Modifier, onClick: () -> Un
 
 @Composable
 private fun Chip(icon: String, value: String, label: String, color: Color, description: String, modifier: Modifier) {
-    Surface(shape = RoundedCornerShape(18.dp), border = BorderStroke(1.5.dp, color.copy(alpha = 0.6f)),
-        color = MaterialTheme.colorScheme.surface, modifier = modifier.semantics(mergeDescendants = true) { contentDescription = description }) {
-        Column(Modifier.padding(vertical = 8.dp, horizontal = 6.dp), horizontalAlignment = Alignment.CenterHorizontally) {
-            Text("$icon $value", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, maxLines = 1)
+    pk.parhlou.student.ui.components.Chunky(
+        modifier = modifier.semantics(mergeDescendants = true) { contentDescription = description },
+        colors = pk.parhlou.student.ui.components.ChunkyColors(MaterialTheme.colorScheme.surface, color.copy(alpha = 0.55f),
+            MaterialTheme.colorScheme.onSurface, color.copy(alpha = 0.55f)),
+        shape = RoundedCornerShape(16.dp), lip = 3.dp, contentPadding = PaddingValues(vertical = 8.dp, horizontal = 6.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+            Text("$icon $value", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold, maxLines = 1)
             Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
         }
     }
@@ -117,7 +123,7 @@ fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: Stri
         shown.forEach { c ->
             UnitHeader(c, onKit)
             c.modules.forEach { m ->
-                PathNode(m, Rewards.sectionLevel(progress.evidence(m.id)), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false) { onStart(m.id) }
+                PathNode(m, Rewards.sectionLevel(progress.evidence(m.id)), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false, unit = c.number) { onStart(m.id) }
             }
         }
     }
@@ -126,24 +132,31 @@ fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: Stri
 @Composable
 private fun UnitHeader(c: Chapter, onKit: (String) -> Unit) {
     val out = c.kit?.inExam == false
-    Surface(shape = RoundedCornerShape(20.dp),
-        color = if (out) MaterialTheme.colorScheme.surfaceVariant else MaterialTheme.colorScheme.primary,
-        modifier = Modifier.fillMaxWidth().padding(top = 10.dp)) {
+    val (face, lip) = unitColour(c.number)
+    pk.parhlou.student.ui.components.Chunky(
+        modifier = Modifier.fillMaxWidth().padding(top = 10.dp),
+        colors = if (out) pk.parhlou.student.ui.components.ChunkyDefaults.disabled() else pk.parhlou.student.ui.components.ChunkyColors(face, lip, Color.White),
+        shape = RoundedCornerShape(20.dp), contentPadding = PaddingValues(0.dp),
+    ) {
         Row(Modifier.padding(start = 16.dp, end = 4.dp, top = 10.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
-                val fg = if (out) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.onPrimary
+                val fg = if (out) MaterialTheme.colorScheme.onSurfaceVariant else Color.White
                 Text("Unit ${c.number}" + if (out) " · not in this year's exam" else "", style = MaterialTheme.typography.labelMedium, color = fg.copy(alpha = 0.8f))
                 Text(c.title, style = MaterialTheme.typography.titleMedium, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             if (c.kit != null) TextButton(onClick = { onKit(c.id) }, modifier = Modifier.heightIn(min = 48.dp)) {
-                Text("Exam kit", color = if (out) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primaryContainer)
+                Text("Exam kit", color = if (out) MaterialTheme.colorScheme.primary else Color.White, style = MaterialTheme.typography.labelLarge)
             }
         }
     }
 }
 
+/** Each unit has its own colour on the path, so the road is easy to follow. */
 @Composable
-private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam: Boolean, onClick: () -> Unit) {
+private fun unitColour(n: Int): Pair<Color, Color> = pk.parhlou.student.ui.theme.LocalBrand.current.units.let { it[(n - 1).mod(it.size)] }
+
+@Composable
+private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam: Boolean, unit: Int = 1, onClick: () -> Unit) {
     val reduced = LocalReducedMotion.current
     val bounce = pk.parhlou.student.ui.components.rememberBob(reduced || !current, 700, times = 5)
     val shift = (sin(index * 0.9) * 70).dp
@@ -157,9 +170,9 @@ private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam
     val ring = MaterialTheme.colorScheme.primary
     val track = MaterialTheme.colorScheme.outlineVariant
     Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-        if (current) Surface(shape = RoundedCornerShape(12.dp), color = MaterialTheme.colorScheme.primary,
+        if (current) Surface(shape = RoundedCornerShape(12.dp), color = unitColour(unit).first,
             modifier = Modifier.offset(x = shift).graphicsLayer { translationY = -bounce * 6f * density }) {
-            Text("Start", color = MaterialTheme.colorScheme.onPrimary, style = MaterialTheme.typography.labelLarge,
+            Text("Start", color = Color.White, style = MaterialTheme.typography.labelLarge,
                 modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp))
         }
         Box(Modifier.offset(x = shift).size(76.dp).graphicsLayer { translationY = -bounce * 6f * density }, contentAlignment = Alignment.Center) {
@@ -168,13 +181,24 @@ private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam
                 drawArc(track, -90f, 360f, false, style = st)
                 if (level > 0) drawArc(ring, -90f, 360f * level / 5f, false, style = st)
             }
-            Surface(onClick = onClick, shape = CircleShape, color = fill, shadowElevation = if (current) 6.dp else 1.dp,
-                modifier = Modifier.size(60.dp).testTag("path-${m.id}").semantics {
+            val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+            val (uFace, uLip) = unitColour(unit)
+            val nodeColors = when {
+                !inExam -> pk.parhlou.student.ui.components.ChunkyDefaults.disabled()
+                done -> pk.parhlou.student.ui.components.ChunkyColors(brand.sun, brand.sunLip, brand.onSun)
+                current -> pk.parhlou.student.ui.components.ChunkyColors(uFace, uLip, Color.White)
+                else -> pk.parhlou.student.ui.components.ChunkyColors(MaterialTheme.colorScheme.surface, brand.lineLip, uFace, brand.line)
+            }
+            pk.parhlou.student.ui.components.Chunky(
+                modifier = Modifier.width(60.dp).testTag("path-${m.id}").semantics(mergeDescendants = true) {
                     contentDescription = "${m.title}, level $level of 5" + if (current) ", today's session" else ""
-                }) {
-                Box(contentAlignment = Alignment.Center) {
+                },
+                colors = nodeColors, shape = CircleShape, lip = 5.dp, onClick = onClick, sound = pk.parhlou.student.ui.components.Sfx.SELECT,
+                contentPadding = PaddingValues(0.dp), contentAlignment = Alignment.Center,
+            ) {
+                Box(Modifier.size(55.dp), contentAlignment = Alignment.Center) {
                     Icon(when { done -> Icons.Filled.Check; current -> Icons.Filled.PlayArrow; else -> Icons.Filled.Star }, contentDescription = null,
-                        tint = if (done && inExam) Color.White else MaterialTheme.colorScheme.onSurface)
+                        modifier = Modifier.size(30.dp))
                 }
             }
         }

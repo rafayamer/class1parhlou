@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.session
 
+import androidx.compose.runtime.LaunchedEffect
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
@@ -53,6 +54,24 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.focusRequester
+import androidx.compose.material.icons.filled.Check
+import pk.parhlou.student.ui.components.Chunky
+import pk.parhlou.student.ui.components.ChunkyButton
+import pk.parhlou.student.ui.components.ChunkyColors
+import pk.parhlou.student.ui.components.ChunkyDefaults
+import pk.parhlou.student.ui.components.LocalReducedMotion
+import pk.parhlou.student.ui.components.Sfx
+import pk.parhlou.student.ui.theme.LocalBrand
 import pk.parhlou.student.domain.Feedback
 import pk.parhlou.student.domain.SessionAnswer
 import pk.parhlou.student.domain.SessionItem
@@ -63,8 +82,8 @@ import pk.parhlou.student.ui.components.UstadMood
 import pk.parhlou.student.ui.components.UstadSays
 import pk.parhlou.student.ui.components.rememberFeedbackEffects
 
-private val Right = Color(0xFF58A700)
-private val Wrong = Color(0xFFD93A3A)
+private val Right: Color @Composable get() = LocalBrand.current.success
+private val Wrong: Color @Composable get() = LocalBrand.current.danger
 
 /**
  * A Duolingo-style guided session: one item per screen, a progress bar, a big Check button, then a green or red
@@ -118,19 +137,29 @@ private fun SessionBody(
         Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).statusBarsPadding().padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)) {
             UstadSays("This section's practice questions are on their way. Open the lesson or the solutions meanwhile.", UstadMood.THINKING)
-            Button(onClick = onClose, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Back") }
+            pk.parhlou.student.ui.components.BigButton("Back", onClick = onClose)
         }
         return
     }
     val item = player.current ?: return
-    val progress by animateFloatAsState(player.progress, spring(), label = "progress")
+    val progress by animateFloatAsState(player.progress, spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessLow), label = "progress")
+    fun check() {
+        val a = answer ?: return
+        val f = player.answer(a)
+        if (item.id !in firstTries) { firstTries += item.id; onAnswered(item, f.correct) }
+        when {
+            !f.correct -> fx.wrong()
+            player.combo == 3 || player.combo == 5 || player.combo % 10 == 0 -> fx.combo()
+            else -> fx.correct()
+        }
+        feedback = f
+    }
 
     Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).statusBarsPadding().navigationBarsPadding().imePadding()) {
         Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = onClose) { Icon(Icons.Filled.Close, contentDescription = "Close session") }
-            LinearProgressIndicator(progress = { progress }, modifier = Modifier.weight(1f).heightIn(min = 12.dp).testTag("session-progress"),
-                color = Right, trackColor = MaterialTheme.colorScheme.surfaceVariant, strokeCap = androidx.compose.ui.graphics.StrokeCap.Round)
-            if (player.combo >= 2) Text("🔥 ${player.combo}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(start = 8.dp).testTag("combo"))
+            IconButton(onClick = onClose) { Icon(Icons.Filled.Close, contentDescription = "Close session", tint = MaterialTheme.colorScheme.onSurfaceVariant) }
+            SessionProgress(progress, Modifier.weight(1f).testTag("session-progress"))
+            if (player.combo >= 2) ComboBadge(player.combo)
             IconButton(onClick = onToggleSound) {
                 Icon(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff,
                     contentDescription = if (soundOn) "Mute sounds" else "Turn sounds on")
@@ -141,23 +170,14 @@ private fun SessionBody(
             Text(title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             UstadSays(item.instruction, if (feedback?.correct == false) UstadMood.THINKING else UstadMood.HAPPY, size = 48.dp)
             // Each attempt starts fresh, even when a missed item comes straight back.
-            key(tick) { ItemBody(item, answer, feedback, onAnswer = { if (feedback == null) answer = it }) }
+            key(tick) { ItemBody(item, answer, feedback, onAnswer = { if (feedback == null) answer = it }, onSubmit = { if (feedback == null) check() }, fx = fx) }
         }
         val fb = feedback
         if (fb == null) {
-            Button(
-                onClick = {
-                    val a = answer ?: return@Button
-                    val f = player.answer(a)
-                    if (item.id !in firstTries) { firstTries += item.id; onAnswered(item, f.correct) }
-                    if (f.correct) fx.correct() else fx.wrong()
-                    feedback = f
-                },
-                enabled = answer != null,
-                shape = RoundedCornerShape(16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Right, contentColor = Color.White),
-                modifier = Modifier.fillMaxWidth().padding(16.dp).heightIn(min = 56.dp).testTag("session-check"),
-            ) { Text("Check", style = MaterialTheme.typography.titleMedium) }
+            Box(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 14.dp)) {
+                ChunkyButton("Check", onClick = { check() }, colors = ChunkyDefaults.success(), enabled = answer != null,
+                    sound = Sfx.TAP, modifier = Modifier.testTag("session-check"))
+            }
         } else {
             AnimatedVisibility(visible = true, enter = slideInVertically { it } + fadeIn()) {
                 FeedbackPanel(fb, onAsk = { onAskTutor(askText(item)) }, onContinue = {
@@ -182,25 +202,53 @@ private fun askText(item: SessionItem): String = when (item) {
 
 @Composable
 private fun FeedbackPanel(fb: Feedback, onAsk: () -> Unit, onContinue: () -> Unit) {
-    val color = if (fb.correct) Right else Wrong
-    Surface(color = color.copy(alpha = 0.14f), modifier = Modifier.fillMaxWidth().testTag(if (fb.correct) "feedback-right" else "feedback-wrong")) {
-        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(fb.title, style = MaterialTheme.typography.headlineSmall, color = color, fontWeight = FontWeight.Bold)
-            fb.correctAnswer?.let { pk.parhlou.student.ui.components.MathText("Correct answer: $it", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold)) }
+    val brand = LocalBrand.current
+    val color = if (fb.correct) brand.success else brand.danger
+    Surface(color = if (fb.correct) brand.successPale else brand.dangerPale,
+        modifier = Modifier.fillMaxWidth().testTag(if (fb.correct) "feedback-right" else "feedback-wrong")) {
+        Column(Modifier.padding(horizontal = 20.dp, vertical = 18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Box(Modifier.size(34.dp).clip(CircleShape).background(color), contentAlignment = Alignment.Center) {
+                    Icon(if (fb.correct) Icons.Filled.Check else Icons.Filled.Close, contentDescription = null, tint = Color.White, modifier = Modifier.size(22.dp))
+                }
+                Text(fb.title, style = MaterialTheme.typography.headlineSmall, color = color)
+            }
+            fb.correctAnswer?.let { pk.parhlou.student.ui.components.MathText("Correct answer: $it", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = color) }
             if (fb.explanation.isNotBlank()) Text(fb.explanation, style = MaterialTheme.typography.bodyMedium)
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                TextButton(onClick = onAsk, modifier = Modifier.heightIn(min = 48.dp)) { Text("Ask Ustaad") }
-                Box(Modifier.weight(1f))
-                Button(onClick = onContinue, shape = RoundedCornerShape(16.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = color, contentColor = Color.White),
-                    modifier = Modifier.heightIn(min = 52.dp).testTag("session-continue")) { Text("Continue", style = MaterialTheme.typography.titleMedium) }
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                TextButton(onClick = onAsk, modifier = Modifier.heightIn(min = 48.dp)) { Text("Ask Ustaad", color = color, style = MaterialTheme.typography.labelLarge) }
+                ChunkyButton("Continue", onClick = onContinue, colors = if (fb.correct) ChunkyDefaults.success() else ChunkyDefaults.danger(),
+                    modifier = Modifier.weight(1f).testTag("session-continue"))
             }
         }
     }
 }
 
+/** The lesson's progress: a thick rounded bar that fills with a springy motion and a light shine on top. */
 @Composable
-private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedback?, onAnswer: (SessionAnswer) -> Unit) {
+private fun SessionProgress(progress: Float, modifier: Modifier) {
+    val brand = LocalBrand.current
+    Box(modifier.height(16.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant)) {
+        Box(Modifier.fillMaxWidth(progress.coerceIn(0f, 1f)).fillMaxHeight().clip(RoundedCornerShape(50)).background(brand.success)) {
+            Box(Modifier.fillMaxWidth().padding(horizontal = 6.dp).padding(top = 3.dp).height(4.dp).clip(RoundedCornerShape(50))
+                .background(Color.White.copy(alpha = 0.35f)))
+        }
+    }
+}
+
+/** "🔥 3": pops in each time the run of right answers grows. */
+@Composable
+private fun ComboBadge(combo: Int) {
+    val pop = remember { Animatable(1f) }
+    val reduced = LocalReducedMotion.current
+    LaunchedEffect(combo) { if (!reduced) { pop.snapTo(1.5f); pop.animateTo(1f, spring(dampingRatio = 0.35f, stiffness = Spring.StiffnessMedium)) } }
+    Text("🔥 $combo", style = MaterialTheme.typography.titleMedium, color = Color(0xFFFF7A00),
+        modifier = Modifier.padding(start = 8.dp).graphicsLayer { scaleX = pop.value; scaleY = pop.value }.testTag("combo"))
+}
+
+@Composable
+private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedback?, onAnswer: (SessionAnswer) -> Unit,
+                     onSubmit: () -> Unit = {}, fx: pk.parhlou.student.ui.components.FeedbackEffects? = null) {
     val checked = feedback != null
     when (item) {
         is SessionItem.Mcq -> {
@@ -227,9 +275,15 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
             item.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
             var text by remember(item.id) { mutableStateOf("") }
             var hint by remember(item.id) { mutableStateOf(false) }
+            // The answer box takes focus (and opens the keyboard) as soon as the question appears; "Done" checks it.
+            val focus = remember(item.id) { androidx.compose.ui.focus.FocusRequester() }
+            LaunchedEffect(item.id) { runCatching { focus.requestFocus() } }
             OutlinedTextField(value = text, onValueChange = { text = it; if (it.isNotBlank()) onAnswer(SessionAnswer.Typed(it)) },
-                enabled = !checked, placeholder = { Text("Your final answer") }, singleLine = false,
-                modifier = Modifier.fillMaxWidth().testTag("session-input"))
+                enabled = !checked, placeholder = { Text("Your final answer") }, singleLine = true,
+                shape = RoundedCornerShape(16.dp), textStyle = MaterialTheme.typography.titleMedium,
+                keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(imeAction = androidx.compose.ui.text.input.ImeAction.Done),
+                keyboardActions = androidx.compose.foundation.text.KeyboardActions(onDone = { if (text.isNotBlank()) onSubmit() }),
+                modifier = Modifier.fillMaxWidth().focusRequester(focus).testTag("session-input"))
             if (item.hint != null && !checked) {
                 if (hint) Text(item.hint, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.secondary)
                 else TextButton(onClick = { hint = true }, modifier = Modifier.heightIn(min = 48.dp)) { Text("Show a hint") }
@@ -273,8 +327,8 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
         is SessionItem.Flashcard -> {
             var flipped by remember(item.id) { mutableStateOf(false) }
             val turn by animateFloatAsState(if (flipped) 180f else 0f, label = "flip")
-            Card(onClick = { flipped = !flipped }, modifier = Modifier.fillMaxWidth().heightIn(min = 160.dp).testTag("flashcard"), shape = RoundedCornerShape(24.dp),
-                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)) {
+            pk.parhlou.student.ui.components.TapCard(onClick = { flipped = !flipped }, modifier = Modifier.fillMaxWidth().heightIn(min = 160.dp).testTag("flashcard"), shape = RoundedCornerShape(24.dp),
+                containerColor = MaterialTheme.colorScheme.secondaryContainer) {
                 Box(Modifier.fillMaxWidth().heightIn(min = 160.dp).padding(20.dp), contentAlignment = Alignment.Center) {
                     Text(if (turn > 90f) item.text else item.term, textAlign = TextAlign.Center,
                         style = if (turn > 90f) MaterialTheme.typography.bodyLarge else MaterialTheme.typography.headlineSmall)
@@ -291,29 +345,27 @@ private fun ItemBody(item: SessionItem, answer: SessionAnswer?, feedback: Feedba
     }
 }
 
-/** A big tappable answer card. [state]: null = not marked, true = right, false = wrong. */
+/** A big tappable 3D answer card. [state]: null = not marked, true = right, false = wrong (it shakes). */
 @Composable
 private fun OptionCard(text: String, selected: Boolean, state: Boolean?, tag: String, modifier: Modifier = Modifier, onClick: () -> Unit) {
-    val border = when (state) {
-        true -> Right
-        false -> Wrong
-        null -> if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
+    val brand = LocalBrand.current
+    val colors = when {
+        state == true -> ChunkyColors(brand.successPale, brand.success, MaterialTheme.colorScheme.onSurface, brand.success)
+        state == false -> ChunkyColors(brand.dangerPale, brand.danger, MaterialTheme.colorScheme.onSurface, brand.danger)
+        selected -> ChunkyColors(MaterialTheme.colorScheme.primaryContainer, MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onSurface, MaterialTheme.colorScheme.primary)
+        else -> ChunkyDefaults.plain()
     }
-    val scale by animateFloatAsState(if (selected) 1.02f else 1f, spring(dampingRatio = 0.5f), label = "press")
-    Surface(
-        onClick = onClick,
-        shape = RoundedCornerShape(16.dp),
-        border = BorderStroke(if (selected || state != null) 2.5.dp else 1.5.dp, border),
-        color = when (state) {
-            true -> Right.copy(alpha = 0.12f)
-            false -> Wrong.copy(alpha = 0.12f)
-            null -> if (selected) MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.35f) else MaterialTheme.colorScheme.surface
-        },
-        modifier = modifier.fillMaxWidth().heightIn(min = 56.dp).testTag(tag).graphicsLayer { scaleX = scale; scaleY = scale },
+    val shake = remember { Animatable(0f) }
+    val reduced = LocalReducedMotion.current
+    LaunchedEffect(state) {
+        if (state == false && !reduced) for (x in listOf(14f, -12f, 9f, -6f, 3f, 0f)) shake.animateTo(x, tween(45))
+    }
+    Chunky(
+        modifier = modifier.fillMaxWidth().heightIn(min = 60.dp).graphicsLayer { translationX = shake.value * density }.testTag(tag),
+        colors = colors, shape = RoundedCornerShape(16.dp), onClick = onClick, sound = Sfx.SELECT,
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 14.dp), contentAlignment = Alignment.CenterStart,
     ) {
-        Box(Modifier.padding(horizontal = 16.dp, vertical = 14.dp), contentAlignment = Alignment.CenterStart) {
-            pk.parhlou.student.ui.components.MathText(text, style = MaterialTheme.typography.bodyLarge)
-        }
+        pk.parhlou.student.ui.components.MathText(text, style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold))
     }
 }
 
@@ -334,19 +386,30 @@ private fun SessionEnd(r: SessionResult, streak: String, onDone: () -> Unit) {
                 },
                 if (r.accuracy >= 80) UstadMood.CHEER else UstadMood.HAPPY, size = 72.dp,
             )
+            // XP counts up with little coin ticks; then the streak line lands with its own sound.
+            val fx = rememberFeedbackEffects(true)
+            val reduced = LocalReducedMotion.current
+            var xpShown by remember { mutableIntStateOf(if (reduced) r.xp else 0) }
+            LaunchedEffect(r) {
+                if (!reduced) {
+                    kotlinx.coroutines.delay(500)
+                    val steps = minOf(r.xp, 12).coerceAtLeast(1)
+                    for (i in 1..steps) { xpShown = r.xp * i / steps; if (i % 2 == 0) fx.xp(); kotlinx.coroutines.delay(55) }
+                }
+                xpShown = r.xp
+                if (streak.isNotBlank()) { kotlinx.coroutines.delay(250); fx.streak() }
+            }
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
-                Stat("XP", "+${r.xp}", Color(0xFFF4B400), Modifier.weight(1f))
+                Stat("XP", "+$xpShown", LocalBrand.current.sunLip, Modifier.weight(1f))
                 Stat("Accuracy", "${r.accuracy}%", Right, Modifier.weight(1f))
-                Stat("Best combo", "${r.bestCombo}", Color(0xFFEA4335), Modifier.weight(1f))
+                Stat("Best combo", "${r.bestCombo}", Color(0xFFFF7A00), Modifier.weight(1f))
             }
             if (streak.isNotBlank()) Text(streak, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("session-streak"))
             if (r.missed.isNotEmpty()) {
                 Text("To practise again", style = MaterialTheme.typography.titleMedium, modifier = Modifier.fillMaxWidth())
                 r.missed.forEach { Text("•  ${label(it)}", style = MaterialTheme.typography.bodyMedium, modifier = Modifier.fillMaxWidth()) }
             }
-            Button(onClick = onDone, shape = RoundedCornerShape(16.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Right, contentColor = Color.White),
-                modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("session-finish")) { Text("Continue", style = MaterialTheme.typography.titleMedium) }
+            ChunkyButton("Continue", onClick = onDone, colors = ChunkyDefaults.success(), modifier = Modifier.testTag("session-finish"))
         }
         Confetti()
     }
@@ -363,10 +426,11 @@ private fun label(i: SessionItem): String = when (i) {
 
 @Composable
 private fun Stat(label: String, value: String, color: Color, modifier: Modifier) {
-    Surface(shape = RoundedCornerShape(18.dp), border = BorderStroke(2.dp, color), modifier = modifier) {
-        Column(Modifier.padding(vertical = 12.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Chunky(modifier = modifier, colors = ChunkyColors(MaterialTheme.colorScheme.surface, color, MaterialTheme.colorScheme.onSurface, color),
+        shape = RoundedCornerShape(18.dp), contentPadding = PaddingValues(vertical = 12.dp), contentAlignment = Alignment.Center) {
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(label, style = MaterialTheme.typography.labelMedium, color = color)
-            Text(value, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+            Text(value, style = MaterialTheme.typography.headlineSmall)
         }
     }
 }

@@ -46,6 +46,10 @@ data class UstaadAnswer(
     val videos: List<LessonVideo> = emptyList(),
     /** Offline answers only: the course note it came from, so follow-ups stay on the same topic. */
     val noteId: String = "",
+    /** SOLVE, CONCEPT or CHAT: lesson videos come only with CONCEPT answers; the student can still ask for one. */
+    val intent: String = "",
+    /** A graph, number line, diagram, chart or table to draw, as the server checked it (JSON), or "". */
+    val figure: String = "",
 ) {
     fun toJson(): JSONObject = JSONObject().put("kind", kind).put("reply", reply).put("questionAsRead", questionAsRead).put("topic", topic)
         .put("steps", JSONArray(steps.map { JSONObject().put("text", it.text).put("why", it.why) }))
@@ -53,6 +57,7 @@ data class UstaadAnswer(
         .put("suggestions", JSONArray(suggestions)).put("videoQuery", videoQuery).put("noteId", noteId)
         .put("book", book?.let { JSONObject().put("moduleId", it.moduleId).put("index", it.index).put("source", it.source).put("section", it.section) } ?: JSONObject.NULL)
         .put("videos", JSONArray(videos.map { JSONObject().put("id", it.id).put("title", it.title).put("channel", it.channel).put("thumbnail", it.thumbnail) }))
+        .put("intent", intent).put("figure", if (figure.isBlank()) JSONObject.NULL else JSONObject(figure))
 
     companion object {
         /** Reads a gateway reply (or a saved one). Null when it isn't a valid answer. */
@@ -70,7 +75,8 @@ data class UstaadAnswer(
             if (reply.isBlank() && steps.isEmpty()) return null
             return UstaadAnswer(kind, reply, r.optString("questionAsRead"), r.optString("topic"), steps, r.optString("finalAnswer"),
                 r.optString("concept"), r.optString("examTip"), r.optString("checkQuestion"), list("suggestions"), r.optString("videoQuery"), book, videos,
-                r.optString("noteId"))
+                r.optString("noteId"), r.optString("intent"),
+                r.optJSONObject("figure")?.takeIf { pk.parhlou.student.ui.components.FigureSpec.parse(it) != null }?.toString().orEmpty())
         }
     }
 }

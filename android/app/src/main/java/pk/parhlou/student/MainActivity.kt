@@ -12,6 +12,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -80,6 +81,10 @@ class MainActivity : ComponentActivity() {
         val account = account
         setContent {
             ParhlouTheme { ProvideMotion {
+                // Parhlou's own sounds, following the student's sound switch.
+                val soundOn by store.soundOn.collectAsState(initial = true)
+                val sounds = pk.parhlou.student.ui.components.rememberSoundBoard(soundOn)
+                androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.components.LocalSounds provides sounds) {
                 val scope = rememberCoroutineScope()
                 var repo by remember { mutableStateOf<ParhlouRepository>(packed) }
                 var update by remember { mutableStateOf<UpdateInfo?>(null) }
@@ -123,6 +128,7 @@ class MainActivity : ComponentActivity() {
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
                     ParhlouApp(repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, ai = ai, account = account,
                         versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
+                }
                 }
             } }
         }

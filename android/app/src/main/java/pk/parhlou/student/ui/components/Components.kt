@@ -22,8 +22,6 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import com.styropyr0.prismal.sources.prismalGlassLayer
-import com.styropyr0.prismal.sources.rememberPrismalGlassLayer
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -72,11 +70,17 @@ import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.ui.graphics.graphicsLayer
+import pk.parhlou.student.ui.theme.LocalBrand
 
 /**
- * Standard screen. Content scrolls underneath a floating glass title bar (iOS style) and, on main
- * screens, underneath the glass tab bar ([LocalBottomBarSpace] keeps the last item reachable).
- * `title = null` hides the bar (Home draws its own greeting header).
+ * Standard screen: a solid title bar (back button, centred title, mirrored spacer so the title sits exactly in the
+ * middle), then content that scrolls under it with the same side margins everywhere. On main screens the content also
+ * scrolls under the tab bar ([LocalBottomBarSpace] keeps the last item reachable). `title = null` hides the bar (Home
+ * draws its own header). The content rises gently into place when the screen opens.
  */
 @Composable
 fun ParhlouScreen(
@@ -88,7 +92,6 @@ fun ParhlouScreen(
     scrollToEndKey: Any? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    val backdrop = rememberPrismalGlassLayer()
     val bottomSpace = LocalBottomBarSpace.current
     val scroll = rememberScrollState()
     val density = LocalDensity.current
@@ -96,135 +99,118 @@ fun ParhlouScreen(
     LaunchedEffect(scrollToEndKey, scroll.maxValue) {
         if (scrollToEndKey != null) scroll.scrollTo(scroll.maxValue)
     }
-    // Surface sets the default text/icon colour for the theme (light or dark).
     Surface(color = MaterialTheme.colorScheme.background, contentColor = MaterialTheme.colorScheme.onBackground) {
-    Box(Modifier.fillMaxSize()) {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .prismalGlassLayer(backdrop)
-                .background(MaterialTheme.colorScheme.background)
-                .verticalScroll(scroll)
-                .statusBarsPadding()
-                .padding(horizontal = 16.dp)
-                .padding(top = if (title != null) 76.dp else 8.dp, bottom = 16.dp + bottomSpace + barHeight),
-            verticalArrangement = Arrangement.spacedBy(14.dp),
-            content = content,
-        )
-        if (title != null) {
-            Row(
-                Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp),
-            ) {
-                if (onBack != null) {
-                    val interaction = remember { MutableInteractionSource() }
-                    Box(
-                        Modifier.size(52.dp).pressScale(interaction).glassCapsule(backdrop)
-                            .clip(CircleShape)
-                            .clickable(interactionSource = interaction, indication = null, role = Role.Button, onClick = onBack)
-                            .semantics { contentDescription = "Back" },
-                        contentAlignment = Alignment.Center,
+        Column(Modifier.fillMaxSize()) {
+            if (title != null) TitleBar(title, onBack, scrolled = scroll.value > 0)
+            // The page ends above the tab bar (it no longer scrolls underneath), so nothing is ever hidden behind it.
+            val navInset = if (bottomSpace > 0.dp) androidx.compose.foundation.layout.WindowInsets.navigationBars
+                .asPaddingValues().calculateBottomPadding() else 0.dp
+            Box(Modifier.weight(1f).fillMaxWidth().padding(bottom = bottomSpace + navInset)) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .verticalScroll(scroll)
+                        .then(if (title == null) Modifier.statusBarsPadding() else Modifier)
+                        .padding(horizontal = 20.dp)
+                        .padding(top = if (title != null) 8.dp else 12.dp, bottom = 20.dp + barHeight)
+                        .appear(0),
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
+                    content = content,
+                )
+                if (bottomBar != null) {
+                    Surface(
+                        color = MaterialTheme.colorScheme.background,
+                        modifier = Modifier.align(Alignment.BottomCenter).fillMaxWidth()
+                            .onSizeChanged { barHeight = with(density) { it.height.toDp() } },
                     ) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null, tint = MaterialTheme.colorScheme.onSurface)
+                        Box(Modifier.navigationBarsPadding().imePadding().padding(horizontal = 16.dp, vertical = 10.dp)) { bottomBar() }
                     }
                 }
-                Box(
-                    Modifier.heightIn(min = 52.dp).glassCapsule(backdrop).padding(horizontal = 20.dp),
-                    contentAlignment = Alignment.CenterStart,
-                ) {
-                    Text(title, style = MaterialTheme.typography.titleMedium, maxLines = 1,
-                        overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                        color = MaterialTheme.colorScheme.onSurface,
-                        modifier = Modifier.semantics { heading() })
-                }
-            }
-        }
-        if (bottomBar != null) {
-            Surface(
-                color = MaterialTheme.colorScheme.background,
-                modifier = Modifier.align(Alignment.BottomCenter).fillMaxWidth()
-                    .onSizeChanged { barHeight = with(density) { it.height.toDp() } },
-            ) {
-                Box(Modifier.navigationBarsPadding().imePadding().padding(horizontal = 16.dp, vertical = 10.dp)) { bottomBar() }
             }
         }
     }
+}
+
+/** Title bar: back button on the left, the title centred, and a hairline that appears once the page scrolls. */
+@Composable
+fun TitleBar(title: String, onBack: (() -> Unit)?, scrolled: Boolean = false, actions: (@Composable () -> Unit)? = null) {
+    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background).statusBarsPadding()) {
+        Row(
+            Modifier.fillMaxWidth().height(60.dp).padding(horizontal = 12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Box(Modifier.width(52.dp), contentAlignment = Alignment.CenterStart) {
+                if (onBack != null) RoundIconButton(Icons.AutoMirrored.Filled.ArrowBack, "Back", onBack)
+            }
+            Text(title, style = MaterialTheme.typography.titleLarge, maxLines = 1, textAlign = TextAlign.Center,
+                overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+                modifier = Modifier.weight(1f).semantics { heading() })
+            Box(Modifier.width(52.dp), contentAlignment = Alignment.CenterEnd) { actions?.invoke() }
+        }
+        val line by animateFloatAsState(if (scrolled) 1f else 0f, label = "titleLine")
+        Box(Modifier.fillMaxWidth().height(2.dp).graphicsLayer { alpha = line }.background(LocalBrand.current.line))
     }
 }
 
-/** The one big primary action per screen (PRD §2). */
+/** A round chunky icon button (back, close, sound). */
 @Composable
-fun BigButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) {
-    val interaction = remember { MutableInteractionSource() }
-    Button(
-        onClick = onClick,
-        enabled = enabled,
-        interactionSource = interaction,
-        shape = RoundedCornerShape(50),
-        contentPadding = PaddingValues(vertical = 16.dp),
-        modifier = modifier.pressScale(interaction).fillMaxWidth().heightIn(min = 56.dp),
-    ) { Text(text, style = MaterialTheme.typography.labelLarge) }
+fun RoundIconButton(icon: ImageVector, description: String, onClick: () -> Unit, colors: ChunkyColors = ChunkyDefaults.plain()) {
+    Chunky(
+        modifier = Modifier.width(46.dp).semantics(mergeDescendants = true) { contentDescription = description },
+        colors = colors, shape = CircleShape, lip = 3.dp, onClick = onClick,
+        contentPadding = PaddingValues(0.dp), contentAlignment = Alignment.Center,
+    ) {
+        Box(Modifier.size(46.dp), contentAlignment = Alignment.Center) { Icon(icon, contentDescription = null, modifier = Modifier.size(22.dp)) }
+    }
 }
 
+/** The one big primary action per screen (PRD §2): a chunky teal button. */
 @Composable
-fun SecondaryButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) {
-    OutlinedButton(
-        onClick = onClick,
-        enabled = enabled,
-        shape = RoundedCornerShape(50),
-        modifier = modifier.fillMaxWidth().heightIn(min = 52.dp),
-    ) { Text(text) }
-}
+fun BigButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) =
+    ChunkyButton(text, onClick, modifier, ChunkyDefaults.primary(), enabled)
 
-/** Opaque study sheet: readable text on a solid surface, no translucent layers (PRD §5). */
+/** A secondary action: white chunky button with a teal label. */
+@Composable
+fun SecondaryButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) =
+    ChunkyButton(text, onClick, modifier, ChunkyDefaults.outlinePrimary(), enabled)
+
+/** A reward or highlight action: sunny yellow. */
+@Composable
+fun AccentButton(text: String, onClick: () -> Unit, enabled: Boolean = true, modifier: Modifier = Modifier) =
+    ChunkyButton(text, onClick, modifier, ChunkyDefaults.sun(), enabled)
+
+/** Opaque study sheet: a white card with a soft border and lip, so every card in the app looks the same (PRD §5). */
 @Composable
 fun Sheet(modifier: Modifier = Modifier, content: @Composable ColumnScope.() -> Unit) {
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
-    ) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp), content = content)
+    Chunky(modifier = modifier.fillMaxWidth(), shape = RoundedCornerShape(20.dp), lip = 3.dp, contentPadding = PaddingValues(16.dp)) {
+        Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp), content = content)
     }
 }
 
 /** Large icon + text tile. The label is always visible next to the pictogram. */
 @Composable
 fun Tile(label: String, icon: ImageVector, onClick: () -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true) {
-    Card(
-        onClick = onClick,
-        enabled = enabled,
-        modifier = modifier.heightIn(min = 104.dp),
-        shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-    ) {
-        Column(
-            Modifier.fillMaxWidth().padding(14.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            CircleIcon(icon, background = MaterialTheme.colorScheme.surface)
-            Text(label, style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.onSurface)
+    Chunky(modifier = modifier.heightIn(min = 104.dp), shape = RoundedCornerShape(20.dp), onClick = onClick, enabled = enabled,
+        contentPadding = PaddingValues(14.dp), contentAlignment = Alignment.Center) {
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            CircleIcon(icon)
+            Text(label, style = MaterialTheme.typography.titleSmall, textAlign = TextAlign.Center, color = MaterialTheme.colorScheme.onSurface)
         }
     }
 }
 
-/** Visible label on anything that has not passed academic review. */
+/** Visible label on anything that has not passed academic review, and small status tags. */
 @Composable
 fun StatusPill(text: String, warning: Boolean = true) {
     Surface(
         shape = RoundedCornerShape(50),
-        color = if (warning) MaterialTheme.colorScheme.tertiary.copy(alpha = 0.16f)
-        else MaterialTheme.colorScheme.secondary.copy(alpha = 0.16f),
+        color = if (warning) MaterialTheme.colorScheme.tertiary.copy(alpha = 0.14f) else MaterialTheme.colorScheme.secondaryContainer,
     ) {
         Text(
             text,
-            style = MaterialTheme.typography.labelLarge.copy(fontSize = MaterialTheme.typography.bodyMedium.fontSize),
-            color = if (warning) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.secondary,
-            modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp),
+            style = MaterialTheme.typography.labelMedium,
+            color = if (warning) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.onSecondaryContainer,
+            modifier = Modifier.padding(horizontal = 12.dp, vertical = 5.dp),
         )
     }
 }
@@ -232,7 +218,7 @@ fun StatusPill(text: String, warning: Boolean = true) {
 @Composable
 fun SampleBadge() = StatusPill("Sample — demo content")
 
-/** A large selectable choice (onboarding). */
+/** A large selectable choice (onboarding, settings): chunky, teal when chosen. */
 @Composable
 fun ChoiceCard(
     title: String,
@@ -241,22 +227,17 @@ fun ChoiceCard(
     enabled: Boolean = true,
     onClick: () -> Unit,
 ) {
-    Card(
-        onClick = onClick,
-        enabled = enabled,
-        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp).semantics { role = Role.RadioButton },
-        shape = RoundedCornerShape(18.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface,
-        ),
-        border = if (selected) CardDefaults.outlinedCardBorder().copy(width = 2.dp) else null,
+    val brand = LocalBrand.current
+    val colors = if (selected) ChunkyColors(MaterialTheme.colorScheme.primaryContainer, brand.lip, MaterialTheme.colorScheme.onPrimaryContainer, MaterialTheme.colorScheme.primary)
+    else ChunkyDefaults.plain()
+    Chunky(
+        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp).semantics { role = Role.RadioButton; this.selected = selected },
+        colors = colors, onClick = onClick, enabled = enabled, sound = Sfx.SELECT, role = Role.RadioButton,
     ) {
-        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
                 Text(title, style = MaterialTheme.typography.titleMedium)
-                if (subtitle != null) {
-                    Text(subtitle, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
+                if (subtitle != null) Text(subtitle, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             Spacer(Modifier.width(8.dp))
             if (selected) Text("Selected", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.labelLarge)
@@ -289,21 +270,17 @@ fun CircleIcon(icon: ImageVector, background: Color = MaterialTheme.colorScheme.
         Modifier.size(size).clip(CircleShape).background(background),
         contentAlignment = Alignment.Center,
     ) {
-        Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.secondary, modifier = Modifier.size(size * 0.5f))
+        Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(size * 0.5f))
     }
 }
 
 /** Task row: icon, title, subtitle and an arrow; the whole row is the touch target. */
 @Composable
 fun TaskRow(icon: ImageVector, title: String, subtitle: String, onClick: () -> Unit) {
-    Card(
-        onClick = onClick,
-        modifier = Modifier.fillMaxWidth().heightIn(min = 72.dp),
-        shape = RoundedCornerShape(22.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-    ) {
-        Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically) {
-            CircleIcon(icon, background = MaterialTheme.colorScheme.surfaceVariant)
+    Chunky(modifier = Modifier.fillMaxWidth().heightIn(min = 72.dp), shape = RoundedCornerShape(20.dp), onClick = onClick,
+        contentPadding = PaddingValues(14.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            CircleIcon(icon)
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
                 Text(title, style = MaterialTheme.typography.titleMedium)
@@ -351,21 +328,12 @@ data class NavItem(val route: String, val label: String, val icon: ImageVector)
 @Composable
 fun UpdateBanner() {
     val offer = LocalUpdateOffer.current ?: return
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(24.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
-    ) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text(if (offer.ready) "Update ready — tap to install" else "Update available", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
-            Text(
-                "Build ${offer.build}" + (if (offer.publishedOn.isNotBlank()) " · ${offer.publishedOn}" else "") +
-                    ". Your answers and progress stay on this phone.",
-                style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer,
-            )
-            BigButton(if (offer.installing) "Opening installer…" else if (offer.ready) "Install build ${offer.build}" else "Update now",
-                onClick = offer.install, enabled = !offer.installing)
-        }
+    Sheet {
+        Text(if (offer.ready) "Update ready — tap to install" else "Update available", style = MaterialTheme.typography.titleMedium)
+        Muted("Build ${offer.build}" + (if (offer.publishedOn.isNotBlank()) " · ${offer.publishedOn}" else "") +
+            ". Your answers and progress stay on this phone.")
+        AccentButton(if (offer.installing) "Opening installer…" else if (offer.ready) "Install build ${offer.build}" else "Update now",
+            onClick = offer.install, enabled = !offer.installing)
     }
 }
 

@@ -42,6 +42,9 @@ interface ParhlouAi {
     /** Lets the AI choose a practice paper's questions from each slot's candidates. Null = not available (the app picks itself). */
     suspend fun pickPaper(slots: List<pk.parhlou.student.domain.PickSlot>, profile: String): pk.parhlou.student.domain.PaperPick? = null
 
+    /** Lesson videos on a topic, asked for by the student. Null = not available here (the app opens a YouTube search). */
+    suspend fun lessonVideos(query: String): List<LessonVideo>? = null
+
     /** The examiner's written analysis of a marked paper, from the app's own [facts]. Null = not available (the app writes it). */
     suspend fun paperReport(facts: String, topics: List<String>, profile: String, language: String): pk.parhlou.student.domain.ExaminerReport? = null
 

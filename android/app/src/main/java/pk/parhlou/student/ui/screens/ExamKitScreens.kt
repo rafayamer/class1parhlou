@@ -69,7 +69,7 @@ fun ExamKitScreen(chapter: Chapter, onOpenSolution: (moduleId: String, index: In
             KitSection("Most important questions", "Most likely in the board paper. Tap one to see its full solution.") {
                 kit.important.forEach { imp ->
                     val ref = refs.firstOrNull { it.solution.source.equals(imp.ref, ignoreCase = true) }
-                    Card(
+                    pk.parhlou.student.ui.components.TapCard(
                         onClick = { if (ref != null) onOpenSolution(ref.module.id, ref.index) },
                         enabled = ref != null,
                         modifier = Modifier.fillMaxWidth().testTag("kit-important"),

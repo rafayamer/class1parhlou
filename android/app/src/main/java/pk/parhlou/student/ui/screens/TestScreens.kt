@@ -113,7 +113,7 @@ fun TestsScreen(
         if (blueprints.isEmpty()) Muted("No papers are published for your subjects yet.")
         blueprints.forEach { b ->
             val ready = b.id in available
-            Card(onClick = { onOpen(b.id) }, enabled = readinessPassed && ready, modifier = Modifier.fillMaxWidth(),
+            pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(b.id) }, enabled = readinessPassed && ready, modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(22.dp)) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text(b.title, style = MaterialTheme.typography.titleMedium)
@@ -129,7 +129,7 @@ fun TestsScreen(
         if (pendingMocks.isNotEmpty()) {
             Text("Mock papers", style = MaterialTheme.typography.titleLarge)
             pendingMocks.forEach { m ->
-                Card(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
+                pk.parhlou.student.ui.components.TapCard(modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(22.dp)) {
                     Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text("${m.scope.label} (Units ${m.chapters.first().number}–${m.chapters.last().number})", style = MaterialTheme.typography.titleMedium)
                         StatusPill("Practice pattern — not official")

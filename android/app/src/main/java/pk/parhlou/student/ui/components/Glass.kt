@@ -1,5 +1,8 @@
 package pk.parhlou.student.ui.components
 
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.border
 import android.provider.Settings
 import android.view.HapticFeedbackConstants
 import androidx.compose.animation.core.animateDpAsState
@@ -121,65 +124,59 @@ fun Modifier.glassCapsule(backdrop: PrismalBackdrop): Modifier {
 }
 
 /**
- * Floating glass tab bar. Plain tap targets (one per section) over a frosted capsule, with a pill that slides to the
- * selected tab. Built here rather than with Prismal's droplet tabs, whose drag overlay swallowed taps.
+ * The tab bar: a solid bar along the bottom with a hairline on top. The selected tab's icon sits in a pale teal tile
+ * with a teal outline and gives a little bounce; every switch plays the tap sound. (The name is kept from the earlier
+ * glass bar; [backdrop] is no longer used.)
  */
 @Composable
 fun GlassTabBar(
     items: List<NavItem>,
     selectedIndex: Int,
     onSelect: (Int) -> Unit,
-    backdrop: PrismalBackdrop,
+    @Suppress("UNUSED_PARAMETER") backdrop: PrismalBackdrop? = null,
 ) {
     val reduced = LocalReducedMotion.current
     val view = LocalView.current
-    val selectedColor = MaterialTheme.colorScheme.onPrimaryContainer
-    val idleColor = MaterialTheme.colorScheme.onSurface
-    Box(
-        Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 20.dp, vertical = 10.dp),
-        contentAlignment = Alignment.Center,
-    ) {
-        // The glass is drawn on its own layer behind the tabs, never around them: the glass clips touches to its
-        // outline, and for a wide capsule that outline rejected every tap (the bar didn't respond on phones).
-        Box(Modifier.fillMaxWidth().height(64.dp).shadow(10.dp, CircleShape, clip = false)) {
-        Box(Modifier.matchParentSize().glassCapsule(backdrop))
-        BoxWithConstraints(Modifier.fillMaxSize().padding(4.dp)) {
-            val tabWidth = maxWidth / items.size
-            val pillX by animateDpAsState(
-                tabWidth * selectedIndex,
-                if (reduced) snap() else spring(dampingRatio = 0.75f, stiffness = Spring.StiffnessMediumLow),
-                label = "tabPill",
-            )
-            Box(
-                Modifier.offset(x = pillX).width(tabWidth).fillMaxHeight()
-                    .clip(CircleShape).background(MaterialTheme.colorScheme.primaryContainer),
-            )
-            Row(Modifier.fillMaxSize().selectableGroup()) {
-                items.forEachIndexed { index, item ->
-                    val selected = index == selectedIndex
-                    Column(
-                        Modifier.weight(1f).fillMaxHeight().clip(CircleShape)
-                            .selectable(selected = selected, role = Role.Tab) {
-                                view.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
-                                onSelect(index)
-                            }
-                            .testTag("tab-${item.route}"),
-                        verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        val color = if (selected) selectedColor else idleColor
-                        Icon(item.icon, contentDescription = null, tint = color, modifier = Modifier.size(24.dp))
-                        Text(item.label, style = MaterialTheme.typography.labelMedium, color = color)
-                    }
+    val sounds = LocalSounds.current
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)) {
+        Box(Modifier.fillMaxWidth().height(2.dp).background(brand.line))
+        Row(Modifier.fillMaxWidth().navigationBarsPadding().height(70.dp).padding(horizontal = 8.dp).selectableGroup(),
+            verticalAlignment = Alignment.CenterVertically) {
+            items.forEachIndexed { index, item ->
+                val selected = index == selectedIndex
+                val bounce = remember { androidx.compose.animation.core.Animatable(1f) }
+                LaunchedEffect(selected) {
+                    if (selected && !reduced) { bounce.snapTo(0.82f); bounce.animateTo(1f, spring(dampingRatio = 0.35f, stiffness = Spring.StiffnessMedium)) }
+                }
+                Column(
+                    Modifier.weight(1f).fillMaxHeight()
+                        .selectable(selected = selected, role = Role.Tab, indication = null,
+                            interactionSource = remember { MutableInteractionSource() }) {
+                            if (!selected) sounds?.play(Sfx.TAP, view) ?: view.performHapticFeedback(HapticFeedbackConstants.CLOCK_TICK)
+                            onSelect(index)
+                        }
+                        .testTag("tab-${item.route}"),
+                    verticalArrangement = Arrangement.spacedBy(2.dp, Alignment.CenterVertically),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    val tint = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                    Box(
+                        Modifier.graphicsLayer { scaleX = bounce.value; scaleY = bounce.value }
+                            .size(width = 52.dp, height = 34.dp).clip(RoundedCornerShape(12.dp))
+                            .background(if (selected) MaterialTheme.colorScheme.primaryContainer else androidx.compose.ui.graphics.Color.Transparent)
+                            .then(if (selected) Modifier.border(2.dp, MaterialTheme.colorScheme.primary, RoundedCornerShape(12.dp)) else Modifier),
+                        contentAlignment = Alignment.Center,
+                    ) { Icon(item.icon, contentDescription = null, tint = tint, modifier = Modifier.size(24.dp)) }
+                    Text(item.label, style = MaterialTheme.typography.labelMedium, color = tint)
                 }
             }
-        }
         }
     }
 }
 
 /** Height reserved under content for [GlassTabBar] (bar + margins); navigation bar inset is added separately. */
-val GlassTabBarHeight: Dp = 96.dp
+val GlassTabBarHeight: Dp = 76.dp
 
 @Composable
 fun ProvideMotion(content: @Composable () -> Unit) {

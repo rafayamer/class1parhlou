@@ -1,5 +1,9 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.material.icons.filled.Forum
+import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.automirrored.filled.VolumeOff
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.semantics.Role
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -167,22 +171,14 @@ fun HomeScreen(
     ParhlouScreen(title = null) {
         UpdateBanner()
         // Greeting row
-        Row(Modifier.appear(0), verticalAlignment = Alignment.CenterVertically) {
-            Surface(shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface) {
-                Row(Modifier.padding(start = 6.dp, end = 14.dp, top = 6.dp, bottom = 6.dp),
-                    verticalAlignment = Alignment.CenterVertically) {
-                    CircleIcon(Icons.Filled.Person, size = 32.dp)
-                    Spacer(Modifier.width(8.dp))
-                    Text(if (onboarding.name.isBlank()) "Hello!" else "Hello, ${onboarding.name}!", style = MaterialTheme.typography.labelLarge)
-                }
+        Row(Modifier.appear(0).fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            CircleIcon(Icons.Filled.Person, size = 44.dp)
+            Spacer(Modifier.width(12.dp))
+            Column(Modifier.weight(1f)) {
+                Text(if (onboarding.name.isBlank()) "Hello!" else "Hello, ${onboarding.name}!", style = MaterialTheme.typography.titleLarge)
+                Text("Ready for today's maths?", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
-            Spacer(Modifier.weight(1f))
-            Surface(onClick = { onPlaceholder("profile") }, shape = CircleShape,
-                color = MaterialTheme.colorScheme.surface, modifier = Modifier.size(48.dp)) {
-                Box(contentAlignment = Alignment.Center) {
-                    Icon(Icons.Filled.Notifications, contentDescription = "Notifications", tint = MaterialTheme.colorScheme.onSurfaceVariant)
-                }
-            }
+            pk.parhlou.student.ui.components.RoundIconButton(Icons.Filled.Notifications, "Notifications", { onPlaceholder("profile") })
         }
 
         val rewards = pk.parhlou.student.domain.Rewards.summary(progress.history(), onboarding.minutesPerDay, System.currentTimeMillis())
@@ -191,23 +187,17 @@ fun HomeScreen(
         if (examIn != null) Text("📅 About ${examIn.first} days to your ${examIn.second.ifBlank { "board exam" }}",
             style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("home-countdown"))
         // Quick actions: tutor, book, scanner
-        Row(Modifier.appear(2), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-            Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
-                border = BorderStroke(1.5.dp, MaterialTheme.colorScheme.primaryContainer),
-                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
-                Box(contentAlignment = Alignment.Center) { Text("Ask Ustaad", style = MaterialTheme.typography.labelLarge) }
-            }
-            QuickIcon(Icons.AutoMirrored.Filled.MenuBook, "Open my book", onSubjects)
-            QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", onScan)
+        Row(Modifier.appear(2).fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            QuickTile(Icons.Filled.Forum, "Ask Ustaad", null, onTutor, Modifier.weight(1f))
+            QuickTile(Icons.AutoMirrored.Filled.MenuBook, "My book", "Open my book", onSubjects, Modifier.weight(1f))
+            QuickTile(Icons.Filled.PhotoCamera, "Scan", "Scan answer sheets", onScan, Modifier.weight(1f))
         }
 
         val today = todaysModule(subjects, progress)
-        if (today != null) Card(
-            shape = RoundedCornerShape(28.dp),
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
-            modifier = Modifier.appear(1).fillMaxWidth(),
+        if (today != null) pk.parhlou.student.ui.components.Chunky(
+            modifier = Modifier.appear(1).fillMaxWidth(), shape = RoundedCornerShape(24.dp),
         ) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 pk.parhlou.student.ui.components.UstadSays(
                     when {
                         rewards.goalMet -> "Daily goal done. Shabash! One more session keeps it fresh: ${today.title}."
@@ -216,16 +206,8 @@ fun HomeScreen(
                         else -> "Assalam-o-Alaikum! Today we practise ${today.title}. One question at a time."
                     },
                 )
-                Button(
-                    onClick = { onStartSession(null, onboarding.minutesPerDay) },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("start-session"),
-                ) { Text("Start today's session", style = MaterialTheme.typography.titleMedium) }
-                androidx.compose.material3.OutlinedButton(
-                    onClick = { onStartSession(null, 5) },
-                    shape = RoundedCornerShape(16.dp),
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp).testTag("busy-day"),
-                ) { Text("Busy day? 5-minute session") }
+                BigButton("Start today's session", onClick = { onStartSession(null, onboarding.minutesPerDay) }, modifier = Modifier.testTag("start-session"))
+                SecondaryButton("Busy day? 5-minute session", onClick = { onStartSession(null, 5) }, modifier = Modifier.testTag("busy-day"))
             }
         }
 
@@ -233,12 +215,11 @@ fun HomeScreen(
         LearningPath(subjects, progress, today?.id, onStart = { onStartSession(it, onboarding.minutesPerDay) }, onKit = onKit)
 
         // Hero: the one thing to do now, with assessed progress
-        Card(
-            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary),
-            shape = RoundedCornerShape(28.dp),
-            modifier = Modifier.appear(3).fillMaxWidth(),
+        pk.parhlou.student.ui.components.Chunky(
+            modifier = Modifier.appear(3).fillMaxWidth(), shape = RoundedCornerShape(24.dp),
+            colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(), contentPadding = PaddingValues(20.dp),
         ) {
-            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         Text("Do this now", color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.75f),
@@ -257,15 +238,7 @@ fun HomeScreen(
                         textColor = MaterialTheme.colorScheme.onPrimary,
                     )
                 }
-                Button(
-                    onClick = go,
-                    shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer,
-                        contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                    ),
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp),
-                ) { Text("Continue", style = MaterialTheme.typography.labelLarge) }
+                pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
             }
         }
 
@@ -303,6 +276,21 @@ fun HomeScreen(
             }
         }
         Spacer(Modifier.height(8.dp))
+    }
+}
+
+/** One of the three equal quick actions on Home: a chunky tile with an icon over its label. */
+@Composable
+private fun QuickTile(icon: androidx.compose.ui.graphics.vector.ImageVector, label: String, description: String?, onClick: () -> Unit, modifier: Modifier) {
+    pk.parhlou.student.ui.components.Chunky(
+        modifier = modifier.then(if (description != null) Modifier.semantics(mergeDescendants = true) { contentDescription = description } else Modifier),
+        shape = RoundedCornerShape(18.dp), onClick = onClick, contentPadding = PaddingValues(vertical = 12.dp, horizontal = 6.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(28.dp))
+            Text(label, style = MaterialTheme.typography.titleSmall, maxLines = 1)
+        }
     }
 }
 
@@ -422,6 +410,8 @@ fun ProfileScreen(
     reminderLabel: String = "Every day at 6 pm",
     onReminder: () -> Unit = {},
     accountMessage: String? = null,
+    soundOn: Boolean = true,
+    onToggleSound: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
@@ -447,7 +437,7 @@ fun ProfileScreen(
             Stat("Modules assessed", "${progress.assessedCount(ids)}", Modifier.weight(1f))
             Stat("Papers handed in", progress.papersSubmitted.toString(), Modifier.weight(1f))
         }
-        Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
+        pk.parhlou.student.ui.components.TapCard(containerColor = MaterialTheme.colorScheme.primaryContainer,
             shape = RoundedCornerShape(24.dp), modifier = Modifier.fillMaxWidth()) {
             Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
                 Text("Your plan", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
@@ -474,6 +464,8 @@ fun ProfileScreen(
         TaskRow(Icons.Filled.SmartToy, "My Ustaad", "What Ustaad knows about you and how it explains", onMyUstaad)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
         TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
+        TaskRow(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff, "Sounds",
+            if (soundOn) "On: taps, right and wrong, rewards" else "Off (vibration only)", onToggleSound)
         TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Coming later", { onPlaceholder("guardian") })
         var confirmDelete by remember { mutableStateOf(false) }
         if (email != null) {
@@ -501,8 +493,8 @@ fun ProfileScreen(
 
 @Composable
 private fun Stat(label: String, value: String, modifier: Modifier = Modifier) {
-    Card(modifier = modifier, shape = RoundedCornerShape(22.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)) {
+    pk.parhlou.student.ui.components.TapCard(modifier = modifier, shape = RoundedCornerShape(22.dp),
+        containerColor = MaterialTheme.colorScheme.surface) {
         Column(Modifier.fillMaxWidth().padding(vertical = 14.dp, horizontal = 8.dp),
             horizontalAlignment = Alignment.CenterHorizontally) {
             Text(value, style = MaterialTheme.typography.headlineMedium)
@@ -546,7 +538,7 @@ fun SubjectsScreen(
         if (subjects.any { s -> s.chapters.any { c -> c.modules.any { it.solutions.isNotEmpty() } } })
             TaskRow(Icons.Filled.Lightbulb, "Step-by-step solutions", "Every example and exercise question, solved", onSolutions)
         subjects.forEach { s ->
-            Card(onClick = { onOpen(s.id) }, modifier = Modifier.fillMaxWidth()) {
+            pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(s.id) }, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium)
                     Muted("${s.chapters.size} units · ${s.editionLabel}")

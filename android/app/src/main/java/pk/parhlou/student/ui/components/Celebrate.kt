@@ -1,8 +1,5 @@
 package pk.parhlou.student.ui.components
 
-import android.media.AudioManager
-import android.media.ToneGenerator
-import android.os.Build
 import android.view.HapticFeedbackConstants
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.LinearEasing
@@ -10,7 +7,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -30,7 +26,7 @@ fun Confetti(modifier: Modifier = Modifier, pieces: Int = 70) {
     LaunchedEffect(Unit) { t.animateTo(1f, tween(2200, easing = LinearEasing)) }
     val parts = remember {
         val rnd = Random(7)
-        val colors = listOf(Color(0xFF7BC74D), Color(0xFFF4B400), Color(0xFF4285F4), Color(0xFFEA4335), Color(0xFFAB47BC), Color(0xFF26A69A))
+        val colors = listOf(Color(0xFF0B8A8A), Color(0xFFFFC93C), Color(0xFF5B5FE0), Color(0xFFE5484D), Color(0xFF1C9E5E), Color(0xFFE0712B))
         List(pieces) { Triple(rnd.nextFloat(), rnd.nextFloat() * 0.6f + 0.4f, colors[it % colors.size]) to rnd.nextFloat() * 360f }
     }
     if (t.value >= 1f) return
@@ -46,27 +42,29 @@ fun Confetti(modifier: Modifier = Modifier, pieces: Int = 70) {
     }
 }
 
-/** Haptics and short tones for right and wrong answers, like a game. Sounds can be muted. */
-class FeedbackEffects(private val view: android.view.View, private val tones: ToneGenerator?) {
+/** Sounds and haptics for right and wrong answers, combos and the end of a session, like a game. Sounds can be muted. */
+class FeedbackEffects(private val view: android.view.View, private val sounds: SoundBoard?) {
     var soundOn = true
-    fun correct() {
-        view.performHapticFeedback(if (Build.VERSION.SDK_INT >= 30) HapticFeedbackConstants.CONFIRM else HapticFeedbackConstants.VIRTUAL_KEY)
-        if (soundOn) runCatching { tones?.startTone(ToneGenerator.TONE_PROP_ACK, 150) }
+    private fun play(s: Sfx) {
+        if (sounds == null) { if (s != Sfx.TAP) view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY); return }
+        val was = sounds.enabled
+        sounds.enabled = was && soundOn
+        sounds.play(s, view)
+        sounds.enabled = was
     }
-    fun wrong() {
-        view.performHapticFeedback(if (Build.VERSION.SDK_INT >= 30) HapticFeedbackConstants.REJECT else HapticFeedbackConstants.LONG_PRESS)
-        if (soundOn) runCatching { tones?.startTone(ToneGenerator.TONE_PROP_NACK, 200) }
-    }
-    fun finish() {
-        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
-        if (soundOn) runCatching { tones?.startTone(ToneGenerator.TONE_CDMA_CONFIRM, 400) }
-    }
+    fun correct() = play(Sfx.CORRECT)
+    fun wrong() = play(Sfx.WRONG)
+    fun combo() = play(Sfx.COMBO)
+    fun select() = play(Sfx.SELECT)
+    fun finish() = play(Sfx.COMPLETE)
+    fun streak() = play(Sfx.STREAK)
+    fun levelUp() = play(Sfx.LEVEL_UP)
+    fun xp() = play(Sfx.XP)
 }
 
 @Composable
 fun rememberFeedbackEffects(soundOn: Boolean): FeedbackEffects {
     val view = LocalView.current
-    val tones = remember { runCatching { ToneGenerator(AudioManager.STREAM_MUSIC, 60) }.getOrNull() }
-    DisposableEffect(tones) { onDispose { runCatching { tones?.release() } } }
-    return remember(view, tones) { FeedbackEffects(view, tones) }.also { it.soundOn = soundOn }
+    val sounds = LocalSounds.current
+    return remember(view, sounds) { FeedbackEffects(view, sounds) }.also { it.soundOn = soundOn }
 }

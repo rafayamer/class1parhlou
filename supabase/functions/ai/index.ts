@@ -8,7 +8,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
-import type { Video } from "./core.ts";
+import { PROMPT_VERSION, type Video } from "./core.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
@@ -78,6 +78,16 @@ Deno.serve(async (request) => {
 
   let body: unknown;
   try { body = await request.json(); } catch { return json({ error: "BAD_REQUEST" }, 400); }
+
+  // Lesson videos the student asked for ("Watch a lesson on this topic"): a cached YouTube search, no AI call.
+  if ((body as any)?.task === "videos") {
+    const q = String((body as any)?.query ?? "").replace(/[^\p{L}\p{N} .,'+-]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 120);
+    if (q.length < 3) return json({ error: "BAD_REQUEST" }, 400);
+    if ((mine ?? 0) >= settings.perInstall) return json({ error: "QUOTA_LIMIT" }, 429);
+    const found = await videos(db, `class 9 maths ${q}`.slice(0, 120));
+    await db.from("ai_usage").insert({ caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
+    return json({ result: { videos: found } });
+  }
 
   if ((body as any)?.task === "mark_mcqs") {
     const firstId = Object.keys((body as any)?.answers ?? {})[0];

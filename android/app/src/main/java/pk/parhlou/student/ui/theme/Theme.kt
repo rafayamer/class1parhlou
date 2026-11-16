@@ -6,120 +6,152 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import pk.parhlou.student.R
 
 /**
- * Parhlou "Calm Green" theme, from the founder's reference image (decision D-010):
- * soft sage background, opaque white study sheets, lime accents and a dark ink action colour.
+ * Parhlou "Bold" brand (decision D-030): deep teal for actions, sunny yellow for rewards and highlights, a clean white
+ * page, chunky 3D buttons and cards with a darker "lip", and the rounded Nunito typeface.
  *
  * Role mapping used by every screen:
- * - primary            = main action (ink in light, lime in dark): Continue button, selected nav pill, hero card
- * - primaryContainer   = lime tint for highlighted cards and tiles
- * - secondary          = green used for icons, links and "good" states
- * - tertiary           = amber used only for warnings ("Sample — not reviewed", "not official")
+ * - primary            = teal: the main action, selected tab, current path node
+ * - primaryContainer   = pale teal for highlighted cards
+ * - secondary          = green for correct / done / good states
+ * - tertiary           = amber for warnings ("not official")
+ * - error              = coral for wrong answers and errors
+ * Extra brand colours (lips, sun, XP, unit colours) are in [Brand], read with [LocalBrand].
  */
 object Palette {
-    // Light
-    val Sage = Color(0xFFEDF2EA)
-    val SageDeep = Color(0xFFE2EADC)
-    val White = Color(0xFFFFFFFF)
-    val Ink = Color(0xFF1C211D)
-    val InkMuted = Color(0xFF5A6558)
-    val Lime = Color(0xFFC6EC8C)
-    val LimeInk = Color(0xFF1E2D10)
-    val Leaf = Color(0xFF3B7614)
-    val Amber = Color(0xFF8A5A00)
-    val Red = Color(0xFFB3261E)
-    val Outline = Color(0xFFD3DCCD)
+    val Teal = Color(0xFF0B8A8A)
+    val TealLip = Color(0xFF066565)
+    val TealPale = Color(0xFFDDF4F3)
+    val Sun = Color(0xFFFFC93C)
+    val SunLip = Color(0xFFDDA200)
+    val SunInk = Color(0xFF3B2A00)
+    val Green = Color(0xFF1C9E5E)
+    val GreenLip = Color(0xFF13764A)
+    val GreenPale = Color(0xFFDDF6E8)
+    val Coral = Color(0xFFE5484D)
+    val CoralLip = Color(0xFFB8333A)
+    val CoralPale = Color(0xFFFDE4E4)
+    val Amber = Color(0xFF9A5B00)
+    val Indigo = Color(0xFF5B5FE0)
+    val Ink = Color(0xFF1D2B33)
+    val InkMuted = Color(0xFF5E6E77)
+    val Page = Color(0xFFFFFFFF)
+    val Soft = Color(0xFFF3F7F8)
+    val Line = Color(0xFFE2E9EC)
+    val LineLip = Color(0xFFD2DCE0)
 
-    // Dark
-    val Night = Color(0xFF101410)
-    val NightSurface = Color(0xFF1A201A)
-    val NightRaised = Color(0xFF252D24)
-    val Mist = Color(0xFFE6ECE2)
-    val MistMuted = Color(0xFFB4BFAF)
-    val LimeBright = Color(0xFFB9E772)
-    val LimeDeep = Color(0xFF2D3D1C)
-    val LeafLight = Color(0xFFA6DA66)
-    val AmberLight = Color(0xFFF0C072)
-    val RedLight = Color(0xFFF2B8B5)
-    val OutlineDark = Color(0xFF3A4538)
+    val NightPage = Color(0xFF0F1A1F)
+    val NightCard = Color(0xFF16252C)
+    val NightSoft = Color(0xFF1D3039)
+    val NightLine = Color(0xFF2A3F49)
+    val NightLineLip = Color(0xFF223540)
+    val NightInk = Color(0xFFEAF2F4)
+    val NightMuted = Color(0xFFA3B4BB)
+    val TealBright = Color(0xFF2CC3BF)
+    val TealBrightLip = Color(0xFF168E8B)
+    val GreenBright = Color(0xFF3DD68C)
+    val CoralBright = Color(0xFFFF7176)
 }
 
+/** Colours outside Material's roles: the 3D lips, the reward yellow, XP and the colour of each unit on the path. */
+@Immutable
+data class Brand(
+    val lip: Color, val sun: Color, val sunLip: Color, val onSun: Color,
+    val success: Color, val successLip: Color, val successPale: Color,
+    val danger: Color, val dangerLip: Color, val dangerPale: Color,
+    val line: Color, val lineLip: Color, val xp: Color,
+    val units: List<Pair<Color, Color>>,
+)
+
+private val unitColours = listOf(
+    Color(0xFF0B8A8A) to Color(0xFF066565), Color(0xFF5B5FE0) to Color(0xFF4044B5), Color(0xFFE0712B) to Color(0xFFB4561C),
+    Color(0xFF1C9E5E) to Color(0xFF13764A), Color(0xFFC2459B) to Color(0xFF983277), Color(0xFF2F7FD8) to Color(0xFF2161AD),
+)
+
+private val LightBrand = Brand(Palette.TealLip, Palette.Sun, Palette.SunLip, Palette.SunInk, Palette.Green, Palette.GreenLip, Palette.GreenPale,
+    Palette.Coral, Palette.CoralLip, Palette.CoralPale, Palette.Line, Palette.LineLip, Palette.Indigo, unitColours)
+private val DarkBrand = Brand(Palette.TealBrightLip, Palette.Sun, Palette.SunLip, Palette.SunInk, Palette.GreenBright, Palette.GreenLip,
+    Color(0xFF173B2B), Palette.CoralBright, Palette.CoralLip, Color(0xFF3F1F22), Palette.NightLine, Palette.NightLineLip, Color(0xFF8C8FFF), unitColours)
+
+val LocalBrand = staticCompositionLocalOf { LightBrand }
+
 private val Light = lightColorScheme(
-    primary = Palette.Ink,
-    onPrimary = Palette.White,
-    primaryContainer = Palette.Lime,
-    onPrimaryContainer = Palette.LimeInk,
-    secondary = Palette.Leaf,
-    onSecondary = Palette.White,
-    secondaryContainer = Palette.SageDeep,
-    onSecondaryContainer = Palette.Ink,
-    tertiary = Palette.Amber,
-    background = Palette.Sage,
-    onBackground = Palette.Ink,
-    surface = Palette.White,
-    onSurface = Palette.Ink,
-    surfaceVariant = Palette.SageDeep,
-    onSurfaceVariant = Palette.InkMuted,
-    outline = Palette.Outline,
-    outlineVariant = Palette.Outline,
-    error = Palette.Red,
-    // Cards, menus, dialogs and chips use these; unset they fall back to Material's lavender.
-    surfaceTint = Color.Transparent,
-    surfaceBright = Palette.White,
-    surfaceDim = Palette.SageDeep,
-    surfaceContainerLowest = Palette.White,
-    surfaceContainerLow = Palette.White,
-    surfaceContainer = Color(0xFFF6F9F4),
-    surfaceContainerHigh = Palette.White,
-    surfaceContainerHighest = Palette.White,
+    primary = Palette.Teal, onPrimary = Color.White,
+    primaryContainer = Palette.TealPale, onPrimaryContainer = Color(0xFF053F3F),
+    secondary = Palette.Green, onSecondary = Color.White,
+    secondaryContainer = Palette.GreenPale, onSecondaryContainer = Color(0xFF0B3D24),
+    tertiary = Palette.Amber, onTertiary = Color.White,
+    background = Palette.Page, onBackground = Palette.Ink,
+    surface = Palette.Page, onSurface = Palette.Ink,
+    surfaceVariant = Palette.Soft, onSurfaceVariant = Palette.InkMuted,
+    outline = Palette.Line, outlineVariant = Palette.Line,
+    error = Palette.Coral, onError = Color.White,
+    surfaceTint = Color.Transparent, surfaceBright = Palette.Page, surfaceDim = Palette.Soft,
+    surfaceContainerLowest = Palette.Page, surfaceContainerLow = Palette.Page, surfaceContainer = Palette.Soft,
+    surfaceContainerHigh = Palette.Page, surfaceContainerHighest = Palette.Page,
 )
 
 private val Dark = darkColorScheme(
-    primary = Palette.LimeBright,
-    onPrimary = Palette.LimeInk,
-    primaryContainer = Palette.LimeDeep,
-    onPrimaryContainer = Color(0xFFDDF3BC),
-    secondary = Palette.LeafLight,
-    onSecondary = Palette.LimeInk,
-    secondaryContainer = Palette.NightRaised,
-    onSecondaryContainer = Palette.Mist,
-    tertiary = Palette.AmberLight,
-    background = Palette.Night,
-    onBackground = Palette.Mist,
-    surface = Palette.NightSurface,
-    onSurface = Palette.Mist,
-    surfaceVariant = Palette.NightRaised,
-    onSurfaceVariant = Palette.MistMuted,
-    outline = Palette.OutlineDark,
-    outlineVariant = Palette.OutlineDark,
-    error = Palette.RedLight,
-    surfaceTint = Color.Transparent,
-    surfaceBright = Palette.NightRaised,
-    surfaceDim = Palette.Night,
-    surfaceContainerLowest = Palette.Night,
-    surfaceContainerLow = Palette.NightSurface,
-    surfaceContainer = Color(0xFF1F261F),
-    surfaceContainerHigh = Palette.NightSurface,
-    surfaceContainerHighest = Palette.NightSurface,
+    primary = Palette.TealBright, onPrimary = Color(0xFF002E2D),
+    primaryContainer = Color(0xFF123F42), onPrimaryContainer = Color(0xFFBFF0EE),
+    secondary = Palette.GreenBright, onSecondary = Color(0xFF00321A),
+    secondaryContainer = Color(0xFF173B2B), onSecondaryContainer = Color(0xFFC6F3DA),
+    tertiary = Color(0xFFF0C072), onTertiary = Color(0xFF3B2A00),
+    background = Palette.NightPage, onBackground = Palette.NightInk,
+    surface = Palette.NightCard, onSurface = Palette.NightInk,
+    surfaceVariant = Palette.NightSoft, onSurfaceVariant = Palette.NightMuted,
+    outline = Palette.NightLine, outlineVariant = Palette.NightLine,
+    error = Palette.CoralBright, onError = Color(0xFF3F0005),
+    surfaceTint = Color.Transparent, surfaceBright = Palette.NightSoft, surfaceDim = Palette.NightPage,
+    surfaceContainerLowest = Palette.NightPage, surfaceContainerLow = Palette.NightCard, surfaceContainer = Palette.NightSoft,
+    surfaceContainerHigh = Palette.NightCard, surfaceContainerHighest = Palette.NightCard,
 )
 
+/** Nunito (SIL Open Font Licence), bundled so it works offline. */
+val Nunito = FontFamily(
+    Font(R.font.nunito_medium, FontWeight.Normal),
+    Font(R.font.nunito_medium, FontWeight.Medium),
+    Font(R.font.nunito_semibold, FontWeight.SemiBold),
+    Font(R.font.nunito_bold, FontWeight.Bold),
+    Font(R.font.nunito_extrabold, FontWeight.ExtraBold),
+    Font(R.font.nunito_extrabold, FontWeight.Black),
+)
+
+private fun s(size: Int, weight: FontWeight, line: Int, spacing: Float = 0f) =
+    TextStyle(fontFamily = Nunito, fontSize = size.sp, fontWeight = weight, lineHeight = line.sp, letterSpacing = spacing.sp)
+
 private val Type = Typography(
-    displaySmall = TextStyle(fontSize = 32.sp, fontWeight = FontWeight.SemiBold, lineHeight = 38.sp, letterSpacing = (-0.5).sp),
-    headlineMedium = TextStyle(fontSize = 26.sp, fontWeight = FontWeight.SemiBold, lineHeight = 32.sp, letterSpacing = (-0.3).sp),
-    titleLarge = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.SemiBold, lineHeight = 26.sp),
-    titleMedium = TextStyle(fontSize = 17.sp, fontWeight = FontWeight.SemiBold, lineHeight = 22.sp),
-    bodyLarge = TextStyle(fontSize = 17.sp, lineHeight = 25.sp),
-    bodyMedium = TextStyle(fontSize = 15.sp, lineHeight = 22.sp),
-    labelLarge = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.SemiBold),
-    labelMedium = TextStyle(fontSize = 13.sp, fontWeight = FontWeight.Medium, letterSpacing = 0.2.sp),
+    displayLarge = s(44, FontWeight.ExtraBold, 50, -0.5f),
+    displayMedium = s(38, FontWeight.ExtraBold, 44, -0.5f),
+    displaySmall = s(32, FontWeight.ExtraBold, 38, -0.4f),
+    headlineLarge = s(30, FontWeight.ExtraBold, 36, -0.3f),
+    headlineMedium = s(26, FontWeight.ExtraBold, 32, -0.3f),
+    headlineSmall = s(23, FontWeight.ExtraBold, 29),
+    titleLarge = s(21, FontWeight.ExtraBold, 27),
+    titleMedium = s(17, FontWeight.Bold, 23),
+    titleSmall = s(15, FontWeight.Bold, 21),
+    bodyLarge = s(17, FontWeight.Medium, 25),
+    bodyMedium = s(15, FontWeight.Medium, 22),
+    bodySmall = s(13, FontWeight.Medium, 18),
+    labelLarge = s(16, FontWeight.ExtraBold, 20, 0.4f),
+    labelMedium = s(13, FontWeight.Bold, 16, 0.2f),
+    labelSmall = s(11, FontWeight.Bold, 14, 0.3f),
 )
 
 @Composable
 fun ParhlouTheme(dark: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    MaterialTheme(colorScheme = if (dark) Dark else Light, typography = Type, content = content)
+    CompositionLocalProvider(LocalBrand provides if (dark) DarkBrand else LightBrand) {
+        MaterialTheme(colorScheme = if (dark) Dark else Light, typography = Type, content = content)
+    }
 }

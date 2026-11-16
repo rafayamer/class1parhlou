@@ -143,7 +143,7 @@ private fun search(all: List<SolutionRef>, query: String): List<SolutionRef> {
 
 @Composable
 private fun TaskRowLike(title: String, subtitle: String, onClick: () -> Unit) {
-    Card(onClick = onClick, modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp), shape = RoundedCornerShape(20.dp)) {
+    pk.parhlou.student.ui.components.TapCard(onClick = onClick, modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp), shape = RoundedCornerShape(20.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
             Muted(subtitle)
@@ -153,7 +153,7 @@ private fun TaskRowLike(title: String, subtitle: String, onClick: () -> Unit) {
 
 @Composable
 private fun QuestionRow(ref: SolutionRef, showWhere: Boolean, onClick: () -> Unit) {
-    Card(onClick = onClick, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(20.dp)) {
+    pk.parhlou.student.ui.components.TapCard(onClick = onClick, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(20.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(if (showWhere) "Unit ${ref.chapter.number} · ${ref.solution.source}" else ref.solution.source,
                 style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
@@ -191,7 +191,7 @@ fun SolutionDetailScreen(
         if (similar.isNotEmpty()) {
             Text("Similar questions", style = MaterialTheme.typography.titleLarge)
             similar.forEach { (i, x) ->
-                Card(onClick = { onOpen(i) }, modifier = Modifier.fillMaxWidth().testTag("similar-$i"), shape = RoundedCornerShape(16.dp)) {
+                pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(i) }, modifier = Modifier.fillMaxWidth().testTag("similar-$i"), shape = RoundedCornerShape(16.dp)) {
                     Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
                         Text(x.source, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
                         Text(x.question, style = MaterialTheme.typography.bodyLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)

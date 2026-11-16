@@ -288,7 +288,7 @@ fun ParhlouApp(
     NavHost(
         nav,
         startDestination = if (state.completed) Routes.HOME else Routes.WELCOME,
-        modifier = Modifier.fillMaxSize().prismalGlassLayer(backdrop),
+        modifier = Modifier.fillMaxSize(),
         enterTransition = enter,
         exitTransition = exit,
         popEnterTransition = popEnter,
@@ -369,12 +369,14 @@ fun ParhlouApp(
         }
         composable(Routes.TUTOR) {
             val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
+            androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.screens.LocalLessonVideos provides { q: String -> ai.lessonVideos(q) }) {
             TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back(),
                 store = store, prefs = prefs, studentName = state.name,
                 profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
                 moduleOf = { repo.module(it) }, noteTitle = { noteTitles[it] },
                 onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") },
                 onMyUstaad = { nav.navigate(Routes.MY_USTAAD) })
+            }
         }
         composable(Routes.MY_USTAAD) {
             val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
@@ -382,8 +384,10 @@ fun ParhlouApp(
                 onChange = { p -> scope.launch { store.setUstaadPrefs(p) } }, onBack = nav.back())
         }
         composable(Routes.PROFILE) { WithTabBarSpace {
+            val soundOn by store.soundOn.collectAsState(initial = true)
             ProfileScreen(
                 repo, state, progress,
+                soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
                 onPlaceholder = { nav.navigate("soon/$it") },
                 onClearDevice = { scope.launch { account?.auth?.signOut(); store.clearAll() } },
                 email = session?.email,

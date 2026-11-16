@@ -1,10 +1,11 @@
 // Parhlou AI gateway core: builds GPT-6 Luna requests, validates the replies.
+import { toFigure, type Figure } from "./figure.ts";
 // Pure TypeScript (no Deno or Node APIs) so it runs in the Edge Function and in tests.
 // Prompts follow docs/AI-INSTRUCTIONS.md. Human-review wording is replaced by automated
 // re-checks (decision D-015).
 
 export const MODEL = "gpt-6-luna";
-export const PROMPT_VERSION = "2026-11-16.3";
+export const PROMPT_VERSION = "2026-11-17.1";
 
 export const SYSTEM_PROMPT = `You are Parhlou AI, an educational assistant for Pakistani school students.
 Teach according to the learner's verified board, class, subject, textbook edition, language and examination session.
@@ -64,8 +65,37 @@ export const TUTOR_SCHEMA = obj({
 
 export const READ_SCHEMA = obj({ readable: { type: "boolean" }, question: str });
 
+/**
+ * A figure Ustaad wants to show, as data the app draws exactly (graphs, number lines, coordinates, geometry, Venn diagrams,
+ * charts, tables). Every field is present (strict schema); fields a kind doesn't use are empty.
+ */
+const num = { type: "number" };
+const point = obj({ x: num, y: num, label: str });
+export const FIGURE_SCHEMA = obj({
+  kind: { type: "string", enum: ["none", "graph", "number_line", "coordinate", "geometry", "venn", "bar", "pie", "table"] },
+  title: str,
+  description: str,
+  functions: { type: "array", items: str },
+  shade: obj({ expression: str, side: { type: "string", enum: ["", "above", "below"] }, strict: { type: "boolean" } }),
+  x_min: num, x_max: num, y_min: num, y_max: num,
+  points: { type: "array", items: point },
+  segments: { type: "array", items: obj({ from: str, to: str, label: str }) },
+  polygons: { type: "array", items: { type: "array", items: str } },
+  angles: { type: "array", items: obj({ at: str, label: str, right: { type: "boolean" } }) },
+  circles: { type: "array", items: obj({ center: str, radius: num, label: str }) },
+  intervals: { type: "array", items: obj({ from: num, to: num, from_closed: { type: "boolean" }, to_closed: { type: "boolean" }, label: str }) },
+  sets: { type: "array", items: obj({ name: str, only: { type: "array", items: str } }) },
+  both: { type: "array", items: str },
+  outside: { type: "array", items: str },
+  categories: { type: "array", items: str },
+  values: { type: "array", items: num },
+  headers: { type: "array", items: str },
+  rows: { type: "array", items: { type: "array", items: str } },
+});
+
 export const USTAAD_SCHEMA = obj({
   kind: { type: "string", enum: ["SOLUTION", "CHAT", "UNREADABLE", "OFF_TOPIC"] },
+  intent: { type: "string", enum: ["SOLVE", "CONCEPT", "CHAT"] },
   question_as_read: str,
   topic: str,
   reply: str,
@@ -76,6 +106,7 @@ export const USTAAD_SCHEMA = obj({
   check_question: str,
   suggestions: { type: "array", items: str },
   video_query: str,
+  figure: FIGURE_SCHEMA,
 });
 
 export const MARK_SCHEMA = obj({
@@ -250,7 +281,22 @@ HOW TO ANSWER
 - question_as_read: the question you are answering (from the photo or the message), "" for plain chat.
 - topic: the matching section from this list, exactly as written, or "": ${t.sections.join(" | ")}
 - suggestions: 3 short follow-ups the student might tap next (e.g. "Explain more simply", "Give me a similar question").
-- video_query: a YouTube search for a lesson on this topic, e.g. "class 9 maths common logarithm characteristic mantissa", or "".
+- intent: SOLVE when the student wants a question solved, answered, its steps shown or their working checked; CONCEPT when they
+  want to understand an idea or topic (explain, why, what is, how does it work, teach me); CHAT for anything else.
+  For SOLVE: answer the question directly with full working (from the textbook's checked solution when one is given, else
+  your own careful working). Do not suggest videos.
+- video_query: ONLY when intent is CONCEPT, a YouTube search for a lesson on this topic, e.g. "class 9 maths common logarithm
+  characteristic mantissa"; otherwise "".
+- figure: draw a figure when it helps the student understand, or the question asks to draw, sketch, plot, shade, represent or
+  show graphically; otherwise kind "none" with empty fields. The app draws it exactly from your data, so be precise:
+  graph: functions as expressions in x (e.g. "2*x - 3", "x^2 - 4", "sqrt(x)", "sin(x)"), axis ranges, labelled points;
+    shade = an inequality's boundary expression with side above/below and strict true for < or > (dashed boundary).
+  number_line: x range and intervals (from_closed/to_closed for solid or open dots; use ±1e9 for unbounded) and points.
+  coordinate / geometry: labelled points (x, y), segments between point labels (with side lengths as labels), polygons as
+    lists of point labels, angles at a point label (right = true for a right angle), circles (centre label, radius).
+  venn: up to 3 sets with the elements only in each, both = elements in all of them, outside = rest of the universal set.
+  bar / pie: categories with values. table: headers and rows.
+  title: a short caption; description: one sentence saying what the figure shows (for screen readers).
 - Language: ${t.language}. Style: ${t.style}. Use the student's name sometimes. Never mention any book, website or teacher by name.
 - Be correct above all. Show formulas, substitutions and units. If unsure, say so; never invent textbook pages or past-paper claims.
 
@@ -276,6 +322,9 @@ export interface UstaadReply {
   questionAsRead: string; topic: string; reply: string; steps: { text: string; why: string }[]; finalAnswer: string;
   concept: string; examTip: string; checkQuestion: string; suggestions: string[]; videoQuery: string;
   book: { source: string; section: string } | null; videos: Video[];
+  /** SOLVE, CONCEPT or CHAT: lesson videos are found only for CONCEPT questions. */
+  intent?: "SOLVE" | "CONCEPT" | "CHAT";
+  figure?: Figure | null;
 }
 export interface Video { id: string; title: string; channel: string; thumbnail: string }
 
@@ -293,7 +342,10 @@ export function toUstaadReply(raw: any, sections: string[]): UstaadReply | null 
     reply: s(raw.reply, 6000), steps, finalAnswer: s(raw.final_answer, 600), concept: s(raw.concept, 1500),
     examTip: s(raw.exam_tip, 600), checkQuestion: s(raw.check_question, 400),
     suggestions: Array.isArray(raw.suggestions) ? raw.suggestions.filter((x: any) => typeof x === "string" && x.trim()).slice(0, 4).map((x: string) => x.trim().slice(0, 60)) : [],
-    videoQuery: s(raw.video_query, 120), book: null, videos: [],
+    // Videos only for questions about understanding a concept, never for "solve this".
+    intent: ["SOLVE", "CONCEPT", "CHAT"].includes(raw.intent) ? raw.intent : (raw.kind === "SOLUTION" ? "SOLVE" : "CHAT"),
+    videoQuery: raw.intent === "CONCEPT" ? s(raw.video_query, 120) : "", book: null, videos: [],
+    figure: raw.figure && raw.figure.kind !== "none" ? toFigure(raw.figure) : null,
   };
 }
 

@@ -77,12 +77,15 @@ import org.json.JSONArray
 import org.json.JSONObject
 import pk.parhlou.student.ai.ParhlouAi
 import pk.parhlou.student.ai.UstaadAnswer
+import pk.parhlou.student.ai.LessonVideo
 import pk.parhlou.student.ai.UstaadMessage
 import pk.parhlou.student.ai.UstaadRequest
 import pk.parhlou.student.data.LocalStore
 import pk.parhlou.student.data.McqQuestion
 import pk.parhlou.student.data.Module
 import pk.parhlou.student.data.UstaadPrefs
+import pk.parhlou.student.ui.components.FigureSpec
+import pk.parhlou.student.ui.components.FigureView
 import pk.parhlou.student.ui.components.BookFigure
 import pk.parhlou.student.ui.components.MathText
 import pk.parhlou.student.ui.components.Muted
@@ -286,7 +289,7 @@ fun TutorScreen(
             Text("Your chats", style = MaterialTheme.typography.titleLarge)
             if (chats.isEmpty()) Muted("No saved chats yet.")
             chats.forEach { c ->
-                Card(onClick = { messages.clear(); messages += c.messages; chatId = c.id; showChats = false },
+                pk.parhlou.student.ui.components.TapCard(onClick = { messages.clear(); messages += c.messages; chatId = c.id; showChats = false },
                     modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(16.dp)) {
                     Row(Modifier.padding(start = 16.dp, top = 6.dp, bottom = 6.dp), verticalAlignment = Alignment.CenterVertically) {
                         Column(Modifier.weight(1f)) {
@@ -316,7 +319,7 @@ fun TutorScreen(
             Text("Assalam-o-Alaikum${if (studentName.isNotBlank()) ", $studentName" else ""}!", style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             Muted("Ask me anything, or snap a photo of a question and I'll solve it step by step, the way your exam wants it.")
-            Card(onClick = { photoMenu = true }, modifier = Modifier.fillMaxWidth().testTag("ustaad-photo-start"), shape = RoundedCornerShape(20.dp)) {
+            pk.parhlou.student.ui.components.TapCard(onClick = { photoMenu = true }, modifier = Modifier.fillMaxWidth().testTag("ustaad-photo-start"), shape = RoundedCornerShape(20.dp)) {
                 Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                     Icon(Icons.Filled.PhotoCamera, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(32.dp))
                     Column {
@@ -371,6 +374,7 @@ private fun UstaadBubble(a: UstaadAnswer, moduleOf: (String) -> Module?, onOpenS
             if (a.reply.isNotBlank()) RichText(a.reply)
             if (a.kind == "SOLUTION" || a.questionAsRead.isNotBlank() && a.steps.isNotEmpty()) SolutionCardView(a, moduleOf, onOpenSolution)
             if (a.kind != "SOLUTION" && a.concept.isNotBlank()) Section("Understand the topic", a.concept)
+            FigureSpec.parse(a.figure.takeIf { it.isNotBlank() }?.let { org.json.JSONObject(it) })?.let { FigureView(it) }
             VideoCards(a)
             // Suggested replies only under the latest answer, as in a chat app.
             if (latest && a.suggestions.isNotEmpty()) Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -434,15 +438,40 @@ private fun Section(title: String, body: String) {
     }
 }
 
-/** Lesson videos for the topic, or a YouTube search for it. Both open YouTube itself. */
+/** Finds lesson videos when the student asks for them; null where there's no server (then YouTube search opens). */
+val LocalLessonVideos = androidx.compose.runtime.staticCompositionLocalOf<(suspend (String) -> List<LessonVideo>?)?> { null }
+
+/**
+ * Lesson videos. They come by themselves only when the student asked to understand a concept; after a solved question
+ * there is a small "Watch a lesson on this topic" button instead, so videos are searched only when wanted.
+ */
 @Composable
 private fun VideoCards(a: UstaadAnswer) {
     val context = LocalContext.current
+    val find = LocalLessonVideos.current
+    val scope = rememberCoroutineScope()
+    var asked by remember(a) { mutableStateOf<List<LessonVideo>?>(null) }
+    var looking by remember(a) { mutableStateOf(false) }
     fun open(url: String) = runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
-    if (a.videos.isNotEmpty()) {
+    val shown = a.videos.ifEmpty { asked.orEmpty() }
+    val topic = a.topic.substringAfter("· ").ifBlank { a.questionAsRead.take(80) }
+    if (shown.isEmpty() && a.videoQuery.isBlank() && a.kind == "SOLUTION" && topic.isNotBlank() && asked == null) {
+        TextButton(onClick = {
+            looking = true
+            scope.launch {
+                val found = find?.invoke(topic)
+                looking = false
+                if (found.isNullOrEmpty()) open("https://www.youtube.com/results?search_query=" + Uri.encode("class 9 maths $topic")) else asked = found
+            }
+        }, enabled = !looking, modifier = Modifier.heightIn(min = 48.dp).testTag("video-ask")) {
+            Icon(Icons.Filled.PlayCircle, null, modifier = Modifier.size(20.dp))
+            Text(if (looking) "  Finding lessons…" else "  Watch a lesson on this topic")
+        }
+    }
+    if (shown.isNotEmpty()) {
         Text("Watch a lesson on this", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
-        a.videos.forEach { v ->
-            Card(onClick = { open("https://www.youtube.com/watch?v=${v.id}") }, modifier = Modifier.fillMaxWidth().testTag("video-${v.id}"), shape = RoundedCornerShape(14.dp)) {
+        shown.forEach { v ->
+            pk.parhlou.student.ui.components.TapCard(onClick = { open("https://www.youtube.com/watch?v=${v.id}") }, modifier = Modifier.fillMaxWidth().testTag("video-${v.id}"), shape = RoundedCornerShape(14.dp)) {
                 Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Icon(Icons.Filled.PlayCircle, null, tint = Color(0xFFE53935), modifier = Modifier.size(36.dp))
                     Column(Modifier.weight(1f)) {

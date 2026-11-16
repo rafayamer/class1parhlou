@@ -88,6 +88,12 @@ class LunaGateway(
         return call(body)?.let { PaperPick.parse(it, slots) }
     }
 
+    override suspend fun lessonVideos(query: String): List<LessonVideo>? =
+        call(JSONObject().put("task", "videos").put("query", query))?.optJSONArray("videos")?.let { a ->
+            (0 until a.length()).map { a.getJSONObject(it) }.filter { it.optString("id").matches(Regex("[A-Za-z0-9_-]{6,20}")) }
+                .map { LessonVideo(it.optString("id"), it.optString("title"), it.optString("channel"), it.optString("thumbnail")) }
+        }
+
     override suspend fun paperReport(facts: String, topics: List<String>, profile: String, language: String): ExaminerReport? {
         val body = JSONObject().put("task", "paper_report").put("facts", facts).put("topics", JSONArray(topics))
             .put("profile", profile).put("language", language)

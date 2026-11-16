@@ -215,17 +215,51 @@ test("ustaad: book questions are matched by words and numbers; near misses are r
   assert.deepEqual(sectionsOf(bookContent), ["Unit 2 · 2.3 Common Logarithm"]);
 });
 
-test("ustaad: a photo is read first, matched to the book, answered from the checked solution, with videos", async () => {
+test("ustaad: a photo is read first, matched to the book, answered from the checked solution, with no video search", async () => {
   const seen: any[] = [];
-  const f = fakeFetch([reply({ readable: true, question: "Find x: log x = 4.3561" }), ustaadReply()], seen);
+  let searches = 0;
+  const f = fakeFetch([reply({ readable: true, question: "Find x: log x = 4.3561" }), ustaadReply({ intent: "SOLVE" })], seen);
   const out: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], message: "", image: "data:image/jpeg;base64,AAAA", history: [] },
-    bookContent, f, "k", 10, { videos: async (q) => [{ id: "v1", title: q, channel: "c", thumbnail: "" }], photoQuotaLeft: 5 });
+    bookContent, f, "k", 10, { videos: async (q) => { searches++; return [{ id: "v1", title: q, channel: "c", thumbnail: "" }]; }, photoQuotaLeft: 5 });
   assert.equal(seen.length, 2);
   assert.equal(seen[0].input[0].content[1].type, "input_image");
   assert.ok(seen[1].input.includes("Ex 2.3 Q4(v)") && seen[1].input.includes("CHECKED solution"));
   assert.equal(out.body.result.book.source, "Ex 2.3 Q4(v)");
-  assert.equal(out.body.result.videos[0].id, "v1");
+  // "Solve this" gets the answer, not a video search.
+  assert.equal(searches, 0);
+  assert.deepEqual(out.body.result.videos, []);
+  assert.equal(out.body.result.intent, "SOLVE");
   assert.equal(out.usage.task, "ustaad_photo");
+});
+
+test("ustaad: a question about understanding a concept gets lesson videos", async () => {
+  let searches = 0;
+  const out: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], message: "what is a logarithm, I don't get it", history: [] },
+    bookContent, fakeFetch([ustaadReply({ kind: "CHAT", intent: "CONCEPT" })]), "k", 10,
+    { videos: async (q) => { searches++; return [{ id: "v1", title: q, channel: "c", thumbnail: "" }]; } });
+  assert.equal(searches, 1);
+  assert.equal(out.body.result.videos[0].id, "v1");
+});
+
+test("ustaad: figures are checked before they reach the app", async () => {
+  const { toFigure, safeExpression } = await import("./figure.ts");
+  assert.equal(safeExpression("2*x − 3"), "2*x-3");
+  assert.equal(safeExpression("√(x)+sin(x)"), "sqrt(x)+sin(x)");
+  assert.equal(safeExpression("alert(1)"), null);
+  assert.equal(safeExpression("x+(1"), null);
+  const g: any = toFigure({ kind: "graph", functions: ["2*x-3", "fetch()"], x_min: -5, x_max: 5, y_min: -10, y_max: 10, shade: { expression: "4-x", side: "below", strict: false } });
+  assert.deepEqual(g.functions, ["2*x-3"]);
+  assert.equal(g.shade.side, "below");
+  const geo: any = toFigure({ kind: "geometry", points: [{ x: 0, y: 0, label: "A" }, { x: 4, y: 0, label: "B" }, { x: 0, y: 3, label: "C" }],
+    segments: [{ from: "A", to: "B", label: "4 cm" }, { from: "A", to: "Z", label: "?" }], polygons: [["A", "B", "C"]], angles: [{ at: "A", label: "", right: true }] });
+  assert.equal(geo.segments.length, 1);
+  assert.equal(geo.angles[0].right, true);
+  assert.equal(toFigure({ kind: "pie", categories: ["a", "b"], values: [1] }), null);   // values must match categories
+  assert.equal(toFigure({ kind: "graph", functions: ["import x"] }), null);              // nothing drawable is left
+  const r: any = (await import("./core.ts")).toUstaadReply({ kind: "CHAT", reply: "Here is the graph.", intent: "CHAT", video_query: "should be dropped",
+    figure: { kind: "venn", sets: [{ name: "A", only: ["1"] }, { name: "B", only: ["4"] }], both: ["2", "3"], outside: [] } }, []);
+  assert.equal(r.figure.kind, "venn");
+  assert.equal(r.videoQuery, "");
 });
 
 test("ustaad: unreadable photos ask for a retake without a second call; photo quota is enforced", async () => {
