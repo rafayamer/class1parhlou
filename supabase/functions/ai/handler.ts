@@ -1,5 +1,6 @@
 // Maps an app request to a Luna task. The app sends ids and the student's own text only;
 // questions, answer keys and rubrics are looked up here, on the server.
+import { runExaminer, type PickPaperTask, type ReadScriptTask } from "./examiner.ts";
 import { runTask, type BookRef, type Fetch, type Task, type Turn, type UstaadReply, type Usage, type Video } from "./core.ts";
 
 export interface Content { course: any; subjectId: string; notes: any[]; written: any[]; mcqs: any[] }
@@ -10,7 +11,7 @@ export type Outcome = { status: number; body: unknown; usage?: Usage };
 
 const STYLES = ["NORMAL", "SIMPLER", "ANOTHER_EXAMPLE", "STEPS", "QUIZ_ME"];
 
-export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMITS): Task | { error: string; status: number } {
+export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMITS): Task | ReadScriptTask | PickPaperTask | { error: string; status: number } {
   const bad = (error: string, status = 400) => ({ error, status });
   if (!req || typeof req !== "object") return bad("BAD_REQUEST");
   if (req.task === "tutor") {
@@ -44,7 +45,41 @@ export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMI
     if (images.some((i) => typeof i !== "string" || !/^data:image\/(png|jpeg);base64,/.test(i) || i.length > limits.maxImageChars)) {
       return bad("IMAGE_RESCAN_REQUIRED", 413);
     }
-    return { task: "mark_written", course: content.course, question, answer: String(req.answer ?? "").slice(0, limits.maxTextChars), images };
+    return { task: "mark_written", course: content.course, question, answer: String(req.answer ?? "").slice(0, limits.maxTextChars), images,
+      handwritten: req.handwritten === true && images.length > 0 };
+  }
+  if (req.task === "read_script") {
+    // The phone sends the paper's question ids and printed labels; question texts come from the server's own content.
+    const image = req.image;
+    if (typeof image !== "string" || !/^data:image\/(png|jpeg);base64,/.test(image) || image.length > limits.maxImageChars) return bad("IMAGE_RESCAN_REQUIRED", 413);
+    const asked: any[] = Array.isArray(req.questions) ? req.questions.slice(0, 80) : [];
+    const questions = asked.map((x) => {
+      const w = content.written.find((q) => q.id === x?.id);
+      return w && typeof x.label === "string" ? { id: w.id, label: x.label.slice(0, 20), text: String(w.text) } : null;
+    }).filter((x): x is { id: string; label: string; text: string } => x !== null);
+    if (!questions.length) return bad("RUBRIC_NOT_APPROVED", 404);
+    const mcqCount = Math.min(Math.max(Number(req.mcqCount) || 0, 0), 30);
+    const page = Math.min(Math.max(Number(req.page) || 1, 1), 60);
+    return { task: "read_script", course: content.course, image, questions, mcqCount, page } as ReadScriptTask;
+  }
+  if (req.task === "pick_paper") {
+    const slots: any[] = Array.isArray(req.slots) ? req.slots.slice(0, 40) : [];
+    const mcqs = allMcqs(content);
+    const out: PickPaperTask["slots"] = [];
+    for (const s of slots) {
+      const count = Number(s?.count);
+      if (typeof s?.slot !== "string" || !Number.isInteger(count) || count < 1 || count > 20) return bad("BAD_REQUEST");
+      const candidates = (Array.isArray(s.candidates) ? s.candidates.slice(0, 40) : []).map((c: any) => {
+        const w = content.written.find((q) => q.id === c?.id) ?? mcqs.find((m) => m.id === c?.id);
+        if (!w) return null;
+        return { id: w.id, text: String(w.text ?? w.stem ?? ""), marks: Number(w.marks ?? 1), topic: String(c.topic ?? "").slice(0, 80),
+          pastPapers: Array.isArray(w.tags) ? w.tags.map(String) : [], seen: c.seen === true };
+      }).filter((c: any) => c !== null);
+      if (candidates.length < count) return bad("NOT_ENOUGH_QUESTIONS");
+      out.push({ slot: s.slot.slice(0, 40), count, candidates });
+    }
+    if (!out.length) return bad("BAD_REQUEST");
+    return { task: "pick_paper", course: content.course, profile: String(req.profile ?? "").slice(0, 1200), slots: out } as PickPaperTask;
   }
   if (req.task === "ustaad") {
     const message = String(req.message ?? "").slice(0, limits.maxTextChars);
@@ -108,6 +143,10 @@ export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey:
   if ("error" in task) return { status: task.status, body: { error: task.error } };
   if (quotaLeft <= 0) return { status: 429, body: { error: "QUOTA_LIMIT" } };
   if (task.task === "ustaad") return ustaad(task, content, fetchFn, apiKey, extras);
+  if (task.task === "read_script" || task.task === "pick_paper") {
+    const { result, usage } = await runExaminer(task, fetchFn, apiKey);
+    return { status: 200, body: { result, model: usage.model, promptVersion: usage.promptVersion }, usage };
+  }
   const { result, usage } = await runTask(task, fetchFn, apiKey);
   return { status: 200, body: { result, model: usage.model, promptVersion: usage.promptVersion }, usage };
 }

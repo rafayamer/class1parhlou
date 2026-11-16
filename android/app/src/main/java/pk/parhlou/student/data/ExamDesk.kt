@@ -16,6 +16,9 @@ import pk.parhlou.student.domain.PaperResult
 import pk.parhlou.student.domain.TOPIC_PREFIX
 import pk.parhlou.student.domain.ExamEventType
 import pk.parhlou.student.domain.PaperSubmission
+import pk.parhlou.student.domain.BoardNumbering
+import pk.parhlou.student.domain.ScriptPage
+import pk.parhlou.student.domain.ScriptReading
 import java.io.File
 import pk.parhlou.scanner.PageStore
 
@@ -36,6 +39,8 @@ class ExamDesk(
     private companion object {
         const val MAX_PHOTOS = 5
         const val MAX_PHOTO_SIDE = 1600
+        /** Handwriting needs a sharper page than a photo answer; still well under the server's size limit. */
+        const val SCRIPT_PAGE_SIDE = 2000
     }
 
     fun draftKey(paperId: String, questionId: String) = "exam_${paperId}_$questionId"
@@ -95,11 +100,63 @@ class ExamDesk(
     suspend fun check(blueprint: PaperBlueprint, paper: PaperContent, submission: PaperSubmission): PaperResult =
         CheckMaster.check(blueprint, paper, submission, ai)
 
+    // ── Papers written on paper: printed, answered by hand, scanned in any order and read by the AI examiner ──────
+    /** The scanned pages of a script written on paper (all pages together, in any order). */
+    fun printedStore(paperId: String): PageStore = synchronized(scans) {
+        scans.getOrPut("$paperId/_printed") { PageStore(File(context.filesDir, "exam/$paperId/_printed")) }
+    }
+
+    private val readCache = mutableMapOf<String, ScriptPage>()
+    private val handedIn = mutableMapOf<String, Pair<PaperSubmission, PaperResult>>()
+
+    /** The submission and result of the paper just handed in, so the result screen shows them without marking again. */
+    fun handedIn(paperId: String): Pair<PaperSubmission, PaperResult>? = handedIn[paperId]
+
+    /**
+     * Reads every scanned page of a script (a page already read is not sent again). [onPage] reports progress.
+     * Pages the AI could not read come back as UNREADABLE, so the student is asked to scan them again.
+     */
+    suspend fun readScript(blueprint: PaperBlueprint, paper: PaperContent, onPage: (Int, Int) -> Unit = { _, _ -> }): List<ScriptPage> {
+        val numbering = BoardNumbering(blueprint)
+        val questions = paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { it.id to numbering.label(it) }
+        val pages = printedStore(blueprint.id).pages()
+        return pages.mapIndexed { i, p ->
+            onPage(i + 1, pages.size)
+            val key = "${blueprint.id}/${p.id}/${p.rev}/${p.shown}"
+            readCache[key]?.copy(page = i + 1) ?: run {
+                val image = withContext(Dispatchers.IO) { toDataUrl(File(p.shown), SCRIPT_PAGE_SIDE) }
+                val read = image?.let { ai.readScriptPage(it, i + 1, questions, paper.mcqs.size) }
+                read?.also { readCache[key] = it } ?: ScriptPage(i + 1, "ANSWERS", "UNREADABLE", emptyList(), emptyMap(), "")
+            }
+        }
+    }
+
+    /** The submission for a script on paper: the answers as read, and for each answer the pages it is written on. */
+    suspend fun printedSubmission(paper: PaperContent, reading: ScriptReading): PaperSubmission {
+        val files = printedStore(paper.blueprintId).pages().map { File(it.shown) }
+        val data = withContext(Dispatchers.IO) {
+            reading.pagesOf.mapValues { (_, pages) -> pages.take(MAX_PHOTOS).mapNotNull { files.getOrNull(it - 1)?.let { f -> toDataUrl(f, SCRIPT_PAGE_SIDE) } } }
+        }
+        return PaperSubmission(
+            mcq = reading.mcq, written = reading.answers,
+            photos = reading.pagesOf.mapValues { it.value.size }, photoData = data, handwritten = true,
+        )
+    }
+
+    /** Hands in a paper written on paper. It counts as one of the paper's attempts, like a paper sat on the phone. */
+    suspend fun submitPrinted(blueprint: PaperBlueprint, paper: PaperContent, reading: ScriptReading, now: Long = System.currentTimeMillis()): PaperResult {
+        store.appendExamEvent(blueprint.id, ExamEventType.STARTED, now)
+        reading.mcq.forEach { (q, choice) -> store.saveMcqChoice(blueprint.id, q, choice) }
+        reading.answers.forEach { (q, text) -> store.saveDraft(draftKey(blueprint.id, q), text) }
+        return submit(blueprint, paper, now, printedSubmission(paper, reading))
+    }
+
     /** Hands the paper in: closes the invigilator log, runs the first check and records demo-checked evidence. */
-    suspend fun submit(blueprint: PaperBlueprint, paper: PaperContent, now: Long = System.currentTimeMillis()): PaperResult {
+    suspend fun submit(blueprint: PaperBlueprint, paper: PaperContent, now: Long = System.currentTimeMillis(), given: PaperSubmission? = null): PaperResult {
         store.appendExamEvent(blueprint.id, ExamEventType.SUBMITTED, now)
-        val submission = submission(paper)
+        val submission = given ?: submission(paper)
         val result = check(blueprint, paper, submission)
+        handedIn[blueprint.id] = submission to result
         store.saveFirstResult(
             blueprint.id,
             result.written.associate { it.question.id to it.mark.awarded } + ("mcq" to result.mcqMarks) + ("total" to result.confirmed),
@@ -115,12 +172,14 @@ class ExamDesk(
     }
 
     /** Downsizes a page photo and encodes it for the AI examiner. Null if the file is not a readable image. */
-    private fun toDataUrl(file: File): String? = runCatching {
+    private fun toDataUrl(file: File, side: Int = MAX_PHOTO_SIDE): String? = runCatching {
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         BitmapFactory.decodeFile(file.path, bounds)
         var sample = 1
-        while (maxOf(bounds.outWidth, bounds.outHeight) / (sample * 2) >= MAX_PHOTO_SIDE) sample *= 2
-        val bitmap = BitmapFactory.decodeFile(file.path, BitmapFactory.Options().apply { inSampleSize = sample }) ?: return null
+        while (maxOf(bounds.outWidth, bounds.outHeight) / (sample * 2) >= side) sample *= 2
+        var bitmap = BitmapFactory.decodeFile(file.path, BitmapFactory.Options().apply { inSampleSize = sample }) ?: return null
+        val longest = maxOf(bitmap.width, bitmap.height)
+        if (longest > side) bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.width * side / longest, bitmap.height * side / longest, true)
         val out = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out)
         "data:image/jpeg;base64," + Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP)
@@ -147,6 +206,7 @@ class ExamDesk(
         val id = paper.blueprintId
         store.resetExam(id, paper.written.map { draftKey(id, it.id) })
         scanStore(id).clear()
+        printedStore(id).clear()
         withContext(Dispatchers.IO) { File(context.filesDir, "exam/$id").deleteRecursively() }
     }
 }

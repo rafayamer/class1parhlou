@@ -373,6 +373,13 @@ function modelPaper() {
 }
 const modelMade = modelPaper();
 
+// Some book MCQs carry their own letters ("(a) 12(x + 3)"); the app and the printed paper add A–D themselves.
+const unletter = (q) => q.options.every((o, i) => new RegExp(`^\\(?${"abcd"[i]}[).]\\s+`, "i").test(o))
+  ? { ...q, options: q.options.map((o) => o.replace(/^\(?[a-d][).]\s+/i, "")) } : q;
+quiz.splice(0, quiz.length, ...quiz.map(unletter));
+readiness.splice(0, readiness.length, ...readiness.map(unletter));
+for (const p of papers) p.mcqs = p.mcqs.map(unletter);
+
 const bundle = {
   format: 1,
   subjectId: SUBJECT,

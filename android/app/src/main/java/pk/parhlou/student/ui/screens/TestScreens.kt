@@ -94,8 +94,16 @@ fun TestsScreen(
     onBack: (() -> Unit)?,
     /** Quarter/half/full mocks that can't be built yet (ready ones are already in [blueprints]). */
     pendingMocks: List<MockPaper.NeedsQuestions> = emptyList(),
+    /** Opens "Make my paper" (the AI chooses a full board-pattern paper); null when no board pattern is published. */
+    onMakePaper: (() -> Unit)? = null,
 ) {
     ParhlouScreen("Papers", onBack = onBack) {
+        if (onMakePaper != null) Sheet(Modifier.testTag("make-paper")) {
+            Text("Make my paper", style = MaterialTheme.typography.titleMedium)
+            Muted("Ustaad picks a full 75-mark paper in the 2027 board pattern from real past-paper questions: the most repeated ones, more from your weak topics, none you've done. Sit it here or print it.")
+            BigButton("Make my paper", onClick = onMakePaper, enabled = readinessPassed)
+            if (!readinessPassed) Muted("Pass the readiness check first.")
+        }
         Sheet {
             Text("Readiness check", style = MaterialTheme.typography.titleMedium)
             Muted("A short quiz before each paper. Pass mark $READINESS_PASS_PERCENT%. Failing it doesn't use up a paper.")
@@ -176,6 +184,10 @@ fun AssessmentStartScreen(
     /** Hand-ins so far and the best score, for the 3-attempt rule. */
     attemptsUsed: Int = 0,
     bestPercent: Int? = null,
+    /** Makes the printable paper; true = with the marking scheme. Null hides printing. */
+    onPrint: ((Boolean) -> Unit)? = null,
+    /** Opens the scan-and-mark flow for a paper written on paper. */
+    onWrittenOnPaper: (() -> Unit)? = null,
 ) {
     val problems = BlueprintValidator.problems(blueprint)
     val attemptsLeft = (pk.parhlou.student.domain.PaperAttempts.MAX - attemptsUsed).coerceAtLeast(0)
@@ -210,6 +222,19 @@ fun AssessmentStartScreen(
             Text("Invigilator", style = MaterialTheme.typography.titleMedium)
             Muted("The timer keeps running if you close the app. The invigilator records how long you take and each time you leave the paper, then shows you a report. It stays on this phone.")
             Muted("The AI tutor is locked until you hand in.")
+        }
+        if (onPrint != null && problems.isEmpty()) {
+            Sheet(Modifier.testTag("print-paper")) {
+                Text("Write it on paper, like the real exam", style = MaterialTheme.typography.titleMedium)
+                Muted("Print this paper in the board's layout, with a bubble sheet for the MCQs. Answer on plain paper in any order; " +
+                    "just write the question and part number, like \"Q2 (iii)\" or \"Q5 (b)\". Then scan your pages and the AI examiner " +
+                    "reads your handwriting and marks it step by step, the way board examiners do.")
+                SecondaryButton("Print or share the paper (PDF)", onClick = { onPrint(false) })
+                TextButton(onClick = { onPrint(true) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("With the marking scheme (for parents and teachers)") }
+                if (onWrittenOnPaper != null && !started && !submitted && attemptsLeft > 0) {
+                    BigButton("I wrote it on paper: scan my answers", onClick = onWrittenOnPaper)
+                }
+            }
         }
         if (problems.isNotEmpty()) {
             Sheet {
@@ -290,7 +315,7 @@ fun ExamScreen(
     var scanVersion by remember { mutableIntStateOf(0) }
     var confirmUnmatched by remember { mutableStateOf(0) }
     val questions = remember(paper) {
-        paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { ScanQuestion(it.id, questionLabel(it)) }
+        paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { ScanQuestion(it.id, questionLabel(it, blueprint)) }
     }
     if (scanning && startedAt != null) {
         // Its own full-screen window: the camera preview must not be drawn inside the app's glass layer, where it
@@ -365,7 +390,7 @@ fun ExamScreen(
                 }
             } else {
                 paper.written.filter { it.section == index }.sortedBy { it.number }.forEach { q ->
-                    WrittenAnswerCard(id, q, store, desk, enabled = !locked, scanVersion = scanVersion)
+                    WrittenAnswerCard(id, q, questionLabel(q, blueprint), store, desk, enabled = !locked, scanVersion = scanVersion)
                 }
             }
         }
@@ -423,7 +448,7 @@ private fun McqCard(number: Int, q: McqQuestion, chosen: Int?, enabled: Boolean,
 }
 
 @Composable
-private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalStore, desk: ExamDesk, enabled: Boolean, scanVersion: Int = 0) {
+private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, label: String, store: LocalStore, desk: ExamDesk, enabled: Boolean, scanVersion: Int = 0) {
     val scope = rememberCoroutineScope()
     val key = desk.draftKey(paperId, q.id)
     val saved by store.draft(key).collectAsState(initial = null)
@@ -436,7 +461,7 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, store: LocalS
     }
     Sheet {
         Row {
-            Text("${questionLabel(q)}. ${q.text}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            Text("$label. ${q.text}", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
             Spacer(Modifier.width(8.dp))
             Text("[${fmt(q.marks)}]", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }

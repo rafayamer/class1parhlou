@@ -6,6 +6,9 @@ import org.json.JSONArray
 import org.json.JSONObject
 import pk.parhlou.student.data.McqQuestion
 import pk.parhlou.student.data.WrittenQuestion
+import pk.parhlou.student.domain.PaperPick
+import pk.parhlou.student.domain.PickSlot
+import pk.parhlou.student.domain.ScriptPage
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -52,6 +55,36 @@ class LunaGateway(
         // Model output is untrusted: it is used only if it matches this question's rubric exactly.
         return if (mark != null && MarkingValidator.problems(question, mark).isEmpty()) mark
         else fallback.markWritten(question, answer, photos)
+    }
+
+    override suspend fun markHandwritten(question: WrittenQuestion, answer: String, images: List<String>, paperId: String?): WrittenMark {
+        if (images.isEmpty()) return markWritten(question, answer, 0, images, paperId)
+        val body = JSONObject().put("task", "mark_written").put("questionId", question.id)
+            .put("answer", answer).put("images", JSONArray(images)).put("handwritten", true)
+        if (paperId != null) body.put("paperId", paperId)
+        val mark = call(body)?.let { parseMark(question, it) }
+        return if (mark != null && MarkingValidator.problems(question, mark).isEmpty()) mark
+        else fallback.markWritten(question, answer, images.size)
+    }
+
+    override suspend fun readScriptPage(image: String, page: Int, questions: List<Pair<String, String>>, mcqCount: Int): ScriptPage? {
+        if (questions.isEmpty()) return null
+        val body = JSONObject().put("task", "read_script").put("image", image).put("page", page).put("mcqCount", mcqCount)
+            // The first question id tells the server which course this paper belongs to.
+            .put("questionId", questions.first().first)
+            .put("questions", JSONArray(questions.map { (id, label) -> JSONObject().put("id", id).put("label", label) }))
+        return call(body)?.let(ScriptPage::parse)
+    }
+
+    override suspend fun pickPaper(slots: List<PickSlot>, profile: String): PaperPick? {
+        val first = slots.firstOrNull()?.candidates?.firstOrNull() ?: return null
+        val body = JSONObject().put("task", "pick_paper").put("profile", profile).put("questionId", first.id)
+            .put("slots", JSONArray(slots.map { s ->
+                JSONObject().put("slot", s.slot).put("count", s.count).put("candidates", JSONArray(s.candidates.map {
+                    JSONObject().put("id", it.id).put("topic", it.topic).put("seen", it.seen)
+                }))
+            }))
+        return call(body)?.let { PaperPick.parse(it, slots) }
     }
 
     override suspend fun ustaad(req: UstaadRequest): UstaadAnswer {
@@ -114,9 +147,11 @@ class LunaGateway(
             val criterionStatus = runCatching { CriterionStatus.valueOf(c.getString("status")) }.getOrNull() ?: return null
             // Marks, wording and advice come from the app's own rubric, never from the reply.
             CriterionMark(rubric.id, rubric.description, rubric.marks,
-                if (criterionStatus == CriterionStatus.MET) rubric.marks else 0.0, criterionStatus, rubric.why, rubric.how)
+                if (criterionStatus == CriterionStatus.MET) rubric.marks else 0.0, criterionStatus, rubric.why, rubric.how,
+                evidence = c.optString("evidence").take(400))
         }
-        return WrittenMark(question.id, status, criteria, question.followUp)
+        return WrittenMark(question.id, status, criteria, question.followUp,
+            examiners = r.optInt("examiners", 1).coerceIn(1, 3), correction = r.optString("correction").take(400))
     }
 
     private fun offline(reply: TutorReply) =

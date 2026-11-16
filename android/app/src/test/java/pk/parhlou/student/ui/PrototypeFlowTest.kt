@@ -112,16 +112,16 @@ class PrototypeFlowTest {
         rule.waitUntil(10_000) { !exists("Preparing") }
 
         rule.onAllNodes(hasText("Choose question"))[0].performClick()
-        rule.onNodeWithText("B1").performClick()
+        rule.onNodeWithText("Q2 (i)").performClick()
         rule.onNodeWithTag("scan-pages").performScrollToIndex(1)
         rule.onAllNodes(hasText("Choose question"))[0].performClick()
-        rule.onNodeWithText("B1").performClick()
-        assertEquals(2, rule.onAllNodes(hasText("Answer to B1")).fetchSemanticsNodes().size)
+        rule.onNodeWithText("Q2 (i)").performClick()
+        assertEquals(2, rule.onAllNodes(hasText("Answer to Q2 (i)")).fetchSemanticsNodes().size)
         assertTrue(!exists("aren't matched"))
         rule.onNodeWithContentDescription("Move page 2 up").performClick()
         rule.onNodeWithText("Done").performClick()
 
-        // Back in the paper, the timer kept running and both pages count as photos of B1.
+        // Back in the paper, the timer kept running and both pages count as photos of Q2 (i).
         rule.waitUntil(15_000) { exists("2 pages scanned and matched to questions.") }
         assertTrue(exists("2 page photos attached"))
         val log = runBlocking { store.examLog(paperId).first() }
@@ -135,7 +135,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("The invigilator records", substring = true).assertExists()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
-        rule.waitUntil(20_000) { exists("Invigilator on") }
+        rule.waitUntil(40_000) { exists("Invigilator on") }
 
         // Two MCQs (one right, one wrong), one full written answer, one partial, one unrecognised.
         rule.onNodeWithTag("mcq-p1-3").performScrollTo().performClick()

@@ -18,6 +18,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import pk.parhlou.student.domain.PaperPdf
+import pk.parhlou.student.domain.PaperPicker
+import pk.parhlou.student.ui.screens.MakePaperScreen
+import pk.parhlou.student.ui.screens.PrintedPaperScreen
 import pk.parhlou.student.data.LocalStore
 import pk.parhlou.student.data.ParhlouRepository
 import pk.parhlou.student.data.ProgressStore
@@ -51,6 +57,7 @@ import pk.parhlou.student.ui.screens.todaysModule
 import pk.parhlou.student.ui.screens.ProgressScreen
 import pk.parhlou.student.ui.screens.MyUstaadScreen
 import pk.parhlou.student.domain.StudentProfile
+import pk.parhlou.student.ui.shareFile
 import pk.parhlou.student.data.UstaadPrefs
 import pk.parhlou.student.ui.session.SessionScreen
 import pk.parhlou.student.domain.SessionBuilder
@@ -121,6 +128,8 @@ object Routes {
     const val EXAM = "exam/{id}?scan={scan}"
     const val SCAN = "scan"
     const val RESULT = "checked/{id}"
+    const val PRINTED = "printed/{id}"
+    const val MAKE_PAPER = "make-paper"
     const val JOURNEY = "journey"
     const val PLACEHOLDER = "soon/{key}"
     const val TUTOR = "tutor"
@@ -227,8 +236,16 @@ fun ParhlouApp(
         }
     }
     val readyMocks = mocks.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id }
-    val blueprints = chapterBlueprints + readyMocks.values.map { it.blueprint }
-    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper
+    // "Make my paper": full 2027-pattern papers the AI chose for this student, kept on the phone.
+    val template = chapterBlueprints.firstOrNull { it.official && it.chapterId == null && it.id.startsWith("board-") }
+    val bank = remember(repo, subjectIds) { questionBank(repo, subjects, chapterBlueprints) }
+    val myPapersJson by store.draft(MY_PAPERS).collectAsState(initial = "")
+    val myPapers = remember(myPapersJson, bank, template) {
+        if (template == null || myPapersJson.isBlank()) emptyList()
+        else runCatching { org.json.JSONArray(myPapersJson).let { a -> (0 until a.length()).mapNotNull { PaperPicker.fromJson(a.getString(it), template, bank) } } }.getOrDefault(emptyList())
+    }.associateBy { it.blueprint.id }
+    val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint }
+    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
     val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
     // The plan teaches what the exam examines; sections the smart syllabus leaves out stay open as practice.
     val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
@@ -501,6 +518,7 @@ fun ParhlouApp(
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
                 pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
+                onMakePaper = if (template != null) ({ nav.navigate(Routes.MAKE_PAPER) }) else null,
             )
         } }
         composable(Routes.READINESS) {
@@ -523,6 +541,15 @@ fun ParhlouApp(
                     onBack = nav.back(),
                     attemptsUsed = pk.parhlou.student.domain.PaperAttempts.used(progress.history(), b.id),
                     bestPercent = pk.parhlou.student.domain.PaperAttempts.best(progress.history(), b.id),
+                    onPrint = { withScheme ->
+                        scope.launch {
+                            val file = withContext(Dispatchers.IO) {
+                                PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}${if (withScheme) "-scheme" else ""}.pdf"), b, paper, withScheme)
+                            }
+                            shareFile(context, file, "application/pdf", "Print or share your paper")
+                        }
+                    },
+                    onWrittenOnPaper = { nav.navigate("printed/${b.id}") },
                 )
             }
         }
@@ -536,6 +563,39 @@ fun ParhlouApp(
                 blueprint = b, paper = paper, store = store, desk = desk, appScope = scope,
                 openScanner = entry.arguments?.getBoolean("scan") == true,
                 onSubmitted = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
+                onBack = nav.back(),
+            )
+        }
+        composable(Routes.PRINTED) { entry ->
+            val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
+            val paper = b?.let { paperOf(it.id) }
+            if (b == null || paper == null) Missing(nav) else PrintedPaperScreen(
+                blueprint = b, paper = paper, desk = desk, appScope = scope, readsHandwriting = ai.readsPhotos,
+                onMarked = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
+                onBack = nav.back(),
+            )
+        }
+        composable(Routes.MAKE_PAPER) {
+            val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
+            MakePaperScreen(
+                make = make@{
+                    val t = template ?: return@make null
+                    val tPaper = repo.paper(t.id) ?: return@make null
+                    val history = progress.history()
+                    val seen = history.map { it.key }.filter { it.startsWith(ProgressStore.PAPER_PREFIX) }
+                        .mapNotNull { paperOf(it.removePrefix(ProgressStore.PAPER_PREFIX)) }
+                        .flatMap { p -> p.mcqs.map { it.id } + p.written.map { it.id } }.toSet()
+                    val slots = PaperPicker.slots(t, tPaper, bank, weakTopics().map { it.noteId }.toSet(), seen, System.currentTimeMillis())
+                    val profile = StudentProfile.build(state, subjects, history, prefs, { noteTitles[it] }).summary()
+                    val aiPick = if (ai.readsPhotos) ai.pickPaper(slots, profile) else null
+                    val n = myPapers.size + 1
+                    val made = PaperPicker.build("my-paper-${System.currentTimeMillis()}", "My paper $n (2027 pattern)", t, tPaper, slots,
+                        aiPick ?: PaperPicker.localPick(slots), bank, byAi = aiPick != null) ?: return@make null
+                    val list = runCatching { org.json.JSONArray(myPapersJson) }.getOrDefault(org.json.JSONArray()).put(PaperPicker.toJson(made))
+                    store.saveDraft(MY_PAPERS, list.toString())
+                    made
+                },
+                onOpen = { nav.navigate("assessment/$it") { popUpTo(Routes.TESTS) } },
                 onBack = nav.back(),
             )
         }
@@ -595,3 +655,22 @@ private fun Missing(nav: NavHostController) =
 /** Daily reminder choices, cycled by tapping the Profile row: 4, 6, 8 and 9 pm, or off. */
 private val REMINDER_CHOICES = listOf(16, 18, 20, 21, -1)
 private fun hourLabel(h: Int) = "${if (h % 12 == 0) 12 else h % 12} ${if (h < 12) "am" else "pm"}"
+
+private const val MY_PAPERS = "my_papers"
+
+/** Every published question of the student's subjects (papers and section quizzes), for "Make my paper". */
+private fun questionBank(repo: pk.parhlou.student.data.ParhlouRepository, subjects: List<pk.parhlou.student.data.Subject>,
+                         blueprints: List<pk.parhlou.student.data.PaperBlueprint>): PaperPicker.Bank {
+    val papers = blueprints.mapNotNull { repo.paper(it.id) }
+    val modules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it to c } } }
+    val quiz = modules.flatMap { (m, _) -> repo.moduleQuiz(m.id, 1000) }
+    val noteModule = subjects.flatMap { repo.notes(it.id) }.associate { it.id to it.moduleId }
+    val chapterOfModule = modules.associate { (m, c) -> m.id to c }
+    val titleOfModule = modules.associate { (m, c) -> m.id to "Unit ${c.number} · ${m.title}" }
+    return PaperPicker.Bank(
+        mcqs = (papers.flatMap { it.mcqs } + quiz).distinctBy { it.id },
+        written = papers.flatMap { it.written }.distinctBy { it.id },
+        unitOfNote = { key -> key?.let { chapterOfModule[noteModule[it] ?: it]?.number } },
+        topicOfNote = { key -> key?.let { titleOfModule[noteModule[it] ?: it] }.orEmpty() },
+    )
+}

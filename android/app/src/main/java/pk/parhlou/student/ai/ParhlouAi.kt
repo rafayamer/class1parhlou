@@ -29,6 +29,19 @@ interface ParhlouAi {
      */
     suspend fun recordMcqs(paperId: String, answers: Map<String, Int>): Boolean = false
 
+    /**
+     * Marks an answer the student wrote on paper: [answer] is what the AI read from their pages and [images] are the pages
+     * themselves (the original, which decides). Answers on paper are double-marked by the server.
+     */
+    suspend fun markHandwritten(question: WrittenQuestion, answer: String, images: List<String>, paperId: String? = null): WrittenMark =
+        markWritten(question, answer, images.size, images, paperId)
+
+    /** Reads one page of a handwritten answer script. [questions] are the paper's (question id, printed label). Null = couldn't read. */
+    suspend fun readScriptPage(image: String, page: Int, questions: List<Pair<String, String>>, mcqCount: Int): pk.parhlou.student.domain.ScriptPage? = null
+
+    /** Lets the AI choose a practice paper's questions from each slot's candidates. Null = not available (the app picks itself). */
+    suspend fun pickPaper(slots: List<pk.parhlou.student.domain.PickSlot>, profile: String): pk.parhlou.student.domain.PaperPick? = null
+
     /** Ask Ustaad: a chat turn or a photographed question. Without the AI, the notes-based tutor answers text questions. */
     suspend fun ustaad(req: UstaadRequest): UstaadAnswer = UstaadOffline.answer(this, req)
 }
@@ -71,6 +84,8 @@ data class CriterionMark(
     val status: CriterionStatus,
     val why: String,
     val how: String,
+    /** What the examiner saw in the answer for this point (a quote, or what is missing). */
+    val evidence: String = "",
 )
 
 enum class MarkStatus(val label: String) {
@@ -86,6 +101,10 @@ data class WrittenMark(
     val status: MarkStatus,
     val criteria: List<CriterionMark>,
     val followUp: String,
+    /** 2 = double-marked and both examiners agreed; 3 = a head examiner settled their disagreements. */
+    val examiners: Int = 1,
+    /** The examiner's correction for the most important mistake. */
+    val correction: String = "",
 ) {
     val max: Double get() = criteria.sumOf { it.max }
     val awarded: Double get() = criteria.sumOf { it.awarded }

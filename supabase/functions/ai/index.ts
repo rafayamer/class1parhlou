@@ -86,6 +86,12 @@ Deno.serve(async (request) => {
     return json(m.body, m.status);
   }
 
+  // Answer-script pages have their own daily allowance: one full paper is 10–20 pages.
+  if ((body as any)?.task === "read_script") {
+    const { count: pages } = await db.from("ai_usage").select("id", { count: "exact", head: true })
+      .eq("caller", caller).eq("task", "read_script").gte("created_at", since);
+    if ((pages ?? 0) >= SCRIPT_PAGES_PER_DAY) return json({ error: "SCRIPT_PAGE_LIMIT" }, 429);
+  }
   let photoQuotaLeft = settings.photosPerDay;
   if ((body as any)?.task === "ustaad" && (body as any)?.image) {
     const { count: photos } = await db.from("ai_usage").select("id", { count: "exact", head: true })
@@ -123,6 +129,8 @@ async function videos(db: any, query: string): Promise<Video[]> {
   }
   return found;
 }
+
+const SCRIPT_PAGES_PER_DAY = 60;
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });

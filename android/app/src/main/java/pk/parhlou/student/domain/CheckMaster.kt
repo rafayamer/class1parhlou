@@ -16,6 +16,8 @@ data class PaperSubmission(
     val photos: Map<String, Int> = emptyMap(),
     /** Page photos as data URLs, filled only when the AI can read them. */
     val photoData: Map<String, List<String>> = emptyMap(),
+    /** Written on paper: [written] holds what the AI read from the pages, and [photoData] the pages themselves. */
+    val handwritten: Boolean = false,
 )
 
 data class McqOutcome(val question: McqQuestion, val chosen: Int?, val correct: Boolean)
@@ -57,7 +59,8 @@ object CheckMaster {
         val written = paper.written.sortedWith(compareBy({ it.section }, { it.number })).map { q ->
             val answer = submission.written[q.id].orEmpty()
             val photos = submission.photos[q.id] ?: 0
-            var mark = ai.markWritten(q, answer, photos, submission.photoData[q.id].orEmpty(), blueprint.id)
+            var mark = if (submission.handwritten && answer.isNotBlank()) ai.markHandwritten(q, answer, submission.photoData[q.id].orEmpty(), blueprint.id)
+                else ai.markWritten(q, answer, photos, submission.photoData[q.id].orEmpty(), blueprint.id)
             if (MarkingValidator.problems(q, mark).isNotEmpty()) {
                 // An invalid AI result is rejected, not shown: the question simply stays unchecked.
                 mark = WrittenMark(q.id, MarkStatus.COULD_NOT_CHECK, emptyList(), q.followUp)

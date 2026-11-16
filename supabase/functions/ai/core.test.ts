@@ -58,14 +58,40 @@ test("invalid reply is retried once, then reported as not checked (never zero, n
   assert.ok(bad.result.criteria.every((c: any) => c.status === "UNSURE" && c.awarded === 0));
 });
 
-test("photo answers: images are sent, and unsure criteria get one second pass that cannot lower a mark", async () => {
-  const seen: any[] = [];
+test("answers on paper are double-marked: agreement stands, disagreements go to the head examiner", async () => {
   const img = "data:image/png;base64,AAAA";
-  const { result, usage }: any = await runTask(task("", [img]), fakeFetch([mark(["MET", "UNSURE", "UNSURE"]), mark(["NOT_FOUND", "MET", "UNSURE"])], seen), "k");
+  const seen: any[] = [];
+  const agreed: any = (await runTask(task("", [img]), fakeFetch([mark(["MET", "NOT_FOUND", "MET"]), mark(["MET", "NOT_FOUND", "MET"])], seen), "k")).result;
   assert.equal(seen[0].input[0].content[1].type, "input_image");
-  assert.equal(usage.attempts, 2);
-  assert.deepEqual(result.criteria.map((c: any) => c.status), ["MET", "MET", "UNSURE"]);
+  assert.equal(seen.length, 2);
+  assert.match(seen[1].input[0].content[0].text, /second examiner/);
+  assert.equal(agreed.examiners, 2);
+  assert.deepEqual(agreed.disputed, []);
+
+  const seen2: any[] = [];
+  const settled: any = (await runTask(task("", [img]), fakeFetch([mark(["MET", "UNSURE", "MET"]), mark(["NOT_FOUND", "MET", "MET"]), mark(["MET", "MET", "NOT_FOUND"])], seen2), "k")).result;
+  assert.equal(seen2.length, 3);
+  assert.match(seen2[2].input[0].content[0].text, /head examiner[\s\S]*examiner 1 said MET/);
+  // Only disputed points take the head examiner's decision; the agreed third point stays MET.
+  assert.deepEqual(settled.criteria.map((c: any) => c.status), ["MET", "MET", "MET"]);
+  assert.equal(settled.examiners, 3);
+  assert.deepEqual(settled.disputed, [q.rubric[0].id, q.rubric[1].id]);
+  assert.equal(settled.status, "CHECKED");
+});
+
+test("a disagreement nobody can settle is left for a look, never guessed", async () => {
+  const img = "data:image/png;base64,AAAA";
+  const { result }: any = await runTask(task("", [img]), fakeFetch([mark(["MET", "MET", "MET"]), mark(["MET", "NOT_FOUND", "MET"]), "HTTP_500"]), "k");
+  assert.deepEqual(result.criteria.map((c: any) => c.status), ["MET", "UNSURE", "MET"]);
+  assert.equal(result.criteria[1].awarded, 0);
+  assert.match(result.criteria[1].evidence, /Examiners disagreed/);
   assert.equal(result.status, "PARTLY_CHECKED");
+});
+
+test("every marking request carries the board examiner's rules", () => {
+  const prompt = buildRequest(task("2x = 6, x = 3")).input as string;
+  assert.match(prompt, /Error carried forward/);
+  assert.match(prompt, /struck through/);
 });
 
 test("tutor: only supplied notes can be cited; NOT_FOUND carries no steps or citation", () => {
@@ -239,4 +265,76 @@ test("videos: only real lessons, no shorts or live streams; nothing without a ke
   ];
   assert.deepEqual(pickVideos({ items }).map((v) => v.id), ["a"]);
   assert.deepEqual(await searchVideos("logs", "", async () => ({ ok: true, json: async () => ({ items }) })), []);
+});
+
+// ── Paper-based examining: reading handwritten scripts and picking a printed paper ─────────────────────────────
+import { handle as handleReq } from "./handler.ts";
+import { toScriptPage, toPaperPick } from "./examiner.ts";
+
+const page = (o: any) => reply({ page_kind: "ANSWERS", legibility: "CLEAR", mcq: [], note: "", ...o });
+const seg = (o: any) => ({ label_written: "", question_id: "", continues_previous_page: false, crossed_out: false, rough_work: false, legible: "CLEAR", text: "x", ...o });
+
+test("read_script: question texts come from the server; ids the paper doesn't have are dropped, not trusted", async () => {
+  const seen: any[] = [];
+  const img = "data:image/jpeg;base64,AAAA";
+  const out: any = await handleReq({ task: "read_script", subjectIds: ["pb-9-math"], image: img, page: 2, mcqCount: 15,
+    questions: [{ id: "s1", label: "2(i)" }, { id: "s2", label: "2(ii)", text: "phone text is ignored" }, { id: "nope", label: "2(iii)" }] },
+    content, fakeFetch([page({ segments: [seg({ label_written: "2 ii)", question_id: "s2", text: "a = 3" }), seg({ question_id: "invented", text: "?" })],
+      mcq: [{ number: 3, choice: "B" }, { number: 99, choice: "A" }] })], seen), "k", 10);
+  assert.equal(out.status, 200);
+  const prompt = seen[0].input[0].content[0].text;
+  assert.match(prompt, /s2: 2\(ii\): /);
+  assert.doesNotMatch(prompt, /phone text is ignored|nope/);
+  assert.equal(seen[0].input[0].content[1].image_url, img);
+  assert.deepEqual(out.body.result.segments.map((s: any) => s.questionId), ["s2", null]);
+  assert.deepEqual(out.body.result.mcq, [{ number: 3, choice: "B" }]);
+  assert.equal(out.body.result.page, 2);
+});
+
+test("read_script: bad images and papers with no known questions are refused before any model call", async () => {
+  const seen: any[] = [];
+  const bad1: any = await handleReq({ task: "read_script", image: "http://x", questions: [{ id: "s1", label: "2(i)" }] }, content, fakeFetch([], seen), "k", 10);
+  const bad2: any = await handleReq({ task: "read_script", image: "data:image/png;base64,AA", questions: [{ id: "zz", label: "2(i)" }] }, content, fakeFetch([], seen), "k", 10);
+  assert.equal(bad1.status, 413);
+  assert.equal(bad2.status, 404);
+  assert.equal(seen.length, 0);
+});
+
+test("read_script: an unusable reply is retried once, then reported as null (the app asks for a retake)", async () => {
+  const out: any = await handleReq({ task: "read_script", image: "data:image/png;base64,AA", questions: [{ id: "s1", label: "2(i)" }] },
+    content, fakeFetch([reply({ nonsense: true })]), "k", 10);
+  assert.equal(out.body.result, null);
+  assert.equal(out.usage.attempts, 2);
+  assert.equal(out.usage.ok, false);
+});
+
+test("pick_paper: picks must be the slot's own candidates, the exact count, never repeated", () => {
+  const t: any = { task: "pick_paper", course: content.course, profile: "", slots: [
+    { slot: "Q2", count: 2, candidates: ["s1", "s2", "s3"].map((id) => ({ id, text: "", marks: 2, topic: "", pastPapers: [], seen: false })) },
+    { slot: "Q3", count: 1, candidates: ["s3", "s4"].map((id) => ({ id, text: "", marks: 2, topic: "", pastPapers: [], seen: false })) }] };
+  const ok = toPaperPick({ slots: [{ slot: "Q2", picks: [{ id: "s1", why: "Came in 6 papers" }, { id: "s3", why: "" }] }, { slot: "Q3", picks: [{ id: "s4", why: "" }] }], summary: "s" }, t);
+  assert.ok(ok);
+  assert.equal(toPaperPick({ slots: [{ slot: "Q2", picks: [{ id: "s1", why: "" }, { id: "s3", why: "" }] }, { slot: "Q3", picks: [{ id: "s3", why: "" }] }], summary: "" }, t), null);
+  assert.equal(toPaperPick({ slots: [{ slot: "Q2", picks: [{ id: "s1", why: "" }] }, { slot: "Q3", picks: [{ id: "s4", why: "" }] }], summary: "" }, t), null);
+  assert.equal(toPaperPick({ slots: [{ slot: "Q2", picks: [{ id: "s1", why: "" }, { id: "s9", why: "" }] }, { slot: "Q3", picks: [{ id: "s4", why: "" }] }], summary: "" }, t), null);
+});
+
+test("pick_paper: candidates are looked up on the server; a slot without enough real questions is refused", async () => {
+  const seen: any[] = [];
+  const ok: any = await handleReq({ task: "pick_paper", slots: [{ slot: "Q2", count: 1, candidates: [{ id: "s1", topic: "Surds" }, { id: "fake" }] }] },
+    content, fakeFetch([reply({ slots: [{ slot: "Q2", picks: [{ id: "s1", why: "w" }] }], summary: "s" })], seen), "k", 10);
+  assert.equal(ok.status, 200);
+  assert.equal(ok.body.result.slots[0].picks[0].id, "s1");
+  assert.doesNotMatch(seen[0].input, /fake/);
+  const short: any = await handleReq({ task: "pick_paper", slots: [{ slot: "Q2", count: 2, candidates: [{ id: "s1" }, { id: "fake" }] }] }, content, fakeFetch([]), "k", 10);
+  assert.equal(short.body.error, "NOT_ENOUGH_QUESTIONS");
+});
+
+test("handwritten marking is flagged only when pages are sent", async () => {
+  const { toTask: tt } = await import("./handler.ts");
+  const withPages: any = tt({ task: "mark_written", questionId: "s7", answer: "x", images: ["data:image/png;base64,AA"], handwritten: true }, content);
+  const typed: any = tt({ task: "mark_written", questionId: "s7", answer: "x", images: [], handwritten: true }, content);
+  assert.equal(withPages.handwritten, true);
+  assert.equal(typed.handwritten, false);
+  assert.match(buildRequest(withPages).input[0].content[0].text, /photos decide/);
 });

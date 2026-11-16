@@ -64,7 +64,9 @@ import pk.parhlou.student.ui.components.StatusPill
 const val DEMO_CHECKER_LABEL = "Demo checker — practice marks, not official board marks"
 
 /** Short label for a paper question: section letter plus number, e.g. "B3". */
-fun questionLabel(q: WrittenQuestion): String = "${'A' + q.section}${q.number}"
+/** The board's numbering ("Q2 (iii)", "Q5") when the paper is known; otherwise section letter and number. */
+fun questionLabel(q: WrittenQuestion, blueprint: PaperBlueprint? = null): String =
+    blueprint?.let { pk.parhlou.student.domain.BoardNumbering(it).label(q) } ?: "${'A' + q.section}${q.number}"
 
 /** Result of the automatic check, the invigilator's report, and a re-check for every written answer. */
 @Composable
@@ -79,9 +81,10 @@ fun CheckMasterScreen(
     val id = blueprint.id
     val scope = rememberCoroutineScope()
     var submission by remember { mutableStateOf<PaperSubmission?>(null) }
-    LaunchedEffect(id) { submission = desk.submission(paper) }
+    LaunchedEffect(id) { submission = desk.handedIn(id)?.first ?: desk.submission(paper) }
     val result by produceState<PaperResult?>(null, submission) {
-        value = submission?.let { desk.check(blueprint, paper, it) }
+        val done = desk.handedIn(id)
+        value = submission?.let { s -> if (done != null && done.first === s) done.second else desk.check(blueprint, paper, s) }
     }
     val first by store.firstResult(id).collectAsState(initial = emptyMap())
     val log by store.examLog(id).collectAsState(initial = "")
@@ -112,7 +115,7 @@ fun CheckMasterScreen(
                 }
                 Text("${r.percent}%" + if (r.percent >= 33) " · pass" else " · below the 33% pass mark", style = MaterialTheme.typography.titleMedium)
             }
-            val remarks = BoardMarking.remarks(r, ::questionLabel)
+            val remarks = BoardMarking.remarks(r, { questionLabel(it, blueprint) })
             if (remarks.isNotEmpty()) {
                 Text("Examiner's remarks", style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("examiner-remarks"))
                 remarks.forEach { Text("•  $it", style = MaterialTheme.typography.bodyMedium) }
@@ -150,6 +153,7 @@ fun CheckMasterScreen(
                 outcome = outcome,
                 firstMark = first[outcome.question.id],
                 attemptLimit = blueprint.sections.getOrNull(outcome.question.section)?.attempt,
+                label = questionLabel(outcome.question, blueprint),
                 onRecheck = { newText ->
                     scope.launch {
                         store.saveDraft(desk.draftKey(id, outcome.question.id), newText)
@@ -163,7 +167,7 @@ fun CheckMasterScreen(
         if (skipped.isNotEmpty()) {
             Sheet {
                 Text("Not attempted", style = MaterialTheme.typography.titleMedium)
-                Muted(skipped.joinToString(", ") { questionLabel(it.question) })
+                Muted(skipped.joinToString(", ") { questionLabel(it.question, blueprint) })
             }
         }
 
@@ -213,6 +217,7 @@ private fun WrittenResultCard(
     outcome: WrittenOutcome,
     firstMark: Double?,
     attemptLimit: Int?,
+    label: String,
     onRecheck: (String) -> Unit,
     onExplain: () -> Unit,
 ) {
@@ -220,7 +225,7 @@ private fun WrittenResultCard(
     var editing by remember(q.id) { mutableStateOf(false) }
     var text by remember(q.id, outcome.answer) { mutableStateOf(outcome.answer) }
     Sheet(Modifier.testTag("result-${q.id}")) {
-        Text("Question ${questionLabel(q)}", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text("Question $label", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         Text(q.text, style = MaterialTheme.typography.titleMedium)
         if (!outcome.counted) {
             Muted("Not counted: you answered more than ${attemptLimit ?: "the allowed number of"} questions in this section, and only the first ones are checked.")
@@ -252,6 +257,11 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
         Text("${fmt(mark.awarded)} / ${fmt(question.marks)}", style = MaterialTheme.typography.titleLarge)
         StatusPill(mark.status.label, warning = mark.status != MarkStatus.CHECKED)
     }
+    when (mark.examiners) {
+        2 -> Muted("Double-marked: two AI examiners marked this separately and agreed on every step.")
+        3 -> Muted("Double-marked: the two AI examiners disagreed on a step, so a head examiner decided, as in the board.")
+        else -> Unit
+    }
     when (mark.status) {
         MarkStatus.WAITING_FOR_AI ->
             Muted("$photos page photo${if (photos == 1) "" else "s"} saved. The demo checker can't read handwriting, so these marks wait for the AI examiner. Type your working to have it checked now.")
@@ -268,8 +278,11 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
             }
             Column(Modifier.weight(1f)) {
                 Text("${c.description}  (${fmt(c.awarded)}/${fmt(c.max)})", style = MaterialTheme.typography.bodyLarge)
+                if (c.evidence.isNotBlank() && mark.status != MarkStatus.NOT_ATTEMPTED) {
+                    Muted((if (c.status == CriterionStatus.MET) "Examiner saw: " else "Examiner's note: ") + c.evidence)
+                }
                 if (c.status == CriterionStatus.NOT_FOUND && mark.status != MarkStatus.NOT_ATTEMPTED) {
-                    Muted("What: this step is missing from your answer.")
+                    if (c.evidence.isBlank()) Muted("What: this step is missing from your answer.")
                     Muted("Why: ${c.why}")
                     Muted("How: ${c.how}")
                 }
@@ -288,6 +301,7 @@ fun WrittenMarkDetails(question: WrittenQuestion, mark: WrittenMark, photos: Int
     TextButton(onClick = { showModel = !showModel }, modifier = Modifier.heightIn(min = 48.dp)) {
         Text(if (showModel) "Hide model answer" else "Show model answer")
     }
+    if (mark.correction.isNotBlank() && mark.awarded < question.marks) Muted("Correction: ${mark.correction}")
     if (mark.awarded < question.marks && mark.status != MarkStatus.NOT_ATTEMPTED) {
         Muted("Try next: ${mark.followUp}")
     }

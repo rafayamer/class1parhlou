@@ -79,4 +79,32 @@ class LunaGatewayTest {
         g.markWritten(q, "", 1, listOf("data:image/jpeg;base64,AAAA"))
         assertEquals(1, sent.single().second.getJSONArray("images").length())
     }
+
+    // ── Papers written on paper ──
+    @Test fun handwrittenAnswersAreSentWithTheirPagesAndDoubleMarkingIsShown() = runBlocking {
+        val reply = """{"result":{"questionId":"s7","status":"CHECKED","correction":"Divide by 9.","examiners":3,"followUp":"x","criteria":[""" +
+            q.rubric.mapIndexed { i, c -> """{"criterionId":"${c.id}","status":"${if (i == 0) "NOT_FOUND" else "MET"}","evidence":"saw line $i"}""" }.joinToString(",") + "]}}"
+        val mark = gateway(200, reply).markHandwritten(q, "read from the page", listOf("data:image/jpeg;base64,AAAA"), "board-2027-a")
+        val body = sent.single().second
+        assertEquals(true, body.getBoolean("handwritten"))
+        assertEquals(1, body.getJSONArray("images").length())
+        assertEquals(3, mark.examiners)
+        assertEquals("Divide by 9.", mark.correction)
+        assertEquals("saw line 1", mark.criteria[1].evidence)
+    }
+
+    @Test fun aScriptPageIsReadWithThePapersLabelsOnly() = runBlocking {
+        val reply = """{"result":{"page":1,"kind":"ANSWERS","legibility":"CLEAR","note":"","mcq":[],
+            "segments":[{"label":"2 iii)","questionId":"s7","continues":false,"crossedOut":false,"roughWork":false,"legible":"CLEAR","text":"7√2"}]}}"""
+        val page = gateway(200, reply).readScriptPage("data:image/jpeg;base64,AAAA", 1, listOf("s7" to "Q2 (iii)", "s8" to "Q2 (iv)"), 15)!!
+        val body = sent.single().second
+        assertEquals("read_script", body.getString("task"))
+        assertEquals("s7", body.getString("questionId"))
+        assertEquals("Q2 (iii)", body.getJSONArray("questions").getJSONObject(0).getString("label"))
+        assertFalse(body.toString().contains("modelAnswer"))
+        assertEquals("s7", page.segments.single().questionId)
+        // No server: nothing is guessed.
+        sent.clear()
+        assertEquals(null, gateway(500, "{}").readScriptPage("data:image/jpeg;base64,AAAA", 1, listOf("s7" to "Q2 (iii)"), 15))
+    }
 }
