@@ -1,0 +1,1038 @@
+{
+ "unit": 6,
+ "sections": [
+  {
+   "number": "6.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.4",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.5",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.6",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.7",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.8",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.9",
+   "solutions": [
+    {
+     "kind": "EXAMPLE",
+     "source": "Example 6.4",
+     "question": "The diameters of the pistons of a hydraulic press are 5 cm and 25 cm respectively. A normal force of 160 N is applied on the smaller piston, what will be the pressure exerted by this force on the bigger piston? How much weight can be lifted by the other piston?",
+     "steps": [
+      "Given: Diameter of smaller piston, d₁ = 5 cm = 0.05 m; diameter of bigger piston, d₂ = 25 cm = 0.25 m; force applied on smaller piston, F₁ = 160 N.",
+      "Required: Pressure exerted on the bigger piston, P₂; weight lifted by the bigger piston, F₂.",
+      "Formula: P = F/A; A = πr²; according to Pascal’s law, F₁/A₁ = F₂/A₂.",
+      "The radii of the pistons are r₁ = d₁/2 = 0.025 m and r₂ = d₂/2 = 0.125 m.",
+      "Substitution: P₁ = F₁/(πr₁²) = 160 N/[π(0.025 m)²].",
+      "Working: P₁ = 8.15 × 10⁴ Pa. By Pascal’s law, the pressure is transmitted equally through the enclosed liquid, so P₂ = P₁ = 8.15 × 10⁴ Pa.",
+      "Substitution: F₂ = F₁(A₂/A₁) = F₁(r₂²/r₁²) = 160 N × (0.125 m)²/(0.025 m)².",
+      "Working: F₂ = 160 N × 25 = 4000 N = 4 kN.",
+      "Result: The pressure exerted on the bigger piston is 8.15 × 10⁴ Pa, and it can lift a weight of 4000 N."
+     ],
+     "answer": "Pressure = 8.15 × 10⁴ Pa; weight lifted = 4000 N (4 kN).",
+     "figure": "",
+     "accept": [
+      [
+       "8.15",
+       "10^4",
+       "Pa",
+       "4000",
+       "N"
+      ],
+      [
+       "81500",
+       "Pa",
+       "4000",
+       "N"
+      ],
+      [
+       "8.2",
+       "10^4",
+       "Pa",
+       "4",
+       "kN"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": []
+  },
+  {
+   "number": "6.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.1",
+     "question": "Why heavy animals like an elephant have a large area of the foot?",
+     "steps": [
+      "Pressure is the force acting normally per unit area: P = F/A.",
+      "An elephant has a large area of the feet, so its weight acts over a large area.",
+      "Therefore, the pressure exerted on the ground is reduced."
+     ],
+     "answer": "An elephant has large feet to reduce the pressure exerted on the ground.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.2",
+     "question": "Why animals like deer who run fast have a small area of the foot?",
+     "steps": [
+      "Pressure is the force acting normally per unit area: P = F/A.",
+      "A deer has a small area of the feet, so its weight acts over a small area.",
+      "Therefore, greater pressure is exerted on the ground, helping the deer run fast."
+     ],
+     "answer": "A deer’s small foot area produces greater pressure on the ground and helps it run fast.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.3",
+     "question": "Why is it painful to walk bare footed on pebbles?",
+     "steps": [
+      "The area of contact between a bare foot and a pebble is very small.",
+      "Pressure is the force acting normally per unit area, P = F/A.",
+      "The body’s weight acting on this small area produces great pressure, so walking on pebbles is painful."
+     ],
+     "answer": "Pebbles exert great pressure on the small area of contact with the bare foot, causing pain.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.4",
+     "question": "State Pascal's law. Give an application of Pascal's law.",
+     "steps": [
+      "Pascal’s law states that pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions and to the walls of the container.",
+      "An application of Pascal’s law is a hydraulic press."
+     ],
+     "answer": "Pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions; a hydraulic press is an application.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.5",
+     "question": "State what do you mean by elasticity of a solid.",
+     "steps": [
+      "The property of a solid by virtue of which it regains its original shape and size when the deforming force is removed is called elasticity."
+     ],
+     "answer": "Elasticity is the property of a solid to regain its original shape and size when the deforming force is removed.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.6",
+     "question": "What is Hooke's law? Does an object remain elastic beyond elastic limit? Give reason.",
+     "steps": [
+      "Hooke’s law states that, within the elastic limit, the extension produced in a body is directly proportional to the applied force.",
+      "In symbols, F ∝ x, or F = kx, where x is the extension and k is a constant.",
+      "An object does not remain elastic when stretched beyond its elastic limit.",
+      "Beyond the elastic limit, it does not regain its original shape and size when the force is removed; it becomes permanently deformed."
+     ],
+     "answer": "Within the elastic limit, extension is directly proportional to applied force; beyond the limit, an object is permanently deformed.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.7",
+     "question": "Distinguish between force and pressure.",
+     "steps": [
+      "Force is a push or pull acting on a body; pressure is the force acting normally per unit area.",
+      "Force is measured in newtons (N); pressure is measured in pascals (Pa), where 1 Pa = 1 N/m².",
+      "Force is a vector quantity; pressure is a scalar quantity.",
+      "Pressure depends on the area over which the force acts: P = F/A."
+     ],
+     "answer": "Force is a push or pull measured in newtons, while pressure is normal force per unit area measured in pascals.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.8",
+     "question": "What is the relationship between liquid pressure and the depth of the liquid?",
+     "steps": [
+      "The pressure exerted by a liquid increases with the depth below its surface.",
+      "For a liquid of density ρ, the pressure at depth h is given by P = ρgh.",
+      "Thus, for the same liquid, liquid pressure is directly proportional to depth."
+     ],
+     "answer": "Liquid pressure increases directly with depth.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.9",
+     "question": "What is the basic principle to measure the atmospheric pressure by a simple mercury barometer?",
+     "steps": [
+      "Atmospheric pressure acting on the mercury in the reservoir supports a column of mercury in the tube.",
+      "The mercury column comes to rest when the pressure due to its weight balances the atmospheric pressure acting on the reservoir surface."
+     ],
+     "answer": "A mercury barometer measures atmospheric pressure by balancing it against the pressure of a column of mercury.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.10",
+     "question": "State the basic principle used in the hydraulic brake system of the automobiles.",
+     "steps": [
+      "The hydraulic brake system works on Pascal’s principle.",
+      "Pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions.",
+      "The transmitted pressure acts on the brake pistons and applies the brakes."
+     ],
+     "answer": "Hydraulic brakes work on Pascal’s principle.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.1(i)",
+     "question": "A spring having spring constant k hangs vertically from a fixed point. A load of weight L, when hung from the spring, causes an extension x, the elastic limit of the spring is not exceeded. Some identical springs, each with spring constant k, are arranged as shown below: For each arrangement, complete the table by determining: (i) the total extension in terms of x. Arrangements: two springs arranged vertically in series, hanging from a fixed support, with a load labelled L at the bottom; two springs arranged in parallel between a fixed support and a horizontal bar, with a load labelled L hanging from the bar.",
+     "steps": [
+      "For two identical springs in series, the load L acts on each spring, so each extends by x.",
+      "Total extension in series = x + x = 2x.",
+      "For two identical springs in parallel, the load is shared equally, so each spring carries L/2.",
+      "Since a load L produces extension x in one spring, a load L/2 produces extension x/2.",
+      "The two parallel springs have the same extension, so the total extension is x/2."
+     ],
+     "answer": "Series: 2x; parallel: x/2.",
+     "figure": "Completed table: two springs in series — total extension 2x; two springs in parallel — total extension x/2.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.1(ii)",
+     "question": "A spring having spring constant k hangs vertically from a fixed point. A load of weight L, when hung from the spring, causes an extension x, the elastic limit of the spring is not exceeded. Some identical springs, each with spring constant k, are arranged as shown below: For each arrangement, complete the table by determining: (ii) the spring constant in terms of k. Arrangements: two springs arranged vertically in series, hanging from a fixed support, with a load labelled L at the bottom; two springs arranged in parallel between a fixed support and a horizontal bar, with a load labelled L hanging from the bar.",
+     "steps": [
+      "For two identical springs in series, the total extension under load L is 2x.",
+      "Using L = kx for one spring, the equivalent spring constant in series is L/(2x) = k/2.",
+      "For two identical springs in parallel, the total extension under load L is x/2.",
+      "The equivalent spring constant in parallel is L/(x/2) = 2k."
+     ],
+     "answer": "Series: k/2; parallel: 2k.",
+     "figure": "Completed table: two springs in series — spring constant k/2; two springs in parallel — spring constant 2k.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.2",
+     "question": "Springs are made of steel instead of iron. Why?",
+     "steps": [
+      "Steel has a greater elastic limit than iron.",
+      "Therefore, a steel spring can be stretched or compressed more without being permanently deformed, and returns to its original shape when the force is removed."
+     ],
+     "answer": "Steel is used for springs because it has a greater elastic limit than iron.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.3",
+     "question": "Which of the following material is more elastic? (a) Iron or rubber (b) Air or water",
+     "steps": [
+      "(a) Iron is more elastic than rubber because iron has a greater Young’s modulus.",
+      "(b) Water is more elastic than air because water has a greater bulk modulus."
+     ],
+     "answer": "(a) Iron  (b) Water",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.4",
+     "question": "How does water pressure one metre below the surface of a swimming pool compare to water pressure one metre below the surface of a very large and deep lake?",
+     "steps": [
+      "The water pressure at a depth h is given by P = ρgh.",
+      "At one metre below the surface, the depth and the liquid are the same in both cases.",
+      "Therefore, the water pressure is the same in the swimming pool and in the lake."
+     ],
+     "answer": "The pressures are equal.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.5",
+     "question": "What will happen to the pressure in all parts of a confined liquid if pressure is increased in one part? Give an example from your daily life where such principle is applied.",
+     "steps": [
+      "The pressure applied to any part of a confined liquid is transmitted equally and undiminished in all directions to every part of the liquid and to the walls of its container.",
+      "This is Pascal’s principle.",
+      "A hydraulic brake is a daily-life application: pressure applied to the brake fluid is transmitted to the brakes at the wheels."
+     ],
+     "answer": "An increase in pressure in one part of a confined liquid is transmitted equally and undiminished throughout it; hydraulic brakes apply this principle.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.6",
+     "question": "If some air remains trapped within the top of the mercury column of the barometer which is supposed to be vacuum, how would it affect the height of the mercury column?",
+     "steps": [
+      "The trapped air exerts pressure on the mercury at the top of the column.",
+      "This pressure adds to the pressure of the mercury column, so a smaller height of mercury is needed to balance atmospheric pressure.",
+      "Therefore, the mercury column becomes lower than it should be, giving an incorrect barometer reading."
+     ],
+     "answer": "The mercury column would be lower than its correct height.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.7",
+     "question": "How does the long neck is not a problem to a giraffe while raising its neck suddenly?",
+     "steps": [
+      "The giraffe’s heart produces high blood pressure to pump blood up its long neck to the brain.",
+      "Special valves in its blood vessels help regulate blood flow and pressure when it raises or lowers its neck suddenly.",
+      "Thus, the brain continues to receive blood without being exposed to a harmful change in pressure."
+     ],
+     "answer": "High blood pressure from the heart and special valves help maintain safe blood flow to a giraffe’s brain when it raises its long neck.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.8",
+     "question": "The end of glass tube used in a simple barometer is not properly sealed, some leak is present. What will be its effect?",
+     "steps": [
+      "Air enters through the leak and occupies the space above the mercury column, which should be a vacuum.",
+      "The air exerts pressure on the mercury at the top of the column.",
+      "The mercury column falls, so the barometer gives a reading lower than the true atmospheric pressure."
+     ],
+     "answer": "Air entering through the leak lowers the mercury column and makes the barometer reading incorrect.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.9",
+     "question": "Comment on the statement. “Density is a property of a material not the property of an object made of that material.”",
+     "steps": [
+      "Density is the mass per unit volume of a substance: density = mass ÷ volume.",
+      "For a given material, density is the same for different-sized objects made of that material, provided the conditions are the same.",
+      "Therefore, density is a property of the material, not of the size or shape of an individual object."
+     ],
+     "answer": "Density is a property of a material because it does not depend on the size or shape of an object made from it.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "CRQ 6.10",
+     "question": "How the load of a large structure is estimated by an engineer?",
+     "steps": [
+      "An engineer estimates the volume of each material used in the structure.",
+      "The mass of each material is calculated using mass = density × volume.",
+      "The masses are added and multiplied by gravitational field strength to find the total weight (load) of the structure.",
+      "The engineer can then determine how this load is distributed over the supporting parts and foundation."
+     ],
+     "answer": "An engineer estimates a structure’s load by using the density and volume of its materials to calculate their total weight.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Comprehensive 6.1",
+     "question": "What is Hooke’s law? Give three applications of this law.",
+     "steps": [
+      "Hooke’s law states that the extension of an elastic body is directly proportional to the applied force, provided its elastic limit is not exceeded.",
+      "In symbols: F ∝ x, or F = kx, where F is the applied force, x is the extension and k is the spring constant.",
+      "A spring balance uses this law to measure force or weight.",
+      "Vehicle suspension and shock absorbers use springs that extend or compress under force.",
+      "Springs in devices such as clocks use this law to produce controlled motion."
+     ],
+     "answer": "Within the elastic limit, extension is directly proportional to applied force; this principle is used in spring balances, vehicle suspension and clocks.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Comprehensive 6.2",
+     "question": "Describe the working and applications of a simple mercury barometer and a manometer.",
+     "steps": [
+      "A simple mercury barometer consists of a long glass tube, closed at one end, filled with mercury and inverted in a mercury trough.",
+      "Some mercury flows out, leaving a space called the Torricellian vacuum above the mercury column.",
+      "Atmospheric pressure acting on the mercury in the trough supports the column; its height measures atmospheric pressure.",
+      "A barometer is used to measure atmospheric pressure and to help forecast changes in the weather.",
+      "A manometer is a U-shaped tube partly filled with a liquid, with one end connected to a gas container and the other usually open to the atmosphere.",
+      "The gas pressure causes the liquid levels in the two arms to differ. The difference in level is used to determine the gas pressure relative to atmospheric pressure.",
+      "A manometer is used to measure the pressure of a gas in a container or pipe."
+     ],
+     "answer": "A barometer measures atmospheric pressure from the height of its mercury column, while a manometer measures gas pressure from the difference between liquid levels in its arms.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Comprehensive 6.3",
+     "question": "Describe Pascal’s Law. State its applications with examples.",
+     "steps": [],
+     "answer": "",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Comprehensive 6.4",
+     "question": "On what factors the pressure of a liquid in a container depend? How is it determined?",
+     "steps": [
+      "The pressure of a liquid depends upon the depth below its surface and the density of the liquid.",
+      "It also depends upon the gravitational field strength, g.",
+      "The pressure at depth h is determined by the relation: P = ρgh, where ρ is the density of the liquid.",
+      "Thus, pressure increases with the depth and density of the liquid."
+     ],
+     "answer": "Liquid pressure is determined by P = ρgh and depends on liquid density, depth, and gravitational field strength.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Comprehensive 6.5",
+     "question": "Explain that atmosphere exerts pressure. What are its applications? Give at least three examples.",
+     "steps": [
+      "The air surrounding the Earth is called the atmosphere.",
+      "The atmosphere has weight and exerts pressure on the Earth and on all objects in it; this pressure is called atmospheric pressure.",
+      "Atmospheric pressure acts in all directions.",
+      "When we drink through a straw, air pressure on the liquid surface pushes the liquid up the straw when pressure inside the straw is reduced.",
+      "A syringe or dropper draws liquid in when the pressure inside it is reduced and atmospheric pressure pushes the liquid inside.",
+      "A suction cup sticks to a smooth surface because the pressure inside it is reduced and atmospheric pressure presses it against the surface.",
+      "A hand pump lifts water when the pressure inside the pump is reduced, allowing atmospheric pressure to push water up."
+     ],
+     "answer": "Atmospheric pressure is exerted by the weight of the air and is used in straws, syringes or droppers, suction cups, and hand pumps.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.1",
+     "question": "A spring is stretched 20 mm by a load of 40 N. Calculate the value of spring constant. If an object causes an extension of 16 mm, what will be its weight?",
+     "steps": [
+      "Given: Extension, x₁ = 20 mm = 0.020 m; load, F₁ = 40 N; extension, x₂ = 16 mm = 0.016 m.",
+      "Required: Spring constant, k; weight of the object, F₂.",
+      "Formula: F = kx, so k = F/x and F₂ = kx₂.",
+      "Substitution: k = 40 N / 0.020 m.",
+      "Working: k = 2000 N m⁻¹ = 2 kN m⁻¹.",
+      "Substitution: F₂ = (2000 N m⁻¹)(0.016 m).",
+      "Working: F₂ = 32 N.",
+      "Result: Spring constant = 2 kN m⁻¹; weight of the object = 32 N."
+     ],
+     "answer": "2 kN m⁻¹; 32 N",
+     "figure": "",
+     "accept": [
+      [
+       "2 kN m^-1",
+       "32 N"
+      ],
+      [
+       "2000 N m^-1",
+       "32 N"
+      ],
+      [
+       "2 kN/m",
+       "32 N"
+      ],
+      [
+       "2000 N/m",
+       "32 N"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.2",
+     "question": "The mass of 5 litres of milk is 4.5 kg. Find its density in SI units.",
+     "steps": [
+      "Given: Mass, m = 4.5 kg; volume, V = 5 L = 5 × 10⁻³ m³.",
+      "Required: Density, ρ.",
+      "Formula: ρ = m/V.",
+      "Substitution: ρ = 4.5 kg / (5 × 10⁻³ m³).",
+      "Working: ρ = 900 kg m⁻³ = 0.9 × 10³ kg m⁻³.",
+      "Result: Density of milk = 0.9 × 10³ kg m⁻³."
+     ],
+     "answer": "0.9 × 10³ kg m⁻³",
+     "figure": "",
+     "accept": [
+      [
+       "0.9 × 10^3 kg m^-3"
+      ],
+      [
+       "900 kg m^-3"
+      ],
+      [
+       "0.9 × 10^3 kg/m^3"
+      ],
+      [
+       "900 kg/m^3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.3",
+     "question": "When a solid of mass 60 g is lowered into a measuring cylinder, the level of water rises from 40 cm³ to 44 cm³. Calculate the density of the solid.",
+     "steps": [
+      "Given: Mass, m = 60 g = 0.060 kg; initial water volume = 40 cm³; final water volume = 44 cm³.",
+      "Required: Density of the solid, ρ.",
+      "Volume of solid: V = 44 cm³ − 40 cm³ = 4 cm³ = 4 × 10⁻⁶ m³.",
+      "Formula: ρ = m/V.",
+      "Substitution: ρ = 0.060 kg / (4 × 10⁻⁶ m³).",
+      "Working: ρ = 15 000 kg m⁻³ = 15 × 10³ kg m⁻³.",
+      "Result: Density of the solid = 15 × 10³ kg m⁻³."
+     ],
+     "answer": "15 × 10³ kg m⁻³",
+     "figure": "",
+     "accept": [
+      [
+       "15 × 10^3 kg m^-3"
+      ],
+      [
+       "15000 kg m^-3"
+      ],
+      [
+       "15 × 10^3 kg/m^3"
+      ],
+      [
+       "15000 kg/m^3"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.4",
+     "question": "A block of density 8 × 10³ kg m⁻³ has a volume 60 cm³. Find its mass.",
+     "steps": [
+      "Given: Density, ρ = 8 × 10³ kg m⁻³; volume, V = 60 cm³ = 60 × 10⁻⁶ m³ = 6 × 10⁻⁵ m³.",
+      "Required: Mass, m.",
+      "Formula: ρ = m/V, so m = ρV.",
+      "Substitution: m = (8 × 10³ kg m⁻³)(6 × 10⁻⁵ m³).",
+      "Working: m = 0.48 kg.",
+      "Result: Mass of the block = 0.48 kg."
+     ],
+     "answer": "0.48 kg",
+     "figure": "",
+     "accept": [
+      [
+       "0.48 kg"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.5",
+     "question": "A brick measures 5 cm × 10 cm × 20 cm. If its mass is 5 kg, calculate the maximum and minimum pressure which the brick can exert on a horizontal surface.",
+     "steps": [
+      "Given: Length = 20 cm = 0.20 m; width = 10 cm = 0.10 m; height = 5 cm = 0.05 m; mass, m = 5 kg; take g = 10 N kg⁻¹.",
+      "Required: Maximum and minimum pressure exerted by the brick.",
+      "Weight of brick: W = mg = (5 kg)(10 N kg⁻¹) = 50 N.",
+      "Formula: P = F/A.",
+      "For maximum pressure, use the smallest face area: A = (0.10 m)(0.05 m) = 0.005 m².",
+      "Substitution and working: Pmax = 50 N / 0.005 m² = 10 000 Pa = 1 × 10⁴ Pa.",
+      "For minimum pressure, use the largest face area: A = (0.20 m)(0.10 m) = 0.020 m².",
+      "Substitution and working: Pmin = 50 N / 0.020 m² = 2500 Pa = 25 × 10² Pa.",
+      "Result: Maximum pressure = 1 × 10⁴ Pa; minimum pressure = 25 × 10² Pa."
+     ],
+     "answer": "Maximum pressure = 1 × 10⁴ Pa; minimum pressure = 25 × 10² Pa",
+     "figure": "",
+     "accept": [
+      [
+       "1 × 10^4 Pa",
+       "25 × 10^2 Pa"
+      ],
+      [
+       "10000 Pa",
+       "2500 Pa"
+      ],
+      [
+       "1 × 10^4 N m^-2",
+       "25 × 10^2 N m^-2"
+      ],
+      [
+       "10000 N m^-2",
+       "2500 N m^-2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.6",
+     "question": "What will be the height of the column in barometer at sea level if mercury is replaced by water of density 1000 kg m⁻³, where density of mercury is 13.6 × 10³ kg m⁻³",
+     "steps": [
+      "Given: Height of mercury column, hₘ = 0.76 m; density of mercury, ρₘ = 13.6 × 10³ kg m⁻³; density of water, ρw = 1000 kg m⁻³.",
+      "Required: Height of water column, hw.",
+      "At sea level, pressure due to the mercury column equals pressure due to the water column: ρₘ g hₘ = ρw g hw.",
+      "Therefore, hw = (ρₘ hₘ) / ρw.",
+      "Substitution: hw = (13.6 × 10³ kg m⁻³ × 0.76 m) / (1000 kg m⁻³).",
+      "Working: hw = 10.336 m ≈ 10.3 m.",
+      "Result: The height of the water column is 10.3 m."
+     ],
+     "answer": "10.3 m",
+     "figure": "",
+     "accept": [
+      [
+       "10.3",
+       "m"
+      ],
+      [
+       "10.3~",
+       "m"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.7",
+     "question": "Suppose in the hydraulic brake system of a car, the force exerted normally on its piston of cross-sectional area of 5 cm² is 500 N. What will be the pressure transferred to the brake oil? What will be the force on the second piston of area of cross-section 20 cm²?",
+     "steps": [
+      "Given: Force on the first piston, F₁ = 500 N; area of the first piston, A₁ = 5 cm² = 5 × 10⁻⁴ m²; area of the second piston, A₂ = 20 cm² = 2 × 10⁻³ m².",
+      "Required: Pressure transferred to the brake oil, P; force on the second piston, F₂.",
+      "Pressure, P = Force / Area.",
+      "Substitution: P = 500 N / (5 × 10⁻⁴ m²).",
+      "Working: P = 1.0 × 10⁶ N m⁻².",
+      "By Pascal’s principle, the pressure is transmitted equally throughout the brake oil. Therefore, F₂ = P A₂.",
+      "Substitution: F₂ = 1.0 × 10⁶ N m⁻² × 2 × 10⁻³ m².",
+      "Working: F₂ = 2000 N.",
+      "Result: The pressure transferred is 1.0 × 10⁶ N m⁻² and the force on the second piston is 2000 N."
+     ],
+     "answer": "1.0 × 10⁶ N m⁻²; 2000 N",
+     "figure": "",
+     "accept": [
+      [
+       "1.0",
+       "10^6",
+       "N m",
+       "2"
+      ],
+      [
+       "1000000",
+       "N m",
+       "2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.8",
+     "question": "Find the water pressure on a deep-sea diver at a depth of 10 m, where the density of sea water is 1030 kg m⁻³.",
+     "steps": [
+      "Given: Density of sea water, ρ = 1030 kg m⁻³; depth, h = 10 m; acceleration due to gravity, g = 10 m s⁻².",
+      "Required: Water pressure on the diver, P.",
+      "Pressure in a liquid, P = ρgh.",
+      "Substitution: P = 1030 kg m⁻³ × 10 m s⁻² × 10 m.",
+      "Working: P = 103000 N m⁻² = 1.03 × 10⁵ N m⁻².",
+      "Result: The water pressure on the diver is 1.03 × 10⁵ N m⁻²."
+     ],
+     "answer": "1.03 × 10⁵ N m⁻²",
+     "figure": "",
+     "accept": [
+      [
+       "1.03",
+       "10^5",
+       "N m",
+       "2"
+      ],
+      [
+       "103000",
+       "N m",
+       "2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.9",
+     "question": "The area of cross-section of the small and large pistons of a hydraulic press is respectively 10 cm² and 100 cm². What force should be exerted on the small piston in order to lift a car of weight 4000 N?",
+     "steps": [
+      "Given: Area of the small piston, A₁ = 10 cm²; area of the large piston, A₂ = 100 cm²; weight of the car, F₂ = 4000 N.",
+      "Required: Force on the small piston, F₁.",
+      "According to Pascal’s principle, pressure is transmitted equally through the liquid: F₁ / A₁ = F₂ / A₂.",
+      "Therefore, F₁ = (F₂ A₁) / A₂.",
+      "Substitution: F₁ = (4000 N × 10 cm²) / 100 cm².",
+      "Working: F₁ = 400 N.",
+      "Result: A force of 400 N should be exerted on the small piston."
+     ],
+     "answer": "400 N",
+     "figure": "",
+     "accept": [
+      [
+       "400",
+       "N"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.10(a)",
+     "question": "In a hot air balloon, the following data was recorded. Draw a graph between the altitude and pressure and find out: (a) What would the air pressure have been at sea level? Altitude (m), Pressure (kPa): 150, 99.5; 500, 95.7; 800, 92.4; 1140, 88.9; 1300, 87.2; 1500, 85.3.",
+     "steps": [
+      "Given: Altitude = 150 m, 500 m, 800 m, 1140 m, 1300 m and 1500 m; pressure = 99.5 kPa, 95.7 kPa, 92.4 kPa, 88.9 kPa, 87.2 kPa and 85.3 kPa, respectively.",
+      "Required: Air pressure at sea level (altitude = 0 m), in Pa.",
+      "Plot altitude on the x-axis and pressure on the y-axis; plot the given data points and draw a best-fit straight line.",
+      "Extend the line to altitude 0 m. From the graph, the pressure intercept is approximately 101 kPa.",
+      "Convert to SI units: 101 kPa = 101 × 10³ Pa.",
+      "Result: Air pressure at sea level ≈ 1.01 × 10⁵ Pa."
+     ],
+     "answer": "1.01 × 10⁵ Pa",
+     "figure": "Plot altitude (m) on the horizontal axis and pressure (kPa) on the vertical axis. Plot the six measured points and draw a straight best-fit line, extending it back to altitude 0 m. The line meets the pressure axis at about 101 kPa.\n\nPressure (kPa)\n101 |●  (sea-level intercept)\n100 |  ●\n 96 |       ●\n 92 |            ●\n 90 |               ×  (about 1020 m, 90 kPa)\n 89 |                ●\n 87 |                  ●\n 85 |                     ●\n    +----------------------> Altitude (m)\n     0  150  500  800  1140 1300 1500",
+     "accept": [
+      [
+       "1.01×10^5",
+       "Pa"
+      ],
+      [
+       "101",
+       "kPa"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.10(b)",
+     "question": "In a hot air balloon, the following data was recorded. Draw a graph between the altitude and pressure and find out: (b) At what height the air pressure would have been 90 kPa? Altitude (m), Pressure (kPa): 150, 99.5; 500, 95.7; 800, 92.4; 1140, 88.9; 1300, 87.2; 1500, 85.3.",
+     "steps": [
+      "Given: Altitude = 150 m, 500 m, 800 m, 1140 m, 1300 m and 1500 m; pressure = 99.5 kPa, 95.7 kPa, 92.4 kPa, 88.9 kPa, 87.2 kPa and 85.3 kPa, respectively; pressure = 90 kPa.",
+      "Required: Height at which the air pressure is 90 kPa, in km.",
+      "Plot altitude on the x-axis and pressure on the y-axis; plot the given data points and draw a best-fit straight line.",
+      "From 90 kPa on the y-axis, draw a horizontal line to the graph and then a vertical line to the altitude axis.",
+      "Read the altitude from the graph: approximately 1020 m.",
+      "Convert to km: 1020 m = 1.02 km.",
+      "Result: Height ≈ 1.02 km."
+     ],
+     "answer": "1.02 km",
+     "figure": "Plot altitude (m) on the horizontal axis and pressure (kPa) on the vertical axis. Plot the six measured points and draw a straight best-fit line. Draw a horizontal line from 90 kPa to the best-fit line, then a vertical line down to the altitude axis; the reading is about 1020 m (1.02 km).\n\nPressure (kPa)\n101 |●\n100 |  ●\n 96 |       ●\n 92 |            ●\n 90 |---------------×  (read down to about 1020 m)\n 89 |                ●\n 87 |                  ●\n 85 |                     ●\n    +----------------------> Altitude (m)\n     0  150  500  800  1020 1140 1300 1500",
+     "accept": [
+      [
+       "1.02",
+       "km"
+      ],
+      [
+       "1020",
+       "m"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.11",
+     "question": "If the pressure in a hydraulic press is increased by an additional 10 N cm⁻², how much extra load will the output platform support if its cross-sectional area is 50 cm²?",
+     "steps": [
+      "Given: Increase in pressure, P = 10 N cm⁻²; area of the output platform, A = 50 cm².",
+      "Required: Extra load supported, F.",
+      "Pressure = Force / Area; therefore, F = PA.",
+      "Substitution: F = 10 N cm⁻² × 50 cm².",
+      "Working: F = 500 N.",
+      "Result: The output platform will support an extra load of 500 N."
+     ],
+     "answer": "500 N",
+     "figure": "",
+     "accept": [
+      [
+       "500",
+       "N"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.12(a)",
+     "question": "The force exerted normally on the hydraulic brake system of a car, with its piston of cross sectional area 5 cm² is 500 N. What will be the: (a) pressure transferred to the brake oil?",
+     "steps": [
+      "Given: Force on the piston, F = 500 N; area of the piston, A = 5 cm² = 5 × 10⁻⁴ m².",
+      "Required: Pressure transferred to the brake oil, P.",
+      "Pressure, P = Force / Area.",
+      "Substitution: P = 500 N / (5 × 10⁻⁴ m²).",
+      "Working: P = 1.0 × 10⁶ N m⁻².",
+      "Result: The pressure transferred to the brake oil is 1.0 × 10⁶ N m⁻²."
+     ],
+     "answer": "1.0 × 10⁶ N m⁻²",
+     "figure": "",
+     "accept": [
+      [
+       "1.0",
+       "10^6",
+       "N m",
+       "2"
+      ],
+      [
+       "1000000",
+       "N m",
+       "2"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Numerical 6.12(b)",
+     "question": "The force exerted normally on the hydraulic brake system of a car, with its piston of cross sectional area 5 cm² is 500 N. What will be the: (b) force on the brake piston of area of cross section 20 cm²?",
+     "steps": [
+      "Given: F₁ = 500 N, A₁ = 5 cm² = 5 × 10⁻⁴ m², A₂ = 20 cm² = 2 × 10⁻³ m².",
+      "Required: Force on the brake piston, F₂.",
+      "By Pascal’s principle, pressure is transmitted equally throughout the liquid: F₁/A₁ = F₂/A₂.",
+      "Substitution: 500 N/(5 × 10⁻⁴ m²) = F₂/(2 × 10⁻³ m²).",
+      "F₂ = (500 N × 2 × 10⁻³ m²)/(5 × 10⁻⁴ m²) = 2000 N."
+     ],
+     "answer": "2000 N",
+     "figure": "",
+     "accept": [
+      [
+       "2000",
+       "N"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 6.1",
+     "stem": "A wire is stretched by a weight w. If the diameter of the wire is reduced to half of its previous value, the extension will become:",
+     "options": [
+      "one half",
+      "double",
+      "one fourth",
+      "four times"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This is incorrect because reducing the diameter does not halve the extension; extension varies inversely with cross-sectional area.",
+      "This is incorrect because halving the diameter reduces the area to one quarter and therefore increases the extension fourfold.",
+      "This is incorrect because the extension increases when the wire’s cross-sectional area decreases.",
+      "This is correct because extension is inversely proportional to cross-sectional area, and halving the diameter reduces the area to one quarter."
+     ]
+    },
+    {
+     "source": "MCQ 6.2",
+     "stem": "Four wires of the same material are stretched by the same load. Their dimensions are given below. Which of them will elongate most?",
+     "options": [
+      "Length 1 m, diameter 1 mm",
+      "Length 2 m, diameter 2 mm",
+      "Length 3 m, diameter 3 mm",
+      "Length 4 m, diameter 0.5 mm"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This is incorrect because its length-to-area ratio is smaller than that of the fourth wire.",
+      "This is incorrect because its length-to-area ratio is smaller than that of the fourth wire.",
+      "This is incorrect because its length-to-area ratio is smaller than that of the fourth wire.",
+      "This is correct because elongation is proportional to length divided by cross-sectional area, and this wire has the greatest such ratio."
+     ]
+    },
+    {
+     "source": "MCQ 6.3",
+     "stem": "Two metal plates of area 2 and 3 square metres are placed in a liquid at the same depth. The ratio of pressures on the two plates is:",
+     "options": [
+      "1:1",
+      "√2 : √3",
+      "2:3",
+      "4:9"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "This is correct because pressure at the same depth in the same liquid is independent of the plate area.",
+      "This is incorrect because pressure does not vary with the square root of the plate area.",
+      "This is incorrect because pressure does not vary in proportion to the plate area.",
+      "This is incorrect because pressure does not vary with the square of the plate area."
+     ]
+    },
+    {
+     "source": "MCQ 6.4",
+     "stem": "The pressure at any point in a liquid is proportional to:",
+     "options": [
+      "density of the liquid",
+      "depth of the point below the surface of the liquid",
+      "acceleration due to gravity",
+      "all of the above"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This is incorrect because pressure also depends on depth and gravitational acceleration.",
+      "This is incorrect because pressure also depends on density and gravitational acceleration.",
+      "This is incorrect because pressure also depends on density and depth.",
+      "This is correct because hydrostatic pressure is given by p = ρgh."
+     ]
+    },
+    {
+     "source": "MCQ 6.5",
+     "stem": "Pressure applied to an enclosed fluid is:",
+     "options": [
+      "increased and applied to every part of the fluid",
+      "diminished and transmitted to the walls of container",
+      "increased in proportional to the mass of fluid and then transmitted to each part of the fluid",
+      "transmitted unchanged to every portion of the fluid and walls of containing vessel"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "This is incorrect because the applied pressure is transmitted rather than increased throughout the fluid.",
+      "This is incorrect because the pressure is not diminished during transmission.",
+      "This is incorrect because pressure transmission does not depend on the mass of fluid in this way.",
+      "This is correct because Pascal’s principle states that applied pressure is transmitted unchanged throughout an enclosed fluid and to its walls."
+     ]
+    },
+    {
+     "source": "MCQ 6.6",
+     "stem": "The principle of a hydraulic press is based on:",
+     "options": [
+      "Hooke's law",
+      "Pascal's law",
+      "Principle of conservation of energy",
+      "Principle of conservation of momentum"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This is incorrect because Hooke’s law describes the relationship between force and deformation in an elastic body.",
+      "This is correct because a hydraulic press works by transmitting pressure through an enclosed fluid according to Pascal’s law.",
+      "This is incorrect because conservation of energy is not the principle on which hydraulic pressure multiplication is based.",
+      "This is incorrect because conservation of momentum is not the principle on which a hydraulic press operates."
+     ]
+    },
+    {
+     "source": "MCQ 6.7",
+     "stem": "When a spring is compressed, what form of energy does it possess?",
+     "options": [
+      "Kinetic",
+      "Potential",
+      "Internal",
+      "Heat"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This is incorrect because a compressed spring stores energy rather than necessarily moving with kinetic energy.",
+      "This is correct because a compressed spring stores elastic potential energy.",
+      "This is incorrect because the energy stored by compression is elastic potential energy, not internal energy in this context.",
+      "This is incorrect because compression stores elastic potential energy rather than heat."
+     ]
+    },
+    {
+     "source": "MCQ 6.8",
+     "stem": "What is the force exerted by the atmosphere on a rectangular block surface of length 50 cm and breadth 40 cm? The atmospheric pressure is 100 kPa.",
+     "options": [
+      "20 kN",
+      "100 kN",
+      "200 kN",
+      "500 kN"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "This is correct because the area is 0.50 × 0.40 = 0.20 m², so the force is 100,000 × 0.20 = 20,000 N, or 20 kN.",
+      "This is incorrect because the force on the given area is 20 kN, not 100 kN.",
+      "This is incorrect because the force on the given area is 20 kN, not 200 kN.",
+      "This is incorrect because the force on the given area is 20 kN, not 500 kN."
+     ]
+    }
+   ]
+  }
+ ]
+}

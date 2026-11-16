@@ -1,0 +1,65 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "9:23",
+   "figure": "",
+   "steps": [
+    "Pascal’s Law states that pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions throughout the liquid and to the walls of its container.",
+    "The pressure acts at right angles to the surfaces in contact with the liquid.",
+    "Applications of Pascal’s Law:",
+    "1. Hydraulic press: It is used to compress materials, such as cotton or scrap metal. A small force applied to the small piston produces a large force on the larger piston.",
+    "2. Hydraulic brakes: In vehicles, pressure applied to the brake pedal is transmitted through the brake fluid to the brakes at the wheels, slowing or stopping the vehicle.",
+    "3. Hydraulic lift: It is used to raise heavy vehicles in workshops. Pressure applied to a small piston is transmitted through the liquid and produces a large lifting force on a larger piston."
+   ],
+   "finalAnswer": "Pressure applied to an enclosed liquid is transmitted equally and undiminished in all directions; hydraulic presses, brakes and lifts are examples of its applications."
+  },
+  {
+   "accept": [
+    [
+     "1.01×10^5",
+     "Pa"
+    ],
+    [
+     "101",
+     "kPa"
+    ]
+   ],
+   "id": "9:35",
+   "figure": "Plot altitude (m) on the horizontal axis and pressure (kPa) on the vertical axis. Plot the six measured points and draw a straight best-fit line, extending it back to altitude 0 m. The line meets the pressure axis at about 101 kPa.\n\nPressure (kPa)\n101 |●  (sea-level intercept)\n100 |  ●\n 96 |       ●\n 92 |            ●\n 90 |               ×  (about 1020 m, 90 kPa)\n 89 |                ●\n 87 |                  ●\n 85 |                     ●\n    +----------------------> Altitude (m)\n     0  150  500  800  1140 1300 1500",
+   "steps": [
+    "Given: Altitude = 150 m, 500 m, 800 m, 1140 m, 1300 m and 1500 m; pressure = 99.5 kPa, 95.7 kPa, 92.4 kPa, 88.9 kPa, 87.2 kPa and 85.3 kPa, respectively.",
+    "Required: Air pressure at sea level (altitude = 0 m), in Pa.",
+    "Plot altitude on the x-axis and pressure on the y-axis; plot the given data points and draw a best-fit straight line.",
+    "Extend the line to altitude 0 m. From the graph, the pressure intercept is approximately 101 kPa.",
+    "Convert to SI units: 101 kPa = 101 × 10³ Pa.",
+    "Result: Air pressure at sea level ≈ 1.01 × 10⁵ Pa."
+   ],
+   "finalAnswer": "1.01 × 10⁵ Pa"
+  },
+  {
+   "accept": [
+    [
+     "1.02",
+     "km"
+    ],
+    [
+     "1020",
+     "m"
+    ]
+   ],
+   "id": "9:36",
+   "figure": "Plot altitude (m) on the horizontal axis and pressure (kPa) on the vertical axis. Plot the six measured points and draw a straight best-fit line. Draw a horizontal line from 90 kPa to the best-fit line, then a vertical line down to the altitude axis; the reading is about 1020 m (1.02 km).\n\nPressure (kPa)\n101 |●\n100 |  ●\n 96 |       ●\n 92 |            ●\n 90 |---------------×  (read down to about 1020 m)\n 89 |                ●\n 87 |                  ●\n 85 |                     ●\n    +----------------------> Altitude (m)\n     0  150  500  800  1020 1140 1300 1500",
+   "steps": [
+    "Given: Altitude = 150 m, 500 m, 800 m, 1140 m, 1300 m and 1500 m; pressure = 99.5 kPa, 95.7 kPa, 92.4 kPa, 88.9 kPa, 87.2 kPa and 85.3 kPa, respectively; pressure = 90 kPa.",
+    "Required: Height at which the air pressure is 90 kPa, in km.",
+    "Plot altitude on the x-axis and pressure on the y-axis; plot the given data points and draw a best-fit straight line.",
+    "From 90 kPa on the y-axis, draw a horizontal line to the graph and then a vertical line to the altitude axis.",
+    "Read the altitude from the graph: approximately 1020 m.",
+    "Convert to km: 1020 m = 1.02 km.",
+    "Result: Height ≈ 1.02 km."
+   ],
+   "finalAnswer": "1.02 km"
+  }
+ ]
+}

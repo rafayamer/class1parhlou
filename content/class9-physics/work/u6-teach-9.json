@@ -1,0 +1,864 @@
+{
+ "note": {
+  "explanation": "Pascal's law explains how pressure applied to an enclosed fluid is passed on throughout the fluid. Hydraulic machines use this to transfer force and, with a larger output piston, produce a greater force.",
+  "examples": [
+   "A hydraulic press uses pressure from a small piston to produce a larger force on a large piston.",
+   "In hydraulic brakes, pressure from the brake pedal is transmitted through brake fluid to pistons at the wheels."
+  ],
+  "checkAnswer": "The pressure is transmitted equally to every part of the enclosed fluid.",
+  "keywords": [
+   "Pascal's law",
+   "enclosed fluid",
+   "pressure",
+   "hydraulic press",
+   "piston",
+   "hydraulic brakes"
+  ],
+  "simple": "Push on a fluid in a closed system, and the pressure is passed on equally through the fluid.",
+  "checkQuestion": "What happens to pressure applied at one point in an enclosed fluid?",
+  "title": "Pascal's Law",
+  "steps": [
+   "Use Pascal's law: pressure is transmitted equally to all parts of an enclosed fluid.",
+   "For a piston, pressure is force divided by area: P = F/A.",
+   "Set the pressures at the two pistons equal: F₁/A₁ = F₂/A₂.",
+   "Rearrange to find the unknown force or area."
+  ],
+  "answer": "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss.",
+  "checkAccept": [
+   [
+    "transmitted equally",
+    "all parts"
+   ],
+   [
+    "equally",
+    "enclosed fluid"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It is transmitted equally to all parts of the enclosed fluid.",
+    "It is transmitted only towards the bottom of the container.",
+    "It becomes greater at every point in the fluid.",
+    "It is absorbed completely by the fluid."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to Pascal's law, pressure applied to an enclosed fluid is:",
+   "rationales": [
+    "This is the statement of Pascal's law.",
+    "Pascal's law applies in all directions, not only downwards.",
+    "The applied pressure is transmitted unchanged, not increased.",
+    "The fluid transmits the pressure rather than absorbing it."
+   ]
+  },
+  {
+   "options": [
+    "A hydraulic press",
+    "A simple pendulum",
+    "A mercury thermometer",
+    "A spring balance"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which device works on Pascal's law?",
+   "rationales": [
+    "A hydraulic press uses pressure transmitted through an enclosed liquid.",
+    "A simple pendulum works through oscillation under gravity.",
+    "A mercury thermometer works through expansion of mercury.",
+    "A spring balance works through extension of a spring."
+   ]
+  },
+  {
+   "options": [
+    "The larger piston has a greater area.",
+    "The larger piston has a smaller area.",
+    "The liquid increases the applied pressure.",
+    "The small piston moves faster."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why can a hydraulic press produce a force greater than the force applied to its small piston?",
+   "rationales": [
+    "The same pressure acts on the larger area, producing a greater force.",
+    "A smaller area would produce a smaller force at the same pressure.",
+    "Pascal's law transmits pressure without loss; it does not increase pressure.",
+    "The speed of the piston does not explain the force multiplication."
+   ]
+  },
+  {
+   "options": [
+    "Incompressibility",
+    "High compressibility",
+    "Low density",
+    "Elasticity"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which property of the liquid helps a hydraulic system transmit pressure effectively?",
+   "rationales": [
+    "The textbook identifies incompressibility as a reason liquids can move heavy loads and provide great forces.",
+    "A highly compressible fluid would not transmit the applied effect in the intended way.",
+    "Low density is not the stated reason hydraulic systems work.",
+    "Elasticity is not the property on which the hydraulic system is based."
+   ]
+  },
+  {
+   "options": [
+    "The brake pads press towards the brake discs or drums.",
+    "The brake pads move away from the wheels.",
+    "The brake fluid is compressed and absorbs all pressure.",
+    "The wheels turn faster."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When a vehicle's brake pedal is pushed, what does the transmitted pressure cause?",
+   "rationales": [
+    "The pressure moves the larger pistons outward, pressing the pads towards the discs or drums.",
+    "The pads are pressed towards the discs or drums when the pedal is pushed.",
+    "The system uses liquid to transmit pressure; it does not absorb all of it.",
+    "Friction from the pads slows the vehicle rather than making the wheels turn faster."
+   ]
+  },
+  {
+   "options": [
+    "P = F/A",
+    "P = FA",
+    "P = A/F",
+    "P = F + A"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which expression gives the pressure produced by a force F on a piston of area A?",
+   "rationales": [
+    "Pressure is force acting normally per unit area.",
+    "Multiplying force by area does not give pressure.",
+    "Area divided by force is not the pressure definition.",
+    "Adding force and area does not give pressure."
+   ]
+  },
+  {
+   "options": [
+    "F₂ = F₁A₂/A₁",
+    "F₂ = F₁A₁/A₂",
+    "F₂ = A₁A₂/F₁",
+    "F₂ = F₁ + A₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A hydraulic press has small-piston area A₁ and large-piston area A₂. Which equation follows from equal pressure at both pistons?",
+   "rationales": [
+    "Equating F₁/A₁ and F₂/A₂ gives F₂ = F₁A₂/A₁.",
+    "This reverses the area ratio and does not follow from equal pressure.",
+    "This does not follow from the pressure equation.",
+    "Force and area cannot be combined by addition to obtain the output force."
+   ]
+  },
+  {
+   "options": [
+    "The pressure applied at the master cylinder is transmitted through the brake fluid.",
+    "The brake fluid changes into a gas.",
+    "The brake pedal directly touches every brake pad.",
+    "The wheels stop because the liquid pressure disappears."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the basic Pascal's-law process in a hydraulic brake system?",
+   "rationales": [
+    "Pressure applied at the master cylinder is transmitted equally through the liquid to the wheel cylinders.",
+    "The system is filled with oil and relies on transmitted pressure, not a liquid-to-gas change.",
+    "The pedal acts on the master cylinder; it does not directly touch every brake pad.",
+    "The pressure moves the pistons and creates friction; it does not disappear as the cause of stopping."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Example 6.4: The diameters of the pistons of a hydraulic press are 5 cm and 25 cm respectively. A normal force of 160 N is applied on the smaller piston, what will be the pressure exerted by this force on the bigger piston? How much weight can be lifted by the other piston?",
+   "finalAnswer": "Pressure transmitted = 8.15 × 10⁴ Pa; weight lifted = 4000 N = 4 kN.",
+   "marks": 5,
+   "source": "Example 6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2.5",
+       "12.5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The piston radii are needed to use the textbook's area-ratio method.",
+     "description": "Identify the piston radii in metres.",
+     "how": "Use r₁ = 2.5 × 10⁻² m and r₂ = 12.5 × 10⁻² m."
+    },
+    {
+     "accept": [
+      [
+       "P=F₁/A₁"
+      ],
+      [
+       "8.15",
+       "10⁴"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pressure is force per unit area and is transmitted to the larger piston.",
+     "description": "Find the transmitted pressure.",
+     "how": "Use P = F₁/(πr₁²) = 8.15 × 10⁴ Pa."
+    },
+    {
+     "accept": [
+      [
+       "w=F₁A₂/A₁"
+      ],
+      [
+       "r₂²/r₁²"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equal-pressure relation connects the input force and output weight.",
+     "description": "Set the pressures at the pistons equal and rearrange.",
+     "how": "Write F₁/A₁ = w/A₂, so w = F₁A₂/A₁."
+    },
+    {
+     "accept": [
+      [
+       "4000",
+       "N"
+      ],
+      [
+       "4",
+       "kN"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final lifted weight is the requested output.",
+     "description": "Calculate and state the lifted weight.",
+     "how": "Substitute the radii to obtain 4000 N = 4 kN."
+    }
+   ],
+   "modelAnswer": [
+    "Let the areas of cross-sections of the pistons be A₁ and A₂ and their radii be r₁ and r₂ respectively.",
+    "r₁ = 5/2 cm = 2.5 × 10⁻² m; r₂ = 25/2 cm = 12.5 × 10⁻² m",
+    "A₁ = πr₁² and A₂ = πr₂²",
+    "F₁ = 160 N",
+    "P = F₁/A₁ = F₁/(πr₁²) = 160/[π(2.5 × 10⁻²)²] = 8.15 × 10⁴ Pa",
+    "According to Pascal's law, F₁/A₁ = w/A₂",
+    "w = F₁A₂/A₁ = F₁πr₂²/(πr₁²) = F₁ × r₂²/r₁²",
+    "w = 160 × (12.5 × 10⁻²)²/(2.5 × 10⁻²)² = 4000 N = 4 kN",
+    "Pressure transmitted = 8.15 × 10⁴ Pa; weight lifted = 4000 N = 4 kN."
+   ]
+  },
+  {
+   "text": "Q6.4. State Pascal's law. Give an application of Pascal's law.",
+   "finalAnswer": "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of the fluid without loss. An application is a hydraulic press.",
+   "marks": 2,
+   "source": "Short 6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "pressure",
+       "enclosed fluid",
+       "transmitted equally"
+      ]
+     ],
+     "marks": 1,
+     "why": "The statement of the law is the key physics idea.",
+     "description": "State Pascal's law.",
+     "how": "Explain that pressure applied at one point in an enclosed fluid is transmitted equally to all parts without loss."
+    },
+    {
+     "accept": [
+      [
+       "hydraulic press"
+      ],
+      [
+       "hydraulic brakes"
+      ],
+      [
+       "car lift"
+      ]
+     ],
+     "marks": 1,
+     "why": "An appropriate application shows how the law is used.",
+     "description": "Give one application.",
+     "how": "Name a hydraulic press, a car lift, or hydraulic brakes."
+    }
+   ],
+   "modelAnswer": [
+    "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss.",
+    "An application of Pascal's law is a hydraulic press."
+   ]
+  },
+  {
+   "text": "Q6.10. State the basic principle used in the hydraulic brake system of the automobiles.",
+   "finalAnswer": "Hydraulic brakes work on Pascal's law: pressure applied to the liquid in the master cylinder is transmitted equally to the larger pistons at the wheels.",
+   "marks": 2,
+   "source": "Short 6.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Pascal's law"
+      ],
+      [
+       "Pascal"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the principle identifies the basis of hydraulic brakes.",
+     "description": "Name the principle.",
+     "how": "State that the system works on Pascal's law."
+    },
+    {
+     "accept": [
+      [
+       "pressure",
+       "transmitted equally"
+      ],
+      [
+       "pressure",
+       "all",
+       "pistons"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pressure transmission explains how the brakes operate.",
+     "description": "Explain what happens to the applied pressure.",
+     "how": "State that pressure in the liquid is transmitted to the pistons at the wheels."
+    }
+   ],
+   "modelAnswer": [
+    "The basic principle used in hydraulic brakes is Pascal's law.",
+    "When the brake pedal is pushed, pressure on the liquid in the master cylinder is transmitted equally to the larger pistons at the wheels."
+   ]
+  },
+  {
+   "text": "Q6.5. What will happen to the pressure in all parts of a confined liquid if pressure is increased in one part? Give an example from your daily life where such principle is applied.",
+   "finalAnswer": "The pressure increase is transmitted equally to all parts of the confined liquid. This principle is applied in hydraulic brakes.",
+   "marks": 2,
+   "source": "CRQ 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "pressure",
+       "transmitted equally",
+       "all parts"
+      ],
+      [
+       "increased pressure",
+       "equally",
+       "confined liquid"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states the effect of increasing pressure in a confined liquid.",
+     "description": "Describe what happens to the pressure.",
+     "how": "Say that the pressure increase is transmitted equally throughout the liquid."
+    },
+    {
+     "accept": [
+      [
+       "hydraulic brakes"
+      ],
+      [
+       "hydraulic press"
+      ],
+      [
+       "car lift"
+      ]
+     ],
+     "marks": 1,
+     "why": "A real application links the principle to everyday technology.",
+     "description": "Give an application.",
+     "how": "Give hydraulic brakes, a hydraulic press, or a car lift as an example."
+    }
+   ],
+   "modelAnswer": [
+    "The increase in pressure is transmitted equally to all parts of the confined liquid.",
+    "Hydraulic brakes of vehicles are an application of this principle."
+   ]
+  },
+  {
+   "text": "Q6.3. Describe Pascal’s Law. State its applications with examples.",
+   "finalAnswer": "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of the fluid without loss. Applications include a hydraulic press, a car lift at service stations, and hydraulic brakes of vehicles.",
+   "marks": 4,
+   "source": "Comprehensive 6.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "pressure",
+       "enclosed fluid",
+       "transmitted equally",
+       "without loss"
+      ],
+      [
+       "pressure",
+       "all parts",
+       "fluid",
+       "equally"
+      ]
+     ],
+     "marks": 2,
+     "why": "A complete statement of the law earns the main explanation marks.",
+     "description": "Describe Pascal's law.",
+     "how": "State that pressure applied at one point in an enclosed fluid is transmitted equally to all parts without loss."
+    },
+    {
+     "accept": [
+      [
+       "hydraulic press"
+      ],
+      [
+       "car lift"
+      ],
+      [
+       "hydraulic brakes"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct application demonstrates one use of the law.",
+     "description": "Name an application.",
+     "how": "Name a hydraulic press, service-station car lift, or vehicle hydraulic brakes."
+    },
+    {
+     "accept": [
+      [
+       "larger force"
+      ],
+      [
+       "compresses",
+       "cotton"
+      ],
+      [
+       "brake pads"
+      ],
+      [
+       "lift",
+       "cars"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example showing how the device uses the law completes the answer.",
+     "description": "Explain an example.",
+     "how": "Explain that a press produces a larger force, a lift raises a car, or brakes press pads against discs or drums."
+    }
+   ],
+   "modelAnswer": [
+    "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss.",
+    "A hydraulic press works on this principle: pressure produced by the small piston is transmitted to the larger piston, producing a much greater force.",
+    "A hydraulic lift at a service station uses this principle to lift cars.",
+    "Hydraulic brakes use transmitted liquid pressure to move pistons and press brake pads towards the discs or drums."
+   ]
+  },
+  {
+   "text": "Q6.7. Suppose in the hydraulic brake system of a car, the force exerted normally on its piston of cross-sectional area of 5 cm² is 500 N. What will be the pressure transferred to the brake oil? What will be the force on the second piston of area of cross-section 20 cm²?",
+   "finalAnswer": "1.0 × 10⁶ N m⁻²; 2000 N.",
+   "marks": 5,
+   "source": "Numerical 6.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5",
+       "10⁻⁴"
+      ],
+      [
+       "0.0005"
+      ]
+     ],
+     "marks": 1,
+     "why": "The input area must be converted into SI units for pressure in N m⁻².",
+     "description": "Convert the area of the first piston.",
+     "how": "Use 5 cm² = 5 × 10⁻⁴ m²."
+    },
+    {
+     "accept": [
+      [
+       "P=F/A"
+      ],
+      [
+       "1.0",
+       "10⁶"
+      ]
+     ],
+     "marks": 2,
+     "why": "Pressure is calculated from the applied force and piston area.",
+     "description": "Calculate the pressure transferred to the oil.",
+     "how": "Use P = 500/(5 × 10⁻⁴) = 1.0 × 10⁶ N m⁻²."
+    },
+    {
+     "accept": [
+      [
+       "20",
+       "10⁻⁴"
+      ],
+      [
+       "0.002"
+      ]
+     ],
+     "marks": 1,
+     "why": "The output area is needed to calculate the second force.",
+     "description": "Use the second piston area in SI units.",
+     "how": "Convert 20 cm² to 20 × 10⁻⁴ m²."
+    },
+    {
+     "accept": [
+      [
+       "2000",
+       "N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the requested force on the second piston.",
+     "description": "State the force on the second piston.",
+     "how": "Use F₂ = PA₂ to obtain 2000 N."
+    }
+   ],
+   "modelAnswer": [
+    "Area of the first piston, A₁ = 5 cm² = 5 × 10⁻⁴ m²",
+    "Pressure, P = F₁/A₁ = 500/(5 × 10⁻⁴) = 1.0 × 10⁶ N m⁻²",
+    "Area of the second piston, A₂ = 20 cm² = 20 × 10⁻⁴ m²",
+    "F₂ = PA₂ = (1.0 × 10⁶)(20 × 10⁻⁴) = 2000 N",
+    "Pressure transferred = 1.0 × 10⁶ N m⁻²; force on the second piston = 2000 N."
+   ]
+  },
+  {
+   "text": "Q6.9. The area of cross-section of the small and large pistons of a hydraulic press is respectively 10 cm² and 100 cm². What force should be exerted on the small piston in order to lift a car of weight 4000 N?",
+   "finalAnswer": "400 N",
+   "marks": 4,
+   "source": "Numerical 6.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F₁/A₁=F₂/A₂"
+      ],
+      [
+       "F₁",
+       "10",
+       "4000",
+       "100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal pressure at both pistons is the method for solving a hydraulic press problem.",
+     "description": "Set up the equal-pressure relation.",
+     "how": "Write F₁/A₁ = F₂/A₂."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "cm²"
+      ],
+      [
+       "100",
+       "cm²"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly assigning the small and large areas prevents reversing the ratio.",
+     "description": "Identify the piston areas and output force.",
+     "how": "Use A₁ = 10 cm², A₂ = 100 cm², and F₂ = 4000 N."
+    },
+    {
+     "accept": [
+      [
+       "F₁=F₂A₁/A₂"
+      ],
+      [
+       "4000",
+       "10",
+       "100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rearranging the relation gives the required input force.",
+     "description": "Rearrange and substitute.",
+     "how": "Use F₁ = F₂A₁/A₂."
+    },
+    {
+     "accept": [
+      [
+       "400",
+       "N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final force is the requested result.",
+     "description": "State the answer with its unit.",
+     "how": "Give F₁ = 400 N."
+    }
+   ],
+   "modelAnswer": [
+    "According to Pascal's law, F₁/A₁ = F₂/A₂",
+    "F₁/10 = 4000/100",
+    "F₁ = 4000 × 10/100",
+    "F₁ = 400 N"
+   ]
+  },
+  {
+   "text": "Q6.11. If the pressure in a hydraulic press is increased by an additional 10 N cm⁻², how much extra load will the output platform support if its cross-sectional area is 50 cm²?",
+   "finalAnswer": "500 N",
+   "marks": 4,
+   "source": "Numerical 6.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F=PA"
+      ],
+      [
+       "pressure",
+       "area"
+      ]
+     ],
+     "marks": 1,
+     "why": "The force on the output platform follows from pressure multiplied by area.",
+     "description": "Choose the pressure-force relation.",
+     "how": "Use F = PA."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "N cm⁻²"
+      ],
+      [
+       "50",
+       "cm²"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given pressure and platform area must be used together.",
+     "description": "Substitute the given values.",
+     "how": "Use P = 10 N cm⁻² and A = 50 cm²."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "50"
+      ],
+      [
+       "500"
+      ]
+     ],
+     "marks": 1,
+     "why": "Multiplying the pressure increase by the area gives the extra load.",
+     "description": "Calculate the extra force.",
+     "how": "Calculate F = 10 × 50 = 500 N."
+    },
+    {
+     "accept": [
+      [
+       "500",
+       "N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the requested extra supported load.",
+     "description": "State the final answer.",
+     "how": "Give 500 N."
+    }
+   ],
+   "modelAnswer": [
+    "Additional pressure, P = 10 N cm⁻²",
+    "Area of output platform, A = 50 cm²",
+    "Extra load, F = PA = 10 × 50",
+    "F = 500 N"
+   ]
+  },
+  {
+   "text": "Q6.12. The force exerted normally on the hydraulic brake system of a car, with its piston of cross sectional area 5 cm² is 500 N. What will be the: (a) pressure transferred to the brake oil? (b) force on the brake piston of area of cross section 20 cm²?",
+   "finalAnswer": "(a) 1.0 × 10⁶ N m⁻², (b) 2000 N",
+   "marks": 5,
+   "source": "Numerical 6.12",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5",
+       "10⁻⁴"
+      ],
+      [
+       "0.0005"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first piston area must be in square metres to find SI pressure.",
+     "description": "Convert the first piston area.",
+     "how": "Use 5 cm² = 5 × 10⁻⁴ m²."
+    },
+    {
+     "accept": [
+      [
+       "P=F/A"
+      ],
+      [
+       "1.0",
+       "10⁶"
+      ]
+     ],
+     "marks": 2,
+     "why": "This calculation gives the pressure transmitted to the brake oil.",
+     "description": "Calculate the pressure.",
+     "how": "Use P = 500/(5 × 10⁻⁴) = 1.0 × 10⁶ N m⁻²."
+    },
+    {
+     "accept": [
+      [
+       "F₂=PA₂"
+      ],
+      [
+       "20",
+       "10⁻⁴"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pressure acting on the second piston determines its force.",
+     "description": "Set up the output-force calculation.",
+     "how": "Convert 20 cm² to 20 × 10⁻⁴ m² and use F₂ = PA₂."
+    },
+    {
+     "accept": [
+      [
+       "2000",
+       "N"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the required force on the brake piston.",
+     "description": "State the final output force.",
+     "how": "Give 2000 N."
+    }
+   ],
+   "modelAnswer": [
+    "Area of the first piston, A₁ = 5 cm² = 5 × 10⁻⁴ m²",
+    "(a) Pressure, P = F₁/A₁ = 500/(5 × 10⁻⁴) = 1.0 × 10⁶ N m⁻²",
+    "Area of the second piston, A₂ = 20 cm² = 20 × 10⁻⁴ m²",
+    "(b) F₂ = PA₂ = (1.0 × 10⁶)(20 × 10⁻⁴) = 2000 N",
+    "(a) 1.0 × 10⁶ N m⁻²; (b) 2000 N"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Pascal's law may be asked as a short-answer definition or as part of a longer question about hydraulic presses, lifts, or brakes.",
+   "For a hydraulic numerical, write the equal-pressure relation F₁/A₁ = F₂/A₂ before substituting values.",
+   "In numerical problems, show unit conversions and each substitution; these working steps can earn marks even if an arithmetic error occurs later.",
+   "For an explanation of hydraulic brakes, mention the master cylinder, liquid pressure transmitted through the brake fluid, and pistons pressing the brake pads against the discs or drums."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Use the equal-pressure relation for the two pistons.",
+     "Rearrange it to make the small-piston force the subject: F₁ = F₂A₁/A₂."
+    ],
+    "accept": [
+     [
+      "400",
+      "N"
+     ]
+    ],
+    "question": "Q6.9. The area of cross-section of the small and large pistons of a hydraulic press is respectively 10 cm² and 100 cm². What force should be exerted on the small piston in order to lift a car of weight 4000 N?",
+    "solution": [
+     "According to Pascal's law, F₁/A₁ = F₂/A₂",
+     "F₁/10 = 4000/100",
+     "F₁ = 4000 × 10/100",
+     "F₁ = 400 N"
+    ],
+    "answer": "400 N"
+   },
+   {
+    "hints": [
+     "First change 5 cm² into square metres.",
+     "Find P = F/A, then use F₂ = PA₂ for the second piston."
+    ],
+    "accept": [
+     [
+      "1.0",
+      "10⁶",
+      "2000"
+     ],
+     [
+      "1×10⁶",
+      "2000"
+     ]
+    ],
+    "question": "Q6.7. Suppose in the hydraulic brake system of a car, the force exerted normally on its piston of cross-sectional area of 5 cm² is 500 N. What will be the pressure transferred to the brake oil? What will be the force on the second piston of area of cross-section 20 cm²?",
+    "solution": [
+     "Area of the first piston, A₁ = 5 cm² = 5 × 10⁻⁴ m²",
+     "Pressure, P = F₁/A₁ = 500/(5 × 10⁻⁴) = 1.0 × 10⁶ N m⁻²",
+     "Area of the second piston, A₂ = 20 cm² = 20 × 10⁻⁴ m²",
+     "F₂ = PA₂ = (1.0 × 10⁶)(20 × 10⁻⁴) = 2000 N"
+    ],
+    "answer": "Pressure = 1.0 × 10⁶ N m⁻²; force = 2000 N."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Naming the two piston areas and radii sets up the area comparison.",
+     "text": "Let the areas of cross-sections of the pistons be A₁ and A₂ and their radii be r₁ and r₂ respectively."
+    },
+    {
+     "why": "The piston radii are half their diameters and are converted to metres.",
+     "text": "Putting the values of r₁ = 5/2 cm = 2.5 × 10⁻² m r₂ = 25/2 cm = 12.5 × 10⁻² m"
+    },
+    {
+     "why": "A circular piston has area equal to π times the square of its radius.",
+     "text": "A₁ = π r₁²  and  A₂ = π r₂²"
+    },
+    {
+     "why": "The pressure on the small piston is the applied force divided by its area.",
+     "text": "Force on the smaller piston F₁ = 160 N. Its pressure on the piston is P = F₁/A₁ = F₁/(π r₁²)"
+    },
+    {
+     "why": "Pascal's law makes the pressure equal at the two pistons.",
+     "text": "If the weight lifted by the bigger piston is w, then according to the Pascal's law. F₁/A₁ = w/A₂"
+    },
+    {
+     "why": "Rearranging gives the output weight in terms of the input force and piston areas.",
+     "text": "w = F₁ A₂/A₁ = F₁πr₂²/πr₁² = F₁ × r₂²/r₁²"
+    },
+    {
+     "why": "Substitution gives the weight the large piston can lift.",
+     "text": "w = 160 N × (12.5 × 10⁻² m)² / (2.5 × 10⁻² m)² = 4000 N = 4 kN"
+    },
+    {
+     "why": "The same pressure is transmitted to the bigger piston.",
+     "text": "P = 160/[π(2.5 × 10⁻²)²] = 8.15 × 10⁴ Pa"
+    }
+   ],
+   "question": "The diameters of the pistons of a hydraulic press are 5 cm and 25 cm respectively. A normal force of 160 N is applied on the smaller piston, what will be the pressure exerted by this force on the bigger piston? How much weight can be lifted by the other piston?",
+   "answer": "Pressure transmitted = 8.15 × 10⁴ Pa; weight lifted = 4000 N = 4 kN."
+  },
+  "explain": [
+   {
+    "title": "Pascal's law",
+    "body": "The textbook states: “When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss.” A fluid includes a liquid or a gas. This means pressure applied at one point is passed on throughout the enclosed fluid."
+   },
+   {
+    "title": "Hydraulic press",
+    "body": "In a hydraulic press, a small piston pushes on an incompressible liquid. The liquid transmits the pressure to a larger piston. Since the larger piston has a greater area, the force on it is greater: F₂ = F₁A₂/A₁."
+   },
+   {
+    "title": "Hydraulic brakes",
+    "body": "Pushing the brake pedal applies pressure to liquid in the master cylinder. Pascal's law transmits this pressure through the brake fluid to larger pistons at the wheels. Those pistons press brake pads towards the discs or drums, and friction slows the vehicle."
+   }
+  ],
+  "mistakes": [
+   "Do not say pressure is transmitted only downwards; Pascal's law says it is transmitted equally to all parts of the enclosed fluid.",
+   "Do not reverse the piston-area ratio. From F₁/A₁ = F₂/A₂, the output force is F₂ = F₁A₂/A₁.",
+   "Do not confuse force with pressure: pressure is force divided by area.",
+   "Convert areas to m² when the answer for pressure is required in N m⁻².",
+   "Include the unit in the final answer and show the equation and substitution."
+  ]
+ }
+}
