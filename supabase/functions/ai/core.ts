@@ -4,7 +4,7 @@
 // re-checks (decision D-015).
 
 export const MODEL = "gpt-6-luna";
-export const PROMPT_VERSION = "2026-11-16.2";
+export const PROMPT_VERSION = "2026-11-16.3";
 
 export const SYSTEM_PROMPT = `You are Parhlou AI, an educational assistant for Pakistani school students.
 Teach according to the learner's verified board, class, subject, textbook edition, language and examination session.
