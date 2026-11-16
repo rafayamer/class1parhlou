@@ -1,6 +1,6 @@
 // Maps an app request to a Luna task. The app sends ids and the student's own text only;
 // questions, answer keys and rubrics are looked up here, on the server.
-import { runTask, type Fetch, type Task, type Usage } from "./core.ts";
+import { runTask, type BookRef, type Fetch, type Task, type Turn, type UstaadReply, type Usage, type Video } from "./core.ts";
 
 export interface Content { course: any; subjectId: string; notes: any[]; written: any[]; mcqs: any[] }
 export interface Limits { maxImages: number; maxImageChars: number; maxTextChars: number }
@@ -46,13 +46,68 @@ export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMI
     }
     return { task: "mark_written", course: content.course, question, answer: String(req.answer ?? "").slice(0, limits.maxTextChars), images };
   }
+  if (req.task === "ustaad") {
+    const message = String(req.message ?? "").slice(0, limits.maxTextChars);
+    const image = typeof req.image === "string" ? req.image : null;
+    if (image && (!/^data:image\/(png|jpeg);base64,/.test(image) || image.length > limits.maxImageChars)) return bad("IMAGE_RESCAN_REQUIRED", 413);
+    if (!message.trim() && !image) return bad("EMPTY_QUESTION");
+    const subjects: string[] = Array.isArray(req.subjectIds) ? req.subjectIds : [];
+    const mine = subjects.includes(content.subjectId);
+    const history: Turn[] = (Array.isArray(req.history) ? req.history : []).slice(-12)
+      .filter((h: any) => h && (h.role === "student" || h.role === "ustaad") && typeof h.text === "string")
+      .map((h: any) => ({ role: h.role, text: h.text.slice(0, 1500) }));
+    const pick = (v: unknown, allowed: string[], fallback: string) => (typeof v === "string" && allowed.includes(v) ? v : fallback);
+    return {
+      task: "ustaad", course: content.course, message, image, questionAsRead: null, history,
+      profile: String(req.profile ?? "").slice(0, 1200),
+      language: pick(req.language, ["English", "Urdu", "English with Roman Urdu explanations"], "English"),
+      style: pick(req.style, ["Step by step, simple words", "Short and exam-style"], "Step by step, simple words"),
+      notes: mine ? relevantNotes(content.notes, message, { moduleId: req.moduleId }, 4) : [],
+      sections: mine ? sectionsOf(content) : [], book: null, examActive: req.examActive === true,
+    };
+  }
   return bad("UNKNOWN_TASK");
 }
 
-export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey: string, quotaLeft: number): Promise<Outcome> {
+/** "Unit 2 · 2.3 Common Logarithm" for every section of the course. */
+export function sectionsOf(content: Content): string[] {
+  const chapters: any[] = (content as any).subject?.chapters ?? [];
+  return chapters.flatMap((c) => (c.modules ?? []).map((m: any) => `Unit ${c.number} · ${m.title}`));
+}
+
+const tokens = (t: string) => (t.toLowerCase().normalize("NFKC").match(/[a-z]+|\d+(?:\.\d+)?|[√πθ²³]/g) ?? []).filter((w) => w.trim() && !STOP.has(w));
+
+/**
+ * Finds the textbook question a student's question is, among the course's checked solutions: most of the student's
+ * words must appear in it and every number must match. Returns null for anything less than a clear match.
+ */
+export function bookMatch(content: Content, text: string): (BookRef & { moduleId: string; index: number; score: number }) | null {
+  const q = tokens(text);
+  if (q.length < 3) return null;
+  const qNums = q.filter((w) => /\d/.test(w));
+  let best: any = null;
+  for (const c of (content as any).subject?.chapters ?? []) for (const m of c.modules ?? []) {
+    (m.solutions ?? []).forEach((s: any, index: number) => {
+      if (!s.checked || !Array.isArray(s.steps) || !s.steps.length) return;
+      const cand = new Set(tokens(s.question));
+      if (qNums.some((n) => !cand.has(n))) return;
+      const hit = q.filter((w) => cand.has(w)).length / q.length;
+      const back = [...cand].filter((w) => q.includes(w)).length / Math.max(cand.size, 1);
+      const score = 0.7 * hit + 0.3 * back;
+      if (!best || score > best.score) best = { score, moduleId: m.id, index, source: s.source, section: `Unit ${c.number} · ${m.title}`,
+        question: s.question, steps: s.steps, answer: s.answer ?? "", bookAnswer: s.bookAnswer ?? "" };
+    });
+  }
+  return best && best.score >= 0.72 ? best : null;
+}
+
+export interface Extras { videos?: (query: string) => Promise<Video[]>; photoQuotaLeft?: number }
+
+export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey: string, quotaLeft: number, extras: Extras = {}): Promise<Outcome> {
   const task = toTask(req, content);
   if ("error" in task) return { status: task.status, body: { error: task.error } };
   if (quotaLeft <= 0) return { status: 429, body: { error: "QUOTA_LIMIT" } };
+  if (task.task === "ustaad") return ustaad(task, content, fetchFn, apiKey, extras);
   const { result, usage } = await runTask(task, fetchFn, apiKey);
   return { status: 200, body: { result, model: usage.model, promptVersion: usage.promptVersion }, usage };
 }
@@ -117,4 +172,47 @@ export function relevantNotes(notes: any[], question: string, ctx: { lastNoteId?
     return s;
   };
   return notes.map((n) => [score(n), n] as const).filter(([s]) => s > 0).sort((a, b) => b[0] - a[0]).slice(0, limit).map(([, n]) => n);
+}
+
+/**
+ * Ask Ustaad. A photo is read first (a separate, cheap call), then the question is looked up among the textbook's
+ * checked solutions, so a book question is taught from its checked working. Videos are attached when available.
+ */
+async function ustaad(task: Extract<Task, { task: "ustaad" }>, content: Content, fetchFn: Fetch, apiKey: string, extras: Extras): Promise<Outcome> {
+  if (task.image && (extras.photoQuotaLeft ?? 1) <= 0) return { status: 429, body: { error: "PHOTO_QUOTA_LIMIT" } };
+  let usage: Usage | undefined;
+  const add = (u: Usage) => {
+    usage = usage ? { ...u, task: usage.task, inputTokens: usage.inputTokens + u.inputTokens, outputTokens: usage.outputTokens + u.outputTokens, attempts: usage.attempts + u.attempts } : u;
+  };
+  if (task.examActive) {
+    const { result, usage: u } = await runTask(task, fetchFn, apiKey);
+    return { status: 200, body: { result, model: u.model, promptVersion: u.promptVersion }, usage: u };
+  }
+  if (task.image) {
+    const read = await runTask({ task: "read_question", course: task.course, image: task.image }, fetchFn, apiKey);
+    add({ ...read.usage, task: "ustaad_photo" });
+    const r = read.result as { readable: boolean; question: string };
+    if (!r.readable) {
+      const result: UstaadReply = { kind: "UNREADABLE", questionAsRead: r.question, topic: "", steps: [], finalAnswer: "", concept: "", examTip: "",
+        checkQuestion: "", suggestions: ["I'll retake the photo", "Let me type the question"], videoQuery: "", book: null, videos: [],
+        reply: `I couldn't read this photo clearly${r.question ? ` (${r.question})` : ""}. Could you retake it in good light, holding the phone straight over the question?` };
+      return { status: 200, body: { result, model: read.usage.model, promptVersion: read.usage.promptVersion }, usage };
+    }
+    task.questionAsRead = r.question;
+  }
+  const subjectOk = task.sections.length > 0;
+  const match = subjectOk ? bookMatch(content, task.questionAsRead ?? task.message) : null;
+  if (match) task.book = match;
+  if (!task.notes.length && subjectOk && task.questionAsRead) task.notes = relevantNotes(content.notes, task.questionAsRead, {}, 4);
+  const run = await runTask(task, fetchFn, apiKey);
+  add({ ...run.usage, task: usage?.task ?? "ustaad" });
+  const result = run.result as UstaadReply;
+  if (match && (result.kind === "SOLUTION" || result.kind === "CHAT")) {
+    result.book = { source: match.source, section: match.section, moduleId: match.moduleId, index: match.index } as any;
+    if (!result.topic) result.topic = match.section;
+  }
+  if (extras.videos && result.videoQuery && result.kind !== "OFF_TOPIC" && result.kind !== "LOCKED") {
+    result.videos = await extras.videos(result.videoQuery).catch(() => []);
+  }
+  return { status: 200, body: { result, model: run.usage.model, promptVersion: run.usage.promptVersion }, usage: { ...usage!, ok: run.usage.ok } };
 }

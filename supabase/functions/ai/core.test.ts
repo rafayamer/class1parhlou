@@ -163,3 +163,80 @@ test("MCQ explanations find questions in quizzes and papers too", () => {
   const content: any = { mcqs: [{ id: "a" }], quiz: [{ id: "b" }], readiness: [{ id: "c" }], papers: [{ mcqs: [{ id: "d" }] }] };
   assert.deepEqual(allMcqs(content).map((m) => m.id), ["a", "b", "c", "d"]);
 });
+
+// ── Ask Ustaad ────────────────────────────────────────────────────────────────────────────────────────────────
+import { bookMatch, sectionsOf } from "./handler.ts";
+import { toUstaadReply } from "./core.ts";
+import { pickVideos, searchVideos } from "./youtube.ts";
+
+const course = { board: "Punjab", grade: 9, subject: "Mathematics", edition: "test" };
+const sol = (source: string, question: string, answer: string) => ({ kind: "EXERCISE", source, question, steps: ["log x = 4.3561", "x = antilog 4.3561", `x = ${answer}`], answer, checked: true, bookAnswer: "" });
+const bookContent: any = {
+  course, subjectId: "pb-9-math", notes: [], written: [], mcqs: [],
+  subject: { chapters: [{ number: 2, modules: [{ id: "m-2-3", title: "2.3 Common Logarithm", solutions: [
+    sol("Ex 2.3 Q4(v)", "Find the value of x: log x = 4.3561", "22700"),
+    sol("Ex 2.3 Q4(vi)", "Find the value of x: log x = −2.0184", "0.009585"),
+  ] }] }] },
+};
+const ustaadReply = (o: any = {}) => reply({ kind: "SOLUTION", question_as_read: "", topic: "Unit 2 · 2.3 Common Logarithm", reply: "Let's do it!",
+  steps: [{ text: "Take antilog", why: "log and antilog are inverses" }], final_answer: "x = 22700", concept: "c", exam_tip: "t",
+  check_question: "q", suggestions: ["Explain simpler", "Another one"], video_query: "class 9 common logarithm antilog", ...o });
+
+test("ustaad: book questions are matched by words and numbers; near misses are refused", () => {
+  assert.equal(bookMatch(bookContent, "find value of x if log x = 4.3561")?.source, "Ex 2.3 Q4(v)");
+  assert.equal(bookMatch(bookContent, "log x = 4.3562 find x"), null);          // a different number is a different question
+  assert.equal(bookMatch(bookContent, "what is a logarithm"), null);
+  assert.deepEqual(sectionsOf(bookContent), ["Unit 2 · 2.3 Common Logarithm"]);
+});
+
+test("ustaad: a photo is read first, matched to the book, answered from the checked solution, with videos", async () => {
+  const seen: any[] = [];
+  const f = fakeFetch([reply({ readable: true, question: "Find x: log x = 4.3561" }), ustaadReply()], seen);
+  const out: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], message: "", image: "data:image/jpeg;base64,AAAA", history: [] },
+    bookContent, f, "k", 10, { videos: async (q) => [{ id: "v1", title: q, channel: "c", thumbnail: "" }], photoQuotaLeft: 5 });
+  assert.equal(seen.length, 2);
+  assert.equal(seen[0].input[0].content[1].type, "input_image");
+  assert.ok(seen[1].input.includes("Ex 2.3 Q4(v)") && seen[1].input.includes("CHECKED solution"));
+  assert.equal(out.body.result.book.source, "Ex 2.3 Q4(v)");
+  assert.equal(out.body.result.videos[0].id, "v1");
+  assert.equal(out.usage.task, "ustaad_photo");
+});
+
+test("ustaad: unreadable photos ask for a retake without a second call; photo quota is enforced", async () => {
+  const seen: any[] = [];
+  const out: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], image: "data:image/png;base64,AAAA" }, bookContent,
+    fakeFetch([reply({ readable: false, question: "the bottom line is blurred" })], seen), "k", 10);
+  assert.equal(seen.length, 1);
+  assert.equal(out.body.result.kind, "UNREADABLE");
+  const over: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], image: "data:image/png;base64,AAAA" }, bookContent, fakeFetch([]), "k", 10, { photoQuotaLeft: 0 });
+  assert.equal(over.status, 429);
+});
+
+test("ustaad: history is trimmed, profile capped, exam lock needs no model call", async () => {
+  const t: any = toTask({ task: "ustaad", subjectIds: ["pb-9-math"], message: "why?", history: Array.from({ length: 30 }, (_, i) => ({ role: i % 2 ? "ustaad" : "student", text: `m${i}` })),
+    profile: "x".repeat(5000), language: "Klingon" }, bookContent);
+  assert.equal(t.history.length, 12);
+  assert.equal(t.profile.length, 1200);
+  assert.equal(t.language, "English");
+  const seen: any[] = [];
+  const out: any = await handle({ task: "ustaad", subjectIds: ["pb-9-math"], message: "help", examActive: true }, bookContent, fakeFetch([ustaadReply()], seen), "k", 10);
+  assert.equal(seen.length, 0);
+  assert.equal(out.body.result.kind, "LOCKED");
+});
+
+test("ustaad: replies are validated (solutions need steps and an answer; topics must be real sections)", () => {
+  assert.equal(toUstaadReply({ kind: "SOLUTION", reply: "x", steps: [], final_answer: "" }, []), null);
+  const r = toUstaadReply({ kind: "CHAT", reply: "Hello", topic: "Made up topic", suggestions: ["a", "b", "c", "d", "e"] }, ["Unit 1 · 1.1 X"])!;
+  assert.equal(r.topic, "");
+  assert.equal(r.suggestions.length, 4);
+});
+
+test("videos: only real lessons, no shorts or live streams; nothing without a key", async () => {
+  const items = [
+    { id: { videoId: "a" }, snippet: { title: "Common logarithm class 9", channelTitle: "Teacher", liveBroadcastContent: "none", thumbnails: { medium: { url: "u" } } } },
+    { id: { videoId: "b" }, snippet: { title: "log trick #shorts", channelTitle: "X", liveBroadcastContent: "none" } },
+    { id: { videoId: "c" }, snippet: { title: "Live class", channelTitle: "Y", liveBroadcastContent: "live" } },
+  ];
+  assert.deepEqual(pickVideos({ items }).map((v) => v.id), ["a"]);
+  assert.deepEqual(await searchVideos("logs", "", async () => ({ ok: true, json: async () => ({ items }) })), []);
+});

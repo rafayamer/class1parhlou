@@ -7,11 +7,13 @@
 import { createClient } from "jsr:@supabase/supabase-js@2";
 import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, type Content } from "./handler.ts";
+import { searchVideos } from "./youtube.ts";
+import type { Video } from "./core.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
 
-interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number }
+interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number }
 let cache: Live | null = null;
 
 async function live(db: any): Promise<Live> {
@@ -28,6 +30,7 @@ async function live(db: any): Promise<Live> {
     enabled: setting("ai_enabled", true) === true,
     perInstall: Number(setting("daily_calls_per_install", 300)),
     total: Number(setting("daily_calls_total", 2000)),
+    photosPerDay: Number(setting("daily_photo_questions", 20)),
   };
   return cache;
 }
@@ -83,7 +86,14 @@ Deno.serve(async (request) => {
     return json(m.body, m.status);
   }
 
-  const outcome = await handle(body, pick(settings.contents, body), (url, init) => fetch(url, init), apiKey, settings.perInstall - (mine ?? 0));
+  let photoQuotaLeft = settings.photosPerDay;
+  if ((body as any)?.task === "ustaad" && (body as any)?.image) {
+    const { count: photos } = await db.from("ai_usage").select("id", { count: "exact", head: true })
+      .eq("caller", caller).eq("task", "ustaad_photo").gte("created_at", since);
+    photoQuotaLeft = settings.photosPerDay - (photos ?? 0);
+  }
+  const outcome = await handle(body, pick(settings.contents, body), (url, init) => fetch(url, init), apiKey, settings.perInstall - (mine ?? 0),
+    { videos: (q) => videos(db, q), photoQuotaLeft });
   if (outcome.usage) {
     await db.from("ai_usage").insert({
       caller, task: outcome.usage.task, model: outcome.usage.model, prompt_version: outcome.usage.promptVersion,
@@ -95,6 +105,24 @@ Deno.serve(async (request) => {
   }
   return json(outcome.body, outcome.status);
 });
+
+// Lesson videos for a topic: memory cache, then the video_cache table (if present), then the YouTube Data API.
+const videoMemo = new Map<string, Video[]>();
+async function videos(db: any, query: string): Promise<Video[]> {
+  const key = query.toLowerCase().replace(/\s+/g, " ").trim().slice(0, 120);
+  if (!key) return [];
+  if (videoMemo.has(key)) return videoMemo.get(key)!;
+  try {
+    const { data } = await db.from("video_cache").select("results").eq("query", key).maybeSingle();
+    if (data?.results) { videoMemo.set(key, data.results); return data.results; }
+  } catch { /* table not created yet: search directly */ }
+  const found = await searchVideos(key, Deno.env.get("YOUTUBE_API_KEY") ?? "", (url) => fetch(url));
+  if (found.length) {
+    videoMemo.set(key, found);
+    try { await db.from("video_cache").upsert({ query: key, results: found }); } catch { /* optional cache */ }
+  }
+  return found;
+}
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
