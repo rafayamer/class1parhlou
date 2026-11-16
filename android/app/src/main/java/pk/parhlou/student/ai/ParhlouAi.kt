@@ -42,6 +42,12 @@ interface ParhlouAi {
     /** Lets the AI choose a practice paper's questions from each slot's candidates. Null = not available (the app picks itself). */
     suspend fun pickPaper(slots: List<pk.parhlou.student.domain.PickSlot>, profile: String): pk.parhlou.student.domain.PaperPick? = null
 
+    /** What's left of this month's AI allowance, or null where there's no server. */
+    suspend fun allowance(): Allowance? = null
+
+    /** Sends the student's feedback to the owner. False when it couldn't be sent. */
+    suspend fun sendFeedback(text: String, screen: String, appVersion: String): Boolean = false
+
     /** Lesson videos on a topic, asked for by the student. Null = not available here (the app opens a YouTube search). */
     suspend fun lessonVideos(query: String): List<LessonVideo>? = null
 
@@ -134,4 +140,19 @@ object MarkingValidator {
         if (mark.awarded > question.marks) problems += "total exceeds the question's marks"
         return problems
     }
+}
+
+/**
+ * This month's AI allowance, as things the student can still do (questions to Ustaad, photo questions, papers marked…),
+ * worked out on the server from the credit balance and the price of each thing.
+ */
+data class Allowance(val balance: Int, val resetsOn: String, val left: Map<String, Int>) {
+    /** "About 420 questions to Ustaad" style lines, most useful first. */
+    fun lines(): List<Pair<String, String>> = listOfNotNull(
+        left["chat"]?.let { "💬" to "About $it questions to Ustaad" },
+        left["photo"]?.let { "📷" to "$it photo questions" },
+        left["mark_handwritten"]?.let { "📝" to "About ${it / 20} handwritten papers marked" },
+        left["mark_typed"]?.let { "✅" to "$it typed answers marked" },
+        left["pick_paper"]?.let { "🎯" to "$it papers made for you" },
+    )
 }

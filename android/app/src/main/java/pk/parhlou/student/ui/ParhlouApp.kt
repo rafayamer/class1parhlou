@@ -388,6 +388,8 @@ fun ParhlouApp(
             ProfileScreen(
                 repo, state, progress,
                 soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
+                allowance = { ai.allowance() },
+                onSendFeedback = { ai.sendFeedback(it, "profile", "build ${pk.parhlou.student.BuildConfig.VERSION_CODE}") },
                 onPlaceholder = { nav.navigate("soon/$it") },
                 onClearDevice = { scope.launch { account?.auth?.signOut(); store.clearAll() } },
                 email = session?.email,

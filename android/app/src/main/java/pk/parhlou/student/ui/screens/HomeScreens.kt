@@ -1,8 +1,10 @@
 package pk.parhlou.student.ui.screens
 
+import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material.icons.filled.Forum
+import androidx.compose.material.icons.filled.Feedback
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.automirrored.filled.VolumeOff
 import androidx.compose.foundation.layout.PaddingValues
@@ -416,6 +418,9 @@ fun ProfileScreen(
     accountMessage: String? = null,
     soundOn: Boolean = true,
     onToggleSound: () -> Unit = {},
+    /** Loads what's left of this month's AI allowance; null result = not available (offline or no server). */
+    allowance: suspend () -> pk.parhlou.student.ai.Allowance? = { null },
+    onSendFeedback: suspend (String) -> Boolean = { false },
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
@@ -467,6 +472,18 @@ fun ProfileScreen(
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
         TaskRow(Icons.Filled.SmartToy, "My Ustaad", "What Ustaad knows about you and how it explains", onMyUstaad)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
+        // This month's Ustaad time, as things the student can still do.
+        val left by androidx.compose.runtime.produceState<pk.parhlou.student.ai.Allowance?>(null) { value = allowance() }
+        left?.let { a ->
+            Sheet(Modifier.testTag("allowance")) {
+                Text("This month with Ustaad", style = MaterialTheme.typography.titleMedium)
+                a.lines().forEach { (icon, line) -> Text("$icon  $line", style = MaterialTheme.typography.bodyLarge) }
+                Muted("More on ${a.resetsOn}. Unused time carries over for up to 4 months.")
+            }
+        }
+        var feedbackOpen by remember { mutableStateOf(false) }
+        TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = true })
+        if (feedbackOpen) FeedbackDialog(onSend = onSendFeedback, onClose = { feedbackOpen = false })
         TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
         TaskRow(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff, "Sounds",
             if (soundOn) "On: taps, right and wrong, rewards" else "Off (vibration only)", onToggleSound)
@@ -624,4 +641,34 @@ private fun ChoiceChip(text: String, selected: Boolean, modifier: Modifier, onCl
         shape = RoundedCornerShape(14.dp), lip = 3.dp, onClick = onClick, contentPadding = PaddingValues(vertical = 10.dp),
         contentAlignment = Alignment.Center,
     ) { Text(text, style = MaterialTheme.typography.labelLarge, modifier = Modifier.fillMaxWidth(), textAlign = androidx.compose.ui.text.style.TextAlign.Center) }
+}
+
+/** Feedback goes straight to the owner's inbox. */
+@Composable
+private fun FeedbackDialog(onSend: suspend (String) -> Boolean, onClose: () -> Unit) {
+    var text by remember { mutableStateOf("") }
+    var state by remember { mutableStateOf(0) } // 0 writing, 1 sending, 2 sent, 3 failed
+    val scope = androidx.compose.runtime.rememberCoroutineScope()
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onClose,
+        title = { Text(if (state == 2) "Thank you!" else "Send feedback") },
+        text = {
+            when (state) {
+                2 -> Text("We read every message.")
+                else -> Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    androidx.compose.material3.OutlinedTextField(text, { text = it.take(3000) }, placeholder = { Text("What should we fix or add?") },
+                        minLines = 4, modifier = Modifier.fillMaxWidth().testTag("feedback-text"))
+                    if (state == 3) Text("Couldn't send. Check your internet and try again.", color = MaterialTheme.colorScheme.error)
+                }
+            }
+        },
+        confirmButton = {
+            if (state == 2) TextButton(onClick = onClose) { Text("Done") }
+            else TextButton(enabled = text.isNotBlank() && state != 1, onClick = {
+                state = 1
+                scope.launch { state = if (onSend(text.trim())) 2 else 3 }
+            }) { Text(if (state == 1) "Sending…" else "Send") }
+        },
+        dismissButton = { if (state != 2) TextButton(onClick = onClose) { Text("Cancel") } },
+    )
 }

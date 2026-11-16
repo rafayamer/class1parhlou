@@ -107,7 +107,11 @@ class LunaGateway(
             .put("profile", req.profile).put("language", req.language).put("style", req.style)
             .put("subjectIds", JSONArray(req.subjectIds.toList())).put("moduleId", req.moduleId ?: JSONObject.NULL)
             .put("examActive", req.examActive)
-        return call(body)?.let(UstaadAnswer::parse) ?: UstaadOffline.answer(fallback, req).let {
+        call(body)?.let(UstaadAnswer::parse)?.let { return it }
+        creditsResetOn?.let { date ->
+            return UstaadAnswer("OFFLINE", "This month's Ustaad time is used up. It comes back on $date. Your lessons, practice and papers still work.")
+        }
+        return UstaadOffline.answer(fallback, req).let {
             if (it.kind == "OFFLINE") it else it.copy(reply = it.reply + "\n\n_(Answered offline from your course notes.)_")
         }
     }
@@ -133,9 +137,23 @@ class LunaGateway(
             "x-parhlou-install" to installId(),
         )
         val (status, text) = transport(endpoint, headers, body.toString()) ?: return null
+        // This month's AI allowance is used up: remember when it comes back, so screens can say so kindly.
+        if (status == 402) { creditsResetOn = runCatching { JSONObject(text).optString("resetsOn") }.getOrNull().orEmpty().ifBlank { "the 1st" }; return null }
         if (status != 200) return null
+        creditsResetOn = null
         JSONObject(text).optJSONObject("result")
     }.getOrNull()
+
+    /** Set when the last request was refused because this month's allowance is used up. */
+    @Volatile var creditsResetOn: String? = null
+
+    override suspend fun allowance(): Allowance? = call(JSONObject().put("task", "credits"))?.let { r ->
+        val left = r.optJSONObject("left") ?: return@let null
+        Allowance(r.optInt("balance"), r.optString("resetsOn"), left.keys().asSequence().associateWith { left.optInt(it) })
+    }
+
+    override suspend fun sendFeedback(text: String, screen: String, appVersion: String): Boolean =
+        call(JSONObject().put("task", "feedback").put("text", text).put("screen", screen).put("appVersion", appVersion)) != null
 
     private fun parseTutor(r: JSONObject): TutorReply? {
         val kind = runCatching { ReplyKind.valueOf(r.getString("kind")) }.getOrNull() ?: return null
