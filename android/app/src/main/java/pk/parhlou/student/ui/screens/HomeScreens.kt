@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Lightbulb
+import androidx.compose.material.icons.filled.NewReleases
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.filled.PlayCircle
@@ -383,6 +384,7 @@ fun ProfileScreen(
     onDeleteAccount: () -> Unit = {},
     onHistory: () -> Unit = { onPlaceholder("history") },
     versionLabel: String = "",
+    onWhatsNew: () -> Unit = {},
     accountMessage: String? = null,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
@@ -433,6 +435,7 @@ fun ProfileScreen(
             }
         }
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
+        TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
         TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Coming later", { onPlaceholder("guardian") })
         var confirmDelete by remember { mutableStateOf(false) }
         if (email != null) {

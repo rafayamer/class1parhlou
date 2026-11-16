@@ -654,10 +654,25 @@
    "bookAnswer": "4√29 ≈ 21.5 units",
    "keyReadsAgree": true,
    "indep": "4√29 ≈ 21.5 unit",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "This uses the textbook’s intended coordinate-plane interpretation; an actual Earth-surface distance would require Earth’s radius and a great-circle calculation.",
    "replace": {
-    "checked": false
+    "steps": [
+     "Assume the coordinates are to be treated as points on a plane, as the book intends.",
+     "The coordinate differences are Δx = 65 − 45 = 20 and Δy = 20 − 12 = 8.",
+     "Distance = √(20² + 8²) = √464 = 4√29 ≈ 21.5 units."
+    ],
+    "answer": "The distance is 4√29 ≈ 21.5 coordinate units.",
+    "figure": "",
+    "accept": [
+     [
+      "4√29"
+     ],
+     [
+      "21.5~"
+     ]
+    ],
+    "checked": true
    },
    "examiner": "The coordinate-plane calculation gives the key’s value, but latitude and longitude describe positions on Earth, not Cartesian distances; the question does not specify enough to determine a physical surface distance."
   },

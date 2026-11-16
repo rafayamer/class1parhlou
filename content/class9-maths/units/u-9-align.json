@@ -310,10 +310,25 @@
    "bookAnswer": "4/5",
    "keyReadsAgree": true,
    "indep": "h₁ : h₂ = 4 : 5",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "The volume ratio alone does not determine the height ratio; the answer assumes the cones are similar.",
    "replace": {
-    "checked": false
+    "steps": [
+     "Assume the cones are similar, as the book intends.",
+     "For similar cones, the volume ratio is the cube of the corresponding linear ratio.",
+     "h₁ : h₂ = ∛64 : ∛125 = 4 : 5."
+    ],
+    "answer": "The ratio of their heights is 4 : 5.",
+    "figure": "",
+    "accept": [
+     [
+      "4:5"
+     ],
+     [
+      "4/5"
+     ]
+    ],
+    "checked": true
    },
    "examiner": "The printed question does not say that the cones are similar, and a volume ratio alone does not determine their height ratio. The answer 4 : 5 is valid only if similarity is assumed."
   },
@@ -323,10 +338,25 @@
    "bookAnswer": "16/25",
    "keyReadsAgree": true,
    "indep": "A₁ : A₂ = 16 : 25",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "The volume ratio alone does not determine the base-area ratio; the answer assumes the cones are similar.",
    "replace": {
-    "checked": false
+    "steps": [
+     "Assume the cones are similar, as the book intends.",
+     "Their linear ratio is the cube root of their volume ratio: 4 : 5.",
+     "For similar cones, base areas are in the square of the linear ratio: A₁ : A₂ = 4² : 5² = 16 : 25."
+    ],
+    "answer": "The ratio of their base areas is 16 : 25.",
+    "figure": "",
+    "accept": [
+     [
+      "16:25"
+     ],
+     [
+      "16/25"
+     ]
+    ],
+    "checked": true
    },
    "examiner": "The volume ratio alone does not determine the base-area ratio, since no relationship between the cones’ heights or shapes is specified. Your textbook’s answer key of 16:25 is valid only if the cones are similar."
   },

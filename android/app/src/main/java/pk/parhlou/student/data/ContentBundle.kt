@@ -116,6 +116,7 @@ object ContentBundle {
                 note = s.optString("note"),
                 bookAnswer = s.optString("bookAnswer"),
                 inExam = s.optBoolean("inExam", true),
+                why = s.optJSONArray("why")?.strings().orEmpty(),
             )
         }.orEmpty(),
         inExam = m.optBoolean("inExam", true),

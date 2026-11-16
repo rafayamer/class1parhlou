@@ -208,6 +208,7 @@ fun <S : Comparable<S>> rememberStepTransition(): androidx.compose.animation.Ani
 }
 
 /** A newer prototype build that can be installed with one tap. Null when the app is up to date. */
-data class UpdateOffer(val build: Int, val publishedOn: String, val installing: Boolean, val install: () -> Unit)
+/** [ready] is true once the new build has been downloaded in the background, so installing is one tap. */
+data class UpdateOffer(val build: Int, val publishedOn: String, val installing: Boolean, val install: () -> Unit, val ready: Boolean = false)
 
 val LocalUpdateOffer = compositionLocalOf<UpdateOffer?> { null }

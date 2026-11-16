@@ -31,24 +31,33 @@ class AppUpdater(
         return if (status == 200) latest(body, currentBuild) else null
     }
 
-    /** Downloads the APK and opens Android's installer. Returns false if the download failed. */
-    suspend fun install(info: UpdateInfo): Boolean {
-        val file = withContext(Dispatchers.IO) {
+    /** The downloaded APK for [info], if it is already on the phone. */
+    fun downloaded(info: UpdateInfo): File? =
+        File(File(context.cacheDir, "updates"), "parhlou-${info.build}.apk").takeIf { it.isFile && it.length() > 0 }
+
+    /** Downloads the APK in the background (once) so installing is instant. Returns null if the download failed. */
+    suspend fun download(info: UpdateInfo): File? = downloaded(info) ?: withContext(Dispatchers.IO) {
             runCatching {
                 val dir = File(context.cacheDir, "updates").apply { mkdirs() }
                 val target = File(dir, "parhlou-${info.build}.apk")
+                val part = File(dir, "parhlou-${info.build}.part")
                 val c = URL(info.apkUrl).openConnection() as HttpURLConnection
                 try {
                     c.instanceFollowRedirects = true
                     c.connectTimeout = 15_000
                     c.readTimeout = 120_000
                     if (c.responseCode !in 200..299) return@runCatching null
-                    c.inputStream.use { input -> target.outputStream().use { input.copyTo(it) } }
+                    c.inputStream.use { input -> part.outputStream().use { input.copyTo(it) } }
                 } finally { c.disconnect() }
+                if (!part.renameTo(target)) return@runCatching null
                 dir.listFiles()?.filter { it != target }?.forEach { it.delete() }
                 target
             }.getOrNull()
-        } ?: return false
+        }
+
+    /** Downloads the APK if needed and opens Android's installer (Android always asks the user to confirm). */
+    suspend fun install(info: UpdateInfo): Boolean {
+        val file = download(info) ?: return false
         val uri = FileProvider.getUriForFile(context, "${context.packageName}.files", file)
         val intent = Intent(Intent.ACTION_VIEW)
             .setDataAndType(uri, "application/vnd.android.package-archive")

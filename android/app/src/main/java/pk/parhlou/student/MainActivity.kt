@@ -33,6 +33,10 @@ import pk.parhlou.student.ui.components.UpdateOffer
 import pk.parhlou.student.ui.theme.ParhlouTheme
 import pk.parhlou.student.update.AppUpdater
 import pk.parhlou.student.update.UpdateInfo
+import pk.parhlou.student.update.UpdateWorker
+import android.Manifest
+import android.os.Build
+import kotlinx.coroutines.flow.first
 
 class MainActivity : ComponentActivity() {
     private var account: Account? = null
@@ -68,6 +72,7 @@ class MainActivity : ComponentActivity() {
             account = Account(auth, SyncClient(supabaseUrl, BuildConfig.SUPABASE_ANON_KEY, auth, store), store)
         }
         if (savedInstanceState == null) handleSignInLink(intent)
+        UpdateWorker.schedule(applicationContext)
         val account = account
         setContent {
             ParhlouTheme { ProvideMotion {
@@ -75,6 +80,9 @@ class MainActivity : ComponentActivity() {
                 var repo by remember { mutableStateOf<ParhlouRepository>(packed) }
                 var update by remember { mutableStateOf<UpdateInfo?>(null) }
                 var installing by remember { mutableStateOf(false) }
+                var ready by remember { mutableStateOf(false) }
+                val askNotify = androidx.activity.compose.rememberLauncherForActivityResult(
+                    androidx.activity.result.contract.ActivityResultContracts.RequestPermission()) { }
 
                 // Live content and update check: on open and every time the app comes back to the front.
                 LifecycleEventEffect(Lifecycle.Event.ON_START) {
@@ -83,7 +91,18 @@ class MainActivity : ComponentActivity() {
                         if (repo === packed) remote.cached(subject)?.let { repo = it }
                         remote.refresh(subject, (repo as? BundleRepository)?.version)?.let { repo = it }
                     }
-                    scope.launch { update = updater.check() }
+                    // New builds download in the background, so "Install" is instant.
+                    scope.launch {
+                        val info = updater.check()
+                        update = info
+                        if (info != null) {
+                            if (Build.VERSION.SDK_INT >= 33 && !store.askedNotifications.first()) {
+                                store.markAskedNotifications()
+                                askNotify.launch(Manifest.permission.POST_NOTIFICATIONS)
+                            }
+                            ready = updater.download(info) != null
+                        }
+                    }
                 }
 
                 val ai = remember(repo) {
@@ -93,12 +112,12 @@ class MainActivity : ComponentActivity() {
                         accessToken = { account?.auth?.accessToken() })
                 }
                 val offer = update?.let { info ->
-                    UpdateOffer(info.build, info.publishedOn, installing) {
+                    UpdateOffer(info.build, info.publishedOn, installing, install = {
                         if (!installing) scope.launch { installing = true; updater.install(info); installing = false }
-                    }
+                    }, ready = ready)
                 }
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
-                    ParhlouApp(repo = repo, store = store, ai = ai, account = account,
+                    ParhlouApp(repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, ai = ai, account = account,
                         versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
                 }
             } }

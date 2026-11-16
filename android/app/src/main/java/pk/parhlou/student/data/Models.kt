@@ -99,6 +99,8 @@ data class BookSolution(
     val bookAnswer: String = "",
     /** False when the current exam's smart syllabus leaves this question out. */
     val inExam: Boolean = true,
+    /** One short reason per step ("why this step"), same length as [steps] when present. */
+    val why: List<String> = emptyList(),
 )
 
 /** A module's tutor lesson (decision D-022). Written once per section; no AI call while the student studies. */

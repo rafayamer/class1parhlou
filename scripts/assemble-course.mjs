@@ -4,6 +4,8 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { bundleProblems } from "../owner-panel/src/validate.ts";
 import { isExcluded } from "./syllabus.mjs";
+import { createHash } from "node:crypto";
+const whyKey = (unit, s) => createHash("sha1").update(`${unit}|${s.kind}|${s.source}|${s.steps.join("\n")}`).digest("hex").slice(0, 16);
 
 const ROOT = "content/class9-maths";
 const OUT = process.argv[2] ?? `${ROOT}/bundle.json`;
@@ -89,6 +91,8 @@ function longOf(id, a, b) {
 }
 
 const bookPages = Array.from({ length: 261 }, (_, i) => { const f = `${ROOT}/pages/p${String(i + 1).padStart(3, "0")}.md`; return existsSync(f) ? readFileSync(f, "utf8") : ""; });
+// Places where the book's own numbering skips (checked on the printed page), so the audit doesn't report them as gaps.
+const BOOK_NUMBERING_QUIRKS = ["ex12.2 q13(iv)", "ex12.2 q13(v)"]; // printed as (i), (ii), (iii), (vi)
 const coverage = [];
 for (const u of units) {
   const outlineFile = `${ROOT}/work/u${u.chapter.number}-outline.json`;
@@ -134,7 +138,9 @@ for (const u of units) {
       if (a) {
         y.bookAnswer = a.bookAnswer ?? "";
         y.note = a.note ?? y.note;
-        if (a.replace) y = { ...y, ...a.replace };
+        // Still unsettled: a solution that passed its own check keeps its working, with the examiner's note.
+        if (a.status === "unresolved" && x.checked) y.note = a.examiner ? `Note: ${a.examiner}` : y.note;
+        else if (a.replace) y = { ...y, ...a.replace };
       }
       return y;
     });
@@ -157,7 +163,7 @@ for (const u of units) {
     const stop = rest.search(/\n\s*#*\s*(REVIEW )?EXERCISE\s*\d|\n#{1,2} \d+\.\d/);
     return new RegExp(`(^|\\n)\\s*(Q\\s*)?${m[4]}\\.`).test(stop < 0 ? rest : rest.slice(0, stop));
   };
-  if (aligned) audit.push({ unit: n0, counts: aligned.counts, gaps: aligned.numberingGaps.filter((g) => printed(g.replace(/\s/g, ""))).filter((g) => !ourKeys.some((r) => r.startsWith(g.replace(/\s/g, "")) && !/\d/.test(r[g.replace(/\s/g, "").length] ?? ""))), missing: missingQuestions.filter(printed),
+  if (aligned) audit.push({ unit: n0, counts: aligned.counts, gaps: aligned.numberingGaps.filter((g) => !BOOK_NUMBERING_QUIRKS.includes(g) && printed(g.replace(/\s/g, ""))).filter((g) => !ourKeys.some((r) => r.startsWith(g.replace(/\s/g, "")) && !/\d/.test(r[g.replace(/\s/g, "").length] ?? ""))), missing: missingQuestions.filter(printed),
     flagged: aligned.items.filter((i) => i.status !== "matches key" && i.status !== "confirmed" && i.status !== "no key") });
   // Worked examples must run 1…N without gaps.
   const exNums = u.chapter.modules.flatMap((m) => m.solutions.filter((x) => x.kind === "EXAMPLE").map((x) => Number(/\d+/.exec(x.source)?.[0] ?? 0)));
@@ -319,6 +325,15 @@ const bundle = {
 };
 
 const cleaned = cleanAll(bundle);
+// "Why this step?" reasons (step-why.mjs), attached only where they were written for exactly these steps.
+const whyFile = `${ROOT}/why.json`;
+if (existsSync(whyFile)) {
+  const whys = JSON.parse(readFileSync(whyFile, "utf8"));
+  for (const c of cleaned.subject.chapters) for (const m of c.modules) for (const s of m.solutions) {
+    const w = whys[whyKey(c.number, s)];
+    if (w && w.length === s.steps.length) s.why = w;
+  }
+}
 const problems = bundleProblems(cleaned, SUBJECT);
 writeFileSync(OUT, JSON.stringify(cleaned));
 const kb = Math.round(JSON.stringify(cleaned).length / 1024);

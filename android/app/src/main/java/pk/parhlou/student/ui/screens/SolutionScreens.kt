@@ -22,6 +22,10 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import pk.parhlou.student.ai.TextMatch
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Surface
+import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -171,6 +175,27 @@ fun SolutionDetailScreen(module: Module, index: Int, onAskTutor: (String) -> Uni
     }
 }
 
+/** One numbered step of a worked solution, with an optional "Why?" that explains the rule behind it. */
+@Composable
+private fun StepCard(number: Int, text: String, why: String?, key: String) {
+    var open by rememberSaveable(key) { mutableStateOf(false) }
+    Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
+        Surface(shape = androidx.compose.foundation.shape.CircleShape, color = MaterialTheme.colorScheme.secondaryContainer,
+            modifier = Modifier.size(28.dp)) {
+            Box(contentAlignment = Alignment.Center) {
+                Text("$number", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSecondaryContainer)
+            }
+        }
+        Column(Modifier.weight(1f)) {
+            Text(text, style = MaterialTheme.typography.bodyLarge)
+            if (why != null) {
+                if (open) Text("Why: $why", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.secondary)
+                else TextButton(onClick = { open = true }, modifier = Modifier.heightIn(min = 40.dp).testTag("why-$key")) { Text("Why?") }
+            }
+        }
+    }
+}
+
 @Composable
 private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> Unit)? = null) {
     var steps by rememberSaveable(key) { mutableIntStateOf(0) }
@@ -193,10 +218,17 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
             if (verdict == false) Text("Not yet. Look at the first step and try again.", color = MaterialTheme.colorScheme.tertiary)
         }
         if (verdict == true) StatusPill("Correct!", warning = false)
-        s.steps.take(steps).forEach { Text(it, style = MaterialTheme.typography.bodyLarge) }
+        s.steps.take(steps).forEachIndexed { i, step -> StepCard(i + 1, step, s.why.getOrNull(i).takeIf { s.why.size == s.steps.size }, "$key-why-$i") }
         if (steps >= s.steps.size && steps > 0) {
             if (s.figure.isNotBlank()) Muted("Figure: ${s.figure}")
-            if (s.answer.isNotBlank()) Text("Answer: ${s.answer}", style = MaterialTheme.typography.titleMedium)
+            if (s.answer.isNotBlank()) Surface(
+                color = MaterialTheme.colorScheme.primaryContainer, shape = RoundedCornerShape(16.dp), modifier = Modifier.fillMaxWidth(),
+            ) {
+                Column(Modifier.padding(14.dp)) {
+                    Text("Final answer", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                    Text(s.answer, style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+                }
+            }
             if (s.bookAnswer.isNotBlank()) Text("Book answer: ${s.bookAnswer}", style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
             if (s.note.isNotBlank()) Muted(s.note)

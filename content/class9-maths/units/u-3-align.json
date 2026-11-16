@@ -461,10 +461,21 @@
    "bookAnswer": "",
    "keyReadsAgree": true,
    "indep": "",
-   "status": "unresolved",
+   "status": "resolved (assumption)",
    "note": "",
    "replace": {
-    "checked": false
+    "steps": [
+     "Complements are taken relative to U.",
+     "A∪B={a,b,c,d,e,f,g,h,j}, so (A∪B)′={i}.",
+     "A∩B={c,d}, so (A∩B)′={a,b,e,f,g,h,i,j}.",
+     "A′={e,f,i,j} and B′={a,b,g,h,i}.",
+     "A′∩B′={i}=(A∪B)′.",
+     "A′∪B′={a,b,e,f,g,h,i,j}=(A∩B)′."
+    ],
+    "answer": "A′={e,f,i,j}, B′={a,b,g,h,i}. Then (A∪B)′={i}=A′∩B′, and (A∩B)′={a,b,e,f,g,h,i,j}=A′∪B′. Hence both De Morgan’s laws are verified.",
+    "figure": "In the Venn diagram, put a,b,g,h in A only; c,d in A∩B; e,f,j in B only; and i outside both circles.",
+    "accept": [],
+    "checked": true
    },
    "examiner": "The complements are taken relative to U. Both De Morgan identities hold for the resulting sets."
   },

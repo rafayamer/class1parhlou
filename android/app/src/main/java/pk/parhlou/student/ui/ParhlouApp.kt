@@ -47,6 +47,8 @@ import androidx.compose.runtime.produceState
 import pk.parhlou.student.ui.screens.SubjectScreen
 import pk.parhlou.student.ui.screens.SolutionsFinderScreen
 import pk.parhlou.student.ui.screens.ExamKitScreen
+import pk.parhlou.student.ui.screens.WhatsNew
+import pk.parhlou.student.ui.screens.WhatsNewScreen
 import pk.parhlou.student.ui.screens.SolutionDetailScreen
 import pk.parhlou.student.ui.screens.SubjectsScreen
 import pk.parhlou.student.ui.screens.TestsScreen
@@ -120,6 +122,7 @@ object Routes {
     const val WEAK_TOPICS = "weak-topics"
     const val SOLUTIONS = "solutions"
     const val KIT = "kit/{id}"
+    const val WHATS_NEW = "whats-new"
     const val SOLUTION = "solution/{module}/{index}"
 }
 
@@ -141,6 +144,8 @@ private val placeholders = mapOf(
 fun ParhlouApp(
     repo: ParhlouRepository,
     store: LocalStore,
+    /** This build's number; when above 0, "What's new" opens once after each update. Tests leave it 0. */
+    currentBuild: Int = 0,
     ai: ParhlouAi = remember(repo) { DemoBrain(repo) },
     /** Sign-in and sync; null in builds without a Supabase address. */
     account: Account? = null,
@@ -158,6 +163,15 @@ fun ParhlouApp(
         return
     }
     val nav = rememberNavController()
+    // After an update, "What's new" opens once by itself (a fresh install starts with onboarding instead).
+    if (currentBuild > 0) {
+        val seen by store.seenBuild.collectAsState(initial = -1)
+        LaunchedEffect(seen) {
+            if (seen < 0 || seen >= currentBuild) return@LaunchedEffect
+            store.markSeen(currentBuild)
+            if (state.completed) kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Main.immediate) { nav.navigate(Routes.WHATS_NEW) }
+        }
+    }
     val session by (account?.auth?.session ?: flowOf(null)).collectAsState(initial = null)
     val guest by store.guest.collectAsState(initial = false)
     val accountError by (account?.error ?: MutableStateFlow(null)).collectAsState()
@@ -347,6 +361,7 @@ fun ParhlouApp(
                 },
                 onHistory = { nav.navigate(Routes.HISTORY) },
                 versionLabel = versionLabel,
+                onWhatsNew = { nav.navigate(Routes.WHATS_NEW) },
                 accountMessage = accountMessage,
             )
         } }
@@ -354,6 +369,10 @@ fun ParhlouApp(
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
                 onSolutions = { nav.navigate(Routes.SOLUTIONS) })
         } }
+        composable(Routes.WHATS_NEW) {
+            val context = LocalContext.current
+            WhatsNewScreen(remember { WhatsNew.load(context) }, versionLabel, onDone = { nav.popBackStack() })
+        }
         composable(Routes.SOLUTIONS) {
             SolutionsFinderScreen(subjects, onOpen = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
         }

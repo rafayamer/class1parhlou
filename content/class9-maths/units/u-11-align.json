@@ -87,10 +87,18 @@
    "bookAnswer": "",
    "keyReadsAgree": true,
    "indep": "[figure] Two triangles KLM and K′LM; this is an ambiguous case.",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "Since N is not a vertex of triangle KLM, the length LN does not determine one of its sides.",
    "replace": {
-    "checked": false
+    "steps": [
+     "In triangle KLM, N is not a named vertex, so the given length LN does not specify a side of that triangle.",
+     "The printed measurements therefore do not define a construction for triangle KLM.",
+     "A correction to the stated side or vertex is needed before the ambiguous-case construction can be determined."
+    ],
+    "answer": "A triangle KLM cannot be constructed uniquely from the data as printed; LN is not a side of triangle KLM.",
+    "figure": "No determinate triangle can be drawn from the measurements as printed.",
+    "accept": [],
+    "checked": true
    },
    "examiner": "N is not a vertex of △KLM, so the stated length LN does not specify a side of that triangle. The question appears misprinted, and its intended ambiguous case cannot be determined from the data as printed."
   },
@@ -119,10 +127,20 @@
    "bookAnswer": "",
    "keyReadsAgree": true,
    "indep": "[figure] ∠ABC = 105° and its angle bisector ray BP.",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "The construction gives the internal locus, as intended; if points outside the angle are included, the external angle bisector is also a locus.",
    "replace": {
-    "checked": false
+    "steps": [
+     "Assume P is restricted to the inside of ∠ABC, as the book intends.",
+     "Draw ray BC and use a protractor at B to construct ray BA so that ∠ABC = 105°.",
+     "With B as centre and compass radius 3 cm, draw an arc cutting BA at D and BC at E.",
+     "With D and E as centres and the same compass radius 3 cm, draw arcs intersecting at P inside the angle.",
+     "Draw ray BP. It bisects the 105° angle, so each half is 52.5°."
+    ],
+    "answer": "The required locus inside ∠ABC is the angle-bisector ray BP, with ∠ABP = ∠PBC = 52.5°.",
+    "figure": "∠ABC = 105° with internal angle-bisector ray BP; P lies on the locus equidistant from arms BA and BC.",
+    "accept": [],
+    "checked": true
    },
    "examiner": "Points on the angle bisector are equidistant from the two arms of the angle. The required locus inside the angle is therefore its bisector ray."
   },
@@ -159,10 +177,21 @@
    "bookAnswer": "",
    "keyReadsAgree": true,
    "indep": "[figure] Triangle CDE with the perpendicular bisector of CD and the angle bisector of ∠DCE intersecting at X.",
-   "status": "unresolved",
-   "note": "",
+   "status": "resolved (assumption)",
+   "note": "Assume the required locus is the internal angle bisector within the triangle, as the book intends.",
    "replace": {
-    "checked": false
+    "steps": [
+     "Draw CD=7.6 cm.",
+     "At D, construct a perpendicular ray to DC on the chosen side using compass arcs; bisect the 90° angle between DC and this perpendicular ray to obtain a 45° ray DE.",
+     "On ray DE, mark E so that DE=5.9 cm, then join C to E.",
+     "At C, draw an arc of any convenient radius cutting CD and CE at X and Y.",
+     "With the same radius, draw arcs centered at X and Y to meet at Z inside ∠DCE.",
+     "Draw ray CZ; its portion from C to side DE is the required internal angle-bisector locus."
+    ],
+    "answer": "The required locus inside triangle CDE is the internal angle bisector of ∠DCE.",
+    "figure": "Triangle CDE has CD=7.6 cm, DE=5.9 cm and ∠CDE=45°. The internal bisector of ∠DCE runs from C to side DE and shows the required locus within the triangle.",
+    "accept": [],
+    "checked": true
    },
    "examiner": "The points equidistant from the two arms CD and CE lie on the angle bisector of ∠DCE. In the triangle, the required locus is the internal bisector shown."
   },

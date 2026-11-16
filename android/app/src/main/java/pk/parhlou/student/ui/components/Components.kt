@@ -357,13 +357,14 @@ fun UpdateBanner() {
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
     ) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            Text("Update available", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text(if (offer.ready) "Update ready — tap to install" else "Update available", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onPrimaryContainer)
             Text(
                 "Build ${offer.build}" + (if (offer.publishedOn.isNotBlank()) " · ${offer.publishedOn}" else "") +
                     ". Your answers and progress stay on this phone.",
                 style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer,
             )
-            BigButton(if (offer.installing) "Downloading…" else "Update now", onClick = offer.install, enabled = !offer.installing)
+            BigButton(if (offer.installing) "Opening installer…" else if (offer.ready) "Install build ${offer.build}" else "Update now",
+                onClick = offer.install, enabled = !offer.installing)
         }
     }
 }
