@@ -42,6 +42,9 @@ interface ParhlouAi {
     /** Lets the AI choose a practice paper's questions from each slot's candidates. Null = not available (the app picks itself). */
     suspend fun pickPaper(slots: List<pk.parhlou.student.domain.PickSlot>, profile: String): pk.parhlou.student.domain.PaperPick? = null
 
+    /** The examiner's written analysis of a marked paper, from the app's own [facts]. Null = not available (the app writes it). */
+    suspend fun paperReport(facts: String, topics: List<String>, profile: String, language: String): pk.parhlou.student.domain.ExaminerReport? = null
+
     /** Ask Ustaad: a chat turn or a photographed question. Without the AI, the notes-based tutor answers text questions. */
     suspend fun ustaad(req: UstaadRequest): UstaadAnswer = UstaadOffline.answer(this, req)
 }

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -45,6 +46,10 @@ import pk.parhlou.student.ai.WrittenMark
 import pk.parhlou.student.data.ExamDesk
 import pk.parhlou.student.data.LocalStore
 import pk.parhlou.student.data.PaperBlueprint
+import pk.parhlou.student.domain.AreaScore
+import pk.parhlou.student.domain.ExaminerReport
+import pk.parhlou.student.domain.PaperAnalysis
+import pk.parhlou.student.domain.PaperAnalyzer
 import pk.parhlou.student.data.PaperContent
 import pk.parhlou.student.data.WrittenQuestion
 import pk.parhlou.student.domain.ExamLog
@@ -77,6 +82,11 @@ fun CheckMasterScreen(
     store: LocalStore,
     onExplain: (TutorSeed) -> Unit,
     onHome: () -> Unit,
+    /** The topic and unit a question tests (by its note or module id), for the examiner's analysis. */
+    topicOf: (String?) -> pk.parhlou.student.domain.TopicInfo? = { null },
+    profile: () -> String = { "" },
+    language: String = "English",
+    studentName: String = "",
 ) {
     val id = blueprint.id
     val scope = rememberCoroutineScope()
@@ -123,6 +133,12 @@ fun CheckMasterScreen(
             val firstTotal = first["total"]
             if (firstTotal != null && firstTotal != r.confirmed) Muted("At your first hand-in: ${fmt(firstTotal)} / ${fmt(r.total)}")
         }
+
+        val analysis = remember(r) { PaperAnalyzer.analyse(blueprint, r, topicOf, { questionLabel(it, blueprint) }, report) }
+        val examiner by produceState<ExaminerReport?>(null, analysis) {
+            value = desk.examinerReport(blueprint.title, id, analysis, profile(), language, studentName)
+        }
+        ExaminerAnalysis(analysis, examiner, onPractise = { onExplain(TutorSeed(noteId = it)) })
 
         if (report != null) IntegrityCard(report)
 
@@ -178,7 +194,8 @@ fun CheckMasterScreen(
                 val file = runCatching {
                     withContext(Dispatchers.IO) {
                         val photos = r.written.associate { o -> o.question.id to desk.photos(id, o.question.id) }
-                        MarkedPdf.write(File(exportsDir(context), "parhlou-marked-$id.pdf"), blueprint, r, report, photos, DEMO_CHECKER_LABEL)
+                        MarkedPdf.write(File(exportsDir(context), "parhlou-marked-$id.pdf"), blueprint, r, report, photos, DEMO_CHECKER_LABEL,
+                            analysis = analysis, examiner = examiner)
                     }
                 }.getOrNull()
                 if (file == null) pdfMessage = "Couldn't make the PDF. Free some space on the phone and try again."
@@ -187,6 +204,81 @@ fun CheckMasterScreen(
         })
         pdfMessage?.let { Muted(it) }
         BigButton("Back to home", onClick = onHome)
+    }
+}
+
+/** The examiner's analysis: where the marks came from and went, strong and weak topics, and what to work on next. */
+@OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+@Composable
+private fun ExaminerAnalysis(a: PaperAnalysis, report: ExaminerReport?, onPractise: (String) -> Unit) {
+    Sheet(Modifier.testTag("examiner-analysis")) {
+        Text("Examiner's analysis", style = MaterialTheme.typography.titleLarge)
+        if (report == null) {
+            Muted("Your examiner is writing your analysis…")
+            androidx.compose.material3.LinearProgressIndicator(Modifier.fillMaxWidth())
+        } else {
+            StatusPill(if (report.byAi) "Written by your AI examiner from your marks" else "Written from your marks", warning = false)
+            Text(report.headline, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("analysis-headline"))
+            Text(report.summary, style = MaterialTheme.typography.bodyLarge)
+        }
+        if (a.units.isNotEmpty()) {
+            Text("By unit", style = MaterialTheme.typography.titleSmall, modifier = Modifier.padding(top = 6.dp))
+            a.units.forEach { ScoreBar(it) }
+        }
+        if (a.types.size > 1) {
+            Text("By question type", style = MaterialTheme.typography.titleSmall, modifier = Modifier.padding(top = 6.dp))
+            a.types.forEach { ScoreBar(it) }
+        }
+        val lost = a.lost.filterValues { it > 0 }.entries.sortedByDescending { it.value }
+        if (lost.isNotEmpty()) {
+            Text("Where your marks went", style = MaterialTheme.typography.titleSmall, modifier = Modifier.padding(top = 6.dp))
+            lost.forEach { (k, v) -> ReportRow(k.label, "−${fmt(v)}") }
+        }
+    }
+    if (report == null) return
+    if (report.strengths.isNotEmpty()) Sheet(Modifier.testTag("analysis-strong")) {
+        Text("Strong: keep it up", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.secondary)
+        report.strengths.forEach { Text("•  $it", style = MaterialTheme.typography.bodyMedium) }
+    }
+    if (report.weaknesses.isNotEmpty()) Sheet(Modifier.testTag("analysis-weak")) {
+        Text("Needs hard work", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
+        report.weaknesses.forEach { w ->
+            val score = (a.weak + a.needsWork).firstOrNull { it.title == w.topic }
+            Column(Modifier.padding(top = 6.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                Text(w.topic + (score?.let { "  ·  ${it.percent}%" } ?: ""), style = MaterialTheme.typography.titleSmall)
+                Muted("What went wrong: ${w.why}")
+                Text("What to do: ${w.action}", style = MaterialTheme.typography.bodyMedium)
+                score?.noteId?.let { note -> TextButton(onClick = { onPractise(note) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("Work on this with Ustaad") } }
+            }
+        }
+    }
+    if (report.plan.isNotEmpty() || report.technique.isNotEmpty()) Sheet(Modifier.testTag("analysis-plan")) {
+        if (report.plan.isNotEmpty()) {
+            Text("Your plan for the next 7 days", style = MaterialTheme.typography.titleMedium)
+            report.plan.forEach { Text("•  $it", style = MaterialTheme.typography.bodyMedium) }
+        }
+        if (report.technique.isNotEmpty()) {
+            Text("Exam technique", style = MaterialTheme.typography.titleMedium, modifier = Modifier.padding(top = 6.dp))
+            report.technique.forEach { Text("•  $it", style = MaterialTheme.typography.bodyMedium) }
+        }
+        if (report.closing.isNotBlank()) Text(report.closing, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.padding(top = 6.dp))
+    }
+}
+
+@Composable
+private fun ScoreBar(s: AreaScore) {
+    val color = when {
+        s.percent >= 75 -> MaterialTheme.colorScheme.secondary
+        s.percent >= 50 -> MaterialTheme.colorScheme.tertiary
+        else -> MaterialTheme.colorScheme.error
+    }
+    Column(Modifier.fillMaxWidth().padding(vertical = 2.dp)) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            Text(s.title, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+            Text("${fmt(s.got)}/${fmt(s.max)} · ${s.percent}%", style = MaterialTheme.typography.bodyMedium)
+        }
+        androidx.compose.material3.LinearProgressIndicator(progress = { s.percent / 100f }, color = color,
+            modifier = Modifier.fillMaxWidth().height(6.dp))
     }
 }
 

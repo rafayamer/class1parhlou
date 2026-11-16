@@ -109,6 +109,28 @@ class ExamDesk(
     private val readCache = mutableMapOf<String, ScriptPage>()
     private val handedIn = mutableMapOf<String, Pair<PaperSubmission, PaperResult>>()
 
+    private val reports = mutableMapOf<String, pk.parhlou.student.domain.ExaminerReport>()
+
+    /**
+     * The examiner's written analysis of a marked paper: by the AI examiner when it is reachable, otherwise by the app from the
+     * same numbers. One report per result, kept on the phone.
+     */
+    suspend fun examinerReport(paperTitle: String, paperId: String, analysis: pk.parhlou.student.domain.PaperAnalysis,
+                               profile: String, language: String, name: String): pk.parhlou.student.domain.ExaminerReport {
+        val facts = analysis.factsJson(paperTitle)
+        val key = "report_${paperId}_${facts.hashCode()}"
+        reports[key]?.let { return it }
+        val topics = analysis.topics.map { it.title }
+        store.draft(key).first().takeIf { it.isNotBlank() }?.let { saved ->
+            runCatching { pk.parhlou.student.domain.ExaminerReport.parse(org.json.JSONObject(saved), topics.toSet(), org.json.JSONObject(saved).optBoolean("byAi")) }
+                .getOrNull()?.let { reports[key] = it; return it }
+        }
+        val report = ai.paperReport(facts, topics, profile, language) ?: pk.parhlou.student.domain.ExaminerReport.local(analysis, name)
+        reports[key] = report
+        if (report.byAi) store.saveDraft(key, report.toJson())
+        return report
+    }
+
     /** The submission and result of the paper just handed in, so the result screen shows them without marking again. */
     fun handedIn(paperId: String): Pair<PaperSubmission, PaperResult>? = handedIn[paperId]
 

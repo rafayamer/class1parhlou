@@ -338,3 +338,17 @@ test("handwritten marking is flagged only when pages are sent", async () => {
   assert.equal(typed.handwritten, false);
   assert.match(buildRequest(withPages).input[0].content[0].text, /photos decide/);
 });
+
+test("paper_report: weak topics must be the paper's own; numbers come from the app's facts", async () => {
+  const seen: any[] = [];
+  const out: any = await handleReq({ task: "paper_report", facts: '{"percent":48,"topics":[{"name":"Unit 2 · Logarithms","percent":20}]}',
+    topics: ["Unit 2 · Logarithms"], language: "Klingon" }, content, fakeFetch([reply({
+      headline: "48%: you passed, but logarithms cost you dearly.", summary: "s", strengths: [], plan: ["Day 1–2: logarithms"], technique: [], closing: "c",
+      weaknesses: [{ topic: "Unit 2 · Logarithms", why: "w", action: "a" }, { topic: "Invented topic", why: "w", action: "a" }] })], seen), "k", 10);
+  assert.equal(out.status, 200);
+  assert.match(seen[0].input, /never change or invent a mark/);
+  assert.match(seen[0].input, /Language: English\./);
+  assert.deepEqual(out.body.result.weaknesses.map((w: any) => w.topic), ["Unit 2 · Logarithms"]);
+  const empty: any = await handleReq({ task: "paper_report", facts: "" }, content, fakeFetch([]), "k", 10);
+  assert.equal(empty.status, 400);
+});

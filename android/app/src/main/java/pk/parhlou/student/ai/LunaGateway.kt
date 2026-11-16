@@ -7,6 +7,7 @@ import org.json.JSONObject
 import pk.parhlou.student.data.McqQuestion
 import pk.parhlou.student.data.WrittenQuestion
 import pk.parhlou.student.domain.PaperPick
+import pk.parhlou.student.domain.ExaminerReport
 import pk.parhlou.student.domain.PickSlot
 import pk.parhlou.student.domain.ScriptPage
 import java.net.HttpURLConnection
@@ -85,6 +86,12 @@ class LunaGateway(
                 }))
             }))
         return call(body)?.let { PaperPick.parse(it, slots) }
+    }
+
+    override suspend fun paperReport(facts: String, topics: List<String>, profile: String, language: String): ExaminerReport? {
+        val body = JSONObject().put("task", "paper_report").put("facts", facts).put("topics", JSONArray(topics))
+            .put("profile", profile).put("language", language)
+        return call(body)?.let { ExaminerReport.parse(it, topics.toSet(), byAi = true) }
     }
 
     override suspend fun ustaad(req: UstaadRequest): UstaadAnswer {

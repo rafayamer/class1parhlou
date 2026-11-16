@@ -35,6 +35,8 @@ object MarkedPdf {
         photos: Map<String, List<File>>,
         label: String,
         now: Long = System.currentTimeMillis(),
+        analysis: PaperAnalysis? = null,
+        examiner: ExaminerReport? = null,
     ): File {
         val doc = PdfDocument()
         val pages = PageWriter(doc)
@@ -57,6 +59,27 @@ object MarkedPdf {
             pages.text("Time used: ${Invigilator.duration(report.usedMillis)} of ${Invigilator.duration(report.allowedMillis)}")
             pages.text("Left the paper: ${if (report.timesAway == 0) "never" else "${report.timesAway} times, ${Invigilator.duration(report.totalAwayMillis)} in total"}")
             pages.text("Finished: ${if (report.finishedOnTime) "on time" else "${Invigilator.duration(report.overrunMillis)} late"}")
+        }
+        if (analysis != null) {
+            pages.newPage()
+            pages.heading("Examiner's analysis")
+            examiner?.let { pages.text(it.headline, bold = true); pages.text(it.summary, size = 11f) }
+            pages.gap(); pages.text("By unit", bold = true)
+            analysis.units.forEach { pages.text("${it.title}: ${fmt(it.got)}/${fmt(it.max)} (${it.percent}%)", size = 11f) }
+            pages.gap(); pages.text("By question type", bold = true)
+            analysis.types.forEach { pages.text("${it.title}: ${fmt(it.got)}/${fmt(it.max)} (${it.percent}%)", size = 11f) }
+            val lost = analysis.lost.filterValues { it > 0 }.entries.sortedByDescending { it.value }
+            if (lost.isNotEmpty()) { pages.gap(); pages.text("Where the marks went", bold = true); lost.forEach { (k, v) -> pages.text("${k.label}: −${fmt(v)}", size = 11f) } }
+            examiner?.let { e ->
+                if (e.strengths.isNotEmpty()) { pages.gap(); pages.text("Strong", bold = true); e.strengths.forEach { pages.text("• $it", size = 11f) } }
+                if (e.weaknesses.isNotEmpty()) {
+                    pages.gap(); pages.text("Needs hard work", bold = true)
+                    e.weaknesses.forEach { w -> pages.text("• ${w.topic}: ${w.why}", size = 11f); pages.text("   What to do: ${w.action}", size = 10f, color = Color.DKGRAY) }
+                }
+                if (e.plan.isNotEmpty()) { pages.gap(); pages.text("Plan for the next 7 days", bold = true); e.plan.forEach { pages.text("• $it", size = 11f) } }
+                if (e.technique.isNotEmpty()) { pages.gap(); pages.text("Exam technique", bold = true); e.technique.forEach { pages.text("• $it", size = 11f) } }
+                if (e.closing.isNotBlank()) { pages.gap(); pages.text(e.closing, size = 11f) }
+            }
         }
         val wrongMcqs = result.mcq.filter { !it.correct }
         if (wrongMcqs.isNotEmpty()) {

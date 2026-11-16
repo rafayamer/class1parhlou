@@ -1,6 +1,6 @@
 // Maps an app request to a Luna task. The app sends ids and the student's own text only;
 // questions, answer keys and rubrics are looked up here, on the server.
-import { runExaminer, type PickPaperTask, type ReadScriptTask } from "./examiner.ts";
+import { runExaminer, type PaperReportTask, type PickPaperTask, type ReadScriptTask } from "./examiner.ts";
 import { runTask, type BookRef, type Fetch, type Task, type Turn, type UstaadReply, type Usage, type Video } from "./core.ts";
 
 export interface Content { course: any; subjectId: string; notes: any[]; written: any[]; mcqs: any[] }
@@ -11,7 +11,7 @@ export type Outcome = { status: number; body: unknown; usage?: Usage };
 
 const STYLES = ["NORMAL", "SIMPLER", "ANOTHER_EXAMPLE", "STEPS", "QUIZ_ME"];
 
-export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMITS): Task | ReadScriptTask | PickPaperTask | { error: string; status: number } {
+export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMITS): Task | ReadScriptTask | PickPaperTask | PaperReportTask | { error: string; status: number } {
   const bad = (error: string, status = 400) => ({ error, status });
   if (!req || typeof req !== "object") return bad("BAD_REQUEST");
   if (req.task === "tutor") {
@@ -61,6 +61,14 @@ export function toTask(req: any, content: Content, limits: Limits = DEFAULT_LIMI
     const mcqCount = Math.min(Math.max(Number(req.mcqCount) || 0, 0), 30);
     const page = Math.min(Math.max(Number(req.page) || 1, 1), 60);
     return { task: "read_script", course: content.course, image, questions, mcqCount, page } as ReadScriptTask;
+  }
+  if (req.task === "paper_report") {
+    // The facts are the app's own sums of the student's marks; they carry no answer keys and are capped in size.
+    const facts = typeof req.facts === "string" ? req.facts.slice(0, 12_000) : "";
+    if (!facts.trim()) return bad("BAD_REQUEST");
+    const topics = (Array.isArray(req.topics) ? req.topics : []).filter((x: unknown) => typeof x === "string").slice(0, 60).map((x: string) => x.slice(0, 120));
+    const language = ["English", "Urdu", "English with Roman Urdu explanations"].includes(req.language) ? req.language : "English";
+    return { task: "paper_report", course: content.course, facts, topics, profile: String(req.profile ?? "").slice(0, 1200), language } as PaperReportTask;
   }
   if (req.task === "pick_paper") {
     const slots: any[] = Array.isArray(req.slots) ? req.slots.slice(0, 40) : [];
@@ -143,7 +151,7 @@ export async function handle(req: any, content: Content, fetchFn: Fetch, apiKey:
   if ("error" in task) return { status: task.status, body: { error: task.error } };
   if (quotaLeft <= 0) return { status: 429, body: { error: "QUOTA_LIMIT" } };
   if (task.task === "ustaad") return ustaad(task, content, fetchFn, apiKey, extras);
-  if (task.task === "read_script" || task.task === "pick_paper") {
+  if (task.task === "read_script" || task.task === "pick_paper" || task.task === "paper_report") {
     const { result, usage } = await runExaminer(task, fetchFn, apiKey);
     return { status: 200, body: { result, model: usage.model, promptVersion: usage.promptVersion }, usage };
   }

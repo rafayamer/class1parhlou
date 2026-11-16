@@ -600,12 +600,16 @@ fun ParhlouApp(
             )
         }
         composable(Routes.RESULT) { entry ->
+            val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
             val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else CheckMasterScreen(
                 blueprint = b, paper = paper, desk = desk, store = store,
                 onExplain = { openTutor(it) },
                 onHome = { nav.popBackStack(Routes.HOME, inclusive = false) },
+                topicOf = { key -> topicOf(repo, subjects, key) },
+                profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
+                language = prefs.language, studentName = state.name,
             )
         }
         composable(Routes.HISTORY) {
@@ -673,4 +677,18 @@ private fun questionBank(repo: pk.parhlou.student.data.ParhlouRepository, subjec
         unitOfNote = { key -> key?.let { chapterOfModule[noteModule[it] ?: it]?.number } },
         topicOfNote = { key -> key?.let { titleOfModule[noteModule[it] ?: it] }.orEmpty() },
     )
+}
+
+/** The topic (lesson section) and unit behind a question's note or module id, for the examiner's analysis. */
+private fun topicOf(repo: pk.parhlou.student.data.ParhlouRepository, subjects: List<pk.parhlou.student.data.Subject>, key: String?): pk.parhlou.student.domain.TopicInfo? {
+    if (key == null) return null
+    val notes = subjects.flatMap { repo.notes(it.id) }
+    val note = notes.firstOrNull { it.id == key }
+    val moduleId = note?.moduleId ?: key
+    val module = repo.module(moduleId) ?: return null
+    val chapter = repo.chapterOf(moduleId)
+    // The topic is the lesson section; its first note is where Ustaad starts when the student works on it.
+    val noteId = note?.id ?: notes.firstOrNull { it.moduleId == moduleId }?.id ?: moduleId
+    return pk.parhlou.student.domain.TopicInfo(moduleId, (chapter?.let { "Unit ${it.number} · " } ?: "") + module.title, chapter?.number, chapter?.title ?: "",
+        noteId.takeIf { id -> notes.any { it.id == id } })
 }
