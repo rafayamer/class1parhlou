@@ -22,10 +22,12 @@ fi
 
 if [ "$WHAT" = "function" ] || [ "$WHAT" = "all" ]; then
   cd "$ROOT/supabase/functions/ai"
+  # Every source file of the function (tests excluded), so a new module can never be left behind.
+  FILES=()
+  for f in *.ts; do case "$f" in *.test.ts) ;; *) FILES+=(-F "file=@$f;filename=$f") ;; esac; done
   code=$(curl -sS -m 180 -X POST "${AUTH[@]}" "$API/functions/deploy?slug=ai" \
     -F 'metadata={"entrypoint_path":"index.ts","name":"ai","verify_jwt":false};type=application/json' \
-    -F "file=@index.ts;filename=index.ts" -F "file=@handler.ts;filename=handler.ts" -F "file=@core.ts;filename=core.ts" -F "file=@youtube.ts;filename=youtube.ts" \
-    -F "file=@content/sample.json;filename=content/sample.json" -o /tmp/parhlou-fn.out -w "%{http_code}")
+    "${FILES[@]}" -F "file=@content/sample.json;filename=content/sample.json" -o /tmp/parhlou-fn.out -w "%{http_code}")
   echo "function ai: HTTP $code"; head -c 400 /tmp/parhlou-fn.out; echo
   [ "$code" = "201" ] || [ "$code" = "200" ]
 fi
