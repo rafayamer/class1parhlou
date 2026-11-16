@@ -195,7 +195,7 @@ fun HomeScreen(
             Surface(onClick = onTutor, shape = RoundedCornerShape(50), color = MaterialTheme.colorScheme.surface,
                 border = BorderStroke(1.5.dp, MaterialTheme.colorScheme.primaryContainer),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
-                Box(contentAlignment = Alignment.Center) { Text("Ask a question", style = MaterialTheme.typography.labelLarge) }
+                Box(contentAlignment = Alignment.Center) { Text("Ask Ustaad", style = MaterialTheme.typography.labelLarge) }
             }
             QuickIcon(Icons.AutoMirrored.Filled.MenuBook, "Open my book", onSubjects)
             QuickIcon(Icons.Filled.PhotoCamera, "Scan answer sheets", onScan)
@@ -417,6 +417,7 @@ fun ProfileScreen(
     onHistory: () -> Unit = { onPlaceholder("history") },
     versionLabel: String = "",
     onWhatsNew: () -> Unit = {},
+    onMyUstaad: () -> Unit = {},
     /** Current reminder setting, e.g. "Every day at 6 pm" or "Off"; tapping cycles through the choices. */
     reminderLabel: String = "Every day at 6 pm",
     onReminder: () -> Unit = {},
@@ -470,6 +471,7 @@ fun ProfileScreen(
             }
         }
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
+        TaskRow(Icons.Filled.SmartToy, "My Ustaad", "What Ustaad knows about you and how it explains", onMyUstaad)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
         TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
         TaskRow(Icons.Filled.FamilyRestroom, "Add a parent", "Coming later", { onPlaceholder("guardian") })

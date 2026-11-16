@@ -189,7 +189,7 @@ private fun FeedbackPanel(fb: Feedback, onAsk: () -> Unit, onContinue: () -> Uni
             fb.correctAnswer?.let { pk.parhlou.student.ui.components.MathText("Correct answer: $it", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold)) }
             if (fb.explanation.isNotBlank()) Text(fb.explanation, style = MaterialTheme.typography.bodyMedium)
             Row(verticalAlignment = Alignment.CenterVertically) {
-                TextButton(onClick = onAsk, modifier = Modifier.heightIn(min = 48.dp)) { Text("Ask Ustad") }
+                TextButton(onClick = onAsk, modifier = Modifier.heightIn(min = 48.dp)) { Text("Ask Ustaad") }
                 Box(Modifier.weight(1f))
                 Button(onClick = onContinue, shape = RoundedCornerShape(16.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = color, contentColor = Color.White),

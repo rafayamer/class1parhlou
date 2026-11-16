@@ -54,6 +54,24 @@ class LunaGateway(
         else fallback.markWritten(question, answer, photos)
     }
 
+    override suspend fun ustaad(req: UstaadRequest): UstaadAnswer {
+        val body = JSONObject().put("task", "ustaad").put("message", req.message)
+            .put("image", req.image ?: JSONObject.NULL)
+            .put("history", JSONArray(req.history.takeLast(12).map { JSONObject().put("role", it.role).put("text", historyText(it)) }))
+            .put("profile", req.profile).put("language", req.language).put("style", req.style)
+            .put("subjectIds", JSONArray(req.subjectIds.toList())).put("moduleId", req.moduleId ?: JSONObject.NULL)
+            .put("examActive", req.examActive)
+        return call(body)?.let(UstaadAnswer::parse) ?: UstaadOffline.answer(fallback, req).let {
+            if (it.kind == "OFFLINE") it else it.copy(reply = it.reply + "\n\n_(Answered offline from your course notes.)_")
+        }
+    }
+
+    /** What an earlier message contributes to the conversation: its text, or the solved question and answer. */
+    private fun historyText(m: UstaadMessage): String = m.answer?.let { a ->
+        listOf(a.questionAsRead.takeIf { it.isNotBlank() }?.let { "Question: $it" }, a.reply,
+            a.finalAnswer.takeIf { it.isNotBlank() }?.let { "Final answer: $it" }).filterNotNull().joinToString("\n")
+    } ?: (m.text.ifBlank { if (m.image != null) "(sent a photo of a question)" else "" })
+
     override suspend fun recordMcqs(paperId: String, answers: Map<String, Int>): Boolean {
         if (answers.isEmpty()) return true
         val body = JSONObject().put("task", "mark_mcqs").put("paperId", paperId).put("answers", JSONObject(answers as Map<*, *>))

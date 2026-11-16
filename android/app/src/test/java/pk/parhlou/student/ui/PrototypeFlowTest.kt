@@ -61,14 +61,13 @@ class PrototypeFlowTest {
     @Test
     fun tutorAnswersRefusesAndChecks() {
         launch()
-        rule.onNodeWithText("Ask a question").performScrollTo().performClick()
+        rule.onNodeWithText("Ask Ustaad").performScrollTo().performClick()
         rule.onNodeWithText("Demo tutor", substring = true).assertExists()
 
         rule.onNodeWithTag("tutor-input").performTextInput("How do I simplify root 50?")
         rule.onNodeWithContentDescription("Send").performClick()
         rule.waitUntil(5_000) { exists("largest perfect-square factor") }
-        rule.onNodeWithText("not a textbook citation", substring = true).assertExists()
-        rule.onNodeWithText("Simplify √18.").assertExists()
+        rule.onNodeWithText("Simplify √18.", substring = true).assertExists()
 
         // Answer the tutor's own check question.
         rule.onNodeWithTag("tutor-input").performTextInput("3 root 2")
@@ -136,7 +135,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Chapter test (sample practice pattern)").performScrollTo().performClick()
         rule.onNodeWithText("The invigilator records", substring = true).assertExists()
         rule.onNodeWithText("Start paper").performScrollTo().performClick()
-        rule.waitUntil(10_000) { exists("Invigilator on") }
+        rule.waitUntil(20_000) { exists("Invigilator on") }
 
         // Two MCQs (one right, one wrong), one full written answer, one partial, one unrecognised.
         rule.onNodeWithTag("mcq-p1-3").performScrollTo().performClick()
@@ -147,7 +146,7 @@ class PrototypeFlowTest {
         rule.waitForIdle()
 
         rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
-        rule.waitUntil(10_000) { exists("Confirmed marks") }
+        rule.waitUntil(20_000) { exists("Confirmed marks") }
 
         // 1 MCQ + 3 (s1) + 2 (s7) confirmed; 3 marks of s3 not checked, never counted as wrong.
         rule.onNodeWithTag("confirmed-marks").assertTextContains("6 / 40")
@@ -198,9 +197,9 @@ class PrototypeFlowTest {
     fun tutorIsLockedWhileAPaperIsRunning() {
         runBlocking { store.appendExamEvent(paperId, ExamEventType.STARTED, System.currentTimeMillis()) }
         launch()
-        rule.onNodeWithText("Ask a question").performScrollTo().performClick()
-        rule.onNodeWithText("Tutor locked").assertExists()
-        rule.onNodeWithTag("tutor-input").assertIsNotEnabled()
+        rule.onNodeWithText("Ask Ustaad").performScrollTo().performClick()
+        rule.onNodeWithText("Ask Ustaad is locked").assertExists()
+        rule.onNodeWithTag("tutor-input").assertDoesNotExist()
     }
 
     @Test

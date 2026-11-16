@@ -28,6 +28,9 @@ interface ParhlouAi {
      * server-verified marks. Returns false where there is no server (the demo brain), which is not an error.
      */
     suspend fun recordMcqs(paperId: String, answers: Map<String, Int>): Boolean = false
+
+    /** Ask Ustaad: a chat turn or a photographed question. Without the AI, the notes-based tutor answers text questions. */
+    suspend fun ustaad(req: UstaadRequest): UstaadAnswer = UstaadOffline.answer(this, req)
 }
 
 enum class TutorStyle { NORMAL, SIMPLER, ANOTHER_EXAMPLE, STEPS, QUIZ_ME }

@@ -44,7 +44,7 @@ fun Ustad(size: Dp = 56.dp, mood: UstadMood = UstadMood.HAPPY, modifier: Modifie
         modifier
             .size(size)
             .graphicsLayer { translationY = -bob * 3f * density }
-            .semantics { contentDescription = "Ustad, your tutor" },
+            .semantics { contentDescription = "Ustaad, your tutor" },
     ) {
         val w = this.size.width
         val c = Offset(w / 2, w * 0.56f)

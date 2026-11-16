@@ -36,8 +36,8 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         val minutes = store.onboarding.first().minutesPerDay
         val r = Rewards.summary(progress.history(), minutes, System.currentTimeMillis())
         if (r.studiedToday) return Result.success()
-        val text = if (r.streakDays >= 1) "Your ${r.streakDays}-day streak is waiting. 5 minutes with Ustad keeps it alive!"
-        else "Ustad is ready for today's session. Just 5 minutes builds your exam marks."
+        val text = if (r.streakDays >= 1) "Your ${r.streakDays}-day streak is waiting. 5 minutes with Ustaad keeps it alive!"
+        else "Ustaad is ready for today's session. Just 5 minutes builds your exam marks."
         notify(applicationContext, text)
         return Result.success()
     }
@@ -72,7 +72,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
                 PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
             manager.notify(1, NotificationCompat.Builder(context, CHANNEL)
                 .setSmallIcon(android.R.drawable.ic_popup_reminder)
-                .setContentTitle("Time to study with Ustad")
+                .setContentTitle("Time to study with Ustaad")
                 .setContentText(text)
                 .setStyle(NotificationCompat.BigTextStyle().bigText(text))
                 .setContentIntent(open).setAutoCancel(true).build())

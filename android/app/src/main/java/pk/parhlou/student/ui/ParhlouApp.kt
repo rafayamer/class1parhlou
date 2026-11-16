@@ -49,6 +49,9 @@ import pk.parhlou.student.ui.screens.SolutionsFinderScreen
 import pk.parhlou.student.ui.screens.ExamKitScreen
 import pk.parhlou.student.ui.screens.todaysModule
 import pk.parhlou.student.ui.screens.ProgressScreen
+import pk.parhlou.student.ui.screens.MyUstaadScreen
+import pk.parhlou.student.domain.StudentProfile
+import pk.parhlou.student.data.UstaadPrefs
 import pk.parhlou.student.ui.session.SessionScreen
 import pk.parhlou.student.domain.SessionBuilder
 import pk.parhlou.student.domain.Evidence
@@ -130,6 +133,7 @@ object Routes {
     const val KIT = "kit/{id}"
     const val WHATS_NEW = "whats-new"
     const val PROGRESS = "progress"
+    const val MY_USTAAD = "my-ustaad"
     /** A guided session; module "today" = today's pick. */
     const val SESSION = "session/{module}?min={min}"
     const val SOLUTION = "solution/{module}/{index}"
@@ -347,7 +351,18 @@ fun ParhlouApp(
             WeakTopicsScreen(weakTopics(), onFix = { openTutor(TutorSeed(noteId = it.noteId)) }, onBack = nav.back())
         }
         composable(Routes.TUTOR) {
-            TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back())
+            val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
+            TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back(),
+                store = store, prefs = prefs, studentName = state.name,
+                profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
+                moduleOf = { repo.module(it) }, noteTitle = { noteTitles[it] },
+                onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") },
+                onMyUstaad = { nav.navigate(Routes.MY_USTAAD) })
+        }
+        composable(Routes.MY_USTAAD) {
+            val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
+            MyUstaadScreen(StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }),
+                onChange = { p -> scope.launch { store.setUstaadPrefs(p) } }, onBack = nav.back())
         }
         composable(Routes.PROFILE) { WithTabBarSpace {
             ProfileScreen(
@@ -375,6 +390,7 @@ fun ParhlouApp(
                 onHistory = { nav.navigate(Routes.HISTORY) },
                 versionLabel = versionLabel,
                 onWhatsNew = { nav.navigate(Routes.WHATS_NEW) },
+                onMyUstaad = { nav.navigate(Routes.MY_USTAAD) },
                 reminderLabel = if (reminderHour < 0) "Off" else "Every day at ${hourLabel(reminderHour)}",
                 onReminder = {
                     val next = REMINDER_CHOICES[(REMINDER_CHOICES.indexOf(reminderHour) + 1) % REMINDER_CHOICES.size]

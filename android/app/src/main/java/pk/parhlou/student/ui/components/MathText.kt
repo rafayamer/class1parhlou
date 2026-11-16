@@ -22,6 +22,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.text
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
@@ -99,7 +101,8 @@ fun MathText(text: String, style: TextStyle, modifier: Modifier = Modifier, colo
         return
     }
     FlowRow(
-        modifier.semantics(mergeDescendants = true) { contentDescription = text },
+        // Screen readers (and searches) see the whole sentence as one text, not word by word.
+        modifier.clearAndSetSemantics { this.text = AnnotatedString(text) },
         itemVerticalAlignment = Alignment.CenterVertically,
     ) { Nodes(nodes, style, color) }
 }

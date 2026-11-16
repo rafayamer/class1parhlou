@@ -52,6 +52,11 @@ class LocalStore(private val context: Context) {
         val askedNotify = booleanPreferencesKey("asked_notifications")
         val sound = booleanPreferencesKey("sound_on")
         val reminder = intPreferencesKey("reminder_hour")
+        val ustaadLanguage = stringPreferencesKey("ustaad_language")
+        val ustaadStyle = stringPreferencesKey("ustaad_style")
+        val targetMarks = intPreferencesKey("target_marks")
+        val ustaadForget = androidx.datastore.preferences.core.longPreferencesKey("ustaad_forget_before")
+        val ustaadChats = stringPreferencesKey("ustaad_chats")
     }
 
     val onboarding: Flow<OnboardingState> = context.dataStore.data.map { it.toOnboarding() }
@@ -106,6 +111,18 @@ class LocalStore(private val context: Context) {
     /** Build whose "What's new" the student has seen (0 = never). */
     val seenBuild: Flow<Int> = context.dataStore.data.map { it[K.seenBuild] ?: 0 }
     suspend fun markSeen(build: Int) { context.dataStore.edit { it[K.seenBuild] = build } }
+
+    /** How Ask Ustaad talks to this student (the student avatar's preferences). */
+    val ustaadPrefs: Flow<UstaadPrefs> = context.dataStore.data.map {
+        UstaadPrefs(it[K.ustaadLanguage] ?: UstaadPrefs.LANGUAGES[0], it[K.ustaadStyle] ?: UstaadPrefs.STYLES[0], it[K.targetMarks] ?: 0, it[K.ustaadForget] ?: 0L)
+    }
+    suspend fun setUstaadPrefs(p: UstaadPrefs) {
+        context.dataStore.edit { it[K.ustaadLanguage] = p.language; it[K.ustaadStyle] = p.style; it[K.targetMarks] = p.targetMarks; it[K.ustaadForget] = p.forgetBefore }
+    }
+
+    /** Saved Ask Ustaad chats (JSON, newest first), kept on this phone only. */
+    val ustaadChats: Flow<String> = context.dataStore.data.map { it[K.ustaadChats] ?: "[]" }
+    suspend fun saveUstaadChats(json: String) { context.dataStore.edit { it[K.ustaadChats] = json } }
 
     /** Hour (0–23) of the daily study reminder, or -1 when off. 6 pm by default. */
     val reminderHour: Flow<Int> = context.dataStore.data.map { it[K.reminder] ?: 18 }
@@ -220,4 +237,12 @@ class LocalStore(private val context: Context) {
         completed = this[K.completed] ?: false,
         name = this[K.name] ?: "",
     )
+}
+
+/** The student's Ask Ustaad preferences. [forgetBefore]: Ustaad ignores study history before this time ("clear what Ustaad knows"). */
+data class UstaadPrefs(val language: String, val style: String, val targetMarks: Int, val forgetBefore: Long = 0L) {
+    companion object {
+        val LANGUAGES = listOf("English", "English with Roman Urdu explanations", "Urdu")
+        val STYLES = listOf("Step by step, simple words", "Short and exam-style")
+    }
 }
