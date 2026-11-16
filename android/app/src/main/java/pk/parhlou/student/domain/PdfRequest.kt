@@ -1,5 +1,7 @@
 package pk.parhlou.student.domain
 
+import pk.parhlou.student.data.word
+
 import pk.parhlou.student.data.BlueprintSection
 import pk.parhlou.student.data.Chapter
 import pk.parhlou.student.data.PaperBlueprint
@@ -84,7 +86,7 @@ object PdfContent {
     fun notes(chapters: List<Chapter>, units: Set<Int>): List<Pair<String, List<String>>> =
         chapters.filter { it.number in units }.sortedBy { it.number }.flatMap { c ->
             val k = c.kit
-            val u = "Unit ${c.number}"
+            val u = "${c.word} ${c.number}"
             if (k == null) listOf("$u · ${c.title}" to c.modules.map { it.title })
             else listOf(
                 "$u · ${c.title}" to listOf("Definitions, formulas and what the exam asks from this unit."),

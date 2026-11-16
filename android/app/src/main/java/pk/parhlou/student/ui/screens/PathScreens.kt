@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.data.word
+
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
@@ -141,7 +143,7 @@ private fun UnitHeader(c: Chapter, onKit: (String) -> Unit) {
         Row(Modifier.padding(start = 16.dp, end = 4.dp, top = 10.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f)) {
                 val fg = if (out) MaterialTheme.colorScheme.onSurfaceVariant else Color.White
-                Text("Unit ${c.number}" + if (out) " · not in this year's exam" else "", style = MaterialTheme.typography.labelMedium, color = fg.copy(alpha = 0.8f))
+                Text("${c.word} ${c.number}" + if (out) " · not in this year's exam" else "", style = MaterialTheme.typography.labelMedium, color = fg.copy(alpha = 0.8f))
                 Text(c.title, style = MaterialTheme.typography.titleMedium, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             if (c.kit != null) TextButton(onClick = { onKit(c.id) }, modifier = Modifier.heightIn(min = 48.dp)) {

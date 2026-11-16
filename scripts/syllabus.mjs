@@ -27,6 +27,10 @@ function entryCovers(entry, ref) {
 /** True when the reference is left out of the given exam by the smart syllabus. */
 export function isExcluded(syllabus, unit, source) {
   if (syllabus.excludedUnits.includes(unit)) return true;
+  // Physics-style labels ("MCQ 1.3", "Numerical 1.2", "Activity 6.1"): the item, or any of its parts ("Numerical 1.2(a)").
+  const flat = (t) => t.toLowerCase().replace(/\s+/g, " ").replace(/^q(?=\d)/, "").trim();
+  const src = flat(source);
+  if ((syllabus.excluded[String(unit)] ?? []).some((e) => { const x = flat(e); return src === x || src.startsWith(`${x}(`) || src.startsWith(`${x} (`); })) return true;
   const ref = parseRef(source);
   if (!ref) return false;
   return (syllabus.excluded[String(unit)] ?? []).some((e) => entryCovers(e, ref));

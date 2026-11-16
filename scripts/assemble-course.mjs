@@ -473,6 +473,7 @@ if (existsSync(auditFile)) {
 
 // ── No developer notes in anything a student reads ─────────────────────────────────────────────────────────────
 const devClean = (t) => typeof t !== "string" ? t : t
+  .replace(/^\s*Q\d{1,2}\.\d{1,2}\.\s*/, "")                                          // the book's "Q1.4." numbering (Physics)
   .replace(/\s*\((?:Ex|Example|Exercise)\s+[\d.]+[^()]*(?:\([^()]*\))?[^()]*\)/g, "")   // "(Ex 6.1 Q1(i))" references
   .replace(/\s*Draw it on paper and photograph your work[^.]*\./g, "")
   .replace(/\s{2,}/g, " ").trim();
@@ -488,6 +489,15 @@ for (const w of cleaned.written) { w.text = devClean(w.text); w.followUp = devCl
 for (const p of cleaned.papers) for (const w of p.written) { w.text = devClean(w.text); w.followUp = devClean(w.followUp); }
 for (const q of [...cleaned.quiz, ...cleaned.papers.flatMap((p) => p.mcqs)]) q.stem = devClean(q.stem);
 if (cleaned.subject) cleaned.subject.editionVerified = true;
+// Physics labels: one name per kind of exercise item ("Constructed Response 1.2" → "CRQ 1.2").
+for (const c of cleaned.subject.chapters) for (const m of c.modules) for (const x of m.solutions)
+  x.source = x.source.replace(/^Constructed\s+Response(\s+Questions?)?\s+/i, "CRQ ").replace(/^Short\s+Answer(\s+Questions?)?\s+/i, "Short ");
+// Practicals, from the book's activities (practicals.mjs).
+const pracFile = `${ROOT}/units/practicals.json`;
+if (existsSync(pracFile)) {
+  cleaned.subject.practicals = JSON.parse(readFileSync(pracFile, "utf8")).practicals.map((p) => ({ ...p, bookText: devClean(p.bookText) }));
+  console.log(`Practicals: ${cleaned.subject.practicals.length} (${cleaned.subject.practicals.filter((p) => p.checked).length} written up and checked)`);
+}
 // "Why this step?" reasons (step-why.mjs), attached only where they were written for exactly these steps.
 const whyFile = `${ROOT}/why.json`;
 if (existsSync(whyFile)) {

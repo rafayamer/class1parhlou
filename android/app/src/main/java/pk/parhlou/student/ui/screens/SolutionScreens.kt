@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.data.word
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -94,7 +96,7 @@ fun SolutionsFinderScreen(subjects: List<Subject>, onOpen: (String, Int) -> Unit
     var group by rememberSaveable { mutableStateOf<String?>(null) }
     val title = when {
         group != null -> group!!
-        unit != null -> all.firstOrNull { it.chapter.id == unit }?.let { "Unit ${it.chapter.number}" } ?: "Solutions"
+        unit != null -> all.firstOrNull { it.chapter.id == unit }?.let { "${it.chapter.word} ${it.chapter.number}" } ?: "Solutions"
         else -> "Solutions"
     }
     BackHandler(enabled = query.isBlank() && (unit != null || group != null)) { if (group != null) group = null else unit = null }
@@ -118,7 +120,7 @@ fun SolutionsFinderScreen(subjects: List<Subject>, onOpen: (String, Int) -> Unit
                 Muted("Every example and exercise question in your textbook, solved step by step in the book's method.")
                 all.groupBy { it.chapter }.forEach { (c, refs) ->
                     val exercises = refs.count { it.solution.kind == SolutionKind.EXERCISE }
-                    TaskRowLike("Unit ${c.number}: ${c.title}", "$exercises exercise questions · ${refs.size - exercises} examples") { unit = c.id }
+                    TaskRowLike("${c.word} ${c.number}: ${c.title}", "$exercises exercise questions · ${refs.size - exercises} examples") { unit = c.id }
                 }
             }
             g == null -> all.filter { it.chapter.id == u }.groupBy { it.group }.toList().sortedBy { groupOrder(it.first).first * 1000 + groupOrder(it.first).second }
@@ -155,7 +157,7 @@ private fun TaskRowLike(title: String, subtitle: String, onClick: () -> Unit) {
 private fun QuestionRow(ref: SolutionRef, showWhere: Boolean, onClick: () -> Unit) {
     pk.parhlou.student.ui.components.TapCard(onClick = onClick, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(20.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(if (showWhere) "Unit ${ref.chapter.number} · ${ref.solution.source}" else ref.solution.source,
+            Text(if (showWhere) "${ref.chapter.word} ${ref.chapter.number} · ${ref.solution.source}" else ref.solution.source,
                 style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.secondary)
             Text(ref.solution.question, style = MaterialTheme.typography.bodyLarge, maxLines = 3, overflow = TextOverflow.Ellipsis)
             if (!ref.solution.checked) Muted("Answer from your textbook")

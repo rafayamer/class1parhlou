@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.data.word
+
 import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -565,7 +567,7 @@ fun SubjectsScreen(
 
 @Composable
 fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (String) -> Unit, onBack: () -> Unit, onOpenKit: (String) -> Unit = {},
-                  onStartSession: (String) -> Unit = onOpenModule, onSolutions: () -> Unit = {}) {
+                  onStartSession: (String) -> Unit = onOpenModule, onSolutions: () -> Unit = {}, onOpenPractical: (String) -> Unit = {}) {
     // Current chapter = first one with modules not yet assessed; it starts expanded (PRD §6).
     val current = subject.chapters.firstOrNull { c ->
         c.modules.any { progress.state(it.id) !in setOf(LearningState.ASSESSED, LearningState.MASTERED) }
@@ -576,10 +578,14 @@ fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (Stri
     var view by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(0) }
     ParhlouScreen("${subject.name} ${subject.grade}", onBack = onBack) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-            listOf("Path", "Units").forEachIndexed { i, t ->
+            (listOf("Path", "Units") + if (subject.practicals.isNotEmpty()) listOf("Practicals") else emptyList()).forEachIndexed { i, t ->
                 ChoiceChip(t, view == i, Modifier.weight(1f)) { view = i }
             }
             ChoiceChip("Solutions", false, Modifier.weight(1f), onSolutions)
+        }
+        if (view == 2 && subject.practicals.isNotEmpty()) {
+            PracticalList(subject, onOpenPractical)
+            return@ParhlouScreen
         }
         if (view == 0) {
             LearningPath(listOf(subject), progress, todaysModule(listOf(subject), progress)?.id, onStart = onStartSession, onKit = onOpenKit, showAllDefault = true)
@@ -590,7 +596,7 @@ fun SubjectScreen(subject: Subject, progress: ProgressStore, onOpenModule: (Stri
             Sheet {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Column(Modifier.weight(1f)) {
-                        Text("Unit ${c.number}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        Text("${c.word} ${c.number}", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
                         Text(c.title, style = MaterialTheme.typography.titleMedium)
                         if (c.kit?.inExam == false) StatusPill("Not in the ${c.kit.examLabel.ifBlank { "exam" }}", warning = true)
                     }
@@ -655,6 +661,23 @@ private fun FeedbackBox(onSend: suspend (String) -> Boolean, onClose: () -> Unit
                 state = 1
                 scope.launch { state = if (onSend(text.trim())) 2 else 3 }
             })
+        }
+    }
+}
+
+/** A science book's practicals, chapter by chapter. */
+@Composable
+private fun PracticalList(subject: Subject, onOpen: (String) -> Unit) {
+    subject.practicals.groupBy { it.unit }.toSortedMap().forEach { (unit, list) ->
+        val chapter = subject.chapters.firstOrNull { it.number == unit }
+        Text("${chapter?.word ?: "Chapter"} $unit${chapter?.let { " · ${it.title}" } ?: ""}", style = MaterialTheme.typography.titleMedium)
+        list.forEach { p ->
+            pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(p.id) }, modifier = Modifier.fillMaxWidth().testTag("practical-${p.id}"), shape = RoundedCornerShape(18.dp)) {
+                Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                    Text("🧪 ${p.title}", style = MaterialTheme.typography.bodyLarge)
+                    Muted(p.label + if (!p.inExam) " · practice (not in this year's exam)" else "")
+                }
+            }
         }
     }
 }

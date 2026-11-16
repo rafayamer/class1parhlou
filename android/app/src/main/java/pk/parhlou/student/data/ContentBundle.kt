@@ -97,6 +97,19 @@ object ContentBundle {
                 kit = c.optJSONObject("kit")?.let(::readKit))
         },
         examDate = o.optString("examDate"), examName = o.optString("examName"),
+        practicals = o.optJSONArray("practicals")?.list(::readPractical).orEmpty(),
+    )
+
+    private fun readPractical(p: JSONObject) = Practical(
+        id = p.getString("id"), unit = p.optInt("unit"), label = p.optString("label"), title = p.optString("title"), aim = p.optString("aim"),
+        apparatus = p.optJSONArray("apparatus")?.strings().orEmpty(), diagram = p.optString("diagram"),
+        procedure = p.optJSONArray("procedure")?.strings().orEmpty(),
+        columns = p.optJSONObject("table")?.optJSONArray("columns")?.strings().orEmpty(),
+        rows = p.optJSONObject("table")?.optJSONArray("rows")?.let { a -> List(a.length()) { a.getJSONArray(it).strings() } }.orEmpty(),
+        calculation = p.optJSONArray("calculation")?.strings().orEmpty(), result = p.optString("result"),
+        precautions = p.optJSONArray("precautions")?.strings().orEmpty(),
+        viva = p.optJSONArray("viva")?.list { v -> v.optString("question") to v.optString("answer") }.orEmpty(),
+        bookText = p.optString("bookText"), checked = p.optBoolean("checked"), inExam = p.optBoolean("inExam", true),
     )
 
     private fun readModule(m: JSONObject) = Module(

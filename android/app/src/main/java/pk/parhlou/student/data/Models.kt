@@ -26,6 +26,31 @@ data class Subject(
     /** Approximate start of the board exam this course prepares for (ISO date), and its name, e.g. "2027 board exam". */
     val examDate: String = "",
     val examName: String = "",
+    /** Practical work for science subjects, from the book's activities. */
+    val practicals: List<Practical> = emptyList(),
+)
+
+/** One practical: the book's activity written up as students write it in their practical notebook. */
+data class Practical(
+    val id: String,
+    val unit: Int,
+    val label: String,
+    val title: String,
+    val aim: String,
+    val apparatus: List<String>,
+    val diagram: String,
+    val procedure: List<String>,
+    val columns: List<String>,
+    val rows: List<List<String>>,
+    val calculation: List<String>,
+    val result: String,
+    val precautions: List<String>,
+    val viva: List<Pair<String, String>>,
+    /** The activity exactly as the book prints it. */
+    val bookText: String,
+    /** False when the write-up could not be checked: then only the book's text is shown. */
+    val checked: Boolean,
+    val inExam: Boolean,
 )
 
 data class Chapter(
@@ -37,6 +62,9 @@ data class Chapter(
     /** The unit's exam kit (definitions, formulas, important questions, full-marks writing, mistakes). */
     val kit: ExamKit? = null,
 )
+
+/** How the book names its parts: Mathematics has units; Physics (ids "phy-…") has chapters. */
+val Chapter.word: String get() = if (id.startsWith("phy-")) "Chapter" else "Unit"
 
 /** Everything a student needs to revise one unit for the board exam. */
 data class ExamKit(

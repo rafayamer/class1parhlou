@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.data.word
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,7 +35,7 @@ import pk.parhlou.student.ui.components.StatusPill
 @Composable
 fun ExamKitScreen(chapter: Chapter, onOpenSolution: (moduleId: String, index: Int) -> Unit, onBack: () -> Unit) {
     val kit = chapter.kit
-    ParhlouScreen("Unit ${chapter.number} exam kit", onBack = onBack) {
+    ParhlouScreen("${chapter.word} ${chapter.number} exam kit", onBack = onBack) {
         Text(chapter.title, style = MaterialTheme.typography.titleLarge)
         if (kit == null) { Muted("The exam kit for this unit is on its way."); return@ParhlouScreen }
         val exam = kit.examLabel.ifBlank { "board exam" }

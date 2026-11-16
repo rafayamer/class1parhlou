@@ -11,10 +11,15 @@ import { join } from "node:path";
 import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAll, matchesAny, SYNTAX } from "./textmatch.mjs";
 import { isExcluded } from "./syllabus.mjs";
+import { S } from "./subject.mjs";
+const PHY = S.key === "physics";
+const IDP = S.idPrefix;
 
-const ROOT = "content/class9-maths";
-const UNITS = process.argv.slice(2).length ? process.argv.slice(2).map(Number) : Array.from({ length: 13 }, (_, i) => i + 1);
-const WRITTEN_UNITS = new Set([5, 10, 11]);
+const ROOT = S.root;
+const UNITS = process.argv.slice(2).length ? process.argv.slice(2).map(Number)
+  : Array.from({ length: 30 }, (_, i) => i + 1).filter((u) => existsSync(join(ROOT, "units", `u-${u}-solutions.json`)));
+// Mathematics units whose questions are mostly graphs and constructions get board-style written questions here.
+const WRITTEN_UNITS = new Set(PHY ? [] : [5, 10, 11]);
 const syllabus = JSON.parse(readFileSync(join(ROOT, "syllabus-2027.json"), "utf8"));
 
 const str = { type: "string" }, strs = { type: "array", items: str }, int = { type: "integer" };
@@ -34,16 +39,16 @@ async function structured(name, item, instructions, input, schema, effort = "med
 }
 const norm = (s) => s.toLowerCase().replace(/[*_`#>]/g, "").replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
 
-const KIT = `You are an experienced Punjab board Class 9 Mathematics teacher whose students score 75/75. Build the exam kit for ONE unit
+const KIT = `You are an experienced Punjab board Class 9 ${S.name} teacher whose students score full marks. Build the exam kit for ONE ${S.unitWord.toLowerCase()}
 of the 2025 Punjab textbook (National Curriculum 2023), for the Annual Exam 2027. You get the unit's full text, its examinable exercise
 questions (references), the 2027 paper pattern, and what the 2027 smart syllabus excludes from this unit.
 - definitions: every definition, theorem/law statement and rule a student must reproduce word for word, copied EXACTLY as printed in the
   unit text (same words and symbols; a full sentence or two). term = the name. Only examinable content.
-- formulas: every formula/identity/law of the unit in plain Unicode (√, ², ×, ÷, π, θ, logₐ), each with a few words saying when to use it.
+- formulas: every formula/identity/law of the ${S.unitWord.toLowerCase()} in plain Unicode (√, ², ×, ÷, π, θ, logₐ, Δ, ρ, η), each with a few words saying when to use it${PHY ? " and the SI unit of every quantity in it (e.g. \"v = s/t  (v in m s⁻¹, s in m, t in s): speed from distance and time\")" : ""}.
 - important: 8–14 examinable exercise questions most likely to come in the board paper (short and long), as references exactly as given
   in the list, each with a one-line reason (e.g. "repeated in board papers", "standard 4-mark long question").
 - fullMarks: 5–8 concrete instructions for writing answers in THIS unit so an examiner gives full marks (what to write first, which
-  steps examiners look for, units, final statement, diagram labelling, number line, etc.).
+  steps examiners look for, units, final statement, diagram labelling, number line, etc.${PHY ? "; for numericals: given data in SI units, formula, substitution with units, answer with unit and correct significant figures" : ""}).
 - mistakes: 4–7 specific mistakes Class 9 students make in this unit that lose marks, each with the fix.
 - shortTheory: 4–8 likely 2-mark theory short questions (e.g. "Define …", "State …") with the exact book answer.
 Write simply for a 14–15 year old. Never mention any book, website, teacher or publisher by name.`;
@@ -87,7 +92,8 @@ function rubricProblems(w) {
 async function buildUnit(n) {
   const outline = JSON.parse(readFileSync(join(ROOT, "work", `u${n}-outline.json`), "utf8"));
   const sol = JSON.parse(readFileSync(join(ROOT, "units", `u-${n}-solutions.json`), "utf8"));
-  const unitText = outline.sections.map((s) => `## ${s.number} ${s.title}\n${s.text}`).join("\n\n");
+  // (A Physics section's text ends with a copy of the chapter exercise, for teaching; the kit reads each part once.)
+  const unitText = outline.sections.map((s) => `## ${s.number} ${s.title}\n${s.text.split("\n\nCHAPTER EXERCISE (pick only")[0]}`).join("\n\n");
   const exercises = sol.sections.flatMap((s) => s.solutions.map((x) => ({ ...x, section: s.number }))).filter((x) => x.kind === "EXERCISE");
   const examinable = exercises.filter((x) => !isExcluded(syllabus, n, x.source));
   const excludedUnit = syllabus.excludedUnits.includes(n);
@@ -133,15 +139,15 @@ async function buildUnit(n) {
       const src = items[Number(w.id)];
       const mod = moduleOf.get(src.section) ?? 1;
       return {
-        id: `w-${n}-${mod}-k${w.id}`, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp,
-        noteId: `n-${n}-${mod}`, section: 0, number: 0, matching: "method", source: src.source,
+        id: `${IDP}w-${n}-${mod}-k${w.id}`, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp,
+        noteId: `${IDP}n-${n}-${mod}`, section: 0, number: 0, matching: "method", source: src.source,
         rubric: w.rubric.map((c, k) => ({ id: String.fromCharCode(97 + k), ...c })),
       };
     });
   }
 
   // Theory short questions ("Define …", "State …") become marked 2-mark written questions, as the board sets them.
-  const THEORY = `For each Class 9 maths theory question with its exact textbook answer, write a 2-mark marking scheme: two points of 1 mark
+  const THEORY = `For each Class 9 ${S.short} theory question with its exact textbook answer, write a 2-mark marking scheme: two points of 1 mark
 each (usually: the key term or condition, then the complete statement). modelAnswer = the textbook answer as one or two lines.
 Each point needs why, how and accept patterns (key words or symbols from the answer that a correct answer must contain).
 ${SYNTAX}`;
@@ -153,8 +159,8 @@ ${SYNTAX}`;
     theory = res.items.map((t) => ({ ...t, marks: 2, text: kit.shortTheory[Number(t.id)]?.question ?? "" }))
       .filter((t) => t.text && rubricProblems(t).length === 0)
       .map((t) => ({
-        id: `w-${n}-1-t${t.id}`, text: t.text, marks: 2, modelAnswer: t.modelAnswer, followUp: t.text,
-        noteId: `n-${n}-1`, section: 0, number: 0, matching: "method", source: "theory",
+        id: `${IDP}w-${n}-1-t${t.id}`, text: t.text, marks: 2, modelAnswer: t.modelAnswer, followUp: t.text,
+        noteId: `${IDP}n-${n}-1`, section: 0, number: 0, matching: "method", source: "theory",
         rubric: t.rubric.map((c, k) => ({ id: String.fromCharCode(97 + k), ...c })),
       }));
   }

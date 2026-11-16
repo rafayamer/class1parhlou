@@ -1,5 +1,7 @@
 package pk.parhlou.student.ui
 
+import pk.parhlou.student.data.word
+
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
@@ -24,6 +26,8 @@ import pk.parhlou.student.domain.PaperPdf
 import pk.parhlou.student.data.FakeRepository
 import pk.parhlou.student.domain.PaperPicker
 import pk.parhlou.student.ui.screens.MakePaperScreen
+import pk.parhlou.student.ui.screens.PracticalScreen
+import pk.parhlou.student.ui.screens.practicalNotes
 import pk.parhlou.student.ui.screens.PrintedPaperScreen
 import pk.parhlou.student.data.LocalStore
 import pk.parhlou.student.data.ParhlouRepository
@@ -141,6 +145,7 @@ object Routes {
     const val WEAK_TOPICS = "weak-topics"
     const val SOLUTIONS = "solutions"
     const val KIT = "kit/{id}"
+    const val PRACTICAL = "practical/{id}"
     const val WHATS_NEW = "whats-new"
     const val PROGRESS = "progress"
     const val MY_USTAAD = "my-ustaad"
@@ -298,7 +303,7 @@ fun ParhlouApp(
     LaunchedEffect(Unit) { if (store.activeExam.first() == null) pk.parhlou.student.ui.FocusMode.off(context) }
     val noteTitles = remember(repo, subjectIds) { subjectIds.flatMap { repo.notes(it) }.associate { it.id to it.title } }
     // The plan teaches what the exam examines; sections the smart syllabus leaves out stay open as practice.
-    val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "Unit ${c.number} ${c.title}") } } }
+    val planModules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { PlanModule(it.id, it.title, c.id, "${c.word} ${c.number} ${c.title}") } } }
     fun plan() = StudyPlanner.plan(
         planModules, progress.history(), { noteTitles[it] },
         blueprints.filter { paperOf(it.id) != null }.map { it.id to it.title },
@@ -496,7 +501,7 @@ fun ParhlouApp(
                 }
                 val sound by store.soundOn.collectAsState(initial = true)
                 SessionScreen(
-                    title = "Unit ${chapter?.number ?: ""} · ${module.title}",
+                    title = "${chapter?.word ?: "Unit"} ${chapter?.number ?: ""} · ${module.title}",
                     items = items,
                     soundOn = sound,
                     onToggleSound = { scope.launch { store.setSound(!sound) } },
@@ -549,7 +554,21 @@ fun ParhlouApp(
                 SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
                     onOpenKit = { nav.navigate("kit/$it") },
                     onStartSession = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
-                    onSolutions = { nav.navigate(Routes.SOLUTIONS) })
+                    onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                    onOpenPractical = { nav.navigate("practical/$it") })
+        }
+        composable(Routes.PRACTICAL) { entry ->
+            val id = entry.arguments?.getString("id")
+            val owner = subjects.firstOrNull { s -> s.practicals.any { it.id == id } }
+            val p = owner?.practicals?.firstOrNull { it.id == id }
+            if (p == null) Missing(nav) else PracticalScreen(p, onBack = nav.back(), onPrint = {
+                scope.launch {
+                    val f = withContext(Dispatchers.IO) {
+                        PaperPdf.notes(java.io.File(context.cacheDir, "papers/${p.id}.pdf"), "${p.label}: ${p.title}", practicalNotes(p), owner.name)
+                    }
+                    shareFile(context, f, "application/pdf", p.title)
+                }
+            })
         }
         composable(Routes.KIT) { entry ->
             val id = entry.arguments?.getString("id").orEmpty()
@@ -748,7 +767,7 @@ private fun questionBank(repo: pk.parhlou.student.data.ParhlouRepository, subjec
     val quiz = modules.flatMap { (m, _) -> repo.moduleQuiz(m.id, 1000) }
     val noteModule = subjects.flatMap { repo.notes(it.id) }.associate { it.id to it.moduleId }
     val chapterOfModule = modules.associate { (m, c) -> m.id to c }
-    val titleOfModule = modules.associate { (m, c) -> m.id to "Unit ${c.number} · ${m.title}" }
+    val titleOfModule = modules.associate { (m, c) -> m.id to "${c.word} ${c.number} · ${m.title}" }
     return PaperPicker.Bank(
         mcqs = (papers.flatMap { it.mcqs } + quiz).distinctBy { it.id },
         written = papers.flatMap { it.written }.distinctBy { it.id },
@@ -767,6 +786,6 @@ private fun topicOf(repo: pk.parhlou.student.data.ParhlouRepository, subjects: L
     val chapter = repo.chapterOf(moduleId)
     // The topic is the lesson section; its first note is where Ustaad starts when the student works on it.
     val noteId = note?.id ?: notes.firstOrNull { it.moduleId == moduleId }?.id ?: moduleId
-    return pk.parhlou.student.domain.TopicInfo(moduleId, (chapter?.let { "Unit ${it.number} · " } ?: "") + module.title, chapter?.number, chapter?.title ?: "",
+    return pk.parhlou.student.domain.TopicInfo(moduleId, (chapter?.let { "${it.word} ${it.number} · " } ?: "") + module.title, chapter?.number, chapter?.title ?: "",
         noteId.takeIf { id -> notes.any { it.id == id } })
 }
