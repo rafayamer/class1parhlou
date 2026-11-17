@@ -1,274 +1,513 @@
 {
  "note": {
-  "explanation": "A system is the part of a change that we are studying. Everything outside it is the surrounding. Energy moving into the system makes the change endothermic; energy moving out makes it exothermic.",
-  "examples": [],
-  "checkAnswer": "The water is the system. Heat energy moves from the burner and surroundings into the water, so boiling is endothermic.",
+  "explanation": "A system is the part of a change that we are studying. Everything outside it is the surrounding. Energy moving into the system makes the change endothermic; energy moving out of the system makes it exothermic.",
+  "examples": [
+   "When water boils in a beaker, the water is the system and the beaker and burner are part of the surrounding.",
+   "If a reaction releases heat to its surroundings, it is exothermic and has a negative enthalpy change."
+  ],
+  "checkAnswer": "Boiling water is endothermic: heat energy moves from the surroundings into the water system.",
   "keywords": [
    "system",
    "surrounding",
-   "energy transfer",
    "endothermic",
    "exothermic",
-   "positive sign",
-   "negative sign"
+   "enthalpy",
+   "energy transfer"
   ],
-  "simple": "Think of the system as the main thing being studied. The surrounding is everything around it. Follow the energy: going in means endothermic; going out means exothermic.",
-  "checkQuestion": "If energy moves from a system to its surrounding, is the change endothermic or exothermic?",
-  "title": "System and Surrounding",
+  "simple": "The system is the part we are looking at. The surroundings are everything else. Heat going in means endothermic; heat going out means exothermic.",
+  "checkQuestion": "When water boils, which way does heat energy move, and is the change endothermic or exothermic?",
+  "title": "System, Surroundings and Energy Transfer",
   "steps": [
-   "Identify the part of the change being studied: that is the system.",
-   "Identify everything outside the system: that is the surrounding.",
-   "Check the direction of energy transfer.",
-   "Energy entering the system means endothermic and has a positive sign.",
-   "Energy leaving the system means exothermic and has a negative sign."
+   "Identify the part being studied: this is the system.",
+   "Identify everything outside it: this is the surrounding.",
+   "If energy moves from the surrounding to the system, label the change endothermic and give it a positive sign.",
+   "If energy moves from the system to the surrounding, label the change exothermic and give it a negative sign."
   ],
-  "answer": "Energy moves from the system to the surrounding: the change is exothermic and has a negative sign.",
+  "answer": "Heat energy moves from the surroundings into the water system; the change is endothermic.",
   "checkAccept": [
    [
-    "exothermic",
-    "negative"
+    "heat",
+    "into",
+    "endothermic"
+   ],
+   [
+    "energy",
+    "into",
+    "endothermic"
+   ],
+   [
+    "positive",
+    "endothermic"
    ]
   ]
  },
  "mcqs": [
   {
    "options": [
-    "The burner",
     "The water being heated",
-    "The air in the room",
-    "The beaker"
+    "The beaker and burner",
+    "The room only",
+    "The water and everything around it"
    ],
    "fromBook": false,
-   "correctIndex": 1,
-   "stem": "When water is heated in a beaker and the water is being studied, what is the system?",
+   "correctIndex": 0,
+   "stem": "A student is studying water as it boils in a beaker. Which is the system?",
    "rationales": [
-    "The burner is outside the water being studied, so it is part of the surrounding.",
-    "The water is the part being studied, so it is the system.",
-    "The room air is outside the system, so it is part of the surrounding.",
-    "The beaker is around the water and is part of the surrounding in this example."
+    "Correct: the water is the part being studied, so it is the system.",
+    "Incorrect: the beaker and burner are examples of the surrounding.",
+    "Incorrect: the room is outside the water system.",
+    "Incorrect: the system is the chosen part under study, not the system plus everything around it."
    ]
   },
   {
    "options": [
-    "Energy moves from the system to the surrounding.",
-    "Energy moves from the surrounding to the system.",
-    "No energy is transferred.",
-    "The surrounding becomes the system."
+    "Everything outside the system",
+    "Only the products of a reaction",
+    "Only the heat released by a reaction",
+    "The reactants alone"
    ],
    "fromBook": false,
-   "correctIndex": 1,
+   "correctIndex": 0,
+   "stem": "What is meant by the surrounding?",
+   "rationales": [
+    "Correct: everything that is not included in the system is called the surrounding.",
+    "Incorrect: products may be part of the chemical system.",
+    "Incorrect: heat is energy transferred, not the definition of the surrounding.",
+    "Incorrect: reactants are part of the system being studied."
+   ]
+  },
+  {
+   "options": [
+    "The system absorbs energy from the surrounding",
+    "The system transfers energy to the surrounding",
+    "No energy is transferred",
+    "The surrounding absorbs energy from the system"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
    "stem": "Which energy transfer describes an endothermic change?",
    "rationales": [
-    "Energy leaving the system describes an exothermic change.",
-    "Energy entering the system from the surrounding describes an endothermic change.",
-    "The definition depends on energy transfer into the system, not on there being no transfer.",
-    "Energy transfer does not change which part has been defined as the system."
+    "Correct: in an endothermic change, energy moves from the surrounding into the system.",
+    "Incorrect: energy moving from the system to the surrounding describes an exothermic change.",
+    "Incorrect: an endothermic change involves energy transfer into the system.",
+    "Incorrect: this describes energy leaving the system, so it is exothermic."
    ]
   },
   {
    "options": [
-    "Positive",
     "Negative",
-    "Zero",
-    "The sign cannot be stated"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "What sign is given to an endothermic change in this section?",
-   "rationales": [
-    "An endothermic change transfers energy into the system and has a positive sign.",
-    "A negative sign is associated with an exothermic change.",
-    "Zero is not the sign given for an endothermic change.",
-    "The section states that endothermic changes have a positive sign."
-   ]
-  },
-  {
-   "options": [
     "Positive",
-    "Negative",
     "Always zero",
-    "The sign depends only on the container"
+    "It has no sign"
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "A reaction transfers energy from its system to the surrounding. What sign does the change carry?",
+   "stem": "What sign is given to the enthalpy change when energy is transferred from the surrounding to the system?",
    "rationales": [
-    "A positive sign is associated with energy transferred into the system.",
-    "Energy transferred from the system to the surrounding is exothermic and carries a negative sign.",
-    "The section does not assign zero to this energy transfer.",
-    "The sign is determined by the direction of energy transfer, not just by the container."
+    "Incorrect: the negative sign is used when energy moves from the system to the surrounding.",
+    "Correct: energy entering the system makes the enthalpy change positive.",
+    "Incorrect: energy transfer into the system does not mean the enthalpy change is zero.",
+    "Incorrect: the section assigns a positive or negative sign according to the direction of energy transfer."
    ]
   },
   {
    "options": [
-    "The system",
-    "The surrounding",
-    "The catalyst only",
-    "The energy transfer"
-   ],
-   "fromBook": false,
-   "correctIndex": 1,
-   "stem": "In a chemical reaction, what is everything that does not belong to the system called?",
-   "rationales": [
-    "The system is the change or reaction being studied, not everything outside it.",
-    "Everything outside the system is called the surrounding.",
-    "A catalyst may be included in the system when it is important to study the reaction.",
-    "Energy transfer describes movement of energy; it is not the name for everything outside the system."
-   ]
-  },
-  {
-   "options": [
-    "The surrounding gets warmer.",
-    "The surrounding gets cooler.",
-    "The system disappears.",
-    "Energy stops moving."
+    "Energy moves from the system to the surrounding",
+    "Energy moves from the surrounding to the system",
+    "The system and surroundings have equal temperatures",
+    "The system stops changing"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "During an exothermic change, what happens to the surrounding as it receives energy from the system?",
+   "stem": "Which statement describes an exothermic change?",
    "rationales": [
-    "The surrounding receives energy from the system and gets warmer.",
-    "The section's figure shows the surrounding gets cooler when energy enters the system, not when it receives energy.",
-    "An exothermic change does not mean that the system disappears.",
-    "Energy is transferred from the system to the surrounding in an exothermic change."
+    "Correct: an exothermic change transfers energy from the system to the surrounding.",
+    "Incorrect: this direction of transfer describes an endothermic change.",
+    "Incorrect: equal temperatures do not define an exothermic change.",
+    "Incorrect: stopping a change is not the definition of an exothermic change."
+   ]
+  },
+  {
+   "options": [
+    "The total amount of thermal energy stored in a compound",
+    "The amount of matter in a compound",
+    "The temperature of the surrounding only",
+    "The energy needed to start every reaction"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to the section, what is enthalpy (H), or heat content?",
+   "rationales": [
+    "Correct: enthalpy is defined as the total amount of thermal energy stored in a compound.",
+    "Incorrect: this describes amount of substance, not enthalpy.",
+    "Incorrect: enthalpy refers to a compound's thermal energy, not just the surrounding's temperature.",
+    "Incorrect: the energy needed to start a reaction is not the definition of enthalpy."
    ]
   }
  ],
  "written": [
   {
-   "text": "Does boiling water in a beaker endothermic or exothermic change? Which form of energy is being transferred in this system.",
-   "finalAnswer": "Boiling water is an endothermic change. Heat energy is transferred from the surrounding to the water (the system).",
+   "text": "What is the difference between enthalpy and enthalpy change?",
+   "finalAnswer": "Enthalpy (H) is the total amount of thermal energy stored in a compound. Enthalpy change is the change in the system's enthalpy when energy is transferred during a change or reaction; it is positive when energy enters the system and negative when energy leaves it.",
    "marks": 2,
-   "source": "In-text Exercise 5.1",
+   "source": "Short 5.1",
    "rubric": [
     {
      "accept": [
       [
-       "endothermic"
+       "total",
+       "thermal",
+       "energy",
+       "stored"
       ]
      ],
      "marks": 1,
-     "why": "Classifying the change correctly shows that the direction of energy transfer has been understood.",
-     "description": "Identify boiling as an endothermic change.",
-     "how": "State that boiling water is endothermic."
+     "why": "The answer must distinguish enthalpy as the system's heat content.",
+     "description": "Define enthalpy.",
+     "how": "State that enthalpy is the total amount of thermal energy stored in a compound."
     },
     {
      "accept": [
       [
-       "heat"
+       "change",
+       "system",
+       "positive",
+       "negative"
       ],
       [
-       "thermal energy"
+       "energy",
+       "transferred",
+       "positive",
+       "negative"
       ]
      ],
      "marks": 1,
-     "why": "Naming the transferred form of energy completes the question.",
-     "description": "Name the form of energy transferred.",
-     "how": "State that heat energy is transferred from the surrounding to the water."
+     "why": "The answer must explain that enthalpy change concerns a change in the system and its sign follows the energy transfer.",
+     "description": "Distinguish enthalpy change and state its signs.",
+     "how": "Explain that energy entering the system gives a positive change and energy leaving gives a negative change."
     }
    ],
    "modelAnswer": [
-    "The water is the system and the burner and beaker are part of the surrounding.",
-    "Heat energy is transferred from the surrounding to the system.",
-    "Therefore, boiling water is an endothermic change."
+    "Enthalpy (H) is the total amount of thermal energy stored in a compound.",
+    "Enthalpy change is the change in the system's enthalpy when energy is transferred during a change or reaction.",
+    "It is positive when energy enters the system and negative when energy leaves it."
+   ]
+  },
+  {
+   "text": "Why is breaking of a bond an endothermic process?",
+   "finalAnswer": "Energy is needed to break a bond. Therefore, energy is absorbed by the system, so bond breaking is endothermic.",
+   "marks": 2,
+   "source": "Short 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "energy",
+       "needed",
+       "break",
+       "bond"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must identify the energy required to separate bonded atoms.",
+     "description": "State that energy is needed to break a bond.",
+     "how": "Write that energy must be supplied to break a bond."
+    },
+    {
+     "accept": [
+      [
+       "absorbed",
+       "endothermic"
+      ],
+      [
+       "system",
+       "absorbs",
+       "endothermic"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect energy absorption with the endothermic label.",
+     "description": "Link energy absorption to an endothermic process.",
+     "how": "State that the system absorbs energy, making bond breaking endothermic."
+    }
+   ],
+   "modelAnswer": [
+    "Energy is needed to break a bond.",
+    "Therefore, energy is absorbed by the system, so bond breaking is endothermic."
+   ]
+  },
+  {
+   "text": "Physical changes which usually occur around us are given in the table. Write down whether they are exothermic or endothermic.\n\n| Physical change | Exothermic or Endothermic | Physical change | Exothermic or Endothermic |\n|---|---|---|---|\n| Conversion of hydrated salt into anhydrous salt |  | Conduction of electricity by metals |  |\n| Burning of paper |  | Dissolving ammonium chloride in water |  |\n| Vapourizing liquid nitrogen |  | Formation of rain from clouds |  |\n| Evaporation of dry ice |  | Dissolving sodium carbonate in water |  |",
+   "finalAnswer": "Conversion of hydrated salt into anhydrous salt — endothermic; conduction of electricity by metals — neither exothermic nor endothermic; burning of paper — exothermic; dissolving ammonium chloride in water — endothermic; vapourizing liquid nitrogen — endothermic; formation of rain from clouds — exothermic; evaporation of dry ice — endothermic; dissolving sodium carbonate in water — exothermic.",
+   "marks": 4,
+   "source": "CRQ 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hydrated",
+       "anhydrous",
+       "endothermic"
+      ],
+      [
+       "burning",
+       "paper",
+       "exothermic"
+      ]
+     ],
+     "marks": 1,
+     "why": "These classifications show recognition of heat absorbed during dehydration and heat released during burning.",
+     "description": "Classify dehydration and burning of paper.",
+     "how": "Label conversion to anhydrous salt endothermic and burning of paper exothermic."
+    },
+    {
+     "accept": [
+      [
+       "ammonium",
+       "chloride",
+       "endothermic"
+      ],
+      [
+       "vapourizing",
+       "nitrogen",
+       "endothermic"
+      ]
+     ],
+     "marks": 1,
+     "why": "These changes require energy to be absorbed.",
+     "description": "Classify ammonium chloride dissolving and liquid nitrogen vapourizing.",
+     "how": "Label both changes endothermic."
+    },
+    {
+     "accept": [
+      [
+       "rain",
+       "clouds",
+       "exothermic"
+      ],
+      [
+       "dry",
+       "ice",
+       "endothermic"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rain formation releases energy, whereas dry ice evaporation requires energy.",
+     "description": "Classify rain formation and dry ice evaporation.",
+     "how": "Label formation of rain exothermic and evaporation of dry ice endothermic."
+    },
+    {
+     "accept": [
+      [
+       "sodium",
+       "carbonate",
+       "exothermic"
+      ],
+      [
+       "conduction",
+       "neither"
+      ],
+      [
+       "conduction",
+       "not",
+       "exothermic",
+       "endothermic"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must distinguish heat-releasing dissolution from electrical conduction, which is not itself an exothermic or endothermic change.",
+     "description": "Classify sodium carbonate dissolving and electrical conduction.",
+     "how": "Label sodium carbonate dissolving exothermic and state that conduction of electricity by metals is neither."
+    }
+   ],
+   "modelAnswer": [
+    "Conversion of hydrated salt into anhydrous salt — endothermic.",
+    "Conduction of electricity by metals — neither exothermic nor endothermic.",
+    "Burning of paper — exothermic.",
+    "Dissolving ammonium chloride in water — endothermic.",
+    "Vapourizing liquid nitrogen — endothermic.",
+    "Formation of rain from clouds — exothermic.",
+    "Evaporation of dry ice — endothermic.",
+    "Dissolving sodium carbonate in water — exothermic."
+   ]
+  },
+  {
+   "text": "Explain the difference between the terms heat and enthalpy.",
+   "finalAnswer": "Heat is energy transferred from one body or system to another because of a temperature difference. Enthalpy (H) is the total amount of thermal energy stored in a compound. Heat is transferred, while enthalpy describes the thermal energy content of the system.",
+   "marks": 4,
+   "source": "Descriptive 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "heat",
+       "energy",
+       "transferred"
+      ]
+     ],
+     "marks": 1,
+     "why": "Heat must be described as energy in transfer, rather than as energy stored in a substance.",
+     "description": "Define heat as transferred energy.",
+     "how": "State that heat is energy transferred between a system and its surroundings."
+    },
+    {
+     "accept": [
+      [
+       "enthalpy",
+       "total",
+       "thermal",
+       "energy",
+       "stored"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the section's definition of enthalpy.",
+     "description": "Define enthalpy.",
+     "how": "State that enthalpy is the total amount of thermal energy stored in a compound."
+    },
+    {
+     "accept": [
+      [
+       "heat",
+       "transferred",
+       "enthalpy",
+       "stored"
+      ],
+      [
+       "heat",
+       "transfer",
+       "enthalpy",
+       "content"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear comparison distinguishes transfer of heat from the system's enthalpy content.",
+     "description": "Explain the difference between the terms.",
+     "how": "Contrast heat as energy being transferred with enthalpy as thermal energy stored in the system."
+    }
+   ],
+   "modelAnswer": [
+    "Heat is energy transferred from one body or system to another because of a temperature difference.",
+    "Enthalpy (H) is the total amount of thermal energy stored in a compound.",
+    "Heat is transferred, while enthalpy describes the thermal energy content of the system."
    ]
   }
  ],
  "lesson": {
   "examTips": [
-   "A short-answer question may ask you to identify the system and surrounding in a familiar situation, such as heating water.",
-   "For full marks, state both the direction of energy transfer and whether the change is endothermic or exothermic.",
-   "Remember the signs: energy entering the system is endothermic and positive; energy leaving the system is exothermic and negative."
+   "A short-answer question may ask you to define the system and surrounding or distinguish enthalpy from enthalpy change.",
+   "For energy-transfer questions, identify the system first, then state the direction of transfer and the correct sign.",
+   "Write both the name and sign: endothermic means energy enters the system and has a positive sign; exothermic means energy leaves the system and has a negative sign.",
+   "For a physical-change classification table, give a clear label for every item and check that each label agrees with whether the system absorbs or releases energy."
   ],
   "yourTurn": [
    {
     "hints": [
-     "Use the water as the part being studied.",
-     "During boiling, energy enters the water from its surroundings. Name the energy form and classify the change."
+     "Decide whether the water takes in or gives out energy as it boils.",
+     "The water is the system; heat comes from the surroundings into the water."
     ],
     "accept": [
      [
       "endothermic",
-      "heat"
+      "heat",
+      "into"
      ],
      [
       "endothermic",
-      "thermal energy"
+      "energy",
+      "into"
+     ],
+     [
+      "positive",
+      "endothermic",
+      "water"
      ]
     ],
     "question": "Does boiling water in a beaker endothermic or exothermic change? Which form of energy is being transferred in this system.",
     "solution": [
-     "The water is the system.",
-     "Heat energy is transferred from the surrounding to the water.",
-     "Energy entering the system makes the change endothermic."
+     "The water molecules are the system; the beaker, burner and other things around it are the surrounding.",
+     "Boiling requires heat energy to move from the surrounding into the water system.",
+     "Energy transferred into the system makes the change endothermic and gives it a positive sign."
     ],
-    "answer": "Boiling water is endothermic; heat energy is transferred from the surrounding to the water."
+    "answer": "Boiling water is an endothermic change. Heat energy is transferred from the surrounding into the water system."
    },
    {
     "hints": [
-     "First decide whether energy enters or leaves the system.",
-     "Energy entering the system is endothermic and has a positive sign."
+     "Enthalpy describes stored thermal energy; enthalpy change describes what happens to it during a change.",
+     "Include the positive and negative signs by relating them to energy entering or leaving the system."
     ],
     "accept": [
      [
-      "endothermic",
-      "positive"
+      "enthalpy",
+      "thermal",
+      "energy",
+      "stored",
+      "change",
+      "positive",
+      "negative"
+     ],
+     [
+      "enthalpy",
+      "stored",
+      "energy",
+      "energy",
+      "transferred",
+      "positive",
+      "negative"
      ]
     ],
-    "question": "A chemical change takes in energy from its surrounding. Is it endothermic or exothermic, and what sign does the change have?",
+    "question": "What is the difference between enthalpy and enthalpy change?",
     "solution": [
-     "Energy is transferred from the surrounding to the system.",
-     "A change that takes in energy is endothermic.",
-     "An endothermic change has a positive sign."
+     "Enthalpy (H) is the total amount of thermal energy stored in a compound.",
+     "Enthalpy change is the change in the system's enthalpy when energy is transferred during a change or reaction.",
+     "Energy entering the system gives a positive enthalpy change.",
+     "Energy leaving the system gives a negative enthalpy change."
     ],
-    "answer": "The change is endothermic and has a positive sign."
+    "answer": "Enthalpy is the total amount of thermal energy stored in a compound. Enthalpy change is the change in the system's enthalpy during a change or reaction; it is positive when energy enters the system and negative when energy leaves it."
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "The textbook identifies the water molecules as the part being studied in this example.",
+     "why": "The section identifies the water molecules as the part being studied in this example.",
      "text": "The water molecules are the system."
     },
     {
-     "why": "The beaker and burner are outside the water system.",
-     "text": "The beaker and burner are part of the surrounding."
+     "why": "The beaker and burner are outside the water system, so they are part of the surrounding.",
+     "text": "The beaker, burner and everything else around the water are the surrounding."
     },
     {
-     "why": "Boiling needs energy to pass into the water.",
+     "why": "Boiling needs heat energy to move into the water.",
      "text": "Heat energy is transferred from the surrounding to the system."
     },
     {
-     "why": "Energy entering the system defines an endothermic change.",
-     "text": "Therefore, boiling water is an endothermic change with a positive sign."
+     "why": "Energy transferred into a system defines an endothermic change and carries a positive sign.",
+     "text": "Therefore, boiling water is endothermic and has a positive sign."
     }
    ],
-   "question": "Does boiling water in a beaker endothermic or exothermic change? Which form of energy is being transferred in this system.",
-   "answer": "Boiling water is endothermic; heat energy is transferred from the surrounding to the water."
+   "question": "When water is boiled in a beaker, identify the system and surrounding. State the direction of energy transfer and whether the change is endothermic or exothermic.",
+   "answer": "The water is the system; the beaker and burner are part of the surrounding. Heat energy moves from the surrounding into the system, so the change is endothermic and positive."
   },
   "explain": [
    {
-    "title": "The system",
-    "body": "In Chemistry, any physical or chemical change under study may also be called a system. The chemical reaction includes reactants, products, catalyst, solvent and anything else which is important to study this reaction."
+    "title": "The system and its surrounding",
+    "body": "In Chemistry, any physical or chemical change under study may also be called a system. The chemical reaction includes reactants, products, catalyst, solvent and anything else which is important to study this reaction. Everything else which does not fall in this system is called the surrounding. In the beaker example, the water is the system and the beaker and burner are in the surrounding."
    },
    {
-    "title": "The surrounding",
-    "body": "Everything else which does not fall in this system is called the surrounding. For boiling water in a beaker, the water molecules are the system, while the beaker and burner are part of the surrounding."
+    "title": "Energy entering or leaving",
+    "body": "When energy is transferred from surrounding to the system, the change is called endothermic and it has a positive sign. When energy is transferred from system to surrounding, the change is called exothermic and it carries a negative sign. The surroundings get cooler when they supply energy and warmer when they receive energy."
    },
    {
-    "title": "Energy entering the system",
-    "body": "When energy is transferred from surrounding to the system, the change is called endothermic and it has a positive sign. The surroundings get cooler as they give energy to the system."
-   },
-   {
-    "title": "Energy leaving the system",
-    "body": "When energy is transferred from system to surrounding, the change is called exothermic and it carries a negative sign. The surroundings get warmer as they receive energy."
+    "title": "Enthalpy and heat",
+    "body": "Enthalpy (H) or heat content, is defined as the total amount of thermal energy stored in a compound. The unit of its measurement is kJ mol⁻¹. Energy absorbed during a reaction increases the total enthalpy of the system; energy evolved during a reaction decreases it."
    }
   ],
   "mistakes": [
-   "Do not call everything in the beaker the system automatically; identify the part being studied. In the boiling-water example, the water is the system.",
-   "Do not reverse the direction: energy entering the system is endothermic, while energy leaving it is exothermic.",
-   "Do not mix up the signs: endothermic is positive and exothermic is negative.",
-   "Name the energy form as heat or thermal energy when asked which form is transferred."
+   "Do not call everything in the experiment the system; the system is the part or change being studied.",
+   "Do not reverse the direction: endothermic energy goes from the surrounding into the system.",
+   "Do not give a negative sign to an endothermic change; it is positive. Exothermic change is negative.",
+   "Do not treat heat and enthalpy as identical: heat is transferred energy, while enthalpy is thermal energy stored in a compound.",
+   "When describing a beaker example, do not name the beaker or burner as the water system; they are part of the surrounding."
   ]
  }
 }

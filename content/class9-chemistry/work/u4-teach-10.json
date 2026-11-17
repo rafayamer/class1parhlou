@@ -1,0 +1,1697 @@
+{
+ "note": {
+  "explanation": "Stoichiometry uses a balanced chemical equation and mole ratios to calculate amounts of reactants and products. Convert the given amount to moles, use the equation, then convert to the required unit.",
+  "examples": [
+   "For 10 g of CH₄: 10 ÷ 16 = 0.625 mol CH₄.",
+   "The equation gives a 1:1 ratio of CH₄ to CO₂, so 0.625 mol CO₂ forms, which is 0.625 × 44 = 27.5 g."
+  ],
+  "checkAnswer": "One mole of CH₄ produces one mole of CO₂, so 10 g CH₄ produces 27.5 g CO₂.",
+  "keywords": [
+   "mole",
+   "Avogadro number",
+   "molar mass",
+   "empirical formula",
+   "molecular formula",
+   "stoichiometry",
+   "percentage composition"
+  ],
+  "simple": "A balanced equation is like a recipe: its numbers tell you the mole ratios. Convert what you are given into moles, follow the ratio, and convert to the requested amount.",
+  "checkQuestion": "How many grams of CO₂ form from 10 g of CH₄ when oxygen is in excess?",
+  "title": "Stoichiometry: counting particles and calculating amounts",
+  "steps": [
+   "Write and balance the chemical equation.",
+   "Convert the given mass to moles using moles = mass ÷ molar mass.",
+   "Use the mole ratio from the balanced equation.",
+   "Convert the resulting moles into the required mass or number of particles."
+  ],
+  "answer": "27.5 g CO₂",
+  "checkAccept": [
+   [
+    "27.5",
+    "g"
+   ],
+   [
+    "27.5g"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "1.002 × 10²³ atoms",
+    "6.022 × 10²³ atoms",
+    "0.334 × 10²³ atoms",
+    "2.004 × 10²³ atoms"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q4.1. How many atoms are present in one gram of H₂O?",
+   "rationales": [
+    "Correct: 1 g is 1/18 mol of water molecules, and each molecule contains three atoms, giving about 1.002 × 10²³ atoms.",
+    "This is approximately the number of molecules in 18 g of water, not the atoms in 1 g.",
+    "This does not account for all three atoms in each water molecule.",
+    "This is about twice the correct count and results from an incorrect conversion."
+   ]
+  },
+  {
+   "options": [
+    "CaP",
+    "CaP₂",
+    "Ca₂P₃",
+    "Ca₃P₂"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.2. Which is the correct formula of calcium phosphide?",
+   "rationales": [
+    "Calcium is Ca²⁺ and phosphide is P³⁻, so CaP is not electrically neutral.",
+    "This formula does not balance the +2 and −3 ionic charges.",
+    "The subscripts do not give equal total positive and negative charges.",
+    "Correct: three Ca²⁺ ions and two P³⁻ ions balance the charges."
+   ]
+  },
+  {
+   "options": [
+    "1 amu",
+    "10²³ amu",
+    "6.022 × 10²³ amu",
+    "6.022 × 10²² amu"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.3. How many atomic mass units (amu) are there in one gram?",
+   "rationales": [
+    "One gram is not equal to one atomic mass unit.",
+    "This is not the conversion between grams and atomic mass units.",
+    "Correct: 1 g is approximately 6.022 × 10²³ amu.",
+    "This is ten times smaller than the correct conversion."
+   ]
+  },
+  {
+   "options": [
+    "C₂H₂",
+    "CH",
+    "C₆H₁₂",
+    "CH₂"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.4. Structural formula of 2-hexene is CH₃ – CH = CH – (CH₂)₂ – CH₃. What will be its empirical formula?",
+   "rationales": [
+    "C₂H₂ can be reduced to CH, so it is not the empirical formula of C₆H₁₂.",
+    "CH does not have the same simplest carbon-to-hydrogen ratio as C₆H₁₂.",
+    "C₆H₁₂ is the molecular formula, not the simplest whole-number ratio.",
+    "Correct: dividing the subscripts in C₆H₁₂ by 6 gives CH₂."
+   ]
+  },
+  {
+   "options": [
+    "0.765 moles",
+    "0.51 moles",
+    "0.255 moles",
+    "0.4 moles"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.5. How many moles are there in 25 g of H₂SO₄?",
+   "rationales": [
+    "This is greater than 25 ÷ 98, the correct mass-to-mole calculation.",
+    "This is not the result of dividing the mass by the molar mass of H₂SO₄.",
+    "Correct: molar mass of H₂SO₄ is 98 g mol⁻¹, so 25 ÷ 98 = 0.255 mol.",
+    "This does not follow from the molar mass of H₂SO₄."
+   ]
+  },
+  {
+   "options": [
+    "6.02 × 10²³",
+    "12.04 × 10²³",
+    "1.003 × 10²³",
+    "3.01 × 10²³"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.6. A necklace has 6g of diamonds in it. What are the number of carbon atoms in it?",
+   "rationales": [
+    "This is about twice the number of atoms in 6 g of carbon.",
+    "This is about four times the number of atoms in 6 g of carbon.",
+    "This is too small; 6 g of carbon is half a mole of carbon atoms.",
+    "Correct: 6 g carbon is 0.5 mol, or about 3.01 × 10²³ carbon atoms."
+   ]
+  },
+  {
+   "options": [
+    "26g",
+    "27g",
+    "54g",
+    "108g"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q4.7. What is the mass of Al in 204g of aluminium oxide, Al₂O₃.",
+   "rationales": [
+    "This is not the aluminium mass fraction in Al₂O₃.",
+    "This does not account for both Al atoms in each formula unit.",
+    "This is the aluminium mass in one mole of Al₂O₃, not in 204 g.",
+    "Correct: 204 g is two moles of Al₂O₃, containing four moles of Al, or 108 g."
+   ]
+  },
+  {
+   "options": [
+    "CO (NH₂)₂",
+    "N₂H₄",
+    "NH₃",
+    "NH₂OH"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q4.8. Which one of the following compounds will have the highest percentage of the mass of nitrogen?",
+   "rationales": [
+    "Urea contains nitrogen, but its nitrogen mass percentage is lower than that in N₂H₄.",
+    "Correct: nitrogen makes up 28/32 of the mass of N₂H₄, the greatest proportion listed.",
+    "Ammonia has a lower nitrogen mass percentage than N₂H₄.",
+    "NH₂OH has a lower nitrogen mass percentage than N₂H₄."
+   ]
+  },
+  {
+   "options": [
+    "Carbon",
+    "Diamond",
+    "Ethane (C₂H₆)",
+    "Methane (CH₄)"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.9. When one mole of each of the following compounds is reacted with oxygen, which will produce the maximum amount of CO₂?",
+   "rationales": [
+    "One mole of carbon forms one mole of CO₂.",
+    "Diamond is carbon, so one mole of carbon atoms forms one mole of CO₂.",
+    "Correct: one mole of ethane contains two moles of carbon atoms and forms two moles of CO₂.",
+    "One mole of methane forms one mole of CO₂."
+   ]
+  },
+  {
+   "options": [
+    "9.5g",
+    "1.25g",
+    "1.32g",
+    "1.45g"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q4.10. What mass of 95% CaCO₃ will be required to neutralize 50 cm³ of 0.5M HCl solution?",
+   "rationales": [
+    "This is much greater than the amount calculated from the acid concentration and volume.",
+    "This is the mass of pure CaCO₃ required, without adjusting for 95% purity.",
+    "Correct: 0.025 mol HCl needs 0.0125 mol CaCO₃; adjusting its 1.25 g pure mass for 95% purity gives about 1.32 g.",
+    "This does not correctly apply the 2:1 HCl-to-CaCO₃ ratio and the 95% purity."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Write down the chemical formula of barium nitride.",
+   "finalAnswer": "Ba₃N₂",
+   "marks": 2,
+   "source": "Short 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Ba",
+       "N"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct ions must be identified.",
+     "description": "Identifies barium and nitride ions.",
+     "how": "Use Ba²⁺ and N³⁻."
+    },
+    {
+     "accept": [
+      [
+       "Ba3N2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The subscripts must balance the ionic charges.",
+     "description": "Gives the correct neutral formula.",
+     "how": "Cross the charge magnitudes to obtain Ba₃N₂."
+    }
+   ],
+   "modelAnswer": [
+    "Barium ion = Ba²⁺; nitride ion = N³⁻.",
+    "Cross the charges to balance them: Ba₃N₂.",
+    "Barium nitride = Ba₃N₂."
+   ]
+  },
+  {
+   "text": "Find out the molecular formula of a compound whose empirical formula is CH₂O and its molar mass is 180.",
+   "finalAnswer": "C₆H₁₂O₆",
+   "marks": 2,
+   "source": "Short 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The empirical formula mass is needed to find the multiplier.",
+     "description": "Finds the empirical formula mass.",
+     "how": "Calculate 12 + 2(1) + 16 = 30."
+    },
+    {
+     "accept": [
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final subscripts must all be multiplied by the same whole number.",
+     "description": "Gives the molecular formula.",
+     "how": "Use 180 ÷ 30 = 6 and multiply CH₂O by 6."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical formula mass of CH₂O = 12 + 2(1) + 16 = 30.",
+    "n = molar mass ÷ empirical formula mass = 180 ÷ 30 = 6.",
+    "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆."
+   ]
+  },
+  {
+   "text": "How many molecules are present in 1.5 g H₂O?",
+   "finalAnswer": "5.02 × 10²² molecules",
+   "marks": 2,
+   "source": "Short 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1.5/18"
+      ],
+      [
+       "0.0833"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass must first be converted to moles.",
+     "description": "Calculates moles of water.",
+     "how": "Divide 1.5 g by 18 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "5.02",
+       "10^22"
+      ],
+      [
+       "5.02",
+       "molecules"
+      ]
+     ],
+     "marks": 1,
+     "why": "Avogadro's number converts moles into molecules.",
+     "description": "Gives the number of molecules.",
+     "how": "Multiply the moles by 6.022 × 10²³."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of H₂O = 18 g mol⁻¹.",
+    "Moles of H₂O = 1.5 ÷ 18 = 0.0833 mol.",
+    "Number of molecules = 0.0833 × 6.022 × 10²³ = 5.02 × 10²² molecules."
+   ]
+  },
+  {
+   "text": "What is the difference between a mole and Avogadro's number?",
+   "finalAnswer": "A mole is the amount of substance containing 6.022 × 10²³ particles; Avogadro's number is the number 6.022 × 10²³.",
+   "marks": 2,
+   "source": "Short 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "amount",
+       "substance"
+      ]
+     ],
+     "marks": 1,
+     "why": "A mole is a unit for amount of substance.",
+     "description": "Defines the mole.",
+     "how": "State that one mole contains a specified number of particles."
+    },
+    {
+     "accept": [
+      [
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The number itself must be distinguished from the unit.",
+     "description": "Defines Avogadro's number.",
+     "how": "Give 6.022 × 10²³ particles per mole."
+    }
+   ],
+   "modelAnswer": [
+    "A mole is the amount of substance that contains 6.022 × 10²³ particles.",
+    "Avogadro's number is the number 6.022 × 10²³, which gives the number of particles in one mole."
+   ]
+  },
+  {
+   "text": "Write down the chemical equation of the following reaction.\nANSWER: Copper + Sulphuric acid → Copper sulphate + Sulphur dioxide + Water",
+   "finalAnswer": "Cu + 2H₂SO₄ → CuSO₄ + SO₂ + 2H₂O",
+   "marks": 2,
+   "source": "Short 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Cu",
+       "H2SO4",
+       "CuSO4",
+       "SO2",
+       "H2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "All reactants and products must be written with correct formulas.",
+     "description": "Writes correct formulas for the substances.",
+     "how": "Translate each name into its chemical formula."
+    },
+    {
+     "accept": [
+      [
+       "2H2SO4",
+       "2H2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "A chemical equation must be balanced.",
+     "description": "Balances the equation.",
+     "how": "Place coefficients to balance atoms on both sides."
+    }
+   ],
+   "modelAnswer": [
+    "Cu + H₂SO₄ → CuSO₄ + SO₂ + H₂O",
+    "Balance H and O: Cu + 2H₂SO₄ → CuSO₄ + SO₂ + 2H₂O."
+   ]
+  },
+  {
+   "text": "Different compounds will never have the same molecule formula but they can have the same empirical formula. Explain",
+   "finalAnswer": "Different compounds can have the same simplest whole-number ratio of atoms, but their actual numbers of atoms per molecule can differ.",
+   "marks": 4,
+   "source": "CRQ 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "simplest",
+       "ratio"
+      ]
+     ],
+     "marks": 1,
+     "why": "An empirical formula gives the simplest ratio.",
+     "description": "Explains what an empirical formula represents.",
+     "how": "State that it is the simplest whole-number ratio of atoms."
+    },
+    {
+     "accept": [
+      [
+       "molecular formula"
+      ],
+      [
+       "actual",
+       "atoms"
+      ]
+     ],
+     "marks": 1,
+     "why": "A molecular formula gives the actual number of atoms in a molecule.",
+     "description": "Distinguishes the molecular formula.",
+     "how": "Explain that molecular formulas show actual atom counts."
+    },
+    {
+     "accept": [
+      [
+       "CH2O"
+      ],
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example makes the shared empirical formula clear.",
+     "description": "Provides a valid example.",
+     "how": "Use compounds such as glucose and other compounds sharing an empirical formula."
+    },
+    {
+     "accept": [
+      [
+       "same",
+       "empirical"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation must directly address the statement.",
+     "description": "Concludes why empirical formulas may match.",
+     "how": "Relate the shared simplest ratio to different actual molecular formulas."
+    }
+   ],
+   "modelAnswer": [
+    "An empirical formula gives the simplest whole-number ratio of atoms in a compound.",
+    "A molecular formula gives the actual number of each kind of atom in one molecule.",
+    "Different molecular formulas can reduce to the same simplest ratio; for example, C₆H₁₂O₆ reduces to CH₂O.",
+    "Therefore, different compounds can have the same empirical formula but different molecular formulas."
+   ]
+  },
+  {
+   "text": "Write down the chemical formulas of the following compounds. Calcium phosphate, Aluminium nitride, Sodium acetate, Ammonium carbonate and Bismuth sulphate.",
+   "finalAnswer": "Ca₃(PO₄)₂, AlN, CH₃COONa, (NH₄)₂CO₃, Bi₂(SO₄)₃",
+   "marks": 4,
+   "source": "CRQ 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Ca3(PO4)2"
+      ],
+      [
+       "AlN"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct ion charges determine these formulas.",
+     "description": "Writes calcium phosphate and aluminium nitride formulas.",
+     "how": "Balance the charges of each cation and anion."
+    },
+    {
+     "accept": [
+      [
+       "CH3COONa"
+      ],
+      [
+       "NaC2H3O2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The acetate ion and sodium ion must be combined in a neutral formula.",
+     "description": "Writes sodium acetate.",
+     "how": "Use Na⁺ and CH₃COO⁻."
+    },
+    {
+     "accept": [
+      [
+       "NH4",
+       "CO3"
+      ]
+     ],
+     "marks": 1,
+     "why": "Two ammonium ions are required for one carbonate ion.",
+     "description": "Writes ammonium carbonate.",
+     "how": "Use (NH₄)₂CO₃."
+    },
+    {
+     "accept": [
+      [
+       "Bi2(SO4)3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final compound must have balanced charges.",
+     "description": "Writes bismuth sulphate.",
+     "how": "Use Bi₂(SO₄)₃."
+    }
+   ],
+   "modelAnswer": [
+    "Calcium phosphate = Ca₃(PO₄)₂.",
+    "Aluminium nitride = AlN.",
+    "Sodium acetate = CH₃COONa.",
+    "Ammonium carbonate = (NH₄)₂CO₃.",
+    "Bismuth sulphate = Bi₂(SO₄)₃."
+   ]
+  },
+  {
+   "text": "Why does Avogadro's number have an immense importance in chemistry?",
+   "finalAnswer": "It connects the number of atoms, molecules or ions to measurable amounts of substance and makes particle counting possible by weighing.",
+   "marks": 4,
+   "source": "CRQ 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The numerical value identifies Avogadro's number.",
+     "description": "States Avogadro's number.",
+     "how": "Give 6.022 × 10²³ particles per mole."
+    },
+    {
+     "accept": [
+      [
+       "particles",
+       "mole"
+      ]
+     ],
+     "marks": 1,
+     "why": "It defines how many particles are in a mole.",
+     "description": "Links the number to the mole.",
+     "how": "State that one mole contains this number of particles."
+    },
+    {
+     "accept": [
+      [
+       "atoms"
+      ],
+      [
+       "molecules"
+      ],
+      [
+       "ions"
+      ]
+     ],
+     "marks": 1,
+     "why": "Chemistry deals with extremely small particles.",
+     "description": "Identifies the particles counted.",
+     "how": "Mention atoms, molecules or ions."
+    },
+    {
+     "accept": [
+      [
+       "mass"
+      ],
+      [
+       "weigh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mole connects microscopic particles to measurable laboratory quantities.",
+     "description": "Explains its practical importance.",
+     "how": "Explain that particles can be counted indirectly by measuring mass."
+    }
+   ],
+   "modelAnswer": [
+    "Avogadro's number is 6.022 × 10²³ particles per mole.",
+    "It tells the number of atoms, molecules or ions present in a mole.",
+    "Atoms and molecules are too small to count individually.",
+    "The mole and Avogadro's number let chemists relate a measurable mass to the number of particles."
+   ]
+  },
+  {
+   "text": "When 8.657g of a compound were converted into elements, it gave 5.217g of carbon, 0.962g of hydrogen and 2.478g of oxygen. Calculate the percentage of each element present in this compound.",
+   "finalAnswer": "Carbon = 60.26%; hydrogen = 11.11%; oxygen = 28.63%",
+   "marks": 5,
+   "source": "CRQ 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "5.217/8.657"
+      ],
+      [
+       "60.26"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each percentage uses the total sample mass as the denominator.",
+     "description": "Calculates the carbon percentage.",
+     "how": "Divide the carbon mass by 8.657 g and multiply by 100."
+    },
+    {
+     "accept": [
+      [
+       "0.962/8.657"
+      ],
+      [
+       "11.11"
+      ]
+     ],
+     "marks": 1,
+     "why": "The hydrogen percentage must use its measured mass.",
+     "description": "Calculates the hydrogen percentage.",
+     "how": "Divide 0.962 g by 8.657 g and multiply by 100."
+    },
+    {
+     "accept": [
+      [
+       "2.478/8.657"
+      ],
+      [
+       "28.63"
+      ]
+     ],
+     "marks": 1,
+     "why": "The oxygen percentage must use its measured mass.",
+     "description": "Calculates the oxygen percentage.",
+     "how": "Divide 2.478 g by 8.657 g and multiply by 100."
+    },
+    {
+     "accept": [
+      [
+       "100"
+      ]
+     ],
+     "marks": 1,
+     "why": "The percentages should account for the whole sample.",
+     "description": "Checks the percentage total.",
+     "how": "Show that the three percentages sum to about 100%."
+    },
+    {
+     "accept": [
+      [
+       "60.26",
+       "11.11",
+       "28.63"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final results must identify all three elements correctly.",
+     "description": "Gives the final percentages.",
+     "how": "Label each calculated percentage with its element."
+    }
+   ],
+   "modelAnswer": [
+    "Percentage of carbon = (5.217 ÷ 8.657) × 100 = 60.26%.",
+    "Percentage of hydrogen = (0.962 ÷ 8.657) × 100 = 11.11%.",
+    "Percentage of oxygen = (2.478 ÷ 8.657) × 100 = 28.63%.",
+    "Check: 60.26 + 11.11 + 28.63 = 100.00%.",
+    "Carbon = 60.26%; hydrogen = 11.11%; oxygen = 28.63%."
+   ]
+  },
+  {
+   "text": "How can you calculate the masses of the products formed in a reversible reaction?",
+   "finalAnswer": "Use the balanced chemical equation and mole ratios to calculate product amounts, taking account of the amount of reactants that actually react.",
+   "marks": 4,
+   "source": "CRQ 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "balanced",
+       "equation"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation provides the correct stoichiometric ratios.",
+     "description": "Begins with a balanced equation.",
+     "how": "Write and balance the reaction."
+    },
+    {
+     "accept": [
+      [
+       "moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "Chemical equation coefficients compare amounts in moles.",
+     "description": "Uses mole ratios.",
+     "how": "Convert known quantities to moles and apply the coefficients."
+    },
+    {
+     "accept": [
+      [
+       "reactants"
+      ],
+      [
+       "limiting"
+      ]
+     ],
+     "marks": 1,
+     "why": "In a reversible reaction, not all reactants necessarily become products.",
+     "description": "Accounts for the reaction amount or equilibrium.",
+     "how": "Use the amount that actually reacts or the equilibrium composition if supplied."
+    },
+    {
+     "accept": [
+      [
+       "mass"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result must be expressed as product mass.",
+     "description": "Converts product moles to mass.",
+     "how": "Multiply product moles by molar mass."
+    }
+   ],
+   "modelAnswer": [
+    "Write and balance the chemical equation.",
+    "Convert the known reactant quantities into moles.",
+    "Use the mole ratio in the balanced equation to find the moles of products formed.",
+    "For a reversible reaction, use the amount that actually reacts or the equilibrium amount when given.",
+    "Multiply product moles by their molar masses to calculate the product masses."
+   ]
+  },
+  {
+   "text": "Which conditions must be fulfilled before writing a chemical equation for a reaction?",
+   "finalAnswer": "The reactants and products must be identified and written with correct chemical formulas, and the equation must be balanced.",
+   "marks": 4,
+   "source": "Descriptive 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "reactants"
+      ],
+      [
+       "products"
+      ]
+     ],
+     "marks": 1,
+     "why": "The substances taking part in the reaction must be known.",
+     "description": "Identifies the reacting substances.",
+     "how": "State that reactants and products must be determined."
+    },
+    {
+     "accept": [
+      [
+       "formula"
+      ],
+      [
+       "symbols"
+      ]
+     ],
+     "marks": 1,
+     "why": "A chemical equation uses symbols and formulas.",
+     "description": "Requires correct chemical formulas.",
+     "how": "Write correct symbols and formulas for all substances."
+    },
+    {
+     "accept": [
+      [
+       "balanced"
+      ]
+     ],
+     "marks": 1,
+     "why": "Atoms are conserved in a chemical reaction.",
+     "description": "Requires atom balance.",
+     "how": "Balance the number of each kind of atom on both sides."
+    },
+    {
+     "accept": [
+      [
+       "states"
+      ],
+      [
+       "conditions"
+      ]
+     ],
+     "marks": 1,
+     "why": "State symbols or reaction conditions may be needed for a complete equation.",
+     "description": "Includes relevant state symbols or conditions.",
+     "how": "Add state symbols and required conditions when known."
+    }
+   ],
+   "modelAnswer": [
+    "The reactants and products of the reaction must be identified.",
+    "The correct chemical symbols and formulas of all substances must be written.",
+    "The equation must be balanced so that the number of atoms of each element is the same on both sides.",
+    "State symbols and reaction conditions should be shown when required."
+   ]
+  },
+  {
+   "text": "Explain the concepts of Avogadro's number and mole.",
+   "finalAnswer": "One mole contains 6.022 × 10²³ particles; this number is Avogadro's number.",
+   "marks": 4,
+   "source": "Descriptive 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The standard number of particles per mole is essential.",
+     "description": "States Avogadro's number.",
+     "how": "Write 6.022 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "particles"
+      ]
+     ],
+     "marks": 1,
+     "why": "A mole counts specified particles.",
+     "description": "Identifies what is counted.",
+     "how": "Mention atoms, molecules, ions or other specified particles."
+    },
+    {
+     "accept": [
+      [
+       "amount",
+       "substance"
+      ],
+      [
+       "unit"
+      ]
+     ],
+     "marks": 1,
+     "why": "A mole is an amount-of-substance unit.",
+     "description": "Defines a mole.",
+     "how": "Explain that it is a unit for amount of substance."
+    },
+    {
+     "accept": [
+      [
+       "mass"
+      ],
+      [
+       "weigh"
+      ]
+     ],
+     "marks": 1,
+     "why": "The concept makes particle counting useful in laboratory work.",
+     "description": "Explains the mole's practical use.",
+     "how": "Relate amount of substance to measurable mass."
+    }
+   ],
+   "modelAnswer": [
+    "A mole is a unit for measuring the amount of substance.",
+    "One mole of a substance contains 6.022 × 10²³ particles.",
+    "The number 6.022 × 10²³ is called Avogadro's number.",
+    "The particles may be atoms, molecules or ions, and the mole relates their number to a measurable mass."
+   ]
+  },
+  {
+   "text": "How many grams of CO₂ will be produced when we react 10 g of CH₄ with excess of O₂ according to the following equation?\n\nCH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+   "finalAnswer": "27.5 g CO₂",
+   "marks": 5,
+   "source": "Descriptive 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "16",
+       "g/mol"
+      ],
+      [
+       "10/16"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given mass must be converted to moles.",
+     "description": "Finds the molar mass and moles of methane.",
+     "how": "Use 10 g ÷ 16 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "1:1"
+      ],
+      [
+       "0.625"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation gives the mole ratio between methane and carbon dioxide.",
+     "description": "Uses the equation's mole ratio.",
+     "how": "Use 1 mol CH₄ : 1 mol CO₂."
+    },
+    {
+     "accept": [
+      [
+       "44"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molar mass of carbon dioxide converts its moles to mass.",
+     "description": "Uses the CO₂ molar mass.",
+     "how": "Calculate 12 + 2(16) = 44 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "0.625",
+       "44"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct product mass follows from moles times molar mass.",
+     "description": "Calculates the CO₂ mass.",
+     "how": "Multiply 0.625 mol by 44 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "27.5",
+       "g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result must be stated with the requested unit.",
+     "description": "Gives the final answer.",
+     "how": "State 27.5 g CO₂."
+    }
+   ],
+   "modelAnswer": [
+    "Given: mass of CH₄ = 10 g; oxygen is in excess.",
+    "Molar mass of CH₄ = 12 + 4(1) = 16 g mol⁻¹.",
+    "Moles of CH₄ = 10 g ÷ 16 g mol⁻¹ = 0.625 mol.",
+    "From the equation, CH₄ : CO₂ = 1 : 1, so moles of CO₂ = 0.625 mol.",
+    "Molar mass of CO₂ = 12 + 2(16) = 44 g mol⁻¹.",
+    "Mass of CO₂ = 0.625 mol × 44 g mol⁻¹ = 27.5 g CO₂."
+   ]
+  },
+  {
+   "text": "How many moles of coal are needed to produce 10 moles of CO according to the following equation?\n\n3C(s) + O₂(g) + H₂O(l) → H₂(g) + 3CO(g)",
+   "finalAnswer": "10 moles of coal (carbon)",
+   "marks": 5,
+   "source": "Descriptive 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3C"
+      ],
+      [
+       "3CO"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation provides the required coefficients.",
+     "description": "Identifies the carbon and CO coefficients.",
+     "how": "Read the coefficients 3 and 3."
+    },
+    {
+     "accept": [
+      [
+       "3:3"
+      ],
+      [
+       "1:1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficient ratio determines the required reactant amount.",
+     "description": "Finds the coal-to-CO mole ratio.",
+     "how": "Reduce 3 mol C : 3 mol CO to 1 : 1."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required product amount must be used in the ratio.",
+     "description": "Substitutes the given CO amount.",
+     "how": "Apply the 1:1 ratio to 10 mol CO."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "coal"
+      ],
+      [
+       "10",
+       "carbon"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculated substance must be identified.",
+     "description": "Identifies the amount as coal/carbon.",
+     "how": "State the moles of carbon needed."
+    },
+    {
+     "accept": [
+      [
+       "10",
+       "moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must have the correct value and unit.",
+     "description": "Gives the final amount.",
+     "how": "State 10 moles of coal."
+    }
+   ],
+   "modelAnswer": [
+    "From the equation, 3 mol C produce 3 mol CO.",
+    "Mole ratio C : CO = 3 : 3 = 1 : 1.",
+    "Moles of coal (carbon) needed = 10 mol CO × (3 mol C ÷ 3 mol CO).",
+    "Moles of coal needed = 10 mol.",
+    "Answer: 10 moles of coal (carbon)."
+   ]
+  },
+  {
+   "text": "How much SO₂ is needed in grams to produce 10 moles of sulphur?\n\n2H₂S(g) + SO₂(g) → 2H₂O(l) + 3S(s)",
+   "finalAnswer": "213.3 g SO₂",
+   "marks": 5,
+   "source": "Descriptive 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1",
+       "3"
+      ],
+      [
+       "1:3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation gives the SO₂-to-sulphur mole ratio.",
+     "description": "Identifies the mole ratio.",
+     "how": "Use 1 mol SO₂ for every 3 mol S."
+    },
+    {
+     "accept": [
+      [
+       "10/3"
+      ],
+      [
+       "3.333"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required sulphur amount must be converted to SO₂ moles.",
+     "description": "Calculates moles of SO₂.",
+     "how": "Calculate 10 × 1/3 = 3.333 mol."
+    },
+    {
+     "accept": [
+      [
+       "64"
+      ]
+     ],
+     "marks": 1,
+     "why": "The SO₂ molar mass is needed to obtain grams.",
+     "description": "Finds molar mass of SO₂.",
+     "how": "Use 32 + 2(16) = 64 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "3.333",
+       "64"
+      ]
+     ],
+     "marks": 1,
+     "why": "Multiplying moles by molar mass gives mass.",
+     "description": "Calculates SO₂ mass.",
+     "how": "Multiply 10/3 mol by 64 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "213.3",
+       "g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result must be given in grams as asked.",
+     "description": "Gives the final answer.",
+     "how": "State about 213.3 g SO₂."
+    }
+   ],
+   "modelAnswer": [
+    "From the equation, 1 mol SO₂ produces 3 mol S.",
+    "Moles of SO₂ needed = 10 mol S × (1 mol SO₂ ÷ 3 mol S) = 10/3 mol.",
+    "Molar mass of SO₂ = 32 + 2(16) = 64 g mol⁻¹.",
+    "Mass of SO₂ = (10/3 mol) × 64 g mol⁻¹ = 213.3 g.",
+    "Answer: 213.3 g SO₂."
+   ]
+  },
+  {
+   "text": "How much ammonia is needed in grams to produce 1 kg of urea fertilizer?\n\n2NH₃(aq) + CO₂(aq) → CO(NH₂)₂(aq) + H₂O(l)",
+   "finalAnswer": "566.7 g NH₃",
+   "marks": 5,
+   "source": "Descriptive 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1000",
+       "g"
+      ],
+      [
+       "1",
+       "kg"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given urea mass must be expressed in grams.",
+     "description": "Converts the urea amount to grams.",
+     "how": "Use 1 kg = 1000 g."
+    },
+    {
+     "accept": [
+      [
+       "60"
+      ]
+     ],
+     "marks": 1,
+     "why": "The urea molar mass converts its mass into moles.",
+     "description": "Finds the urea molar mass and amount.",
+     "how": "Use 12 + 16 + 2(14) + 4(1) = 60 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "16.667"
+      ],
+      [
+       "1000/60"
+      ]
+     ],
+     "marks": 1,
+     "why": "Stoichiometry requires the urea amount in moles.",
+     "description": "Calculates moles of urea.",
+     "how": "Calculate 1000 ÷ 60."
+    },
+    {
+     "accept": [
+      [
+       "2:1"
+      ],
+      [
+       "33.333"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation requires two moles of ammonia per mole of urea.",
+     "description": "Uses the equation's mole ratio.",
+     "how": "Double the urea moles to find NH₃ moles."
+    },
+    {
+     "accept": [
+      [
+       "566.7",
+       "g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final ammonia amount must be converted to mass and labelled.",
+     "description": "Gives the final ammonia mass.",
+     "how": "Multiply NH₃ moles by 17 g mol⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Given: mass of urea = 1 kg = 1000 g.",
+    "Molar mass of CO(NH₂)₂ = 12 + 16 + 2(14) + 4(1) = 60 g mol⁻¹.",
+    "Moles of urea = 1000 g ÷ 60 g mol⁻¹ = 16.667 mol.",
+    "From the equation, NH₃ : urea = 2 : 1.",
+    "Moles of NH₃ needed = 2 × 16.667 = 33.333 mol.",
+    "Molar mass of NH₃ = 14 + 3(1) = 17 g mol⁻¹.",
+    "Mass of NH₃ = 33.333 mol × 17 g mol⁻¹ = 566.7 g NH₃."
+   ]
+  },
+  {
+   "text": "Calculate the number of atoms in the following.\n\n(a) 3g of H₂",
+   "finalAnswer": "1.806 × 10²⁴ atoms",
+   "marks": 5,
+   "source": "Descriptive 4.7(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2",
+       "g/mol"
+      ],
+      [
+       "3/2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass of hydrogen must be converted to moles of H₂ molecules.",
+     "description": "Finds the H₂ molar mass and amount.",
+     "how": "Use 2 g mol⁻¹ and divide 3 g by 2 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "1.5",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculated molecular amount is needed before counting atoms.",
+     "description": "States moles of H₂ molecules.",
+     "how": "Calculate 3 ÷ 2 = 1.5 mol H₂."
+    },
+    {
+     "accept": [
+      [
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each H₂ molecule contains two atoms.",
+     "description": "Accounts for atoms per molecule.",
+     "how": "Multiply the molecule amount by 2."
+    },
+    {
+     "accept": [
+      [
+       "3",
+       "6.022"
+      ],
+      [
+       "3",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "Avogadro's number converts atom moles into atoms.",
+     "description": "Uses Avogadro's number.",
+     "how": "Multiply 3 mol of H atoms by 6.022 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "1.806",
+       "10^24",
+       "atoms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be the number of atoms.",
+     "description": "Gives the atom count.",
+     "how": "State 1.806 × 10²⁴ atoms."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of H₂ = 2 g mol⁻¹.",
+    "Moles of H₂ = 3 g ÷ 2 g mol⁻¹ = 1.5 mol.",
+    "Each H₂ molecule has 2 H atoms, so moles of H atoms = 1.5 × 2 = 3 mol.",
+    "Number of H atoms = 3 × 6.022 × 10²³ = 1.806 × 10²⁴ atoms."
+   ]
+  },
+  {
+   "text": "Calculate the number of atoms in the following.\n\n(b) 3.4 moles of N₂",
+   "finalAnswer": "4.095 × 10²⁴ atoms",
+   "marks": 5,
+   "source": "Descriptive 4.7(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3.4",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given amount is in moles of nitrogen molecules.",
+     "description": "Identifies moles of N₂.",
+     "how": "Start with 3.4 mol N₂."
+    },
+    {
+     "accept": [
+      [
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each N₂ molecule contains two nitrogen atoms.",
+     "description": "Accounts for atoms per molecule.",
+     "how": "Multiply 3.4 mol by 2."
+    },
+    {
+     "accept": [
+      [
+       "6.8",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The amount of nitrogen atoms is required before counting them.",
+     "description": "Calculates moles of nitrogen atoms.",
+     "how": "Find 3.4 × 2 = 6.8 mol atoms."
+    },
+    {
+     "accept": [
+      [
+       "6.8",
+       "6.022"
+      ],
+      [
+       "6.8",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "Avogadro's number converts atom moles into atoms.",
+     "description": "Uses Avogadro's number.",
+     "how": "Multiply 6.8 mol by 6.022 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "4.095",
+       "10^24",
+       "atoms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must be expressed as an atom count.",
+     "description": "Gives the final answer.",
+     "how": "State 4.095 × 10²⁴ atoms."
+    }
+   ],
+   "modelAnswer": [
+    "Each N₂ molecule contains 2 nitrogen atoms.",
+    "Moles of N atoms = 3.4 mol N₂ × 2 = 6.8 mol atoms.",
+    "Number of atoms = 6.8 × 6.022 × 10²³.",
+    "Number of atoms = 4.095 × 10²⁴ atoms."
+   ]
+  },
+  {
+   "text": "Calculate the number of atoms in the following.\n\n(c) 10g of C₆H₁₂O₆.",
+   "finalAnswer": "8.03 × 10²³ atoms",
+   "marks": 5,
+   "source": "Descriptive 4.7(c)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "180"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molar mass of glucose is required to convert its mass to moles.",
+     "description": "Finds the glucose molar mass.",
+     "how": "Calculate 6(12) + 12(1) + 6(16) = 180 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "10/180"
+      ],
+      [
+       "0.0556"
+      ]
+     ],
+     "marks": 1,
+     "why": "The amount of glucose molecules must be calculated first.",
+     "description": "Calculates moles of glucose.",
+     "how": "Divide 10 g by 180 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "24"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each glucose molecule contains 24 atoms in total.",
+     "description": "Counts the atoms in one glucose molecule.",
+     "how": "Add 6 + 12 + 6 = 24 atoms."
+    },
+    {
+     "accept": [
+      [
+       "1.333",
+       "mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The total atom amount is needed before applying Avogadro's number.",
+     "description": "Calculates moles of atoms.",
+     "how": "Multiply 10/180 mol glucose by 24."
+    },
+    {
+     "accept": [
+      [
+       "8.03",
+       "10^23",
+       "atoms"
+      ]
+     ],
+     "marks": 1,
+     "why": "The requested final quantity is the number of atoms.",
+     "description": "Gives the atom count.",
+     "how": "Multiply atom moles by Avogadro's number."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of C₆H₁₂O₆ = 6(12) + 12(1) + 6(16) = 180 g mol⁻¹.",
+    "Moles of glucose = 10 g ÷ 180 g mol⁻¹ = 0.0556 mol.",
+    "Each glucose molecule contains 6 + 12 + 6 = 24 atoms.",
+    "Moles of atoms = 0.0556 × 24 = 1.333 mol.",
+    "Number of atoms = 1.333 × 6.022 × 10²³ = 8.03 × 10²³ atoms."
+   ]
+  },
+  {
+   "text": "It is generally believed that drinking eight glasses of water every day is required to keep oneself hydrated especially in the summer. If a glass occupies 400 cm³ of water on the average, how many moles of water are needed for a single adult?",
+   "finalAnswer": "177.8 moles of water",
+   "marks": 5,
+   "source": "Investigative 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "8",
+       "400"
+      ],
+      [
+       "3200"
+      ]
+     ],
+     "marks": 1,
+     "why": "The total volume is needed from the number and size of glasses.",
+     "description": "Finds total water volume.",
+     "how": "Calculate 8 × 400 = 3200 cm³."
+    },
+    {
+     "accept": [
+      [
+       "3200",
+       "g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The water volume must be converted to mass.",
+     "description": "Uses the density of water.",
+     "how": "Use 1 cm³ water = 1 g."
+    },
+    {
+     "accept": [
+      [
+       "18"
+      ]
+     ],
+     "marks": 1,
+     "why": "Molar mass converts water mass to moles.",
+     "description": "Uses the molar mass of water.",
+     "how": "Use 18 g mol⁻¹ for H₂O."
+    },
+    {
+     "accept": [
+      [
+       "3200/18"
+      ],
+      [
+       "177.8"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mole amount must be calculated from mass and molar mass.",
+     "description": "Calculates moles of water.",
+     "how": "Divide 3200 g by 18 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "177.8",
+       "moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The result must state the requested amount and unit.",
+     "description": "Gives the final answer.",
+     "how": "State approximately 177.8 mol H₂O."
+    }
+   ],
+   "modelAnswer": [
+    "Total volume of water = 8 × 400 cm³ = 3200 cm³.",
+    "Using density of water = 1 g cm⁻³, mass of water = 3200 g.",
+    "Molar mass of H₂O = 18 g mol⁻¹.",
+    "Moles of water = 3200 g ÷ 18 g mol⁻¹ = 177.8 mol.",
+    "Answer: approximately 177.8 moles of water."
+   ]
+  },
+  {
+   "text": "The chemical formula for sand is SiO₂ but the sand does not exist in the form of discrete molecules like H₂O. How has its formula been determined keeping in view its structure?",
+   "finalAnswer": "SiO₂ is the simplest whole-number ratio of silicon to oxygen atoms in the extended crystal structure of sand.",
+   "marks": 4,
+   "source": "Investigative 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "crystal"
+      ],
+      [
+       "structure"
+      ]
+     ],
+     "marks": 1,
+     "why": "Sand's structure is an extended network rather than separate molecules.",
+     "description": "Recognises the extended structure.",
+     "how": "State that silicon dioxide forms a continuous structure."
+    },
+    {
+     "accept": [
+      [
+       "silicon"
+      ],
+      [
+       "oxygen"
+      ]
+     ],
+     "marks": 1,
+     "why": "The formula describes the relative amounts of its elements.",
+     "description": "Identifies the elements involved.",
+     "how": "Refer to silicon and oxygen atoms."
+    },
+    {
+     "accept": [
+      [
+       "1:2"
+      ],
+      [
+       "one",
+       "two"
+      ]
+     ],
+     "marks": 1,
+     "why": "The atom ratio is the basis of the formula.",
+     "description": "States the silicon-to-oxygen ratio.",
+     "how": "Give one silicon atom for every two oxygen atoms."
+    },
+    {
+     "accept": [
+      [
+       "SiO2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final formula must show the simplest atom ratio.",
+     "description": "Gives the formula unit.",
+     "how": "Write SiO₂ as the empirical or formula-unit ratio."
+    }
+   ],
+   "modelAnswer": [
+    "Sand has an extended crystal structure and does not consist of separate SiO₂ molecules.",
+    "Its formula represents the simplest ratio of the atoms in the structure.",
+    "The ratio of silicon atoms to oxygen atoms is 1 : 2.",
+    "Therefore, the formula unit is SiO₂."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Board questions commonly ask you to write ionic formulas, balance equations, calculate empirical or molecular formulas, and explain the mole and Avogadro's number.",
+   "For numerical stoichiometry, show the balanced equation, molar mass, conversion to moles, mole ratio, and conversion to the requested unit; these steps earn method marks.",
+   "For percentage composition, show each element's mass divided by the total sample mass, multiplied by 100, and check that the percentages add to about 100%.",
+   "For atom-counting questions, state whether you are counting molecules or atoms; multiply by the number of atoms in each molecule before using Avogadro's number where needed.",
+   "Write units at each stage and include the unit in the final answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First find the empirical formula mass of CH₂O.",
+     "Divide the molar mass by the empirical formula mass, then multiply every subscript by that whole number."
+    ],
+    "accept": [
+     [
+      "C6H12O6"
+     ]
+    ],
+    "question": "Short 4.2. Find out the molecular formula of a compound whose empirical formula is CH₂O and its molar mass is 180.",
+    "solution": [
+     "Empirical formula mass of CH₂O = 12 + 2(1) + 16 = 30.",
+     "n = molar mass ÷ empirical formula mass = 180 ÷ 30 = 6.",
+     "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆."
+    ],
+    "answer": "C₆H₁₂O₆"
+   },
+   {
+    "hints": [
+     "Find the number of moles of CH₄ in 10 g.",
+     "Use the 1:1 CH₄-to-CO₂ mole ratio, then multiply the CO₂ moles by 44 g mol⁻¹."
+    ],
+    "accept": [
+     [
+      "27.5",
+      "g"
+     ],
+     [
+      "27.5g"
+     ]
+    ],
+    "question": "Descriptive 4.3. How many grams of CO₂ will be produced when we react 10 g of CH₄ with excess of O₂ according to the following equation?\n\nCH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+    "solution": [
+     "Molar mass of CH₄ = 12 + 4(1) = 16 g mol⁻¹.",
+     "Moles of CH₄ = 10 g ÷ 16 g mol⁻¹ = 0.625 mol.",
+     "From the equation, CH₄ : CO₂ = 1 : 1, so moles of CO₂ = 0.625 mol.",
+     "Molar mass of CO₂ = 12 + 2(16) = 44 g mol⁻¹.",
+     "Mass of CO₂ = 0.625 mol × 44 g mol⁻¹ = 27.5 g CO₂."
+    ],
+    "answer": "27.5 g CO₂"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The balanced equation gives the mole relationship between methane and carbon dioxide.",
+     "text": "Given: mass of CH₄ = 10 g; oxygen is in excess. Equation: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)."
+    },
+    {
+     "why": "A mass must be converted to moles before using the equation's coefficients.",
+     "text": "Molar mass of CH₄ = 12 + 4(1) = 16 g mol⁻¹."
+    },
+    {
+     "why": "Dividing the given mass by the molar mass finds the amount of methane.",
+     "text": "Moles of CH₄ = 10 g ÷ 16 g mol⁻¹ = 0.625 mol."
+    },
+    {
+     "why": "The equation has a 1:1 mole ratio of CH₄ to CO₂.",
+     "text": "Moles of CO₂ = 0.625 mol CH₄ × (1 mol CO₂ ÷ 1 mol CH₄) = 0.625 mol."
+    },
+    {
+     "why": "Multiplying product moles by its molar mass gives the requested mass.",
+     "text": "Molar mass of CO₂ = 12 + 2(16) = 44 g mol⁻¹; mass of CO₂ = 0.625 mol × 44 g mol⁻¹ = 27.5 g CO₂."
+    }
+   ],
+   "question": "How many grams of CO₂ will be produced when we react 10 g of CH₄ with excess of O₂ according to the following equation?\n\nCH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+   "answer": "27.5 g CO₂"
+  },
+  "explain": [
+   {
+    "title": "Formula writing and balancing",
+    "body": "Write the correct formula for every reactant and product, then balance the equation with coefficients. Do not change the subscripts in a formula when balancing."
+   },
+   {
+    "title": "The mole and Avogadro's number",
+    "body": "A mole is an amount of substance containing 6.022 × 10²³ particles. Avogadro's number is the number of particles in one mole."
+   },
+   {
+    "title": "Empirical and molecular formulas",
+    "body": "An empirical formula gives the simplest whole-number ratio of atoms. A molecular formula gives the actual number of each kind of atom in a molecule and is a whole-number multiple of the empirical formula."
+   },
+   {
+    "title": "Mass and percentage composition",
+    "body": "Use molar mass to convert between mass and moles. To calculate an element's percentage by mass, divide its mass by the total sample mass and multiply by 100."
+   },
+   {
+    "title": "Stoichiometric calculations",
+    "body": "A balanced equation gives mole ratios. Convert the given quantity to moles, use the ratio, and then convert the answer to the requested mass or number of particles."
+   }
+  ],
+  "mistakes": [
+   "Changing formula subscripts instead of adding coefficients when balancing an equation.",
+   "Using an unbalanced equation to obtain a mole ratio.",
+   "Forgetting to convert grams into moles before using the equation coefficients.",
+   "Counting molecules when the question asks for atoms; multiply by the atoms in each molecule.",
+   "Confusing the mole, which is an amount of substance, with Avogadro's number, which is a number of particles.",
+   "Leaving out units or failing to label which element or substance a final value belongs to."
+  ]
+ }
+}

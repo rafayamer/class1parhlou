@@ -230,6 +230,8 @@ for (const u of units) {
     .map((w) => ({ id: w.id, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp, noteId: noteOf(w.moduleId),
       section: 0, number: 0, matching: "method", rubric: w.rubric, tags: w.tags, source: w.bookSource || "", ppModule: w.moduleId }));
   u.written = [...ppWritten, ...u.written];
+  // A marking point worth nothing ("Gives a direct answer", 0 marks) is not a marking point.
+  for (const w of u.written) if (w.rubric?.some((c) => !(c.marks > 0))) w.rubric = w.rubric.filter((c) => c.marks > 0);
   const examinableModule = (id) => { const m = u.chapter.modules.find((x) => x.id === id); return m ? m.inExam : true; };
   const moduleOfWritten = (w) => { if (w.ppModule) return w.ppModule; const k = new RegExp(`^${IDP}w-(\\d+)-(\\d+)`).exec(w.id); return k ? `${IDP}m-${k[1]}-${k[2]}` : null; };
   const inExamWritten = new Set(u.written.filter((w) => !unitOut && examinableModule(moduleOfWritten(w)) && !(w.source && isExcluded(syllabus, n0, w.source))).map((w) => w.id));
@@ -260,7 +262,7 @@ for (const u of units) {
     shorts: examWritten.filter((w) => w.marks === 2), fours, fives,
   });
   const longs = [];
-  if (LONG.b === 4) for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
+  if (LONG.a === 4 && LONG.b === 4) for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
   else {
     const [pa, pb] = LONG.a === 4 ? [fours, fives] : [fives, fours];
     for (let i = 0; i < Math.min(pa.length, pb.length) && longs.length < 3; i++) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, pa[i], pb[i]));
@@ -577,6 +579,13 @@ if (existsSync(linksFile)) {
     console.log(`Lessons: ${placed} teaching diagrams placed on idea cards`);
   }
 }
+// A marking point worth nothing ("Gives a direct answer", 0 marks) is not a marking point, wherever it is.
+(function dropZeroPoints(o) {
+  if (Array.isArray(o)) return o.forEach(dropZeroPoints);
+  if (!o || typeof o !== "object") return;
+  if (Array.isArray(o.rubric) && o.rubric.some((c) => !(c.marks > 0))) o.rubric = o.rubric.filter((c) => c.marks > 0);
+  Object.values(o).forEach(dropZeroPoints);
+})(cleaned);
 const problems = bundleProblems(cleaned, SUBJECT);
 writeFileSync(OUT, JSON.stringify(cleaned));
 const kb = Math.round(JSON.stringify(cleaned).length / 1024);

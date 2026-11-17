@@ -1,0 +1,430 @@
+{
+ "note": {
+  "explanation": "Count every atom shown in the structural formula, write each element symbol, and use the atom counts as subscripts. Omit any subscript of 1.",
+  "examples": [
+   "CH₃—C(=O)—O—H contains 2 C, 4 H and 2 O atoms, so its formula is C₂H₄O₂.",
+   "CH₃—CH₂—CH₂—OH contains 3 C, 8 H and 1 O atom, so its formula is C₃H₈O."
+  ],
+  "checkAnswer": "C₂H₆O",
+  "keywords": [
+   "structural formula",
+   "molecular formula",
+   "atoms",
+   "subscript",
+   "count",
+   "element symbols"
+  ],
+  "simple": "A structural formula shows how atoms are joined. Count each kind of atom to write the molecular formula.",
+  "checkQuestion": "What is the molecular formula of CH₃—CH₂—OH?",
+  "title": "Getting a molecular formula from a structural formula",
+  "steps": [
+   "Write down the structural formula of the compound.",
+   "Count the number of atoms of each type in the structural formula.",
+   "Write the symbols of all the elements.",
+   "Write the total number of atoms of each kind as a subscript.",
+   "Remove the subscript 1."
+  ],
+  "answer": "Write the symbol of each element and its atom count as a subscript; do not write a subscript 1.",
+  "checkAccept": [
+   [
+    "C2H6O"
+   ],
+   [
+    "C₂H₆O"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "C₂H₆O",
+    "C₂H₆O₂",
+    "C₃H₆O",
+    "C₂H₅O"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the molecular formula of CH₃—CH₂—OH?",
+   "rationales": [
+    "This is correct because the structure has 2 carbon, 6 hydrogen and 1 oxygen atom.",
+    "This is wrong because the structure has only 1 oxygen atom.",
+    "This is wrong because the structure has only 2 carbon atoms.",
+    "This is wrong because the structure has 6 hydrogen atoms, not 5."
+   ]
+  },
+  {
+   "options": [
+    "CH₄O",
+    "CH₂O",
+    "CH₃O",
+    "C₂H₄O"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A structural formula contains one carbon atom, four hydrogen atoms and one oxygen atom. Which is its molecular formula?",
+   "rationales": [
+    "This is correct because the subscripts show 1 C, 4 H and 1 O, with the subscript 1 omitted.",
+    "This is wrong because it has only 2 hydrogen atoms.",
+    "This is wrong because it has only 3 hydrogen atoms.",
+    "This is wrong because it has 2 carbon atoms and 4 hydrogen atoms."
+   ]
+  },
+  {
+   "options": [
+    "H₃PO₄",
+    "HPO₄",
+    "H₃PO₃",
+    "H₄PO₃"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A structural formula of phosphoric acid shows three OH groups, one P atom and one additional O atom double-bonded to P. What is its molecular formula?",
+   "rationales": [
+    "This is correct because the structure has 3 H, 1 P and 4 O atoms.",
+    "This is wrong because it leaves out the hydrogen atoms in the three OH groups.",
+    "This is wrong because the structure contains 4 oxygen atoms, not 3.",
+    "This is wrong because the three OH groups contribute 3 hydrogen atoms, not 4."
+   ]
+  },
+  {
+   "options": [
+    "C₃H₈O",
+    "C₃H₇O",
+    "C₂H₈O",
+    "C₃H₆O₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Count the atoms in CH₃—CH₂—CH₂—OH. Which molecular formula is correct?",
+   "rationales": [
+    "This is correct because the structure contains 3 C, 8 H and 1 O atom.",
+    "This is wrong because the hydrogen in the OH group must also be counted.",
+    "This is wrong because the structure contains 3 carbon atoms.",
+    "This is wrong because the structure contains only 1 oxygen atom."
+   ]
+  },
+  {
+   "options": [
+    "CaCO₃",
+    "CaC₃O",
+    "CaCO₂",
+    "Ca₂CO₃"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A structural formula shows one calcium atom, one carbon atom and three oxygen atoms. What formula should be written?",
+   "rationales": [
+    "This is correct because it shows 1 Ca, 1 C and 3 O atoms, omitting subscripts of 1.",
+    "This is wrong because it gives 3 carbon atoms and only 1 oxygen atom.",
+    "This is wrong because it gives only 2 oxygen atoms.",
+    "This is wrong because it gives 2 calcium atoms."
+   ]
+  },
+  {
+   "options": [
+    "C₂H₄O₂",
+    "C₂H₄O",
+    "C₂H₃O₂",
+    "CH₂O"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A structural formula contains 2 carbon, 4 hydrogen and 2 oxygen atoms. Which molecular formula follows?",
+   "rationales": [
+    "This is correct because it records all three atom counts accurately.",
+    "This is wrong because it records only 1 oxygen atom.",
+    "This is wrong because it records only 3 hydrogen atoms.",
+    "This is wrong because it records only 1 carbon and 1 oxygen atom."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Write down the molecular formula of sulphuric acid. Its structural formula is: [H—O—S—O—H, with one O double-bonded above S and one O double-bonded below S.]",
+   "finalAnswer": "H₂SO₄",
+   "marks": 2,
+   "source": "Example 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2H",
+       "1S",
+       "4O"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct atom counting is the basis of the formula.",
+     "description": "Counts the atoms correctly.",
+     "how": "State that the structure has 2 H, 1 S and 4 O atoms."
+    },
+    {
+     "accept": [
+      [
+       "H2SO4"
+      ],
+      [
+       "H₂SO₄"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final formula must show the correct counts and omit the subscript 1.",
+     "description": "Writes the molecular formula.",
+     "how": "Write H₂SO₄."
+    }
+   ],
+   "modelAnswer": [
+    "It has 2 H, 1 S and 4 O atoms.",
+    "Its molecular formula will be H₂SO₄."
+   ]
+  },
+  {
+   "text": "Write down the molecular formula of acetic acid. Its structure formula is: [CH₃—C(=O)—O—H.]",
+   "finalAnswer": "C₂H₄O₂",
+   "marks": 2,
+   "source": "Example 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2C",
+       "4H",
+       "2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The formula depends on counting every atom in the structural formula.",
+     "description": "Counts the atoms correctly.",
+     "how": "State that it has 2 C, 4 H and 2 O atoms."
+    },
+    {
+     "accept": [
+      [
+       "C2H4O2"
+      ],
+      [
+       "C₂H₄O₂"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final formula must represent all the atom counts correctly.",
+     "description": "Writes the molecular formula.",
+     "how": "Write C₂H₄O₂."
+    }
+   ],
+   "modelAnswer": [
+    "It has 2C, 4H, 2O atoms",
+    "Its molecular formula will be C₂H₄O₂"
+   ]
+  },
+  {
+   "text": "Find out the molecular formula of phosphoric acid, Its structural formula is: [P at the centre, with three OH groups and one double-bonded O.]",
+   "finalAnswer": "H₃PO₄",
+   "marks": 2,
+   "source": "Exercise 4.5, Q1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3H",
+       "1P",
+       "4O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The structural formula must be counted before writing the formula.",
+     "description": "Counts the atoms in the structure.",
+     "how": "Identify 3 H, 1 P and 4 O atoms."
+    },
+    {
+     "accept": [
+      [
+       "H3PO4"
+      ],
+      [
+       "H₃PO₄"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct subscripts give the molecular formula.",
+     "description": "Writes the molecular formula.",
+     "how": "Write H₃PO₄, omitting the subscript 1 for P."
+    }
+   ],
+   "modelAnswer": [
+    "It has 3 H, 1 P and 4 O atoms.",
+    "Its molecular formula will be H₃PO₄."
+   ]
+  },
+  {
+   "text": "Determine the molecular formula of n – propyl alcohol. Its structural formula is CH₃—CH₂—CH₂—OH",
+   "finalAnswer": "C₃H₈O",
+   "marks": 2,
+   "source": "Exercise 4.5, Q2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3C",
+       "8H",
+       "1O"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each atom, including the H in OH, must be counted.",
+     "description": "Counts the atoms in the structural formula.",
+     "how": "Identify 3 C, 8 H and 1 O atom."
+    },
+    {
+     "accept": [
+      [
+       "C3H8O"
+      ],
+      [
+       "C₃H₈O"
+      ]
+     ],
+     "marks": 1,
+     "why": "Writing the atom counts as subscripts gives the required formula.",
+     "description": "Writes the molecular formula.",
+     "how": "Write C₃H₈O and omit the subscript 1 for O."
+    }
+   ],
+   "modelAnswer": [
+    "It has 3 C, 8 H and 1 O atom.",
+    "Its molecular formula will be C₃H₈O."
+   ]
+  },
+  {
+   "text": "Write down the formula of calcium carbonate. Its structural formula is: [C at the centre, double-bonded to O and single-bonded to two O⁻ atoms; Ca²⁺ is also shown.]",
+   "finalAnswer": "CaCO₃",
+   "marks": 2,
+   "source": "Exercise 4.5, Q3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1Ca",
+       "1C",
+       "3O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The formula must reflect the number of each atom shown.",
+     "description": "Counts the atoms shown.",
+     "how": "Identify 1 Ca, 1 C and 3 O atoms."
+    },
+    {
+     "accept": [
+      [
+       "CaCO3"
+      ],
+      [
+       "CaCO₃"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct formula uses subscripts for counts greater than 1 and omits subscript 1.",
+     "description": "Writes the formula.",
+     "how": "Write CaCO₃."
+    }
+   ],
+   "modelAnswer": [
+    "It has 1 Ca, 1 C and 3 O atoms.",
+    "Its formula will be CaCO₃."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is commonly tested by asking you to count atoms from a structural formula and write the molecular formula.",
+   "Show the atom counts before writing the final formula; this makes your method clear and can earn a working mark.",
+   "Write the element symbols in the correct order and use subscripts for counts greater than 1.",
+   "Do not write a subscript 1 after an element symbol."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Count the H atoms in each OH group.",
+     "There are three OH groups, one P atom and one additional double-bonded O atom."
+    ],
+    "accept": [
+     [
+      "H3PO4"
+     ],
+     [
+      "H₃PO₄"
+     ]
+    ],
+    "question": "Find out the molecular formula of phosphoric acid, Its structural formula is: [P at the centre, with three OH groups and one double-bonded O.]",
+    "solution": [
+     "Write down the structural formula of phosphoric acid.",
+     "It has 3 H, 1 P and 4 O atoms.",
+     "Write the symbols of all the elements: H, P and O.",
+     "Write the total number of atoms of each kind as a subscript: H₃P₁O₄.",
+     "Remove the subscript 1.",
+     "The molecular formula is H₃PO₄."
+    ],
+    "answer": "H₃PO₄"
+   },
+   {
+    "hints": [
+     "Count each group in CH₃—CH₂—CH₂—OH.",
+     "Add the hydrogen atoms from all three carbon groups and the OH group."
+    ],
+    "accept": [
+     [
+      "C3H8O"
+     ],
+     [
+      "C₃H₈O"
+     ]
+    ],
+    "question": "Determine the molecular formula of n – propyl alcohol. Its structural formula is CH₃—CH₂—CH₂—OH",
+    "solution": [
+     "Write down the structural formula of n-propyl alcohol: CH₃—CH₂—CH₂—OH.",
+     "It has 3 C, 8 H and 1 O atom.",
+     "Write the symbols of all the elements: C, H and O.",
+     "Write the total number of atoms of each kind as a subscript: C₃H₈O₁.",
+     "Remove the subscript 1.",
+     "The molecular formula is C₃H₈O."
+    ],
+    "answer": "C₃H₈O"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Counting the atoms in the displayed structure tells us how many of each element to include.",
+     "text": "It has 2 H, 1 S and 4 O atoms."
+    },
+    {
+     "why": "Writing these counts as subscripts gives the molecular formula, with the subscript 1 omitted.",
+     "text": "Its molecular formula will be H₂SO₄"
+    }
+   ],
+   "question": "Write down the molecular formula of sulphuric acid. Its structural formula is: [H—O—S—O—H, with one O double-bonded above S and one O double-bonded below S.]",
+   "answer": "H₂SO₄"
+  },
+  "explain": [
+   {
+    "title": "Start with the structure",
+    "body": "A structural formula shows the atoms in a compound and how they are connected. Look at the whole structure before writing the formula."
+   },
+   {
+    "title": "Count each kind of atom",
+    "body": "Count all atoms of one element, then all atoms of the next element. Include atoms in groups such as OH."
+   },
+   {
+    "title": "Use subscripts",
+    "body": "Write each element symbol with its atom count as a subscript. If there is only one atom, omit the subscript 1."
+   }
+  ],
+  "mistakes": [
+   "Forgetting to count an H atom in an OH group.",
+   "Missing an oxygen atom shown with a double bond.",
+   "Writing the number 1 as a subscript.",
+   "Using the number of groups instead of counting the atoms in every group."
+  ]
+ }
+}

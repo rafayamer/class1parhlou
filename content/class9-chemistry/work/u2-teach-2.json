@@ -1,11 +1,11 @@
 {
  "note": {
-  "explanation": "For a neutral atom, the atomic number tells you the number of protons and electrons. The mass number counts protons and neutrons together. Subtract the atomic number from the mass number to find the neutrons.",
+  "explanation": "An element is identified by its atomic number, Z, which tells us how many protons its atoms have. The mass number, A, is the total number of protons and neutrons. Subtract Z from A to find the number of neutrons. In a neutral atom, electrons equal protons. For example, ¹⁶₈O has 8 protons, 8 electrons and 8 neutrons; ³²₁₆S has 16 neutrons.",
   "examples": [
-   "For ³²₁₆S: neutrons = 32 − 16 = 16.",
-   "For ¹³⁷₅₆Ba: protons = 56, electrons = 56, and neutrons = 137 − 56 = 81."
+   "For ¹⁶₈O: protons = 8, electrons = 8, neutrons = 16 − 8 = 8.",
+   "For ³²₁₆S: neutrons = 32 − 16 = 16."
   ],
-  "checkAnswer": "15 neutrons",
+  "checkAnswer": "A neutral atom of ²³₁₁Na has 11 protons, 11 electrons and 12 neutrons.",
   "keywords": [
    "atomic number",
    "mass number",
@@ -14,23 +14,20 @@
    "electrons",
    "neutral atom"
   ],
-  "simple": "Atomic number is the proton count. Mass number is protons plus neutrons. So, neutrons = mass number − atomic number.",
-  "checkQuestion": "How many neutrons are in ³⁵₁₇Cl?",
-  "title": "Finding particles in an atom",
+  "simple": "The atomic number gives the protons. The mass number gives protons plus neutrons. Subtract to find neutrons; in a neutral atom, electrons equal protons.",
+  "checkQuestion": "How many neutrons are in ²³₁₁Na?",
+  "title": "Atomic Number and Mass Number",
   "steps": [
-   "Read the mass number A from the upper-left number.",
-   "Read the atomic number Z from the lower-left number.",
-   "Protons = Z.",
-   "For a neutral atom, electrons = Z.",
-   "Neutrons N = A − Z."
+   "Read the left subscript: Z = number of protons.",
+   "For a neutral atom, set the number of electrons equal to the number of protons.",
+   "Read the left superscript: A = mass number.",
+   "Calculate neutrons using N = A − Z."
   ],
-  "answer": "In ³⁵₁₇Cl, N = 35 − 17 = 18, so it has 18 neutrons.",
+  "answer": "Atomic number Z is the number of protons. Mass number A is the total number of protons and neutrons. Neutrons N = A − Z; electrons equal protons in a neutral atom.",
   "checkAccept": [
    [
-    "15"
-   ],
-   [
-    "15 neutrons"
+    "12",
+    "11"
    ]
   ]
  },
@@ -38,170 +35,157 @@
   {
    "options": [
     "The number of protons in an atom",
-    "The total number of protons and neutrons",
+    "The total number of protons and neutrons in an atom",
     "The number of neutrons in an atom",
-    "The number of electrons in a neutral atom"
+    "The number of electrons and neutrons in an atom"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "What does the atomic number of an element represent?",
+   "stem": "What does the atomic number of an element tell us?",
    "rationales": [
-    "This is correct because atomic number is the number of protons in the atom.",
-    "This is the mass number, not the atomic number.",
-    "Neutron number is found by subtracting atomic number from mass number.",
-    "A neutral atom has this many electrons, but atomic number is defined by its protons."
+    "This is correct because the atomic number is the number of protons in the atoms of an element.",
+    "This describes the mass number, not the atomic number.",
+    "The neutron count can vary and is not the atomic number.",
+    "Atomic number does not count electrons and neutrons together."
    ]
   },
   {
    "options": [
-    "A",
-    "Z",
-    "N",
-    "e"
+    "The total number of protons and electrons",
+    "The total number of protons and neutrons",
+    "The total number of neutrons and electrons",
+    "The number of protons only"
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "Which symbol represents the atomic number?",
+   "stem": "Which particles are counted in the mass number?",
    "rationales": [
-    "A represents the mass number.",
-    "This is correct because the textbook represents atomic number by Z.",
-    "N is used for the number of neutrons.",
-    "e may be used to refer to an electron, but it is not the symbol for atomic number."
+    "Electrons are not included in the mass number.",
+    "This is correct: mass number is the total number of protons and neutrons.",
+    "Electrons are not counted in the mass number.",
+    "Protons alone give the atomic number, not the mass number."
    ]
   },
   {
    "options": [
     "The number of protons",
-    "The total number of protons and neutrons",
-    "The number of electrons and neutrons",
-    "The number of protons and electrons"
+    "The number of electrons",
+    "The number of neutrons",
+    "The mass number"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "An atom has A = 39 and Z = 19. Which value is its number of neutrons?",
+   "rationales": [
+    "19 is the atomic number and therefore the number of protons.",
+    "In a neutral atom, there are 19 electrons, not 20.",
+    "This is correct because N = A − Z = 39 − 19 = 20.",
+    "39 is the mass number, not the neutron count."
+   ]
+  },
+  {
+   "options": [
+    "The number of protons equals the number of neutrons.",
+    "The number of electrons equals the number of protons.",
+    "The number of electrons equals the mass number.",
+    "The number of neutrons equals the atomic number."
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "What is the mass number of an atom?",
+   "stem": "Which statement is true for a neutral atom?",
    "rationales": [
-    "This gives only the atomic number.",
-    "This is correct because mass number is the total number of protons and neutrons.",
-    "Electrons are not included in the mass number.",
-    "Electrons are not included in the mass number, so this is not its definition."
+    "A neutral atom does not have to have equal numbers of protons and neutrons.",
+    "This is correct because equal positive and negative charges make the atom neutral.",
+    "The mass number counts protons and neutrons, not electrons.",
+    "There is no rule that neutrons must equal the atomic number."
    ]
   },
   {
    "options": [
-    "A = Z − N",
-    "N = A − Z",
-    "Z = A − N",
-    "N = A + Z"
+    "A right subscript",
+    "A right superscript",
+    "A left subscript",
+    "A left superscript"
    ],
    "fromBook": false,
-   "correctIndex": 1,
-   "stem": "Which equation gives the number of neutrons in an atom?",
+   "correctIndex": 2,
+   "stem": "Where is the atomic number written in the element symbol notation shown in this section?",
    "rationales": [
-    "This is not the equation used to find the mass number from neutron and proton counts.",
-    "This is correct because neutron number equals mass number minus atomic number.",
-    "This equation can rearrange the relation, but it does not state the required neutron formula.",
-    "Adding the atomic number to the mass number does not give the neutron number."
+    "The section does not place the atomic number at the right as a subscript.",
+    "The left superscript is used for the mass number.",
+    "This is correct: the atomic number is written as a left subscript.",
+    "The left superscript shows the mass number, not the atomic number."
    ]
   },
   {
    "options": [
-    "8 protons, 8 neutrons",
-    "8 protons, 16 neutrons",
-    "16 protons, 8 neutrons",
-    "16 protons, 16 neutrons"
+    "They have different numbers of protons.",
+    "They have different numbers of electrons only.",
+    "They have different numbers of neutrons only.",
+    "They have different mass numbers only."
    ],
    "fromBook": false,
-   "correctIndex": 0,
-   "stem": "How many protons and neutrons are in ¹⁶₈O?",
+   "correctIndex": 2,
+   "stem": "Two isotopes of the same element differ in which fundamental particle count?",
    "rationales": [
-    "This is correct: Z = 8 gives 8 protons, and 16 − 8 = 8 neutrons.",
-    "The neutron number is not the mass number itself; it is A − Z.",
-    "The lower-left number gives the proton count, so this reverses the numbers.",
-    "The symbol gives 8 protons, not 16, and the neutron count is 8."
-   ]
-  },
-  {
-   "options": [
-    "15 protons and 15 electrons",
-    "15 protons and 16 electrons",
-    "16 protons and 15 electrons",
-    "16 protons and 16 electrons"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "A neutral atom has atomic number 15. How many protons and electrons does it have?",
-   "rationales": [
-    "This is correct because the atomic number gives 15 protons and a neutral atom has an equal number of electrons.",
-    "A neutral atom has equal numbers of protons and electrons.",
-    "The atomic number is 15, so it cannot have 16 protons.",
-    "Both counts are one greater than the stated atomic number."
+    "Isotopes of the same element have the same number of protons.",
+    "Changing electrons forms ions, not isotopes.",
+    "This is correct: isotopes of an element have different numbers of neutrons.",
+    "Their mass numbers may differ, but the differing particle count is the neutrons."
    ]
   }
  ],
  "written": [
   {
-   "text": "Calculate the number of neutrons, protons and electrons in barium ¹³⁷₅₆Ba.",
-   "finalAnswer": "81 neutrons, 56 protons and 56 electrons",
+   "text": "Calculate the number of neutrons, protons and electrons in barium ¹³⁷₅₆Ba",
+   "finalAnswer": "81 neutrons, 56 protons and 56 electrons.",
    "marks": 4,
-   "source": "Example 2.2",
+   "source": "Example 2.1",
    "rubric": [
     {
      "accept": [
       [
-       "56 protons"
-      ],
-      [
-       "protons=56"
+       "56"
       ]
      ],
      "marks": 1,
-     "why": "The atomic number gives the number of protons.",
-     "description": "State the proton number.",
-     "how": "Read Z = 56 from the symbol."
+     "why": "The atomic number identifies the number of protons.",
+     "description": "Identify the protons.",
+     "how": "Read Z = 56 from the left subscript."
     },
     {
      "accept": [
       [
-       "56 electrons"
-      ],
-      [
-       "electrons=56"
+       "56"
       ]
      ],
      "marks": 1,
-     "why": "The atom is neutral, so its electrons equal its protons.",
-     "description": "State the electron number.",
-     "how": "Set the electron number equal to 56."
+     "why": "A neutral barium atom has equal numbers of electrons and protons.",
+     "description": "Identify the electrons.",
+     "how": "State that the atom has 56 electrons."
     },
     {
      "accept": [
       [
-       "137-56"
-      ],
-      [
+       "137",
+       "56",
        "81"
       ]
      ],
      "marks": 1,
-     "why": "Subtracting Z from A gives the neutron number.",
-     "description": "Show the neutron calculation.",
-     "how": "Write N = A − Z = 137 − 56."
+     "why": "The neutron count is found from the mass number minus the atomic number.",
+     "description": "Calculate the neutrons.",
+     "how": "Use N = A − Z = 137 − 56 = 81."
     },
     {
      "accept": [
       [
        "81",
-       "56",
-       "protons"
-      ],
-      [
-       "81",
-       "56",
-       "electrons"
+       "56"
       ]
      ],
      "marks": 1,
-     "why": "The final result must correctly identify all three particle counts.",
+     "why": "The final response must give the correct counts for all three particles.",
      "description": "Give the correct final answer.",
      "how": "State 81 neutrons, 56 protons and 56 electrons."
     }
@@ -214,58 +198,49 @@
    ]
   },
   {
-   "text": "Calculate the number of neutrons, protons and electrons in the following atoms: ¹⁹⁵₇₈Pt, ⁵⁵₂₅Mn, ¹²⁷₅₃I.",
-   "finalAnswer": "¹⁹⁵₇₈Pt: 117 neutrons, 78 protons and 78 electrons; ⁵⁵₂₅Mn: 30 neutrons, 25 protons and 25 electrons; ¹²⁷₅₃I: 74 neutrons, 53 protons and 53 electrons",
-   "marks": 5,
+   "text": "Calculate the number of neutrons, protons and electrons in the following atoms. ¹⁹⁵₇₈Pt, ⁵⁵₂₅Mn, ¹²⁷₅₃I",
+   "finalAnswer": "¹⁹⁵₇₈Pt: 117 neutrons, 78 protons and 78 electrons; ⁵⁵₂₅Mn: 30 neutrons, 25 protons and 25 electrons; ¹²⁷₅₃I: 74 neutrons, 53 protons and 53 electrons.",
+   "marks": 4,
    "source": "In-text exercise 2.2",
    "rubric": [
     {
      "accept": [
       [
        "78",
-       "25",
-       "53",
-       "protons"
-      ]
-     ],
-     "marks": 1,
-     "why": "Atomic number gives the proton count for each atom.",
-     "description": "Find the proton numbers.",
-     "how": "Read each lower-left number."
-    },
-    {
-     "accept": [
-      [
        "78",
-       "25",
-       "53",
-       "electrons"
+       "117"
       ]
      ],
      "marks": 1,
-     "why": "Each of the given atoms is neutral, so its electrons equal its protons.",
-     "description": "Find the electron numbers.",
-     "how": "Use the same count as the protons for each atom."
+     "why": "The platinum counts must be read and calculated correctly.",
+     "description": "Find the particles in ¹⁹⁵₇₈Pt.",
+     "how": "Give 78 protons, 78 electrons and 117 neutrons."
     },
     {
      "accept": [
       [
-       "195-78",
-       "117"
-      ],
-      [
-       "55-25",
+       "25",
+       "25",
        "30"
-      ],
+      ]
+     ],
+     "marks": 1,
+     "why": "The manganese counts must be read and calculated correctly.",
+     "description": "Find the particles in ⁵⁵₂₅Mn.",
+     "how": "Give 25 protons, 25 electrons and 30 neutrons."
+    },
+    {
+     "accept": [
       [
-       "127-53",
+       "53",
+       "53",
        "74"
       ]
      ],
-     "marks": 2,
-     "why": "The subtraction A − Z is needed to find each neutron count.",
-     "description": "Calculate the neutron numbers.",
-     "how": "Apply N = A − Z to all three atoms."
+     "marks": 1,
+     "why": "The iodine counts must be read and calculated correctly.",
+     "description": "Find the particles in ¹²⁷₅₃I.",
+     "how": "Give 53 protons, 53 electrons and 74 neutrons."
     },
     {
      "accept": [
@@ -279,9 +254,9 @@
       ]
      ],
      "marks": 1,
-     "why": "The final answer must give the correct particle counts for all three atoms.",
-     "description": "Give the correct final answer.",
-     "how": "List each atom's neutrons, protons and electrons."
+     "why": "The final answer must correctly report the counts for all three atoms.",
+     "description": "Give the complete final answer.",
+     "how": "List the proton, electron and neutron counts for Pt, Mn and I."
     }
    ],
    "modelAnswer": [
@@ -291,73 +266,25 @@
     "N = A − Z = 55 − 25 = 30.",
     "For ¹²⁷₅₃I: protons = 53 and electrons = 53.",
     "N = A − Z = 127 − 53 = 74.",
-    "So ¹⁹⁵₇₈Pt has 117 neutrons, 78 protons and 78 electrons; ⁵⁵₂₅Mn has 30 neutrons, 25 protons and 25 electrons; ¹²⁷₅₃I has 74 neutrons, 53 protons and 53 electrons."
-   ]
-  },
-  {
-   "text": "Why are elements different from one another?",
-   "finalAnswer": "Atoms of different elements contain different numbers of fundamental particles.",
-   "marks": 2,
-   "source": "Short 2.2",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "different",
-       "number",
-       "fundamental particles"
-      ],
-      [
-       "different numbers",
-       "particles"
-      ]
-     ],
-     "marks": 1,
-     "why": "The textbook explains the difference through the particles in their atoms.",
-     "description": "Identify what differs in atoms of different elements.",
-     "how": "State that they contain different numbers of fundamental particles."
-    },
-    {
-     "accept": [
-      [
-       "different numbers",
-       "fundamental particles"
-      ],
-      [
-       "different",
-       "electrons",
-       "protons",
-       "neutrons"
-      ]
-     ],
-     "marks": 1,
-     "why": "Naming the fundamental particles makes the explanation complete.",
-     "description": "Give the correct final answer.",
-     "how": "Mention electrons, protons and neutrons as the fundamental particles."
-    }
-   ],
-   "modelAnswer": [
-    "Atoms of different elements contain different numbers of the fundamental particles: electrons, protons and neutrons."
+    "So the atoms have: Pt, 117 neutrons, 78 protons and 78 electrons; Mn, 30 neutrons, 25 protons and 25 electrons; I, 74 neutrons, 53 protons and 53 electrons."
    ]
   },
   {
    "text": "How many neutrons are present in ²¹⁰₈₃Bi?",
-   "finalAnswer": "127 neutrons",
+   "finalAnswer": "127 neutrons.",
    "marks": 2,
-   "source": "Short 2.3",
+   "source": "Short Q2.3",
    "rubric": [
     {
      "accept": [
       [
-       "210-83"
-      ],
-      [
-       "N=A-Z"
+       "210",
+       "83"
       ]
      ],
      "marks": 1,
-     "why": "The neutron formula must be used with the correct mass and atomic numbers.",
-     "description": "Show the neutron calculation.",
+     "why": "The neutron calculation uses mass number minus atomic number.",
+     "description": "Set up the calculation.",
      "how": "Use N = A − Z = 210 − 83."
     },
     {
@@ -367,9 +294,9 @@
       ]
      ],
      "marks": 1,
-     "why": "The answer is the difference between the mass number and atomic number.",
-     "description": "Give the correct final answer.",
-     "how": "State 127 neutrons."
+     "why": "The final neutron count must be correct.",
+     "description": "Give the final answer.",
+     "how": "State that ²¹⁰₈₃Bi has 127 neutrons."
     }
    ],
    "modelAnswer": [
@@ -377,77 +304,113 @@
     "N = 210 − 83 = 127",
     "So ²¹⁰₈₃Bi has 127 neutrons."
    ]
+  },
+  {
+   "text": "Why are elements different from one another?",
+   "finalAnswer": "Elements differ because their atoms contain different numbers of fundamental particles; in particular, each element has a unique number of protons.",
+   "marks": 2,
+   "source": "Short Q2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "different",
+       "fundamental particles"
+      ],
+      [
+       "different",
+       "protons"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should explain that atoms of different elements have different particle counts.",
+     "description": "State the particle-count difference.",
+     "how": "Say that atoms of different elements contain different numbers of fundamental particles."
+    },
+    {
+     "accept": [
+      [
+       "unique",
+       "protons"
+      ],
+      [
+       "different",
+       "number of protons"
+      ]
+     ],
+     "marks": 1,
+     "why": "The proton count, or atomic number, identifies the element.",
+     "description": "Connect the difference to atomic number.",
+     "how": "Explain that each element has a unique number of protons."
+    }
+   ],
+   "modelAnswer": [
+    "Atoms of different elements contain different numbers of fundamental particles.",
+    "Each element has a unique number of protons, which is its atomic number."
+   ]
   }
  ],
  "lesson": {
   "examTips": [
-   "A short-answer question may ask for the neutron count from an isotope symbol. Write N = A − Z and show the subtraction.",
-   "For a question asking for protons, neutrons and electrons, identify A and Z first. For a neutral atom, state that electrons equal protons.",
-   "In a symbol such as ¹⁶₈O, the mass number A is the upper-left number and the atomic number Z is the lower-left number. Do not swap them.",
-   "Marks are commonly earned for the correct formula, correct substitution and the final particle counts with their names."
+   "This section is commonly tested with short numerical questions asking for protons, electrons or neutrons from nuclide notation.",
+   "For a neutral atom, read the atomic number Z as the proton count and state that the electron count is the same.",
+   "Show the formula N = A − Z and the substitution before writing the neutron count; these working steps can earn marks.",
+   "In notation such as ¹⁶₈O, the left superscript is the mass number A and the left subscript is the atomic number Z."
   ],
   "yourTurn": [
    {
     "hints": [
-     "The lower-left number is the atomic number.",
-     "Use Z = 78 for protons and electrons, then calculate 195 − 78 for neutrons."
+     "Read the left subscript to find the protons.",
+     "Use N = A − Z for neutrons; a neutral atom has the same number of electrons as protons."
     ],
     "accept": [
      [
       "117",
-      "78"
-     ],
-     [
-      "117 neutrons",
-      "78 protons",
-      "78 electrons"
+      "78",
+      "30",
+      "25",
+      "74",
+      "53"
      ]
     ],
-    "question": "Calculate the number of neutrons, protons and electrons in ¹⁹⁵₇₈Pt.",
+    "question": "Calculate the number of neutrons, protons and electrons in the following atoms. ¹⁹⁵₇₈Pt, ⁵⁵₂₅Mn, ¹²⁷₅₃I",
     "solution": [
-     "Protons = Z = 78.",
-     "For a neutral atom, electrons = 78.",
-     "N = A − Z",
-     "N = 195 − 78 = 117.",
-     "So ¹⁹⁵₇₈Pt has 117 neutrons, 78 protons and 78 electrons."
+     "For ¹⁹⁵₇₈Pt: protons = 78 and electrons = 78.",
+     "N = A − Z = 195 − 78 = 117.",
+     "For ⁵⁵₂₅Mn: protons = 25 and electrons = 25.",
+     "N = A − Z = 55 − 25 = 30.",
+     "For ¹²⁷₅₃I: protons = 53 and electrons = 53.",
+     "N = A − Z = 127 − 53 = 74."
     ],
-    "answer": "117 neutrons, 78 protons and 78 electrons"
+    "answer": "¹⁹⁵₇₈Pt: 117 neutrons, 78 protons and 78 electrons; ⁵⁵₂₅Mn: 30 neutrons, 25 protons and 25 electrons; ¹²⁷₅₃I: 74 neutrons, 53 protons and 53 electrons."
    },
    {
     "hints": [
-     "Read A and Z from the two left-hand numbers in the symbol.",
-     "For ⁵⁵₂₅Mn, protons and electrons are 25 each; calculate 55 − 25 to find neutrons."
+     "For ²¹⁰₈₃Bi, identify A and Z from the superscript and subscript.",
+     "Subtract the atomic number from the mass number: N = 210 − 83."
     ],
     "accept": [
      [
-      "30",
-      "25"
-     ],
-     [
-      "30 neutrons",
-      "25 protons",
-      "25 electrons"
+      "127"
      ]
     ],
-    "question": "Calculate the number of neutrons, protons and electrons in ⁵⁵₂₅Mn.",
+    "question": "How many neutrons are present in ²¹⁰₈₃Bi?",
     "solution": [
-     "Protons = Z = 25.",
-     "For a neutral atom, electrons = 25.",
      "N = A − Z",
-     "N = 55 − 25 = 30.",
-     "So ⁵⁵₂₅Mn has 30 neutrons, 25 protons and 25 electrons."
+     "N = 210 − 83 = 127",
+     "So ²¹⁰₈₃Bi has 127 neutrons."
     ],
-    "answer": "30 neutrons, 25 protons and 25 electrons"
+    "answer": "127 neutrons."
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "The lower-left number is Z, the proton count, and a neutral atom has the same number of electrons.",
+     "why": "The atomic number is the number of protons, and a neutral atom has the same number of electrons.",
      "text": "Each barium atom will have 56 protons and 56 electrons."
     },
     {
-     "why": "This is the textbook formula for calculating the number of neutrons.",
+     "why": "This is the formula for finding the number of neutrons from A and Z.",
      "text": "N = A − Z"
     },
     {
@@ -455,37 +418,36 @@
      "text": "N = 137-56 = 81"
     },
     {
-     "why": "This states the calculated neutron count along with the proton and electron counts.",
+     "why": "This combines the three particle counts for the atom.",
      "text": "So each ¹³⁷₅₆Ba atom will have 81 neutrons, 56 protons and 56 electrons."
     }
    ],
    "question": "Calculate the number of neutrons, protons and electrons in barium ¹³⁷₅₆Ba",
-   "answer": "81 neutrons, 56 protons and 56 electrons"
+   "answer": "81 neutrons, 56 protons and 56 electrons."
   },
   "explain": [
    {
     "title": "Atomic number",
-    "body": "The number of protons present in the atoms of an element is always fixed and it is called the atomic number of that element. It is represented by Z. The atomic number identifies the element."
+    "body": "The number of protons present in the atoms of an element is always fixed and it is called the atomic number of that element. It is represented by Z. An element is identified by its atomic number."
    },
    {
     "title": "Mass number",
-    "body": "The total number of protons and neutrons present in an atom almost accounts for the total mass of that atom and hence it is called its nucleon number or mass number. It is represented by A. Electrons are not included in the mass number."
+    "body": "The total number of protons and neutrons present in an atom almost accounts for the total mass of that atom and hence it is called its nucleon number or mass number. It is represented by A. The mass of electron being very small is not included in the mass number."
    },
    {
-    "title": "Reading the atom symbol",
-    "body": "The atomic number is written as a left subscript while the mass number as a left superscript. For example, in ¹⁶₈O, A = 16 and Z = 8."
+    "title": "Reading an atom symbol",
+    "body": "The atomic number is written as a left subscript while the mass number as a left superscript. For example, ¹⁶₈O has 8 protons and a mass number of 16."
    },
    {
-    "title": "Finding the particles",
-    "body": "For a neutral atom, electrons equal protons, so both counts equal Z. The number of neutrons is found using N = A − Z."
+    "title": "Finding neutrons",
+    "body": "The number of neutrons N present in an atom can be calculated if its atomic number Z and mass number (A) are known. N = A − Z. Since an atom as a whole is electrically neutral, the number of electrons equals the number of protons."
    }
   ],
   "mistakes": [
-   "Do not confuse the upper-left mass number A with the lower-left atomic number Z.",
-   "Do not count electrons in the mass number; it is the total of protons and neutrons.",
-   "Do not say that atomic number is the number of neutrons; it is the number of protons.",
-   "When finding neutrons, subtract Z from A, not A from Z.",
-   "For a neutral atom, do not give different numbers of protons and electrons."
+   "Do not mix up the left superscript A (mass number) and left subscript Z (atomic number).",
+   "Do not use A + Z to find neutrons; use N = A − Z.",
+   "Do not say that the mass number includes electrons; it counts protons and neutrons.",
+   "For a neutral atom, do not make the electron count equal to the mass number; it equals the proton count."
   ]
  }
 }

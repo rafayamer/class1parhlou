@@ -1,33 +1,34 @@
 {
  "note": {
-  "explanation": "In an exothermic reaction, more energy is released when bonds form than is taken in when bonds break. In an endothermic reaction, more energy is taken in breaking bonds than is released forming bonds.",
+  "explanation": "Exothermic reactions release heat to the surroundings, while endothermic reactions absorb heat. Bond breaking absorbs energy; bond formation releases energy. To find the overall enthalpy change, add the energy used to break bonds to the energy released when new bonds form.",
   "examples": [
-   "For 2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ, heat is released and ΔH is negative.",
-   "Melting ice takes in heat, so it is endothermic."
+   "When hydrogen and oxygen form water, heat is released: ΔH = −571.6 kJ for the reaction as written.",
+   "For H₂(g) + I₂(g) → 2HI(g), the bond-energy calculation using the values in Example 5.2 gives ΔH = 436 + 151 + 2(−299) = −11 kJ."
   ],
-  "checkAnswer": "Breaking a bond absorbs energy, so it is endothermic.",
+  "checkAnswer": "Bond breaking absorbs energy, so it is endothermic.",
   "keywords": [
    "exothermic",
    "endothermic",
-   "enthalpy",
    "heat",
-   "bond energy",
+   "enthalpy",
+   "bond breaking",
    "bond formation"
   ],
-  "simple": "Breaking bonds takes in energy; forming bonds gives out energy. Compare the two amounts to decide whether the whole reaction takes in or gives out energy.",
-  "checkQuestion": "Is bond breaking endothermic or exothermic?",
-  "title": "Energy changes in reactions",
+  "simple": "If a reaction gives heat out, it is exothermic. If it takes heat in, it is endothermic.",
+  "checkQuestion": "Why is breaking a chemical bond endothermic?",
+  "title": "Exothermic and Endothermic Reactions",
   "steps": [
-   "Identify the energy needed to break the reactant bonds.",
-   "Identify the energy released when product bonds form.",
-   "Subtract: ΔH = energy absorbed − energy released.",
-   "A negative ΔH means heat is released; a positive ΔH means heat is absorbed."
+   "Identify which bonds break and which bonds form.",
+   "Add the energies absorbed to break the bonds.",
+   "Add the energies released when the new bonds form, using negative values where given.",
+   "Add the two totals to find the enthalpy change, ΔH.",
+   "A negative ΔH means the reaction is exothermic; a positive ΔH means it is endothermic."
   ],
-  "answer": "Exothermic reactions release heat and have a negative ΔH. Endothermic reactions absorb heat and have a positive ΔH.",
+  "answer": "Exothermic reactions release heat; endothermic reactions absorb heat.",
   "checkAccept": [
    [
-    "absorbs",
-    "energy"
+    "energy is absorbed",
+    "bond breaking"
    ],
    [
     "endothermic"
@@ -37,383 +38,254 @@
  "mcqs": [
   {
    "options": [
-    "The reaction absorbs more energy breaking bonds than it releases forming bonds.",
-    "The reaction releases more energy forming bonds than it absorbs breaking bonds.",
-    "The reaction has no bond breaking.",
-    "The reaction absorbs heat from its surroundings."
+    "The reaction takes heat from its surroundings.",
+    "The reaction releases heat to its surroundings.",
+    "The container must become colder.",
+    "The reaction cannot be reversed."
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "Which statement best explains why a reaction is exothermic?",
+   "stem": "Which statement describes an exothermic reaction?",
    "rationales": [
-    "This describes an endothermic overall energy change, not an exothermic one.",
-    "This is correct: the energy released is greater than the energy absorbed.",
-    "Chemical reactions generally involve bond breaking as well as bond formation.",
-    "Absorbing heat from the surroundings describes an endothermic reaction."
+    "This describes an endothermic reaction, which absorbs heat.",
+    "This is correct: an exothermic reaction evolves heat to its surroundings.",
+    "An exothermic reaction tends to warm its surroundings and container, not cool them.",
+    "Exothermic reactions can be reversed; the reverse reaction absorbs energy."
    ]
   },
   {
    "options": [
-    "Positive",
-    "Negative",
-    "Always zero",
-    "It cannot be stated"
+    "ΔH is positive.",
+    "ΔH is negative.",
+    "ΔH is always zero.",
+    "The sign of ΔH cannot be known."
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "What is the sign of ΔH for an exothermic reaction?",
+   "stem": "A reaction evolves heat. What is the sign of its enthalpy change?",
    "rationales": [
-    "A positive ΔH indicates that heat is absorbed overall.",
-    "A negative ΔH indicates that heat is released overall.",
-    "ΔH is zero only when there is no net enthalpy change.",
-    "The sign can be stated from whether heat is absorbed or released."
+    "A positive ΔH indicates that heat is absorbed.",
+    "This is correct: heat-evolving reactions have a negative ΔH.",
+    "ΔH is not generally zero when heat is evolved.",
+    "The information that heat is evolved is enough to determine the sign."
    ]
   },
   {
    "options": [
-    "The surroundings become warmer.",
-    "The surroundings become colder.",
-    "No energy is transferred.",
-    "The products must be gases."
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "A reaction releases heat to its surroundings. What is most likely to happen to the surroundings?",
-   "rationales": [
-    "This is correct: released heat warms the surroundings.",
-    "The surroundings tend to cool when a reaction absorbs heat.",
-    "Heat is transferred in this situation, so this is incorrect.",
-    "The state of the products does not determine whether the surroundings warm."
-   ]
-  },
-  {
-   "options": [
-    "Bond breaking absorbs energy.",
     "Bond breaking releases energy.",
-    "Bond breaking has no energy change.",
-    "Bond breaking always forms a new bond."
+    "Bond formation absorbs energy.",
+    "Bond breaking absorbs energy.",
+    "Bond formation has no energy change."
    ],
    "fromBook": false,
-   "correctIndex": 0,
-   "stem": "What happens to energy when a chemical bond is broken?",
+   "correctIndex": 2,
+   "stem": "Which statement about a chemical bond is correct?",
    "rationales": [
-    "This is correct: energy must be supplied to separate bonded atoms.",
-    "Bond breaking requires energy rather than releasing it.",
-    "Breaking a bond requires energy, so the change is not zero.",
-    "Bond breaking separates atoms; bond formation is a different process."
+    "Bond breaking requires energy; it does not release it.",
+    "Bond formation releases energy rather than absorbing it.",
+    "This is correct: energy must be supplied to break a bond.",
+    "Bond formation involves an energy change and releases energy."
    ]
   },
   {
    "options": [
-    "+11 kJ",
-    "−11 kJ",
-    "+598 kJ",
-    "−587 kJ"
+    "The energy released by forming bonds is greater than the energy absorbed breaking bonds.",
+    "The energy absorbed breaking bonds is greater than the energy released forming bonds.",
+    "No bonds are broken in an exothermic reaction.",
+    "The products must have more energy than the reactants."
    ],
    "fromBook": false,
-   "correctIndex": 1,
-   "stem": "For a reaction, 587 kJ is absorbed breaking bonds and 598 kJ is released forming bonds. What is ΔH?",
+   "correctIndex": 0,
+   "stem": "Why can a reaction that breaks and forms bonds be exothermic overall?",
    "rationales": [
-    "This has the wrong sign for a reaction releasing more energy than it absorbs.",
-    "This is correct: ΔH = 587 − 598 = −11 kJ.",
-    "This gives only the energy released in bond formation, not the net change.",
-    "This does not subtract the released energy from the absorbed energy correctly."
+    "This is correct: greater energy release during bond formation gives a net release of energy.",
+    "This would mean more energy is absorbed than released, making the reaction endothermic.",
+    "Chemical reactions commonly involve bond breaking as well as bond formation.",
+    "For an exothermic reaction, the products have lower enthalpy than the reactants."
+   ]
+  },
+  {
+   "options": [
+    "Heat is absorbed, and the container tends to cool.",
+    "Heat is evolved, and the container tends to cool.",
+    "Heat is absorbed, and the container tends to warm.",
+    "No heat is transferred."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What happens to the surroundings when a reaction absorbs heat from them?",
+   "rationales": [
+    "This is correct: the reaction takes heat from its surroundings, lowering their temperature.",
+    "Heat evolution would tend to warm the surroundings, not cool them.",
+    "Absorbing heat from the surroundings does not warm them.",
+    "Heat is transferred because the reaction absorbs it from its surroundings."
    ]
   },
   {
    "options": [
     "The reverse reaction releases the same amount of heat.",
     "The reverse reaction absorbs the same amount of heat.",
-    "The reverse reaction has no energy change.",
-    "The reverse reaction must have a different ΔH sign and magnitude."
+    "The reverse reaction has no enthalpy change.",
+    "The reverse reaction is always impossible."
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "An exothermic reaction has ΔH = −120 kJ. What is the enthalpy change for the reverse reaction?",
+   "stem": "A forward reaction releases 80 kJ of heat. If it is reversed, what happens to the heat change?",
    "rationales": [
-    "The reverse reaction has the opposite direction of energy transfer, so it absorbs heat.",
-    "This is correct: reversing the reaction changes the sign, giving +120 kJ.",
-    "Reversing the reaction does not make its energy change zero.",
-    "The magnitude remains 120 kJ, while the sign changes."
+    "Reversing the reaction reverses the direction of the heat change.",
+    "This is correct: the reverse reaction absorbs the amount released in the forward direction.",
+    "The reverse reaction has an enthalpy change of equal size and opposite sign.",
+    "A reaction may be reversible even though its reverse direction requires energy."
    ]
   },
   {
    "options": [
-    "A reaction forming stronger bonds than the bonds broken is likely exothermic.",
-    "A reaction forming weaker bonds than the bonds broken is always exothermic.",
-    "Bond formation always absorbs energy.",
-    "Bond breaking always releases energy."
+    "Energy absorbed to break bonds minus energy released forming bonds",
+    "Energy released forming bonds minus energy absorbed breaking bonds",
+    "The number of bonds broken multiplied by the temperature",
+    "The heat capacity of the reaction container"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which statement agrees with the bond-energy explanation of an exothermic reaction?",
+   "stem": "Which calculation gives ΔH when bond-formation energies are written as negative values?",
    "rationales": [
-    "This is correct: stronger product bonds release more energy when formed.",
-    "If less energy is released forming weaker bonds, the reaction is not necessarily exothermic.",
-    "Bond formation releases energy; it does not absorb it.",
-    "Bond breaking absorbs energy rather than releasing it."
+    "This is correct: add the bond-breaking energy to the negative bond-formation energy.",
+    "This reverses the calculation when bond-formation energies are already written as negative values.",
+    "Bond count and temperature alone do not give the enthalpy change.",
+    "The container's heat capacity is not the bond-energy calculation for ΔH."
    ]
   },
   {
    "options": [
-    "−285.8 kJ mol⁻¹",
-    "+285.8 kJ mol⁻¹",
-    "−571.6 kJ mol⁻¹",
-    "+571.6 kJ mol⁻¹"
+    "Combustion of a fuel",
+    "Melting ice",
+    "Evaporation of water",
+    "Decomposition of water by absorbing heat"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "The reaction 2H₂(g) + O₂(g) → 2H₂O(l) releases 571.6 kJ. What is ΔH for forming one mole of liquid water?",
+   "stem": "Which process is an example of an exothermic change described in this section?",
    "rationales": [
-    "This is correct: half the reaction forms one mole of water and ΔH is negative.",
-    "The sign is wrong because heat is released.",
-    "This is the heat change for forming two moles, not one.",
-    "This gives the wrong sign and is for two moles."
+    "This is correct: combustion of fuels releases heat.",
+    "Melting ice absorbs heat, so it is endothermic.",
+    "Evaporation absorbs heat from the surroundings.",
+    "A decomposition that absorbs heat is endothermic."
    ]
   }
  ],
  "written": [
   {
-   "text": "Calculate the enthalpy change of the following chemical reaction.\n\nH₂(g) + I₂(g) → 2 HI(g)\n\nBond energies of H₂, I₂ and HI are 436,151, and -299 kJ mol⁻¹ respectively.",
-   "finalAnswer": "ΔH = −11 kJ mol⁻¹",
-   "marks": 4,
-   "source": "Example 5.3",
+   "text": "Hydrogen gas and oxygen gas react to give liquid water in an exothermic reaction.",
+   "finalAnswer": "2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ; ΔH = −571.6 kJ",
+   "marks": 2,
+   "source": "Example 5.1",
    "rubric": [
     {
      "accept": [
       [
-       "436",
-       "151",
-       "587"
+       "2H2+O2→2H2O"
       ]
      ],
      "marks": 1,
-     "why": "The energy absorbed to break the reactant bonds must be found first.",
-     "description": "Calculate the energy absorbed in bond breaking.",
-     "how": "Add 436 and 151 to obtain 587 kJ mol⁻¹."
+     "why": "The balanced chemical equation identifies the reaction and its products.",
+     "description": "Write the balanced equation for forming water.",
+     "how": "Show two moles of hydrogen reacting with one mole of oxygen to form two moles of water."
     },
     {
      "accept": [
       [
-       "2",
-       "299",
-       "598"
-      ]
-     ],
-     "marks": 1,
-     "why": "Two HI bonds form, so their energy contribution must be counted twice.",
-     "description": "Calculate the energy released in bond formation.",
-     "how": "Use 2 × (−299) = −598 kJ mol⁻¹."
-    },
-    {
-     "accept": [
-      [
-       "587",
-       "598",
-       "!+11"
-      ]
-     ],
-     "marks": 1,
-     "why": "The net enthalpy change depends on comparing absorbed and released energy.",
-     "description": "Subtract the energy released from the energy absorbed.",
-     "how": "Calculate ΔH = 587 − 598."
-    },
-    {
-     "accept": [
-      [
-       "-11"
+       "571.6 kJ",
+       "ΔH=-571.6"
       ],
       [
-       "−11"
-      ]
-     ],
-     "marks": 1,
-     "why": "The final value and its negative sign identify the reaction as exothermic.",
-     "description": "Give the final enthalpy change with units.",
-     "how": "State ΔH = −11 kJ mol⁻¹."
-    }
-   ],
-   "modelAnswer": [
-    "Energy absorbed in breaking bonds = 436 + 151 = 587 kJ mol⁻¹",
-    "Energy released in forming bonds = 2 × (−299) = −598 kJ mol⁻¹",
-    "ΔH = energy absorbed + energy released = 587 + (−598)",
-    "ΔH = −11 kJ mol⁻¹"
-   ]
-  },
-  {
-   "text": "Why the chemical reaction between sodium metal and water proceeds violently?",
-   "finalAnswer": "It is a highly exothermic reaction; the heat evolved can ignite the hydrogen produced.",
-   "marks": 2,
-   "source": "In-text Exercise 5.3",
-   "rubric": [
-    {
-     "accept": [
-      [
+       "571.6 kJ",
        "exothermic"
       ]
      ],
      "marks": 1,
-     "why": "Identifying the reaction as exothermic explains the release of heat.",
-     "description": "State the energy nature of the reaction.",
-     "how": "Say that it is highly exothermic or releases a large amount of heat."
-    },
-    {
-     "accept": [
-      [
-       "hydrogen",
-       "ignite"
-      ],
-      [
-       "heat",
-       "violently"
-      ]
-     ],
-     "marks": 1,
-     "why": "The evolved heat and hydrogen explain why the reaction can proceed violently.",
-     "description": "Relate the heat to the violent reaction.",
-     "how": "Explain that the heat may ignite the hydrogen produced."
-    }
-   ],
-   "modelAnswer": [
-    "The reaction between sodium and water is highly exothermic and evolves a large amount of heat.",
-    "The heat can ignite the hydrogen produced, so the reaction proceeds violently."
-   ]
-  },
-  {
-   "text": "Is melting of ice an exothermic or endothermic change?",
-   "finalAnswer": "Endothermic",
-   "marks": 2,
-   "source": "In-text Exercise 5.3",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "endothermic"
-      ]
-     ],
-     "marks": 2,
-     "why": "The classification is the required answer and follows from heat being absorbed.",
-     "description": "Identify the type of change.",
-     "how": "State that melting ice is endothermic."
-    }
-   ],
-   "modelAnswer": [
-    "Melting of ice absorbs heat from its surroundings.",
-    "Therefore, melting of ice is an endothermic change."
-   ]
-  },
-  {
-   "text": "Can exothermic reaction be reversed?",
-   "finalAnswer": "Yes; the reverse reaction absorbs the same amount of heat that the forward reaction releases.",
-   "marks": 2,
-   "source": "In-text Exercise 5.3",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "yes"
-      ]
-     ],
-     "marks": 1,
-     "why": "The question asks whether reversal is possible.",
-     "description": "Answer yes or no.",
-     "how": "State that an exothermic reaction can be reversed."
-    },
-    {
-     "accept": [
-      [
-       "reverse",
-       "absorbs"
-      ],
-      [
-       "same",
-       "heat"
-      ]
-     ],
-     "marks": 1,
-     "why": "The reverse direction has the opposite energy change.",
-     "description": "Describe the energy change in reverse.",
-     "how": "State that the reverse reaction absorbs the same amount of heat."
-    }
-   ],
-   "modelAnswer": [
-    "Yes, an exothermic reaction can be reversed.",
-    "In the reverse direction, the same amount of heat is absorbed."
-   ]
-  },
-  {
-   "text": "Calculate the enthalpy change for the formation of one mole of liquid water.",
-   "finalAnswer": "ΔH = −285.8 kJ mol⁻¹",
-   "marks": 4,
-   "source": "In-text Exercise 5.3",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "2H2",
-       "O2",
-       "2H2O"
-      ]
-     ],
-     "marks": 1,
-     "why": "The balanced equation gives the amount of water corresponding to the stated heat change.",
-     "description": "Use the reaction for forming liquid water.",
-     "how": "Write 2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ."
-    },
-    {
-     "accept": [
-      [
-       "571.6",
-       "2"
-      ]
-     ],
-     "marks": 1,
-     "why": "The stated heat is for the formation of two moles of water.",
-     "description": "Divide the heat change by two moles.",
-     "how": "Calculate 571.6 ÷ 2."
-    },
-    {
-     "accept": [
-      [
-       "negative"
-      ],
-      [
-       "heat",
-       "released"
-      ]
-     ],
-     "marks": 1,
-     "why": "Released heat gives a negative enthalpy change.",
-     "description": "Use the correct sign.",
-     "how": "Make the enthalpy change negative because the reaction is exothermic."
-    },
-    {
-     "accept": [
-      [
-       "-285.8"
-      ],
-      [
-       "−285.8"
-      ]
-     ],
-     "marks": 1,
-     "why": "The final answer must be for one mole of liquid water.",
-     "description": "State the enthalpy change per mole.",
-     "how": "Give −285.8 kJ mol⁻¹."
+     "why": "The heat amount and its direction show the exothermic nature of the reaction.",
+     "description": "State the heat evolved and the enthalpy change.",
+     "how": "Show that 571.6 kJ is released and that ΔH is negative."
     }
    ],
    "modelAnswer": [
     "2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ",
-    "For 2 mol of H₂O, ΔH = −571.6 kJ",
-    "For 1 mol of H₂O, ΔH = −571.6 ÷ 2",
-    "ΔH = −285.8 kJ mol⁻¹"
+    "571.6 kJ heat energy is evolved during this reaction.",
+    "If the energy evolved is shown separately it is expressed as ΔH = −571.6 kJ."
    ]
   },
   {
-   "text": "Q6.2. Why is breaking of a bond an endothermic process?",
-   "finalAnswer": "Energy must be absorbed to overcome the attractive forces holding the bonded atoms together.",
+   "text": "Calculate the enthalpy change of the following chemical reaction.\n\nH₂(g) + I₂(g) → 2 HI(g)\n\nBond energies of H₂, I₂ and HI are 436,151, and -299 kJ mol⁻¹ respectively.",
+   "finalAnswer": "ΔH = −11 kJ",
+   "marks": 4,
+   "source": "Example 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "436+151"
+      ]
+     ],
+     "marks": 1,
+     "why": "The H₂ and I₂ bonds must be broken, which absorbs energy.",
+     "description": "Add the energies for breaking the reactant bonds.",
+     "how": "Use 436 kJ mol⁻¹ for H₂ and 151 kJ mol⁻¹ for I₂."
+    },
+    {
+     "accept": [
+      [
+       "2(-299)"
+      ],
+      [
+       "2×-299"
+      ]
+     ],
+     "marks": 1,
+     "why": "Two HI bonds form, and the given formation energy is negative.",
+     "description": "Include the energy released in forming two HI bonds.",
+     "how": "Multiply −299 kJ mol⁻¹ by 2."
+    },
+    {
+     "accept": [
+      [
+       "436+151+2(-299)"
+      ],
+      [
+       "587-598"
+      ]
+     ],
+     "marks": 1,
+     "why": "Combining bond breaking and bond formation gives the overall enthalpy change.",
+     "description": "Add the bond-energy contributions.",
+     "how": "Evaluate the sum using the signed bond-formation energy."
+    },
+    {
+     "accept": [
+      [
+       "ΔH=-11"
+      ],
+      [
+       "-11 kJ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final signed result gives the reaction's enthalpy change.",
+     "description": "State the final enthalpy change.",
+     "how": "Give the calculated result in kJ."
+    }
+   ],
+   "modelAnswer": [
+    "Energy absorbed to break H₂ and I₂ bonds = 436 + 151 = 587 kJ.",
+    "Energy evolved in forming two HI bonds = 2(−299) = −598 kJ.",
+    "ΔH = 587 + (−598) = −11 kJ.",
+    "The enthalpy change is ΔH = −11 kJ."
+   ]
+  },
+  {
+   "text": "Why is breaking of a bond an endothermic process?",
+   "finalAnswer": "Energy must be absorbed to overcome the forces holding the bonded atoms together.",
    "marks": 2,
-   "source": "Short 6.2",
+   "source": "Short 5.2",
    "rubric": [
     {
      "accept": [
@@ -423,15 +295,15 @@
       ]
      ],
      "marks": 1,
-     "why": "Bond breaking requires an input of energy.",
-     "description": "State what happens to energy.",
+     "why": "Identifying energy absorption establishes that bond breaking is endothermic.",
+     "description": "State what happens to energy when a bond breaks.",
      "how": "Say that energy is absorbed or supplied."
     },
     {
      "accept": [
       [
        "overcome",
-       "forces"
+       "bond"
       ],
       [
        "separate",
@@ -439,211 +311,37 @@
       ]
      ],
      "marks": 1,
-     "why": "This explains why energy is needed to break the bond.",
-     "description": "Explain what the energy does.",
-     "how": "Relate the energy to overcoming the attraction between bonded atoms or separating them."
+     "why": "The explanation connects the energy input to separating atoms that are bonded.",
+     "description": "Explain why energy is needed.",
+     "how": "Explain that energy overcomes the attraction holding the bonded atoms together."
     }
    ],
    "modelAnswer": [
-    "Energy must be absorbed to break a bond.",
-    "This energy overcomes the attractive forces holding the bonded atoms together, so bond breaking is endothermic."
+    "Energy is absorbed to overcome the forces holding the bonded atoms together.",
+    "Therefore, breaking a bond is an endothermic process."
    ]
   },
   {
-   "text": "Q8.2. Explain why the reaction between atmospheric gases oxygen and nitrogen does not take place under normal conditions? But in the presence of lightning these gases react to give NO. The reaction stops as soon as the lightning stops.",
-   "finalAnswer": "The reaction is highly endothermic, so it needs the high energy supplied by lightning; when the lightning stops, this energy supply stops.",
+   "text": "Explain why formation of a bond is always an exothermic process.",
+   "finalAnswer": "When a bond forms, the atoms reach a lower-energy, more stable state and energy is released.",
    "marks": 4,
-   "source": "CRQ 8.2",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "highly",
-       "endothermic"
-      ]
-     ],
-     "marks": 1,
-     "why": "The endothermic nature accounts for the reaction needing a large energy input.",
-     "description": "Identify the energy type of the reaction.",
-     "how": "State that the reaction is highly endothermic."
-    },
-    {
-     "accept": [
-      [
-       "lightning",
-       "energy"
-      ],
-      [
-       "lightning",
-       "heat"
-      ]
-     ],
-     "marks": 1,
-     "why": "Lightning supplies the energy needed for the reaction to occur.",
-     "description": "Explain why the gases react during lightning.",
-     "how": "Say that lightning provides enough energy for the reaction."
-    },
-    {
-     "accept": [
-      [
-       "normal",
-       "conditions"
-      ],
-      [
-       "not",
-       "enough",
-       "energy"
-      ]
-     ],
-     "marks": 1,
-     "why": "This explains why the reaction does not normally occur.",
-     "description": "Relate the reaction to ordinary conditions.",
-     "how": "State that normal conditions do not supply enough energy."
-    },
-    {
-     "accept": [
-      [
-       "stops",
-       "energy"
-      ],
-      [
-       "lightning",
-       "stops"
-      ]
-     ],
-     "marks": 1,
-     "why": "The energy supply explains why the reaction stops when lightning ends.",
-     "description": "Explain why the reaction stops.",
-     "how": "State that when lightning stops, the required energy supply is removed."
-    }
-   ],
-   "modelAnswer": [
-    "The reaction between nitrogen and oxygen is highly endothermic.",
-    "Under normal conditions, there is not enough energy for the reaction to take place.",
-    "Lightning supplies enough energy for nitrogen and oxygen to react and form NO.",
-    "When the lightning stops, the energy supply stops, so the reaction stops."
-   ]
-  },
-  {
-   "text": "Q8.1. Find out the enthalpy change of the following reaction using the given data.\n\nN₂ + O₂ → 2NO\n\nBond dissociation energy of N₂ = 958.38 kJ/mol\nBond dissociation energy of O₂ = 498 kJ/mol\nBond formation energy of NO = −626 kJ/mol",
-   "finalAnswer": "ΔH = +204.38 kJ mol⁻¹",
-   "marks": 5,
-   "source": "Descriptive 8.1",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "958.38",
-       "498",
-       "1456.38"
-      ]
-     ],
-     "marks": 1,
-     "why": "The energy absorbed to break the reactant bonds is needed for the calculation.",
-     "description": "Add the reactant bond dissociation energies.",
-     "how": "Calculate 958.38 + 498 = 1456.38 kJ mol⁻¹."
-    },
-    {
-     "accept": [
-      [
-       "2",
-       "626",
-       "-1252"
-      ],
-      [
-       "2",
-       "626",
-       "−1252"
-      ]
-     ],
-     "marks": 1,
-     "why": "Two NO bonds form in the reaction, so the formation energy is counted twice.",
-     "description": "Calculate the energy change for forming NO bonds.",
-     "how": "Calculate 2 × (−626) = −1252 kJ mol⁻¹."
-    },
-    {
-     "accept": [
-      [
-       "1456.38",
-       "-1252"
-      ],
-      [
-       "1456.38",
-       "−1252"
-      ]
-     ],
-     "marks": 1,
-     "why": "Combining absorbed and released energy gives the reaction's net change.",
-     "description": "Combine the two energy contributions.",
-     "how": "Calculate 1456.38 + (−1252)."
-    },
-    {
-     "accept": [
-      [
-       "204.38"
-      ]
-     ],
-     "marks": 1,
-     "why": "This is the numerical enthalpy change from the given data.",
-     "description": "Give the calculated value.",
-     "how": "Obtain +204.38."
-    },
-    {
-     "accept": [
-      [
-       "+204.38"
-      ],
-      [
-       "204.38",
-       "positive"
-      ]
-     ],
-     "marks": 1,
-     "why": "The positive sign shows the reaction absorbs energy overall.",
-     "description": "State the sign and units.",
-     "how": "Give ΔH = +204.38 kJ mol⁻¹ and identify it as endothermic."
-    }
-   ],
-   "modelAnswer": [
-    "Energy absorbed in breaking bonds = 958.38 + 498 = 1456.38 kJ mol⁻¹",
-    "Energy released in forming bonds = 2 × (−626) = −1252 kJ mol⁻¹",
-    "ΔH = energy absorbed + energy released",
-    "ΔH = 1456.38 + (−1252)",
-    "ΔH = +204.38 kJ mol⁻¹"
-   ]
-  },
-  {
-   "text": "Q8.3. Explain why formation of a bond is always an exothermic process.",
-   "finalAnswer": "When a bond forms, the bonded atoms reach a lower-energy, more stable state and the excess energy is released.",
-   "marks": 4,
-   "source": "Descriptive 8.3",
+   "source": "Descriptive 5.3",
    "rubric": [
     {
      "accept": [
       [
        "bond",
        "forms"
-      ]
-     ],
-     "marks": 1,
-     "why": "The answer must refer to the formation of a bond.",
-     "description": "Identify the process being explained.",
-     "how": "State what happens when atoms form a bond."
-    },
-    {
-     "accept": [
-      [
-       "lower",
-       "energy"
       ],
       [
-       "stable"
+       "atoms",
+       "join"
       ]
      ],
      "marks": 1,
-     "why": "Bonded atoms have lower energy and greater stability than separated atoms.",
-     "description": "Describe the energy or stability of the bonded state.",
-     "how": "Say that the atoms move to a lower-energy or more stable state."
+     "why": "The answer must identify the process being explained.",
+     "description": "State what happens when a bond forms.",
+     "how": "Explain that atoms become bonded."
     },
     {
      "accept": [
@@ -652,14 +350,30 @@
        "released"
       ],
       [
-       "evolve",
-       "energy"
+       "energy",
+       "evolved"
       ]
      ],
      "marks": 1,
-     "why": "This is the defining energy change of bond formation.",
-     "description": "State what happens to energy.",
-     "how": "Explain that energy is released or evolved."
+     "why": "Energy release is the defining feature that makes the process exothermic.",
+     "description": "State the energy change.",
+     "how": "Say that energy is released or evolved during bond formation."
+    },
+    {
+     "accept": [
+      [
+       "lower",
+       "energy"
+      ],
+      [
+       "more",
+       "stable"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lower-energy state explains why energy is given out.",
+     "description": "Relate bond formation to the energy state of the atoms.",
+     "how": "State that the bonded atoms are in a lower-energy or more stable state."
     },
     {
      "accept": [
@@ -668,120 +382,640 @@
       ]
      ],
      "marks": 1,
-     "why": "Releasing energy makes the process exothermic.",
-     "description": "Connect energy release to the term.",
+     "why": "The final classification answers the question directly.",
+     "description": "Name the process.",
      "how": "Conclude that bond formation is exothermic."
     }
    ],
    "modelAnswer": [
-    "When a bond forms, the atoms move into a lower-energy, more stable arrangement.",
-    "The excess energy is released to the surroundings.",
-    "A process that releases energy is exothermic.",
-    "Therefore, bond formation is exothermic."
+    "When atoms form a bond, they move to a lower-energy, more stable state.",
+    "The energy difference is released to the surroundings.",
+    "Therefore, formation of a bond is an exothermic process."
+   ]
+  },
+  {
+   "text": "Find out the enthalpy change of the following reaction using the given data.\n\nN₂ + O₂ → 2NO\n\nBond dissociation energy of N₂ = 958.38 kJ/mol\nBond dissociation energy of O₂ = 498 kJ/mol\nBond formation energy of NO = −626 kJ/mol",
+   "finalAnswer": "ΔH = +204.38 kJ",
+   "marks": 5,
+   "source": "Descriptive 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "958.38+498"
+      ]
+     ],
+     "marks": 1,
+     "why": "Breaking the N₂ and O₂ bonds absorbs energy.",
+     "description": "Calculate the energy absorbed for bond breaking.",
+     "how": "Add the two bond dissociation energies."
+    },
+    {
+     "accept": [
+      [
+       "2(-626)"
+      ],
+      [
+       "2×-626"
+      ]
+     ],
+     "marks": 1,
+     "why": "Two NO bonds form for the reaction as written, so the formation energy is counted twice.",
+     "description": "Calculate the energy released in NO bond formation.",
+     "how": "Multiply −626 kJ mol⁻¹ by 2."
+    },
+    {
+     "accept": [
+      [
+       "1456.38"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bond-breaking total is needed to obtain the overall enthalpy change.",
+     "description": "Show the total energy absorbed.",
+     "how": "Evaluate 958.38 + 498."
+    },
+    {
+     "accept": [
+      [
+       "1456.38-1252"
+      ],
+      [
+       "1456.38+(-1252)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The released energy must be combined with the absorbed energy using its sign.",
+     "description": "Combine the breaking and formation contributions.",
+     "how": "Add 1456.38 kJ and −1252 kJ."
+    },
+    {
+     "accept": [
+      [
+       "ΔH=204.38"
+      ],
+      [
+       "+204.38 kJ"
+      ]
+     ],
+     "marks": 1,
+     "why": "The positive final value identifies the endothermic enthalpy change.",
+     "description": "State the final enthalpy change.",
+     "how": "Give the signed answer in kJ."
+    }
+   ],
+   "modelAnswer": [
+    "Energy absorbed to break N₂ and O₂ bonds = 958.38 + 498 = 1456.38 kJ.",
+    "Energy evolved in forming two NO bonds = 2(−626) = −1252 kJ.",
+    "ΔH = 1456.38 + (−1252) kJ.",
+    "ΔH = +204.38 kJ.",
+    "The positive enthalpy change shows that the reaction is endothermic."
+   ]
+  },
+  {
+   "text": "Explain why the reaction between atmospheric gases oxygen and nitrogen does not take place under normal conditions? But in the presence of lightning these gases react to give NO. The reaction stops as soon as the lightning stops.",
+   "finalAnswer": "The reaction is highly endothermic and needs the energy supplied by lightning; without that energy, it does not proceed under normal conditions.",
+   "marks": 4,
+   "source": "CRQ 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "N2+O2",
+       "NO"
+      ],
+      [
+       "nitrogen",
+       "oxygen",
+       "NO"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the reactants and product identifies the reaction being discussed.",
+     "description": "Identify the reaction.",
+     "how": "State that atmospheric nitrogen and oxygen react to form NO."
+    },
+    {
+     "accept": [
+      [
+       "highly",
+       "endothermic"
+      ],
+      [
+       "absorbs",
+       "energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Its energy requirement explains why it does not occur readily in ordinary conditions.",
+     "description": "Describe the energy nature of the reaction.",
+     "how": "State that the reaction is highly endothermic or absorbs a large amount of energy."
+    },
+    {
+     "accept": [
+      [
+       "lightning",
+       "energy"
+      ],
+      [
+       "lightning",
+       "provides"
+      ]
+     ],
+     "marks": 1,
+     "why": "Lightning supplies the energy needed for the reaction to occur.",
+     "description": "Explain the role of lightning.",
+     "how": "Say that lightning provides enough energy for the reaction."
+    },
+    {
+     "accept": [
+      [
+       "stops",
+       "lightning"
+      ],
+      [
+       "without",
+       "energy",
+       "does not"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains why the reaction stops when the energy supply ends.",
+     "description": "Explain why the reaction stops when lightning stops.",
+     "how": "State that the reaction needs continuing energy input."
+    }
+   ],
+   "modelAnswer": [
+    "The reaction between atmospheric nitrogen and oxygen to form NO is highly endothermic.",
+    "It does not occur under normal conditions because it needs a large input of energy.",
+    "Lightning supplies enough energy for the reaction to take place.",
+    "When the lightning stops, the energy supply stops and so does the reaction."
+   ]
+  },
+  {
+   "text": "A reaction between natural gas (CH₄) and atmospheric oxygen does not take place when you mix them. As soon as you show a burning match stick, the reaction starts immediately and then it continues until one or both of the reactants is/are used up. Explain.",
+   "finalAnswer": "The burning match supplies the initial energy needed to start combustion. Once started, the exothermic reaction releases heat that keeps it going until a reactant is used up.",
+   "marks": 4,
+   "source": "CRQ 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "CH4",
+       "oxygen"
+      ],
+      [
+       "natural gas",
+       "oxygen"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying the reactants sets out the combustion reaction.",
+     "description": "Identify the substances reacting.",
+     "how": "Name methane or natural gas and atmospheric oxygen."
+    },
+    {
+     "accept": [
+      [
+       "match",
+       "energy"
+      ],
+      [
+       "match",
+       "starts"
+      ]
+     ],
+     "marks": 1,
+     "why": "The match provides the energy that starts the reaction.",
+     "description": "Explain why the match is needed initially.",
+     "how": "State that the burning match supplies energy to start combustion."
+    },
+    {
+     "accept": [
+      [
+       "exothermic"
+      ],
+      [
+       "heat",
+       "released"
+      ]
+     ],
+     "marks": 1,
+     "why": "Heat released by the reaction explains how it continues after ignition.",
+     "description": "Explain why the reaction continues.",
+     "how": "State that combustion is exothermic and releases heat."
+    },
+    {
+     "accept": [
+      [
+       "reactant",
+       "used"
+      ],
+      [
+       "until",
+       "used up"
+      ]
+     ],
+     "marks": 1,
+     "why": "Combustion stops when a required reactant is no longer available.",
+     "description": "State when the reaction ends.",
+     "how": "Say that it continues until one or both reactants are used up."
+    }
+   ],
+   "modelAnswer": [
+    "Mixing methane and oxygen does not provide enough initial energy to start the reaction.",
+    "A burning match supplies the energy needed to start combustion.",
+    "Combustion is exothermic, so the heat released helps the reaction continue.",
+    "The reaction continues until one or both reactants are used up."
+   ]
+  },
+  {
+   "text": "Explain the difference between the terms heat and enthalpy.",
+   "finalAnswer": "Heat is energy transferred during a reaction; enthalpy is the energy content of a system, and enthalpy change is the heat evolved or absorbed during a reaction at constant pressure.",
+   "marks": 4,
+   "source": "Descriptive 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "heat",
+       "transferred"
+      ],
+      [
+       "heat",
+       "evolved",
+       "absorbed"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must describe heat as energy transferred or exchanged.",
+     "description": "Define heat in the context of a reaction.",
+     "how": "State that heat is evolved or absorbed during a reaction."
+    },
+    {
+     "accept": [
+      [
+       "enthalpy",
+       "energy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Enthalpy refers to the energy content of the system, not simply energy being transferred.",
+     "description": "Define enthalpy.",
+     "how": "Identify enthalpy as the energy content of a system."
+    },
+    {
+     "accept": [
+      [
+       "enthalpy",
+       "change",
+       "reaction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Distinguishing enthalpy from its change clarifies the terms.",
+     "description": "Explain what enthalpy change represents.",
+     "how": "Say that ΔH represents the heat evolved or absorbed during the reaction."
+    },
+    {
+     "accept": [
+      [
+       "constant pressure"
+      ],
+      [
+       "ΔH"
+      ]
+     ],
+     "marks": 1,
+     "why": "The constant-pressure condition connects the heat transfer with enthalpy change.",
+     "description": "State the condition for the heat–enthalpy-change relation.",
+     "how": "Mention that at constant pressure, the heat exchanged equals ΔH."
+    }
+   ],
+   "modelAnswer": [
+    "Heat is energy transferred to or from a system during a change.",
+    "Enthalpy is the energy content of a system.",
+    "The enthalpy change, ΔH, is the heat evolved or absorbed during a reaction at constant pressure.",
+    "Thus, heat is energy transfer, while enthalpy describes the system's energy content."
+   ]
+  },
+  {
+   "text": "Explain the role of lipids in our body.",
+   "finalAnswer": "Lipids are biological fuels; during metabolism, their chemical energy is converted into heat that helps keep the body warm.",
+   "marks": 4,
+   "source": "Descriptive 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "lipids",
+       "fuels"
+      ],
+      [
+       "fats",
+       "fuels"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying lipids as fuels explains their energy role.",
+     "description": "State the role of lipids as a fuel.",
+     "how": "Say that lipids or fats are biological fuels."
+    },
+    {
+     "accept": [
+      [
+       "metabolism"
+      ]
+     ],
+     "marks": 1,
+     "why": "Metabolism is the process through which the body obtains usable energy from food.",
+     "description": "Name the process that releases the energy.",
+     "how": "Mention metabolism."
+    },
+    {
+     "accept": [
+      [
+       "chemical",
+       "energy",
+       "converted"
+      ],
+      [
+       "energy",
+       "released"
+      ]
+     ],
+     "marks": 1,
+     "why": "This connects the fuel to the energy change in the body.",
+     "description": "Describe what happens to the fuel's energy.",
+     "how": "State that chemical energy is released or converted during metabolism."
+    },
+    {
+     "accept": [
+      [
+       "heat",
+       "warm"
+      ],
+      [
+       "body",
+       "warm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The heat produced explains how this process helps the body.",
+     "description": "State the effect of the heat.",
+     "how": "Explain that it helps keep the body warm."
+    }
+   ],
+   "modelAnswer": [
+    "Lipids are biological fuels in our body.",
+    "During metabolism, the chemical energy in food is converted into heat energy.",
+    "This heat helps keep us warm."
+   ]
+  },
+  {
+   "text": "Why is it essential to cook some of the food items while others we can eat without cooking?",
+   "finalAnswer": "Cooking supplies energy that can bring about changes in some foods; foods that do not need those changes can be eaten without cooking.",
+   "marks": 4,
+   "source": "Investigative 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "cooking",
+       "energy"
+      ],
+      [
+       "heat",
+       "cooking"
+      ]
+     ],
+     "marks": 1,
+     "why": "Cooking involves supplying heat energy to food.",
+     "description": "Identify the energy input in cooking.",
+     "how": "State that cooking supplies heat or energy."
+    },
+    {
+     "accept": [
+      [
+       "chemical",
+       "change"
+      ],
+      [
+       "changes",
+       "food"
+      ]
+     ],
+     "marks": 1,
+     "why": "The energy input can bring about changes in the food.",
+     "description": "Explain why some food needs cooking.",
+     "how": "Mention that cooking causes changes in some foods."
+    },
+    {
+     "accept": [
+      [
+       "without",
+       "cooking"
+      ],
+      [
+       "raw"
+      ]
+     ],
+     "marks": 1,
+     "why": "This addresses why other foods may be eaten without being cooked.",
+     "description": "Contrast foods that can be eaten without cooking.",
+     "how": "State that some foods do not need cooking before eating."
+    },
+    {
+     "accept": [
+      [
+       "energy",
+       "needed"
+      ],
+      [
+       "does not",
+       "need",
+       "cooking"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response should link the difference to whether heating or a change is needed.",
+     "description": "Connect the two cases.",
+     "how": "Explain that the need for cooking depends on the changes and energy required."
+    }
+   ],
+   "modelAnswer": [
+    "Cooking supplies heat energy and brings about changes in food.",
+    "Some foods need these changes before they are eaten.",
+    "Other foods can be eaten without cooking because they do not need those changes first."
+   ]
+  },
+  {
+   "text": "Why does fireworks look spectacular? What type of chemical compounds undergo chemical reactions during this activity?",
+   "finalAnswer": "Fireworks produce heat, light and sound during combustion; different metal salts, along with oxidising agents, undergo the reactions and produce different colours.",
+   "marks": 4,
+   "source": "Investigative 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "heat",
+       "light",
+       "sound"
+      ]
+     ],
+     "marks": 1,
+     "why": "Heat, light and sound account for the spectacular effects.",
+     "description": "Name the effects produced by fireworks.",
+     "how": "State that fireworks yield heat, light and sound."
+    },
+    {
+     "accept": [
+      [
+       "combustion"
+      ]
+     ],
+     "marks": 1,
+     "why": "Combustion is the chemical process described for fireworks.",
+     "description": "Identify the type of reaction.",
+     "how": "Name combustion reactions."
+    },
+    {
+     "accept": [
+      [
+       "metal salts"
+      ]
+     ],
+     "marks": 1,
+     "why": "Metal salts are named in the section as compounds used in fireworks.",
+     "description": "Name the compounds that produce different colours.",
+     "how": "State that different metal salts are used."
+    },
+    {
+     "accept": [
+      [
+       "oxidising agents"
+      ],
+      [
+       "oxidizing agents"
+      ]
+     ],
+     "marks": 1,
+     "why": "The section identifies oxidising agents as accompanying the metal salts.",
+     "description": "Name the other compounds involved.",
+     "how": "Mention oxidising agents."
+    }
+   ],
+   "modelAnswer": [
+    "Fireworks are the result of combustion reactions that yield heat, light and sound.",
+    "Different metal salts produce a variety of colours when burnt.",
+    "The metal salts react along with oxidising agents."
    ]
   }
  ],
  "lesson": {
   "examTips": [
-   "Board questions may ask you to classify a change as exothermic or endothermic and state whether heat is absorbed or released.",
-   "For a bond-energy calculation, show energy absorbed in bond breaking, energy released in bond formation, and the net ΔH calculation.",
-   "Use a negative sign for heat released and a positive sign for heat absorbed; include the units and balance the equation.",
-   "For explanation questions, connect the energy change to bond breaking, bond formation, or heat transfer to the surroundings."
+   "A short-answer question may ask you to define exothermic or endothermic reactions. Include whether heat is evolved or absorbed.",
+   "For a numerical using bond energies, show the energy absorbed in breaking bonds and the energy released in forming bonds before calculating ΔH.",
+   "Write the sign of ΔH: negative for a heat-evolving exothermic reaction and positive for a heat-absorbing endothermic reaction.",
+   "For an explanation question about bonds, state both processes: bond breaking absorbs energy, while bond formation releases energy.",
+   "When asked about the reverse reaction, state that the same amount of energy is exchanged in the opposite direction."
   ],
   "yourTurn": [
    {
     "hints": [
-     "Think about the direction of the reaction.",
-     "The reverse direction needs the same energy amount, but the energy transfer changes direction."
+     "Work out the energy absorbed when the H₂ and I₂ bonds break.",
+     "Count the two HI bonds formed, then add their given negative formation energy to the bond-breaking energy."
     ],
     "accept": [
      [
-      "yes",
-      "reverse",
-      "absorbs"
+      "ΔH=-11"
      ],
      [
-      "yes",
-      "same",
-      "heat"
+      "-11 kJ"
      ]
     ],
-    "question": "Can exothermic reaction be reversed?",
+    "question": "Calculate the enthalpy change of the following chemical reaction.\n\nH₂(g) + I₂(g) → 2 HI(g)\n\nBond energies of H₂, I₂ and HI are 436,151, and -299 kJ mol⁻¹ respectively.",
     "solution": [
-     "Yes, an exothermic reaction can be reversed.",
-     "In the reverse direction, the same amount of heat is absorbed."
+     "Energy absorbed to break H₂ and I₂ bonds = 436 + 151 = 587 kJ.",
+     "Energy evolved in forming two HI bonds = 2(−299) = −598 kJ.",
+     "ΔH = 587 + (−598) = −11 kJ."
     ],
-    "answer": "Yes; the reverse reaction absorbs the same amount of heat that the forward reaction releases."
+    "answer": "ΔH = −11 kJ"
    },
    {
     "hints": [
-     "Use the equation for forming liquid water given in the section.",
-     "The stated heat is for two moles of water; divide by two and use a negative sign because heat is released."
+     "Add the energy absorbed in breaking the N₂ and O₂ bonds.",
+     "Two NO bonds form, so multiply the given formation energy by 2 and include it as a negative value."
     ],
     "accept": [
      [
-      "-285.8"
+      "ΔH=204.38"
      ],
      [
-      "−285.8"
+      "+204.38 kJ"
      ]
     ],
-    "question": "Calculate the enthalpy change for the formation of one mole of liquid water.",
+    "question": "Find out the enthalpy change of the following reaction using the given data.\n\nN₂ + O₂ → 2NO\n\nBond dissociation energy of N₂ = 958.38 kJ/mol\nBond dissociation energy of O₂ = 498 kJ/mol\nBond formation energy of NO = −626 kJ/mol",
     "solution": [
-     "2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ",
-     "For 2 mol of H₂O, ΔH = −571.6 kJ",
-     "For 1 mol of H₂O, ΔH = −571.6 ÷ 2",
-     "ΔH = −285.8 kJ mol⁻¹"
+     "Energy absorbed to break N₂ and O₂ bonds = 958.38 + 498 = 1456.38 kJ.",
+     "Energy evolved in forming two NO bonds = 2(−626) = −1252 kJ.",
+     "ΔH = 1456.38 + (−1252) = +204.38 kJ.",
+     "The positive enthalpy change shows that the reaction is endothermic."
     ],
-    "answer": "ΔH = −285.8 kJ mol⁻¹"
+    "answer": "ΔH = +204.38 kJ"
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "Bond breaking requires energy, so first add the energies for breaking the H₂ and I₂ bonds.",
-     "text": "Energy absorbed in breaking bonds = 436 + 151 = 587 kJ mol⁻¹"
+     "why": "The balanced equation shows the amounts of hydrogen, oxygen and water in the reaction.",
+     "text": "2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ"
     },
     {
-     "why": "Two HI bonds are formed, and the given formation energy for each is −299 kJ mol⁻¹.",
-     "text": "Energy released in forming bonds = 2 × (−299) = −598 kJ mol⁻¹"
+     "why": "Heat appears on the product side, so the reaction releases heat.",
+     "text": "571.6 kJ heat energy is evolved during this reaction."
     },
     {
-     "why": "The net change is the absorbed energy plus the negative contribution from bond formation.",
-     "text": "ΔH = energy absorbed + energy released = 587 + (−598)"
+     "why": "An exothermic reaction has a negative enthalpy change.",
+     "text": "If the energy evolved is shown separately it is expressed as ΔH = -571.6 kJ."
     },
     {
-     "why": "The negative result means the reaction releases heat overall.",
-     "text": "ΔH = −11 kJ mol⁻¹"
+     "why": "Reversing the reaction reverses the direction of heat transfer.",
+     "text": "The same amount of energy will be absorbed when the reaction will move in the backward direction i.e. water will decompose to give hydrogen and oxygen back."
     }
    ],
-   "question": "Calculate the enthalpy change of the following chemical reaction.\n\nH₂(g) + I₂(g) → 2 HI(g)\n\nBond energies of H₂, I₂ and HI are 436,151, and -299 kJ mol⁻¹ respectively.",
-   "answer": "ΔH = −11 kJ mol⁻¹"
+   "question": "Hydrogen gas and oxygen gas react to give liquid water in an exothermic reaction.",
+   "answer": "2H₂(g) + O₂(g) → 2H₂O(l) + 571.6 kJ; ΔH = −571.6 kJ"
   },
   "explain": [
    {
     "title": "Heat of a reaction",
-    "body": "Your textbook defines it this way: “Heat, which is evolved or absorbed during a chemical reaction, is called the heat of that reaction.” A reaction may release heat or take it in."
+    "body": "Heat, which is evolved or absorbed during a chemical reaction, is called the heat of that reaction."
    },
    {
     "title": "Exothermic and endothermic reactions",
-    "body": "Your textbook defines them this way: “Chemical reactions in which heat energy is evolved are called exothermic reactions while those in which heat energy is absorbed are called endothermic reactions.” Released heat warms the surroundings; absorbed heat can cool them."
+    "body": "Chemical reactions in which heat energy is evolved are called exothermic reactions while those in which heat energy is absorbed are called endothermic reactions. Heat from an exothermic reaction goes to the surroundings and container, making them warmer. An endothermic reaction takes heat from the surroundings, so the container becomes cooler."
    },
    {
     "title": "The sign of ΔH",
-    "body": "When heat is released, ΔH is negative. When heat is absorbed, ΔH is positive. For example, the section gives ΔH = −393.5 kJ mol⁻¹ for carbon burning to form carbon dioxide."
+    "body": "When energy evolved is shown separately, an exothermic reaction has a negative ΔH. An endothermic reaction has a positive ΔH. Reversing a reaction reverses the direction of the heat change."
    },
    {
-    "title": "Bond energies explain the overall change",
-    "body": "Breaking bonds absorbs energy, while forming bonds releases energy. Compare the amounts: if bond formation releases more energy than bond breaking absorbs, the reaction is exothermic; if it releases less, the reaction is endothermic."
+    "title": "Bond energy and the overall reaction",
+    "body": "Breaking bonds absorbs energy, while forming bonds evolves energy. The overall reaction is exothermic if more energy is released by bond formation than is absorbed in bond breaking. It is endothermic if more energy is absorbed than released."
+   },
+   {
+    "title": "Exothermic reactions in everyday life",
+    "body": "Combustion of fuels releases heat used for cooking, heating and generating electricity. During metabolism, chemical energy in food is converted to heat. Fireworks are combustion reactions that produce heat, light and sound."
    }
   ],
   "mistakes": [
-   "Calling bond breaking exothermic: breaking a bond absorbs energy.",
-   "Using a positive ΔH for a reaction that releases heat, or a negative ΔH for one that absorbs heat.",
-   "Forgetting to count every bond in the balanced equation, such as the two HI bonds formed in the example.",
-   "Giving the energy for two moles when the question asks for one mole; divide by the number of moles and show the units.",
-   "Leaving out the sign or units in a bond-energy calculation."
+   "Do not give a positive ΔH for a reaction that evolves heat; its ΔH is negative.",
+   "Do not say that bond breaking releases energy. Breaking a bond absorbs energy.",
+   "Do not forget to multiply a bond energy by the number of bonds formed or broken.",
+   "When bond-formation energy is given as a negative value, keep its negative sign in the calculation.",
+   "Do not assume that the reverse reaction has the same sign of ΔH; it has the opposite sign.",
+   "In a bond-energy calculation, show both the bond-breaking and bond-forming contributions before giving the final answer."
   ]
  }
 }

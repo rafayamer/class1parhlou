@@ -1,0 +1,802 @@
+{
+ "note": {
+  "explanation": "A mole is a counting unit for particles. One mole contains 6.022 × 10²³ particles, and the particles may be atoms, molecules or ions. Molar mass is the mass of one mole of a substance. To find a compound’s molar mass, multiply each element’s atomic mass by its subscript and add the contributions.",
+  "examples": [
+   "One mole of O₂ contains 6.022 × 10²³ molecules and has a mass of 32 g.",
+   "For H₂SO₄: 2(1) + 1(32) + 4(16) = 98 g mol⁻¹."
+  ],
+  "checkAnswer": "One mole; 18 g mol⁻¹",
+  "keywords": [
+   "mole",
+   "Avogadro's number",
+   "molar mass",
+   "molecules",
+   "formula units",
+   "g mol⁻¹"
+  ],
+  "simple": "A mole is a very large counting unit: like a dozen means 12, a mole means 6.022 × 10²³ particles. Molar mass tells you the mass of that mole.",
+  "checkQuestion": "How many particles are in one mole, and what is the molar mass of H₂O?",
+  "title": "The Mole and Molar Mass",
+  "steps": [
+   "Identify the elements in the formula and their subscripts.",
+   "Multiply each atomic mass by the number of atoms of that element.",
+   "Add the contributions.",
+   "Write the molar mass in g mol⁻¹."
+  ],
+  "answer": "One mole contains 6.022 × 10²³ particles. The molar mass of H₂O is 18 g mol⁻¹.",
+  "checkAccept": [
+   [
+    "6.022×10^23",
+    "18",
+    "g mol"
+   ],
+   [
+    "6.022×10^23",
+    "18 g/mol"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "6.022 × 10²³ atoms",
+    "6.022 × 10²³ molecules",
+    "6.022 × 10²³ formula units",
+    "6.022 × 10²² molecules"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "One mole of oxygen gas, O₂, contains how many molecules?",
+   "rationales": [
+    "This is the number of atoms in one mole, not the number of O₂ molecules.",
+    "Correct: one mole contains Avogadro’s number of the specified particles, here O₂ molecules.",
+    "Formula units are used for ionic compounds such as NaCl, not molecular O₂.",
+    "This is one-tenth of Avogadro’s number, so it is not the number of molecules in one mole."
+   ]
+  },
+  {
+   "options": [
+    "16 g mol⁻¹",
+    "18 g mol⁻¹",
+    "20 g mol⁻¹",
+    "34 g mol⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the molar mass of water, H₂O? Use H = 1 and O = 16.",
+   "rationales": [
+    "This counts only the oxygen atom and leaves out both hydrogen atoms.",
+    "Correct: 2(1) + 16 = 18 g mol⁻¹.",
+    "This is not the sum of the atomic-mass contributions in H₂O.",
+    "This incorrectly adds the atomic masses instead of using the two hydrogen atoms and one oxygen atom."
+   ]
+  },
+  {
+   "options": [
+    "28 g mol⁻¹",
+    "30 g mol⁻¹",
+    "32 g mol⁻¹",
+    "34 g mol⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the molar mass of O₂? Use O = 16.",
+   "rationales": [
+    "This is not the total mass of the two oxygen atoms in O₂.",
+    "This does not equal twice the atomic mass of oxygen.",
+    "Correct: O₂ has two oxygen atoms, so 2(16) = 32 g mol⁻¹.",
+    "This incorrectly gives more than the contribution of two oxygen atoms."
+   ]
+  },
+  {
+   "options": [
+    "The mass of one atom",
+    "The mass of one mole of a substance",
+    "The number of atoms in one gram",
+    "The number of grams in one molecule"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is meant by the molar mass of a substance?",
+   "rationales": [
+    "This describes the mass of a single atom, not the mass of a mole.",
+    "Correct: molar mass is the mass of one mole of a substance.",
+    "This does not define molar mass.",
+    "This does not define molar mass and confuses the mass of a molecule with a mole."
+   ]
+  },
+  {
+   "options": [
+    "1 mole",
+    "2 moles",
+    "16 moles",
+    "32 moles"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How many moles are present in 64 g of O₂? Its molar mass is 32 g mol⁻¹.",
+   "rationales": [
+    "One mole of O₂ has a mass of 32 g, not 64 g.",
+    "Correct: 64 ÷ 32 = 2 moles.",
+    "This does not follow from dividing the given mass by the molar mass.",
+    "This uses the molar mass as a number of moles rather than dividing 64 g by 32 g mol⁻¹."
+   ]
+  },
+  {
+   "options": [
+    "18 g",
+    "32 g",
+    "58.5 g",
+    "6.022 × 10²³ g"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the mass of one mole of NaCl, according to the section?",
+   "rationales": [
+    "18 g is the molar mass of water, not NaCl.",
+    "32 g is the molar mass of O₂, not NaCl.",
+    "Correct: the section gives the mass of one mole of NaCl as 58.5 g.",
+    "This is a particle count, not a mass in grams."
+   ]
+  },
+  {
+   "options": [
+    "98 g mol⁻¹",
+    "96 g mol⁻¹",
+    "49 g mol⁻¹",
+    "80 g mol⁻¹"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the molar mass of H₂SO₄? Use H = 1, S = 32 and O = 16.",
+   "rationales": [
+    "Correct: 2(1) + 32 + 4(16) = 98 g mol⁻¹.",
+    "This does not correctly add the atomic-mass contributions of H₂SO₄.",
+    "This is half of the correct molar mass.",
+    "This does not include the correct contributions of all atoms in H₂SO₄."
+   ]
+  },
+  {
+   "options": [
+    "One dozen",
+    "6.022 × 10²³ particles",
+    "6.022 × 10²³ grams",
+    "The mass of one atom"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes one mole of a substance?",
+   "rationales": [
+    "A dozen is 12 items and is only an analogy for a mole.",
+    "Correct: one mole contains 6.022 × 10²³ specified particles.",
+    "Avogadro’s number counts particles; it is not a mass in grams.",
+    "One mole is a quantity of particles, not the mass of a single atom."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Determine the molar mass of the following compound in g mol⁻¹: (a) H₂SO₄ (Sulphuric acid)",
+   "finalAnswer": "98 g mol⁻¹",
+   "marks": 2,
+   "source": "Example 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2(1)",
+       "1(32)",
+       "4(16)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct atom counts and atomic masses are needed to find the molar mass.",
+     "description": "Set up the contributions from each atom.",
+     "how": "Write 2(1) + 1(32) + 4(16)."
+    },
+    {
+     "accept": [
+      [
+       "98",
+       "g mol"
+      ],
+      [
+       "98 g/mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final sum and unit give the required molar mass.",
+     "description": "Give the molar mass.",
+     "how": "Add the contributions and state 98 g mol⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Atomic mass of H = 1; Atomic mass of S = 32; Atomic mass of O = 16",
+    "Add the contribution of each atom",
+    "2(1) + 1 (32) + 4(16) = 98 g mol⁻¹"
+   ]
+  },
+  {
+   "text": "Determine the molar mass of the following compound in g mol⁻¹: (b) C₆H₁₂O₆ (Glucose)",
+   "finalAnswer": "180 g mol⁻¹",
+   "marks": 2,
+   "source": "Example 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "6(12)",
+       "12(1)",
+       "6(16)"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each contribution must use the correct subscript and atomic mass.",
+     "description": "Set up the contributions from each atom.",
+     "how": "Write 6(12) + 12(1) + 6(16)."
+    },
+    {
+     "accept": [
+      [
+       "180",
+       "g mol"
+      ],
+      [
+       "180 g/mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sum is the molar mass of glucose.",
+     "description": "Give the molar mass.",
+     "how": "Add the contributions and state 180 g mol⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "Atomic mass of C = 12; Atomic mass of H = 1; Atomic mass of O = 16",
+    "Add the contribution of each atom",
+    "6(12) + 12(1) + 6(16) = 180 g mol⁻¹"
+   ]
+  },
+  {
+   "text": "Q4.3. How many molecules are present in 1.5 g H₂O?",
+   "finalAnswer": "5.018 × 10²² molecules",
+   "marks": 2,
+   "source": "Short 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "18 g mol",
+       "0.0833"
+      ],
+      [
+       "18",
+       "1.5/18"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass must first be converted into moles using water’s molar mass.",
+     "description": "Calculate the moles of water.",
+     "how": "Find M(H₂O) = 18 g mol⁻¹ and calculate 1.5 ÷ 18 = 0.0833 mol."
+    },
+    {
+     "accept": [
+      [
+       "5.018",
+       "10^22"
+      ],
+      [
+       "5.02",
+       "10^22"
+      ]
+     ],
+     "marks": 1,
+     "why": "Multiplying moles by Avogadro’s number gives the number of molecules.",
+     "description": "Give the number of molecules.",
+     "how": "Multiply the amount in moles by 6.022 × 10²³."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of H₂O = 2(1) + 16 = 18 g mol⁻¹",
+    "Moles of H₂O = 1.5 ÷ 18 = 0.0833 mol",
+    "Number of molecules = 0.0833 × 6.022 × 10²³ = 5.018 × 10²² molecules"
+   ]
+  },
+  {
+   "text": "Q4.4. What is the difference between a mole and Avogadro's number?",
+   "finalAnswer": "A mole is the amount of substance containing 6.022 × 10²³ specified particles; Avogadro's number is the number 6.022 × 10²³.",
+   "marks": 2,
+   "source": "Short 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "mole",
+       "amount",
+       "6.022×10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The meaning of a mole must be stated.",
+     "description": "Define a mole.",
+     "how": "State that one mole contains 6.022 × 10²³ specified particles."
+    },
+    {
+     "accept": [
+      [
+       "Avogadro",
+       "number",
+       "6.022×10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must distinguish the counting number from the quantity called a mole.",
+     "description": "Explain Avogadro’s number.",
+     "how": "State that Avogadro’s number is the numerical value 6.022 × 10²³."
+    }
+   ],
+   "modelAnswer": [
+    "A mole is the quantity of a substance that contains Avogadro's number of specified particles.",
+    "Avogadro's number is the number 6.022 × 10²³."
+   ]
+  },
+  {
+   "text": "Q4.3. Why does Avogadro's number have an immense importance in chemistry?",
+   "finalAnswer": "Atoms and molecules are so small that they cannot be counted individually; the mole concept lets us count them by weighing measurable amounts of matter.",
+   "marks": 4,
+   "source": "CRQ 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "atoms",
+       "molecules",
+       "small"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason for needing a counting method is that particles are extremely small.",
+     "description": "Explain why direct counting is impractical.",
+     "how": "State that atoms and molecules are too small to count individually."
+    },
+    {
+     "accept": [
+      [
+       "mole",
+       "count"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mole concept connects a count to a known number of particles.",
+     "description": "Connect Avogadro’s number to the mole.",
+     "how": "Explain that one mole represents 6.022 × 10²³ particles."
+    },
+    {
+     "accept": [
+      [
+       "weigh",
+       "matter"
+      ]
+     ],
+     "marks": 1,
+     "why": "Weighing provides a practical way to handle large numbers of tiny particles.",
+     "description": "Describe the practical use.",
+     "how": "State that weighing a sample lets us count particles indirectly."
+    },
+    {
+     "accept": [
+      [
+       "6.022×10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The value of Avogadro’s number supports the explanation.",
+     "description": "Give the number.",
+     "how": "Include 6.022 × 10²³ particles per mole."
+    }
+   ],
+   "modelAnswer": [
+    "Atoms and molecules are so small that they cannot be counted individually.",
+    "One mole contains 6.022 × 10²³ particles.",
+    "The mole concept allows us to count atoms and molecules by weighing macroscopically small amounts of matter."
+   ]
+  },
+  {
+   "text": "Q4.7. Calculate the number of atoms in the following. (a) 3g of H₂",
+   "finalAnswer": "1.8066 × 10²⁴ atoms",
+   "marks": 4,
+   "source": "Descriptive 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2 g mol",
+       "3/2"
+      ],
+      [
+       "1.5 mol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass of hydrogen must be converted into moles of H₂.",
+     "description": "Find moles of H₂.",
+     "how": "Use molar mass H₂ = 2 g mol⁻¹ and calculate 3 ÷ 2 = 1.5 mol."
+    },
+    {
+     "accept": [
+      [
+       "2",
+       "atoms",
+       "H2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each H₂ molecule contains two hydrogen atoms.",
+     "description": "Convert molecules into atoms.",
+     "how": "Recognise that each H₂ molecule has two atoms."
+    },
+    {
+     "accept": [
+      [
+       "3",
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The atom amount is three moles of atoms.",
+     "description": "Use Avogadro’s number.",
+     "how": "Calculate 1.5 × 2 × 6.022 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "1.8066",
+       "10^24"
+      ],
+      [
+       "1.81",
+       "10^24"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must report the total number of hydrogen atoms.",
+     "description": "Give the number of atoms.",
+     "how": "State 1.8066 × 10²⁴ atoms."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of H₂ = 2 g mol⁻¹",
+    "Moles of H₂ = 3 ÷ 2 = 1.5 mol",
+    "Each molecule of H₂ contains 2 atoms",
+    "Number of atoms = 1.5 × 2 × 6.022 × 10²³ = 1.8066 × 10²⁴ atoms"
+   ]
+  },
+  {
+   "text": "Q4.7. Calculate the number of atoms in the following. (b) 3.4 moles of N₂",
+   "finalAnswer": "4.095 × 10²⁴ atoms",
+   "marks": 4,
+   "source": "Descriptive 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3.4",
+       "mol",
+       "N2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given amount is in moles of N₂ molecules.",
+     "description": "Identify the given amount.",
+     "how": "Use 3.4 mol of N₂."
+    },
+    {
+     "accept": [
+      [
+       "2",
+       "atoms",
+       "N2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each N₂ molecule contains two nitrogen atoms.",
+     "description": "Convert molecules into atoms.",
+     "how": "Multiply the amount of N₂ by 2 to obtain moles of nitrogen atoms."
+    },
+    {
+     "accept": [
+      [
+       "6.8",
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "Avogadro’s number converts moles of atoms into a number of atoms.",
+     "description": "Apply Avogadro’s number.",
+     "how": "Calculate 3.4 × 2 × 6.022 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "4.095",
+       "10^24"
+      ],
+      [
+       "4.09",
+       "10^24"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be the total number of nitrogen atoms.",
+     "description": "Give the number of atoms.",
+     "how": "State approximately 4.095 × 10²⁴ atoms."
+    }
+   ],
+   "modelAnswer": [
+    "Each molecule of N₂ contains 2 atoms",
+    "Moles of nitrogen atoms = 3.4 × 2 = 6.8 mol",
+    "Number of atoms = 6.8 × 6.022 × 10²³",
+    "Number of atoms = 4.095 × 10²⁴ atoms"
+   ]
+  },
+  {
+   "text": "Q4.7. Calculate the number of atoms in the following. (c) 10g of C₆H₁₂O₆.",
+   "finalAnswer": "8.029 × 10²³ atoms",
+   "marks": 5,
+   "source": "Descriptive 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "180",
+       "g mol"
+      ],
+      [
+       "6(12)",
+       "12(1)",
+       "6(16)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molar mass is needed to convert the glucose mass into moles.",
+     "description": "Find molar mass.",
+     "how": "Calculate 6(12) + 12(1) + 6(16) = 180 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "10/180"
+      ],
+      [
+       "0.0556"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sample mass must be converted into moles of glucose.",
+     "description": "Find moles of glucose.",
+     "how": "Calculate 10 ÷ 180 = 0.0556 mol."
+    },
+    {
+     "accept": [
+      [
+       "24",
+       "atoms"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each glucose molecule contains 24 atoms in total.",
+     "description": "Count atoms in one molecule.",
+     "how": "Add 6 carbon, 12 hydrogen and 6 oxygen atoms."
+    },
+    {
+     "accept": [
+      [
+       "0.0556",
+       "24",
+       "6.022",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The number of glucose molecules and atoms is obtained using Avogadro’s number and atoms per molecule.",
+     "description": "Calculate the total atoms.",
+     "how": "Use 0.0556 × 6.022 × 10²³ × 24."
+    },
+    {
+     "accept": [
+      [
+       "8.029",
+       "10^23"
+      ],
+      [
+       "8.03",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final result must be the number of all atoms in the sample.",
+     "description": "Give the number of atoms.",
+     "how": "State approximately 8.029 × 10²³ atoms."
+    }
+   ],
+   "modelAnswer": [
+    "Molar mass of C₆H₁₂O₆ = 6(12) + 12(1) + 6(16) = 180 g mol⁻¹",
+    "Moles of C₆H₁₂O₆ = 10 ÷ 180 = 0.0556 mol",
+    "Number of molecules = 0.0556 × 6.022 × 10²³",
+    "Each molecule contains 6 + 12 + 6 = 24 atoms",
+    "Number of atoms = 0.0556 × 6.022 × 10²³ × 24 = 8.029 × 10²³ atoms"
+   ]
+  },
+  {
+   "text": "Q4.2. The chemical formula for sand is SiO₂ but the sand does not exist in the form of discrete molecules like H₂O. How has its formula been determined keeping in view its structure?",
+   "finalAnswer": "SiO₂ is the simplest whole-number ratio of silicon atoms to oxygen atoms in the giant structure of sand; it is an empirical formula, not a formula for a discrete molecule.",
+   "marks": 4,
+   "source": "Investigative 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "giant",
+       "structure"
+      ],
+      [
+       "network"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must recognise that sand has a continuous structure rather than separate molecules.",
+     "description": "Describe the structure.",
+     "how": "State that silicon and oxygen atoms form a giant continuous structure."
+    },
+    {
+     "accept": [
+      [
+       "ratio"
+      ],
+      [
+       "silicon",
+       "oxygen"
+      ]
+     ],
+     "marks": 1,
+     "why": "The formula represents the relative numbers of the elements.",
+     "description": "Explain what the formula represents.",
+     "how": "State that the formula expresses the silicon-to-oxygen atom ratio."
+    },
+    {
+     "accept": [
+      [
+       "1:2"
+      ],
+      [
+       "one",
+       "two"
+      ]
+     ],
+     "marks": 1,
+     "why": "The atom ratio is needed to establish the formula.",
+     "description": "Give the atom ratio.",
+     "how": "State that the ratio is one silicon atom to two oxygen atoms."
+    },
+    {
+     "accept": [
+      [
+       "SiO2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct empirical formula is the required final result.",
+     "description": "Give the formula.",
+     "how": "Write SiO₂ as the simplest whole-number ratio."
+    }
+   ],
+   "modelAnswer": [
+    "Sand has a giant continuous structure rather than separate molecules.",
+    "Its formula shows the simplest ratio of the atoms in the structure.",
+    "The ratio of silicon atoms to oxygen atoms is 1:2.",
+    "Therefore, the empirical formula is SiO₂."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may ask you to define a mole, state Avogadro’s number, or distinguish the number from the unit.",
+   "Molar-mass questions usually earn marks for showing each atom’s contribution before giving the total with the unit g mol⁻¹.",
+   "For questions asking for particles or atoms in a sample, first find moles, then multiply by 6.022 × 10²³; account for the number of atoms in each molecule.",
+   "Write the type of particle being counted, such as atoms, molecules or formula units. A bare number may lose a unit or identification mark."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First find the molar mass of H₂O.",
+     "Convert 1.5 g into moles, then multiply by Avogadro’s number."
+    ],
+    "accept": [
+     [
+      "5.018",
+      "10^22"
+     ],
+     [
+      "5.02",
+      "10^22"
+     ]
+    ],
+    "question": "Q4.3. How many molecules are present in 1.5 g H₂O?",
+    "solution": [
+     "Molar mass of H₂O = 2(1) + 16 = 18 g mol⁻¹",
+     "Moles of H₂O = 1.5 ÷ 18 = 0.0833 mol",
+     "Number of molecules = 0.0833 × 6.022 × 10²³ = 5.018 × 10²² molecules"
+    ],
+    "answer": "5.018 × 10²² molecules"
+   },
+   {
+    "hints": [
+     "Find the molar mass of H₂ and convert 3 g into moles.",
+     "Each H₂ molecule contains two atoms, so multiply the number of molecules by 2."
+    ],
+    "accept": [
+     [
+      "1.8066",
+      "10^24"
+     ],
+     [
+      "1.81",
+      "10^24"
+     ]
+    ],
+    "question": "Q4.7. Calculate the number of atoms in the following. (a) 3g of H₂",
+    "solution": [
+     "Molar mass of H₂ = 2 g mol⁻¹",
+     "Moles of H₂ = 3 ÷ 2 = 1.5 mol",
+     "Each molecule of H₂ contains 2 atoms",
+     "Number of atoms = 1.5 × 2 × 6.022 × 10²³ = 1.8066 × 10²⁴ atoms"
+    ],
+    "answer": "1.8066 × 10²⁴ atoms"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These atomic masses are the values needed to calculate the mass contributed by each atom in H₂SO₄.",
+     "text": "Atomic mass of H = 1  Atomic mass of S = 32  Atomic mass of O = 16"
+    },
+    {
+     "why": "The subscript of each element tells how many times its atomic mass must be counted.",
+     "text": "Add the contribution of each atom"
+    },
+    {
+     "why": "Adding the contributions gives the molar mass of one mole of H₂SO₄.",
+     "text": "2(1) + 1 (32) + 4(16) = 98 g mol⁻¹"
+    }
+   ],
+   "question": "Determine the molar masses of the following compounds in g mol⁻¹. (a) H₂SO₄ (Sulphuric acid)",
+   "answer": "98 g mol⁻¹"
+  },
+  "explain": [
+   {
+    "title": "A mole counts particles",
+    "body": "Your textbook defines it this way: “the quantity of a substance containing Avogadro's number of particles (Nₐ) is called a Mole.” One mole means 6.022 × 10²³ particles. Always say whether the particles are atoms, molecules or ions."
+   },
+   {
+    "title": "The particles depend on the substance",
+    "body": "A mole of carbon means 6.022 × 10²³ carbon atoms. A mole of O₂ means 6.022 × 10²³ oxygen molecules. A mole of NaCl means 6.022 × 10²³ formula units."
+   },
+   {
+    "title": "Molar mass is mass per mole",
+    "body": "Your textbook defines it this way: “The mass of one mole of a substance is called Molar mass.” For a compound, multiply each element’s atomic mass by the subscript in its formula, then add the contributions."
+   },
+   {
+    "title": "Use the formula to count every atom",
+    "body": "In H₂SO₄ there are 2 H atoms, 1 S atom and 4 O atoms. Its molar mass is 2(1) + 1(32) + 4(16) = 98 g mol⁻¹. Include the correct unit and particle name in your answer."
+   }
+  ],
+  "mistakes": [
+   "Do not treat Avogadro’s number and a mole as exactly the same idea: the number is 6.022 × 10²³; a mole is an amount containing that number of specified particles.",
+   "Do not forget to multiply an atomic mass by its subscript, such as using 4(16) for the four oxygen atoms in H₂SO₄.",
+   "Do not confuse atoms with molecules: one O₂ molecule has two atoms, while one mole of O₂ contains one mole of O₂ molecules.",
+   "Do not leave off g mol⁻¹ when giving a molar mass, or atoms/molecules when giving a particle count."
+  ]
+ }
+}

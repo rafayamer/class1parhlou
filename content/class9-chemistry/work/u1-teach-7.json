@@ -1,34 +1,36 @@
 {
  "note": {
-  "explanation": "A solution is unsaturated if it can still dissolve more solute at a particular temperature. It is saturated when the maximum amount of solute has dissolved in a particular amount of solvent at that temperature. Different solutes can dissolve in different amounts.",
-  "examples": [],
-  "checkAnswer": "A saturated solution: no more solute dissolves at that temperature.",
+  "explanation": "A solution is unsaturated if it can still dissolve more solute at a particular temperature. It is saturated when it has dissolved the maximum amount of solute possible in a particular amount of solvent at that temperature.",
+  "examples": [
+   "Sugar dissolves in water, and more sugar can still dissolve: the solution is unsaturated.",
+   "At 20°C, 36 g of sodium chloride dissolves in 100 g of water to make a saturated solution."
+  ],
+  "checkAnswer": "An unsaturated solution can dissolve more solute at that temperature; a saturated solution has dissolved the maximum amount.",
   "keywords": [
-   "unsaturated",
-   "saturated",
+   "unsaturated solution",
+   "saturated solution",
    "solute",
    "solvent",
    "solubility",
-   "temperature"
+   "particular temperature"
   ],
-  "simple": "Unsaturated means there is still room for more solute to dissolve. Saturated means the solution has dissolved as much solute as it can at that temperature.",
-  "checkQuestion": "What happens to extra sugar added to a saturated solution?",
-  "title": "Unsaturated and saturated solutions",
+  "simple": "Unsaturated means more solute can dissolve. Saturated means no more can dissolve at that temperature.",
+  "checkQuestion": "What is the difference between an unsaturated solution and a saturated solution?",
+  "title": "Unsaturated and Saturated Solutions",
   "steps": [
-   "Add a small amount of sugar to water and stir; it dissolves.",
-   "Keep adding and stirring; sugar continues to dissolve while the solution can take more.",
-   "When no more sugar dissolves, the solution is saturated at that temperature.",
-   "At 20°C, 100 g of water dissolves 36 g of sodium chloride or 203.9 g of table sugar to form saturated solutions."
+   "Check whether more solute can dissolve at the same temperature.",
+   "If more can dissolve, the solution is unsaturated.",
+   "If the maximum amount has dissolved, the solution is saturated."
   ],
-  "answer": "The extra sugar does not dissolve and settles at the bottom.",
+  "answer": "An unsaturated solution can dissolve more solute; a saturated solution contains the maximum amount that can dissolve at that temperature.",
   "checkAccept": [
    [
-    "does not dissolve",
-    "settles"
+    "more",
+    "unsaturated"
    ],
    [
-    "p:remain",
-    "p:bottom"
+    "maximum",
+    "saturated"
    ]
   ]
  },
@@ -36,327 +38,381 @@
   {
    "options": [
     "It can dissolve more solute at that temperature.",
+    "It has dissolved the maximum amount of solute at that temperature.",
     "It contains no solvent.",
-    "Extra solute always settles at the bottom.",
-    "It contains the maximum amount of solute that can dissolve."
+    "It must contain solid solute at the bottom."
    ],
    "fromBook": false,
    "correctIndex": 0,
    "stem": "Which statement describes an unsaturated solution?",
    "rationales": [
-    "This is correct because an unsaturated solution can dissolve more solute at that temperature.",
-    "This is wrong because a solution contains a solvent.",
-    "This is wrong because extra solute settles when the solution has reached saturation.",
-    "This is wrong because the maximum dissolved amount describes a saturated solution."
+    "This is correct: an unsaturated solution can dissolve more solute at that temperature.",
+    "This describes a saturated solution, not an unsaturated one.",
+    "A solution contains a solvent, so this does not define an unsaturated solution.",
+    "Undissolved solute may appear in a saturated mixture, but it is not the definition of an unsaturated solution."
    ]
   },
   {
    "options": [
-    "It can still dissolve more solute.",
-    "It has dissolved the maximum amount of solute at that temperature.",
-    "It contains no solute.",
-    "It must be a mixture of two liquids."
+    "The solution has dissolved the maximum amount of solute at that temperature.",
+    "The solution has dissolved no solute.",
+    "The solvent has evaporated completely.",
+    "The solute has changed into a different substance."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When is a solution saturated?",
+   "rationales": [
+    "This is correct: saturation means the maximum amount of solute has dissolved in that amount of solvent at that temperature.",
+    "A solution with no dissolved solute is not necessarily saturated.",
+    "A saturated solution still contains solvent; complete evaporation is not its definition.",
+    "Dissolving does not mean that the solute has changed into a different substance."
+   ]
+  },
+  {
+   "options": [
+    "A saturated solution",
+    "An unsaturated solution",
+    "A pure solvent",
+    "A heterogeneous solid"
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "What is a saturated solution?",
+   "stem": "A solution can still dissolve more sugar at its current temperature. What kind of solution is it?",
    "rationales": [
-    "This is wrong because a solution that can dissolve more solute is unsaturated.",
-    "This is correct because saturation means the maximum amount has dissolved at that temperature.",
-    "This is wrong because a saturated solution contains dissolved solute.",
-    "This is wrong because saturation does not require two liquids."
+    "A saturated solution has already dissolved the maximum amount at that temperature.",
+    "This is correct: the solution can still dissolve more solute.",
+    "A solution containing dissolved sugar is not a pure solvent.",
+    "This does not describe the state of a solution that can dissolve more sugar."
    ]
   },
   {
    "options": [
-    "It settles at the bottom.",
-    "It changes into water.",
-    "It dissolves completely in every case.",
-    "It turns the solvent into a solute."
+    "100 g water at 20°C",
+    "100 g water at 0°C",
+    "100 g sodium chloride at 20°C",
+    "203.9 g water at 20°C"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "What happens when more sugar is added after a sugar solution has become saturated?",
+   "stem": "According to this section, how much sodium chloride dissolves in 100 g of water at 20°C to give a saturated solution?",
    "rationales": [
-    "This is correct because extra sugar will not dissolve and settles at the bottom.",
-    "This is wrong because adding sugar does not change it into water.",
-    "This is wrong because a saturated solution cannot dissolve more sugar at that temperature.",
-    "This is wrong because the added sugar does not turn the solvent into a solute."
+    "This is correct: the section gives 36 g of sodium chloride per 100 g water at 20°C.",
+    "The amount and temperature do not match the stated example.",
+    "This gives the mass of sodium chloride, not the amount of water used.",
+    "The 203.9 g figure is for table sugar, not water."
    ]
   },
   {
    "options": [
-    "36 g",
-    "100 g",
     "203.9 g",
-    "5 g"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "According to the section, how much sodium chloride dissolves in 100 g of water at 20°C to make a saturated solution?",
-   "rationales": [
-    "This is correct because the section gives 36 g of sodium chloride per 100 g of water at 20°C.",
-    "This is wrong because 100 g is the amount of water, not the dissolved sodium chloride.",
-    "This is wrong because 203.9 g is the amount of table sugar stated for 100 g of water at 20°C.",
-    "This is wrong because 5 g is used in the sugar demonstration, not the stated sodium chloride solubility."
-   ]
-  },
-  {
-   "options": [
     "36 g",
     "5 g",
-    "100 g",
-    "203.9 g"
+    "100 g"
    ],
    "fromBook": false,
-   "correctIndex": 3,
-   "stem": "How much table sugar dissolves in 100 g of water at 20°C to form a saturated solution, according to the section?",
+   "correctIndex": 0,
+   "stem": "At 20°C, how much table sugar dissolves in 100 g of water to give a saturated solution, according to this section?",
    "rationales": [
-    "This is wrong because 36 g is the stated amount for sodium chloride.",
-    "This is wrong because 5 g is one portion used in the sugar demonstration.",
-    "This is wrong because 100 g is the amount of water in the comparison.",
-    "This is correct because the section states that 203.9 g of table sugar dissolves in 100 g of water at 20°C."
+    "This is correct: the section states that 203.9 g of table sugar dissolves in water at 20°C to give a saturated solution.",
+    "36 g is the stated amount for sodium chloride, not table sugar.",
+    "5 g is used in the demonstration, but it is not the stated saturation amount.",
+    "100 g is the amount of water in the comparison, not the amount of sugar."
    ]
   },
   {
    "options": [
-    "Sugar molecules are larger, so more water molecules can surround a single sugar molecule.",
-    "Sugar molecules are smaller than salt ions.",
-    "Water cannot dissolve sodium chloride.",
-    "Every solute has the same solubility in water."
+    "Table sugar has greater solubility than sodium chloride in water at 20°C.",
+    "Sodium chloride has greater solubility than table sugar in water at 20°C.",
+    "Both have equal solubility in water at 20°C.",
+    "Neither substance dissolves in water at 20°C."
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "What reason does the section give for table sugar having a greater solubility in water than sodium chloride at 20°C?",
+   "stem": "Which substance has the greater solubility in water at 20°C, according to the section?",
    "rationales": [
-    "This is correct because the section links larger sugar molecules with more surrounding water molecules and greater dissolution.",
-    "This is wrong because the section says sugar molecules are larger than salt ions.",
-    "This is wrong because the section states that sodium chloride does dissolve in water.",
-    "This is wrong because the section says different solutes have different solubilities."
+    "This is correct: the section compares 203.9 g of sugar with 36 g of sodium chloride per 100 g water.",
+    "The stated quantities show the opposite comparison.",
+    "The amounts given in the section are not equal.",
+    "The section says both substances dissolve in water."
+   ]
+  },
+  {
+   "options": [
+    "At a particular temperature",
+    "At every possible temperature at once",
+    "Only when the solvent is boiling",
+    "Without any solvent"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "The definition of a saturated solution in this section depends on which condition?",
+   "rationales": [
+    "This is correct: the definition specifies a particular temperature.",
+    "Solubility can vary with temperature, so the definition is not independent of temperature.",
+    "The section does not restrict saturation to boiling conditions.",
+    "A solution requires a solvent, so this option is incorrect."
+   ]
+  },
+  {
+   "options": [
+    "More sugar will dissolve in the water.",
+    "Some sugar may settle at the bottom.",
+    "The water will become a solute.",
+    "The sugar will stop being a solute."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What may happen when more sugar is added after the solution has become saturated?",
+   "rationales": [
+    "Once the solution is saturated, it cannot dissolve more sugar at that temperature.",
+    "This is correct: any additional sugar may remain undissolved and settle at the bottom.",
+    "Water is the solvent in this example; it does not become the solute.",
+    "Sugar remains the solute even when some of it does not dissolve."
    ]
   }
  ],
  "written": [
   {
    "text": "Why do different compounds have different solubilities in water at a particular temperature?",
-   "finalAnswer": "Different solutes have different solubilities. The section explains that sugar molecules are larger than salt ions, so more water molecules can surround a single sugar molecule, causing it to dissolve in larger amounts.",
+   "finalAnswer": "Different compounds have different solubilities because their particles differ; the section explains that larger sugar molecules can be surrounded by more water molecules than salt ions, so more sugar dissolves.",
    "marks": 4,
    "source": "CRQ 1.6",
    "rubric": [
     {
      "accept": [
       [
-       "different solubilities"
+       "different",
+       "solubilities"
+      ],
+      [
+       "particles"
       ]
      ],
      "marks": 1,
-     "why": "This states the key difference between compounds in water.",
-     "description": "State that different solutes have different solubilities.",
-     "how": "Explain that different compounds do not dissolve in equal amounts."
+     "why": "The answer must state that compounds differ in solubility because their particles differ.",
+     "description": "State that different compounds have different solubilities because their particles differ.",
+     "how": "Connect the difference in solubility to differences between the particles of the compounds."
     },
     {
      "accept": [
       [
-       "sugar molecules",
-       "larger",
-       "salt ions"
+       "sugar",
+       "larger"
+      ],
+      [
+       "molecules"
       ]
      ],
      "marks": 1,
-     "why": "This gives the comparison used in the section.",
+     "why": "The section specifically compares the larger sugar molecules with salt ions.",
      "description": "Identify that sugar molecules are larger than salt ions.",
-     "how": "Make the size comparison clearly."
+     "how": "Name the particle types and state which is larger."
     },
     {
      "accept": [
       [
-       "more water molecules",
+       "water",
        "surround"
       ]
      ],
      "marks": 1,
-     "why": "This explains how the size comparison relates to dissolution.",
-     "description": "Explain that more water molecules can surround a sugar molecule.",
-     "how": "Connect the larger molecule with more surrounding water molecules."
+     "why": "The section explains the difference by how water molecules surround the solute particles.",
+     "description": "Explain that more water molecules can surround a single sugar molecule.",
+     "how": "Mention the surrounding of a sugar molecule by water molecules."
     },
     {
      "accept": [
       [
-       "dissolve",
-       "larger amounts"
+       "more",
+       "sugar",
+       "dissolves"
       ]
      ],
      "marks": 1,
-     "why": "This completes the reason by stating its effect on solubility.",
-     "description": "Conclude that sugar dissolves in larger amounts.",
-     "how": "State the effect as the correct final conclusion."
+     "why": "The conclusion links the particle explanation to the observed solubility difference.",
+     "description": "Conclude that sugar dissolves in a greater amount than sodium chloride.",
+     "how": "State that more sugar dissolves in water at the stated temperature."
     }
    ],
    "modelAnswer": [
-    "Different solutes have different solubilities in a particular solvent.",
-    "Sugar molecules are larger than salt ions.",
-    "More water molecules can surround a single sugar molecule, causing it to dissolve in larger amounts."
+    "Different compounds have different solubilities in water because their particles differ.",
+    "Sugar molecules are larger than salt ions, so more water molecules can surround a single sugar molecule.",
+    "Therefore, sugar dissolves in a larger amount than sodium chloride at the same temperature.",
+    "Different compounds have different solubilities in water at a particular temperature."
    ]
   },
   {
    "text": "Define solubility of a solute. How does the solubility of solutes change with the increase in temperature?",
-   "finalAnswer": "Solubility is the amount of a solute that dissolves in a particular amount of solvent to form a saturated solution at a particular temperature. For most solid solutes, solubility increases as temperature increases, but the change depends on the solute.",
+   "finalAnswer": "Solubility is the maximum amount of a solute that dissolves in a particular amount of solvent at a particular temperature to form a saturated solution. The effect of increasing temperature depends on the solute; the solubility of most solids in water increases, while that of gases generally decreases.",
    "marks": 4,
    "source": "Descriptive 1.4",
    "rubric": [
     {
      "accept": [
       [
-       "amount",
-       "solute",
-       "dissolves"
-      ]
-     ],
-     "marks": 1,
-     "why": "The definition must identify solubility as an amount of solute that dissolves.",
-     "description": "Define solubility as an amount of solute that dissolves.",
-     "how": "Include the words amount, solute, and dissolves."
-    },
-    {
-     "accept": [
+       "maximum",
+       "amount"
+      ],
       [
-       "saturated solution"
+       "solute"
+      ],
+      [
+       "solvent"
       ],
       [
        "particular temperature"
       ]
      ],
-     "marks": 1,
-     "why": "Saturation and temperature specify the conditions for the definition.",
-     "description": "Include formation of a saturated solution at a particular temperature.",
-     "how": "State the temperature condition and the saturated endpoint."
+     "marks": 2,
+     "why": "A definition needs the maximum amount, solvent and temperature conditions.",
+     "description": "Define solubility with the maximum amount of solute in a stated amount of solvent at a particular temperature.",
+     "how": "Include the maximum amount, solvent and particular temperature."
     },
     {
      "accept": [
       [
        "most",
-       "solid",
-       "increases",
-       "temperature"
+       "solids"
+      ],
+      [
+       "increases"
       ]
      ],
      "marks": 1,
-     "why": "This gives the usual trend for solid solutes as temperature rises.",
-     "description": "State that the solubility of most solids increases with temperature.",
-     "how": "Name the type of solute and describe the increasing trend."
+     "why": "This gives the usual temperature trend for solid solutes in water.",
+     "description": "State that the solubility of most solids increases as temperature rises.",
+     "how": "Clearly state the trend for most solid solutes."
     },
     {
      "accept": [
       [
-       "depends",
-       "solute"
+       "gases"
+      ],
+      [
+       "decreases"
       ]
      ],
      "marks": 1,
-     "why": "This avoids claiming that all solutes behave in exactly the same way.",
-     "description": "Clarify that the change depends on the solute.",
-     "how": "End with the correct qualification."
+     "why": "The temperature effect is not the same for all kinds of solute.",
+     "description": "Note that the solubility of gases generally decreases as temperature rises.",
+     "how": "Give the contrasting general trend for gases."
     }
    ],
    "modelAnswer": [
-    "Solubility is the amount of a solute that dissolves in a particular amount of solvent to form a saturated solution at a particular temperature.",
-    "For most solid solutes, solubility increases as temperature increases.",
-    "The change depends on the solute."
+    "Solubility is the maximum amount of a solute that dissolves in a particular amount of solvent at a particular temperature to form a saturated solution.",
+    "The effect of an increase in temperature depends on the solute.",
+    "The solubility of most solid solutes in water increases with temperature, whereas the solubility of gases generally decreases.",
+    "Solubility is the maximum amount of solute that dissolves in a particular amount of solvent at a particular temperature; most solids become more soluble as temperature rises, while gases generally become less soluble."
    ]
   }
  ],
  "lesson": {
   "examTips": [
-   "A board question may ask you to define unsaturated or saturated solution. Write the temperature condition as part of the definition.",
-   "For a comparison question, quote the amounts with their conditions: at 20°C, 36 g of sodium chloride and 203.9 g of table sugar dissolve in 100 g of water to make saturated solutions.",
-   "For a reason question, show the full link: sugar molecules are larger than salt ions, more water molecules can surround a sugar molecule, and it dissolves in larger amounts.",
-   "Use the words solute, solvent, and particular temperature accurately; confusing these terms can lose marks."
+   "A board question may ask you to define an unsaturated or saturated solution; include the phrase “at a particular temperature.”",
+   "A short or constructed-response question may ask you to compare the solubility of two substances using the figures in your textbook: 36 g sodium chloride and 203.9 g table sugar in 100 g water at 20°C.",
+   "For a reason question, earn marks by linking the larger size of sugar molecules to more water molecules surrounding each one, then state that more sugar dissolves.",
+   "If a question asks about added solute settling at the bottom, explain that the solution has reached its saturation point at that temperature."
   ],
   "yourTurn": [
    {
     "hints": [
-     "Compare the sizes of sugar molecules and salt ions.",
-     "Then explain how many water molecules can surround a sugar molecule and what effect this has."
+     "Ask whether more solute can dissolve at the same temperature.",
+     "Compare the particles: sugar molecules are larger than salt ions, so more water molecules can surround a sugar molecule."
     ],
     "accept": [
      [
-      "sugar molecules",
-      "larger",
-      "salt ions",
-      "water molecules",
-      "surround",
-      "larger amounts"
+      "different",
+      "solubilities"
      ],
      [
-      "different solubilities",
-      "larger amounts"
+      "sugar",
+      "larger"
+     ],
+     [
+      "water",
+      "surround"
+     ],
+     [
+      "more",
+      "sugar",
+      "dissolves"
      ]
     ],
     "question": "Why do different compounds have different solubilities in water at a particular temperature?",
     "solution": [
-     "Different solutes have different solubilities in a particular solvent.",
-     "Sugar molecules are larger than salt ions.",
-     "More water molecules can surround a single sugar molecule.",
-     "This causes sugar to dissolve in larger amounts."
+     "Different compounds have different solubilities in water because their particles differ.",
+     "Sugar molecules are larger than salt ions, so more water molecules can surround a single sugar molecule.",
+     "Therefore, sugar dissolves in a larger amount than sodium chloride at the same temperature."
     ],
-    "answer": "Sugar molecules are larger than salt ions, so more water molecules can surround a single sugar molecule, causing it to dissolve in larger amounts."
+    "answer": "Sugar molecules are larger than salt ions, so more water molecules can surround each sugar molecule and more sugar dissolves."
    },
    {
     "hints": [
-     "First say what amount solubility describes and what kind of solution is formed.",
-     "Then state the usual effect of increasing temperature on most solid solutes, and qualify your statement."
+     "Define solubility using the maximum amount dissolved in a particular amount of solvent at a particular temperature.",
+     "For temperature, give the general trends for solid solutes and gases."
     ],
     "accept": [
      [
-      "amount",
-      "solute",
-      "dissolves",
-      "saturated solution",
-      "particular temperature",
+      "maximum",
+      "amount"
+     ],
+     [
+      "particular temperature"
+     ],
+     [
       "most",
-      "solid",
+      "solids",
       "increases"
+     ],
+     [
+      "gases",
+      "decreases"
      ]
     ],
     "question": "Define solubility of a solute. How does the solubility of solutes change with the increase in temperature?",
     "solution": [
-     "Solubility is the amount of a solute that dissolves in a particular amount of solvent to form a saturated solution at a particular temperature.",
-     "For most solid solutes, solubility increases as temperature increases.",
-     "The change depends on the solute."
+     "Solubility is the maximum amount of a solute that dissolves in a particular amount of solvent at a particular temperature to form a saturated solution.",
+     "The effect of an increase in temperature depends on the solute.",
+     "The solubility of most solid solutes in water increases with temperature, whereas the solubility of gases generally decreases."
     ],
-    "answer": "Solubility is the amount of a solute that dissolves in a particular amount of solvent to form a saturated solution at a particular temperature. For most solid solutes, it increases as temperature increases, but the change depends on the solute."
+    "answer": "Solubility is the maximum amount of solute that dissolves in a particular amount of solvent at a particular temperature. Most solid solutes become more soluble as temperature rises, while gases generally become less soluble."
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "The section gives these amounts for saturated solutions made with the same amount of water at the same temperature.",
-     "text": "At 20°C, 36 g of sodium chloride and 203.9 g of table sugar dissolve in 100 g of water to form saturated solutions."
+     "why": "This sets up the solvent and solute amounts used in the textbook's demonstration.",
+     "text": "Take about 100 g of water in a beaker, add to it 5g of table sugar, and stir it."
     },
     {
-     "why": "Comparing amounts under the same conditions shows which solute has the greater solubility.",
-     "text": "203.9 g of table sugar is greater than 36 g of sodium chloride."
+     "why": "A further addition dissolves too, showing that the solution can still take in more solute.",
+     "text": "Then add another 5g of sugar and stir. This will also dissolve."
     },
     {
-     "why": "This states the comparison the figures demonstrate.",
-     "text": "Therefore, table sugar has a greater solubility in water than sodium chloride at 20°C."
+     "why": "The solution is unsaturated because it can still dissolve more sugar at that temperature.",
+     "text": "This solution is called an unsaturated solution."
+    },
+    {
+     "why": "This gives the textbook's definition and identifies the key condition: the particular temperature.",
+     "text": "A solution which can dissolve more amount of a solute at a particular temperature is called an unsaturated solution."
     }
    ],
-   "question": "At 20°C, compare the solubility of table sugar and sodium chloride in 100 g of water.",
-   "answer": "Table sugar has a greater solubility: 203.9 g dissolves, compared with 36 g of sodium chloride."
+   "question": "In the textbook's sugar-and-water demonstration, how can you tell that the solution is unsaturated?",
+   "answer": "The added sugar dissolves, and the solution can dissolve more solute at that temperature, so it is unsaturated."
   },
   "explain": [
    {
     "title": "Unsaturated solution",
-    "body": "A solution which can dissolve more amount of a solute at a particular temperature is called an unsaturated solution. So, if more sugar can still dissolve, the solution is unsaturated."
+    "body": "A solution which can dissolve more amount of a solute at a particular temperature is called an unsaturated solution. The key test is whether more solute can still dissolve."
    },
    {
     "title": "Saturated solution",
-    "body": "A solution in which the maximum amount of the solute has been dissolved in a particular amount of a solvent at a particular temperature is called a saturated solution. Any extra sugar added at this stage will not dissolve and will settle at the bottom."
+    "body": "A solution in which the maximum amount of the solute has been dissolved in a particular amount of a solvent at a particular temperature is called a saturated solution. At that temperature, extra solute will not dissolve and may settle at the bottom."
    },
    {
-    "title": "Solubilities can differ",
-    "body": "Different solutes have different solubilities in a particular solvent. At 20°C, 36 g of sodium chloride or 203.9 g of table sugar can dissolve in 100 g of water to make saturated solutions."
+    "title": "Solubility can differ",
+    "body": "Different solutes have different solubilities in the same solvent. At 20°C, 36 g of sodium chloride dissolves in 100 g of water to give a saturated solution, while 203.9 g of table sugar dissolves in water to give its saturated solution."
    },
    {
     "title": "Why sugar dissolves in a larger amount",
@@ -364,10 +420,10 @@
    }
   ],
   "mistakes": [
-   "Calling a solution saturated just because it contains some dissolved solute; it is saturated only when the maximum amount has dissolved at that temperature.",
-   "Leaving out the particular temperature when defining saturated or unsaturated solutions.",
-   "Mixing up solute and solvent: sugar or salt is the solute, and water is the solvent.",
-   "Comparing solubilities without keeping the amount of water and temperature the same."
+   "Leaving out “at a particular temperature” when defining either kind of solution.",
+   "Calling a solution unsaturated just because it is dilute, without checking whether more solute can dissolve.",
+   "Confusing the amount of water with the amount of solute in the 20°C comparison.",
+   "Saying that no solute is present in a saturated solution; saturation means the maximum amount has dissolved, not that the solution contains no solute."
   ]
  }
 }

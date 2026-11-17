@@ -1,11 +1,11 @@
 {
  "note": {
-  "explanation": "Elements, compounds and mixtures differ in how their particles are made and joined. Elements contain one kind of atom; compounds contain elements chemically combined in a fixed ratio; mixtures contain substances mixed without chemical bonding.",
+  "explanation": "Elements, compounds and mixtures differ in what they contain and whether their particles are chemically joined. Elements contain one kind of atom; compounds contain elements chemically combined in fixed ratios; mixtures contain substances mixed without chemical bonding.",
   "examples": [
    "Water (H₂O) is a compound: hydrogen and oxygen are chemically combined in a fixed ratio.",
-   "Salt water is a mixture: salt and water are mixed, and the salt retains its identity."
+   "Salt water is a mixture: salt and water are mixed, and the salt can be separated by physical methods."
   ],
-  "checkAnswer": "A mixture has components that are not chemically bound together and can be separated by physical methods.",
+  "checkAnswer": "A compound contains elements chemically combined in a fixed ratio; a mixture contains components that are not chemically bound together.",
   "keywords": [
    "element",
    "compound",
@@ -15,21 +15,25 @@
    "homogeneous",
    "heterogeneous"
   ],
-  "simple": "An element has one kind of atom. A compound has different elements chemically joined in a fixed ratio. A mixture has different substances together but not chemically joined.",
-  "checkQuestion": "How can the components of a mixture be separated?",
-  "title": "Elements, Compounds and Mixtures",
+  "simple": "An element has one kind of atom. A compound has different elements chemically joined. A mixture has substances together but not chemically joined.",
+  "checkQuestion": "What is one key difference between a compound and a mixture?",
+  "title": "Elements, compounds and mixtures",
   "steps": [
-   "Check whether the sample contains one kind of atom, chemically combined elements, or mixed substances.",
-   "For a compound, look for chemical combination in a fixed ratio.",
-   "For a mixture, remember that its components retain their properties and can be separated physically."
+   "Check whether the sample contains one kind of atom or more than one substance.",
+   "If different elements are chemically combined in a fixed ratio, it is a compound.",
+   "If substances are mixed without chemical bonding and can be separated physically, it is a mixture."
   ],
-  "answer": "A mixture is a sample of matter containing more than one type of element or compound mixed together in any ratio.",
+  "answer": "A compound has chemically combined elements in a fixed ratio; a mixture has components that are not chemically bound together.",
   "checkAccept": [
    [
-    "physical methods"
+    "fixed ratio"
    ],
    [
-    "physically"
+    "not chemically bound"
+   ],
+   [
+    "chemically combined",
+    "fixed ratio"
    ]
   ]
  },
@@ -37,245 +41,295 @@
   {
    "options": [
     "A pure substance containing the same kind of atoms",
-    "Different substances chemically combined in any ratio",
-    "Two or more substances mixed in a fixed ratio",
-    "A pure substance that can always be separated physically"
+    "A pure substance formed from elements in a fixed ratio",
+    "Different substances mixed without chemical bonding",
+    "A substance that can always be separated physically"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which description matches an element?",
+   "stem": "Which description defines an element?",
    "rationales": [
     "Correct: an element is a pure substance containing the same kind of atoms.",
-    "Incorrect: chemical combination describes a compound, and compounds form in fixed ratios.",
-    "Incorrect: substances mixed in any ratio describe a mixture.",
-    "Incorrect: an element cannot be broken down by ordinary chemical reactions."
+    "Incorrect: this describes a compound.",
+    "Incorrect: this describes a mixture.",
+    "Incorrect: physical separation is a property of mixture components, not the definition of an element."
    ]
   },
   {
    "options": [
-    "Its components retain their identities and properties",
-    "Its elements are always present in any ratio",
-    "It can be separated only by chemical reactions",
-    "Its properties are always different from its components"
+    "It contains one kind of atom",
+    "Its components retain their properties",
+    "Its atoms are chemically combined in a fixed ratio",
+    "It can be separated by physical methods"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which feature distinguishes a compound from a mixture?",
+   "rationales": [
+    "Incorrect: compounds contain atoms of different elements chemically combined.",
+    "Incorrect: retaining component properties is a feature of mixtures.",
+    "Correct: the elements in a compound combine chemically in a fixed ratio.",
+    "Incorrect: physical separation applies to mixture components, not the elements of a compound."
+   ]
+  },
+  {
+   "options": [
+    "Hydrogen and oxygen in water are present in a fixed ratio by weight",
+    "Salt and water in salt water are chemically combined",
+    "The components of a mixture lose their identities",
+    "A compound's properties are always the same as those of its elements"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which statement is a property of a mixture?",
+   "stem": "Which statement is correct according to the section?",
    "rationales": [
-    "Correct: each component of a mixture retains its identity and specific properties.",
-    "Incorrect: a mixture may be in any ratio, but this option incorrectly describes its elements as having a fixed identity in that ratio.",
-    "Incorrect: mixtures can be separated by physical methods.",
-    "Incorrect: this is a property of compounds, not mixtures."
-   ]
-  },
-  {
-   "options": [
-    "The atoms of its elements combine in a fixed ratio by weight",
-    "Its components can be separated by physical methods",
-    "It contains only one kind of atom",
-    "Its components always retain their original properties"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "What distinguishes a compound from a mixture?",
-   "rationales": [
-    "Correct: the elements in a compound combine in a fixed ratio by weight.",
-    "Incorrect: physical separation is a feature of mixtures.",
-    "Incorrect: one kind of atom describes an element.",
-    "Incorrect: mixture components retain their properties; compound properties differ from those of its elements."
-   ]
-  },
-  {
-   "options": [
-    "Water",
-    "Salt dissolved in water",
-    "A sample of rock",
-    "A mixture of sand and iron filings"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "Which of these is a compound?",
-   "rationales": [
-    "Correct: water is a compound made from hydrogen and oxygen in a fixed ratio.",
-    "Incorrect: salt dissolved in water is a mixture.",
-    "Incorrect: rock is given as an example of a heterogeneous mixture.",
-    "Incorrect: sand and iron filings are mixed, not chemically combined."
-   ]
-  },
-  {
-   "options": [
-    "The components are chemically bound together",
-    "The components are not chemically bound and can be separated physically",
-    "The components must be present in a fixed ratio",
-    "The mixture has properties different from all its components"
-   ],
-   "fromBook": false,
-   "correctIndex": 1,
-   "stem": "Which statement best describes how the components of a mixture are held together?",
-   "rationales": [
-    "Incorrect: chemical bonding between elements is characteristic of compounds.",
-    "Correct: mixture components are not chemically bound and can be separated by physical methods.",
-    "Incorrect: a fixed ratio is a feature of compounds, not mixtures.",
-    "Incorrect: the textbook states that mixture properties are the sum of those of its components."
+    "Correct: the textbook gives water as an example of elements in a fixed ratio by weight.",
+    "Incorrect: salt water is a mixture, and its components are not chemically bound.",
+    "Incorrect: mixture components retain their identities and specific properties.",
+    "Incorrect: a compound's properties are different from those of the elements forming it."
    ]
   },
   {
    "options": [
     "A solution of common salt in water",
-    "Water",
-    "Hydrogen chloride",
-    "Ammonia"
+    "A sample of rock",
+    "Water (H₂O)",
+    "Ammonia (NH₃)"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which is an example of a homogeneous mixture?",
+   "stem": "Which is the example of a homogeneous mixture given in the section?",
    "rationales": [
-    "Correct: a solution of common salt in water is given as a homogeneous mixture.",
+    "Correct: salt solution in water is given as a homogeneous mixture.",
+    "Incorrect: rock is given as a heterogeneous mixture.",
     "Incorrect: water is a compound.",
-    "Incorrect: hydrogen chloride is a compound.",
     "Incorrect: ammonia is a compound."
    ]
   },
   {
    "options": [
-    "It can be broken into simpler particles by ordinary chemical reactions",
-    "It is represented by a symbol when it exists as atoms",
-    "It always exists as independent molecules",
-    "It is made from different elements in a fixed ratio"
+    "Its components are chemically bound together",
+    "Its components can be separated by physical methods",
+    "It must have a fixed ratio by weight",
+    "Its properties are always different from those of its components"
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "Which statement about elements is correct?",
+   "stem": "Which statement about mixtures is correct?",
    "rationales": [
-    "Incorrect: an element cannot be broken down into simpler particles by ordinary chemical reactions.",
-    "Correct: an element existing as atoms is represented by a symbol, such as Na or Ca.",
-    "Incorrect: some elements exist as atoms, while gaseous elements may exist as molecules and noble gases are monoatomic.",
-    "Incorrect: different elements combined in a fixed ratio describe a compound."
+    "Incorrect: mixture components are not chemically bound together.",
+    "Correct: mixture components can be separated by physical methods.",
+    "Incorrect: a mixture may contain its components in any ratio.",
+    "Incorrect: this describes a compound; a mixture's properties are the sum of those of its components."
    ]
   },
   {
    "options": [
-    "The properties of a compound are always different from those of the elements forming it",
-    "A compound's components can always be separated by physical methods",
-    "A compound contains only one type of element",
-    "A compound has no fixed ratio of its elements"
+    "A sample of rock",
+    "Water (H₂O)",
+    "Hydrogen chloride (HCl)",
+    "Sodium chloride (NaCl)"
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which statement about compounds is correct?",
+   "stem": "Which example is a heterogeneous mixture?",
    "rationales": [
-    "Correct: the properties of a compound are always different from those of the elements from which it is formed.",
-    "Incorrect: a compound is broken into its constituent elements by a chemical reaction.",
-    "Incorrect: a compound is formed from two or more atoms of different elements.",
-    "Incorrect: the elements in a compound combine in a fixed ratio by weight."
+    "Correct: the section gives a sample of rock as a heterogeneous mixture.",
+    "Incorrect: water is a compound.",
+    "Incorrect: hydrogen chloride is a compound.",
+    "Incorrect: sodium chloride is an ionic compound."
    ]
   }
  ],
- "written": [],
+ "written": [
+  {
+   "text": "Which elements are found in pure state on Earth?",
+   "finalAnswer": "Examples include gold, silver, copper and sulphur.",
+   "marks": 2,
+   "source": "In-text 1.5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "gold",
+       "silver"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names examples of elements occurring in the pure state.",
+     "description": "Give examples of elements found in pure state.",
+     "how": "Name at least two correct examples."
+    },
+    {
+     "accept": [
+      [
+       "copper"
+      ],
+      [
+       "sulphur"
+      ],
+      [
+       "sulfur"
+      ]
+     ],
+     "marks": 1,
+     "why": "Completes the response with further correct examples.",
+     "description": "Give further examples.",
+     "how": "Name another correct example."
+    }
+   ],
+   "modelAnswer": [
+    "Examples of elements found in pure state on Earth include gold, silver, copper and sulphur.",
+    "These are examples of elements that occur uncombined in nature.",
+    "Examples include gold, silver, copper and sulphur."
+   ]
+  },
+  {
+   "text": "Which elements are present in very small amounts on Earth?",
+   "finalAnswer": "Gold and platinum are examples of elements present in very small amounts on Earth.",
+   "marks": 2,
+   "source": "In-text 1.5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "gold"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies an element found in very small amounts.",
+     "description": "Name one example.",
+     "how": "Name gold or another suitable example."
+    },
+    {
+     "accept": [
+      [
+       "platinum"
+      ]
+     ],
+     "marks": 1,
+     "why": "Adds another suitable example to complete the answer.",
+     "description": "Name another example.",
+     "how": "Name platinum or another suitable example."
+    }
+   ],
+   "modelAnswer": [
+    "Gold and platinum occur in very small amounts on Earth.",
+    "They are examples of elements that may occur in the pure state.",
+    "Gold and platinum are examples of elements present in very small amounts on Earth."
+   ]
+  }
+ ],
  "lesson": {
   "examTips": [
-   "A board question may ask you to differentiate between elements, compounds and mixtures. Write clear points in a table for easy marking.",
-   "Include the key distinctions: kinds of particles, fixed ratio, chemical combination, properties, and how components can be separated.",
-   "Give the textbook examples where relevant: water as a compound, salt solution as a homogeneous mixture, and rock as a heterogeneous mixture."
+   "Board questions may ask you to define an element, compound or mixture, or to compare their properties in a table.",
+   "For comparison questions, earn marks by stating the key distinction clearly: chemical combination and fixed ratio for compounds; no chemical bonding and physical separation for mixtures.",
+   "Use textbook examples such as H₂O for a compound, salt solution for a homogeneous mixture and rock for a heterogeneous mixture.",
+   "When asked about mixture properties, mention that each component retains its identity and that the mixture's properties are the sum of those of its components."
   ],
   "yourTurn": [
    {
     "hints": [
-     "Think of elements that can occur naturally without being chemically combined with other elements.",
-     "Examples include gold, silver and copper."
+     "Think of elements that can occur uncombined in nature.",
+     "Give several examples of native elements, such as familiar metals and sulphur."
     ],
     "accept": [
      [
       "gold",
+      "silver"
+     ],
+     [
+      "gold",
+      "copper"
+     ],
+     [
       "silver",
       "copper"
      ],
      [
-      "gold",
-      "silver",
-      "platinum"
+      "sulphur"
      ],
      [
-      "gold",
-      "silver"
+      "sulfur"
      ]
     ],
     "question": "Which elements are found in pure state on Earth?",
     "solution": [
-     "Some elements can occur in nature in an uncombined, or native, state.",
-     "Examples include gold, silver and copper."
+     "Examples include gold, silver, copper and sulphur.",
+     "These are elements that can occur uncombined in nature."
     ],
-    "answer": "Examples include gold, silver and copper."
+    "answer": "Gold, silver, copper and sulphur are examples of elements found in pure state on Earth."
    },
    {
     "hints": [
-     "The question asks for elements that are scarce, not the most abundant elements.",
-     "Gold, silver and platinum are examples of elements found in small amounts."
+     "The question asks about elements occurring in especially small amounts.",
+     "Gold and platinum are examples."
     ],
     "accept": [
      [
       "gold",
-      "silver",
       "platinum"
      ],
      [
-      "gold",
-      "silver"
+      "gold"
      ],
      [
-      "gold",
       "platinum"
      ]
     ],
     "question": "Which elements are present in very small amounts on Earth?",
     "solution": [
-     "Some elements are present in very small amounts compared with the common elements of Earth's crust.",
-     "Examples include gold, silver and platinum."
+     "Gold and platinum occur in very small amounts on Earth.",
+     "They are examples of elements that may occur in pure state."
     ],
-    "answer": "Examples include gold, silver and platinum."
+    "answer": "Gold and platinum are examples of elements present in very small amounts on Earth."
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "A compound is made when atoms of different elements combine chemically.",
-     "text": "Water is a compound formed from hydrogen and oxygen."
+     "why": "The sample contains more than one substance, so it cannot be classed as an element.",
+     "text": "Salt water contains salt and water."
     },
     {
-     "why": "A fixed ratio by weight is a defining feature of a compound.",
-     "text": "In water (H₂O), hydrogen and oxygen are present in a fixed ratio of 1:8 by weight."
+     "why": "The textbook says components of a mixture are not chemically bound together.",
+     "text": "Salt and water are mixed, not chemically combined."
     },
     {
-     "why": "The elements in a compound can be separated by a chemical reaction, unlike the components of a mixture.",
-     "text": "A compound can be broken into its constituent elements by a chemical reaction."
+     "why": "A mixture's components retain their identities and can be separated physically.",
+     "text": "The salt can be separated from the water by a physical method."
+    },
+    {
+     "why": "These features identify salt water as a mixture rather than a compound.",
+     "text": "Therefore, salt water is a mixture."
     }
    ],
-   "question": "Use the textbook description to explain why water is a compound.",
-   "answer": "Water is a compound because hydrogen and oxygen are chemically combined in a fixed ratio of 1:8 by weight."
+   "question": "Use the textbook's descriptions to classify salt water as an element, compound or mixture.",
+   "answer": "Salt water is a mixture."
   },
   "explain": [
    {
     "title": "Elements",
-    "body": "An element is the simplest form of matter. It is a pure substance containing the same kind of atoms. It cannot be broken down into simpler particles by ordinary chemical reactions. When an element exists in the form of atoms, it is represented by a symbol, such as Na for sodium and Ca for calcium."
+    "body": "An element is the simplest form of matter. It is a pure substance containing the same kind of atoms. It is not possible to break down an element into simpler particles by ordinary chemical reactions."
    },
    {
     "title": "Compounds",
-    "body": "A compound is a pure substance. It is formed by the chemical combination of two or more atoms of different elements. These atoms combine in a fixed ratio by weight. A compound can be broken into its constituent elements by a chemical reaction, and its properties differ from those of the elements forming it."
+    "body": "A compound is a pure substance. It is formed by the chemical combination of two or more atoms of different elements. In a compound, the atoms of elements must combine together by a fixed ratio by weight. A compound can be broken into its constituent elements by a chemical reaction."
    },
    {
     "title": "Mixtures",
-    "body": "Mixture is an impure compound. A sample of matter having more than one type of elements or compounds mixed together in any ratio, is called a mixture. Its components retain their identities and specific properties, are not chemically bound together, and can be separated by physical methods."
+    "body": "Mixture is an impure compound. A sample of matter having more than one type of elements or compounds mixed together in any ratio, is called a mixture. Its components are not chemically bound together, retain their identities and specific properties, and can be separated by physical methods."
    },
    {
-    "title": "Homogeneous and heterogeneous mixtures",
-    "body": "A mixture may be homogeneous or heterogeneous. A solution of common salt in water is homogeneous, while a sample of rock is heterogeneous. The properties of a mixture are the sum of those of its components."
+    "title": "Examples and forms",
+    "body": "Water (H₂O) and ammonia (NH₃) are compounds. A salt solution in water is a homogeneous mixture, while a sample of rock is a heterogeneous mixture. Mixtures have the combined properties of their components."
    }
   ],
   "mistakes": [
-   "Do not say that the components of a mixture are chemically combined; they are not chemically bound and can be separated by physical methods.",
-   "Do not confuse a fixed ratio in a compound with the any-ratio composition of a mixture.",
-   "Do not write that a compound has the same properties as its elements; its properties are different.",
-   "Give a suitable example when asked to compare homogeneous and heterogeneous mixtures."
+   "Do not call a mixture a compound: mixtures are not chemically bound together, while compounds are chemically combined in a fixed ratio.",
+   "Do not say that components of a mixture lose their properties; each component retains its identity and specific properties.",
+   "Do not confuse homogeneous and heterogeneous mixtures: salt solution is homogeneous, while a sample of rock is heterogeneous.",
+   "Do not say a compound can be separated by physical methods; breaking it into its constituent elements requires a chemical reaction."
   ]
  }
 }

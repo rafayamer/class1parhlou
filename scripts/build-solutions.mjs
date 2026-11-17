@@ -67,6 +67,27 @@ function bookCounts(text) {
   return { examples, exerciseItems: parts };
 }
 
+/** The "EXAMPLE n.m:" blocks of a section, copied as printed: the question, then the solution one line per step. */
+function textExamples(text) {
+  const out = [];
+  const lines = text.split("\n");
+  for (let i = 0; i < lines.length; i++) {
+    const m = /^\**\s*EXAMPLE\s+(\d+\.\d+)\s*\**\s*:?\s*(.*)$/i.exec(lines[i].trim());
+    if (!m) continue;
+    const q = m[2] ? [m[2]] : [], sol = [];
+    let inSol = false;
+    for (i++; i < lines.length; i++) {
+      const l = lines[i].trim();
+      if (/^\**\s*EXAMPLE\s+\d/i.test(l) || /^#{1,4}\s/.test(l) || /^EXERCISE\b/i.test(l) || /^(INTERESTING INFORMATION|REMEMBER|DO YOU KNOW|SAFETY|ACTIVITY)\b/i.test(l)) { i--; break; }
+      if (/^SOLUTION\s*:?/i.test(l)) { inSol = true; const rest = l.replace(/^SOLUTION\s*:?\s*/i, ""); if (rest) sol.push(rest); continue; }
+      if (!l || /^PAGE\s+\d+$/i.test(l) || /^\[FIGURE/.test(l)) continue;
+      (inSol ? sol : q).push(l);
+    }
+    if (q.length && sol.length) out.push({ label: `Example ${m[1]}`, question: q.join("\n"), solution: sol, answer: sol[sol.length - 1] });
+  }
+  return out;
+}
+
 // ── 1. Inventory: every example, exercise part and MCQ, verbatim ──────────────────────────────────────────
 const INVENTORY = PHY ? `You list EVERYTHING in one section of a Pakistani Class 9 ${S.name} textbook (Punjab, National Curriculum 2023), copying the book's words exactly.
 - examples: EVERY worked example (each block starting "EXAMPLE n.m:"), label "Example n.m", with its question, the BOOK'S OWN solution copied as one
@@ -100,9 +121,14 @@ for (const [i, sec] of outline.sections.entries()) {
   const input = `${S.unitWord.toUpperCase()} ${UNIT} ${outline.unitTitle}, SECTION ${sec.number} ${sec.title}\n\nSECTION TEXT:\n${own}\n\nANSWER KEY:\n${PHY ? "(numerical answers are printed in the text after each problem as ANSWER:)" : sec.bookAnswers || "(none printed)"}`;
   let inv = await stage(`inv-${i + 1}`, () => structured("section_inventory", INVENTORY, input, invSchema));
   // Too few items against the page count: ask once more, saying how many the pages show.
-  if (expected.exerciseItems && inv.exercise.length < expected.exerciseItems * 0.9) {
+  if ((expected.exerciseItems && inv.exercise.length < expected.exerciseItems * 0.9) || inv.examples.length < expected.examples) {
     inv = await stage(`inv-${i + 1}-retry`, () => structured("section_inventory", INVENTORY,
-      `${input}\n\nNOTE: the exercise has about ${expected.exerciseItems} question parts and ${expected.examples} examples. Your previous list had ${inv.exercise.length}. List every one.`, invSchema));
+      `${input}\n\nNOTE: the exercise has about ${expected.exerciseItems} question parts and ${expected.examples} examples. Your previous list had ${inv.exercise.length} parts and ${inv.examples.length} examples. List every one, including every worked example.`, invSchema));
+  }
+  // Worked examples the reader still missed are copied straight from the text: question, the book's solution lines, last line as answer.
+  if (PHY && inv.examples.length < expected.examples) {
+    const have = new Set(inv.examples.map((e) => e.label.replace(/\s+/g, " ").toLowerCase()));
+    for (const e of textExamples(own)) if (!have.has(e.label.toLowerCase())) inv.examples.push(e);
   }
   // Anything labelled "Example" belongs with the examples (it keeps its checked solution below).
   inv = { ...inv, exercise: inv.exercise.filter((q) => !/^example/i.test(q.source)), strayExamples: inv.exercise.filter((q) => /^example/i.test(q.source)) };

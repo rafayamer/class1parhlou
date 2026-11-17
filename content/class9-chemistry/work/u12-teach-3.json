@@ -1,0 +1,493 @@
+{
+ "note": {
+  "explanation": "Accuracy tells how close a measurement is to the true value. Precision tells how close repeated measurements are to one another. A result can be precise without being accurate, or accurate without being precise.",
+  "examples": [
+   "True value: 5.0 g; repeated readings: 5.2 g, 5.2 g, 5.2 g. These readings are precise but not accurate.",
+   "True value: 20 g; readings: 19.8 g, 20.5 g, 19.6 g. These readings are more accurate overall but not precise."
+  ],
+  "checkAnswer": "The readings are precise but not accurate.",
+  "keywords": [
+   "accuracy",
+   "precision",
+   "true value",
+   "repeated measurements",
+   "precise",
+   "accurate"
+  ],
+  "simple": "Accuracy means close to the true value. Precision means repeated results are close to each other.",
+  "checkQuestion": "A true mass is 10 g. A student gets 11.2 g every time. Are the readings precise, accurate, both, or neither?",
+  "title": "Accuracy and Precision",
+  "steps": [
+   "Find the true or known value.",
+   "Check whether each reading is close to that true value. This tells you about accuracy.",
+   "Compare the readings with one another. If they are close together, they are precise.",
+   "State accuracy and precision separately."
+  ],
+  "answer": "They are precise but not accurate.",
+  "checkAccept": [
+   [
+    "precise",
+    "!not precise",
+    "not accurate"
+   ],
+   [
+    "precise",
+    "!inaccurate"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Accurate but not precise",
+    "Precise but not accurate",
+    "Both accurate and precise",
+    "Neither accurate nor precise"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "The true length is 8 cm. A student measures it three times and records 7 cm each time. The results are:",
+   "rationales": [
+    "This is wrong because all readings are close to each other, so they are precise, but they are not close to the true value.",
+    "This is correct because the readings agree with one another but differ from the true length.",
+    "This is wrong because the readings are not close to the true length.",
+    "This is wrong because the repeated readings are close to each other, so they are precise."
+   ]
+  },
+  {
+   "options": [
+    "Accuracy",
+    "Precision",
+    "True value",
+    "Measurement error"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which term describes the closeness of two or more measurements to each other?",
+   "rationales": [
+    "This is wrong because accuracy describes closeness to the true or known value.",
+    "This is correct because precision describes how close measurements are to one another.",
+    "This is wrong because a true value is the known value being measured against.",
+    "This is wrong because measurement error is the difference between a measured value and a true value."
+   ]
+  },
+  {
+   "options": [
+    "Measurements are close to the known value",
+    "Repeated measurements are close to one another",
+    "A measurement is written with a unit",
+    "An instrument is used more than once"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes accuracy?",
+   "rationales": [
+    "This is correct because accuracy measures how close results are to the true or known value.",
+    "This is wrong because it describes precision.",
+    "This is wrong because writing a unit does not show whether a result is accurate.",
+    "This is wrong because repeating a measurement alone does not establish accuracy."
+   ]
+  },
+  {
+   "options": [
+    "A reading of 12.0 cm when the true length is 12.0 cm",
+    "Readings of 10.1 cm, 10.1 cm and 10.1 cm when the true length is 12.0 cm",
+    "Readings of 11.8 cm, 12.1 cm and 12.0 cm when the true length is 12.0 cm",
+    "Readings of 8 cm, 12 cm and 16 cm when the true length is 12.0 cm"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which set of readings is both accurate and reasonably precise for a true length of 12.0 cm?",
+   "rationales": [
+    "This is not a set of repeated readings, so it does not show precision.",
+    "This is wrong because the readings are precise but far from the true length.",
+    "This is correct because the readings are close to the true value and fairly close to one another.",
+    "This is wrong because the readings are spread far apart and are not all close to the true value."
+   ]
+  },
+  {
+   "options": [
+    "Accuracy and precision always mean the same thing",
+    "Precision depends on the true value",
+    "Precision is independent of accuracy",
+    "An accurate result must always be precise"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which statement about precision and accuracy is correct?",
+   "rationales": [
+    "This is wrong because the terms describe different features of measurements.",
+    "This is wrong because precision is about agreement among measurements, not closeness to the true value.",
+    "This is correct because a result may be precise but inaccurate, or accurate but not precise.",
+    "This is wrong because accuracy and precision are independent, so an accurate result need not be precise."
+   ]
+  },
+  {
+   "options": [
+    "The results are precise but not accurate",
+    "The results are accurate but not precise",
+    "The results are both accurate and precise",
+    "The results are neither accurate nor precise"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A true mass is 20 g. A student records 19.8 g, 20.5 g and 19.6 g. These results are best described as:",
+   "rationales": [
+    "This is wrong because the readings are not all close to one another, and they are close to the true value overall.",
+    "This is correct because the readings are around the true mass, but they are not close to one another.",
+    "This is wrong because the readings are not close enough to one another to be precise.",
+    "This is wrong because the readings are close to the true value overall, so they are not wholly inaccurate."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is consistency of results?",
+   "finalAnswer": "Consistency of results means that two or more measurements are close to each other; this is called precision.",
+   "marks": 2,
+   "source": "Short 12.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "measurements",
+       "close",
+       "each other"
+      ],
+      [
+       "readings",
+       "close",
+       "one another"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must describe agreement between measurements.",
+     "description": "States that repeated measurements are close to one another.",
+     "how": "Use the idea that results agree or are close together."
+    },
+    {
+     "accept": [
+      [
+       "precision"
+      ]
+     ],
+     "marks": 1,
+     "why": "The textbook connects consistency of measurements with precision.",
+     "description": "Names this property as precision.",
+     "how": "State that consistency is called precision."
+    }
+   ],
+   "modelAnswer": [
+    "The closeness of two or more measurements to each other is called precision.",
+    "Therefore, consistency of results means that the measurements are close to each other."
+   ]
+  },
+  {
+   "text": "Elaborate the difference between precision and accuracy.",
+   "finalAnswer": "Accuracy measures how close results are to the true or known value. Precision is the closeness of two or more measurements to each other. Precision is independent of accuracy.",
+   "marks": 4,
+   "source": "Descriptive 12.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "accuracy",
+       "true",
+       "value"
+      ],
+      [
+       "accuracy",
+       "known",
+       "value"
+      ]
+     ],
+     "marks": 1,
+     "why": "Accuracy must be distinguished by reference to the true or known value.",
+     "description": "Defines accuracy correctly.",
+     "how": "Explain that accuracy measures closeness to the true or known value."
+    },
+    {
+     "accept": [
+      [
+       "precision",
+       "measurements",
+       "each other"
+      ],
+      [
+       "precision",
+       "readings",
+       "one another"
+      ]
+     ],
+     "marks": 1,
+     "why": "Precision is defined by the agreement among measurements.",
+     "description": "Defines precision correctly.",
+     "how": "Explain that precision is the closeness of measurements to one another."
+    },
+    {
+     "accept": [
+      [
+       "independent"
+      ],
+      [
+       "not the same"
+      ]
+     ],
+     "marks": 1,
+     "why": "The textbook emphasizes that precision and accuracy are independent.",
+     "description": "States that precision and accuracy are independent properties.",
+     "how": "Explain that a result can have one property without having the other."
+    },
+    {
+     "accept": [
+      [
+       "accuracy",
+       "true",
+       "value",
+       "precision",
+       "measurements",
+       "each other"
+      ],
+      [
+       "accuracy",
+       "known",
+       "value",
+       "precision",
+       "measurements",
+       "each other"
+      ],
+      [
+       "accuracy",
+       "true",
+       "value",
+       "precision",
+       "readings",
+       "one another"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct final comparison brings both definitions together.",
+     "description": "Gives the final difference accurately.",
+     "how": "End by contrasting closeness to the true value with closeness among readings."
+    }
+   ],
+   "modelAnswer": [
+    "Accuracy measures how close results are to the true or known value.",
+    "The closeness of two or more measurements to each other is called precision.",
+    "Precision is independent of accuracy.",
+    "Therefore, accuracy compares results with the true value, whereas precision compares measurements with one another."
+   ]
+  },
+  {
+   "text": "Can a student be both inaccurate and imprecise in his measurements?",
+   "finalAnswer": "Yes. A student is both inaccurate and imprecise when the measurements are far from the true value and far from each other.",
+   "marks": 4,
+   "source": "Descriptive 12.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes"
+      ]
+     ],
+     "marks": 1,
+     "why": "The student must answer the yes-or-no question directly.",
+     "description": "Answers yes.",
+     "how": "Begin with a clear yes."
+    },
+    {
+     "accept": [
+      [
+       "true",
+       "value"
+      ],
+      [
+       "known",
+       "value"
+      ]
+     ],
+     "marks": 1,
+     "why": "Inaccuracy means results are not close to the true or known value.",
+     "description": "Explains what makes the measurements inaccurate.",
+     "how": "Mention that they are far from the true or known value."
+    },
+    {
+     "accept": [
+      [
+       "measurements",
+       "far",
+       "each other"
+      ],
+      [
+       "readings",
+       "far",
+       "one another"
+      ],
+      [
+       "measurements",
+       "not close",
+       "each other"
+      ]
+     ],
+     "marks": 1,
+     "why": "Imprecision means the readings do not agree closely with one another.",
+     "description": "Explains what makes the measurements imprecise.",
+     "how": "Mention that the readings are spread apart."
+    },
+    {
+     "accept": [
+      [
+       "yes",
+       "true",
+       "value",
+       "measurements",
+       "far",
+       "each other"
+      ],
+      [
+       "yes",
+       "known",
+       "value",
+       "measurements",
+       "far",
+       "each other"
+      ],
+      [
+       "yes",
+       "true",
+       "value",
+       "readings",
+       "far",
+       "one another"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must correctly establish that both conditions can occur together.",
+     "description": "Gives a complete final response.",
+     "how": "State that results can be both far from the true value and far apart from one another."
+    }
+   ],
+   "modelAnswer": [
+    "Yes, a student can be both inaccurate and imprecise.",
+    "The readings are inaccurate if they are far from the true or known value.",
+    "They are imprecise if they are far from one another.",
+    "Therefore, both conditions can occur in the same set of measurements."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "The board may ask you to define accuracy and precision or explain their difference.",
+   "For a measurement scenario, compare the readings with the true value to decide accuracy, then compare the readings with one another to decide precision.",
+   "A full-mark comparison should include both definitions and state that precision is independent of accuracy.",
+   "When asked to classify readings, give both parts of the classification, such as “precise but not accurate.”"
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Compare the three readings with one another first.",
+     "Then compare the repeated reading with the true weight of 5.0 g."
+    ],
+    "accept": [
+     [
+      "precise",
+      "!not precise",
+      "not accurate"
+     ],
+     [
+      "precise",
+      "!inaccurate"
+     ]
+    ],
+    "question": "A student weighs a given substance three times, and each time he gets the reading 5.2g. The true weight of the substance is, however, 5.0g. Is the work done by the student (i) precise and accurate (ii) accurate but not precise (iii) precise but not accurate?",
+    "solution": [
+     "The three readings are all 5.2 g, so they are close to one another.",
+     "Therefore, the measurements are precise.",
+     "The true weight is 5.0 g, so the readings are not equal to the true value.",
+     "Therefore, the student’s work is precise but not accurate."
+    ],
+    "answer": "The work is (iii) precise but not accurate."
+   },
+   {
+    "hints": [
+     "Think about what repeated measurements help you do.",
+     "Use suitable instruments and technique for systematic errors; repeat measurements and compare or average them to reduce random errors."
+    ],
+    "accept": [
+     [
+      "calibrate",
+      "repeat",
+      "average"
+     ],
+     [
+      "zero",
+      "repeat",
+      "average"
+     ],
+     [
+      "correct",
+      "instrument",
+      "repeat"
+     ]
+    ],
+    "question": "How will you avoid systematic and random errors?",
+    "solution": [
+     "Check that the instrument is properly calibrated and set to zero before measuring, and use the correct method to reduce systematic errors.",
+     "Take repeated measurements to reduce the effect of random errors.",
+     "Compare the repeated readings and use their average as the result."
+    ],
+    "answer": "Check and correctly use calibrated instruments to reduce systematic errors. Repeat measurements and use their average to reduce random errors."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The known value is the reference used to judge accuracy.",
+     "text": "The exact mass of an object is 20 g."
+    },
+    {
+     "why": "These are the readings to compare with one another and with the exact mass.",
+     "text": "A student measures it and takes three readings as 17.3, 17.4 and 17.2."
+    },
+    {
+     "why": "The readings are close to one another, which shows precision.",
+     "text": "The three readings are close to each other, so the student’s measurements are precise."
+    },
+    {
+     "why": "All three readings are below and not close enough to the exact mass, so they are not accurate.",
+     "text": "The readings are not close to 20 g, so the measurements are not accurate."
+    },
+    {
+     "why": "This gives the required classification using both properties.",
+     "text": "Therefore, the student is precise but not accurate."
+    }
+   ],
+   "question": "The exact mass of an object is 20 g. A student measures it and takes three readings as 17.3, 17.4 and 17.2. Is the student accurate or precise?",
+   "answer": "The student is precise but not accurate."
+  },
+  "explain": [
+   {
+    "title": "Accuracy",
+    "body": "Accuracy measures how close results are to the true or known value. Compare a reading with the true value to judge accuracy."
+   },
+   {
+    "title": "Precision",
+    "body": "The closeness of two or more measurements to each other is called precision. Compare repeated readings with one another to judge precision."
+   },
+   {
+    "title": "They are independent",
+    "body": "Precision is independent of accuracy. Repeated results may agree closely but still be far from the true value; a set of results may also be near the true value but spread apart."
+   },
+   {
+    "title": "Classifying measurements",
+    "body": "Check two things separately: how close the readings are to the true value, and how close the readings are to each other. Then name accuracy and precision separately."
+   }
+  ],
+  "mistakes": [
+   "Do not call repeated identical readings accurate unless they are also close to the true or known value.",
+   "Do not mix up the meanings: accuracy is closeness to the true value; precision is closeness among measurements.",
+   "Do not assume that an accurate result must also be precise, or that a precise result must also be accurate.",
+   "When classifying a set of readings, state both properties rather than only saying “good measurements.”"
+  ]
+ }
+}

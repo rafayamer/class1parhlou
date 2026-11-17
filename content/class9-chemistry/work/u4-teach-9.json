@@ -1,0 +1,859 @@
+{
+ "note": {
+  "explanation": "A balanced chemical equation gives the mole ratio between reactants and products. Use that ratio to work out the amount of a substance that reacts or forms, then convert between moles and mass or particles if needed.",
+  "examples": [
+   "In CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂, 100 g of CaCO₃ produces 111 g of CaCl₂.",
+   "In 2H₂ + O₂ → 2H₂O, 4 g of H₂ produces 36 g of H₂O."
+  ],
+  "checkAnswer": "27.5 g of CO₂",
+  "keywords": [
+   "balanced equation",
+   "mole ratio",
+   "mass ratio",
+   "reactants",
+   "products",
+   "stoichiometry"
+  ],
+  "simple": "The numbers in a balanced equation act like a recipe. They show how much of each substance reacts and how much product is made.",
+  "checkQuestion": "How much CO₂ is produced when 10 g of CH₄ reacts with excess oxygen according to CH₄ + 2O₂ → CO₂ + 2H₂O?",
+  "title": "Calculations from a chemical equation",
+  "steps": [
+   "Write the balanced chemical equation.",
+   "Use its coefficients to find the mole ratio, or use the molar masses to find the mass ratio.",
+   "Set up the ratio for the amount given in the question.",
+   "Calculate the required mass, moles, or number of particles."
+  ],
+  "answer": "A balanced chemical equation gives the mole ratio between reactants and products. This ratio can be used to calculate how much of a substance reacts or is produced.",
+  "checkAccept": [
+   [
+    "27.5g"
+   ],
+   [
+    "27.5 g"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "2 mol",
+    "3 mol",
+    "4 mol",
+    "6 mol"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to 2H₂ + O₂ → 2H₂O, how many moles of O₂ react with 6 moles of H₂?",
+   "rationales": [
+    "This is incorrect because the equation requires 1 mole of O₂ for every 2 moles of H₂.",
+    "This is correct because the ratio is 2:1, so 6 moles of H₂ require 3 moles of O₂.",
+    "This is incorrect because 4 moles of O₂ would require 8 moles of H₂.",
+    "This is incorrect because 6 moles of O₂ would require 12 moles of H₂."
+   ]
+  },
+  {
+   "options": [
+    "11 g",
+    "22 g",
+    "44 g",
+    "88 g"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What mass of CO₂ is produced by the complete reaction of 16 g of CH₄ with excess oxygen? CH₄ + 2O₂ → CO₂ + 2H₂O",
+   "rationales": [
+    "This is incorrect because 11 g is one quarter of the required product mass.",
+    "This is incorrect because it is half of the mass produced by 16 g of CH₄.",
+    "This is correct because 16 g of CH₄ is 1 mole and the equation produces 1 mole, or 44 g, of CO₂.",
+    "This is incorrect because it is twice the mass produced by 16 g of CH₄."
+   ]
+  },
+  {
+   "options": [
+    "5.4 g",
+    "7.2 g",
+    "14.4 g",
+    "21.6 g"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to 4Al + 3O₂ → 2Al₂O₃, what mass of oxygen reacts with 0.3 moles of aluminium?",
+   "rationales": [
+    "This is incorrect because it does not use the 3:4 mole ratio of O₂ to Al correctly.",
+    "This is correct: 0.3 × 3/4 = 0.225 mol O₂, and 0.225 × 32 = 7.2 g.",
+    "This is incorrect because it is twice the correct mass.",
+    "This is incorrect because it is three times the correct mass."
+   ]
+  },
+  {
+   "options": [
+    "18 g",
+    "36 g",
+    "45 g",
+    "72 g"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What mass of water forms when 5 g of hydrogen reacts with excess oxygen? 2H₂ + O₂ → 2H₂O",
+   "rationales": [
+    "This is incorrect because 18 g is the mass of only 1 mole of water.",
+    "This is incorrect because 36 g of water forms from 4 g of hydrogen, not 5 g.",
+    "This is correct because 4 g of hydrogen produces 36 g of water, so 5 g produces 36/4 × 5 = 45 g.",
+    "This is incorrect because it is more than the mass produced by the stated ratio."
+   ]
+  },
+  {
+   "options": [
+    "1.5 mol",
+    "3 mol",
+    "4.5 mol",
+    "6 mol"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "How many moles of CO₂ form when 2.25 moles of ethanol burn completely? C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O",
+   "rationales": [
+    "This is incorrect because it is less than the amount given by the 2:1 ratio.",
+    "This is incorrect because it does not apply the coefficient ratio of 2 moles of CO₂ per mole of ethanol.",
+    "This is correct because 2.25 × 2 = 4.5 moles of CO₂.",
+    "This is incorrect because it is greater than the amount given by the equation."
+   ]
+  },
+  {
+   "options": [
+    "27.75 g",
+    "25 g",
+    "111 g",
+    "2.775 g"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What mass of CaCl₂ forms from 25 g of CaCO₃, if hydrochloric acid is in excess? CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂",
+   "rationales": [
+    "This is correct because 100 g of CaCO₃ produces 111 g of CaCl₂, so 25 g produces 111/100 × 25 = 27.75 g.",
+    "This is incorrect because it repeats the starting mass rather than using the mass ratio.",
+    "This is incorrect because 111 g of CaCl₂ forms from 100 g of CaCO₃.",
+    "This is incorrect because it is one tenth of the correctly calculated product mass."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "25g of limestone (CaCO₃) reacts with an excess of hydrochloric acid according to the above equation. How much calcium chloride (CaCl₂) will be produced?",
+   "finalAnswer": "27.75g",
+   "marks": 2,
+   "source": "Example 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "100g",
+       "111g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct mass relationship must be taken from the equation.",
+     "description": "Uses the equation's mass ratio for CaCO₃ and CaCl₂.",
+     "how": "State that 100 g of CaCO₃ produces 111 g of CaCl₂."
+    },
+    {
+     "accept": [
+      [
+       "27.75g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final product mass is the quantity asked for.",
+     "description": "Calculates and states the mass of CaCl₂.",
+     "how": "Apply 111/100 × 25 and give the answer with units."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of CaCO₃ = 25 g",
+    "Molar mass of CaCO₃ = 100 g mol⁻¹",
+    "Mass of CaCl₂ product = ?",
+    "Molar mass of CaCl₂ = 111 g mol⁻¹",
+    "According to the equation",
+    "100 g of limestone reacts to produce calcium chloride = 111 g",
+    "1 g of limestone will react to produce calcium chloride = 111/100 g",
+    "25 g of limestone will react to produce calcium chloride = 111/100 × 25",
+    "= 27.75g"
+   ]
+  },
+  {
+   "text": "1.80 moles of ethyl alcohol, when burnt in air completely, will utilize how many moles of oxygen gas? Also calculate the number of moles of CO₂ produced.",
+   "finalAnswer": "5.4 moles of O₂ and 3.6 moles of CO₂",
+   "marks": 4,
+   "source": "Example 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "C2H5OH",
+       "3O2",
+       "2CO2",
+       "3H2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation coefficients establish the required mole ratios.",
+     "description": "Writes the balanced equation.",
+     "how": "Write C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O."
+    },
+    {
+     "accept": [
+      [
+       "5.4moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The oxygen amount must follow the coefficient ratio.",
+     "description": "Calculates moles of oxygen.",
+     "how": "Use 3/1 × 1.8."
+    },
+    {
+     "accept": [
+      [
+       "3.6moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The carbon dioxide amount must follow its coefficient in the equation.",
+     "description": "Calculates moles of carbon dioxide.",
+     "how": "Use 2/1 × 1.8."
+    },
+    {
+     "accept": [
+      [
+       "5.4moles",
+       "3.6moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both requested quantities must be stated clearly.",
+     "description": "States the final amounts with substance names and units.",
+     "how": "Give 5.4 moles of O₂ and 3.6 moles of CO₂."
+    }
+   ],
+   "modelAnswer": [
+    "No. of moles of ethyl alcohol = 1.80",
+    "No. of moles of oxygen needed = ?",
+    "C₂H₅OH (l) + 3O₂ (g) → 2CO₂ (g) + 3H₂O (g)",
+    "One mole of ethyl alcohol, when completely burnt, needs oxygen = 3 moles",
+    "1.8 moles of ethyl alcohol, upon burning, will need oxygen = 3/1 × 1.8",
+    "= 5.4 moles",
+    "1 mole of ethyl alcohol produces moles of CO₂ = 2.0",
+    "1.8 mol of ethyl alcohol will produce = 2/1 × 1.8",
+    "= 3.6 moles"
+   ]
+  },
+  {
+   "text": "Aluminium metal reacts with oxygen to produce aluminium oxide. How many grams of oxygen will be required to react completely with 0.3 moles of aluminium?",
+   "finalAnswer": "7.2 g",
+   "marks": 4,
+   "source": "Example 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "4Al",
+       "3O2",
+       "2Al2O3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation gives the mole ratio needed for the calculation.",
+     "description": "Writes the balanced chemical equation.",
+     "how": "Use 4Al + 3O₂ → 2Al₂O₃."
+    },
+    {
+     "accept": [
+      [
+       "0.225moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculation must convert the given aluminium moles to oxygen moles.",
+     "description": "Finds the moles of oxygen.",
+     "how": "Calculate 3/4 × 0.3 = 0.225 moles."
+    },
+    {
+     "accept": [
+      [
+       "32",
+       "0.225"
+      ]
+     ],
+     "marks": 1,
+     "why": "Oxygen moles must be converted to mass using its molar mass.",
+     "description": "Uses the molar mass of O₂ to calculate the mass.",
+     "how": "Multiply 32 by 0.225."
+    },
+    {
+     "accept": [
+      [
+       "7.2g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final oxygen mass is the requested result.",
+     "description": "States the final mass of oxygen.",
+     "how": "Give 7.2 g."
+    }
+   ],
+   "modelAnswer": [
+    "Moles of Al = 0.3",
+    "Grams of O₂ used = ?",
+    "4Al (s) + 3O₂ (g) → 2Al₂O₃ (s)",
+    "4 moles of aluminium need oxygen = 3.0 moles",
+    "1.0 mole of aluminium will need oxygen = 3/4",
+    "0.3 moles of aluminium will need oxygen = 3/4 × 0.3",
+    "= 0.225 moles",
+    "1 mole of oxygen (O₂) has molar mass = 32 g",
+    "0.225 mole of oxygen (O₂) will have molar mass = 32 × 0.225",
+    "= 7.2 g"
+   ]
+  },
+  {
+   "text": "How many molecules of water will be produced if we react 5 g of hydrogen gas with excess of oxygen gas?",
+   "finalAnswer": "1.505 × 10²⁴ molecules",
+   "marks": 5,
+   "source": "Example 4.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2H2",
+       "O2",
+       "2H2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation establishes the reactant and product relationship.",
+     "description": "Writes the balanced equation and its mass relationship.",
+     "how": "Use 2H₂ + O₂ → 2H₂O and identify 4 g H₂ producing 36 g H₂O."
+    },
+    {
+     "accept": [
+      [
+       "45g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The water mass is needed before its molecules can be found.",
+     "description": "Calculates the mass of water produced.",
+     "how": "Calculate 36/4 × 5 = 45 g."
+    },
+    {
+     "accept": [
+      [
+       "12.04",
+       "10^23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molecules in 36 g of water provide the next conversion ratio.",
+     "description": "Finds the molecules in 36 g of water.",
+     "how": "Use 6.022 × 10²³ × 2 = 12.04 × 10²³ molecules."
+    },
+    {
+     "accept": [
+      [
+       "45/36",
+       "12.04"
+      ]
+     ],
+     "marks": 1,
+     "why": "The amount of water must be scaled from 36 g to 45 g.",
+     "description": "Scales the molecule count to 45 g.",
+     "how": "Multiply 45/36 by 12.04 × 10²³."
+    },
+    {
+     "accept": [
+      [
+       "1.505",
+       "10^24"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be the number of water molecules.",
+     "description": "States the final number of molecules.",
+     "how": "Give 1.505 × 10²⁴ molecules."
+    }
+   ],
+   "modelAnswer": [
+    "Mass of H₂ used = 5g",
+    "Molecules of water produced = ?",
+    "2H₂(g) + O₂(g) → 2H₂O(l)",
+    "2 moles  1 mole  2 moles",
+    "4g    32 g   36 g",
+    "4 g of hydrogen produce H₂O = 36 g of H₂O",
+    "5 g of hydrogen will produce H₂O = 36/4 × 5 = 45g of H₂O",
+    "18g (1 mole) of H₂O contain molecules = 6.022 × 10²³",
+    "36g of H₂O contain molecules = 6.022 × 10²³ × 2",
+    "= 12.04 × 10²³",
+    "45g of H₂O contain = 45/36 × 12.04 × 10²³",
+    "= 1.505 × 10²⁴ molecules"
+   ]
+  },
+  {
+   "text": "How can you calculate the masses of the products formed in a reversible reaction?",
+   "finalAnswer": "Balance the chemical equation, use its mole ratio and the molar masses, then calculate the product masses.",
+   "marks": 4,
+   "source": "Constructed Response 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "balanced",
+       "equation"
+      ]
+     ],
+     "marks": 1,
+     "why": "A balanced equation is the basis for all reaction calculations.",
+     "description": "States that the equation must be balanced.",
+     "how": "Explain that the balanced equation provides the correct ratios."
+    },
+    {
+     "accept": [
+      [
+       "mole ratio"
+      ],
+      [
+       "coefficients"
+      ]
+     ],
+     "marks": 1,
+     "why": "The coefficients determine the relative amounts of reactants and products.",
+     "description": "Identifies the mole ratio from the equation.",
+     "how": "Use the equation's coefficients to find the product moles."
+    },
+    {
+     "accept": [
+      [
+       "molar mass"
+      ],
+      [
+       "molecular mass"
+      ]
+     ],
+     "marks": 1,
+     "why": "Molar mass converts the calculated product amount to mass.",
+     "description": "Mentions the molar masses of the substances.",
+     "how": "Convert moles of product into grams using its molar mass."
+    },
+    {
+     "accept": [
+      [
+       "product",
+       "mass"
+      ]
+     ],
+     "marks": 1,
+     "why": "The method must lead to the requested masses of products.",
+     "description": "Clearly states the final calculation method.",
+     "how": "Explain that the mole ratio and molar masses give the product masses."
+    }
+   ],
+   "modelAnswer": [
+    "Write and balance the chemical equation for the reaction.",
+    "Use the coefficients in the balanced equation to find the mole ratio between the reactants and products.",
+    "Use the given quantity and the mole ratio to calculate the moles of product.",
+    "Multiply the moles of product by its molar mass to calculate its mass."
+   ]
+  },
+  {
+   "text": "How many grams of CO₂ will be produced when we react 10 g of CH₄ with excess of O₂ according to the following equation?\n\nCH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+   "finalAnswer": "27.5 g",
+   "marks": 4,
+   "source": "Descriptive 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "16g",
+       "44g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reactant-to-product mass ratio is essential to the calculation.",
+     "description": "Identifies the masses corresponding to the equation.",
+     "how": "Use 16 g CH₄ to produce 44 g CO₂."
+    },
+    {
+     "accept": [
+      [
+       "44/16"
+      ],
+      [
+       "44",
+       "16"
+      ]
+     ],
+     "marks": 1,
+     "why": "The given reactant mass must be scaled by the correct mass ratio.",
+     "description": "Sets up the mass-ratio calculation.",
+     "how": "Use 44/16 × 10."
+    },
+    {
+     "accept": [
+      [
+       "27.5g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculation must give the amount of CO₂ formed.",
+     "description": "Calculates the carbon dioxide mass.",
+     "how": "Evaluate 44/16 × 10."
+    },
+    {
+     "accept": [
+      [
+       "27.5g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must include the correct product and unit.",
+     "description": "States the final mass of CO₂.",
+     "how": "Give 27.5 g of CO₂."
+    }
+   ],
+   "modelAnswer": [
+    "CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+    "Molar mass of CH₄ = 16 g mol⁻¹",
+    "Molar mass of CO₂ = 44 g mol⁻¹",
+    "16 g of CH₄ will produce CO₂ = 44 g",
+    "10 g of CH₄ will produce CO₂ = 44/16 × 10",
+    "= 27.5 g"
+   ]
+  },
+  {
+   "text": "How many moles of coal are needed to produce 10 moles of CO according to the following equation?\n\n3C(s) + O₂(g) + H₂O(l) → H₂(g) + 3CO(g)",
+   "finalAnswer": "10 moles",
+   "marks": 4,
+   "source": "Descriptive 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3C",
+       "3CO"
+      ]
+     ],
+     "marks": 1,
+     "why": "The equation supplies the ratio between carbon in coal and CO.",
+     "description": "Uses the given equation's coefficients.",
+     "how": "Identify the 3:3 ratio of C to CO."
+    },
+    {
+     "accept": [
+      [
+       "1:1"
+      ],
+      [
+       "3",
+       "3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mole ratio determines the amount of coal needed.",
+     "description": "Finds the carbon-to-CO mole ratio.",
+     "how": "Show that the ratio simplifies to 1:1."
+    },
+    {
+     "accept": [
+      [
+       "10moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ratio must be applied to the 10 moles of CO.",
+     "description": "Calculates the amount of carbon needed.",
+     "how": "Use 10 × 3/3."
+    },
+    {
+     "accept": [
+      [
+       "10moles"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final amount and unit must answer the question.",
+     "description": "States the required amount of coal.",
+     "how": "Give 10 moles of coal (carbon)."
+    }
+   ],
+   "modelAnswer": [
+    "3C(s) + O₂(g) + H₂O(l) → H₂(g) + 3CO(g)",
+    "3 moles of C produce 3 moles of CO",
+    "Moles of coal (C) needed for 10 moles of CO = 3/3 × 10",
+    "= 10 moles"
+   ]
+  },
+  {
+   "text": "How much SO₂ is needed in grams to produce 10 moles of sulphur?\n\n2H₂S(g) + SO₂(g) → 2H₂O(l) + 3S(s)",
+   "finalAnswer": "213.3 g",
+   "marks": 5,
+   "source": "Descriptive 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "SO2",
+       "3S"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation gives the mole ratio of SO₂ to sulphur.",
+     "description": "Uses the equation's coefficient ratio.",
+     "how": "Identify that 1 mole of SO₂ produces 3 moles of S."
+    },
+    {
+     "accept": [
+      [
+       "10/3"
+      ],
+      [
+       "3.333"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required SO₂ moles must be found from the sulphur amount.",
+     "description": "Calculates moles of SO₂.",
+     "how": "Calculate 10/3 moles of SO₂."
+    },
+    {
+     "accept": [
+      [
+       "64g"
+      ],
+      [
+       "64"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molar mass is needed to convert SO₂ moles to grams.",
+     "description": "Finds the molar mass of SO₂.",
+     "how": "Use 32 + 2(16) = 64 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "10/3",
+       "64"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass must be calculated from the correct mole amount and molar mass.",
+     "description": "Multiplies SO₂ moles by its molar mass.",
+     "how": "Calculate 10/3 × 64."
+    },
+    {
+     "accept": [
+      [
+       "213.3g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must be the required SO₂ mass.",
+     "description": "States the final mass with units.",
+     "how": "Give approximately 213.3 g."
+    }
+   ],
+   "modelAnswer": [
+    "2H₂S(g) + SO₂(g) → 2H₂O(l) + 3S(s)",
+    "1 mole of SO₂ produces 3 moles of S",
+    "Moles of SO₂ needed to produce 10 moles of S = 10/3",
+    "Molar mass of SO₂ = 32 + 2(16) = 64 g mol⁻¹",
+    "Mass of SO₂ = 10/3 × 64",
+    "= 213.3 g"
+   ]
+  },
+  {
+   "text": "How much ammonia is needed in grams to produce 1 kg of urea fertilizer?\n\n2NH₃(aq) + CO₂(aq) → CO(NH₂)₂(aq) + H₂O(l)",
+   "finalAnswer": "566.7 g",
+   "marks": 5,
+   "source": "Descriptive 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2NH3",
+       "CO(NH2)2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The balanced equation gives the ratio between ammonia and urea.",
+     "description": "Uses the equation's mole relationship.",
+     "how": "Identify that 2 moles of NH₃ produce 1 mole of urea."
+    },
+    {
+     "accept": [
+      [
+       "34g"
+      ],
+      [
+       "2",
+       "17"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ammonia mass corresponding to the equation is needed.",
+     "description": "Finds the mass of 2 moles of NH₃.",
+     "how": "Use 2 × 17 = 34 g."
+    },
+    {
+     "accept": [
+      [
+       "60g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The urea molar mass links its amount to its mass.",
+     "description": "Finds the molar mass of urea.",
+     "how": "Use 12 + 16 + 2(14) + 4(1) = 60 g mol⁻¹."
+    },
+    {
+     "accept": [
+      [
+       "34/60",
+       "1000"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mass ratio must be applied to 1 kg of urea.",
+     "description": "Sets up the mass-ratio calculation.",
+     "how": "Calculate 34/60 × 1000."
+    },
+    {
+     "accept": [
+      [
+       "566.7g"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must give the required ammonia mass.",
+     "description": "States the final mass of ammonia.",
+     "how": "Give approximately 566.7 g."
+    }
+   ],
+   "modelAnswer": [
+    "2NH₃(aq) + CO₂(aq) → CO(NH₂)₂(aq) + H₂O(l)",
+    "2 moles of NH₃ produce 1 mole of urea",
+    "Molar mass of NH₃ = 17 g mol⁻¹",
+    "Mass of 2 moles of NH₃ = 2 × 17 = 34 g",
+    "Molar mass of urea, CO(NH₂)₂ = 12 + 16 + 2(14) + 4(1) = 60 g mol⁻¹",
+    "60 g of urea require NH₃ = 34 g",
+    "1000 g of urea require NH₃ = 34/60 × 1000",
+    "= 566.7 g"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Numerical questions may ask you to find a reactant or product mass, moles, or number of particles from a balanced equation.",
+   "Write the balanced equation first and show the coefficients clearly; they provide the mole ratio.",
+   "For mass calculations, show the molar masses or the mass ratio before substituting the given amount.",
+   "For a multi-step question, show each conversion, such as grams to moles or moles to particles, and include the unit in the final answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with the balanced equation given in the question and note the molar masses of CH₄ and CO₂.",
+     "16 g of CH₄ produces 44 g of CO₂; scale that mass ratio to 10 g."
+    ],
+    "accept": [
+     [
+      "27.5g"
+     ]
+    ],
+    "question": "How many grams of CO₂ will be produced when we react 10 g of CH₄ with excess of O₂ according to the following equation?\n\nCH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g)",
+    "solution": [
+     "Molar mass of CH₄ = 16 g mol⁻¹",
+     "Molar mass of CO₂ = 44 g mol⁻¹",
+     "16 g of CH₄ will produce CO₂ = 44 g",
+     "10 g of CH₄ will produce CO₂ = 44/16 × 10",
+     "= 27.5 g"
+    ],
+    "answer": "27.5 g of CO₂"
+   },
+   {
+    "hints": [
+     "Compare the coefficients of C and CO in the equation.",
+     "The equation shows a 3:3 ratio, so use that ratio for 10 moles of CO."
+    ],
+    "accept": [
+     [
+      "10moles"
+     ]
+    ],
+    "question": "How many moles of coal are needed to produce 10 moles of CO according to the following equation?\n\n3C(s) + O₂(g) + H₂O(l) → H₂(g) + 3CO(g)",
+    "solution": [
+     "3 moles of C produce 3 moles of CO",
+     "Moles of coal (C) needed for 10 moles of CO = 3/3 × 10",
+     "= 10 moles"
+    ],
+    "answer": "10 moles of coal"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This identifies the given mass and the substance whose mass is required.",
+     "text": "Mass of CaCO₃ = 25 g; mass of CaCl₂ product = ?"
+    },
+    {
+     "why": "These molar masses give the mass ratio for the reaction.",
+     "text": "Molar mass of CaCO₃ = 100 g mol⁻¹; molar mass of CaCl₂ = 111 g mol⁻¹"
+    },
+    {
+     "why": "The equation states that 100 g of limestone produces 111 g of calcium chloride.",
+     "text": "100 g of limestone reacts to produce calcium chloride = 111 g"
+    },
+    {
+     "why": "Dividing by 100 gives the calcium chloride produced by 1 g of limestone.",
+     "text": "1 g of limestone will react to produce calcium chloride = 111/100 g"
+    },
+    {
+     "why": "Multiply the amount for 1 g by the given 25 g.",
+     "text": "25 g of limestone will react to produce calcium chloride = 111/100 × 25"
+    },
+    {
+     "why": "This is the required product mass.",
+     "text": "= 27.75g"
+    }
+   ],
+   "question": "25g of limestone (CaCO₃) reacts with an excess of hydrochloric acid according to the above equation. How much calcium chloride (CaCl₂) will be produced?",
+   "answer": "27.75g"
+  },
+  "explain": [
+   {
+    "title": "A balanced equation is a recipe",
+    "body": "A balanced chemical equation tells you the relative numbers of moles that react and form. The coefficients are the mole ratio."
+   },
+   {
+    "title": "Use the ratio for masses",
+    "body": "Find the molar mass of each substance. Combine these masses with the mole ratio to get the mass ratio, then scale it to the amount given in the question."
+   },
+   {
+    "title": "Convert to the quantity asked for",
+    "body": "Some questions ask for moles or particles rather than grams. Use the equation ratio first, then use molar mass or Avogadro's number for any further conversion."
+   },
+   {
+    "title": "Keep the equation correct",
+    "body": "A chemical equation tells the reacting and producing elements or compounds in a chemical reaction. It also tells the mole ratio between reactants or products and between reactants and products. A chemical equation must be balanced and should show the correct formulas of all the participating elements and compounds."
+   },
+   {
+    "title": "Mass ratios come from mole ratios",
+    "body": "The mole ratio between reactants and products as shown by a chemical equation enables us to find out the mass ratio of these substances. A chemical equation is used to calculate the masses of the reactants as well as the products, which take part in a chemical reaction."
+   }
+  ],
+  "mistakes": [
+   "Using an unbalanced equation or incorrect chemical formula gives the wrong mole ratio.",
+   "Using the coefficients as a mass ratio without taking molar masses into account.",
+   "Reversing the ratio—for example, using reactant mass divided by product mass when the opposite is needed.",
+   "Leaving out a conversion step when changing grams to moles or moles to particles.",
+   "Giving a number without naming the substance or including its unit."
+  ]
+ }
+}

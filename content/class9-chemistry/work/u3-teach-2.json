@@ -1,57 +1,162 @@
 {
  "note": {
-  "explanation": "A chemical bond holds atoms together. In an ionic bond, electrons are transferred and oppositely charged ions attract. In a covalent bond, atoms share electron pairs. In a coordinate covalent bond, one atom supplies both electrons in the shared pair.",
+  "explanation": "A chemical bond is the force of attraction that holds atoms together. Atoms can form bonds by transferring electrons, sharing electrons, or sharing a pair of electrons donated by one atom.",
   "examples": [
-   "Sodium transfers an electron to chlorine: Na → Na⁺ + e⁻; e⁻ + Cl → Cl⁻.",
-   "Two oxygen atoms share two electron pairs in O₂, forming a double covalent bond."
+   "Sodium transfers one electron to chlorine, forming Na⁺ and Cl⁻; their attraction forms an ionic bond.",
+   "Two hydrogen atoms share an electron pair to form H—H, a single covalent bond."
   ],
-  "checkAnswer": "An ionic bond forms by complete transfer of electrons; a covalent bond forms by mutual sharing of an electron pair.",
+  "checkAnswer": "A covalent bond is formed by mutual sharing of an electron pair provided by the bonded atoms.",
   "keywords": [
    "chemical bond",
    "ionic bond",
    "covalent bond",
-   "coordinate bond",
+   "coordinate covalent bond",
    "electron transfer",
    "electron sharing"
   ],
-  "simple": "Ionic means electrons move from one atom to another. Covalent means atoms share electrons. Coordinate covalent means one atom donates the whole shared pair.",
-  "checkQuestion": "What is the main difference between ionic and covalent bonding?",
-  "title": "How atoms bond",
+  "simple": "Atoms stick together because they attract each other. They may transfer electrons or share them to make a bond.",
+  "checkQuestion": "What is a covalent bond?",
+  "title": "How atoms form chemical bonds",
   "steps": [
-   "For an ionic bond, identify the atom that loses electrons and the atom that gains them.",
-   "Write the ions formed and their charges.",
-   "State that opposite charges attract and hold the ions together.",
-   "For a covalent bond, state how many electron pairs are shared.",
-   "For a coordinate covalent bond, identify the donor and acceptor and show the arrow towards the acceptor."
+   "Identify whether electrons are transferred or shared.",
+   "For an ionic bond, show the electron transfer and the ions formed.",
+   "For a covalent bond, show the shared electron pair or bond line.",
+   "For a coordinate covalent bond, identify the donor, acceptor and direction of the arrow."
   ],
-  "answer": "Ionic bonding involves electron transfer, while covalent bonding involves mutual sharing of an electron pair.",
+  "answer": "Atoms form chemical bonds by transferring or sharing electrons, or by one atom donating a shared pair.",
   "checkAccept": [
    [
-    "electron transfer",
-    "electron sharing"
+    "mutual sharing",
+    "electron pair"
    ],
    [
-    "transfer",
-    "share"
+    "shared pair",
+    "bonded atoms"
+   ],
+   [
+    "p:sharing",
+    "electron pair"
    ]
   ]
  },
  "mcqs": [
   {
    "options": [
-    "The complete transfer of electrons from one atom to another",
-    "The mutual sharing of an electron pair by bonded atoms",
-    "The attraction between two nuclei only",
-    "The sharing of a proton by two atoms"
+    "A force of attraction between atoms that holds them together",
+    "A force that makes electrons leave the nucleus",
+    "A group of atoms with no attraction between them",
+    "A transfer of protons between atoms"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a chemical bond?",
+   "rationales": [
+    "Correct: a chemical bond is a force of attraction that holds atoms together.",
+    "Incorrect: electron loss may occur during some reactions, but it is not the definition of a bond.",
+    "Incorrect: a bond holds atoms together rather than describing atoms without attraction.",
+    "Incorrect: the section describes electron transfer or sharing, not proton transfer."
+   ]
+  },
+  {
+   "options": [
+    "Atoms share electrons equally",
+    "Electrons are completely transferred from one atom to another",
+    "One atom donates a shared electron pair to another",
+    "The nuclei of two atoms are transferred"
    ],
    "fromBook": false,
    "correctIndex": 1,
-   "stem": "Which description defines a single covalent bond?",
+   "stem": "Which process forms an ionic bond?",
    "rationales": [
-    "This describes ionic bonding, not a single covalent bond.",
-    "This is the textbook definition of a single covalent bond.",
-    "A bond is not formed by attraction between nuclei alone.",
-    "Covalent bonds involve electrons, not shared protons."
+    "Incorrect: equal sharing describes a non-polar covalent bond.",
+    "Correct: an ionic bond forms by complete transference of electron or electrons from one atom to another.",
+    "Incorrect: donation of a shared pair by one atom describes a coordinate covalent bond.",
+    "Incorrect: nuclei are not transferred to form an ionic bond."
+   ]
+  },
+  {
+   "options": [
+    "The atoms share an electron pair provided by the bonded atoms",
+    "One atom transfers a proton to another",
+    "The atoms attract because they have opposite ionic charges",
+    "One atom donates both electrons in a shared pair"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How is a single covalent bond formed?",
+   "rationales": [
+    "Correct: a single covalent bond is formed by mutual sharing of an electron pair provided by the bonded atoms.",
+    "Incorrect: proton transfer is not how the section defines a covalent bond.",
+    "Incorrect: attraction between oppositely charged ions is the basis of an ionic bond.",
+    "Incorrect: donation of both shared electrons by one atom describes a coordinate covalent bond."
+   ]
+  },
+  {
+   "options": [
+    "H—H",
+    "O=O",
+    "N≡N",
+    "Na⁺Cl⁻"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which structural formula represents a double covalent bond?",
+   "rationales": [
+    "Incorrect: H—H has one line and represents a single covalent bond.",
+    "Correct: O=O has two lines and represents a double covalent bond.",
+    "Incorrect: N≡N has three lines and represents a triple covalent bond.",
+    "Incorrect: Na⁺Cl⁻ represents oppositely charged ions, not a double covalent bond."
+   ]
+  },
+  {
+   "options": [
+    "The shared pair lies midway between the atoms",
+    "The shared pair bends towards the more electronegative atom",
+    "Electrons are completely transferred to the less electronegative atom",
+    "The shared pair is donated by a third atom"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What happens to the shared electron pair in a polar covalent bond?",
+   "rationales": [
+    "Incorrect: a pair midway between identical atoms gives a non-polar covalent bond.",
+    "Correct: in a bond between non-identical atoms, the shared pair bends towards the more electronegative atom.",
+    "Incorrect: the section describes a shared pair bending towards the more electronegative atom, not complete transfer to the less electronegative atom.",
+    "Incorrect: a coordinate covalent bond involves donation by one of the bonded species, not a third atom."
+   ]
+  },
+  {
+   "options": [
+    "The donor",
+    "The acceptor",
+    "The atom with the greatest number of shells",
+    "The ion that loses a proton"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In a coordinate covalent bond, what is the name for the species that donates the electron pair?",
+   "rationales": [
+    "Correct: the species which donates the electron pair is called the donor.",
+    "Incorrect: the species that accepts the electron pair is called the acceptor.",
+    "Incorrect: number of shells does not define the donor.",
+    "Incorrect: proton loss does not define the donor in a coordinate covalent bond."
+   ]
+  },
+  {
+   "options": [
+    "An arrow pointing towards the donor",
+    "An arrow pointing towards the acceptor",
+    "A pair of parallel lines",
+    "A plus sign between the bonded atoms"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In which direction does the arrow point when representing a coordinate covalent bond?",
+   "rationales": [
+    "Incorrect: the arrow points away from the donor and towards the acceptor.",
+    "Correct: the arrow head points towards the acceptor.",
+    "Incorrect: two parallel lines represent a double covalent bond.",
+    "Incorrect: a plus sign is not the section's symbol for a coordinate covalent bond."
    ]
   },
   {
@@ -63,123 +168,21 @@
    ],
    "fromBook": false,
    "correctIndex": 0,
-   "stem": "Which ions are produced when sodium transfers an electron to chlorine?",
+   "stem": "Which ions form when an electron transfers from sodium to chlorine?",
    "rationales": [
-    "Sodium loses an electron to become Na⁺, and chlorine gains it to become Cl⁻.",
-    "These are neutral atoms, not the ions formed after electron transfer.",
-    "The charges are reversed: sodium loses and chlorine gains an electron.",
-    "Sodium transfers one electron in this reaction, not two."
-   ]
-  },
-  {
-   "options": [
-    "A single covalent bond",
-    "A double covalent bond",
-    "A triple covalent bond",
-    "An ionic bond"
-   ],
-   "fromBook": false,
-   "correctIndex": 1,
-   "stem": "What type of covalent bond is represented by two shared electron pairs?",
-   "rationales": [
-    "A single covalent bond has one shared electron pair.",
-    "A double covalent bond has two shared electron pairs.",
-    "A triple covalent bond has three shared electron pairs.",
-    "An ionic bond involves electron transfer rather than shared pairs."
-   ]
-  },
-  {
-   "options": [
-    "The donor atom",
-    "The acceptor atom",
-    "A noble gas atom",
-    "A negatively charged ion only"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "In coordinate covalent bonding, what is the name for the species that supplies the shared electron pair?",
-   "rationales": [
-    "The atom that supplies the pair is called the donor.",
-    "The acceptor receives the donated electron pair.",
-    "A species need not be a noble gas to donate a pair.",
-    "The donor is not defined as a negatively charged ion only."
-   ]
-  },
-  {
-   "options": [
-    "The shared electron pair is exactly midway between the atoms",
-    "The shared electron pair bends towards the more electronegative atom",
-    "One atom transfers a proton to the other",
-    "The atoms share three electron pairs"
-   ],
-   "fromBook": false,
-   "correctIndex": 1,
-   "stem": "How does the textbook describe the shared pair in a polar covalent bond between unlike atoms?",
-   "rationales": [
-    "A pair midway between identical atoms is described as non-polar.",
-    "In a polar covalent bond the pair bends towards the more electronegative atom.",
-    "The description concerns electron sharing, not proton transfer.",
-    "The number of shared pairs does not determine whether the bond is polar."
-   ]
-  },
-  {
-   "options": [
-    "NaCl",
-    "H₂",
-    "O₂",
-    "N₂"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "Which substance is held together by oppositely charged ions formed by electron transfer?",
-   "rationales": [
-    "NaCl consists of Na⁺ and Cl⁻ ions held together by electrostatic attraction.",
-    "H₂ is formed by covalent sharing between hydrogen atoms.",
-    "O₂ has a double covalent bond between oxygen atoms.",
-    "N₂ has a triple covalent bond between nitrogen atoms."
-   ]
-  },
-  {
-   "options": [
-    "H—H",
-    "O=O",
-    "N≡N",
-    "Na⁺Cl⁻"
-   ],
-   "fromBook": false,
-   "correctIndex": 2,
-   "stem": "Which notation represents a triple covalent bond?",
-   "rationales": [
-    "One line represents a single covalent bond.",
-    "Two lines represent a double covalent bond.",
-    "Three lines represent a triple covalent bond.",
-    "This notation represents oppositely charged ions, not a triple covalent bond."
-   ]
-  },
-  {
-   "options": [
-    "One atom donates both electrons in the shared pair",
-    "Each atom donates one electron to the shared pair",
-    "One atom transfers an electron and forms two ions",
-    "The atoms share three protons"
-   ],
-   "fromBook": false,
-   "correctIndex": 0,
-   "stem": "What distinguishes the formation of a coordinate covalent bond?",
-   "rationales": [
-    "The whole shared pair in a coordinate bond is donated by one atom.",
-    "This describes the usual formation of a covalent shared pair, not a coordinate bond.",
-    "This describes ionic electron transfer.",
-    "Coordinate covalent bonding involves an electron pair, not shared protons."
+    "Correct: sodium loses an electron to become Na⁺, and chlorine gains it to become Cl⁻.",
+    "Incorrect: these are the uncharged atoms before electron transfer.",
+    "Incorrect: the charges are reversed; sodium loses an electron and chlorine gains one.",
+    "Incorrect: each atom transfers or gains one electron in this example, not two."
    ]
   }
  ],
  "written": [
   {
    "text": "What types of elements form ionic bonds?",
-   "finalAnswer": "Ionic bonds generally form between a metal and a non-metal.",
+   "finalAnswer": "Ionic bonds form between metals and non-metals.",
    "marks": 2,
-   "source": "In-text 3.2.1",
+   "source": "In-text Exercise 3.2.1",
    "rubric": [
     {
      "accept": [
@@ -188,41 +191,42 @@
        "non-metal"
       ],
       [
-       "metal",
-       "nonmetal"
+       "p:metal",
+       "p:non-metal"
       ]
      ],
      "marks": 1,
-     "why": "Identifying the kinds of elements shows which atoms typically lose and gain electrons.",
-     "description": "Name the metal and non-metal.",
-     "how": "State that ionic bonds generally form between a metal and a non-metal."
+     "why": "Identifying the metal gives the first part of the pair.",
+     "description": "Names the metallic element.",
+     "how": "State that one of the elements is a metal."
     },
     {
      "accept": [
       [
-       "lose",
-       "gain"
+       "non-metal",
+       "metal"
       ],
       [
-       "electron transfer"
+       "p:non-metal",
+       "p:metal"
       ]
      ],
      "marks": 1,
-     "why": "Electron transfer explains how the ions that form the bond are produced.",
-     "description": "Relate the elements to electron transfer.",
-     "how": "Explain that the metal loses electrons and the non-metal gains them."
+     "why": "Ionic bonds form between a metal and a non-metal.",
+     "description": "Names the non-metal and gives the complete answer.",
+     "how": "State that the other element is a non-metal."
     }
    ],
    "modelAnswer": [
-    "Ionic bonds generally form between a metal and a non-metal.",
-    "The metal loses electron(s), and the non-metal gains electron(s)."
+    "Ionic bonds form between metals and non-metals.",
+    "Final answer: Ionic bonds form between metals and non-metals."
    ]
   },
   {
    "text": "What are the conditions for an ionic bond to be formed?",
-   "finalAnswer": "One atom loses electron(s), another gains them, and the oppositely charged ions attract.",
-   "marks": 2,
-   "source": "In-text 3.2.1",
+   "finalAnswer": "Atoms lose or gain electron(s) to acquire the electronic configuration of the nearest noble gas; the resulting oppositely charged ions are held together by electrostatic attraction.",
+   "marks": 4,
+   "source": "In-text Exercise 3.2.1",
    "rubric": [
     {
      "accept": [
@@ -230,41 +234,72 @@
        "lose",
        "gain",
        "electron"
+      ],
+      [
+       "transfer",
+       "electron"
       ]
      ],
      "marks": 1,
-     "why": "Electron transfer forms the positive and negative ions.",
-     "description": "State the electron-transfer condition.",
-     "how": "Explain that one atom loses electron(s) and another gains them."
+     "why": "Electron transfer is the process that forms the ions.",
+     "description": "States that electron(s) are lost or gained.",
+     "how": "Mention loss or gain of electrons by the atoms."
     },
     {
      "accept": [
       [
-       "oppositely charged",
-       "attract"
+       "nearest noble gas"
+      ],
+      [
+       "noble gas",
+       "configuration"
+      ]
+     ],
+     "marks": 1,
+     "why": "The atoms tend to obtain a stable noble-gas electronic configuration.",
+     "description": "States the electronic configuration reached.",
+     "how": "Name the electronic configuration of the nearest noble gas."
+    },
+    {
+     "accept": [
+      [
+       "oppositely charged ions"
       ],
       [
        "positive",
        "negative",
-       "electrostatic"
+       "ions"
       ]
      ],
      "marks": 1,
-     "why": "Attraction between opposite charges holds the ions together.",
-     "description": "State how the ions are held together.",
-     "how": "Mention the electrostatic attraction between oppositely charged ions."
+     "why": "The transferred electrons produce oppositely charged ions.",
+     "description": "Identifies the ions formed.",
+     "how": "State that positive and negative ions result."
+    },
+    {
+     "accept": [
+      [
+       "electrostatic",
+       "attraction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Attraction between the oppositely charged ions holds them together.",
+     "description": "Gives the final answer and force holding the ions.",
+     "how": "Name the electrostatic force of attraction."
     }
    ],
    "modelAnswer": [
-    "One atom must lose electron(s) and another atom must gain them.",
-    "The oppositely charged ions formed are held together by electrostatic attraction."
+    "Atoms lose or gain electron(s) to acquire the electronic configuration of the nearest noble gas.",
+    "The resulting oppositely charged ions are held together by the electrostatic force of attraction.",
+    "Final answer: Electron transfer forms oppositely charged ions with noble-gas configurations, and electrostatic attraction holds them together."
    ]
   },
   {
    "text": "What type of elements form covalent bond?",
-   "finalAnswer": "Covalent bonds generally form between non-metal atoms.",
+   "finalAnswer": "Covalent bonds form between non-metal atoms.",
    "marks": 2,
-   "source": "In-text 3.2.2",
+   "source": "In-text Exercise 3.2.2",
    "rubric": [
     {
      "accept": [
@@ -272,367 +307,120 @@
        "non-metal"
       ],
       [
-       "nonmetal"
+       "nonmetals"
       ]
      ],
-     "marks": 1,
-     "why": "The types of atoms identify the usual partners in covalent bonding.",
-     "description": "Identify the elements.",
-     "how": "State that covalent bonds generally form between non-metal atoms."
-    },
-    {
-     "accept": [
-      [
-       "share",
-       "electrons"
-      ],
-      [
-       "mutual sharing"
-      ]
-     ],
-     "marks": 1,
-     "why": "Sharing distinguishes covalent bonds from ionic bonds.",
-     "description": "Explain their bonding action.",
-     "how": "Add that the atoms mutually share electron pair(s)."
+     "marks": 2,
+     "why": "Covalent bonds form when atoms share electrons, typically between non-metals.",
+     "description": "Identifies the elements that form covalent bonds.",
+     "how": "State that non-metal atoms form covalent bonds."
     }
    ],
    "modelAnswer": [
-    "Covalent bonds generally form between non-metal atoms.",
-    "The atoms mutually share electron pair(s)."
+    "Covalent bonds form between non-metal atoms.",
+    "Final answer: Covalent bonds form between non-metal atoms."
    ]
   },
   {
    "text": "How covalent bond is different from an ionic bond?",
-   "finalAnswer": "A covalent bond forms by mutual sharing of an electron pair; an ionic bond forms by complete transfer of electron(s) and attraction between oppositely charged ions.",
-   "marks": 2,
-   "source": "In-text 3.2.2",
+   "finalAnswer": "A covalent bond is formed by mutual sharing of an electron pair, whereas an ionic bond is formed by complete transference of electron(s) from one atom to another.",
+   "marks": 4,
+   "source": "In-text Exercise 3.2.2",
    "rubric": [
     {
      "accept": [
       [
+       "covalent",
        "mutual sharing",
        "electron pair"
       ],
       [
-       "share",
-       "electron pair"
+       "covalent",
+       "sharing",
+       "electron"
       ]
      ],
-     "marks": 1,
-     "why": "Sharing is the defining electron process in covalent bonding.",
-     "description": "Give the covalent-bond process.",
+     "marks": 2,
+     "why": "Sharing is the defining process for a covalent bond.",
+     "description": "Explains how a covalent bond forms.",
      "how": "State that bonded atoms mutually share an electron pair."
     },
     {
      "accept": [
       [
-       "complete transfer",
-       "oppositely charged"
+       "ionic",
+       "complete transference",
+       "electron"
       ],
       [
+       "ionic",
        "transfer",
+       "electron"
+      ]
+     ],
+     "marks": 2,
+     "why": "Complete electron transfer distinguishes an ionic bond from a covalent bond.",
+     "description": "Explains how an ionic bond forms and completes the comparison.",
+     "how": "State that electron(s) transfer completely from one atom to another."
+    }
+   ],
+   "modelAnswer": [
+    "A covalent bond is formed by the mutual sharing of an electron pair provided by the bonded atoms.",
+    "An ionic bond is formed by the complete transference of electron or electrons from one atom to another atom.",
+    "Final answer: Covalent bonds form by sharing electron pairs; ionic bonds form by complete electron transfer."
+   ]
+  },
+  {
+   "text": "Which property of metals makes them malleable and ductile?",
+   "finalAnswer": "The layers of metal ions can slide over one another while the metallic bond holds them together.",
+   "marks": 2,
+   "source": "Short Q3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "layers",
+       "slide"
+      ],
+      [
        "ions",
-       "attract"
+       "slide"
       ]
      ],
      "marks": 1,
-     "why": "Transfer and ionic attraction distinguish ionic bonding from covalent sharing.",
-     "description": "Give the ionic-bond process.",
-     "how": "State that electrons transfer to form oppositely charged ions which attract."
+     "why": "Sliding layers account for metals being shaped without breaking.",
+     "description": "States that layers of metal ions can slide.",
+     "how": "Mention the movement of layers over one another."
+    },
+    {
+     "accept": [
+      [
+       "metallic bond",
+       "holds"
+      ],
+      [
+       "bond",
+       "holds",
+       "together"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bonding must remain effective as the layers move.",
+     "description": "Connects the sliding layers to metallic bonding.",
+     "how": "State that metallic bonding holds the metal together."
     }
    ],
    "modelAnswer": [
-    "A covalent bond is formed by the mutual sharing of an electron pair.",
-    "An ionic bond is formed by complete transference of electron(s) from one atom to another; the oppositely charged ions attract."
-   ]
-  },
-  {
-   "text": "Draw electron dot and cross structure of the following compounds. SiH₄, PCl₃, SO₂, SO₃",
-   "finalAnswer": "SiH₄: Si forms four single bonds to H. PCl₃: P forms three single bonds to Cl and has one lone pair. SO₂: O=S=O, with one lone pair on S and two lone pairs on each O. SO₃: S forms three S=O double bonds, with two lone pairs on each O.",
-   "marks": 5,
-   "source": "In-text 3.2.2",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "SiH4",
-       "four",
-       "single",
-       "H"
-      ],
-      [
-       "SiH4",
-       "Si-H",
-       "Si-H",
-       "Si-H",
-       "Si-H"
-      ]
-     ],
-     "marks": 1,
-     "why": "The silicon hydride structure must show four shared pairs around silicon.",
-     "description": "Show SiH₄.",
-     "how": "Draw or state four Si—H single bonds, showing one shared pair in each."
-    },
-    {
-     "accept": [
-      [
-       "PCl3",
-       "three",
-       "single",
-       "lone pair"
-      ],
-      [
-       "PCl3",
-       "three P-Cl",
-       "lone pair"
-      ]
-     ],
-     "marks": 1,
-     "why": "The phosphorus lone pair and three shared pairs complete the correct structure.",
-     "description": "Show PCl₃.",
-     "how": "Show three P—Cl single bonds and one lone pair on P."
-    },
-    {
-     "accept": [
-      [
-       "SO2",
-       "O=S=O"
-      ],
-      [
-       "SO2",
-       "double bond"
-      ]
-     ],
-     "marks": 1,
-     "why": "The structure must correctly represent the shared bonds in sulfur dioxide.",
-     "description": "Show SO₂ bonding.",
-     "how": "Show O=S=O, with lone pairs on the oxygen atoms."
-    },
-    {
-     "accept": [
-      [
-       "SO3",
-       "three",
-       "S=O"
-      ],
-      [
-       "SO3",
-       "three double"
-      ]
-     ],
-     "marks": 1,
-     "why": "The sulfur trioxide structure must show its three S—O shared bonds correctly.",
-     "description": "Show SO₃ bonding.",
-     "how": "Show three S=O double bonds and lone pairs on the oxygen atoms."
-    },
-    {
-     "accept": [
-      [
-       "dot",
-       "cross"
-      ],
-      [
-       "electron pair",
-       "shared"
-      ]
-     ],
-     "marks": 1,
-     "why": "The requested dot-and-cross representation must identify the shared electrons.",
-     "description": "Show shared electrons.",
-     "how": "Use dots and crosses, or clearly mark each shared electron pair."
-    }
-   ],
-   "modelAnswer": [
-    "SiH₄: Draw Si in the centre with four H atoms; show one shared electron pair in each Si—H bond.",
-    "PCl₃: Draw P in the centre with three Cl atoms; show one shared pair in each P—Cl bond and one lone pair on P.",
-    "SO₂: Draw O=S=O; show two shared pairs in each S=O bond and two lone pairs on each O.",
-    "SO₃: Draw S bonded to three O atoms by double bonds; show two lone pairs on each O.",
-    "Use a dot from one atom and a cross from the other atom to distinguish their electrons."
-   ]
-  },
-  {
-   "text": "Draw the pictures of coordinate covalent bond formed between: (a) BF₃ and AlCl₃ (b) CH₃OCH₃ and H⁺",
-   "finalAnswer": "(a) F₃B←AlCl₃ (equivalently, AlCl₃→BF₃), with the arrow pointing to the electron-pair acceptor. (b) CH₃—O—CH₃ donates an oxygen lone pair to H⁺, forming [CH₃—O(H)—CH₃]⁺.",
-   "marks": 4,
-   "source": "In-text 3.2.3",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "BF3",
-       "AlCl3",
-       "arrow"
-      ],
-      [
-       "BF3",
-       "AlCl3",
-       "donor",
-       "acceptor"
-      ]
-     ],
-     "marks": 1,
-     "why": "The first structure must show electron-pair donation between the two compounds.",
-     "description": "Show the coordinate bond in (a).",
-     "how": "Draw the donated pair and an arrow from its donor towards its acceptor."
-    },
-    {
-     "accept": [
-      [
-       "BF3",
-       "AlCl3",
-       "lone pair"
-      ],
-      [
-       "F3B",
-       "AlCl3",
-       "coordinate"
-      ]
-     ],
-     "marks": 1,
-     "why": "Identifying the donated pair makes the coordinate bond formation clear.",
-     "description": "Show the electron pair in (a).",
-     "how": "Show that a lone pair is donated to the electron-pair acceptor."
-    },
-    {
-     "accept": [
-      [
-       "CH3OCH3",
-       "H+",
-       "O",
-       "arrow"
-      ],
-      [
-       "oxygen",
-       "H+",
-       "donates"
-      ]
-     ],
-     "marks": 1,
-     "why": "The oxygen atom in dimethyl ether supplies the pair to the proton.",
-     "description": "Show the donor and acceptor in (b).",
-     "how": "Draw an arrow from an oxygen lone pair towards H⁺."
-    },
-    {
-     "accept": [
-      [
-       "positive",
-       "CH3",
-       "O",
-       "H"
-      ],
-      [
-       "CH3-O(H)-CH3",
-       "+"
-      ]
-     ],
-     "marks": 1,
-     "why": "The product must show the new O—H bond and the positive charge.",
-     "description": "Show the product in (b).",
-     "how": "Draw the protonated ether ion and mark its positive charge."
-    }
-   ],
-   "modelAnswer": [
-    "(a) Show a lone pair donated from one compound to the electron-pair acceptor in the other; draw the coordinate-bond arrow towards the acceptor.",
-    "(b) CH₃—O—CH₃ + H⁺ → [CH₃—O(H)—CH₃]⁺.",
-    "Draw the coordinate-bond arrow from the oxygen lone pair towards H⁺."
-   ]
-  },
-  {
-   "text": "Which compound is not able to form a coordinate covalent bond?",
-   "finalAnswer": "The section does not specify the compound choices, so the answer depends on the options: a compound without an available electron pair to donate cannot form a coordinate covalent bond.",
-   "marks": 2,
-   "source": "In-text 3.2.3",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "no",
-       "electron pair",
-       "donate"
-      ],
-      [
-       "cannot",
-       "donate",
-       "lone pair"
-      ]
-     ],
-     "marks": 1,
-     "why": "An available pair of electrons is required for donation.",
-     "description": "State the key condition.",
-     "how": "Explain that the species must have an electron pair available to donate."
-    },
-    {
-     "accept": [
-      [
-       "depends",
-       "options"
-      ],
-      [
-       "compound",
-       "without",
-       "electron pair"
-      ]
-     ],
-     "marks": 1,
-     "why": "The question gives no answer choices, so a particular compound cannot be identified from this text alone.",
-     "description": "Apply the condition to the question.",
-     "how": "State that the non-donating compound must be selected from the choices and must lack an available pair."
-    }
-   ],
-   "modelAnswer": [
-    "A species that has no available electron pair to donate cannot form a coordinate covalent bond.",
-    "The particular compound cannot be named unless the answer choices are supplied."
-   ]
-  },
-  {
-   "text": "What type of elements lose their outer electron easily and what type of elements gain electron easily?",
-   "finalAnswer": "Metals lose their outer electron(s) easily, while non-metals gain electron(s) easily.",
-   "marks": 2,
-   "source": "Short Q4.1",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "metals",
-       "lose"
-      ],
-      [
-       "metal",
-       "lose"
-      ]
-     ],
-     "marks": 1,
-     "why": "Metals commonly form positive ions by losing outer electrons.",
-     "description": "Name the electron-losing elements.",
-     "how": "State that metals lose outer electron(s) easily."
-    },
-    {
-     "accept": [
-      [
-       "non-metals",
-       "gain"
-      ],
-      [
-       "nonmetals",
-       "gain"
-      ]
-     ],
-     "marks": 1,
-     "why": "Non-metals commonly form negative ions by gaining electrons.",
-     "description": "Name the electron-gaining elements.",
-     "how": "State that non-metals gain electron(s) easily."
-    }
-   ],
-   "modelAnswer": [
-    "Metals lose their outer electron(s) easily.",
-    "Non-metals gain electron(s) easily."
+    "The layers of metal ions can slide over one another.",
+    "The metallic bond still holds the ions together.",
+    "Final answer: The layers slide over one another while the metallic bond holds them together."
    ]
   },
   {
    "text": "Is coordinate covalent bond a strong bond?",
-   "finalAnswer": "Yes. A coordinate covalent bond is a covalent bond; after formation, it behaves like the other covalent bonds in the species.",
+   "finalAnswer": "Yes. Once formed, a coordinate covalent bond behaves like a covalent bond.",
    "marks": 2,
-   "source": "Short Q4.5",
+   "source": "Short Q3.5",
    "rubric": [
     {
      "accept": [
@@ -641,120 +429,38 @@
       ]
      ],
      "marks": 1,
-     "why": "The response must give a direct answer.",
-     "description": "Answer the yes-or-no question.",
-     "how": "State yes."
+     "why": "A direct response answers the question.",
+     "description": "States whether the bond is strong.",
+     "how": "Answer yes."
     },
     {
      "accept": [
       [
-       "after formation",
-       "same",
-       "covalent"
-      ],
-      [
        "behave",
-       "exactly alike"
+       "covalent bond"
       ],
       [
        "no difference",
-       "covalent bond"
+       "formed"
       ]
      ],
      "marks": 1,
-     "why": "The section explains that once formed, a coordinate bond does not remain different from a covalent bond.",
-     "description": "Support the answer using the section's bonding idea.",
-     "how": "Explain that after formation it behaves like the other covalent bonds."
+     "why": "The text explains that after formation, coordinate and ordinary covalent bonds do not differ.",
+     "description": "Supports the response with the bond's behaviour after formation.",
+     "how": "State that it behaves like a covalent bond once formed."
     }
    ],
    "modelAnswer": [
     "Yes.",
-    "After formation, a coordinate covalent bond behaves like the other covalent bonds in the species."
-   ]
-  },
-  {
-   "text": "Write down dot and cross formula of HNO₃.",
-   "finalAnswer": "HNO₃: H—O—N(=O)₂, with electron pairs shown around the atoms; the dot-and-cross diagram must show the shared bonding pairs and oxygen lone pairs.",
-   "marks": 4,
-   "source": "Short Q4.6",
-   "rubric": [
-    {
-     "accept": [
-      [
-       "HNO3",
-       "H-O-N"
-      ],
-      [
-       "HNO3",
-       "H-O"
-      ]
-     ],
-     "marks": 1,
-     "why": "The hydrogen is attached through oxygen in the displayed structure.",
-     "description": "Show the H—O connection.",
-     "how": "Draw the H—O bond in the nitric acid structure."
-    },
-    {
-     "accept": [
-      [
-       "N",
-       "O",
-       "three"
-      ],
-      [
-       "N",
-       "three oxygen"
-      ]
-     ],
-     "marks": 1,
-     "why": "The formula and connectivity must include one nitrogen and three oxygen atoms.",
-     "description": "Show the atoms and connectivity.",
-     "how": "Include the nitrogen and all three oxygen atoms in the structure."
-    },
-    {
-     "accept": [
-      [
-       "double bond"
-      ],
-      [
-       "N=O"
-      ]
-     ],
-     "marks": 1,
-     "why": "A dot-and-cross formula must distinguish the multiple shared pairs from single bonds.",
-     "description": "Show the multiple bond(s).",
-     "how": "Represent the N—O multiple bond(s) with the corresponding shared electron pairs."
-    },
-    {
-     "accept": [
-      [
-       "lone pairs",
-       "oxygen"
-      ],
-      [
-       "dots",
-       "crosses",
-       "oxygen"
-      ]
-     ],
-     "marks": 1,
-     "why": "The requested dot-and-cross formula includes non-bonding as well as bonding electrons.",
-     "description": "Show the non-bonding electrons.",
-     "how": "Add oxygen lone pairs and distinguish electrons using dots and crosses."
-    }
-   ],
-   "modelAnswer": [
-    "Draw H—O—N with the remaining two oxygen atoms bonded to N.",
-    "Show the shared electron pairs in the N—O bonds, including the multiple bond(s).",
-    "Add the oxygen lone pairs.",
-    "Use dots and crosses to distinguish the electrons contributed by different atoms."
+    "After formation, a coordinate covalent bond behaves exactly like a covalent bond.",
+    "Final answer: Yes; once formed, it behaves like a covalent bond."
    ]
   },
   {
    "text": "Explain the formation of an ionic bond and a covalent bond.",
-   "finalAnswer": "An ionic bond forms by complete transfer of electron(s) from one atom to another, producing oppositely charged ions held together by electrostatic attraction. A covalent bond forms by mutual sharing of an electron pair provided by the bonded atoms.",
-   "marks": 4,
-   "source": "Descriptive Q4.1",
+   "finalAnswer": "An ionic bond forms by complete transfer of electron(s), producing oppositely charged ions held together by electrostatic attraction. A covalent bond forms by mutual sharing of an electron pair provided by the bonded atoms.",
+   "marks": 5,
+   "source": "Descriptive Q3.1",
    "rubric": [
     {
      "accept": [
@@ -763,32 +469,42 @@
        "electron"
       ],
       [
-       "transfer",
+       "complete transference",
        "electron"
       ]
      ],
      "marks": 1,
-     "why": "Electron transfer is the defining formation process for an ionic bond.",
-     "description": "Explain ionic electron transfer.",
-     "how": "State that electron(s) pass completely from one atom to another."
+     "why": "Complete electron transfer is the defining step in ionic-bond formation.",
+     "description": "Describes electron transfer in an ionic bond.",
+     "how": "State that electron(s) transfer completely from one atom to another."
     },
     {
      "accept": [
       [
-       "oppositely charged",
-       "electrostatic",
-       "attraction"
+       "oppositely charged ions"
       ],
       [
        "positive",
        "negative",
-       "attract"
+       "ions"
       ]
      ],
      "marks": 1,
-     "why": "The electrostatic attraction between the ions holds the ionic compound together.",
-     "description": "Explain what holds the ions together.",
-     "how": "Mention opposite charges and their attraction."
+     "why": "Electron transfer forms positive and negative ions.",
+     "description": "Identifies the ions produced.",
+     "how": "Name the oppositely charged ions."
+    },
+    {
+     "accept": [
+      [
+       "electrostatic",
+       "attraction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Electrostatic attraction holds the ionic compound's ions together.",
+     "description": "Explains what holds the ions together.",
+     "how": "Mention electrostatic force of attraction."
     },
     {
      "accept": [
@@ -797,142 +513,234 @@
        "electron pair"
       ],
       [
-       "share",
+       "sharing",
        "electron pair"
       ]
      ],
      "marks": 1,
-     "why": "Mutual sharing defines covalent bond formation.",
-     "description": "Explain covalent electron sharing.",
-     "how": "State that bonded atoms mutually share an electron pair."
+     "why": "Mutual sharing distinguishes covalent-bond formation from ionic-bond formation.",
+     "description": "Describes how a covalent bond forms.",
+     "how": "State that the bonded atoms share an electron pair."
     },
     {
      "accept": [
       [
-       "provided by",
-       "bonded atoms"
+       "covalent bond",
+       "shared",
+       "final answer"
       ],
       [
-       "each atom",
-       "contributes"
+       "sharing",
+       "ionic",
+       "final answer"
       ]
      ],
      "marks": 1,
-     "why": "The shared-pair contribution distinguishes an ordinary covalent bond from a coordinate bond.",
-     "description": "Complete the covalent-bond explanation.",
-     "how": "State that the shared pair is provided by the bonded atoms."
+     "why": "The final point rewards a complete, accurate distinction between the two bond types.",
+     "description": "Gives the correct final comparison.",
+     "how": "Clearly distinguish transfer in ionic bonding from sharing in covalent bonding."
     }
    ],
    "modelAnswer": [
-    "An ionic bond forms by complete transference of electron(s) from one atom to another.",
-    "This produces oppositely charged ions, which are held together by electrostatic force of attraction.",
-    "A covalent bond is formed by the mutual sharing of an electron pair.",
-    "The shared electron pair is provided by the bonded atoms."
+    "An ionic bond is formed by the complete transference of electron or electrons from one atom to another atom.",
+    "This produces positively and negatively charged ions.",
+    "These oppositely charged ions are held together by electrostatic force of attraction.",
+    "A covalent bond is formed by the mutual sharing of an electron pair provided by the bonded atoms.",
+    "Final answer: Ionic bonds form by electron transfer and attraction between ions; covalent bonds form by mutual sharing of electron pairs."
    ]
   },
   {
    "text": "How do ions arrange themselve to form NaCl crystal.",
    "finalAnswer": "Na⁺ and Cl⁻ ions surround each other three dimensionally in a crystal lattice.",
    "marks": 4,
-   "source": "Descriptive Q4.2",
+   "source": "Descriptive Q3.2",
    "rubric": [
     {
      "accept": [
       [
-       "Na+",
-       "Cl-"
+       "na+",
+       "cl-"
       ],
       [
-       "sodium",
-       "chloride",
-       "ions"
+       "sodium ion",
+       "chloride ion"
       ]
      ],
      "marks": 1,
-     "why": "Naming the two ions identifies the particles in the crystal.",
-     "description": "Identify the ions.",
-     "how": "Name Na⁺ and Cl⁻ ions."
+     "why": "The answer must identify the ions in sodium chloride.",
+     "description": "Names the sodium and chloride ions.",
+     "how": "Write Na⁺ and Cl⁻."
     },
     {
      "accept": [
       [
-       "opposite",
-       "attract"
+       "surround",
+       "each other"
       ],
+      [
+       "alternating",
+       "ions"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ions are arranged around ions of opposite charge.",
+     "description": "Describes how the oppositely charged ions are positioned.",
+     "how": "State that the ions surround one another or alternate."
+    },
+    {
+     "accept": [
+      [
+       "three dimensional"
+      ],
+      [
+       "3d"
+      ]
+     ],
+     "marks": 1,
+     "why": "The crystal arrangement extends in three dimensions.",
+     "description": "States the dimensional nature of the arrangement.",
+     "how": "Mention that the arrangement is three-dimensional."
+    },
+    {
+     "accept": [
+      [
+       "crystal lattice"
+      ],
+      [
+       "lattice"
+      ]
+     ],
+     "marks": 1,
+     "why": "A crystal lattice is the name for the repeating three-dimensional arrangement.",
+     "description": "Gives the final answer using the textbook term.",
+     "how": "Name the arrangement a crystal lattice."
+    }
+   ],
+   "modelAnswer": [
+    "Na⁺ and Cl⁻ ions surround each other three dimensionally.",
+    "They form a crystal lattice.",
+    "Final answer: Na⁺ and Cl⁻ ions surround each other three dimensionally to form a crystal lattice."
+   ]
+  },
+  {
+   "text": "Compare the properties of ionic and covalent compounds.",
+   "finalAnswer": "Ionic compounds contain oppositely charged ions held by electrostatic attraction, whereas covalent compounds consist of atoms joined by shared electron pairs.",
+   "marks": 5,
+   "source": "Descriptive Q3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ionic",
+       "ions"
+      ],
+      [
+       "ionic",
+       "positive",
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison must identify the particles in ionic compounds.",
+     "description": "States that ionic compounds contain ions.",
+     "how": "Mention positive and negative ions."
+    },
+    {
+     "accept": [
       [
        "electrostatic",
        "attraction"
       ]
      ],
      "marks": 1,
-     "why": "Attraction between opposite charges explains the arrangement.",
-     "description": "Explain the ionic attraction.",
-     "how": "State that oppositely charged ions attract."
+     "why": "Electrostatic attraction is the force holding the ionic particles together.",
+     "description": "Explains the attraction in ionic compounds.",
+     "how": "Name the electrostatic force of attraction."
     },
     {
      "accept": [
       [
-       "three dimension",
-       "crystal lattice"
+       "covalent",
+       "sharing",
+       "electron pair"
       ],
       [
-       "three-dimensional",
-       "lattice"
+       "shared",
+       "electron pairs"
       ]
      ],
      "marks": 1,
-     "why": "The ions form an extended three-dimensional lattice, not separate pairs only.",
-     "description": "Describe the lattice.",
-     "how": "State that ions surround each other three dimensionally in a crystal lattice."
+     "why": "Shared electron pairs identify covalent bonding.",
+     "description": "States how covalent compounds are bonded.",
+     "how": "Mention sharing of electron pairs between atoms."
     },
     {
      "accept": [
       [
-       "alternating",
-       "Na+",
-       "Cl-"
+       "ionic",
+       "covalent",
+       "different"
       ],
       [
-       "each",
-       "surrounded",
-       "opposite"
+       "ions",
+       "atoms",
+       "shared"
       ]
      ],
      "marks": 1,
-     "why": "The arrangement places ions of opposite charge around one another.",
-     "description": "Describe neighbouring ions.",
-     "how": "Explain that each ion is surrounded by oppositely charged ions."
+     "why": "A comparison must make the difference between the two particle arrangements clear.",
+     "description": "Directly contrasts the two compound types.",
+     "how": "Contrast ionic ions with covalently bonded atoms."
+    },
+    {
+     "accept": [
+      [
+       "final answer",
+       "ionic",
+       "covalent"
+      ],
+      [
+       "electrostatic",
+       "shared",
+       "final answer"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final point rewards a complete and accurate comparison.",
+     "description": "Gives the correct final comparison.",
+     "how": "Summarise the difference using ion attraction and electron sharing."
     }
    ],
    "modelAnswer": [
-    "NaCl contains positively charged Na⁺ ions and negatively charged Cl⁻ ions.",
-    "Oppositely charged ions attract one another.",
-    "The ions surround each other three dimensionally to form a crystal lattice.",
-    "Each ion is surrounded by ions of the opposite charge."
+    "Ionic compounds contain positive and negative ions.",
+    "These oppositely charged ions are held together by electrostatic force of attraction.",
+    "Covalent compounds have atoms joined by mutually shared electron pairs.",
+    "Thus ionic bonding involves electron transfer and attraction between ions, while covalent bonding involves sharing electron pairs.",
+    "Final answer: Ionic compounds contain ions held by electrostatic attraction; covalent compounds contain atoms joined by shared electron pairs."
    ]
   },
   {
    "text": "The formula of AlCl₃ in vapour phase is Al₂Cl₆ which means it exists as a dimer. Explain the bonding between its two molecules?",
-   "finalAnswer": "A chlorine atom of one AlCl₃ molecule donates a lone pair to the electron-deficient aluminium atom of another AlCl₃ molecule, forming a coordinate covalent bond and the Al₂Cl₆ dimer.",
+   "finalAnswer": "A chlorine atom of one AlCl₃ molecule donates a lone pair to the electron-deficient aluminium atom of the other AlCl₃ molecule, forming a coordinate covalent bond.",
    "marks": 5,
-   "source": "Investigative Q4.1",
+   "source": "Investigative Q3.1",
    "rubric": [
     {
      "accept": [
       [
-       "AlCl3",
-       "Al2Cl6"
+       "alcl3",
+       "al2cl6"
       ],
       [
        "two",
-       "AlCl3",
-       "dimer"
+       "alcl3",
+       "molecules"
       ]
      ],
      "marks": 1,
-     "why": "Identifying the dimer sets out which molecules are joined.",
-     "description": "Identify the reacting molecules and product.",
-     "how": "State that two AlCl₃ molecules form the Al₂Cl₆ dimer."
+     "why": "The answer must identify the two AlCl₃ molecules that make the dimer.",
+     "description": "Identifies the molecules involved in dimer formation.",
+     "how": "State that two AlCl₃ molecules combine."
     },
     {
      "accept": [
@@ -941,37 +749,35 @@
        "lone pair"
       ],
       [
-       "Cl",
-       "electron pair",
-       "donor"
+       "cl",
+       "electron pair"
       ]
      ],
      "marks": 1,
-     "why": "A coordinate bond requires a donor with a lone pair.",
-     "description": "Identify the donor.",
-     "how": "State that a chlorine atom supplies a lone pair."
+     "why": "A chlorine atom supplies the electron pair for the additional bond.",
+     "description": "Identifies the donor atom and donated pair.",
+     "how": "State that chlorine donates a lone pair."
     },
     {
      "accept": [
       [
        "aluminium",
-       "acceptor"
+       "accept"
       ],
       [
-       "Al",
+       "al",
        "electron deficient"
       ]
      ],
      "marks": 1,
-     "why": "The electron-deficient aluminium atom accepts the donated pair.",
-     "description": "Identify the acceptor.",
-     "how": "State that an aluminium atom accepts the pair."
+     "why": "The electron-deficient aluminium atom accepts the pair.",
+     "description": "Identifies the acceptor.",
+     "how": "State that aluminium accepts the electron pair."
     },
     {
      "accept": [
       [
-       "coordinate covalent",
-       "bond"
+       "coordinate covalent bond"
       ],
       [
        "coordinate",
@@ -979,153 +785,148 @@
       ]
      ],
      "marks": 1,
-     "why": "Naming the bond type applies the section's coordinate-bond definition.",
-     "description": "Name the bond formed.",
-     "how": "Identify the chlorine-to-aluminium link as a coordinate covalent bond."
+     "why": "Donation of both electrons in the shared pair makes the bond coordinate covalent.",
+     "description": "Names the bond formed between the molecules.",
+     "how": "Call the bond a coordinate covalent bond."
     },
     {
      "accept": [
       [
-       "arrow",
-       "aluminium"
+       "final answer",
+       "coordinate covalent bond"
       ],
       [
-       "Cl",
-       "Al",
-       "donates"
+       "donates",
+       "accepts",
+       "final answer"
       ]
      ],
      "marks": 1,
-     "why": "The direction of the coordinate arrow indicates donation towards the acceptor.",
-     "description": "Show the bond direction.",
-     "how": "Draw or state the coordinate arrow from chlorine towards aluminium."
+     "why": "The final point rewards the complete donor-to-acceptor explanation.",
+     "description": "Gives the correct final answer.",
+     "how": "Summarise the chlorine-to-aluminium electron-pair donation."
     }
    ],
    "modelAnswer": [
-    "Two AlCl₃ molecules join to form the Al₂Cl₆ dimer.",
-    "A chlorine atom of one molecule has a lone pair to donate.",
+    "Two AlCl₃ molecules combine to form the Al₂Cl₆ dimer.",
+    "A chlorine atom of one molecule donates a lone pair of electrons.",
     "The electron-deficient aluminium atom of the other molecule accepts this pair.",
-    "A coordinate covalent bond is formed between Cl and Al.",
-    "Show the coordinate arrow from the chlorine donor towards the aluminium acceptor."
+    "A coordinate covalent bond forms between the two molecules.",
+    "Final answer: Al₂Cl₆ forms when a chlorine atom donates a lone pair to an electron-deficient aluminium atom, making a coordinate covalent bond."
    ]
   }
  ],
  "lesson": {
   "examTips": [
-   "In short questions, define ionic, covalent, and coordinate covalent bonds using the textbook's key terms: complete transfer, mutual sharing, and one atom donating the shared pair.",
-   "For an ionic-bond explanation, show electron loss and gain, write the ions with their charges, then state that electrostatic attraction holds them together.",
-   "For dot-and-cross diagrams, show the outer-shell electrons, distinguish electrons from each atom, and include lone pairs as well as bonding pairs.",
-   "Use one, two, or three lines for single, double, or triple covalent bonds; for a coordinate bond, draw the arrow towards the acceptor.",
-   "For a crystal-lattice response, state that positive and negative ions surround each other three dimensionally."
+   "Board questions may ask you to define a bond or compare ionic, covalent and coordinate covalent bonding; give the defining electron process for each.",
+   "For sodium chloride, show the transfer equations Na → Na⁺ + e⁻ and e⁻ + Cl → Cl⁻, then state that electrostatic attraction holds the ions together.",
+   "For a coordinate bond, name the donor and acceptor and draw the arrow towards the acceptor.",
+   "For single, double and triple covalent bonds, use one, two and three lines respectively; this distinction can earn a direct mark.",
+   "In a written explanation, include both what happens to the electrons and what results from that process."
   ],
   "yourTurn": [
    {
     "hints": [
-     "Think about the usual electron changes when a metal reacts with a non-metal.",
-     "State what happens to electrons, then explain what holds the resulting ions together."
+     "Think about which kinds of atoms tend to lose electrons and which tend to gain them.",
+     "The textbook's ionic-bond example pairs a metal with a non-metal."
     ],
     "accept": [
      [
-      "lose",
-      "gain",
-      "oppositely charged",
-      "attract"
+      "metal",
+      "non-metal"
      ],
      [
-      "electron transfer",
-      "positive",
-      "negative",
-      "electrostatic"
+      "metals",
+      "nonmetals"
      ]
     ],
-    "question": "What are the conditions for an ionic bond to be formed?",
+    "question": "What types of elements form ionic bonds?",
     "solution": [
-     "One atom must lose electron(s), and another atom must gain them.",
-     "This forms oppositely charged ions.",
-     "The electrostatic force of attraction between these ions forms the ionic bond."
+     "Ionic bonds are formed by electron transfer between a metal and a non-metal.",
+     "Final answer: Ionic bonds form between metals and non-metals."
     ],
-    "answer": "One atom loses electron(s), another gains them, and the oppositely charged ions attract."
+    "answer": "Ionic bonds form between metals and non-metals."
    },
    {
     "hints": [
-     "Compare what happens to the electrons in each kind of bond.",
-     "Use the phrases complete transference and mutual sharing, then mention the attraction between ions."
+     "Ask whether electrons are transferred or shared.",
+     "For an ionic bond, electrons transfer completely; for a covalent bond, atoms mutually share an electron pair."
     ],
     "accept": [
      [
-      "mutual sharing",
+      "covalent",
+      "sharing",
       "electron pair",
-      "complete transfer",
-      "oppositely charged"
+      "ionic",
+      "transfer"
      ],
      [
-      "share",
-      "electron pair",
-      "transfer",
-      "ions",
-      "attract"
+      "ionic",
+      "complete transference",
+      "covalent",
+      "mutual sharing"
      ]
     ],
     "question": "How covalent bond is different from an ionic bond?",
     "solution": [
-     "In a covalent bond, the bonded atoms mutually share an electron pair.",
-     "In an ionic bond, electron(s) are completely transferred from one atom to another.",
-     "This forms oppositely charged ions, which are held together by electrostatic attraction."
+     "A covalent bond is formed by the mutual sharing of an electron pair provided by the bonded atoms.",
+     "An ionic bond is formed by the complete transference of electron or electrons from one atom to another atom.",
+     "Final answer: A covalent bond forms by sharing an electron pair, while an ionic bond forms by complete electron transfer."
     ],
-    "answer": "A covalent bond forms by mutual sharing of an electron pair; an ionic bond forms by complete transfer of electron(s) and attraction between oppositely charged ions."
+    "answer": "A covalent bond forms by mutual sharing of an electron pair; an ionic bond forms by complete transfer of electron(s)."
    }
   ],
   "example": {
    "steps": [
     {
-     "why": "This is the electron loss shown for sodium in the textbook's sodium chloride formation.",
+     "why": "Sodium has one electron in its outermost shell and loses it in the textbook's example.",
      "text": "Na → Na⁺ + e⁻"
     },
     {
-     "why": "Chlorine gains the electron lost by sodium.",
+     "why": "Chlorine gains the electron that sodium loses.",
      "text": "e⁻ + Cl → Cl⁻"
     },
     {
-     "why": "The positive sodium ion and negative chloride ion are formed together.",
+     "why": "The electron transfer produces a positive sodium ion and a negative chloride ion.",
      "text": "Na + Cl → Na⁺Cl⁻"
     },
     {
-     "why": "Oppositely charged ions attract and make an ionic bond.",
+     "why": "The oppositely charged ions attract and are held together by an ionic bond.",
      "text": "Na⁺ and Cl⁻ are held together by electrostatic force of attraction."
     }
    ],
-   "question": "Use the formation of sodium chloride to explain how an ionic bond forms.",
-   "answer": "Sodium transfers an electron to chlorine, forming Na⁺ and Cl⁻ ions. Their electrostatic attraction forms an ionic bond."
+   "question": "Explain the formation of sodium chloride from sodium and chlorine.",
+   "answer": "Sodium transfers one electron to chlorine, forming Na⁺ and Cl⁻; electrostatic attraction between the ions forms an ionic bond."
   },
   "explain": [
    {
     "title": "What is a chemical bond?",
-    "body": "A chemical bond is a force of attraction between atoms which holds them together in the form of a molecule or a compound. When the attractive forces dominate the repulsive forces, the system's energy lowers and a stable molecule can form."
+    "body": "A chemical bond is a force of attraction between atoms which holds them together in the form of a molecule or a compound."
    },
    {
-    "title": "Ionic bonds: electrons transfer",
-    "body": "This chemical bond is formed as a result of the tendency of atoms to lose or gain electron or electrons to acquire the electronic configuration of the nearest noble gas because this is a more stable electronic structure. The transferred electrons come from the outermost shells. The resulting oppositely charged ions attract electrostatically."
+    "title": "Ionic bonds form by electron transfer",
+    "body": "An ionic bond is formed when atoms lose or gain electron(s) to acquire the electronic configuration of the nearest noble gas. The resulting oppositely charged ions are held together by electrostatic attraction."
    },
    {
-    "title": "Covalent bonds: electron pairs are shared",
-    "body": "A covalent bond is therefore a bond formed by the mutual sharing of an electron pair provided by the bonded atoms. One shared pair is a single bond, two pairs make a double bond, and three pairs make a triple bond. The bond symbols are —, =, and ≡."
+    "title": "Covalent bonds form by sharing",
+    "body": "A covalent bond is a bond formed by the mutual sharing of an electron pair provided by the bonded atoms. One shared pair makes a single bond; two and three shared pairs make double and triple bonds."
+   },
+   {
+    "title": "Coordinate covalent bonds have one donor",
+    "body": "Coordinate covalent bond is a type of covalent bond in which the shared electron pair is donated by one atom only. The donating species is the donor and the accepting species is the acceptor. An arrow points towards the acceptor."
    },
    {
     "title": "Polar and non-polar covalent bonds",
-    "body": "Between identical atoms, the shared pair lies midway between the atoms, giving a non-polar bond. Between non-identical atoms, the pair bends towards the more electronegative atom. That atom becomes partially negative and the other becomes partially positive, making a polar covalent bond."
-   },
-   {
-    "title": "Coordinate covalent bonds: one atom supplies the pair",
-    "body": "Coordinate covalent bond is a type of covalent bond in which the shared electron pair is donated by one atom only. The species which donates the electron pair, is called a donor while that which accepts it is called an acceptor. An arrow head (→) pointing towards the acceptor represents this type of bond. Once formed, it behaves like the other covalent bonds in the species."
+    "body": "When a covalent bond is formed between two identical atoms, the shared pair lies midway between them and the bond is non-polar. Between non-identical atoms, the shared pair bends towards the more electronegative atom, making the bond polar."
    }
   ],
   "mistakes": [
-   "Do not say that ionic bonding is electron sharing: it forms by complete transfer of electron(s).",
-   "Do not forget to write the charges on ions, such as Na⁺ and Cl⁻.",
-   "Do not draw the coordinate-bond arrow towards the donor; it points towards the acceptor.",
-   "Do not confuse the number of bonds with the number of shared pairs: single, double, and triple bonds have one, two, and three shared pairs.",
-   "Do not leave lone pairs out of a dot-and-cross structure when the question asks for the electron structure.",
-   "Do not describe a polar covalent bond as electron transfer; the atoms still share electrons, but the shared pair is drawn towards the more electronegative atom."
+   "Do not describe an ionic bond as sharing electrons; it forms by complete transfer of electron(s).",
+   "Do not say that the whole ionic compound is one positive or negative ion; it contains oppositely charged ions.",
+   "Do not reverse the direction of a coordinate-bond arrow; it points towards the acceptor.",
+   "Do not confuse a double bond (=) with a triple bond (≡).",
+   "Do not say the two electrons in a coordinate shared pair come from different atoms; both are donated by one atom.",
+   "When explaining a polar covalent bond, state that the shared pair bends towards the more electronegative atom."
   ]
  }
 }
