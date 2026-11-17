@@ -175,7 +175,7 @@ fun TestsScreen(
             mine.forEach { PaperCard(it, it.id in available, readinessPassed, attemptsLeft(it.id), onOpen) }
         }
         pendingMocks.forEach { m ->
-            Muted("${m.scope.label}: " + if (m.missing.isNotEmpty()) "needs ${unitRanges(m.missing.map { it.number })} first." else "coming soon.")
+            Muted("${m.scope.label}: " + if (m.missing.isNotEmpty()) "ready once ${unitRanges(m.missing.map { it.number })} are in the app." else "coming soon.")
         }
     }
 

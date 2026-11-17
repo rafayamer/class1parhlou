@@ -1,0 +1,450 @@
+{
+ "note": {
+  "explanation": "An empirical formula shows the simplest whole-number ratio of atoms in a compound. It does not always show the actual number of atoms in a molecule.",
+  "examples": [
+   "H₂O₂ simplifies to HO.",
+   "C₆H₆ simplifies to CH."
+  ],
+  "checkAnswer": "CH₂",
+  "keywords": [
+   "empirical formula",
+   "simplest ratio",
+   "molecular formula",
+   "atoms",
+   "ionic compounds",
+   "molecules"
+  ],
+  "simple": "Think of an empirical formula as the smallest whole-number ratio of the atoms.",
+  "checkQuestion": "What is the empirical formula of C₆H₁₂?",
+  "title": "Empirical Formula",
+  "steps": [
+   "Write the subscripts: C₆H₁₂.",
+   "Find the greatest common factor of 6 and 12: it is 6.",
+   "Divide both subscripts by 6: C₁H₂.",
+   "Write the simplest formula: CH₂."
+  ],
+  "answer": "The empirical formula is CH₂.",
+  "checkAccept": [
+   [
+    "CH2"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "CH₂",
+    "C₂H₄",
+    "C₂H₆",
+    "C₃H₆"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the empirical formula of C₄H₈?",
+   "rationales": [
+    "Correct: dividing both subscripts by 4 gives the simplest ratio, CH₂.",
+    "Incorrect: C₂H₄ can still be simplified by dividing both subscripts by 2.",
+    "Incorrect: C₂H₆ does not have the same atom ratio as C₄H₈.",
+    "Incorrect: C₃H₆ does not have the same atom ratio as C₄H₈."
+   ]
+  },
+  {
+   "options": [
+    "HO",
+    "H₂O₂",
+    "H₂O",
+    "OH₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the empirical formula of hydrogen peroxide, H₂O₂?",
+   "rationales": [
+    "Correct: dividing both subscripts by 2 gives HO.",
+    "Incorrect: H₂O₂ is the molecular formula, not the simplest ratio.",
+    "Incorrect: H₂O has a different ratio of hydrogen to oxygen.",
+    "Incorrect: OH₂ has the same atom ratio as H₂O, not hydrogen peroxide."
+   ]
+  },
+  {
+   "options": [
+    "CH",
+    "C₆H₆",
+    "C₂H₃",
+    "C₃H₃"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A molecule has the formula C₆H₆. What is its empirical formula?",
+   "rationales": [
+    "Correct: dividing both subscripts by 6 gives CH.",
+    "Incorrect: C₆H₆ is the molecular formula and can be simplified.",
+    "Incorrect: C₂H₃ is not the simplest ratio obtained by dividing 6 and 6 by a common factor.",
+    "Incorrect: C₃H₃ can still be simplified to CH."
+   ]
+  },
+  {
+   "options": [
+    "H₂O",
+    "HO",
+    "H₂O₂",
+    "H₄O₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which compound has the same empirical and molecular formula?",
+   "rationales": [
+    "Correct: the 2:1 ratio in H₂O cannot be reduced to a smaller whole-number ratio.",
+    "Incorrect: HO is not the formula of water.",
+    "Incorrect: H₂O₂ simplifies to HO.",
+    "Incorrect: H₄O₂ simplifies to H₂O."
+   ]
+  },
+  {
+   "options": [
+    "The actual number of atoms in a molecule",
+    "The simplest whole-number ratio of atoms",
+    "The mass of one atom",
+    "The number of molecules in one mole"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What does an empirical formula show?",
+   "rationales": [
+    "Incorrect: the empirical formula does not necessarily show the actual number of atoms in a molecule.",
+    "Correct: it represents the simplest whole-number ratio of atoms in the compound.",
+    "Incorrect: an empirical formula does not give an atom's mass.",
+    "Incorrect: the number of molecules in one mole is not given by an empirical formula."
+   ]
+  },
+  {
+   "options": [
+    "CaF₂",
+    "Ca₂F₂",
+    "CaF",
+    "Ca₂F"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the simplest formula showing the ratio of calcium ions to fluoride ions in calcium fluoride?",
+   "rationales": [
+    "Correct: CaF₂ shows the simplest 1:2 ratio of calcium to fluoride ions.",
+    "Incorrect: Ca₂F₂ can be simplified to CaF and does not show the correct ratio.",
+    "Incorrect: CaF gives a 1:1 ratio instead of the correct 1:2 ratio.",
+    "Incorrect: Ca₂F gives a 2:1 ratio instead of the correct 1:2 ratio."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Give two examples of the compounds which have same empirical and molecular formulas.",
+   "finalAnswer": "Water (H₂O) and ammonia (NH₃).",
+   "marks": 2,
+   "source": "In-text exercise 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "water"
+      ],
+      [
+       "H2O"
+      ]
+     ],
+     "marks": 1,
+     "why": "One valid example is needed to show a compound whose formula cannot be simplified.",
+     "description": "Gives water as one example.",
+     "how": "State water (H₂O)."
+    },
+    {
+     "accept": [
+      [
+       "ammonia"
+      ],
+      [
+       "NH3"
+      ]
+     ],
+     "marks": 1,
+     "why": "A second valid example completes the requested pair.",
+     "description": "Gives ammonia as another example.",
+     "how": "State ammonia (NH₃)."
+    }
+   ],
+   "modelAnswer": [
+    "Water: H₂O cannot be simplified to a smaller whole-number ratio.",
+    "Ammonia: NH₃ cannot be simplified to a smaller whole-number ratio.",
+    "Therefore, examples are water (H₂O) and ammonia (NH₃)."
+   ]
+  },
+  {
+   "text": "Find out the molecular formula of a compound whose empirical formula is CH₂O and its molar mass is 180.",
+   "finalAnswer": "C₆H₁₂O₆",
+   "marks": 2,
+   "source": "Short 1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The empirical formula mass is needed to find the multiplier.",
+     "description": "Calculates the empirical formula mass as 30.",
+     "how": "Show 12 + (2 × 1) + 16 = 30."
+    },
+    {
+     "accept": [
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molecular formula must use the multiplier for every subscript.",
+     "description": "Finds the molecular formula.",
+     "how": "Show 180 ÷ 30 = 6 and multiply the empirical formula subscripts by 6."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical formula mass of CH₂O = 12 + (2 × 1) + 16 = 30.",
+    "n = molar mass ÷ empirical formula mass = 180 ÷ 30 = 6.",
+    "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆."
+   ]
+  },
+  {
+   "text": "Different compounds will never have the same molecule formula but they can have the same empirical formula. Explain",
+   "finalAnswer": "Different compounds can have the same simplest atom ratio but different actual numbers of atoms; therefore, they may share an empirical formula while having different molecular formulas.",
+   "marks": 4,
+   "source": "CRQ 1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "simplest",
+       "ratio"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition of empirical formula is central to explaining the statement.",
+     "description": "Explains that an empirical formula gives a simplest ratio.",
+     "how": "State that it shows the simplest whole-number ratio of atoms."
+    },
+    {
+     "accept": [
+      [
+       "actual",
+       "number"
+      ],
+      [
+       "molecular"
+      ]
+     ],
+     "marks": 1,
+     "why": "The distinction from a molecular formula explains why formulas can differ.",
+     "description": "Distinguishes the actual atom count from the simplest ratio.",
+     "how": "Explain that a molecular formula shows the actual number of atoms in a molecule."
+    },
+    {
+     "accept": [
+      [
+       "benzene"
+      ],
+      [
+       "C6H6"
+      ]
+     ],
+     "marks": 1,
+     "why": "A textbook example supports the explanation.",
+     "description": "Gives benzene and its molecular formula.",
+     "how": "Use benzene, C₆H₆."
+    },
+    {
+     "accept": [
+      [
+       "acetylene"
+      ],
+      [
+       "C2H2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison shows two distinct molecular formulas reducing to one empirical formula.",
+     "description": "Gives acetylene and identifies the shared empirical formula.",
+     "how": "State that acetylene, C₂H₂, also simplifies to CH."
+    }
+   ],
+   "modelAnswer": [
+    "An empirical formula shows the simplest whole-number ratio of atoms, but a molecular formula shows the actual number of atoms in a molecule.",
+    "Benzene has molecular formula C₆H₆ and empirical formula CH.",
+    "Acetylene has molecular formula C₂H₂ and empirical formula CH.",
+    "Thus, different compounds can have the same empirical formula but different molecular formulas."
+   ]
+  },
+  {
+   "text": "The chemical formula for sand is SiO₂ but the sand does not exist in the form of discrete molecules like H₂O. How has its formula been determined keeping in view its structure?",
+   "finalAnswer": "SiO₂ gives the simplest 1:2 ratio of silicon to oxygen atoms in the structure of sand; it is an empirical formula, not the formula of a discrete molecule.",
+   "marks": 4,
+   "source": "Investigative 1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "not",
+       "discrete",
+       "molecules"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognising the structure explains why a molecular formula is not used.",
+     "description": "States that sand is not made of discrete molecules.",
+     "how": "Explain that its atoms form an extended structure."
+    },
+    {
+     "accept": [
+      [
+       "silicon"
+      ],
+      [
+       "Si"
+      ]
+     ],
+     "marks": 1,
+     "why": "The elements in the formula must be identified correctly.",
+     "description": "Identifies silicon in the formula.",
+     "how": "Refer to silicon atoms."
+    },
+    {
+     "accept": [
+      [
+       "oxygen"
+      ],
+      [
+       "O"
+      ]
+     ],
+     "marks": 1,
+     "why": "The elements in the formula must be identified correctly.",
+     "description": "Identifies oxygen in the formula.",
+     "how": "Refer to oxygen atoms."
+    },
+    {
+     "accept": [
+      [
+       "SiO2"
+      ],
+      [
+       "1:2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final formula expresses the simplest ratio in the structure.",
+     "description": "Gives the simplest silicon-to-oxygen ratio and formula.",
+     "how": "State that SiO₂ represents a 1:2 ratio."
+    }
+   ],
+   "modelAnswer": [
+    "Sand has an extended structure and does not exist as discrete SiO₂ molecules.",
+    "Its formula represents the ratio of silicon atoms to oxygen atoms in that structure.",
+    "The simplest silicon-to-oxygen ratio is 1:2.",
+    "Therefore, SiO₂ is its empirical formula."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "The board may ask for the definition of empirical formula or ask you to distinguish it from a molecular formula.",
+   "For a numerical question, first find the empirical formula mass, then divide the molar mass by it to get the multiplier.",
+   "To get full marks in a formula calculation, show the mass calculation, the multiplier, and the multiplication of every subscript.",
+   "A short explanation may ask why different compounds can have the same empirical formula; include a suitable example such as benzene and acetylene."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Choose compounds whose formulas cannot be reduced to a simpler ratio.",
+     "Water is one example from your textbook; choose another compound whose atom subscripts have no common factor greater than 1."
+    ],
+    "accept": [
+     [
+      "water",
+      "ammonia"
+     ],
+     [
+      "H2O",
+      "NH3"
+     ]
+    ],
+    "question": "Give two examples of the compounds which have same empirical and molecular formulas.",
+    "solution": [
+     "In water, H₂O, the subscripts 2 and 1 have no common factor greater than 1.",
+     "In ammonia, NH₃, the subscripts 1 and 3 have no common factor greater than 1.",
+     "So the empirical and molecular formulas are the same for both compounds."
+    ],
+    "answer": "Water (H₂O) and ammonia (NH₃)."
+   },
+   {
+    "hints": [
+     "Find the mass of one empirical formula unit, CH₂O.",
+     "Divide 180 by that mass; multiply each subscript in CH₂O by the result."
+    ],
+    "accept": [
+     [
+      "C6H12O6"
+     ]
+    ],
+    "question": "Find out the molecular formula of a compound whose empirical formula is CH₂O and its molar mass is 180.",
+    "solution": [
+     "Empirical formula mass of CH₂O = 12 + (2 × 1) + 16 = 30.",
+     "n = molar mass ÷ empirical formula mass = 180 ÷ 30 = 6.",
+     "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆."
+    ],
+    "answer": "C₆H₁₂O₆"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the molecular formula given for hydrogen peroxide in your textbook.",
+     "text": "Molecular formula of hydrogen peroxide = H₂O₂."
+    },
+    {
+     "why": "Both subscripts have a common factor of 2, so the ratio can be reduced.",
+     "text": "Divide both subscripts by 2: H₂O₂ → HO."
+    },
+    {
+     "why": "HO is the simplest whole-number ratio of hydrogen to oxygen atoms.",
+     "text": "Empirical formula of hydrogen peroxide = HO."
+    }
+   ],
+   "question": "Find the empirical formula of hydrogen peroxide, H₂O₂.",
+   "answer": "HO"
+  },
+  "explain": [
+   {
+    "title": "Meaning of empirical formula",
+    "body": "Empirical Formula of a compound shows the simplest whole number ratio of atoms present in that compound."
+   },
+   {
+    "title": "Ionic compounds",
+    "body": "All the ionic compounds are represented by their empirical formulas. These formulas show the simplest ratio present between their ions. For example, CaF₂ shows the ratio present between calcium and fluoride ions in its crystal."
+   },
+   {
+    "title": "Empirical and molecular formulas",
+    "body": "For covalent chemical compounds, which exist as molecules, the empirical formulas may be different from their molecular formulas. Hydrogen peroxide is H₂O₂ as a molecular formula and HO as an empirical formula."
+   },
+   {
+    "title": "Sometimes they are the same",
+    "body": "For water, the molecular formula and the empirical formula are both the same i.e. H₂O because there does not exist any minimum ratio between hydrogen and oxygen atoms."
+   },
+   {
+    "title": "Different compounds can share an empirical formula",
+    "body": "Since an empirical formula does not tell us the actual number of atoms present in that compound, rather it represents the simplest ratio between atoms, it is possible that some compounds may have the same empirical formula. For example, both benzene (C₆H₆) and acetylene (C₂H₂) have the same empirical formula CH."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse a molecular formula, which gives the actual number of atoms in a molecule, with an empirical formula, which gives the simplest ratio.",
+   "Do not stop at a formula that can still be simplified; divide all subscripts by their greatest common factor.",
+   "When finding a molecular formula from an empirical formula, multiply every subscript by the same whole-number multiplier.",
+   "Do not describe an ionic compound's empirical formula as a count of discrete molecules; it shows the simplest ratio of ions."
+  ]
+ }
+}

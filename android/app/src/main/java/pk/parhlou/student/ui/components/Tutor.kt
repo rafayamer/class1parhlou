@@ -44,7 +44,7 @@ fun moodFor(r: pk.parhlou.student.domain.RewardSummary): UstadMood {
 /** One short line from Ustaad that matches his mood. */
 fun moodLine(r: pk.parhlou.student.domain.RewardSummary): String = when (moodFor(r)) {
     UstadMood.CHEER -> "Goal done today. Shabash!"
-    UstadMood.HAPPY -> if (r.streakDays >= 2) "🔥 ${r.streakDays}-day streak. Keep it going!" else "Ready for today's maths?"
+    UstadMood.HAPPY -> if (r.streakDays >= 2) "🔥 ${r.streakDays}-day streak. Keep it going!" else "Ready to study today?"
     UstadMood.SAD -> "Your streak broke. Let's start a new one today."
     UstadMood.CROSS -> "It's been a few days. Come back, one lesson today!"
     UstadMood.THINKING -> "Let's think it through."

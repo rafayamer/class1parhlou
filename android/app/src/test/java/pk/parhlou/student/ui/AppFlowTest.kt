@@ -88,7 +88,7 @@ class AppFlowTest {
         rule.onNodeWithTag("readiness").assertExists()
         for (tag in listOf("scope-chapter", "scope-half", "scope-full")) rule.onNodeWithTag(tag).assertIsNotEnabled()
         // Quarter, half and full mocks can't be built from Unit 1 alone; they're named, with nothing to tap.
-        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("needs Unit", substring = true))
+        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("ready once Unit", substring = true))
         assertEquals(3, notReady.fetchSemanticsNodes().size)
         notReady.assertAll(androidx.compose.ui.test.hasClickAction().not())
         // No developer wording on papers.

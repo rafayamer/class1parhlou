@@ -263,12 +263,13 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
                 ProgressRing(covered / 100f, "$covered%", "$covered% of the path done", MaterialTheme.colorScheme.surfaceVariant,
                     MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.onSurface, size = 64.dp)
             }
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+            // Facts appear once there is something real to say; a new student sees one plain line instead of dashes.
+            if (started || strong != null || weak != null) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                 val outOf = pk.parhlou.student.domain.PaperAssembler.patternFor(s.id).totalMarks.toInt()
-                JourneyFact("🎯", if (started) "${(pct * outOf / 100).toInt().coerceIn(0, outOf)}/$outOf" else "—", "expected", Modifier.weight(1f))
-                JourneyFact("💪", strong ?: "—", "strong", Modifier.weight(1f))
-                JourneyFact("⚠️", weak ?: "—", "work on", Modifier.weight(1f))
-            }
+                if (started) JourneyFact("🎯", "${(pct * outOf / 100).toInt().coerceIn(0, outOf)}/$outOf", "expected", Modifier.weight(1f))
+                if (strong != null) JourneyFact("💪", strong, "strong", Modifier.weight(1f))
+                if (weak != null) JourneyFact("⚠️", weak, "work on", Modifier.weight(1f))
+            } else Muted("Do a few lessons and quizzes, and your expected marks and strong and weak topics show here.")
             Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
             Text(taskTitle, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
             pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
