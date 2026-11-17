@@ -36,6 +36,6 @@ class AttemptsTest {
 
     @Test fun lockedEvenBeforeStartingWhenAllTriesAreUsed() {
         rule.setContent { ParhlouTheme { AssessmentStartScreen(bp, "", {}, {}, {}, {}, attemptsUsed = 3, bestPercent = 81) } }
-        rule.onNodeWithText("Start paper").assertDoesNotExist()
+        rule.onNodeWithText("Start in the app").assertDoesNotExist()
     }
 }

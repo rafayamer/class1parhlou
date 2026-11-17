@@ -259,6 +259,10 @@ fun AssessmentStartScreen(
     onPrint: ((Boolean) -> Unit)? = null,
     /** Opens the scan-and-mark flow for a paper written on paper. */
     onWrittenOnPaper: (() -> Unit)? = null,
+    /** Starts the exam written on paper: clock on, PDF opened to print. */
+    onStartOnPaper: (() -> Unit)? = null,
+    /** The running paper is being written on paper. */
+    onPaper: Boolean = false,
 ) {
     val problems = BlueprintValidator.problems(blueprint)
     val attemptsLeft = (pk.parhlou.student.domain.PaperAttempts.MAX - attemptsUsed).coerceAtLeast(0)
@@ -287,15 +291,27 @@ fun AssessmentStartScreen(
             }
         }
         FocusModeCard()
-        if (onPrint != null && problems.isEmpty()) {
-            Sheet(Modifier.testTag("print-paper")) {
-                Text("✍️ Write it on paper", style = MaterialTheme.typography.titleMedium)
-                Muted("Print → write → scan. Ustaad marks your handwriting.")
-                SecondaryButton("Print the paper (PDF)", onClick = { onPrint(false) })
-                TextButton(onClick = { onPrint(true) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("With marking scheme") }
-                if (onWrittenOnPaper != null && !started && !submitted && attemptsLeft > 0) {
-                    BigButton("Scan my answers", onClick = onWrittenOnPaper)
-                }
+        val running = started && !submitted
+        if (running) {
+            var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
+            LaunchedEffect(Unit) { while (true) { now = System.currentTimeMillis(); delay(1_000) } }
+            val clock = ExamClock(ExamLog.startedAt(examLog)!!, blueprint.durationMinutes)
+            Sheet(Modifier.testTag("paper-running")) {
+                Text("⏱ ${clock.label(now)} left", style = MaterialTheme.typography.headlineMedium)
+                Muted(if (onPaper) "You're writing on paper. Ask Ustaad is locked until you hand in." else "Your paper is running. Ask Ustaad is locked until you hand in.")
+            }
+        }
+        if (!started && !submitted && attemptsLeft > 0 && problems.isEmpty()) {
+            Text("How will you write?", style = MaterialTheme.typography.titleLarge)
+            if (onStartOnPaper != null) Sheet(Modifier.testTag("print-paper")) {
+                Text("✍️ On paper, like the board", style = MaterialTheme.typography.titleMedium)
+                Muted("The paper opens to print. The clock starts, Ask Ustaad locks. Write, then scan your pages and hand in.")
+                BigButton("Start on paper", onClick = onStartOnPaper, modifier = Modifier.testTag("start-on-paper"))
+            }
+            Sheet {
+                Text("📱 In the app", style = MaterialTheme.typography.titleMedium)
+                Muted("Tap MCQs, type working with the maths keyboard, or add photos per question.")
+                SecondaryButton("Start in the app", onClick = onStart)
             }
         }
         if (problems.isNotEmpty()) {
@@ -321,12 +337,29 @@ fun AssessmentStartScreen(
                     SecondaryButton("Cancel", onClick = { confirm = false })
                 }
             }
-            started -> BigButton("Continue your paper", onClick = onStart, enabled = problems.isEmpty())
+            started -> if (onPaper && onWrittenOnPaper != null) BigButton("Scan my pages and hand in", onClick = onWrittenOnPaper, modifier = Modifier.testTag("continue-on-paper"))
+                else BigButton("Continue your paper", onClick = onStart, enabled = problems.isEmpty())
             attemptsLeft == 0 -> Sheet(Modifier.testTag("attempts-used")) {
                 Text("No attempts left", style = MaterialTheme.typography.titleMedium)
                 Muted("You've used all ${pk.parhlou.student.domain.PaperAttempts.MAX} attempts at this paper" + (bestPercent?.let { "; your best score is $it%" } ?: "") + ".")
             }
-            else -> BigButton("Start paper", onClick = onStart, enabled = problems.isEmpty())
+            else -> Unit
+        }
+        if (onPrint != null && problems.isEmpty()) {
+            var menu by remember { mutableStateOf(false) }
+            var warn by remember { mutableStateOf(false) }
+            TextButton(onClick = { menu = !menu }, modifier = Modifier.heightIn(min = 48.dp).testTag("print-copy")) { Text("⋯ Print a copy") }
+            if (menu) Row {
+                TextButton(onClick = { onPrint(false) }, modifier = Modifier.heightIn(min = 48.dp)) { Text("Questions") }
+                TextButton(onClick = { if (submitted) onPrint(true) else warn = true }, modifier = Modifier.heightIn(min = 48.dp)) { Text("With marking scheme") }
+            }
+            if (warn) AlertDialog(
+                onDismissRequest = { warn = false },
+                title = { Text("This shows the answers") },
+                text = { Text("Use the marking scheme only after you've sat the paper, or it can't show what you really know.") },
+                confirmButton = { TextButton(onClick = { warn = false; onPrint(true) }) { Text("Print anyway") } },
+                dismissButton = { TextButton(onClick = { warn = false }) { Text("Cancel") } },
+            )
         }
     }
 }
@@ -534,13 +567,28 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, label: String
             Text("[${fmt(q.marks)}]", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         pk.parhlou.student.ui.components.PastPaperTag(q.pastPapers)
+        var shown by remember(key) { mutableStateOf(androidx.compose.ui.text.input.TextFieldValue("")) }
+        var loaded by remember(key) { mutableStateOf(false) }
+        LaunchedEffect(saved) {
+            val s = saved
+            if (!loaded && s != null) { shown = androidx.compose.ui.text.input.TextFieldValue(s, androidx.compose.ui.text.TextRange(s.length)); loaded = true }
+        }
+        val update = { v: androidx.compose.ui.text.input.TextFieldValue ->
+            shown = v; loaded = true
+            if (v.text != text) { text = v.text; scope.launch { store.saveDraft(key, v.text) } }
+        }
+        var keys by rememberSaveable(key) { mutableStateOf(false) }
         OutlinedTextField(
-            value = text ?: saved ?: "",
-            onValueChange = { new -> text = new; scope.launch { store.saveDraft(key, new) } },
+            value = shown,
+            onValueChange = update,
             enabled = enabled,
             modifier = Modifier.fillMaxWidth().heightIn(min = 110.dp).testTag("answer-${q.id}"),
-            placeholder = { Text("Type your answer and working") },
+            placeholder = { Text("Type your answer and working, one step per line") },
         )
+        TextButton(enabled = enabled, onClick = { keys = !keys }, modifier = Modifier.heightIn(min = 48.dp).testTag("keys-${q.id}")) {
+            Text(if (keys) "Hide ∑ symbols" else "∑ Maths symbols")
+        }
+        if (keys && enabled) pk.parhlou.student.ui.components.MathKeyboard(shown, update, physics = paperId.contains("phy-"))
         if (photos.isNotEmpty()) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { photos.take(5).forEach { PhotoThumb(it) } }
             val scanned = photos.size - added

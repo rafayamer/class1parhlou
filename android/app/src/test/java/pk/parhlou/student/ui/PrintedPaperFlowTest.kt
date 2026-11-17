@@ -12,6 +12,8 @@ import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.first
+import androidx.compose.runtime.collectAsState
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
@@ -80,7 +82,7 @@ class PrintedPaperFlowTest {
         val store = LocalStore(context)
         val progress = ProgressStore()
         val desk = ExamDesk(context, repo, store, ai, progress)
-        desk.printedStore(blueprint.id).clear()
+        kotlinx.coroutines.runBlocking { desk.reset(paper) }
         repeat(2) { i ->
             val f = File(desk.printedStore(blueprint.id).photoDir(), "p$i.jpg")
             f.outputStream().use { Bitmap.createBitmap(300, 400, Bitmap.Config.ARGB_8888).compress(Bitmap.CompressFormat.JPEG, 80, it) }
@@ -89,7 +91,7 @@ class PrintedPaperFlowTest {
         var marked = false
         rule.setContent {
             ParhlouTheme {
-                PrintedPaperScreen(blueprint, paper, desk, androidx.compose.runtime.rememberCoroutineScope(), readsHandwriting = true,
+                PrintedPaperScreen(blueprint, paper, desk, store, androidx.compose.runtime.rememberCoroutineScope(), readsHandwriting = true,
                     onMarked = { marked = true }, onBack = {})
             }
         }
@@ -117,4 +119,29 @@ class PrintedPaperFlowTest {
         assertEquals(1, result.mcq.count { it.correct } + result.mcq.count { it.chosen != null && !it.correct })
         assertEquals(2, result.written.count { it.mark.examiners == 2 })
     }
+
+    /** "Start on paper": the clock and lock start, the start screen leads to scanning and handing in, and time up keeps scanning open briefly. */
+    @Test fun startingOnPaperRunsTheClockAndKeepsHandInReachable() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = LocalStore(context)
+        val desk = ExamDesk(context, repo, store, ai, ProgressStore())
+        kotlinx.coroutines.runBlocking { desk.reset(paper); desk.startOnPaper(blueprint.id) }
+        assertEquals(blueprint.id, kotlinx.coroutines.runBlocking { store.activeExam.first() })
+        var scan = false
+        rule.setContent {
+            ParhlouTheme {
+                val log = store.examLog(blueprint.id).collectAsStateValue()
+                pk.parhlou.student.ui.screens.AssessmentStartScreen(blueprint, log, onStart = {}, onResult = {}, onReset = {}, onBack = {},
+                    onPrint = {}, onWrittenOnPaper = { scan = true }, onStartOnPaper = {}, onPaper = true)
+            }
+        }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("paper-running")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithText("left", substring = true).assertExists()
+        rule.onNodeWithTag("continue-on-paper").performScrollTo().performClick()
+        assertTrue(scan)
+    }
 }
+
+@androidx.compose.runtime.Composable
+private fun kotlinx.coroutines.flow.Flow<String>.collectAsStateValue(): String =
+    collectAsState(initial = "").value

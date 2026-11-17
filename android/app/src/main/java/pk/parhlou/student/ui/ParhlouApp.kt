@@ -481,7 +481,8 @@ fun ParhlouApp(
         } }
         composable(Routes.SUBJECTS) { WithTabBarSpace {
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
-                onSolutions = { nav.navigate(Routes.SOLUTIONS) })
+                onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                onAddSubject = { id -> scope.launch { store.saveOnboarding(state.copy(subjectIds = state.subjectIds + id)) } })
         } }
         composable(
             Routes.SESSION,
@@ -647,6 +648,17 @@ fun ParhlouApp(
                         }
                     },
                     onWrittenOnPaper = { nav.navigate("printed/${b.id}") },
+                    onPaper = store.draft(desk.modeKey(b.id)).collectAsState(initial = "").value == "paper",
+                    onStartOnPaper = {
+                        scope.launch {
+                            desk.startOnPaper(b.id)
+                            val file = withContext(Dispatchers.IO) {
+                                runCatching { PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}.pdf"), b, paper, false, subjectNameOf(b.id)) }.getOrNull()
+                            }
+                            nav.navigate("printed/${b.id}")
+                            if (file != null) shareFile(context, file, "application/pdf", "Print or open your paper") else pdfFailed(context)
+                        }
+                    },
                 )
             }
         }
@@ -667,7 +679,7 @@ fun ParhlouApp(
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
             val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else PrintedPaperScreen(
-                blueprint = b, paper = paper, desk = desk, appScope = scope, readsHandwriting = ai.readsPhotos,
+                blueprint = b, paper = paper, desk = desk, examStore = store, appScope = scope, readsHandwriting = ai.readsPhotos,
                 onMarked = { nav.navigate("checked/${b.id}") { popUpTo(Routes.HOME) } },
                 onBack = nav.back(),
             )
@@ -694,6 +706,16 @@ fun ParhlouApp(
                 },
                 onOpen = { nav.navigate("assessment/$it") { popUpTo(Routes.TESTS) } },
                 onBack = nav.back(),
+                saved = myPapers.values.map { it.blueprint.id to it.blueprint.title },
+                onDelete = { del ->
+                    scope.launch {
+                        val a = runCatching { org.json.JSONArray(myPapersJson) }.getOrDefault(org.json.JSONArray())
+                        val kept = org.json.JSONArray()
+                        for (i in 0 until a.length()) { val e = a.get(i); val id = runCatching { org.json.JSONObject(e.toString()).optString("id") }.getOrNull(); if (id != del) kept.put(e) }
+                        store.saveDraft(MY_PAPERS, kept.toString())
+                        paperOf(del)?.let { desk.reset(it) }
+                    }
+                },
             )
         }
         composable(Routes.RESULT) { entry ->

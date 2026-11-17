@@ -548,6 +548,8 @@ fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress
 fun SubjectsScreen(
     repo: ParhlouRepository, onboarding: OnboardingState, onOpen: (String) -> Unit, onBack: (() -> Unit)?,
     onSolutions: () -> Unit = {},
+    /** Adds a subject the board offers that the student hasn't chosen yet. */
+    onAddSubject: ((String) -> Unit)? = null,
 ) {
     ParhlouScreen("Your books", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
@@ -558,9 +560,17 @@ fun SubjectsScreen(
             pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(s.id) }, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                     Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium)
-                    Muted("${s.chapters.size} units · ${s.editionLabel}")
+                    Muted("${s.chapters.size} ${s.chapters.firstOrNull()?.word?.lowercase()?.let { "${it}s" } ?: "units"} · ${s.editionLabel}")
                 }
             }
+        }
+        val board = onboarding.boardCode
+        val grade = onboarding.grade
+        val more = if (onAddSubject != null && board != null && grade != null)
+            repo.subjectOptions(board, grade).filter { it.available && it.id !in onboarding.subjectIds } else emptyList()
+        if (more.isNotEmpty()) Sheet(Modifier.testTag("add-subject")) {
+            Text("Add a subject", style = MaterialTheme.typography.titleMedium)
+            more.forEach { o -> SecondaryButton("+ ${o.name}", onClick = { onAddSubject?.invoke(o.id) }, modifier = Modifier.testTag("add-${o.id}")) }
         }
     }
 }

@@ -224,9 +224,18 @@ class ExamDesk(
     }
 
     /** Clears answers, photos and the log of one paper so it can be sat again. */
+    /** Draft key that remembers a running paper is being written on paper. */
+    fun modeKey(paperId: String) = "mode_$paperId"
+
+    /** Starts the exam to be written on paper: the clock and the Ustaad lock begin now. */
+    suspend fun startOnPaper(paperId: String, now: Long = System.currentTimeMillis()) {
+        store.saveDraft(modeKey(paperId), "paper")
+        store.appendExamEvent(paperId, ExamEventType.STARTED, now)
+    }
+
     suspend fun reset(paper: PaperContent) {
         val id = paper.blueprintId
-        store.resetExam(id, paper.written.map { draftKey(id, it.id) })
+        store.resetExam(id, paper.written.map { draftKey(id, it.id) } + modeKey(id))
         scanStore(id).clear()
         printedStore(id).clear()
         withContext(Dispatchers.IO) { File(context.filesDir, "exam/$id").deleteRecursively() }

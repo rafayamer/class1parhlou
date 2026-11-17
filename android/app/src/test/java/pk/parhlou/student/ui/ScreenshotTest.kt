@@ -83,7 +83,7 @@ class ScreenshotTest {
         rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()
         rule.waitUntil(3_000) { exists("Before you start") }
         save("6-paper-start-$mode")
-        rule.onNodeWithText("Start paper").performScrollTo().performClick()
+        rule.onNodeWithText("Start in the app").performScrollTo().performClick()
         rule.waitUntil(5_000) { exists("Invigilator on") }
         save("7-paper-$mode")
     }

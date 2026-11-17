@@ -97,7 +97,7 @@ class PrototypeFlowTest {
         launch()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         openChapterTest()
-        rule.onNodeWithText("Start paper").performScrollTo().performClick()
+        rule.onNodeWithText("Start in the app").performScrollTo().performClick()
         rule.waitUntil(15_000) { exists("Invigilator on") }
         rule.onNodeWithText("2 pages scanned · 2 not matched to a question yet.").performScrollTo().assertExists()
 
@@ -132,7 +132,7 @@ class PrototypeFlowTest {
         launch()
         rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
         openChapterTest()
-        rule.onNodeWithText("Start paper").performScrollTo().performClick()
+        rule.onNodeWithText("Start in the app").performScrollTo().performClick()
         rule.waitUntil(40_000) { exists("Invigilator on") }
 
         // Two MCQs (one right, one wrong), one full written answer, one partial, one unrecognised.

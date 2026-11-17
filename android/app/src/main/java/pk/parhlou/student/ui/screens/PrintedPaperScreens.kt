@@ -18,7 +18,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,6 +60,7 @@ fun PrintedPaperScreen(
     blueprint: PaperBlueprint,
     paper: PaperContent,
     desk: ExamDesk,
+    examStore: pk.parhlou.student.data.LocalStore,
     appScope: CoroutineScope,
     readsHandwriting: Boolean,
     onMarked: () -> Unit,
@@ -88,7 +91,32 @@ fun PrintedPaperScreen(
         }
     }
 
-    ParhlouScreen("Mark my written paper", onBack = onBack) {
+    // The exam clock, Do Not Disturb and the invigilator run here too when the paper is being sat on paper.
+    val log by examStore.examLog(id).collectAsState(initial = "")
+    val startedAt = pk.parhlou.student.domain.ExamLog.startedAt(log)
+    val running = startedAt != null && !pk.parhlou.student.domain.ExamLog.isSubmitted(log)
+    var now by remember { mutableLongStateOf(System.currentTimeMillis()) }
+    LaunchedEffect(running) { while (running) { now = System.currentTimeMillis(); kotlinx.coroutines.delay(1_000) } }
+    val focusContext = androidx.compose.ui.platform.LocalContext.current
+    androidx.compose.runtime.DisposableEffect(running) {
+        if (running) pk.parhlou.student.ui.FocusMode.on(focusContext)
+        onDispose { if (running) pk.parhlou.student.ui.FocusMode.off(focusContext) }
+    }
+    val clock = startedAt?.let { pk.parhlou.student.domain.ExamClock(it, blueprint.durationMinutes) }
+    // After time is up there are 15 minutes to scan, as a student would hand in the script; then scanning closes.
+    val scanClosed = running && clock != null && now > clock.endsAtMillis + LATE_SCAN_MILLIS
+
+    ParhlouScreen(if (running) blueprint.title else "Mark my written paper", onBack = onBack) {
+        if (running && clock != null) Sheet(Modifier.testTag("printed-clock")) {
+            Text(if (clock.isExpired(now)) "Time is up" else "⏱ ${clock.label(now)} left", style = MaterialTheme.typography.headlineMedium,
+                color = if (clock.isExpired(now)) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface)
+            Muted(when {
+                scanClosed -> "Scanning has closed. Read and hand in the pages you scanned."
+                clock.isExpired(now) -> "Pens down. Scan your pages now and hand in (15 minutes)."
+                clock.remainingMillis(now) < 10 * 60_000L -> "Under 10 minutes left. Finish and check your answers."
+                else -> "Ask Ustaad is locked until you hand in. Write on paper, then scan and hand in."
+            })
+        }
         Sheet {
             Text(blueprint.title, style = MaterialTheme.typography.titleMedium)
             Muted("1. Sit the printed paper with a clock: MCQs on the bubble sheet first, then the subjective part.")
@@ -104,7 +132,7 @@ fun PrintedPaperScreen(
         }
         Sheet {
             Text(if (scanned == 0) "No pages scanned yet" else "$scanned page${if (scanned == 1) "" else "s"} scanned", style = MaterialTheme.typography.titleMedium)
-            SecondaryButton(if (scanned == 0) "Scan my pages" else "Add or fix pages", onClick = { scanning = true })
+            SecondaryButton(if (scanned == 0) "Scan my pages" else "Add or fix pages", onClick = { scanning = true }, enabled = !scanClosed)
             if (scanned > 0 && pages == null && reading == null) {
                 BigButton("Read my pages", onClick = {
                     reading = 0 to scanned
@@ -163,7 +191,7 @@ fun PrintedPaperScreen(
         }
         Muted("If something was read wrongly, fix that page (retake it flat, in good light) and read again. The examiners also look at your pages themselves, so the photos decide.")
         if (marking) StatusPill("Two examiners are marking your paper…")
-        else BigButton("Mark my paper", enabled = result.answers.isNotEmpty() || result.mcq.isNotEmpty(), onClick = {
+        else BigButton(if (running) "Hand in and mark my paper" else "Mark my paper", enabled = result.answers.isNotEmpty() || result.mcq.isNotEmpty(), onClick = {
             marking = true
             appScope.launch {
                 desk.submitPrinted(blueprint, paper, result)
@@ -174,20 +202,39 @@ fun PrintedPaperScreen(
     }
 }
 
+private const val LATE_SCAN_MILLIS = 15 * 60_000L
+
+/** Most "My papers" a student keeps at once. */
+const val MAX_MY_PAPERS = 10
+
 /** "Make my paper": the AI examiner chooses a full 2027-pattern paper of real board questions for this student. */
 @Composable
 fun MakePaperScreen(
     make: suspend () -> MyPaper?,
     onOpen: (String) -> Unit,
     onBack: () -> Unit,
+    /** The student's saved papers (id to title); at [MAX_MY_PAPERS] one must be deleted before making another. */
+    saved: List<Pair<String, String>> = emptyList(),
+    onDelete: (String) -> Unit = {},
 ) {
     var made by remember { mutableStateOf<MyPaper?>(null) }
     var failed by remember { mutableStateOf(false) }
     var attempt by remember { mutableIntStateOf(0) }
-    LaunchedEffect(attempt) { failed = false; made = make(); if (made == null) failed = true }
+    val full = saved.size >= MAX_MY_PAPERS && made == null
+    LaunchedEffect(attempt, full) { if (!full) { failed = false; made = make(); if (made == null) failed = true } }
     ParhlouScreen("Make my paper", onBack = onBack) {
         val p = made
         when {
+            full -> Sheet(Modifier.testTag("papers-full")) {
+                Text("You have $MAX_MY_PAPERS papers", style = MaterialTheme.typography.titleMedium)
+                Muted("Delete one to make another. Sit the ones you have first: each is a full board paper.")
+                saved.forEach { (id, title) ->
+                    androidx.compose.foundation.layout.Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                        TextButton(onClick = { onOpen(id) }, modifier = Modifier.weight(1f).heightIn(min = 48.dp)) { Text(title) }
+                        TextButton(onClick = { onDelete(id) }, modifier = Modifier.heightIn(min = 48.dp).testTag("delete-$id")) { Text("Delete") }
+                    }
+                }
+            }
             failed -> Sheet {
                 Text("Couldn't make a paper", style = MaterialTheme.typography.titleMedium)
                 Muted("There aren't enough published questions for every part of the 2027 pattern yet.")
