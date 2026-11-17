@@ -1,0 +1,65 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "11:8",
+   "figure": "Circuit and end view:\n\n        conventional current I\n   ┌──────→──────(((( steel bar ))))──────┐\n   │                   A          B       │\n   │                                      │\n   └─────────────── + |‖| − ─────────────┘\n                         battery\n\nViewed from end A, draw the current around the turns anticlockwise (↺). This makes A the north pole and B the south pole.",
+   "steps": [
+    "Connect the solenoid in series with a battery and a switch, with the steel bar placed inside the solenoid.",
+    "Choose the current direction so that, when viewed from end A, the current in the turns is anticlockwise.",
+    "By the clock rule for a solenoid, the end from which the current appears anticlockwise is a north pole; therefore A becomes N and B becomes S."
+   ],
+   "finalAnswer": "The steel bar is magnetised with A as the north pole and B as the south pole by passing current through the solenoid in the direction shown."
+  },
+  {
+   "accept": [],
+   "id": "11:9",
+   "figure": "One valid labeling (the labels may both be reversed):\n\n       S  [ magnet 1 ]  N   gap   N  [ magnet 2 ]  S\n                           ↑\n                      compass N\n                           │\n                      compass S\n                           ↑ north-south direction\n\nDraw field lines emerging from both facing N poles and curving outward around the gap to enter the outer S poles. Do not draw field lines joining the two facing poles.",
+   "steps": [
+    "Label the two poles facing each other alike. For example, label both facing poles N; then the outer ends are S. (The alternative, with both facing poles S and both outer ends N, is also correct.)",
+    "Draw magnetic field lines emerging from each N pole and entering an S pole. The lines curve away from the gap between the like poles and do not join across the gap.",
+    "At the midpoint, the magnetic fields due to the two identical magnets are equal in magnitude and opposite in direction, so their resultant field is zero.",
+    "With no resultant field from the magnets at the midpoint, the compass needle settles along the north-south direction."
+   ],
+   "finalAnswer": "The facing poles are alike; either N–N or S–S is correct, with the compass at the midpoint pointing north-south because the magnetic fields there cancel."
+  },
+  {
+   "accept": [],
+   "id": "11:11",
+   "figure": "Place four identical solenoids radially around O. The end of each solenoid facing O is S and its outer end is N. Show equal current magnitudes; viewed from O, current around each coil is clockwise (↻).\n\n                         N\n                    [solenoid]\n                        S\n                        ↓ B\n                        O\n       S [solenoid] →   •   ← [solenoid] S\n          N                         N\n                        ↑ B\n                        S\n                    [solenoid]\n                         N\n\nThe arrows show the magnetic field at O due to each solenoid, directed radially outward toward that solenoid. Mark clockwise current when looking from O at the inward-facing end of each coil.",
+   "steps": [
+    "Draw the four identical solenoids symmetrically around O, with the same current magnitude in each.",
+    "Make the end of every solenoid facing O a south pole and its far end a north pole. Using the right-hand grip rule, show the current clockwise when viewed from O at each inward-facing end.",
+    "The magnetic field at O due to each solenoid is directed away from O, toward that solenoid. The four equal field vectors cancel when all four solenoids are on.",
+    "When any one solenoid is switched off, the other three fields have a resultant equal in magnitude and opposite in direction to the field that was switched off. The resultant is therefore directed from O toward the switched-off solenoid."
+   ],
+   "finalAnswer": "Show equal clockwise currents as viewed from O, so each inward-facing end is S and switching off any one solenoid leaves a resultant field directed toward it."
+  },
+  {
+   "accept": [],
+   "id": "11:13",
+   "figure": "Draw these example diagrams, with arrows showing the direction of the magnetic field:\n\nWeak field (lines far apart):       Strong field (lines close together):\n→       →       →                    → → → → → →\n→       →       →                    → → → → → →\n→       →       →                    → → → → → →\n\nUniform field (parallel, equally spaced lines):\n→       →       →\n→       →       →\n→       →       →\n\nNon-uniform field (lines closer together in one region and farther apart in another):\n→   →   →   → → → →",
+   "steps": [
+    "The strength of a magnetic field is described by the closeness of its magnetic lines of force.",
+    "Where the lines of force are close together, the magnetic field is strong.",
+    "Where the lines of force are far apart, the magnetic field is weak.",
+    "For a uniform magnetic field, draw straight, parallel, equally spaced lines of force.",
+    "For a non-uniform magnetic field, draw lines that are not equally spaced; closer lines show the stronger region and farther-apart lines show the weaker region."
+   ],
+   "finalAnswer": "A magnetic field is stronger where its lines of force are closer together and weaker where they are farther apart."
+  },
+  {
+   "accept": [],
+   "id": "11:14",
+   "figure": "Circuit-breaker diagram:\n\n Live wire ────o/ o──────── Load ──── Neutral wire\n                ↑\n          movable contact\n                │ iron armature\n           [electromagnet]\n                │\n          current-carrying coil\n\nDraw the movable contact so it normally touches the fixed contact. Show an overload current energising the electromagnet, which attracts the iron armature and opens the contact.",
+   "steps": [
+    "A circuit breaker is a safety device that automatically breaks a circuit when the current exceeds the safe limit.",
+    "The current in the circuit passes through a coil in the circuit breaker, making the coil an electromagnet.",
+    "If an excessive current flows, the electromagnet becomes strong and attracts the iron armature.",
+    "The armature moves and separates the contacts, opening the circuit and stopping the current.",
+    "After the fault is removed, the circuit breaker can be reset."
+   ],
+   "finalAnswer": "A circuit breaker automatically opens a circuit when excessive current makes its electromagnet attract an armature and separate the contacts."
+  }
+ ]
+}

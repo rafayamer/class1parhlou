@@ -1,0 +1,1363 @@
+{
+ "note": {
+  "explanation": "This exercise text contains Sections A–D only. It includes no Section E, no numerical problems, and no printed numerical answers. The worked example and your-turn questions therefore use the supplied exercise questions rather than invented numerical problems.",
+  "examples": [
+   "A compass placed near a magnet points along the magnetic field at that position.",
+   "Soft iron is used to shield a device because it provides a path for magnetic field lines."
+  ],
+  "checkAnswer": "Outside a magnet, field lines go from the north pole to the south pole.",
+  "keywords": [
+   "magnet",
+   "magnetic field",
+   "field lines",
+   "solenoid",
+   "domains",
+   "electromagnet"
+  ],
+  "simple": "A magnet creates a magnetic field around it. Field lines help us show the direction and strength of that field.",
+  "checkQuestion": "In which direction do magnetic field lines go outside a magnet?",
+  "title": "Magnets, magnetic fields and magnetic materials",
+  "steps": [
+   "Identify the poles and the magnetic material involved.",
+   "Use the direction of magnetic field lines to explain how a compass or another magnet behaves.",
+   "For a solenoid, use the current direction to determine which end is north and which is south.",
+   "When describing a diagram, label poles and show field lines or current directions clearly."
+  ],
+  "answer": "A magnetic field is the region around a magnet or current-carrying conductor where magnetic effects can be observed.",
+  "checkAccept": [
+   [
+    "outside",
+    "north",
+    "south"
+   ],
+   [
+    "n",
+    "s",
+    "outside"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Cobalt",
+    "Iron",
+    "Aluminium",
+    "Nickel"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q8.1. Which one of the following is not a magnetic material?",
+   "rationales": [
+    "Cobalt is a magnetic material.",
+    "Iron is a magnetic material.",
+    "Aluminium is not a ferromagnetic material like iron, cobalt and nickel, so this is the intended answer.",
+    "Nickel is a magnetic material."
+   ]
+  },
+  {
+   "options": [
+    "are always directed in a straight line",
+    "cross one another",
+    "enter into the north pole",
+    "enter into the south pole"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q8.2. Magnetic lines of force:",
+   "rationales": [
+    "Magnetic field lines are generally curved outside a magnet, not always straight.",
+    "Magnetic field lines never cross because the field cannot have two directions at one point.",
+    "Outside a magnet, field lines emerge from the north pole rather than entering it.",
+    "Outside a magnet, field lines enter the south pole."
+   ]
+  },
+  {
+   "options": [
+    "soft iron",
+    "steel",
+    "neodymium",
+    "alnico"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.3. Permanent magnets cannot be made by:",
+   "rationales": [
+    "Soft iron is easily magnetised and demagnetised, so it is unsuitable for permanent magnets.",
+    "Steel can retain magnetism and can be used to make permanent magnets.",
+    "Neodymium is used to make strong permanent magnets.",
+    "Alnico is an alloy used to make permanent magnets."
+   ]
+  },
+  {
+   "options": [
+    "circuit breaker",
+    "loudspeaker",
+    "electric crane",
+    "magnetic recording"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.4. Permanent magnets are used in:",
+   "rationales": [
+    "A circuit breaker commonly uses an electromagnet so that the magnetic effect can respond to current.",
+    "A loudspeaker commonly uses a permanent magnet interacting with a current-carrying coil.",
+    "An electric crane uses an electromagnet that can be switched on and off.",
+    "Magnetic recording uses magnetic materials and a recording magnetic field rather than relying on the listed permanent-magnet application."
+   ]
+  },
+  {
+   "options": [
+    "stroking",
+    "hitting",
+    "heating",
+    "placing inside a solenoid having A.C"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.5. A common method used to magnetise a material is:",
+   "rationales": [
+    "Stroking a magnetic material with a magnet is a common magnetising method.",
+    "Hitting is not the standard method for magnetising a material.",
+    "Heating generally weakens or destroys magnetism rather than magnetising the material.",
+    "Alternating current in a solenoid is commonly used to demagnetise a material."
+   ]
+  },
+  {
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q8.6. A magnetic compass is placed around a bar magnet at four points as shown in figure below. Which diagram would indicate the correct directions of the field?",
+   "rationales": [
+    "This diagram gives an incorrect direction at the right side and below the magnet.",
+    "This diagram does not show the field direction correctly above and beside the magnet.",
+    "This diagram shows the field leaving the north pole, curving around, and entering the south pole.",
+    "This diagram gives incorrect directions above and below the magnet."
+   ]
+  },
+  {
+   "options": [
+    "(a)",
+    "(b)",
+    "(c)",
+    "(d)"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.7. A steel rod is magnetised by double touch stroking method. Which one would be the correct polarity of the AB magnet?",
+   "rationales": [
+    "With the described opposite poles stroking outwards from the centre, the left end becomes N and the right end becomes S.",
+    "This reverses the polarity expected from the indicated stroking arrangement.",
+    "The bar is magnetised with one north pole at each end, which is not the resulting polarity.",
+    "The bar is magnetised with one south pole at each end, which is not the resulting polarity."
+   ]
+  },
+  {
+   "options": [
+    "wood",
+    "plastic",
+    "steel",
+    "soft iron"
+   ],
+   "fromBook": true,
+   "correctIndex": 3,
+   "stem": "Q8.8. The best material to protect a device from external magnetic field is:",
+   "rationales": [
+    "Wood is not an effective magnetic shield.",
+    "Plastic is not an effective magnetic shield.",
+    "Steel is not the best choice here for shielding the device.",
+    "Soft iron provides an easy path for magnetic field lines and is used for magnetic shielding."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are temporary and permanent magnets?",
+   "finalAnswer": "Temporary magnets lose most of their magnetism when the magnetising field is removed; permanent magnets retain their magnetism.",
+   "marks": 2,
+   "source": "Short 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "lose",
+       "magnetism",
+       "field",
+       "removed"
+      ]
+     ],
+     "marks": 1,
+     "why": "This distinguishes temporary magnets by how they behave after magnetisation.",
+     "description": "Describe a temporary magnet.",
+     "how": "State that it loses most of its magnetism when the magnetising field is removed."
+    },
+    {
+     "accept": [
+      [
+       "retain",
+       "magnetism"
+      ],
+      [
+       "keep",
+       "magnetism"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies the defining property of a permanent magnet.",
+     "description": "Describe a permanent magnet.",
+     "how": "State that it retains its magnetism."
+    }
+   ],
+   "modelAnswer": [
+    "A temporary magnet loses most of its magnetism when the magnetising field is removed.",
+    "A permanent magnet retains its magnetism."
+   ]
+  },
+  {
+   "text": "Define magnetic field of a magnet.",
+   "finalAnswer": "The region around a magnet in which its magnetic effect can be detected is called its magnetic field.",
+   "marks": 2,
+   "source": "Short 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "region",
+       "around",
+       "magnet"
+      ]
+     ],
+     "marks": 1,
+     "why": "A definition must identify where the field exists.",
+     "description": "Identify the region around the magnet.",
+     "how": "Write that the magnetic field is the region around a magnet."
+    },
+    {
+     "accept": [
+      [
+       "magnetic",
+       "effect",
+       "detected"
+      ],
+      [
+       "magnetic",
+       "force",
+       "felt"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains what makes the region a magnetic field.",
+     "description": "State the magnetic effect that can be observed there.",
+     "how": "Mention that magnetic effect, force or influence can be detected in the region."
+    }
+   ],
+   "modelAnswer": [
+    "The region around a magnet in which its magnetic effect can be detected is called its magnetic field."
+   ]
+  },
+  {
+   "text": "What are magnetic lines of force?",
+   "finalAnswer": "Magnetic lines of force are imaginary lines that represent the direction and shape of a magnetic field.",
+   "marks": 2,
+   "source": "Short 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "imaginary",
+       "lines"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lines are a representation, not visible physical threads.",
+     "description": "Identify the lines as imaginary.",
+     "how": "State that magnetic lines of force are imaginary lines."
+    },
+    {
+     "accept": [
+      [
+       "direction",
+       "magnetic",
+       "field"
+      ],
+      [
+       "shape",
+       "magnetic",
+       "field"
+      ]
+     ],
+     "marks": 1,
+     "why": "The lines convey information about the magnetic field.",
+     "description": "State what the lines represent.",
+     "how": "Mention the field's direction or shape."
+    }
+   ],
+   "modelAnswer": [
+    "Magnetic lines of force are imaginary lines that represent the direction and shape of a magnetic field."
+   ]
+  },
+  {
+   "text": "Name some uses of permanent magnets and electromagnets.",
+   "finalAnswer": "Permanent magnets are used in loudspeakers and compasses; electromagnets are used in electric cranes and circuit breakers.",
+   "marks": 2,
+   "source": "Short 8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "permanent",
+       "loudspeaker"
+      ],
+      [
+       "permanent",
+       "compass"
+      ],
+      [
+       "permanent",
+       "magnetic",
+       "recording"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer needs a valid use of permanent magnets.",
+     "description": "Give one or more uses of permanent magnets.",
+     "how": "Name loudspeakers, compasses or magnetic recording as an application."
+    },
+    {
+     "accept": [
+      [
+       "electromagnet",
+       "electric",
+       "crane"
+      ],
+      [
+       "electromagnet",
+       "circuit",
+       "breaker"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer also needs a valid use of electromagnets.",
+     "description": "Give one or more uses of electromagnets.",
+     "how": "Name electric cranes or circuit breakers as an application."
+    }
+   ],
+   "modelAnswer": [
+    "Permanent magnets are used in loudspeakers and compasses.",
+    "Electromagnets are used in electric cranes and circuit breakers."
+   ]
+  },
+  {
+   "text": "What are magnetic domains?",
+   "finalAnswer": "Magnetic domains are tiny regions in a magnetic material in which the atomic magnets are aligned in the same direction.",
+   "marks": 2,
+   "source": "Short 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "tiny",
+       "regions"
+      ],
+      [
+       "small",
+       "regions"
+      ]
+     ],
+     "marks": 1,
+     "why": "Domains are small regions within a magnetic material.",
+     "description": "Identify domains as small regions.",
+     "how": "State that magnetic domains are tiny or small regions in a material."
+    },
+    {
+     "accept": [
+      [
+       "aligned",
+       "same",
+       "direction"
+      ],
+      [
+       "atomic",
+       "magnets",
+       "same",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "Alignment within a domain is the key idea.",
+     "description": "Describe the alignment in a domain.",
+     "how": "State that the atomic magnets are aligned in the same direction."
+    }
+   ],
+   "modelAnswer": [
+    "Magnetic domains are tiny regions in a magnetic material in which the atomic magnets are aligned in the same direction."
+   ]
+  },
+  {
+   "text": "Which type of magnetic field is formed by a current-carrying long coil?",
+   "finalAnswer": "A current-carrying long coil forms a uniform magnetic field inside it.",
+   "marks": 2,
+   "source": "Short 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "uniform",
+       "magnetic",
+       "field"
+      ]
+     ],
+     "marks": 2,
+     "why": "The main result is that the field inside a long coil is nearly uniform.",
+     "description": "Name the field formed inside the long coil.",
+     "how": "Answer that it is a uniform magnetic field."
+    }
+   ],
+   "modelAnswer": [
+    "A current-carrying long coil forms a uniform magnetic field inside it."
+   ]
+  },
+  {
+   "text": "Differentiate between paramagnetic and diamagnetic materials.",
+   "finalAnswer": "Paramagnetic materials are weakly attracted by a magnetic field; diamagnetic materials are weakly repelled by it.",
+   "marks": 2,
+   "source": "Short 8.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "paramagnetic",
+       "weakly",
+       "attracted"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the defining magnetic response of paramagnetic materials.",
+     "description": "State the response of a paramagnetic material.",
+     "how": "Write that it is weakly attracted by a magnetic field."
+    },
+    {
+     "accept": [
+      [
+       "diamagnetic",
+       "weakly",
+       "repelled"
+      ]
+     ],
+     "marks": 1,
+     "why": "This contrasts the response of diamagnetic materials.",
+     "description": "State the response of a diamagnetic material.",
+     "how": "Write that it is weakly repelled by a magnetic field."
+    }
+   ],
+   "modelAnswer": [
+    "Paramagnetic materials are weakly attracted by a magnetic field.",
+    "Diamagnetic materials are weakly repelled by a magnetic field."
+   ]
+  },
+  {
+   "text": "Two bar magnets are stored in a wooden box. Label the poles of the magnets and identify P and Q objects.",
+   "finalAnswer": "The two magnets have unlike poles at the top and unlike poles at the bottom; P and Q are soft-iron keepers.",
+   "marks": 4,
+   "source": "CRQ 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "unlike",
+       "poles",
+       "top"
+      ],
+      [
+       "north",
+       "south",
+       "top"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct polarity labelling is needed for the stored magnets.",
+     "description": "Label the upper ends as unlike poles.",
+     "how": "Show one upper end N and the other S."
+    },
+    {
+     "accept": [
+      [
+       "unlike",
+       "poles",
+       "bottom"
+      ],
+      [
+       "north",
+       "south",
+       "bottom"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each bar magnet must have opposite poles at its two ends.",
+     "description": "Label the lower ends consistently.",
+     "how": "Give each magnet the pole opposite to its upper end at the lower end."
+    },
+    {
+     "accept": [
+      [
+       "p",
+       "soft",
+       "iron",
+       "keeper"
+      ],
+      [
+       "q",
+       "soft",
+       "iron",
+       "keeper"
+      ]
+     ],
+     "marks": 2,
+     "why": "The objects across the ends of stored magnets are keepers.",
+     "description": "Identify P and Q.",
+     "how": "Label both P and Q as soft-iron keepers."
+    }
+   ],
+   "modelAnswer": [
+    "Label the upper ends of the two magnets as unlike poles: one N and one S.",
+    "Label the lower end of each magnet with the opposite pole to its own upper end.",
+    "P is a soft-iron keeper.",
+    "Q is a soft-iron keeper."
+   ]
+  },
+  {
+   "text": "A steel bar has to be magnetised by placing it inside a solenoid such that end A of a bar becomes N-pole and end B becomes S-pole. Draw circuit diagram of solenoid showing steel bar inside it.",
+   "finalAnswer": "Draw a steel bar inside a solenoid connected to a DC cell, with current direction chosen so end A is N and end B is S.",
+   "marks": 4,
+   "source": "CRQ 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "steel",
+       "bar",
+       "inside",
+       "solenoid"
+      ]
+     ],
+     "marks": 1,
+     "why": "The steel bar must be shown inside the coil to be magnetised.",
+     "description": "Show the steel bar and solenoid.",
+     "how": "Draw or state that the steel bar lies inside the solenoid."
+    },
+    {
+     "accept": [
+      [
+       "cell"
+      ],
+      [
+       "battery"
+      ],
+      [
+       "dc"
+      ]
+     ],
+     "marks": 1,
+     "why": "A steady current is required to magnetise the bar.",
+     "description": "Include a DC source in the circuit.",
+     "how": "Connect the solenoid to a cell or battery."
+    },
+    {
+     "accept": [
+      [
+       "a",
+       "n"
+      ],
+      [
+       "end",
+       "a",
+       "north"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required polarity at A must be labelled.",
+     "description": "Label end A as north.",
+     "how": "Mark A with N."
+    },
+    {
+     "accept": [
+      [
+       "b",
+       "s"
+      ],
+      [
+       "end",
+       "b",
+       "south"
+      ]
+     ],
+     "marks": 1,
+     "why": "The required polarity at B must be labelled.",
+     "description": "Label end B as south.",
+     "how": "Mark B with S and show a consistent current direction."
+    }
+   ],
+   "modelAnswer": [
+    "Draw the steel bar inside a solenoid and connect the solenoid to a DC cell.",
+    "Choose the current direction so that, viewed from end A, the current around the coil is anticlockwise.",
+    "Label end A as N-pole and end B as S-pole."
+   ]
+  },
+  {
+   "text": "Two bar magnets are lying as shown in the figure. A compass is placed at the middle of the gap. Its needle settles in the north-south direction. Label N and S poles of the magnets. Justify your answer by drawing fields lines.",
+   "finalAnswer": "The two facing ends are like poles, so the fields in the gap cancel and the compass points north-south; draw field lines bending away from the gap.",
+   "marks": 4,
+   "source": "CRQ 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "like",
+       "poles",
+       "facing"
+      ],
+      [
+       "n",
+       "n",
+       "facing"
+      ],
+      [
+       "s",
+       "s",
+       "facing"
+      ]
+     ],
+     "marks": 1,
+     "why": "Like facing poles produce opposing field directions in the gap.",
+     "description": "Identify the facing poles.",
+     "how": "Label the two facing ends as N-N or S-S."
+    },
+    {
+     "accept": [
+      [
+       "cancel",
+       "field",
+       "gap"
+      ],
+      [
+       "fields",
+       "cancel",
+       "gap"
+      ],
+      [
+       "north",
+       "south",
+       "direction"
+      ]
+     ],
+     "marks": 1,
+     "why": "The compass behaviour must be linked to the field at the gap.",
+     "description": "Explain the compass direction.",
+     "how": "Explain that the opposing fields cancel at the midpoint, allowing the compass to settle north-south."
+    },
+    {
+     "accept": [
+      [
+       "field",
+       "lines",
+       "bend",
+       "away"
+      ],
+      [
+       "lines",
+       "away",
+       "gap"
+      ]
+     ],
+     "marks": 2,
+     "why": "A field-line sketch is required to support the pole labels.",
+     "description": "Draw or describe the field lines.",
+     "how": "Show field lines bending away from the region between the like poles, with arrows from N to S outside the magnets."
+    }
+   ],
+   "modelAnswer": [
+    "Label the two facing ends as like poles, either N-N or S-S.",
+    "The fields due to the two like poles oppose one another at the midpoint of the gap.",
+    "Draw the field lines bending away from the gap; outside the magnets, arrows point from N to S.",
+    "At the midpoint the magnetic fields cancel, so the compass needle points in the north-south direction."
+   ]
+  },
+  {
+   "text": "Electric current or motion of electrons produce magnetic field. Is the reverse process true, that is the magnetic field gives rise to electric current? If yes, give an example and describe it briefly.",
+   "finalAnswer": "Yes. A changing magnetic field can induce current; for example, moving a magnet into or out of a coil induces current in the coil.",
+   "marks": 4,
+   "source": "CRQ 8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "yes",
+       "changing",
+       "magnetic",
+       "field",
+       "current"
+      ],
+      [
+       "changing",
+       "magnetic",
+       "field",
+       "induces",
+       "current"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must establish that the reverse process can occur.",
+     "description": "State whether a magnetic field can give rise to current.",
+     "how": "Answer yes and mention that a changing magnetic field induces current."
+    },
+    {
+     "accept": [
+      [
+       "magnet",
+       "coil"
+      ],
+      [
+       "moving",
+       "magnet",
+       "coil"
+      ]
+     ],
+     "marks": 1,
+     "why": "A suitable example makes the principle concrete.",
+     "description": "Give an example.",
+     "how": "Use a magnet and a coil."
+    },
+    {
+     "accept": [
+      [
+       "move",
+       "into",
+       "coil"
+      ],
+      [
+       "move",
+       "out",
+       "coil"
+      ],
+      [
+       "relative",
+       "motion"
+      ]
+     ],
+     "marks": 2,
+     "why": "The changing magnetic field, rather than a stationary field, is essential.",
+     "description": "Briefly describe how the example works.",
+     "how": "Explain that moving the magnet relative to the coil changes the magnetic field through it and induces current."
+    }
+   ],
+   "modelAnswer": [
+    "Yes, a changing magnetic field can produce electric current.",
+    "For example, when a magnet is moved into or out of a coil, the magnetic field through the coil changes.",
+    "This changing field induces current in the coil."
+   ]
+  },
+  {
+   "text": "Four similar solenoids are placed in a circle as shown in the figure. The magnitude of current in all of them should be the same. Show by diagram, the direction of current in each solenoid such that when current in any one solenoid is switched OFF, the net magnetic field at the centre O is directed towards that solenoid. Explain your answer.",
+   "finalAnswer": "Make the field at O due to each solenoid point away from that solenoid; then switching one off leaves the other three fields with a resultant directed toward the switched-off solenoid.",
+   "marks": 5,
+   "source": "CRQ 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "equal",
+       "current"
+      ],
+      [
+       "same",
+       "current"
+      ]
+     ],
+     "marks": 1,
+     "why": "Equal currents in similar solenoids give equal field contributions.",
+     "description": "Use equal current magnitudes.",
+     "how": "State or show that all four currents have the same magnitude."
+    },
+    {
+     "accept": [
+      [
+       "field",
+       "at",
+       "o",
+       "away",
+       "solenoid"
+      ],
+      [
+       "field",
+       "away",
+       "each",
+       "solenoid"
+      ]
+     ],
+     "marks": 2,
+     "why": "The chosen directions must create the required resultant after one field is removed.",
+     "description": "Set the field of each solenoid at O.",
+     "how": "Arrange each field at O to point away from its own solenoid."
+    },
+    {
+     "accept": [
+      [
+       "switch",
+       "off",
+       "three",
+       "fields",
+       "resultant",
+       "towards"
+      ],
+      [
+       "remaining",
+       "fields",
+       "towards",
+       "switched",
+       "off"
+      ]
+     ],
+     "marks": 2,
+     "why": "The explanation must show why the resultant points toward whichever solenoid is switched off.",
+     "description": "Explain the resultant field.",
+     "how": "Explain that the equal fields of the three remaining solenoids add to a resultant toward the missing solenoid."
+    }
+   ],
+   "modelAnswer": [
+    "Use the same current magnitude in all four solenoids.",
+    "Choose the current direction in each solenoid so that its magnetic field at O points away from that solenoid.",
+    "When one solenoid is switched off, the other three equal field contributions remain.",
+    "Their vector resultant is directed toward the solenoid that has been switched off."
+   ]
+  },
+  {
+   "text": "How can you identify whether an object is a magnet or a magnetic material?",
+   "finalAnswer": "Bring a known magnet near the object and test both ends: repulsion proves the object is a magnet, while attraction alone may mean it is only a magnetic material.",
+   "marks": 4,
+   "source": "Comprehensive 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "known",
+       "magnet"
+      ]
+     ],
+     "marks": 1,
+     "why": "The test needs a known magnet for comparison.",
+     "description": "Set up the test.",
+     "how": "Bring a known magnet close to the object."
+    },
+    {
+     "accept": [
+      [
+       "repulsion",
+       "proves",
+       "magnet"
+      ],
+      [
+       "repelled",
+       "magnet"
+      ]
+     ],
+     "marks": 2,
+     "why": "Repulsion is the sure test of magnetism.",
+     "description": "State the conclusive result.",
+     "how": "Explain that repulsion from a like pole proves the object is a magnet."
+    },
+    {
+     "accept": [
+      [
+       "attraction",
+       "magnetic",
+       "material"
+      ],
+      [
+       "attraction",
+       "alone",
+       "not",
+       "prove"
+      ]
+     ],
+     "marks": 1,
+     "why": "A magnetic material can be attracted without itself being a magnet.",
+     "description": "Explain why attraction alone is not conclusive.",
+     "how": "State that attraction can occur for either a magnet or a magnetic material."
+    }
+   ],
+   "modelAnswer": [
+    "Bring a known magnet near the object, testing both poles.",
+    "If one pole repels the object, the object is a magnet; repulsion is the sure test.",
+    "If the object is only attracted, it may be a magnetic material and is not proved to be a magnet."
+   ]
+  },
+  {
+   "text": "Describe the strength of a magnetic field in terms of magnetic lines of force. Explain it by drawing a few diagrams for the fields as examples.",
+   "finalAnswer": "A magnetic field is strong where its field lines are close together and weak where they are far apart.",
+   "marks": 4,
+   "source": "Comprehensive 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "close",
+       "together",
+       "strong"
+      ],
+      [
+       "closer",
+       "lines",
+       "stronger"
+      ]
+     ],
+     "marks": 2,
+     "why": "The spacing of lines represents field strength.",
+     "description": "Describe a strong field.",
+     "how": "State that close or dense field lines show a strong magnetic field."
+    },
+    {
+     "accept": [
+      [
+       "far",
+       "apart",
+       "weak"
+      ],
+      [
+       "widely",
+       "spaced",
+       "weak"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must also describe a weaker field.",
+     "description": "Describe a weak field.",
+     "how": "State that widely spaced field lines show a weak field."
+    },
+    {
+     "accept": [
+      [
+       "diagram"
+      ],
+      [
+       "draw",
+       "lines"
+      ]
+     ],
+     "marks": 1,
+     "why": "The question explicitly asks for field diagrams.",
+     "description": "Include field sketches.",
+     "how": "Draw or describe examples with dense lines for strong fields and sparse lines for weak fields."
+    }
+   ],
+   "modelAnswer": [
+    "The strength of a magnetic field is shown by the spacing of its magnetic lines of force.",
+    "Where the lines are close together, the magnetic field is strong.",
+    "Where the lines are far apart, the magnetic field is weak.",
+    "Draw one diagram with close field lines and another with widely spaced field lines."
+   ]
+  },
+  {
+   "text": "What is a circuit breaker? Describe its working with the help of a diagram.",
+   "finalAnswer": "A circuit breaker is a safety device that automatically breaks a circuit when excessive current flows; its electromagnet attracts an armature and opens the contacts.",
+   "marks": 4,
+   "source": "Comprehensive 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "safety",
+       "device"
+      ],
+      [
+       "breaks",
+       "circuit"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition identifies the purpose of a circuit breaker.",
+     "description": "Define a circuit breaker.",
+     "how": "State that it is a safety device that breaks an electrical circuit."
+    },
+    {
+     "accept": [
+      [
+       "excessive",
+       "current"
+      ],
+      [
+       "large",
+       "current"
+      ]
+     ],
+     "marks": 1,
+     "why": "The breaker operates when current becomes too large.",
+     "description": "State the condition that causes operation.",
+     "how": "Mention excessive or unusually large current."
+    },
+    {
+     "accept": [
+      [
+       "electromagnet",
+       "attracts",
+       "armature"
+      ],
+      [
+       "armature",
+       "electromagnet"
+      ]
+     ],
+     "marks": 1,
+     "why": "The magnetic action explains how the circuit breaker operates.",
+     "description": "Describe the electromagnetic action.",
+     "how": "Explain that the stronger current makes the electromagnet attract the armature."
+    },
+    {
+     "accept": [
+      [
+       "opens",
+       "contacts"
+      ],
+      [
+       "breaks",
+       "circuit"
+      ]
+     ],
+     "marks": 1,
+     "why": "Opening the circuit stops the excessive current.",
+     "description": "State the final action and include a diagram.",
+     "how": "Show or state that the armature opens the contacts and breaks the circuit."
+    }
+   ],
+   "modelAnswer": [
+    "A circuit breaker is a safety device that automatically breaks a circuit when excessive current flows.",
+    "The excessive current makes the electromagnet strong.",
+    "The electromagnet attracts the armature, which opens the contacts.",
+    "Draw the circuit breaker showing the electromagnet, armature and contacts."
+   ]
+  },
+  {
+   "text": "A magnet attracts only a magnet. Explain the statement.",
+   "finalAnswer": "The statement is false: a magnet attracts magnetic materials as well as unlike poles of other magnets; repulsion occurs only between like poles of magnets.",
+   "marks": 4,
+   "source": "Comprehensive 8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "false"
+      ],
+      [
+       "not",
+       "true"
+      ]
+     ],
+     "marks": 1,
+     "why": "The statement must be evaluated correctly.",
+     "description": "Judge the statement.",
+     "how": "State that the statement is false."
+    },
+    {
+     "accept": [
+      [
+       "attracts",
+       "magnetic",
+       "materials"
+      ],
+      [
+       "magnetic",
+       "material",
+       "attracted"
+      ]
+     ],
+     "marks": 2,
+     "why": "Magnets attract magnetic materials as well as other magnets.",
+     "description": "Give the missing case.",
+     "how": "Explain that an iron or other magnetic material can be attracted by a magnet."
+    },
+    {
+     "accept": [
+      [
+       "like",
+       "poles",
+       "repel"
+      ],
+      [
+       "unlike",
+       "poles",
+       "attract"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pole interaction completes the explanation.",
+     "description": "State the pole rule.",
+     "how": "Mention that unlike poles attract and like poles repel."
+    }
+   ],
+   "modelAnswer": [
+    "The statement is false because a magnet can attract magnetic materials as well as other magnets.",
+    "Unlike poles of magnets attract, while like poles repel.",
+    "Repulsion, not attraction alone, is the sure test that an object is a magnet."
+   ]
+  },
+  {
+   "text": "Differentiate between paramagnetic, diamagnetic and ferromagnetic materials with reference to the domain theory.",
+   "finalAnswer": "Paramagnetic materials are weakly attracted, diamagnetic materials are weakly repelled, and ferromagnetic materials are strongly attracted because many domains can align in the field.",
+   "marks": 5,
+   "source": "Comprehensive 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "paramagnetic",
+       "weakly",
+       "attracted"
+      ]
+     ],
+     "marks": 1,
+     "why": "This gives the magnetic response of paramagnetic materials.",
+     "description": "Describe paramagnetic materials.",
+     "how": "State that they are weakly attracted by a magnetic field."
+    },
+    {
+     "accept": [
+      [
+       "diamagnetic",
+       "weakly",
+       "repelled"
+      ]
+     ],
+     "marks": 1,
+     "why": "This gives the contrasting response of diamagnetic materials.",
+     "description": "Describe diamagnetic materials.",
+     "how": "State that they are weakly repelled by a magnetic field."
+    },
+    {
+     "accept": [
+      [
+       "ferromagnetic",
+       "strongly",
+       "attracted"
+      ]
+     ],
+     "marks": 1,
+     "why": "Ferromagnetic materials are distinguished by their strong attraction.",
+     "description": "Describe ferromagnetic materials.",
+     "how": "State that they are strongly attracted by a magnetic field."
+    },
+    {
+     "accept": [
+      [
+       "domains",
+       "align"
+      ],
+      [
+       "domains",
+       "same",
+       "direction"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question specifically requires an explanation using domain theory.",
+     "description": "Explain the difference using domains.",
+     "how": "Explain that in ferromagnetic materials many domains can line up in the applied field; weaker materials show much weaker domain alignment or response."
+    }
+   ],
+   "modelAnswer": [
+    "Paramagnetic materials are weakly attracted by a magnetic field.",
+    "Diamagnetic materials are weakly repelled by a magnetic field.",
+    "Ferromagnetic materials are strongly attracted by a magnetic field.",
+    "In a ferromagnetic material, many magnetic domains can align in the same direction under the influence of a magnetic field.",
+    "This strong domain alignment produces a much stronger magnetic effect than in paramagnetic or diamagnetic materials."
+   ]
+  },
+  {
+   "text": "Why ferromagnetic materials are suitable for making magnets?",
+   "finalAnswer": "Ferromagnetic materials are suitable for making magnets because their domains can align strongly, giving a large magnetic effect, and suitable materials can retain magnetism.",
+   "marks": 4,
+   "source": "Comprehensive 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ferromagnetic",
+       "domains"
+      ],
+      [
+       "magnetic",
+       "domains"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation should refer to the domains in ferromagnetic materials.",
+     "description": "Identify the domain basis.",
+     "how": "Mention that ferromagnetic materials contain magnetic domains."
+    },
+    {
+     "accept": [
+      [
+       "domains",
+       "align",
+       "same",
+       "direction"
+      ],
+      [
+       "domains",
+       "strongly",
+       "align"
+      ]
+     ],
+     "marks": 2,
+     "why": "Alignment of domains produces the material's magnetism.",
+     "description": "Explain how the domains respond.",
+     "how": "State that the domains can align in the same direction, creating a strong magnetic effect."
+    },
+    {
+     "accept": [
+      [
+       "retain",
+       "magnetism"
+      ],
+      [
+       "permanent",
+       "magnet"
+      ]
+     ],
+     "marks": 1,
+     "why": "A material used for a magnet should be able to retain magnetism when appropriate.",
+     "description": "Connect the property to making magnets.",
+     "how": "Mention that suitable ferromagnetic materials can retain magnetism."
+    }
+   ],
+   "modelAnswer": [
+    "Ferromagnetic materials contain magnetic domains.",
+    "Their domains can align in the same direction, producing a strong magnetic effect.",
+    "Suitable ferromagnetic materials can retain magnetism.",
+    "Therefore, they are suitable for making magnets."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Section A tests facts and diagrams: learn the direction of field lines, uses of magnets, magnetising methods and magnetic shielding.",
+   "For short answers, write a clear definition or contrast; do not give only an example when the question asks for a definition.",
+   "In constructed-response diagrams, label poles, current directions and parts such as the solenoid, steel bar or armature clearly.",
+   "For magnetic field diagrams, draw arrows and remember that outside a magnet the field goes from N to S.",
+   "For explanation questions, connect the observation to the principle—for example, repulsion is the sure test of a magnet.",
+   "The supplied exercise has no numerical questions or Section E. For its diagram questions, marks depend on correct labels and a brief explanation as well as the sketch."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what a known magnet can do to a magnetic material.",
+     "Attraction alone is not proof that the object is a magnet; test for repulsion."
+    ],
+    "accept": [
+     [
+      "repulsion",
+      "proves",
+      "magnet"
+     ],
+     [
+      "repelled",
+      "sure",
+      "test"
+     ]
+    ],
+    "question": "How can you identify whether an object is a magnet or a magnetic material?",
+    "solution": [
+     "Bring a known magnet near the object, testing both poles.",
+     "If one pole repels the object, the object is a magnet; repulsion is the sure test.",
+     "If the object is only attracted, it may be a magnetic material and is not proved to be a magnet."
+    ],
+    "answer": "Repulsion from a known magnet proves the object is a magnet; attraction alone does not."
+   },
+   {
+    "hints": [
+     "Compare the spacing of the magnetic lines.",
+     "Dense lines show a stronger field; widely spaced lines show a weaker field."
+    ],
+    "accept": [
+     [
+      "close",
+      "together",
+      "strong"
+     ],
+     [
+      "far",
+      "apart",
+      "weak"
+     ]
+    ],
+    "question": "Describe the strength of a magnetic field in terms of magnetic lines of force. Explain it by drawing a few diagrams for the fields as examples.",
+    "solution": [
+     "The strength of a magnetic field is shown by the spacing of its magnetic lines of force.",
+     "Where the lines are close together, the magnetic field is strong.",
+     "Where the lines are far apart, the magnetic field is weak.",
+     "Draw examples with close lines for a strong field and widely spaced lines for a weak field."
+    ],
+    "answer": "Close field lines show a strong field; widely spaced field lines show a weak field."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The question gives a known magnet as the test object.",
+     "text": "Given: an object of unknown type and a known magnet."
+    },
+    {
+     "why": "Repulsion distinguishes a magnet from an unmagnetised magnetic material.",
+     "text": "Test: bring each pole of the known magnet near the unknown object."
+    },
+    {
+     "why": "A magnetic material can be attracted, so attraction alone is not decisive.",
+     "text": "Observation: repulsion from one pole proves that the object is a magnet."
+    },
+    {
+     "why": "This states the correct conclusion and the alternative.",
+     "text": "Answer: repulsion proves the object is a magnet; attraction alone may mean it is only a magnetic material."
+    }
+   ],
+   "question": "How can you identify whether an object is a magnet or a magnetic material?",
+   "answer": "Use a known magnet and test for repulsion. Repulsion proves the object is a magnet; attraction alone does not."
+  },
+  "explain": [
+   {
+    "title": "Temporary and permanent magnets",
+    "body": "A temporary magnet loses most of its magnetism when the magnetising field is removed. A permanent magnet retains its magnetism."
+   },
+   {
+    "title": "Magnetic fields and field lines",
+    "body": "A magnetic field is the region around a magnet where magnetic effects can be detected. Magnetic lines of force represent the field's direction and shape. Outside a magnet, they go from north to south. Lines close together show a strong field; lines far apart show a weak field."
+   },
+   {
+    "title": "Making and storing magnets",
+    "body": "Stroking is a common way to magnetise a material. A current-carrying solenoid also produces a magnetic field. Keepers made of soft iron are placed across the poles when magnets are stored."
+   },
+   {
+    "title": "Magnetic materials and domains",
+    "body": "Magnetic domains are tiny regions in which atomic magnets are aligned in the same direction. Paramagnetic materials are weakly attracted, diamagnetic materials are weakly repelled, and ferromagnetic materials are strongly attracted."
+   },
+   {
+    "title": "Electromagnets and induction",
+    "body": "An electromagnet uses current in a coil to produce a magnetic field and can be switched on or off. A changing magnetic field can also induce electric current, such as when a magnet moves relative to a coil."
+   },
+   {
+    "title": "Magnets in devices",
+    "body": "Permanent magnets are used in devices such as loudspeakers. Electromagnets are useful in electric cranes and circuit breakers because their magnetic effect can be controlled by switching the current."
+   }
+  ],
+  "mistakes": [
+   "Do not say that magnetic field lines cross; they never cross.",
+   "Do not reverse the outside direction of field lines: they go from N to S.",
+   "Do not use attraction alone as proof that an object is a magnet; repulsion is the sure test.",
+   "Do not confuse a temporary magnet with a permanent magnet.",
+   "In diagrams, do not omit pole labels, field arrows or the current direction when they are requested.",
+   "Do not say that a stationary magnetic field necessarily produces current; the magnetic field through the coil must change."
+  ]
+ }
+}
