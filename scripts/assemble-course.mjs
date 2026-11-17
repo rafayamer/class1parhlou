@@ -33,6 +33,12 @@ const pools = new Map(); // unit number → examinable { mcqs, shorts, fours }
 const audit = [];
 // Past-paper question bank (past-papers.mjs).
 const pastPapers = existsSync(`${ROOT}/pastpapers.json`) ? JSON.parse(readFileSync(`${ROOT}/pastpapers.json`, "utf8")) : null;
+// A past-paper MCQ with a blank option can't be shown, and a question is listed once (the first copy kept).
+if (pastPapers) {
+  const once = (list) => { const seen = new Set(); return list.filter((q) => !seen.has(q.id) && seen.add(q.id)); };
+  pastPapers.mcqs = once((pastPapers.mcqs ?? []).filter((q) => q.options?.every((o) => String(o).trim())));
+  pastPapers.written = once(pastPapers.written ?? []);
+}
 const notes = [], quiz = [], written = [], blueprints = [], papers = [], readiness = [];
 
 /**
