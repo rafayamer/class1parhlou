@@ -16,7 +16,7 @@ import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAll, matchesAny, SYNTAX } from "./textmatch.mjs";
 import { isExcluded } from "./syllabus.mjs";
 import { S } from "./subject.mjs";
-const PHY = S.key === "physics";
+const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 // The latest official model paper: Mathematics 2027; Physics 2026 (the 2027 one is not published yet).
 const MODEL_TAG = PHY ? "Official model paper (2026)" : "Official model paper 2027";
 
@@ -105,7 +105,7 @@ console.log(`read ${raw.length} questions. $${costSoFar().toFixed(3)}`);
 const sections = bundle.subject.chapters.flatMap((c) => c.modules.map((m) => ({ id: m.id, unit: c.number, label: `${S.unitWord} ${c.number} · ${m.title}` })));
 const exampleSources = new Map();
 for (const c of bundle.subject.chapters) for (const m of c.modules) m.solutions.forEach((s, i) => exampleSources.set(`${c.number}|${s.source}`, { m, i, s }));
-const CLASSIFY = PHY ? `You map old Punjab board exam questions onto the NEW Class 9 Physics textbook (National Curriculum 2023).
+const CLASSIFY = PHY ? `You map old Punjab board exam questions onto the NEW Class 9 ${S.name} textbook (National Curriculum 2023).
 For each question: section = the new book's section that teaches it, exactly as written in the list, or "" if the new book does not
 teach it (e.g. gravitation, transfer of heat, anything not in the list). bookSource = the textbook exercise item or example it repeats
 or very closely resembles, exactly as in that section's list (e.g. "Numerical 2.3", "Short 1.4", "Example 3.2"), or "".

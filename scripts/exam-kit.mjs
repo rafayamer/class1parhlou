@@ -12,7 +12,7 @@ import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAll, matchesAny, SYNTAX } from "./textmatch.mjs";
 import { isExcluded } from "./syllabus.mjs";
 import { S } from "./subject.mjs";
-const PHY = S.key === "physics";
+const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 const IDP = S.idPrefix;
 
 const ROOT = S.root;

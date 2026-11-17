@@ -75,8 +75,10 @@ object PaperAssembler {
         return out
     }
 
-    /** The board pattern of a subject's paper (Mathematics 75 marks; Physics 60 marks). */
-    fun patternFor(subjectId: String): PaperBlueprint = if (subjectId.endsWith("-phy")) physicsPattern() else boardPattern()
+    /** The board pattern of a subject's paper (Mathematics 75 marks; Physics and Chemistry 60 marks: 12 MCQs, 15 of 24 shorts,
+     * 2 of 3 long questions of 9 marks). */
+    fun patternFor(subjectId: String): PaperBlueprint =
+        if (subjectId.endsWith("-phy") || subjectId.endsWith("-chem")) physicsPattern() else boardPattern()
 
     /** Physics 9 (PECTAA): 12 MCQs; three short-answer questions, 5 of 8 parts each (2 marks); 2 of 3 long questions,
      * each (a) 4 marks + (b) 5 marks = 9. 60 marks, 2 hours. */

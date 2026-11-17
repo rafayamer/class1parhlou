@@ -7,10 +7,11 @@ import { isExcluded } from "./syllabus.mjs";
 import { createHash } from "node:crypto";
 import { readdirSync } from "node:fs";
 import { S } from "./subject.mjs";
-const PHY = S.key === "physics";
+const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 const IDP = S.idPrefix;
-// A long question is two parts: Mathematics (a) 4 + (b) 4 = 8 marks; Physics (a) 4 + (b) 5 = 9 marks.
-const LONG = PHY ? { a: 4, b: 5, total: 9 } : { a: 4, b: 4, total: 8 };
+// A long question is two parts: Mathematics (a) 4 + (b) 4 = 8 marks; Physics (a) 4 + (b) 5 = 9; Chemistry (a) 5 + (b) 4 = 9.
+const LONG = S.long ?? (PHY ? { a: 4, b: 5, total: 9 } : { a: 4, b: 4, total: 8 });
+const poolOf = (marks) => (marks === 4 ? "fours" : "fives");
 const whyKey = (unit, s) => createHash("sha1").update(`${unit}|${s.kind}|${s.source}|${s.steps.join("\n")}`).digest("hex").slice(0, 16);
 
 const ROOT = S.root;
@@ -260,7 +261,10 @@ for (const u of units) {
   });
   const longs = [];
   if (LONG.b === 4) for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
-  else for (let i = 0; i < Math.min(fours.length, fives.length) && longs.length < 3; i++) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fives[i]));
+  else {
+    const [pa, pb] = LONG.a === 4 ? [fours, fives] : [fives, fours];
+    for (let i = 0; i < Math.min(pa.length, pb.length) && longs.length < 3; i++) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, pa[i], pb[i]));
+  }
   written.push(...longs.map((l) => ({ ...l, section: 0, number: 0 })));
   if (mcqs.length >= 5 && shorts.length >= 3) {
     const sections = [{ type: "MCQ", count: mcqs.length, attempt: mcqs.length, marksEach: 1, minutes: null }];
@@ -320,8 +324,8 @@ function boardPapers() {
           const list = pools.get(u)[key];
           return { w: list[(k + salt) % list.length], u };
         };
-        const a = partFrom(q.a ?? q.units, "fours", 0);
-        const b = partFrom(q.b ?? q.units, LONG.b === 4 ? "fours" : "fives", 1, q.units ? a?.u : undefined);
+        const a = partFrom(q.a ?? q.units, poolOf(LONG.a), 0);
+        const b = partFrom(q.b ?? q.units, poolOf(LONG.b), 1, q.units ? a?.u : undefined);
         if (!a || !b) { problems.push(`Q${q.q}: no ${a ? LONG.b : LONG.a}-mark question for part ${a ? "b" : "a"}`); continue; }
         qs.push(longOf(`${IDP}BP-${set}-Q${q.q}`, a.w, b.w));
       }

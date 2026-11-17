@@ -8,7 +8,7 @@ import { join } from "node:path";
 import { luna, costSoFar } from "./luna-budget.mjs";
 import { matchesAny, SYNTAX } from "./textmatch.mjs";
 import { S } from "./subject.mjs";
-const PHY = S.key === "physics";
+const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 
 const ROOT = S.root;
 const UNIT = Number(process.argv[2]);
@@ -68,13 +68,13 @@ function bookCounts(text) {
 }
 
 // ── 1. Inventory: every example, exercise part and MCQ, verbatim ──────────────────────────────────────────
-const INVENTORY = PHY ? `You list EVERYTHING in one section of a Pakistani Class 9 Physics textbook (Punjab, National Curriculum 2023), copying the book's words exactly.
+const INVENTORY = PHY ? `You list EVERYTHING in one section of a Pakistani Class 9 ${S.name} textbook (Punjab, National Curriculum 2023), copying the book's words exactly.
 - examples: EVERY worked example (each block starting "EXAMPLE n.m:"), label "Example n.m", with its question, the BOOK'S OWN solution copied as one
   line per step (given data, formula, substitution, result with unit) and its final answer with unit. Worked examples are NEVER exercise items.
 - exercise: ONLY items of the end-of-chapter exercise Sections B–E (if this text contains them): EVERY item and EVERY part separately
   ((a), (b), … each its own item). "question" must be complete on its own (the item's instruction plus the part).
-  "source": "Short n.m" (Section B), "CRQ n.m" (Section C), "Comprehensive n.m" (Section D), "Numerical n.m" (Section E), adding the part
-  letter when there are parts, e.g. "Numerical 1.3(a)".
+  "source": ${Object.entries(S.sectionKinds ?? {}).map(([k, v]) => `"${v} n.m" (Section ${k})`).join(", ")}, adding the part
+  letter when there are parts, e.g. "${S.sectionKinds?.E} 1.3(a)".
   bookAnswer: for numericals, the answer printed after the problem ("ANSWER:") for that part, exactly; else "".
   drawing: true if the answer needs a diagram, graph, circuit or table drawn.
 - mcqs: EVERY item of Section A, stem and options verbatim (without the option letters), source "MCQ n.m", answerIndex -1 (the book prints no key).
@@ -113,7 +113,7 @@ for (const [i, sec] of outline.sections.entries()) {
 }
 
 // ── 2. Solve every exercise item in the book's method ─────────────────────────────────────────────────────
-const SOLVE = PHY ? `You are a Class 9 physics teacher in Punjab writing model answers exactly the way the textbook teaches, so a student copying
+const SOLVE = PHY ? `You are a Class 9 ${S.short} teacher in Punjab writing model answers exactly the way the textbook teaches, so a student copying
 your answer earns full marks in the board exam.
 For a NUMERICAL: steps = "Given: …" (each quantity with its unit, converted to SI where needed), "Required: …", the formula, the substitution
 with units, the working, and the result; finalAnswer = the value WITH its unit, in the form the question asks (scientific notation, prefix,
@@ -130,8 +130,8 @@ For a proof, the steps are the proof and finalAnswer is the statement proved.
 accept = patterns that recognise a correct typed final answer (empty list for drawings and proofs).
 ${SYNTAX}`;
 const solveSchema = obj({ items: arr(obj({ id: str, steps: strs, finalAnswer: str, figure: str, accept: arr(strs) })) });
-const CHECK = PHY ? `You are an independent Class 9 physics examiner (Punjab board). For each item, answer it yourself without trusting the candidate, then judge:
-- candidateCorrect: the candidate's working and final answer are correct and complete physics (numericals: right formula, right substitution,
+const CHECK = PHY ? `You are an independent Class 9 ${S.short} examiner (Punjab board). For each item, answer it yourself without trusting the candidate, then judge:
+- candidateCorrect: the candidate's working and final answer are correct and complete ${S.short} (numericals: right formula, right substitution,
   right value AND unit; theory: every point is scientifically correct and the answer covers what the question asks, as the textbook teaches it).
 - matchesBook: the candidate's final answer agrees with the book's printed answer in value and unit (true when no book answer is given).
 ${S.checkRules}
@@ -190,7 +190,7 @@ for (let b = 0; b < bookMcqs.length; b += 15) {
 if (PHY) {
   for (let b = 0; b < bookMcqs.length; b += 15) {
     const batch = bookMcqs.slice(b, b + 15);
-    const out = await stage(`mcq2-${b / 15 + 1}`, () => structured("mcq_answers", `You are an independent Class 9 physics examiner. For each multiple-choice item, work out the correct option yourself (0-based correctIndex).`,
+    const out = await stage(`mcq2-${b / 15 + 1}`, () => structured("mcq_answers", `You are an independent Class 9 ${S.short} examiner. For each multiple-choice item, work out the correct option yourself (0-based correctIndex).`,
       JSON.stringify(batch.map(({ id, stem, options }) => ({ id, stem, options }))), obj({ items: arr(obj({ id: str, correctIndex: int })) }), 16000));
     for (const m of out.items) { const q = bookMcqs.find((x) => x.id === m.id); if (q) q.answerIndex = m.correctIndex; }
   }

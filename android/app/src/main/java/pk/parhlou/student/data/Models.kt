@@ -65,8 +65,8 @@ data class Chapter(
     val kit: ExamKit? = null,
 )
 
-/** How the book names its parts: Mathematics has units; Physics (ids "phy-…") has chapters. */
-val Chapter.word: String get() = if (id.startsWith("phy-")) "Chapter" else "Unit"
+/** How the book names its parts: Mathematics has units; the sciences (ids "phy-…", "chem-…") have chapters. */
+val Chapter.word: String get() = if (id.startsWith("phy-") || id.startsWith("chem-")) "Chapter" else "Unit"
 
 /** Everything a student needs to revise one unit for the board exam. */
 data class ExamKit(

@@ -72,7 +72,7 @@ in their practical notebook:
 - result: the conclusion in one or two sentences, with the value and unit when there is one.
 - precautions: 3–5 precautions for accurate, safe work.
 - viva: 4–6 short viva questions an examiner asks about this practical, each with a correct short answer.
-Use correct physics and SI units throughout. Never mention any book, website or publisher by name.`;
+Use correct ${S.short} and SI units throughout. Never mention any book, website or publisher by name.`;
 const buildSchema = obj({
   title: str, aim: str, apparatus: strs, diagram: str, procedure: strs,
   table: obj({ columns: strs, rows: arr(strs) }), calculation: strs, result: str, precautions: strs,

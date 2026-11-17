@@ -588,7 +588,7 @@ private fun WrittenAnswerCard(paperId: String, q: WrittenQuestion, label: String
         TextButton(enabled = enabled, onClick = { keys = !keys }, modifier = Modifier.heightIn(min = 48.dp).testTag("keys-${q.id}")) {
             Text(if (keys) "Hide ∑ symbols" else "∑ Maths symbols")
         }
-        if (keys && enabled) pk.parhlou.student.ui.components.MathKeyboard(shown, update, physics = paperId.contains("phy-"))
+        if (keys && enabled) pk.parhlou.student.ui.components.MathKeyboard(shown, update, physics = paperId.contains("phy-") || paperId.contains("chem-"))
         if (photos.isNotEmpty()) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) { photos.take(5).forEach { PhotoThumb(it) } }
             val scanned = photos.size - added

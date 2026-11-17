@@ -21,8 +21,8 @@ const add = (map, key, id) => { (map[key] ??= []).includes(id) || map[key].push(
 let unit = 0, ex = null, q = null, part = null, example = null;
 out.activity = {};
 // ── Physics: one exercise per chapter (Sections A–E, items "Q1.4."), examples "EXAMPLE 1.2:", activities ──────────────
-if (S.key === "physics") {
-  const KIND = { B: "Short", C: "CRQ", D: "Comprehensive", E: "Numerical" };
+if (S.science) {
+  const KIND = S.sectionKinds;
   let section = null, activity = null;
   for (let p = 1; p <= 260; p++) {
     const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
@@ -60,7 +60,7 @@ const qRecord = (answer) => {
   return perQuestion.get(k);
 };
 
-for (let p = 1; p <= (S.key === "physics" ? 0 : LAST); p++) {
+for (let p = 1; p <= (S.science ? 0 : LAST); p++) {
   const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
   if (!existsSync(f)) continue;
   const answer = p >= ANSWER_FROM;
@@ -106,7 +106,7 @@ for (const rec of perQuestion.values()) {
   if (rec.parts.length > 1 && rec.figs.length === rec.parts.length) rec.figs.forEach((id, i) => add(map, `${rec.base}|${rec.parts[i]}`, id));
   else rec.figs.forEach((id) => add(map, `${rec.base}|`, id));
 }
-if (S.key !== "physics") writeFileSync(join(ROOT, "figure-links.json"), JSON.stringify(out, null, 1));
+if (!S.science) writeFileSync(join(ROOT, "figure-links.json"), JSON.stringify(out, null, 1));
 // Descriptions travel with the images, for screen readers (TalkBack) in the app.
 // (One index for every subject: each run keeps the other subjects' entries.)
 const indexFile = "android/app/src/main/assets/figures/index.json";

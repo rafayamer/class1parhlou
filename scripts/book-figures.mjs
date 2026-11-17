@@ -20,7 +20,7 @@ const DPI = 220;
 const num = { type: "number" }, str = { type: "string" };
 const obj = (p) => ({ type: "object", additionalProperties: false, required: Object.keys(p), properties: p });
 const schema = obj({ figures: { type: "array", items: obj({ index: { type: "integer" }, found: { type: "boolean" }, x0: num, y0: num, x1: num, y1: num }) } });
-const PROMPT = `You locate figures (diagrams, graphs, ${S.key === "physics" ? "circuits, ray diagrams, force diagrams, apparatus, photographs" : "Venn diagrams, number lines, triangles, constructions"}, tables drawn as pictures) on one
+const PROMPT = `You locate figures (diagrams, graphs, ${S.key === "chemistry" ? "apparatus, molecular structures, particle diagrams, graphs, photographs" : S.key === "physics" ? "circuits, ray diagrams, force diagrams, apparatus, photographs" : "Venn diagrams, number lines, triangles, constructions"}, tables drawn as pictures) on one
 page of a Class 9 ${S.short} textbook. You get the page image and a numbered list of the figures on it, in reading order, each with a
 short description. For each, return its bounding box as fractions of the page width and height (x0,y0 = top-left, x1,y1 =
 bottom-right, 0..1), tight around the drawing including its labels but excluding body text and question numbers.
@@ -28,7 +28,7 @@ found = false if you cannot see it on the page.`;
 
 const pages = [];
 // (Physics: the first pages are the cover, title and contents; the figures that matter start with Chapter 1.)
-const FIRST = S.key === "physics" ? 5 : 1;
+const FIRST = S.science ? 5 : 1;
 for (let p = FIRST; p <= 288; p++) {
   const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
   if (!existsSync(f)) continue;

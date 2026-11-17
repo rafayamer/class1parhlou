@@ -6,7 +6,7 @@ import { S } from "./subject.mjs";
 const LOG = process.env.COST_LOG ?? `${S.root}/cost-log.jsonl`;
 mkdirSync(S.root, { recursive: true });
 export const PRICE = { input: 0.10, cachedInput: 0.01, output: 0.50 };
-export const CAP = Number(process.env.BUDGET_USD ?? (S.key === "physics" ? 15 : 10));
+export const CAP = Number(process.env.BUDGET_USD ?? (S.science ? 15 : 10));
 
 export function costOf(usage) {
   if (!usage) return 0;

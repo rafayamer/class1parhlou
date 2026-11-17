@@ -14,7 +14,7 @@ import { tmpdir } from "node:os";
 import { luna, costSoFar } from "./luna-budget.mjs";
 
 import { S } from "./subject.mjs";
-const PHY = S.key === "physics";
+const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 const IDP = S.idPrefix;
 const ROOT = S.root;
 // The audit can read a newer printing whose pages are shifted (Physics: the PECTAA printing has two syllabus pages first).
@@ -247,7 +247,7 @@ await pool(blocks.filter((b) => b.exItems.length || b.mcqs.length || b.exampleIt
 });
 
 // ── Steps: every exercise solution checked by an examiner; wrong ones re-solved and checked again ──────────────────
-const CHECK = PHY ? `You are an independent Class 9 physics examiner (Punjab board). For each item, answer it yourself, then judge the app's answer:
+const CHECK = PHY ? `You are an independent Class 9 ${S.short} examiner (Punjab board). For each item, answer it yourself, then judge the app's answer:
 ok = for a numerical: correct formula, substitution with units, every step follows, and the final value AND unit are right (and agree
 with bookAnswer when one is given, to 3 significant figures or as asked); for a theory question: every point is scientifically correct
 and the answer covers what is asked, as the textbook teaches it.` : `You are an independent Class 9 maths examiner (Punjab board). For each item, solve it yourself, then judge the app's working:
