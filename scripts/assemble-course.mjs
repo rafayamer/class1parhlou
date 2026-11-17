@@ -321,7 +321,7 @@ function boardPapers() {
         if (got) qs.push(...got); else problems.push(`Q${sq.q}: Unit ${unit} has too few 2-mark questions`);
       }
       const units = Object.keys(sq.perUnit).join(", ");
-      sections.push({ type: `Q${sq.q} Short questions (Units ${units})`, count: qs.length, attempt: sq.attempt, marksEach: 2, minutes: null });
+      sections.push({ type: `Q${sq.q} Short questions (${S.unitWord}s ${units})`, count: qs.length, attempt: sq.attempt, marksEach: 2, minutes: null });
       writtenOut.push(qs.map((w) => ({ ...w })));
     }
     for (const part of P.long) {

@@ -1,0 +1,421 @@
+{
+ "unit": 11,
+ "sections": [
+  {
+   "number": "11.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "11.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "11.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "11.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 11.1",
+     "question": "Define biostatistics.",
+     "steps": [
+      "Biostatistics is the branch of biology in which statistical methods are applied to biological data.",
+      "It helps in the collection, organization, presentation, analysis and interpretation of biological data."
+     ],
+     "answer": "Biostatistics applies statistical methods to biological data.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 11.2",
+     "question": "What is the median of a data set?",
+     "steps": [
+      "The median is the middle value of a data set when its values are arranged in ascending or descending order.",
+      "If the number of values is even, the median is the mean of the two middle values."
+     ],
+     "answer": "The median is the middle value of an ordered data set.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 11.3",
+     "question": "How is the mean calculated?",
+     "steps": [
+      "Add all the values in the data set.",
+      "Divide their sum by the total number of values.",
+      "Mean = sum of all values ÷ number of values."
+     ],
+     "answer": "The mean is calculated by dividing the sum of all values by the number of values.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 11.4",
+     "question": "What does the height of a bar in a bar chart represent?",
+     "steps": [
+      "The height of a bar represents the frequency or value of the category shown by that bar.",
+      "A taller bar represents a greater frequency or value."
+     ],
+     "answer": "The height of a bar represents the frequency or value of its category.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 11.5",
+     "question": "What is the mode of a data set?",
+     "steps": [
+      "The mode is the value that occurs most frequently in a data set."
+     ],
+     "answer": "The mode is the most frequently occurring value in a data set.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 11.1",
+     "question": "Explain the importance of biostatistics in the field of public health. Provide examples of how it is used to inform public health decisions.",
+     "steps": [
+      "Biostatistics is the application of statistical methods to biological and health-related data.",
+      "It helps public health workers collect, organize, present, analyse and interpret information about the health of a population.",
+      "It is used to measure the frequency and distribution of diseases, such as their incidence and prevalence, and to identify changes or patterns over time.",
+      "It helps identify possible risk factors by comparing health information from different groups of people.",
+      "It is used to assess whether public health programmes, treatments or preventive measures are effective.",
+      "The results help public health authorities make evidence-based decisions, set priorities and distribute health services and resources.",
+      "For example, health authorities can analyse reports of influenza cases from different areas to identify an outbreak and decide where to send vaccines and medical staff.",
+      "They can also compare infection rates before and after a vaccination campaign to assess whether the campaign has reduced disease."
+     ],
+     "answer": "Biostatistics analyses health data to identify disease patterns, evaluate health programmes and guide evidence-based public health decisions; for example, influenza case data can help locate outbreaks and direct vaccines and staff to the areas most in need.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 11.2",
+     "question": "Discuss the differences between mean, median, and mode. Include examples where each measure is most appropriate to use.",
+     "steps": [
+      "The mean is the arithmetic average of a set of values. It is calculated by adding all the values and dividing by the number of values.",
+      "Example: for 2, 3 and 4, mean = (2 + 3 + 4) ÷ 3 = 3.",
+      "The mean is most appropriate for numerical data that are fairly evenly distributed and do not contain extreme values, because extreme values can greatly affect it.",
+      "The median is the middle value when the data are arranged in order. If there is an even number of values, it is the mean of the two middle values.",
+      "Example: for 2, 3, 4 and 100, the median = (3 + 4) ÷ 2 = 3.5.",
+      "The median is most appropriate for skewed data or data with extreme values, such as household incomes, because it is less affected by unusually high or low values.",
+      "The mode is the value or category that occurs most often in a data set.",
+      "Example: in 1, 2, 2, 3, the mode is 2. For categories, the most frequently reported blood group is the mode.",
+      "The mode is most appropriate for identifying the most common value or category, especially when the data are categorical, such as the most popular fruit."
+     ],
+     "answer": "The mean is the arithmetic average, the median is the middle value in ordered data, and the mode is the most frequent value or category; use the mean for balanced numerical data, the median for data with extreme values, and the mode for the most common value or category.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 11.3",
+     "question": "Describe the steps involved in creating a bar chart using Excel. Include a discussion on how to customize the chart for better visualization and interpretation of data.",
+     "steps": [
+      "Enter the data in an Excel worksheet, placing category names in one column and their values in the next column; include headings for both columns.",
+      "Select the cells containing the headings and data so that Excel uses the headings as chart labels.",
+      "Choose the Insert tab on the ribbon.",
+      "In the Charts group, select Insert Column or Bar Chart, then choose the required bar-chart type, such as a clustered bar chart.",
+      "Check that the categories and values are shown in the correct direction; use Chart Design and Select Data or Switch Row/Column if necessary.",
+      "Add a descriptive chart title that states what the data show.",
+      "Add axis titles so the reader knows what each axis represents, and include units where appropriate.",
+      "Add data labels when exact values are useful, and choose a suitable scale for the value axis so the differences are clear and not misleading.",
+      "Use Chart Design or Format to select clear colours, readable fonts and an appropriate chart style; keep the design simple and avoid distracting effects.",
+      "Use a legend only when the chart contains more than one data series, and remove unnecessary gridlines or other clutter.",
+      "Check the finished chart for correct labels, scale and values; clear formatting makes comparisons easier and helps the reader interpret the data accurately."
+     ],
+     "answer": "Enter and select the labelled data, insert a bar chart from Excel’s Insert tab, then add a clear title and axis labels and use a suitable scale, readable colours and optional data labels to make comparisons easy and accurate.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 11.4",
+     "question": "Provide a detailed example of how to calculate the mean, median, and mode of a data set. Use the following data set for your calculations: 12, 15, 22, 8, 19, 25, 15.",
+     "steps": [
+      "Given: Data set = 12, 15, 22, 8, 19, 25, 15",
+      "Required: Mean, median, and mode",
+      "Mean = Sum of all observations ÷ Number of observations",
+      "Mean = (12 + 15 + 22 + 8 + 19 + 25 + 15) ÷ 7",
+      "Mean = 116 ÷ 7 = 16.571… ≈ 16.57",
+      "Arrange the data in ascending order: 8, 12, 15, 15, 19, 22, 25",
+      "Median = Middle value of the ordered data",
+      "There are 7 observations, so the middle value is the 4th value: Median = 15",
+      "Mode = Value that occurs most often",
+      "15 occurs twice, more often than any other value: Mode = 15"
+     ],
+     "answer": "Mean = 16.57; median = 15; mode = 15.",
+     "figure": "",
+     "accept": [
+      [
+       "16.57",
+       "15"
+      ],
+      [
+       "116/7",
+       "15"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 11.5",
+     "question": "You are given the following data set, create a bar chart to represent the number of different types of fruits sold at a market in one week:  \n• Apples: 30  \n• Bananas: 45  \n• Oranges: 20  \n• Grapes: 25  \n• Mangoes: 15  \nEnsure to label the axes and provide a title for the chart.",
+     "steps": [
+      "Draw and label the horizontal axis “Fruit type” and the vertical axis “Number sold”.",
+      "Write the title “Different Types of Fruits Sold in One Week” above the chart.",
+      "Choose a vertical scale of 1 cm = 5 fruits; mark the vertical axis from 0 to 50 at intervals of 5.",
+      "Draw equal-width bars with equal gaps: Apples 6 cm, Bananas 9 cm, Oranges 4 cm, Grapes 5 cm and Mangoes 3 cm high.",
+      "Label each bar along the horizontal axis and check that the heights represent the given numbers."
+     ],
+     "answer": "The bar chart shows Apples 30, Bananas 45, Oranges 20, Grapes 25 and Mangoes 15, with fruit type on the horizontal axis and number sold on the vertical axis.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": "",
+     "drawn": {
+      "kind": "bar",
+      "title": "Different Types of Fruits Sold in One Week",
+      "description": "Bar chart with fruit types on the horizontal axis and number sold on the vertical axis. Use a vertical scale of 1 cm = 5 fruits; draw bars of heights 6 cm, 9 cm, 4 cm, 5 cm and 3 cm, respectively.",
+      "functions": [],
+      "shade": null,
+      "xMin": -10,
+      "xMax": 10,
+      "yMin": 0,
+      "yMax": 50,
+      "points": [],
+      "segments": [],
+      "polygons": [],
+      "angles": [],
+      "circles": [],
+      "intervals": [],
+      "sets": [],
+      "both": [],
+      "outside": [],
+      "categories": [
+       "Apples",
+       "Bananas",
+       "Oranges",
+       "Grapes",
+       "Mangoes"
+      ],
+      "values": [
+       30,
+       45,
+       20,
+       25,
+       15
+      ],
+      "headers": [
+       "Fruit type",
+       "Number sold"
+      ],
+      "rows": [],
+      "forces": [],
+      "components": [],
+      "arrangement": "series"
+     }
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 11.1",
+     "stem": "What is the primary purpose of biostatistics?",
+     "options": [
+      "To analyse financial data",
+      "To apply statistical methods to biological sciences",
+      "To design engineering models",
+      "To study historical events"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Incorrect: financial data analysis is not the primary focus of biostatistics.",
+      "Correct: biostatistics applies statistical methods to biological and health-related sciences.",
+      "Incorrect: engineering models are not the primary subject of biostatistics.",
+      "Incorrect: studying historical events is the focus of history, not biostatistics."
+     ]
+    },
+    {
+     "source": "MCQ 11.2",
+     "stem": "In biostatistics, which method is used to predict future outcomes based on current data?",
+     "options": [
+      "Designing experiments",
+      "Drawing charts",
+      "Taking average",
+      "Analysing data"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Incorrect: designing experiments helps collect data but does not itself predict outcomes from current data.",
+      "Incorrect: drawing charts presents data visually but does not itself predict future outcomes.",
+      "Incorrect: taking an average summarizes data but does not generally predict future outcomes.",
+      "Correct: analysing data can reveal patterns and trends that are used to predict future outcomes."
+     ]
+    },
+    {
+     "source": "MCQ 11.3",
+     "stem": "Which of the following best describes the mean of a data set?",
+     "options": [
+      "The most frequently occurring value",
+      "The middle value when data is ordered",
+      "The sum of all values divided by the number of values",
+      "The difference between the highest and lowest values"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Incorrect: the most frequently occurring value is the mode.",
+      "Incorrect: the middle value after ordering the data is the median.",
+      "Correct: the mean is the sum of all values divided by the number of values.",
+      "Incorrect: the difference between the highest and lowest values is the range."
+     ]
+    },
+    {
+     "source": "MCQ 11.4",
+     "stem": "If the data set is 5, 8, 12, 15, 20, what is the median?",
+     "options": [
+      "8",
+      "12",
+      "15",
+      "20"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Incorrect: 8 is the second value, not the middle value in the ordered data set.",
+      "Correct: 12 is the middle value of the five ordered values.",
+      "Incorrect: 15 is the fourth value, not the middle value.",
+      "Incorrect: 20 is the largest value, not the middle value."
+     ]
+    },
+    {
+     "source": "MCQ 11.5",
+     "stem": "What is the mean of the data set: 7, 8, 9, 10, 11?",
+     "options": [
+      "7",
+      "8",
+      "9",
+      "10"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Incorrect: 7 is the smallest value, not the mean.",
+      "Incorrect: the values sum to 45, which divided by 5 gives 9, not 8.",
+      "Correct: the sum is 45 and 45 divided by 5 is 9.",
+      "Incorrect: 10 is one of the data values, but the mean is 9."
+     ]
+    },
+    {
+     "source": "MCQ 11.6",
+     "stem": "When the number of values in a data set is even, how is the median calculated?",
+     "options": [
+      "By choosing the middle value",
+      "By taking the average of the two middle values",
+      "By selecting the most frequent value",
+      "By adding all values and dividing by the total number of values"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Incorrect: with an even number of values there are two middle values, so one cannot simply choose a single middle value.",
+      "Correct: the median is the average of the two middle values after the data are ordered.",
+      "Incorrect: selecting the most frequent value gives the mode.",
+      "Incorrect: adding all values and dividing by their count gives the mean."
+     ]
+    },
+    {
+     "source": "MCQ 11.7",
+     "stem": "In a data set with values 3, 3, 6, 7, 8, 9, 9, what is the mode?",
+     "options": [
+      "3",
+      "6",
+      "7",
+      "Both 3 and 9"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "Incorrect: 3 occurs twice, which ties with 9 rather than making 3 the sole mode.",
+      "Incorrect: 6 occurs only once, so it is not a mode.",
+      "Incorrect: 7 occurs only once, so it is not a mode.",
+      "Correct: both 3 and 9 occur twice, more often than any other value."
+     ]
+    },
+    {
+     "source": "MCQ 11.8",
+     "stem": "If a data set has no repeated values, what is the mode?",
+     "options": [
+      "The highest value",
+      "The average of the data set",
+      "There is no mode",
+      "The median value"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Incorrect: the highest value is the maximum, not the mode.",
+      "Incorrect: the average of the data set is the mean, not the mode.",
+      "Correct: if no values repeat, no value occurs more often than the others, so there is no mode.",
+      "Incorrect: the median is the middle value, not the mode."
+     ]
+    },
+    {
+     "source": "MCQ 11.9",
+     "stem": "In a bar chart, what does the height or length of each bar represent?",
+     "options": [
+      "The total number of categories",
+      "The value of the corresponding category",
+      "The average of all values",
+      "The difference between the highest and lowest values"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Incorrect: the number of categories is represented by the set of bars, not by each bar’s height or length.",
+      "Correct: each bar’s height or length represents the value for its corresponding category.",
+      "Incorrect: the average of all values is not what each individual bar represents.",
+      "Incorrect: the difference between the highest and lowest values is the range, not the meaning of a bar’s height or length."
+     ]
+    },
+    {
+     "source": "MCQ 11.10",
+     "stem": "When constructing a bar chart, which axis usually represents the categories?",
+     "options": [
+      "Vertical axis (y-axis)",
+      "Horizontal axis (x-axis)",
+      "Both axes equally represent the categories",
+      "Neither axis represents the categories"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Incorrect: the vertical axis usually represents values or frequencies, not categories.",
+      "Correct: categories are usually listed along the horizontal x-axis in a bar chart.",
+      "Incorrect: the axes generally have different roles rather than equally representing categories.",
+      "Incorrect: one axis—usually the horizontal axis—represents the categories."
+     ]
+    }
+   ]
+  }
+ ]
+}

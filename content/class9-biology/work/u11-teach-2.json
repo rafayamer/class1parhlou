@@ -1,0 +1,595 @@
+{
+ "note": {
+  "explanation": "Mean, median, and mode describe the centre or most common value in a data set. Find the mean by adding all the values and dividing by how many there are. Find the median after arranging the values in order. Find the mode by checking which value occurs most often.",
+  "examples": [
+   "For 2, 4, 6, the mean is (2 + 4 + 6)/3 = 4.",
+   "For 2, 4, 6, the median is 4, and there is no mode because no value repeats."
+  ],
+  "checkAnswer": "The values in order are 2, 4, 8, 10. The two middle values are 4 and 8, so the median is (4 + 8)/2 = 6.",
+  "keywords": [
+   "mean",
+   "average",
+   "median",
+   "middle value",
+   "mode",
+   "frequency"
+  ],
+  "simple": "Mean is the sharing-out average, median is the middle after sorting, and mode is the value that occurs most often.",
+  "checkQuestion": "Find the median of 2, 10, 4, 8.",
+  "title": "Mean, Median, and Mode",
+  "steps": [
+   "For the mean, add all the data values and divide by the number of values.",
+   "For the median, arrange the values in ascending order.",
+   "If there are an odd number of values, take the middle value; if there are an even number, average the two middle values.",
+   "For the mode, count how often each value appears and choose the value or values with the highest frequency."
+  ],
+  "answer": "Mean = sum of all data points divided by number of data points; median = the middle value after ordering; mode = the most frequent value.",
+  "checkAccept": [
+   [
+    "6"
+   ],
+   [
+    "6.0"
+   ],
+   [
+    "median=6"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "10",
+    "12",
+    "14",
+    "16"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Find the mean of 8, 10, 14, and 16.",
+   "rationales": [
+    "Incorrect: the sum is 48, and 48 divided by 4 is not 10.",
+    "Correct: (8 + 10 + 14 + 16)/4 = 48/4 = 12.",
+    "Incorrect: 14 is one of the data values, but it is not their mean.",
+    "Incorrect: 16 is the greatest value, not the mean."
+   ]
+  },
+  {
+   "options": [
+    "5",
+    "7",
+    "9",
+    "11"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the median of 3, 5, 7, 9, 11?",
+   "rationales": [
+    "Incorrect: 5 is the second value, not the middle value.",
+    "Correct: the ordered set has five values, so its third value, 7, is the median.",
+    "Incorrect: 9 is the fourth value, not the middle value.",
+    "Incorrect: 11 is the greatest value, not the middle value."
+   ]
+  },
+  {
+   "options": [
+    "4",
+    "6",
+    "7",
+    "8"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Find the median of 4, 8, 6, 10.",
+   "rationales": [
+    "Incorrect: after ordering, 4 is the first value.",
+    "Incorrect: 6 is one of the middle values, but the median is their average.",
+    "Correct: the ordered values are 4, 6, 8, 10, so the median is (6 + 8)/2 = 7.",
+    "Incorrect: 8 is one of the middle values, but the median is their average."
+   ]
+  },
+  {
+   "options": [
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the mode of 2, 3, 3, 4, 5?",
+   "rationales": [
+    "Incorrect: 2 appears only once.",
+    "Correct: 3 appears twice, more often than any other value.",
+    "Incorrect: 4 appears only once.",
+    "Incorrect: 5 appears only once."
+   ]
+  },
+  {
+   "options": [
+    "There is no mode",
+    "2 and 4",
+    "2 only",
+    "4 only"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Identify the mode or modes of 2, 2, 4, 4, 7.",
+   "rationales": [
+    "Incorrect: 2 and 4 both occur more often than 7.",
+    "Correct: 2 and 4 each occur twice, the highest frequency, so both are modes.",
+    "Incorrect: 2 is a mode, but 4 also occurs twice.",
+    "Incorrect: 4 is a mode, but 2 also occurs twice."
+   ]
+  },
+  {
+   "options": [
+    "The smallest value",
+    "The largest value",
+    "The middle value after arranging the data",
+    "The value that occurs most often"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "Which description gives the mode of a data set?",
+   "rationales": [
+    "Incorrect: the smallest value is not necessarily the most frequent.",
+    "Incorrect: the largest value is not necessarily the most frequent.",
+    "Incorrect: this describes the median, not the mode.",
+    "Correct: the mode is the value that appears most frequently."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the median of a data set?",
+   "finalAnswer": "The median is the middle value of a data set when the values are arranged in ascending or descending order.",
+   "marks": 2,
+   "source": "Short 11.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "middle value"
+      ]
+     ],
+     "marks": 1,
+     "why": "The defining feature of the median is that it identifies a middle value.",
+     "description": "State that the median is the middle value.",
+     "how": "Write that the median gives the middle value."
+    },
+    {
+     "accept": [
+      [
+       "ascending"
+      ],
+      [
+       "descending"
+      ],
+      [
+       "order"
+      ]
+     ],
+     "marks": 1,
+     "why": "The data must be ordered to identify the middle value.",
+     "description": "Mention that the data values are arranged in order.",
+     "how": "Include ascending or descending order."
+    }
+   ],
+   "modelAnswer": [
+    "The median is the middle value of a data set when the values are arranged in ascending or descending order."
+   ]
+  },
+  {
+   "text": "How is the mean calculated?",
+   "finalAnswer": "Mean = Sum of All Data Points / Number of Data Points",
+   "marks": 2,
+   "source": "Short 11.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sum",
+       "data"
+      ],
+      [
+       "add"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mean calculation starts with the sum of the data values.",
+     "description": "Explain that all data values are added.",
+     "how": "State that the sum of all the values is found."
+    },
+    {
+     "accept": [
+      [
+       "divide",
+       "number"
+      ],
+      [
+       "sum",
+       "/",
+       "number"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by the number of values completes the mean calculation.",
+     "description": "Divide the sum by the number of data values.",
+     "how": "Give the full mean rule or formula."
+    }
+   ],
+   "modelAnswer": [
+    "Mean = Sum of All Data Points / Number of Data Points."
+   ]
+  },
+  {
+   "text": "What is the mode of a data set?",
+   "finalAnswer": "The mode is the value that appears most frequently in a data set.",
+   "marks": 2,
+   "source": "Short 11.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "value"
+      ]
+     ],
+     "marks": 1,
+     "why": "A mode is a value in the data set.",
+     "description": "Identify the mode as a value.",
+     "how": "State that the mode is a value in the data set."
+    },
+    {
+     "accept": [
+      [
+       "most",
+       "frequently"
+      ],
+      [
+       "most",
+       "often"
+      ],
+      [
+       "highest",
+       "frequency"
+      ]
+     ],
+     "marks": 1,
+     "why": "The defining feature of the mode is its highest frequency.",
+     "description": "State that the value occurs most often.",
+     "how": "Use the idea of most frequent or highest frequency."
+    }
+   ],
+   "modelAnswer": [
+    "The mode is the value that appears most frequently in a data set."
+   ]
+  },
+  {
+   "text": "Discuss the differences between mean, median, and mode. Include examples where each measure is most appropriate to use.",
+   "finalAnswer": "Mean is the sum of all values divided by the number of values; median is the middle value after ordering; mode is the value that appears most frequently. For 2, 4, 6, the mean and median are 4 and there is no mode. The median is useful when extreme values affect the mean, and the mode is useful for identifying the most common value.",
+   "marks": 5,
+   "source": "Long 11.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sum",
+       "divide"
+      ],
+      [
+       "average"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct description distinguishes the mean from the other measures.",
+     "description": "Define the mean.",
+     "how": "Say it is the sum divided by the number of values, or the average."
+    },
+    {
+     "accept": [
+      [
+       "middle",
+       "order"
+      ],
+      [
+       "median",
+       "middle"
+      ]
+     ],
+     "marks": 1,
+     "why": "The median is based on position after ordering.",
+     "description": "Define the median.",
+     "how": "Explain that it is the middle value after arranging the data."
+    },
+    {
+     "accept": [
+      [
+       "most",
+       "frequent"
+      ],
+      [
+       "most",
+       "often"
+      ],
+      [
+       "mode",
+       "frequency"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mode is identified by frequency rather than position or averaging.",
+     "description": "Define the mode.",
+     "how": "Explain that it is the value occurring most often."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "2",
+       "4",
+       "6"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example shows how the measures apply to actual data.",
+     "description": "Give a relevant data example and identify one or more measures.",
+     "how": "Use a data set and state a correct mean, median, or mode."
+    },
+    {
+     "accept": [
+      [
+       "mean",
+       "median",
+       "mode"
+      ],
+      [
+       "extreme",
+       "median",
+       "common",
+       "mode"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect the measures to appropriate uses.",
+     "description": "State when a measure is appropriate to use.",
+     "how": "For example, explain that the median is less affected by extreme values or that the mode identifies the most common value."
+    }
+   ],
+   "modelAnswer": [
+    "Mean = sum of all the values divided by the number of values.",
+    "Median = the middle value when the values are arranged in order.",
+    "Mode = the value that appears most frequently.",
+    "For 2, 4, 6, the mean is (2 + 4 + 6)/3 = 4, the median is 4, and there is no mode.",
+    "The median is useful when extreme values affect the mean; the mode is useful for finding the most common value."
+   ]
+  },
+  {
+   "text": "Provide a detailed example of how to calculate the mean, median, and mode of a data set. Use the following data set for your calculations: 12, 15, 22, 8, 19, 25, 15.",
+   "finalAnswer": "Mean = 116/7 ≈ 16.57; median = 15; mode = 15.",
+   "marks": 5,
+   "source": "Long 11.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "116"
+      ],
+      [
+       "12",
+       "15",
+       "22",
+       "8",
+       "19",
+       "25"
+      ]
+     ],
+     "marks": 1,
+     "why": "Adding the data values correctly is necessary for the mean.",
+     "description": "Find the sum of the data values.",
+     "how": "Show that their sum is 116."
+    },
+    {
+     "accept": [
+      [
+       "116/7"
+      ],
+      [
+       "16.57"
+      ],
+      [
+       "16.571~"
+      ]
+     ],
+     "marks": 1,
+     "why": "The mean is the sum divided by the number of data values.",
+     "description": "Calculate the mean.",
+     "how": "Divide 116 by 7 and give an appropriate decimal approximation."
+    },
+    {
+     "accept": [
+      [
+       "8",
+       "12",
+       "15",
+       "19",
+       "22",
+       "25"
+      ],
+      [
+       "ascending"
+      ]
+     ],
+     "marks": 1,
+     "why": "Ordering the data makes the median position clear.",
+     "description": "Arrange the data in ascending order.",
+     "how": "Show the ordered list: 8, 12, 15, 15, 19, 22, 25."
+    },
+    {
+     "accept": [
+      [
+       "15"
+      ]
+     ],
+     "marks": 1,
+     "why": "With seven values, the fourth value is the median.",
+     "description": "Identify the median.",
+     "how": "State that the middle value is 15."
+    },
+    {
+     "accept": [
+      [
+       "mode",
+       "15"
+      ],
+      [
+       "most",
+       "15"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must correctly identify the most frequent value.",
+     "description": "Give the mode as the final result.",
+     "how": "State that 15 occurs twice and is the mode."
+    }
+   ],
+   "modelAnswer": [
+    "Mean = (12 + 15 + 22 + 8 + 19 + 25 + 15)/7.",
+    "Mean = 116/7 ≈ 16.57.",
+    "Arrange the data in ascending order: 8, 12, 15, 15, 19, 22, 25.",
+    "There are 7 values, so the median is the value at position (7 + 1)/2 = 4.",
+    "Median = 15.",
+    "The value 15 appears twice, more frequently than any other value.",
+    "Mode = 15."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask you to define the median or mode, or state how to calculate the mean. Give the key definition or formula clearly.",
+   "A longer question may ask you to calculate all three measures from a data set. Show the sum and division for the mean, arrange the values before finding the median, and count frequencies for the mode.",
+   "For an even number of values, show the average of the two middle values when finding the median.",
+   "Write units in your final answer when the data has units, such as cm for heights."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First, count how many values are in the data set.",
+     "Add the values for the mean, arrange them for the median, and count repeats for the mode."
+    ],
+    "accept": [
+     [
+      "116/7",
+      "15",
+      "mode",
+      "15"
+     ],
+     [
+      "16.57",
+      "median",
+      "15",
+      "mode",
+      "15"
+     ],
+     [
+      "mean=116/7",
+      "median=15",
+      "mode=15"
+     ]
+    ],
+    "question": "Provide a detailed example of how to calculate the mean, median, and mode of a data set. Use the following data set for your calculations: 12, 15, 22, 8, 19, 25, 15.",
+    "solution": [
+     "Mean = (12 + 15 + 22 + 8 + 19 + 25 + 15)/7.",
+     "Mean = 116/7 ≈ 16.57.",
+     "Arrange the data in ascending order: 8, 12, 15, 15, 19, 22, 25.",
+     "There are 7 values, so the median is the value at position (7 + 1)/2 = 4.",
+     "Median = 15.",
+     "The value 15 appears twice, more frequently than any other value.",
+     "Mode = 15."
+    ],
+    "answer": "Mean = 116/7 ≈ 16.57; median = 15; mode = 15."
+   },
+   {
+    "hints": [
+     "Recall that the mean is another name for the average.",
+     "Add every data value, then divide the total by the number of data values."
+    ],
+    "accept": [
+     [
+      "sum",
+      "divide",
+      "number"
+     ],
+     [
+      "sum",
+      "/",
+      "number"
+     ],
+     [
+      "average"
+     ]
+    ],
+    "question": "How is the mean calculated?",
+    "solution": [
+     "Add all the data values to find their sum.",
+     "Divide the sum by the number of data values.",
+     "Mean = Sum of All Data Points / Number of Data Points."
+    ],
+    "answer": "Mean = Sum of All Data Points / Number of Data Points."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the data set whose average is required.",
+     "text": "Consider the following data set representing the heights (in cm) of five students:"
+    },
+    {
+     "why": "These are the five values to add together.",
+     "text": "150, 160, 165, 155, 170."
+    },
+    {
+     "why": "The mean is found by adding all five values and dividing by the number of values.",
+     "text": "Mean = (150 + 160 + 165 + 155 + 170) / 5 = 800 / 5 = 160"
+    },
+    {
+     "why": "This states the result in the units used for the heights.",
+     "text": "So, the mean height is 160 cm."
+    }
+   ],
+   "question": "Consider the following data set representing the heights (in cm) of five students:\n\n150, 160, 165, 155, 170.",
+   "answer": "So, the mean height is 160 cm."
+  },
+  "explain": [
+   {
+    "title": "Mean",
+    "body": "The mean, also known as the average, is the sum of all the values in a data set divided by the number of values. It represents the central value of a data set."
+   },
+   {
+    "title": "Median",
+    "body": "The median is the middle value of a data set when the values are arranged in ascending or descending order. If the number of values is odd, the median is the middle value. If the number of values is even, the median is the average of the two middle values."
+   },
+   {
+    "title": "Finding the median",
+    "body": "Arrange the data in ascending order first. For an odd number of values, use position (n + 1)/2. For an even number of values, average the values at positions n/2 and n/2 + 1."
+   },
+   {
+    "title": "Mode",
+    "body": "The mode is the value that appears most frequently in a data set. A data set may have one mode, more than one mode, or no mode at all."
+   },
+   {
+    "title": "Finding the mode",
+    "body": "Count the frequency of each value in the data set. The value with the highest frequency is the mode. If two or more values share the highest frequency, they are all modes; if every value occurs equally often, there is no mode."
+   }
+  ],
+  "mistakes": [
+   "Finding the median before arranging the values in order.",
+   "Choosing just one of the two middle values when the number of values is even; take their average instead.",
+   "Dividing the sum by the wrong number of values when calculating the mean.",
+   "Assuming a data set always has a mode; it can have more than one mode or no mode.",
+   "Giving a mode without checking which value has the highest frequency."
+  ]
+ }
+}

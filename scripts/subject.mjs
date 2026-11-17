@@ -159,6 +159,7 @@ Rules:
     answerKeyAtBack: false,
     backMatter: /^#{0,4}\s*(BIBLIOGRAPHY|GLOSSARY|INDEX)\s*$/im,
     writtenMarks: [2, 4, 5],
+    marksBrief: "2 for a short answer question, and 5 or 4 for a long question (5 when it asks for several points, a comparison or a labelled diagram; otherwise 4)",
     science: true,
     lessonFigures: true,
     long: { a: 5, b: 4, total: 9 },

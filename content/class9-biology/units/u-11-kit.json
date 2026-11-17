@@ -1,0 +1,103 @@
+{
+ "unit": 11,
+ "examinable": false,
+ "kit": {
+  "inExam": false,
+  "excluded": [],
+  "definitions": [
+   {
+    "term": "Biostatistics",
+    "text": "Biostatistics is a branch of statistics that applies statistical methods to biological sciences."
+   },
+   {
+    "term": "Mean",
+    "text": "The mean, also known as the average, is the sum of all the values in a data set divided by the number of values. It represents the central value of a data set."
+   },
+   {
+    "term": "Median",
+    "text": "The median is the middle value of a data set when the values are arranged in ascending or descending order. If the number of values is odd, the median is the middle value. If the number of values is even, the median is the average of the two middle values."
+   },
+   {
+    "term": "Mode",
+    "text": "The mode is the value that appears most frequently in a data set. A data set may have one mode, more than one mode, or no mode at all."
+   },
+   {
+    "term": "Bar chart",
+    "text": "A bar chart is a graphical representation of data using bars of different heights or lengths. It is used to compare the quantities of different categories."
+   },
+   {
+    "term": "Rules for calculating the median",
+    "text": "1. Arrange the data in ascending order.\n2. If the number of values (n) is odd, the median is the value at the position (n + 1)/2.\n3. If the number of values (n) is even, the median is the average of the values at positions (n/2) and (n/2 + 1)."
+   },
+   {
+    "term": "Rules for calculating the mode",
+    "text": "1. Count the frequency of each value in the data set.\n2. The value with the highest frequency is the mode."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "Mean = Sum of All Data Points ÷ Number of Data Points; x̄ = Σxᵢ ÷ n",
+    "use": "Use to find the mean. xᵢ and x̄ have the SI unit of the measured quantity (for example, m for length; counts are dimensionless); n is the number of data points (unitless)."
+   },
+   {
+    "formula": "Median position = (n + 1) ÷ 2",
+    "use": "Use to find the middle position when n is odd, after arranging values in order. n and the position are dimensionless; the median value has the same SI unit as the data."
+   },
+   {
+    "formula": "Median = (value at position n ÷ 2 + value at position (n ÷ 2 + 1)) ÷ 2",
+    "use": "Use to find the median when n is even, after arranging values in order. The two values and the median have the same SI unit as the data; n and positions are dimensionless."
+   }
+  ],
+  "important": [],
+  "fullMarks": [
+   "For a definition question, write the complete book definition, not just a keyword or example.",
+   "For a mean, show the sum of all values and the number of values, then divide and state the answer with the data's unit.",
+   "For a median, first show the data arranged in ascending or descending order. State whether n is odd or even, then show the middle position or the average of the two middle values.",
+   "For a mode, show or describe the frequencies and identify the value or values with the highest frequency. State clearly if there is no mode or more than one mode.",
+   "For a bar chart, include a clear title, labelled x- and y-axes, category names, values, and an even scale with equal intervals. Draw equal-width bars with even spaces between them.",
+   "When a question asks for comparison or explanation, name the measure or use first, then support it with the relevant data or example.",
+   "For numerical answers, show the formula, substitution, calculation and final answer. Keep the original data unit in the answer, or use SI units if the question requires them."
+  ],
+  "mistakes": [
+   "Finding the median before arranging the values. Fix: write the values in ascending order first.",
+   "For an even number of values, choosing one middle value instead of averaging the two. Fix: find both middle values and divide their sum by 2.",
+   "Dividing the sum by the wrong number when finding the mean. Fix: count the data points and show that count as the divisor.",
+   "Assuming every data set has exactly one mode. Fix: check frequencies; a data set can have more than one mode or no mode.",
+   "Drawing bars with unequal widths or no gaps. Fix: make the bars equal in width and space them evenly.",
+   "Leaving out the title, axis labels, scale or category names in a bar chart. Fix: check each chart feature before finishing.",
+   "Giving a numerical answer without its unit when the data has a unit. Fix: carry the data unit through the calculation and include it in the final answer."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define biostatistics.",
+    "answer": "Biostatistics is a branch of statistics that applies statistical methods to biological sciences."
+   },
+   {
+    "question": "What is the median of a data set?",
+    "answer": "The median is the middle value of a data set when the values are arranged in ascending or descending order. If the number of values is odd, the median is the middle value. If the number of values is even, the median is the average of the two middle values."
+   },
+   {
+    "question": "How is the mean calculated?",
+    "answer": "The mean, also known as the average, is the sum of all the values in a data set divided by the number of values."
+   },
+   {
+    "question": "What does the height of a bar in a bar chart represent?",
+    "answer": "For each category, draw a bar with a height corresponding to its value."
+   },
+   {
+    "question": "What is the mode of a data set?",
+    "answer": "The mode is the value that appears most frequently in a data set. A data set may have one mode, more than one mode, or no mode at all."
+   },
+   {
+    "question": "How do you find the mean of the data set 7, 8, 9, 10, 11?",
+    "answer": "Mean = (7 + 8 + 9 + 10 + 11) / 5 = 45 / 5 = 9. So, the mean is 9."
+   }
+  ]
+ },
+ "written": [],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 9,
+  "writtenBuilt": 0
+ }
+}

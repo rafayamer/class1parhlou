@@ -1,0 +1,511 @@
+{
+ "note": {
+  "explanation": "Nucleic acids are built from nucleotides. DNA stores hereditary information, while different types of RNA help use that information to make proteins.",
+  "examples": [
+   "A nucleotide contains a pentose sugar, a nitrogenous base and a phosphate group.",
+   "In DNA, adenine pairs with thymine; cytosine pairs with guanine."
+  ],
+  "checkAnswer": "Adenine pairs with thymine using two hydrogen bonds, and cytosine pairs with guanine using three hydrogen bonds.",
+  "keywords": [
+   "nucleotide",
+   "DNA",
+   "RNA",
+   "gene",
+   "base pairing",
+   "mRNA"
+  ],
+  "simple": "Think of DNA as information written in a sequence of bases. RNA helps carry and use that information so a protein can be made.",
+  "checkQuestion": "Which bases pair in DNA, and how many hydrogen bonds are between each pair?",
+  "title": "Nucleic Acids: DNA and RNA",
+  "steps": [
+   "A nucleotide has a pentose sugar, a nitrogenous base and a phosphate group.",
+   "DNA has deoxyribose and the bases A, T, C and G.",
+   "RNA has ribose and the bases A, U, C and G.",
+   "mRNA carries information, tRNA transfers amino acids and rRNA forms part of ribosomes."
+  ],
+  "answer": "Nucleic acids are made of nucleotides. DNA carries hereditary information, and RNA helps with protein synthesis.",
+  "checkAccept": [
+   [
+    "adenine",
+    "thymine",
+    "cytosine",
+    "guanine",
+    "2",
+    "3"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Ribose",
+    "Deoxyribose",
+    "Glucose",
+    "Fructose"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which pentose sugar is found in a DNA nucleotide?",
+   "rationales": [
+    "Ribose is the pentose sugar in RNA, not DNA.",
+    "Deoxyribose is the pentose sugar in DNA nucleotides.",
+    "Glucose is a simple sugar, not the pentose sugar named for DNA.",
+    "Fructose is a simple sugar, not the pentose sugar named for DNA."
+   ]
+  },
+  {
+   "options": [
+    "Adenine and uracil",
+    "Adenine and thymine",
+    "Cytosine and thymine",
+    "Guanine and adenine"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which pair of bases forms two hydrogen bonds in DNA?",
+   "rationales": [
+    "Uracil is an RNA base; this is not the DNA pair described in the section.",
+    "Adenine pairs with thymine, and this pair has two hydrogen bonds.",
+    "Cytosine pairs with guanine, not thymine.",
+    "Guanine pairs with cytosine, not adenine."
+   ]
+  },
+  {
+   "options": [
+    "It is a segment of DNA whose nucleotide sequence determines the synthesis of a protein.",
+    "It is a nucleotide that contains ribose.",
+    "It is the structure that transfers amino acids to ribosomes.",
+    "It is a pair of bases joined by hydrogen bonds."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which description best defines a gene?",
+   "rationales": [
+    "A gene is a segment of DNA whose sequence determines the synthesis of a protein.",
+    "A ribose-containing nucleotide is a ribonucleotide, not a gene.",
+    "Transferring amino acids to ribosomes is the function of tRNA.",
+    "A pair of bases is part of DNA structure, but it is not the definition of a gene."
+   ]
+  },
+  {
+   "options": [
+    "It is single-stranded and contains ribose.",
+    "It is double-stranded and contains deoxyribose.",
+    "It is single-stranded and contains deoxyribose.",
+    "It is double-stranded and contains ribose."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes RNA?",
+   "rationales": [
+    "RNA is single-stranded, and its ribonucleotides contain ribose.",
+    "This describes the sugar of DNA, and DNA is a double helix.",
+    "RNA is single-stranded, but its sugar is ribose rather than deoxyribose.",
+    "RNA is single-stranded, not double-stranded."
+   ]
+  },
+  {
+   "options": [
+    "mRNA",
+    "tRNA",
+    "rRNA",
+    "DNA"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which type of RNA transfers specific amino acids to ribosomes?",
+   "rationales": [
+    "mRNA carries genetic information from DNA to ribosomes.",
+    "tRNA transfers specific amino acids to ribosomes.",
+    "rRNA forms structural and functional components of ribosomes.",
+    "DNA contains hereditary information; it is not one of the three types of RNA."
+   ]
+  },
+  {
+   "options": [
+    "A–T and C–G",
+    "A–C and T–G",
+    "A–G and T–C",
+    "A–U and C–G"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which shows the specific base pairing in DNA?",
+   "rationales": [
+    "In DNA, adenine pairs with thymine and cytosine pairs with guanine.",
+    "These are not the specific base pairs described for DNA.",
+    "These are not the specific base pairs described for DNA.",
+    "Uracil is found in RNA rather than DNA."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are the types of RNA? Write their functions.",
+   "finalAnswer": "There are three types of RNA: mRNA carries genetic information from DNA to the ribosomes during protein synthesis; tRNA transfers specific amino acids to the ribosomes, ensuring the correct sequence during protein synthesis; rRNA constitutes the structural and functional components of ribosomes.",
+   "marks": 2,
+   "source": "Short 6.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "mRNA",
+       "tRNA",
+       "rRNA"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Naming all three types shows that the student knows the classification of RNA.",
+     "description": "Name the three types of RNA.",
+     "how": "Write mRNA, tRNA and rRNA."
+    },
+    {
+     "accept": [
+      [
+       "genetic information",
+       "ribosomes"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "This identifies the role of mRNA in carrying information to the site of protein synthesis.",
+     "description": "Give the function of mRNA.",
+     "how": "State that mRNA carries genetic information from DNA to ribosomes."
+    },
+    {
+     "accept": [
+      [
+       "amino acid",
+       "ribosomes"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "This identifies how tRNA helps supply amino acids for protein synthesis.",
+     "description": "Give the function of tRNA.",
+     "how": "State that tRNA transfers specific amino acids to ribosomes."
+    },
+    {
+     "accept": [
+      [
+       "rRNA",
+       "structural",
+       "functional",
+       "ribosomes"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "This gives the role of rRNA as part of ribosomes.",
+     "description": "Give the function of rRNA.",
+     "how": "State that rRNA forms structural and functional components of ribosomes."
+    }
+   ],
+   "modelAnswer": [
+    "There are three types of RNA: messenger RNA (mRNA), transfer RNA (tRNA) and ribosomal RNA (rRNA).",
+    "mRNA carries the genetic information from DNA to the ribosomes during protein synthesis.",
+    "tRNA transfers specific amino acids to the ribosomes, ensuring the correct sequence during protein synthesis.",
+    "rRNA constitutes the structural and functional components of ribosomes, the cellular machinery for protein synthesis."
+   ]
+  },
+  {
+   "text": "Briefly describe the function of DNA.",
+   "finalAnswer": "DNA contains hereditary information in the form of a sequence of nucleotides. This sequence determines the order of amino acids during protein synthesis. DNA is passed from one generation to the next and carries hereditary information to the next generation.",
+   "marks": 2,
+   "source": "Short 6.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hereditary information",
+       "sequence of nucleotides"
+      ],
+      [
+       "hereditary information",
+       "nucleotide sequence"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states what DNA contains and how its information is arranged.",
+     "description": "State that DNA contains hereditary information in a nucleotide sequence.",
+     "how": "Mention hereditary information and its sequence of nucleotides."
+    },
+    {
+     "accept": [
+      [
+       "order of amino acids",
+       "protein synthesis"
+      ],
+      [
+       "next generation",
+       "hereditary information"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how DNA information is used or passed on.",
+     "description": "Explain the role of DNA information in protein synthesis or inheritance.",
+     "how": "State that the sequence determines amino-acid order during protein synthesis, or that DNA passes hereditary information to the next generation."
+    }
+   ],
+   "modelAnswer": [
+    "DNA contains the hereditary information in the form of a sequence of nucleotides.",
+    "This sequence determines the order of amino acids during protein synthesis.",
+    "During reproduction, DNA is passed from one generation to the next and carries hereditary information to the next generation."
+   ]
+  },
+  {
+   "text": "Explain the double helix structure of DNA, and discuss the base pairing in this structure.",
+   "finalAnswer": "DNA is a double helix made of two strands of nucleotides coiled around each other. The nitrogenous bases of one strand form hydrogen bonds with the bases of the opposite strand. Adenine pairs with thymine using two hydrogen bonds, while cytosine pairs with guanine using three hydrogen bonds.",
+   "marks": 4,
+   "source": "Long 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "double helix",
+       "two strands"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies the overall structure and the number of DNA strands.",
+     "description": "Describe DNA as a double helix made of two nucleotide strands.",
+     "how": "State that DNA has two strands and is a double helix."
+    },
+    {
+     "accept": [
+      [
+       "coiled around each other"
+      ]
+     ],
+     "marks": 1,
+     "why": "This describes how the two strands are arranged.",
+     "description": "Explain the arrangement of the two strands.",
+     "how": "State that both strands are coiled around each other."
+    },
+    {
+     "accept": [
+      [
+       "adenine",
+       "thymine",
+       "cytosine",
+       "guanine",
+       "hydrogen bonds"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies the specific complementary base pairs and their bonding.",
+     "description": "Give the specific DNA base pairs.",
+     "how": "State that adenine pairs with thymine and cytosine pairs with guanine through hydrogen bonds."
+    },
+    {
+     "accept": [
+      [
+       "2",
+       "3"
+      ]
+     ],
+     "marks": 1,
+     "why": "The number of hydrogen bonds distinguishes the two base pairs.",
+     "description": "Give the number of hydrogen bonds in each pair.",
+     "how": "State two for A–T and three for C–G."
+    }
+   ],
+   "modelAnswer": [
+    "DNA is a double helix molecule made of two strands of nucleotides.",
+    "Both strands are coiled around each other.",
+    "The nitrogenous bases of one strand make hydrogen bonds with the nitrogenous bases of the opposite strand.",
+    "Adenine pairs with thymine, and there are two hydrogen bonds between them.",
+    "Cytosine pairs with guanine, and there are three hydrogen bonds between them."
+   ]
+  },
+  {
+   "text": "Explain how the information in DNA is converted to RNA and then to proteins.",
+   "finalAnswer": "DNA contains hereditary information in a sequence of nucleotides. This sequence determines the order of amino acids during protein synthesis. mRNA carries genetic information from DNA to the ribosomes. At the ribosomes, tRNA transfers specific amino acids, and their order forms a polypeptide chain, or protein.",
+   "marks": 4,
+   "source": "Long 6.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "DNA",
+       "sequence of nucleotides"
+      ],
+      [
+       "DNA",
+       "nucleotide sequence"
+      ]
+     ],
+     "marks": 1,
+     "why": "The DNA nucleotide sequence is the information that guides protein synthesis.",
+     "description": "State where the hereditary information is held.",
+     "how": "Explain that DNA contains information in a sequence of nucleotides."
+    },
+    {
+     "accept": [
+      [
+       "mRNA",
+       "genetic information",
+       "ribosomes"
+      ]
+     ],
+     "marks": 1,
+     "why": "This describes how genetic information is carried from DNA to the ribosomes.",
+     "description": "Explain the role of mRNA.",
+     "how": "State that mRNA carries genetic information from DNA to ribosomes."
+    },
+    {
+     "accept": [
+      [
+       "tRNA",
+       "amino acids",
+       "ribosomes"
+      ],
+      [
+       "tRNA",
+       "amino acid",
+       "ribosomes"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how amino acids are brought to the site of protein synthesis.",
+     "description": "Explain the role of tRNA.",
+     "how": "State that tRNA transfers specific amino acids to ribosomes."
+    },
+    {
+     "accept": [
+      [
+       "order of amino acids",
+       "polypeptide chain"
+      ],
+      [
+       "protein synthesis",
+       "polypeptide chain"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ordered amino acids form the protein product.",
+     "description": "Connect amino-acid order with the protein product.",
+     "how": "State that the sequence determines amino-acid order and that the amino acids form a polypeptide chain."
+    }
+   ],
+   "modelAnswer": [
+    "DNA contains hereditary information in the form of a sequence of nucleotides.",
+    "This sequence determines the order of amino acids during protein synthesis.",
+    "mRNA carries the genetic information from DNA to the ribosomes.",
+    "At the ribosomes, tRNA transfers specific amino acids, ensuring the correct sequence.",
+    "The amino-acid sequence forms a polypeptide chain, or protein."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the three types of RNA and their functions. Name each type and pair it with its correct function.",
+   "A short question may ask for the function of DNA. Include hereditary information, nucleotide sequence, protein synthesis or inheritance.",
+   "A long question on DNA structure can earn marks for the two coiled strands, hydrogen bonding, the correct base pairs and the number of bonds in each pair.",
+   "For a question on DNA information and protein synthesis, connect DNA sequence, mRNA, ribosomes, tRNA and amino-acid order."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "There are three types of RNA.",
+     "Match each type with its job: carrying information, transferring amino acids or forming part of ribosomes."
+    ],
+    "accept": [
+     [
+      "mRNA",
+      "genetic information",
+      "ribosomes",
+      "tRNA",
+      "amino acid",
+      "rRNA",
+      "structural",
+      "functional"
+     ]
+    ],
+    "question": "What are the types of RNA? Write their functions.",
+    "solution": [
+     "There are three types of RNA: messenger RNA (mRNA), transfer RNA (tRNA) and ribosomal RNA (rRNA).",
+     "mRNA carries the genetic information from DNA to the ribosomes during protein synthesis.",
+     "tRNA transfers specific amino acids to the ribosomes, ensuring the correct sequence during protein synthesis.",
+     "rRNA constitutes the structural and functional components of ribosomes, the cellular machinery for protein synthesis."
+    ],
+    "answer": "mRNA carries genetic information from DNA to ribosomes; tRNA transfers specific amino acids to ribosomes; rRNA forms structural and functional components of ribosomes."
+   },
+   {
+    "hints": [
+     "DNA stores hereditary information.",
+     "Mention its nucleotide sequence, how it helps determine amino-acid order, and how information passes to the next generation."
+    ],
+    "accept": [
+     [
+      "hereditary information",
+      "sequence of nucleotides",
+      "order of amino acids",
+      "next generation"
+     ],
+     [
+      "hereditary information",
+      "nucleotide sequence",
+      "protein synthesis",
+      "next generation"
+     ]
+    ],
+    "question": "Briefly describe the function of DNA.",
+    "solution": [
+     "DNA contains the hereditary information in the form of a sequence of nucleotides.",
+     "This sequence determines the order of amino acids during protein synthesis.",
+     "During reproduction, DNA is passed from one generation to the next and carries hereditary information to the next generation."
+    ],
+    "answer": "DNA contains hereditary information in a nucleotide sequence, determines amino-acid order during protein synthesis and passes hereditary information to the next generation."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The section states that DNA consists of two nucleotide strands.",
+     "text": "DNA is a double helix molecule. It is made of two strands of nucleotides."
+    },
+    {
+     "why": "This tells how the two strands are positioned in the double helix.",
+     "text": "Both strands are coiled around each other."
+    },
+    {
+     "why": "The bases on opposite strands are joined by hydrogen bonds.",
+     "text": "The nitrogenous bases of one strand make hydrogen bonds with the nitrogenous bases of the opposite strand."
+    },
+    {
+     "why": "These are the specific complementary base pairs in DNA.",
+     "text": "Adenine pairs with thymine; cytosine pairs with guanine."
+    },
+    {
+     "why": "The two pairs have different numbers of hydrogen bonds, an important detail to remember.",
+     "text": "There are two hydrogen bonds between adenine and thymine and three hydrogen bonds between cytosine and guanine."
+    }
+   ],
+   "question": "Explain the double helix structure of DNA and state its specific base pairs.",
+   "answer": "DNA has two nucleotide strands coiled around each other. The bases on opposite strands form hydrogen bonds: adenine pairs with thymine using two hydrogen bonds, and cytosine pairs with guanine using three."
+  },
+  "explain": [
+   {
+    "title": "Nucleotides are the units of nucleic acids",
+    "body": "Your textbook defines them this way: “Nucleic acids are the biomolecules that are composed of units called nucleotides. A nucleotide is made up of three components:” Those components are pentose sugar, nitrogenous base and phosphate group (PO₄)."
+   },
+   {
+    "title": "DNA has a double helix structure",
+    "body": "“DNA is made of deoxyribonucleotides (de-oxy-ribo-nucleotides).” Its sugar is deoxyribose, and its bases are adenine, thymine, cytosine and guanine. The two strands coil around each other. A pairs with T, while C pairs with G."
+   },
+   {
+    "title": "DNA carries hereditary information",
+    "body": "The nucleotide sequence in DNA determines the order of amino acids during protein synthesis. A segment of DNA that determines the synthesis of a protein is called a gene. DNA is also passed from one generation to the next."
+   },
+   {
+    "title": "RNA helps in protein synthesis",
+    "body": "“RNA is single-stranded. Its strand consists of ribonucleotides.” These contain ribose and may have adenine, uracil, cytosine or guanine. mRNA carries information to ribosomes, tRNA transfers amino acids, and rRNA forms structural and functional parts of ribosomes."
+   }
+  ],
+  "mistakes": [
+   "Do not mix up the sugars: DNA has deoxyribose, while RNA has ribose.",
+   "Do not write uracil as a DNA base; DNA has thymine, while RNA has uracil.",
+   "Do not reverse the DNA base pairs: A pairs with T, and C pairs with G.",
+   "Remember the bond counts: A–T has two hydrogen bonds; C–G has three.",
+   "Do not swap RNA functions: mRNA carries information, tRNA transfers amino acids and rRNA forms part of ribosomes."
+  ]
+ }
+}
