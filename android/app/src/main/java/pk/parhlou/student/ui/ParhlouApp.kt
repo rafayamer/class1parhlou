@@ -407,7 +407,7 @@ fun ParhlouApp(
                     val active = activeExam
                     if (active != null && blueprints.any { it.id == active }) scope.launch {
                         val onPaper = store.draft(desk.modeKey(active)).first() == "paper"
-                        nav.navigate(if (onPaper) "printed/$active" else "exam/$active?scan=true")
+                        withContext(Dispatchers.Main.immediate) { nav.navigate(if (onPaper) "printed/$active" else "exam/$active?scan=true") }
                     }
                     else nav.navigate(Routes.SCAN)
                 },
@@ -670,8 +670,10 @@ fun ParhlouApp(
                             val file = withContext(Dispatchers.IO) {
                                 runCatching { PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}.pdf"), b, paper, false, subjectNameOf(b.id)) }.getOrNull()
                             }
-                            nav.navigate("printed/${b.id}")
-                            if (file != null) shareFile(context, file, "application/pdf", "Print or open your paper") else pdfFailed(context)
+                            withContext(Dispatchers.Main.immediate) {
+                                nav.navigate("printed/${b.id}")
+                                if (file != null) shareFile(context, file, "application/pdf", "Print or open your paper") else pdfFailed(context)
+                            }
                         }
                     },
                 )

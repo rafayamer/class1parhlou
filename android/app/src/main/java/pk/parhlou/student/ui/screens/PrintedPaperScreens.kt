@@ -145,12 +145,9 @@ fun PrintedPaperScreen(
             Muted("2. Scan every page: the bubble sheet and all your answer pages, in any order. Write question numbers like \"Q2 (iii)\" or \"5 b)\" on your answers.")
             Muted("3. Ustaad reads your handwriting and you check what it read. Then it's marked step by step, like the board.")
         }
-        if (!readsHandwriting) {
-            Sheet {
-                Text("Needs the internet", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
-                Muted("Reading handwriting needs the internet. Connect and open this page again.")
-            }
-            return@ParhlouScreen
+        if (!readsHandwriting) Sheet(Modifier.testTag("needs-internet")) {
+            Text("Offline", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
+            Muted("You can scan your pages now. Ustaad needs the internet to read and mark them, so connect before you hand in.")
         }
         Sheet {
             Text(if (scanned == 0) "No pages scanned yet" else "$scanned page${if (scanned == 1) "" else "s"} scanned", style = MaterialTheme.typography.titleMedium)
@@ -172,7 +169,10 @@ fun PrintedPaperScreen(
                 Muted("Each page takes a few seconds. Keep the app open.")
             }
         }
-        if (pages == null && reading == null && running) {
+        if (pages == null && reading == null && running && !readsHandwriting && scanned > 0) {
+            Muted("Connect to the internet, then open this page again to hand in.")
+        }
+        if (pages == null && reading == null && running && (readsHandwriting || scanned == 0)) {
             // Handing in is always possible while the paper runs, even before (or without) scanning.
             BigButton(if (scanned == 0) "Hand in" else "Read my pages and hand in", modifier = Modifier.testTag("hand-in-printed"), onClick = {
                 if (scanned == 0) confirmBlank = true

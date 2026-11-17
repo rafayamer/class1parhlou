@@ -142,6 +142,36 @@ class ScreenshotTest {
         save("10-calendar-$mode")
     }
 
+    /** A paper sat on paper: the running start screen, the scan-and-hand-in desk, the locked Ustaad, then in-app with the keyboard. */
+    @Test fun paperFlowLight() {
+        assumeTrue(dir != null)
+        val store = LocalStore(ApplicationProvider.getApplicationContext())
+        runBlocking {
+            store.clearAll()
+            store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
+            store.setReadinessPassed(true)
+        }
+        rule.setContent { ParhlouTheme(dark = false) { ParhlouApp(FakeRepository(), store) } }
+        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.onNodeWithTag("tab-tests").performClick()
+        rule.waitUntil(3_000) { exists("Make a paper") }
+        rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Before you start") }
+        rule.onNodeWithTag("start-on-paper").performScrollTo().performClick()
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("printed-clock")).fetchSemanticsNodes().isNotEmpty() }
+        save("20-printed-desk")
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.waitUntil(3_000) { exists("Before you start") }
+        save("21-start-running")
+        rule.onNodeWithTag("quit-paper").performScrollTo().performClick()
+        save("22-quit-dialog")
+        rule.onNodeWithTag("quit-confirm").performClick()
+        rule.waitUntil(5_000) { exists("Assalam-o-Alaikum") }
+        save("23-ustaad-after-quit")
+    }
+
     @Test fun moreLight() = shootMore(false)
     @Test fun moreDark() = shootMore(true)
 
