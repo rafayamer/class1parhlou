@@ -1,0 +1,255 @@
+{
+ "exercise": [
+  {
+   "source": "Short 2.1",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "What is the primary purpose of the ASCII encoding scheme?"
+  },
+  {
+   "source": "Short 2.2",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Explain the difference between ASCII and Unicode."
+  },
+  {
+   "source": "Short 2.3",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "How does Unicode handle characters from different languages?"
+  },
+  {
+   "source": "Short 2.4",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "What is the range of values for an unsigned 2-byte integer?"
+  },
+  {
+   "source": "Short 2.5",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Explain how a negative integer is represented in binary."
+  },
+  {
+   "source": "Short 2.6",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "What is the benefit of using unsigned integers?"
+  },
+  {
+   "source": "Short 2.7",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "How does the number of bits affect the range of integer values?"
+  },
+  {
+   "source": "Short 2.8",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Why are whole numbers commonly used in computing for quantities that cannot be negative?"
+  },
+  {
+   "source": "Short 2.9",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "How is the range of floating-point numbers calculated for single precision?"
+  },
+  {
+   "source": "Short 2.10",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Why is it important to understand the limitations of floating-point representation in scientific computing?"
+  },
+  {
+   "source": "Long 2.1",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points."
+  },
+  {
+   "source": "Long 2.2",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Describe in detail how integers are stored in computer memory."
+  },
+  {
+   "source": "Long 2.3",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and negative integers."
+  },
+  {
+   "source": "Long 2.4(a)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Perform the following binary arithmetic operations: Multiplication of 101₂ by 11₂."
+  },
+  {
+   "source": "Long 2.4(b)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Perform the following binary arithmetic operations: Division of 1100₂ by 10₂."
+  },
+  {
+   "source": "Long 2.6(a)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Add the following binary numbers:\n  101₂\n+ 110₂"
+  },
+  {
+   "source": "Long 2.6(b)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Add the following binary numbers:\n 1100₂\n+1011₂"
+  },
+  {
+   "source": "Long 2.7(a)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Convert the following numbers to 4-bit binary and add them: 7 + (-4)"
+  },
+  {
+   "source": "Long 2.7(b)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Convert the following numbers to 4-bit binary and add them: -5 + 3"
+  },
+  {
+   "source": "Long 2.8(a)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Solve the following: 1101₂ - 0100₂"
+  },
+  {
+   "source": "Long 2.8(b)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Solve the following: 1010₂ - 0011₂"
+  },
+  {
+   "source": "Long 2.8(c)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Solve the following: 1000₂ - 0110₂"
+  },
+  {
+   "source": "Long 2.8(d)",
+   "bookAnswer": "",
+   "drawing": false,
+   "question": "Solve the following: 1110₂ - 100₂"
+  }
+ ],
+ "examples": [],
+ "mcqs": [
+  {
+   "options": [
+    "American Standard Code for Information Interchange",
+    "Advanced Standard Code for Information Interchange",
+    "American Standard Communication for Information Interchange",
+    "Advanced Standard Communication for Information Interchange"
+   ],
+   "source": "MCQ 2.1",
+   "stem": "What does ASCII stand for?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "1101102",
+    "11011",
+    "110.11",
+    "1101A"
+   ],
+   "source": "MCQ 2.2",
+   "stem": "Which of the following numbers is a valid binary number?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "7 bits",
+    "8 bits",
+    "16 bits",
+    "32 bits"
+   ],
+   "source": "MCQ 2.3",
+   "stem": "How many bits are used in the standard ASCII encoding?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "It uses fewer bits per character",
+    "It can represent characters from many different languages",
+    "It is backward compatible with binary",
+    "It is specific to the English language"
+   ],
+   "source": "MCQ 2.4",
+   "stem": "Which of the following is a key advantage of Unicode over ASCII?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "1 byte",
+    "2 bytes",
+    "4 bytes",
+    "8 bytes"
+   ],
+   "source": "MCQ 2.5",
+   "stem": "How many bytes are used to store a typical integer?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "Unsigned integers cannot be negative",
+    "Signed integers have a larger range",
+    "Unsigned integers are stored in floating-point format",
+    "Signed integers are only used for positive numbers"
+   ],
+   "source": "MCQ 2.6",
+   "stem": "What is the primary difference between signed and unsigned integers?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "23 bits",
+    "8 bits",
+    "11 bits",
+    "52 bits"
+   ],
+   "source": "MCQ 2.7",
+   "stem": "In the single precision, how many bits are used for the exponent?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "1.4 x 10⁻⁴⁵ to 3.4 x 10³⁸",
+    "1.4 x 10⁻³⁸ to 3.4 x 10⁴⁵",
+    "4.9 x 10⁻³²⁴ to 1.8 x 10³⁰⁸",
+    "4.9 x 10⁻³⁰⁸ to 1.8 x 10³²⁴"
+   ],
+   "source": "MCQ 2.8",
+   "stem": "What is the approximate range of values for single-precision floating-point numbers?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "Pixels",
+    "Bits",
+    "Bytes",
+    "Nodes"
+   ],
+   "source": "MCQ 2.9",
+   "stem": "What are the tiny dots that make up an image called?",
+   "answerIndex": -1
+  },
+  {
+   "options": [
+    "Red, Green, Blue",
+    "Red, Gray, Black",
+    "Right, Green, Blue",
+    "Red, Green, Brown"
+   ],
+   "source": "MCQ 2.10",
+   "stem": "In an RGB color model, what does RGB stand for?",
+   "answerIndex": -1
+  }
+ ]
+}

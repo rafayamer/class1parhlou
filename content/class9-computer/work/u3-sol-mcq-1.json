@@ -1,0 +1,54 @@
+{
+ "items": [
+  {
+   "id": "3:0",
+   "correctIndex": 1,
+   "rationales": [
+    "A · B represents the AND operation, which is true only when both inputs are true.",
+    "A + B represents the OR operation, which is true when at least one input is true.",
+    "A̅ represents the NOT operation, which complements A.",
+    "A ⊕ B represents the XOR operation, which is true when the inputs differ."
+   ]
+  },
+  {
+   "id": "3:1",
+   "correctIndex": 0,
+   "rationales": [
+    "A + 1 = 1 is the dual, obtained by interchanging AND with OR and 0 with 1.",
+    "A + 0 = A is a valid identity, but it is not the dual of the given expression.",
+    "A · 1 = A is a valid identity, but it is not the dual of the given expression.",
+    "A · 0 = 0 is the original expression, not its dual."
+   ]
+  },
+  {
+   "id": "3:2",
+   "correctIndex": 1,
+   "rationales": [
+    "An OR gate outputs true when at least one input is true.",
+    "An AND gate outputs true only when both inputs are true.",
+    "An XOR gate outputs true when its inputs differ.",
+    "A NOT gate complements a single input rather than combining two inputs."
+   ]
+  },
+  {
+   "id": "3:3",
+   "correctIndex": 1,
+   "rationales": [
+    "XOR produces the sum bit in a half-adder, not the carry.",
+    "AND produces the carry bit in a half-adder because a carry occurs when both inputs are true.",
+    "OR does not produce the half-adder carry because it is true even when only one input is true.",
+    "NOT complements an input and does not generate the half-adder carry."
+   ]
+  },
+  {
+   "id": "3:4",
+   "correctIndex": 2,
+   "rationales": [
+    "1101₂ equals 13₁₀, not 11.",
+    "1101₂ equals 13₁₀, not 12.",
+    "1101₂ equals 8 + 4 + 1 = 13₁₀.",
+    "1101₂ equals 13₁₀, not 14."
+   ]
+  }
+ ]
+}

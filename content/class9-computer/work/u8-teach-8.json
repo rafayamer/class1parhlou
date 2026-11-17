@@ -1,0 +1,288 @@
+{
+ "note": {
+  "explanation": "Debugging helps you find and fix problems in code. Testing checks that a web page works correctly across browsers, devices, and for its users.",
+  "examples": [
+   "If a link does not open the intended page, check that its URL and file path are correct.",
+   "If a page looks different on a phone, use responsive design mode to check it at different screen sizes."
+  ],
+  "checkAnswer": "Use the browser console to view error messages and debug output.",
+  "keywords": [
+   "debugging",
+   "developer tools",
+   "console",
+   "broken links",
+   "cross-browser testing",
+   "responsive design",
+   "user testing"
+  ],
+  "simple": "Debugging is like finding and fixing a mistake. Testing is checking that the page works as expected.",
+  "checkQuestion": "Which browser tool can show error messages and debug output?",
+  "title": "Developing, Testing, and Debugging Web Pages",
+  "steps": [
+   "Open the browser developer tools and check the console for errors.",
+   "Read the error message carefully to understand the problem.",
+   "Check the code line by line for issues such as missing semicolons, unmatched braces, or incorrect variable names.",
+   "Check links, HTML tag structure, and CSS selectors when a page does not work or look right.",
+   "Test the page in different browsers and on different screen sizes.",
+   "Ask users to try the page and give feedback."
+  ],
+  "answer": "The browser console in the developer tools.",
+  "checkAccept": [
+   [
+    "console"
+   ],
+   [
+    "developer tools"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To display messages and values that help check what the code is doing",
+    "To automatically correct every error in the code",
+    "To change the page layout without CSS",
+    "To test a page on every device at once"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why might a developer use `console.log()` while debugging JavaScript?",
+   "rationales": [
+    "Correct: `console.log()` displays messages or values in the browser console, helping the developer inspect the code.",
+    "Incorrect: `console.log()` shows information but does not automatically fix errors.",
+    "Incorrect: Page layout is not changed by `console.log()`; CSS is used to style a page.",
+    "Incorrect: A console message does not test a page across devices."
+   ]
+  },
+  {
+   "options": [
+    "Ignore the message and reload the page repeatedly",
+    "Read the message carefully and use it to identify what went wrong",
+    "Delete all the HTML from the page",
+    "Change every CSS selector"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is a useful first step when a browser displays an error message?",
+   "rationales": [
+    "Incorrect: Reloading without investigating does not explain or fix the cause of the error.",
+    "Correct: The error message can help you understand what went wrong and how to fix it.",
+    "Incorrect: Deleting all the HTML is unnecessary and would remove the page content.",
+    "Incorrect: Changing every CSS selector is not a sensible response to an unspecified error."
+   ]
+  },
+  {
+   "options": [
+    "Check whether the URL or file path is correct",
+    "Add more headings to the page",
+    "Change the browser used by the visitor",
+    "Remove all links from the page"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A link on a web page does not open the intended destination. What should you check?",
+   "rationales": [
+    "Correct: The section advises checking that links point to the correct URLs and file paths.",
+    "Incorrect: Adding headings does not correct a link destination.",
+    "Incorrect: The visitor's browser is not the first thing to change when a link has a wrong path.",
+    "Incorrect: Removing every link avoids rather than fixes the broken link."
+   ]
+  },
+  {
+   "options": [
+    "Make sure HTML tags are properly nested and closed",
+    "Replace all HTML tags with CSS selectors",
+    "Remove the page's text",
+    "Use a different screen size"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which check can help fix an incorrect HTML structure?",
+   "rationales": [
+    "Correct: Properly nesting and closing tags helps ensure the HTML structure is correct.",
+    "Incorrect: CSS selectors do not replace HTML tags.",
+    "Incorrect: Removing text does not fix incorrectly structured tags.",
+    "Incorrect: A screen-size change does not correct the HTML structure."
+   ]
+  },
+  {
+   "options": [
+    "Cross-browser testing",
+    "User testing",
+    "Responsive design testing",
+    "Reading error messages"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which testing strategy checks whether a web page works consistently in Chrome, Firefox, and Edge?",
+   "rationales": [
+    "Correct: Cross-browser testing checks the page in different browsers.",
+    "Incorrect: User testing gathers feedback from people using the page.",
+    "Incorrect: Responsive design testing checks the page on different screen sizes and devices.",
+    "Incorrect: Reading error messages helps debug code, but it is not the strategy for comparing browsers."
+   ]
+  },
+  {
+   "options": [
+    "Responsive design testing",
+    "Cross-browser testing",
+    "User testing",
+    "Checking variable names"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which strategy checks how a page looks on desktops, tablets, and smartphones?",
+   "rationales": [
+    "Correct: Responsive design testing checks the page on different devices and screen sizes.",
+    "Incorrect: Cross-browser testing checks different browsers, not primarily different screen sizes.",
+    "Incorrect: User testing asks people to use the page and provide feedback.",
+    "Incorrect: Checking variable names is a code-checking technique, not a device-layout test."
+   ]
+  },
+  {
+   "options": [
+    "Ask friends or family to use the page and provide feedback",
+    "Check the page only in one browser",
+    "Change every variable name",
+    "Close the developer tools before testing"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is an example of user testing?",
+   "rationales": [
+    "Correct: User testing involves asking people to use the page and share feedback.",
+    "Incorrect: Testing in only one browser is not asking users to try the page.",
+    "Incorrect: Changing variable names does not gather user feedback.",
+    "Incorrect: Closing developer tools is not a user-testing strategy."
+   ]
+  },
+  {
+   "options": [
+    "Use the browser inspector to see how CSS is applied to elements",
+    "Use it to automatically write all JavaScript",
+    "Use it to replace the HTML document",
+    "Use it only to create hyperlinks"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What can the browser's inspector tool help you see?",
+   "rationales": [
+    "Correct: The section notes that the inspector can show how CSS is applied to elements.",
+    "Incorrect: The inspector is not described as a tool that automatically writes JavaScript.",
+    "Incorrect: The inspector does not replace the HTML document.",
+    "Incorrect: The inspector is not only for creating hyperlinks."
+   ]
+  }
+ ],
+ "written": [],
+ "lesson": {
+  "examTips": [
+   "This section has no matching questions in the supplied unit exercise, so no exercise item is included here.",
+   "For a board-style question about debugging, state what debugging means, then describe a relevant technique such as using the console, reading error messages, or checking code line by line.",
+   "For a question about testing, name the strategy and say what it checks: browsers, screen sizes and devices, or feedback from users.",
+   "For a problem-solving question, connect the symptom to a suitable fix—for example, check a link's URL if it is broken, or check tag nesting and closing if the HTML structure is incorrect."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with the browser's error messages.",
+     "Then inspect the code for syntax issues and check the page's links, HTML structure, or CSS, depending on the problem."
+    ],
+    "accept": [
+     [
+      "error message",
+      "code line by line"
+     ],
+     [
+      "console",
+      "links"
+     ]
+    ],
+    "question": "A web page does not work as expected. Describe two debugging steps you could use to find the problem.",
+    "solution": [
+     "Read the browser's error messages carefully to understand what went wrong.",
+     "Check the code line by line for common issues such as missing semicolons, unmatched braces, or incorrect variable names.",
+     "If the problem concerns a link, HTML structure, or styling, check the URL or file path, tag nesting and closing, or CSS selectors as appropriate."
+    ],
+    "answer": "Read the browser's error messages, then check the code line by line for common issues."
+   },
+   {
+    "hints": [
+     "Think about the different places people use web pages.",
+     "Name the three testing strategies and state what each one checks."
+    ],
+    "accept": [
+     [
+      "cross browser",
+      "responsive design",
+      "user testing"
+     ]
+    ],
+    "question": "Name three strategies for testing a web page and briefly state what each checks.",
+    "solution": [
+     "Cross-browser testing checks the page in different browsers, such as Chrome, Firefox, and Edge.",
+     "Responsive design testing checks how the page looks on different devices and screen sizes.",
+     "User testing asks people to use the page and provide feedback."
+    ],
+    "answer": "Cross-browser testing checks different browsers; responsive design testing checks devices and screen sizes; user testing collects feedback from people using the page."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This starts the script section containing the JavaScript debug code.",
+     "text": "<script>"
+    },
+    {
+     "why": "This prints a debug message in the browser console.",
+     "text": "    console.log(\"This is a debug message\");"
+    },
+    {
+     "why": "This gives the variable `x` the value 10 so it can be checked.",
+     "text": "    var x = 10;"
+    },
+    {
+     "why": "This prints a label followed by the current value of `x` in the console.",
+     "text": "    console.log(\"The value of x is: \" + x);"
+    },
+    {
+     "why": "This closes the script section in the HTML document.",
+     "text": "</script>"
+    }
+   ],
+   "question": "How can the browser console be used to display a debug message and check the value of a variable?",
+   "answer": "Use `console.log()` to display the debug message and the value of `x` in the browser console."
+  },
+  "explain": [
+   {
+    "title": "What debugging means",
+    "body": "Debugging is the process of finding and fixing issues in your code. It helps you find and fix errors so your web pages work correctly."
+   },
+   {
+    "title": "Use tools and messages to find errors",
+    "body": "Browser developer tools can show messages in the console and let you set break points to pause code and examine its behavior. Read error messages carefully because they can help explain what went wrong."
+   },
+   {
+    "title": "Check common code problems",
+    "body": "Go through your code line by line. Look for missing semicolons, unmatched braces, and incorrect variable names. Also check that links use the correct URLs or file paths, HTML tags are properly nested and closed, and CSS selectors have no typos."
+   },
+   {
+    "title": "Test pages for different users",
+    "body": "Cross-browser testing checks a page in browsers such as Chrome, Firefox, and Edge. Responsive design testing checks it on desktops, tablets, and smartphones. User testing asks people to try the page and provide feedback."
+   },
+   {
+    "title": "Inspect CSS",
+    "body": "The browser's inspector tool can show how CSS is applied to elements, which can help when investigating a styling problem."
+   }
+  ],
+  "mistakes": [
+   "Ignoring an error message instead of reading it carefully.",
+   "Checking only one line of code when the problem may be elsewhere.",
+   "Forgetting to check URLs or file paths when a link is broken.",
+   "Leaving HTML tags unclosed or nesting them incorrectly.",
+   "Assuming a CSS problem is fixed without checking selectors for typos.",
+   "Testing only in one browser or at one screen size.",
+   "Skipping user feedback, which may reveal issues you missed."
+  ]
+ }
+}

@@ -1,0 +1,524 @@
+{
+ "note": {
+  "explanation": "Data pre-processing gets data ready for analysis by checking its quality, finding problems, and cleaning or organizing it. Analysis then uses suitable methods to find useful information. Numerical data can be studied using measures such as the mean, median, mode, range, variance, and standard deviation. Non-numeric data can be studied using content analysis or thematic analysis.",
+  "examples": [
+   "If a score is recorded as 105 when the maximum is 100, it is an error that should be checked and corrected or removed.",
+   "For the scores 70, 80, 90, 100, and 110, the mean is 90."
+  ],
+  "checkAnswer": "Quantitative analysis deals with numbers and measurable data; qualitative analysis deals with non-numeric data such as text, images, and sounds.",
+  "keywords": [
+   "pre-processing",
+   "data cleaning",
+   "outlier",
+   "mean",
+   "median",
+   "variance",
+   "qualitative",
+   "thematic analysis"
+  ],
+  "simple": "First check and tidy the data. Then choose a suitable way to study it: use number methods for numeric data and look for words or themes in non-numeric data.",
+  "checkQuestion": "What type of analysis could help identify common themes in student essays?",
+  "title": "Preparing and Analysing Data",
+  "steps": [
+   "Check whether the data is accurate, complete, reliable, consistent, and up-to-date.",
+   "Identify errors, outliers, and possible biases.",
+   "Validate completeness and accuracy, then clean the data as needed.",
+   "Use quantitative methods for numbers and qualitative methods for non-numeric data.",
+   "Interpret the results to discover useful information and draw conclusions."
+  ],
+  "answer": "Thematic analysis.",
+  "checkAccept": [
+   [
+    "thematic analysis"
+   ],
+   [
+    "thematic"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Data cleaning",
+    "Data validation",
+    "Data collection",
+    "Data visualization"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Checking that every student has a recorded test score is an example of:",
+   "rationales": [
+    "Data cleaning fixes or handles data problems; it is not the check for completeness itself.",
+    "Correct: validating completeness means checking that no data is missing.",
+    "Data collection is gathering information, not checking whether collected information is complete.",
+    "Data visualization presents data visually; it does not check for missing scores."
+   ]
+  },
+  {
+   "options": [
+    "A score of 105 when the maximum is 100",
+    "A score of 75 when most scores are near 75",
+    "A score that appears most often",
+    "The middle score in ordered data"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which observation is an error because it lies outside the stated valid range?",
+   "rationales": [
+    "Correct: 105 exceeds the maximum allowed score of 100.",
+    "A score of 75 is not outside the valid range and may fit the pattern.",
+    "A value that occurs most often is the mode, not necessarily an error.",
+    "The middle value in ordered data is the median, not necessarily an error."
+   ]
+  },
+  {
+   "options": [
+    "The mean",
+    "The median",
+    "The mode",
+    "The range"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which measure of centre is usually less affected by an extremely high or low value?",
+   "rationales": [
+    "The mean can be pulled toward an extremely high or low value.",
+    "Correct: the median is useful when outliers could distort the mean.",
+    "The mode identifies the most frequent value; it is not the measure described here.",
+    "The range measures spread, not the centre."
+   ]
+  },
+  {
+   "options": [
+    "The difference between the highest and lowest values",
+    "The most frequent value",
+    "The middle value",
+    "The sum of all values divided by their number"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the range of a dataset measure?",
+   "rationales": [
+    "Correct: range equals the highest value minus the lowest value.",
+    "The most frequent value is the mode.",
+    "The middle value of ordered data is the median.",
+    "The sum divided by the number of values is the mean."
+   ]
+  },
+  {
+   "options": [
+    "Counting how often a word or theme appears in text",
+    "Finding the average of numerical scores",
+    "Measuring the spread of scores around the mean",
+    "Checking whether any scores are missing"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which action is an example of content analysis?",
+   "rationales": [
+    "Correct: content analysis counts how often particular words or themes appear in text.",
+    "Finding an average is a quantitative statistical method.",
+    "Measuring spread around the mean is a quantitative statistical method.",
+    "Checking for missing scores is data validation."
+   ]
+  },
+  {
+   "options": [
+    "Thematic analysis",
+    "Range analysis",
+    "Data validation",
+    "Mean analysis"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A researcher reads student essays to identify common ideas such as difficulty with mathematics. Which method is being used?",
+   "rationales": [
+    "Correct: thematic analysis identifies and interprets themes or patterns in qualitative data.",
+    "Range is a measure of spread for numerical values, not a method for interpreting essay themes.",
+    "Data validation checks completeness and accuracy, not common ideas in essays.",
+    "The mean is a numerical average and does not interpret essay themes."
+   ]
+  },
+  {
+   "options": [
+    "The mean is 4 and the sample variance is 4",
+    "The mean is 4 and the sample variance is 2",
+    "The mean is 12 and the sample variance is 4",
+    "The mean is 4 and the sample variance is 8"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "For the data set [2, 4, 6], what are the mean and sample variance?",
+   "rationales": [
+    "Correct: the mean is 4 and the squared deviations sum to 8, so the sample variance is 8 ÷ (3 − 1) = 4.",
+    "The sample variance is 4, not 2; the denominator is n − 1, which is 2.",
+    "The mean is (2 + 4 + 6) ÷ 3 = 4, not 12.",
+    "The sum of squared deviations is 8, but it must be divided by n − 1, giving a variance of 4."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "For the dataset [2, 4, 6], the mean is 4. Calculate the variance.",
+   "finalAnswer": "4",
+   "marks": 2,
+   "source": "Example 9.7: Variance",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The deviations must be measured from the mean.",
+     "description": "Find and square the deviations from the mean.",
+     "how": "Show (2 − 4)² + (4 − 4)² + (6 − 4)² = 4 + 0 + 4 = 8."
+    },
+    {
+     "accept": [
+      [
+       "4"
+      ]
+     ],
+     "marks": 1,
+     "why": "The book's sample variance formula divides by n − 1.",
+     "description": "Divide by n − 1 and give the variance.",
+     "how": "Show 8 ÷ 2 = 4 as the final answer."
+    }
+   ],
+   "modelAnswer": [
+    "Mean = 4",
+    "Variance = [(2 − 4)² + (4 − 4)² + (6 − 4)²] / (3 − 1)",
+    "= (4 + 0 + 4) / 2",
+    "= 8 / 2",
+    "= 4"
+   ]
+  },
+  {
+   "text": "What is the difference between qualitative and quantitative data?",
+   "finalAnswer": "Quantitative data is numeric and measurable; qualitative data is non-numeric, such as text, images, or sounds.",
+   "marks": 2,
+   "source": "Short Q9.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "quantitative",
+       "numeric"
+      ],
+      [
+       "quantitative",
+       "numbers"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct description of quantitative data shows the key distinction.",
+     "description": "Define quantitative data.",
+     "how": "State that it deals with numbers or measurable data."
+    },
+    {
+     "accept": [
+      [
+       "qualitative",
+       "non-numeric"
+      ],
+      [
+       "qualitative",
+       "text"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct description of qualitative data completes the comparison.",
+     "description": "Define qualitative data.",
+     "how": "State that it is non-numeric and give a suitable kind of example."
+    }
+   ],
+   "modelAnswer": [
+    "Quantitative data deals with numbers and measurable data, such as test scores.",
+    "Qualitative data deals with non-numeric data such as text, images, and sounds."
+   ]
+  },
+  {
+   "text": "Explain the differences between qualitative and quantitative data. Provide examples of each type.",
+   "finalAnswer": "Quantitative data is numerical and measurable, for example test scores. Qualitative data is non-numeric, for example words in student essays or students' opinions.",
+   "marks": 8,
+   "source": "Long Q9.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "quantitative",
+       "numbers"
+      ],
+      [
+       "quantitative",
+       "numeric"
+      ]
+     ],
+     "marks": 2,
+     "why": "The distinction between numerical and non-numerical information is central to the comparison.",
+     "description": "Explain quantitative data.",
+     "how": "State that it deals with numbers and measurable data."
+    },
+    {
+     "accept": [
+      [
+       "qualitative",
+       "non-numeric"
+      ],
+      [
+       "qualitative",
+       "meanings"
+      ]
+     ],
+     "marks": 2,
+     "why": "Qualitative data describes or represents non-numeric information.",
+     "description": "Explain qualitative data.",
+     "how": "State that it includes non-numeric data such as text, images, or sounds."
+    },
+    {
+     "accept": [
+      [
+       "scores"
+      ],
+      [
+       "numeric"
+      ]
+     ],
+     "marks": 2,
+     "why": "A suitable numerical example demonstrates the meaning of quantitative data.",
+     "description": "Give an example of quantitative data.",
+     "how": "Give test scores or another appropriate measurable numerical example."
+    },
+    {
+     "accept": [
+      [
+       "essays"
+      ],
+      [
+       "opinions"
+      ],
+      [
+       "text"
+      ]
+     ],
+     "marks": 2,
+     "why": "A suitable non-numeric example demonstrates the meaning of qualitative data.",
+     "description": "Give an example of qualitative data.",
+     "how": "Give student essays, opinions, images, or another appropriate non-numeric example."
+    }
+   ],
+   "modelAnswer": [
+    "Quantitative data deals with numbers and measurable data.",
+    "For example, students' test scores are quantitative data.",
+    "Qualitative data deals with non-numeric data such as text, images, and sounds.",
+    "For example, opinions written in student essays are qualitative data."
+   ]
+  },
+  {
+   "text": "Describe a situation where non-numeric data is essential. How would you collect, store, and analyse this type of data? Discuss the tools and techniques you would use to ensure the data is accurately interpreted.",
+   "finalAnswer": "Non-numeric data is useful for studying people's experiences or opinions. For example, student essays can be collected, stored in an organized form, checked for completeness and accuracy, and analysed using content analysis or thematic analysis.",
+   "marks": 8,
+   "source": "Long Q9.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "opinions"
+      ],
+      [
+       "experiences"
+      ],
+      [
+       "essays"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant situation shows why non-numeric data is needed.",
+     "description": "Describe an appropriate situation.",
+     "how": "Give a situation involving opinions, experiences, essays, images, or sounds."
+    },
+    {
+     "accept": [
+      [
+       "collect"
+      ],
+      [
+       "interviews"
+      ],
+      [
+       "survey"
+      ]
+     ],
+     "marks": 2,
+     "why": "A suitable collection method is needed to obtain the data.",
+     "description": "Explain how the data could be collected.",
+     "how": "Name a suitable method such as interviews, surveys, or collecting essays."
+    },
+    {
+     "accept": [
+      [
+       "store"
+      ],
+      [
+       "organized"
+      ],
+      [
+       "records"
+      ]
+     ],
+     "marks": 2,
+     "why": "Organized storage supports checking and analysis.",
+     "description": "Explain storage and checking.",
+     "how": "Explain that responses should be stored in an organized form and checked for completeness and accuracy."
+    },
+    {
+     "accept": [
+      [
+       "content analysis"
+      ],
+      [
+       "thematic analysis"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer must name a suitable qualitative analysis technique.",
+     "description": "Name and explain an analysis technique.",
+     "how": "Use content analysis to count words or themes, or thematic analysis to identify and interpret patterns; the final answer should include a suitable technique."
+    }
+   ],
+   "modelAnswer": [
+    "Student opinions about a new school policy are an example of essential non-numeric data.",
+    "The opinions could be collected through interviews or a survey with open-ended questions.",
+    "The responses should be stored in an organized form, such as a clearly labelled set of text records.",
+    "Check that responses are complete and accurate before analysing them.",
+    "Use content analysis to count how often particular words or themes appear.",
+    "Use thematic analysis to identify and interpret common patterns in the responses."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define an error, outlier, bias, or a measure of centre or spread. Give the definition clearly and add a relevant example when asked.",
+   "For numerical questions, show the formula, substitute the values, show the calculation, and state the final answer. For sample variance and standard deviation, use n − 1 as the denominator, as in your textbook.",
+   "In a comparison question, explain both quantitative and qualitative data and give an example of each.",
+   "For qualitative analysis questions, distinguish content analysis (counting words or themes) from thematic analysis (identifying and interpreting patterns).",
+   "Marks are usually earned for the correct definition or method, appropriate working or example, and the final answer. Do not give only a number when working is needed."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about whether each kind of data is numeric.",
+     "Quantitative data is numeric and measurable; qualitative data is non-numeric. Give one example of each."
+    ],
+    "accept": [
+     [
+      "quantitative",
+      "numeric",
+      "qualitative",
+      "non-numeric"
+     ],
+     [
+      "quantitative",
+      "numbers",
+      "qualitative",
+      "text"
+     ]
+    ],
+    "question": "What is the difference between qualitative and quantitative data?",
+    "solution": [
+     "Quantitative data deals with numbers and measurable data.",
+     "Qualitative data deals with non-numeric data such as text, images, and sounds.",
+     "For example, test scores are quantitative, while student opinions are qualitative."
+    ],
+    "answer": "Quantitative data is numeric and measurable; qualitative data is non-numeric, such as text, images, or sounds."
+   },
+   {
+    "hints": [
+     "Choose a situation where people's words or experiences matter, not just numbers.",
+     "Describe collecting and organizing the responses, then use content analysis or thematic analysis."
+    ],
+    "accept": [
+     [
+      "qualitative",
+      "content analysis"
+     ],
+     [
+      "qualitative",
+      "thematic analysis"
+     ],
+     [
+      "non-numeric",
+      "thematic analysis"
+     ]
+    ],
+    "question": "Describe a situation where non-numeric data is essential. How would you collect, store, and analyse this type of data? Discuss the tools and techniques you would use to ensure the data is accurately interpreted.",
+    "solution": [
+     "Student opinions about a new school policy are an example of essential non-numeric data.",
+     "Collect opinions through interviews or a survey with open-ended questions.",
+     "Store the responses in an organized form and check them for completeness and accuracy.",
+     "Use content analysis to count the appearance of particular words or themes.",
+     "Use thematic analysis to identify and interpret common patterns in the responses."
+    ],
+    "answer": "Collect and organize non-numeric responses, check them, and analyse them using content analysis or thematic analysis."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The textbook gives the mean as 4, which is the value used to measure each deviation.",
+     "text": "Mean = 4"
+    },
+    {
+     "why": "The sample variance formula adds the squared differences from the mean and divides by n − 1.",
+     "text": "Variance = [(2 − 4)² + (4 − 4)² + (6 − 4)²] / (3 − 1)"
+    },
+    {
+     "why": "Squaring the deviations gives 4, 0, and 4, and the denominator is 2.",
+     "text": "= (4 + 0 + 4) / 2"
+    },
+    {
+     "why": "Add the squared deviations before dividing.",
+     "text": "= 8 / 2"
+    },
+    {
+     "why": "Dividing gives the sample variance.",
+     "text": "= 4"
+    }
+   ],
+   "question": "For the dataset [2, 4, 6], the mean is 4. Calculate the variance.",
+   "answer": "The variance is 4."
+  },
+  "explain": [
+   {
+    "title": "Pre-processing prepares the data",
+    "body": "Data pre-processing is the first and most important step in working with data. It involves getting the data ready for analysis by cleaning and organizing it. Before analysis, check that data is accurate, complete, reliable, consistent, and up-to-date."
+   },
+   {
+    "title": "Find and deal with data problems",
+    "body": "Errors are mistakes in the data. Outliers are unusual or extreme values that don't fit the pattern of the rest of the data. Biases are distortions that affect the accuracy of the data. Validation checks completeness and accuracy; cleaning corrects or removes errors and decides how to handle missing values and outliers."
+   },
+   {
+    "title": "Quantitative analysis uses numbers",
+    "body": "Quantitative analysis deals with numbers and measurable data. The mean is the sum of all values divided by the number of values. The median is the middle value when the values are arranged in order; with an even number of values, it is the average of the two middle values. The mode is the value that appears most frequently."
+   },
+   {
+    "title": "Measures of spread describe variation",
+    "body": "The range is the difference between the highest and lowest values. Variance measures how spread out the values are from the mean, using S² = ∑(xᵢ − x̄)² / (n − 1). Standard deviation is the square root of the variance, using S = √[∑(xᵢ − x̄)² / (n − 1)]."
+   },
+   {
+    "title": "Qualitative analysis studies non-numeric data",
+    "body": "Qualitative analysis deals with non-numeric data such as text, images, and sounds. Content analysis counts how often specific words or themes appear. Thematic analysis identifies and interprets themes or patterns within the data."
+   }
+  ],
+  "mistakes": [
+   "Calling any unusual value an error: an outlier may be an unusual but true value, so investigate it before changing or removing it.",
+   "Confusing an outlier with bias: an outlier is an unusual value, while bias is a distortion affecting data accuracy.",
+   "Using the mean when an extreme value strongly distorts it; the median can give a better typical value in that situation.",
+   "Forgetting to arrange data in order before finding the median.",
+   "Using n instead of n − 1 in the sample variance or standard deviation formula shown in your textbook.",
+   "Mixing up content analysis and thematic analysis: content analysis counts appearances, while thematic analysis identifies and interprets patterns."
+  ]
+ }
+}

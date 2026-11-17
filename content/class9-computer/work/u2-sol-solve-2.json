@@ -1,0 +1,121 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "6:8",
+   "figure": "",
+   "steps": [
+    "Single-precision floating-point format uses 32 bits: 1 sign bit, 8 exponent bits and 23 fraction bits.",
+    "The exponent is stored using a bias of 127. For normalized numbers, the exponent field ranges from 1 to 254, so the actual exponent ranges from 1 − 127 = −126 to 254 − 127 = 127.",
+    "The smallest positive normalized value is 1.0 × 2⁻¹²⁶ ≈ 1.175 × 10⁻³⁸.",
+    "The largest finite value is (2 − 2⁻²³) × 2¹²⁷ ≈ 3.403 × 10³⁸.",
+    "Including subnormal numbers, the smallest positive value is 2⁻¹⁴⁹ ≈ 1.401 × 10⁻⁴⁵. The sign bit allows both positive and negative values."
+   ],
+   "finalAnswer": "Single precision represents finite values up to approximately ±3.403 × 10³⁸; its smallest positive value is approximately 1.401 × 10⁻⁴⁵ when subnormal numbers are included."
+  },
+  {
+   "accept": [],
+   "id": "6:9",
+   "figure": "",
+   "steps": [
+    "Floating-point numbers have limited precision, so some real numbers cannot be represented exactly. This can cause rounding errors.",
+    "Rounding errors can accumulate during calculations and affect the accuracy of scientific results.",
+    "A value outside the representable range may cause overflow; a value too close to zero may cause underflow.",
+    "Understanding these limitations helps programmers choose suitable data types and methods, and interpret calculated results correctly."
+   ],
+   "finalAnswer": "Understanding floating-point limitations helps prevent and manage rounding errors, overflow and underflow in scientific calculations."
+  },
+  {
+   "accept": [],
+   "id": "6:10",
+   "figure": "",
+   "steps": [
+    "Unicode assigns each character a unique code point, so characters from different writing systems can be represented consistently.",
+    "A code point is written in the form U+ followed by hexadecimal digits.",
+    "Examples: Latin letter A — U+0041; Arabic letter ا — U+0627; Chinese character 中 — U+4E2D; euro sign € — U+20AC.",
+    "Unicode code points are stored as bytes using encoding forms such as UTF-8, UTF-16 or UTF-32."
+   ],
+   "finalAnswer": "Unicode identifies characters from different languages with unique code points and stores them using encodings such as UTF-8."
+  },
+  {
+   "accept": [],
+   "id": "6:11",
+   "figure": "",
+   "steps": [
+    "An integer is stored in computer memory as a fixed number of binary bits. The number of bits available determines the range of values that can be stored.",
+    "For an unsigned integer, all bits represent the magnitude. With n bits, the range is 0 to 2ⁿ − 1.",
+    "Signed integers are commonly stored using two’s complement. The leftmost bit indicates the sign: 0 for a non-negative number and 1 for a negative number.",
+    "To form a negative number in two’s complement, write the positive number in binary, invert all the bits and add 1.",
+    "With n-bit two’s-complement storage, the range is −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1. For example, in 8 bits, +5 is 00000101 and −5 is 11111011."
+   ],
+   "finalAnswer": "Integers are stored as fixed-length bit patterns; signed integers are commonly represented using two’s complement."
+  },
+  {
+   "accept": [],
+   "id": "6:12",
+   "figure": "",
+   "steps": [
+    "To convert a positive decimal integer to binary, repeatedly divide it by 2 and record each remainder. Read the remainders from bottom to top.",
+    "Example: 13 ÷ 2 gives remainders 1, 0, 1, 1 when read upwards; therefore, 13₁₀ = 1101₂.",
+    "To convert a binary integer to decimal, multiply each bit by its corresponding power of 2, starting with 2⁰ at the right, and add the results.",
+    "Example: 1101₂ = 1 × 2³ + 1 × 2² + 0 × 2¹ + 1 × 2⁰ = 13₁₀.",
+    "A negative integer is represented in a chosen fixed bit width using two’s complement: write its positive binary form, invert the bits and add 1.",
+    "Example using 8 bits: +13 = 00001101; invert to get 11110010 and add 1, giving −13 = 11110011.",
+    "To convert 11110011₂ back to decimal as an 8-bit two’s-complement number, invert and add 1 to obtain 00001101 (13); since the leading bit is 1, the value is −13."
+   ],
+   "finalAnswer": "Positive integers are converted by repeated division by 2 or by adding powers of 2; negative integers use a fixed-width two’s-complement representation."
+  },
+  {
+   "accept": [
+    [
+     "1111"
+    ]
+   ],
+   "id": "6:13",
+   "figure": "",
+   "steps": [
+    "  101₂",
+    "×  11₂",
+    "──────",
+    "  101₂",
+    " 1010₂",
+    "──────",
+    " 1111₂"
+   ],
+   "finalAnswer": "1111₂"
+  },
+  {
+   "accept": [
+    [
+     "110"
+    ]
+   ],
+   "id": "6:14",
+   "figure": "",
+   "steps": [
+    "1100₂ ÷ 10₂",
+    "10₂ goes into 11₂ once; subtract 10₂ to get remainder 1.",
+    "Bring down the next 0: 10₂. 10₂ goes into 10₂ once; subtract 10₂ to get remainder 0.",
+    "Bring down the final 0: 0₂. The next quotient bit is 0.",
+    "Quotient = 110₂; remainder = 0₂."
+   ],
+   "finalAnswer": "110₂, remainder 0₂"
+  },
+  {
+   "accept": [
+    [
+     "1011"
+    ]
+   ],
+   "id": "6:15",
+   "figure": "",
+   "steps": [
+    "  101₂",
+    "+ 110₂",
+    "──────",
+    " 1011₂"
+   ],
+   "finalAnswer": "1011₂"
+  }
+ ]
+}

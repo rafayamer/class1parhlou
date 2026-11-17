@@ -1,0 +1,1775 @@
+{
+ "note": {
+  "explanation": "Computational thinking is a way to solve problems systematically. It includes understanding the problem, breaking it into parts, finding patterns, focusing on important details, and designing and checking a solution.",
+  "examples": [
+   "A recipe gives ordered instructions for preparing food, much like an algorithm.",
+   "A school timetable can be simplified by focusing on each class's time and room, rather than every detail about the school."
+  ],
+  "checkAnswer": "Break the task into smaller parts, find repeated steps, focus on the important information, and write and test a clear set of instructions.",
+  "keywords": [
+   "computational thinking",
+   "decomposition",
+   "pattern recognition",
+   "abstraction",
+   "algorithm",
+   "flowchart",
+   "pseudocode",
+   "dry run"
+  ],
+  "simple": "Computational thinking means working out a problem carefully, in manageable steps, before or while using a computer.",
+  "checkQuestion": "Name one way computational thinking can make a difficult problem easier.",
+  "title": "Computational Thinking: Solve Problems Step by Step",
+  "steps": [
+   "Understand what the problem asks and identify the information you need.",
+   "Decompose the problem into smaller parts.",
+   "Look for similarities or repeated steps (patterns).",
+   "Ignore unnecessary details and focus on what matters (abstraction).",
+   "Design a step-by-step algorithm, using pseudocode or a flowchart if helpful.",
+   "Dry run the solution with sample data and debug any errors."
+  ],
+  "answer": "Computational thinking is a systematic, logical approach to understanding and solving problems. It uses decomposition, pattern recognition, abstraction, and algorithm design.",
+  "checkAccept": [
+   [
+    "decomposition"
+   ],
+   [
+    "patterns"
+   ],
+   [
+    "algorithm"
+   ],
+   [
+    "break",
+    "parts"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A method of solving problems using mathematical calculations only.",
+    "A problem-solving approach that employs systematic, algorithmic, and logical thinking.",
+    "A technique used exclusively in computer programming.",
+    "An approach that ignores real-world applications."
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.1. Which of the following best defines computational thinking?",
+   "rationales": [
+    "This is too narrow because computational thinking is not limited to mathematical calculations.",
+    "This is correct because computational thinking uses systematic, algorithmic, and logical thinking.",
+    "This is incorrect because computational thinking can be used beyond computer programming.",
+    "This is incorrect because computational thinking can apply to real-world problems."
+   ]
+  },
+  {
+   "options": [
+    "It simplifies problems by breaking them down into smaller, more manageable parts.",
+    "It complicates problems by adding more details.",
+    "It eliminates the need for solving the problem.",
+    "It is only useful for simple problems."
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q7.2. Why is problem decomposition important in computational thinking?",
+   "rationales": [
+    "This is correct because decomposition makes a problem easier to handle by dividing it into smaller parts.",
+    "This is incorrect because decomposition aims to make a problem more manageable, not more complicated.",
+    "This is incorrect because decomposition helps with solving; it does not remove the need to solve.",
+    "This is incorrect because decomposition is useful for complex problems too."
+   ]
+  },
+  {
+   "options": [
+    "Finding and using similarities within problems",
+    "Ignoring repetitive elements",
+    "Breaking problems into smaller pieces",
+    "Writing detailed algorithms"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q7.3. Pattern recognition involves:",
+   "rationales": [
+    "This is correct because pattern recognition identifies and uses similarities.",
+    "This is incorrect because recognizing repetition helps reveal patterns.",
+    "This describes decomposition rather than pattern recognition.",
+    "This describes algorithm design rather than pattern recognition."
+   ]
+  },
+  {
+   "options": [
+    "Decomposition",
+    "Pattern recognition",
+    "Abstraction",
+    "Algorithm design"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q7.4. Which term refers to the process of ignoring the details to focus on the main idea?",
+   "rationales": [
+    "Decomposition breaks a problem into smaller parts; it does not mean ignoring details.",
+    "Pattern recognition identifies similarities between problems or parts of problems.",
+    "This is correct because abstraction focuses on important details and leaves out unnecessary ones.",
+    "Algorithm design creates steps for solving a problem."
+   ]
+  },
+  {
+   "options": [
+    "Ignoring problem understanding",
+    "Problem simplification",
+    "Avoiding solution design",
+    "Implementing random solutions"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.5. Which of the following is a principle of computational thinking?",
+   "rationales": [
+    "Understanding the problem is important, so ignoring it is not a principle.",
+    "This is correct because simplifying a problem helps make it manageable.",
+    "Solution design is part of developing a solution, not something to avoid.",
+    "A solution should be systematic, not random."
+   ]
+  },
+  {
+   "options": [
+    "Lists of data",
+    "Graphical representations",
+    "Step-by-step instructions for solving a problem",
+    "Repetitive patterns"
+   ],
+   "fromBook": true,
+   "correctIndex": 2,
+   "stem": "Q7.6. Algorithms are:",
+   "rationales": [
+    "A list of data is not necessarily an algorithm.",
+    "A graphical representation may be a flowchart, which can show an algorithm, but is not the definition of an algorithm.",
+    "This is correct because an algorithm is a sequence of steps for solving a problem.",
+    "Repetitive patterns may be found in problems, but they are not the definition of an algorithm."
+   ]
+  },
+  {
+   "options": [
+    "Writing the solution",
+    "Understanding the problem",
+    "Designing a flowchart",
+    "Selecting a solution"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.7. Which of the following is the first step in problem-solving according to computational thinking?",
+   "rationales": [
+    "Writing a solution comes after the problem has been understood.",
+    "This is correct because the problem must be understood before designing a solution.",
+    "A flowchart is a way to represent a solution and is not the first step.",
+    "A solution can be selected only after the problem has been understood and possible solutions considered."
+   ]
+  },
+  {
+   "options": [
+    "Code a program",
+    "Represent algorithms graphically",
+    "Solve mathematical equations",
+    "Identify patterns"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.8. Flowcharts are used to:",
+   "rationales": [
+    "A flowchart represents logic graphically; it is not program code.",
+    "This is correct because flowcharts show algorithms with graphical symbols and arrows.",
+    "Flowcharts can represent steps for many tasks, but their purpose is not specifically to solve equations.",
+    "Pattern recognition is a computational-thinking process, not the purpose of a flowchart."
+   ]
+  },
+  {
+   "options": [
+    "A type of flowchart",
+    "A high-level description of an algorithm using plain language",
+    "A programming language",
+    "A debugging tool"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.9. Pseudocode is:",
+   "rationales": [
+    "Pseudocode is written in words and structured steps, not as a flowchart.",
+    "This is correct because pseudocode describes an algorithm in plain language and a structured form.",
+    "Pseudocode is not a programming language that a computer executes directly.",
+    "Pseudocode can help check an algorithm, but it is not itself a debugging tool."
+   ]
+  },
+  {
+   "options": [
+    "Writing the code in a programming language",
+    "Testing the flowchart with sample data",
+    "Converting the flowchart into pseudocode",
+    "Ignoring the flowchart details"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q7.10. Dry running a flowchart involves:",
+   "rationales": [
+    "Writing program code is implementation, not dry running a flowchart.",
+    "This is correct because a dry run traces the flowchart using sample data.",
+    "Converting representations is not the meaning of a dry run.",
+    "A dry run follows the flowchart's details rather than ignoring them."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q7.1. Define computational thinking.",
+   "finalAnswer": "Computational thinking is a problem-solving approach that employs systematic, algorithmic, and logical thinking.",
+   "marks": 2,
+   "source": "Short 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "systematic"
+      ],
+      [
+       "algorithmic"
+      ],
+      [
+       "logical"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must identify the systematic, algorithmic, and logical nature of the approach.",
+     "description": "State that it is systematic, algorithmic, and logical thinking.",
+     "how": "Use the key terms in describing the approach."
+    },
+    {
+     "accept": [
+      [
+       "problem"
+      ],
+      [
+       "solv"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect the approach to solving problems.",
+     "description": "Explain that it is a problem-solving approach.",
+     "how": "State that the approach is used to solve problems."
+    }
+   ],
+   "modelAnswer": [
+    "Computational thinking is a problem-solving approach that employs systematic, algorithmic, and logical thinking."
+   ]
+  },
+  {
+   "text": "Q7.2. What is decomposition in computational thinking?",
+   "finalAnswer": "Decomposition is breaking a problem into smaller, more manageable parts.",
+   "marks": 2,
+   "source": "Short 7.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "break"
+      ],
+      [
+       "parts"
+      ]
+     ],
+     "marks": 1,
+     "why": "Breaking a problem into parts is the central meaning of decomposition.",
+     "description": "Say that the problem is broken down.",
+     "how": "Use the idea of breaking or dividing the problem."
+    },
+    {
+     "accept": [
+      [
+       "smaller"
+      ],
+      [
+       "manageable"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose is to make the parts easier to handle.",
+     "description": "Explain that the parts are smaller and easier to manage.",
+     "how": "Mention smaller or more manageable parts."
+    }
+   ],
+   "modelAnswer": [
+    "Decomposition is breaking a problem into smaller, more manageable parts."
+   ]
+  },
+  {
+   "text": "Q7.3. Explain pattern recognition with an example.",
+   "finalAnswer": "Pattern recognition is finding and using similarities within problems. For example, repeated steps in preparing several recipes can be identified and reused.",
+   "marks": 2,
+   "source": "Short 7.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "similarit"
+      ],
+      [
+       "pattern"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying similarities is the key meaning of pattern recognition.",
+     "description": "Define pattern recognition as finding similarities or repeated features.",
+     "how": "Mention similarities, repetition, or patterns."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "repeated"
+      ],
+      [
+       "recipe"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example shows how a pattern is recognised and used.",
+     "description": "Give a relevant example of a repeated feature or similarity.",
+     "how": "Name a situation where a pattern is found and used."
+    }
+   ],
+   "modelAnswer": [
+    "Pattern recognition is finding and using similarities within problems.",
+    "For example, repeated steps in preparing several recipes can be identified and reused."
+   ]
+  },
+  {
+   "text": "Q7.4. Describe abstraction and its importance in problem-solving.",
+   "finalAnswer": "Abstraction means ignoring unnecessary details and focusing on the main idea. It is important because it simplifies a problem and helps us concentrate on the information needed for a solution.",
+   "marks": 2,
+   "source": "Short 7.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "unnecessary"
+      ],
+      [
+       "details"
+      ],
+      [
+       "main idea"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must show that abstraction filters details to focus on what matters.",
+     "description": "Define abstraction as focusing on important information and leaving out irrelevant details.",
+     "how": "Mention unnecessary details and the main idea."
+    },
+    {
+     "accept": [
+      [
+       "simplif"
+      ],
+      [
+       "solution"
+      ],
+      [
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "Its importance is that it makes the problem easier to solve.",
+     "description": "Explain how abstraction helps problem-solving.",
+     "how": "State that it simplifies the problem or focuses attention on needed information."
+    }
+   ],
+   "modelAnswer": [
+    "Abstraction means ignoring unnecessary details and focusing on the main idea.",
+    "It is important because it simplifies a problem and helps us concentrate on the information needed for a solution."
+   ]
+  },
+  {
+   "text": "Q7.5. What is an algorithm?",
+   "finalAnswer": "An algorithm is a step-by-step set of instructions for solving a problem.",
+   "marks": 2,
+   "source": "Short 7.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "step"
+      ],
+      [
+       "instructions"
+      ]
+     ],
+     "marks": 1,
+     "why": "An algorithm consists of ordered instructions.",
+     "description": "State that an algorithm is a sequence of steps or instructions.",
+     "how": "Use the idea of steps or instructions."
+    },
+    {
+     "accept": [
+      [
+       "solv"
+      ],
+      [
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "The steps must be directed towards solving a problem.",
+     "description": "State the purpose of the instructions.",
+     "how": "Mention solving a problem or completing a task."
+    }
+   ],
+   "modelAnswer": [
+    "An algorithm is a step-by-step set of instructions for solving a problem."
+   ]
+  },
+  {
+   "text": "Q7.6. How does problem understanding help in computational thinking?",
+   "finalAnswer": "Understanding the problem identifies what is required, the relevant information, and any constraints. This helps us design an appropriate solution.",
+   "marks": 2,
+   "source": "Short 7.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "required"
+      ],
+      [
+       "information"
+      ],
+      [
+       "constraint"
+      ]
+     ],
+     "marks": 1,
+     "why": "Understanding clarifies the task and the information or limits involved.",
+     "description": "Explain what problem understanding helps identify.",
+     "how": "Mention the requirements, relevant information, or constraints."
+    },
+    {
+     "accept": [
+      [
+       "solution"
+      ],
+      [
+       "design"
+      ]
+     ],
+     "marks": 1,
+     "why": "A clear understanding guides the design of a suitable solution.",
+     "description": "Connect problem understanding to solution design.",
+     "how": "Say that it helps create or choose an appropriate solution."
+    }
+   ],
+   "modelAnswer": [
+    "Understanding the problem identifies what is required, the relevant information, and any constraints.",
+    "This helps us design an appropriate solution."
+   ]
+  },
+  {
+   "text": "Q7.7. What are flowcharts and how are they used?",
+   "finalAnswer": "Flowcharts are graphical representations of algorithms. They use symbols and arrows to show the steps and the order in which they are performed.",
+   "marks": 2,
+   "source": "Short 7.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "graphical"
+      ],
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 1,
+     "why": "A flowchart represents an algorithm graphically.",
+     "description": "Define a flowchart as a graphical representation of an algorithm.",
+     "how": "Include graphical representation and algorithm."
+    },
+    {
+     "accept": [
+      [
+       "symbol"
+      ],
+      [
+       "arrow"
+      ],
+      [
+       "steps"
+      ]
+     ],
+     "marks": 1,
+     "why": "Symbols and arrows show the steps and their sequence.",
+     "description": "Explain how a flowchart shows the procedure.",
+     "how": "Mention symbols, arrows, steps, or order."
+    }
+   ],
+   "modelAnswer": [
+    "Flowcharts are graphical representations of algorithms.",
+    "They use symbols and arrows to show the steps and the order in which they are performed."
+   ]
+  },
+  {
+   "text": "Q7.8. Explain the purpose of pseudocode.",
+   "finalAnswer": "Pseudocode gives a clear, high-level description of an algorithm using plain language. It helps plan and communicate the logic before writing program code.",
+   "marks": 2,
+   "source": "Short 7.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "plain language"
+      ],
+      [
+       "algorithm"
+      ],
+      [
+       "high level"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pseudocode describes algorithmic steps in a readable, structured form.",
+     "description": "Define pseudocode as a plain-language description of an algorithm.",
+     "how": "Mention plain language and an algorithm."
+    },
+    {
+     "accept": [
+      [
+       "plan"
+      ],
+      [
+       "logic"
+      ],
+      [
+       "code"
+      ]
+     ],
+     "marks": 1,
+     "why": "Its purpose includes planning or communicating logic before implementation.",
+     "description": "Explain how pseudocode is useful.",
+     "how": "Mention planning, understanding, or communicating the solution before coding."
+    }
+   ],
+   "modelAnswer": [
+    "Pseudocode gives a clear, high-level description of an algorithm using plain language.",
+    "It helps plan and communicate the logic before writing program code."
+   ]
+  },
+  {
+   "text": "Q7.9. How do you differentiate between flowcharts and pseudocode?",
+   "finalAnswer": "A flowchart shows an algorithm graphically using symbols and arrows, while pseudocode describes it in structured plain language.",
+   "marks": 2,
+   "source": "Short 7.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowchart"
+      ],
+      [
+       "graphical"
+      ],
+      [
+       "symbol"
+      ]
+     ],
+     "marks": 1,
+     "why": "The flowchart side of the comparison must identify its graphical form.",
+     "description": "Describe how a flowchart represents an algorithm.",
+     "how": "Mention a graphical representation, symbols, or arrows."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode"
+      ],
+      [
+       "plain language"
+      ],
+      [
+       "words"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pseudocode side must identify its written, plain-language form.",
+     "description": "Describe how pseudocode represents an algorithm.",
+     "how": "Mention structured plain language or words."
+    }
+   ],
+   "modelAnswer": [
+    "A flowchart shows an algorithm graphically using symbols and arrows.",
+    "Pseudocode describes it in structured plain language."
+   ]
+  },
+  {
+   "text": "Q7.10. What is a dry run and why is it important?",
+   "finalAnswer": "A dry run is manually tracing an algorithm or flowchart with sample data. It helps check that the steps produce the expected result and reveal errors before implementation.",
+   "marks": 2,
+   "source": "Short 7.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sample"
+      ],
+      [
+       "data"
+      ],
+      [
+       "trace"
+      ]
+     ],
+     "marks": 1,
+     "why": "A dry run follows the steps manually using test data.",
+     "description": "Define the dry run process.",
+     "how": "Mention tracing or testing steps with sample data."
+    },
+    {
+     "accept": [
+      [
+       "check"
+      ],
+      [
+       "error"
+      ],
+      [
+       "correct"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose is to validate the logic and find errors.",
+     "description": "Explain why a dry run is useful.",
+     "how": "Mention checking correctness or detecting errors."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run is manually tracing an algorithm or flowchart with sample data.",
+    "It helps check that the steps produce the expected result and reveal errors before implementation."
+   ]
+  },
+  {
+   "text": "Q7.11. Describe LARP and its significance in learning algorithms.",
+   "finalAnswer": "LARP (Logic And Reasoning Process) is a tool for representing and practising algorithms. It helps learners understand the logic and sequence of an algorithm and test how it works.",
+   "marks": 2,
+   "source": "Short 7.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "logic and reasoning"
+      ],
+      [
+       "larp"
+      ],
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must identify LARP and relate it to algorithms or logical reasoning.",
+     "description": "Describe what LARP is in relation to algorithm learning.",
+     "how": "Give the expansion if known and identify its connection with algorithms."
+    },
+    {
+     "accept": [
+      [
+       "learn"
+      ],
+      [
+       "practic"
+      ],
+      [
+       "understand"
+      ],
+      [
+       "test"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must explain why LARP is useful to learners.",
+     "description": "State its significance in learning algorithms.",
+     "how": "Mention practising, understanding, or testing algorithm logic."
+    }
+   ],
+   "modelAnswer": [
+    "LARP (Logic And Reasoning Process) is a tool for representing and practising algorithms.",
+    "It helps learners understand the logic and sequence of an algorithm and test how it works."
+   ]
+  },
+  {
+   "text": "Q7.12. List and explain two debugging techniques.",
+   "finalAnswer": "Two debugging techniques are dry running and testing with sample data. A dry run traces each step manually; sample-data testing checks whether the algorithm produces the expected results for selected inputs.",
+   "marks": 2,
+   "source": "Short 7.12",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "dry run"
+      ],
+      [
+       "dry"
+      ],
+      [
+       "trace"
+      ]
+     ],
+     "marks": 1,
+     "why": "One valid debugging technique must be identified and explained.",
+     "description": "Name and explain the first debugging technique.",
+     "how": "Describe tracing the algorithm step by step."
+    },
+    {
+     "accept": [
+      [
+       "sample"
+      ],
+      [
+       "test"
+      ],
+      [
+       "input"
+      ]
+     ],
+     "marks": 1,
+     "why": "A second technique and its purpose are required.",
+     "description": "Name and explain another valid debugging technique.",
+     "how": "Explain testing selected inputs and checking the resulting output."
+    }
+   ],
+   "modelAnswer": [
+    "One debugging technique is a dry run, which traces each step of the algorithm manually.",
+    "Another is testing with sample data to check whether the algorithm produces the expected results."
+   ]
+  },
+  {
+   "text": "Q7.1. Write an algorithm to assign a grade based on the marks obtained by a student. The grading system follows these criteria:\n- 90 and above: A+\n- 80 to 89: A\n- 70 to 79: B\n- 60 to 69: C\n- Below 60: F",
+   "finalAnswer": "The algorithm assigns A+ for marks ≥ 90, A for marks ≥ 80, B for marks ≥ 70, C for marks ≥ 60, and F otherwise.",
+   "marks": 8,
+   "source": "Long 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "input"
+      ],
+      [
+       "marks"
+      ]
+     ],
+     "marks": 1,
+     "why": "The algorithm needs the student's marks as input.",
+     "description": "Read the student's marks.",
+     "how": "Start by obtaining the marks."
+    },
+    {
+     "accept": [
+      [
+       "90"
+      ],
+      [
+       "a+"
+      ]
+     ],
+     "marks": 2,
+     "why": "The top grade and its threshold must be correct.",
+     "description": "Check for 90 and above and assign A+.",
+     "how": "Test the highest threshold first and assign A+."
+    },
+    {
+     "accept": [
+      [
+       "80"
+      ],
+      [
+       "70"
+      ],
+      [
+       "60"
+      ],
+      [
+       "a"
+      ],
+      [
+       "b"
+      ],
+      [
+       "c"
+      ]
+     ],
+     "marks": 3,
+     "why": "The intermediate thresholds and grades must cover the specified ranges without overlap.",
+     "description": "Assign A, B, and C at the correct thresholds.",
+     "how": "Check marks from highest threshold downward, assigning A, B, then C."
+    },
+    {
+     "accept": [
+      [
+       "below 60"
+      ],
+      [
+       "otherwise"
+      ],
+      [
+       "f"
+      ]
+     ],
+     "marks": 2,
+     "why": "All marks below 60 must receive F and the algorithm must finish clearly.",
+     "description": "Assign F otherwise and present a complete ordered algorithm.",
+     "how": "Use the final else case for F and include an end."
+    }
+   ],
+   "modelAnswer": [
+    "START",
+    "INPUT marks",
+    "IF marks >= 90 THEN",
+    "    grade = A+",
+    "ELSE IF marks >= 80 THEN",
+    "    grade = A",
+    "ELSE IF marks >= 70 THEN",
+    "    grade = B",
+    "ELSE IF marks >= 60 THEN",
+    "    grade = C",
+    "ELSE",
+    "    grade = F",
+    "END IF",
+    "OUTPUT grade",
+    "STOP"
+   ]
+  },
+  {
+   "text": "Q7.2. Explain how you would use algorithm design methods, such as flowcharts and pseudocode, to solve a complex computational problem. Illustrate your explanation with a detailed example.",
+   "finalAnswer": "Understand the problem, decompose it, design the algorithm in pseudocode and a flowchart, then dry run and debug it. For example, a student-grade algorithm reads marks, tests grade thresholds from highest to lowest, outputs the corresponding grade, and is checked with sample marks.",
+   "marks": 8,
+   "source": "Long 7.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "understand"
+      ],
+      [
+       "decompos"
+      ],
+      [
+       "requirements"
+      ]
+     ],
+     "marks": 2,
+     "why": "A sound design begins with understanding and organising the problem.",
+     "description": "Explain how to understand and break down the problem.",
+     "how": "Identify requirements and divide the task into manageable parts."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode"
+      ],
+      [
+       "flowchart"
+      ],
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must explain how design representations help express the solution.",
+     "description": "Explain the use of pseudocode and flowcharts.",
+     "how": "Describe pseudocode as written logic and flowcharts as graphical steps."
+    },
+    {
+     "accept": [
+      [
+       "marks"
+      ],
+      [
+       "grade"
+      ],
+      [
+       "example"
+      ]
+     ],
+     "marks": 2,
+     "why": "A detailed example demonstrates the design method in practice.",
+     "description": "Give a relevant example with its main algorithmic decisions.",
+     "how": "Use a problem such as assigning grades and state the inputs, decisions, and output."
+    },
+    {
+     "accept": [
+      [
+       "dry run"
+      ],
+      [
+       "sample"
+      ],
+      [
+       "test"
+      ],
+      [
+       "check"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing and revision help validate and improve the algorithm.",
+     "description": "Explain how to check and refine the design.",
+     "how": "Dry run sample data and correct any errors."
+    }
+   ],
+   "modelAnswer": [
+    "First, understand the problem by identifying its input, required output, and rules.",
+    "Decompose it into smaller tasks, such as reading input, making decisions, and displaying output.",
+    "Write pseudocode to describe the steps in plain language, then draw a flowchart to show the sequence and decisions graphically.",
+    "For example, to assign a grade, input the student's marks and test the thresholds from highest to lowest.",
+    "If marks are at least 90, output A+; otherwise, if at least 80, output A; continue with B at 70 and C at 60; otherwise output F.",
+    "Dry run the algorithm with sample marks such as 95, 84, 73, 62, and 48 to check that each grade is correct.",
+    "If a sample gives an incorrect result, debug the decisions and test again."
+   ]
+  },
+  {
+   "text": "Q7.3. Define computational thinking and explain its significance in modern problem-solving. Provide examples to illustrate how computational thinking can be applied in different fields.",
+   "finalAnswer": "Computational thinking is a problem-solving approach that employs systematic, algorithmic, and logical thinking. It helps organise complex problems into manageable steps and develop testable solutions. It can be applied in fields such as education, healthcare, and transport.",
+   "marks": 8,
+   "source": "Long 7.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "systematic"
+      ],
+      [
+       "algorithmic"
+      ],
+      [
+       "logical"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct definition establishes the key nature of computational thinking.",
+     "description": "Define computational thinking.",
+     "how": "Include systematic, algorithmic, and logical problem-solving."
+    },
+    {
+     "accept": [
+      [
+       "problem"
+      ],
+      [
+       "solv"
+      ],
+      [
+       "complex"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must explain why this approach matters.",
+     "description": "Discuss its significance in modern problem-solving.",
+     "how": "Explain that it organises problems and supports clear, testable solutions."
+    },
+    {
+     "accept": [
+      [
+       "education"
+      ],
+      [
+       "healthcare"
+      ],
+      [
+       "transport"
+      ],
+      [
+       "field"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples show that computational thinking is useful in different areas.",
+     "description": "Give examples from different fields.",
+     "how": "Name at least two fields and describe an application."
+    },
+    {
+     "accept": [
+      [
+       "decompos"
+      ],
+      [
+       "pattern"
+      ],
+      [
+       "abstraction"
+      ],
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 2,
+     "why": "Connecting the examples to computational-thinking methods demonstrates understanding.",
+     "description": "Explain how its principles are applied.",
+     "how": "Relate an example to decomposition, patterns, abstraction, or algorithms."
+    }
+   ],
+   "modelAnswer": [
+    "Computational thinking is a problem-solving approach that employs systematic, algorithmic, and logical thinking.",
+    "It is significant because it helps people organise complex problems, focus on relevant information, and create solutions that can be checked and improved.",
+    "In education, a school can organise a timetable by dividing the task into classes, teachers, and rooms, then checking for conflicts.",
+    "In healthcare, repeated patient symptoms can be recognised as patterns that help organise information for further assessment.",
+    "In transport, an algorithm can compare routes and select one that meets requirements such as time or distance.",
+    "These examples use decomposition, pattern recognition, abstraction, and algorithm design to make problems manageable."
+   ]
+  },
+  {
+   "text": "Q7.4. Discuss the concept of decomposition in computational thinking. Why is it important?",
+   "finalAnswer": "Decomposition is breaking a complex problem into smaller, more manageable parts. It is important because each part is easier to understand, solve, test, and combine into the complete solution.",
+   "marks": 8,
+   "source": "Long 7.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "break"
+      ],
+      [
+       "smaller"
+      ],
+      [
+       "parts"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition must state that a problem is divided into smaller parts.",
+     "description": "Define decomposition.",
+     "how": "Explain that a complex problem is broken down."
+    },
+    {
+     "accept": [
+      [
+       "manageable"
+      ],
+      [
+       "understand"
+      ],
+      [
+       "solve"
+      ]
+     ],
+     "marks": 2,
+     "why": "The parts should be easier to handle than the whole problem.",
+     "description": "Explain how decomposition makes a problem manageable.",
+     "how": "State that the smaller tasks are easier to understand or solve."
+    },
+    {
+     "accept": [
+      [
+       "test"
+      ],
+      [
+       "combine"
+      ],
+      [
+       "solution"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing and recombining parts explain its practical value.",
+     "description": "Describe how parts contribute to the final solution.",
+     "how": "Explain that parts can be solved or tested separately and then combined."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "timetable"
+      ],
+      [
+       "task"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example demonstrates the concept clearly.",
+     "description": "Give an example of decomposing a problem.",
+     "how": "Show a complex task divided into smaller tasks."
+    }
+   ],
+   "modelAnswer": [
+    "Decomposition is the process of breaking a complex problem into smaller, more manageable parts.",
+    "Each part can be understood and solved separately, which makes the whole problem less difficult.",
+    "The parts can be tested individually and then combined to form the complete solution.",
+    "For example, planning a school event can be decomposed into arranging a venue, preparing a schedule, inviting participants, and organising equipment.",
+    "Each task can be assigned and checked separately, making the event easier to plan successfully."
+   ]
+  },
+  {
+   "text": "Q7.5. Explain pattern recognition in the context of computational thinking. How does identifying patterns help in problem-solving?",
+   "finalAnswer": "Pattern recognition is finding and using similarities or repeated features within problems. It helps by allowing known solutions or steps to be reused, reducing effort and helping predict outcomes.",
+   "marks": 8,
+   "source": "Long 7.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "similarit"
+      ],
+      [
+       "repeated"
+      ],
+      [
+       "pattern"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition must identify common or repeated features.",
+     "description": "Define pattern recognition.",
+     "how": "State that it finds similarities or repeated features."
+    },
+    {
+     "accept": [
+      [
+       "reuse"
+      ],
+      [
+       "known solution"
+      ],
+      [
+       "predict"
+      ]
+     ],
+     "marks": 2,
+     "why": "Recognising a pattern can make solving a new problem more efficient.",
+     "description": "Explain how patterns help solve problems.",
+     "how": "Mention reusing a solution, reducing effort, or predicting results."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "recipe"
+      ],
+      [
+       "schedule"
+      ],
+      [
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "An example makes the use of patterns concrete.",
+     "description": "Provide a relevant example.",
+     "how": "Describe a repeated feature across problems or tasks."
+    },
+    {
+     "accept": [
+      [
+       "solution"
+      ],
+      [
+       "steps"
+      ],
+      [
+       "efficient"
+      ],
+      [
+       "effort"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should connect the example to an improved solution process.",
+     "description": "Show the benefit of applying the identified pattern.",
+     "how": "Explain how the common steps can be reused or simplify the task."
+    }
+   ],
+   "modelAnswer": [
+    "Pattern recognition in computational thinking is finding and using similarities or repeated features within problems.",
+    "When a pattern is recognised, a known solution or set of steps may be reused, reducing effort and helping predict what will happen.",
+    "For example, if several school forms require the same basic information, the repeated fields can be identified and handled using the same procedure.",
+    "Recognising such patterns makes it easier to design a consistent solution rather than solving each similar task from the beginning."
+   ]
+  },
+  {
+   "text": "Q7.6. What is an abstraction in computational thinking? Discuss its importance and provide examples of how abstraction can be used to simplify complex problems.",
+   "finalAnswer": "Abstraction focuses on the main idea by ignoring unnecessary details. It simplifies complex problems by keeping only relevant information, such as showing a route map with roads and destinations but leaving out unrelated details.",
+   "marks": 8,
+   "source": "Long 7.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "main idea"
+      ],
+      [
+       "unnecessary details"
+      ],
+      [
+       "relevant"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition must distinguish important information from irrelevant detail.",
+     "description": "Define abstraction.",
+     "how": "Say that it focuses on the main idea and ignores unnecessary details."
+    },
+    {
+     "accept": [
+      [
+       "simplif"
+      ],
+      [
+       "complex"
+      ],
+      [
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain why abstraction helps with complex problems.",
+     "description": "Discuss its importance.",
+     "how": "Explain that retaining relevant information makes the problem easier to understand or solve."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "map"
+      ],
+      [
+       "route"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples demonstrate how details can be filtered for a purpose.",
+     "description": "Give one example of abstraction.",
+     "how": "Describe a simplified representation and the details it keeps or omits."
+    },
+    {
+     "accept": [
+      [
+       "relevant"
+      ],
+      [
+       "ignore"
+      ],
+      [
+       "focus"
+      ],
+      [
+       "detail"
+      ]
+     ],
+     "marks": 2,
+     "why": "The example must explain which information matters to the task.",
+     "description": "Explain how the example simplifies the problem.",
+     "how": "Identify the useful details and unnecessary details."
+    }
+   ],
+   "modelAnswer": [
+    "Abstraction in computational thinking means ignoring unnecessary details and focusing on the main idea or relevant information.",
+    "It is important because it reduces complexity and helps us concentrate on the information needed to solve a problem.",
+    "For example, a route map shows roads and destinations needed to choose a journey, while leaving out details such as the colour of buildings.",
+    "The map is therefore a simpler representation suited to the task of finding a route."
+   ]
+  },
+  {
+   "text": "Q7.8. Compare and contrast flowcharts and pseudocode as methods for algorithm design. Discuss the advantages and disadvantages of each method, and provide examples where one might be preferred over the other.",
+   "finalAnswer": "Flowcharts represent algorithms graphically with symbols and arrows; pseudocode describes them in structured plain language. Flowcharts make sequence and decisions visual but can be cumbersome for large algorithms. Pseudocode is easy to write and revise but does not show the logic graphically.",
+   "marks": 8,
+   "source": "Long 7.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowchart"
+      ],
+      [
+       "graphical"
+      ],
+      [
+       "symbol"
+      ],
+      [
+       "arrow"
+      ]
+     ],
+     "marks": 2,
+     "why": "A comparison requires an accurate description of flowcharts.",
+     "description": "Describe flowcharts and one feature or advantage.",
+     "how": "State that they use graphical symbols and arrows to show logic."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode"
+      ],
+      [
+       "plain language"
+      ],
+      [
+       "words"
+      ]
+     ],
+     "marks": 2,
+     "why": "A comparison requires an accurate description of pseudocode.",
+     "description": "Describe pseudocode and one feature or advantage.",
+     "how": "State that it expresses algorithm steps in structured plain language."
+    },
+    {
+     "accept": [
+      [
+       "advantage"
+      ],
+      [
+       "disadvantage"
+      ],
+      [
+       "large"
+      ],
+      [
+       "revise"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must compare strengths and limitations of both methods.",
+     "description": "Discuss advantages and disadvantages.",
+     "how": "Mention visual clarity or size limits for flowcharts and readability or graphical limits for pseudocode."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "prefer"
+      ],
+      [
+       "complex"
+      ],
+      [
+       "decision"
+      ]
+     ],
+     "marks": 2,
+     "why": "An application example shows when a method is suitable.",
+     "description": "Give a situation where one method may be preferred.",
+     "how": "Explain when a visual flowchart or readily edited pseudocode is useful."
+    }
+   ],
+   "modelAnswer": [
+    "A flowchart represents an algorithm graphically with symbols and arrows, while pseudocode describes the steps in structured plain language.",
+    "A flowchart makes the sequence and decision points easy to see, but a large flowchart can become difficult to draw and follow.",
+    "Pseudocode is quick to write, read, and revise, but it does not show the algorithm graphically and its wording may vary.",
+    "A flowchart may be preferred when explaining a small decision process visually, such as assigning a grade.",
+    "Pseudocode may be preferred when planning a long algorithm because steps can be written and edited without rearranging many symbols."
+   ]
+  },
+  {
+   "text": "Q7.9. Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+   "finalAnswer": "A dry run manually follows the steps of a flowchart or pseudocode using sample data. Tracking the values and decisions shows whether the algorithm produces the expected output and helps reveal errors before implementation.",
+   "marks": 8,
+   "source": "Long 7.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manually"
+      ],
+      [
+       "follow"
+      ],
+      [
+       "trace"
+      ],
+      [
+       "steps"
+      ]
+     ],
+     "marks": 2,
+     "why": "A dry run means following the algorithm without executing a program.",
+     "description": "Define a dry run for an algorithm representation.",
+     "how": "State that the steps are traced manually."
+    },
+    {
+     "accept": [
+      [
+       "flowchart"
+      ],
+      [
+       "pseudocode"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question asks for dry running both forms of algorithm design.",
+     "description": "Connect dry running to flowcharts and pseudocode.",
+     "how": "Explain that the steps in either representation are followed in order."
+    },
+    {
+     "accept": [
+      [
+       "sample data"
+      ],
+      [
+       "input"
+      ],
+      [
+       "value"
+      ]
+     ],
+     "marks": 2,
+     "why": "Test data allows the steps and decisions to be checked.",
+     "description": "Explain how sample data is used.",
+     "how": "Trace the input values through the steps and decisions."
+    },
+    {
+     "accept": [
+      [
+       "expected"
+      ],
+      [
+       "correct"
+      ],
+      [
+       "error"
+      ],
+      [
+       "debug"
+      ]
+     ],
+     "marks": 2,
+     "why": "Validation checks results and helps locate mistakes.",
+     "description": "Explain how the dry run validates the algorithm.",
+     "how": "Compare the output with the expected result and identify errors."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run is the manual tracing of an algorithm's steps using sample data.",
+    "For a flowchart, follow the arrows and symbols; for pseudocode, follow each instruction in order.",
+    "Record the values and decisions as the sample input passes through the algorithm.",
+    "Compare the final output with the expected result.",
+    "If the output is incorrect, the trace helps locate the step or decision causing the error, so the algorithm can be debugged before implementation."
+   ]
+  },
+  {
+   "text": "Q7.10. What is LARP? Discuss its importance in learning and practicing algorithms.",
+   "finalAnswer": "LARP (Logic And Reasoning Process) is a way to learn and practise algorithmic logic. It helps learners follow steps, reason about decisions, and check how an algorithm works before implementation.",
+   "marks": 8,
+   "source": "Long 7.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "logic and reasoning"
+      ],
+      [
+       "larp"
+      ],
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must identify LARP and connect it to algorithmic reasoning.",
+     "description": "Define or describe LARP.",
+     "how": "Give the expansion or describe its role in algorithm learning."
+    },
+    {
+     "accept": [
+      [
+       "learn"
+      ],
+      [
+       "practic"
+      ],
+      [
+       "understand"
+      ]
+     ],
+     "marks": 2,
+     "why": "Its value for learning and practice must be stated.",
+     "description": "Explain how LARP supports learning.",
+     "how": "Mention practising or understanding algorithms."
+    },
+    {
+     "accept": [
+      [
+       "steps"
+      ],
+      [
+       "decision"
+      ],
+      [
+       "logic"
+      ],
+      [
+       "reason"
+      ]
+     ],
+     "marks": 2,
+     "why": "LARP's significance includes reasoning through the logic of algorithms.",
+     "description": "Explain the reasoning skills it develops.",
+     "how": "Describe following steps or working through decisions."
+    },
+    {
+     "accept": [
+      [
+       "test"
+      ],
+      [
+       "check"
+      ],
+      [
+       "algorithm"
+      ],
+      [
+       "implement"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should connect practice to checking algorithms before implementation.",
+     "description": "Explain a practical use of LARP.",
+     "how": "State that learners can examine or test an algorithm's operation."
+    }
+   ],
+   "modelAnswer": [
+    "LARP means Logic And Reasoning Process and is used to learn and practise algorithmic thinking.",
+    "It helps learners follow an algorithm's steps and reason about the decisions it makes.",
+    "By working through an algorithm, learners can check how inputs lead to outputs and identify errors in the logic.",
+    "This practice builds understanding before the algorithm is implemented in a computer program."
+   ]
+  },
+  {
+   "text": "Q7.11. How does LARP enhance the understanding and application of computational thinking principles? Provide a scenario where LARP can be used to improve an algorithm.",
+   "finalAnswer": "LARP develops logical reasoning by helping learners trace steps, decisions, and results. For example, a learner can use it to trace a grade-assignment algorithm with sample marks and correct a threshold error.",
+   "marks": 8,
+   "source": "Long 7.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "logic"
+      ],
+      [
+       "reasoning"
+      ],
+      [
+       "larp"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must explain how LARP supports computational thinking.",
+     "description": "Explain LARP's effect on understanding and reasoning.",
+     "how": "Mention logical reasoning and following algorithm steps."
+    },
+    {
+     "accept": [
+      [
+       "decompos"
+      ],
+      [
+       "pattern"
+      ],
+      [
+       "abstraction"
+      ],
+      [
+       "algorithm"
+      ],
+      [
+       "decision"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should connect LARP to computational-thinking principles.",
+     "description": "Relate LARP to relevant computational-thinking ideas.",
+     "how": "Explain how it helps apply algorithms, decisions, or other principles."
+    },
+    {
+     "accept": [
+      [
+       "scenario"
+      ],
+      [
+       "example"
+      ],
+      [
+       "marks"
+      ],
+      [
+       "grade"
+      ]
+     ],
+     "marks": 2,
+     "why": "A specific scenario is needed to demonstrate use.",
+     "description": "Give a scenario where LARP is applied.",
+     "how": "Describe tracing an algorithm with sample information."
+    },
+    {
+     "accept": [
+      [
+       "error"
+      ],
+      [
+       "threshold"
+      ],
+      [
+       "improv"
+      ],
+      [
+       "correct"
+      ]
+     ],
+     "marks": 2,
+     "why": "The scenario must show how tracing leads to an improved algorithm.",
+     "description": "Explain how the algorithm is improved.",
+     "how": "Identify an error through the trace and correct or refine a step."
+    }
+   ],
+   "modelAnswer": [
+    "LARP enhances computational thinking by giving learners practice in following steps, examining decisions, and reasoning about results.",
+    "It can be used to trace an algorithm and check whether its logic works for different inputs.",
+    "For example, a learner can apply LARP to an algorithm that assigns grades from marks.",
+    "Trace sample marks such as 90, 80, 70, and 60 and check each output.",
+    "If a boundary mark receives the wrong grade, the learner can find and correct the threshold condition, then trace the algorithm again."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "For definition questions, use the textbook's key terms: decomposition, pattern recognition, abstraction, algorithm, flowchart, pseudocode, and dry run.",
+   "For algorithm questions, write the steps in order, include input and output, and make decision conditions cover every stated case.",
+   "For comparison questions, explain both methods and give a clear difference; do not only list their names.",
+   "For dry-run questions, show sample input, trace each decision, and compare the final output with the expected result.",
+   "In longer answers, define the concept, explain why it matters, and support it with a relevant example."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "What is the first thing the algorithm needs to know?",
+     "Write the grade checks from the highest threshold down, then use a final otherwise case."
+    ],
+    "accept": [
+     [
+      "a+"
+     ],
+     [
+      "grade"
+     ],
+     [
+      "90"
+     ]
+    ],
+    "question": "Q7.1. Write an algorithm to assign a grade based on the marks obtained by a student. The grading system follows these criteria:\n- 90 and above: A+\n- 80 to 89: A\n- 70 to 79: B\n- 60 to 69: C\n- Below 60: F",
+    "solution": [
+     "START",
+     "INPUT marks",
+     "IF marks >= 90 THEN",
+     "    grade = A+",
+     "ELSE IF marks >= 80 THEN",
+     "    grade = A",
+     "ELSE IF marks >= 70 THEN",
+     "    grade = B",
+     "ELSE IF marks >= 60 THEN",
+     "    grade = C",
+     "ELSE",
+     "    grade = F",
+     "END IF",
+     "OUTPUT grade",
+     "STOP"
+    ],
+    "answer": "A+ for marks ≥ 90; A for ≥ 80; B for ≥ 70; C for ≥ 60; otherwise F."
+   },
+   {
+    "hints": [
+     "Think of repeated features or similarities between problems.",
+     "Say what is repeated, then explain how that repetition helps solve the problem."
+    ],
+    "accept": [
+     [
+      "similarit"
+     ],
+     [
+      "repeated"
+     ],
+     [
+      "pattern"
+     ]
+    ],
+    "question": "Q7.3. Explain pattern recognition with an example.",
+    "solution": [
+     "Pattern recognition is finding and using similarities within problems.",
+     "For example, repeated steps in preparing several recipes can be identified and reused.",
+     "Recognising the repeated steps helps solve a similar task without starting from the beginning."
+    ],
+    "answer": "Pattern recognition is finding and using similarities within problems. For example, repeated steps in preparing several recipes can be identified and reused."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "An algorithm needs a starting point and the student's marks as its input.",
+     "text": "START; INPUT marks"
+    },
+    {
+     "why": "Checking the highest threshold first assigns A+ to every mark of 90 or more.",
+     "text": "IF marks >= 90 THEN grade = A+"
+    },
+    {
+     "why": "If the first condition is false, this check assigns A to marks from 80 up to 89.",
+     "text": "ELSE IF marks >= 80 THEN grade = A"
+    },
+    {
+     "why": "The next threshold assigns B to marks from 70 up to 79.",
+     "text": "ELSE IF marks >= 70 THEN grade = B"
+    },
+    {
+     "why": "The next threshold assigns C to marks from 60 up to 69.",
+     "text": "ELSE IF marks >= 60 THEN grade = C"
+    },
+    {
+     "why": "All remaining marks are below 60, so they receive F.",
+     "text": "ELSE grade = F"
+    },
+    {
+     "why": "The decision structure is now complete, and the algorithm can show the assigned grade.",
+     "text": "END IF; OUTPUT grade; STOP"
+    }
+   ],
+   "question": "Q7.1. Write an algorithm to assign a grade based on the marks obtained by a student. The grading system follows these criteria:\n- 90 and above: A+\n- 80 to 89: A\n- 70 to 79: B\n- 60 to 69: C\n- Below 60: F",
+   "answer": "START\nINPUT marks\nIF marks >= 90 THEN\n    grade = A+\nELSE IF marks >= 80 THEN\n    grade = A\nELSE IF marks >= 70 THEN\n    grade = B\nELSE IF marks >= 60 THEN\n    grade = C\nELSE\n    grade = F\nEND IF\nOUTPUT grade\nSTOP"
+  },
+  "explain": [
+   {
+    "title": "Computational thinking",
+    "body": "Computational thinking is a systematic, algorithmic, and logical approach to solving problems. It is useful beyond programming because many real-world tasks can be organised and solved in steps."
+   },
+   {
+    "title": "Decomposition and pattern recognition",
+    "body": "Decomposition breaks a complex problem into smaller, manageable parts. Pattern recognition finds similarities or repeated features, so useful steps or solutions can be reused."
+   },
+   {
+    "title": "Abstraction",
+    "body": "Abstraction ignores unnecessary details and focuses on the main idea or information needed for the task. This makes a complex problem simpler to understand and solve."
+   },
+   {
+    "title": "Algorithms and their representations",
+    "body": "An algorithm is a step-by-step set of instructions for solving a problem. A flowchart represents an algorithm graphically with symbols and arrows; pseudocode describes its steps in structured plain language."
+   },
+   {
+    "title": "Dry runs, debugging, and LARP",
+    "body": "A dry run traces an algorithm with sample data to check its steps and results. Debugging finds and corrects errors. LARP supports learning algorithms through logic and reasoning practice."
+   }
+  ],
+  "mistakes": [
+   "Do not define computational thinking as programming alone; it is a problem-solving approach.",
+   "Do not confuse decomposition (breaking a problem into parts) with abstraction (ignoring irrelevant details).",
+   "In a grade algorithm, check thresholds from highest to lowest so that each mark receives the correct grade.",
+   "Do not leave out the otherwise case; every possible input should have a result.",
+   "Do not call pseudocode a programming language; it describes an algorithm in plain language.",
+   "A dry run means tracing steps with sample data, not writing or executing program code."
+  ]
+ }
+}

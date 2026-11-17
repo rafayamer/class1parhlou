@@ -1,0 +1,432 @@
+{
+ "note": {
+  "explanation": "A basic HTML document has an outer structure that helps the browser understand the page. The head contains information such as the title, while the body contains the content shown on the page. Tags organise that content.",
+  "examples": [
+   "<head><title>My Page</title></head>",
+   "<body><h1>Welcome</h1><p>Hello!</p></body>"
+  ],
+  "checkAnswer": "A paired tag has an opening tag and a closing tag, such as <p> and </p>.",
+  "keywords": [
+   "HTML",
+   "structure",
+   "head",
+   "body",
+   "paired tags",
+   "unpaired tags"
+  ],
+  "simple": "Think of an HTML page as a container: the head holds page information, and the body holds what people see.",
+  "checkQuestion": "Which kind of tag has an opening tag and a closing tag?",
+  "title": "The Basic Structure of an HTML Page",
+  "steps": [
+   "Start with <!DOCTYPE html> to identify the document as HTML5.",
+   "Put the page inside the root <html> element.",
+   "Use <head> for information such as the title.",
+   "Use <body> for the visible page content.",
+   "Use tags such as <h1> for a large heading and <p> for a paragraph."
+  ],
+  "answer": "A paired tag has an opening tag and a closing tag, such as <p> and </p>.",
+  "checkAccept": [
+   [
+    "paired"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It tells the browser that the document is HTML5.",
+    "It creates the main heading on the page.",
+    "It contains the visible content of the page.",
+    "It sets the title shown in the browser tab."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the purpose of <!DOCTYPE html>?",
+   "rationales": [
+    "This is correct because the section says this line tells the browser that the document is an HTML5 document.",
+    "This is incorrect because <h1>, not the doctype declaration, defines a large heading.",
+    "This is incorrect because the <body> section contains the content seen in the browser.",
+    "This is incorrect because the <title> element sets the page title shown in the browser tab."
+   ]
+  },
+  {
+   "options": [
+    "<body>",
+    "<head>",
+    "<html>",
+    "<title>"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which element is the root element of an HTML page?",
+   "rationales": [
+    "This is incorrect because <body> contains the page content seen in the browser.",
+    "This is incorrect because <head> contains meta-information about the document.",
+    "This is correct because <html> is the root element of an HTML page.",
+    "This is incorrect because <title> sets the title of the web page."
+   ]
+  },
+  {
+   "options": [
+    "<head>",
+    "<title>",
+    "<body>",
+    "<p>"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which element contains the content of a web page that is seen in the browser?",
+   "rationales": [
+    "This is incorrect because <head> contains information about the document rather than its visible content.",
+    "This is incorrect because <title> sets the page title shown in the browser tab.",
+    "This is correct because <body> contains the content seen in the browser.",
+    "This is incorrect because <p> defines a paragraph within the page content."
+   ]
+  },
+  {
+   "options": [
+    "<h1>",
+    "<title>",
+    "<p>",
+    "<html>"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tag defines a large heading?",
+   "rationales": [
+    "This is correct because <h1> defines a large heading.",
+    "This is incorrect because <title> sets the page title shown in the browser tab.",
+    "This is incorrect because <p> defines a paragraph.",
+    "This is incorrect because <html> is the root element of the page."
+   ]
+  },
+  {
+   "options": [
+    "<p>",
+    "<h1>",
+    "<body>",
+    "<title>"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tag defines a paragraph?",
+   "rationales": [
+    "This is correct because <p> defines a paragraph.",
+    "This is incorrect because <h1> defines a large heading.",
+    "This is incorrect because <body> contains the visible page content.",
+    "This is incorrect because <title> sets the browser-tab title."
+   ]
+  },
+  {
+   "options": [
+    "<p>Text</p>",
+    "<br>Text</br>",
+    "<img>Photo</img>",
+    "<head>Info"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which option shows a paired tag used according to the section's example?",
+   "rationales": [
+    "This is correct because <p> and </p> are the opening and closing tags of a paired tag.",
+    "This is incorrect because <br> is an unpaired tag and does not need a closing tag.",
+    "This is incorrect because <img> is an unpaired tag and does not need a closing tag.",
+    "This is incorrect because it has an opening <head> tag but no closing tag."
+   ]
+  },
+  {
+   "options": [
+    "<br>",
+    "<p>",
+    "<html>",
+    "<title>"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tag is identified in this section as an unpaired tag?",
+   "rationales": [
+    "This is correct because <br> is listed as an unpaired, self-closing tag.",
+    "This is incorrect because <p> is shown as a paired tag with opening and closing tags.",
+    "This is incorrect because <html> is an element of the page structure, not one of the listed unpaired-tag examples.",
+    "This is incorrect because <title> is an element of the page structure, not one of the listed unpaired-tag examples."
+   ]
+  },
+  {
+   "options": [
+    "The title shown in the browser tab",
+    "The paragraph text on the page",
+    "The document's root element",
+    "The visible page content"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the <title> element set?",
+   "rationales": [
+    "This is correct because <title> sets the page title, which appears in the browser tab.",
+    "This is incorrect because <p> defines a paragraph.",
+    "This is incorrect because <html> is the root element.",
+    "This is incorrect because the <body> section contains the visible page content."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the purpose of the <head> tag in HTML?",
+   "finalAnswer": "The <head> section contains meta-information about the HTML document, like the title.",
+   "marks": 2,
+   "source": "Short 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "meta-information"
+      ],
+      [
+       "meta information"
+      ],
+      [
+       "metadata"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the kind of information kept in the head.",
+     "description": "States that the head contains meta-information about the HTML document.",
+     "how": "Write that the head contains meta-information or metadata about the document."
+    },
+    {
+     "accept": [
+      [
+       "title"
+      ],
+      [
+       "meta-information",
+       "title"
+      ],
+      [
+       "metadata",
+       "title"
+      ]
+     ],
+     "marks": 1,
+     "why": "The section gives the title as an example of information in the head.",
+     "description": "Mentions the title as an example of information in the head.",
+     "how": "Add that the head can contain the page title."
+    }
+   ],
+   "modelAnswer": [
+    "The <head> section contains meta-information about the HTML document, like the title."
+   ]
+  },
+  {
+   "text": "Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+   "finalAnswer": "<!DOCTYPE html><html><head><title>My Page</title></head><body><h1>My Header</h1><p>This is a paragraph.</p><img src=\"photo.jpg\" alt=\"A photo\"><a href=\"https://example.com\">Visit Example</a></body></html>",
+   "marks": 8,
+   "source": "Long 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<!DOCTYPE html>",
+       "<html>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The document declaration and root element establish the basic HTML page structure.",
+     "description": "Includes the HTML5 doctype and the root html element.",
+     "how": "Begin with <!DOCTYPE html> and place the page content inside <html>."
+    },
+    {
+     "accept": [
+      [
+       "<head>",
+       "<title>",
+       "</head>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The head and title demonstrate the correct document-information structure.",
+     "description": "Includes a head section with a title element.",
+     "how": "Place a <title> element inside the <head> section."
+    },
+    {
+     "accept": [
+      [
+       "<body>",
+       "<h1>",
+       "<p>",
+       "<img>",
+       "<a"
+      ]
+     ],
+     "marks": 3,
+     "why": "The body must contain all the requested visible elements.",
+     "description": "Includes a heading, paragraph, image, and hyperlink in the body.",
+     "how": "Put <h1>, <p>, <img>, and <a> elements inside <body>."
+    },
+    {
+     "accept": [
+      [
+       "</html>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The closing root tag completes the HTML document structure.",
+     "description": "Closes the HTML root element.",
+     "how": "End the document with </html>."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "    <title>My Page</title>",
+    "</head>",
+    "<body>",
+    "    <h1>My Header</h1>",
+    "    <p>This is a paragraph.</p>",
+    "    <img src=\"photo.jpg\" alt=\"A photo\">",
+    "    <a href=\"https://example.com\">Visit Example</a>",
+    "</body>",
+    "</html>"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the purpose of an element such as <head>. State its function directly and give the textbook's example, such as the title.",
+   "A longer question may ask you to create a basic HTML page. Start with the doctype and root structure, then place the required content in the body.",
+   "Marks are commonly earned for the correct document structure, correctly choosing the tags, and closing paired tags properly.",
+   "Remember the textbook examples of unpaired tags: <img> and <br>. Do not add closing tags to them."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about the information in an HTML document that is not the visible page content.",
+     "The section names the title as an example of information held there."
+    ],
+    "accept": [
+     [
+      "meta-information"
+     ],
+     [
+      "meta information"
+     ],
+     [
+      "metadata"
+     ]
+    ],
+    "question": "What is the purpose of the <head> tag in HTML?",
+    "solution": [
+     "The <head> section contains meta-information about the HTML document, like the title."
+    ],
+    "answer": "The <head> section contains meta-information about the HTML document, like the title."
+   },
+   {
+    "hints": [
+     "Begin with the HTML5 declaration and the root <html> element.",
+     "Put the heading, paragraph, image, and hyperlink inside the <body>; use <img> and <a> for the image and link."
+    ],
+    "accept": [
+     [
+      "<!DOCTYPE html>",
+      "<html>",
+      "<head>",
+      "<title>",
+      "<body>",
+      "<h1>",
+      "<p>",
+      "<img>",
+      "<a"
+     ]
+    ],
+    "question": "Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+    "solution": [
+     "<!DOCTYPE html>",
+     "<html>",
+     "<head>",
+     "    <title>My Page</title>",
+     "</head>",
+     "<body>",
+     "    <h1>My Header</h1>",
+     "    <p>This is a paragraph.</p>",
+     "    <img src=\"photo.jpg\" alt=\"A photo\">",
+     "    <a href=\"https://example.com\">Visit Example</a>",
+     "</body>",
+     "</html>"
+    ],
+    "answer": "<!DOCTYPE html><html><head><title>My Page</title></head><body><h1>My Header</h1><p>This is a paragraph.</p><img src=\"photo.jpg\" alt=\"A photo\"><a href=\"https://example.com\">Visit Example</a></body></html>"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This line tells the browser that the document is an HTML5 document.",
+     "text": "<!DOCTYPE html>"
+    },
+    {
+     "why": "The html element is the root element of the page.",
+     "text": "<html>"
+    },
+    {
+     "why": "The head section holds information about the document, including its title.",
+     "text": "    <head>"
+    },
+    {
+     "why": "The title sets the name shown in the browser tab.",
+     "text": "        <title>My Page</title>"
+    },
+    {
+     "why": "This closes the head section before the visible page content begins.",
+     "text": "    </head>"
+    },
+    {
+     "why": "The body section contains the content seen in the browser.",
+     "text": "    <body>"
+    },
+    {
+     "why": "The h1 tag defines a large heading.",
+     "text": "        <h1>Welcome</h1>"
+    },
+    {
+     "why": "The p tag defines a paragraph.",
+     "text": "        <p>This is my first page.</p>"
+    },
+    {
+     "why": "This closes the body section.",
+     "text": "    </body>"
+    },
+    {
+     "why": "This closes the root html element and completes the document.",
+     "text": "</html>"
+    }
+   ],
+   "question": "Write a basic HTML document with a title, a large heading, and a paragraph.",
+   "answer": "<!DOCTYPE html>\n<html>\n    <head>\n        <title>My Page</title>\n    </head>\n    <body>\n        <h1>Welcome</h1>\n        <p>This is my first page.</p>\n    </body>\n</html>"
+  },
+  "explain": [
+   {
+    "title": "The outer structure",
+    "body": "Every HTML page has a basic structure. The line <!DOCTYPE html> tells the browser that this is an HTML5 document. The <html> element is the root element that contains the page."
+   },
+   {
+    "title": "Information and visible content",
+    "body": "The <head> section contains meta-information about the HTML document, like the title. The <title> sets the title of the web page, which appears in the browser tab. The <body> contains the content that you see in the browser."
+   },
+   {
+    "title": "Tags organise content",
+    "body": "HTML tags define the structure and content of a web page. For example, <h1> defines a large heading and <p> defines a paragraph."
+   },
+   {
+    "title": "Paired and unpaired tags",
+    "body": "Paired tags come in pairs: an opening tag and a closing tag, such as <p> and </p>. Unpaired tags do not need closing tags; the section gives <img> and <br> as examples."
+   }
+  ],
+  "mistakes": [
+   "Leaving out <!DOCTYPE html> when writing a basic HTML5 document.",
+   "Putting visible page content in <head> instead of inside <body>.",
+   "Confusing <title>, which sets the browser-tab title, with <h1>, which defines a large heading.",
+   "Forgetting the closing tag for a paired element such as <p>.",
+   "Adding a closing tag to an unpaired tag such as <img> or <br>."
+  ]
+ }
+}

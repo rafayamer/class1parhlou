@@ -1,0 +1,574 @@
+{
+ "note": {
+  "explanation": "LARP is a tool for trying out algorithms: you provide inputs, run the instructions, and observe the outputs. It uses simple commands such as START, READ, WRITE, IF...THEN...ELSE, and END.",
+  "examples": [
+   "An even-or-odd algorithm reads a number and displays whether it is even or odd.",
+   "A salary algorithm can calculate annual salary and display whether tax applies."
+  ],
+  "checkAnswer": "LARP helps you run algorithms and see how different inputs affect their outputs.",
+  "keywords": [
+   "LARP",
+   "algorithm",
+   "START",
+   "READ",
+   "WRITE",
+   "IF THEN ELSE",
+   "flowchart"
+  ],
+  "simple": "LARP is like a practice space where you can run an algorithm and see what it does.",
+  "checkQuestion": "What does LARP help you do with an algorithm?",
+  "title": "Practising algorithms with LARP",
+  "steps": [
+   "Start the algorithm with START.",
+   "Use READ to get input and WRITE to display messages or results.",
+   "Use IF...THEN...ELSE when the algorithm must make a decision.",
+   "Finish the algorithm with END.",
+   "Run the algorithm with different inputs and check its outputs."
+  ],
+  "answer": "LARP stands for Logic of Algorithms for resolution of Problems. It lets learners run algorithms and observe their results.",
+  "checkAccept": [
+   [
+    "run",
+    "algorithm"
+   ],
+   [
+    "test",
+    "algorithm"
+   ],
+   [
+    "see",
+    "output"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Logic of Algorithms for Resolution of Problems",
+    "Language and Arithmetic for Repeated Programs",
+    "Logical Applications for Reading Processes",
+    "Lists of Algorithms for Real Programming"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does LARP stand for?",
+   "rationales": [
+    "Correct: LARP stands for Logic of Algorithms for resolution of Problems.",
+    "Incorrect: This is not the expansion given for LARP.",
+    "Incorrect: This is not the expansion given for LARP.",
+    "Incorrect: This is not the expansion given for LARP."
+   ]
+  },
+  {
+   "options": [
+    "READ",
+    "WRITE",
+    "START",
+    "ENDIF"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which command begins a LARP algorithm?",
+   "rationales": [
+    "Incorrect: READ is used to input values, not begin the algorithm.",
+    "Incorrect: WRITE displays messages or results; it does not begin the algorithm.",
+    "Correct: A LARP algorithm begins with START.",
+    "Incorrect: ENDIF closes a conditional structure, not the whole algorithm."
+   ]
+  },
+  {
+   "options": [
+    "To display a message or result",
+    "To input a value",
+    "To begin a program",
+    "To finish a conditional statement"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the purpose of the LARP command WRITE?",
+   "rationales": [
+    "Correct: WRITE displays messages or results.",
+    "Incorrect: READ is used to input a value.",
+    "Incorrect: START begins the algorithm.",
+    "Incorrect: ENDIF finishes the IF structure."
+   ]
+  },
+  {
+   "options": [
+    "WRITE",
+    "READ",
+    "END",
+    "IF"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which LARP command is used to input a value?",
+   "rationales": [
+    "Incorrect: WRITE displays information.",
+    "Correct: READ inputs a value for the algorithm to use.",
+    "Incorrect: END finishes the algorithm.",
+    "Incorrect: IF begins a decision condition."
+   ]
+  },
+  {
+   "options": [
+    "A rectangle",
+    "A diamond",
+    "A parallelogram",
+    "A circle"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which standard flowchart symbol represents a decision?",
+   "rationales": [
+    "Incorrect: A rectangle represents a process.",
+    "Correct: A diamond represents a decision.",
+    "Incorrect: A parallelogram represents input or output.",
+    "Incorrect: A circle is not the standard decision symbol described here."
+   ]
+  },
+  {
+   "options": [
+    "START and END",
+    "READ and WRITE",
+    "IF and ELSE",
+    "THEN and ENDIF"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which LARP structure is used to handle decision-making?",
+   "rationales": [
+    "Incorrect: START and END mark the beginning and ending of the algorithm.",
+    "Incorrect: READ and WRITE handle input and output.",
+    "Correct: IF...THEN...ELSE is used for decision-making.",
+    "Incorrect: THEN and ENDIF are parts of the conditional structure, but the complete decision form is IF...THEN...ELSE."
+   ]
+  },
+  {
+   "options": [
+    "To make complex coding syntax harder",
+    "To see how algorithms process data by running them",
+    "To replace every flowchart with a picture",
+    "To prevent learners from testing different inputs"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How does LARP help learners understand algorithms?",
+   "rationales": [
+    "Incorrect: LARP uses a simplified approach rather than making syntax harder.",
+    "Correct: Running algorithms lets learners see how they process data and produce results.",
+    "Incorrect: LARP can execute algorithms, including those developed from flowcharts; it does not replace every flowchart with a picture.",
+    "Incorrect: LARP helps learners see the effects of different inputs."
+   ]
+  },
+  {
+   "options": [
+    "END",
+    "ENDIF",
+    "ELSE",
+    "WRITE"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which command ends a complete LARP algorithm?",
+   "rationales": [
+    "Correct: END marks the end of a LARP algorithm.",
+    "Incorrect: ENDIF closes an IF conditional structure.",
+    "Incorrect: ELSE introduces the alternative branch of a conditional.",
+    "Incorrect: WRITE displays information and does not end the algorithm."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Write the LARP algorithm shown in your textbook that checks whether a number is even or odd.",
+   "finalAnswer": "The algorithm displays whether the input number is even or odd.",
+   "marks": 2,
+   "source": "Example 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "READ",
+       "number"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The algorithm needs to receive the number being checked.",
+     "description": "Input the number.",
+     "how": "Use READ to input number."
+    },
+    {
+     "accept": [
+      [
+       "IF",
+       "number",
+       "%",
+       "2",
+       "==",
+       "0"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The remainder condition identifies an even number.",
+     "description": "Check whether the number is even.",
+     "how": "Test whether number % 2 == 0."
+    },
+    {
+     "accept": [
+      [
+       "even"
+      ],
+      [
+       "odd"
+      ]
+     ],
+     "marks": 1,
+     "why": "The algorithm must display the correct result for either case.",
+     "description": "Display the even or odd result.",
+     "how": "Use the two branches to write the corresponding message."
+    }
+   ],
+   "modelAnswer": [
+    "START",
+    "WRITE \"Enter a number\"",
+    "READ number",
+    "IF number % 2 == 0 THEN",
+    "    WRITE \"The number is even\"",
+    "ELSE",
+    "    WRITE \"The number is odd\"",
+    "ENDIF",
+    "END"
+   ]
+  },
+  {
+   "text": "Describe LARP and its significance in learning algorithms.",
+   "finalAnswer": "LARP stands for Logic of Algorithms for resolution of Problems. It lets learners run algorithms, see how different inputs affect outputs, and practise writing and improving algorithms.",
+   "marks": 2,
+   "source": "Short 7.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Logic of Algorithms for resolution of Problems"
+      ]
+     ],
+     "marks": 1,
+     "why": "Expanding the acronym gives the definition of LARP.",
+     "description": "State what LARP stands for.",
+     "how": "Write the full expansion of LARP."
+    },
+    {
+     "accept": [
+      [
+       "run",
+       "algorithms"
+      ],
+      [
+       "execute",
+       "algorithms"
+      ]
+     ],
+     "marks": 1,
+     "why": "Running algorithms is a central way LARP supports learning.",
+     "description": "Explain its significance.",
+     "how": "Mention running algorithms and observing results or practising algorithm design."
+    }
+   ],
+   "modelAnswer": [
+    "LARP stands for Logic of Algorithms for resolution of Problems.",
+    "It is an interactive way to learn how algorithms work by running them and seeing the results.",
+    "It helps learners see the effect of different inputs on outputs and practise writing and improving algorithms."
+   ]
+  },
+  {
+   "text": "What is LARP? Discuss its importance in learning and practicing algorithms.",
+   "finalAnswer": "LARP stands for Logic of Algorithms for resolution of Problems. It is an interactive way to learn how algorithms work by running them and seeing the results. It helps learners understand algorithms, see the effect of different inputs on outputs, and practise writing and improving algorithms.",
+   "marks": 8,
+   "source": "Long 7.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Logic of Algorithms for resolution of Problems"
+      ]
+     ],
+     "marks": 2,
+     "why": "The full expansion defines the term correctly.",
+     "description": "Define LARP.",
+     "how": "Give the full form of LARP."
+    },
+    {
+     "accept": [
+      [
+       "run",
+       "algorithms"
+      ],
+      [
+       "execute",
+       "algorithms"
+      ]
+     ],
+     "marks": 2,
+     "why": "Running algorithms is the practical learning method described for LARP.",
+     "description": "Explain how learners use LARP.",
+     "how": "State that learners can run algorithms and observe the results."
+    },
+    {
+     "accept": [
+      [
+       "different",
+       "inputs",
+       "outputs"
+      ],
+      [
+       "effect",
+       "inputs",
+       "output"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing different inputs shows how an algorithm processes data.",
+     "description": "Explain how LARP supports understanding.",
+     "how": "Mention observing how different inputs affect outputs."
+    },
+    {
+     "accept": [
+      [
+       "write",
+       "improve",
+       "algorithms"
+      ],
+      [
+       "practice",
+       "algorithms"
+      ]
+     ],
+     "marks": 2,
+     "why": "Practice writing and improving algorithms is another stated benefit of LARP.",
+     "description": "State a learning benefit.",
+     "how": "Explain that learners can practise writing and improving their algorithms."
+    }
+   ],
+   "modelAnswer": [
+    "LARP stands for Logic of Algorithms for resolution of Problems.",
+    "It is a fun and interactive way to learn how algorithms work by actually running them and seeing the results.",
+    "LARP helps learners understand how algorithms work.",
+    "Learners can see the effect of different inputs on the output.",
+    "They can also practise writing and improving their own algorithms.",
+    "LARP therefore provides a practical way to learn and practise algorithms."
+   ]
+  },
+  {
+   "text": "How does LARP enhance the understanding and application of computational thinking principles? Provide a scenario where LARP can be used to improve an algorithm.",
+   "finalAnswer": "LARP lets learners run algorithms, observe how inputs affect outputs, and improve the steps. For example, they can test an even-or-odd algorithm with different numbers and correct its decision or output if needed.",
+   "marks": 8,
+   "source": "Long 7.11",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "run",
+       "algorithms"
+      ],
+      [
+       "execute",
+       "algorithms"
+      ]
+     ],
+     "marks": 2,
+     "why": "Running an algorithm makes its logical steps practical to observe.",
+     "description": "Explain how LARP supports understanding.",
+     "how": "Describe executing an algorithm in LARP."
+    },
+    {
+     "accept": [
+      [
+       "inputs",
+       "outputs"
+      ],
+      [
+       "different",
+       "inputs"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing inputs helps learners understand the relationship between input and output.",
+     "description": "Explain how testing develops understanding.",
+     "how": "Mention observing the effect of different inputs on the output."
+    },
+    {
+     "accept": [
+      [
+       "write",
+       "improve",
+       "algorithms"
+      ],
+      [
+       "improve",
+       "algorithm"
+      ]
+     ],
+     "marks": 2,
+     "why": "Using test results to improve steps applies computational thinking to algorithm design.",
+     "description": "Explain how LARP supports improvement.",
+     "how": "State that learners can practise writing or improving algorithms."
+    },
+    {
+     "accept": [
+      [
+       "even",
+       "odd"
+      ],
+      [
+       "number",
+       "even"
+      ]
+     ],
+     "marks": 2,
+     "why": "A specific test scenario shows how LARP can be used to check and improve an algorithm.",
+     "description": "Give a suitable scenario and result.",
+     "how": "Describe testing an even-or-odd algorithm with numbers and checking its outputs."
+    }
+   ],
+   "modelAnswer": [
+    "LARP lets learners run an algorithm and see how it processes data.",
+    "By trying different inputs, learners can compare the outputs and check whether the logic works.",
+    "They can then practise writing and improving the algorithm.",
+    "For example, a learner can run an even-or-odd algorithm with even and odd numbers.",
+    "If a result is incorrect, the learner can check the condition and the messages in the two branches, then improve the algorithm."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the full form of LARP, its purpose, or its significance in learning algorithms.",
+   "For a question about LARP's benefits, include running algorithms, testing different inputs, observing outputs, and practising improvement.",
+   "For an algorithm question, write commands in the textbook's order: START, instructions, and END; close a decision with ENDIF.",
+   "In a flowchart question, use the standard symbols: rectangle for process, diamond for decision, and parallelogram for input/output."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Recall what the letters in LARP stand for.",
+     "Then state how running algorithms and trying different inputs helps learners."
+    ],
+    "accept": [
+     [
+      "Logic of Algorithms for resolution of Problems",
+      "run",
+      "algorithms"
+     ],
+     [
+      "LARP",
+      "run",
+      "algorithms",
+      "outputs"
+     ]
+    ],
+    "question": "Describe LARP and its significance in learning algorithms.",
+    "solution": [
+     "LARP stands for Logic of Algorithms for resolution of Problems.",
+     "It is an interactive way to learn how algorithms work by running them and seeing the results.",
+     "It helps learners see the effect of different inputs on outputs and practise writing and improving algorithms."
+    ],
+    "answer": "LARP stands for Logic of Algorithms for resolution of Problems. It lets learners run algorithms, observe outputs, and practise writing and improving algorithms."
+   },
+   {
+    "hints": [
+     "Say what LARP allows a learner to do with an algorithm.",
+     "Give a concrete example, such as checking even and odd numbers with different inputs."
+    ],
+    "accept": [
+     [
+      "run",
+      "algorithm",
+      "inputs",
+      "outputs"
+     ],
+     [
+      "even",
+      "odd",
+      "improve",
+      "algorithm"
+     ]
+    ],
+    "question": "How does LARP enhance the understanding and application of computational thinking principles? Provide a scenario where LARP can be used to improve an algorithm.",
+    "solution": [
+     "LARP lets learners run an algorithm and see how it processes data.",
+     "They can try different inputs, observe the outputs, and check whether the logic works.",
+     "For example, a learner can test an even-or-odd algorithm with even and odd numbers.",
+     "If the output is wrong, the learner can check and improve the condition or its messages."
+    ],
+    "answer": "LARP helps learners run and test algorithms with different inputs, observe outputs, and improve the logic. For example, they can test an even-or-odd algorithm with even and odd numbers."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "START marks the beginning of the algorithm.",
+     "text": "START"
+    },
+    {
+     "why": "WRITE tells the user which input to provide.",
+     "text": "WRITE \"Enter a number\""
+    },
+    {
+     "why": "READ stores the number that will be checked.",
+     "text": "READ number"
+    },
+    {
+     "why": "The condition checks whether division by 2 leaves a remainder of 0.",
+     "text": "IF number % 2 == 0 THEN"
+    },
+    {
+     "why": "This message is displayed when the condition is true.",
+     "text": "    WRITE \"The number is even\""
+    },
+    {
+     "why": "ELSE selects the alternative branch when the condition is false.",
+     "text": "ELSE"
+    },
+    {
+     "why": "This message is displayed when the number is not even.",
+     "text": "    WRITE \"The number is odd\""
+    },
+    {
+     "why": "ENDIF closes the decision structure.",
+     "text": "ENDIF"
+    },
+    {
+     "why": "END marks the end of the algorithm.",
+     "text": "END"
+    }
+   ],
+   "question": "Here's an example of a simple algorithm to check if a number is even or odd:",
+   "answer": "The algorithm displays whether the input number is even or odd."
+  },
+  "explain": [
+   {
+    "title": "What LARP means",
+    "body": "LARP stands for Logic of Algorithms for resolution of Problems. It is an interactive way to learn how algorithms work by running them and seeing their results."
+   },
+   {
+    "title": "LARP commands",
+    "body": "A LARP algorithm starts with START and ends with END. READ inputs values, WRITE displays messages or results, and IF...THEN...ELSE handles decisions; ENDIF closes the decision."
+   },
+   {
+    "title": "Why learners use LARP",
+    "body": "LARP helps you understand algorithms, see how different inputs affect outputs, and practise writing and improving algorithms."
+   },
+   {
+    "title": "Flowcharts in LARP",
+    "body": "Flowcharts show algorithm steps with standard symbols: rectangles for processes, diamonds for decisions, and parallelograms for input/output. A flowchart can be translated into LARP commands and executed to check its logic."
+   }
+  ],
+  "mistakes": [
+   "Writing the wrong expansion of LARP or leaving out the word resolution.",
+   "Confusing READ, which inputs a value, with WRITE, which displays information.",
+   "Forgetting START, END, or ENDIF in the algorithm.",
+   "Writing a condition but not providing an output for both the IF and ELSE cases.",
+   "Assuming a flowchart is executed directly without translating it into LARP syntax as described in the section."
+  ]
+ }
+}

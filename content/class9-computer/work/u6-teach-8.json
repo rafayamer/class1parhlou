@@ -1,0 +1,342 @@
+{
+ "note": {
+  "explanation": "Protocols are rules for communication between devices. DNS looks up the IP address for a domain name, while DHCP automatically gives an IP address to a device on a network.",
+  "examples": [
+   "Typing www.example.com in a browser: DNS translates the domain name to its IP address.",
+   "Connecting a device to Wi-Fi: DHCP assigns the device an IP address."
+  ],
+  "checkAnswer": "DHCP automatically assigns IP addresses to devices on a network.",
+  "keywords": [
+   "protocol",
+   "TCP/IP",
+   "HTTP",
+   "DNS",
+   "DHCP",
+   "domain name",
+   "IP address"
+  ],
+  "simple": "DNS finds the address of a website. DHCP gives a connected device its network address.",
+  "checkQuestion": "Which protocol automatically assigns IP addresses to devices on a network?",
+  "title": "Protocols, DNS and DHCP",
+  "steps": [
+   "Identify what the device or user needs.",
+   "Use DNS to translate a domain name to an IP address.",
+   "Use DHCP to assign an IP address automatically when a device connects to a network."
+  ],
+  "answer": "Protocols are sets of rules that govern data communication. DNS translates domain names to IP addresses, and DHCP automatically assigns IP addresses to devices on a network.",
+  "checkAccept": [
+   [
+    "DHCP",
+    "assigns"
+   ],
+   [
+    "DHCP",
+    "IP address"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A set of rules that governs data communication",
+    "A device that connects multiple networks",
+    "A method for storing web pages",
+    "A tool that assigns domain names"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a protocol in network communication?",
+   "rationales": [
+    "Correct: protocols are sets of rules that govern data communication.",
+    "Incorrect: a router, rather than a protocol, connects networks and directs data.",
+    "Incorrect: storing web pages is not the definition of a protocol.",
+    "Incorrect: protocols do not assign domain names."
+   ]
+  },
+  {
+   "options": [
+    "It transfers web pages over the internet",
+    "It automatically assigns IP addresses",
+    "It translates domain names to IP addresses",
+    "It sends email messages"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is HTTP used for, according to this section?",
+   "rationales": [
+    "Correct: HTTP is used for transferring web pages over the internet.",
+    "Incorrect: DHCP automatically assigns IP addresses.",
+    "Incorrect: DNS translates domain names to IP addresses.",
+    "Incorrect: SMTP, not HTTP, is listed as a common protocol associated with email."
+   ]
+  },
+  {
+   "options": [
+    "Translate a domain name to an IP address",
+    "Assign an IP address to a device",
+    "Transfer web pages",
+    "Set rules for a Wi-Fi password"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A user enters a website's domain name in a browser. Which service helps find its IP address?",
+   "rationales": [
+    "Correct: DNS translates domain names to IP addresses.",
+    "Incorrect: DHCP assigns addresses to devices; it does not translate domain names.",
+    "Incorrect: HTTP transfers web pages, rather than looking up their IP addresses.",
+    "Incorrect: setting a Wi-Fi password is not the function of DNS."
+   ]
+  },
+  {
+   "options": [
+    "DHCP",
+    "DNS",
+    "HTTP",
+    "FTP"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which protocol automatically assigns an IP address when a device joins a network?",
+   "rationales": [
+    "Correct: DHCP automatically assigns IP addresses to devices on a network.",
+    "Incorrect: DNS translates domain names to IP addresses.",
+    "Incorrect: HTTP is used for transferring web pages.",
+    "Incorrect: FTP is listed as a common protocol, but this section does not give it the IP-assignment role."
+   ]
+  },
+  {
+   "options": [
+    "When a device connects to a Wi-Fi network",
+    "When a user types a domain name in a browser",
+    "When a web page is transferred",
+    "When a user reads a printed address"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which situation is an example of DHCP doing its job?",
+   "rationales": [
+    "Correct: the section gives connecting to Wi-Fi as an example of DHCP assigning an IP address.",
+    "Incorrect: DNS translates the domain name when it is typed in a browser.",
+    "Incorrect: HTTP is used to transfer web pages.",
+    "Incorrect: reading a printed address does not involve DHCP assigning an address."
+   ]
+  },
+  {
+   "options": [
+    "TCP/IP, HTTP, FTP and SMTP",
+    "DNS, DHCP, Wi-Fi and a browser",
+    "HTTP, IP address, website and domain",
+    "Router, switch, hub and modem"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which group contains only common protocols named in this section?",
+   "rationales": [
+    "Correct: the section names TCP/IP, HTTP, FTP and SMTP as common protocols.",
+    "Incorrect: Wi-Fi and a browser are not protocols listed in the section.",
+    "Incorrect: an IP address, website and domain are not all protocols.",
+    "Incorrect: these are network devices, not the common protocols listed."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+   "finalAnswer": "DHCP automatically assigns IP addresses to devices on a network.",
+   "marks": 2,
+   "source": "Short 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "DHCP",
+       "automatically"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify that the assignment happens automatically.",
+     "description": "State that DHCP assigns addresses automatically.",
+     "how": "Use the word 'automatically' or clearly express the same idea."
+    },
+    {
+     "accept": [
+      [
+       "IP address",
+       "devices"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must say what DHCP assigns and to whom.",
+     "description": "Identify IP addresses and network devices.",
+     "how": "State that DHCP assigns IP addresses to devices on a network."
+    }
+   ],
+   "modelAnswer": [
+    "DHCP automatically assigns IP addresses to devices on a network."
+   ]
+  },
+  {
+   "text": "Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DHCP.",
+   "finalAnswer": "Protocols are sets of rules that govern data communication. TCP/IP is a common protocol for network communication. HTTP transfers web pages over the internet. DNS translates domain names to IP addresses. DHCP automatically assigns IP addresses to devices on a network.",
+   "marks": 8,
+   "source": "Long 6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "rules",
+       "data communication"
+      ]
+     ],
+     "marks": 2,
+     "why": "Defining protocols and their role establishes the main idea of the answer.",
+     "description": "Define protocols and explain their role in communication.",
+     "how": "Explain that protocols are rules governing data communication."
+    },
+    {
+     "accept": [
+      [
+       "TCP/IP"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question specifically asks for the key protocols to be discussed.",
+     "description": "Include TCP/IP as a common protocol for network communication.",
+     "how": "Name TCP/IP and link it to network communication."
+    },
+    {
+     "accept": [
+      [
+       "HTTP",
+       "web pages"
+      ]
+     ],
+     "marks": 2,
+     "why": "HTTP's function is one of the specific protocol functions requested.",
+     "description": "Explain HTTP's function.",
+     "how": "State that HTTP transfers web pages over the internet."
+    },
+    {
+     "accept": [
+      [
+       "DNS",
+       "domain",
+       "IP address",
+       "DHCP",
+       "assigns"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must distinguish DNS name translation from DHCP address assignment.",
+     "description": "Give the functions of DNS and DHCP.",
+     "how": "State that DNS translates domain names to IP addresses and DHCP automatically assigns IP addresses to devices."
+    }
+   ],
+   "modelAnswer": [
+    "Protocols are sets of rules that govern data communication.",
+    "TCP/IP is a common protocol for network communication.",
+    "HTTP is used for transferring web pages over the internet.",
+    "DNS translates domain names to IP addresses.",
+    "DHCP automatically assigns IP addresses to devices on a network."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the purpose of DHCP; earn the key marks by saying it automatically assigns IP addresses to devices on a network.",
+   "A long question may ask you to discuss protocols and give their functions. Define protocols first, then state the function of each named protocol.",
+   "Keep DNS and DHCP functions distinct: DNS translates domain names to IP addresses; DHCP assigns IP addresses to devices.",
+   "Use the textbook's key wording, such as 'translates domain names to IP addresses' and 'automatically assigns IP addresses'."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of what a device needs when it joins a network.",
+     "Name the type of address DHCP gives and say that the assignment is automatic."
+    ],
+    "accept": [
+     [
+      "DHCP",
+      "automatically"
+     ],
+     [
+      "IP address",
+      "devices"
+     ]
+    ],
+    "question": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+    "solution": [
+     "DHCP automatically assigns IP addresses to devices on a network."
+    ],
+    "answer": "DHCP automatically assigns IP addresses to devices on a network."
+   },
+   {
+    "hints": [
+     "Begin by saying what protocols are.",
+     "Give each named protocol its function: TCP/IP, HTTP, DNS and DHCP."
+    ],
+    "accept": [
+     [
+      "rules",
+      "data communication",
+      "TCP/IP",
+      "HTTP",
+      "web pages",
+      "DNS",
+      "domain",
+      "IP address",
+      "DHCP",
+      "assigns"
+     ]
+    ],
+    "question": "Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DHCP.",
+    "solution": [
+     "Protocols are sets of rules that govern data communication.",
+     "TCP/IP is a common protocol for network communication.",
+     "HTTP is used for transferring web pages over the internet.",
+     "DNS translates domain names to IP addresses.",
+     "DHCP automatically assigns IP addresses to devices on a network."
+    ],
+    "answer": "Protocols are sets of rules that govern data communication. TCP/IP is a common protocol for network communication. HTTP transfers web pages over the internet. DNS translates domain names to IP addresses. DHCP automatically assigns IP addresses to devices on a network."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This states the rule DNS follows when a user enters a website name.",
+     "text": "DNS translates domain names to IP addresses, making it easier for users to access websites."
+    },
+    {
+     "why": "This applies the DNS rule to the example domain name.",
+     "text": "When you type www.example.com in a browser, DNS translates it to the corresponding IP address."
+    }
+   ],
+   "question": "When you type www.example.com in a browser, DNS translates it to the corresponding IP address.",
+   "answer": "DNS translates www.example.com to the corresponding IP address."
+  },
+  "explain": [
+   {
+    "title": "Protocols",
+    "body": "Protocols are sets of rules that govern data communication. Devices use these rules to communicate. Common protocols include TCP/IP, HTTP, FTP and SMTP."
+   },
+   {
+    "title": "HTTP",
+    "body": "HyperText Transfer Protocol (HTTP) is used for transferring web pages over the internet."
+   },
+   {
+    "title": "DNS",
+    "body": "Domain Name System (DNS) translates domain names to IP addresses, making it easier for users to access websites."
+   },
+   {
+    "title": "DHCP",
+    "body": "Dynamic Host Configuration Protocol (DHCP) automatically assigns IP addresses to devices on a network, simplifying network management."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse DNS with DHCP: DNS translates domain names to IP addresses, while DHCP assigns IP addresses to devices.",
+   "Do not say HTTP automatically gives a device its address; that is DHCP's function.",
+   "When defining protocols, include their role in governing data communication.",
+   "For full marks, state what DHCP assigns and that it does so automatically."
+  ]
+ }
+}

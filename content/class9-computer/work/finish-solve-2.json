@@ -1,0 +1,109 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "3:3:8",
+   "figure": {
+    "functions": [
+     "HALF-ADDER: A,B → XOR gate → S; A,B → AND gate → C.",
+     "FULL-ADDER: A,B → XOR gate → P; P,Cin → XOR gate → S.",
+     "FULL-ADDER carry: A,B → AND gate → G; P,Cin → AND gate → H; G,H → OR gate → Cout."
+    ],
+    "arrangement": "series",
+    "components": [],
+    "kind": "circuit",
+    "outside": [],
+    "circles": [],
+    "forces": [],
+    "y_max": 0,
+    "description": "Gate-level circuit diagrams. Draw XOR and AND gates for the half-adder. For the full-adder, cascade two half-adder sections and combine their carry outputs with an OR gate.",
+    "title": "Half-adder and full-adder circuits",
+    "segments": [],
+    "x_min": 0,
+    "categories": [],
+    "x_max": 0,
+    "angles": [],
+    "both": [],
+    "shade": {
+     "side": "",
+     "expression": "",
+     "strict": false
+    },
+    "points": [],
+    "rows": [],
+    "y_min": 0,
+    "values": [],
+    "polygons": [],
+    "sets": [],
+    "headers": [],
+    "intervals": []
+   },
+   "steps": [
+    "A half-adder adds two 1-bit inputs A and B. It has no carry-in input; its outputs are sum S and carry C.",
+    "Half-adder truth table (A B | S C): 00|00; 01|10; 10|10; 11|01.",
+    "Half-adder Boolean expressions: S = A ⊕ B; C = A·B.",
+    "Draw the half-adder with A and B connected to an XOR gate labelled S, and also to an AND gate labelled C.",
+    "A full-adder adds three 1-bit inputs A, B and Cin. Its outputs are sum S and carry Cout.",
+    "Full-adder truth table (A B Cin | S Cout): 000|00; 001|10; 010|10; 011|01; 100|10; 101|01; 110|01; 111|11.",
+    "Full-adder Boolean expressions: S = A ⊕ B ⊕ Cin; Cout = AB + ACin + BCin = AB + Cin(A ⊕ B).",
+    "Draw the full-adder using two half-adder sections: first form P = A ⊕ B and G = AB; then form S = P ⊕ Cin and H = P·Cin; connect G and H to an OR gate to produce Cout.",
+    "Thus, a half-adder has two inputs and cannot accept a preceding carry, whereas a full-adder has three inputs and can be cascaded to add multi-bit numbers."
+   ],
+   "finalAnswer": "Half-adder: S = A ⊕ B, C = AB. Full-adder: S = A ⊕ B ⊕ Cin, Cout = AB + ACin + BCin. The truth tables and gate-level circuits are shown."
+  },
+  {
+   "accept": [],
+   "id": "3:3:10",
+   "figure": {
+    "functions": [
+     "Inputs: A3 A2 A1 A0 and B3 B2 B1 B0; no external carry-in.",
+     "HA0: A0,B0 → XOR → S0; A0,B0 → AND → C1.",
+     "FA1: A1,B1 → XOR → P1; P1,C1 → XOR → S1; A1,B1 → AND → G1; P1,C1 → AND → H1; G1,H1 → OR → C2.",
+     "FA2: A2,B2 → XOR → P2; P2,C2 → XOR → S2; A2,B2 → AND → G2; P2,C2 → AND → H2; G2,H2 → OR → C3.",
+     "FA3: A3,B3 → XOR → P3; P3,C3 → XOR → S3; A3,B3 → AND → G3; P3,C3 → AND → H3; G3,H3 → OR → C4.",
+     "Connect the carry outputs in order: HA0 C1 → FA1 Cin; FA1 C2 → FA2 Cin; FA2 C3 → FA3 Cin. Final result is C4 S3 S2 S1 S0."
+    ],
+    "arrangement": "series",
+    "components": [],
+    "kind": "circuit",
+    "outside": [],
+    "circles": [],
+    "forces": [],
+    "y_max": 0,
+    "description": "Four-bit ripple-carry adder gate-level diagram: one half-adder at bit 0 and three full-adders at bits 1, 2 and 3. Carry wires ripple from the least significant stage to the most significant stage.",
+    "title": "4-bit binary adder",
+    "segments": [],
+    "x_min": 0,
+    "categories": [],
+    "x_max": 0,
+    "angles": [],
+    "both": [],
+    "shade": {
+     "side": "",
+     "expression": "",
+     "strict": false
+    },
+    "points": [],
+    "rows": [],
+    "y_min": 0,
+    "values": [],
+    "polygons": [],
+    "sets": [],
+    "headers": [],
+    "intervals": []
+   },
+   "steps": [
+    "Let A3A2A1A0 and B3B2B1B0 be the two 4-bit numbers. There is no external carry-in, so use a half-adder for bit 0 and a full-adder for each of bits 1, 2 and 3.",
+    "Half-adder truth table (A B | S C): 00|00; 01|10; 10|10; 11|01. Its expressions are S = A ⊕ B and C = AB.",
+    "Full-adder truth table (A B Cin | S Cout): 000|00; 001|10; 010|10; 011|01; 100|10; 101|01; 110|01; 111|11. Its expressions are S = A ⊕ B ⊕ Cin and Cout = AB + ACin + BCin.",
+    "At bit 0, connect A0 and B0 to a half-adder: S0 = A0 ⊕ B0 and C1 = A0B0.",
+    "At bit 1, connect A1, B1 and C1 to full-adder FA1; its outputs are S1 and C2.",
+    "At bit 2, connect A2, B2 and C2 to full-adder FA2; its outputs are S2 and C3.",
+    "At bit 3, connect A3, B3 and C3 to full-adder FA3; its outputs are S3 and final carry C4.",
+    "To draw the circuit, place HA0 followed by FA1, FA2 and FA3. Connect each stage's carry output to the next stage's carry input, and label the sum outputs S0–S3 and the last carry C4.",
+    "For the full-adder gate circuit at each stage i = 1, 2, 3, form Pi = Ai ⊕ Bi and Gi = AiBi; then form Si = Pi ⊕ Ci and Hi = PiCi; finally, Ci+1 = Gi + Hi using an OR gate."
+   ],
+   "finalAnswer": "The 4-bit adder uses one half-adder for the least significant bit and three cascaded full-adders for the remaining bits. Its 5-bit result is C4S3S2S1S0."
+  }
+ ]
+}

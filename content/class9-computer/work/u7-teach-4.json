@@ -1,0 +1,363 @@
+{
+ "note": {
+  "explanation": "Time complexity describes how an algorithm’s running time changes as the input gets bigger. Space complexity describes how much memory it uses. Dry runs and simulations help check that an algorithm works as intended.",
+  "examples": [
+   "If you check each name in a list one by one, a longer list may take more steps.",
+   "A dry run uses sample data to check an algorithm without actually running a program."
+  ],
+  "checkAnswer": "A dry run is a manual check of an algorithm using sample data.",
+  "keywords": [
+   "time complexity",
+   "space complexity",
+   "Big O",
+   "dry run",
+   "algorithm",
+   "memory"
+  ],
+  "simple": "Time complexity is about time and steps; space complexity is about memory. A dry run is a careful test using sample data.",
+  "checkQuestion": "What does a dry run use to check an algorithm?",
+  "title": "Checking how algorithms work",
+  "steps": [
+   "Choose sample input data.",
+   "Follow the algorithm one step at a time.",
+   "Keep track of the values and actions at each step.",
+   "Check whether the result is correct."
+  ],
+  "answer": "A dry run checks an algorithm step by step using sample data.",
+  "checkAccept": [
+   [
+    "sample data",
+    "step"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The number of steps an algorithm takes for one fixed input",
+    "How an algorithm’s running time changes as input size increases",
+    "The amount of input data stored on a computer",
+    "The time taken to write an algorithm"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What does time complexity describe?",
+   "rationales": [
+    "This is not the general description of time complexity because it does not consider changes in input size.",
+    "This is correct because time complexity describes how running time changes as input size increases.",
+    "This describes input storage, not how running time changes.",
+    "Writing time is not what time complexity measures."
+   ]
+  },
+  {
+   "options": [
+    "The memory used by an algorithm relative to input size",
+    "The speed of an internet connection",
+    "The number of people using an algorithm",
+    "The length of an algorithm’s name"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes space complexity?",
+   "rationales": [
+    "This is correct because space complexity concerns memory use relative to input size.",
+    "Internet speed is not the memory used by an algorithm.",
+    "The number of people using it is not a measure of its memory use.",
+    "The length of an algorithm’s name has no bearing on space complexity."
+   ]
+  },
+  {
+   "options": [
+    "O(n)",
+    "O(log n)",
+    "O(n²)",
+    "All of these"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "Which of these is an example of Big O notation?",
+   "rationales": [
+    "O(n) is an example of Big O notation, but it is not the only correct option.",
+    "O(log n) is an example of Big O notation, but it is not the only correct option.",
+    "O(n²) is an example of Big O notation, but it is not the only correct option.",
+    "This is correct because all three expressions are examples of Big O notation."
+   ]
+  },
+  {
+   "options": [
+    "To measure how much memory an algorithm uses",
+    "To draw a picture of an algorithm",
+    "To make an algorithm use no input",
+    "To count the number of people who use an algorithm"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does space complexity help us evaluate?",
+   "rationales": [
+    "This is correct because space complexity concerns an algorithm’s memory use.",
+    "Drawing an algorithm is not what space complexity measures.",
+    "Algorithms may need input, and space complexity does not remove it.",
+    "Counting users does not measure the memory used by an algorithm."
+   ]
+  },
+  {
+   "options": [
+    "Using a longer list always means fewer steps",
+    "The number of steps may change as the input size changes",
+    "Input size has no relation to an algorithm’s running time",
+    "All algorithms take the same time"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "When considering time complexity, what should we examine?",
+   "rationales": [
+    "A longer list does not always mean fewer steps.",
+    "This is correct because time complexity considers how running time changes with input size.",
+    "Input size is central to time complexity, so this statement is incorrect.",
+    "Different algorithms can take different amounts of time."
+   ]
+  },
+  {
+   "options": [
+    "Manually following an algorithm with sample data",
+    "Writing an algorithm in a programming language",
+    "Measuring the size of a computer’s memory",
+    "Removing all the steps from an algorithm"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a dry run of an algorithm?",
+   "rationales": [
+    "This is correct because a dry run involves checking an algorithm step by step with sample data.",
+    "Writing code is not the same as manually checking an algorithm.",
+    "Measuring the whole computer’s memory is not a dry run.",
+    "Removing steps would change the algorithm rather than test it."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is a dry run and why is it important?",
+   "finalAnswer": "A dry run is manually testing an algorithm with sample data, step by step, to check that it works and to find errors.",
+   "marks": 2,
+   "source": "Short Q7.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sample data",
+       "step"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must say how a dry run is carried out.",
+     "description": "Explain what a dry run does.",
+     "how": "State that the algorithm is followed manually, step by step, using sample data."
+    },
+    {
+     "accept": [
+      [
+       "check"
+      ],
+      [
+       "error"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain why a dry run is useful.",
+     "description": "Give its purpose.",
+     "how": "Say that it checks correctness or helps find errors."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run is manually testing an algorithm with sample data, step by step.",
+    "It helps check that the algorithm works as intended and find errors.",
+    "Therefore, a dry run helps validate an algorithm before it is used."
+   ]
+  },
+  {
+   "text": "Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+   "finalAnswer": "A dry run manually follows a flowchart or pseudocode using sample data, step by step, to check the results and find errors.",
+   "marks": 8,
+   "source": "Long Q7.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowchart",
+       "pseudocode"
+      ],
+      [
+       "sample data"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must identify what is checked and what data is used.",
+     "description": "Define a dry run for flowcharts and pseudocode.",
+     "how": "Explain that a dry run means manually following the flowchart or pseudocode using sample data."
+    },
+    {
+     "accept": [
+      [
+       "step",
+       "values"
+      ],
+      [
+       "step",
+       "result"
+      ]
+     ],
+     "marks": 2,
+     "why": "The student must show how the check is performed.",
+     "description": "Describe tracing the algorithm.",
+     "how": "Explain that each instruction is followed in order and values or results are tracked."
+    },
+    {
+     "accept": [
+      [
+       "check",
+       "correct"
+      ],
+      [
+       "check",
+       "result"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must connect dry running to validation.",
+     "description": "Explain how it checks correctness.",
+     "how": "Say that the resulting steps or output can be compared with what is expected."
+    },
+    {
+     "accept": [
+      [
+       "find",
+       "error"
+      ],
+      [
+       "find",
+       "mistake"
+      ]
+     ],
+     "marks": 2,
+     "why": "Identifying faults is an important benefit of testing an algorithm.",
+     "description": "Give the final benefit of performing a dry run.",
+     "how": "State that a dry run can reveal errors or steps that need correction."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run is a manual check of a flowchart or pseudocode using sample data.",
+    "Follow each instruction in order and keep track of the values and results.",
+    "Compare the result with the expected result to check whether the algorithm is correct.",
+    "A dry run can reveal errors or steps that need correction.",
+    "Therefore, a dry run helps validate an algorithm before it is used."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define time complexity, space complexity, or a dry run; write a clear definition and include what is measured or tested.",
+   "For a dry-run question, explain the method: use sample data, follow the steps in order, and check the result.",
+   "A longer question may ask how a dry run validates an algorithm; earn marks by explaining both the process and how it helps find errors.",
+   "Keep time and space separate: time complexity concerns running time, while space complexity concerns memory."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what data you use to test an algorithm.",
+     "Say how following its steps helps you check it."
+    ],
+    "accept": [
+     [
+      "sample data",
+      "check"
+     ],
+     [
+      "manual",
+      "error"
+     ]
+    ],
+    "question": "What is a dry run and why is it important?",
+    "solution": [
+     "A dry run is manually testing an algorithm with sample data, step by step.",
+     "It helps check that the algorithm works as intended and find errors.",
+     "Therefore, a dry run helps validate an algorithm before it is used."
+    ],
+    "answer": "A dry run is manually testing an algorithm with sample data, step by step, to check that it works and to find errors."
+   },
+   {
+    "hints": [
+     "Trace each instruction in the flowchart or pseudocode using sample data.",
+     "Compare the result with what should happen, and look for mistakes."
+    ],
+    "accept": [
+     [
+      "flowchart",
+      "pseudocode",
+      "sample data"
+     ],
+     [
+      "step",
+      "correct",
+      "error"
+     ]
+    ],
+    "question": "Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+    "solution": [
+     "A dry run is a manual check of a flowchart or pseudocode using sample data.",
+     "Follow each instruction in order and keep track of the values and results.",
+     "Compare the result with the expected result to check whether the algorithm is correct.",
+     "A dry run can reveal errors or steps that need correction.",
+     "Therefore, a dry run helps validate an algorithm before it is used."
+    ],
+    "answer": "A dry run manually follows a flowchart or pseudocode using sample data, step by step, to check the results and find errors."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This gives the task and input size to consider.",
+     "text": "Choose a simple task, such as finding the largest number in a list."
+    },
+    {
+     "why": "A small input lets you trace the steps clearly.",
+     "text": "Write down the steps you would take to complete the task for a list of 10 numbers."
+    },
+    {
+     "why": "A larger input helps you notice whether the steps change as the input grows.",
+     "text": "Repeat the task with a list of 100 numbers."
+    },
+    {
+     "why": "Comparing the step counts helps you think about how the algorithm’s work changes as input size increases.",
+     "text": "Compare how the steps change when the list grows from 10 numbers to 100 numbers."
+    }
+   ],
+   "question": "Think of a simple task, like finding the largest number in a list. Write down the steps you would take to complete this task. Now, imagine the list has 10 numbers, then 100 numbers. How do the steps change?",
+   "answer": "To find the largest number, keep the first number as the largest so far, compare each remaining number with it, and update the largest when a bigger number is found. A list of 100 numbers requires more comparisons than a list of 10 numbers."
+  },
+  "explain": [
+   {
+    "title": "Time complexity",
+    "body": "Time Complexity measures how fast or slow an algorithm performs. It shows how the running time of an algorithm changes as the size of the input increases. For example, finding a name may take longer in a list of 1,000 names than in a list of 10 names."
+   },
+   {
+    "title": "Big O notation",
+    "body": "Time complexity is usually expressed using Big O notation, like O(n), O(logn), or O(n²). It helps compare algorithms to see which one is faster."
+   },
+   {
+    "title": "Space complexity",
+    "body": "Space complexity measures the amount of memory an algorithm uses relative to input size. It is essential to consider both the memory required for the input and any extra memory used by the algorithm."
+   },
+   {
+    "title": "Dry runs and simulations",
+    "body": "Designing and evaluating algorithms involves activities like dry runs and simulations to ensure they work as intended. A dry run follows the algorithm using sample data so you can check its steps and result."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse time complexity, which is about running time, with space complexity, which is about memory.",
+   "Do not define time complexity only as the time for one particular input; it describes how running time changes as input size increases.",
+   "Do not say that a dry run means writing or executing program code; describe manually tracing the steps with sample data.",
+   "When explaining a dry run’s purpose, include checking the result and finding errors."
+  ]
+ }
+}

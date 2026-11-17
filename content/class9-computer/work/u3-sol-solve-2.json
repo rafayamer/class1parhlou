@@ -1,0 +1,150 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "3:8",
+   "figure": "Half-adder: connect inputs A and B to an XOR gate for Sum S and an AND gate for Carry C. Full-adder: connect A, B and Cin to a three-input XOR gate for Sum S. For Carry Cout, connect A and B, A and Cin, and B and Cin to three AND gates, then connect their outputs to an OR gate.",
+   "steps": [
+    "A half-adder adds two binary digits, A and B. It produces a Sum (S) and a Carry (C).",
+    "Half-adder truth table:",
+    "A | B | S | C",
+    "0 | 0 | 0 | 0",
+    "0 | 1 | 1 | 0",
+    "1 | 0 | 1 | 0",
+    "1 | 1 | 0 | 1",
+    "Half-adder Boolean expressions: S = A ⊕ B; C = A · B.",
+    "A full-adder adds three binary digits: A, B and the input carry Cin. It produces a Sum (S) and an output carry (Cout).",
+    "Full-adder truth table:",
+    "A | B | Cin | S | Cout",
+    "0 | 0 | 0 | 0 | 0",
+    "0 | 0 | 1 | 1 | 0",
+    "0 | 1 | 0 | 1 | 0",
+    "0 | 1 | 1 | 0 | 1",
+    "1 | 0 | 0 | 1 | 0",
+    "1 | 0 | 1 | 0 | 1",
+    "1 | 1 | 0 | 0 | 1",
+    "1 | 1 | 1 | 1 | 1",
+    "Full-adder Boolean expressions: S = A ⊕ B ⊕ Cin; Cout = A · B + A · Cin + B · Cin.",
+    "A half-adder has no carry input, so it is used when there is no carry from a previous column, such as the least significant bit.",
+    "A full-adder accepts a carry input and is used for the other columns of a multi-bit addition."
+   ],
+   "finalAnswer": "A half-adder adds two bits and has no carry input; a full-adder adds two bits and an input carry. Their outputs are given by the truth tables and Boolean expressions above."
+  },
+  {
+   "accept": [],
+   "id": "3:9",
+   "figure": "Draw a three-variable Karnaugh map with columns AB in Gray-code order 00, 01, 11, 10 and rows C = 0, 1. Enter 1 in the cells for minterms 1, 3, 5 and 7. The four 1s fill the entire C = 1 row; group them together and label the group C.",
+   "steps": [
+    "A Karnaugh map (K-map) is a graphical method for simplifying Boolean expressions. Each cell represents one minterm.",
+    "Arrange the cells in Gray-code order so that adjacent cells differ in only one variable. Place a 1 in each cell where the function is 1.",
+    "Make the largest possible rectangular groups of adjacent 1s. The group size must be a power of 2: 1, 2, 4, 8, and so on. The first and last cells of a row or column are also adjacent.",
+    "For each group, keep only the variables that remain unchanged within that group. Remove variables that change. OR the resulting terms to obtain the simplified expression.",
+    "Example: Simplify F(A, B, C) = Σm(1, 3, 5, 7).",
+    "Use columns AB in Gray-code order 00, 01, 11, 10 and rows C = 0, 1.",
+    "K-map:",
+    "C \\ AB | 00 | 01 | 11 | 10",
+    "0       | 0  | 0  | 0  | 0",
+    "1       | 1  | 1  | 1  | 1",
+    "The four 1s in the C = 1 row form one group of four.",
+    "Within this group, A and B change, so they are eliminated. C remains 1 throughout the group.",
+    "Therefore, F = C."
+   ],
+   "finalAnswer": "A K-map simplifies a Boolean expression by grouping adjacent 1s and retaining only the variables that remain unchanged; in the example, F = C."
+  },
+  {
+   "accept": [],
+   "id": "3:10",
+   "figure": "Draw four stages from right to left. Connect A0 and B0 to a half-adder; label its outputs S0 and C1. Connect A1, B1 and C1 to a full-adder; label its outputs S1 and C2. Connect A2, B2 and C2 to a full-adder; label its outputs S2 and C3. Connect A3, B3 and C3 to a full-adder; label its outputs S3 and C4. The result is C4 S3 S2 S1 S0.",
+   "steps": [
+    "To add two 4-bit numbers A3A2A1A0 and B3B2B1B0, connect the adders in order from the least significant bit (bit 0) to the most significant bit (bit 3).",
+    "At bit 0, there is no input carry. Use a half-adder with inputs A0 and B0.",
+    "Half-adder truth table:",
+    "A | B | S | C",
+    "0 | 0 | 0 | 0",
+    "0 | 1 | 1 | 0",
+    "1 | 0 | 1 | 0",
+    "1 | 1 | 0 | 1",
+    "Half-adder expressions: S0 = A0 ⊕ B0; C1 = A0 · B0.",
+    "At bit 1, use a full-adder with inputs A1, B1 and carry C1. Its outputs are S1 and C2.",
+    "At bit 2, use a full-adder with inputs A2, B2 and carry C2. Its outputs are S2 and C3.",
+    "At bit 3, use a full-adder with inputs A3, B3 and carry C3. Its outputs are S3 and final carry C4.",
+    "Full-adder truth table:",
+    "A | B | Cin | S | Cout",
+    "0 | 0 | 0 | 0 | 0",
+    "0 | 0 | 1 | 1 | 0",
+    "0 | 1 | 0 | 1 | 0",
+    "0 | 1 | 1 | 0 | 1",
+    "1 | 0 | 0 | 1 | 0",
+    "1 | 0 | 1 | 0 | 1",
+    "1 | 1 | 0 | 0 | 1",
+    "1 | 1 | 1 | 1 | 1",
+    "At each full-adder: Si = Ai ⊕ Bi ⊕ Ci; Ci+1 = Ai · Bi + Ai · Ci + Bi · Ci.",
+    "The 5-bit result is C4S3S2S1S0. C4 is the final carry and is included when the addition produces an overflow beyond four bits."
+   ],
+   "finalAnswer": "Use one half-adder for bit 0 and three full-adders for bits 1, 2 and 3; the 5-bit sum is C4S3S2S1S0."
+  },
+  {
+   "accept": [],
+   "id": "3:11",
+   "figure": "",
+   "steps": [
+    "F(A, B) = A · B + A · B̅",
+    "Take A as the common factor: F = A · (B + B̅).",
+    "By the complement law, B + B̅ = 1.",
+    "Therefore, F = A · 1 = A."
+   ],
+   "finalAnswer": "F(A, B) = A"
+  },
+  {
+   "accept": [],
+   "id": "3:12",
+   "figure": "",
+   "steps": [
+    "F(A, B, C) = (A + B)̅ + (A · C)̅",
+    "By De Morgan’s law, (A + B)̅ = A̅ · B̅ and (A · C)̅ = A̅ + C̅.",
+    "Therefore, F = A̅ · B̅ + A̅ + C̅.",
+    "By the absorption law, A̅ + A̅ · B̅ = A̅.",
+    "Therefore, F = A̅ + C̅."
+   ],
+   "finalAnswer": "F(A, B, C) = A̅ + C̅"
+  },
+  {
+   "accept": [],
+   "id": "3:13",
+   "figure": "",
+   "steps": [
+    "(A + B)̅ · (A + B)",
+    "Let X = A + B. Then the expression is X̅ · X.",
+    "By the complement law, X̅ · X = 0.",
+    "Therefore, (A + B)̅ · (A + B) = 0."
+   ],
+   "finalAnswer": "0"
+  },
+  {
+   "accept": [],
+   "id": "3:14",
+   "figure": "",
+   "steps": [
+    "(A + B̅) · (A + B)",
+    "Using the identity (X + Y) · (X + Z) = X + Y · Z:",
+    "(A + B̅) · (A + B) = A + (B̅ · B).",
+    "By the complement law, B̅ · B = 0.",
+    "Therefore, A + 0 = A."
+   ],
+   "finalAnswer": "A"
+  },
+  {
+   "accept": [],
+   "id": "3:15",
+   "figure": "",
+   "steps": [
+    "A + A̅ · (B̅ + C)",
+    "Using the distributive law, A + A̅ · X = (A + A̅) · (A + X), where X = B̅ + C.",
+    "Therefore, A + A̅ · (B̅ + C) = (A + A̅) · (A + B̅ + C).",
+    "By the complement law, A + A̅ = 1.",
+    "Therefore, 1 · (A + B̅ + C) = A + B̅ + C."
+   ],
+   "finalAnswer": "A + B̅ + C"
+  }
+ ]
+}

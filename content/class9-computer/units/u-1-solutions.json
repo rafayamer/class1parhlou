@@ -1,0 +1,531 @@
+{
+ "unit": 1,
+ "sections": [
+  {
+   "number": "1.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.4",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.5",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.6",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "1.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.1",
+     "question": "Define a system. What are its basic components?",
+     "steps": [
+      "A system is a group of interrelated components that work together to achieve a common goal.",
+      "The basic components of a system are input, processing, output, and feedback.",
+      "Input is the data or material entered into the system.",
+      "Processing changes the input into useful results.",
+      "Output is the result produced by the system.",
+      "Feedback provides information about the output and helps control or improve the system."
+     ],
+     "answer": "A system is a group of interrelated components that work together through input, processing, output, and feedback.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.2",
+     "question": "Differentiate between natural and artificial systems.",
+     "steps": [
+      "Natural systems occur in nature and are not made by humans.",
+      "Examples of natural systems are the solar system and the human body.",
+      "Artificial systems are designed and made by humans to achieve a specific purpose.",
+      "Examples of artificial systems are a computer system and a transportation system."
+     ],
+     "answer": "Natural systems occur in nature, while artificial systems are designed and made by humans.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.3",
+     "question": "Describe the main components of a computer system.",
+     "steps": [
+      "A computer system is an organized combination of components that work together to process data and produce useful information.",
+      "Hardware is the physical part of the computer, such as the keyboard, monitor, processor and storage devices. It is used to input, process, store and output data.",
+      "Software is a set of programs and instructions that tells the hardware what to do. It includes system software, such as an operating system, and application software, such as a word processor.",
+      "Data consists of raw facts and figures entered into the computer. The computer processes data to produce meaningful information.",
+      "People, also called users or peopleware, operate the computer, provide data and use the information it produces.",
+      "Procedures are the rules and instructions followed to use the computer system and process data correctly.",
+      "These components work together: users follow procedures and use software to enter data through hardware; the hardware processes and stores the data and presents the resulting information to users."
+     ],
+     "answer": "A computer system consists of hardware, software, data, people and procedures that work together to process data and produce information.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.4",
+     "question": "List and describe the types of computing systems.",
+     "steps": [
+      "A computing system is an organized set of components that performs computing tasks by accepting input, processing data, storing it and producing output.",
+      "A computer is an electronic device that accepts data, processes it according to instructions, stores it and produces information. Computers may be used as personal computers, servers, mainframes or supercomputers, according to their size and purpose.",
+      "A software system is a collection of related programs and data that work together to perform tasks. An operating system manages computer resources, while application software helps users perform particular tasks.",
+      "A computer network is a group of interconnected computers and devices that communicate and share data and resources. For example, computers in a school may share files and a printer through a network.",
+      "The Internet is a worldwide network of interconnected networks. It allows users and computer systems to communicate and access services such as the World Wide Web and email.",
+      "These systems can be connected and work together; for example, a computer uses software and a network connection to access information on the Internet."
+     ],
+     "answer": "Computing systems include computers, software systems, computer networks and the Internet; each performs computing tasks, and they can work together to process and share information.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.5",
+     "question": "What are the main components of the Von Neumann architecture?",
+     "steps": [
+      "The main components of the Von Neumann architecture are the Central Processing Unit (CPU), memory, and input/output devices.",
+      "The CPU consists of the Arithmetic Logic Unit (ALU), the Control Unit (CU), and registers.",
+      "The ALU performs arithmetic and logical operations.",
+      "The Control Unit directs and coordinates the activities of the computer.",
+      "Memory stores data and instructions.",
+      "Input devices enter data and instructions, while output devices present the results."
+     ],
+     "answer": "The Von Neumann architecture consists of the CPU (ALU, Control Unit, and registers), memory, and input/output devices.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.6",
+     "question": "What is the Von Neumann computer architecture? List its key components.",
+     "steps": [
+      "The Von Neumann architecture is a computer design in which data and instructions are stored in the same memory.",
+      "The CPU fetches instructions and data from memory, processes them, and stores the results.",
+      "Its key components are the CPU, memory, and input/output devices.",
+      "The CPU contains the ALU, Control Unit, and registers."
+     ],
+     "answer": "The Von Neumann architecture stores data and instructions in the same memory and uses the CPU, memory, and input/output devices.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.7",
+     "question": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+     "steps": [
+      "Fetch: The Control Unit retrieves an instruction from memory.",
+      "Decode: The Control Unit interprets the instruction.",
+      "Execute: The CPU performs the operation specified by the instruction.",
+      "Store: The result is stored in memory or a register."
+     ],
+     "answer": "The four steps of the instruction cycle are fetch, decode, execute, and store.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.8",
+     "question": "What is the Von Neumann bottleneck?",
+     "steps": [
+      "The Von Neumann bottleneck is the limitation on the speed of data transfer between the CPU and memory.",
+      "Data and instructions share the same pathway between the CPU and memory.",
+      "As a result, the CPU may have to wait while data or instructions are transferred."
+     ],
+     "answer": "The Von Neumann bottleneck is the limited transfer speed between the CPU and memory because they share the same pathway.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.9",
+     "question": "What is a key advantage of the Von Neumann architecture?",
+     "steps": [
+      "A key advantage of the Von Neumann architecture is the stored-program concept.",
+      "Both data and instructions are stored in the same memory.",
+      "This makes a computer flexible because programs can be changed or replaced without changing the hardware."
+     ],
+     "answer": "The stored-program concept allows data and instructions to share memory, making the computer flexible and easy to reprogram.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 1.10",
+     "question": "What are the three main requirements for a computing system to function?",
+     "steps": [
+      "A computing system requires hardware, the physical parts of the computer.",
+      "It requires software, the programs and instructions that tell the hardware what to do.",
+      "It also requires data to be processed into useful information."
+     ],
+     "answer": "The three main requirements are hardware, software, and data.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.1",
+     "question": "Define and describe the concept of a system. Explain the fundamental components, objectives, environment, and methods of communication within a system.",
+     "steps": [
+      "A system is a set of interrelated components that work together to achieve a common objective.",
+      "The components are the parts or elements of the system.",
+      "The relationships between components allow them to work together.",
+      "The objective is the purpose or goal for which the system is designed.",
+      "The environment is everything outside the system that can affect it or be affected by it.",
+      "A system receives input from its environment, processes it, and produces output.",
+      "The boundary separates a system from its environment; an interface is the point through which the system interacts with its environment or another system.",
+      "Components communicate and exchange information through suitable links, signals, or interfaces."
+     ],
+     "answer": "A system is a set of interrelated components that work together to achieve an objective and interact with their environment.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.2",
+     "question": "Differentiate between natural and artificial systems. Discuss their characteristics, functions, and purposes with relevant examples.",
+     "steps": [
+      "A system is a group of related parts that work together to achieve a purpose. Systems may be natural or artificial.",
+      "A natural system exists in nature and is not made by humans. Its parts are naturally connected and interact according to natural processes.",
+      "The function of a natural system is carried out by the interaction of its parts. Its purpose is generally related to maintaining natural processes or supporting life; for example, the human body carries out functions such as breathing and digestion, and an ecosystem supports interactions among living things and their environment.",
+      "An artificial system is designed and made by humans to achieve a particular objective. Its components are selected and organized for a planned purpose, and people may operate or control it.",
+      "The function of an artificial system depends on its components and the way they work together. For example, a traffic-light system controls the flow of traffic, while a computer system processes data and produces information.",
+      "Natural systems arise through nature, whereas artificial systems are deliberately designed by people; both consist of interacting parts and perform functions that serve a purpose."
+     ],
+     "answer": "Natural systems occur in nature, while artificial systems are designed by people; both have interacting parts that perform functions to serve a purpose.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.3",
+     "question": "Examine the relationship between systems and different branches of science, including natural science, design science, and computer science. How do these branches utilize system theory to understand and improve their respective fields? Provide specific examples to support your analysis.",
+     "steps": [
+      "System theory studies systems as organized wholes made up of related parts that interact with one another and with their environment. It helps explain how the parts work together to achieve objectives.",
+      "Natural science uses system theory to study systems found in nature. Scientists identify the parts, their interactions and the processes of the whole system; for example, an ecosystem is studied through the interactions of organisms with one another and with their environment.",
+      "Design science uses system theory to plan and create artificial systems that meet a need. Designers identify the objective, choose suitable components and arrange them so that they work together; for example, a traffic-control system uses traffic lights, sensors and control rules to manage the movement of vehicles.",
+      "Computer science uses system theory to understand and design computer-based systems. A computer system has components such as hardware, software, data and users that interact to process data and produce information; a computer network is another example in which connected computers communicate and share resources.",
+      "In each branch, system theory helps people examine the components, relationships, inputs, processes and outputs of a system. This understanding can be used to explain how a system works, find problems and improve its performance."
+     ],
+     "answer": "System theory helps natural science understand interactions in nature, design science plan effective artificial systems, and computer science understand and improve computer-based systems.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.4",
+     "question": "Explore the different types of computing systems such as computers, software systems, computer networks, and the internet.",
+     "steps": [
+      "Computing systems are organized systems that use computers or computer-related components to process, store or communicate information.",
+      "A computer is an electronic device that accepts data, processes it according to instructions, stores it and produces information. It may be used for tasks such as calculations, document preparation and data storage.",
+      "A software system is a set of related programs and data that work together. System software, such as an operating system, manages hardware and provides services for other programs; application software helps users perform specific tasks.",
+      "A computer network connects two or more computers or devices so that they can communicate and share data and resources. For example, a local area network can connect computers and a shared printer in a school.",
+      "The Internet is a worldwide system of interconnected networks. It enables communication and access to information and services, including websites and email.",
+      "These types can operate together: a computer runs software, connects to a network and can use the Internet to exchange information."
+     ],
+     "answer": "Computers process data, software systems provide instructions and services, networks connect devices to share information, and the Internet connects networks worldwide.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.5",
+     "question": "Describe the main characteristics of a computer as a system, including its objectives, components, and interactions among these components.",
+     "steps": [
+      "A computer is a system because it consists of related components that interact to achieve the objective of processing data and producing useful information.",
+      "Its objective is to accept data and instructions, process and store the data, and provide information as output.",
+      "The input unit accepts data and instructions from the user or another device and sends them to the computer for processing.",
+      "The Central Processing Unit (CPU) controls the operations of the computer and processes data. The Control Unit (CU) directs and coordinates the work of the other components, while the Arithmetic Logic Unit (ALU) performs arithmetic and logical operations.",
+      "Memory and storage hold data, instructions and results. Main memory provides data and instructions needed during processing, while secondary storage keeps data and programs for later use.",
+      "The output unit presents the processed information to the user or another device, for example through a monitor or printer.",
+      "The components interact in sequence: input devices send data and instructions to memory and the CPU; the CPU processes them under the direction of the CU, using the ALU when required; results are stored or sent to output devices.",
+      "The computer also interacts with its environment through users and external devices. Users provide input and use the output, while connected devices can supply data or receive results."
+     ],
+     "answer": "A computer system aims to process data into information; its input, CPU, memory and storage, and output components interact under the control of software and users.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.6",
+     "question": "Explain the Von Neumann architecture of a computer. Include a discussion on the main components, their functions, and the step-by-step process of how the architecture operates.",
+     "steps": [
+      "The Von Neumann architecture is a computer design in which program instructions and data are stored in the same memory and are processed by the CPU.",
+      "The main components are the Central Processing Unit (CPU), memory, input devices, output devices and the buses that carry information between them.",
+      "The CPU consists mainly of the Control Unit (CU) and the Arithmetic Logic Unit (ALU). The CU controls and coordinates computer operations and directs the movement of data and instructions.",
+      "The ALU performs arithmetic operations, such as addition, and logical operations, such as comparisons.",
+      "Memory stores both program instructions and data. The CPU uses memory to obtain the instructions and data required for processing and can store results back in memory.",
+      "Input devices enter data and instructions into the computer. Output devices present the results to the user.",
+      "Buses are communication paths that transfer data, instructions and control signals between the CPU, memory and input/output devices.",
+      "First, a program and its data are placed in memory. The CPU fetches the next instruction from memory.",
+      "The Control Unit decodes the instruction to determine what action is required and which data is needed.",
+      "The CPU obtains the required data, and the ALU performs the operation if a calculation or logical decision is required.",
+      "The CPU stores the result in memory or sends it to an output device. The CPU then fetches the next instruction and repeats the cycle until the program is completed.",
+      "This repeated fetch-decode-execute cycle enables the computer to run stored programs."
+     ],
+     "answer": "In the Von Neumann architecture, data and instructions share memory, and the CPU repeatedly fetches, decodes and executes instructions, using input, output and buses to communicate.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.7",
+     "question": "Provide a detailed explanation of how a computer interacts with its environment. Include examples of user input, network communication, and power supply.",
+     "steps": [
+      "A computer system interacts with its environment by receiving data and instructions, exchanging information with other devices, receiving energy to operate and producing output.",
+      "A user can provide input through devices such as a keyboard, mouse, microphone or touchscreen. For example, a user types a document using a keyboard and selects commands with a mouse.",
+      "The computer processes the input according to its software and may store data or produce output. A monitor displays the result, while a printer can produce a paper copy.",
+      "Through a network connection, a computer can send and receive data. For example, it can send an email through the Internet or request a web page from a server and receive the page in response.",
+      "The computer requires electrical power to operate. Power from a wall outlet is supplied to a desktop computer through its power supply, which provides the electrical power needed by its components; a laptop can also use energy stored in its battery.",
+      "Thus, the computer is not isolated: users, other computers and networks provide input or services, the power supply enables its operation, and the computer returns information or other output to its environment."
+     ],
+     "answer": "A computer interacts with its environment through user input, network communication, electrical power and output to users or other devices.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 1.8",
+     "question": "Describe the process of retrieving and displaying a file using a computer, based on the interactions among different components. Provide a step-by-step explanation of how input is processed, data is transferred, and results are displayed on the screen.",
+     "steps": [
+      "The user gives a command to open a file by using an input device, such as a keyboard or mouse.",
+      "The input unit accepts the command and sends it to the CPU for processing.",
+      "The CPU interprets the command and requests the required file from secondary storage, such as a hard disk.",
+      "The file is transferred from secondary storage to main memory through the computer’s data pathways (buses).",
+      "The CPU processes the file’s data and sends the results to the output unit.",
+      "The output unit displays the results on the monitor screen."
+     ],
+     "answer": "1. The user enters a command to open a file using a keyboard or mouse. 2. The input unit sends the command to the CPU. 3. The CPU processes the command and requests the file from secondary storage. 4. The file is transferred to main memory through the data pathways (buses). 5. The CPU processes the data and sends the results to the output unit. 6. The monitor displays the results on the screen.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 1.1",
+     "stem": "What is the primary function of a system?",
+     "options": [
+      "To work independently",
+      "To achieve a common goal",
+      "To create new systems",
+      "To provide entertainment"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A system does not necessarily work independently; it may interact with other systems or its environment.",
+      "A system’s primary function is to organize its components and activities to achieve a common goal.",
+      "Creating new systems is not the primary function of a system.",
+      "Providing entertainment may be the purpose of some systems, but it is not the primary function of systems in general."
+     ]
+    },
+    {
+     "source": "MCQ 1.2",
+     "stem": "What is one of the fundamental concepts of any system?",
+     "options": [
+      "Its size",
+      "Its objective",
+      "Its age",
+      "Its price"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A system can be large or small, so size is not a fundamental concept that defines it.",
+      "An objective is fundamental because it describes what the system is intended to achieve.",
+      "A system’s age does not define its fundamental nature.",
+      "A system’s price is not a fundamental concept of systems."
+     ]
+    },
+    {
+     "source": "MCQ 1.3",
+     "stem": "What is an example of a simple system?",
+     "options": [
+      "A human body",
+      "A computer network",
+      "A thermostat regulating temperature",
+      "The Internet"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The human body is a complex system with many interacting parts.",
+      "A computer network is generally more complex than a simple system.",
+      "A thermostat regulating temperature is a simple system that senses temperature and controls heating or cooling.",
+      "The Internet is a large and highly complex system."
+     ]
+    },
+    {
+     "source": "MCQ 1.4",
+     "stem": "What type of environment remains unchanged unless the system provides an output?",
+     "options": [
+      "Dynamic",
+      "Static",
+      "Deterministic",
+      "Non-deterministic"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A dynamic environment changes over time, whether or not the system produces an output.",
+      "A static environment remains unchanged unless an output from the system affects it.",
+      "A deterministic system produces predictable results from given inputs; this does not describe an unchanged environment.",
+      "A non-deterministic system may produce unpredictable results; this does not describe an unchanged environment."
+     ]
+    },
+    {
+     "source": "MCQ 1.5",
+     "stem": "What are the basic components of a system?",
+     "options": [
+      "Users, hardware, software",
+      "Objectives, components, environment, communication",
+      "Inputs, outputs, processes",
+      "Sensors, actuators, controllers"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Users, hardware, and software can be parts of some systems but do not describe the basic components of a system in general.",
+      "Objectives, components, environment, and communication describe the basic components of a system.",
+      "Inputs, outputs, and processes describe a common way of representing system operations, but not the full set of basic components asked for here.",
+      "Sensors, actuators, and controllers are components of some control systems, not systems in general."
+     ]
+    },
+    {
+     "source": "MCQ 1.6",
+     "stem": "What concept does the theory of systems aim to understand?",
+     "options": [
+      "Hardware design",
+      "System interactions and development over time",
+      "Software applications",
+      "Network security"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Hardware design is only one possible application of systems theory, not its overall focus.",
+      "Systems theory seeks to understand how systems interact and develop over time.",
+      "Software applications are a specific topic and are not the general focus of systems theory.",
+      "Network security is a specialized field rather than the general subject of systems theory."
+     ]
+    },
+    {
+     "source": "MCQ 1.7",
+     "stem": "What role does the Operating System (OS) play in a computer?",
+     "options": [
+      "It performs calculations and executes instructions",
+      "It temporarily stores data and instructions for the CPU",
+      "It receives input from interface components and decides what to do with it",
+      "It provides long-term storage of data and software"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "The processor performs calculations and executes instructions; the OS manages and coordinates computer operations.",
+      "Main memory temporarily stores data and instructions for the CPU, rather than serving as the OS.",
+      "The OS manages computer operations and responds to input by directing appropriate actions.",
+      "Long-term storage devices provide persistent storage, rather than serving as the OS."
+     ]
+    },
+    {
+     "source": "MCQ 1.8",
+     "stem": "Which of the following describes the Von Neumann architecture's main characteristic?",
+     "options": [
+      "Separate memory for data and instructions",
+      "Parallel execution of instructions",
+      "Single memory store for both program instructions and data",
+      "Multiple CPUs for different tasks"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Separate memories for data and instructions are characteristic of Harvard architecture, not the standard Von Neumann architecture.",
+      "Parallel instruction execution is not the defining characteristic of Von Neumann architecture.",
+      "Von Neumann architecture uses a single memory store for both program instructions and data.",
+      "Using multiple CPUs is not the defining characteristic of Von Neumann architecture."
+     ]
+    },
+    {
+     "source": "MCQ 1.9",
+     "stem": "What is a disadvantage of the Von Neumann architecture?",
+     "options": [
+      "Complex design due to separate memory spaces",
+      "Difficult to modify programs stored in memory",
+      "Bottleneck due to single memory space for instructions and data",
+      "Lack of flexibility in executing instructions"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Separate memory spaces are not a design feature of the Von Neumann architecture.",
+      "Programs stored in memory can generally be modified, so this is not its key disadvantage.",
+      "Sharing a single memory and communication path for instructions and data can create a bottleneck.",
+      "Von Neumann architecture is flexible in executing instructions; its key disadvantage is the shared-memory bottleneck."
+     ]
+    },
+    {
+     "source": "MCQ 1.10",
+     "stem": "Which of the following transports data inside a computer among different components?",
+     "options": [
+      "Control Unit",
+      "System Bus",
+      "Memory",
+      "Processor"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The Control Unit directs and coordinates operations but does not itself transport data among components.",
+      "The System Bus transports data among a computer’s components.",
+      "Memory stores data and instructions rather than transporting them among components.",
+      "The processor executes instructions and processes data, while the bus carries data between components."
+     ]
+    }
+   ]
+  }
+ ]
+}

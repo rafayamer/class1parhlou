@@ -1,0 +1,63 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 0,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q5"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q6"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q7"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "<button onclick=\"showMessage()\">Click me</button>\n<script>\nfunction showMessage() {\n  alert(\"Button clicked!\");\n}\n</script>\nClicking the button calls showMessage(), which displays an alert."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w1",
+   "myAnswer": "<!DOCTYPE html>\n<html>\n<head><title>Simple Form</title></head>\n<body>\n  <input id=\"name\" type=\"text\" placeholder=\"Enter your name\">\n  <button onclick=\"greet()\">Submit</button>\n  <p id=\"message\"></p>\n  <script>\n    function greet() {\n      var name = document.getElementById(\"name\").value;\n      document.getElementById(\"message\").textContent = \"Hello, \" + name + \"!\";\n    }\n  </script>\n</body>\n</html>"
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w2",
+   "myAnswer": "<!DOCTYPE html>\n<html>\n<head><title>Changing Background Color</title></head>\n<body>\n  <button onclick=\"changeColor()\">Change Background Color</button>\n  <script>\n    function changeColor() {\n      document.body.style.backgroundColor = \"lightblue\";\n    }\n  </script>\n</body>\n</html>"
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w3",
+   "myAnswer": "JavaScript can be included in an HTML file by writing it inside a <script> element. It can also be placed in an external .js file and linked with a tag such as <script src=\"script.js\"></script>."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w4",
+   "myAnswer": "<!DOCTYPE html>\n<html>\n<head><title>Change Background Color</title></head>\n<body>\n  <button onclick=\"changeColor()\">Change color</button>\n  <script>\n    function changeColor() {\n      document.body.style.backgroundColor = \"lightblue\";\n    }\n  </script>\n</body>\n</html>\nWhen the button is clicked, its onclick handler calls changeColor(). The function changes the page's background color to lightblue."
+  }
+ ]
+}

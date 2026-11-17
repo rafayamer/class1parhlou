@@ -1,0 +1,78 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 2,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 2,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q5"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q6"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q7"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "INPUT number. If number % 2 == 0, PRINT \"Even\"; otherwise, PRINT \"Odd\"."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "INPUT number. If number <= 1, RETURN False. Check each integer divisor from 2 through sqrt(number); if any divides number evenly, RETURN False. If none does, RETURN True."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w2",
+   "myAnswer": "Ask the user for a username and password, then compare both with the valid credentials. If both match, print \"Login successful\"; otherwise, print a message identifying the invalid credential or credentials."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w3",
+   "myAnswer": "A flowchart is a visual representation of a process or algorithm, using standard symbols connected by arrows. It is used to show the order of steps and decisions, helping people plan, understand, and communicate a process."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w4",
+   "myAnswer": "Pseudocode expresses an algorithm's steps in simple, structured language without requiring the exact syntax of a programming language. It helps plan and communicate program logic before coding."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w5",
+   "myAnswer": "A flowchart represents an algorithm visually using symbols and arrows to show steps and control flow. Pseudocode describes the steps in structured, plain language without using a specific programming language's syntax."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w6",
+   "myAnswer": "First, understand the problem and identify its inputs, outputs, and requirements. Break it into smaller steps, then design the logic using pseudocode and a flowchart, including decisions and repeated steps. Check the design with sample inputs and revise it if needed. For example, to calculate a student's grade, input the marks, check that they are within the valid range, and then use a sequence of decisions to assign a grade (such as A for 80 or more, B for 70–79, and so on). In pseudocode, these checks can be written as IF/ELSE statements; in a flowchart, they can be shown as decision diamonds with branches leading to the grade output."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w7",
+   "myAnswer": "Flowcharts use standard graphical symbols and arrows to show an algorithm's steps and branches. They make the overall flow and decisions easy to see, but can take time to draw and become cumbersome for large or frequently changed algorithms. Pseudocode uses structured, plain language to describe the logic; it is quick to write, easy to revise, and can be translated into code, but it does not show the flow as visually and may be interpreted differently. A flowchart may be preferred to explain a simple process to a group, while pseudocode may be preferred for describing detailed logic, such as a sorting algorithm, before coding."
+  }
+ ]
+}

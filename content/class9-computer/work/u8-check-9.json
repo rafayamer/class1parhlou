@@ -1,0 +1,136 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": -1,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q5"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q6"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q7"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q8"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q9"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "The `<head>` contains document information and resources, such as the page title, metadata, and links to CSS files. Its contents are generally not displayed as the page’s main content."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "An ordered list uses `<ol>` and presents its items in a sequence, usually numbered. An unordered list uses `<ul>` and presents its items without a numbered order, usually with bullets."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w2",
+   "myAnswer": "Write a CSS comment between `/*` and `*/`, for example: `/* This is a comment */`."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w3",
+   "myAnswer": "CSS can be applied inline using an element’s `style` attribute, internally using a `<style>` element, or externally by linking a separate CSS file."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w4",
+   "myAnswer": "Write JavaScript inside a `<script>` element, or include an external JavaScript file with a tag such as `<script src=\"script.js\"></script>`."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w5",
+   "myAnswer": "Use `<a href=\"URL\">link text</a>`. The `href` attribute specifies the destination, and the text inside the element is the clickable link."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w6",
+   "myAnswer": "`<div>` groups content in a block-level container, making it possible to organise or style that content together."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w7",
+   "myAnswer": "Add a link element inside the document’s `<head>`, for example: `<link rel=\"stylesheet\" href=\"style.css\">`."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w8",
+   "myAnswer": "The `<table>` element creates a table for presenting data in rows and columns."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w9",
+   "myAnswer": "The CSS box model represents an element as content surrounded by padding, a border, and a margin."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w10",
+   "myAnswer": "HTML structures the content of a web page, CSS controls its presentation, and JavaScript adds behaviour and interactivity."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w11",
+   "myAnswer": "Install or choose a code editor and a web browser. Create a project folder and files for HTML, CSS, and JavaScript, write and save the code in the editor, then open the HTML file in the browser to test it."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w12",
+   "myAnswer": "```html\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Basic Page</title>\n</head>\n<body>\n  <header><h1>Welcome</h1></header>\n  <p>This is a sample paragraph.</p>\n  <img src=\"image.jpg\" alt=\"A sample image\">\n  <a href=\"https://example.com\">Visit this website</a>\n</body>\n</html>\n```"
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w13",
+   "myAnswer": "```html\n<table>\n  <tr><th>Name</th><th>Score</th></tr>\n  <tr><td>Ayesha</td><td>90</td></tr>\n</table>\n```\n```css\ntable {\n  border-collapse: collapse;\n  width: 100%;\n}\nth, td {\n  border: 1px solid black;\n  padding: 8px;\n  text-align: left;\n}\nth {\n  background-color: lightgray;\n}\n```"
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w14",
+   "myAnswer": "Common CSS selectors include:\n- Element selector: `p { color: blue; }` selects all `<p>` elements.\n- Class selector: `.note { color: green; }` selects elements with `class=\"note\"`.\n- ID selector: `#title { color: red; }` selects the element with `id=\"title\"`.\n- Grouping selector: `h1, h2 { font-family: Arial; }` applies styles to both headings."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w15",
+   "myAnswer": "Use flexible sizes for layouts and images, and use media queries to adjust styles for different screen widths. For example:\n```css\n.container { width: 90%; margin: auto; }\nimg { max-width: 100%; height: auto; }\n@media (max-width: 600px) {\n  .container { width: 100%; }\n  nav { display: block; }\n}\n```\nThe media query applies the contained styles when the viewport is at most 600 pixels wide."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w16",
+   "myAnswer": "```html\n<!DOCTYPE html>\n<html>\n<body>\n  <button id=\"changeColor\">Change background</button>\n  <script>\n    function changeBackground() {\n      document.body.style.backgroundColor = \"lightblue\";\n    }\n    document.getElementById(\"changeColor\").addEventListener(\"click\", changeBackground);\n  </script>\n</body>\n</html>\n```\nWhen the button is clicked, the event listener calls `changeBackground`, which changes the page body’s background color."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w17",
+   "myAnswer": "A transition smoothly changes a CSS property between values, commonly when a state changes. For example, `button { transition: background-color 0.3s ease; } button:hover { background-color: blue; }` transitions the background color on hover. An animation uses `@keyframes` to define changes over time, for example: `@keyframes fade { from { opacity: 0; } to { opacity: 1; } } .box { animation: fade 1s ease; }`. The `animation` properties can specify the keyframe name, duration, timing function, and other settings."
+  }
+ ]
+}

@@ -1,0 +1,439 @@
+{
+ "note": {
+  "explanation": "A dry run means following an algorithm manually with sample data. You track what happens at each step, including the values of variables and the output. This can help you spot logic errors before using a computer.",
+  "examples": [
+   "For the addition flowchart, use A = 3 and B = 5: Sum = 3 + 5 = 8.",
+   "For FindMax, use num1 = 10 and num2 = 15: 10 > 15 is False, so max = 15."
+  ],
+  "checkAnswer": "If num1 = 4 and num2 = 9, the output max is 9.",
+  "keywords": [
+   "dry run",
+   "flowchart",
+   "pseudocode",
+   "sample data",
+   "variable",
+   "simulation"
+  ],
+  "simple": "A dry run is like acting out an algorithm by hand, one step at a time.",
+  "checkQuestion": "If num1 = 4 and num2 = 9, what value does FindMax output?",
+  "title": "Dry Run",
+  "steps": [
+   "Choose sample data for the algorithm.",
+   "Follow each instruction in order.",
+   "Check conditions and update variable values when needed.",
+   "Record the output and check whether it makes sense."
+  ],
+  "answer": "A dry run involves manually going through the algorithm with sample data to identify any errors.",
+  "checkAccept": [
+   [
+    "9"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Run the algorithm on a computer and record its speed",
+    "Manually follow the algorithm using sample data",
+    "Change the algorithm without checking it",
+    "Draw only the input and output symbols"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What does it mean to dry run an algorithm?",
+   "rationales": [
+    "This describes measuring performance, not manually tracing the steps.",
+    "This is correct because a dry run manually follows the algorithm with sample data.",
+    "Changing an algorithm is not a dry run and may introduce errors.",
+    "A dry run follows the algorithm's steps rather than drawing only symbols."
+   ]
+  },
+  {
+   "options": [
+    "It records the value of each variable as the steps are followed",
+    "It converts a flowchart into a programming language",
+    "It removes all input from the algorithm",
+    "It guarantees that the algorithm is the fastest possible"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When dry running pseudocode, what should you do with variable values?",
+   "rationales": [
+    "This is correct because tracking variable values shows how the pseudocode changes its data.",
+    "Converting to code is not the same as manually simulating pseudocode.",
+    "A dry run uses sample input rather than removing the input.",
+    "A dry run can help check logic, but it does not prove the algorithm is fastest."
+   ]
+  },
+  {
+   "options": [
+    "The condition is True, so max = num1",
+    "The condition is False, so max = num2",
+    "The algorithm stops before assigning max",
+    "Both values are added together"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In FindMax, num1 = 6 and num2 = 11. What happens when the condition num1 > num2 is checked?",
+   "rationales": [
+    "This is incorrect because 6 is not greater than 11.",
+    "This is correct because the condition is False, so the else branch assigns num2 to max.",
+    "The algorithm continues into the else branch and assigns max.",
+    "FindMax compares the values; it does not add them."
+   ]
+  },
+  {
+   "options": [
+    "3",
+    "8",
+    "15",
+    "35"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A dry run of an addition flowchart uses A = 3 and B = 5. What value is displayed?",
+   "rationales": [
+    "This is only the first input, not the sum.",
+    "This is correct because 3 + 5 = 8.",
+    "This is not the sum of the sample inputs.",
+    "This is not the sum; the flowchart adds 3 and 5."
+   ]
+  },
+  {
+   "options": [
+    "To understand how a flowchart works step-by-step without using a computer",
+    "To make a flowchart execute itself",
+    "To replace every decision with an output",
+    "To make the algorithm use more input values"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is one purpose of dry running a flowchart?",
+   "rationales": [
+    "This is correct because manually tracing a flowchart helps you understand its control flow and find logic errors.",
+    "A dry run is a manual check; it does not make a flowchart execute itself.",
+    "A dry run follows the decisions rather than replacing them.",
+    "A dry run uses sample data to check the algorithm; it does not require more inputs."
+   ]
+  },
+  {
+   "options": [
+    "Cost-effective",
+    "Safe",
+    "Repeatable",
+    "Guaranteed to match every real-world event exactly"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "Which statement is NOT given as a benefit of simulation in this section?",
+   "rationales": [
+    "Cost-effective is listed as a benefit of simulation.",
+    "Safe is listed as a benefit because dangerous situations can be tested without risk.",
+    "Repeatable is listed as a benefit because a simulation can be run again with different settings.",
+    "The section lists cost, safety and repeatability, but does not promise that simulations exactly match every real-world event."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Calculating the Sum of Two Numbers. Consider the flowchart given in figure 7.7 for adding two numbers. Dry run it using the example inputs 3 and 5.",
+   "finalAnswer": "The displayed sum is 8.",
+   "marks": 2,
+   "source": "Example 7.5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "3",
+       "5"
+      ]
+     ],
+     "marks": 1,
+     "why": "The sample inputs must be identified so the trace can be followed.",
+     "description": "Identify the two inputs.",
+     "how": "State that the first number is 3 and the second number is 5."
+    },
+    {
+     "accept": [
+      [
+       "3+5",
+       "8"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct calculation and displayed result complete the dry run.",
+     "description": "Calculate and state the output.",
+     "how": "Show 3 + 5 = 8 and state that 8 is displayed."
+    }
+   ],
+   "modelAnswer": [
+    "Start.",
+    "Input the first number: 3.",
+    "Input the second number: 5.",
+    "Add the two numbers: 3 + 5 = 8.",
+    "Output the result: 8.",
+    "Stop."
+   ]
+  },
+  {
+   "text": "Finding the Maximum of Two Numbers. Dry run the given pseudocode using num1 = 10 and num2 = 15.",
+   "finalAnswer": "max = 15",
+   "marks": 2,
+   "source": "Example 7.5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "10>15",
+       "False"
+      ]
+     ],
+     "marks": 1,
+     "why": "The condition determines which branch the pseudocode follows.",
+     "description": "Check the condition.",
+     "how": "Show that 10 > 15 is False."
+    },
+    {
+     "accept": [
+      [
+       "max=15"
+      ]
+     ],
+     "marks": 1,
+     "why": "The selected branch sets the correct maximum and output.",
+     "description": "Give the final value.",
+     "how": "State that max = num2 = 15 and the output is 15."
+    }
+   ],
+   "modelAnswer": [
+    "Input num1 = 10 and num2 = 15.",
+    "Check if num1 > num2 (10 > 15: False).",
+    "Since the condition is False, max = num2 (max = 15).",
+    "Output max (15)."
+   ]
+  },
+  {
+   "text": "Q7.10. What is a dry run and why is it important?",
+   "finalAnswer": "A dry run involves manually going through an algorithm with sample data to identify errors. It helps check the algorithm's logic and understand how it works.",
+   "marks": 2,
+   "source": "Short 7.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manually",
+       "sample data"
+      ]
+     ],
+     "marks": 1,
+     "why": "A definition must explain the key action and use of a dry run.",
+     "description": "Define a dry run.",
+     "how": "Say that the algorithm is followed manually using sample data."
+    },
+    {
+     "accept": [
+      [
+       "errors"
+      ],
+      [
+       "logic"
+      ]
+     ],
+     "marks": 1,
+     "why": "The importance explains what the check helps the user do.",
+     "description": "Explain why it matters.",
+     "how": "Mention checking logic, understanding the algorithm, or identifying errors."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run involves manually going through an algorithm with sample data.",
+    "It helps identify errors and check the algorithm's logic and correctness."
+   ]
+  },
+  {
+   "text": "Q7.9. Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+   "finalAnswer": "A dry run manually follows a flowchart step-by-step or simulates pseudocode line-by-line using sample data. It helps check the logic, variable values, decisions and output, so errors can be identified and the algorithm's correctness can be verified.",
+   "marks": 8,
+   "source": "Long 7.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowchart",
+       "manually"
+      ],
+      [
+       "step-by-step"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain how a flowchart is traced in a dry run.",
+     "description": "Explain a flowchart dry run.",
+     "how": "Describe manually following the flowchart step-by-step."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode",
+       "line-by-line"
+      ],
+      [
+       "simulate"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must distinguish the line-by-line simulation of pseudocode.",
+     "description": "Explain a pseudocode dry run.",
+     "how": "Describe manually simulating pseudocode line-by-line."
+    },
+    {
+     "accept": [
+      [
+       "sample data"
+      ],
+      [
+       "variable"
+      ]
+     ],
+     "marks": 2,
+     "why": "Using sample data and tracking values shows how the algorithm is tested.",
+     "description": "Describe what is tracked.",
+     "how": "Mention using sample data and checking variable values or decisions."
+    },
+    {
+     "accept": [
+      [
+       "errors"
+      ],
+      [
+       "correctness"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must connect dry running to checking algorithm logic and correctness.",
+     "description": "State the benefit and conclusion.",
+     "how": "Explain that checking the steps helps identify logic errors and validate the result."
+    }
+   ],
+   "modelAnswer": [
+    "A dry run of a flowchart involves manually walking through it step-by-step to understand how the algorithm works without using a computer.",
+    "A dry run of pseudocode involves manually simulating its execution line-by-line.",
+    "In both cases, use sample data and follow each instruction in order.",
+    "Check conditions and note how variable values change.",
+    "Check the output produced by the algorithm.",
+    "This helps verify the logic and correctness of the algorithm and identify errors."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define a dry run and state why it is useful. Give both the meaning and its purpose.",
+   "A question may ask you to dry run a flowchart or pseudocode with given sample values. Show the inputs, each condition or calculation, any changed variable values, and the output.",
+   "For a dry-run trace, marks are commonly earned for correctly checking a condition, following the correct branch, updating variables, and stating the final output.",
+   "Do not skip steps just because the final answer seems obvious; board marking may award marks for the working."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "A dry run is a manual check that uses sample data.",
+     "Mention that it can help check logic and find errors."
+    ],
+    "accept": [
+     [
+      "manually",
+      "sample data",
+      "errors"
+     ],
+     [
+      "manually",
+      "sample data",
+      "logic"
+     ]
+    ],
+    "question": "Q7.10. What is a dry run and why is it important?",
+    "solution": [
+     "A dry run involves manually going through an algorithm with sample data.",
+     "Follow the steps in order and check what happens to the values.",
+     "This helps check the algorithm's logic and identify errors."
+    ],
+    "answer": "A dry run involves manually going through an algorithm with sample data. It helps check the logic and identify errors."
+   },
+   {
+    "hints": [
+     "For a flowchart, walk through its steps; for pseudocode, simulate its lines.",
+     "Track sample values and conditions, then explain how this helps find errors."
+    ],
+    "accept": [
+     [
+      "flowchart",
+      "pseudocode",
+      "sample data",
+      "errors"
+     ],
+     [
+      "flowchart",
+      "pseudocode",
+      "correctness"
+     ]
+    ],
+    "question": "Q7.9. Explain the concept of a dry run in the context of both flowcharts and pseudocode. How does performing a dry run help in validating the correctness of an algorithm?",
+    "solution": [
+     "A dry run of a flowchart involves manually walking through it step-by-step without using a computer.",
+     "A dry run of pseudocode involves manually simulating its execution line-by-line.",
+     "Use sample data and follow each instruction in order.",
+     "Check conditions and record how variable values change.",
+     "Check the output produced by the algorithm.",
+     "This helps verify the logic and correctness of the algorithm and identify errors."
+    ],
+    "answer": "A dry run manually follows a flowchart step-by-step or simulates pseudocode line-by-line using sample data. Tracking conditions, values and output helps check correctness and identify errors."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the sample values used to trace the pseudocode.",
+     "text": "Input num1 and num2 (e.g., 10 and 15)"
+    },
+    {
+     "why": "The condition decides which branch the pseudocode will follow.",
+     "text": "Check if num1 > num2 (10>15: False)"
+    },
+    {
+     "why": "A False condition means the else branch assigns num2 to max.",
+     "text": "Since the condition is False, max = num2 (max = 15)"
+    },
+    {
+     "why": "The output is the value stored in max after the assignment.",
+     "text": "Output max (15)"
+    }
+   ],
+   "question": "Finding the Maximum of Two Numbers: dry run the pseudocode using num1 = 10 and num2 = 15.",
+   "answer": "max = 15"
+  },
+  "explain": [
+   {
+    "title": "What a dry run is",
+    "body": "A dry run involves manually going through the algorithm with sample data to identify any errors."
+   },
+   {
+    "title": "Dry running a flowchart",
+    "body": "A dry run of a flowchart involves manually walking through the flowchart step-by-step to understand how the algorithm works without using a computer. This helps identify any logical errors and understand the flow of control."
+   },
+   {
+    "title": "Dry running pseudocode",
+    "body": "A dry run of pseudocode involves manually simulating the execution of the pseudocode line-by-line. This helps in verifying the logic and correctness of the algorithm."
+   },
+   {
+    "title": "Simulation",
+    "body": "Simulation is we use of computer programs to create a model of a real-world process or system. This helps us understand how things work by testing different ideas or algorithms without needing to try them out in real life."
+   }
+  ],
+  "mistakes": [
+   "Skipping a step in the flowchart or pseudocode instead of following the instructions in order.",
+   "Checking a condition incorrectly and then following the wrong branch.",
+   "Forgetting to update a variable after an assignment.",
+   "Writing the input values as the output without carrying out the calculation or comparison.",
+   "Giving only the final answer when the question asks you to show the dry run."
+  ]
+ }
+}

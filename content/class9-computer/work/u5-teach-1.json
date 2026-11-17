@@ -1,0 +1,642 @@
+{
+ "note": {
+  "explanation": "Software is a collection of programs and instructions that tell a computer what to do and how to do. System software is designed to manage the system resources and provide a platform for application software to run. For example, Windows is system software, while Microsoft Word is application software.",
+  "examples": [
+   "Windows manages computer resources; Microsoft Word helps a user create documents."
+  ],
+  "checkAnswer": "Application software.",
+  "keywords": [
+   "software",
+   "system software",
+   "application software",
+   "operating system",
+   "device driver",
+   "utility program"
+  ],
+  "simple": "System software helps run the computer. Application software helps you do a particular task.",
+  "checkQuestion": "Is Microsoft Word system software or application software?",
+  "title": "System software and application software",
+  "steps": [
+   "Identify what the software is mainly for.",
+   "If it manages system resources or supports applications, classify it as system software.",
+   "If it helps a user perform a specific task, classify it as application software.",
+   "Use examples to check: Windows is system software; Microsoft Word is application software."
+  ],
+  "answer": "System software manages system resources and provides a platform for applications; application software helps users perform specific tasks.",
+  "checkAccept": [
+   [
+    "application software"
+   ],
+   [
+    "application"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A collection of programs and instructions",
+    "A collection of computer parts",
+    "A type of computer screen",
+    "A list of internet websites"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes software?",
+   "rationales": [
+    "This is correct because software is a collection of programs and instructions.",
+    "This describes hardware, not software.",
+    "A screen is a hardware component, not software.",
+    "A list of websites is not the definition of software."
+   ]
+  },
+  {
+   "options": [
+    "It helps users perform specific tasks",
+    "It only protects the computer from viruses",
+    "It is always a physical part of the computer",
+    "It replaces the need for system software"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the main purpose of application software?",
+   "rationales": [
+    "This is correct because application software is designed to help users perform specific tasks.",
+    "Virus protection is one possible utility function, not the purpose of all application software.",
+    "Application software is made of programs, not physical computer parts.",
+    "Application software runs on a platform provided by system software; it does not replace it."
+   ]
+  },
+  {
+   "options": [
+    "Linux",
+    "Google Docs",
+    "Minecraft",
+    "VLC Media Player"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which of these is system software?",
+   "rationales": [
+    "This is correct because Linux is an example of an operating system, which is system software.",
+    "Google Docs is a word processor, an example of application software.",
+    "Minecraft is a game, an example of application software.",
+    "VLC Media Player is a media player, an example of application software."
+   ]
+  },
+  {
+   "options": [
+    "A printer driver",
+    "A web browser",
+    "A word processor",
+    "A computer game"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which item is an example of a device driver?",
+   "rationales": [
+    "This is correct because printer drivers are listed as examples of device drivers.",
+    "A web browser is application software.",
+    "A word processor is application software.",
+    "A computer game is application software."
+   ]
+  },
+  {
+   "options": [
+    "A disk cleanup tool",
+    "A presentation",
+    "A web page",
+    "A word-processing document"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which item is an example of a utility program?",
+   "rationales": [
+    "This is correct because disk cleanup tools are listed as utility programs.",
+    "A presentation is content created using application software, not a utility program.",
+    "A web page is content viewed or created using applications, not a utility program.",
+    "A word-processing document is a file made using application software."
+   ]
+  },
+  {
+   "options": [
+    "System software is usually pre-installed; application software can be installed as needed.",
+    "Application software is always pre-installed; system software is installed only when needed.",
+    "Both types are always pre-installed.",
+    "Neither type can be installed on a computer."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement matches the section's description of software installation?",
+   "rationales": [
+    "This is correct: the section says system software is usually pre-installed and application software can be installed by the user as needed.",
+    "This reverses the installation description in the section.",
+    "The section does not say that both types are always pre-installed.",
+    "The section says application software can be installed by the user."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Define system software and provide two examples.",
+   "finalAnswer": "System software is designed to manage the system resources and provide a platform for application software to run. Examples include an operating system and a device driver.",
+   "marks": 2,
+   "source": "Short 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manage the system resources",
+       "platform"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition identifies the purpose of system software.",
+     "description": "Define system software.",
+     "how": "State that it manages system resources and provides a platform for application software."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "device driver"
+      ],
+      [
+       "operating system",
+       "utility"
+      ],
+      [
+       "driver",
+       "utility"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples show that the definition can be applied to actual software types.",
+     "description": "Give two examples.",
+     "how": "Name any two suitable examples, such as an operating system, a device driver, or a utility program."
+    }
+   ],
+   "modelAnswer": [
+    "System software is designed to manage the system resources and provide a platform for application software to run.",
+    "Examples include an operating system and a device driver."
+   ]
+  },
+  {
+   "text": "Describe the role of device drivers in a computer system.",
+   "finalAnswer": "Device drivers help the operating system communicate with hardware devices; examples include printer, graphics card, and sound card drivers.",
+   "marks": 2,
+   "source": "Short 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hardware",
+       "operating system",
+       "communicat"
+      ],
+      [
+       "hardware",
+       "operating system",
+       "bridge"
+      ]
+     ],
+     "marks": 1,
+     "why": "The communication role is the key function of a device driver.",
+     "description": "Describe what device drivers do.",
+     "how": "Explain that they facilitate communication between hardware devices and the operating system."
+    },
+    {
+     "accept": [
+      [
+       "printer driver"
+      ],
+      [
+       "graphics card driver"
+      ],
+      [
+       "sound card driver"
+      ]
+     ],
+     "marks": 1,
+     "why": "A relevant example makes the role of a driver concrete.",
+     "description": "Give a suitable example.",
+     "how": "Name a printer, graphics card, or sound card driver."
+    }
+   ],
+   "modelAnswer": [
+    "Device drivers facilitate communication between hardware devices and the operating system.",
+    "Examples include printer drivers, graphics card drivers, and sound card drivers."
+   ]
+  },
+  {
+   "text": "Differentiate between system software and application software with examples.",
+   "finalAnswer": "System software manages and operates computer hardware and provides a platform for applications; examples include operating systems and device drivers. Application software helps users perform specific tasks; examples include word processors, web browsers, and games.",
+   "marks": 2,
+   "source": "Short 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "system software",
+       "manage",
+       "hardware",
+       "operating system"
+      ],
+      [
+       "system software",
+       "resources",
+       "device driver"
+      ]
+     ],
+     "marks": 1,
+     "why": "This distinguishes system software by its role and provides an example.",
+     "description": "Explain system software and give an example.",
+     "how": "State that it manages or operates computer hardware and name an operating system or device driver."
+    },
+    {
+     "accept": [
+      [
+       "application software",
+       "specific tasks",
+       "word processor"
+      ],
+      [
+       "application software",
+       "specific tasks",
+       "web browser"
+      ],
+      [
+       "application software",
+       "specific tasks",
+       "game"
+      ]
+     ],
+     "marks": 1,
+     "why": "This distinguishes application software by its role and provides an example.",
+     "description": "Explain application software and give an example.",
+     "how": "State that it helps users perform specific tasks and name a word processor, web browser, or game."
+    }
+   ],
+   "modelAnswer": [
+    "System software manages and operates computer hardware, making it possible for application software to run; examples include operating systems and device drivers.",
+    "Application software helps the user perform specific tasks; examples include word processors, web browsers, and games."
+   ]
+  },
+  {
+   "text": "Discuss the importance of system software in a computing system.",
+   "finalAnswer": "System software manages system resources and provides a platform for application software to run. It acts as a bridge between hardware and user applications. Operating systems, device drivers, and utility programs are examples. System software is usually pre-installed, and keeping it updated helps the computer run smoothly and stay protected from security threats.",
+   "marks": 8,
+   "source": "Long 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manage",
+       "system resources"
+      ]
+     ],
+     "marks": 2,
+     "why": "Managing system resources is a central purpose of system software.",
+     "description": "Explain resource management.",
+     "how": "State that system software manages the system resources."
+    },
+    {
+     "accept": [
+      [
+       "platform",
+       "application software"
+      ],
+      [
+       "bridge",
+       "hardware",
+       "applications"
+      ]
+     ],
+     "marks": 2,
+     "why": "The platform and bridge roles explain how hardware and applications work together.",
+     "description": "Explain the platform or bridge role.",
+     "how": "Explain that system software provides a platform for applications and acts as a bridge between hardware and user applications."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "device driver",
+       "utility"
+      ],
+      [
+       "windows",
+       "driver",
+       "antivirus"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct examples show knowledge of the main categories of system software.",
+     "description": "Give examples of system software.",
+     "how": "Name examples such as operating systems, device drivers, and utility programs."
+    },
+    {
+     "accept": [
+      [
+       "updated",
+       "security"
+      ],
+      [
+       "updated",
+       "smoothly"
+      ]
+     ],
+     "marks": 2,
+     "why": "The section highlights the practical value of keeping system software updated.",
+     "description": "Explain why updates matter.",
+     "how": "State that updates help the computer run smoothly and protect it from security threats."
+    }
+   ],
+   "modelAnswer": [
+    "System software is designed to manage the system resources and provide a platform for application software to run.",
+    "It acts as a bridge between the hardware and the user applications.",
+    "Examples include operating systems such as Windows, device drivers such as printer drivers, and utility programs such as antivirus software.",
+    "System software is usually pre-installed on a computer.",
+    "Keeping system software updated helps the computer run smoothly and protects it from security threats."
+   ]
+  },
+  {
+   "text": "Describe the roles of operating systems, utility software, and device drivers, providing examples of each.",
+   "finalAnswer": "An operating system is system software that manages system resources and provides a platform for application software; examples include Microsoft Windows, macOS, and Linux. Utility programs support system management; examples include antivirus software, disk cleanup tools, and backup software. Device drivers facilitate communication between hardware devices and the operating system; examples include printer, graphics card, and sound card drivers.",
+   "marks": 8,
+   "source": "Long 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "operating system",
+       "manage",
+       "resources",
+       "platform",
+       "windows"
+      ],
+      [
+       "operating system",
+       "manage",
+       "resources",
+       "platform",
+       "linux"
+      ]
+     ],
+     "marks": 2,
+     "why": "The operating system role and an example are required parts of the response.",
+     "description": "Describe operating systems.",
+     "how": "Explain that they manage system resources and provide a platform for applications; give an example such as Windows, macOS, or Linux."
+    },
+    {
+     "accept": [
+      [
+       "utility",
+       "antivirus"
+      ],
+      [
+       "utility",
+       "disk cleanup"
+      ],
+      [
+       "utility",
+       "backup"
+      ]
+     ],
+     "marks": 2,
+     "why": "Utility examples demonstrate understanding of this system software category.",
+     "description": "Describe utility software and give an example.",
+     "how": "Name utility programs such as antivirus software, disk cleanup tools, or backup software."
+    },
+    {
+     "accept": [
+      [
+       "device driver",
+       "hardware",
+       "operating system",
+       "communicat"
+      ],
+      [
+       "driver",
+       "hardware",
+       "operating system",
+       "communicat"
+      ]
+     ],
+     "marks": 2,
+     "why": "The communication role is the defining function of a device driver.",
+     "description": "Describe device drivers.",
+     "how": "Explain that drivers facilitate communication between hardware devices and the operating system."
+    },
+    {
+     "accept": [
+      [
+       "printer driver",
+       "graphics card driver",
+       "sound card driver"
+      ],
+      [
+       "printer",
+       "graphics card",
+       "sound card"
+      ]
+     ],
+     "marks": 2,
+     "why": "Specific examples complete the comparison of the three software types.",
+     "description": "Give driver examples.",
+     "how": "Give examples such as printer, graphics card, and sound card drivers."
+    }
+   ],
+   "modelAnswer": [
+    "An operating system manages system resources and provides a platform for application software to run.",
+    "Examples of operating systems include Microsoft Windows, macOS, and Linux.",
+    "Utility programs are system software; examples include antivirus software, disk cleanup tools, and backup software.",
+    "Device drivers facilitate communication between hardware devices and the operating system.",
+    "Examples include printer drivers, graphics card drivers, and sound card drivers."
+   ]
+  },
+  {
+   "text": "Explain the differences between system software and application software.",
+   "finalAnswer": "System software manages and operates computer hardware and provides a platform for application software to run. Application software helps users perform specific tasks. System software includes operating systems and device drivers, while application software includes word processors, web browsers, and games. System software is usually pre-installed, while application software can be installed by the user as needed.",
+   "marks": 8,
+   "source": "Long 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "system software",
+       "manage",
+       "hardware"
+      ],
+      [
+       "system software",
+       "system resources"
+      ]
+     ],
+     "marks": 2,
+     "why": "The purpose of system software is the first main point of difference.",
+     "description": "Explain the purpose of system software.",
+     "how": "State that it manages or operates computer hardware and system resources."
+    },
+    {
+     "accept": [
+      [
+       "application software",
+       "specific tasks"
+      ],
+      [
+       "application software",
+       "user needs"
+      ]
+     ],
+     "marks": 2,
+     "why": "The user-task purpose distinguishes application software from system software.",
+     "description": "Explain the purpose of application software.",
+     "how": "State that it helps users perform specific tasks."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "word processor"
+      ],
+      [
+       "device driver",
+       "web browser"
+      ],
+      [
+       "operating system",
+       "game"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples make the distinction clear and correctly applied.",
+     "description": "Give examples of both types.",
+     "how": "Name system examples such as operating systems or device drivers and application examples such as word processors, browsers, or games."
+    },
+    {
+     "accept": [
+      [
+       "pre-installed",
+       "installed",
+       "user"
+      ],
+      [
+       "usually pre-installed",
+       "as needed"
+      ]
+     ],
+     "marks": 2,
+     "why": "Installation is another difference specifically given in the section.",
+     "description": "Compare installation.",
+     "how": "State that system software is usually pre-installed, while application software can be installed by the user as needed."
+    }
+   ],
+   "modelAnswer": [
+    "System software manages and operates computer hardware, making it possible for application software to run.",
+    "Application software helps the user perform specific tasks.",
+    "System software includes operating systems and device drivers; application software includes word processors, web browsers, and games.",
+    "System software is usually pre-installed on a computer, while application software can be installed by the user as needed."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the definition of software or system software, or ask for examples. Learn the definition and give relevant examples.",
+   "A comparison question may ask you to distinguish system software from application software. State each purpose and give examples of both.",
+   "A longer question may ask about operating systems, utility programs, and device drivers. Explain each role and give examples.",
+   "For full marks, do not only list examples: connect each example to the correct type and purpose of software."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with what system software does.",
+     "Include both resource management and its platform for application software, then give two examples."
+    ],
+    "accept": [
+     [
+      "manage",
+      "system resources",
+      "platform",
+      "operating system",
+      "device driver"
+     ],
+     [
+      "manage",
+      "system resources",
+      "platform",
+      "operating system",
+      "utility"
+     ]
+    ],
+    "question": "Q5.1. Define system software and provide two examples.",
+    "solution": [
+     "System software is designed to manage the system resources and provide a platform for application software to run.",
+     "Two examples are operating systems and device drivers."
+    ],
+    "answer": "System software is designed to manage the system resources and provide a platform for application software to run. Examples include operating systems and device drivers."
+   },
+   {
+    "hints": [
+     "Compare what each type of software is for.",
+     "System software manages hardware; application software helps with specific tasks. Give an example of each."
+    ],
+    "accept": [
+     [
+      "system software",
+      "hardware",
+      "application software",
+      "specific tasks",
+      "operating system",
+      "word processor"
+     ],
+     [
+      "system software",
+      "resources",
+      "application software",
+      "specific tasks",
+      "device driver",
+      "web browser"
+     ]
+    ],
+    "question": "Q5.5. Differentiate between system software and application software with examples.",
+    "solution": [
+     "System software manages and operates computer hardware, making it possible for application software to run.",
+     "Examples of system software include operating systems and device drivers.",
+     "Application software helps the user perform specific tasks.",
+     "Examples of application software include word processors, web browsers, and games."
+    ],
+    "answer": "System software manages and operates computer hardware and provides a platform for application software to run; examples include operating systems and device drivers. Application software helps users perform specific tasks; examples include word processors, web browsers, and games."
+   }
+  ],
+  "example": {
+   "steps": [],
+   "question": "This section contains no worked example.",
+   "answer": ""
+  },
+  "explain": [
+   {
+    "title": "Software",
+    "body": "Software is a collection of programs and instructions that tell a computer what to do and how to do. Without software, computers would be useless machines."
+   },
+   {
+    "title": "System software",
+    "body": "System software is designed to manage the system resources and provide a platform for application software to run. It acts as a bridge between the hardware and the user applications. Examples include operating systems, device drivers, and utility programs."
+   },
+   {
+    "title": "Application software",
+    "body": "Application software is designed to help users perform specific tasks. These programs are built to fulfill user needs and are typically more varied than system software. Word processors, web browsers, games, and media players are examples."
+   },
+   {
+    "title": "How to tell them apart",
+    "body": "System software manages and operates computer hardware, making it possible for application software to run. Application software helps the user perform specific tasks. System software is usually pre-installed, while application software can be installed by the user as needed."
+   }
+  ],
+  "mistakes": [
+   "Do not call a word processor or a game system software; they are application software.",
+   "Do not confuse a device driver with a hardware device. A driver is software that supports communication with hardware.",
+   "When asked to differentiate the two types, give both their purposes; examples alone may not earn all the marks.",
+   "Do not say application software manages the computer's hardware. Its purpose is to help users perform specific tasks."
+  ]
+ }
+}

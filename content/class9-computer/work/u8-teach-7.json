@@ -1,0 +1,580 @@
+{
+ "note": {
+  "explanation": "JavaScript is a programming language that is used to make websites interactive and engaging. It can respond to actions such as clicks, read information entered in a form, and change page content or styles.",
+  "examples": [
+   "When a button is clicked, JavaScript can display an alert message.",
+   "JavaScript can change a page's background color when a button is clicked."
+  ],
+  "checkAnswer": "onclick",
+  "keywords": [
+   "JavaScript",
+   "variable",
+   "function",
+   "parameter",
+   "event",
+   "onclick"
+  ],
+  "simple": "HTML provides the page elements, and JavaScript makes them respond to users.",
+  "checkQuestion": "Which HTML event runs when a user clicks an element?",
+  "title": "Introduction to JavaScript",
+  "steps": [
+   "Put the JavaScript code in a <script> element or link an external JavaScript file.",
+   "Write a function to perform the task.",
+   "Connect the function to an event, such as onclick.",
+   "When the event occurs, the function runs."
+  ],
+  "answer": "JavaScript makes web pages interactive by responding to user actions and input.",
+  "checkAccept": [
+   [
+    "onclick"
+   ],
+   [
+    "on click"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To make websites interactive and engaging",
+    "To create only the structure of a webpage",
+    "To store images on a computer",
+    "To replace every HTML element"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a main use of JavaScript on a website?",
+   "rationales": [
+    "Correct: JavaScript can make pages interactive and respond to user actions.",
+    "Incorrect: HTML provides the structure of a webpage.",
+    "Incorrect: JavaScript is not used to store images on a computer.",
+    "Incorrect: JavaScript does not replace HTML elements."
+   ]
+  },
+  {
+   "options": [
+    "var age = \"15\";",
+    "var age = 15;",
+    "var age = true;",
+    "var age = [15];"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement stores 15 as a Number in a JavaScript variable?",
+   "rationales": [
+    "Incorrect: The quotes make 15 a String.",
+    "Correct: The number has no quotes, so it is stored as a Number.",
+    "Incorrect: true is a Boolean value, not the number 15.",
+    "Incorrect: Brackets make this an Array."
+   ]
+  },
+  {
+   "options": [
+    "var isStudent = \"true\";",
+    "var isStudent = true;",
+    "var isStudent = [true];",
+    "var isStudent = 1;"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement assigns a Boolean value to a variable?",
+   "rationales": [
+    "Incorrect: Quotation marks make the value a String.",
+    "Correct: true without quotation marks is a Boolean value.",
+    "Incorrect: The square brackets make this an Array.",
+    "Incorrect: 1 is a Number, not a Boolean value."
+   ]
+  },
+  {
+   "options": [
+    "function greet() { }",
+    "greet function() { }",
+    "function() greet { }",
+    "var function greet;"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the correct way to begin declaring a function named greet?",
+   "rationales": [
+    "Correct: The function keyword is followed by the function name and parentheses.",
+    "Incorrect: The function name and keyword are in the wrong order.",
+    "Incorrect: This is not the function declaration syntax shown in the section.",
+    "Incorrect: This does not declare a function using the section's syntax."
+   ]
+  },
+  {
+   "options": [
+    "onload",
+    "onclick",
+    "onmouseout",
+    "onkeyup"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which event is triggered when a user clicks an HTML element?",
+   "rationales": [
+    "Incorrect: onload is triggered when a page or image has finished loading.",
+    "Correct: onclick is triggered when an element is clicked.",
+    "Incorrect: onmouseout is triggered when the pointer moves out of an element.",
+    "Incorrect: onkeyup is triggered when a keyboard key is released."
+   ]
+  },
+  {
+   "options": [
+    "document.getElementById('name').value",
+    "document.getElementById('name').style",
+    "document.getElementById('name').click",
+    "document.getElementById('name').title"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which expression gets the value entered in the input element whose id is name?",
+   "rationales": [
+    "Correct: The value property gets the input field's entered value.",
+    "Incorrect: The style property refers to styling, not the entered text.",
+    "Incorrect: This does not get the input field's entered value.",
+    "Incorrect: The title property does not return the input's entered value."
+   ]
+  },
+  {
+   "options": [
+    "<script src=\"script.js\"></script>",
+    "<javascript src=\"script.js\"></javascript>",
+    "<link src=\"script.js\">",
+    "<code href=\"script.js\"></code>"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which HTML markup links the external file script.js as JavaScript?",
+   "rationales": [
+    "Correct: A script element with the src attribute links an external JavaScript file.",
+    "Incorrect: javascript is not the HTML tag used to include a JavaScript file.",
+    "Incorrect: The link element is not used this way to include a JavaScript file.",
+    "Incorrect: The code element does not link an external JavaScript file."
+   ]
+  },
+  {
+   "options": [
+    "document.body.style.backgroundColor = \"lightblue\";",
+    "document.body.backgroundColor = \"lightblue\";",
+    "body.style.background = lightblue;",
+    "document.style.body = \"lightblue\";"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which JavaScript statement changes the page background color to lightblue?",
+   "rationales": [
+    "Correct: It sets the body's backgroundColor style property to the string lightblue.",
+    "Incorrect: It leaves out the style property used to change a CSS property.",
+    "Incorrect: It does not use the section's JavaScript property path or quote the color.",
+    "Incorrect: The document, style, and body parts are in the wrong order."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Button Click Event\n\nHere's an example of how to handle a button-click event:",
+   "finalAnswer": "A button with onclick=\"showMessage()\" calls the showMessage function, which displays the alert.",
+   "marks": 2,
+   "source": "Example 8.7 (Button Click Event)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "function showMessage"
+      ]
+     ],
+     "marks": 1,
+     "why": "The function contains the action to perform.",
+     "description": "Declare the showMessage function and its alert.",
+     "how": "Write the named function and the alert statement inside it."
+    },
+    {
+     "accept": [
+      [
+       "onclick"
+      ],
+      [
+       "showMessage()"
+      ]
+     ],
+     "marks": 1,
+     "why": "The event handler connects the click to the function.",
+     "description": "Call the function from the button's onclick event.",
+     "how": "Add onclick=\"showMessage()\" to the button."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html >",
+    "    <head>",
+    "        <title>Button Click Event</title>",
+    "        <script>",
+    "            function showMessage() {",
+    "            alert(\"Button was clicked!\");",
+    "            }",
+    "        </script>",
+    "    </head>",
+    "<body>",
+    "        <button onclick =\"showMessage()\">Click Me!</button>",
+    "</body>",
+    "</html>"
+   ]
+  },
+  {
+   "text": "Simple Form\n\nCreate an “index.html” file with the following content:",
+   "finalAnswer": "The form reads the name input's value and displays a greeting when the button is clicked.",
+   "marks": 2,
+   "source": "Example 8.7 (Simple Form)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "document.getElementById('name').value"
+      ],
+      [
+       "document.getElementById(\"name\").value"
+      ]
+     ],
+     "marks": 1,
+     "why": "The function must retrieve the user's entered name.",
+     "description": "Get the input value using its id.",
+     "how": "Use document.getElementById('name').value."
+    },
+    {
+     "accept": [
+      [
+       "onclick"
+      ],
+      [
+       "Hello"
+      ]
+     ],
+     "marks": 1,
+     "why": "The button must run the greeting function and show its result.",
+     "description": "Call greetUser on click and display a greeting.",
+     "how": "Use the button's onclick attribute and an alert containing the name."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "    <title>Interactive Form</title>",
+    "    <script>",
+    "        function greetUser() {",
+    "var name = document.getElementById('name').value;",
+    "alert(\"Hello, \" + name + \"!\");",
+    "}",
+    "    </script>",
+    "</head>",
+    "<body>",
+    "    <h1>Welcome!</h1>",
+    "    <form>",
+    "        <label for=\"name\">Enter your name:</label>",
+    "        <input type=\"text\" id=\"name\" name=\"name\">",
+    "        <button type=\"button\" onclick=\"greetUser()\">Submit</button>",
+    "    </form>",
+    "</body>",
+    "</html>"
+   ]
+  },
+  {
+   "text": "Changing Background Color\n\nAdd the following content to your index.html file:",
+   "finalAnswer": "Clicking the button calls changeColor(), which sets the page background color to lightblue.",
+   "marks": 2,
+   "source": "Example 8.7 (Changing Background Color)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "onclick=\"changeColor()\""
+      ],
+      [
+       "onclick='changeColor()'"
+      ]
+     ],
+     "marks": 1,
+     "why": "The button must call the function when clicked.",
+     "description": "Connect the button to changeColor.",
+     "how": "Use onclick=\"changeColor()\" on the button."
+    },
+    {
+     "accept": [
+      [
+       "document.body.style.backgroundColor"
+      ],
+      [
+       "lightblue"
+      ]
+     ],
+     "marks": 1,
+     "why": "This statement changes the background color of the page.",
+     "description": "Set the body's backgroundColor style property.",
+     "how": "Assign the value \"lightblue\" in the function."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "    <head>",
+    "        <meta charset=\"UTF-8\">",
+    "        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+    "        <title>Change Background Color</title>",
+    "<script src=\"script.js\" ></script>",
+    "</head>",
+    "<body>",
+    "<h1> Welcome to the Color Changer! </h1>",
+    "<button onclick=\"changeColor()\">Change Background Color</button>",
+    "</body>",
+    "</html>",
+    "function changeColor() {",
+    "document.body.style.backgroundColor = \"lightblue\";",
+    "}"
+   ]
+  },
+  {
+   "text": "Q8.5. How can you include JavaScript in an HTML file?",
+   "finalAnswer": "JavaScript can be written inside a <script> element in the HTML file or linked from an external file using <script src=\"script.js\"></script>.",
+   "marks": 2,
+   "source": "Short Q8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<script>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The script element allows JavaScript code to be included in the HTML document.",
+     "description": "Identify the HTML tag used for JavaScript.",
+     "how": "State that JavaScript code can be placed inside a <script> element."
+    },
+    {
+     "accept": [
+      [
+       "src="
+      ],
+      [
+       "script.js"
+      ]
+     ],
+     "marks": 1,
+     "why": "The src attribute can connect an external JavaScript file.",
+     "description": "Give the external-file method.",
+     "how": "Show a script element using src to link a JavaScript file."
+    }
+   ],
+   "modelAnswer": [
+    "JavaScript code can be written inside a <script> element in the HTML file.",
+    "An external JavaScript file can be included using <script src=\"script.js\"></script>."
+   ]
+  },
+  {
+   "text": "Q8.7. Write a JavaScript function that changes the background color of a web page when a button is clicked. Provide the complete code and explain how it works.",
+   "finalAnswer": "When the button is clicked, changeColor() runs and sets document.body.style.backgroundColor to \"lightblue\".",
+   "marks": 8,
+   "source": "Long Q8.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<button"
+      ],
+      [
+       "onclick"
+      ],
+      [
+       "changeColor()"
+      ]
+     ],
+     "marks": 2,
+     "why": "The button and its event handler provide the user interaction.",
+     "description": "Create a button that calls the function when clicked.",
+     "how": "Include a button with onclick=\"changeColor()\"."
+    },
+    {
+     "accept": [
+      [
+       "function changeColor"
+      ]
+     ],
+     "marks": 2,
+     "why": "The function groups the code that performs the requested task.",
+     "description": "Declare the changeColor function.",
+     "how": "Write function changeColor() with a function body."
+    },
+    {
+     "accept": [
+      [
+       "document.body.style.backgroundColor"
+      ],
+      [
+       "lightblue"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct property assignment is what changes the page background.",
+     "description": "Set the body's background color.",
+     "how": "Assign \"lightblue\" to document.body.style.backgroundColor."
+    },
+    {
+     "accept": [
+      [
+       "when the button is clicked"
+      ],
+      [
+       "changeColor"
+      ],
+      [
+       "background"
+      ]
+     ],
+     "marks": 2,
+     "why": "An explanation shows how the event triggers the code and what effect it has.",
+     "description": "Explain the click, function call, and resulting change.",
+     "how": "State that clicking the button runs the function and changes the page background."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "    <title>Change Background Color</title>",
+    "    <script>",
+    "        function changeColor() {",
+    "            document.body.style.backgroundColor = \"lightblue\";",
+    "        }",
+    "    </script>",
+    "</head>",
+    "<body>",
+    "    <h1> Welcome to the Color Changer! </h1>",
+    "    <button onclick=\"changeColor()\">Change Background Color</button>",
+    "</body>",
+    "</html>",
+    "When the button is clicked, its onclick event calls changeColor().",
+    "The function changes the page's background color to lightblue."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask how JavaScript is included in an HTML file; name the <script> element and describe linking an external file with src.",
+   "A long question may ask for a complete program, such as changing a background color after a button click. Include the HTML button, its onclick attribute, the function, and the correct style property.",
+   "Marks are commonly earned for correct syntax, connecting the event to the function, writing the action inside the function, and briefly explaining what happens.",
+   "For variables, use quotation marks for strings, but not for numbers or Boolean values."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the HTML element used for JavaScript code.",
+     "Mention both JavaScript written in the page and an external file linked using src."
+    ],
+    "accept": [
+     [
+      "<script>",
+      "src="
+     ],
+     [
+      "external",
+      "script.js"
+     ]
+    ],
+    "question": "Q8.5. How can you include JavaScript in an HTML file?",
+    "solution": [
+     "JavaScript code can be written inside a <script> element in the HTML file.",
+     "An external JavaScript file can be included using <script src=\"script.js\"></script>."
+    ],
+    "answer": "Write the code in a <script> element or link an external file with <script src=\"script.js\"></script>."
+   },
+   {
+    "hints": [
+     "The button needs an onclick event handler.",
+     "In the function, set document.body.style.backgroundColor to a quoted color."
+    ],
+    "accept": [
+     [
+      "onclick",
+      "changeColor()",
+      "document.body.style.backgroundColor",
+      "lightblue"
+     ],
+     [
+      "button",
+      "function changeColor",
+      "backgroundColor",
+      "lightblue"
+     ]
+    ],
+    "question": "Q8.7. Write a JavaScript function that changes the background color of a web page when a button is clicked. Provide the complete code and explain how it works.",
+    "solution": [
+     "<!DOCTYPE html>",
+     "<html>",
+     "<head>",
+     "    <title>Change Background Color</title>",
+     "    <script>",
+     "        function changeColor() {",
+     "            document.body.style.backgroundColor = \"lightblue\";",
+     "        }",
+     "    </script>",
+     "</head>",
+     "<body>",
+     "    <h1> Welcome to the Color Changer! </h1>",
+     "    <button onclick=\"changeColor()\">Change Background Color</button>",
+     "</body>",
+     "</html>",
+     "When the button is clicked, its onclick event calls changeColor().",
+     "The function changes the page's background color to lightblue."
+    ],
+    "answer": "Clicking the button runs changeColor(), which changes the page background color to lightblue."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This starts the function that will run when the button is clicked.",
+     "text": "function showMessage() {"
+    },
+    {
+     "why": "This is the action the function performs.",
+     "text": "alert(\"Button was clicked!\");"
+    },
+    {
+     "why": "This closes the function body.",
+     "text": "}"
+    },
+    {
+     "why": "The button's onclick event calls the function when the user clicks it.",
+     "text": "<button onclick =\"showMessage()\">Click Me!</button>"
+    }
+   ],
+   "question": "Button Click Event: Here's an example of how to handle a button-click event:",
+   "answer": "Clicking the button calls showMessage(), which displays the alert “Button was clicked!”"
+  },
+  "explain": [
+   {
+    "title": "What JavaScript does",
+    "body": "JavaScript is a programming language that is used to make websites interactive and engaging. It can make things happen after a user clicks a button, moves the mouse, or enters information."
+   },
+   {
+    "title": "Variables hold information",
+    "body": "A variable is like a container that holds information which can be used and manipulated in your code. JavaScript uses var, let, or const to declare variables. Strings use quotes, while numbers and Boolean values do not."
+   },
+   {
+    "title": "Functions reuse code",
+    "body": "Functions allow you to reuse code and perform specific tasks. A function can take parameters, which are placeholders for values passed to it. Calling the function makes its code run."
+   },
+   {
+    "title": "Events connect users to code",
+    "body": "An event is an action that occurs when a user interacts with a webpage, like clicking a button or pressing a key. An event handler is a function that runs when a specific event occurs."
+   }
+  ],
+  "mistakes": [
+   "Leaving quotation marks off a String, or adding quotation marks around a Number or Boolean value.",
+   "Declaring a function but forgetting to call it or connect it to an event such as onclick.",
+   "Using the wrong event name; for example, onclick is for a click, while onload is for a page or image finishing loading.",
+   "Forgetting .value when reading what a user typed into an input field.",
+   "Writing a CSS property change without the correct path, such as document.body.style.backgroundColor."
+  ]
+ }
+}

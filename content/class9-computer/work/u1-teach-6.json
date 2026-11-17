@@ -1,0 +1,475 @@
+{
+ "note": {
+  "explanation": "A computing system needs hardware, software, and electricity to work. Networks and the Internet are also computing systems that connect devices and help them share information.",
+  "examples": [
+   "A school LAN connects computers and printers within the school.",
+   "The Internet connects networks across the world."
+  ],
+  "checkAnswer": "A LAN connects computers in a specific area, such as one building or school.",
+  "keywords": [
+   "computing system",
+   "hardware",
+   "software",
+   "electricity",
+   "LAN",
+   "WAN",
+   "Internet"
+  ],
+  "simple": "Hardware is the equipment, software gives it instructions, and electricity powers it. Networks connect devices so they can communicate and share resources.",
+  "checkQuestion": "What type of network connects computers in a specific area, such as a school?",
+  "title": "Computing Systems",
+  "steps": [
+   "Identify the hardware: the physical devices.",
+   "Identify the software: the instructions and programs.",
+   "Check that electricity is available to power the hardware.",
+   "For a network, identify how devices connect and share information."
+  ],
+  "answer": "A computing system uses hardware, software, and electricity to process data and perform tasks.",
+  "checkAccept": [
+   [
+    "p:lan"
+   ],
+   [
+    "local area network"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It connects networks worldwide to facilitate communication and data exchange",
+    "It connects computers only within one building",
+    "It supplies electricity to computer hardware",
+    "It is software used only for word processing"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the primary objective of the Internet?",
+   "rationales": [
+    "Correct: the Internet connects networks worldwide and enables communication and data exchange.",
+    "Incorrect: this describes a LAN, not the Internet's worldwide reach.",
+    "Incorrect: electricity powers hardware; it is not the Internet's objective.",
+    "Incorrect: word processing is a function of application software."
+   ]
+  },
+  {
+   "options": [
+    "A physical medium for data transfer",
+    "A rule for data exchange",
+    "A device that transmits data packets between networks",
+    "Software that retrieves emails"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which item is identified as a physical medium for data transfer in a network?",
+   "rationales": [
+    "Correct: network cables provide a physical medium for data transfer.",
+    "Incorrect: this describes a protocol.",
+    "Incorrect: this describes a router.",
+    "Incorrect: POP is used for retrieving emails."
+   ]
+  },
+  {
+   "options": [
+    "LAN",
+    "WAN",
+    "Switch",
+    "TCP/IP"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which type of network connects computers across large geographic regions?",
+   "rationales": [
+    "Incorrect: a LAN connects computers in a specific area, such as a building or school.",
+    "Correct: a WAN connects computers across larger geographic regions.",
+    "Incorrect: a switch connects devices within a network.",
+    "Incorrect: TCP/IP is a set of Internet protocols, not a network type."
+   ]
+  },
+  {
+   "options": [
+    "A router",
+    "A network cable",
+    "A switch",
+    "A web browser"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which network device transmits data packets between networks?",
+   "rationales": [
+    "Correct: routers transmit data packets between networks.",
+    "Incorrect: a network cable is a physical medium for data transfer.",
+    "Incorrect: switches connect devices in a network and facilitate communication.",
+    "Incorrect: a web browser lets a user request and view web pages."
+   ]
+  },
+  {
+   "options": [
+    "FTP",
+    "UDP",
+    "POP",
+    "TCP/IP"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which protocol is used for retrieving emails from a server or network?",
+   "rationales": [
+    "Incorrect: FTP is used for transferring files between computers.",
+    "Incorrect: UDP is described as faster but less reliable.",
+    "Correct: POP is used for retrieving emails from a server or network.",
+    "Incorrect: TCP/IP governs data transmission over the Internet."
+   ]
+  },
+  {
+   "options": [
+    "Application software",
+    "System software",
+    "Network cable",
+    "Electricity"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which category includes an operating system that manages a computer's resources?",
+   "rationales": [
+    "Incorrect: application software carries out functions for the user.",
+    "Correct: system software includes the operating system and utilities that manage computer resources.",
+    "Incorrect: a network cable is hardware, not a software category.",
+    "Incorrect: electricity is a power source, not software."
+   ]
+  },
+  {
+   "options": [
+    "A LAN connects a specific area; a WAN connects a larger geographic region",
+    "A LAN uses software; a WAN uses hardware",
+    "A LAN retrieves email; a WAN transfers files",
+    "A LAN is the Internet; a WAN is a web browser"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement correctly distinguishes a LAN from a WAN?",
+   "rationales": [
+    "Correct: a LAN covers a specific area, while a WAN covers larger geographic regions.",
+    "Incorrect: both types of networks can use hardware and software.",
+    "Incorrect: email retrieval and file transfer are not the definitions of LAN and WAN.",
+    "Incorrect: a LAN is not the Internet, and a WAN is not a web browser."
+   ]
+  },
+  {
+   "options": [
+    "The environment influences network design, security, and performance",
+    "The environment replaces the need for network software",
+    "The environment makes all networks operate identically",
+    "The environment is the same thing as a network protocol"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is a network's operating environment important?",
+   "rationales": [
+    "Correct: the environment influences network design, security, and performance.",
+    "Incorrect: network software is still needed, including protocols and network operating systems.",
+    "Incorrect: networks can operate in different environments, which influence their design and performance.",
+    "Incorrect: a protocol is a rule for data exchange, not the network's environment."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Describe the main components of a computer system.",
+   "finalAnswer": "Hardware, software, and electricity.",
+   "marks": 2,
+   "source": "Short 1.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hardware"
+      ]
+     ],
+     "marks": 1,
+     "why": "Hardware is one of the three main components.",
+     "description": "Identifies hardware.",
+     "how": "Name the tangible components, such as the CPU, RAM, storage, and input/output devices."
+    },
+    {
+     "accept": [
+      [
+       "software",
+       "electricity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Software and electricity complete the three main components.",
+     "description": "Identifies software and electricity.",
+     "how": "Name software as instructions for hardware and electricity as its power source."
+    }
+   ],
+   "modelAnswer": [
+    "Hardware refers to the tangible components of the system, such as the CPU, RAM, storage devices, and input and output devices.",
+    "Software is a collection of instructions that dictate the requirements and actions that hardware must do.",
+    "Electricity is the power source that enables the hardware components to function.",
+    "Therefore, the main components are hardware, software, and electricity."
+   ]
+  },
+  {
+   "text": "List and describe the types of computing systems.",
+   "finalAnswer": "Computer, software systems, computer networks, and the Internet.",
+   "marks": 2,
+   "source": "Short 1.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "computer"
+      ],
+      [
+       "software"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the types of computing systems.",
+     "description": "Lists the types of computing systems.",
+     "how": "List computer, software systems, computer networks, and the Internet."
+    },
+    {
+     "accept": [
+      [
+       "network"
+      ],
+      [
+       "internet"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must include the network and Internet types as well as the other types.",
+     "description": "Completes the list and briefly describes the types.",
+     "how": "State that computers process data, software systems provide instructions or functions, networks connect devices, and the Internet connects networks worldwide."
+    }
+   ],
+   "modelAnswer": [
+    "The types of computing systems include computers, software systems, computer networks, and the Internet.",
+    "A computer processes data and performs tasks according to instructions.",
+    "Software systems provide instructions or functions for computers and users.",
+    "A computer network connects multiple computers and devices to exchange resources and information.",
+    "The Internet connects multiple networks worldwide to facilitate communication and data exchange."
+   ]
+  },
+  {
+   "text": "What are the three main requirements for a computing system to function?",
+   "finalAnswer": "Hardware, software, and electricity.",
+   "marks": 2,
+   "source": "Short 1.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hardware"
+      ],
+      [
+       "software"
+      ]
+     ],
+     "marks": 1,
+     "why": "Hardware and software are two of the three requirements.",
+     "description": "Identifies hardware and software.",
+     "how": "Name the physical components and the instructions that direct them."
+    },
+    {
+     "accept": [
+      [
+       "electricity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Electricity is the power source needed for the hardware to function.",
+     "description": "Identifies electricity.",
+     "how": "State that electricity enables the hardware components to function."
+    }
+   ],
+   "modelAnswer": [
+    "The three main requirements are hardware, software, and electricity.",
+    "Hardware provides the tangible components, software provides the instructions, and electricity powers the hardware."
+   ]
+  },
+  {
+   "text": "Explore the different types of computing systems such as computers, software systems, computer networks, and the internet.",
+   "finalAnswer": "The four types are computers, software systems, computer networks, and the Internet; computers process data, software systems provide instructions and functions, networks connect devices to share resources and information, and the Internet connects networks worldwide for communication and data exchange.",
+   "marks": 8,
+   "source": "Long 1.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "computer"
+      ],
+      [
+       "software"
+      ],
+      [
+       "network"
+      ],
+      [
+       "internet"
+      ]
+     ],
+     "marks": 2,
+     "why": "All four types asked about must be identified.",
+     "description": "Names the four computing system types.",
+     "how": "List computers, software systems, computer networks, and the Internet."
+    },
+    {
+     "accept": [
+      [
+       "process data"
+      ],
+      [
+       "instructions"
+      ]
+     ],
+     "marks": 2,
+     "why": "A description of computers and software systems explains their purpose.",
+     "description": "Describes computers and software systems.",
+     "how": "Explain that computers process data and perform tasks, while software provides instructions or user functions."
+    },
+    {
+     "accept": [
+      [
+       "share"
+      ],
+      [
+       "devices"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should explain what computer networks do.",
+     "description": "Describes computer networks.",
+     "how": "State that networks connect computers and devices for resource sharing, communication, or information exchange."
+    },
+    {
+     "accept": [
+      [
+       "worldwide"
+      ],
+      [
+       "communication"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must correctly describe the Internet's global purpose.",
+     "description": "Gives the correct final explanation of the Internet.",
+     "how": "State that the Internet connects networks worldwide to facilitate communication and data exchange."
+    }
+   ],
+   "modelAnswer": [
+    "The types of computing systems include computers, software systems, computer networks, and the Internet.",
+    "A computer is a system designed to process data and perform tasks according to instructions.",
+    "Software is a collection of instructions that dictate the requirements and actions that hardware must do.",
+    "System software manages computer resources, while application software carries out certain functions for the user.",
+    "A computer network connects multiple computers and devices, enabling the exchange of resources and information.",
+    "Networks can share files, printers, and Internet access and can enable communication and data management.",
+    "The Internet connects multiple networks worldwide, including private, public, academic, business, and government networks.",
+    "Its primary objective is to facilitate communication and data exchange between computers and users globally."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask you to name the three requirements of a computing system, list types of computing systems, or describe computer-system components.",
+   "For a list question, include every item asked for: hardware, software, and electricity; or computer, software systems, computer networks, and the Internet.",
+   "In long questions, earn marks by naming each type and giving its purpose. Add details such as resource sharing and communication for networks, and worldwide data exchange for the Internet.",
+   "Use the textbook's terms: routers transmit data packets between networks, switches connect devices in a network, and network cables provide a physical medium for data transfer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "There are four types listed in this section.",
+     "Include computers, software systems, computer networks, and the Internet, then briefly describe each."
+    ],
+    "accept": [
+     [
+      "computer",
+      "software",
+      "network",
+      "internet"
+     ]
+    ],
+    "question": "List and describe the types of computing systems.",
+    "solution": [
+     "The types of computing systems include computers, software systems, computer networks, and the Internet.",
+     "A computer processes data and performs tasks according to instructions.",
+     "Software systems provide instructions or functions for computers and users.",
+     "A computer network connects multiple computers and devices to exchange resources and information.",
+     "The Internet connects multiple networks worldwide to facilitate communication and data exchange."
+    ],
+    "answer": "Computers, software systems, computer networks, and the Internet."
+   },
+   {
+    "hints": [
+     "Think about the physical parts, the instructions, and what powers the hardware.",
+     "Name hardware, software, and electricity."
+    ],
+    "accept": [
+     [
+      "hardware",
+      "software",
+      "electricity"
+     ]
+    ],
+    "question": "What are the three main requirements for a computing system to function?",
+    "solution": [
+     "Hardware refers to the tangible components of the system.",
+     "Software is a collection of instructions that dictate the requirements and actions that hardware must do.",
+     "Electricity is the power source that enables the hardware components to function.",
+     "Therefore, the three main requirements are hardware, software, and electricity."
+    ],
+    "answer": "Hardware, software, and electricity."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This identifies the three items needed before we explain their roles.",
+     "text": "The three main requirements are hardware, software, and electricity."
+    },
+    {
+     "why": "Hardware is the physical equipment that makes up the system.",
+     "text": "Hardware refers to the tangible components of the system."
+    },
+    {
+     "why": "Software provides the instructions that tell the hardware what to do.",
+     "text": "Software is a collection of instructions that dictate the requirements and actions that hardware must do."
+    },
+    {
+     "why": "Electricity supplies the power needed for the hardware to operate.",
+     "text": "Electricity is the power source that enables the hardware components to function."
+    }
+   ],
+   "question": "What are the three main requirements for a computing system to function?",
+   "answer": "Hardware, software, and electricity."
+  },
+  "explain": [
+   {
+    "title": "What is a computer system?",
+    "body": "A computer system is a structured set of hardware and software components specifically designed for data processing and the performance of various operations. Its basic task is to execute programs and manage data to achieve objectives such as problem solving, process control, and communication aid."
+   },
+   {
+    "title": "Three requirements",
+    "body": "The three basic requisites needed to run a computing system are hardware, software, and electric power. Hardware means the tangible components. Software is a collection of instructions that dictate the requirements and actions that hardware must do. Electricity enables the hardware to function."
+   },
+   {
+    "title": "Networks and their parts",
+    "body": "A computer network connects multiple computers and devices so they can exchange resources and information. Routers transmit data packets between networks; switches connect devices in a network; cables provide a physical medium for data transfer. Protocols are rules for data exchange."
+   },
+   {
+    "title": "LAN, WAN, and the Internet",
+    "body": "A LAN connects computers in a specific area, such as a building or school. A WAN connects computers across larger geographic regions. The Internet connects multiple networks worldwide to facilitate communication and data exchange."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse hardware, software, and electricity: they are different requirements of a computing system.",
+   "Do not say that a switch transmits data packets between networks; the section assigns that role to routers.",
+   "Do not describe a LAN as worldwide. A LAN covers a specific area; a WAN covers larger geographic regions.",
+   "Do not leave out one of the four types when asked to list the types of computing systems.",
+   "Do not confuse protocols with hardware: protocols are rules and conventions for data exchange."
+  ]
+ }
+}

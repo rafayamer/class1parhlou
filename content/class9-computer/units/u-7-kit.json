@@ -1,0 +1,588 @@
+{
+ "unit": 7,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [],
+  "definitions": [
+   {
+    "term": "Computational Thinking",
+    "text": "Computational Thinking (CT) is a problem-solving process that involves a set of skills and techniques to solve complex problems in a way that a can be executed by a computer."
+   },
+   {
+    "term": "Decomposition",
+    "text": "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components."
+   },
+   {
+    "term": "Pattern recognition",
+    "text": "Pattern recognition involves looking for similarities or patterns among and within problems."
+   },
+   {
+    "term": "Abstraction",
+    "text": "Abstraction is the process of hiding the complex details while exposing only the necessary parts. It helps reduce complexity by allowing us to focus on the high-level overview without getting lost in the details."
+   },
+   {
+    "term": "Algorithm",
+    "text": "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal, like a recipe or a set of directions that tells you exactly what to do and in what order."
+   },
+   {
+    "term": "Problem understanding",
+    "text": "Understanding a problem involves identifying the core issue, defining the requirements, and setting the objectives."
+   },
+   {
+    "term": "Problem simplification",
+    "text": "Simplifying a problem involves breaking it down into smaller, more manageable sub-problems."
+   },
+   {
+    "term": "Solution selection and design",
+    "text": "Choosing the best solution involves evaluating different approaches and selecting the most efficient one. Designing the solution requires creating a detailed plan or algorithm."
+   },
+   {
+    "term": "Flowchart",
+    "text": "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows."
+   },
+   {
+    "term": "Time complexity",
+    "text": "Time Complexity measures how fast or slow an algorithm performs. It shows how the running time of an algorithm changes as the size of the input increases."
+   },
+   {
+    "term": "Space complexity",
+    "text": "Space complexity measures the amount of memory an algorithm uses relative to input size."
+   },
+   {
+    "term": "Dry run",
+    "text": "A dry run involves manually going through the algorithm with sample data to identify any errors."
+   },
+   {
+    "term": "Simulation",
+    "text": "Simulation is we use of computer programs to create a model of a real-world process or system."
+   },
+   {
+    "term": "LARP",
+    "text": "LARP stands for Logic of Algorithms for resolution of Problems. It is a fun and interactive way to learn how algorithms work by actually running them and seeing the results."
+   },
+   {
+    "term": "Debugging",
+    "text": "Debugging is the process of finding and fixing errors in an algorithm or flowchart."
+   },
+   {
+    "term": "Syntax errors",
+    "text": "These occur when we write something incorrectly in our algorithm or flowchart. For example, missing a step or using the wrong symbol."
+   },
+   {
+    "term": "Logical errors",
+    "text": "These are mistakes in the logic of the algorithm that cause it to behave incorrectly. For example, using the wrong condition in a decision step."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "Area = side² (area in m², side in m)",
+    "use": "Find the area of a square; the unit changes consistently if another length unit is used."
+   },
+   {
+    "formula": "n² = 1 + 3 + 5 + … + (2n − 1) (n is a dimensionless count)",
+    "use": "Recognize the pattern that the sum of the first n odd numbers gives the square of n."
+   },
+   {
+    "formula": "Even if number % 2 = 0; otherwise odd (number is a count, no SI unit)",
+    "use": "Check whether an integer is even or odd using its remainder after division by 2."
+   },
+   {
+    "formula": "If number ≤ 1, not prime; otherwise test divisors i from 2 to √number (number and i are counts, no SI unit)",
+    "use": "Use the prime-number algorithm; a divisor found in the test means the number is not prime."
+   },
+   {
+    "formula": "Sum = A + B (A, B and Sum are input numbers; no SI unit specified)",
+    "use": "Add two input values in the flowchart dry-run example."
+   },
+   {
+    "formula": "max = num1 if num1 > num2; otherwise max = num2 (values have no SI unit specified)",
+    "use": "Find the larger of two input numbers."
+   },
+   {
+    "formula": "Annual Salary = Salary × 12 (salary and annual salary in the same currency; 12 is months per year)",
+    "use": "Convert a monthly salary to an annual salary in the LARP example."
+   },
+   {
+    "formula": "0 ≤ rating ≤ 5 (rating is a count, no SI unit)",
+    "use": "Check that a customer rating is within the valid range described in the unit."
+   },
+   {
+    "formula": "O(n), O(log n), O(n²) (n is input size, a dimensionless count)",
+    "use": "Recognize examples of Big O notation used to express time complexity; these are not physical quantities and have no SI units."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 7.1",
+    "why": "Core unit definition and a likely 2-mark question."
+   },
+   {
+    "ref": "Short 7.2",
+    "why": "A key computational-thinking component that is straightforward to assess."
+   },
+   {
+    "ref": "Short 7.3",
+    "why": "Tests both the definition and applying it to a familiar situation."
+   },
+   {
+    "ref": "Short 7.4",
+    "why": "A central concept with a definition and clear importance point."
+   },
+   {
+    "ref": "Short 7.5",
+    "why": "A basic definition that supports several other topics in the unit."
+   },
+   {
+    "ref": "Short 7.6",
+    "why": "Problem understanding is identified as the first and most important step."
+   },
+   {
+    "ref": "Short 7.7",
+    "why": "Flowcharts are a major algorithm-design method and a common theory question."
+   },
+   {
+    "ref": "Short 7.8",
+    "why": "Tests the second main algorithm-design method and its practical purpose."
+   },
+   {
+    "ref": "Short 7.9",
+    "why": "A standard comparison question covering two major methods."
+   },
+   {
+    "ref": "Short 7.10",
+    "why": "Dry runs are a key method for checking an algorithm without running it on a computer."
+   },
+   {
+    "ref": "Short 7.11",
+    "why": "LARP is a named unit topic with both a definition and stated benefits."
+   },
+   {
+    "ref": "Short 7.12",
+    "why": "A direct question on the unit’s practical error-fixing techniques."
+   }
+  ],
+  "fullMarks": [
+   "For a definition question, begin with the exact definition and then add a short example or importance point if the question asks for one.",
+   "For questions on computational thinking, name the relevant components or principles clearly: problem understanding, simplification, solution selection and design, decomposition, pattern recognition, abstraction, and algorithms.",
+   "When comparing flowcharts and pseudocode, explain both forms: symbols and arrows for a flowchart; simple, structured language for pseudocode. Give at least one advantage or use of each.",
+   "For an algorithm or pseudocode answer, write the steps in order and include the required input, decisions, outputs, and a clear start and end.",
+   "For a flowchart, use the correct symbols: oval for Start/End, rectangle for a process, parallelogram for input/output, and diamond for a decision. Label decision branches, such as Yes and No, and connect steps with arrows.",
+   "For a dry run, show the sample input, test each step or condition in order, record changes to variables, and state the final output.",
+   "For debugging questions, name each technique and explain how it helps find or fix an error. Distinguish syntax, runtime, and logical errors with a correct example if asked."
+  ],
+  "mistakes": [
+   "Mistake: Defining abstraction as breaking a problem into smaller tasks only. Fix: State that abstraction hides complex details and exposes the necessary parts.",
+   "Mistake: Saying pattern recognition means decomposition. Fix: Pattern recognition finds similarities or regularities; decomposition divides a problem into smaller tasks.",
+   "Mistake: Calling pseudocode a programming language that a computer can run. Fix: Explain that it describes algorithm steps in simple, informal language and is not actual executable code.",
+   "Mistake: Mixing up flowchart symbols. Fix: Memorize oval = start/end, rectangle = process, parallelogram = input/output, and diamond = decision.",
+   "Mistake: Treating a dry run as executing the algorithm on a computer. Fix: Say that it is a manual, step-by-step check using sample data.",
+   "Mistake: Calling every error a syntax error. Fix: A syntax error breaks writing rules, a runtime error occurs during execution, and a logical error gives an incorrect result because of faulty logic.",
+   "Mistake: Leaving decision branches or variable changes unclear in an algorithm or flowchart. Fix: Label branches such as Yes/No, show the order of steps, and record updated values when tracing."
+  ],
+  "shortTheory": [
+   {
+    "question": "Short 7.1: Define computational thinking.",
+    "answer": "Computational Thinking (CT) is a problem-solving process that involves a set of skills and techniques to solve complex problems in a way that a can be executed by a computer."
+   },
+   {
+    "question": "Short 7.2: What is decomposition in computational thinking?",
+    "answer": "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components."
+   },
+   {
+    "question": "Short 7.3: Explain pattern recognition with an example.",
+    "answer": "Pattern recognition involves looking for similarities or patterns among and within problems. For instance, if you notice that you always forget your homework on Mondays, you might recognize a pattern and set a reminder specifically for Sundays."
+   },
+   {
+    "question": "Short 7.4: Describe abstraction and its importance in problem-solving.",
+    "answer": "Abstraction is the process of hiding the complex details while exposing only the necessary parts. It helps reduce complexity by allowing us to focus on the high-level overview without getting lost in the details."
+   },
+   {
+    "question": "Short 7.5: What is an algorithm?",
+    "answer": "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal, like a recipe or a set of directions that tells you exactly what to do and in what order."
+   },
+   {
+    "question": "Short 7.6: How does problem understanding help in computational thinking?",
+    "answer": "Understanding the problem is the first and most important step in problem-solving, especially in computational thinking. This involves thoroughly analyzing the problem to identify its key components and requirements before attempting to find a solution."
+   },
+   {
+    "question": "Short 7.7: What are flowcharts and how are they used?",
+    "answer": "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows. They are widely used in various fields, including computer science, engineering, and business, to model processes, design systems, and communicate complex workflows clearly and effectively."
+   },
+   {
+    "question": "Short 7.8: Explain the purpose of pseudocode.",
+    "answer": "Pseudocode is not actual code that can be run on a computer, but rather a way to describe the steps of an algorithm in a manner that is easy to follow. It helps programmers and students focus on the logic of the algorithm without worrying about the syntax of a specific programming language."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-7-1-t1",
+   "text": "Short 7.2: What is decomposition in computational thinking?",
+   "marks": 2,
+   "modelAnswer": [
+    "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components."
+   ],
+   "followUp": "Short 7.2: What is decomposition in computational thinking?",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "decomposition"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the concept being defined.",
+     "description": "Names decomposition.",
+     "how": "Award 1 mark for stating “Decomposition”."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "break",
+       "problem",
+       "smaller"
+      ],
+      [
+       "breaking",
+       "problem",
+       "smaller"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the defining action of decomposition: breaking a complicated problem into smaller components.",
+     "description": "Explains how decomposition works.",
+     "how": "Award 1 mark for stating that a complicated problem is broken into smaller, more convenient components."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t2",
+   "text": "Short 7.3: Explain pattern recognition with an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "Pattern recognition involves looking for similarities or patterns among and within problems. For instance, if you notice that you always forget your homework on Mondays, you might recognize a pattern and set a reminder specifically for Sundays."
+   ],
+   "followUp": "Short 7.3: Explain pattern recognition with an example.",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "pattern recognition",
+       "similarities"
+      ],
+      [
+       "pattern recognition",
+       "patterns"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines pattern recognition as looking for similarities or patterns among or within problems.",
+     "description": "Explains what pattern recognition involves.",
+     "how": "Award 1 mark for identifying the search for similarities or patterns among or within problems."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "homework",
+       "Mondays",
+       "Sundays",
+       "reminder"
+      ],
+      [
+       "forget",
+       "homework",
+       "Mondays",
+       "reminder"
+      ]
+     ],
+     "marks": 1,
+     "why": "Provides the example of forgetting homework on Mondays and setting a Sunday reminder.",
+     "description": "Gives a relevant example of recognizing and acting on a pattern.",
+     "how": "Award 1 mark for the Monday homework pattern and a Sunday reminder."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t3",
+   "text": "Short 7.4: Describe abstraction and its importance in problem-solving.",
+   "marks": 2,
+   "modelAnswer": [
+    "Abstraction is the process of hiding the complex details while exposing only the necessary parts. It helps reduce complexity by allowing us to focus on the high-level overview without getting lost in the details."
+   ],
+   "followUp": "Short 7.4: Describe abstraction and its importance in problem-solving.",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "abstraction",
+       "hiding",
+       "details"
+      ],
+      [
+       "abstraction",
+       "necessary parts",
+       "details"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines abstraction as hiding complex details while exposing necessary parts.",
+     "description": "States what abstraction does.",
+     "how": "Award 1 mark for explaining that abstraction hides complex details and exposes only necessary parts."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "reduce complexity",
+       "focus",
+       "overview"
+      ],
+      [
+       "complexity",
+       "focus",
+       "details"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that abstraction reduces complexity and helps focus on the high-level overview rather than details.",
+     "description": "States why abstraction is useful in problem-solving.",
+     "how": "Award 1 mark for describing its role in simplifying a problem or enabling focus on the overview."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t4",
+   "text": "Short 7.5: What is an algorithm?",
+   "marks": 2,
+   "modelAnswer": [
+    "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal, like a recipe or a set of directions that tells you exactly what to do and in what order."
+   ],
+   "followUp": "Short 7.5: What is an algorithm?",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "algorithm"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the concept being defined.",
+     "description": "Names an algorithm.",
+     "how": "Award 1 mark for stating “An algorithm”."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "sequence",
+       "instructions",
+       "goal"
+      ],
+      [
+       "instructions",
+       "specific goal",
+       "order"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that an algorithm is a precise sequence of instructions followed in order to achieve a specific goal.",
+     "description": "Gives the defining properties of an algorithm.",
+     "how": "Award 1 mark for describing ordered instructions that achieve a goal."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t5",
+   "text": "Short 7.6: How does problem understanding help in computational thinking?",
+   "marks": 2,
+   "modelAnswer": [
+    "Understanding the problem is the first and most important step in problem-solving, especially in computational thinking. This involves thoroughly analyzing the problem to identify its key components and requirements before attempting to find a solution."
+   ],
+   "followUp": "Short 7.6: How does problem understanding help in computational thinking?",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "first",
+       "important step",
+       "problem solving"
+      ],
+      [
+       "understanding",
+       "problem",
+       "first"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that understanding the problem is the first and most important step in problem-solving.",
+     "description": "Identifies the role of problem understanding.",
+     "how": "Award 1 mark for stating that understanding the problem comes first and is important."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "analyzing",
+       "key components",
+       "requirements"
+      ],
+      [
+       "analyze",
+       "components",
+       "requirements"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that the problem is analyzed to identify its key components and requirements before finding a solution.",
+     "description": "Describes what problem understanding involves.",
+     "how": "Award 1 mark for identifying analysis of the problem’s components and requirements before solving it."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t6",
+   "text": "Short 7.7: What are flowcharts and how are they used?",
+   "marks": 2,
+   "modelAnswer": [
+    "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows. They are widely used in various fields, including computer science, engineering, and business, to model processes, design systems, and communicate complex workflows clearly and effectively."
+   ],
+   "followUp": "Short 7.7: What are flowcharts and how are they used?",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "flowcharts",
+       "visual representations",
+       "steps"
+      ],
+      [
+       "flowchart",
+       "visual representation",
+       "process"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines flowcharts as visual representations of steps in a process or system.",
+     "description": "Explains what flowcharts are.",
+     "how": "Award 1 mark for describing them as visual representations of process or system steps."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "symbols",
+       "arrows",
+       "model processes"
+      ],
+      [
+       "design systems",
+       "communicate",
+       "workflows"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that symbols connected by arrows are used to model processes, design systems, or communicate workflows.",
+     "description": "Describes how flowcharts are used.",
+     "how": "Award 1 mark for identifying a use such as modeling processes, designing systems, or clearly communicating workflows."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-7-1-t7",
+   "text": "Short 7.8: Explain the purpose of pseudocode.",
+   "marks": 2,
+   "modelAnswer": [
+    "Pseudocode is not actual code that can be run on a computer, but rather a way to describe the steps of an algorithm in a manner that is easy to follow. It helps programmers and students focus on the logic of the algorithm without worrying about the syntax of a specific programming language."
+   ],
+   "followUp": "Short 7.8: Explain the purpose of pseudocode.",
+   "noteId": "cs-n-7-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "pseudocode",
+       "not actual code"
+      ],
+      [
+       "pseudocode",
+       "describe",
+       "algorithm"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that pseudocode is not executable code and is a way to describe an algorithm’s steps.",
+     "description": "Explains what pseudocode is.",
+     "how": "Award 1 mark for identifying it as a non-executable way of describing algorithm steps."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "logic",
+       "syntax",
+       "programming language"
+      ],
+      [
+       "focus",
+       "logic",
+       "syntax"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that pseudocode lets programmers focus on algorithm logic without worrying about a specific programming language’s syntax.",
+     "description": "States the purpose of pseudocode.",
+     "how": "Award 1 mark for explaining that it clarifies logic independently of programming-language syntax."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 2,
+  "importantDropped": 0,
+  "writtenBuilt": 7
+ }
+}

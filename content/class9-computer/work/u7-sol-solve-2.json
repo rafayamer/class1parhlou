@@ -1,0 +1,108 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "7:8",
+   "figure": "",
+   "steps": [
+    "A flowchart is a graphical representation of an algorithm, using standard symbols and arrows to show the sequence of steps and decisions.",
+    "Pseudocode is a text-based description of an algorithm written in simple, structured language; it is not written in the exact syntax of a programming language.",
+    "A flowchart is easier to understand visually, while pseudocode is easier to write and convert into a program."
+   ],
+   "finalAnswer": "A flowchart represents an algorithm with symbols and arrows, whereas pseudocode describes it in simple, structured text."
+  },
+  {
+   "accept": [],
+   "id": "7:9",
+   "figure": "",
+   "steps": [
+    "A dry run is the manual execution of an algorithm or program, step by step, using sample input and keeping track of the values of variables.",
+    "It helps check whether the steps produce the expected result before the program is run or used with actual data.",
+    "It helps locate logical errors and understand how values change during execution."
+   ],
+   "finalAnswer": "A dry run manually traces an algorithm using sample data to check its result and find errors."
+  },
+  {
+   "accept": [],
+   "id": "7:10",
+   "figure": "",
+   "steps": [
+    "LARP stands for Learning Algorithms through Role-Play.",
+    "In LARP, students act out the steps of an algorithm, with different students or objects representing instructions, data, or parts of a computer.",
+    "It makes the order of instructions and the changes to data easier to see and understand.",
+    "LARP encourages active participation and helps students find mistakes in an algorithm before writing a program."
+   ],
+   "finalAnswer": "LARP teaches algorithms through role-play, helping students understand and check their steps by acting them out."
+  },
+  {
+   "accept": [],
+   "id": "7:11",
+   "figure": "",
+   "steps": [
+    "Dry run (tracing): Execute the algorithm manually with sample input and record the value of each variable at every step. This helps identify logical errors.",
+    "Use of a debugger: Run the program with debugging tools, such as breakpoints and step-by-step execution, to inspect variable values and locate the statement causing an error."
+   ],
+   "finalAnswer": "A dry run traces an algorithm manually, while a debugger helps inspect a program during execution to locate errors."
+  },
+  {
+   "accept": [],
+   "id": "7:12",
+   "figure": "",
+   "steps": [
+    "Start.",
+    "Input the student's marks M.",
+    "If M is greater than or equal to 90, assign grade A+.",
+    "Otherwise, if M is greater than or equal to 80, assign grade A.",
+    "Otherwise, if M is greater than or equal to 70, assign grade B.",
+    "Otherwise, if M is greater than or equal to 60, assign grade C.",
+    "Otherwise, assign grade F.",
+    "Display the grade.",
+    "Stop."
+   ],
+   "finalAnswer": "Algorithm: Input marks; assign A+ for marks ≥ 90, A for 80–89, B for 70–79, C for 60–69, and F for marks below 60; display the grade."
+  },
+  {
+   "accept": [],
+   "id": "7:13",
+   "figure": "The flowchart begins with Start, inputs the marks, checks the ranges in descending order (≥90, ≥80, ≥70, ≥60), assigns A+, A, B, C, or F on the appropriate branch, displays the grade, and ends. Each decision has Yes and No branches; the No branch leads to the next decision.",
+   "steps": [
+    "First, understand the problem and identify its input, processing, and required output.",
+    "Break the problem into smaller steps and arrange them in the correct order.",
+    "Write pseudocode to describe the solution in simple, structured language.",
+    "Draw a flowchart using standard symbols: an oval for Start/Stop, a parallelogram for input/output, a diamond for a decision, and arrows for the direction of flow.",
+    "Example: To assign a grade, input the student's marks and compare them with the grade boundaries, beginning with the highest boundary.",
+    "Pseudocode: INPUT marks; IF marks ≥ 90 THEN grade ← A+; ELSE IF marks ≥ 80 THEN grade ← A; ELSE IF marks ≥ 70 THEN grade ← B; ELSE IF marks ≥ 60 THEN grade ← C; ELSE grade ← F; OUTPUT grade.",
+    "Trace the pseudocode or flowchart with sample marks, such as 85, to check that the correct grade (A) is displayed.",
+    "After checking the logic, translate the algorithm into a programming language and test it with different inputs."
+   ],
+   "finalAnswer": "Use decomposition to plan the solution, write pseudocode and a flowchart, then trace and test them; for example, compare marks with grade boundaries and display the assigned grade."
+  },
+  {
+   "accept": [],
+   "id": "7:14",
+   "figure": "",
+   "steps": [
+    "Computational thinking is a way of solving problems by using logical and systematic methods that can be understood and carried out by a computer.",
+    "It includes decomposition (breaking a problem into smaller parts), pattern recognition, abstraction (focusing on important information), and algorithm design (creating step-by-step instructions).",
+    "It is significant because it helps people solve complex problems clearly and efficiently, in computing and in everyday life.",
+    "In healthcare, patient information can be analysed to identify patterns and help doctors make decisions.",
+    "In transport, route-planning systems use algorithms to find efficient routes.",
+    "In education, student results can be analysed to identify topics that need further practice."
+   ],
+   "finalAnswer": "Computational thinking uses decomposition, pattern recognition, abstraction, and algorithms to solve problems systematically in many fields."
+  },
+  {
+   "accept": [],
+   "id": "7:15",
+   "figure": "",
+   "steps": [
+    "Decomposition is the process of breaking a complex problem into smaller, more manageable sub-problems.",
+    "Each smaller part can be understood, designed, and solved separately.",
+    "The solutions to the smaller parts are then combined to solve the original problem.",
+    "Decomposition is important because it reduces complexity, makes problems easier to manage, and helps with designing, testing, and finding errors in a solution.",
+    "For example, a school management system can be divided into modules for student records, attendance, examinations, and fees."
+   ],
+   "finalAnswer": "Decomposition breaks a complex problem into smaller parts that are easier to solve, test, and combine."
+  }
+ ]
+}

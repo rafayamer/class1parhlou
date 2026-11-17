@@ -1,0 +1,559 @@
+{
+ "unit": 8,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "Long 8.7",
+   "Long 8.8"
+  ],
+  "definitions": [
+   {
+    "term": "Web development",
+    "text": "Process of creating websites and web applications is called Web development. It means using various programming languages and tools to design, build, and maintain websites."
+   },
+   {
+    "term": "Front-end development",
+    "text": "This focuses on what users see and interact with on a website."
+   },
+   {
+    "term": "Back-end development",
+    "text": "This manages the behind-the-scenes functionality of a website, including servers, databases, and application logic."
+   },
+   {
+    "term": "HTML",
+    "text": "HTML is the standard language used to create web pages."
+   },
+   {
+    "term": "CSS",
+    "text": "Styling with Cascading Style Sheets (CSS) is very important for improving the visual appearance of webpages and improving user experience."
+   },
+   {
+    "term": "JavaScript",
+    "text": "JavaScript is a programming language that is used to make websites interactive and engaging."
+   },
+   {
+    "term": "HTML tags",
+    "text": "Elements that make up an HTML document are called tags."
+   },
+   {
+    "term": "Paired tags",
+    "text": "Comes in pairs an opening Tag and closing Tag i.e `<p>` ..... `</p>`."
+   },
+   {
+    "term": "Unpaired tags",
+    "text": "Do not need closing Tags. They are also known as self-closing Tags i.e., `<img>`, `<br>`."
+   },
+   {
+    "term": "Paragraphs in HTML",
+    "text": "Paragraphs in HTML are used to organize and separate text into readable sections. Each paragraph creates a block of text with space above and below it, making the content easier to read."
+   },
+   {
+    "term": "Links in HTML",
+    "text": "Links in HTML are used to connect one web page to another. They allow you to click on words or images to go to different parts of the same web page or to other web pages on the internet."
+   },
+   {
+    "term": "HTML lists",
+    "text": "Lists improve readability by breaking complex ideas into simpler parts, allowing users to scan for details easily. Overall, lists make the content more organized and accessible for everyone."
+   },
+   {
+    "term": "HTML tables",
+    "text": "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+   },
+   {
+    "term": "HTML comments",
+    "text": "HTML comments begin with `<!--` and end with `-->`. Any text placed within these markers will be treated as a comment and will not be rendered by the browser."
+   },
+   {
+    "term": "CSS rule",
+    "text": "CSS is composed of rules that consist of selectors and declarations. Selectors specify which HTML elements the styles will apply to, while declarations define the specific styles to be applied, including properties and their corresponding values."
+   },
+   {
+    "term": "Margin and padding",
+    "text": "Margins create space outside the element, while padding creates space inside the element."
+   },
+   {
+    "term": "Variable",
+    "text": "A variable is like a container that holds information which can be used and manipulated in your code."
+   },
+   {
+    "term": "String",
+    "text": "A sequence of characters used for text."
+   },
+   {
+    "term": "Number",
+    "text": "Represents both integer and floating-point numbers."
+   },
+   {
+    "term": "Boolean",
+    "text": "Represents true or false values."
+   },
+   {
+    "term": "Array",
+    "text": "A collection of values stored in a single variable."
+   },
+   {
+    "term": "Function",
+    "text": "Functions allow you to reuse code and perform specific tasks."
+   },
+   {
+    "term": "Event",
+    "text": "An event is an action that occurs when a user interacts with a webpage, like clicking a button or pressing a key."
+   },
+   {
+    "term": "Event handler",
+    "text": "An event handler is a function that runs when a specific event occurs."
+   },
+   {
+    "term": "Debugging",
+    "text": "Debugging is the process of finding and fixing issues in your code."
+   }
+  ],
+  "formulas": [],
+  "important": [
+   {
+    "ref": "Short 8.1",
+    "why": "A direct 2-mark question on the basic HTML document structure."
+   },
+   {
+    "ref": "Short 8.2",
+    "why": "Tests the commonly examined distinction between numbered and bulleted lists."
+   },
+   {
+    "ref": "Short 8.3",
+    "why": "A short syntax question that can be answered with a small code example."
+   },
+   {
+    "ref": "Short 8.4",
+    "why": "Tests the three main CSS integration methods described in the unit."
+   },
+   {
+    "ref": "Short 8.5",
+    "why": "A common short question on adding JavaScript to a page."
+   },
+   {
+    "ref": "Short 8.6",
+    "why": "A straightforward question on the `<a>` tag and `href` attribute."
+   },
+   {
+    "ref": "Short 8.7",
+    "why": "Checks understanding of grouping content for layout and styling."
+   },
+   {
+    "ref": "Short 8.8",
+    "why": "Tests a key HTML code pattern using the `<link>` tag."
+   },
+   {
+    "ref": "Short 8.9",
+    "why": "A direct question on displaying data in a structured format."
+   },
+   {
+    "ref": "Short 8.10",
+    "why": "A likely short question about spacing around and inside elements."
+   }
+  ],
+  "fullMarks": [
+   "For a definition question, start with the exact definition, then add a brief example or use if the question asks for one.",
+   "For HTML code, write a complete document structure with `<!DOCTYPE html>`, `<html>`, `<head>`, `<title>`, and `<body>` in the correct order.",
+   "Use opening and closing tags correctly, and nest elements properly. Remember that `<img>` is an unpaired tag in the examples given.",
+   "For a hyperlink, show both the `<a>` tag and its `href` attribute; put the clickable text between the opening and closing `<a>` tags.",
+   "For a CSS rule, identify the selector, then write declarations inside braces as `property: value;`. Keep each declaration correctly punctuated.",
+   "When asked how CSS or JavaScript is added, name the method and show a correct code example, such as a `<link>` tag for external CSS or a `<script>` tag for JavaScript.",
+   "For a code-writing answer, use clear indentation and finish with a short statement explaining what the code does."
+  ],
+  "mistakes": [
+   "Writing `<link>` as the hyperlink tag. Use `<a href=\"URL\">clickable text</a>` for a hyperlink; `<link>` is used to connect an external CSS file.",
+   "Mixing up ordered and unordered lists. Use `<ol>` for a numbered list and `<ul>` for a bulleted list; use `<li>` for each item.",
+   "Leaving out the `href` attribute or placing the clickable text outside the `<a>` element. Include both correctly in the hyperlink code.",
+   "Putting an external stylesheet link in the body. Place `<link rel=\"stylesheet\" href=\"styles.css\">` in the `<head>` section.",
+   "Confusing a CSS selector with a declaration. The selector comes before `{ }`; declarations inside the braces use `property: value;`.",
+   "Writing HTML comment markers for a CSS comment. In a CSS file, write comments as `/* comment text */`.",
+   "Forgetting to close paired tags or nesting tags incorrectly. Check each opening tag has the correct closing tag and that elements are properly nested."
+  ],
+  "shortTheory": [
+   {
+    "question": "What is the purpose of the `<head>` tag in HTML?",
+    "answer": "This section contains meta-information about the HTML document, like the title."
+   },
+   {
+    "question": "Explain the difference between an ordered list and an unordered list in HTML.",
+    "answer": "You can create ordered (numbered) and unordered (bulleted) lists."
+   },
+   {
+    "question": "What are the different ways to apply CSS to an HTML document?",
+    "answer": "Integrating CSS with HTML is essential for styling web pages and it can be done in three primary ways: inline, internal, and external styles."
+   },
+   {
+    "question": "Describe the syntax for creating a hyperlink in HTML.",
+    "answer": "Links are created using the `<a>` tag.\n\n```html\n<a href=\"https://www.example.com\">Visit Example.com</a>\n```"
+   },
+   {
+    "question": "How do you link an external CSS file to an HTML document?",
+    "answer": "The most efficient method for larger projects is to use an external CSS file, which is linked to the HTML document with the `<link>` tag in the `<head>` section.\n\n```html\n<link rel=\"stylesheet\" href=\"styles.css\">\n```"
+   },
+   {
+    "question": "What is the use of the `<table>` tag in HTML?",
+    "answer": "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+   },
+   {
+    "question": "How can you include JavaScript in an HTML file?",
+    "answer": "```html\n<script src=\"script.js\" ></script>\n```"
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-8-1-t0",
+   "text": "What is the purpose of the `<head>` tag in HTML?",
+   "marks": 2,
+   "modelAnswer": [
+    "This section contains meta-information about the HTML document, like the title."
+   ],
+   "followUp": "What is the purpose of the `<head>` tag in HTML?",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "meta-information"
+      ],
+      [
+       "meta information"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the kind of information stored in the head section.",
+     "description": "States that the <head> contains meta-information.",
+     "how": "Award 1 mark for identifying meta-information."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "title"
+      ],
+      [
+       "document",
+       "information"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the title or another example of document information.",
+     "description": "Says it can contain information such as the document title.",
+     "how": "Award 1 mark for giving the title or another suitable example."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t1",
+   "text": "Explain the difference between an ordered list and an unordered list in HTML.",
+   "marks": 2,
+   "modelAnswer": [
+    "You can create ordered (numbered) and unordered (bulleted) lists."
+   ],
+   "followUp": "Explain the difference between an ordered list and an unordered list in HTML.",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ordered",
+       "numbered"
+      ],
+      [
+       "ordered",
+       "numbers"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies ordered lists as numbered.",
+     "description": "States that an ordered list is numbered.",
+     "how": "Award 1 mark for linking ordered lists with numbering."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "unordered",
+       "bulleted"
+      ],
+      [
+       "unordered",
+       "bullet"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies unordered lists as bulleted.",
+     "description": "States that an unordered list is bulleted.",
+     "how": "Award 1 mark for linking unordered lists with bullets."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t2",
+   "text": "What are the different ways to apply CSS to an HTML document?",
+   "marks": 2,
+   "modelAnswer": [
+    "Integrating CSS with HTML is essential for styling web pages and it can be done in three primary ways: inline, internal, and external styles."
+   ],
+   "followUp": "What are the different ways to apply CSS to an HTML document?",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "inline"
+      ],
+      [
+       "internal"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names CSS application methods.",
+     "description": "Names inline and/or internal CSS.",
+     "how": "Award 1 mark for naming at least one of inline or internal CSS."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "external"
+      ],
+      [
+       "inline",
+       "internal",
+       "external"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the external method, completing the three methods when combined with the first point.",
+     "description": "Names external CSS as a method; the three methods are inline, internal, and external.",
+     "how": "Award 1 mark for naming external CSS."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t3",
+   "text": "Describe the syntax for creating a hyperlink in HTML.",
+   "marks": 2,
+   "modelAnswer": [
+    "Links are created using the `<a>` tag.",
+    "<a href=\"https://www.example.com\">Visit Example.com</a>"
+   ],
+   "followUp": "Describe the syntax for creating a hyperlink in HTML.",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "<a"
+      ],
+      [
+       "anchor"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the HTML anchor tag used to create links.",
+     "description": "States that hyperlinks are created using the <a> tag.",
+     "how": "Award 1 mark for identifying the anchor tag."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "href",
+       "</a>"
+      ],
+      [
+       "href",
+       "URL",
+       "text"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises the href destination attribute and the link's closing or displayed text structure.",
+     "description": "Gives the href attribute as part of the hyperlink syntax.",
+     "how": "Award 1 mark for including href and a valid link structure or its destination and text."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t4",
+   "text": "How do you link an external CSS file to an HTML document?",
+   "marks": 2,
+   "modelAnswer": [
+    "The most efficient method for larger projects is to use an external CSS file, which is linked to the HTML document with the `<link>` tag in the `<head>` section.",
+    "<link rel=\"stylesheet\" href=\"styles.css\">"
+   ],
+   "followUp": "How do you link an external CSS file to an HTML document?",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "<link",
+       "head"
+      ],
+      [
+       "link",
+       "head"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the link tag and its location in the document.",
+     "description": "Says the external CSS file is linked using <link> in the <head>.",
+     "how": "Award 1 mark for identifying the link tag in the head section."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "stylesheet",
+       "href"
+      ],
+      [
+       "rel",
+       "href"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the stylesheet relationship and the external file reference.",
+     "description": "Includes the stylesheet and href attributes in the link element.",
+     "how": "Award 1 mark for including the stylesheet and href details."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t5",
+   "text": "What is the use of the `<table>` tag in HTML?",
+   "marks": 2,
+   "modelAnswer": [
+    "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+   ],
+   "followUp": "What is the use of the `<table>` tag in HTML?",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "data",
+       "structured"
+      ],
+      [
+       "information",
+       "structured"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that tables present data in an organised structure.",
+     "description": "Says tables display data or information in a structured format.",
+     "how": "Award 1 mark for identifying structured data display."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "comparison",
+       "organization"
+      ],
+      [
+       "compare",
+       "organize"
+      ],
+      [
+       "comparison",
+       "organise"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the stated benefits of comparing and organizing information.",
+     "description": "Mentions easy comparison and organization of information.",
+     "how": "Award 1 mark for stating comparison and organization as benefits."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-8-1-t6",
+   "text": "How can you include JavaScript in an HTML file?",
+   "marks": 2,
+   "modelAnswer": [
+    "<script src=\"script.js\" ></script>"
+   ],
+   "followUp": "How can you include JavaScript in an HTML file?",
+   "noteId": "cs-n-8-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "<script"
+      ],
+      [
+       "script tag"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the script element used to include JavaScript.",
+     "description": "Uses the <script> tag.",
+     "how": "Award 1 mark for identifying the script tag."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "src",
+       "script.js"
+      ],
+      [
+       "src",
+       "javascript file"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the src attribute and the external JavaScript file it references.",
+     "description": "Shows the script file being referenced with src.",
+     "how": "Award 1 mark for including src with a JavaScript filename."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 7
+ }
+}

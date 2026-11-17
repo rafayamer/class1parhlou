@@ -1,0 +1,26 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "3:16",
+   "figure": "",
+   "steps": [
+    "\\overline{A\\cdot B}+A\\cdot\\overline{B}",
+    "=\\overline{A}+\\overline{B}+A\\cdot\\overline{B} \\quad\\text{(De Morgan's law)}",
+    "=\\overline{A}+\\overline{B} \\quad\\text{(absorption law: }X+X\\cdot Y=X\\text{)}"
+   ],
+   "finalAnswer": "\\overline{A}+\\overline{B}"
+  },
+  {
+   "accept": [],
+   "id": "3:17",
+   "figure": "",
+   "steps": [
+    "A\\cdot B+\\overline{A}\\cdot\\overline{B}",
+    "This expression is already in its simplest sum-of-products form.",
+    "It represents the XNOR operation: the output is 1 when A and B have the same value."
+   ],
+   "finalAnswer": "A\\cdot B+\\overline{A}\\cdot\\overline{B} (XNOR)"
+  }
+ ]
+}

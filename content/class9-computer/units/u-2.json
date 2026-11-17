@@ -1,0 +1,5817 @@
+{
+ "chapter": {
+  "id": "cs-u-2",
+  "number": 2,
+  "title": "Number Systems",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "cs-m-2-1",
+    "position": 1,
+    "title": "2.1 Numbering Systems",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.1, pages 24–31",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.1 (pages 24–31) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-1-1",
+      "text": "Example 2.1: Convert 83 to binary",
+      "marks": 2,
+      "modelAnswer": [
+       "83 / 2 = 41 remainder 1",
+       "41 / 2 = 20 remainder 1",
+       "20 / 2 = 10 remainder 0",
+       "10 / 2 = 5 remainder 0",
+       "5 / 2 = 2 remainder 1",
+       "2 / 2 = 1 remainder 0",
+       "1 / 2 = 0 remainder 1",
+       "Reading the remainders from bottom to top gives 1010011₂."
+      ],
+      "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+      "noteId": "cs-n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct repeated division by 2 with remainders.",
+        "marks": 1,
+        "why": "The repeated divisions and remainders establish the binary digits.",
+        "how": "Divide by 2 until the quotient is 0 and record each remainder.",
+        "accept": [
+         [
+          "83",
+          "41",
+          "1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct binary result read from bottom to top.",
+        "marks": 1,
+        "why": "The remainders must be read in the required order to give the answer.",
+        "how": "Read the recorded remainders from bottom to top.",
+        "accept": [
+         [
+          "1010011"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.1"
+     },
+     {
+      "id": "cs-w-2-1-2",
+      "text": "Example 2.2: Consider the 9-bit binary number 110101011₂. This number can be divided into groups of three Bits from right to left:",
+      "marks": 2,
+      "modelAnswer": [
+       "110 101 011",
+       "110₂ = 6",
+       "101₂ = 5",
+       "011₂ = 3",
+       "So, 110101011₂ = 653₈."
+      ],
+      "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+      "noteId": "cs-n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct groups of three bits.",
+        "marks": 1,
+        "why": "Grouping from the right preserves the binary place values for conversion to octal.",
+        "how": "Group the bits from right to left in sets of three.",
+        "accept": [
+         [
+          "110 101 011"
+         ],
+         [
+          "110101011"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct octal result.",
+        "marks": 1,
+        "why": "Each group must be mapped to its corresponding octal digit.",
+        "how": "Convert each group to one octal digit and keep the group order.",
+        "accept": [
+         [
+          "653"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.2"
+     },
+     {
+      "id": "cs-w-2-1-3",
+      "text": "Example 2.3: Convert 83 to octal",
+      "marks": 2,
+      "modelAnswer": [
+       "83 / 8 = 10 remainder 3",
+       "10 / 8 = 1 remainder 2",
+       "1 / 8 = 0 remainder 1",
+       "Reading the remainders from bottom to top gives 123₈."
+      ],
+      "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+      "noteId": "cs-n-2-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Correct repeated division by 8 and remainders.",
+        "marks": 1,
+        "why": "Correct division by 8 produces the remainders needed for the conversion.",
+        "how": "Continue dividing the quotient by 8 until it becomes 0.",
+        "accept": [
+         [
+          "83",
+          "8",
+          "3"
+         ],
+         [
+          "10",
+          "8",
+          "2"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Correct octal result.",
+        "marks": 1,
+        "why": "The remainders give the answer only when read from bottom to top.",
+        "how": "Read the remainders from bottom to top.",
+        "accept": [
+         [
+          "123"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A board question on this section may ask you to convert a number between decimal, binary, octal, and hexadecimal.",
+      "For decimal-to-base conversions, show each division, quotient, and remainder; reading the remainders from bottom to top is an important marked step.",
+      "For binary-to-octal or binary-to-hexadecimal conversions, show the groups of three or four bits and then the digit corresponding to each group.",
+      "In place-value conversions to decimal, show each digit multiplied by its power of the base, then add the terms.",
+      "Check that each digit is allowed in its number system: binary uses 0–1, octal 0–7, decimal 0–9, and hexadecimal 0–9 and A–F."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Divide 45 by 8 and write down the remainder.",
+        "Keep dividing each quotient by 8 until it becomes 0, then read the remainders upwards for each number."
+       ],
+       "accept": [
+        [
+         "55",
+         "200",
+         "100"
+        ]
+       ],
+       "question": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+       "solution": [
+        "45 / 8 = 5 remainder 5",
+        "5 / 8 = 0 remainder 5",
+        "Reading from bottom to top: 45₁₀ = 55₈.",
+        "128 / 8 = 16 remainder 0",
+        "16 / 8 = 2 remainder 0",
+        "2 / 8 = 0 remainder 2",
+        "Reading from bottom to top: 128₁₀ = 200₈.",
+        "64 / 8 = 8 remainder 0",
+        "8 / 8 = 1 remainder 0",
+        "1 / 8 = 0 remainder 1",
+        "Reading from bottom to top: 64₁₀ = 100₈."
+       ],
+       "answer": "45₁₀ = 55₈, 128₁₀ = 200₈, and 64₁₀ = 100₈."
+      },
+      {
+       "hints": [
+        "Write the octal digits as coefficients of powers of 8, starting with 8⁰ at the right.",
+        "For each number, multiply the digits by their place values and add the results."
+       ],
+       "accept": [
+        [
+         "47",
+         "84",
+         "193"
+        ]
+       ],
+       "question": "Convert these octal numbers to decimal: 57, 124, 301.",
+       "solution": [
+        "57₈ = 5 × 8¹ + 7 × 8⁰ = 40 + 7 = 47₁₀.",
+        "124₈ = 1 × 8² + 2 × 8¹ + 4 × 8⁰ = 64 + 16 + 4 = 84₁₀.",
+        "301₈ = 3 × 8² + 0 × 8¹ + 1 × 8⁰ = 192 + 0 + 1 = 193₁₀."
+       ],
+       "answer": "57₈ = 47₁₀, 124₈ = 84₁₀, and 301₈ = 193₁₀."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The first division gives the first remainder, which will become the rightmost binary digit.",
+        "text": "83 / 2 = 41 remainder 1"
+       },
+       {
+        "why": "Continue dividing the quotient by 2 and record the remainder each time.",
+        "text": "41 / 2 = 20 remainder 1"
+       },
+       {
+        "why": "The quotient is divided again, and its remainder is recorded.",
+        "text": "20 / 2 = 10 remainder 0"
+       },
+       {
+        "why": "Continue until the quotient becomes 0.",
+        "text": "10 / 2 = 5 remainder 0"
+       },
+       {
+        "why": "This division gives another remainder for the binary number.",
+        "text": "5 / 2 = 2 remainder 1"
+       },
+       {
+        "why": "Keep dividing the quotient and recording the remainder.",
+        "text": "2 / 2 = 1 remainder 0"
+       },
+       {
+        "why": "The quotient is now 0, so the divisions stop.",
+        "text": "1 / 2 = 0 remainder 1"
+       },
+       {
+        "why": "The algorithm reads the remainders from bottom to top.",
+        "text": "Reading the remainders from bottom to top gives 1010011₂."
+       }
+      ],
+      "question": "Convert 83 to binary",
+      "answer": "83₁₀ = 1010011₂"
+     },
+     "explain": [
+      {
+       "title": "Decimal uses base 10",
+       "body": "The decimal number system is a base-10 number system that consists of digit from 0 to 9 and we use it in everyday life. That's why each digit of the number represents a power of 10. In the decimal system the place values starting from the rightmost digits are 10⁰, 10¹, 10², and so on. For example, 523 = 5 × 10² + 2 × 10¹ + 3 × 10⁰ = 523."
+      },
+      {
+       "title": "Binary uses base 2",
+       "body": "In binary, the place values are arranged from the right to left, starting with 2⁰, and ending at 2ⁿ,where each position represents a power of 2. Binary digits are 0 and 1. Computers use binary because digital circuits have two states: on and off, represented by 1 and 0."
+      },
+      {
+       "title": "Octal uses base 8",
+       "body": "Octal is a positional numeral system with base eight, which implies that a digit to be used ranges from 0 to 7. The last digit is a single digit power of 8 while the other digits are the coefficients. In the decimal system, the place values starting from the 8⁰, 8¹, 8² and so on. Each octal digit represents three binary digits (bits) because 8 = 2³."
+      },
+      {
+       "title": "Hexadecimal uses base 16",
+       "body": "The hexadecimal is a base 16 number system with digit number from 0 to 9 and alphabets from A to F; each digit represents 16 to the power of the position of the digit. The letter A to F stand for the numeric value of 10 to 15. Since 16 = 2⁴, each hexadecimal digit corresponds to four binary bits."
+      },
+      {
+       "title": "Convert by repeated division",
+       "body": "To convert a decimal number to binary, octal, or hexadecimal, repeatedly divide by 2, 8, or 16 respectively. Record each remainder, continue until the quotient is 0, then read the remainders from bottom to top."
+      }
+     ],
+     "mistakes": [
+      "Reading the remainders from top to bottom instead of bottom to top in decimal-to-base conversions.",
+      "Using a digit that is not allowed in the base, such as 2 in binary or 8 in octal.",
+      "For binary-to-octal or binary-to-hexadecimal conversions, grouping from the left instead of from the right.",
+      "Forgetting to add leading zeroes when a binary number needs complete groups of three or four bits.",
+      "Leaving out the place-value powers or arithmetic when converting a positional number to decimal."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-2",
+    "position": 2,
+    "title": "2.2 Data Representation in Computing Systems",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.2, pages 31–33",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.2 (pages 31–33) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-2-1",
+      "text": "Let's convert the decimal number -5 to an 8-bit binary number:",
+      "marks": 2,
+      "modelAnswer": [
+       "Start with the binary representation of 5: 00000101₂.",
+       "Invert all the bits: 11111010₂.",
+       "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+       "So, −5 in 8-bit two's complement is 11111011₂."
+      ],
+      "followUp": "What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Write the 8-bit binary representation of 5.",
+        "marks": 0.5,
+        "why": "Starting with the binary representation of 5 is the first step in the method.",
+        "how": "Show 00000101₂.",
+        "accept": [
+         [
+          "00000101"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Invert all bits.",
+        "marks": 0.5,
+        "why": "Inverting every bit is necessary to form the complement.",
+        "how": "Change 00000101₂ to 11111010₂.",
+        "accept": [
+         [
+          "11111010"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Add 1 to the inverted binary number.",
+        "marks": 0.5,
+        "why": "Adding 1 completes the two's-complement conversion.",
+        "how": "Show 11111010₂ + 1₂ = 11111011₂.",
+        "accept": [
+         [
+          "11111010",
+          "1"
+         ],
+         [
+          "11111011"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the correct final answer.",
+        "marks": 0.5,
+        "why": "The final binary value is the requested 8-bit representation of −5.",
+        "how": "State −5 = 11111011₂ in 8-bit two's complement.",
+        "accept": [
+         [
+          "11111011"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.1"
+     },
+     {
+      "id": "cs-w-2-2-3",
+      "text": "Explain how a negative integer is represented in binary.",
+      "marks": 2,
+      "modelAnswer": [
+       "To store negative values, computers use a method called two's complement.",
+       "Start with the binary representation of the positive value.",
+       "Invert all the bits (change 0s to 1s and 1s to 0s).",
+       "Add 1 to the Least Significant Bit (LSB)."
+      ],
+      "followUp": "What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Name the method.",
+        "marks": 0.5,
+        "why": "Naming the representation method identifies how negative values are stored.",
+        "how": "State that computers use two's complement.",
+        "accept": [
+         [
+          "two's complement"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the first operation.",
+        "marks": 0.5,
+        "why": "Inverting the bits is the first required operation.",
+        "how": "Explain that every 0 changes to 1 and every 1 changes to 0.",
+        "accept": [
+         [
+          "invert",
+          "bits"
+         ],
+         [
+          "complement"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the second operation.",
+        "marks": 0.5,
+        "why": "Adding 1 after inversion completes the method.",
+        "how": "State that 1 is added to the least significant bit.",
+        "accept": [
+         [
+          "add 1"
+         ],
+         [
+          "+1"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "State the correct final explanation.",
+        "marks": 0.5,
+        "why": "The final answer must correctly describe the complete method.",
+        "how": "Describe two's complement as inversion followed by adding 1.",
+        "accept": [
+         [
+          "invert",
+          "add 1"
+         ],
+         [
+          "two's complement",
+          "add 1"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.5"
+     },
+     {
+      "id": "cs-w-2-2-5",
+      "text": "Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+      "marks": 2,
+      "modelAnswer": [
+       "Whole numbers are a set of non-negative integers.",
+       "They include zero and all the positive integers.",
+       "Quantities such as the number of students cannot be negative.",
+       "Therefore, whole numbers are suitable for representing such quantities."
+      ],
+      "followUp": "What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explain the non-negative nature of whole numbers.",
+        "marks": 0.5,
+        "why": "Whole numbers include zero and do not go below zero.",
+        "how": "Mention zero or that whole numbers are non-negative.",
+        "accept": [
+         [
+          "zero"
+         ],
+         [
+          "non-negative"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain which other values whole numbers include.",
+        "marks": 0.5,
+        "why": "Whole numbers include the positive counts needed for these quantities.",
+        "how": "Mention positive integers.",
+        "accept": [
+         [
+          "positive integers"
+         ],
+         [
+          "positive"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Relate whole numbers to non-negative quantities.",
+        "marks": 0.5,
+        "why": "The answer must connect whole numbers to the kind of quantity being represented.",
+        "how": "Explain that such quantities have no negative values.",
+        "accept": [
+         [
+          "cannot be negative"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the correct final reason.",
+        "marks": 0.5,
+        "why": "The final explanation should give the reason whole numbers suit these quantities.",
+        "how": "Connect zero and positive values with quantities that cannot be negative.",
+        "accept": [
+         [
+          "suitable",
+          "cannot be negative"
+         ],
+         [
+          "non-negative",
+          "quantities"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.8"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Short questions may ask for whole-number definitions, integer ranges, or how negative integers are represented.",
+      "For a range question, show the number of bits and the correct formula before giving the range.",
+      "For a two's-complement question, show the positive binary form, invert every bit, then add 1; these working steps can earn marks as well as the answer.",
+      "In a longer explanation, distinguish unsigned whole numbers from signed integers and state how the sign bit affects the range."
+     ],
+     "yourTurn": [],
+     "example": {
+      "steps": [
+       {
+        "why": "The method begins with the 8-bit binary form of the positive value 5.",
+        "text": "Start with the binary representation of 5: 00000101₂."
+       },
+       {
+        "why": "Two's complement requires changing every 0 to 1 and every 1 to 0.",
+        "text": "Invert all the bits: 11111010₂."
+       },
+       {
+        "why": "Adding 1 after inversion completes the two's-complement form.",
+        "text": "Add 1: 11111010₂ + 1₂ = 11111011₂."
+       },
+       {
+        "why": "This states the requested 8-bit representation of −5.",
+        "text": "So, -5 in 8-bit two's complement is 11111011₂."
+       }
+      ],
+      "question": "Let's convert the decimal number -5 to an 8-bit binary number:",
+      "answer": "−5 in 8-bit two's complement is 11111011₂."
+     },
+     "explain": [
+      {
+       "title": "Whole numbers",
+       "body": "Whole numbers are a set of non-negative integers. They include zero and all the positive integers. Mathematically, the set of whole numbers is: W = {0,1,2,3...}. They suit quantities that cannot be negative, such as the number of students."
+      },
+      {
+       "title": "Unsigned whole-number ranges",
+       "body": "A byte has 8 bits. For an unsigned whole number with n bits, the maximum value is 2ⁿ − 1. So, 1 byte has a maximum of 255, 2 bytes a maximum of 65,535, and 4 bytes a maximum of 4,294,967,295."
+      },
+      {
+       "title": "Signed integers",
+       "body": "Integers extend the concept of whole numbers to include negative numbers. In computer programming, we call them signed integers. One bit is reserved as the sign bit (the most significant bit). For n bits, the maximum positive value is 2ⁿ⁻¹ − 1."
+      },
+      {
+       "title": "Negative integers and two's complement",
+       "body": "To store negative values, computers use a method called two's complement. Invert all the bits, then add 1 to the Least Significant Bit (LSB). For 8-bit integers, the minimum is −2⁷ = −128."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse unsigned and signed ranges: an unsigned 1-byte number has maximum 255, while a signed 1-byte integer has maximum 127.",
+      "For a signed integer, remember that one bit is reserved as the sign bit.",
+      "Do not stop after inverting the bits when finding two's complement; you must add 1.",
+      "Keep the number of bits fixed in a two's-complement example, such as 8 bits.",
+      "Do not confuse the maximum signed value, 2ⁿ⁻¹ − 1, with the minimum, −2ⁿ⁻¹."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-3",
+    "position": 3,
+    "title": "2.3 Storing Real Values in Computer Memory",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.3, pages 33–36",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.3 (pages 33–36) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-3-1",
+      "text": "Convert 0.375 to Binary.",
+      "marks": 2,
+      "modelAnswer": [
+       "0.375 × 2 = 0.75 (Integer part: 0)",
+       "0.75 × 2 = 1.5 (Integer part: 1)",
+       "0.5 × 2 = 1.0 (Integer part: 1)",
+       "0.375₁₀ = 0.011₂"
+      ],
+      "followUp": "Convert 0.375 to Binary.",
+      "noteId": "cs-n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Show the repeated multiplication by 2 and record the integer parts.",
+        "marks": 1,
+        "why": "The repeated multiplication method must be applied to the fractional part.",
+        "how": "Multiply each new fractional part by 2 and record the integer parts in order.",
+        "accept": [
+         [
+          "0.75"
+         ],
+         [
+          "0.75×2=0.75"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct binary fraction.",
+        "marks": 1,
+        "why": "The binary digits must be written in the correct order as the final result.",
+        "how": "Write the recorded integer parts from top to bottom after the binary point.",
+        "accept": [
+         [
+          "0.011"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.3"
+     },
+     {
+      "id": "cs-w-2-3-2",
+      "text": "How is the range of floating-point numbers calculated for single precision?",
+      "marks": 2,
+      "modelAnswer": [
+       "Single precision uses 8 bits for the exponent and a bias of 127.",
+       "The actual exponent range is −126 to +127.",
+       "The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+      ],
+      "followUp": "Convert 0.375 to Binary.",
+      "noteId": "cs-n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the exponent bit count and bias.",
+        "marks": 1,
+        "why": "The exponent bit allocation and bias are needed to explain how the range is determined.",
+        "how": "Explain that single precision uses 8 exponent bits and a bias of 127.",
+        "accept": [
+         [
+          "8 bits",
+          "127"
+         ],
+         [
+          "exponent",
+          "127"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the exponent limits and approximate value range.",
+        "marks": 1,
+        "why": "The exponent limits and approximate value range are the result of the calculation.",
+        "how": "State the actual exponent range and the approximate range of values.",
+        "accept": [
+         [
+          "-126",
+          "127"
+         ],
+         [
+          "1.4×10^-45",
+          "3.4×10^38"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.9"
+     },
+     {
+      "id": "cs-w-2-3-3",
+      "text": "Why is it important to understand the limitations of floating-point representation in scientific computing?",
+      "marks": 2,
+      "modelAnswer": [
+       "Floating-point computation can have round-off errors.",
+       "In scientific computing, these errors must be monitored to maintain accuracy."
+      ],
+      "followUp": "Convert 0.375 to Binary.",
+      "noteId": "cs-n-2-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify possible round-off errors.",
+        "marks": 1,
+        "why": "Identifying possible round-off error states an important limitation of floating-point computation.",
+        "how": "Explain that floating-point computations can produce round-off errors.",
+        "accept": [
+         [
+          "round-off"
+         ],
+         [
+          "round off"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain the need to monitor errors.",
+        "marks": 1,
+        "why": "Monitoring errors explains why the limitation matters in scientific work.",
+        "how": "State that errors should be monitored to maintain accuracy.",
+        "accept": [
+         [
+          "accuracy",
+          "monitor"
+         ],
+         [
+          "maintain accuracy"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.10"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A board question may ask you to convert a decimal fraction to binary. Show each multiplication by 2 and record the integer parts in order.",
+      "For single-precision questions, state the allocation clearly: 1 sign bit, 8 exponent bits, and 23 mantissa bits.",
+      "When asked for the single-precision range, include the exponent bias and actual exponent range as well as the approximate range of values.",
+      "For questions about accuracy, mention round-off errors and explain why they should be monitored."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start by multiplying 0.375 by 2.",
+        "Keep multiplying each new fractional part by 2; write down the integer parts from top to bottom."
+       ],
+       "accept": [
+        [
+         "0.011"
+        ]
+       ],
+       "question": "Convert 0.375 to Binary.",
+       "solution": [
+        "0.375 × 2 = 0.75 (Integer part: 0)",
+        "0.75 × 2 = 1.5 (Integer part: 1)",
+        "0.5 × 2 = 1.0 (Integer part: 1)",
+        "The integer parts recorded are 0, 1, 1.",
+        "0.375₁₀ = 0.011₂"
+       ],
+       "answer": "0.375₁₀ = 0.011₂"
+      },
+      {
+       "hints": [
+        "Recall how many bits single precision gives to its exponent and what bias it uses.",
+        "State the actual exponent range and the approximate range of values given in the section."
+       ],
+       "accept": [
+        [
+         "8 bits",
+         "127",
+         "-126",
+         "1.4×10^-45",
+         "3.4×10^38"
+        ]
+       ],
+       "question": "How is the range of floating-point numbers calculated for single precision?",
+       "solution": [
+        "Single precision uses 8 bits for the exponent and a bias of 127.",
+        "The actual exponent range is −126 to +127.",
+        "The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+       ],
+       "answer": "The exponent uses 8 bits and a bias of 127, giving an actual exponent range of −126 to +127. The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This identifies the number's fractional part, which is the part being converted.",
+        "text": "Fractional part: 0.375"
+       },
+       {
+        "why": "The repeated multiplications produce the binary digits as the integer parts.",
+        "text": "0.375 × 2 = 0.75 (Integer part: 0)"
+       },
+       {
+        "why": "Continue with the new fractional part and record its integer part.",
+        "text": "0.75 × 2 = 1.5 (Integer part: 1)"
+       },
+       {
+        "why": "Repeat until the fractional part becomes zero.",
+        "text": "0.5 × 2 = 1.0 (Integer part: 1)"
+       },
+       {
+        "why": "Writing the recorded integer parts from top to bottom gives the binary fraction.",
+        "text": "0.375₁₀ = 0.011₂"
+       }
+      ],
+      "question": "Converting 0.375 to Binary",
+      "answer": "0.375₁₀ = 0.011₂"
+     },
+     "explain": [
+      {
+       "title": "What is a floating-point number?",
+       "body": "In computers, real values, also known as floating-point numbers, are used to represent number with fractions and/or decimals. A floating-point number = sign × mantissa × 2^exponent."
+      },
+      {
+       "title": "Convert a decimal fraction to binary",
+       "body": "To convert the fractional part of a real (floating-point) number from decimal (base-10) to binary (base-2), multiply the fractional part by 2 and write down the integral part of the result. Repeat this process with the new fractional part until the value of the fractional part becomes zero or until the required precision is achieved."
+      },
+      {
+       "title": "Single precision",
+       "body": "In this standard, 4 bytes (or 32 bits) are assigned where the 1st bit is the sign bit, and the next 8 bits are for the exponent and the remaining 23 bits are for the mantissa. The approximate range of values from 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+      },
+      {
+       "title": "Double precision and accuracy",
+       "body": "In double precision, the exponent is represented using 11 bits. The exponent is stored in a biased form, with a bias of 1023. Floating-point computations may also have round-off errors, so scientific computing requires monitoring these errors to maintain accuracy."
+      }
+     ],
+     "mistakes": [
+      "Writing the integer parts in reverse order when converting a fraction to binary; record them from top to bottom.",
+      "Stopping before the fractional part reaches zero when the conversion is exact.",
+      "Confusing the exponent bits with the mantissa bits in single precision: the allocation is 1, 8, and 23 bits.",
+      "Forgetting that the exponent is stored with a bias, or stating the bias for double precision when asked about single precision.",
+      "Ignoring possible round-off errors when explaining the limits of floating-point values."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-4",
+    "position": 4,
+    "title": "2.4 Binary Arithmetic Operations",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.4, pages 36–39",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.4 (pages 36–39) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-4-1",
+      "text": "Add the binary numbers: 1101₂ + 1011₂.",
+      "marks": 8,
+      "modelAnswer": [
+       "  1101₂",
+       "+ 1011₂",
+       "-------",
+       " 11000₂"
+      ],
+      "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+      "noteId": "cs-n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Align the binary numbers by their rightmost bits.",
+        "marks": 2,
+        "why": "Correct alignment is needed to add each binary place.",
+        "how": "Write 1101₂ above 1011₂ with the rightmost bits aligned.",
+        "accept": [
+         [
+          "1101",
+          "1011"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Add columns from right to left, carrying 1 when the column totals 2 or 3.",
+        "marks": 3,
+        "why": "Correct carries determine the result bits.",
+        "how": "Show or correctly use the carries through the columns.",
+        "accept": [
+         [
+          "11000"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct binary sum.",
+        "marks": 3,
+        "why": "The final answer is the required result.",
+        "how": "Write the final answer as 11000₂.",
+        "accept": [
+         [
+          "11000"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.4.1"
+     },
+     {
+      "id": "cs-w-2-4-2",
+      "text": "Subtract 6 from 9 in Binary.",
+      "marks": 8,
+      "modelAnswer": [
+       "Minuend = 9₁₀ = 1001₂",
+       "Subtrahend = 6₁₀ = 0110₂",
+       "Invert the bits of 0110₂: 1001₂",
+       "Add 1 to the inverted number: 1001₂ + 1₂ = 1010₂",
+       "1001₂ + 1010₂ = 10011₂",
+       "Discard the carry bit: 0011₂ = 3₁₀",
+       "So, 9 − 6 = 3."
+      ],
+      "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+      "noteId": "cs-n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Convert 9 and 6 to binary.",
+        "marks": 2,
+        "why": "The method begins by writing the minuend and subtrahend in binary.",
+        "how": "State 9₁₀ = 1001₂ and 6₁₀ = 0110₂.",
+        "accept": [
+         [
+          "1001",
+          "0110"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Invert the subtrahend and add 1.",
+        "marks": 3,
+        "why": "The two's complement is the value added to perform the subtraction.",
+        "how": "Show that 0110₂ inverts to 1001₂ and that 1001₂ + 1₂ = 1010₂.",
+        "accept": [
+         [
+          "1010"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Add, discard the carry bit and state the answer.",
+        "marks": 3,
+        "why": "The carry must be discarded to obtain the correct 4-bit result.",
+        "how": "Show 1001₂ + 1010₂ = 10011₂, discard the carry, and give 0011₂ = 3₁₀.",
+        "accept": [
+         [
+          "0011"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.4.2"
+     },
+     {
+      "id": "cs-w-2-4-3",
+      "text": "Multiply 101₂ and 11₂.",
+      "marks": 8,
+      "modelAnswer": [
+       "    101₂",
+       "  ×  11₂",
+       "  ------",
+       "     101",
+       "   +1010",
+       "  ------",
+       "    1111₂",
+       "So, 101₂ × 11₂ = 1111₂."
+      ],
+      "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+      "noteId": "cs-n-2-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Set up the binary multiplication.",
+        "marks": 2,
+        "why": "The numbers must be aligned for the partial products.",
+        "how": "Write 101₂ above 11₂ with the rightmost bits aligned.",
+        "accept": [
+         [
+          "101",
+          "11"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Find the partial products and shift the second row one place left.",
+        "marks": 3,
+        "why": "The shifted partial products are the main steps in long multiplication.",
+        "how": "Show the rows 101 and 1010.",
+        "accept": [
+         [
+          "101",
+          "1010"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Add the partial products and give the answer.",
+        "marks": 3,
+        "why": "Adding the partial products gives the final product.",
+        "how": "Write 101₂ + 1010₂ = 1111₂.",
+        "accept": [
+         [
+          "1111"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 2.4.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Expect short calculations and longer questions that ask you to perform binary addition, subtraction, multiplication or division.",
+      "For addition, line up the rightmost bits and show carries clearly; each correct column and carry can earn method marks.",
+      "For subtraction, show the subtrahend's inversion, the addition of 1, the addition to the minuend and the discarded carry.",
+      "For multiplication, show both partial products and the left shift in the second row.",
+      "For division, show the comparisons, subtractions and digits brought down, then state the quotient."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Align 101₂ and 110₂ at their rightmost bits.",
+        "Start at the right: 1 + 0 = 1; then add 0 + 1, and finally add 1 + 1 with its carry."
+       ],
+       "accept": [
+        [
+         "1011"
+        ]
+       ],
+       "question": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+       "solution": [
+        "  101₂",
+        "+ 110₂",
+        "------",
+        " 1011₂"
+       ],
+       "answer": "1011₂"
+      },
+      {
+       "hints": [
+        "Compare 10₂ with the first two digits of 1100₂.",
+        "Subtract when the divisor fits, bring down the next digit, and continue until all dividend digits are used."
+       ],
+       "accept": [
+        [
+         "110"
+        ]
+       ],
+       "question": "Q2.4. Perform the following binary arithmetic operations: (b) Division of 1100₂ by 10₂.",
+       "solution": [
+        "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+        "Bring down the next digit 0.",
+        "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+        "Bring down the next digit 0; no more digits are left.",
+        "1100₂ ÷ 10₂ = 110₂."
+       ],
+       "answer": "110₂"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This names the decimal numbers being subtracted and writes them in binary for the calculation.",
+        "text": "Minuend = 9₁₀ = 1001₂; Subtrahend = 6₁₀ = 0110₂"
+       },
+       {
+        "why": "Inverting each bit is the first part of finding the two's complement.",
+        "text": "Invert the bits of 0110₂: Inversion: 1001₂"
+       },
+       {
+        "why": "Adding 1 to the inverted number completes the two's complement.",
+        "text": "Add 1 to the inverted number: 1001₂ + 1₂ = 1010₂ = −6₁₀"
+       },
+       {
+        "why": "Adding the two's complement to the minuend performs the subtraction.",
+        "text": "1001₂ + 1010₂ = 10011₂"
+       },
+       {
+        "why": "The final carry is discarded, leaving the 4-bit difference.",
+        "text": "Discard the carry bit: 0011₂ = 3₁₀"
+       },
+       {
+        "why": "This states the result of the original subtraction.",
+        "text": "So, 9 − 6 = 3"
+       }
+      ],
+      "question": "Subtract 6 from 9 in Binary",
+      "answer": "9 − 6 = 3"
+     },
+     "explain": [
+      {
+       "title": "Binary operations",
+       "body": "“Arithmetic operations include addition, subtraction, multiplication and division, and are performed on two numbers at a time. Binary arithmetic operations are similar to decimal operations but follow binary rules.” This means you use the same kinds of operations as in decimal arithmetic, but work with binary digits."
+      },
+      {
+       "title": "Adding binary digits",
+       "body": "“Binary addition uses only two digits: 0 and 1.” The rules are: 0 + 0 = 0; 0 + 1 = 1; 1 + 0 = 1; and 1 + 1 = 0 with a carry of 1 to the next higher bit."
+      },
+      {
+       "title": "Subtracting with two's complement",
+       "body": "“In binary arithmetic, subtraction can also be carried out by adding the two's complement or the value of the subtrahend to the minuend.” Find the two's complement by inverting the bits and adding 1, add it to the minuend, then discard the carry bit."
+      },
+      {
+       "title": "Multiplication and division",
+       "body": "“Binary numbers are base-2 numbers, consisting of only 0s and 1s. Multiplying binary numbers follows similar principles to multiplying decimal numbers, but with simpler rules.” For division, compare, subtract when possible, bring down the next digit, and repeat until all dividend digits are used."
+      }
+     ],
+     "mistakes": [
+      "Forgetting to carry 1 when adding 1 + 1.",
+      "For subtraction, stopping after inverting the bits instead of also adding 1.",
+      "Adding the two's complement but forgetting to discard the final carry bit.",
+      "In multiplication, forgetting to shift the second partial product one place left.",
+      "In division, skipping a dividend digit or writing the quotient before completing the steps."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-5",
+    "position": 5,
+    "title": "2.5 Common Text Encoding Schemes",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.5, pages 39–43",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.5 (pages 39–43) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-5-1",
+      "text": "What is the primary purpose of the ASCII encoding scheme?",
+      "marks": 2,
+      "modelAnswer": [
+       "ASCII gives each alphabet, number or symbol a code number.",
+       "These code numbers let computers represent and process text."
+      ],
+      "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+      "noteId": "cs-n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "States that ASCII assigns code numbers to characters.",
+        "marks": 1,
+        "why": "The answer must state what ASCII does to characters.",
+        "how": "Explain that each alphabet, number or symbol is given a code number.",
+        "accept": [
+         [
+          "p:code",
+          "alphabet"
+         ],
+         [
+          "p:code",
+          "symbol"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "States that the codes let computers represent or process text.",
+        "marks": 1,
+        "why": "The answer must connect encoding to computer-readable text.",
+        "how": "Mention that the codes are used by computers to represent or process text.",
+        "accept": [
+         [
+          "computers",
+          "text"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.1"
+     },
+     {
+      "id": "cs-w-2-5-2",
+      "text": "Explain the difference between ASCII and Unicode.",
+      "marks": 2,
+      "modelAnswer": [
+       "ASCII uses 7 bits and can represent only 128 characters.",
+       "Unicode can represent over a million characters from writing systems around the world."
+      ],
+      "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+      "noteId": "cs-n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identifies ASCII as limited to 7 bits and 128 characters.",
+        "marks": 1,
+        "why": "The answer must give ASCII's stated limitation.",
+        "how": "State both the 7-bit limit and the 128-character capacity.",
+        "accept": [
+         [
+          "7 bits",
+          "128"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "States that Unicode represents many characters or writing systems.",
+        "marks": 1,
+        "why": "The answer must explain Unicode's wider character coverage.",
+        "how": "Compare Unicode's broad coverage with ASCII's limited set.",
+        "accept": [
+         [
+          "Unicode",
+          "million"
+         ],
+         [
+          "Unicode",
+          "many",
+          "languages"
+         ],
+         [
+          "Unicode",
+          "writing systems"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.2"
+     },
+     {
+      "id": "cs-w-2-5-3",
+      "text": "How does Unicode handle characters from different languages?",
+      "marks": 2,
+      "modelAnswer": [
+       "Unicode maps graphic characters used in the world's writing systems.",
+       "It represents these characters through encoding forms such as UTF-8, UTF-16 and UTF-32."
+      ],
+      "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+      "noteId": "cs-n-2-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "States that Unicode maps graphic characters.",
+        "marks": 1,
+        "why": "The answer must explain Unicode's character-mapping purpose.",
+        "how": "Use the idea of mapping characters used in writing systems.",
+        "accept": [
+         [
+          "maps",
+          "characters"
+         ],
+         [
+          "graphic characters"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Names a Unicode encoding form.",
+        "marks": 1,
+        "why": "The answer must show how Unicode characters are encoded.",
+        "how": "Give one or more of UTF-8, UTF-16 and UTF-32.",
+        "accept": [
+         [
+          "UTF-8"
+         ],
+         [
+          "UTF-16"
+         ],
+         [
+          "UTF-32"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask for ASCII's purpose, its character limit, or how it differs from Unicode.",
+      "A long question may ask you to explain Unicode and give code-point examples from different languages.",
+      "For full marks, state the key facts clearly: ASCII uses 7 bits for 128 characters; Unicode covers many writing systems; and UTF-8, UTF-16 and UTF-32 are Unicode encoding forms.",
+      "When giving examples, pair each character with its correct code point, such as A with U+0041 and ب with U+0628."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think about what ASCII gives to each character.",
+        "Mention code numbers and how computers use them for text."
+       ],
+       "accept": [
+        [
+         "code numbers",
+         "characters",
+         "computers"
+        ],
+        [
+         "assigns",
+         "codes",
+         "text"
+        ],
+        [
+         "numerical representation",
+         "characters"
+        ]
+       ],
+       "question": "What is the primary purpose of the ASCII encoding scheme?",
+       "solution": [
+        "ASCII gives each alphabet, number or symbol a code number.",
+        "These code numbers let computers represent and process text."
+       ],
+       "answer": "ASCII assigns code numbers to characters so computers can represent and process text."
+      },
+      {
+       "hints": [
+        "Compare how many characters each scheme can represent.",
+        "Include ASCII's 7-bit, 128-character limit and Unicode's coverage of many writing systems."
+       ],
+       "accept": [
+        [
+         "ASCII",
+         "7 bits",
+         "128",
+         "Unicode",
+         "many"
+        ],
+        [
+         "ASCII",
+         "128",
+         "Unicode",
+         "million"
+        ],
+        [
+         "ASCII",
+         "limited",
+         "Unicode",
+         "writing systems"
+        ]
+       ],
+       "question": "Explain the difference between ASCII and Unicode.",
+       "solution": [
+        "ASCII uses 7 bits and can represent only 128 characters.",
+        "Unicode can represent over a million characters from writing systems around the world."
+       ],
+       "answer": "ASCII is limited to 7 bits and 128 characters, while Unicode can represent over a million characters from many writing systems."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This identifies the character and encoding form being represented.",
+        "text": "Represent the letter ‘A’ in UTF-8."
+       },
+       {
+        "why": "The section gives U+0041 as the Unicode code point for A.",
+        "text": "The letter ‘A’ is Unicode, represented as U+0041."
+       },
+       {
+        "why": "This gives the binary form and the storage length stated for UTF-8.",
+        "text": "It is 01000001 in the binary format and occupies 8 bits or 1 byte."
+       }
+      ],
+      "question": "Represent the letter ‘A’ in UTF-8.",
+      "answer": "U+0041 = 01000001; it occupies 8 bits or 1 byte."
+     },
+     "explain": [
+      {
+       "title": "ASCII",
+       "body": "ASCII is an acronym that stands for American Standard Code for Information Interchange. It is a character encoding standard adopted for representing in devices such as computers and similar systems that use text. Each alphabet, number or symbol is given a code number between 0 and 127."
+      },
+      {
+       "title": "Extended ASCII",
+       "body": "While the standard ASCII Table includes 128 characters, there is an extended version that includes 256 characters. This extended ASCII uses 8 bits and includes additional symbols, accented letters, and other characters."
+      },
+      {
+       "title": "Unicode",
+       "body": "Unicode is an attempt at mapping all graphic characters used in any of the world's writing system. Unlike ASCII, which is limited to 7bits and can represent only 128 characters, Unicode can represent over a million characters through different forms of encodings such as, UTF-8, UTF-16, and UTF-32."
+      },
+      {
+       "title": "UTF encoding forms",
+       "body": "UTF is an acronym that stands for Unicode Transformation Format. UTF-8 is variable-length and uses 1 to 4 bytes; UTF-16 uses either 2 bytes or 4 bytes per character at most; UTF-32 uses a fixed length of 4 bytes per character."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse standard ASCII's 128 characters with extended ASCII's 256 characters.",
+      "Do not say Unicode is limited to English or to 128 characters.",
+      "Do not mix up the byte lengths: UTF-8 uses 1 to 4 bytes, UTF-16 uses 2 or 4 bytes, and UTF-32 uses 4 bytes.",
+      "When giving a code-point example, keep the character and code point paired correctly: A is U+0041 and ب is U+0628.",
+      "Do not write a code point as though it were the binary representation; for example, U+0041 and 01000001 are different forms."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-6",
+    "position": 6,
+    "title": "2.6 Storing Images, Audio, and Video in Computers",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, section 2.6, pages 43–46",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 2.6 (pages 43–46) in your textbook."
+    ],
+    "writtenQuestions": [],
+    "lesson": {
+     "examTips": [
+      "This section can be tested with MCQs asking about pixels, RGB, file formats, sampling, quantization, frame rate, or storage devices.",
+      "For a short response, define the term clearly and include its key detail—for example, sampling records a sound wave at regular intervals.",
+      "When comparing formats or devices, name each one and state the correct feature. Avoid mixing audio, image, and video formats."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Recall the name for the tiny dots in an image.",
+        "The section says images are made up of tiny dots called pixels."
+       ],
+       "accept": [
+        [
+         "p:pixel"
+        ]
+       ],
+       "question": "What are the tiny dots that make up an image called?",
+       "solution": [
+        "Images are made up of tiny dots.",
+        "These tiny dots are called pixels."
+       ],
+       "answer": "Pixels."
+      },
+      {
+       "hints": [
+        "Expand each of the three letters in RGB.",
+        "The colours are Red, Green, and Blue."
+       ],
+       "accept": [
+        [
+         "rgb"
+        ],
+        [
+         "red",
+         "green",
+         "blue"
+        ]
+       ],
+       "question": "In an RGB color model, what does RGB stand for?",
+       "solution": [
+        "R stands for Red.",
+        "G stands for Green.",
+        "B stands for Blue."
+       ],
+       "answer": "Red, Green, Blue."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The section gives this as an example of representing a pixel's colour with three numbers.",
+        "text": "The pixel has RGB values (255, 0, 0)."
+       },
+       {
+        "why": "The first number is the red value, and 255 is the highest value in the stated 0-to-255 range.",
+        "text": "Red = 255."
+       },
+       {
+        "why": "The green and blue values are both 0, so the pixel is bright red.",
+        "text": "The pixel is bright red."
+       }
+      ],
+      "question": "A pixel with RGB values (255, 0, 0): what color is it?",
+      "answer": "Bright red."
+     },
+     "explain": [
+      {
+       "title": "Images use pixels and RGB",
+       "body": "Images are made up of tiny dots called pixels. Each pixel has a color. In a color image, a pixel's color can be represented by three numbers: Red, Green, and Blue (RGB), each typically from 0 to 255."
+      },
+      {
+       "title": "Audio uses sampling and quantization",
+       "body": "Sampling records a sound wave at regular intervals. The number of samples per second is the sampling rate. Quantization converts each sample into a number; more bits per sample give a more accurate sound representation."
+      },
+      {
+       "title": "Video uses frames",
+       "body": "Videos are made up of many images shown rapidly in sequence, along with audio. Each image in a video is called a frame. Frame rate is the number of frames shown per second, measured in FPS."
+      },
+      {
+       "title": "Files are stored as binary data",
+       "body": "All these files (images, audio, and video) are stored as binary data, which means they are represented by sequences of 0s and 1s. HDDs use spinning disks, SSDs use flash memory, and cloud storage keeps files on remote servers accessed via the internet."
+      },
+      {
+       "title": "Formats and storage units",
+       "body": "JPEG compresses images but might lose some quality; PNG supports transparency and maintains quality without losing data; GIF is used for simple animations and images with few colours. MP3 compresses audio but may lose some quality, WAV is uncompressed, and AAC offers efficient compression. Data size is measured in bytes and multiples such as KB, MB, and GB."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse a pixel with a bit or a byte; a pixel is a tiny dot in an image.",
+      "Do not mix up sampling and quantization: sampling records the sound wave at intervals, while quantization turns each sample into a number.",
+      "Do not confuse frame rate with image resolution; frame rate is frames per second.",
+      "Do not claim every compressed format keeps all quality: JPEG and MP3 may lose some quality.",
+      "Remember the section's units: 1 KB = 1024 bytes, not 1000 bytes."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-2-7",
+    "position": 7,
+    "title": "Unit 2 exercise",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 2, end-of-chapter exercise, pages 46–48; Chapter 2 exercise",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 2 and attempt the end-of-chapter exercise (pages 46–48)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-2-7-1",
+      "text": "Q2.1. What is the primary purpose of the ASCII encoding scheme?",
+      "marks": 2,
+      "modelAnswer": [
+       "ASCII assigns binary codes to characters such as letters, digits, and symbols.",
+       "Its purpose is to let computers store and process text."
+      ],
+      "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-7",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "States that ASCII represents or encodes characters.",
+        "marks": 1,
+        "why": "The answer must identify what ASCII encodes.",
+        "how": "Mention characters or text symbols.",
+        "accept": [
+         [
+          "characters"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "States that characters are represented by binary codes.",
+        "marks": 1,
+        "why": "The answer must explain how the characters are represented.",
+        "how": "Include binary codes or 0s and 1s.",
+        "accept": [
+         [
+          "binary"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.1"
+     },
+     {
+      "id": "cs-w-2-7-2",
+      "text": "Q2.2. Explain the difference between ASCII and Unicode.",
+      "marks": 2,
+      "modelAnswer": [
+       "ASCII encodes a limited set of characters, mainly for English.",
+       "Unicode can represent characters from many different languages and writing systems."
+      ],
+      "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-7",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Says ASCII represents a limited set of characters, mainly English.",
+        "marks": 1,
+        "why": "The comparison must describe ASCII's more limited character set.",
+        "how": "Identify ASCII as limited or mainly English.",
+        "accept": [
+         [
+          "ASCII"
+         ],
+         [
+          "limited"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Says Unicode supports characters from many languages.",
+        "marks": 1,
+        "why": "The comparison must state Unicode's wider character coverage.",
+        "how": "Mention Unicode and its broad language coverage.",
+        "accept": [
+         [
+          "Unicode"
+         ],
+         [
+          "many"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.2"
+     },
+     {
+      "id": "cs-w-2-7-3",
+      "text": "Q2.3. How does Unicode handle characters from different languages?",
+      "marks": 2,
+      "modelAnswer": [
+       "Unicode assigns a unique code point to each character.",
+       "This allows characters from many languages and writing systems to be represented."
+      ],
+      "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+      "noteId": "cs-n-2-7",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explains that Unicode assigns code points to characters.",
+        "marks": 1,
+        "why": "A code point is the key way Unicode identifies a character.",
+        "how": "State that each character is given a code point.",
+        "accept": [
+         [
+          "unique"
+         ],
+         [
+          "code point"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "States that this allows characters from many languages to be represented.",
+        "marks": 1,
+        "why": "The answer must connect Unicode's system to different languages.",
+        "how": "Mention its broad language coverage.",
+        "accept": [
+         [
+          "languages"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 2.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Section A tests quick facts and definitions, such as ASCII, Unicode, bit counts, pixels, RGB, and integer ranges. Learn the key facts carefully.",
+      "Short questions usually earn marks for a correct definition or fact and a brief explanation, formula, or example.",
+      "Long questions can ask for an explanation, conversions, or binary arithmetic. Show each step, not just the final result.",
+      "For unsigned integers, show the number of bits and use 0 to 2ⁿ − 1. For negative values, state the bit width and show the two's complement steps.",
+      "In binary addition and subtraction, line up the numbers, show carries or borrowing where needed, and write the final answer in binary."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Two bytes contain how many bits?",
+        "For an unsigned n-bit integer, use 0 to 2ⁿ − 1."
+       ],
+       "accept": [
+        [
+         "0",
+         "65535"
+        ],
+        [
+         "0",
+         "65,535"
+        ],
+        [
+         "2^16-1"
+        ]
+       ],
+       "question": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+       "solution": [
+        "2 bytes = 16 bits.",
+        "For an unsigned integer, the range is 0 to 2¹⁶ − 1.",
+        "2¹⁶ − 1 = 65,535.",
+        "Therefore, the range is 0 to 65,535."
+       ],
+       "answer": "0 to 65,535"
+      },
+      {
+       "hints": [
+        "Start adding in the rightmost column.",
+        "When a column totals 2 in binary, write 0 and carry 1."
+       ],
+       "accept": [
+        [
+         "1011"
+        ]
+       ],
+       "question": "Q2.6. Add the following binary numbers:  (a)  101₂ + 110₂",
+       "solution": [
+        "  101₂",
+        "+ 110₂",
+        "------",
+        "In the rightmost column, 1 + 0 = 1.",
+        "In the next column, 0 + 1 = 1.",
+        "In the left column, 1 + 1 = 10₂; write 0 and carry 1.",
+        "Write the carried 1 in the next column.",
+        " 1011₂"
+       ],
+       "answer": "1011₂"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Use the same number of bits for both numbers so the 4-bit addition is clear.",
+        "text": "In 4 bits, 7 = 0111₂."
+       },
+       {
+        "why": "For a negative value, first write the positive value in 4-bit binary.",
+        "text": "4 = 0100₂."
+       },
+       {
+        "why": "Inverting every bit begins the two's complement process.",
+        "text": "Invert 0100₂ to get 1011₂."
+       },
+       {
+        "why": "Adding 1 completes the two's complement representation of −4.",
+        "text": "1011₂ + 1₂ = 1100₂, so −4 = 1100₂."
+       },
+       {
+        "why": "The numbers are now in the required 4-bit form and can be added column by column.",
+        "text": "  0111₂\n+ 1100₂\n---------"
+       },
+       {
+        "why": "The carries are handled in the binary addition, leaving the 4-bit sum shown.",
+        "text": "  0011₂"
+       },
+       {
+        "why": "The sum is positive 3, written as 0011 in 4-bit binary.",
+        "text": "Therefore, 7 + (−4) = 0011₂."
+       }
+      ],
+      "question": "Q2.7. Convert the following numbers to 4-bit binary and add them:  (a) 7 + (-4)",
+      "answer": "0011₂"
+     },
+     "explain": [
+      {
+       "title": "Characters and codes",
+       "body": "ASCII gives binary codes to a limited set of text characters. Unicode gives code points to characters from many languages and writing systems."
+      },
+      {
+       "title": "Integers in memory",
+       "body": "Integers are stored as bits. Unsigned integers represent zero and positive values; signed integers can represent negative values, commonly using two's complement."
+      },
+      {
+       "title": "Bit count and number range",
+       "body": "More bits allow more possible values. An unsigned integer with n bits ranges from 0 to 2ⁿ − 1."
+      },
+      {
+       "title": "Floating-point numbers",
+       "body": "Single precision uses 1 sign bit, 8 exponent bits, and 23 fraction bits. It represents a wide range of values, but its precision and range are limited."
+      },
+      {
+       "title": "Binary arithmetic and images",
+       "body": "Binary numbers can be added, subtracted, multiplied, and divided using place values and carries. Images are made of pixels; RGB means Red, Green, Blue."
+      }
+     ],
+     "mistakes": [
+      "Using the digit 2 or another non-binary digit in a binary number.",
+      "Forgetting that 2 bytes contain 16 bits, or using the signed range for an unsigned integer.",
+      "Finding a negative two's complement value by inverting the bits but forgetting to add 1.",
+      "Not keeping the required bit width when adding signed 4-bit numbers.",
+      "Adding binary columns without carrying, or subtracting without aligning the place values.",
+      "Confusing single-precision exponent bits with fraction bits: the exponent has 8 bits and the fraction has 23 bits."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "cs-n-2-1",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-1",
+   "title": "Numbering Systems: Bases and Conversion",
+   "keywords": [
+    "number system",
+    "decimal",
+    "binary",
+    "octal",
+    "hexadecimal",
+    "base",
+    "remainder"
+   ],
+   "answer": "The number systems in this section are decimal (base 10), binary (base 2), octal (base 8), and hexadecimal (base 16).",
+   "explanation": "A number system uses a base to decide its place values and which digits are allowed. To convert from decimal, divide by the new base and read the remainders from bottom to top. To convert a binary number to decimal, add the place values of its 1s.",
+   "simple": "A base tells you how many different digit values a number system uses. For example, binary uses only 0 and 1, while octal uses 0 through 7.",
+   "examples": [
+    "83₁₀ = 1010011₂",
+    "83₁₀ = 123₈"
+   ],
+   "steps": [
+    "Identify the base you are converting from and the base you are converting to.",
+    "For decimal to binary, octal or hexadecimal, divide repeatedly by 2, 8 or 16, respectively.",
+    "Write down each remainder and continue until the quotient is 0.",
+    "Read the remainders from bottom to top.",
+    "For binary to decimal, multiply each digit by its place value and add the results."
+   ],
+   "checkQuestion": "Convert 1010₂ to decimal.",
+   "checkAnswer": "1010₂ = 10₁₀",
+   "checkAccept": [
+    [
+     "10"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-2",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-2",
+   "title": "Storing whole numbers and integers",
+   "keywords": [
+    "integer",
+    "whole number",
+    "unsigned",
+    "signed",
+    "byte",
+    "bits",
+    "two's complement"
+   ],
+   "answer": "The range is 0 to 65,535.",
+   "explanation": "An unsigned 2-byte whole number uses 16 bits. Its values range from 0 to 2¹⁶ − 1, which is 65,535.",
+   "simple": "More bits let a computer store a wider range of whole-number values. Signed integers can be negative; unsigned whole numbers cannot.",
+   "examples": [
+    "An unsigned 1-byte whole number ranges from 0 to 255.",
+    "An 8-bit signed integer ranges from −128 to 127."
+   ],
+   "steps": [
+    "A byte has 8 bits, so 2 bytes have 16 bits.",
+    "For an unsigned number, the minimum value is 0.",
+    "Find the maximum using 2ⁿ − 1: 2¹⁶ − 1 = 65,535."
+   ],
+   "checkQuestion": "What is the range of values for an unsigned 2-byte integer?",
+   "checkAnswer": "0 to 65,535",
+   "checkAccept": [
+    [
+     "0",
+     "65535"
+    ],
+    [
+     "0 to 65535"
+    ],
+    [
+     "0–65535"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-3",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-3",
+   "title": "Storing Real Values in Computer Memory",
+   "keywords": [
+    "floating-point",
+    "real values",
+    "binary fraction",
+    "sign bit",
+    "exponent",
+    "mantissa",
+    "single precision"
+   ],
+   "answer": "A floating-point value is represented using a sign bit, an exponent, and a mantissa.",
+   "explanation": "A real number with a fractional part can be written in binary and stored using a sign bit, an exponent, and a mantissa. To convert a decimal fraction to binary, repeatedly multiply it by 2 and record each integer part.",
+   "simple": "Computers store decimal numbers with fractions by expressing them in binary and dividing their storage into parts.",
+   "examples": [
+    "0.375₁₀ = 0.011₂",
+    "5.75 is represented as 1.4375 × 2²."
+   ],
+   "steps": [
+    "Separate the number into its integer and fractional parts.",
+    "To convert a fractional part to binary, multiply it by 2.",
+    "Record the integer part of each result, from top to bottom.",
+    "Continue with each new fractional part until it reaches zero or the required precision is achieved.",
+    "For single precision, use 1 sign bit, 8 exponent bits, and 23 mantissa bits."
+   ],
+   "checkQuestion": "What are the three main components used to represent a floating-point value?",
+   "checkAnswer": "The sign bit, exponent, and mantissa.",
+   "checkAccept": [
+    [
+     "sign bit",
+     "exponent",
+     "mantissa"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-4",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-4",
+   "title": "Binary Arithmetic Operations",
+   "keywords": [
+    "binary",
+    "addition",
+    "subtraction",
+    "carry",
+    "two's complement",
+    "multiplication",
+    "division"
+   ],
+   "answer": "Binary addition, subtraction, multiplication and division are performed using the digits 0 and 1 and the rules for each operation.",
+   "explanation": "Binary arithmetic uses the digits 0 and 1. Addition uses carries; subtraction can be done by adding the subtrahend's two's complement; multiplication and division follow familiar decimal methods using binary digits.",
+   "simple": "Work with just 0 and 1. For subtraction, change the subtrahend to its two's complement, add it, and discard the final carry.",
+   "examples": [
+    "101₂ + 11₂ = 1111₂",
+    "1100₂ ÷ 10₂ = 110₂"
+   ],
+   "steps": [
+    "For addition, add the bits from right to left and carry 1 when needed.",
+    "For subtraction, invert the subtrahend's bits and add 1.",
+    "Add the minuend and the two's complement.",
+    "Discard the carry bit if one appears.",
+    "For multiplication and division, use the familiar long-operation steps with binary digits."
+   ],
+   "checkQuestion": "Add 101₂ and 110₂.",
+   "checkAnswer": "1011₂",
+   "checkAccept": [
+    [
+     "1011"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-5",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-5",
+   "title": "Common Text Encoding Schemes",
+   "keywords": [
+    "ASCII",
+    "Unicode",
+    "UTF-8",
+    "UTF-16",
+    "UTF-32",
+    "encoding"
+   ],
+   "answer": "ASCII represents characters using code numbers from 0 to 127. Unicode maps graphic characters used in the world's writing systems and can be encoded in forms such as UTF-8, UTF-16 and UTF-32.",
+   "explanation": "ASCII assigns a number to each character. Unicode can represent characters from many writing systems, and UTF-8, UTF-16 and UTF-32 are ways of encoding Unicode characters.",
+   "simple": "Encoding gives characters a computer-readable form, such as a number or a sequence of bits.",
+   "examples": [],
+   "steps": [
+    "Identify the character.",
+    "Look up its code or Unicode code point.",
+    "Use the encoding scheme to represent it in binary.",
+    "State how many bits or bytes the encoding uses, when required."
+   ],
+   "checkQuestion": "How many bits does standard ASCII use?",
+   "checkAnswer": "ASCII uses 7 bits and can represent 128 characters.",
+   "checkAccept": [
+    [
+     "7 bits"
+    ],
+    [
+     "7",
+     "ASCII"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-6",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-6",
+   "title": "How computers store images, audio, and video",
+   "keywords": [
+    "pixels",
+    "RGB",
+    "sampling",
+    "quantization",
+    "frame rate",
+    "binary data"
+   ],
+   "answer": "Images use pixels and RGB colour values; audio uses sampling and quantization; videos use frames. Computers store all of them as binary data.",
+   "explanation": "Images are made from pixels. Each pixel has a colour, represented in a colour image by Red, Green, and Blue (RGB) values. Computers store image, audio, and video files as binary data: sequences of 0s and 1s.",
+   "simple": "A digital picture is made from tiny coloured dots. A computer stores the information about those dots using 0s and 1s.",
+   "examples": [
+    "A pixel with RGB values (255, 0, 0) is bright red.",
+    "A video frame rate tells how many frames are shown each second."
+   ],
+   "steps": [
+    "Identify whether the file is an image, audio, or video.",
+    "For an image, think of pixels and their RGB colour values.",
+    "For audio, remember sampling and quantization.",
+    "For video, remember that frames are shown in sequence and measured in frames per second.",
+    "Remember that all these files are stored as binary data."
+   ],
+   "checkQuestion": "What are the tiny dots that make up a digital image called?",
+   "checkAnswer": "A pixel.",
+   "checkAccept": [
+    [
+     "p:pixel"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-2-7",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-2-7",
+   "title": "How computers represent information",
+   "keywords": [
+    "ASCII",
+    "Unicode",
+    "binary",
+    "integer",
+    "two's complement",
+    "floating-point",
+    "pixel"
+   ],
+   "answer": "0 to 65,535.",
+   "explanation": "This unit covers how computers represent text, integers, floating-point numbers, and images. It also practises binary arithmetic and signed 4-bit calculations.",
+   "simple": "A computer stores information as bits: 0s and 1s. Different rules let those bits represent letters, numbers, and pictures.",
+   "examples": [
+    "Unsigned 2-byte integers use 16 bits, so their range is 0 to 2¹⁶ − 1, or 0 to 65,535.",
+    "In 4-bit two's complement, −5 is made by writing 5 as 0101, inverting the bits to 1010, then adding 1 to get 1011."
+   ],
+   "steps": [
+    "For an unsigned integer with n bits, use the range 0 to 2ⁿ − 1.",
+    "For a signed 4-bit value, use two's complement: invert the positive number's bits and add 1 to represent its negative.",
+    "For binary addition and subtraction, line up the bits and work from right to left, carrying or borrowing as needed.",
+    "Unicode assigns code points to characters from many languages.",
+    "An image is made of pixels, and RGB represents colour using red, green, and blue."
+   ],
+   "checkQuestion": "What is the range of an unsigned 2-byte integer?",
+   "checkAnswer": "The range is 0 to 65,535.",
+   "checkAccept": [
+    [
+     "0",
+     "65535"
+    ],
+    [
+     "0",
+     "65,535"
+    ],
+    [
+     "2^16-1"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "cs-q-2-1-1",
+   "stem": "Which statement correctly describes the binary number system?",
+   "options": [
+    "Base 2, using digits 0 and 1",
+    "Base 8, using digits 0 to 7",
+    "Base 10, using digits 0 to 9",
+    "Base 16, using digits 0 to 9 and A to F"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: binary is base 2 and uses the digits 0 and 1.",
+    "Incorrect: this describes the octal system.",
+    "Incorrect: this describes the decimal system.",
+    "Incorrect: this describes the hexadecimal system."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-2",
+   "stem": "Which of the following is a valid binary number?",
+   "options": [
+    "101101₂",
+    "10201₂",
+    "1102₂",
+    "1A01₂"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: every digit is either 0 or 1.",
+    "Incorrect: the digit 2 is not allowed in binary.",
+    "Incorrect: the digit 2 is not allowed in binary.",
+    "Incorrect: the letter A is not a binary digit."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-3",
+   "stem": "What is the decimal value of 1101₂?",
+   "options": [
+    "1101₂",
+    "101₂",
+    "111₂",
+    "1001₂"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 1 × 2³ + 1 × 2² + 0 × 2¹ + 1 × 2⁰ = 13.",
+    "Incorrect: 101₂ is 5 in decimal.",
+    "Incorrect: 111₂ is 7 in decimal.",
+    "Incorrect: 1001₂ is 9 in decimal."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-4",
+   "stem": "Convert 59₁₀ to octal.",
+   "options": [
+    "73₈",
+    "63₈",
+    "37₈",
+    "83₈"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 59 ÷ 8 gives remainders 3 and 7, read bottom to top as 73₈.",
+    "Incorrect: 63₈ equals 51₁₀.",
+    "Incorrect: 37₈ equals 31₁₀.",
+    "Incorrect: 8 is not a permitted octal digit."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-5",
+   "stem": "Convert 42₁₀ to hexadecimal.",
+   "options": [
+    "2A₁₆",
+    "2B₁₆",
+    "1A₁₆",
+    "A2₁₆"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 42 ÷ 16 gives remainder 10 (A) and quotient 2, so the result is 2A₁₆.",
+    "Incorrect: 2B₁₆ equals 43₁₀.",
+    "Incorrect: 1A₁₆ equals 26₁₀.",
+    "Incorrect: A2₁₆ equals 162₁₀."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-6",
+   "stem": "How many binary bits correspond to one hexadecimal digit?",
+   "options": [
+    "4 bits",
+    "3 bits",
+    "2 bits",
+    "8 bits"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: 16 = 2⁴, so each hexadecimal digit corresponds to four bits.",
+    "Incorrect: three bits correspond to one octal digit.",
+    "Incorrect: two bits can represent only four different values.",
+    "Incorrect: eight bits correspond to a byte, not one hexadecimal digit."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-7",
+   "stem": "Convert 110101011₂ to octal.",
+   "options": [
+    "653₈",
+    "635₈",
+    "653₁₀",
+    "563₈"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: group from the right as 110 101 011, which gives 6, 5, 3.",
+    "Incorrect: the groups give 6, 5, 3, not 6, 3, 5.",
+    "Incorrect: the conversion gives an octal numeral, not a decimal numeral.",
+    "Incorrect: the groups give 6, 5, 3, not 5, 6, 3."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-1-8",
+   "stem": "Convert 2297₁₀ to hexadecimal.",
+   "options": [
+    "8F9₁₆",
+    "8F8₁₆",
+    "9F8₁₆",
+    "8E9₁₆"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: repeated division gives remainders 9, 15 (F), and 8, read bottom to top as 8F9₁₆.",
+    "Incorrect: the middle remainder is 15, which is F, not 8.",
+    "Incorrect: the remainders read bottom to top begin with 8, not 9.",
+    "Incorrect: the middle remainder is 15, which is F, not E."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-1",
+   "moduleId": "cs-m-2-1"
+  },
+  {
+   "id": "cs-q-2-2-1",
+   "stem": "What is the maximum value of an unsigned 1-byte whole number?",
+   "options": [
+    "255",
+    "127",
+    "128",
+    "256"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because 8 bits can represent unsigned values from 0 to 2⁸ − 1 = 255.",
+    "This is the maximum positive value for a 1-byte signed integer, not an unsigned one.",
+    "This is the magnitude of the minimum 1-byte signed integer, not the unsigned maximum.",
+    "This is one greater than the maximum value representable by 8 unsigned bits."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-2-2",
+   "stem": "What is the maximum positive value of a 1-byte signed integer?",
+   "options": [
+    "255",
+    "127",
+    "128",
+    "−127"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the maximum for an unsigned 1-byte whole number, not a signed integer.",
+    "This is correct because one of the 8 bits is the sign bit, leaving the maximum positive value 2⁷ − 1 = 127.",
+    "This is the magnitude of the minimum signed value, not the maximum positive value.",
+    "This is not the maximum positive value; the maximum is 127."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-2-3",
+   "stem": "What is the range of an 8-bit signed integer?",
+   "options": [
+    "−128 to 127",
+    "0 to 255",
+    "−127 to 128",
+    "−255 to 255"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the minimum is −2⁷ = −128 and the maximum is 2⁷ − 1 = 127.",
+    "This is the range for an 8-bit unsigned whole number.",
+    "This reverses the endpoints and does not give the two's-complement range.",
+    "Eight bits cannot represent this range as a signed integer."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-2-4",
+   "stem": "How does the textbook describe finding the two's complement of a binary number?",
+   "options": [
+    "Invert all bits, then add 1",
+    "Add 1, then invert all bits",
+    "Change only the sign bit",
+    "Remove the least significant bit"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: first invert the bits, then add 1 to the least significant bit.",
+    "This gives the steps in the wrong order.",
+    "Changing only the sign bit is not the two's-complement method described.",
+    "Removing a bit does not find a two's complement."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-2-5",
+   "stem": "How many bits are in a 2-byte integer?",
+   "options": [
+    "8 bits",
+    "16 bits",
+    "32 bits",
+    "4 bits"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Eight bits make up 1 byte, not 2 bytes.",
+    "This is correct because 2 bytes contain 2 × 8 = 16 bits.",
+    "Thirty-two bits make up 4 bytes.",
+    "Four bits are half a byte, not 2 bytes."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-2-6",
+   "stem": "Which statement describes whole numbers as defined in this section?",
+   "options": [
+    "They include zero and positive integers, but not negative integers.",
+    "They include negative integers but not zero.",
+    "They include only positive integers.",
+    "They include fractions and negative integers."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because whole numbers are non-negative integers and include zero.",
+    "Whole numbers include zero and do not include negative integers.",
+    "Whole numbers include zero as well as positive integers.",
+    "Fractions and negative integers are not whole numbers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-2",
+   "moduleId": "cs-m-2-2"
+  },
+  {
+   "id": "cs-q-2-3-1",
+   "stem": "What is 0.375₁₀ in binary?",
+   "options": [
+    "0.101₂",
+    "0.110₂",
+    "0.011₂",
+    "0.111₂"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is not the result of recording the integer parts from the repeated multiplication steps.",
+    "This is not the result of recording the integer parts from the repeated multiplication steps.",
+    "Correct: multiplying 0.375 by 2 repeatedly gives integer parts 0, 1, 1.",
+    "This is not the result of recording the integer parts from the repeated multiplication steps."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-3-2",
+   "stem": "How many bits are assigned to the sign in the single-precision format described in the section?",
+   "options": [
+    "1 bit",
+    "8 bits",
+    "11 bits",
+    "23 bits"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the first bit is the sign bit.",
+    "Eight bits are assigned to the exponent, not the sign.",
+    "Eleven bits are used for the exponent in double precision, not for the sign.",
+    "Twenty-three bits are assigned to the mantissa, not the sign."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-3-3",
+   "stem": "How many bits are assigned to the exponent in single precision?",
+   "options": [
+    "1 bit",
+    "8 bits",
+    "11 bits",
+    "23 bits"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "One bit is assigned to the sign.",
+    "Correct: single precision uses 8 exponent bits.",
+    "Eleven exponent bits are used in double precision.",
+    "Twenty-three bits are assigned to the mantissa."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-3-4",
+   "stem": "What bias is used for the exponent in single precision, according to the section's method?",
+   "options": [
+    "127",
+    "1023",
+    "255",
+    "−127"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the single-precision exponent is stored with a bias of 127.",
+    "1023 is the bias stated for double precision.",
+    "255 is not the bias given for single precision.",
+    "The bias is added to the actual exponent; it is not −127."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-3-5",
+   "stem": "Which bit allocation describes single precision in this section?",
+   "options": [
+    "1 sign bit, 8 exponent bits, 23 mantissa bits",
+    "1 sign bit, 11 exponent bits, 52 mantissa bits",
+    "8 sign bits, 1 exponent bit, 23 mantissa bits",
+    "1 sign bit, 23 exponent bits, 8 mantissa bits"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: this allocation totals 32 bits and matches the section.",
+    "This describes the bit allocation of double precision, not single precision.",
+    "This reverses the sign and exponent allocation.",
+    "This swaps the exponent and mantissa allocations."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-3-6",
+   "stem": "According to the section, approximately what is the smallest positive number representable in single precision?",
+   "options": [
+    "4.9 × 10⁻³²⁴",
+    "1.4 × 10⁻⁴⁵",
+    "3.4 × 10³⁸",
+    "1.8 × 10³⁰⁸"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is the approximate smallest positive number given for double precision.",
+    "Correct: the section gives approximately 1.4 × 10⁻⁴⁵ for single precision.",
+    "This is the approximate upper end of the single-precision range, not the smallest positive value.",
+    "This is an approximate upper-range value associated with double precision, not the single-precision minimum."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-3",
+   "moduleId": "cs-m-2-3"
+  },
+  {
+   "id": "cs-q-2-4-1",
+   "stem": "What is the result of 1₂ + 1₂?",
+   "options": [
+    "0",
+    "1",
+    "10",
+    "11"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "0 is the result bit, but it leaves out the carry.",
+    "1 is not the full value of the sum.",
+    "10₂ is the result: write 0 and carry 1.",
+    "11₂ would represent 3, but 1 + 1 equals 2."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-2",
+   "stem": "What is 101₂ + 11₂?",
+   "options": [
+    "1010₂",
+    "1000₂",
+    "1110₂",
+    "1100₂"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "1010₂ is not the sum; the rightmost columns have been added incorrectly.",
+    "1000₂ is not the sum because the middle bits are missing.",
+    "1110₂ is too large; it results from an incorrect carry.",
+    "1100₂ is not the correct result of adding the aligned digits."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-3",
+   "stem": "What is the two's complement of 0110₂?",
+   "options": [
+    "1001₂",
+    "1010₂",
+    "0110₂",
+    "1111₂"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "1001₂ is the inverted number before adding 1, not the two's complement.",
+    "Invert 0110₂ to get 1001₂, then add 1 to get 1010₂.",
+    "0110₂ is the original number, not its two's complement.",
+    "1111₂ is not obtained by inverting 0110₂ and adding 1."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-4",
+   "stem": "Using the section's two's-complement method, what is 1001₂ − 0110₂?",
+   "options": [
+    "0011₂",
+    "0101₂",
+    "1011₂",
+    "1100₂"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The two's complement of 0110₂ is 1010₂; adding gives 10011₂, and discarding the carry gives 0011₂.",
+    "0101₂ is not the result of adding the two's complement and discarding the carry.",
+    "1011₂ is the wrong result because the carry and bit positions have been handled incorrectly.",
+    "1100₂ is not the result of this subtraction."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-5",
+   "stem": "What is 101₂ × 11₂?",
+   "options": [
+    "1111₂",
+    "1011₂",
+    "1001₂",
+    "1101₂"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The partial products are 101₂ and 1010₂; their sum is 1111₂.",
+    "1011₂ does not include the correctly shifted second partial product.",
+    "1001₂ is not the sum of the two partial products.",
+    "1101₂ is not the product of 101₂ and 11₂."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-6",
+   "stem": "What is 1100₂ ÷ 10₂?",
+   "options": [
+    "11₂",
+    "110₂",
+    "100₂",
+    "101₂"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "11₂ is too small; dividing by 10₂ shifts the value right by one place.",
+    "110₂ is the quotient because 110₂ × 10₂ = 1100₂.",
+    "100₂ does not multiply by 10₂ to give 1100₂.",
+    "101₂ is not the quotient of this division."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-7",
+   "stem": "When subtracting in a fixed 4-bit calculation, what is the two's complement of 0100₂?",
+   "options": [
+    "1001₂",
+    "1010₂",
+    "1100₂",
+    "1110₂"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "1001₂ is the inversion of 0110₂, not the two's complement of 0100₂.",
+    "1010₂ is not obtained by inverting 0100₂ and adding 1.",
+    "Invert 0100₂ to get 1011₂ and add 1 to get 1100₂.",
+    "1110₂ is not the two's complement of 0100₂."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-4-8",
+   "stem": "In binary long division, what do you do after subtracting the divisor from the current dividend portion?",
+   "options": [
+    "Shift the next digit down to the remainder.",
+    "Change the divisor to decimal.",
+    "Stop before using all the dividend's digits.",
+    "Add the divisor to the dividend portion."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The division steps say to shift the next binary digit down to the remainder.",
+    "The method stays in binary; it does not change the divisor to decimal.",
+    "The process is repeated until all dividend digits have been used.",
+    "The stated step is subtraction, not addition."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-4",
+   "moduleId": "cs-m-2-4"
+  },
+  {
+   "id": "cs-q-2-5-1",
+   "stem": "Which statement describes standard ASCII?",
+   "options": [
+    "It represents one character using a code from 0 to 127.",
+    "It represents every character using exactly 4 bytes.",
+    "It is a variable-length form of Unicode.",
+    "It can represent more than a million characters."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: standard ASCII assigns each character a code number between 0 and 127.",
+    "This describes the fixed character length of UTF-32, not standard ASCII.",
+    "This describes UTF-8, not ASCII.",
+    "This describes Unicode's broad character coverage, not ASCII."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-2",
+   "stem": "How many characters can the standard ASCII table represent?",
+   "options": [
+    "8",
+    "32",
+    "128",
+    "256"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Eight is the number of bits in a byte, not the number of standard ASCII characters.",
+    "Thirty-two is not the size of the standard ASCII character set.",
+    "Correct: standard ASCII has codes from 0 through 127, giving 128 characters.",
+    "Two hundred and fifty-six is the number of characters in extended ASCII."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-3",
+   "stem": "Which description of UTF-8 is correct?",
+   "options": [
+    "It uses 1 to 4 bytes and is backward compatible with ASCII.",
+    "It always uses 4 bytes and is not compatible with ASCII.",
+    "It uses only 7 bits and represents 128 characters.",
+    "It uses 2 or 4 bytes and cannot encode Unicode."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: UTF-8 is variable-length, uses 1 to 4 bytes, and is backward compatible with ASCII.",
+    "This confuses UTF-8 with UTF-32 and incorrectly says it is incompatible with ASCII.",
+    "This describes the limits of standard ASCII, not UTF-8.",
+    "UTF-16 uses 2 or 4 bytes; it does not mean UTF-8 cannot encode Unicode."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-4",
+   "stem": "What is Unicode designed to do?",
+   "options": [
+    "It is an attempt at mapping graphic characters used in the world's writing systems.",
+    "It is limited to the 128 characters in standard ASCII.",
+    "It is a fixed-length encoding that always uses 4 bytes.",
+    "It is another name for the ASCII table."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Unicode maps graphic characters used in writing systems around the world.",
+    "Unicode can represent far more characters than standard ASCII.",
+    "UTF-32 uses 4 bytes per character; Unicode itself has different encoding forms.",
+    "Unicode and ASCII are different character encoding standards."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-5",
+   "stem": "Which statement about extended ASCII matches the section?",
+   "options": [
+    "It includes 256 characters and uses 8 bits.",
+    "It includes 128 characters and uses 7 bits.",
+    "It uses 1 to 4 bytes for every character.",
+    "It uses exactly 2 bytes for every character."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the extended version includes 256 characters and uses 8 bits.",
+    "This describes the size and bit length of standard ASCII.",
+    "This describes UTF-8's variable byte length.",
+    "This is not the section's description of extended ASCII."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-6",
+   "stem": "Which binary representation of the letter A is given for UTF-32?",
+   "options": [
+    "A is represented as 00000000 00000000 00000000 01000001.",
+    "A is represented as 01000001.",
+    "A is represented as 00000000 01000001.",
+    "A is represented as 11011000 10101000."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section gives A in UTF-32 as this 4-byte sequence.",
+    "This is the UTF-8 representation of A in the section.",
+    "This is the UTF-16 representation of A in the section.",
+    "This is the UTF-8 representation given for the Urdu letter ب."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-7",
+   "stem": "Which Unicode code point is given for the Urdu letter ب?",
+   "options": [
+    "U+0041",
+    "U+0628",
+    "U+0048",
+    "U+0080"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "U+0041 is the code point given for the letter A.",
+    "Correct: the section gives U+0628 for the Urdu letter ب.",
+    "The section does not give U+0048 for ب.",
+    "The section does not give U+0080 for ب."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-5-8",
+   "stem": "How many bytes does UTF-32 use for each character?",
+   "options": [
+    "1 to 4 bytes",
+    "Exactly 1 byte",
+    "Exactly 2 bytes",
+    "Exactly 4 bytes"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "This is the byte range given for UTF-8.",
+    "This is not the fixed length of UTF-32.",
+    "This is not the fixed length of UTF-32.",
+    "Correct: UTF-32 stores every character in 4 bytes."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-5",
+   "moduleId": "cs-m-2-5"
+  },
+  {
+   "id": "cs-q-2-6-1",
+   "stem": "What is a pixel in a digital image?",
+   "options": [
+    "A small coloured dot in an image",
+    "A number of samples recorded each second",
+    "A picture shown in a video",
+    "A unit equal to 1024 bytes"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: an image is made up of tiny dots called pixels.",
+    "Incorrect: the number of samples per second is the sampling rate.",
+    "Incorrect: an image shown in a video is called a frame.",
+    "Incorrect: 1024 bytes make one kilobyte, not a pixel."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-2",
+   "stem": "In a colour image, what do the letters RGB stand for?",
+   "options": [
+    "Red, Green, Blue",
+    "Red, Grey, Black",
+    "Right, Green, Blue",
+    "Red, Green, Brown"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: RGB represents Red, Green, and Blue.",
+    "Incorrect: grey and black are not the colours represented by RGB.",
+    "Incorrect: RGB means Red, Green, Blue, not Right, Green, Blue.",
+    "Incorrect: RGB does not stand for Red, Green, Brown."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-3",
+   "stem": "Which statement about PNG images is correct?",
+   "options": [
+    "It supports transparency and maintains high quality without losing data.",
+    "It is used only for video.",
+    "It always loses image quality to save space.",
+    "It is an uncompressed audio format."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: PNG supports transparency and maintains high quality without losing data.",
+    "Incorrect: PNG is an image format, not a video format.",
+    "Incorrect: JPEG is the format described as compressing an image with possible quality loss.",
+    "Incorrect: WAV is the uncompressed audio format."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-4",
+   "stem": "What is sampling in digital audio?",
+   "options": [
+    "Recording a sound wave at regular intervals",
+    "Converting each sound sample into a number",
+    "Showing video frames in sequence",
+    "Compressing an image to save space"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: sampling records the sound wave at regular intervals.",
+    "Incorrect: converting each sample into a number is quantization.",
+    "Incorrect: video frames are shown in sequence to make video.",
+    "Incorrect: image compression is not audio sampling."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-5",
+   "stem": "What does the frame rate of a video measure?",
+   "options": [
+    "The number of frames shown per second",
+    "The number of colours in one pixel",
+    "The number of audio tracks in a file",
+    "The number of bytes in a kilobyte"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: frame rate is the number of frames shown per second.",
+    "Incorrect: RGB values describe a pixel's colour, not frame rate.",
+    "Incorrect: audio tracks are a feature supported by some video formats, not a frame-rate measure.",
+    "Incorrect: a kilobyte contains 1024 bytes; this is unrelated to frame rate."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-6",
+   "stem": "Which format is described as being used for simple animations and images with few colours?",
+   "options": [
+    "MP3",
+    "WAV",
+    "AAC",
+    "GIF"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Incorrect: MP3 is a compressed audio format.",
+    "Incorrect: WAV is an uncompressed audio format.",
+    "Incorrect: AAC is an audio format used for efficient compression.",
+    "Correct: GIF is used for simple animations and images with few colours."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-7",
+   "stem": "Which statement correctly describes a storage device?",
+   "options": [
+    "A Solid State Drive uses flash memory for faster access times.",
+    "An HDD uses remote internet servers to store files.",
+    "Cloud storage uses spinning disks inside the computer.",
+    "An SSD stores files only as printed images."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: an SSD uses flash memory and provides faster access times.",
+    "Incorrect: spinning disks are used by an HDD; remote servers describe cloud storage.",
+    "Incorrect: cloud storage is on remote servers, not spinning disks in the computer.",
+    "Incorrect: an SSD stores digital data, not only printed images."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-6-8",
+   "stem": "How many bytes are in 1 kilobyte (KB), according to the section?",
+   "options": [
+    "8 bits",
+    "1024 bits",
+    "1024 bytes",
+    "8 bytes"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Incorrect: 8 bits make 1 byte.",
+    "Incorrect: 1024 bits are not 1024 bytes.",
+    "Correct: 1 kilobyte equals 1024 bytes.",
+    "Incorrect: 8 bytes are not 1 kilobyte."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-2-6",
+   "moduleId": "cs-m-2-6"
+  },
+  {
+   "id": "cs-q-2-7-1",
+   "stem": "Q2.1. What does ASCII stand for?",
+   "options": [
+    "American Standard Code for Information Interchange",
+    "Advanced Standard Code for Information Interchange",
+    "American Standard Communication for Information Interchange",
+    "Advanced Standard Communication for Information Interchange"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the full form of ASCII.",
+    "This changes the first word of the correct full form.",
+    "This incorrectly uses “Communication” instead of “Code.”",
+    "This changes both “American” and “Code” in the full form."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-2",
+   "stem": "Q2.2. Which of the following numbers is a valid binary number?",
+   "options": [
+    "1101102",
+    "11011",
+    "110.11",
+    "1101A"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The digit 2 is not allowed in a binary number.",
+    "A binary number can use only the digits 0 and 1, and this option does.",
+    "This option has a decimal point, so it is not a whole binary number as asked here.",
+    "The letter A is not a binary digit."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-3",
+   "stem": "Q2.3. How many bits are used in the standard ASCII encoding?",
+   "options": [
+    "7 bits",
+    "8 bits",
+    "16 bits",
+    "32 bits"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Standard ASCII uses 7 bits.",
+    "Eight bits may be used in extended forms, but standard ASCII uses 7 bits.",
+    "Sixteen bits is not the standard ASCII encoding size.",
+    "Thirty-two bits is not the standard ASCII encoding size."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-4",
+   "stem": "Q2.4. Which of the following is a key advantage of Unicode over ASCII?",
+   "options": [
+    "It uses fewer bits per character",
+    "It can represent characters from many different languages",
+    "It is backward compatible with binary",
+    "It is specific to the English language"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Unicode's key advantage is its wide character coverage, not using fewer bits.",
+    "Unicode can represent characters from many languages and writing systems.",
+    "Binary is a way of representing data, not a character set that Unicode is backward compatible with.",
+    "Unicode is not specific to English; it supports many languages."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-5",
+   "stem": "Q2.5. How many bytes are used to store a typical integer?",
+   "options": [
+    "1 byte",
+    "2 bytes",
+    "4 bytes",
+    "8 bytes"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "One byte is not the typical integer size asked for here.",
+    "Two bytes may be used for some integers, but the typical size in this question is 4 bytes.",
+    "A typical integer is stored using 4 bytes.",
+    "Eight bytes is commonly used for larger integer types, not the typical integer here."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-6",
+   "stem": "Q2.6. What is the primary difference between signed and unsigned integers?",
+   "options": [
+    "Unsigned integers cannot be negative",
+    "Signed integers have a larger range",
+    "Unsigned integers are stored in floating-point format",
+    "Signed integers are only used for positive numbers"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Unsigned integers represent zero and positive values, but not negative values.",
+    "This is not the primary difference; for the same number of bits, signed integers include negative values.",
+    "Unsigned integers are integer values, not floating-point values.",
+    "Signed integers can represent both positive and negative numbers."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-7",
+   "stem": "Q2.7. In the single precision, how many bits are used for the exponent?",
+   "options": [
+    "23 bits",
+    "8 bits",
+    "11 bits",
+    "52 bits"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Single precision uses 23 bits for the fraction, not the exponent.",
+    "Single precision uses 8 bits for the exponent.",
+    "Eleven exponent bits are used in double precision, not single precision.",
+    "Fifty-two bits are used for the fraction in double precision."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-8",
+   "stem": "Q2.8. What is the approximate range of values for single-precision floating-point numbers?",
+   "options": [
+    "1.4 x 10⁻⁴⁵ to 3.4 x 10³⁸",
+    "1.4 x 10⁻³⁸ to 3.4 x 10⁴⁵",
+    "4.9 x 10⁻³²⁴ to 1.8 x 10³⁰⁸",
+    "4.9 x 10⁻³⁰⁸ to 1.8 x 10³²⁴"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is the approximate range given for single precision.",
+    "These exponents do not give the approximate single-precision range.",
+    "This is approximately the range for double precision, not single precision.",
+    "These limits are not the approximate single-precision range."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-9",
+   "stem": "Q2.9. What are the tiny dots that make up an image called?",
+   "options": [
+    "Pixels",
+    "Bits",
+    "Bytes",
+    "Nodes"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The tiny dots that make up a digital image are called pixels.",
+    "Bits are units of binary data, not the dots in an image.",
+    "Bytes are groups of bits, not the dots in an image.",
+    "Nodes are not the name for image dots."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  },
+  {
+   "id": "cs-q-2-7-10",
+   "stem": "Q2.10. In an RGB color model, what does RGB stand for?",
+   "options": [
+    "Red, Green, Blue",
+    "Red, Gray, Black",
+    "Right, Green, Blue",
+    "Red, Green, Brown"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "RGB stands for Red, Green, Blue.",
+    "The second and third words are not the RGB colour components.",
+    "The first word is not “Right”; it is “Red.”",
+    "The third word is not “Brown”; it is “Blue.”"
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-2-7",
+   "moduleId": "cs-m-2-7"
+  }
+ ],
+ "written": [
+  {
+   "id": "cs-w-2-1-1",
+   "text": "Example 2.1: Convert 83 to binary",
+   "marks": 2,
+   "modelAnswer": [
+    "83 / 2 = 41 remainder 1",
+    "41 / 2 = 20 remainder 1",
+    "20 / 2 = 10 remainder 0",
+    "10 / 2 = 5 remainder 0",
+    "5 / 2 = 2 remainder 1",
+    "2 / 2 = 1 remainder 0",
+    "1 / 2 = 0 remainder 1",
+    "Reading the remainders from bottom to top gives 1010011₂."
+   ],
+   "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct repeated division by 2 with remainders.",
+     "marks": 1,
+     "why": "The repeated divisions and remainders establish the binary digits.",
+     "how": "Divide by 2 until the quotient is 0 and record each remainder.",
+     "accept": [
+      [
+       "83",
+       "41",
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct binary result read from bottom to top.",
+     "marks": 1,
+     "why": "The remainders must be read in the required order to give the answer.",
+     "how": "Read the recorded remainders from bottom to top.",
+     "accept": [
+      [
+       "1010011"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.1"
+  },
+  {
+   "id": "cs-w-2-1-2",
+   "text": "Example 2.2: Consider the 9-bit binary number 110101011₂. This number can be divided into groups of three Bits from right to left:",
+   "marks": 2,
+   "modelAnswer": [
+    "110 101 011",
+    "110₂ = 6",
+    "101₂ = 5",
+    "011₂ = 3",
+    "So, 110101011₂ = 653₈."
+   ],
+   "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct groups of three bits.",
+     "marks": 1,
+     "why": "Grouping from the right preserves the binary place values for conversion to octal.",
+     "how": "Group the bits from right to left in sets of three.",
+     "accept": [
+      [
+       "110 101 011"
+      ],
+      [
+       "110101011"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct octal result.",
+     "marks": 1,
+     "why": "Each group must be mapped to its corresponding octal digit.",
+     "how": "Convert each group to one octal digit and keep the group order.",
+     "accept": [
+      [
+       "653"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.2"
+  },
+  {
+   "id": "cs-w-2-1-3",
+   "text": "Example 2.3: Convert 83 to octal",
+   "marks": 2,
+   "modelAnswer": [
+    "83 / 8 = 10 remainder 3",
+    "10 / 8 = 1 remainder 2",
+    "1 / 8 = 0 remainder 1",
+    "Reading the remainders from bottom to top gives 123₈."
+   ],
+   "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct repeated division by 8 and remainders.",
+     "marks": 1,
+     "why": "Correct division by 8 produces the remainders needed for the conversion.",
+     "how": "Continue dividing the quotient by 8 until it becomes 0.",
+     "accept": [
+      [
+       "83",
+       "8",
+       "3"
+      ],
+      [
+       "10",
+       "8",
+       "2"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct octal result.",
+     "marks": 1,
+     "why": "The remainders give the answer only when read from bottom to top.",
+     "how": "Read the remainders from bottom to top.",
+     "accept": [
+      [
+       "123"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.3"
+  },
+  {
+   "id": "cs-w-2-1-4",
+   "text": "Example 2.4: Therefore, the binary number 1101011010110010 equals to the hexadecimal number D6B2.",
+   "marks": 2,
+   "modelAnswer": [
+    "1101  0110  1011  0010",
+    "1101 = D",
+    "0110 = 6",
+    "1011 = B",
+    "0010 = 2",
+    "Therefore, 1101011010110010₂ = D6B2₁₆."
+   ],
+   "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct four-bit grouping.",
+     "marks": 1,
+     "why": "Four-bit groups correspond to single hexadecimal digits.",
+     "how": "Group the binary digits from the right in sets of four.",
+     "accept": [
+      [
+       "1101",
+       "0110",
+       "1011",
+       "0010"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct hexadecimal result.",
+     "marks": 1,
+     "why": "Each four-bit group must be converted to the correct hexadecimal digit.",
+     "how": "Use the binary-to-hexadecimal correspondence for each group.",
+     "accept": [
+      [
+       "D6B2"
+      ],
+      [
+       "D",
+       "6",
+       "B",
+       "2"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.4"
+  },
+  {
+   "id": "cs-w-2-1-5",
+   "text": "Example 2.5: Convert 2297 to hexadecimal",
+   "marks": 2,
+   "modelAnswer": [
+    "2297 / 16 = 143 remainder 9",
+    "143 / 16 = 8 remainder F",
+    "8 / 16 = 0 remainder 8",
+    "Reading the remainders from bottom to top gives 8F9₁₆."
+   ],
+   "followUp": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Correct repeated division and remainders.",
+     "marks": 1,
+     "why": "Repeated division by 16 gives the hexadecimal remainders.",
+     "how": "Divide by 16 repeatedly until the quotient is 0; write 15 as F.",
+     "accept": [
+      [
+       "2297",
+       "16",
+       "9"
+      ],
+      [
+       "143",
+       "16",
+       "F"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Correct hexadecimal result.",
+     "marks": 1,
+     "why": "Reading the remainders in the correct order gives the final hexadecimal number.",
+     "how": "Read the remainders from bottom to top.",
+     "accept": [
+      [
+       "8F9"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.5"
+  },
+  {
+   "id": "cs-w-2-2-1",
+   "text": "Let's convert the decimal number -5 to an 8-bit binary number:",
+   "marks": 2,
+   "modelAnswer": [
+    "Start with the binary representation of 5: 00000101₂.",
+    "Invert all the bits: 11111010₂.",
+    "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+    "So, −5 in 8-bit two's complement is 11111011₂."
+   ],
+   "followUp": "What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the 8-bit binary representation of 5.",
+     "marks": 0.5,
+     "why": "Starting with the binary representation of 5 is the first step in the method.",
+     "how": "Show 00000101₂.",
+     "accept": [
+      [
+       "00000101"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Invert all bits.",
+     "marks": 0.5,
+     "why": "Inverting every bit is necessary to form the complement.",
+     "how": "Change 00000101₂ to 11111010₂.",
+     "accept": [
+      [
+       "11111010"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add 1 to the inverted binary number.",
+     "marks": 0.5,
+     "why": "Adding 1 completes the two's-complement conversion.",
+     "how": "Show 11111010₂ + 1₂ = 11111011₂.",
+     "accept": [
+      [
+       "11111010",
+       "1"
+      ],
+      [
+       "11111011"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct final answer.",
+     "marks": 0.5,
+     "why": "The final binary value is the requested 8-bit representation of −5.",
+     "how": "State −5 = 11111011₂ in 8-bit two's complement.",
+     "accept": [
+      [
+       "11111011"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.1"
+  },
+  {
+   "id": "cs-w-2-2-3",
+   "text": "Explain how a negative integer is represented in binary.",
+   "marks": 2,
+   "modelAnswer": [
+    "To store negative values, computers use a method called two's complement.",
+    "Start with the binary representation of the positive value.",
+    "Invert all the bits (change 0s to 1s and 1s to 0s).",
+    "Add 1 to the Least Significant Bit (LSB)."
+   ],
+   "followUp": "What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the method.",
+     "marks": 0.5,
+     "why": "Naming the representation method identifies how negative values are stored.",
+     "how": "State that computers use two's complement.",
+     "accept": [
+      [
+       "two's complement"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the first operation.",
+     "marks": 0.5,
+     "why": "Inverting the bits is the first required operation.",
+     "how": "Explain that every 0 changes to 1 and every 1 changes to 0.",
+     "accept": [
+      [
+       "invert",
+       "bits"
+      ],
+      [
+       "complement"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the second operation.",
+     "marks": 0.5,
+     "why": "Adding 1 after inversion completes the method.",
+     "how": "State that 1 is added to the least significant bit.",
+     "accept": [
+      [
+       "add 1"
+      ],
+      [
+       "+1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "State the correct final explanation.",
+     "marks": 0.5,
+     "why": "The final answer must correctly describe the complete method.",
+     "how": "Describe two's complement as inversion followed by adding 1.",
+     "accept": [
+      [
+       "invert",
+       "add 1"
+      ],
+      [
+       "two's complement",
+       "add 1"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.5"
+  },
+  {
+   "id": "cs-w-2-2-5",
+   "text": "Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+   "marks": 2,
+   "modelAnswer": [
+    "Whole numbers are a set of non-negative integers.",
+    "They include zero and all the positive integers.",
+    "Quantities such as the number of students cannot be negative.",
+    "Therefore, whole numbers are suitable for representing such quantities."
+   ],
+   "followUp": "What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the non-negative nature of whole numbers.",
+     "marks": 0.5,
+     "why": "Whole numbers include zero and do not go below zero.",
+     "how": "Mention zero or that whole numbers are non-negative.",
+     "accept": [
+      [
+       "zero"
+      ],
+      [
+       "non-negative"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain which other values whole numbers include.",
+     "marks": 0.5,
+     "why": "Whole numbers include the positive counts needed for these quantities.",
+     "how": "Mention positive integers.",
+     "accept": [
+      [
+       "positive integers"
+      ],
+      [
+       "positive"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Relate whole numbers to non-negative quantities.",
+     "marks": 0.5,
+     "why": "The answer must connect whole numbers to the kind of quantity being represented.",
+     "how": "Explain that such quantities have no negative values.",
+     "accept": [
+      [
+       "cannot be negative"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct final reason.",
+     "marks": 0.5,
+     "why": "The final explanation should give the reason whole numbers suit these quantities.",
+     "how": "Connect zero and positive values with quantities that cannot be negative.",
+     "accept": [
+      [
+       "suitable",
+       "cannot be negative"
+      ],
+      [
+       "non-negative",
+       "quantities"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.8"
+  },
+  {
+   "id": "cs-w-2-2-7",
+   "text": "Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and negative integers.",
+   "marks": 8,
+   "modelAnswer": [
+    "A positive decimal integer is written in binary using place values that are powers of 2.",
+    "For example, 5₁₀ = 00000101₂.",
+    "To convert binary to decimal, add the place values of the bits that are 1.",
+    "Thus, 00000101₂ = 5₁₀.",
+    "To represent −5, start with the binary representation of 5: 00000101₂.",
+    "Invert all the bits: 11111010₂.",
+    "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+    "So, −5 in 8-bit two's complement is 11111011₂."
+   ],
+   "followUp": "What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain positive decimal-to-binary conversion.",
+     "marks": 2,
+     "why": "The response needs to explain how positive integers are expressed in binary.",
+     "how": "Describe binary place values or show a correct positive example.",
+     "accept": [
+      [
+       "powers of 2"
+      ],
+      [
+       "binary",
+       "decimal"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give a correct positive conversion example.",
+     "marks": 2,
+     "why": "A correct positive example demonstrates the conversion in both directions.",
+     "how": "Show that 5₁₀ = 00000101₂ or an equivalent correct example.",
+     "accept": [
+      [
+       "00000101",
+       "5"
+      ],
+      [
+       "5",
+       "00000101"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain the negative conversion method.",
+     "marks": 2,
+     "why": "Negative integers require the two's-complement process described in the section.",
+     "how": "Invert the positive value's bits and add 1.",
+     "accept": [
+      [
+       "invert",
+       "add 1"
+      ],
+      [
+       "two's complement",
+       "add 1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct final negative result.",
+     "marks": 2,
+     "why": "A correct final negative example shows that the method has been applied correctly.",
+     "how": "State that −5 is 11111011₂ in 8-bit two's complement.",
+     "accept": [
+      [
+       "11111011"
+      ],
+      [
+       "-5",
+       "11111011"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.3"
+  },
+  {
+   "id": "cs-w-2-3-1",
+   "text": "Convert 0.375 to Binary.",
+   "marks": 2,
+   "modelAnswer": [
+    "0.375 × 2 = 0.75 (Integer part: 0)",
+    "0.75 × 2 = 1.5 (Integer part: 1)",
+    "0.5 × 2 = 1.0 (Integer part: 1)",
+    "0.375₁₀ = 0.011₂"
+   ],
+   "followUp": "Convert 0.375 to Binary.",
+   "noteId": "cs-n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Show the repeated multiplication by 2 and record the integer parts.",
+     "marks": 1,
+     "why": "The repeated multiplication method must be applied to the fractional part.",
+     "how": "Multiply each new fractional part by 2 and record the integer parts in order.",
+     "accept": [
+      [
+       "0.75"
+      ],
+      [
+       "0.75×2=0.75"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct binary fraction.",
+     "marks": 1,
+     "why": "The binary digits must be written in the correct order as the final result.",
+     "how": "Write the recorded integer parts from top to bottom after the binary point.",
+     "accept": [
+      [
+       "0.011"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.3"
+  },
+  {
+   "id": "cs-w-2-3-2",
+   "text": "How is the range of floating-point numbers calculated for single precision?",
+   "marks": 2,
+   "modelAnswer": [
+    "Single precision uses 8 bits for the exponent and a bias of 127.",
+    "The actual exponent range is −126 to +127.",
+    "The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+   ],
+   "followUp": "Convert 0.375 to Binary.",
+   "noteId": "cs-n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the exponent bit count and bias.",
+     "marks": 1,
+     "why": "The exponent bit allocation and bias are needed to explain how the range is determined.",
+     "how": "Explain that single precision uses 8 exponent bits and a bias of 127.",
+     "accept": [
+      [
+       "8 bits",
+       "127"
+      ],
+      [
+       "exponent",
+       "127"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the exponent limits and approximate value range.",
+     "marks": 1,
+     "why": "The exponent limits and approximate value range are the result of the calculation.",
+     "how": "State the actual exponent range and the approximate range of values.",
+     "accept": [
+      [
+       "-126",
+       "127"
+      ],
+      [
+       "1.4×10^-45",
+       "3.4×10^38"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.9"
+  },
+  {
+   "id": "cs-w-2-3-3",
+   "text": "Why is it important to understand the limitations of floating-point representation in scientific computing?",
+   "marks": 2,
+   "modelAnswer": [
+    "Floating-point computation can have round-off errors.",
+    "In scientific computing, these errors must be monitored to maintain accuracy."
+   ],
+   "followUp": "Convert 0.375 to Binary.",
+   "noteId": "cs-n-2-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify possible round-off errors.",
+     "marks": 1,
+     "why": "Identifying possible round-off error states an important limitation of floating-point computation.",
+     "how": "Explain that floating-point computations can produce round-off errors.",
+     "accept": [
+      [
+       "round-off"
+      ],
+      [
+       "round off"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the need to monitor errors.",
+     "marks": 1,
+     "why": "Monitoring errors explains why the limitation matters in scientific work.",
+     "how": "State that errors should be monitored to maintain accuracy.",
+     "accept": [
+      [
+       "accuracy",
+       "monitor"
+      ],
+      [
+       "maintain accuracy"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.10"
+  },
+  {
+   "id": "cs-w-2-4-1",
+   "text": "Add the binary numbers: 1101₂ + 1011₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "  1101₂",
+    "+ 1011₂",
+    "-------",
+    " 11000₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Align the binary numbers by their rightmost bits.",
+     "marks": 2,
+     "why": "Correct alignment is needed to add each binary place.",
+     "how": "Write 1101₂ above 1011₂ with the rightmost bits aligned.",
+     "accept": [
+      [
+       "1101",
+       "1011"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Add columns from right to left, carrying 1 when the column totals 2 or 3.",
+     "marks": 3,
+     "why": "Correct carries determine the result bits.",
+     "how": "Show or correctly use the carries through the columns.",
+     "accept": [
+      [
+       "11000"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct binary sum.",
+     "marks": 3,
+     "why": "The final answer is the required result.",
+     "how": "Write the final answer as 11000₂.",
+     "accept": [
+      [
+       "11000"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.4.1"
+  },
+  {
+   "id": "cs-w-2-4-2",
+   "text": "Subtract 6 from 9 in Binary.",
+   "marks": 8,
+   "modelAnswer": [
+    "Minuend = 9₁₀ = 1001₂",
+    "Subtrahend = 6₁₀ = 0110₂",
+    "Invert the bits of 0110₂: 1001₂",
+    "Add 1 to the inverted number: 1001₂ + 1₂ = 1010₂",
+    "1001₂ + 1010₂ = 10011₂",
+    "Discard the carry bit: 0011₂ = 3₁₀",
+    "So, 9 − 6 = 3."
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Convert 9 and 6 to binary.",
+     "marks": 2,
+     "why": "The method begins by writing the minuend and subtrahend in binary.",
+     "how": "State 9₁₀ = 1001₂ and 6₁₀ = 0110₂.",
+     "accept": [
+      [
+       "1001",
+       "0110"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Invert the subtrahend and add 1.",
+     "marks": 3,
+     "why": "The two's complement is the value added to perform the subtraction.",
+     "how": "Show that 0110₂ inverts to 1001₂ and that 1001₂ + 1₂ = 1010₂.",
+     "accept": [
+      [
+       "1010"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add, discard the carry bit and state the answer.",
+     "marks": 3,
+     "why": "The carry must be discarded to obtain the correct 4-bit result.",
+     "how": "Show 1001₂ + 1010₂ = 10011₂, discard the carry, and give 0011₂ = 3₁₀.",
+     "accept": [
+      [
+       "0011"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.4.2"
+  },
+  {
+   "id": "cs-w-2-4-3",
+   "text": "Multiply 101₂ and 11₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "    101₂",
+    "  ×  11₂",
+    "  ------",
+    "     101",
+    "   +1010",
+    "  ------",
+    "    1111₂",
+    "So, 101₂ × 11₂ = 1111₂."
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the binary multiplication.",
+     "marks": 2,
+     "why": "The numbers must be aligned for the partial products.",
+     "how": "Write 101₂ above 11₂ with the rightmost bits aligned.",
+     "accept": [
+      [
+       "101",
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the partial products and shift the second row one place left.",
+     "marks": 3,
+     "why": "The shifted partial products are the main steps in long multiplication.",
+     "how": "Show the rows 101 and 1010.",
+     "accept": [
+      [
+       "101",
+       "1010"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add the partial products and give the answer.",
+     "marks": 3,
+     "why": "Adding the partial products gives the final product.",
+     "how": "Write 101₂ + 1010₂ = 1111₂.",
+     "accept": [
+      [
+       "1111"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.4.3"
+  },
+  {
+   "id": "cs-w-2-4-4",
+   "text": "Divide 1100₂ by 10₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+    "Bring down the next digit 0.",
+    "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+    "Bring down the next digit 0; no more digits are left.",
+    "1100₂ ÷ 10₂ = 110₂."
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Compare the divisor with the first dividend portion.",
+     "marks": 2,
+     "why": "The first comparison sets up the quotient.",
+     "how": "Compare 10₂ with 11₂.",
+     "accept": [
+      [
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Subtract the divisor and bring down the remaining digits in order.",
+     "marks": 3,
+     "why": "Subtracting and bringing down each digit carries the division forward.",
+     "how": "Show the successive comparisons and subtractions.",
+     "accept": [
+      [
+       "10"
+      ],
+      [
+       "subtract"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the quotient after all dividend digits are used.",
+     "marks": 3,
+     "why": "The quotient is the required final answer.",
+     "how": "Give 110₂.",
+     "accept": [
+      [
+       "110"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 2.4.4"
+  },
+  {
+   "id": "cs-w-2-4-5",
+   "text": "Q2.4. Perform the following binary arithmetic operations: (a) Multiplication of 101₂ by 11₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "    101₂",
+    "  ×  11₂",
+    "  ------",
+    "     101",
+    "   +1010",
+    "  ------",
+    "    1111₂",
+    "So, 101₂ × 11₂ = 1111₂."
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the binary multiplication.",
+     "marks": 2,
+     "why": "The multiplication must be set up with the bits aligned.",
+     "how": "Write 101₂ × 11₂ with rightmost bits aligned.",
+     "accept": [
+      [
+       "101",
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the partial products and shift the second row.",
+     "marks": 3,
+     "why": "The shifted partial products show the multiplication method.",
+     "how": "Show partial products 101 and 1010.",
+     "accept": [
+      [
+       "101",
+       "1010"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Add the partial products and state the answer.",
+     "marks": 3,
+     "why": "Their sum is the final product.",
+     "how": "Give 1111₂.",
+     "accept": [
+      [
+       "1111"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.4(a)"
+  },
+  {
+   "id": "cs-w-2-4-6",
+   "text": "Q2.4. Perform the following binary arithmetic operations: (b) Division of 1100₂ by 10₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+    "Bring down the next digit 0.",
+    "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+    "Bring down the next digit 0; no more digits are left.",
+    "1100₂ ÷ 10₂ = 110₂."
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Compare the divisor with the first dividend portion.",
+     "marks": 2,
+     "why": "The first comparison starts the division correctly.",
+     "how": "Compare 10₂ with 11₂.",
+     "accept": [
+      [
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Carry out the comparison, subtraction and shift steps.",
+     "marks": 3,
+     "why": "Repeated subtraction and bringing down digits generate the quotient.",
+     "how": "Show the intermediate division steps.",
+     "accept": [
+      [
+       "subtract"
+      ],
+      [
+       "bring down"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final quotient.",
+     "marks": 3,
+     "why": "The quotient is the final result asked for.",
+     "how": "Write 110₂.",
+     "accept": [
+      [
+       "110"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.4(b)"
+  },
+  {
+   "id": "cs-w-2-4-7",
+   "text": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "  101₂",
+    "+ 110₂",
+    "------",
+    " 1011₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the addition with rightmost bits aligned.",
+     "marks": 2,
+     "why": "Aligning the numbers puts matching place values in the same column.",
+     "how": "Write 101₂ above 110₂.",
+     "accept": [
+      [
+       "101",
+       "110"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Add each column and handle the carry.",
+     "marks": 3,
+     "why": "The carry from 1 + 1 must be included in the next column.",
+     "how": "Correctly add from right to left.",
+     "accept": [
+      [
+       "1011"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the binary sum.",
+     "marks": 3,
+     "why": "The final sum is the requested result.",
+     "how": "Give 1011₂.",
+     "accept": [
+      [
+       "1011"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.6(a)"
+  },
+  {
+   "id": "cs-w-2-4-8",
+   "text": "Q2.6. Add the following binary numbers: (b) 1100₂ + 1011₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "  1100₂",
+    "+ 1011₂",
+    "-------",
+    " 10111₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Set up the addition.",
+     "marks": 2,
+     "why": "The bits must be aligned by place value.",
+     "how": "Write the two numbers with their rightmost bits aligned.",
+     "accept": [
+      [
+       "1100",
+       "1011"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Add the columns from right to left.",
+     "marks": 3,
+     "why": "Correct carries are required to obtain the correct sum.",
+     "how": "Handle each carry correctly.",
+     "accept": [
+      [
+       "10111"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the answer.",
+     "marks": 3,
+     "why": "The final binary sum completes the problem.",
+     "how": "Give 10111₂.",
+     "accept": [
+      [
+       "10111"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.6(b)"
+  },
+  {
+   "id": "cs-w-2-4-9",
+   "text": "Q2.8. Solve the following (a) 1101₂ − 0100₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Subtrahend = 0100₂",
+    "Invert the bits of 0100₂: 1011₂",
+    "Add 1: 1011₂ + 1₂ = 1100₂",
+    "1101₂ + 1100₂ = 11001₂",
+    "Discard the carry bit: 1001₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify and invert the subtrahend.",
+     "marks": 2,
+     "why": "The subtrahend must be identified for the complement method.",
+     "how": "Invert 0100₂ to get 1011₂.",
+     "accept": [
+      [
+       "0100"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the two's complement and add it to the minuend.",
+     "marks": 3,
+     "why": "Adding 1 to the inverted bits forms the two's complement.",
+     "how": "Show 1011₂ + 1₂ = 1100₂ and add it to 1101₂.",
+     "accept": [
+      [
+       "1100"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Discard the carry and state the result.",
+     "marks": 3,
+     "why": "Discarding the carry gives the correct final answer.",
+     "how": "Give 1001₂.",
+     "accept": [
+      [
+       "1001"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.8(a)"
+  },
+  {
+   "id": "cs-w-2-4-10",
+   "text": "Q2.8. Solve the following (b) 1010₂ − 0011₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Subtrahend = 0011₂",
+    "Invert the bits of 0011₂: 1100₂",
+    "Add 1: 1100₂ + 1₂ = 1101₂",
+    "1010₂ + 1101₂ = 10111₂",
+    "Discard the carry bit: 0111₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Invert the subtrahend.",
+     "marks": 2,
+     "why": "The subtrahend is the number whose two's complement is needed.",
+     "how": "Invert 0011₂ to get 1100₂.",
+     "accept": [
+      [
+       "0011"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the two's complement and add it to the minuend.",
+     "marks": 3,
+     "why": "Adding 1 completes the complement before the addition.",
+     "how": "Show 1100₂ + 1₂ = 1101₂, then add to 1010₂.",
+     "accept": [
+      [
+       "1101"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Discard the carry and state the result.",
+     "marks": 3,
+     "why": "The carry is discarded to give the answer in the original width.",
+     "how": "Give 0111₂.",
+     "accept": [
+      [
+       "0111"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.8(b)"
+  },
+  {
+   "id": "cs-w-2-4-11",
+   "text": "Q2.8. Solve the following (c) 1000₂ − 0110₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Subtrahend = 0110₂",
+    "Invert the bits of 0110₂: 1001₂",
+    "Add 1: 1001₂ + 1₂ = 1010₂",
+    "1000₂ + 1010₂ = 10010₂",
+    "Discard the carry bit: 0010₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Invert the subtrahend.",
+     "marks": 2,
+     "why": "The complement process is applied to the subtrahend.",
+     "how": "Invert 0110₂ to get 1001₂.",
+     "accept": [
+      [
+       "0110"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the complement and add it to the minuend.",
+     "marks": 3,
+     "why": "The two's complement is formed by adding 1 to the inverted number.",
+     "how": "Show 1001₂ + 1₂ = 1010₂, then add to 1000₂.",
+     "accept": [
+      [
+       "1010"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Discard the carry and state the difference.",
+     "marks": 3,
+     "why": "The final carry must be discarded.",
+     "how": "Give 0010₂.",
+     "accept": [
+      [
+       "0010"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.8(c)"
+  },
+  {
+   "id": "cs-w-2-4-12",
+   "text": "Q2.8. Solve the following (d) 1110₂ − 100₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "Write the subtrahend in 4 bits: 100₂ = 0100₂",
+    "Invert the bits of 0100₂: 1011₂",
+    "Add 1: 1011₂ + 1₂ = 1100₂",
+    "1110₂ + 1100₂ = 11010₂",
+    "Discard the carry bit: 1010₂"
+   ],
+   "followUp": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "noteId": "cs-n-2-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Pad and invert the subtrahend.",
+     "marks": 2,
+     "why": "The subtrahend must be written in the same 4-bit width.",
+     "how": "Write 100₂ as 0100₂ and invert it to 1011₂.",
+     "accept": [
+      [
+       "0100"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Find the complement and add it to the minuend.",
+     "marks": 3,
+     "why": "The inverted number plus 1 is the two's complement used in the addition.",
+     "how": "Show 1011₂ + 1₂ = 1100₂, then add to 1110₂.",
+     "accept": [
+      [
+       "1100"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Discard the carry and state the result.",
+     "marks": 3,
+     "why": "Discarding the carry leaves the correct 4-bit difference.",
+     "how": "Give 1010₂.",
+     "accept": [
+      [
+       "1010"
+      ]
+     ]
+    }
+   ],
+   "source": "Long Q2.8(d)"
+  },
+  {
+   "id": "cs-w-2-5-1",
+   "text": "What is the primary purpose of the ASCII encoding scheme?",
+   "marks": 2,
+   "modelAnswer": [
+    "ASCII gives each alphabet, number or symbol a code number.",
+    "These code numbers let computers represent and process text."
+   ],
+   "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+   "noteId": "cs-n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that ASCII assigns code numbers to characters.",
+     "marks": 1,
+     "why": "The answer must state what ASCII does to characters.",
+     "how": "Explain that each alphabet, number or symbol is given a code number.",
+     "accept": [
+      [
+       "p:code",
+       "alphabet"
+      ],
+      [
+       "p:code",
+       "symbol"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that the codes let computers represent or process text.",
+     "marks": 1,
+     "why": "The answer must connect encoding to computer-readable text.",
+     "how": "Mention that the codes are used by computers to represent or process text.",
+     "accept": [
+      [
+       "computers",
+       "text"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.1"
+  },
+  {
+   "id": "cs-w-2-5-2",
+   "text": "Explain the difference between ASCII and Unicode.",
+   "marks": 2,
+   "modelAnswer": [
+    "ASCII uses 7 bits and can represent only 128 characters.",
+    "Unicode can represent over a million characters from writing systems around the world."
+   ],
+   "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+   "noteId": "cs-n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies ASCII as limited to 7 bits and 128 characters.",
+     "marks": 1,
+     "why": "The answer must give ASCII's stated limitation.",
+     "how": "State both the 7-bit limit and the 128-character capacity.",
+     "accept": [
+      [
+       "7 bits",
+       "128"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that Unicode represents many characters or writing systems.",
+     "marks": 1,
+     "why": "The answer must explain Unicode's wider character coverage.",
+     "how": "Compare Unicode's broad coverage with ASCII's limited set.",
+     "accept": [
+      [
+       "Unicode",
+       "million"
+      ],
+      [
+       "Unicode",
+       "many",
+       "languages"
+      ],
+      [
+       "Unicode",
+       "writing systems"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.2"
+  },
+  {
+   "id": "cs-w-2-5-3",
+   "text": "How does Unicode handle characters from different languages?",
+   "marks": 2,
+   "modelAnswer": [
+    "Unicode maps graphic characters used in the world's writing systems.",
+    "It represents these characters through encoding forms such as UTF-8, UTF-16 and UTF-32."
+   ],
+   "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+   "noteId": "cs-n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that Unicode maps graphic characters.",
+     "marks": 1,
+     "why": "The answer must explain Unicode's character-mapping purpose.",
+     "how": "Use the idea of mapping characters used in writing systems.",
+     "accept": [
+      [
+       "maps",
+       "characters"
+      ],
+      [
+       "graphic characters"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Names a Unicode encoding form.",
+     "marks": 1,
+     "why": "The answer must show how Unicode characters are encoded.",
+     "how": "Give one or more of UTF-8, UTF-16 and UTF-32.",
+     "accept": [
+      [
+       "UTF-8"
+      ],
+      [
+       "UTF-16"
+      ],
+      [
+       "UTF-32"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.3"
+  },
+  {
+   "id": "cs-w-2-5-4",
+   "text": "Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points.",
+   "marks": 8,
+   "modelAnswer": [
+    "Unicode is an attempt at mapping all graphic characters used in the world's writing systems.",
+    "The letter A is represented in Unicode as U+0041.",
+    "The Urdu letter ب is represented in Unicode as U+0628.",
+    "Unicode uses different encoding forms, such as UTF-8, UTF-16 and UTF-32, to represent characters."
+   ],
+   "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+   "noteId": "cs-n-2-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains that Unicode maps graphic characters used in writing systems.",
+     "marks": 2,
+     "why": "A clear explanation of Unicode's purpose is the foundation of the answer.",
+     "how": "Describe Unicode as a character-mapping system for writing systems.",
+     "accept": [
+      [
+       "maps",
+       "graphic characters"
+      ],
+      [
+       "writing systems"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the letter A with code point U+0041.",
+     "marks": 2,
+     "why": "A correct code point example shows how the system identifies a character.",
+     "how": "Write the character A and its code point together.",
+     "accept": [
+      [
+       "U+0041",
+       "A"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives the Urdu letter ب with code point U+0628.",
+     "marks": 2,
+     "why": "An example from another language demonstrates Unicode's broader character coverage.",
+     "how": "Write the Urdu character and its code point together.",
+     "accept": [
+      [
+       "U+0628",
+       "ب"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Names the Unicode encoding forms and gives the complete answer.",
+     "marks": 2,
+     "why": "The answer must correctly name Unicode's encoding forms to complete the explanation.",
+     "how": "State that Unicode code points are represented using forms such as UTF-8, UTF-16 and UTF-32.",
+     "accept": [
+      [
+       "UTF-8",
+       "UTF-16",
+       "UTF-32"
+      ],
+      [
+       "UTF-8",
+       "UTF-16"
+      ],
+      [
+       "UTF-8",
+       "UTF-32"
+      ],
+      [
+       "UTF-16",
+       "UTF-32"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.1"
+  },
+  {
+   "id": "cs-w-2-7-1",
+   "text": "Q2.1. What is the primary purpose of the ASCII encoding scheme?",
+   "marks": 2,
+   "modelAnswer": [
+    "ASCII assigns binary codes to characters such as letters, digits, and symbols.",
+    "Its purpose is to let computers store and process text."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that ASCII represents or encodes characters.",
+     "marks": 1,
+     "why": "The answer must identify what ASCII encodes.",
+     "how": "Mention characters or text symbols.",
+     "accept": [
+      [
+       "characters"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that characters are represented by binary codes.",
+     "marks": 1,
+     "why": "The answer must explain how the characters are represented.",
+     "how": "Include binary codes or 0s and 1s.",
+     "accept": [
+      [
+       "binary"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.1"
+  },
+  {
+   "id": "cs-w-2-7-2",
+   "text": "Q2.2. Explain the difference between ASCII and Unicode.",
+   "marks": 2,
+   "modelAnswer": [
+    "ASCII encodes a limited set of characters, mainly for English.",
+    "Unicode can represent characters from many different languages and writing systems."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Says ASCII represents a limited set of characters, mainly English.",
+     "marks": 1,
+     "why": "The comparison must describe ASCII's more limited character set.",
+     "how": "Identify ASCII as limited or mainly English.",
+     "accept": [
+      [
+       "ASCII"
+      ],
+      [
+       "limited"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Says Unicode supports characters from many languages.",
+     "marks": 1,
+     "why": "The comparison must state Unicode's wider character coverage.",
+     "how": "Mention Unicode and its broad language coverage.",
+     "accept": [
+      [
+       "Unicode"
+      ],
+      [
+       "many"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.2"
+  },
+  {
+   "id": "cs-w-2-7-3",
+   "text": "Q2.3. How does Unicode handle characters from different languages?",
+   "marks": 2,
+   "modelAnswer": [
+    "Unicode assigns a unique code point to each character.",
+    "This allows characters from many languages and writing systems to be represented."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains that Unicode assigns code points to characters.",
+     "marks": 1,
+     "why": "A code point is the key way Unicode identifies a character.",
+     "how": "State that each character is given a code point.",
+     "accept": [
+      [
+       "unique"
+      ],
+      [
+       "code point"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that this allows characters from many languages to be represented.",
+     "marks": 1,
+     "why": "The answer must connect Unicode's system to different languages.",
+     "how": "Mention its broad language coverage.",
+     "accept": [
+      [
+       "languages"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.3"
+  },
+  {
+   "id": "cs-w-2-7-4",
+   "text": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "marks": 2,
+   "modelAnswer": [
+    "2 bytes = 16 bits.",
+    "For an unsigned integer, the range is 0 to 2¹⁶ − 1.",
+    "The range is 0 to 65,535."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies that 2 bytes contain 16 bits.",
+     "marks": 1,
+     "why": "The range depends on the number of bits available.",
+     "how": "Convert 2 bytes to 16 bits.",
+     "accept": [
+      [
+       "16"
+      ],
+      [
+       "bits"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the range from 0 to 65,535.",
+     "marks": 1,
+     "why": "The final range must include both correct endpoints.",
+     "how": "Use 0 to 2¹⁶ − 1.",
+     "accept": [
+      [
+       "0"
+      ],
+      [
+       "65535"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.4"
+  },
+  {
+   "id": "cs-w-2-7-5",
+   "text": "Q2.5. Explain how a negative integer is represented in binary.",
+   "marks": 2,
+   "modelAnswer": [
+    "Write the positive integer in binary using the required number of bits.",
+    "Invert all the bits.",
+    "Add 1 to obtain the two's complement representation of the negative integer."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies two's complement as the method.",
+     "marks": 1,
+     "why": "The answer must name the signed representation method.",
+     "how": "Write or name two's complement.",
+     "accept": [
+      [
+       "two's complement"
+      ],
+      [
+       "twos complement"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains that the bits are inverted and 1 is added.",
+     "marks": 1,
+     "why": "The process requires complementing the bits and adding one.",
+     "how": "Include both operations in the correct order.",
+     "accept": [
+      [
+       "invert"
+      ],
+      [
+       "1"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.5"
+  },
+  {
+   "id": "cs-w-2-7-6",
+   "text": "Q2.6. What is the benefit of using unsigned integers?",
+   "marks": 2,
+   "modelAnswer": [
+    "Unsigned integers do not need to represent negative values.",
+    "Therefore, all their bits are used for zero and positive values, giving a larger positive range than a signed integer of the same size."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that unsigned integers represent zero and positive values.",
+     "marks": 1,
+     "why": "Unsigned integers represent non-negative quantities.",
+     "how": "Mention non-negative values.",
+     "accept": [
+      [
+       "positive"
+      ],
+      [
+       "zero"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that unsigned integers can represent a larger positive range than signed integers of the same size.",
+     "marks": 1,
+     "why": "The benefit is a wider non-negative range for the same bit count.",
+     "how": "Compare the positive range for the same number of bits.",
+     "accept": [
+      [
+       "larger"
+      ],
+      [
+       "range"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.6"
+  },
+  {
+   "id": "cs-w-2-7-8",
+   "text": "Q2.8. Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+   "marks": 2,
+   "modelAnswer": [
+    "These quantities are zero or positive and cannot be negative.",
+    "Unsigned whole numbers are suitable because they represent non-negative values and use their bits for that range."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognises that the quantities are zero or positive.",
+     "marks": 1,
+     "why": "The answer must connect the choice to the quantity's possible values.",
+     "how": "State that the quantities cannot be negative.",
+     "accept": [
+      [
+       "cannot be negative"
+      ],
+      [
+       "non-negative"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains that unsigned whole numbers represent non-negative quantities efficiently.",
+     "marks": 1,
+     "why": "Unsigned representation makes the available range useful for these quantities.",
+     "how": "Mention unsigned integers or their non-negative range.",
+     "accept": [
+      [
+       "unsigned"
+      ],
+      [
+       "positive"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.8"
+  },
+  {
+   "id": "cs-w-2-7-9",
+   "text": "Q2.9. How is the range of floating-point numbers calculated for single precision?",
+   "marks": 2,
+   "modelAnswer": [
+    "Single precision has 1 sign bit, 8 exponent bits, and 23 fraction bits.",
+    "The exponent bits set the scale of the values that can be represented.",
+    "Its approximate range is 1.4 x 10⁻⁴⁵ to 3.4 x 10³⁸."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies the 8-bit exponent in single precision.",
+     "marks": 1,
+     "why": "The exponent bits determine the scale and range of floating-point values.",
+     "how": "State that single precision has 8 exponent bits.",
+     "accept": [
+      [
+       "8"
+      ],
+      [
+       "exponent"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the approximate range 1.4 x 10⁻⁴⁵ to 3.4 x 10³⁸.",
+     "marks": 1,
+     "why": "The approximate range is the numerical result being asked for.",
+     "how": "Include the approximate minimum and maximum.",
+     "accept": [
+      [
+       "1.4"
+      ],
+      [
+       "3.4"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.9"
+  },
+  {
+   "id": "cs-w-2-7-10",
+   "text": "Q2.10. Why is it important to understand the limitations of floating-point representation in scientific computing?",
+   "marks": 2,
+   "modelAnswer": [
+    "Floating-point numbers have limited precision, so some values are rounded or stored as approximations.",
+    "They also have a limited range, so overflow or underflow can occur and affect scientific results."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Mentions limited precision or rounding error.",
+     "marks": 1,
+     "why": "Limited precision can make stored values differ slightly from exact values.",
+     "how": "Explain that a value may be rounded or approximated.",
+     "accept": [
+      [
+       "precision"
+      ],
+      [
+       "rounding"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Mentions overflow, underflow, or another consequence of limited range.",
+     "marks": 1,
+     "why": "Values outside the representable range can also affect calculations.",
+     "how": "Connect the representation limits to possible calculation errors.",
+     "accept": [
+      [
+       "overflow"
+      ],
+      [
+       "underflow"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 2.10"
+  },
+  {
+   "id": "cs-w-2-7-11",
+   "text": "Q2.1. Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points.",
+   "marks": 8,
+   "modelAnswer": [
+    "Unicode assigns a unique code point to each character.",
+    "The code point identifies the character, while an encoding such as UTF-8 stores it as bytes in a computer.",
+    "For example, the English letter A has the code point U+0041.",
+    "The Arabic letter ا has the code point U+0627.",
+    "The Devanagari letter ब has the code point U+092C.",
+    "These examples show how Unicode can represent characters from different languages."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains that Unicode assigns a code point to each character.",
+     "marks": 2,
+     "why": "The central idea is that Unicode identifies characters using code points.",
+     "how": "Describe the code point mapping.",
+     "accept": [
+      [
+       "Unicode"
+      ],
+      [
+       "code points"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains that Unicode supports different languages and writing systems.",
+     "marks": 2,
+     "why": "Unicode's purpose includes representing characters from many languages.",
+     "how": "State that its character set is not limited to English.",
+     "accept": [
+      [
+       "many"
+      ],
+      [
+       "languages"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives at least two correct character and code point examples.",
+     "marks": 2,
+     "why": "Correct examples show how code points identify actual characters.",
+     "how": "Use examples from different languages, such as A, ا, and ब.",
+     "accept": [
+      [
+       "U+0041"
+      ],
+      [
+       "U+0627"
+      ],
+      [
+       "U+0041",
+       "U+092C"
+      ],
+      [
+       "U+0627",
+       "U+092C"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Correctly matches the examples to their Unicode code points.",
+     "marks": 2,
+     "why": "The final answer must include correctly matched examples.",
+     "how": "Give A as U+0041, ا as U+0627, and ब as U+092C.",
+     "accept": [
+      [
+       "U+0041"
+      ],
+      [
+       "U+0627"
+      ],
+      [
+       "U+092C"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.1"
+  },
+  {
+   "id": "cs-w-2-7-12",
+   "text": "Q2.2. Describe in detail how integers are stored in computer memory.",
+   "marks": 8,
+   "modelAnswer": [
+    "Computer memory stores an integer as a pattern of binary bits, each having a value of 0 or 1.",
+    "The number of bits allocated to the integer determines how many different values can be stored.",
+    "For an unsigned n-bit integer, all bit patterns represent non-negative values, from 0 to 2ⁿ − 1.",
+    "A signed integer must also represent negative values.",
+    "A common signed representation is two's complement.",
+    "To form a negative value in two's complement, write the positive value in binary, invert its bits, and add 1.",
+    "For example, in 4 bits, 5 is 0101; invert to get 1010 and add 1 to get 1011, which represents −5.",
+    "Thus, the same bit pattern is interpreted according to whether the integer is signed or unsigned."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains that integers are stored using binary bits in memory.",
+     "marks": 2,
+     "why": "The answer must establish that memory stores integer values as bit patterns.",
+     "how": "Mention bits or 0s and 1s.",
+     "accept": [
+      [
+       "binary",
+       "bits"
+      ],
+      [
+       "memory",
+       "bits"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains that unsigned integers represent zero and positive values.",
+     "marks": 2,
+     "why": "Unsigned storage is an important integer representation.",
+     "how": "Describe the unsigned range or meaning.",
+     "accept": [
+      [
+       "unsigned",
+       "non-negative"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains that signed integers use two's complement to represent negatives.",
+     "marks": 2,
+     "why": "The method for storing signed integers must be identified.",
+     "how": "Name two's complement and connect it to negative values.",
+     "accept": [
+      [
+       "signed",
+       "two's complement"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explains that the bit count determines the range and gives a correct range rule or example.",
+     "marks": 2,
+     "why": "A correct answer should connect the number of bits with the representable range.",
+     "how": "State that more bits allow more values, or give an appropriate range formula.",
+     "accept": [
+      [
+       "number of bits",
+       "different values"
+      ],
+      [
+       "number of bits",
+       "2^n"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.2"
+  },
+  {
+   "id": "cs-w-2-7-13",
+   "text": "Q2.3. Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and\nnegative integers.",
+   "marks": 8,
+   "modelAnswer": [
+    "To convert a positive decimal integer to binary, divide by 2 repeatedly and record each remainder.",
+    "Read the remainders from bottom to top.",
+    "For 13: 13 ÷ 2 = 6 remainder 1; 6 ÷ 2 = 3 remainder 0; 3 ÷ 2 = 1 remainder 1; 1 ÷ 2 = 0 remainder 1.",
+    "Therefore, 13₁₀ = 1101₂.",
+    "To convert binary to decimal, multiply each bit by its power-of-2 place value and add: 1101₂ = 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13₁₀.",
+    "For a negative integer, use a fixed number of bits and two's complement.",
+    "In 4 bits, 5 is 0101; invert the bits to get 1010 and add 1 to get 1011.",
+    "Therefore, −5₁₀ = 1011₂ in 4-bit two's complement; conversely, 1011₂ represents −5₁₀."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains how to convert a positive decimal integer to binary.",
+     "marks": 2,
+     "why": "Repeated division by 2 is the standard decimal-to-binary method.",
+     "how": "Divide repeatedly by 2 and read the remainders from bottom to top.",
+     "accept": [
+      [
+       "divide by 2",
+       "remainders"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains how to convert a binary number to decimal.",
+     "marks": 2,
+     "why": "Binary-to-decimal conversion uses powers of 2 as place values.",
+     "how": "Multiply each bit by its power of 2 and add.",
+     "accept": [
+      [
+       "multiply each bit",
+       "add"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains how to represent a negative value using two's complement.",
+     "marks": 2,
+     "why": "Negative values in the example must use the two's complement process.",
+     "how": "Use a fixed bit width, invert the positive bits, and add 1.",
+     "accept": [
+      [
+       "two's complement",
+       "invert",
+       "add 1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives correct examples, including a positive decimal-binary pair and a negative two's complement pair.",
+     "marks": 2,
+     "why": "The final answer must demonstrate positive and negative conversions correctly.",
+     "how": "Include 13₁₀ = 1101₂ and, in 4 bits, −5₁₀ = 1011₂.",
+     "accept": [
+      [
+       "1101",
+       "1011"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.3"
+  },
+  {
+   "id": "cs-w-2-7-14",
+   "text": "Q2.4. Perform the following binary arithmetic operations:  (a) Multiplication of 101₂ by 11₂.  (b) Division of 1100₂ by 10₂.",
+   "marks": 8,
+   "modelAnswer": [
+    "(a) 101₂ × 11₂",
+    "101₂ × 1₂ = 101₂",
+    "101₂ × 1₂, shifted one place left = 1010₂",
+    "  101₂",
+    "+1010₂",
+    " 1111₂",
+    "Therefore, 101₂ × 11₂ = 1111₂.",
+    "(b) 1100₂ ÷ 10₂ = 110₂",
+    "Therefore, 1100₂ ÷ 10₂ = 110₂."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Sets up or shows correct binary multiplication.",
+     "marks": 2,
+     "why": "Correct partial products are needed for the multiplication.",
+     "how": "Multiply by each bit of 11₂ and shift the second partial product.",
+     "accept": [
+      [
+       "101"
+      ],
+      [
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives 101₂ × 11₂ = 1111₂.",
+     "marks": 2,
+     "why": "The multiplication must end with the correct binary product.",
+     "how": "Add the partial products correctly.",
+     "accept": [
+      [
+       "1111"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Shows division of 1100₂ by 10₂.",
+     "marks": 2,
+     "why": "The division working must use the correct dividend and divisor.",
+     "how": "Divide by 10₂, which shifts the binary number one place right.",
+     "accept": [
+      [
+       "1100"
+      ],
+      [
+       "10"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives 1100₂ ÷ 10₂ = 110₂.",
+     "marks": 2,
+     "why": "The final quotient must be correct.",
+     "how": "State the correct quotient.",
+     "accept": [
+      [
+       "110"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.4"
+  },
+  {
+   "id": "cs-w-2-7-15",
+   "text": "Q2.6. Add the following binary numbers:  (a)  101₂ + 110₂  (b)  1100₂ + 1011₂",
+   "marks": 8,
+   "modelAnswer": [
+    "(a)",
+    "  101₂",
+    "+ 110₂",
+    "------",
+    " 1011₂",
+    "Therefore, 101₂ + 110₂ = 1011₂.",
+    "(b)",
+    " 1100₂",
+    "+1011₂",
+    "------",
+    "10111₂",
+    "Therefore, 1100₂ + 1011₂ = 10111₂."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Lines up the numbers correctly for part (a).",
+     "marks": 2,
+     "why": "Correct alignment is needed before adding binary columns.",
+     "how": "Place the rightmost bits in the same column.",
+     "accept": [
+      [
+       "101"
+      ],
+      [
+       "110"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives 101₂ + 110₂ = 1011₂.",
+     "marks": 2,
+     "why": "The sum for part (a) must be correct.",
+     "how": "Carry correctly when a column adds to 2 or 3.",
+     "accept": [
+      [
+       "1011"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Shows the addition of 1100₂ and 1011₂.",
+     "marks": 2,
+     "why": "Correct alignment and carrying are required for part (b).",
+     "how": "Add from right to left and carry when needed.",
+     "accept": [
+      [
+       "1100"
+      ],
+      [
+       "1011"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives 1100₂ + 1011₂ = 10111₂.",
+     "marks": 2,
+     "why": "The final result for part (b) must be correct.",
+     "how": "Write the correct final sum.",
+     "accept": [
+      [
+       "10111"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.6"
+  },
+  {
+   "id": "cs-w-2-7-16",
+   "text": "Q2.7. Convert the following numbers to 4-bit binary and add them:  (a) 7 + (-4)  (b) -5 + 3",
+   "marks": 8,
+   "modelAnswer": [
+    "(a) In 4 bits, 7 = 0111₂.",
+    "To represent −4: 4 = 0100₂; invert to get 1011₂; add 1 to get 1100₂.",
+    "  0111₂",
+    "+ 1100₂",
+    "---------",
+    "  0011₂",
+    "Therefore, 7 + (−4) = 0011₂.",
+    "(b) In 4 bits, 5 = 0101₂; invert to get 1010₂; add 1 to get 1011₂, so −5 = 1011₂.",
+    "In 4 bits, 3 = 0011₂.",
+    "  1011₂",
+    "+ 0011₂",
+    "---------",
+    "  1110₂",
+    "Therefore, −5 + 3 = 1110₂."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Converts 7 and −4 to 4-bit binary.",
+     "marks": 2,
+     "why": "Both numbers must be represented correctly in 4-bit two's complement.",
+     "how": "Use 0111 for 7 and form −4 by two's complement.",
+     "accept": [
+      [
+       "0111"
+      ],
+      [
+       "1100"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Adds the 4-bit representations for part (a).",
+     "marks": 2,
+     "why": "The first 4-bit addition must give the correct result.",
+     "how": "Add the bits and give 0011₂.",
+     "accept": [
+      [
+       "0011"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Converts −5 and 3 to 4-bit two's complement.",
+     "marks": 2,
+     "why": "Both numbers in part (b) must be represented correctly.",
+     "how": "Use 1011 for −5 and 0011 for 3.",
+     "accept": [
+      [
+       "1011"
+      ],
+      [
+       "0011"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Adds the representations for part (b) and gives 1110₂.",
+     "marks": 2,
+     "why": "The second addition must give the correct 4-bit answer.",
+     "how": "Add the bits and state the 4-bit result.",
+     "accept": [
+      [
+       "1110"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.7"
+  },
+  {
+   "id": "cs-w-2-7-17",
+   "text": "Q2.8. Solve the following  (a) 1101₂ - 0100₂  (b) 1010₂ - 0011₂  (c) 1000₂ - 0110₂  (d) 1110₂ - 100₂",
+   "marks": 8,
+   "modelAnswer": [
+    "(a) 1101₂ − 0100₂ = 1001₂.",
+    "(b) 1010₂ − 0011₂ = 0111₂.",
+    "(c) 1000₂ − 0110₂ = 0010₂.",
+    "(d) Write 100₂ as 0100₂ to align the places.",
+    "1110₂ − 0100₂ = 1010₂."
+   ],
+   "followUp": "Q2.4. What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-7",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Shows suitable working for part (a).",
+     "marks": 2,
+     "why": "Correct place alignment and borrowing are needed for subtraction.",
+     "how": "Align bits by place value and subtract from right to left.",
+     "accept": [
+      [
+       "1101"
+      ],
+      [
+       "0100"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the correct answers to parts (a) and (b).",
+     "marks": 2,
+     "why": "The first two binary differences must be correct.",
+     "how": "Write 1001₂ and 0111₂.",
+     "accept": [
+      [
+       "1001"
+      ],
+      [
+       "0111"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Shows suitable working for the remaining subtractions.",
+     "marks": 2,
+     "why": "Correct subtraction working is required for parts (c) and (d).",
+     "how": "Align the bits and borrow correctly where needed.",
+     "accept": [
+      [
+       "1000"
+      ],
+      [
+       "0110"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives the correct answers to parts (c) and (d).",
+     "marks": 2,
+     "why": "The final two results must be correct.",
+     "how": "Write 0010₂ and 1010₂.",
+     "accept": [
+      [
+       "0010"
+      ],
+      [
+       "1010"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 2.8"
+  }
+ ],
+ "report": {
+  "unit": 2,
+  "title": "Number Systems",
+  "dropped": [
+   "Written cs-m-2-2#1 (Short 2.4): model answer misses a marking point",
+   "Written cs-m-2-2#3 (Short 2.7): model answer misses a marking point",
+   "Written cs-m-2-2#5 (Long 2.2): model answer misses a marking point",
+   "Your-turn cs-m-2-2: 2 with unusable answer patterns",
+   "Written cs-m-2-7#6 (Short 2.7): model answer misses a marking point"
+  ]
+ }
+}

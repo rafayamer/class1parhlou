@@ -1,0 +1,431 @@
+{
+ "note": {
+  "explanation": "TCP/IP is the main suite of protocols used for internet communication. TCP provides reliable data transfer, while IP handles addressing and routing. DNS translates domain names into IP addresses, and DHCP automatically assigns IP addresses.",
+  "examples": [
+   "When a device needs an IP address automatically, DHCP performs that task.",
+   "When a domain name needs to be translated into an IP address, DNS performs that task."
+  ],
+  "checkAnswer": "TCP provides reliable data transfer; UDP provides faster, but less reliable, data transfer.",
+  "keywords": [
+   "TCP/IP",
+   "TCP",
+   "IP",
+   "UDP",
+   "DNS",
+   "DHCP"
+  ],
+  "simple": "Think of these protocols as different helpers: TCP checks that data transfers reliably, IP handles packet addresses and routes, DNS looks up IP addresses from domain names, and DHCP assigns IP addresses automatically.",
+  "checkQuestion": "Which protocol automatically assigns IP addresses, and which protocol translates domain names to IP addresses?",
+  "title": "Standard Protocols in TCP/IP Communications",
+  "steps": [
+   "Identify the task: reliable transfer, addressing and routing, faster transfer, name translation, or automatic IP assignment.",
+   "Match the task to the protocol: TCP, IP, UDP, DNS, or DHCP, respectively."
+  ],
+  "answer": "DHCP automatically assigns IP addresses; DNS translates domain names to IP addresses.",
+  "checkAccept": [
+   [
+    "DHCP",
+    "automatically",
+    "assigns",
+    "DNS",
+    "translates"
+   ],
+   [
+    "DHCP",
+    "IP addresses",
+    "DNS",
+    "domain names"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "TCP",
+    "IP",
+    "UDP",
+    "DNS"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which TCP/IP protocol is responsible for reliable data transfer?",
+   "rationales": [
+    "Correct: TCP ensures reliable data transfer.",
+    "IP handles addressing and routing of data packets, not reliable transfer.",
+    "UDP provides faster but less reliable data transfer.",
+    "DNS translates domain names to IP addresses."
+   ]
+  },
+  {
+   "options": [
+    "Assigning IP addresses automatically",
+    "Translating domain names to IP addresses",
+    "Routing packets between addresses",
+    "Providing reliable data transfer"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A user enters a domain name and the network needs its IP address. Which protocol performs this translation?",
+   "rationales": [
+    "DHCP automatically assigns IP addresses; it does not translate domain names.",
+    "Correct: DNS translates domain names to IP addresses.",
+    "IP handles addressing and routing of data packets, rather than translating names.",
+    "TCP ensures reliable data transfer."
+   ]
+  },
+  {
+   "options": [
+    "DNS",
+    "UDP",
+    "DHCP",
+    "TCP"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which protocol automatically assigns an IP address to a device?",
+   "rationales": [
+    "DNS translates domain names to IP addresses.",
+    "UDP provides faster, but less reliable, data transfer.",
+    "Correct: DHCP automatically assigns IP addresses.",
+    "TCP ensures reliable data transfer."
+   ]
+  },
+  {
+   "options": [
+    "Addressing and routing data packets",
+    "Translating domain names",
+    "Automatically assigning IP addresses",
+    "Ensuring reliable data transfer"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the function of Internet Protocol (IP) in the section?",
+   "rationales": [
+    "Correct: IP handles addressing and routing of data packets.",
+    "DNS translates domain names to IP addresses.",
+    "DHCP automatically assigns IP addresses.",
+    "TCP ensures reliable data transfer."
+   ]
+  },
+  {
+   "options": [
+    "It is faster and more reliable than TCP.",
+    "It provides faster, but less reliable, data transfer.",
+    "It automatically assigns IP addresses.",
+    "It translates domain names to IP addresses."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which description matches UDP?",
+   "rationales": [
+    "The section does not say UDP is more reliable than TCP; it says UDP is less reliable.",
+    "Correct: UDP provides faster, but less reliable, data transfer.",
+    "DHCP automatically assigns IP addresses.",
+    "DNS translates domain names to IP addresses."
+   ]
+  },
+  {
+   "options": [
+    "A single protocol that only assigns addresses",
+    "A suite of protocols fundamental to internet communication",
+    "A protocol used only to translate domain names",
+    "A method for making data transfer unreliable"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is TCP/IP according to the section?",
+   "rationales": [
+    "TCP/IP is not described as one protocol only for assigning addresses.",
+    "Correct: TCP/IP is the fundamental suite of protocols for internet communication.",
+    "DNS translates domain names; TCP/IP is broader than this one task.",
+    "TCP/IP is not defined as a method for making data transfer unreliable."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+   "finalAnswer": "DHCP automatically assigns IP addresses.",
+   "marks": 2,
+   "source": "Short Q6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "DHCP"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the protocol shows that the answer addresses the question.",
+     "description": "Identify DHCP.",
+     "how": "Write the protocol name or its full name."
+    },
+    {
+     "accept": [
+      [
+       "automatically",
+       "assigns",
+       "IP addresses"
+      ],
+      [
+       "automatic",
+       "IP address"
+      ]
+     ],
+     "marks": 1,
+     "why": "The protocol's function is the key idea being assessed.",
+     "description": "State its function.",
+     "how": "Explain that it automatically assigns IP addresses."
+    }
+   ],
+   "modelAnswer": [
+    "DHCP automatically assigns IP addresses."
+   ]
+  },
+  {
+   "text": "Differentiate between TCP and UDP in terms of data transfer reliability.",
+   "finalAnswer": "TCP ensures reliable data transfer, while UDP provides faster, but less reliable, data transfer.",
+   "marks": 2,
+   "source": "Short Q6.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "TCP",
+       "reliable"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must correctly state TCP's reliability.",
+     "description": "Describe TCP.",
+     "how": "State that TCP ensures reliable data transfer."
+    },
+    {
+     "accept": [
+      [
+       "UDP",
+       "less reliable"
+      ],
+      [
+       "UDP",
+       "faster",
+       "less reliable"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must correctly contrast UDP with TCP.",
+     "description": "Describe UDP.",
+     "how": "State that UDP is less reliable; it also provides faster data transfer."
+    }
+   ],
+   "modelAnswer": [
+    "TCP ensures reliable data transfer.",
+    "UDP provides faster, but less reliable, data transfer."
+   ]
+  },
+  {
+   "text": "Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DHCP.",
+   "finalAnswer": "Protocols provide rules for data communication. TCP/IP is the fundamental suite of protocols for internet communication; TCP ensures reliable data transfer; IP handles addressing and routing of data packets; DNS translates domain names to IP addresses; and DHCP automatically assigns IP addresses. HTTP is also a protocol named in the question, but its function is not given in this section.",
+   "marks": 8,
+   "source": "Long Q6.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "protocols",
+       "communication"
+      ],
+      [
+       "rules",
+       "data communication"
+      ]
+     ],
+     "marks": 1,
+     "why": "A discussion should explain why protocols matter in communication.",
+     "description": "Explain the role of protocols.",
+     "how": "State that protocols provide rules or standards for data communication."
+    },
+    {
+     "accept": [
+      [
+       "TCP/IP",
+       "fundamental",
+       "internet communication"
+      ],
+      [
+       "TCP/IP",
+       "suite of protocols"
+      ]
+     ],
+     "marks": 2,
+     "why": "The section defines TCP/IP as the fundamental protocol suite for internet communication.",
+     "description": "Explain TCP/IP.",
+     "how": "Identify TCP/IP as a fundamental suite of protocols for internet communication."
+    },
+    {
+     "accept": [
+      [
+       "TCP",
+       "reliable",
+       "IP",
+       "addressing",
+       "routing"
+      ]
+     ],
+     "marks": 2,
+     "why": "TCP and IP have distinct functions that should not be confused.",
+     "description": "Give the functions of TCP and IP.",
+     "how": "State that TCP ensures reliable transfer and IP handles packet addressing and routing."
+    },
+    {
+     "accept": [
+      [
+       "DNS",
+       "domain names",
+       "IP addresses",
+       "DHCP",
+       "automatically",
+       "assigns"
+      ]
+     ],
+     "marks": 2,
+     "why": "DNS and DHCP are key protocols in this section, and their functions are commonly tested.",
+     "description": "Give the functions of DNS and DHCP.",
+     "how": "Explain that DNS translates domain names to IP addresses and DHCP automatically assigns IP addresses."
+    },
+    {
+     "accept": [
+      [
+       "HTTP"
+      ]
+     ],
+     "marks": 1,
+     "why": "HTTP is explicitly included in the exercise question, although it is not described in this section.",
+     "description": "Address HTTP.",
+     "how": "Identify HTTP as a protocol; its function is not specified in this section."
+    }
+   ],
+   "modelAnswer": [
+    "Protocols provide rules that allow devices to communicate and exchange data.",
+    "TCP/IP is the fundamental suite of protocols for internet communication.",
+    "TCP ensures reliable data transfer.",
+    "IP handles addressing and routing of data packets.",
+    "DNS translates domain names to IP addresses.",
+    "DHCP automatically assigns IP addresses.",
+    "HTTP is also a protocol named in the question; its function is not given in this section."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short questions asking for the function of a named protocol, especially TCP, UDP, DNS, or DHCP.",
+   "For a comparison question, state both sides clearly: TCP is reliable, while UDP is faster but less reliable.",
+   "In longer answers, name each protocol and match it with its correct function; do not mix up DNS and DHCP.",
+   "Use the textbook's wording: IP handles addressing and routing of data packets."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Look for the word \"automatically\" in the section.",
+     "DHCP is the protocol that assigns IP addresses automatically."
+    ],
+    "accept": [
+     [
+      "DHCP",
+      "automatically",
+      "assigns",
+      "IP addresses"
+     ],
+     [
+      "automatically",
+      "assigns",
+      "IP address"
+     ]
+    ],
+    "question": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+    "solution": [
+     "Identify the protocol named in the question: Dynamic Host Configuration Protocol (DHCP).",
+     "Match it to its function in the section: DHCP automatically assigns IP addresses."
+    ],
+    "answer": "DHCP automatically assigns IP addresses."
+   },
+   {
+    "hints": [
+     "Recall which protocol the section describes as reliable.",
+     "Then contrast it with UDP, which is faster but less reliable."
+    ],
+    "accept": [
+     [
+      "TCP",
+      "reliable",
+      "UDP",
+      "less reliable"
+     ],
+     [
+      "TCP",
+      "reliable",
+      "UDP",
+      "faster"
+     ]
+    ],
+    "question": "Differentiate between TCP and UDP in terms of data transfer reliability.",
+    "solution": [
+     "TCP ensures reliable data transfer.",
+     "UDP provides faster, but less reliable, data transfer."
+    ],
+    "answer": "TCP ensures reliable data transfer, while UDP provides faster, but less reliable, data transfer."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The section identifies the protocol suite used for internet communication.",
+     "text": "TCP/IP is the fundamental suite of protocols for internet communication."
+    },
+    {
+     "why": "TCP's role is to ensure data transfers reliably.",
+     "text": "TCP ensures reliable data transfer."
+    },
+    {
+     "why": "IP handles packet addressing and routing.",
+     "text": "IP handles addressing and routing of data packets."
+    },
+    {
+     "why": "DNS and DHCP have different jobs: name translation and automatic address assignment.",
+     "text": "DNS translates domain names to IP addresses; DHCP automatically assigns IP addresses."
+    }
+   ],
+   "question": "A device needs to communicate over the internet, send data reliably, look up a domain name, and receive an IP address automatically. Name the relevant protocol or protocols for each task.",
+   "answer": "TCP/IP is the fundamental suite for internet communication; TCP provides reliable data transfer; DNS translates domain names to IP addresses; DHCP automatically assigns IP addresses."
+  },
+  "explain": [
+   {
+    "title": "TCP/IP is the internet protocol suite",
+    "body": "TCP/IP (Transmission Control Protocol/Internet Protocol) is the fundamental suite of protocols for internet communication."
+   },
+   {
+    "title": "TCP and IP have different jobs",
+    "body": "Transmission Control Protocol (TCP): Ensures reliable data transfer. Internet Protocol (IP): Handles addressing and routing of data packets."
+   },
+   {
+    "title": "UDP trades reliability for speed",
+    "body": "User Datagram Protocol (UDP ): Provides faster, but less reliable, data transfer."
+   },
+   {
+    "title": "DNS translates names",
+    "body": "Domain Name System (DNS): Translates domain names to IP addresses."
+   },
+   {
+    "title": "DHCP assigns addresses",
+    "body": "Dynamic Host Configuration Protocol (DHCP): Automatically assigns IP addresses."
+   }
+  ],
+  "mistakes": [
+   "Do not say DNS assigns IP addresses; DNS translates domain names to IP addresses.",
+   "Do not say DHCP translates domain names; DHCP automatically assigns IP addresses.",
+   "Do not reverse the reliability comparison: TCP is reliable, while UDP is less reliable.",
+   "Do not claim UDP is the more reliable protocol; the section says it is faster but less reliable.",
+   "Do not confuse IP's addressing and routing role with TCP's reliable-transfer role."
+  ]
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 1,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 2,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 2,
+   "id": "q5"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q6"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q7"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q8"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q9"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "Computational thinking is a systematic approach to problem-solving that uses logical reasoning and algorithmic methods."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "Decomposition is breaking a complex problem into smaller, more manageable parts."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w2",
+   "myAnswer": "Pattern recognition is identifying similarities or repeated features in problems so they can be used to help solve them. For example, recognising that several recipes follow the same preparation steps lets us reuse those steps."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w3",
+   "myAnswer": "Abstraction means setting aside irrelevant details and concentrating on the essential information. It simplifies problem-solving by making the important features easier to identify and use."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w4",
+   "myAnswer": "An algorithm is a finite, ordered sequence of steps or instructions for solving a problem."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w5",
+   "myAnswer": "Understanding a problem clarifies its requirements, relevant information, inputs, outputs, and constraints. This makes it possible to design a suitable solution."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w6",
+   "myAnswer": "A flowchart is a graphical representation of an algorithm. Standard symbols and arrows show its steps, decisions, and the order in which they occur."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w7",
+   "myAnswer": "Pseudocode describes an algorithm in clear, structured language without requiring the syntax of a particular programming language. It helps plan and communicate the solution before coding."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w8",
+   "myAnswer": "A flowchart presents an algorithm visually with symbols and arrows; pseudocode presents its steps in structured, plain-language form."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w9",
+   "myAnswer": "A dry run is a manual trace of an algorithm or flowchart using sample inputs. It checks whether the steps and outputs are correct and can reveal errors before implementation."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w10",
+   "myAnswer": "LARP (Logic and Reasoning Process) is a tool used to represent, practise, and trace algorithms. It helps learners understand the logic and sequence of steps and see how an algorithm behaves."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w11",
+   "myAnswer": "Two debugging techniques are tracing (dry running) and testing with suitable test data. Tracing follows the algorithm step by step while tracking values; testing checks whether it gives the expected results for selected inputs."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w12",
+   "myAnswer": "START\nInput marks\nIf marks >= 90, output A+\nElse if marks >= 80, output A\nElse if marks >= 70, output B\nElse if marks >= 60, output C\nElse, output F\nSTOP"
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w13",
+   "myAnswer": "First understand the problem and identify its inputs, outputs, and constraints. Decompose it if needed, then design the steps using pseudocode and represent them in a flowchart. For example, to assign grades, input a student's marks, test the thresholds from highest to lowest (90, 80, 70, then 60), output the corresponding grade, and stop. Dry-run the design with marks such as 95, 84, 73, 62, and 45 to check each branch, then correct any errors."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w14",
+   "myAnswer": "Computational thinking is a systematic, logical, and algorithmic approach to solving problems. It helps organise complex tasks into manageable parts, identify patterns, focus on relevant details, and design solutions that can be tested. For example, a healthcare team can use it to organise patient information and plan appointment scheduling; a transport service can use it to analyse routes and choose efficient journeys; and a teacher can use it to break a complex assignment into smaller tasks."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w15",
+   "myAnswer": "Decomposition is dividing a complex problem into smaller, manageable subproblems. It is important because the parts are easier to understand, solve, and test, and can then be combined into a complete solution."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w16",
+   "myAnswer": "Pattern recognition is identifying similarities or repeated features in problems. Recognising patterns helps us reuse known methods, reduce repeated work, and make predictions about how a solution will behave."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w17",
+   "myAnswer": "Abstraction is focusing on the essential features of a problem while ignoring irrelevant details. It simplifies complex problems by reducing the information that must be considered. For example, a route map can show roads and destinations while leaving out unrelated details such as building interiors."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w18",
+   "myAnswer": "A flowchart represents an algorithm visually with standard symbols and arrows, while pseudocode describes its steps in structured, plain language. Flowcharts make control flow and decisions easy to see, but large flowcharts can be difficult to draw and revise. Pseudocode is quicker to write and change, but it is less visual and may be interpreted differently. A flowchart is useful for explaining a small decision process to a group; pseudocode is often preferable when planning a long algorithm with many steps."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w19",
+   "myAnswer": "A dry run manually follows the steps of a flowchart or pseudocode using sample data, recording values and decisions as they occur. Comparing the resulting output with the expected output helps validate the algorithm and reveal errors before implementation."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w20",
+   "myAnswer": "LARP (Logic and Reasoning Process) is a tool or method for learning and practising algorithmic logic. It helps learners follow an algorithm's steps and decisions and check how it works before implementation."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w21",
+   "myAnswer": "LARP supports computational thinking by helping learners trace an algorithm's steps, decisions, and results, strengthening logical reasoning and testing. For example, a learner can trace a grade-assignment algorithm with several marks and identify and correct an incorrectly ordered or incorrect threshold."
+  }
+ ]
+}

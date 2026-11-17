@@ -1,0 +1,431 @@
+{
+ "note": {
+  "explanation": "Computational thinking starts by understanding the problem, then simplifying it into manageable parts, and choosing and planning a suitable solution.",
+  "examples": [
+   "Before building a school website, find out what pages it needs, who will use it, and what tools are available.",
+   "To design a website, split the work into layout, content, and functionality."
+  ],
+  "checkAnswer": "Break the problem into smaller, manageable sub-problems.",
+  "keywords": [
+   "understanding",
+   "requirements",
+   "objectives",
+   "simplification",
+   "sub-problems",
+   "solution",
+   "algorithm"
+  ],
+  "simple": "First understand what needs to be done. Then divide the work into smaller parts and plan a suitable way to complete them.",
+  "checkQuestion": "What does problem simplification mean?",
+  "title": "Principles of Computational Thinking",
+  "steps": [
+   "Understand the problem and identify its requirements.",
+   "Set clear objectives for the outcome.",
+   "Break a complex problem into smaller, manageable sub-problems.",
+   "Evaluate possible approaches and select an efficient solution.",
+   "Create a detailed plan or algorithm for the solution."
+  ],
+  "answer": "The three principles in this section are problem understanding, problem simplification, and solution selection and design.",
+  "checkAccept": [
+   [
+    "smaller",
+    "manageable",
+    "sub-problems"
+   ],
+   [
+    "break",
+    "smaller",
+    "parts"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Identifying the core issue, requirements, and objectives",
+    "Starting to code before considering the requirements",
+    "Choosing a solution without checking the problem",
+    "Focusing only on details unrelated to the goal"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which action best shows problem understanding?",
+   "rationales": [
+    "This is correct because understanding a problem includes identifying its core issue, requirements, and objectives.",
+    "This is incorrect because coding before understanding requirements can lead to an unsuitable solution.",
+    "This is incorrect because a solution should be chosen after the problem is understood.",
+    "This is incorrect because problem understanding helps focus on relevant details."
+   ]
+  },
+  {
+   "options": [
+    "It removes the need to define a goal.",
+    "It divides a problem into smaller, manageable sub-problems.",
+    "It makes every problem more complicated.",
+    "It replaces planning with guesswork."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the purpose of problem simplification?",
+   "rationales": [
+    "This is incorrect because simplification does not remove the need for a goal.",
+    "This is correct because the section describes simplification as breaking a problem into smaller, manageable sub-problems.",
+    "This is incorrect because simplification is intended to make a problem more manageable.",
+    "This is incorrect because solution design requires a plan, not guesswork."
+   ]
+  },
+  {
+   "options": [
+    "Evaluate different approaches and select an efficient one.",
+    "Ignore the requirements once they have been listed.",
+    "Begin with random actions and hope one works.",
+    "Avoid making a plan for the solution."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does solution selection involve?",
+   "rationales": [
+    "This is correct because solution selection means evaluating approaches and choosing an efficient one.",
+    "This is incorrect because the requirements guide the choice of solution.",
+    "This is incorrect because random actions are not a structured way to solve a problem.",
+    "This is incorrect because designing a solution requires a detailed plan or algorithm."
+   ]
+  },
+  {
+   "options": [
+    "Making a list of possible website colours only",
+    "Finding out which pages the website needs",
+    "Writing code without knowing who will use the website",
+    "Selecting tools without checking what resources are available"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "In the school website example, which action helps identify requirements?",
+   "rationales": [
+    "This is incorrect because colours alone do not establish the website's required features.",
+    "This is correct because identifying required pages, such as news and schedules, is part of identifying requirements.",
+    "This is incorrect because the example says to understand the users before designing a user-friendly interface.",
+    "This is incorrect because checking available resources and tools is part of understanding technical constraints."
+   ]
+  },
+  {
+   "options": [
+    "Defining clear and achievable goals",
+    "Adding irrelevant details",
+    "Avoiding all evaluation of possible solutions",
+    "Beginning with the final algorithm before understanding the problem"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does proper problem understanding help define goals?",
+   "rationales": [
+    "This is correct because understanding the problem helps set clear and achievable goals for the final outcome.",
+    "This is incorrect because irrelevant details distract from the problem rather than define goals.",
+    "This is incorrect because choosing an efficient solution involves evaluating approaches.",
+    "This is incorrect because understanding the problem comes before planning its solution."
+   ]
+  },
+  {
+   "options": [
+    "It creates a detailed plan or algorithm.",
+    "It guarantees that no requirements need to be checked.",
+    "It means dividing a problem into random parts.",
+    "It involves selecting an approach without considering efficiency."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does designing a solution require?",
+   "rationales": [
+    "This is correct because the section explains that solution design requires a detailed plan or algorithm.",
+    "This is incorrect because requirements remain important throughout solution planning.",
+    "This is incorrect because sub-problems should be manageable and related to the problem, not random.",
+    "This is incorrect because selecting a solution involves seeking an efficient approach."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Imagine you are asked to build a website for your school. Before jumping into coding, you need to understand the problem:",
+   "finalAnswer": "Identify the website's requirements, users, and available technical resources before planning or coding.",
+   "marks": 2,
+   "source": "Example 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "requirements",
+       "pages"
+      ],
+      [
+       "requirements",
+       "features"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying required features shows that the problem has been understood.",
+     "description": "Identify the website requirements.",
+     "how": "Mention that the required pages or features should be identified."
+    },
+    {
+     "accept": [
+      [
+       "users",
+       "resources"
+      ],
+      [
+       "students",
+       "teachers",
+       "parents"
+      ]
+     ],
+     "marks": 1,
+     "why": "Considering users and resources helps ensure the planned website is suitable and possible to build.",
+     "description": "Consider users and technical resources.",
+     "how": "Name the intended users and/or check the available tools and resources."
+    }
+   ],
+   "modelAnswer": [
+    "Identify the required features, such as pages for news, events, class schedules, and contact information.",
+    "Identify the users, such as students, teachers, and parents, to help design a user-friendly interface.",
+    "Check the available resources and tools, such as a web server and the necessary software.",
+    "Final answer: Understand the requirements, users, and technical constraints before planning and building the website."
+   ]
+  },
+  {
+   "text": "Q7.6. How does problem understanding help in computational thinking?",
+   "finalAnswer": "It clarifies what needs to be solved, helps define goals, supports efficient solutions, and helps avoid mistakes.",
+   "marks": 2,
+   "source": "Short 7.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "clarity",
+       "focus"
+      ],
+      [
+       "clarifies",
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognising clarity and focus explains how understanding identifies what needs to be solved.",
+     "description": "Explain how understanding clarifies the problem.",
+     "how": "State that it identifies the problem or helps focus on relevant aspects."
+    },
+    {
+     "accept": [
+      [
+       "goals",
+       "efficient"
+      ],
+      [
+       "goals",
+       "mistakes"
+      ],
+      [
+       "solutions",
+       "mistakes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Goals, efficient solutions, and avoiding mistakes are key benefits stated in the section.",
+     "description": "Give further benefits of understanding the problem.",
+     "how": "Mention defining goals, finding efficient solutions, or avoiding mistakes."
+    }
+   ],
+   "modelAnswer": [
+    "Understanding the problem gives clarity about what needs to be solved and helps focus on the relevant aspects.",
+    "It helps define clear and achievable goals, choose efficient solutions, and avoid mistakes caused by misunderstanding.",
+    "Final answer: Problem understanding clarifies the problem, helps set goals, supports efficient solutions, and prevents mistakes."
+   ]
+  },
+  {
+   "text": "Q7.4. Discuss the concept of decomposition in computational thinking. Why is it important?",
+   "finalAnswer": "Decomposition breaks a problem into smaller, manageable sub-problems, making it easier to solve and plan.",
+   "marks": 8,
+   "source": "Long 7.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "decomposition",
+       "breaking"
+      ],
+      [
+       "break",
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct description of decomposition is essential to answering the question.",
+     "description": "Define decomposition.",
+     "how": "Explain that it means breaking a problem into smaller parts or sub-problems."
+    },
+    {
+     "accept": [
+      [
+       "smaller",
+       "manageable"
+      ],
+      [
+       "sub-problems"
+      ]
+     ],
+     "marks": 2,
+     "why": "The section specifically describes the parts as smaller and more manageable sub-problems.",
+     "description": "Describe the resulting parts.",
+     "how": "State that the parts are smaller, manageable sub-problems."
+    },
+    {
+     "accept": [
+      [
+       "easier",
+       "solve"
+      ],
+      [
+       "manageable",
+       "plan"
+      ]
+     ],
+     "marks": 2,
+     "why": "Explaining why decomposition helps shows its practical importance in problem-solving.",
+     "description": "Explain why decomposition is useful.",
+     "how": "Explain that smaller parts are easier to handle, solve, or plan."
+    },
+    {
+     "accept": [
+      [
+       "layout",
+       "content",
+       "functionality"
+      ],
+      [
+       "website",
+       "layout",
+       "content"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example demonstrates how a large task can be divided into manageable tasks.",
+     "description": "Give an example and state the final answer.",
+     "how": "Use the website example by naming tasks such as layout, content, and functionality; conclude with the definition."
+    }
+   ],
+   "modelAnswer": [
+    "Decomposition means breaking a problem into smaller, more manageable sub-problems.",
+    "It is important because each smaller part is easier to understand, plan, and solve than the whole problem at once.",
+    "For example, when designing a website, the work can be divided into designing the layout, creating content, and coding the functionality.",
+    "These smaller tasks help organise the work and make the larger problem more manageable.",
+    "Final answer: Decomposition is breaking a problem into smaller, manageable sub-problems so that it is easier to plan and solve."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section may be tested with short questions asking for the meaning or importance of problem understanding or simplification.",
+   "A long question may ask you to explain decomposition and why it is useful; give the definition, explain its benefit, and include a relevant example.",
+   "For a question about understanding a problem, mention requirements, users or constraints, and objectives rather than jumping straight to coding.",
+   "For full marks, use the section's key terms: requirements, objectives, manageable sub-problems, efficient solution, and detailed plan or algorithm."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what you need to understand before choosing a solution.",
+     "Include how understanding helps with clarity, goals, efficiency, and mistakes."
+    ],
+    "accept": [
+     [
+      "clarifies",
+      "goals",
+      "efficient"
+     ],
+     [
+      "requirements",
+      "goals",
+      "mistakes"
+     ],
+     [
+      "clarity",
+      "focus",
+      "mistakes"
+     ]
+    ],
+    "question": "Q7.6. How does problem understanding help in computational thinking?",
+    "solution": [
+     "Understanding the problem gives clarity about what needs to be solved and helps focus on relevant aspects.",
+     "It helps define clear and achievable goals.",
+     "It supports efficient solutions and helps avoid mistakes caused by misunderstanding.",
+     "Final answer: Problem understanding clarifies the problem, helps set goals, supports efficient solutions, and prevents mistakes."
+    ],
+    "answer": "It clarifies what needs to be solved, helps define goals, supports efficient solutions, and helps avoid mistakes."
+   },
+   {
+    "hints": [
+     "Start by stating what decomposition does.",
+     "Explain why smaller parts are useful, then give the website example from the section."
+    ],
+    "accept": [
+     [
+      "smaller",
+      "manageable",
+      "sub-problems",
+      "easier"
+     ],
+     [
+      "break",
+      "problem",
+      "smaller",
+      "solve"
+     ]
+    ],
+    "question": "Q7.4. Discuss the concept of decomposition in computational thinking. Why is it important?",
+    "solution": [
+     "Decomposition means breaking a problem into smaller, more manageable sub-problems.",
+     "Each smaller part is easier to understand, plan, and solve than the whole problem at once.",
+     "For example, when designing a website, the work can be divided into designing the layout, creating content, and coding the functionality.",
+     "Final answer: Decomposition breaks a problem into smaller, manageable sub-problems so that it is easier to plan and solve."
+    ],
+    "answer": "Decomposition breaks a problem into smaller, manageable sub-problems, making it easier to plan and solve."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Listing the needed features makes clear what the website must provide.",
+     "text": "Identify Requirements: What features does the website need? For example, pages for news, events, class schedules, and contact information."
+    },
+    {
+     "why": "Knowing the audience helps you plan an interface that works for the people who will use it.",
+     "text": "User Needs: Who will use the website? Students, teachers, parents? Understanding your audience helps in designing user-friendly interfaces."
+    },
+    {
+     "why": "Checking available tools and resources helps you know what is technically possible.",
+     "text": "Technical Constraints: What resources and tools are available? Do you have access to a web server and the necessary software?"
+    }
+   ],
+   "question": "Building a School Website: Imagine you are asked to build a website for your school. Before jumping into coding, you need to understand the problem.",
+   "answer": "Before building the website, identify its requirements, users, and technical constraints."
+  },
+  "explain": [
+   {
+    "title": "Understand the problem first",
+    "body": "Understanding a problem involves identifying the core issue, defining the requirements, and setting the objectives. Before trying to solve a problem, find out what needs to be done and what the result should be. This helps you focus, set clear goals, choose efficient methods, and avoid mistakes."
+   },
+   {
+    "title": "Simplify a problem",
+    "body": "Simplifying a problem involves breaking it down into smaller, more manageable sub-problems. For example, designing a website can be split into designing the layout, creating content, and coding the functionality."
+   },
+   {
+    "title": "Select and design a solution",
+    "body": "Choosing the best solution involves evaluating different approaches and selecting the most efficient one. Designing the solution requires creating a detailed plan or algorithm."
+   }
+  ],
+  "mistakes": [
+   "Starting to code before identifying the problem's requirements and objectives.",
+   "Confusing problem simplification with adding more details; simplification means splitting the problem into manageable sub-problems.",
+   "Choosing a solution without evaluating whether it is efficient.",
+   "Giving an example without explaining how it connects to the principle."
+  ]
+ }
+}

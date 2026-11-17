@@ -1,0 +1,318 @@
+{
+ "note": {
+  "explanation": "The Network Layer transfers data between different networks and selects a path from source to destination. For example, it is like a GPS choosing a route from home to school. The Data Link Layer handles node-to-node transfer, while the Network Layer handles transfer between networks.",
+  "examples": [
+   "A GPS finding a route is an example of the Network Layer choosing a path.",
+   "IP addresses help the Network Layer route data between networks."
+  ],
+  "checkAnswer": "The Network Layer transfers data between different networks and determines the best path from source to destination.",
+  "keywords": [
+   "OSI model",
+   "Network Layer",
+   "IP address",
+   "routing",
+   "Data Link Layer",
+   "Transport Layer"
+  ],
+  "simple": "The Network Layer is like a GPS for data: it helps data travel between networks by choosing a path.",
+  "checkQuestion": "Which OSI layer determines the best path for data to travel between networks?",
+  "title": "What does the Network Layer do?",
+  "steps": [
+   "Identify the source and destination networks.",
+   "Use IP addresses to route the data.",
+   "Determine the best path from source to destination."
+  ],
+  "answer": "The Network Layer transfers data between different networks and determines the best path for data to travel from source to destination.",
+  "checkAccept": [
+   [
+    "Network Layer"
+   ],
+   [
+    "best path",
+    "IP"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Physical Layer",
+    "Data Link Layer",
+    "Network Layer",
+    "Transport Layer"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A computer sends data to a device on a different network. Which OSI layer is responsible for choosing the route?",
+   "rationales": [
+    "The Physical Layer sends bits through a physical medium, not choosing routes.",
+    "The Data Link Layer handles node-to-node transfer and error detection.",
+    "The Network Layer selects a path and transfers data between different networks.",
+    "The Transport Layer manages data flow and error checking between processes."
+   ]
+  },
+  {
+   "options": [
+    "Layer 1",
+    "Layer 3",
+    "Layer 5",
+    "Layer 7"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which OSI layer is at the bottom of the model?",
+   "rationales": [
+    "Layer 1, the Physical Layer, is the bottom layer.",
+    "Layer 3 is the Network Layer, above the Data Link Layer.",
+    "Layer 5 is the Session Layer, near the top half of the model.",
+    "Layer 7, the Application Layer, is at the top."
+   ]
+  },
+  {
+   "options": [
+    "Data Link Layer",
+    "Transport Layer",
+    "Session Layer",
+    "Presentation Layer"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which OSI layer establishes, maintains, and terminates connections between devices?",
+   "rationales": [
+    "The Data Link Layer handles node-to-node data transport and error detection.",
+    "The Transport Layer manages data transfer between processes, including flow control and error checking.",
+    "The Session Layer establishes, maintains, and terminates sessions between applications.",
+    "The Presentation Layer formats and encrypts data for the receiving system."
+   ]
+  },
+  {
+   "options": [
+    "Physical Layer",
+    "Network Layer",
+    "Presentation Layer",
+    "Application Layer"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which layer formats and encrypts data so that it is readable by the receiving system?",
+   "rationales": [
+    "The Physical Layer focuses on sending bits through a physical medium.",
+    "The Network Layer routes data between different networks.",
+    "The Presentation Layer formats and encrypts data for the receiving system.",
+    "The Application Layer provides network services directly to applications."
+   ]
+  },
+  {
+   "options": [
+    "Application Layer",
+    "Data Link Layer",
+    "Physical Layer",
+    "Transport Layer"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A user uses email or a web browser to access network services. Which OSI layer is closest to the user?",
+   "rationales": [
+    "The Application Layer is closest to the user and provides network services to applications.",
+    "The Data Link Layer handles node-to-node transfer and error detection.",
+    "The Physical Layer handles the physical connection and transmission of bits.",
+    "The Transport Layer manages data transfer between processes."
+   ]
+  },
+  {
+   "options": [
+    "A network cable",
+    "A router selecting the best path between networks",
+    "A session being ended",
+    "Data being formatted for the receiving system"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which task is performed by the Network Layer?",
+   "rationales": [
+    "A network cable is part of the physical connection handled by the Physical Layer.",
+    "Selecting a path between networks is the Network Layer's responsibility.",
+    "Ending a session is managed by the Session Layer.",
+    "Formatting data for the receiving system is handled by the Presentation Layer."
+   ]
+  },
+  {
+   "options": [
+    "Layer 2",
+    "Layer 4",
+    "Layer 6",
+    "Layer 7"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "At which OSI layer does the textbook say TCP is used to help ensure reliable data transfer?",
+   "rationales": [
+    "Layer 2 is the Data Link Layer, which handles node-to-node transfer.",
+    "Layer 4 is the Transport Layer, which uses protocols such as TCP for reliable data transfer.",
+    "Layer 6 is the Presentation Layer, which formats and encrypts data.",
+    "Layer 7 is the Application Layer, which provides services such as email and web browsing."
+   ]
+  },
+  {
+   "options": [
+    "The Data Link Layer",
+    "The Session Layer",
+    "The Transport Layer",
+    "The Application Layer"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which layer detects and corrects errors and handles node-to-node data transport?",
+   "rationales": [
+    "The Data Link Layer handles error detection and correction, as well as node-to-node data transport.",
+    "The Session Layer manages sessions between applications.",
+    "The Transport Layer manages data flow and error checking between processes.",
+    "The Application Layer provides network services directly to applications."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are the main functions of the Network Layer in the OSI model?",
+   "finalAnswer": "It transfers data between different networks and determines the best path for data to travel from the source to the destination.",
+   "marks": 2,
+   "source": "Short 6.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "transfers data",
+       "different networks"
+      ],
+      [
+       "data transfer",
+       "between networks"
+      ]
+     ],
+     "marks": 1,
+     "why": "This earns the mark for stating the Network Layer's role in moving data between networks.",
+     "description": "State that it transfers data between different networks.",
+     "how": "Mention data transfer between different networks."
+    },
+    {
+     "accept": [
+      [
+       "best path"
+      ],
+      [
+       "route",
+       "source",
+       "destination"
+      ]
+     ],
+     "marks": 1,
+     "why": "This earns the mark for explaining how the Network Layer directs data toward its destination.",
+     "description": "State that it determines the best path from source to destination.",
+     "how": "Mention the best path or routing from source to destination."
+    }
+   ],
+   "modelAnswer": [
+    "The Network Layer is responsible for data transfer between different networks.",
+    "It determines the best path for data to travel from the source to the destination."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for a particular OSI layer's function; name the layer and state its job clearly.",
+   "For a question about the Network Layer, include both data transfer between different networks and finding the best path from source to destination.",
+   "For an OSI-layer identification question, connect the function to the layer: physical connection—Physical; node-to-node transfer—Data Link; routing—Network; sessions—Session; formatting and encryption—Presentation."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the layer that handles data transfer between different networks.",
+     "It uses IP addresses and finds the best path from source to destination."
+    ],
+    "accept": [
+     [
+      "transfers data",
+      "different networks"
+     ],
+     [
+      "best path",
+      "source",
+      "destination"
+     ]
+    ],
+    "question": "Q6.3. What are the main functions of the Network Layer in the OSI model?",
+    "solution": [
+     "The Network Layer transfers data between different networks.",
+     "It determines the best path for data to travel from the source to the destination."
+    ],
+    "answer": "It transfers data between different networks and determines the best path from source to destination."
+   },
+   {
+    "hints": [
+     "The question asks about error detection and node-to-node data transfer.",
+     "Look for the layer immediately above the Physical Layer."
+    ],
+    "accept": [
+     [
+      "Data Link"
+     ],
+     [
+      "Layer 2"
+     ]
+    ],
+    "question": "Q6.3. Which layer of the OSI model is responsible for node-to-node data transfer and error detection? Options: (a) Physical Layer (b) Data Link Layer (c) Network Layer (d) Transport Layer",
+    "solution": [
+     "The Data Link Layer handles node-to-node data transport and error detection.",
+     "Therefore, the correct option is (b) Data Link Layer."
+    ],
+    "answer": "Data Link Layer"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The textbook describes the Network Layer as transferring data between different networks.",
+     "text": "The data must travel from the network at home to the network at school."
+    },
+    {
+     "why": "The Network Layer uses IP addresses to route data between networks.",
+     "text": "The Network Layer uses IP addresses to identify where the data must go."
+    },
+    {
+     "why": "Choosing the route is the Network Layer's path-finding function.",
+     "text": "Like a GPS, it determines the best path from the source to the destination."
+    }
+   ],
+   "question": "Using the textbook's GPS comparison, explain how the Network Layer helps data travel from a computer on one network to a computer on another network.",
+   "answer": "The Network Layer uses IP addresses to transfer data between networks and determines the best path from source to destination."
+  },
+  "explain": [
+   {
+    "title": "The OSI model has seven layers",
+    "body": "The Open Systems Interconnection (OSI) Model is a framework used to understand how different networking protocols interact. It has 7 layers, each with a specific function. From bottom to top, the layers are Physical, Data Link, Network, Transport, Session, Presentation, and Application."
+   },
+   {
+    "title": "Physical and Data Link layers",
+    "body": "The Physical Layer is liable for the actual connection between devices. The process of sending unprocessed data bits via a physical medium is the focus here. The Data Link Layer handles error detection and correction, as well as node-to-node data transport. It ensures error-free data transmission from the Physical Layer."
+   },
+   {
+    "title": "Network and Transport layers",
+    "body": "The Network Layer is responsible for data transfer between different networks. It determines the best path for data to travel from the source to the destination. The Transport Layer ensures that data is transferred from one process rerunning on source end system to a process souring on destination end system. It manages data flow control and error checking."
+   },
+   {
+    "title": "Session and Presentation layers",
+    "body": "The Session Layer manages sessions between applications. It establishes, maintains, and terminates connections between devices. The Presentation Layer translates data between the application layer and the network. It formats and encrypts data to ensure it is readable by the receiving system."
+   },
+   {
+    "title": "Application layer",
+    "body": "The Application Layer is the closest to the end user. It provides network services directly to applications, such as email, web browsing, and file transfer."
+   }
+  ],
+  "mistakes": [
+   "Mixing up the Network Layer, which routes data between networks, and the Data Link Layer, which handles node-to-node transfer.",
+   "Writing only that the Network Layer transfers data, but forgetting to mention that it determines the best path.",
+   "Reversing the order of the layers; Layer 1 is Physical and Layer 7 is Application.",
+   "Saying that the Transport Layer selects the route; route selection belongs to the Network Layer."
+  ]
+ }
+}

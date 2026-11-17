@@ -1,0 +1,182 @@
+{
+ "items": [
+  {
+   "id": "0",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "exchange",
+       "sender",
+       "receiver",
+       "medium"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for defining data communication as an exchange between communicating parties through a medium.",
+     "description": "Defines data communication.",
+     "how": "Look for exchange of data between a sender and receiver through a communication medium."
+    },
+    {
+     "accept": [
+      [
+       "sender",
+       "receiver",
+       "message",
+       "protocol",
+       "medium"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying all five key components.",
+     "description": "Lists the key components.",
+     "how": "Check that the answer names the sender, receiver, message, protocol, and medium."
+    }
+   ],
+   "modelAnswer": [
+    "Data communication involves the exchange of data between a sender and a receiver through a communication medium. Key components include the sender, receiver, message, protocol, and medium."
+   ]
+  },
+  {
+   "id": "1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "router",
+       "interconnect",
+       "networks"
+      ],
+      [
+       "router",
+       "devices",
+       "connect"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for describing the router's role in connecting networks or devices to it.",
+     "description": "Identifies what a router connects.",
+     "how": "Look for a router interconnecting networks, or allowing devices to connect to it."
+    },
+    {
+     "accept": [
+      [
+       "directs",
+       "data packets",
+       "different networks"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for explaining that the router directs packets between networks.",
+     "description": "Explains how a router handles data.",
+     "how": "Check for data packets being directed between different networks."
+    }
+   ],
+   "modelAnswer": [
+    "A router is a networking device that interconnects networks or allows devices to connect to it. It directs data packets between different networks."
+   ]
+  },
+  {
+   "id": "2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "data transfer",
+       "different networks"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying inter-network data transfer as a Network Layer function.",
+     "description": "States the Network Layer's data-transfer function.",
+     "how": "Look for data transfer between different networks."
+    },
+    {
+     "accept": [
+      [
+       "best path",
+       "source",
+       "destination",
+       "ip addresses"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for explaining path selection and IP-based routing.",
+     "description": "States how the Network Layer routes data.",
+     "how": "Check for the best path from source to destination and the use of IP addresses."
+    }
+   ],
+   "modelAnswer": [
+    "The Network Layer is responsible for data transfer between different networks. It determines the best path for data to travel from the source to the destination. The Network Layer uses IP addresses to route data between networks!"
+   ]
+  },
+  {
+   "id": "3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "automatically",
+       "assigns",
+       "ip addresses"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for stating that DHCP assigns IP addresses automatically.",
+     "description": "Identifies DHCP's automatic address assignment.",
+     "how": "Look for automatic assignment of IP addresses."
+    },
+    {
+     "accept": [
+      [
+       "devices",
+       "network",
+       "simplifying",
+       "management"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying the devices receiving addresses and the management benefit.",
+     "description": "States the scope and purpose of DHCP.",
+     "how": "Check that addresses are assigned to devices on a network and that this simplifies network management."
+    }
+   ],
+   "modelAnswer": [
+    "DHCP automatically assigns IP addresses to devices on a network, simplifying network management."
+   ]
+  },
+  {
+   "id": "4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "tcp",
+       "reliable"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying TCP as reliable.",
+     "description": "States TCP's reliability.",
+     "how": "Look for TCP and reliable data transfer."
+    },
+    {
+     "accept": [
+      [
+       "udp",
+       "faster",
+       "less reliable"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying UDP as faster but less reliable.",
+     "description": "States UDP's transfer characteristics.",
+     "how": "Check for UDP being faster and less reliable."
+    }
+   ],
+   "modelAnswer": [
+    "Transmission Control Protocol (TCP): Ensures reliable data transfer. User Datagram Protocol (UDP ): Provides faster, but less reliable, data transfer."
+   ]
+  }
+ ]
+}

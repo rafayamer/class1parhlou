@@ -1,0 +1,1151 @@
+{
+ "note": {
+  "explanation": "Troubleshooting means finding what is wrong, checking possible causes, fixing the issue, and confirming that the system works again. Work carefully and record what you did.",
+  "examples": [
+   "If an application freezes, open Task Manager with Ctrl + Alt + Delete, select the unresponsive application, and click “End Task.”",
+   "If a computer is overheating, improve its airflow and clean dust from its vents and fans."
+  ],
+  "checkAnswer": "Identify the problem first, then decide what may be causing it and test that idea.",
+  "keywords": [
+   "troubleshooting",
+   "software",
+   "hardware",
+   "RAM",
+   "backup",
+   "security"
+  ],
+  "simple": "Find the problem, check its cause, fix it, and make sure the computer works properly.",
+  "checkQuestion": "What should you do after implementing a solution?",
+  "title": "A careful way to troubleshoot",
+  "steps": [
+   "Identify and define the problem.",
+   "Establish a theory of probable cause.",
+   "Test the theory.",
+   "Establish a plan of action.",
+   "Implement the solution.",
+   "Verify full system functionality.",
+   "Document findings, actions, and outcomes."
+  ],
+  "answer": "Troubleshooting is a systematic way to identify and resolve problems, then check and record the results.",
+  "checkAccept": [
+   [
+    "verify full system functionality"
+   ],
+   [
+    "check the system"
+   ],
+   [
+    "make sure the system works"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Click End Task in Task Manager.",
+    "Reinstall the application immediately.",
+    "Hold the computer’s power button as the first step.",
+    "Delete the application’s files."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "An application has stopped responding. Which action does the section recommend trying first?",
+   "rationales": [
+    "Correct: Open Task Manager, select the unresponsive application, and click End Task.",
+    "Incorrect: Reinstalling is a possible later step if the problem persists, not the first recommended action.",
+    "Incorrect: A forced shutdown is a last resort and may cause data loss.",
+    "Incorrect: Deleting application files is not the recommended way to handle a freeze."
+   ]
+  },
+  {
+   "options": [
+    "Leave the device plugged in and wait.",
+    "Check the connection, unplug and reconnect it, and consider updating its driver.",
+    "Replace the computer’s hard drive.",
+    "Disable all system updates."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A connected keyboard is not responding. Which troubleshooting sequence best follows the section?",
+   "rationales": [
+    "Incorrect: Waiting alone does not check the likely connection or software causes.",
+    "Correct: Check that the connection is secure, reconnect the device, and update its driver if needed.",
+    "Incorrect: A hard drive replacement is unrelated to a peripheral connection problem.",
+    "Incorrect: Disabling updates does not address an unresponsive keyboard."
+   ]
+  },
+  {
+   "options": [
+    "A plan to replace the battery.",
+    "A laptop does not turn on when the power button is pressed.",
+    "A record that a battery was replaced.",
+    "Testing a replacement power cord."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which action is an example of identifying a problem?",
+   "rationales": [
+    "Incorrect: This is a plan of action, not identifying the issue.",
+    "Correct: Noticing and defining the failure to turn on identifies the problem.",
+    "Incorrect: This documents an action that has already happened.",
+    "Incorrect: This tests a possible cause."
+   ]
+  },
+  {
+   "options": [
+    "Clicking Task Manager’s End Task option.",
+    "Using Ctrl + Alt + Delete to open Task Manager.",
+    "Holding the power button to force shutdown.",
+    "Updating an application."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which action should generally be used only as a last resort because it can cause data loss?",
+   "rationales": [
+    "Incorrect: Ending an unresponsive application through Task Manager is a recommended software fix.",
+    "Incorrect: This opens Task Manager and is part of the recommended response to a frozen application.",
+    "Correct: A forced shutdown can cause data loss if programs are not properly closed.",
+    "Incorrect: Updating software is a routine maintenance step."
+   ]
+  },
+  {
+   "options": [
+    "Frequent crashes and poor performance.",
+    "A loose cable and no display.",
+    "Clicking noises, slow performance, and corrupted files.",
+    "A missing keyboard driver only."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which group of symptoms is associated with possible RAM failure?",
+   "rationales": [
+    "Correct: Frequent crashes, BSODs, poor performance, failure to boot, or random restarts can indicate RAM issues.",
+    "Incorrect: A loose cable or display problem does not specifically identify RAM failure.",
+    "Incorrect: Clicking noises and corrupted files are listed as possible hard drive symptoms.",
+    "Incorrect: A missing keyboard driver is a peripheral software issue, not a RAM symptom."
+   ]
+  },
+  {
+   "options": [
+    "SMART status checks or CrystalDiskInfo.",
+    "Windows Memory Diagnostic only.",
+    "Cable ties and labels.",
+    "Task Manager’s End Task command."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tools can help monitor hard drive health?",
+   "rationales": [
+    "Correct: The section names SMART status checks and CrystalDiskInfo for hard drive health.",
+    "Incorrect: Windows Memory Diagnostic checks RAM, not hard drive health.",
+    "Incorrect: Cable ties and labels help organize cables.",
+    "Incorrect: End Task closes an unresponsive application."
+   ]
+  },
+  {
+   "options": [
+    "Store files only on the computer’s internal drive.",
+    "Use an external drive or USB flash drive, or use cloud storage.",
+    "Delete all files after each use.",
+    "Keep the computer running all the time."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which choice gives two backup methods described in the section?",
+   "rationales": [
+    "Incorrect: Keeping files only on the internal drive does not create a separate backup.",
+    "Correct: External storage and cloud services are both described backup methods.",
+    "Incorrect: Deleting files is not a backup method and may cause data loss.",
+    "Incorrect: Leaving a computer on does not make a backup."
+   ]
+  },
+  {
+   "options": [
+    "Use a mixture of upper- and lower-case letters, numbers, and special characters.",
+    "Use only a short word that is easy to remember.",
+    "Use the same password everywhere and never change it.",
+    "Write the password in a public place."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is the best practice for creating a strong password according to the section?",
+   "rationales": [
+    "Correct: The section recommends combining upper- and lower-case letters, numbers, and special characters.",
+    "Incorrect: A short, simple word is easier to guess.",
+    "Incorrect: The section advises changing passwords regularly and managing them carefully.",
+    "Incorrect: A public password note can expose the account to unauthorized access."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "finalAnswer": "The first step is Identify Problem. It is important because the issue must be recognized and defined before its cause can be investigated.",
+   "marks": 2,
+   "source": "Short 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "identify problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "The first step must be named correctly.",
+     "description": "State the first troubleshooting step.",
+     "how": "Write “Identify Problem.”"
+    },
+    {
+     "accept": [
+      [
+       "recognize",
+       "define"
+      ],
+      [
+       "issue",
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason shows why the process begins with this step.",
+     "description": "Explain why identifying the problem matters.",
+     "how": "Say that the issue must be recognized and defined before investigating causes."
+    }
+   ],
+   "modelAnswer": [
+    "The first step is Identify Problem.",
+    "It is important because the issue must be recognized and defined before its cause can be investigated."
+   ]
+  },
+  {
+   "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "finalAnswer": "The next step is Establish a Theory of Probable Cause. It helps by suggesting what might be causing the problem so that the cause can be tested.",
+   "marks": 2,
+   "source": "Short 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "establish a theory of probable cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "The next step must be identified in the correct order.",
+     "description": "Name the step after identifying the problem.",
+     "how": "State “Establish a Theory of Probable Cause.”"
+    },
+    {
+     "accept": [
+      [
+       "what might be causing"
+      ],
+      [
+       "probable cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "The explanation shows how the theory guides the investigation.",
+     "description": "Explain the purpose of the theory.",
+     "how": "Say that it suggests a possible cause that can then be tested."
+    }
+   ],
+   "modelAnswer": [
+    "The next step is Establish a Theory of Probable Cause.",
+    "It suggests what might be causing the problem so that the cause can be tested."
+   ]
+  },
+  {
+   "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "finalAnswer": "Testing a theory checks whether the suspected cause is correct. For example, if a faulty power cord is suspected, test the computer with a new power cord.",
+   "marks": 2,
+   "source": "Short 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "checks whether"
+      ],
+      [
+       "test the theory"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing must be explained as checking the suspected cause.",
+     "description": "Explain why a theory is tested.",
+     "how": "Say that testing determines whether the suspected cause is correct."
+    },
+    {
+     "accept": [
+      [
+       "power cord",
+       "new power cord"
+      ],
+      [
+       "example",
+       "test"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example makes the troubleshooting step clear.",
+     "description": "Give a relevant example.",
+     "how": "For example, test a computer with a new power cord if the old one may be faulty."
+    }
+   ],
+   "modelAnswer": [
+    "Testing a theory checks whether the suspected cause is correct.",
+    "For example, if a faulty power cord is suspected, test the computer with a new power cord."
+   ]
+  },
+  {
+   "text": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "finalAnswer": "Implement the Solution means applying the fix according to the plan of action.",
+   "marks": 2,
+   "source": "Short 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "apply"
+      ],
+      [
+       "implement"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must describe carrying out the planned fix.",
+     "description": "State what implementation involves.",
+     "how": "Say that the chosen solution is applied."
+    },
+    {
+     "accept": [
+      [
+       "plan of action"
+      ],
+      [
+       "planned fix"
+      ]
+     ],
+     "marks": 1,
+     "why": "The fix should be linked to the preceding plan.",
+     "description": "Connect implementation to the plan.",
+     "how": "Explain that the fix is applied according to the plan of action."
+    }
+   ],
+   "modelAnswer": [
+    "Implement the Solution means applying the fix according to the plan of action."
+   ]
+  },
+  {
+   "text": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "finalAnswer": "Verification makes sure the problem is fully resolved and the system works properly.",
+   "marks": 2,
+   "source": "Short 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "problem",
+       "resolved"
+      ],
+      [
+       "fully resolved"
+      ]
+     ],
+     "marks": 1,
+     "why": "The student must state that the original issue has been checked.",
+     "description": "State what verification checks about the problem.",
+     "how": "Say that it confirms the problem is resolved."
+    },
+    {
+     "accept": [
+      [
+       "system",
+       "works properly"
+      ],
+      [
+       "full system functionality"
+      ]
+     ],
+     "marks": 1,
+     "why": "The check must include the system’s overall operation.",
+     "description": "State what verification checks about the system.",
+     "how": "Say that it confirms the system functions properly."
+    }
+   ],
+   "modelAnswer": [
+    "Verification makes sure the problem is fully resolved and the system works properly."
+   ]
+  },
+  {
+   "text": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "finalAnswer": "Troubleshooting identifies and resolves problems quickly, helping systems operate smoothly, reducing downtime and system damage, and protecting data and security when issues are addressed.",
+   "marks": 8,
+   "source": "Long 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "identify",
+       "resolve"
+      ],
+      [
+       "identify and resolve"
+      ]
+     ],
+     "marks": 2,
+     "why": "Identifying and resolving issues is the basic purpose of troubleshooting.",
+     "description": "Explain troubleshooting’s main purpose.",
+     "how": "Describe finding problems and applying solutions."
+    },
+    {
+     "accept": [
+      [
+       "smoothly"
+      ],
+      [
+       "efficiently"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must connect troubleshooting with reliable operation.",
+     "description": "Explain how troubleshooting supports system operation.",
+     "how": "State that it keeps systems running smoothly or efficiently."
+    },
+    {
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "lost productivity"
+      ]
+     ],
+     "marks": 2,
+     "why": "Reducing interruptions is an important benefit.",
+     "description": "Explain how troubleshooting limits disruption.",
+     "how": "Mention preventing or reducing downtime and lost productivity."
+    },
+    {
+     "accept": [
+      [
+       "data"
+      ],
+      [
+       "security"
+      ],
+      [
+       "system damage"
+      ]
+     ],
+     "marks": 2,
+     "why": "Computing systems also need protection from damage, data loss, and threats.",
+     "description": "Mention another important benefit.",
+     "how": "Give a relevant benefit such as protecting data, limiting damage, or improving security."
+    }
+   ],
+   "modelAnswer": [
+    "Troubleshooting identifies and resolves problems in a system.",
+    "Resolving problems quickly helps computers and other systems operate smoothly and efficiently.",
+    "It can reduce downtime and lost productivity by restoring normal operation sooner.",
+    "It can also prevent system damage and help protect data and security when issues are addressed."
+   ]
+  },
+  {
+   "text": "Explain the systematic process of troubleshooting. Describe each step in detail.",
+   "finalAnswer": "The steps are Identify Problem; Establish a Theory of Probable Cause; Test the Theory; Establish a Plan of Action; Implement the Solution; Verify Full System Functionality; and Document Findings, Actions, and Outcomes.",
+   "marks": 8,
+   "source": "Long 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "identify problem"
+      ],
+      [
+       "recognize and define"
+      ]
+     ],
+     "marks": 2,
+     "why": "The process begins by recognizing and defining the issue.",
+     "description": "Describe the first step.",
+     "how": "Identify and define the problem."
+    },
+    {
+     "accept": [
+      [
+       "theory of probable cause"
+      ],
+      [
+       "test the theory"
+      ]
+     ],
+     "marks": 2,
+     "why": "Possible causes must be proposed and checked before choosing a fix.",
+     "description": "Describe the cause-investigation steps.",
+     "how": "Establish a probable cause and test whether it is correct."
+    },
+    {
+     "accept": [
+      [
+       "plan of action"
+      ],
+      [
+       "implement the solution"
+      ]
+     ],
+     "marks": 2,
+     "why": "The solution should be planned and then applied.",
+     "description": "Describe planning and implementation.",
+     "how": "Make a plan to resolve the problem and carry it out."
+    },
+    {
+     "accept": [
+      [
+       "verify full system functionality"
+      ],
+      [
+       "document findings",
+       "actions",
+       "outcomes"
+      ]
+     ],
+     "marks": 2,
+     "why": "The last steps confirm success and preserve a record.",
+     "description": "Describe verification and documentation.",
+     "how": "Check that the system works and record the findings, actions, and outcomes."
+    }
+   ],
+   "modelAnswer": [
+    "Identify Problem: Recognize and define the issue.",
+    "Establish a Theory of Probable Cause: Develop ideas about what might be causing the problem.",
+    "Test the Theory: Check whether the suspected cause is correct.",
+    "Establish a Plan of Action: Create a plan to fix the issue.",
+    "Implement the Solution: Apply the fix according to the plan.",
+    "Verify Full System Functionality: Ensure the problem is fully resolved and the system works properly.",
+    "Document Findings, Actions, and Outcomes: Record the troubleshooting process and results for future reference."
+   ]
+  },
+  {
+   "text": "Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "finalAnswer": "Identify the problem by confirming that the printer does not print. Establish possible causes such as a loose connection or a software issue, then test the likely cause by checking the connection or using the built-in troubleshooting guide.",
+   "marks": 8,
+   "source": "Long 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "printer",
+       "not printing"
+      ],
+      [
+       "printer does not print"
+      ]
+     ],
+     "marks": 2,
+     "why": "The case must start by clearly defining the observed problem.",
+     "description": "Identify the printer problem.",
+     "how": "State that the printer is not printing."
+    },
+    {
+     "accept": [
+      [
+       "probable cause"
+      ],
+      [
+       "possible cause"
+      ]
+     ],
+     "marks": 2,
+     "why": "A theory must suggest a possible reason for the failure.",
+     "description": "Establish a theory.",
+     "how": "Suggest a likely cause, such as a loose connection or software issue."
+    },
+    {
+     "accept": [
+      [
+       "check the connection"
+      ],
+      [
+       "connection"
+      ]
+     ],
+     "marks": 2,
+     "why": "A possible hardware connection cause should be investigated.",
+     "description": "Give a relevant test of a cause.",
+     "how": "Check that the printer connection is secure."
+    },
+    {
+     "accept": [
+      [
+       "built-in troubleshooting guide"
+      ],
+      [
+       "test"
+      ],
+      [
+       "check"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing the theory helps determine whether it explains the problem.",
+     "description": "Explain how to test a possible cause.",
+     "how": "Use the built-in guide or check the suspected cause and observe whether printing works."
+    }
+   ],
+   "modelAnswer": [
+    "Identify the problem: The printer is not printing.",
+    "Establish a theory of probable cause: A possible cause is a loose connection or a software issue.",
+    "Test the theory: Check that the printer connection is secure, or use the built-in troubleshooting guide.",
+    "If the test identifies the cause, use the result to plan the appropriate fix."
+   ]
+  },
+  {
+   "text": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "finalAnswer": "Documentation records the problem, the steps taken, and their results. It helps people remember what worked and what did not, supports future troubleshooting, and gives others useful information.",
+   "marks": 8,
+   "source": "Long 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "record"
+      ],
+      [
+       "document"
+      ]
+     ],
+     "marks": 2,
+     "why": "Documentation must be described as keeping a record.",
+     "description": "State what documentation does.",
+     "how": "Say that it records the findings, actions, and outcomes."
+    },
+    {
+     "accept": [
+      [
+       "what worked",
+       "what did not"
+      ],
+      [
+       "worked",
+       "did not"
+      ]
+     ],
+     "marks": 2,
+     "why": "Recording results helps avoid repeating ineffective steps.",
+     "description": "Explain how records help future troubleshooting.",
+     "how": "Mention remembering which steps worked or did not work."
+    },
+    {
+     "accept": [
+      [
+       "future reference"
+      ],
+      [
+       "future troubleshooting"
+      ]
+     ],
+     "marks": 2,
+     "why": "A record is valuable when the issue recurs or a similar problem appears.",
+     "description": "Explain its future value.",
+     "how": "Say that the record makes future problems easier to solve."
+    },
+    {
+     "accept": [
+      [
+       "others"
+      ],
+      [
+       "share"
+      ],
+      [
+       "information"
+      ]
+     ],
+     "marks": 2,
+     "why": "Clear records can help another person continue the troubleshooting.",
+     "description": "Explain how documentation supports communication.",
+     "how": "Mention that recorded steps and results can inform others."
+    }
+   ],
+   "modelAnswer": [
+    "Documentation records the findings, actions, and outcomes of troubleshooting.",
+    "It helps people remember what worked and what did not work.",
+    "This makes future troubleshooting easier, especially if the same issue occurs again.",
+    "The record can also provide useful information to someone else helping to solve the problem."
+   ]
+  },
+  {
+   "text": "Describe basic software-related troubleshooting strategies, including handling application freezing and unresponsive peripherals.",
+   "finalAnswer": "For a frozen application, press Ctrl + Alt + Delete, open Task Manager, select the application, and click End Task; if the problem persists, consider reinstalling it or checking for updates. For an unresponsive peripheral, check its connection, unplug and reconnect it, and consider updating its driver.",
+   "marks": 8,
+   "source": "Long 4.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ctrl + alt + delete"
+      ],
+      [
+       "task manager"
+      ]
+     ],
+     "marks": 2,
+     "why": "The recommended method for a frozen application begins with Task Manager.",
+     "description": "Name the first response to application freezing.",
+     "how": "Use Ctrl + Alt + Delete to open Task Manager."
+    },
+    {
+     "accept": [
+      [
+       "end task"
+      ],
+      [
+       "unresponsive application"
+      ]
+     ],
+     "marks": 2,
+     "why": "The frozen program must be selected and closed appropriately.",
+     "description": "Explain how to close the frozen application.",
+     "how": "Select it and click End Task."
+    },
+    {
+     "accept": [
+      [
+       "check the connection"
+      ],
+      [
+       "connections"
+      ]
+     ],
+     "marks": 2,
+     "why": "A peripheral may stop responding because of a loose connection.",
+     "description": "Give the first peripheral check.",
+     "how": "Check that its connections are secure."
+    },
+    {
+     "accept": [
+      [
+       "unplug",
+       "plugging"
+      ],
+      [
+       "update",
+       "driver"
+      ]
+     ],
+     "marks": 2,
+     "why": "Reconnecting or updating the driver may resolve a peripheral software issue.",
+     "description": "Give further peripheral troubleshooting actions.",
+     "how": "Unplug and reconnect it, or update its driver."
+    }
+   ],
+   "modelAnswer": [
+    "For an application freezing, press Ctrl + Alt + Delete to open Task Manager.",
+    "Find the unresponsive application, select it, and click “End Task.”",
+    "If the problem persists, consider reinstalling the application or checking for updates.",
+    "For an unresponsive peripheral, first check that its connections are secure.",
+    "If it is still unresponsive, unplug it and then plug it back in; updating its driver can also help."
+   ]
+  },
+  {
+   "text": "Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+   "finalAnswer": "RAM failure may cause frequent crashes, BSODs, poor performance, failure to boot, or random restarts; use Windows Memory Diagnostic or MemTest86. Hard drive failure may cause clicking noises, slow performance, crashes, corrupted files, failure to boot, or disk error messages; use SMART checks or CrystalDiskInfo.",
+   "marks": 8,
+   "source": "Long 4.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "frequent system crashes"
+      ],
+      [
+       "bsod"
+      ],
+      [
+       "poor performance"
+      ]
+     ],
+     "marks": 2,
+     "why": "Recognizing typical RAM symptoms helps identify a possible failure.",
+     "description": "Give signs of RAM failure.",
+     "how": "Mention crashes, BSODs, poor performance, failure to boot, or random restarts."
+    },
+    {
+     "accept": [
+      [
+       "windows memory diagnostic"
+      ],
+      [
+       "memtest86"
+      ]
+     ],
+     "marks": 2,
+     "why": "A suitable diagnostic tool can check suspected RAM issues.",
+     "description": "Name a RAM diagnostic tool.",
+     "how": "Give Windows Memory Diagnostic or MemTest86."
+    },
+    {
+     "accept": [
+      [
+       "clicking"
+      ],
+      [
+       "corrupted files"
+      ],
+      [
+       "slow performance"
+      ]
+     ],
+     "marks": 2,
+     "why": "These are characteristic signs listed for hard drive failure.",
+     "description": "Give signs of hard drive failure.",
+     "how": "Mention clicking noises, slow performance, crashes, corrupted files, or disk errors."
+    },
+    {
+     "accept": [
+      [
+       "smart"
+      ],
+      [
+       "crystaldiskinfo"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant health check can help diagnose a drive.",
+     "description": "Name a hard drive diagnostic method.",
+     "how": "Give SMART status checks or CrystalDiskInfo."
+    }
+   ],
+   "modelAnswer": [
+    "RAM failure may cause frequent system crashes, Blue Screens Of Death (BSOD), and poor performance.",
+    "A computer with RAM issues may also fail to boot or restart randomly.",
+    "Use Windows Memory Diagnostic or MemTest86 to check for RAM issues.",
+    "Hard drive failure may cause strange noises such as clicking, slow performance, frequent crashes, or corrupted files.",
+    "The computer may also fail to boot or display disk error messages.",
+    "Use SMART status checks or CrystalDiskInfo to monitor hard drive health."
+   ]
+  },
+  {
+   "text": "Elaborate on the importance of maintaining software and addressing security threats.",
+   "finalAnswer": "Installing software updates and patches protects against vulnerabilities and improves performance. Address threats by using updated antivirus software to scan for malware, applying operating system updates, and creating and managing strong passwords.",
+   "marks": 8,
+   "source": "Long 4.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "updates",
+       "patches"
+      ],
+      [
+       "installing updates"
+      ]
+     ],
+     "marks": 2,
+     "why": "Keeping software current is a core maintenance action.",
+     "description": "Describe software maintenance.",
+     "how": "Mention regularly installing software updates and patches."
+    },
+    {
+     "accept": [
+      [
+       "vulnerabilities"
+      ],
+      [
+       "security threats"
+      ]
+     ],
+     "marks": 2,
+     "why": "Updates help protect against security weaknesses and threats.",
+     "description": "Explain a security benefit of updates.",
+     "how": "Say that updates protect against vulnerabilities or fix bugs."
+    },
+    {
+     "accept": [
+      [
+       "antivirus"
+      ],
+      [
+       "scan",
+       "malware"
+      ]
+     ],
+     "marks": 2,
+     "why": "Malware must be detected and removed using appropriate protection.",
+     "description": "Describe a way to address malware.",
+     "how": "Use updated antivirus software to scan for and remove malware."
+    },
+    {
+     "accept": [
+      [
+       "operating system updates"
+      ],
+      [
+       "strong passwords"
+      ]
+     ],
+     "marks": 2,
+     "why": "OS updates and strong passwords help protect systems and accounts.",
+     "description": "Give additional security practices.",
+     "how": "Mention applying OS updates and using strong, managed passwords."
+    }
+   ],
+   "modelAnswer": [
+    "Regularly installing software updates and patches helps protect software against vulnerabilities and helps it perform optimally.",
+    "Updates can also fix bugs that cause crashes.",
+    "Use updated antivirus software to scan for and remove malware.",
+    "Apply operating system updates to protect against newly discovered security vulnerabilities.",
+    "Create strong passwords using upper- and lower-case letters, numbers, and special characters, and manage them carefully."
+   ]
+  },
+  {
+   "text": "Describe common methods for identifying and removing malware infections and applying operating system updates for security.",
+   "finalAnswer": "Use antivirus software with updated definitions to perform full system scans and remove detected malware. Install operating system updates to protect against newly discovered security vulnerabilities.",
+   "marks": 8,
+   "source": "Long 4.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "antivirus software"
+      ],
+      [
+       "antivirus"
+      ]
+     ],
+     "marks": 2,
+     "why": "Antivirus software is the recommended tool for scanning for malware.",
+     "description": "Name the tool used to identify malware.",
+     "how": "State that antivirus software is used."
+    },
+    {
+     "accept": [
+      [
+       "updated",
+       "definitions"
+      ],
+      [
+       "regularly update"
+      ]
+     ],
+     "marks": 2,
+     "why": "Current definitions help antivirus software identify threats.",
+     "description": "Explain how to keep malware detection useful.",
+     "how": "Say to update antivirus definitions regularly."
+    },
+    {
+     "accept": [
+      [
+       "full system scan"
+      ],
+      [
+       "scan"
+      ]
+     ],
+     "marks": 2,
+     "why": "Scanning is how infections are detected and addressed.",
+     "description": "Describe the scan and removal process.",
+     "how": "Perform a full system scan and remove detected malware."
+    },
+    {
+     "accept": [
+      [
+       "operating system updates"
+      ],
+      [
+       "security vulnerabilities"
+      ]
+     ],
+     "marks": 2,
+     "why": "OS updates protect against newly discovered security weaknesses.",
+     "description": "Explain the purpose of OS updates.",
+     "how": "Install operating system updates to address security vulnerabilities."
+    }
+   ],
+   "modelAnswer": [
+    "Use antivirus software to scan for and remove malware.",
+    "Regularly update the antivirus definitions and perform full system scans.",
+    "A full system scan can help detect and remove malware that slows down a computer or steals data.",
+    "Install operating system updates to protect the computer from newly discovered security vulnerabilities."
+   ]
+  },
+  {
+   "text": "Describe the different data backup methods, including using external storage devices and cloud solutions.",
+   "finalAnswer": "External hard drives and USB flash drives provide physical copies of important files that can be stored safely. Cloud services such as Google Drive, Dropbox, and OneDrive store backups online and allow files to be accessed from anywhere with an internet connection.",
+   "marks": 8,
+   "source": "Long 4.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "external hard drive"
+      ],
+      [
+       "usb flash drive"
+      ]
+     ],
+     "marks": 2,
+     "why": "External physical storage is one of the backup methods in the section.",
+     "description": "Name an external storage method.",
+     "how": "Give an external hard drive or USB flash drive."
+    },
+    {
+     "accept": [
+      [
+       "physical copy"
+      ],
+      [
+       "backup"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain what external storage provides.",
+     "description": "Explain the benefit of external storage.",
+     "how": "Say that it keeps a separate physical copy of important files."
+    },
+    {
+     "accept": [
+      [
+       "cloud storage"
+      ],
+      [
+       "google drive"
+      ],
+      [
+       "dropbox"
+      ],
+      [
+       "onedrive"
+      ]
+     ],
+     "marks": 2,
+     "why": "Cloud services are the other specified backup method.",
+     "description": "Name a cloud backup method.",
+     "how": "Give cloud storage or an example service."
+    },
+    {
+     "accept": [
+      [
+       "internet connection"
+      ],
+      [
+       "access your files",
+       "anywhere"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should explain a key benefit of cloud backups.",
+     "description": "Explain the benefit of cloud storage.",
+     "how": "Say that files can be accessed online from anywhere with an internet connection."
+    }
+   ],
+   "modelAnswer": [
+    "External hard drives or USB flash drives can be used to back up important files.",
+    "They provide a physical copy of data that can be accessed and stored safely.",
+    "Cloud storage services such as Google Drive, Dropbox, or OneDrive can back up data online.",
+    "Cloud storage allows files to be accessed from anywhere with an internet connection."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask for a troubleshooting step, why it matters, or a practical example; name the step and give a clear reason or example for full marks.",
+   "Long questions can ask you to describe all seven troubleshooting steps. Keep them in the correct order and explain what happens at each step.",
+   "For scenario questions, state the observed problem, suggest a probable cause, and explain how you would test it before choosing a fix.",
+   "For software and hardware questions, pair symptoms with the correct action or diagnostic tool, such as Task Manager for a frozen application or SMART checks for a hard drive.",
+   "In longer answers, include useful details such as antivirus scans, software updates, backups, and documenting results when the question asks about maintenance or security."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Name the very first troubleshooting step.",
+     "Explain that the issue has to be clearly recognized and defined before its cause can be checked."
+    ],
+    "accept": [
+     [
+      "identify problem",
+      "recognize"
+     ],
+     [
+      "identify problem",
+      "define"
+     ]
+    ],
+    "question": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+    "solution": [
+     "The first step is Identify Problem.",
+     "It is important because the issue must be recognized and defined before its cause can be investigated."
+    ],
+    "answer": "The first step is Identify Problem. It is important because the issue must be recognized and defined before its cause can be investigated."
+   },
+   {
+    "hints": [
+     "Think of the step that checks whether a suspected cause is correct.",
+     "For example, if a power cord may be faulty, try a new power cord and check whether the problem remains."
+    ],
+    "accept": [
+     [
+      "checks whether",
+      "suspected cause"
+     ],
+     [
+      "new power cord",
+      "test"
+     ]
+    ],
+    "question": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+    "solution": [
+     "Testing a theory checks whether the suspected cause is correct.",
+     "For example, if a faulty power cord is suspected, test the computer with a new power cord."
+    ],
+    "answer": "Testing a theory checks whether the suspected cause is correct. For example, test the computer with a new power cord if the old one may be faulty."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "Cable ties keep cables together so that they are less likely to become tangled.",
+     "text": "Use cable ties to bundle the cables together."
+    },
+    {
+     "why": "Keeping the cables arranged makes them easier to identify.",
+     "text": "Arrange the cables so it is easier to identify which cable goes to which device."
+    },
+    {
+     "why": "Organized cables help prevent tangles and make it easier to find and fix issues.",
+     "text": "Keep the cables neat and out of the way."
+    }
+   ],
+   "question": "In an office, using cable ties to bundle cables together can prevent them from getting tangled and make it easier to identify which cable goes to which device.",
+   "answer": "Bundle the cables with cable ties and arrange them neatly so they are easy to identify and less likely to get tangled."
+  },
+  "explain": [
+   {
+    "title": "Troubleshooting follows an order",
+    "body": "Start by identifying and defining the problem. Then suggest and test a probable cause, plan and apply a solution, check that the system works, and record what happened."
+   },
+   {
+    "title": "Handle software problems carefully",
+    "body": "For a frozen application, open Task Manager with Ctrl + Alt + Delete, select the unresponsive application, and click “End Task.” For an unresponsive peripheral, check its connection, unplug and reconnect it, and consider updating its driver."
+   },
+   {
+    "title": "Look for hardware clues",
+    "body": "RAM problems can cause crashes, BSODs, poor performance, failure to boot, or random restarts. A failing hard drive may make clicking noises or cause slow performance, crashes, corrupted files, or disk error messages."
+   },
+   {
+    "title": "Maintain security and data",
+    "body": "Install updates and patches, use updated antivirus software, and create strong passwords. Delete unneeded files or move large ones to free space, and back up important data to external storage or the cloud."
+   },
+   {
+    "title": "Use tools and keep a record",
+    "body": "Use appropriate diagnostic tools: Windows Memory Diagnostic or MemTest86 for RAM, and SMART status checks or CrystalDiskInfo for hard drives. Record troubleshooting steps and results so future problems are easier to solve."
+   }
+  ],
+  "mistakes": [
+   "Do not skip steps: after implementing the solution, verify full system functionality and document the outcome.",
+   "Do not use the power button to force shutdown as the first response; the section says to use it only as a last resort because unsaved data may be lost.",
+   "Do not confuse RAM and hard drive symptoms or diagnostic tools; for example, Windows Memory Diagnostic checks RAM, while SMART checks monitor hard drive health.",
+   "Do not treat backups, updates, or strong passwords as interchangeable: each addresses a different maintenance or security need."
+  ]
+ }
+}

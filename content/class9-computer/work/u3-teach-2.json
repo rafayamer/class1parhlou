@@ -1,0 +1,637 @@
+{
+ "note": {
+  "explanation": "A Boolean function takes one or more binary inputs and gives one binary output. Its inputs and output are only 0 or 1. AND, OR and NOT are used to build Boolean functions.",
+  "examples": [
+   "For F(A, B) = A · B, the output is 1 only when A = 1 and B = 1.",
+   "For P = ¬A, if A = 1 then P = 0."
+  ],
+  "checkAnswer": "For A = 1 and B = 0, A · B = 0 and A + B = 1.",
+  "keywords": [
+   "Boolean function",
+   "binary",
+   "AND",
+   "OR",
+   "NOT",
+   "truth table",
+   "logic gate"
+  ],
+  "simple": "A Boolean function is a rule that takes in 0s and 1s and gives back a 0 or 1.",
+  "checkQuestion": "If A = 0 and B = 1, what are A · B and A + B?",
+  "title": "Boolean functions and basic logic",
+  "steps": [
+   "Write the input values: A = 0 and B = 1.",
+   "For AND, the output is 1 only if both inputs are 1, so A · B = 0.",
+   "For OR, the output is 1 if at least one input is 1, so A + B = 1."
+  ],
+  "answer": "A Boolean function uses binary inputs and logic operations to produce a binary output.",
+  "checkAccept": [
+   [
+    "A·B=0",
+    "A+B=1"
+   ],
+   [
+    "0",
+    "1"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A · B is 1 when at least one input is 1.",
+    "A · B is 1 only when both inputs are 1.",
+    "A · B always gives the opposite of A.",
+    "A · B is 0 only when both inputs are 0."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes the AND operation?",
+   "rationales": [
+    "This describes the OR operation, not AND.",
+    "This is the rule for AND: both inputs must be 1 for the output to be 1.",
+    "This describes a NOT operation on A, not an AND operation.",
+    "For AND, the output is also 0 when just one input is 0."
+   ]
+  },
+  {
+   "options": [
+    "0",
+    "1",
+    "A",
+    "B"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "If A = 1 and B = 0, what is the value of A · B?",
+   "rationales": [
+    "The AND output is 0 because both inputs are not 1.",
+    "The AND output is 1 only when both inputs are 1.",
+    "A is an input variable, not the evaluated output.",
+    "B is an input variable, not the evaluated output."
+   ]
+  },
+  {
+   "options": [
+    "0",
+    "1",
+    "A",
+    "A̅"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the value of A + B when A = 0 and B = 1?",
+   "rationales": [
+    "OR is 0 only when both inputs are 0.",
+    "OR is 1 when at least one input is 1.",
+    "A is an input variable, not the evaluated output.",
+    "A̅ is the NOT of A, not the result of A + B."
+   ]
+  },
+  {
+   "options": [
+    "A",
+    "A̅",
+    "A · B",
+    "A + B"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which expression represents the NOT operation on A?",
+   "rationales": [
+    "A is the original input, not its opposite.",
+    "A̅ represents the opposite value of A.",
+    "A · B is the AND operation on two inputs.",
+    "A + B is the OR operation on two inputs."
+   ]
+  },
+  {
+   "options": [
+    "0",
+    "1",
+    "A",
+    "B"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A truth table shows that both inputs are 1. What is the output of an AND operation?",
+   "rationales": [
+    "The AND output is 0 if at least one input is 0.",
+    "When both inputs are 1, the AND output is 1.",
+    "A is an input, not the output value.",
+    "B is an input, not the output value."
+   ]
+  },
+  {
+   "options": [
+    "It outputs 1 only when both inputs are 1.",
+    "It outputs 1 when at least one input is 1.",
+    "It gives the opposite of its single input.",
+    "It outputs 1 only when exactly one input is 1."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes an OR gate?",
+   "rationales": [
+    "This describes an AND gate.",
+    "This describes an OR gate.",
+    "This describes a NOT gate.",
+    "This describes an XOR gate."
+   ]
+  },
+  {
+   "options": [
+    "A Boolean function can use only 0 and 1 as its input and output values.",
+    "A Boolean function must have exactly three inputs.",
+    "A Boolean function always gives an output of 1.",
+    "A Boolean function uses only the NOT operation."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about Boolean functions is correct?",
+   "rationales": [
+    "Boolean function inputs and outputs have the two values 0 and 1.",
+    "A Boolean function can have one or more inputs; it need not have exactly three.",
+    "Its output may be either 0 or 1, depending on the inputs and operations.",
+    "Boolean functions can be constructed using AND, OR and NOT."
+   ]
+  },
+  {
+   "options": [
+    "A gate that performs a Boolean operation in an electronic circuit",
+    "A table listing only decimal numbers",
+    "A device that stores written words",
+    "A type of binary input"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a logic gate?",
+   "rationales": [
+    "A logic gate is a physical electronic device that performs a Boolean operation.",
+    "A truth table lists input combinations and their outputs; this option does not describe a gate.",
+    "This is not the meaning of a logic gate in digital circuits.",
+    "A binary input is a value, not a physical gate."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Consider a Boolean function with two inputs, A and B. We can construct a function F that represents the AND operation:\nF ( A, B ) = A · B",
+   "finalAnswer": "F(A, B) = A · B; the output is 1 only when A = 1 and B = 1.",
+   "marks": 2,
+   "source": "Example 3.2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ],
+     "marks": 1,
+     "why": "The Boolean expression identifies the function being constructed.",
+     "description": "State the Boolean function.",
+     "how": "Write F(A, B) = A · B."
+    },
+    {
+     "accept": [
+      [
+       "1",
+       "A=1",
+       "B=1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The output condition shows the meaning of the AND function.",
+     "description": "Give the output condition.",
+     "how": "State that the output is 1 only when both inputs are 1."
+    }
+   ],
+   "modelAnswer": [
+    "F(A, B) = A · B",
+    "The output is 1 only when A = 1 and B = 1."
+   ]
+  },
+  {
+   "text": "Now, let us construct a more complex Boolean function with three inputs, A, B, and C:\n\nF (A, B, C) = A · B + A̅ · C",
+   "finalAnswer": "F(A, B, C) = A · B + A̅ · C; the output values for 000, 001, 010, 011, 100, 101, 110, 111 are 0, 1, 0, 1, 0, 0, 1, 1.",
+   "marks": 8,
+   "source": "Example 3.2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A·B",
+       "A̅·C"
+      ]
+     ],
+     "marks": 2,
+     "why": "The intermediate columns apply the operations in the given expression.",
+     "description": "Find the intermediate AND and NOT values.",
+     "how": "Make columns for A · B, A̅ and A̅ · C."
+    },
+    {
+     "accept": [
+      [
+       "000",
+       "001",
+       "010",
+       "011",
+       "100",
+       "101",
+       "110",
+       "111"
+      ]
+     ],
+     "marks": 2,
+     "why": "A complete truth table must include every input combination.",
+     "description": "List the input combinations.",
+     "how": "Use all eight combinations of A, B and C, as shown in the model answer."
+    },
+    {
+     "accept": [
+      [
+       "0,1,0,1,0,0,1,1"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final output column shows the function's value for each combination.",
+     "description": "Evaluate the function for each row.",
+     "how": "Calculate (A · B) + (A̅ · C) for every row."
+    },
+    {
+     "accept": [
+      [
+       "0,1,0,1,0,0,1,1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer must agree with the completed output column.",
+     "description": "Give the final output sequence.",
+     "how": "Write the output values in row order."
+    }
+   ],
+   "modelAnswer": [
+    "F(A, B, C) = A · B + A̅ · C",
+    "| A | B | C | A·B | A̅ | A̅·C | F(A, B, C) |",
+    "| 0 | 0 | 0 | 0 | 1 | 0 | 0 |",
+    "| 0 | 0 | 1 | 0 | 1 | 1 | 1 |",
+    "| 0 | 1 | 0 | 0 | 1 | 0 | 0 |",
+    "| 0 | 1 | 1 | 0 | 1 | 1 | 1 |",
+    "| 1 | 0 | 0 | 0 | 0 | 0 | 0 |",
+    "| 1 | 0 | 1 | 0 | 0 | 0 | 0 |",
+    "| 1 | 1 | 0 | 1 | 0 | 0 | 1 |",
+    "| 1 | 1 | 1 | 1 | 0 | 0 | 1 |",
+    "Final output values in row order: 0, 1, 0, 1, 0, 0, 1, 1."
+   ]
+  },
+  {
+   "text": "Q3.1. Define a Boolean function and give an example.",
+   "finalAnswer": "A Boolean function has one or more binary inputs and produces a single binary output; for example, F(A, B) = A · B.",
+   "marks": 2,
+   "source": "Short 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "binary inputs",
+       "single binary output"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must identify its inputs and output.",
+     "description": "Define a Boolean function.",
+     "how": "State that it has one or more binary inputs and produces a single binary output."
+    },
+    {
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example shows how a Boolean function is written.",
+     "description": "Give an example.",
+     "how": "Use F(A, B) = A · B."
+    }
+   ],
+   "modelAnswer": [
+    "A Boolean function is a function which has one or more binary inputs and produces a single binary output.",
+    "For example, F(A, B) = A · B."
+   ]
+  },
+  {
+   "text": "Q3.2. What is the significance of the truth table in digital logic?",
+   "finalAnswer": "A truth table shows the output of a logic operation or Boolean function for all possible combinations of its inputs.",
+   "marks": 2,
+   "source": "Short 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "all possible combinations"
+      ]
+     ],
+     "marks": 1,
+     "why": "A truth table must show each possible input case.",
+     "description": "State what input cases it covers.",
+     "how": "Say that it lists all possible input combinations."
+    },
+    {
+     "accept": [
+      [
+       "output"
+      ]
+     ],
+     "marks": 1,
+     "why": "The table's purpose is to show the result for each input case.",
+     "description": "State what the table shows for each case.",
+     "how": "Say that it gives the output of the operation or function."
+    }
+   ],
+   "modelAnswer": [
+    "A truth table lists all possible combinations of the input variables.",
+    "It shows the output of the logic operation or Boolean function for each combination."
+   ]
+  },
+  {
+   "text": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "finalAnswer": "A NOT gate gives the opposite of its input: A = 0 gives P = 1, and A = 1 gives P = 0.",
+   "marks": 2,
+   "source": "Short 3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "opposite",
+       "input"
+      ]
+     ],
+     "marks": 1,
+     "why": "The key function of NOT is to reverse the input value.",
+     "description": "Describe the operation.",
+     "how": "State that the output is the opposite of the input."
+    },
+    {
+     "accept": [
+      [
+       "A",
+       "P",
+       "0",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The truth table must show both possible input values and their outputs.",
+     "description": "Give the truth table.",
+     "how": "Write 0 → 1 and 1 → 0."
+    }
+   ],
+   "modelAnswer": [
+    "A NOT gate gives the opposite of its input.",
+    "| A | NOT A (P) |",
+    "| 0 | 1 |",
+    "| 1 | 0 |"
+   ]
+  },
+  {
+   "text": "Q3.1. Explain the usage of Boolean functions in computers.",
+   "finalAnswer": "Boolean functions are used in computer ALUs for arithmetic operations, in memory and storage for data processing, and in control logic to coordinate system operations.",
+   "marks": 8,
+   "source": "Long 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "arithmetic operations",
+       "ALU"
+      ]
+     ],
+     "marks": 2,
+     "why": "The textbook identifies arithmetic operations in ALUs as one computer use.",
+     "description": "Explain the arithmetic use.",
+     "how": "Mention that ALUs use Boolean functions for operations such as addition and subtraction."
+    },
+    {
+     "accept": [
+      [
+       "data processing",
+       "memory"
+      ]
+     ],
+     "marks": 2,
+     "why": "Boolean functions also support the processing and handling of binary data.",
+     "description": "Explain the data-processing use.",
+     "how": "Mention binary data processing in memory and storage."
+    },
+    {
+     "accept": [
+      [
+       "control logic",
+       "coordinate"
+      ]
+     ],
+     "marks": 2,
+     "why": "Control logic is another distinct use of Boolean functions.",
+     "description": "Explain the control use.",
+     "how": "State that Boolean functions help coordinate system operations."
+    },
+    {
+     "accept": [
+      [
+       "cell phones",
+       "calculators"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples from everyday devices support the explanation.",
+     "description": "Give an everyday-device example.",
+     "how": "Mention a cell phone or calculator using Boolean logic to evaluate inputs and produce results."
+    }
+   ],
+   "modelAnswer": [
+    "Boolean functions are used in Arithmetic Logic Units (ALUs) of CPUs to perform arithmetic operations such as addition, subtraction, multiplication and division.",
+    "They are used to process binary data in memory and storage devices, helping with data manipulation and retrieval.",
+    "They are used in control logic to coordinate different parts of a computer system's operation.",
+    "Cell phones and calculators also use Boolean functions to evaluate inputs and produce the required output."
+   ]
+  },
+  {
+   "text": "Q3.2. Describe how to construct a truth table for a Boolean expression with an example.",
+   "finalAnswer": "For F(A, B) = A · B, list all input combinations and evaluate the AND operation in each row; the outputs are 0, 0, 0, 1 for 00, 01, 10, 11.",
+   "marks": 8,
+   "source": "Long 3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "input combinations"
+      ]
+     ],
+     "marks": 2,
+     "why": "A truth table needs every possible combination of input values.",
+     "description": "List the input combinations.",
+     "how": "For two inputs, list 00, 01, 10 and 11."
+    },
+    {
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ],
+     "marks": 2,
+     "why": "The example must clearly identify the expression being evaluated.",
+     "description": "State an example expression.",
+     "how": "Use F(A, B) = A · B."
+    },
+    {
+     "accept": [
+      [
+       "both inputs are 1"
+      ]
+     ],
+     "marks": 2,
+     "why": "Applying the AND rule correctly determines each result.",
+     "description": "Explain the rule used to calculate outputs.",
+     "how": "State that AND is 1 only when both inputs are 1."
+    },
+    {
+     "accept": [
+      [
+       "0,0,0,1"
+      ]
+     ],
+     "marks": 2,
+     "why": "The completed output column is the result of constructing the truth table.",
+     "description": "Give the complete table and output sequence.",
+     "how": "Show the output for all four rows."
+    }
+   ],
+   "modelAnswer": [
+    "Example: F(A, B) = A · B",
+    "List every input combination for A and B: 00, 01, 10 and 11.",
+    "The AND output is 1 only when both inputs are 1.",
+    "| A | B | F(A, B) |",
+    "| 0 | 0 | 0 |",
+    "| 0 | 1 | 0 |",
+    "| 1 | 0 | 0 |",
+    "| 1 | 1 | 1 |",
+    "The output values in row order are 0, 0, 0, 1."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Be ready to define a Boolean function and give an example such as F(A, B) = A · B.",
+   "A short question may ask for the function of a gate and its truth table. Write every input case and its output.",
+   "For a truth-table question, show the input columns first, then any intermediate operation columns, and finish with the function's output column.",
+   "For a long response about computer uses, name and explain the uses: arithmetic in ALUs, data processing, and control logic."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Recall which two values a Boolean function uses.",
+     "Include the number of inputs, the output, and an example expression."
+    ],
+    "accept": [
+     [
+      "binary inputs",
+      "single binary output",
+      "F(A,B)=A·B"
+     ],
+     [
+      "0",
+      "1",
+      "F(A,B)=A·B"
+     ]
+    ],
+    "question": "Q3.1. Define a Boolean function and give an example.",
+    "solution": [
+     "A Boolean function is a function which has one or more binary inputs and produces a single binary output.",
+     "The inputs and output can only have the values 0 and 1.",
+     "For example, F(A, B) = A · B."
+    ],
+    "answer": "A Boolean function has one or more binary inputs and produces a single binary output; for example, F(A, B) = A · B."
+   },
+   {
+    "hints": [
+     "NOT changes an input to its opposite.",
+     "Make one row for A = 0 and one for A = 1."
+    ],
+    "accept": [
+     [
+      "opposite",
+      "0",
+      "1"
+     ],
+     [
+      "NOT",
+      "0",
+      "1"
+     ]
+    ],
+    "question": "Q3.4. Describe the function of a NOT gate with its truth table.",
+    "solution": [
+     "A NOT gate gives the opposite of its input.",
+     "| A | NOT A (P) |",
+     "| 0 | 1 |",
+     "| 1 | 0 |"
+    ],
+    "answer": "A NOT gate gives the opposite of its input: A = 0 gives P = 1, and A = 1 gives P = 0."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the three-input function the example asks us to make a truth table for.",
+     "text": "F (A, B, C) = A · B + A̅ · C"
+    },
+    {
+     "why": "The truth table includes every possible combination of three binary inputs.",
+     "text": "List the input rows: 000, 001, 010, 011, 100, 101, 110, 111."
+    },
+    {
+     "why": "The first AND column evaluates the first term of the function for each row.",
+     "text": "Find A · B: 0, 0, 0, 0, 0, 0, 1, 1."
+    },
+    {
+     "why": "The NOT column reverses the value of A in each row.",
+     "text": "Find A̅: 1, 1, 1, 1, 0, 0, 0, 0."
+    },
+    {
+     "why": "The second AND column evaluates the second term of the function.",
+     "text": "Find A̅ · C: 0, 1, 0, 1, 0, 0, 0, 0."
+    },
+    {
+     "why": "The plus sign means OR, so combine the two term values in each row.",
+     "text": "Find F = (A · B) + (A̅ · C): 0, 1, 0, 1, 0, 0, 1, 1."
+    }
+   ],
+   "question": "EXAMPLE 2: Now, let us construct a more complex Boolean function with three inputs, A, B, and C:\n\nF (A, B, C) = A · B + A̅ · C",
+   "answer": "The output values of F in row order 000 to 111 are 0, 1, 0, 1, 0, 0, 1, 1."
+  },
+  "explain": [
+   {
+    "title": "Binary variables",
+    "body": "Binary variables have only two possible values: 0 and 1. In logic, these may also be described as False and True."
+   },
+   {
+    "title": "AND, OR and NOT",
+    "body": "AND gives 1 only when both inputs are 1. OR gives 1 when at least one input is 1. NOT takes one input and gives its opposite."
+   },
+   {
+    "title": "Boolean functions",
+    "body": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. It is built using logic operations such as AND, OR and NOT."
+   },
+   {
+    "title": "Truth tables and logic gates",
+    "body": "A truth table shows the output for every possible input combination. Logic gates are physical devices in electronic circuits that perform Boolean operations."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse AND and OR: AND needs both inputs to be 1, while OR needs at least one input to be 1.",
+   "Do not leave out an input combination when making a truth table.",
+   "For NOT, reverse the input: 0 becomes 1 and 1 becomes 0.",
+   "When evaluating a multi-part function, calculate each operation column before the final output column.",
+   "In Boolean logic, 1 + 1 for OR is 1, not 2."
+  ]
+ }
+}

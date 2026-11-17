@@ -1,0 +1,380 @@
+{
+ "unit": 4,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 4.6",
+   "MCQ 4.9",
+   "MCQ 4.10",
+   "Long 4.5",
+   "Long 4.6",
+   "Long 4.8",
+   "Long 4.9"
+  ],
+  "definitions": [
+   {
+    "term": "Downtime",
+    "text": "Downtime occurs when a computer system is not operational."
+   },
+   {
+    "term": "Data integrity",
+    "text": "Data integrity means ensuring that data is accurate and reliable."
+   },
+   {
+    "term": "Peripherals",
+    "text": "Peripherals are external devices like keyboards, mice, and printers."
+   },
+   {
+    "term": "Data Management and Backups",
+    "text": "Data Management and Backups mean storing, and organizing data so it is easy to find and use. It helps make sure the data is available, accurate, and ready when needed. Regular backups involve making copies of data regularly to ensure it can be recovered if it is lost, damaged, or during a disaster."
+   },
+   {
+    "term": "Systematic process of troubleshooting",
+    "text": "A systematic approach to troubleshooting involves the following steps:\n\n1. Identify Problem\n2. Establish a Theory of Probable Cause\n3. Test the Theory to Determine the Cause\n4. Establish a Plan of Action to Resolve the Problem\n5. Implement the Solution\n6. Verify Full System Functionality\n7. Document Findings, Actions, and Outcomes"
+   }
+  ],
+  "formulas": [],
+  "important": [
+   {
+    "ref": "Short 4.1",
+    "why": "Directly tests the first step and has a short-question slot in the pattern."
+   },
+   {
+    "ref": "Short 4.2",
+    "why": "Tests the next step in the ordered process and its purpose."
+   },
+   {
+    "ref": "Short 4.3",
+    "why": "A standard short question on checking a probable cause with an example."
+   },
+   {
+    "ref": "Short 4.4",
+    "why": "A direct question on one of the named troubleshooting steps."
+   },
+   {
+    "ref": "Short 4.5",
+    "why": "Tests the purpose of the verification step after a fix."
+   },
+   {
+    "ref": "Long 4.1",
+    "why": "A broad question that can assess several benefits from the unit."
+   },
+   {
+    "ref": "Long 4.2",
+    "why": "Covers the complete seven-step process; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+   },
+   {
+    "ref": "Long 4.3",
+    "why": "A practical scenario for applying problem identification and probable-cause reasoning; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+   },
+   {
+    "ref": "Long 4.4",
+    "why": "Tests the final step and why a record helps with future problems; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+   },
+   {
+    "ref": "Long 4.7",
+    "why": "A focused question on listed symptoms and diagnostic tools; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+   },
+   {
+    "ref": "Long 4.10",
+    "why": "Tests the two backup methods described in the unit; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+   }
+  ],
+  "fullMarks": [
+   "For a question about the troubleshooting process, write the steps in the correct order and use the step names as printed.",
+   "For a step-based answer, explain what the step does and add a relevant example where the question asks for one.",
+   "For a case study, first state the observed problem, then give a probable cause and explain how you would test it. Do not present an untested guess as a confirmed cause.",
+   "When describing hardware failures, list the symptoms clearly and pair them with an appropriate diagnostic method.",
+   "For backup questions, explain both external storage and cloud solutions, including how each helps recover or access data.",
+   "For an importance question, use separate points and connect each benefit—such as less downtime, data integrity, or improved performance—to a clear outcome.",
+   "Finish by answering the question directly; for example, state whether the system works properly after verification or what the backup method protects."
+  ],
+  "mistakes": [
+   "Mixing up the order of the seven troubleshooting steps. Fix: learn them in sequence, from Identify Problem to Document Findings, Actions, and Outcomes.",
+   "Treating a suspected cause as proven before testing it. Fix: explain how the theory will be tested before deciding that it is the cause.",
+   "Skipping verification after applying a fix. Fix: state how you will check that the problem is resolved and the system works properly.",
+   "Giving RAM or hard-drive symptoms without naming a diagnostic method. Fix: pair RAM symptoms with a memory diagnostic tool and drive symptoms with a SMART status check or drive-health tool.",
+   "Describing cloud backup as a physical copy kept beside the computer. Fix: state that cloud storage keeps files online and allows access over an internet connection.",
+   "Writing only that documentation is useful without saying what to record. Fix: include the problem, suspected cause, actions taken, and outcome."
+  ],
+  "shortTheory": [
+   {
+    "question": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+    "answer": "The first step in troubleshooting is to identify the problem. This means recognizing that something is not working as it should."
+   },
+   {
+    "question": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+    "answer": "Once you have identified the problem, the next step is to come up with a theory about what might be causing it. This involves thinking about what could have gone wrong."
+   },
+   {
+    "question": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+    "answer": "After establishing a theory, you need to test it to see if it is correct. This involves checking if the suspected cause is actually the reason for the problem. For example, if you think the laptop's battery is dead, you can test this theory by plugging in the power cord and seeing if the computer turns on."
+   },
+   {
+    "question": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+    "answer": "Once you have a plan, you need to put it into action. This means doing whatever is necessary to fix the problem."
+   },
+   {
+    "question": "Why is it necessary to verify full system functionality after implementing a solution?",
+    "answer": "After implementing the solution, you need to check to make sure that the problem is fully resolved and the system is working properly again."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-4-1-t0",
+   "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "marks": 2,
+   "modelAnswer": [
+    "The first step in troubleshooting is to identify the problem. This means recognizing that something is not working as it should."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "identify the problem"
+      ],
+      [
+       "identify",
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the first troubleshooting step.",
+     "description": "Identify the problem.",
+     "how": "Award 1 mark for stating that the first step is to identify the problem."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "recognizing",
+       "not working"
+      ],
+      [
+       "not working",
+       "as it should"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognizing the fault means noticing that something is not working as expected.",
+     "description": "Recognize that something is not working as it should.",
+     "how": "Award 1 mark for explaining that identification involves noticing something is not working properly."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-4-1-t1",
+   "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "marks": 2,
+   "modelAnswer": [
+    "Once you have identified the problem, the next step is to come up with a theory about what might be causing it. This involves thinking about what could have gone wrong."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "theory",
+       "causing"
+      ],
+      [
+       "theory",
+       "cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "The next step is to form a theory about the cause.",
+     "description": "Come up with a theory about what might be causing the problem.",
+     "how": "Award 1 mark for stating that the next step is to form a theory about the possible cause."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "thinking",
+       "could have gone wrong"
+      ],
+      [
+       "what could have gone wrong"
+      ]
+     ],
+     "marks": 1,
+     "why": "Considering what could have gone wrong helps identify a possible cause.",
+     "description": "Think about what could have gone wrong.",
+     "how": "Award 1 mark for explaining that this involves considering what may have gone wrong."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-4-1-t2",
+   "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "After establishing a theory, you need to test it to see if it is correct. This involves checking if the suspected cause is actually the reason for the problem. For example, if you think the laptop's battery is dead, you can test this theory by plugging in the power cord and seeing if the computer turns on."
+   ],
+   "followUp": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "test it",
+       "correct"
+      ],
+      [
+       "checking",
+       "suspected cause",
+       "reason for the problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing establishes whether the proposed cause is actually responsible for the problem.",
+     "description": "Test the theory to check whether the suspected cause is correct.",
+     "how": "Award 1 mark for explaining that testing checks whether the suspected cause is the actual reason for the problem."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "battery",
+       "power cord",
+       "computer turns on"
+      ],
+      [
+       "battery",
+       "plugging in",
+       "turns on"
+      ]
+     ],
+     "marks": 1,
+     "why": "The example demonstrates testing a suspected battery problem by connecting power and checking the result.",
+     "description": "Give the battery and power-cord example, checking whether the computer turns on.",
+     "how": "Award 1 mark for an example of testing the suspected dead battery by plugging in the power cord and checking whether the computer turns on."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-4-1-t3",
+   "text": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "marks": 2,
+   "modelAnswer": [
+    "Once you have a plan, you need to put it into action. This means doing whatever is necessary to fix the problem."
+   ],
+   "followUp": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "put it into action"
+      ],
+      [
+       "plan",
+       "action"
+      ]
+     ],
+     "marks": 1,
+     "why": "Implementing a solution means carrying out the plan.",
+     "description": "Put the plan into action.",
+     "how": "Award 1 mark for stating that the planned solution is put into action."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "fix the problem"
+      ],
+      [
+       "doing whatever",
+       "fix"
+      ]
+     ],
+     "marks": 1,
+     "why": "The action taken should resolve the problem.",
+     "description": "Do what is necessary to fix the problem.",
+     "how": "Award 1 mark for explaining that implementation involves taking the necessary action to fix the problem."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-4-1-t4",
+   "text": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "marks": 2,
+   "modelAnswer": [
+    "After implementing the solution, you need to check to make sure that the problem is fully resolved and the system is working properly again."
+   ],
+   "followUp": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "problem",
+       "fully resolved"
+      ],
+      [
+       "check",
+       "problem",
+       "resolved"
+      ]
+     ],
+     "marks": 1,
+     "why": "Verification confirms that the original problem has been resolved completely.",
+     "description": "Check that the problem is fully resolved.",
+     "how": "Award 1 mark for stating that the solution must be checked to ensure the problem is fully resolved."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "system",
+       "working properly"
+      ],
+      [
+       "working properly again"
+      ]
+     ],
+     "marks": 1,
+     "why": "The system should be functioning properly after the solution is implemented.",
+     "description": "Check that the system is working properly again.",
+     "how": "Award 1 mark for stating that verification confirms the system is working properly again."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 5
+ }
+}

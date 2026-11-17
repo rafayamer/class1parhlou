@@ -1,0 +1,521 @@
+{
+ "note": {
+  "explanation": "HTML is the standard language used to create web pages. You write HTML in a text editor, save the file with the .html extension, and open it in a web browser to see the page.",
+  "examples": [
+   "Save a page as My_first_website.html.",
+   "Use a text editor such as Notepad++ to write HTML, then open the saved file in a browser."
+  ],
+  "checkAnswer": "Save the file with the .html extension.",
+  "keywords": [
+   "HTML",
+   "web page",
+   "text editor",
+   "web browser",
+   "HTML file",
+   "extension"
+  ],
+  "simple": "HTML is the code used to build a web page. Write it in a text editor, save it as a .html file, and view it in a browser.",
+  "checkQuestion": "What file extension should you add when saving an HTML file?",
+  "title": "Getting Started with HTML",
+  "steps": [
+   "Open a text editor.",
+   "Write the HTML code.",
+   "Save the file with a .html extension.",
+   "Open the file in a web browser.",
+   "Refresh the browser after changing the file."
+  ],
+  "answer": "HTML is the standard language used to create web pages.",
+  "checkAccept": [
+   [
+    ".html"
+   ],
+   [
+    "html extension"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A language used to create web pages",
+    "A web browser",
+    "A text editor",
+    "A file extension"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is HTML mainly used for?",
+   "rationales": [
+    "Correct: HTML is the standard language used to create web pages.",
+    "Incorrect: A browser displays web pages; it is not HTML.",
+    "Incorrect: A text editor is a tool for writing HTML code.",
+    "Incorrect: .html is a file extension, not the language itself."
+   ]
+  },
+  {
+   "options": [
+    "Tim Berners-Lee",
+    "Charles Babbage",
+    "Bill Gates",
+    "Steve Jobs"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Who created HTML in 1991?",
+   "rationales": [
+    "Correct: HTML was created by Tim Berners-Lee in 1991.",
+    "Incorrect: Charles Babbage is not identified as HTML's creator.",
+    "Incorrect: Bill Gates is not identified as HTML's creator.",
+    "Incorrect: Steve Jobs is not identified as HTML's creator."
+   ]
+  },
+  {
+   "options": [
+    "HTML 1.0",
+    "HTML 2.0",
+    "HTML 4.01",
+    "HTML5"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which was the very first version of HTML?",
+   "rationales": [
+    "Correct: HTML 1.0 was the very first version, released in 1991.",
+    "Incorrect: HTML 2.0 came later, in 1995.",
+    "Incorrect: HTML 4.01 came later, in 1999.",
+    "Incorrect: HTML5 came much later, in 2014."
+   ]
+  },
+  {
+   "options": [
+    "A text editor",
+    "A web browser",
+    "An HTML extension",
+    "A website address"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tool is used to write HTML code?",
+   "rationales": [
+    "Correct: HTML code is written in a text editor.",
+    "Incorrect: A browser is used to view and test HTML files.",
+    "Incorrect: An extension identifies a file type but is not used to write code.",
+    "Incorrect: A website address identifies a location and is not a code-writing tool."
+   ]
+  },
+  {
+   "options": [
+    "A web browser",
+    "A text editor",
+    "An HTML tag",
+    "A file extension"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tool do you use to view and test an HTML file?",
+   "rationales": [
+    "Correct: A web browser displays and lets you test HTML files.",
+    "Incorrect: A text editor is where you write the code.",
+    "Incorrect: An HTML tag is part of the code, not a viewing tool.",
+    "Incorrect: A file extension helps identify the file type but does not display it."
+   ]
+  },
+  {
+   "options": [
+    "Save it with the .html extension",
+    "Save it with the .jpg extension",
+    "Save it with the .mp3 extension",
+    "Save it without a file name"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which extension should be added to the name of an HTML file?",
+   "rationales": [
+    "Correct: The .html extension helps the computer recognize the file as a web page.",
+    "Incorrect: .jpg is commonly used for image files.",
+    "Incorrect: .mp3 is commonly used for audio files.",
+    "Incorrect: The file needs a name and the correct extension to be saved properly."
+   ]
+  },
+  {
+   "options": [
+    "Refresh the web page in the browser",
+    "Close the text editor",
+    "Rename the browser",
+    "Delete the HTML file"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What should you do in the browser to see changes made to an HTML file?",
+   "rationales": [
+    "Correct: Refresh the web page in the browser to see the updated content.",
+    "Incorrect: Closing the editor does not update the page displayed in the browser.",
+    "Incorrect: Renaming the browser has no effect on the page content.",
+    "Incorrect: Deleting the file would remove the page rather than update it."
+   ]
+  },
+  {
+   "options": [
+    "Google Chrome",
+    "Notepad++",
+    "Sublime Text",
+    "Visual Studio Code"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which option is a web browser named in this section?",
+   "rationales": [
+    "Correct: Google Chrome is listed as a common web browser.",
+    "Incorrect: Notepad++ is listed as a text editor.",
+    "Incorrect: Sublime Text is listed as a text editor.",
+    "Incorrect: Visual Studio Code is listed as a text editor."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q8.1. What is the purpose of the `<head>` tag in HTML?",
+   "finalAnswer": "The <head> tag contains information about the web page, such as its title.",
+   "marks": 2,
+   "source": "Short 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "information"
+      ],
+      [
+       "page"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying the head section's role shows understanding of the basic HTML structure.",
+     "description": "State that the head contains information about the web page.",
+     "how": "Explain that it holds page information rather than the main displayed content."
+    },
+    {
+     "accept": [
+      [
+       "title"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the title gives a correct example of information placed in the head.",
+     "description": "Give the page title as an example.",
+     "how": "Mention that the title is written inside the head section."
+    }
+   ],
+   "modelAnswer": [
+    "The <head> tag contains information about the web page.",
+    "It can contain the page title, which appears on the browser tab."
+   ]
+  },
+  {
+   "text": "Q8.2. Explain the process of setting up a development environment for web development. By discussing the necessary softwares and tools.",
+   "finalAnswer": "Use a text editor to write HTML code and a web browser to view and test the saved .html file.",
+   "marks": 8,
+   "source": "Long 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "text editor"
+      ],
+      [
+       "write"
+      ]
+     ],
+     "marks": 2,
+     "why": "A text editor is needed to create the HTML code.",
+     "description": "Identify the text editor and its purpose.",
+     "how": "Explain that code is written in a text editor."
+    },
+    {
+     "accept": [
+      [
+       "notepad++"
+      ],
+      [
+       "sublime text"
+      ],
+      [
+       "visual studio code"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples show knowledge of suitable text editors.",
+     "description": "Give examples of text editors.",
+     "how": "Name one or more editors such as Notepad++, Sublime Text, or Visual Studio Code."
+    },
+    {
+     "accept": [
+      [
+       "web browser"
+      ],
+      [
+       "view"
+      ]
+     ],
+     "marks": 2,
+     "why": "A browser is required to view and test the HTML file.",
+     "description": "Identify the browser and its purpose.",
+     "how": "Explain that the browser displays and tests the saved page."
+    },
+    {
+     "accept": [
+      [
+       ".html"
+      ],
+      [
+       "save"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct extension helps the computer recognize the file as a web page.",
+     "description": "Mention saving the HTML file with its extension.",
+     "how": "State that the file should be saved with the .html extension."
+    },
+    {
+     "accept": [
+      [
+       "text editor"
+      ],
+      [
+       "web browser"
+      ],
+      [
+       ".html"
+      ]
+     ],
+     "marks": 1,
+     "why": "A complete answer brings together the essential tools and file-saving step.",
+     "description": "Give the complete development-environment process.",
+     "how": "Include the editor, browser, and saved HTML file."
+    }
+   ],
+   "modelAnswer": [
+    "Use a text editor to write HTML code.",
+    "Examples of text editors are Notepad++, Sublime Text, and Visual Studio Code.",
+    "Save the file with the .html extension, for example, My_first_website.html.",
+    "Open the saved file in a web browser to view and test it.",
+    "Common web browsers are Google Chrome, Mozilla Firefox, and Microsoft Edge."
+   ]
+  },
+  {
+   "text": "Q8.3. Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+   "finalAnswer": "A valid HTML page with a heading, paragraph, image, and hyperlink.",
+   "marks": 8,
+   "source": "Long 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<!doctype html>"
+      ],
+      [
+       "<html>"
+      ],
+      [
+       "</html>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The basic document structure makes the response a complete HTML page.",
+     "description": "Use a basic HTML document structure.",
+     "how": "Include the doctype and opening and closing html tags."
+    },
+    {
+     "accept": [
+      [
+       "<h1>"
+      ],
+      [
+       "</h1>"
+      ],
+      [
+       "<p>"
+      ],
+      [
+       "</p>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The heading and paragraph provide the requested text content.",
+     "description": "Add a heading and a paragraph.",
+     "how": "Use heading and paragraph tags."
+    },
+    {
+     "accept": [
+      [
+       "<img"
+      ],
+      [
+       "src="
+      ]
+     ],
+     "marks": 2,
+     "why": "The image element and its source identify an image to display.",
+     "description": "Add an image.",
+     "how": "Use an img tag with a src attribute."
+    },
+    {
+     "accept": [
+      [
+       "<a"
+      ],
+      [
+       "href="
+      ],
+      [
+       "</a>"
+      ]
+     ],
+     "marks": 1,
+     "why": "A link element with a destination creates the requested hyperlink.",
+     "description": "Add a hyperlink.",
+     "how": "Use an a tag with an href attribute."
+    },
+    {
+     "accept": [
+      [
+       "<h1>"
+      ],
+      [
+       "<p>"
+      ],
+      [
+       "<img"
+      ],
+      [
+       "<a"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final check confirms all four requested page elements are present.",
+     "description": "Complete the page with all requested elements.",
+     "how": "Ensure the answer contains a heading, paragraph, image, and hyperlink."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "    <head>",
+    "        <title>My Web Page</title>",
+    "    </head>",
+    "    <body>",
+    "        <h1>Welcome to My Website</h1>",
+    "        <p>This is my web page.</p>",
+    "        <img src=\"picture.jpg\" alt=\"A picture\">",
+    "        <a href=\"https://example.com\">Visit this website</a>",
+    "    </body>",
+    "</html>"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to name the tools needed to start making web pages: a text editor and a web browser.",
+   "A long question may ask you to describe the development environment. State what each tool does and give examples.",
+   "For a question asking for a basic HTML page, show the complete document structure and include every requested element.",
+   "Marks are earned for correct tags and structure, saving with the .html extension, and explaining how the browser displays the file."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what the browser tab shows.",
+     "The head can contain the title of the web page."
+    ],
+    "accept": [
+     [
+      "information"
+     ],
+     [
+      "title"
+     ]
+    ],
+    "question": "Q8.1. What is the purpose of the `<head>` tag in HTML?",
+    "solution": [
+     "The <head> tag contains information about the web page.",
+     "It can contain the page title, which appears on the browser tab."
+    ],
+    "answer": "The <head> tag contains information about the web page, such as its title."
+   },
+   {
+    "hints": [
+     "You need one tool for writing the code and another for viewing it.",
+     "Save the file with .html, then open it in a browser."
+    ],
+    "accept": [
+     [
+      "text editor"
+     ],
+     [
+      "web browser"
+     ],
+     [
+      ".html"
+     ]
+    ],
+    "question": "Q8.2. Explain the process of setting up a development environment for web development. By discussing the necessary softwares and tools.",
+    "solution": [
+     "Use a text editor to write HTML code.",
+     "Examples of text editors are Notepad++, Sublime Text, and Visual Studio Code.",
+     "Save the file with the .html extension, for example, My_first_website.html.",
+     "Open the saved file in a web browser to view and test it.",
+     "Common web browsers are Google Chrome, Mozilla Firefox, and Microsoft Edge."
+    ],
+    "answer": "Use a text editor to write HTML code and a web browser to view and test the saved .html file."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "A text editor is where you write the page's HTML code.",
+     "text": "Open your text editor, You can use Notepad, Notepad++, Sublime Text, or any other text editor."
+    },
+    {
+     "why": "The HTML code gives the browser the page structure and the text to display.",
+     "text": "Write the following HTML code into your text editor."
+    },
+    {
+     "why": "The .html extension helps the computer recognize the file as a web page.",
+     "text": "Save your file with a html extension, for example, My_first_website.html."
+    },
+    {
+     "why": "Opening the saved file in a browser lets you see the page.",
+     "text": "Open Your Web browser (Google Chrome, Mozilla Firefox, and others)."
+    },
+    {
+     "why": "The browser reads the saved file and displays its web page.",
+     "text": "Double-click on your file named My_first_website.html."
+    }
+   ],
+   "question": "To create a basic HTML application that displays \"a message\" on a web page, follow these simple steps:",
+   "answer": "The browser displays the title \"My First Web Page\" and the page heading \"Welcome to My Website\" with its paragraph."
+  },
+  "explain": [
+   {
+    "title": "What HTML is",
+    "body": "HTML is the standard language used to create web pages. HTML tags come together to build a web page, much like LEGO pieces come together to build a structure."
+   },
+   {
+    "title": "A little HTML history",
+    "body": "HTML was created by Tim Berners-Lee in 1991. HTML 1.0 was the first version. The section describes later versions and identifies HTML5 (2014) as the latest version."
+   },
+   {
+    "title": "Tools to get started",
+    "body": "A text editor is where you write HTML code. A web browser is used to view and test HTML files. Examples include Notepad++, Sublime Text, and Visual Studio Code for editors, and Chrome, Firefox, and Edge for browsers."
+   },
+   {
+    "title": "Make and view a simple page",
+    "body": "Write the HTML code in a text editor and save it with the .html extension. Open the saved file in a browser. If you change the HTML file, refresh the browser to see the updated content."
+   }
+  ],
+  "mistakes": [
+   "Saving an HTML file without the .html extension can stop the computer from recognizing it as a web page.",
+   "Using a text editor to view the page instead of opening the saved file in a web browser.",
+   "Forgetting to refresh the browser after changing the HTML file.",
+   "Leaving out requested elements or HTML tags when writing a basic page."
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "13:10",
+   "figure": "",
+   "steps": [
+    "The objectives of a computer network are to share resources, exchange data and information, and make communication between users easier and faster.",
+    "Resource sharing means that users connected to a network can use common hardware and software resources.",
+    "For example, several computers in an office can share one printer, and users can access files stored on a shared server.",
+    "Data communication means sending and receiving data between connected computers or devices.",
+    "For example, a user can send an email or transfer a file from one computer to another through a network.",
+    "Networks can also help reduce costs because resources such as printers and internet connections can be shared by many users."
+   ],
+   "finalAnswer": "Computer networks make communication and data exchange easier and allow users to share resources such as printers, files, and internet connections."
+  },
+  {
+   "accept": [],
+   "id": "13:17",
+   "figure": "",
+   "steps": [
+    "Star topology: All computers are connected to a central hub or switch. It is easy to manage, and failure of one computer usually does not affect the others; however, failure of the central device can stop the whole network. It requires more cable than a bus topology and is generally more costly.",
+    "Ring topology: Each computer is connected to two neighbouring computers, forming a closed ring. Data travels around the ring. A break in the ring or failure of a computer can disrupt communication, and adding or removing a computer can be difficult.",
+    "Bus topology: All computers are connected to one main cable called the backbone. It is simple and inexpensive and uses less cable than a star topology. However, failure of the backbone can stop the whole network, and performance may decrease when many computers are communicating.",
+    "Mesh topology: Computers are connected to many or all of the other computers. It is highly reliable because data can travel along alternative paths if a connection fails. However, it needs many connections and cables, making it costly and complex to install.",
+    "Comparison: Star and bus topologies are generally simpler to install than mesh. Star depends on its central device, bus depends on its backbone, and ring can be disrupted by a break in the ring. Mesh offers the greatest reliability but usually has the highest cost."
+   ],
+   "finalAnswer": "Star uses a central device, ring forms a closed loop, bus uses a shared backbone, and mesh provides multiple paths; mesh is most reliable but costly, while star, ring, and bus each have characteristic points of failure."
+  }
+ ]
+}

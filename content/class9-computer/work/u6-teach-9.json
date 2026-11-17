@@ -1,0 +1,478 @@
+{
+ "note": {
+  "explanation": "Network security protects data and networks from unauthorized access and attacks. Firewalls monitor and control network traffic, encryption makes data unreadable without the correct decryption key, and passwords and authentication help ensure that only authorized users can access network resources.",
+  "examples": [
+   "A firewall can block unwanted network traffic.",
+   "A shift cipher changes “Hello” to “Khoor” by moving each letter three places down the alphabet."
+  ],
+  "checkAnswer": "A firewall monitors and controls network traffic according to security rules.",
+  "keywords": [
+   "network security",
+   "firewall",
+   "encryption",
+   "decryption",
+   "ciphertext",
+   "authentication"
+  ],
+  "simple": "Network security is like protecting a house: a firewall is the gatekeeper, encryption is a secret code, and a password helps check who is allowed in.",
+  "checkQuestion": "What does a firewall do?",
+  "title": "Network Security",
+  "steps": [
+   "Use a firewall to monitor and control incoming and outgoing network traffic.",
+   "Encrypt sensitive data so that only someone with the correct decryption key can understand it.",
+   "Use passwords and authentication to check that users are authorized.",
+   "Watch for threats such as malware, phishing, DoS attacks, and man-in-the-middle attacks."
+  ],
+  "answer": "Network security uses measures such as firewalls, encryption, and authentication to protect data and prevent unauthorized access to networks.",
+  "checkAccept": [
+   [
+    "firewall",
+    "monitor",
+    "control",
+    "traffic"
+   ],
+   [
+    "monitor",
+    "control",
+    "network traffic"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To translate domain names into IP addresses",
+    "To monitor and control incoming and outgoing network traffic",
+    "To convert ciphertext into its original form",
+    "To make network resources available to every user"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is a firewall designed to do?",
+   "rationales": [
+    "This describes the function of DNS, not a firewall.",
+    "Correct: a firewall monitors and controls network traffic based on security rules.",
+    "This describes decryption.",
+    "A firewall does not give every user access to network resources."
+   ]
+  },
+  {
+   "options": [
+    "Ciphertext",
+    "Malware",
+    "Authentication",
+    "Decryption"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is encrypted data called?",
+   "rationales": [
+    "Correct: encrypted data is known as ciphertext.",
+    "Malware is malicious software that can damage or steal data.",
+    "Authentication checks whether a user is authorized.",
+    "Decryption converts encrypted data back to its original form."
+   ]
+  },
+  {
+   "options": [
+    "A firewall",
+    "A password generator",
+    "A decryption key",
+    "A phishing email"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is needed to read encrypted data?",
+   "rationales": [
+    "A firewall controls network traffic but does not normally unlock encrypted data.",
+    "A password generator can help create passwords but is not the key for decrypting a message.",
+    "Correct: the intended recipient needs the correct decryption key to read encrypted data.",
+    "A phishing email is a threat that tries to trick users into sharing sensitive information."
+   ]
+  },
+  {
+   "options": [
+    "Overwhelming a network with traffic",
+    "Changing data into ciphertext",
+    "Checking whether a user is authorized",
+    "Blocking all communication between two parties"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which action describes a Denial of Service (DoS) attack?",
+   "rationales": [
+    "Correct: a DoS attack overwhelms a network with traffic to disrupt its normal operation.",
+    "Changing data into ciphertext is encryption.",
+    "Checking whether a user is authorized is authentication.",
+    "Blocking all communication between two parties is not the definition given for a DoS attack."
+   ]
+  },
+  {
+   "options": [
+    "A virus",
+    "A worm",
+    "A deceptive website",
+    "A firewall"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which is commonly used in a phishing attempt?",
+   "rationales": [
+    "A virus is malware, not a deceptive website used to trick a user.",
+    "A worm is malware that can damage or steal data.",
+    "Correct: phishing can use deceptive websites to trick users into revealing sensitive information.",
+    "A firewall is a security system that monitors and controls network traffic."
+   ]
+  },
+  {
+   "options": [
+    "A firewall checks traffic against security rules.",
+    "Encryption makes data readable to everyone.",
+    "A man-in-the-middle attack intercepts communication between two parties.",
+    "A DoS attack tries to disrupt normal network operation."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about network security is correct?",
+   "rationales": [
+    "Correct: firewalls monitor and control traffic based on predetermined security rules.",
+    "Encryption makes data readable only to authorized parties with the correct decryption key.",
+    "This statement is true, but it describes a man-in-the-middle attack rather than the best answer to the question about the firewall statement.",
+    "This statement is true, but it describes a DoS attack rather than the best answer to the question about the firewall statement."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q6.8. Explain the importance of encryption in network security.",
+   "finalAnswer": "Encryption protects sensitive information by changing it into a secure format that only authorized parties with the correct decryption key can read.",
+   "marks": 2,
+   "source": "Short 6.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "secure format"
+      ],
+      [
+       "encrypted"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must show that encryption changes data into a protected form.",
+     "description": "State that encryption changes data into a secure format.",
+     "how": "Explain that the original data is transformed into an unreadable or secure form."
+    },
+    {
+     "accept": [
+      [
+       "authorized",
+       "decryption key"
+      ],
+      [
+       "correct",
+       "key",
+       "read"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify who can read the encrypted data and what they need.",
+     "description": "State that only authorized parties with the correct decryption key can read the data.",
+     "how": "Mention the authorized recipient and the correct decryption key."
+    }
+   ],
+   "modelAnswer": [
+    "Encryption transforms data into a secure format.",
+    "Only authorized parties with the correct decryption key can read or understand it."
+   ]
+  },
+  {
+   "text": "Q6.10. How do firewalls contribute to network security?",
+   "finalAnswer": "Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules, helping protect trusted networks from unauthorized access.",
+   "marks": 2,
+   "source": "Short 6.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "monitor",
+       "network traffic"
+      ],
+      [
+       "monitor",
+       "traffic"
+      ]
+     ],
+     "marks": 1,
+     "why": "Monitoring traffic is a key firewall function.",
+     "description": "State that firewalls monitor network traffic.",
+     "how": "Mention incoming and outgoing traffic or network traffic."
+    },
+    {
+     "accept": [
+      [
+       "control",
+       "security rules"
+      ],
+      [
+       "control",
+       "unauthorized"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain how the firewall helps protect the network.",
+     "description": "State that firewalls control traffic using security rules to help prevent unauthorized access.",
+     "how": "Connect traffic control or security rules with protection from unauthorized access."
+    }
+   ],
+   "modelAnswer": [
+    "Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules.",
+    "They act as barriers between trusted internal networks and untrusted external networks, helping prevent unauthorized access."
+   ]
+  },
+  {
+   "text": "Q6.5. Evaluate different methods of network security, including firewalls, encryption, and antivirus software.",
+   "finalAnswer": "Firewalls monitor and control network traffic based on security rules. Encryption changes data into a secure format that only authorized parties with the correct decryption key can read. Antivirus software helps detect and remove malware. These methods protect networks in different ways and work best when used together.",
+   "marks": 8,
+   "source": "Long 6.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "firewall",
+       "monitor",
+       "control",
+       "traffic"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response needs to explain the firewall's role in network protection.",
+     "description": "Describe a firewall as monitoring and controlling traffic according to security rules.",
+     "how": "State what traffic the firewall handles and how rules are used."
+    },
+    {
+     "accept": [
+      [
+       "encryption",
+       "secure format",
+       "decryption key"
+      ],
+      [
+       "encryption",
+       "authorized",
+       "key"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response needs to explain how encryption protects sensitive information.",
+     "description": "Explain that encryption makes data secure or unreadable to unauthorized people and requires the correct key to read it.",
+     "how": "Mention encryption and the authorized recipient or decryption key."
+    },
+    {
+     "accept": [
+      [
+       "antivirus",
+       "malware"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question specifically asks about antivirus software as a security method.",
+     "description": "Explain that antivirus software helps detect or remove malware.",
+     "how": "Connect antivirus software with protection against malicious software."
+    },
+    {
+     "accept": [
+      [
+       "together"
+      ],
+      [
+       "different ways"
+      ]
+     ],
+     "marks": 2,
+     "why": "Evaluation should recognize that the methods provide different protections and can complement one another.",
+     "description": "Conclude that using the methods together gives broader protection.",
+     "how": "State that the methods address different threats and work best in combination."
+    }
+   ],
+   "modelAnswer": [
+    "Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules.",
+    "They act as barriers between trusted internal networks and untrusted external networks.",
+    "Encryption transforms data into a secure format that can only be read by authorized parties with the correct decryption key.",
+    "Antivirus software helps detect and remove malware, such as viruses and worms.",
+    "A firewall controls network traffic, encryption protects the meaning of data, and antivirus software helps protect against malicious software.",
+    "These methods address different threats and work best when used together."
+   ]
+  },
+  {
+   "text": "Q6.8. Consider a shift cipher with a shift amount of 4.\n(a) Encrypt the message \"SECURITY\".\n(b) Decrypt the message \"WMXYVMI\".",
+   "finalAnswer": "(a) WIGYVMXC\n(b) SITURIE",
+   "marks": 8,
+   "source": "Long 6.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "S",
+       "W"
+      ],
+      [
+       "SECURITY"
+      ]
+     ],
+     "marks": 2,
+     "why": "The encryption must begin by applying the stated shift forward to the letters.",
+     "description": "Show or correctly apply the forward shift of four places.",
+     "how": "Shift each plaintext letter four positions down the alphabet."
+    },
+    {
+     "accept": [
+      [
+       "WIGYVMXC"
+      ]
+     ],
+     "marks": 2,
+     "why": "The encrypted message must be correct.",
+     "description": "Give the correct encrypted message.",
+     "how": "Write the complete encrypted word."
+    },
+    {
+     "accept": [
+      [
+       "WMXYVMI"
+      ],
+      [
+       "shift",
+       "back"
+      ]
+     ],
+     "marks": 2,
+     "why": "Decryption must reverse the shift used for encryption.",
+     "description": "Show or correctly apply a backward shift of four places.",
+     "how": "Shift each ciphertext letter four positions back in the alphabet."
+    },
+    {
+     "accept": [
+      [
+       "SITURIE"
+      ]
+     ],
+     "marks": 2,
+     "why": "The decrypted message must match the given ciphertext and shift.",
+     "description": "Give the correct decrypted message.",
+     "how": "Write the complete decrypted word."
+    }
+   ],
+   "modelAnswer": [
+    "(a) Shift each letter of SECURITY four places down the alphabet.",
+    "S → W, E → I, C → G, U → Y, R → V, I → M, T → X, Y → C",
+    "Encrypted message = WIGYVMXC",
+    "(b) Shift each letter of WMXYVMI four places back in the alphabet.",
+    "W → S, M → I, X → T, Y → U, V → R, M → I, I → E",
+    "Decrypted message = SITURIE"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to explain encryption or the role of a firewall. Give the definition and then state how it protects a network or data.",
+   "A long question may ask you to discuss security methods. Explain each method separately and finish by comparing how they protect against different threats.",
+   "For a shift-cipher question, show the shift for each letter and write the complete encrypted or decrypted message clearly.",
+   "Use precise terms such as ciphertext, decryption key, authorized users, incoming and outgoing traffic, and predetermined security rules."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "For encryption, move each letter forward in the alphabet.",
+     "For a shift of 4, map each letter of SECURITY four places down the alphabet."
+    ],
+    "accept": [
+     [
+      "WIGYVMXC"
+     ]
+    ],
+    "question": "Q6.8. Consider a shift cipher with a shift amount of 4.\n(a) Encrypt the message \"SECURITY\".\n(b) Decrypt the message \"WMXYVMI\".",
+    "solution": [
+     "(a) Shift each letter of SECURITY four places down the alphabet.",
+     "S → W, E → I, C → G, U → Y, R → V, I → M, T → X, Y → C",
+     "Encrypted message = WIGYVMXC",
+     "(b) Shift each letter of WMXYVMI four places back in the alphabet.",
+     "W → S, M → I, X → T, Y → U, V → R, M → I, I → E",
+     "Decrypted message = SITURIE"
+    ],
+    "answer": "(a) WIGYVMXC\n(b) SITURIE"
+   },
+   {
+    "hints": [
+     "A firewall checks network traffic.",
+     "Include that it monitors and controls incoming and outgoing traffic using security rules."
+    ],
+    "accept": [
+     [
+      "monitor",
+      "control",
+      "traffic"
+     ],
+     [
+      "monitor",
+      "control",
+      "security rules"
+     ]
+    ],
+    "question": "Q6.10. How do firewalls contribute to network security?",
+    "solution": [
+     "Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules.",
+     "They act as barriers between trusted internal networks and untrusted external networks, helping prevent unauthorized access."
+    ],
+    "answer": "Firewalls monitor and control incoming and outgoing network traffic based on predetermined security rules, helping protect networks from unauthorized access."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the original message that will be encrypted.",
+     "text": "Plain Text: Hello, World!"
+    },
+    {
+     "why": "With a shift of 3, each letter is replaced by the letter three positions down the alphabet; punctuation and spaces remain unchanged.",
+     "text": "Encrypted Text (using a simple shift cipher): Khoor, Zruog!"
+    },
+    {
+     "why": "Decryption uses the same shift cipher in reverse to recover the original message.",
+     "text": "Decryption: Converting \"Khoor, Zruog!\" back to \"Hello, World!\" using the same shift cipher in reverse."
+    }
+   ],
+   "question": "Plain Text: Hello, World!",
+   "answer": "Encrypted Text (using a simple shift cipher): Khoor, Zruog!"
+  },
+  "explain": [
+   {
+    "title": "Why network security matters",
+    "body": "Network security involves measures to protect data and prevent unauthorized access to computer networks. It helps protect sensitive data, defend against attacks, maintain privacy, and keep network resources available to authorized users."
+   },
+   {
+    "title": "Firewalls",
+    "body": "Firewalls are security systems that monitor and control incoming and outgoing network traffic based on predetermined security rules. They act as barriers between trusted internal networks and untrusted external networks."
+   },
+   {
+    "title": "Encryption and decryption",
+    "body": "Encryption transforms data into a secure format that can only be read or understood by authorized parties with the correct decryption key. Decryption is the process of converting the encrypted data back to its original form."
+   },
+   {
+    "title": "Passwords and authentication",
+    "body": "Passwords and authentication methods ensure that only authorized users can access network resources. Strong passwords help protect access to those resources."
+   },
+   {
+    "title": "Common threats",
+    "body": "Malware is malicious software that can damage or steal data. Phishing uses deceptive emails or websites to trick users into revealing sensitive information. DoS attacks overwhelm a network with traffic, while man-in-the-middle attacks intercept communication between two parties."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse encryption, which changes data into a secure format, with decryption, which changes it back to its original form.",
+   "Do not say that a firewall encrypts data; its stated function is to monitor and control network traffic.",
+   "When using a shift cipher, do not shift one way for both encryption and decryption: decryption reverses the shift.",
+   "Do not forget to use the correct decryption key when explaining who can read encrypted data.",
+   "Do not describe phishing as malware: phishing is an attempt to trick users into revealing sensitive information."
+  ]
+ }
+}

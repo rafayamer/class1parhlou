@@ -1,0 +1,65 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 0,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q5"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "−5 in 8-bit two’s complement is 11111011₂."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "0 to 65,535."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w2",
+   "myAnswer": "Using 8-bit two’s complement, write the positive value in binary, invert every bit, then add 1. For example, 5 is 00000101₂; inverting gives 11111010₂, and adding 1 gives −5 as 11111011₂."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w3",
+   "myAnswer": "Using more bits allows a wider range of integer values. For n unsigned bits, the range is 0 to 2ⁿ − 1. For n signed two’s-complement bits, it is −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w4",
+   "myAnswer": "Whole numbers include zero and positive integers, so they represent quantities that cannot be negative."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w5",
+   "myAnswer": "Integers are stored as binary bits. For n bits, an unsigned integer uses the bits to represent values from 0 to 2ⁿ − 1. Signed integers use two’s-complement representation, with a range of −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1; the most significant bit indicates the sign."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w6",
+   "myAnswer": "To convert a positive decimal integer to binary, express it as a sum of powers of 2. For example, 5₁₀ = 00000101₂. To represent −5 using 8-bit two’s complement, invert the bits of 00000101₂ to get 11111010₂, then add 1 to get 11111011₂. To convert binary to decimal, add the place values of the 1 bits; for a signed two’s-complement value, interpret the bits according to that representation. Thus 00000101₂ = 5₁₀ and 11111011₂ = −5₁₀."
+  }
+ ]
+}

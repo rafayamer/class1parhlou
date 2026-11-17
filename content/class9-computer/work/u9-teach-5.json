@@ -1,0 +1,373 @@
+{
+ "note": {
+  "explanation": "Data storage techniques are ways to save and organise information so it can be accessed and used later. Spreadsheets arrange data in rows and columns; databases store structured data in tables; data warehouses store and analyse large amounts of data from different sources; NoSQL databases can store flexible, unstructured data.",
+  "examples": [
+   "A small shop could use a spreadsheet to keep a simple inventory.",
+   "A company could use a data warehouse to analyse sales collected from different sources."
+  ],
+  "checkAnswer": "Spreadsheets, databases, data warehouses, and NoSQL.",
+  "keywords": [
+   "data storage",
+   "spreadsheet",
+   "database",
+   "data warehouse",
+   "NoSQL",
+   "structured data",
+   "unstructured data"
+  ],
+  "simple": "Choose a storage method that suits the data and the job. A spreadsheet suits simpler tasks; a database suits structured records; a data warehouse suits large-scale analysis; NoSQL suits flexible data that does not fit traditional tables.",
+  "checkQuestion": "Name the four data storage technologies covered in this section.",
+  "title": "Choosing a way to store data",
+  "steps": [
+   "Check whether the task is simple or needs complex data management.",
+   "Check whether the data is structured in tables or is flexible and unstructured.",
+   "Choose the method that fits the task: spreadsheet, database, data warehouse, or NoSQL."
+  ],
+  "answer": "The four technologies are spreadsheets, databases, data warehouses, and NoSQL.",
+  "checkAccept": [
+   [
+    "spreadsheets",
+    "databases",
+    "data warehouses",
+    "NoSQL"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A spreadsheet",
+    "A data warehouse",
+    "A NoSQL database",
+    "A database"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A student wants to arrange a simple personal budget in rows and columns and calculate totals. Which tool from this section is most suitable?",
+   "rationales": [
+    "Correct: spreadsheets arrange data in rows and columns and can perform calculations.",
+    "A data warehouse is intended for storing and analysing large amounts of data from various sources.",
+    "NoSQL is designed for data that may not fit well into traditional databases, rather than a simple budget.",
+    "A database can store structured records, but a spreadsheet is the section's direct fit for a simple task like this."
+   ]
+  },
+  {
+   "options": [
+    "Columns",
+    "Records",
+    "Rows",
+    "Attributes"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "In a database table, what represents an individual record?",
+   "rationales": [
+    "Columns represent attributes of records, not individual records.",
+    "Records are the information represented by rows; they are not the table's row-and-column direction.",
+    "Correct: each row represents an individual record.",
+    "Attributes are represented by columns, not by individual records."
+   ]
+  },
+  {
+   "options": [
+    "A small personal budget",
+    "A simple inventory list",
+    "Analysing large amounts of data collected from various sources",
+    "A few calculations in a sheet"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which task best suits a data warehouse?",
+   "rationales": [
+    "A small personal budget is a typical simple spreadsheet task.",
+    "A simple inventory list is a typical spreadsheet task.",
+    "Correct: data warehouses are designed to store and analyse large amounts of data collected from various sources.",
+    "A few calculations in a sheet are a typical spreadsheet task."
+   ]
+  },
+  {
+   "options": [
+    "They use only rows and columns.",
+    "They can store data in documents, key-value pairs, graphs, or columns.",
+    "They can store only numeric data.",
+    "They are designed only for personal budgeting."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes a feature of NoSQL databases?",
+   "rationales": [
+    "NoSQL databases can use different structures, not only tables of rows and columns.",
+    "Correct: NoSQL databases can use structures such as documents, key-value pairs, graphs, or columns.",
+    "NoSQL can store unstructured data, so it is not limited to numeric data.",
+    "Personal budgeting is an example of a spreadsheet use, not the only purpose of NoSQL."
+   ]
+  },
+  {
+   "options": [
+    "Structured data",
+    "Unstructured data",
+    "Only data in spreadsheets",
+    "Only data in charts"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which kind of data is described as not following a specific format?",
+   "rationales": [
+    "Structured data follows an organised format, such as data arranged in tables.",
+    "Correct: unstructured data does not follow a specific format.",
+    "Spreadsheets are a way to organise data, not a type of data described by this definition.",
+    "Charts display data and are not a type of data described by this definition."
+   ]
+  },
+  {
+   "options": [
+    "MongoDB",
+    "Google Sheets",
+    "Amazon Redshift",
+    "Microsoft Excel"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which example from the section is a NoSQL database that stores data in JSON-like documents?",
+   "rationales": [
+    "Correct: the section says MongoDB stores data in JSON-like documents.",
+    "Google Sheets is a spreadsheet tool, not the named NoSQL example.",
+    "Amazon Redshift is given as an example of a data warehouse service.",
+    "Microsoft Excel is a spreadsheet tool, not the named NoSQL example."
+   ]
+  },
+  {
+   "options": [
+    "Cassandra",
+    "Google BigQuery",
+    "Microsoft Excel",
+    "Google Sheets"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which NoSQL database in the section is designed to handle large amounts of data across many servers without a single point of failure?",
+   "rationales": [
+    "Correct: the section describes Cassandra this way.",
+    "Google BigQuery is given as an example of a data warehouse.",
+    "Microsoft Excel is a spreadsheet tool.",
+    "Google Sheets is a spreadsheet tool."
+   ]
+  },
+  {
+   "options": [
+    "A spreadsheet",
+    "A data warehouse",
+    "A NoSQL database",
+    "A chart"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A company wants to combine large amounts of data from various sources to analyse business performance. Which storage technology best matches this purpose?",
+   "rationales": [
+    "A spreadsheet is often used for tasks that do not require complex data management.",
+    "Correct: data warehouses store and analyse large amounts of data collected from various sources and can support organisational decisions.",
+    "NoSQL is flexible for data that may not fit traditional databases, but the described purpose is the section's data warehouse use.",
+    "A chart can display data but is not a data storage technology in the section."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Why is it important to organise data into tables or charts before analyzing it?",
+   "finalAnswer": "Organising data into tables or charts makes it easier to find, compare, and understand patterns in the data before analysing it.",
+   "marks": 2,
+   "source": "Short 9.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "easier",
+       "tables"
+      ],
+      [
+       "easier",
+       "charts"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies the purpose of organising data before analysis.",
+     "description": "State that tables or charts make data easier to work with.",
+     "how": "Explain that organised displays make information easier to find or understand."
+    },
+    {
+     "accept": [
+      [
+       "compare"
+      ],
+      [
+       "patterns"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how organised data supports analysis.",
+     "description": "Explain that organisation helps users compare data or notice patterns.",
+     "how": "Give one clear benefit for analysing the organised data."
+    }
+   ],
+   "modelAnswer": [
+    "Tables or charts organise data so it is easier to find and understand.",
+    "They help us compare information and notice patterns before analysing it."
+   ]
+  },
+  {
+   "text": "Explain the role of tables and charts in data analysis. Provide an example of how you could use a table or chart to present data about students' grades in different subjects.",
+   "finalAnswer": "Tables and charts organise and present data so it is easier to compare, understand, and analyse. For example, a table can list students in rows and subjects in columns, with each student's grade entered in the correct cell; a chart can then help compare grades across subjects.",
+   "marks": 8,
+   "source": "Long 9.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "organise",
+       "data"
+      ],
+      [
+       "present",
+       "data"
+      ]
+     ],
+     "marks": 3,
+     "why": "Explaining the role of tables and charts establishes the main idea of the response.",
+     "description": "Describe tables and charts as ways to organise or present data.",
+     "how": "State that they arrange or display information clearly."
+    },
+    {
+     "accept": [
+      [
+       "compare"
+      ],
+      [
+       "understand"
+      ],
+      [
+       "analyse"
+      ]
+     ],
+     "marks": 3,
+     "why": "The answer must explain how the displays help with analysis, not just name them.",
+     "description": "Explain that tables or charts make data easier to compare, understand, or analyse.",
+     "how": "Give relevant benefits of using an organised display."
+    },
+    {
+     "accept": [
+      [
+       "students",
+       "subjects",
+       "grades"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example shows how the idea applies to the question's school data.",
+     "description": "Give an example presenting students' grades across different subjects.",
+     "how": "Describe a table or chart that includes students, subjects, and grades."
+    }
+   ],
+   "modelAnswer": [
+    "Tables and charts organise and present data clearly.",
+    "They make it easier to compare information, understand it, and analyse it for patterns.",
+    "For example, a table can list students in rows and subjects in columns.",
+    "Enter each student's grade in the cell for the correct subject.",
+    "A chart made from the grades can help compare performance in different subjects."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to distinguish spreadsheets, databases, data warehouses, and NoSQL by their uses and features.",
+   "For a short answer, name the method and connect it to its defining purpose: simple rows and columns, structured records, large-scale analysis, or flexible data structures.",
+   "For a longer answer, explain the choice and give a suitable example, such as a spreadsheet for a simple budget or a data warehouse for analysing data from different sources.",
+   "Use the book's terms accurately: rows are records in a database table, and columns are attributes."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what tables and charts do to information.",
+     "Mention how they help a person find or compare information and notice patterns."
+    ],
+    "accept": [
+     [
+      "tables",
+      "easier"
+     ],
+     [
+      "charts",
+      "easier"
+     ]
+    ],
+    "question": "Why is it important to organise data into tables or charts before analyzing it?",
+    "solution": [
+     "Tables and charts organise data clearly.",
+     "This makes it easier to find and understand information.",
+     "They also help us compare data and notice patterns before analysing it."
+    ],
+    "answer": "Tables and charts make data easier to find, compare, and understand, helping us notice patterns before analysing it."
+   },
+   {
+    "hints": [
+     "Choose a table or chart that can show students, subjects, and grades.",
+     "Explain what goes in the rows and columns, then say how the display helps comparison."
+    ],
+    "accept": [
+     [
+      "students",
+      "subjects",
+      "grades"
+     ]
+    ],
+    "question": "Explain the role of tables and charts in data analysis. Provide an example of how you could use a table or chart to present data about students' grades in different subjects.",
+    "solution": [
+     "Tables and charts organise and present data clearly.",
+     "They make information easier to compare, understand, and analyse.",
+     "For example, a table can list students in rows and subjects in columns.",
+     "Enter each student's grade in the cell for the correct subject.",
+     "A chart made from the grades can help compare performance in different subjects."
+    ],
+    "answer": "Tables and charts organise and present data so it is easier to compare, understand, and analyse. A table can list students in rows and subjects in columns, with each student's grade entered in the correct cell. A chart can help compare grades across subjects."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "MongoDB is identified in the textbook as the example that stores data in JSON-like documents.",
+     "text": "MongoDB stores data in JSON-like documents."
+    },
+    {
+     "why": "Cassandra is identified as the example built to handle large amounts of data across many servers without a single point of failure.",
+     "text": "Cassandra is designed to handle large amounts of data across many servers without a single point of failure."
+    }
+   ],
+   "question": "Which NoSQL database stores data in JSON-like documents, and which is designed to handle large amounts of data across many servers without a single point of failure?",
+   "answer": "MongoDB stores data in JSON-like documents; Cassandra is designed to handle large amounts of data across many servers without a single point of failure."
+  },
+  "explain": [
+   {
+    "title": "Spreadsheets",
+    "body": "Spreadsheets are tools that help us organise data in rows and columns, much like a simpler version of a database. They are often used for tasks that don't require complex data management. Spreadsheets like Microsoft Excel or Google Sheets allow users to input data into cells organised in rows and columns. You can perform calculations, create charts, and sort data easily. These are commonly used for personal budgeting, simple data analysis, and small business inventory management."
+   },
+   {
+    "title": "Databases",
+    "body": "Databases are like digital filing cabinets where information is stored in an organised way. They are designed to handle large amounts of structured data and allow users to easily find and manipulate this data. Information in databases is stored in tables, similar to spreadsheets. Each table has rows and columns, where rows represent individual records, and columns represent the attributes of those records. These are used in many everyday applications like banking systems, online shopping websites, and school records."
+   },
+   {
+    "title": "Data warehouses",
+    "body": "Data Warehouses are specialized types of databases designed for storing and analysing large amounts of data collected from various sources. They are used to help organizations make decisions based on data analysis. Data warehouses are used by companies to analyze business performance, track sales, and understand customer behaviour. Examples include Amazon Redshift and Google BigQuery."
+   },
+   {
+    "title": "NoSQL",
+    "body": "NoSQL stands for \"Not Only SQL\" and refers to a variety of database technologies that are designed to handle different types of data that may not fit well into traditional databases. NoSQL databases are flexible and can store unstructured data, which is data that doesn't follow a specific format. Unlike traditional databases that use tables, NoSQL databases can use various structures like documents, key-value pairs, graphs, or columns to store data. NoSQL databases are often used in big data applications, real-time web applications, and content management systems."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse a spreadsheet with a database: both can use rows and columns, but spreadsheets suit simpler tasks and databases are designed to handle large amounts of structured data.",
+   "Do not say that data warehouses are just for storing everyday records; they are designed for storing and analysing large amounts of data from various sources.",
+   "Do not describe NoSQL as meaning \"no data\" or as only one format; it stands for \"Not Only SQL\" and can use several structures.",
+   "In a database table, do not reverse the terms: rows represent records and columns represent attributes.",
+   "When choosing a storage method, do not give only its name; connect it to the task it is suited for."
+  ]
+ }
+}

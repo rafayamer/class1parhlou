@@ -1,0 +1,446 @@
+{
+ "note": {
+  "explanation": "A website has a front end that users see, a back end that handles behind-the-scenes work, and full-stack development that includes both. HTML structures page content, CSS styles it, and JavaScript adds interactivity. The back end can use web servers, databases, and programming languages such as PHP, Python, and Ruby.",
+  "examples": [
+   "A login form is part of the front end; checking login details and accessing user data are back-end tasks.",
+   "A full-stack developer can work on both the login screen and the authentication and database interaction behind it."
+  ],
+  "checkAnswer": "JavaScript adds interactivity to web pages.",
+  "keywords": [
+   "front end",
+   "back end",
+   "full stack",
+   "HTML",
+   "CSS",
+   "JavaScript",
+   "database"
+  ],
+  "simple": "The front end is what users see. The back end does the hidden work. Full-stack development covers both.",
+  "checkQuestion": "Which front-end technology adds interactivity to web pages?",
+  "title": "Basic Components of Web Development",
+  "steps": [
+   "Identify what the user sees and interacts with: this is the front end.",
+   "Use HTML to structure the content, CSS to style it, and JavaScript to make it interactive.",
+   "Identify the behind-the-scenes work, such as servers, data, and application logic: this is the back end.",
+   "A full-stack developer works on both the front end and the back end."
+  ],
+  "answer": "JavaScript.",
+  "checkAccept": [
+   [
+    "JavaScript"
+   ],
+   [
+    "javascript"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Structure page content",
+    "Style page content",
+    "Add interactivity",
+    "Store user data"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which task is mainly performed by HTML in front-end development?",
+   "rationales": [
+    "Correct: HTML structures content such as headings, paragraphs, images, and links.",
+    "Incorrect: CSS styles content, including its colours, fonts, and layout.",
+    "Incorrect: JavaScript adds interactivity to web pages.",
+    "Incorrect: Databases store and manage data."
+   ]
+  },
+  {
+   "options": [
+    "PHP",
+    "CSS",
+    "HTML",
+    "JavaScript"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which technology is used to style the content on a web page?",
+   "rationales": [
+    "Incorrect: PHP is a back-end programming language.",
+    "Correct: CSS styles web-page content, including colours, fonts, and layout.",
+    "Incorrect: HTML structures web-page content.",
+    "Incorrect: JavaScript adds interactivity to web pages."
+   ]
+  },
+  {
+   "options": [
+    "JavaScript",
+    "A web server",
+    "A database",
+    "HTML"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which front-end technology can make a web page interactive?",
+   "rationales": [
+    "Correct: JavaScript adds interactivity and can support features such as forms and animations.",
+    "Incorrect: A web server stores and delivers web pages to users.",
+    "Incorrect: A database stores and manages data.",
+    "Incorrect: HTML structures the content on web pages."
+   ]
+  },
+  {
+   "options": [
+    "A computer that stores and delivers web pages",
+    "A language used only to style pages",
+    "A tool that creates images",
+    "A list of instructions stored in a database"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a web server?",
+   "rationales": [
+    "Correct: A web server stores and delivers web pages when users enter a URL.",
+    "Incorrect: Styling web pages is the role of CSS, not a web server.",
+    "Incorrect: Creating images is not the definition of a web server.",
+    "Incorrect: A database manages data, while a web server delivers web pages."
+   ]
+  },
+  {
+   "options": [
+    "It stores and manages data",
+    "It changes the layout of a page",
+    "It displays a login button",
+    "It delivers a web page when a URL is entered"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the main role of a database in back-end development?",
+   "rationales": [
+    "Correct: Databases store and manage information such as user details and website content.",
+    "Incorrect: CSS is used to change page layout.",
+    "Incorrect: A login button is part of the user interface, not the database's main role.",
+    "Incorrect: A web server delivers web pages to users."
+   ]
+  },
+  {
+   "options": [
+    "HTML and CSS only",
+    "Back-end development only",
+    "Front-end and back-end development",
+    "Database development only"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which work is included in full-stack development?",
+   "rationales": [
+    "Incorrect: Full-stack development is not limited to HTML and CSS.",
+    "Incorrect: Full-stack development includes more than back-end work.",
+    "Correct: Full-stack development includes both the front end and the back end.",
+    "Incorrect: Database work is only one possible back-end task."
+   ]
+  },
+  {
+   "options": [
+    "PHP",
+    "HTML",
+    "CSS",
+    "JavaScript"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which of these is identified as a back-end programming language in this section?",
+   "rationales": [
+    "Correct: PHP is given as an example of a back-end programming language.",
+    "Incorrect: HTML structures content on web pages.",
+    "Incorrect: CSS styles content on web pages.",
+    "Incorrect: JavaScript is described here as adding interactivity to web pages."
+   ]
+  },
+  {
+   "options": [
+    "Writing the page's headings",
+    "Changing the page's colours",
+    "Processing a form on the server",
+    "Adding an animation to the page"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which is an example of a back-end task?",
+   "rationales": [
+    "Incorrect: Headings are part of the content structured on the front end.",
+    "Incorrect: Changing colours is a styling task done with CSS.",
+    "Correct: Back-end programming languages can process forms.",
+    "Incorrect: An animation is an interactive page feature associated with the front end."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Login System: A login system is a common feature in web development, allowing users to access their accounts on a website. Explain the roles of front-end, back-end, and full-stack development in this example.",
+   "finalAnswer": "The front end provides the login interface; the back end handles authentication and database interaction; a full-stack developer works on both.",
+   "marks": 2,
+   "source": "Example: Login System",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "front end",
+       "login"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The answer must identify the user-facing part of the login system.",
+     "description": "Identify the front-end role.",
+     "how": "State that the front end provides the login interface."
+    },
+    {
+     "accept": [
+      [
+       "back end",
+       "authentication"
+      ],
+      [
+       "back end",
+       "database"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The answer must identify the behind-the-scenes work.",
+     "description": "Identify the back-end role.",
+     "how": "Mention authentication or database interaction."
+    },
+    {
+     "accept": [
+      [
+       "full stack",
+       "both"
+      ],
+      [
+       "full stack",
+       "front end",
+       "back end"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must show that full-stack development includes both sides.",
+     "description": "Give the complete distinction and answer.",
+     "how": "State that a full-stack developer handles both front-end and back-end work."
+    }
+   ],
+   "modelAnswer": [
+    "The front end provides the user interface for entering login details.",
+    "The back end handles user authentication and database interaction.",
+    "A full-stack developer creates the front end and handles the back end."
+   ]
+  },
+  {
+   "text": "Q8.5. How can you include JavaScript in an HTML file?",
+   "finalAnswer": "Use the <script> tag; an external JavaScript file can be included with <script src=\"script.js\"></script>.",
+   "marks": 2,
+   "source": "Short 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "script"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must name the HTML element used to include JavaScript.",
+     "description": "Name the script tag.",
+     "how": "Write that JavaScript is included using the <script> tag."
+    },
+    {
+     "accept": [
+      [
+       "src",
+       "script.js"
+      ],
+      [
+       "external",
+       "script"
+      ]
+     ],
+     "marks": 1,
+     "why": "Giving the external-file form shows how a separate script file can be connected.",
+     "description": "Show the external script form.",
+     "how": "Give an example such as <script src=\"script.js\"></script>."
+    }
+   ],
+   "modelAnswer": [
+    "Use the <script> tag to include JavaScript in an HTML file.",
+    "For an external file, write: <script src=\"script.js\"></script>."
+   ]
+  },
+  {
+   "text": "Q8.1. Discuss the fundamental differences between HTML, CSS, and JavaScript in the context of web development.",
+   "finalAnswer": "HTML structures web-page content, CSS styles it, and JavaScript adds interactivity.",
+   "marks": 8,
+   "source": "Long 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "HTML",
+       "structures"
+      ]
+     ],
+     "marks": 2,
+     "why": "HTML's structural role is the first fundamental difference.",
+     "description": "Explain HTML's role.",
+     "how": "State that HTML structures page content, such as headings, paragraphs, images, and links."
+    },
+    {
+     "accept": [
+      [
+       "CSS",
+       "styles"
+      ]
+     ],
+     "marks": 2,
+     "why": "CSS's styling role distinguishes it from HTML and JavaScript.",
+     "description": "Explain CSS's role.",
+     "how": "State that CSS styles content by changing colours, fonts, or layout."
+    },
+    {
+     "accept": [
+      [
+       "JavaScript",
+       "interactivity"
+      ],
+      [
+       "JavaScript",
+       "dynamic"
+      ]
+     ],
+     "marks": 2,
+     "why": "JavaScript's interactive role completes the comparison.",
+     "description": "Explain JavaScript's role.",
+     "how": "State that JavaScript adds interactivity or makes pages dynamic."
+    },
+    {
+     "accept": [
+      [
+       "HTML",
+       "CSS",
+       "JavaScript",
+       "structures",
+       "styles",
+       "interactivity"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear final comparison demonstrates how all three technologies work together.",
+     "description": "Give the complete comparison.",
+     "how": "Conclude that HTML structures content, CSS styles it, and JavaScript adds interactivity."
+    }
+   ],
+   "modelAnswer": [
+    "HTML structures the content on web pages, like headings, paragraphs, images, and links.",
+    "CSS styles the content on web pages by changing colours, fonts, and layout.",
+    "JavaScript adds interactivity to web pages, making them dynamic and engaging.",
+    "Therefore, HTML provides structure, CSS controls appearance, and JavaScript provides interactivity."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section can be tested as a short question asking you to state the role of HTML, CSS, or JavaScript.",
+   "A long question may ask you to compare HTML, CSS, and JavaScript. Give each technology's role separately for clear marks.",
+   "For a login-system example, distinguish the user-facing login interface from back-end authentication and database interaction.",
+   "Use the terms front end, back end, and full stack accurately; full-stack development includes both front-end and back-end work."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First decide which part of a login system the user sees.",
+     "Then explain what happens behind the scenes and what a full-stack developer handles."
+    ],
+    "accept": [
+     [
+      "front end",
+      "back end",
+      "full stack"
+     ],
+     [
+      "interface",
+      "authentication",
+      "database",
+      "both"
+     ]
+    ],
+    "question": "Q8.1. Discuss the fundamental differences between HTML, CSS, and JavaScript in the context of web development.",
+    "solution": [
+     "HTML structures the content on web pages, like headings, paragraphs, images, and links.",
+     "CSS styles the content on web pages, changing colours, fonts, and layout.",
+     "JavaScript adds interactivity to web pages, making them dynamic and engaging.",
+     "Thus, HTML provides structure, CSS controls appearance, and JavaScript adds interactivity."
+    ],
+    "answer": "HTML structures content, CSS styles it, and JavaScript adds interactivity."
+   },
+   {
+    "hints": [
+     "Think of the HTML element used to contain or connect JavaScript.",
+     "For a separate file, the tag uses a src attribute."
+    ],
+    "accept": [
+     [
+      "script",
+      "src"
+     ],
+     [
+      "script",
+      "external"
+     ]
+    ],
+    "question": "Q8.5. How can you include JavaScript in an HTML file?",
+    "solution": [
+     "Use the <script> tag to include JavaScript in an HTML file.",
+     "For an external file, write: <script src=\"script.js\"></script>."
+    ],
+    "answer": "Use the <script> tag; for an external file, use <script src=\"script.js\"></script>."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The interface is the part of the login system that users see and interact with.",
+     "text": "The front end provides the user interface (UI) for the login system."
+    },
+    {
+     "why": "The section identifies user authentication and database interaction as back-end work.",
+     "text": "The back end handles user authentication and database interaction."
+    },
+    {
+     "why": "A full-stack developer works on both sides of the application.",
+     "text": "A full-stack developer creates the front-end UI and handles the back-end tasks."
+    }
+   ],
+   "question": "Login System: Explain the roles of front-end, back-end, and full-stack development in this example.",
+   "answer": "The front end provides the login interface, the back end handles authentication and database interaction, and a full-stack developer works on both."
+  },
+  "explain": [
+   {
+    "title": "Front-end development",
+    "body": "Front-end Development: This focuses on what users see and interact with on a website. HTML structures the content on web pages, like headings, paragraphs, images, and links. CSS styles the content on web pages, changing colors, fonts, and layout to enhance the appearance. JavaScript adds interactivity to web pages, making them dynamic and engaging. It allows features such as forms, animations, and games."
+   },
+   {
+    "title": "Back-end development",
+    "body": "Back-end Development: This manages the behind-the-scenes functionality of a website, including servers, databases, and application logic. Web Servers are computers that store and deliver web pages to users when they enter a URL. Databases store and manage data, like user information, product details, and website content. Back-end Programming Languages like PHP, Python, and Ruby handle tasks such as processing forms, and managing user logins."
+   },
+   {
+    "title": "Full-stack development",
+    "body": "A full-stack developer works on both the front end and the back end. In the login-system example, a full-stack developer creates the User Interface (UI) for the front end and handles user authentication and database interaction for the back end."
+   },
+   {
+    "title": "How the parts fit together",
+    "body": "HTML provides structure, CSS controls appearance, and JavaScript adds interactivity on the front end. The back end handles behind-the-scenes tasks and may use a web server, a database, and a back-end programming language."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse HTML's role of structuring content with CSS's role of styling it.",
+   "Do not say JavaScript is used only to style a page; this section describes it as adding interactivity.",
+   "Do not confuse a web server, which delivers web pages, with a database, which stores and manages data.",
+   "Do not describe full-stack development as only front-end or only back-end work.",
+   "When explaining a login system, identify both the user-facing interface and the behind-the-scenes authentication or database tasks."
+  ]
+ }
+}

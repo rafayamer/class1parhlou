@@ -1,0 +1,120 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "13:16",
+   "figure": "",
+   "steps": [
+    "In business, networks allow employees to share files, printers, and other resources.",
+    "Businesses use networks for communication, such as email and video conferencing, and for accessing shared databases and online services.",
+    "In education, networks give students and teachers access to learning resources, online courses, and educational websites.",
+    "Schools use networks to share information, communicate, and support online learning.",
+    "In healthcare, networks let healthcare professionals share patient records and medical information.",
+    "Healthcare networks support communication between hospitals, clinics, laboratories, and other healthcare providers.",
+    "Networks can also support telemedicine, allowing patients to consult healthcare professionals remotely."
+   ],
+   "finalAnswer": "Computer networks support resource sharing and communication in business, access to learning resources in education, and sharing of patient information and telemedicine in healthcare."
+  },
+  {
+   "accept": [],
+   "id": "13:17",
+   "figure": "",
+   "steps": [
+    "Star topology: All devices connect to a central hub or switch. It is easy to add devices and manage, but failure of the central device can stop the network.",
+    "Ring topology: Each device connects to two other devices, forming a ring. Data travels around the ring; a break in the ring can disrupt communication.",
+    "Bus topology: All devices connect to one main cable called the backbone. It is simple and inexpensive, but failure of the backbone can stop the network.",
+    "Mesh topology: Devices connect to many or all other devices. It is reliable because there are alternate paths, but it requires more connections and is costly to install.",
+    "Unlike bus and ring topologies, star topology depends on a central device, while mesh topology provides multiple paths between devices."
+   ],
+   "finalAnswer": "Star uses a central device; ring connects devices in a loop; bus uses one backbone cable; and mesh provides multiple connections and paths."
+  },
+  {
+   "accept": [
+    [
+     "WIGYVMXC"
+    ],
+    [
+     "w:WIGYVMXC"
+    ]
+   ],
+   "id": "13:18",
+   "figure": "",
+   "steps": [
+    "Given: Shift amount = 4 letters forward; message = SECURITY.",
+    "Required: Encrypt the message.",
+    "Formula: Replace each letter with the letter four places after it in the alphabet, wrapping around from Z to A.",
+    "Working: S→W, E→I, C→G, U→Y, R→V, I→M, T→X, Y→C.",
+    "Result: SECURITY encrypts to WIGYVMXC."
+   ],
+   "finalAnswer": "WIGYVMXC"
+  },
+  {
+   "accept": [
+    [
+     "SITURIE"
+    ],
+    [
+     "w:SITURIE"
+    ]
+   ],
+   "id": "13:19",
+   "figure": "",
+   "steps": [
+    "Given: Shift amount = 4 letters; encrypted message = WMXYVMI.",
+    "Required: Decrypt the message.",
+    "Formula: Replace each encrypted letter with the letter four places before it in the alphabet, wrapping around from A to Z.",
+    "Working: W→S, M→I, X→T, Y→U, V→R, M→I, I→E.",
+    "Result: WMXYVMI decrypts to SITURIE."
+   ],
+   "finalAnswer": "SITURIE"
+  },
+  {
+   "accept": [
+    [
+     "4294967296"
+    ],
+    [
+     "4,294,967,296"
+    ]
+   ],
+   "id": "13:20",
+   "figure": "",
+   "steps": [
+    "Given: Number of bits in an IPv4 address = 32 bits.",
+    "Required: Total number of unique IPv4 addresses.",
+    "Formula: Total number of possible addresses = 2ⁿ, where n is the number of bits.",
+    "Substitution: Total = 2³² addresses.",
+    "Working: 2³² = 4,294,967,296.",
+    "Result: The total number of unique IPv4 addresses is 4,294,967,296 addresses."
+   ],
+   "finalAnswer": "4,294,967,296 addresses"
+  },
+  {
+   "accept": [
+    [
+     "3865470566.4"
+    ],
+    [
+     "3,865,470,566.4"
+    ],
+    [
+     "3865470566"
+    ],
+    [
+     "3,865,470,566"
+    ]
+   ],
+   "id": "13:21",
+   "figure": "",
+   "steps": [
+    "Given: Total IPv4 addresses = 4,294,967,296 addresses; reserved fraction = 10%.",
+    "Required: Number of addresses left after reserving 10%.",
+    "Formula: Addresses left = Total addresses × (100% − reserved percentage).",
+    "Substitution: Addresses left = 4,294,967,296 × 90%.",
+    "Working: Addresses left = 4,294,967,296 × 0.9 = 3,865,470,566.4.",
+    "Result: Approximately 3,865,470,566 whole addresses are left."
+   ],
+   "finalAnswer": "Approximately 3,865,470,566 addresses (90% of the total is 3,865,470,566.4)."
+  }
+ ]
+}

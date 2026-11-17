@@ -1,0 +1,748 @@
+{
+ "note": {
+  "explanation": "Flowcharts show an algorithm with symbols and arrows; pseudocode describes its steps in simple, structured language. Use the method that makes the algorithm easiest to understand and check.",
+  "examples": [
+   "A flowchart uses a diamond for a decision such as “Is the item available?”",
+   "Pseudocode can use if/else to print “Even” or “Odd”."
+  ],
+  "checkAnswer": "A flowchart is visual and uses symbols and arrows; pseudocode uses plain language in a structured format.",
+  "keywords": [
+   "flowchart",
+   "pseudocode",
+   "algorithm",
+   "decision",
+   "flowline",
+   "process"
+  ],
+  "simple": "A flowchart is a picture of the steps. Pseudocode is a written plan of the steps.",
+  "checkQuestion": "What is one main difference between a flowchart and pseudocode?",
+  "title": "Choosing an Algorithm Design Method",
+  "steps": [
+   "Identify the steps and decisions needed to solve the problem.",
+   "Use a flowchart when you want to show the overall flow visually.",
+   "Use pseudocode when you want to describe the logic step by step in words.",
+   "Check that each decision has the correct branches and that the process can reach an end."
+  ],
+  "answer": "Flowcharts and pseudocode are two ways to describe an algorithm. Flowcharts use graphical symbols and arrows. Pseudocode uses plain language and a structured format.",
+  "checkAccept": [
+   [
+    "symbols",
+    "arrows"
+   ],
+   [
+    "visual",
+    "plain language"
+   ],
+   [
+    "graphical",
+    "structured"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Oval",
+    "Rectangle",
+    "Diamond",
+    "Parallelogram"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which flowchart symbol represents a decision point?",
+   "rationales": [
+    "An oval marks the start or end of a process, not a decision.",
+    "A rectangle represents a process, task, or operation.",
+    "A diamond represents a decision where the flow can branch.",
+    "A parallelogram represents input or output."
+   ]
+  },
+  {
+   "options": [
+    "It represents the start or end of a process.",
+    "It represents a task or operation.",
+    "It represents data input or output.",
+    "It shows the direction of flow."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does an oval (terminal) represent in a flowchart?",
+   "rationales": [
+    "An oval is used for the start or end of a process.",
+    "A rectangle, not an oval, represents a task or operation.",
+    "A parallelogram, not an oval, represents input or output.",
+    "An arrow (flowline), not an oval, shows the direction of flow."
+   ]
+  },
+  {
+   "options": [
+    "A diamond",
+    "A rectangle",
+    "A parallelogram",
+    "An arrow"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which symbol is used for data input or output?",
+   "rationales": [
+    "A diamond represents a decision point.",
+    "A rectangle represents a process or operation.",
+    "A parallelogram represents data input or output.",
+    "An arrow connects symbols and shows the direction of flow."
+   ]
+  },
+  {
+   "options": [
+    "It is actual code that a computer can run.",
+    "It describes an algorithm in simple, informal language.",
+    "It is a graphical representation made only of symbols.",
+    "It is used only to find errors in a program."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement best describes pseudocode?",
+   "rationales": [
+    "Pseudocode is not actual code that can be run on a computer.",
+    "Pseudocode describes algorithm steps in simple and informal language.",
+    "A flowchart, rather than pseudocode, is a graphical representation using symbols.",
+    "Pseudocode helps plan and explain algorithms; it is not only for finding errors."
+   ]
+  },
+  {
+   "options": [
+    "Checking whether a number is divisible by 2",
+    "Drawing the flowline between symbols",
+    "Testing whether a number has a divisor",
+    "Choosing a symbol for output"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In the even-or-odd pseudocode, what does the condition number % 2 == 0 check?",
+   "rationales": [
+    "It checks whether dividing the number by 2 leaves a remainder of zero.",
+    "A flowline is part of a flowchart and is not what this condition checks.",
+    "Checking possible divisors is the purpose of the prime-number example.",
+    "The condition does not choose a flowchart symbol."
+   ]
+  },
+  {
+   "options": [
+    "The procedure returns False.",
+    "The procedure returns True.",
+    "The procedure prints the number.",
+    "The procedure loops forever."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In the prime-number pseudocode, what happens if number <= 1?",
+   "rationales": [
+    "The procedure returns False because numbers less than or equal to 1 are not prime.",
+    "It does not return True for a number less than or equal to 1.",
+    "The pseudocode does not print the number in this case.",
+    "The condition immediately returns False, so the procedure does not loop forever."
+   ]
+  },
+  {
+   "options": [
+    "It gives each symbol a different meaning.",
+    "It connects symbols and indicates the sequence of steps.",
+    "It replaces all decision points.",
+    "It stores the input values."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the purpose of a flowline in a flowchart?",
+   "rationales": [
+    "Symbols have their meanings; a flowline does not assign those meanings.",
+    "A flowline connects symbols and shows the direction or sequence of flow.",
+    "A flowline does not replace decision symbols such as diamonds.",
+    "Input values are represented as input, not stored by a flowline."
+   ]
+  },
+  {
+   "options": [
+    "Pseudocode uses arrows, while flowcharts use paragraphs.",
+    "Pseudocode describes steps in structured language, while flowcharts show steps with symbols and arrows.",
+    "Pseudocode can be run directly, while flowcharts are always plain text.",
+    "There is no difference between them."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement correctly differentiates pseudocode from flowcharts?",
+   "rationales": [
+    "This reverses the methods: flowcharts use arrows and pseudocode uses structured language.",
+    "This correctly describes the written, structured form of pseudocode and the visual form of flowcharts.",
+    "Pseudocode is not actual code that can be run directly, and flowcharts are graphical.",
+    "They are both ways to describe algorithms, but they represent them differently."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Pseudocode for determining if a number is even or odd.",
+   "finalAnswer": "Print \"Even\" if number % 2 == 0; otherwise print \"Odd\".",
+   "marks": 2,
+   "source": "Example 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "number%2==0",
+       "print"
+      ]
+     ],
+     "marks": 1,
+     "why": "The condition is the key test for evenness.",
+     "description": "Give the even-number condition and its output.",
+     "how": "Check whether the remainder when number is divided by 2 is zero, then print Even."
+    },
+    {
+     "accept": [
+      [
+       "else",
+       "odd"
+      ]
+     ],
+     "marks": 1,
+     "why": "The other branch must handle odd numbers.",
+     "description": "Give the alternative output.",
+     "how": "Use else to print Odd when the condition is false."
+    }
+   ],
+   "modelAnswer": [
+    "Procedure CheckEvenOdd(number)",
+    "Input: number {The number to be checked}",
+    "Output: \"Even\" if number is even, \"Odd\" if number is odd",
+    "Begin",
+    "    if (number % 2 == 0) then",
+    "        print \"Even\"",
+    "    else",
+    "        print \"Odd\"",
+    "    End if",
+    "End"
+   ]
+  },
+  {
+   "text": "Pseudocode for determining if a number is prime.",
+   "finalAnswer": "Return False for number <= 1 or if a divisor is found from 2 to sqrt(number); otherwise return True.",
+   "marks": 2,
+   "source": "Example 7.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "number<=1",
+       "returnfalse"
+      ]
+     ],
+     "marks": 1,
+     "why": "Numbers less than or equal to 1 are not prime.",
+     "description": "Include the initial check.",
+     "how": "Test number <= 1 and return False if it is true."
+    },
+    {
+     "accept": [
+      [
+       "sqrt",
+       "returntrue"
+      ]
+     ],
+     "marks": 1,
+     "why": "The divisor check and final result complete the prime test.",
+     "description": "Check possible divisors and state the final result.",
+     "how": "Test from 2 to sqrt(number); return False for a divisor and True if none is found."
+    }
+   ],
+   "modelAnswer": [
+    "Procedure Is Prime(number)",
+    "Input: number {The number to be checked}",
+    "Output: True if number is prime, False otherwise",
+    "Begin",
+    "    if (number <= 1) then",
+    "        return False",
+    "    end if",
+    "    for i from 2 to sqrt(number) do",
+    "        if (number % i == 0) then",
+    "            return False",
+    "        end if",
+    "    end for",
+    "    return True",
+    "End"
+   ]
+  },
+  {
+   "text": "Algorithm 3 presents the pseudocode for checking a valid username and password.",
+   "finalAnswer": "Print \"Login successful\" when both credentials match; otherwise print the appropriate invalid-credential message.",
+   "marks": 2,
+   "source": "Example 7.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "username==validusername",
+       "password==validpassword"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both username and password must be checked.",
+     "description": "Show the nested credential checks.",
+     "how": "Compare the entered username and password with their valid values."
+    },
+    {
+     "accept": [
+      [
+       "login successful",
+       "invalid username",
+       "invalid password"
+      ]
+     ],
+     "marks": 1,
+     "why": "The algorithm must report the correct outcome for each case.",
+     "description": "Give the corresponding validity messages.",
+     "how": "Print the success message if both match and the appropriate invalid message otherwise."
+    }
+   ],
+   "modelAnswer": [
+    "Procedure CheckCredentials(username, password)",
+    "Input: username, password",
+    "Output: Validity message",
+    "Begin",
+    "    validUsername = \"user123\" {Replace with the actual valid username}",
+    "    validPassword = \"pass123\" {Replace with the actual valid password}",
+    "    if (username == validUsername) then",
+    "        if (password == validPassword) then",
+    "            print \"Login successful\"",
+    "        else",
+    "            print \"Invalid password\"",
+    "        end if",
+    "    else",
+    "        print \"Invalid username\"",
+    "    end if",
+    "End"
+   ]
+  },
+  {
+   "text": "Q7.7. What are flowcharts and how are they used?",
+   "finalAnswer": "Flowcharts are visual representations of process steps using symbols connected by arrows; they are used to model processes, design systems, and communicate workflows.",
+   "marks": 2,
+   "source": "Short 7.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "visual",
+       "symbols",
+       "arrows"
+      ]
+     ],
+     "marks": 1,
+     "why": "A correct definition identifies the visual symbols and their connections.",
+     "description": "Define flowcharts.",
+     "how": "State that flowcharts visually represent steps using symbols connected by arrows."
+    },
+    {
+     "accept": [
+      [
+       "model",
+       "process"
+      ],
+      [
+       "design",
+       "systems"
+      ],
+      [
+       "communicate",
+       "workflow"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should explain at least one practical use.",
+     "description": "State how flowcharts are used.",
+     "how": "Mention modelling processes, designing systems, or communicating workflows."
+    }
+   ],
+   "modelAnswer": [
+    "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows.",
+    "They are used to model processes, design systems, and communicate complex workflows clearly and effectively."
+   ]
+  },
+  {
+   "text": "Q7.8. Explain the purpose of pseudocode.",
+   "finalAnswer": "Pseudocode describes algorithm steps in simple, informal language so the logic can be planned and understood without worrying about programming-language syntax.",
+   "marks": 2,
+   "source": "Short 7.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "algorithm",
+       "simple",
+       "language"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must state what pseudocode represents and how it is written.",
+     "description": "Explain what pseudocode describes.",
+     "how": "Say that it represents algorithm steps using simple, informal language."
+    },
+    {
+     "accept": [
+      [
+       "logic",
+       "syntax"
+      ],
+      [
+       "plan",
+       "algorithm"
+      ]
+     ],
+     "marks": 1,
+     "why": "Its purpose is to make algorithm logic easier to plan and explain.",
+     "description": "Explain why pseudocode is useful.",
+     "how": "Mention focusing on logic without worrying about programming-language syntax."
+    }
+   ],
+   "modelAnswer": [
+    "Pseudocode is a method of representing an algorithm using simple and informal language that is easy to understand.",
+    "It helps programmers and students focus on the logic of the algorithm without worrying about the syntax of a specific programming language."
+   ]
+  },
+  {
+   "text": "Q7.9. How do you differentiate between flowcharts and pseudocode?",
+   "finalAnswer": "Flowcharts represent algorithms graphically with symbols and arrows; pseudocode describes their steps in plain language and a structured format.",
+   "marks": 2,
+   "source": "Short 7.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowcharts",
+       "symbols",
+       "arrows"
+      ]
+     ],
+     "marks": 1,
+     "why": "The flowchart representation must be identified.",
+     "description": "Describe flowcharts.",
+     "how": "State that flowcharts use graphical symbols and arrows."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode",
+       "plain language",
+       "structured"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pseudocode representation must be distinguished from the visual one.",
+     "description": "Describe pseudocode.",
+     "how": "State that pseudocode uses plain language in a structured format."
+    }
+   ],
+   "modelAnswer": [
+    "Pseudocode uses plain language and a structured format to describe the steps of an algorithm.",
+    "Flowcharts use graphical symbols and arrows to represent the flow of an algorithm."
+   ]
+  },
+  {
+   "text": "Q7.2. Explain how you would use algorithm design methods, such as flowcharts and pseudocode, to solve a complex computational problem. Illustrate your explanation with a detailed example.",
+   "finalAnswer": "Use a flowchart to show the steps and decision branches, and pseudocode to state the detailed logic; for example, both can describe assigning a grade from a student's marks.",
+   "marks": 8,
+   "source": "Long 7.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowchart",
+       "symbols",
+       "arrows"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must explain how the visual method represents an algorithm.",
+     "description": "Explain the flowchart method.",
+     "how": "Describe using symbols and arrows to show steps and decision branches."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode",
+       "plain language",
+       "logic"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response must explain the role of pseudocode in designing the solution.",
+     "description": "Explain the pseudocode method.",
+     "how": "Describe writing the algorithm's logic in structured, understandable language."
+    },
+    {
+     "accept": [
+      [
+       "marks",
+       "grade",
+       "90"
+      ],
+      [
+       "student",
+       "grade",
+       "if"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example demonstrates how the design methods are applied.",
+     "description": "Give a suitable computational problem and example.",
+     "how": "Use an example such as assigning a grade based on a student's marks."
+    },
+    {
+     "accept": [
+      [
+       "flowchart",
+       "pseudocode",
+       "final"
+      ],
+      [
+       "decision",
+       "output",
+       "grade"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final explanation should connect the design methods to a complete solution.",
+     "description": "Show how the methods work together to solve the example.",
+     "how": "Explain that the flowchart shows the branches and pseudocode gives the detailed steps, ending with the assigned grade."
+    }
+   ],
+   "modelAnswer": [
+    "First, understand the problem and identify the input, processing steps, decisions, and output.",
+    "A flowchart can show the steps using symbols: a parallelogram for input and output, a rectangle for a process, a diamond for a decision, and arrows for flow.",
+    "Pseudocode can then describe the same logic in a structured, readable form without using the syntax of a particular programming language.",
+    "For example, to assign a grade, the input is a student's marks and the output is the grade.",
+    "Check the marks in descending order: if marks are at least 90, assign A+; otherwise if they are at least 80, assign A.",
+    "Continue with the same method: at least 70 gives B; at least 60 gives C; otherwise assign F.",
+    "The flowchart shows each marks decision as a diamond with branches leading to the grade output.",
+    "The pseudocode records these conditions in order, making the logic clear and ready to convert into a program."
+   ]
+  },
+  {
+   "text": "Q7.8. Compare and contrast flowcharts and pseudocode as methods for algorithm design. Discuss the advantages and disadvantages of each method, and provide examples where one might be preferred over the other.",
+   "finalAnswer": "Flowcharts use graphical symbols and arrows to show an algorithm visually; pseudocode uses plain, structured language to describe it in detail. Flowcharts help show overall flow and decisions, while pseudocode is useful for detailed planning and conversion into code.",
+   "marks": 8,
+   "source": "Long 7.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flowcharts",
+       "graphical",
+       "symbols",
+       "arrows"
+      ]
+     ],
+     "marks": 2,
+     "why": "A comparison needs an accurate description of flowcharts.",
+     "description": "Describe the flowchart representation.",
+     "how": "State that flowcharts use graphical symbols and arrows to show algorithm flow."
+    },
+    {
+     "accept": [
+      [
+       "pseudocode",
+       "plain language",
+       "structured"
+      ]
+     ],
+     "marks": 2,
+     "why": "A comparison also needs an accurate description of pseudocode.",
+     "description": "Describe the pseudocode representation.",
+     "how": "State that pseudocode uses plain language and a structured format to describe steps."
+    },
+    {
+     "accept": [
+      [
+       "visual",
+       "overall flow",
+       "decisions"
+      ],
+      [
+       "at a glance",
+       "flowchart"
+      ]
+     ],
+     "marks": 2,
+     "why": "Advantages and disadvantages show understanding of when each method is useful.",
+     "description": "Discuss the advantages or limitations of the methods.",
+     "how": "Explain that flowcharts make overall flow intuitive to see, while detailed diagrams can be less convenient to change or read when complex."
+    },
+    {
+     "accept": [
+      [
+       "convert",
+       "code",
+       "pseudocode"
+      ],
+      [
+       "example",
+       "flowchart",
+       "pseudocode"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples show how a student would choose between the methods.",
+     "description": "Give examples and a final comparison.",
+     "how": "Prefer flowcharts for seeing decisions at a glance and pseudocode for detailing logic that will be converted into code."
+    }
+   ],
+   "modelAnswer": [
+    "Flowcharts and pseudocode both describe algorithms, but they use different forms.",
+    "Flowcharts use graphical symbols and arrows to represent the flow of an algorithm.",
+    "Their advantage is that the overall process and its decisions can be understood at a glance; they are useful for identifying steps and branches visually.",
+    "A flowchart can be preferred when explaining a process such as checking whether an item is available and then choosing a branch.",
+    "Pseudocode uses plain language and a structured format to describe algorithm steps sequentially.",
+    "It is useful for planning and explaining logic without worrying about programming syntax, and it can be converted into actual code in any programming language.",
+    "Pseudocode can be preferred when giving detailed instructions for checking a username and password or testing whether a number is prime.",
+    "Thus, flowcharts are more visual, while pseudocode is more detailed and easier to translate into code; the suitable method depends on the problem and purpose."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask for the definition and use of flowcharts or pseudocode, or ask you to distinguish between them.",
+   "For flowchart questions, marks are commonly earned by naming the correct symbols and showing the order and direction of steps with arrows.",
+   "For pseudocode questions, write steps in a clear order and include the conditions and both outcomes of a decision.",
+   "For comparison questions, describe both methods and give a clear difference or suitable example for each.",
+   "In pseudocode, use the section's notation such as if, then, else, End if, for, return, and %."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the shapes and arrows used in the figure.",
+     "Mention that symbols connected by arrows show the steps in a process or system, and state a use."
+    ],
+    "accept": [
+     [
+      "visual",
+      "symbols",
+      "arrows",
+      "model"
+     ],
+     [
+      "visual",
+      "symbols",
+      "arrows",
+      "communicate"
+     ]
+    ],
+    "question": "Q7.7. What are flowcharts and how are they used?",
+    "solution": [
+     "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows.",
+     "They are used to model processes, design systems, and communicate complex workflows clearly and effectively."
+    ],
+    "answer": "Flowcharts visually represent process steps using symbols connected by arrows. They are used to model processes, design systems, and communicate workflows."
+   },
+   {
+    "hints": [
+     "Pseudocode is not a programming language that runs on a computer.",
+     "Explain how it helps you focus on the algorithm's logic before writing code."
+    ],
+    "accept": [
+     [
+      "algorithm",
+      "simple",
+      "language",
+      "logic"
+     ],
+     [
+      "pseudocode",
+      "steps",
+      "syntax"
+     ]
+    ],
+    "question": "Q7.8. Explain the purpose of pseudocode.",
+    "solution": [
+     "Pseudocode is a method of representing an algorithm using simple and informal language that is easy to understand.",
+     "It helps programmers and students focus on the logic of the algorithm without worrying about the syntax of a specific programming language."
+    ],
+    "answer": "Pseudocode describes an algorithm in simple, informal language so its logic can be understood and planned without worrying about programming-language syntax."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This names the procedure and the single value it checks.",
+     "text": "Procedure CheckEvenOdd(number)"
+    },
+    {
+     "why": "This identifies the value supplied to the procedure.",
+     "text": "Input: number {The number to be checked}"
+    },
+    {
+     "why": "This states the two possible outputs before the test is made.",
+     "text": "Output: \"Even\" if number is even, \"Odd\" if number is odd"
+    },
+    {
+     "why": "This marks the beginning of the procedure.",
+     "text": "Begin"
+    },
+    {
+     "why": "A remainder of zero after division by 2 means the number is even.",
+     "text": "if (number % 2 == 0) then"
+    },
+    {
+     "why": "This is the output when the condition is true.",
+     "text": "    print \"Even\""
+    },
+    {
+     "why": "This begins the alternative branch when the condition is false.",
+     "text": "else"
+    },
+    {
+     "why": "A number that did not pass the even test is printed as odd.",
+     "text": "    print \"Odd\""
+    },
+    {
+     "why": "This closes the decision structure.",
+     "text": "End if"
+    },
+    {
+     "why": "This marks the end of the procedure.",
+     "text": "End"
+    }
+   ],
+   "question": "Pseudocode for determining if a number is even or odd.",
+   "answer": "Print \"Even\" if number % 2 == 0; otherwise print \"Odd\"."
+  },
+  "explain": [
+   {
+    "title": "Flowcharts",
+    "body": "Flowcharts are visual representations of the steps in a process or system, depicted using different symbols connected by arrows. They help people see a process and its decisions clearly."
+   },
+   {
+    "title": "Flowchart symbols",
+    "body": "An oval represents the start or end. A rectangle represents a process or task. A parallelogram represents input or output. A diamond represents a decision. An arrow, or flowline, shows the direction of flow."
+   },
+   {
+    "title": "Pseudocode",
+    "body": "Pseudocode is a method of representing an algorithm using simple and informal language that is easy to understand. It is not actual code that can be run on a computer; it helps you focus on the algorithm's logic without worrying about programming syntax."
+   },
+   {
+    "title": "Choosing a method",
+    "body": "Flowcharts show the flow visually, which helps you see the overall structure and decisions. Pseudocode describes each step in a structured, readable way and is useful when planning how to turn an algorithm into code."
+   },
+   {
+    "title": "Decisions in algorithms",
+    "body": "A decision checks a condition and chooses a path. In a flowchart, the decision is shown with a diamond and branches such as Yes and No. In pseudocode, the decision can be written with if, then, else, and End if."
+   }
+  ],
+  "mistakes": [
+   "Using a rectangle for a decision instead of a diamond.",
+   "Using a parallelogram for a process instead of for input or output.",
+   "Leaving out arrows or making the direction of flow unclear.",
+   "Forgetting to show both outcomes of an if/else decision.",
+   "Calling pseudocode executable program code; pseudocode is an informal way to describe an algorithm.",
+   "In the even-or-odd example, using = instead of == in the condition shown in the textbook.",
+   "In the prime-number example, forgetting to return False for numbers less than or equal to 1."
+  ]
+ }
+}

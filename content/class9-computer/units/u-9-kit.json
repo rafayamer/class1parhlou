@@ -1,0 +1,476 @@
+{
+ "unit": 9,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 9.3",
+   "MCQ 9.4",
+   "MCQ 9.5",
+   "MCQ 9.7",
+   "MCQ 9.12",
+   "MCQ 9.13",
+   "MCQ 9.14",
+   "Short 9.2",
+   "Short 9.3",
+   "Short 9.6",
+   "Short 9.7",
+   "Short 9.8",
+   "Short 9.11",
+   "Long 9.3",
+   "Long 9.5",
+   "Long 9.7",
+   "Long 9.8",
+   "Long 9.9",
+   "Long 9.10"
+  ],
+  "definitions": [
+   {
+    "term": "Data",
+    "text": "Data consists of raw facts collected about things around us that we can process to generate useful information."
+   },
+   {
+    "term": "Qualitative data",
+    "text": "Qualitative data refer to categories or labels used to describe the qualities or characteristics of something rather than its quantity."
+   },
+   {
+    "term": "Nominal data",
+    "text": "Nominal data is used to label or categorize items without implying any order."
+   },
+   {
+    "term": "Ordinal data",
+    "text": "Ordinal data represents categories with a meaningful order, though the differences between categories are not uniform."
+   },
+   {
+    "term": "Quantitative data",
+    "text": "Quantitative data consists of numbers used to measure the quantity or amount of something."
+   },
+   {
+    "term": "Discrete data",
+    "text": "Discrete data consist of distinct, separate values that are countable, often in whole numbers."
+   },
+   {
+    "term": "Continuous data",
+    "text": "Continuous data consists of values that can take any number within a given range, including fractions or decimals."
+   },
+   {
+    "term": "Data collection",
+    "text": "Data collection is the process of gathering information to answer questions, make decisions, or understand something better."
+   },
+   {
+    "term": "Survey",
+    "text": "Surveys collect information from people by asking them questions."
+   },
+   {
+    "term": "Data visualization",
+    "text": "Data visualization is the process of turning numbers and information into pictures."
+   },
+   {
+    "term": "Data analysis",
+    "text": "Data analysis involves examining data to discover useful information, draw conclusions, and support decision-making."
+   },
+   {
+    "term": "Mean",
+    "text": "The sum of all values divided by the number of values, representing the average."
+   },
+   {
+    "term": "Median",
+    "text": "The middle value when all values are arranged in order. If there is an even number of values, the median is the average of the two middle values."
+   },
+   {
+    "term": "Mode",
+    "text": "The value that appears most frequently. There can be more than one modes if multiple values appear with the same frequency."
+   },
+   {
+    "term": "Range",
+    "text": "The range is the simplest measure of spread. It is the difference between the highest and lowest values."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "x̄ = ∑xᵢ ÷ n",
+    "use": "Find the mean (average); x̄ and each xᵢ use the same unit as the measured data, and n is a unitless count."
+   },
+   {
+    "formula": "Range = highest value − lowest value",
+    "use": "Find the spread from the smallest to the largest value; the range has the same unit as the data."
+   },
+   {
+    "formula": "S² = ∑(xᵢ − x̄)² ÷ (n − 1)",
+    "use": "Find sample variance; xᵢ and x̄ use the same unit as the data, n is a unitless count, and S² has the squared unit of the data."
+   },
+   {
+    "formula": "S = √[∑(xᵢ − x̄)² ÷ (n − 1)]",
+    "use": "Find sample standard deviation; xᵢ, x̄ and S use the same unit as the data, and n is a unitless count."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 9.1",
+    "why": "Core distinction between the two main data categories and a likely 2-mark short question."
+   },
+   {
+    "ref": "Short 9.4",
+    "why": "A direct example of countable discrete data that is easy to test in a short question."
+   },
+   {
+    "ref": "Short 9.5",
+    "why": "Tests the reasons for organising data, including clarity, fewer errors and easier analysis."
+   },
+   {
+    "ref": "Short 9.9",
+    "why": "A central concept with clear points suitable for a short-answer question."
+   },
+   {
+    "ref": "Short 9.10",
+    "why": "Tests a common graph type and whether the student can give a suitable example."
+   },
+   {
+    "ref": "Long 9.1",
+    "why": "Standard detailed question covering definitions, differences and examples."
+   },
+   {
+    "ref": "Long 9.2",
+    "why": "A practical, step-by-step question on survey design and data collection."
+   },
+   {
+    "ref": "Long 9.4",
+    "why": "A likely detailed question linking online data-collection tools with their advantages and limits."
+   },
+   {
+    "ref": "Long 9.6",
+    "why": "A standard detailed question requiring explanation and an applied example."
+   }
+  ],
+  "fullMarks": [
+   "For a data-types answer, state whether the data is qualitative or quantitative, then give the reason and a suitable example.",
+   "For the number of students, say it is quantitative and discrete: it is a count and is normally a whole number.",
+   "For a survey question, explain the purpose, write clear and specific questions, keep the survey short and simple, choose suitable answer options, ensure anonymity, test it, collect responses and analyse the results.",
+   "For a Google Forms answer, give both benefits and challenges. Explain how online forms can make creating and collecting responses easier, then mention possible limits such as internet or device access and the need for clear, unbiased questions.",
+   "For a tables-and-charts answer, explain what each helps readers do, then give a relevant example such as organising students’ subject grades in a table and comparing them with a chart.",
+   "For a line graph answer, state that it shows change over time and give a clear example, such as monthly sales or daily temperatures."
+  ],
+  "mistakes": [
+   "Calling the number of students continuous data. Fix: it is discrete because students are counted in separate whole-number values.",
+   "Mixing up qualitative and quantitative data. Fix: qualitative data describes categories or qualities; quantitative data uses numbers to measure or count.",
+   "Giving a chart example without explaining what it helps show. Fix: state that it makes comparisons, patterns or trends easier to see.",
+   "Describing a line graph without saying what it is used for. Fix: mention change over time and give a suitable example.",
+   "Listing only advantages or only challenges of an online survey tool. Fix: include both, as the question asks for benefits and challenges.",
+   "Writing survey questions that are vague or too long. Fix: make them clear, specific and simple, and test the survey before sharing it."
+  ],
+  "shortTheory": [
+   {
+    "question": "What is the difference between qualitative and quantitative data?",
+    "answer": "Qualitative data refer to categories or labels used to describe the qualities or characteristics of something rather than its quantity. Quantitative data consists of numbers used to measure the quantity or amount of something."
+   },
+   {
+    "question": "What type of data is the number of students in your class?",
+    "answer": "It is discrete data because discrete data consist of distinct, separate values that are countable, often in whole numbers."
+   },
+   {
+    "question": "Why is it important to organise data into tables or charts before analyzing it?",
+    "answer": "Organising data helps reduce errors, saves time and improves clarity. Tables, charts and graphs make data easier to understand, compare and analyse, so it is simpler to draw conclusions and make decisions."
+   },
+   {
+    "question": "Explain why data visualization is important. How does it help in understanding complex information?",
+    "answer": "Data visualization makes understanding data much easier. Charts and graphs help us quickly see patterns, trends and relationships, and provide quick insights without having to read through all the details."
+   },
+   {
+    "question": "Describe what a line graph is used for and provide an example of data that could be displayed using a line graph.",
+    "answer": "A line graph can show how data changes over time. For example, it could show monthly sales figures or temperature readings over several days."
+   },
+   {
+    "question": "What is data collection?",
+    "answer": "Data collection is the process of gathering information to answer questions, make decisions, or understand something better."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-9-1-t0",
+   "text": "What is the difference between qualitative and quantitative data?",
+   "marks": 2,
+   "modelAnswer": [
+    "Qualitative data refer to categories or labels used to describe the qualities or characteristics of something rather than its quantity. Quantitative data consists of numbers used to measure the quantity or amount of something."
+   ],
+   "followUp": "What is the difference between qualitative and quantitative data?",
+   "noteId": "cs-n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "qualitative",
+       "categories"
+      ],
+      [
+       "qualitative",
+       "labels"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies qualitative data by its categorical or descriptive nature.",
+     "description": "Names qualitative data and identifies it as categories or labels.",
+     "how": "Award 1 mark when the answer includes “qualitative” and either “categories” or “labels”. The idea that it describes qualities rather than quantity may also be expressed in different words."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "quantitative",
+       "numbers",
+       "measure"
+      ],
+      [
+       "quantitative",
+       "numbers",
+       "quantity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies quantitative data as numerical and concerned with amount.",
+     "description": "Names quantitative data and explains that numbers are used to measure quantity or amount.",
+     "how": "Award 1 mark when the answer includes “quantitative”, “numbers”, and either “measure” or “quantity”."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-9-1-t1",
+   "text": "What type of data is the number of students in your class?",
+   "marks": 2,
+   "modelAnswer": [
+    "It is discrete data because discrete data consist of distinct, separate values that are countable, often in whole numbers."
+   ],
+   "followUp": "What type of data is the number of students in your class?",
+   "noteId": "cs-n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "discrete"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly classifies the number of students as discrete data.",
+     "description": "Identifies the data as discrete.",
+     "how": "Award 1 mark for naming “discrete” data."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "countable",
+       "separate"
+      ],
+      [
+       "countable",
+       "distinct"
+      ],
+      [
+       "countable",
+       "whole numbers"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that discrete values are countable and separate, commonly whole numbers.",
+     "description": "States that discrete data consists of countable, separate or distinct values, often whole numbers.",
+     "how": "Award 1 mark for describing the values as countable and separate/distinct, or as countable whole numbers."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-9-1-t2",
+   "text": "Why is it important to organise data into tables or charts before analyzing it?",
+   "marks": 2,
+   "modelAnswer": [
+    "Organising data helps reduce errors, saves time and improves clarity. Tables, charts and graphs make data easier to understand, compare and analyse, so it is simpler to draw conclusions and make decisions."
+   ],
+   "followUp": "Why is it important to organise data into tables or charts before analyzing it?",
+   "noteId": "cs-n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "errors"
+      ],
+      [
+       "time"
+      ],
+      [
+       "clarity"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises a benefit of organising data before analysis.",
+     "description": "States that organising data can reduce errors, save time or improve clarity.",
+     "how": "Award 1 mark for identifying at least one of these benefits."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "tables",
+       "understand"
+      ],
+      [
+       "charts",
+       "compare"
+      ],
+      [
+       "graphs",
+       "analyse"
+      ],
+      [
+       "graphs",
+       "analyze"
+      ],
+      [
+       "tables",
+       "conclusions"
+      ],
+      [
+       "charts",
+       "decisions"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that visual formats make data easier to interpret and use.",
+     "description": "States that tables, charts or graphs make data easier to understand, compare or analyse, helping with conclusions or decisions.",
+     "how": "Award 1 mark for linking a table, chart or graph with understanding, comparison, analysis, conclusions or decisions."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-9-1-t4",
+   "text": "Describe what a line graph is used for and provide an example of data that could be displayed using a line graph.",
+   "marks": 2,
+   "modelAnswer": [
+    "A line graph can show how data changes over time. For example, it could show monthly sales figures or temperature readings over several days."
+   ],
+   "followUp": "Describe what a line graph is used for and provide an example of data that could be displayed using a line graph.",
+   "noteId": "cs-n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "line graph",
+       "time"
+      ],
+      [
+       "line graph",
+       "changes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the purpose of a line graph as showing change over time.",
+     "description": "States that a line graph shows how data changes over time.",
+     "how": "Award 1 mark for linking a line graph with data changes or trends over time."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "monthly sales"
+      ],
+      [
+       "temperature",
+       "days"
+      ],
+      [
+       "temperature",
+       "over several days"
+      ]
+     ],
+     "marks": 1,
+     "why": "Provides a suitable example of data displayed over time.",
+     "description": "Gives monthly sales figures or temperature readings over several days as an example.",
+     "how": "Award 1 mark for a relevant time-based example such as monthly sales or temperature readings over days."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-9-1-t5",
+   "text": "What is data collection?",
+   "marks": 2,
+   "modelAnswer": [
+    "Data collection is the process of gathering information to answer questions, make decisions, or understand something better."
+   ],
+   "followUp": "What is data collection?",
+   "noteId": "cs-n-9-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "process",
+       "gathering"
+      ],
+      [
+       "process",
+       "collecting"
+      ],
+      [
+       "gathering",
+       "information"
+      ],
+      [
+       "collecting",
+       "data"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines data collection as a process of gathering information or data.",
+     "description": "States that data collection is the process of gathering information.",
+     "how": "Award 1 mark for defining data collection as a process involving gathering or collecting information/data."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "answer questions"
+      ],
+      [
+       "make decisions"
+      ],
+      [
+       "understand",
+       "better"
+      ]
+     ],
+     "marks": 1,
+     "why": "States a purpose of collecting data.",
+     "description": "Explains that data is gathered to answer questions, make decisions or understand something better.",
+     "how": "Award 1 mark for naming at least one stated purpose."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 5
+ }
+}

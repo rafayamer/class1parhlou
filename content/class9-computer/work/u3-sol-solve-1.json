@@ -1,0 +1,93 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "3:0",
+   "figure": "",
+   "steps": [
+    "A Boolean function is a function whose input variables and output have only two possible values: 0 and 1.",
+    "Example: F = A + B is an OR function. It gives output 1 when at least one of its inputs is 1."
+   ],
+   "finalAnswer": "A Boolean function takes binary inputs (0 or 1) and produces a binary output; for example, F = A + B."
+  },
+  {
+   "accept": [],
+   "id": "3:1",
+   "figure": "",
+   "steps": [
+    "A truth table shows the output of a logic function for every possible combination of its input values.",
+    "It helps us understand and analyse the operation of a logic gate or digital circuit.",
+    "It can also be used to check whether a Boolean expression or circuit gives the required output."
+   ],
+   "finalAnswer": "A truth table lists all possible input combinations and their corresponding outputs, helping analyse and verify digital logic."
+  },
+  {
+   "accept": [],
+   "id": "3:2",
+   "figure": "",
+   "steps": [
+    "An analog signal varies continuously and can have any value within a range.",
+    "A digital signal has discrete values; in computers and digital circuits these are represented by 0 and 1.",
+    "Analog signals can represent gradual changes, whereas digital signals represent information using distinct levels."
+   ],
+   "finalAnswer": "Analog signals vary continuously, while digital signals use discrete values, usually 0 and 1."
+  },
+  {
+   "accept": [],
+   "id": "3:3",
+   "figure": "NOT gate: Draw input A entering a triangle-shaped inverter with a small circle at its output, and label the output Y. Write Y = A̅. Truth table: | A | Y | | 0 | 1 | | 1 | 0 |",
+   "steps": [
+    "A NOT gate has one input and one output.",
+    "It produces the complement of its input: when the input is 0, the output is 1; when the input is 1, the output is 0.",
+    "The Boolean expression for the NOT operation is Y = A̅.",
+    "Draw the NOT gate and write its truth table as shown in the figure."
+   ],
+   "finalAnswer": "A NOT gate produces the complement of its input: Y = A̅."
+  },
+  {
+   "accept": [],
+   "id": "3:4",
+   "figure": "",
+   "steps": [
+    "A Karnaugh map (K-map) is a diagram used to simplify Boolean expressions.",
+    "Adjacent 1s in the map are grouped to obtain a simpler expression with fewer terms and variables.",
+    "The simplified expression can be used to design a logic circuit with fewer gates."
+   ],
+   "finalAnswer": "A Karnaugh map simplifies Boolean expressions by grouping adjacent values, helping reduce the number of terms and gates."
+  },
+  {
+   "accept": [],
+   "id": "3:5",
+   "figure": "",
+   "steps": [
+    "Computers use Boolean functions to process binary data, represented by 0s and 1s.",
+    "Boolean functions describe the operations performed by logic gates in computer circuits.",
+    "They are used in arithmetic and logical operations, decision-making, and the control of digital systems."
+   ],
+   "finalAnswer": "Boolean functions are used by computer circuits to process binary data and perform arithmetic, logical, and control operations."
+  },
+  {
+   "accept": [],
+   "id": "3:6",
+   "figure": "Example: F = A · B. Truth table: | A | B | F | | 0 | 0 | 0 | | 0 | 1 | 0 | | 1 | 0 | 0 | | 1 | 1 | 1 |",
+   "steps": [
+    "To construct a truth table, first identify the input variables and the Boolean expression.",
+    "For n input variables, list all 2ⁿ possible combinations of 0 and 1.",
+    "For each combination, evaluate the expression and write the result in the output column.",
+    "Example: For F = A · B, list all combinations of A and B, then calculate F for each row as shown in the figure."
+   ],
+   "finalAnswer": "For F = A · B, the output is 1 only when both inputs are 1."
+  },
+  {
+   "accept": [],
+   "id": "3:7",
+   "figure": "",
+   "steps": [
+    "The principle of duality states that the dual of a valid Boolean identity is also valid.",
+    "To obtain the dual, interchange OR (+) with AND (·), and interchange 0 with 1.",
+    "For example, the identity A + 0 = A has the dual A · 1 = A."
+   ],
+   "finalAnswer": "Boolean duality interchanges + with · and 0 with 1; for example, A + 0 = A has the dual A · 1 = A."
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "7:13",
+   "figure": "              ┌─────────┐\n              │  START  │\n              └────┬────┘\n                   ↓\n       ┌────────────────────────┐\n       │ Input M1, M2 and M3    │\n       └────────────┬───────────┘\n                    ↓\n       ┌────────────────────────┐\n       │ TOTAL ← M1 + M2 + M3   │\n       └────────────┬───────────┘\n                    ↓\n       ┌──────────────────────────────┐\n       │ PERCENT ← TOTAL ÷ 300 × 100  │\n       └──────────────┬───────────────┘\n                      ↓\n       ◇ M1 ≥ 40 AND M2 ≥ 40 AND M3 ≥ 40? ◇\n                ↙ Yes             No ↘\n  ┌──────────────────────┐   ┌──────────────────────┐\n  │ Display PASS and     │   │ Display FAIL and     │\n  │ PERCENT              │   │ PERCENT              │\n  └──────────┬───────────┘   └──────────┬───────────┘\n             └──────────────┬────────────┘\n                            ↓\n                       ┌────────┐\n                       │  STOP  │\n                       └────────┘",
+   "steps": [
+    "Algorithm design methods help break a complex problem into smaller, manageable steps and present its solution clearly.",
+    "First, understand the problem and identify the required input, processing and output.",
+    "Decomposition: divide the problem into smaller tasks. For example, to prepare a student's result, enter marks, calculate the total and percentage, check the pass condition, and display the result.",
+    "Write the solution as an algorithm, using a finite sequence of clear, ordered steps.",
+    "Pseudocode for the example:\nSTART\nINPUT M1, M2, M3\nTOTAL ← M1 + M2 + M3\nPERCENT ← TOTAL ÷ 300 × 100\nIF M1 ≥ 40 AND M2 ≥ 40 AND M3 ≥ 40 THEN\n    DISPLAY \"PASS\", PERCENT\nELSE\n    DISPLAY \"FAIL\", PERCENT\nENDIF\nSTOP",
+    "A flowchart represents the steps of an algorithm graphically. Use an oval for Start/Stop, a parallelogram for input/output, a rectangle for processing, and a diamond for a decision. The flowchart for the result problem is shown in the figure.",
+    "Test the algorithm with sample marks: if M1 = 75, M2 = 68 and M3 = 82, then TOTAL = 225 and PERCENT = 75%. Since every mark is at least 40, the output is PASS, 75%.",
+    "Testing with different inputs helps find and correct errors before the solution is used."
+   ],
+   "finalAnswer": "Flowcharts and pseudocode organise a solution into clear steps; for the student-result example, the algorithm calculates the percentage, checks whether every subject mark is at least 40, and displays PASS or FAIL."
+  },
+  {
+   "accept": [],
+   "id": "7:14",
+   "figure": "",
+   "steps": [
+    "Computational thinking is a problem-solving approach in which a problem is understood and expressed in a form that can be solved systematically, often with the help of a computer.",
+    "Its main methods include decomposition (breaking a problem into smaller parts), pattern recognition (finding similarities), abstraction (focusing on important details), and algorithm design (making a step-by-step solution).",
+    "Computational thinking is significant because it helps people solve complex problems in an organised, logical and efficient way.",
+    "It can reduce errors, make solutions easier to test and improve, and help automate tasks that would otherwise take a long time.",
+    "In medicine, patient symptoms and test results can be analysed to help identify patterns and support diagnosis.",
+    "In agriculture, weather and soil information can be used to plan irrigation and decide suitable times for planting.",
+    "In transport, route-planning systems compare possible roads and traffic conditions to suggest an efficient route.",
+    "In education, learning software can use a student's answers to identify areas of difficulty and provide suitable practice."
+   ],
+   "finalAnswer": "Computational thinking uses decomposition, pattern recognition, abstraction and algorithms to solve problems systematically, efficiently and in many fields, including medicine, agriculture, transport and education."
+  },
+  {
+   "accept": [],
+   "id": "7:18",
+   "figure": "              ┌─────────┐\n              │  START  │\n              └────┬────┘\n                   ↓\n       ╱──────────────────────╲\n      ╱     Input integer N    ╲\n      ╲                        ╱\n       ╲──────────┬───────────╱\n                  ↓\n       ┌──────────────────────┐\n       │ R ← N MOD 2          │\n       └──────────┬───────────┘\n                  ↓\n             ◇ R = 0? ◇\n             ↙ Yes   No ↘\n  ╱────────────────╲   ╱────────────────╲\n ╱ Display \"EVEN\"   ╲ ╱ Display \"ODD\"    ╲\n ╲                  ╱ ╲                  ╱\n  ╲───────┬────────╱   ╲────────┬───────╱\n          └────────────┬────────┘\n                       ↓\n                   ┌────────┐\n                   │  STOP  │\n                   └────────┘",
+   "steps": [
+    "An algorithm is a finite sequence of clear, ordered instructions for solving a problem or performing a task.",
+    "An algorithm plays an important role in computational thinking because it describes the logical steps needed to solve a problem and can be converted into a computer program.",
+    "Example: an algorithm can determine whether an integer is even or odd.",
+    "Algorithm:\n1. START\n2. INPUT integer N\n3. Find the remainder R when N is divided by 2\n4. IF R = 0, DISPLAY \"EVEN\"; otherwise, DISPLAY \"ODD\"\n5. STOP",
+    "Pseudocode:\nSTART\nINPUT N\nR ← N MOD 2\nIF R = 0 THEN\n    DISPLAY \"EVEN\"\nELSE\n    DISPLAY \"ODD\"\nENDIF\nSTOP",
+    "The corresponding flowchart is shown in the figure. The diamond represents the decision R = 0; its Yes and No branches lead to the appropriate output."
+   ],
+   "finalAnswer": "An algorithm is a finite, ordered set of instructions; for an integer, finding its remainder when divided by 2 determines whether it is even or odd, as shown in the flowchart."
+  }
+ ]
+}

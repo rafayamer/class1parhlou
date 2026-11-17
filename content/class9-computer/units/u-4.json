@@ -1,0 +1,3866 @@
+{
+ "chapter": {
+  "id": "cs-u-4",
+  "number": 4,
+  "title": "System Troubleshooting",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "cs-m-4-1",
+    "position": 1,
+    "title": "4.1 System Troubleshooting",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, section 4.1, pages 69–74",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 4.1 (pages 69–74) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-4-1-1",
+      "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "marks": 2,
+      "modelAnswer": [
+       "The first step is to identify the problem.",
+       "It is important because you must recognize what is not working as it should before finding its cause or fixing it."
+      ],
+      "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "noteId": "cs-n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the first step.",
+        "marks": 1,
+        "why": "Naming the first step shows knowledge of the correct troubleshooting sequence.",
+        "how": "Write that the first step is to identify the problem.",
+        "accept": [
+         [
+          "identify problem"
+         ],
+         [
+          "identify",
+          "first step"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain why identifying the problem matters.",
+        "marks": 1,
+        "why": "The reason explains why troubleshooting begins by recognizing the issue.",
+        "how": "Say that you need to recognize what is not working before finding its cause or fixing it.",
+        "accept": [
+         [
+          "recognize"
+         ],
+         [
+          "what is not working"
+         ],
+         [
+          "before",
+          "cause"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.1"
+     },
+     {
+      "id": "cs-w-4-1-2",
+      "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "marks": 2,
+      "modelAnswer": [
+       "The next step is to establish a theory of probable cause.",
+       "It suggests what might have caused the problem, so that the suspected cause can be tested."
+      ],
+      "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "noteId": "cs-n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Name the next step.",
+        "marks": 1,
+        "why": "Correctly naming the next step shows understanding of the process order.",
+        "how": "State that it is establishing a theory of probable cause.",
+        "accept": [
+         [
+          "theory of probable cause"
+         ],
+         [
+          "probable cause"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain how the theory helps.",
+        "marks": 1,
+        "why": "Explaining the purpose shows how a theory guides the next action.",
+        "how": "Say that it suggests a possible cause which can then be tested.",
+        "accept": [
+         [
+          "what might have caused"
+         ],
+         [
+          "possible cause"
+         ],
+         [
+          "test"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.2"
+     },
+     {
+      "id": "cs-w-4-1-3",
+      "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+      "marks": 2,
+      "modelAnswer": [
+       "Testing a theory checks whether the suspected cause is actually the reason for the problem.",
+       "For example, if you think a laptop's battery is dead, plug in the power cord and see if the computer turns on."
+      ],
+      "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "noteId": "cs-n-4-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explain why a theory is tested.",
+        "marks": 1,
+        "why": "The purpose of testing is to check whether the theory is correct.",
+        "how": "Say that testing checks whether the suspected cause is actually responsible.",
+        "accept": [
+         [
+          "checks",
+          "suspected cause"
+         ],
+         [
+          "determine the cause"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give an example.",
+        "marks": 1,
+        "why": "A relevant example demonstrates how the theory is tested.",
+        "how": "Use the book's laptop battery example: plug in the power cord and check whether the computer turns on.",
+        "accept": [
+         [
+          "power cord",
+          "turns on"
+         ],
+         [
+          "battery",
+          "plug"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Expect short questions asking for a particular troubleshooting step, its purpose, or why verification and documentation matter.",
+      "For a question about the complete process, write all seven steps in the book's order and briefly explain each one.",
+      "In a case study, clearly separate the observed problem from the theory of probable cause, then explain how you would test it.",
+      "For questions about importance, organise your answer around benefits such as preventing downtime, ensuring data integrity, improving security and performance, extending equipment life, saving costs, and improving user experience.",
+      "Marks are earned for the correct step or benefit, a clear explanation, and a relevant example where the question asks for one."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think of the step that comes just after identifying the problem.",
+        "It asks you to suggest what might have caused the issue, such as a dead battery or faulty power cord."
+       ],
+       "accept": [
+        [
+         "theory of probable cause"
+        ],
+        [
+         "probable cause"
+        ]
+       ],
+       "question": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+       "solution": [
+        "The next step is to establish a theory of probable cause.",
+        "This means thinking about what might have caused the problem.",
+        "The suspected cause can then be tested to determine whether it is actually responsible."
+       ],
+       "answer": "Establish a theory of probable cause. It suggests what might have caused the problem, so the suspected cause can be tested."
+      },
+      {
+       "hints": [
+        "Ask yourself what needs to be checked after the fix has been carried out.",
+        "Confirm both that the original problem is gone and that the system works as expected."
+       ],
+       "accept": [
+        [
+         "problem",
+         "resolved"
+        ],
+        [
+         "system",
+         "working properly"
+        ],
+        [
+         "full system functionality"
+        ]
+       ],
+       "question": "Why is it necessary to verify full system functionality after implementing a solution?",
+       "solution": [
+        "After implementing the solution, check that the original problem is fully resolved.",
+        "Check that the system is working properly again."
+       ],
+       "answer": "Verification confirms that the problem is fully resolved and that the system is working properly again."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "You must first notice and state what is not working.",
+        "text": "Identify Problem"
+       },
+       {
+        "why": "Thinking of possible causes gives you something specific to investigate.",
+        "text": "Establish a Theory of Probable Cause"
+       },
+       {
+        "why": "A suspected cause must be checked to see whether it is actually responsible.",
+        "text": "Test the Theory to Determine the Cause"
+       },
+       {
+        "why": "Once the cause is confirmed, decide what action will resolve it.",
+        "text": "Establish a Plan of Action to Resolve the Problem"
+       },
+       {
+        "why": "The plan must be carried out to try to fix the issue.",
+        "text": "Implement the Solution"
+       },
+       {
+        "why": "Checking the system confirms that the issue is resolved and the system works properly.",
+        "text": "Verify Full System Functionality"
+       },
+       {
+        "why": "A record can help you or others troubleshoot similar problems in the future.",
+        "text": "Document Findings, Actions, and Outcomes"
+       }
+      ],
+      "question": "A laptop does not turn on, and you suspect that its battery is dead. Show the systematic troubleshooting process.",
+      "answer": "Follow the seven steps in order: identify the problem, establish and test a theory, plan and implement a solution, verify functionality, and document the outcome."
+     },
+     "explain": [
+      {
+       "title": "Follow a systematic process",
+       "body": "Troubleshooting is done in steps so that possible issues are not overlooked. First identify the problem, then consider and test a probable cause, plan and implement a solution, verify the system, and document what happened."
+      },
+      {
+       "title": "Identify and test a probable cause",
+       "body": "After noticing a problem, think about what might have caused it. For example, a laptop that will not turn on might have a dead battery, a faulty power cord, or an internal hardware issue. Test the theory to see whether it explains the problem."
+      },
+      {
+       "title": "Check the result and keep a record",
+       "body": "After applying a solution, verify that the system works properly again. Then record the problem, suspected cause, actions, and outcome so the information can help with similar problems later."
+      },
+      {
+       "title": "Why troubleshooting matters",
+       "body": "Troubleshooting helps keep systems running smoothly. It can reduce downtime, protect data integrity, improve security and performance, extend equipment life, save costs, and improve the user's experience."
+      },
+      {
+       "title": "Data integrity",
+       "body": "Data integrity means ensuring that data is accurate and reliable. Troubleshooting can help identify the source of data corruption and prevent it from happening again."
+      }
+     ],
+     "mistakes": [
+      "Writing the troubleshooting steps out of order or missing one of the seven steps.",
+      "Confusing identifying the problem with establishing a theory about its cause.",
+      "Giving a possible cause but not explaining how to test it.",
+      "Skipping verification after implementing a solution.",
+      "Forgetting to document the findings, actions, and outcome.",
+      "Listing benefits without explaining them or giving an example when the question asks for one."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-4-2",
+    "position": 2,
+    "title": "4.2 Troubleshooting Strategies",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, section 4.2, pages 74–84",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 4.2 (pages 74–84) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-4-2-1",
+      "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "marks": 2,
+      "modelAnswer": [
+       "The first step is Identify Problem.",
+       "It is important because the issue must be recognized and defined before its cause can be investigated."
+      ],
+      "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the first troubleshooting step.",
+        "marks": 1,
+        "why": "The first step must be named correctly.",
+        "how": "Write “Identify Problem.”",
+        "accept": [
+         [
+          "identify problem"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain why identifying the problem matters.",
+        "marks": 1,
+        "why": "The reason shows why the process begins with this step.",
+        "how": "Say that the issue must be recognized and defined before investigating causes.",
+        "accept": [
+         [
+          "recognize",
+          "define"
+         ],
+         [
+          "issue",
+          "problem"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.1"
+     },
+     {
+      "id": "cs-w-4-2-2",
+      "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "marks": 2,
+      "modelAnswer": [
+       "The next step is Establish a Theory of Probable Cause.",
+       "It suggests what might be causing the problem so that the cause can be tested."
+      ],
+      "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Name the step after identifying the problem.",
+        "marks": 1,
+        "why": "The next step must be identified in the correct order.",
+        "how": "State “Establish a Theory of Probable Cause.”",
+        "accept": [
+         [
+          "establish a theory of probable cause"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain the purpose of the theory.",
+        "marks": 1,
+        "why": "The explanation shows how the theory guides the investigation.",
+        "how": "Say that it suggests a possible cause that can then be tested.",
+        "accept": [
+         [
+          "what might be causing"
+         ],
+         [
+          "probable cause"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.2"
+     },
+     {
+      "id": "cs-w-4-2-3",
+      "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+      "marks": 2,
+      "modelAnswer": [
+       "Testing a theory checks whether the suspected cause is correct.",
+       "For example, if a faulty power cord is suspected, test the computer with a new power cord."
+      ],
+      "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explain why a theory is tested.",
+        "marks": 1,
+        "why": "Testing must be explained as checking the suspected cause.",
+        "how": "Say that testing determines whether the suspected cause is correct.",
+        "accept": [
+         [
+          "checks whether"
+         ],
+         [
+          "test the theory"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give a relevant example.",
+        "marks": 1,
+        "why": "An example makes the troubleshooting step clear.",
+        "how": "For example, test a computer with a new power cord if the old one may be faulty.",
+        "accept": [
+         [
+          "power cord",
+          "new power cord"
+         ],
+         [
+          "example",
+          "test"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Short questions may ask for a troubleshooting step, why it matters, or a practical example; name the step and give a clear reason or example for full marks.",
+      "Long questions can ask you to describe all seven troubleshooting steps. Keep them in the correct order and explain what happens at each step.",
+      "For scenario questions, state the observed problem, suggest a probable cause, and explain how you would test it before choosing a fix.",
+      "For software and hardware questions, pair symptoms with the correct action or diagnostic tool, such as Task Manager for a frozen application or SMART checks for a hard drive.",
+      "In longer answers, include useful details such as antivirus scans, software updates, backups, and documenting results when the question asks about maintenance or security."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think of the step that checks whether a suspected cause is correct.",
+        "For example, if a power cord may be faulty, try a new power cord and check whether the problem remains."
+       ],
+       "accept": [
+        [
+         "checks whether",
+         "suspected cause"
+        ],
+        [
+         "new power cord",
+         "test"
+        ]
+       ],
+       "question": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+       "solution": [
+        "Testing a theory checks whether the suspected cause is correct.",
+        "For example, if a faulty power cord is suspected, test the computer with a new power cord."
+       ],
+       "answer": "Testing a theory checks whether the suspected cause is correct. For example, test the computer with a new power cord if the old one may be faulty."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Cable ties keep cables together so that they are less likely to become tangled.",
+        "text": "Use cable ties to bundle the cables together."
+       },
+       {
+        "why": "Keeping the cables arranged makes them easier to identify.",
+        "text": "Arrange the cables so it is easier to identify which cable goes to which device."
+       },
+       {
+        "why": "Organized cables help prevent tangles and make it easier to find and fix issues.",
+        "text": "Keep the cables neat and out of the way."
+       }
+      ],
+      "question": "In an office, using cable ties to bundle cables together can prevent them from getting tangled and make it easier to identify which cable goes to which device.",
+      "answer": "Bundle the cables with cable ties and arrange them neatly so they are easy to identify and less likely to get tangled."
+     },
+     "explain": [
+      {
+       "title": "Troubleshooting follows an order",
+       "body": "Start by identifying and defining the problem. Then suggest and test a probable cause, plan and apply a solution, check that the system works, and record what happened."
+      },
+      {
+       "title": "Handle software problems carefully",
+       "body": "For a frozen application, open Task Manager with Ctrl + Alt + Delete, select the unresponsive application, and click “End Task.” For an unresponsive peripheral, check its connection, unplug and reconnect it, and consider updating its driver."
+      },
+      {
+       "title": "Look for hardware clues",
+       "body": "RAM problems can cause crashes, BSODs, poor performance, failure to boot, or random restarts. A failing hard drive may make clicking noises or cause slow performance, crashes, corrupted files, or disk error messages."
+      },
+      {
+       "title": "Maintain security and data",
+       "body": "Install updates and patches, use updated antivirus software, and create strong passwords. Delete unneeded files or move large ones to free space, and back up important data to external storage or the cloud."
+      },
+      {
+       "title": "Use tools and keep a record",
+       "body": "Use appropriate diagnostic tools: Windows Memory Diagnostic or MemTest86 for RAM, and SMART status checks or CrystalDiskInfo for hard drives. Record troubleshooting steps and results so future problems are easier to solve."
+      }
+     ],
+     "mistakes": [
+      "Do not skip steps: after implementing the solution, verify full system functionality and document the outcome.",
+      "Do not use the power button to force shutdown as the first response; the section says to use it only as a last resort because unsaved data may be lost.",
+      "Do not confuse RAM and hard drive symptoms or diagnostic tools; for example, Windows Memory Diagnostic checks RAM, while SMART checks monitor hard drive health.",
+      "Do not treat backups, updates, or strong passwords as interchangeable: each addresses a different maintenance or security need."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-4-3",
+    "position": 3,
+    "title": "Unit 4 exercise",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 4, end-of-chapter exercise, pages 84–86; Chapter 4 exercise",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 4 and attempt the end-of-chapter exercise (pages 84–86)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-4-3-1",
+      "text": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "marks": 2,
+      "modelAnswer": [
+       "The first step is to identify the problem.",
+       "It is important because the problem must be clearly understood before a cause can be tested or a solution planned."
+      ],
+      "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Names the first step.",
+        "marks": 1,
+        "why": "The answer must name the correct first step.",
+        "how": "State that the first step is to identify the problem.",
+        "accept": [
+         [
+          "identify the problem"
+         ],
+         [
+          "p:identify"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explains why identification matters.",
+        "marks": 1,
+        "why": "The reason shows why the step comes first.",
+        "how": "Explain that understanding the problem guides later cause-testing and solution-planning.",
+        "accept": [
+         [
+          "understood"
+         ],
+         [
+          "before",
+          "solution"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.1"
+     },
+     {
+      "id": "cs-w-4-3-2",
+      "text": "Q4.2. After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+      "marks": 2,
+      "modelAnswer": [
+       "The next step is to establish a theory of probable cause.",
+       "It suggests a likely reason for the problem, which can then be tested to determine the cause."
+      ],
+      "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Names the next step.",
+        "marks": 1,
+        "why": "The answer must identify the next troubleshooting step.",
+        "how": "State that a theory of probable cause is established.",
+        "accept": [
+         [
+          "theory",
+          "probable cause"
+         ],
+         [
+          "p:establish",
+          "cause"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explains the role of the theory.",
+        "marks": 1,
+        "why": "The answer must show how the theory advances the solution.",
+        "how": "Explain that the likely cause can be tested to determine what is wrong.",
+        "accept": [
+         [
+          "likely",
+          "cause"
+         ],
+         [
+          "test"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.2"
+     },
+     {
+      "id": "cs-w-4-3-3",
+      "text": "Q4.3. Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+      "marks": 2,
+      "modelAnswer": [
+       "Testing a theory checks whether a suspected cause is correct before a solution is chosen.",
+       "For example, if a laptop will not turn on, connect its power adapter and check whether it starts."
+      ],
+      "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+      "noteId": "cs-n-4-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explains why the theory is tested.",
+        "marks": 1,
+        "why": "Testing prevents choosing a fix based only on a guess.",
+        "how": "Say that testing checks whether the suspected cause is correct.",
+        "accept": [
+         [
+          "test",
+          "cause"
+         ],
+         [
+          "suspected",
+          "correct"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives an example.",
+        "marks": 1,
+        "why": "A relevant example demonstrates application of the step.",
+        "how": "Give a practical test, such as checking a laptop's power adapter.",
+        "accept": [
+         [
+          "laptop",
+          "power"
+         ],
+         [
+          "example"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 4.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Short questions may ask for a troubleshooting step and its purpose; name the step first, then give a clear reason.",
+      "A long question may ask you to describe the systematic process. Write all seven steps in the correct order and explain each one.",
+      "For a case study, separate what you observed from what you suspect: identify the problem first, then state a theory of probable cause.",
+      "Questions on troubleshooting benefits may ask about downtime, data integrity, security, software, hardware, or backups. Give a specific example to support each point.",
+      "For full marks, distinguish testing a theory from implementing a solution, and remember to verify functionality and document the outcome."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Name the first step in the process.",
+        "Explain why the issue must be clear before a cause or solution is considered."
+       ],
+       "accept": [
+        [
+         "identify the problem"
+        ],
+        [
+         "p:identify"
+        ]
+       ],
+       "question": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+       "solution": [
+        "The first step is to identify the problem.",
+        "It is important because the problem must be clearly understood before a cause can be tested or a solution planned."
+       ],
+       "answer": "Identify the problem first so it is clearly understood before a cause is tested or a solution is planned."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "A clear first step ensures the answer addresses the problem before possible causes or fixes.",
+        "text": "1. Identify the problem: observe and clearly describe what is wrong."
+       },
+       {
+        "why": "A likely cause gives the troubleshooting process something specific to investigate.",
+        "text": "2. Establish a theory of probable cause: suggest a likely reason for the problem."
+       },
+       {
+        "why": "Testing checks whether the suspected cause is actually responsible.",
+        "text": "3. Test the theory to determine the cause: check whether the suspected cause is correct."
+       },
+       {
+        "why": "A plan sets out an appropriate response before action is taken.",
+        "text": "4. Establish a plan of action to resolve the problem: decide what steps or repair are needed."
+       },
+       {
+        "why": "The plan must be carried out to attempt to fix the fault.",
+        "text": "5. Implement the solution: carry out the selected plan."
+       },
+       {
+        "why": "The system should be checked to confirm the fix worked and other functions are operating.",
+        "text": "6. Verify full system functionality: test that the problem is fixed and the system works properly."
+       },
+       {
+        "why": "A record helps with future reference and shows what was done and what happened.",
+        "text": "7. Document findings, actions, and outcomes: record what was found, what was done, and the result."
+       }
+      ],
+      "question": "Q4.2. Explain the systematic process of troubleshooting. Describe each step in detail.",
+      "answer": "The systematic process is to identify the problem, establish and test a theory of probable cause, plan and implement a solution, verify full system functionality, and document findings, actions, and outcomes."
+     },
+     "explain": [
+      {
+       "title": "Start by identifying the problem",
+       "body": "Describe what is actually happening, such as a laptop not turning on or a printer not printing. A clear problem description guides the rest of the process."
+      },
+      {
+       "title": "Find and test a probable cause",
+       "body": "Suggest a likely reason for the problem, then test that theory to determine the cause. For a printer that will not print, possible checks include its power, connection, paper, and ink or toner."
+      },
+      {
+       "title": "Plan, implement, and verify",
+       "body": "Decide on the steps needed to resolve the issue, carry out the selected solution, and then verify full system functionality. Do not assume the solution worked without checking."
+      },
+      {
+       "title": "Document what happened",
+       "body": "Record the findings, actions, and outcomes. This record is useful for future reference and shows which steps have already been tried."
+      },
+      {
+       "title": "Troubleshooting protects reliable computing",
+       "body": "Timely troubleshooting can reduce downtime and lost productivity, help protect data integrity, and support system security. Examples include identifying a database bug or finding a security threat."
+      },
+      {
+       "title": "Maintain and protect systems",
+       "body": "Basic care includes checking frozen applications and unresponsive peripherals, recognizing possible hardware warning signs, addressing malware, applying operating-system updates, and keeping backups on external storage or in the cloud."
+      }
+     ],
+     "mistakes": [
+      "Starting with a possible fix instead of first identifying and describing the problem.",
+      "Confusing establishing a theory with testing that theory; they are separate steps.",
+      "Implementing a solution without first making a plan of action.",
+      "Forgetting to verify full system functionality after carrying out a fix.",
+      "Leaving out documentation of findings, actions, and outcomes.",
+      "Giving a possible hardware symptom as definite proof that RAM or a hard drive has failed.",
+      "Describing only one kind of backup when a question asks about external storage and cloud solutions."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "cs-n-4-1",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-4-1",
+   "title": "Troubleshooting systems step by step",
+   "keywords": [
+    "troubleshooting",
+    "systematic process",
+    "probable cause",
+    "data integrity",
+    "downtime",
+    "verify functionality"
+   ],
+   "answer": "Troubleshooting helps identify and fix system problems quickly so systems can operate smoothly and efficiently.",
+   "explanation": "Troubleshooting means finding out what is wrong with a system and following steps to fix it. Work through the steps in order, then check that the system works and record what you did.",
+   "simple": "Be a tech detective: notice the problem, work out what might cause it, test your idea, fix it, check the result, and write down what happened.",
+   "examples": [
+    "If a laptop will not turn on, possible causes include a dead battery, a faulty power cord, or an internal hardware issue.",
+    "If a printer is not working properly, a paper jam may be the cause; clearing it may fix the problem."
+   ],
+   "steps": [
+    "Identify Problem",
+    "Establish a Theory of Probable Cause",
+    "Test the Theory to Determine the Cause",
+    "Establish a Plan of Action to Resolve the Problem",
+    "Implement the Solution",
+    "Verify Full System Functionality",
+    "Document Findings, Actions, and Outcomes"
+   ],
+   "checkQuestion": "What is the first step in the systematic process of troubleshooting?",
+   "checkAnswer": "Identify the problem.",
+   "checkAccept": [
+    [
+     "identify problem"
+    ],
+    [
+     "first step",
+     "identify"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-4-2",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-4-2",
+   "title": "A careful way to troubleshoot",
+   "keywords": [
+    "troubleshooting",
+    "software",
+    "hardware",
+    "RAM",
+    "backup",
+    "security"
+   ],
+   "answer": "Troubleshooting is a systematic way to identify and resolve problems, then check and record the results.",
+   "explanation": "Troubleshooting means finding what is wrong, checking possible causes, fixing the issue, and confirming that the system works again. Work carefully and record what you did.",
+   "simple": "Find the problem, check its cause, fix it, and make sure the computer works properly.",
+   "examples": [
+    "If an application freezes, open Task Manager with Ctrl + Alt + Delete, select the unresponsive application, and click “End Task.”",
+    "If a computer is overheating, improve its airflow and clean dust from its vents and fans."
+   ],
+   "steps": [
+    "Identify and define the problem.",
+    "Establish a theory of probable cause.",
+    "Test the theory.",
+    "Establish a plan of action.",
+    "Implement the solution.",
+    "Verify full system functionality.",
+    "Document findings, actions, and outcomes."
+   ],
+   "checkQuestion": "What should you do after implementing a solution?",
+   "checkAnswer": "Identify the problem first, then decide what may be causing it and test that idea.",
+   "checkAccept": [
+    [
+     "verify full system functionality"
+    ],
+    [
+     "check the system"
+    ],
+    [
+     "make sure the system works"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-4-3",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-4-3",
+   "title": "A systematic way to solve system problems",
+   "keywords": [
+    "troubleshooting",
+    "probable cause",
+    "test the theory",
+    "plan of action",
+    "verify",
+    "documentation"
+   ],
+   "answer": "Identify the problem.",
+   "explanation": "Troubleshooting is a systematic way to identify and resolve problems in a system. Follow the steps in order: identify the problem, establish a theory of probable cause, test the theory, plan and implement a solution, verify the system, and document what happened.",
+   "simple": "Troubleshooting means finding out what is wrong, fixing it carefully, and checking that the system works afterward.",
+   "examples": [
+    "If a laptop will not turn on, first note the problem, then consider whether the battery or power supply may be faulty.",
+    "If a printer will not print, check its power, connection, paper, and ink or toner before deciding on a solution."
+   ],
+   "steps": [
+    "Identify and clearly describe the problem.",
+    "Establish a theory of probable cause.",
+    "Test the theory to determine the cause.",
+    "Establish a plan of action to resolve the problem.",
+    "Implement the solution.",
+    "Verify full system functionality.",
+    "Document findings, actions, and outcomes."
+   ],
+   "checkQuestion": "What is the first step in the systematic troubleshooting process?",
+   "checkAnswer": "Identify the problem.",
+   "checkAccept": [
+    [
+     "identify the problem"
+    ],
+    [
+     "p:identify"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "cs-q-4-1-1",
+   "stem": "A laptop will not turn on. Which action best matches establishing a theory of probable cause?",
+   "options": [
+    "To decide what might be causing the problem",
+    "To make sure the system is fully working after the fix",
+    "To record what was done and the outcome",
+    "To put the planned fix into action"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because establishing a theory means suggesting a possible cause, such as a dead battery.",
+    "This describes verifying full system functionality after a solution.",
+    "This describes documenting findings, actions, and outcomes.",
+    "This describes implementing the solution."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-1-2",
+   "stem": "You suspect a laptop battery is dead. Which action tests this theory?",
+   "options": [
+    "Replace the laptop battery immediately",
+    "Plug in the power cord and see whether the laptop turns on",
+    "Write down that the laptop did not turn on",
+    "Decide that the battery might be dead"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This is a possible solution, not a test to determine whether the theory is correct.",
+    "This is correct because plugging in the power cord tests whether the suspected battery problem is causing the issue.",
+    "This records the problem but does not test the theory.",
+    "This establishes a theory but does not test it."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-1-3",
+   "stem": "What should you do after implementing a solution?",
+   "options": [
+    "Document the outcome",
+    "Implement the solution",
+    "Verify full system functionality",
+    "Establish a theory of probable cause"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Documentation is the final step, after checking that the system works.",
+    "Implementing the solution is the step that comes before verification.",
+    "This is correct because you must check that the problem is resolved and the system works properly.",
+    "A theory of probable cause is established earlier in the process."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-1-4",
+   "stem": "Why is it useful to document troubleshooting findings, actions, and outcomes?",
+   "options": [
+    "It provides a record for future reference",
+    "It guarantees that the problem will never happen again",
+    "It replaces the need to test a theory",
+    "It means the solution does not need to be checked"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because the record can help with future troubleshooting of similar problems.",
+    "Documentation cannot guarantee that a problem will never happen again.",
+    "Recording information does not replace testing a suspected cause.",
+    "The system still needs to be checked after a solution is implemented."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-1-5",
+   "stem": "What does downtime mean?",
+   "options": [
+    "A computer is not operational",
+    "A computer is running more quickly",
+    "A computer has accurate and reliable data",
+    "A computer has had its findings recorded"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because downtime occurs when a computer system is not operational.",
+    "Running more quickly describes improved performance, not downtime.",
+    "Accurate and reliable data describes data integrity.",
+    "Recording findings is part of documentation, not downtime."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-1-6",
+   "stem": "How can troubleshooting support data integrity?",
+   "options": [
+    "It helps identify data corruption and prevent it from happening again",
+    "It ensures that hardware is always up to date",
+    "It removes the need for data backups",
+    "It makes every system immune to cyber-attacks"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because troubleshooting can find the source of data corruption and help prevent it from recurring.",
+    "Troubleshooting does not ensure that hardware is always up to date.",
+    "Troubleshooting does not remove the need for backups.",
+    "Troubleshooting can help identify security issues but cannot make a system immune to all attacks."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-1",
+   "moduleId": "cs-m-4-1"
+  },
+  {
+   "id": "cs-q-4-2-1",
+   "stem": "An application has stopped responding. Which action does the section recommend trying first?",
+   "options": [
+    "Click End Task in Task Manager.",
+    "Reinstall the application immediately.",
+    "Hold the computer’s power button as the first step.",
+    "Delete the application’s files."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Open Task Manager, select the unresponsive application, and click End Task.",
+    "Incorrect: Reinstalling is a possible later step if the problem persists, not the first recommended action.",
+    "Incorrect: A forced shutdown is a last resort and may cause data loss.",
+    "Incorrect: Deleting application files is not the recommended way to handle a freeze."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-2",
+   "stem": "A connected keyboard is not responding. Which troubleshooting sequence best follows the section?",
+   "options": [
+    "Leave the device plugged in and wait.",
+    "Check the connection, unplug and reconnect it, and consider updating its driver.",
+    "Replace the computer’s hard drive.",
+    "Disable all system updates."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: Waiting alone does not check the likely connection or software causes.",
+    "Correct: Check that the connection is secure, reconnect the device, and update its driver if needed.",
+    "Incorrect: A hard drive replacement is unrelated to a peripheral connection problem.",
+    "Incorrect: Disabling updates does not address an unresponsive keyboard."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-3",
+   "stem": "Which action is an example of identifying a problem?",
+   "options": [
+    "A plan to replace the battery.",
+    "A laptop does not turn on when the power button is pressed.",
+    "A record that a battery was replaced.",
+    "Testing a replacement power cord."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: This is a plan of action, not identifying the issue.",
+    "Correct: Noticing and defining the failure to turn on identifies the problem.",
+    "Incorrect: This documents an action that has already happened.",
+    "Incorrect: This tests a possible cause."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-4",
+   "stem": "Which action should generally be used only as a last resort because it can cause data loss?",
+   "options": [
+    "Clicking Task Manager’s End Task option.",
+    "Using Ctrl + Alt + Delete to open Task Manager.",
+    "Holding the power button to force shutdown.",
+    "Updating an application."
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Incorrect: Ending an unresponsive application through Task Manager is a recommended software fix.",
+    "Incorrect: This opens Task Manager and is part of the recommended response to a frozen application.",
+    "Correct: A forced shutdown can cause data loss if programs are not properly closed.",
+    "Incorrect: Updating software is a routine maintenance step."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-5",
+   "stem": "Which group of symptoms is associated with possible RAM failure?",
+   "options": [
+    "Frequent crashes and poor performance.",
+    "A loose cable and no display.",
+    "Clicking noises, slow performance, and corrupted files.",
+    "A missing keyboard driver only."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: Frequent crashes, BSODs, poor performance, failure to boot, or random restarts can indicate RAM issues.",
+    "Incorrect: A loose cable or display problem does not specifically identify RAM failure.",
+    "Incorrect: Clicking noises and corrupted files are listed as possible hard drive symptoms.",
+    "Incorrect: A missing keyboard driver is a peripheral software issue, not a RAM symptom."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-6",
+   "stem": "Which tools can help monitor hard drive health?",
+   "options": [
+    "SMART status checks or CrystalDiskInfo.",
+    "Windows Memory Diagnostic only.",
+    "Cable ties and labels.",
+    "Task Manager’s End Task command."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: The section names SMART status checks and CrystalDiskInfo for hard drive health.",
+    "Incorrect: Windows Memory Diagnostic checks RAM, not hard drive health.",
+    "Incorrect: Cable ties and labels help organize cables.",
+    "Incorrect: End Task closes an unresponsive application."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-7",
+   "stem": "Which choice gives two backup methods described in the section?",
+   "options": [
+    "Store files only on the computer’s internal drive.",
+    "Use an external drive or USB flash drive, or use cloud storage.",
+    "Delete all files after each use.",
+    "Keep the computer running all the time."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: Keeping files only on the internal drive does not create a separate backup.",
+    "Correct: External storage and cloud services are both described backup methods.",
+    "Incorrect: Deleting files is not a backup method and may cause data loss.",
+    "Incorrect: Leaving a computer on does not make a backup."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-2-8",
+   "stem": "Which is the best practice for creating a strong password according to the section?",
+   "options": [
+    "Use a mixture of upper- and lower-case letters, numbers, and special characters.",
+    "Use only a short word that is easy to remember.",
+    "Use the same password everywhere and never change it.",
+    "Write the password in a public place."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: The section recommends combining upper- and lower-case letters, numbers, and special characters.",
+    "Incorrect: A short, simple word is easier to guess.",
+    "Incorrect: The section advises changing passwords regularly and managing them carefully.",
+    "Incorrect: A public password note can expose the account to unauthorized access."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-4-2",
+   "moduleId": "cs-m-4-2"
+  },
+  {
+   "id": "cs-q-4-3-1",
+   "stem": "Q4.1. What is the first step in the systematic process of troubleshooting?",
+   "options": [
+    "Establish a Theory of Probable Cause",
+    "Implement the Solution",
+    "Identify Problem",
+    "Document Findings, Actions, and Outcomes"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This comes after the problem has been identified.",
+    "A solution is implemented later in the process.",
+    "This is the first step: identify the problem.",
+    "Documentation is done after the actions and outcomes are known."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-2",
+   "stem": "Q4.2. Why is effective troubleshooting important for maintaining systems?",
+   "options": [
+    "It helps save money on repairs",
+    "It prevents the need for professional help",
+    "It ensures systems operate smoothly and efficiently",
+    "It allows for more frequent system updates"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Saving money may be a benefit, but it is not the best answer to the question.",
+    "Troubleshooting does not guarantee that professional help will never be needed.",
+    "Effective troubleshooting helps systems operate smoothly and efficiently.",
+    "Troubleshooting is not intended to make system updates more frequent."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-3",
+   "stem": "Q4.3. Which step involves coming up with a theory about what might be causing a problem?",
+   "options": [
+    "Test the Theory to Determine the Cause",
+    "Establish a Theory of Probable Cause",
+    "Implement the Solution",
+    "Verify Full System Functionality"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This step checks a theory rather than creating one.",
+    "This step involves proposing a likely cause of the problem.",
+    "This step puts the selected fix into action.",
+    "This step checks that the system works after the fix."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-4",
+   "stem": "Q4.4. After implementing a solution, what is the next step in the troubleshooting process?",
+   "options": [
+    "Document Findings, Actions, and Outcomes",
+    "Test the Theory to Determine the Cause",
+    "Verify Full System Functionality",
+    "Establish a Plan of Action to Resolve the Problem"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Documentation follows the actions and checks in the process.",
+    "Testing the theory happens before implementing the solution.",
+    "After implementing a solution, verify full system functionality.",
+    "The plan is established before the solution is implemented."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-5",
+   "stem": "Q4.5. Which of the following is an example of identifying a problem in troubleshooting?",
+   "options": [
+    "Testing a laptop battery by plugging in the power cord",
+    "Coming up with a plan to replace a laptop battery",
+    "Noticing that a laptop does not turn on when the power button is pressed",
+    "Writing down that a laptop battery was replaced"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "This is a test of a possible cause, not the initial identification of the problem.",
+    "This is planning a solution.",
+    "This clearly describes the observed problem.",
+    "This is documenting an action after it has been taken."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-6",
+   "stem": "Q4.6. Why is documenting findings, actions, and outcomes important in troubleshooting?",
+   "options": [
+    "It helps solve problems faster",
+    "It provides a record for future reference",
+    "It allows for more efficient testing",
+    "It ensures the solution is implemented correctly"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Documentation may support efficient work, but the main purpose here is to keep a record.",
+    "A record can be consulted during future troubleshooting.",
+    "Documentation records work; it does not itself make testing more efficient.",
+    "Verification checks whether the solution works; documentation does not ensure correct implementation."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-7",
+   "stem": "Q4.7. What is the purpose of establishing a plan of action in troubleshooting?",
+   "options": [
+    "To identify the problem",
+    "To verify full system functionality",
+    "To determine the cause of the problem",
+    "To decide on the steps needed to resolve the issue"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Identifying the problem is an earlier step.",
+    "Verifying functionality is done after implementing a solution.",
+    "Testing the theory helps determine the cause.",
+    "The plan of action sets out the steps to resolve the issue."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-8",
+   "stem": "Q4.8. Why is troubleshooting important in computing systems?",
+   "options": [
+    "It ensures hardware components are always up to date",
+    "It prevents the need for data backups",
+    "It helps keep systems running smoothly and securely",
+    "It eliminates the need for software updates"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Troubleshooting does not ensure all hardware components are up to date.",
+    "Troubleshooting does not replace the need for data backups.",
+    "Troubleshooting helps maintain smooth and secure system operation.",
+    "Troubleshooting does not remove the need for software updates."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-9",
+   "stem": "Q4.9. What does troubleshooting help prevent by quickly identifying and resolving issues?",
+   "options": [
+    "The need for professional help",
+    "The need for software updates",
+    "Downtime and lost productivity",
+    "The need for regular maintenance"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "Some problems still require professional help.",
+    "Troubleshooting does not remove the need for updates.",
+    "Quickly fixing issues can reduce downtime and lost productivity.",
+    "Troubleshooting does not replace regular maintenance."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  },
+  {
+   "id": "cs-q-4-3-10",
+   "stem": "Q4.10. Which of the following is an example of ensuring data integrity through troubleshooting?",
+   "options": [
+    "Identifying a software bug that causes incorrect database results",
+    "Replacing a faulty printer",
+    "Using a cooling pad to prevent laptop overheating",
+    "Updating the operating system regularly"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Finding a bug that produces incorrect database results helps protect the accuracy of data.",
+    "Replacing a printer repairs hardware but does not directly ensure data integrity.",
+    "A cooling pad can help prevent overheating, not incorrect data.",
+    "Regular updates can improve security, but this example does not specifically address data integrity."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-4-3",
+   "moduleId": "cs-m-4-3"
+  }
+ ],
+ "written": [
+  {
+   "id": "cs-w-4-1-1",
+   "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "marks": 2,
+   "modelAnswer": [
+    "The first step is to identify the problem.",
+    "It is important because you must recognize what is not working as it should before finding its cause or fixing it."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the first step.",
+     "marks": 1,
+     "why": "Naming the first step shows knowledge of the correct troubleshooting sequence.",
+     "how": "Write that the first step is to identify the problem.",
+     "accept": [
+      [
+       "identify problem"
+      ],
+      [
+       "identify",
+       "first step"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain why identifying the problem matters.",
+     "marks": 1,
+     "why": "The reason explains why troubleshooting begins by recognizing the issue.",
+     "how": "Say that you need to recognize what is not working before finding its cause or fixing it.",
+     "accept": [
+      [
+       "recognize"
+      ],
+      [
+       "what is not working"
+      ],
+      [
+       "before",
+       "cause"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.1"
+  },
+  {
+   "id": "cs-w-4-1-2",
+   "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "marks": 2,
+   "modelAnswer": [
+    "The next step is to establish a theory of probable cause.",
+    "It suggests what might have caused the problem, so that the suspected cause can be tested."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the next step.",
+     "marks": 1,
+     "why": "Correctly naming the next step shows understanding of the process order.",
+     "how": "State that it is establishing a theory of probable cause.",
+     "accept": [
+      [
+       "theory of probable cause"
+      ],
+      [
+       "probable cause"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain how the theory helps.",
+     "marks": 1,
+     "why": "Explaining the purpose shows how a theory guides the next action.",
+     "how": "Say that it suggests a possible cause which can then be tested.",
+     "accept": [
+      [
+       "what might have caused"
+      ],
+      [
+       "possible cause"
+      ],
+      [
+       "test"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.2"
+  },
+  {
+   "id": "cs-w-4-1-3",
+   "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "Testing a theory checks whether the suspected cause is actually the reason for the problem.",
+    "For example, if you think a laptop's battery is dead, plug in the power cord and see if the computer turns on."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain why a theory is tested.",
+     "marks": 1,
+     "why": "The purpose of testing is to check whether the theory is correct.",
+     "how": "Say that testing checks whether the suspected cause is actually responsible.",
+     "accept": [
+      [
+       "checks",
+       "suspected cause"
+      ],
+      [
+       "determine the cause"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give an example.",
+     "marks": 1,
+     "why": "A relevant example demonstrates how the theory is tested.",
+     "how": "Use the book's laptop battery example: plug in the power cord and check whether the computer turns on.",
+     "accept": [
+      [
+       "power cord",
+       "turns on"
+      ],
+      [
+       "battery",
+       "plug"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.3"
+  },
+  {
+   "id": "cs-w-4-1-4",
+   "text": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "marks": 2,
+   "modelAnswer": [
+    "Implement the Solution means putting the plan into action by doing what is necessary to fix the problem.",
+    "For example, if the plan is to replace a battery, buy and install a new battery."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain what implementation means.",
+     "marks": 1,
+     "why": "The response must explain that implementation carries out the chosen plan.",
+     "how": "State that it means putting the plan into action to fix the problem.",
+     "accept": [
+      [
+       "putting the plan into action"
+      ],
+      [
+       "necessary",
+       "fix the problem"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give an example of implementation.",
+     "marks": 1,
+     "why": "An example makes the step clear.",
+     "how": "For example, buy and install a new battery if replacing the battery is the plan.",
+     "accept": [
+      [
+       "replace",
+       "battery"
+      ],
+      [
+       "install",
+       "new battery"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.4"
+  },
+  {
+   "id": "cs-w-4-1-5",
+   "text": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "marks": 2,
+   "modelAnswer": [
+    "Verification checks that the problem is fully resolved.",
+    "It also checks that the system is working properly again."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State that verification confirms the problem is resolved.",
+     "marks": 1,
+     "why": "A fix is not confirmed until the original problem has been checked.",
+     "how": "Say that it checks whether the problem is fully resolved.",
+     "accept": [
+      [
+       "problem",
+       "resolved"
+      ],
+      [
+       "fully resolved"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State that verification checks the system's operation.",
+     "marks": 1,
+     "why": "The system must also be checked to ensure it works as expected after the fix.",
+     "how": "Say that it confirms the system is working properly again.",
+     "accept": [
+      [
+       "system",
+       "working properly"
+      ],
+      [
+       "functionality"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.5"
+  },
+  {
+   "id": "cs-w-4-1-6",
+   "text": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "marks": 8,
+   "modelAnswer": [
+    "Troubleshooting helps identify and fix problems quickly so systems operate smoothly and efficiently.",
+    "It can reduce downtime, which helps prevent lost productivity.",
+    "It can help find the source of data corruption and protect data integrity.",
+    "It can identify security vulnerabilities and help protect the system.",
+    "It can find causes of slow performance, such as insufficient memory, software conflicts, or hardware malfunctions.",
+    "Fixing small issues early can extend equipment life and save the cost of expensive repairs or replacements.",
+    "When systems work reliably, users can complete tasks efficiently and have a better experience."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the general purpose.",
+     "marks": 2,
+     "why": "The central purpose of troubleshooting is to identify problems and restore smooth operation.",
+     "how": "Describe how troubleshooting finds and fixes problems so systems work smoothly.",
+     "accept": [
+      [
+       "find",
+       "fix",
+       "problems"
+      ],
+      [
+       "operate smoothly"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Discuss availability and data.",
+     "marks": 2,
+     "why": "Reducing downtime and protecting reliable data are important benefits for computing systems.",
+     "how": "Explain that resolving problems quickly can reduce downtime and help prevent data corruption.",
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "data integrity"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Discuss security and performance.",
+     "marks": 2,
+     "why": "Troubleshooting can identify security vulnerabilities and causes of poor performance.",
+     "how": "Explain that troubleshooting can identify security issues or slow performance and help resolve them.",
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "performance"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give additional benefits.",
+     "marks": 2,
+     "why": "These further benefits show how troubleshooting supports people and equipment.",
+     "how": "Mention extending equipment life, saving costs, or improving user experience.",
+     "accept": [
+      [
+       "equipment life"
+      ],
+      [
+       "save costs"
+      ],
+      [
+       "user experience"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.1"
+  },
+  {
+   "id": "cs-w-4-1-8",
+   "text": "Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "marks": 8,
+   "modelAnswer": [
+    "Identify the problem: The printer is not printing.",
+    "Establish a theory of probable cause: Consider what might be wrong, such as a paper jam.",
+    "Check the suspected cause to see whether the paper jam explains why the printer is not printing."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the printer problem.",
+     "marks": 2,
+     "why": "The case study begins by clearly stating the observed problem.",
+     "how": "State that the printer is not printing.",
+     "accept": [
+      [
+       "printer",
+       "not printing"
+      ],
+      [
+       "identify",
+       "problem"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Establish a possible cause.",
+     "marks": 2,
+     "why": "A probable cause is a reasonable explanation to investigate.",
+     "how": "Suggest a likely cause, such as a paper jam.",
+     "accept": [
+      [
+       "theory of probable cause"
+      ],
+      [
+       "possible cause"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Relate the theory to the case.",
+     "marks": 2,
+     "why": "Checking the suspected cause connects the theory to the observed problem.",
+     "how": "Explain that you would check whether the paper jam is causing the printer not to print.",
+     "accept": [
+      [
+       "paper jam"
+      ],
+      [
+       "check"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain the reasoning in the case.",
+     "marks": 2,
+     "why": "A clear case-based explanation shows how identification and theory work together.",
+     "how": "Connect the observed printing problem with the suspected cause and its investigation.",
+     "accept": [
+      [
+       "not printing",
+       "paper jam",
+       "cause"
+      ],
+      [
+       "printer",
+       "check",
+       "cause"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.3"
+  },
+  {
+   "id": "cs-w-4-1-9",
+   "text": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "marks": 8,
+   "modelAnswer": [
+    "Documentation records what the problem was, what was thought to be causing it, what was done to fix it, and the outcome.",
+    "It is important because it provides information for future reference.",
+    "The record can help you or others troubleshoot similar problems more efficiently in the future.",
+    "For example, you can record that a laptop would not turn on because of a dead battery, that the battery was replaced, and that the laptop is now working properly."
+   ],
+   "followUp": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "noteId": "cs-n-4-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what is recorded.",
+     "marks": 2,
+     "why": "The answer should identify what troubleshooting documentation records.",
+     "how": "Include the problem, suspected cause, actions, and outcome.",
+     "accept": [
+      [
+       "records",
+       "problem"
+      ],
+      [
+       "document",
+       "findings"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain future reference.",
+     "marks": 2,
+     "why": "A central reason for documenting is that the information remains available later.",
+     "how": "Say that the record can be referred to in the future.",
+     "accept": [
+      [
+       "future reference"
+      ],
+      [
+       "record",
+       "future"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain how records help with later problems.",
+     "marks": 2,
+     "why": "Past records can help resolve similar issues more efficiently.",
+     "how": "Describe how the record can help someone troubleshoot a similar problem.",
+     "accept": [
+      [
+       "similar problems"
+      ],
+      [
+       "troubleshoot",
+       "efficiently"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain the usefulness of a clear record.",
+     "marks": 2,
+     "why": "Clear documentation helps the original user or others understand what was done and what happened.",
+     "how": "Mention that others can use the recorded actions and outcome to understand or investigate the issue.",
+     "accept": [
+      [
+       "others"
+      ],
+      [
+       "actions",
+       "outcome"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.4"
+  },
+  {
+   "id": "cs-w-4-2-1",
+   "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "marks": 2,
+   "modelAnswer": [
+    "The first step is Identify Problem.",
+    "It is important because the issue must be recognized and defined before its cause can be investigated."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the first troubleshooting step.",
+     "marks": 1,
+     "why": "The first step must be named correctly.",
+     "how": "Write “Identify Problem.”",
+     "accept": [
+      [
+       "identify problem"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain why identifying the problem matters.",
+     "marks": 1,
+     "why": "The reason shows why the process begins with this step.",
+     "how": "Say that the issue must be recognized and defined before investigating causes.",
+     "accept": [
+      [
+       "recognize",
+       "define"
+      ],
+      [
+       "issue",
+       "problem"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.1"
+  },
+  {
+   "id": "cs-w-4-2-2",
+   "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "marks": 2,
+   "modelAnswer": [
+    "The next step is Establish a Theory of Probable Cause.",
+    "It suggests what might be causing the problem so that the cause can be tested."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the step after identifying the problem.",
+     "marks": 1,
+     "why": "The next step must be identified in the correct order.",
+     "how": "State “Establish a Theory of Probable Cause.”",
+     "accept": [
+      [
+       "establish a theory of probable cause"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the purpose of the theory.",
+     "marks": 1,
+     "why": "The explanation shows how the theory guides the investigation.",
+     "how": "Say that it suggests a possible cause that can then be tested.",
+     "accept": [
+      [
+       "what might be causing"
+      ],
+      [
+       "probable cause"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.2"
+  },
+  {
+   "id": "cs-w-4-2-3",
+   "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "Testing a theory checks whether the suspected cause is correct.",
+    "For example, if a faulty power cord is suspected, test the computer with a new power cord."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain why a theory is tested.",
+     "marks": 1,
+     "why": "Testing must be explained as checking the suspected cause.",
+     "how": "Say that testing determines whether the suspected cause is correct.",
+     "accept": [
+      [
+       "checks whether"
+      ],
+      [
+       "test the theory"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give a relevant example.",
+     "marks": 1,
+     "why": "An example makes the troubleshooting step clear.",
+     "how": "For example, test a computer with a new power cord if the old one may be faulty.",
+     "accept": [
+      [
+       "power cord",
+       "new power cord"
+      ],
+      [
+       "example",
+       "test"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.3"
+  },
+  {
+   "id": "cs-w-4-2-4",
+   "text": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "marks": 2,
+   "modelAnswer": [
+    "Implement the Solution means applying the fix according to the plan of action."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what implementation involves.",
+     "marks": 1,
+     "why": "The answer must describe carrying out the planned fix.",
+     "how": "Say that the chosen solution is applied.",
+     "accept": [
+      [
+       "apply"
+      ],
+      [
+       "implement"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Connect implementation to the plan.",
+     "marks": 1,
+     "why": "The fix should be linked to the preceding plan.",
+     "how": "Explain that the fix is applied according to the plan of action.",
+     "accept": [
+      [
+       "plan of action"
+      ],
+      [
+       "planned fix"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.4"
+  },
+  {
+   "id": "cs-w-4-2-5",
+   "text": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "marks": 2,
+   "modelAnswer": [
+    "Verification makes sure the problem is fully resolved and the system works properly."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what verification checks about the problem.",
+     "marks": 1,
+     "why": "The student must state that the original issue has been checked.",
+     "how": "Say that it confirms the problem is resolved.",
+     "accept": [
+      [
+       "problem",
+       "resolved"
+      ],
+      [
+       "fully resolved"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State what verification checks about the system.",
+     "marks": 1,
+     "why": "The check must include the system’s overall operation.",
+     "how": "Say that it confirms the system functions properly.",
+     "accept": [
+      [
+       "system",
+       "works properly"
+      ],
+      [
+       "full system functionality"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.5"
+  },
+  {
+   "id": "cs-w-4-2-6",
+   "text": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "marks": 8,
+   "modelAnswer": [
+    "Troubleshooting identifies and resolves problems in a system.",
+    "Resolving problems quickly helps computers and other systems operate smoothly and efficiently.",
+    "It can reduce downtime and lost productivity by restoring normal operation sooner.",
+    "It can also prevent system damage and help protect data and security when issues are addressed."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain troubleshooting’s main purpose.",
+     "marks": 2,
+     "why": "Identifying and resolving issues is the basic purpose of troubleshooting.",
+     "how": "Describe finding problems and applying solutions.",
+     "accept": [
+      [
+       "p:identif",
+       "p:resolv"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain how troubleshooting supports system operation.",
+     "marks": 2,
+     "why": "The answer must connect troubleshooting with reliable operation.",
+     "how": "State that it keeps systems running smoothly or efficiently.",
+     "accept": [
+      [
+       "smoothly"
+      ],
+      [
+       "efficiently"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain how troubleshooting limits disruption.",
+     "marks": 2,
+     "why": "Reducing interruptions is an important benefit.",
+     "how": "Mention preventing or reducing downtime and lost productivity.",
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "lost productivity"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Mention another important benefit.",
+     "marks": 2,
+     "why": "Computing systems also need protection from damage, data loss, and threats.",
+     "how": "Give a relevant benefit such as protecting data, limiting damage, or improving security.",
+     "accept": [
+      [
+       "system damage"
+      ],
+      [
+       "data"
+      ],
+      [
+       "security"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.1"
+  },
+  {
+   "id": "cs-w-4-2-8",
+   "text": "Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "marks": 8,
+   "modelAnswer": [
+    "Identify the problem: The printer is not printing.",
+    "Establish a theory of probable cause: A possible cause is a loose connection or a software issue.",
+    "Test the theory: Check that the printer connection is secure, or use the built-in troubleshooting guide.",
+    "If the test identifies the cause, use the result to plan the appropriate fix."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the printer problem.",
+     "marks": 2,
+     "why": "The case must start by clearly defining the observed problem.",
+     "how": "State that the printer is not printing.",
+     "accept": [
+      [
+       "printer",
+       "not printing"
+      ],
+      [
+       "printer does not print"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Establish a theory.",
+     "marks": 2,
+     "why": "A theory must suggest a possible reason for the failure.",
+     "how": "Suggest a likely cause, such as a loose connection or software issue.",
+     "accept": [
+      [
+       "probable cause"
+      ],
+      [
+       "possible cause"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give a relevant test of a cause.",
+     "marks": 2,
+     "why": "A possible hardware connection cause should be investigated.",
+     "how": "Check that the printer connection is secure.",
+     "accept": [
+      [
+       "check the connection"
+      ],
+      [
+       "connection"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain how to test a possible cause.",
+     "marks": 2,
+     "why": "Testing the theory helps determine whether it explains the problem.",
+     "how": "Use the built-in guide or check the suspected cause and observe whether printing works.",
+     "accept": [
+      [
+       "built-in troubleshooting guide"
+      ],
+      [
+       "test"
+      ],
+      [
+       "check"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.3"
+  },
+  {
+   "id": "cs-w-4-2-9",
+   "text": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "marks": 8,
+   "modelAnswer": [
+    "Documentation records the findings, actions, and outcomes of troubleshooting.",
+    "It helps people remember what worked and what did not work.",
+    "This makes future troubleshooting easier, especially if the same issue occurs again.",
+    "The record can also provide useful information to someone else helping to solve the problem."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what documentation does.",
+     "marks": 2,
+     "why": "Documentation must be described as keeping a record.",
+     "how": "Say that it records the findings, actions, and outcomes.",
+     "accept": [
+      [
+       "record"
+      ],
+      [
+       "document"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain how records help future troubleshooting.",
+     "marks": 2,
+     "why": "Recording results helps avoid repeating ineffective steps.",
+     "how": "Mention remembering which steps worked or did not work.",
+     "accept": [
+      [
+       "what worked",
+       "what did not"
+      ],
+      [
+       "worked",
+       "did not"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain its future value.",
+     "marks": 2,
+     "why": "A record is valuable when the issue recurs or a similar problem appears.",
+     "how": "Say that the record makes future problems easier to solve.",
+     "accept": [
+      [
+       "future reference"
+      ],
+      [
+       "future troubleshooting"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain how documentation supports communication.",
+     "marks": 2,
+     "why": "Clear records can help another person continue the troubleshooting.",
+     "how": "Mention that recorded steps and results can inform others.",
+     "accept": [
+      [
+       "others"
+      ],
+      [
+       "share"
+      ],
+      [
+       "information"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.4"
+  },
+  {
+   "id": "cs-w-4-2-10",
+   "text": "Describe basic software-related troubleshooting strategies, including handling application freezing and unresponsive peripherals.",
+   "marks": 8,
+   "modelAnswer": [
+    "For an application freezing, press Ctrl + Alt + Delete to open Task Manager.",
+    "Find the unresponsive application, select it, and click “End Task.”",
+    "If the problem persists, consider reinstalling the application or checking for updates.",
+    "For an unresponsive peripheral, first check that its connections are secure.",
+    "If it is still unresponsive, unplug it and then plug it back in; updating its driver can also help."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the first response to application freezing.",
+     "marks": 2,
+     "why": "The recommended method for a frozen application begins with Task Manager.",
+     "how": "Use Ctrl + Alt + Delete to open Task Manager.",
+     "accept": [
+      [
+       "task manager"
+      ],
+      [
+       "ctrl + alt + delete"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain how to close the frozen application.",
+     "marks": 2,
+     "why": "The frozen program must be selected and closed appropriately.",
+     "how": "Select it and click End Task.",
+     "accept": [
+      [
+       "end task"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the first peripheral check.",
+     "marks": 2,
+     "why": "A peripheral may stop responding because of a loose connection.",
+     "how": "Check that its connections are secure.",
+     "accept": [
+      [
+       "connections"
+      ],
+      [
+       "p:connect"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give further peripheral troubleshooting actions.",
+     "marks": 2,
+     "why": "Reconnecting or updating the driver may resolve a peripheral software issue.",
+     "how": "Unplug and reconnect it, or update its driver.",
+     "accept": [
+      [
+       "unplug",
+       "plug"
+      ],
+      [
+       "update",
+       "driver"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.6"
+  },
+  {
+   "id": "cs-w-4-2-11",
+   "text": "Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+   "marks": 8,
+   "modelAnswer": [
+    "RAM failure may cause frequent system crashes, Blue Screens Of Death (BSOD), and poor performance.",
+    "A computer with RAM issues may also fail to boot or restart randomly.",
+    "Use Windows Memory Diagnostic or MemTest86 to check for RAM issues.",
+    "Hard drive failure may cause strange noises such as clicking, slow performance, frequent crashes, or corrupted files.",
+    "The computer may also fail to boot or display disk error messages.",
+    "Use SMART status checks or CrystalDiskInfo to monitor hard drive health."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Give signs of RAM failure.",
+     "marks": 2,
+     "why": "Recognizing typical RAM symptoms helps identify a possible failure.",
+     "how": "Mention crashes, BSODs, poor performance, failure to boot, or random restarts.",
+     "accept": [
+      [
+       "frequent system crashes"
+      ],
+      [
+       "bsod"
+      ],
+      [
+       "poor performance"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Name a RAM diagnostic tool.",
+     "marks": 2,
+     "why": "A suitable diagnostic tool can check suspected RAM issues.",
+     "how": "Give Windows Memory Diagnostic or MemTest86.",
+     "accept": [
+      [
+       "windows memory diagnostic"
+      ],
+      [
+       "memtest86"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give signs of hard drive failure.",
+     "marks": 2,
+     "why": "These are characteristic signs listed for hard drive failure.",
+     "how": "Mention clicking noises, slow performance, crashes, corrupted files, or disk errors.",
+     "accept": [
+      [
+       "clicking"
+      ],
+      [
+       "corrupted files"
+      ],
+      [
+       "slow performance"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Name a hard drive diagnostic method.",
+     "marks": 2,
+     "why": "A relevant health check can help diagnose a drive.",
+     "how": "Give SMART status checks or CrystalDiskInfo.",
+     "accept": [
+      [
+       "smart"
+      ],
+      [
+       "crystaldiskinfo"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.7"
+  },
+  {
+   "id": "cs-w-4-2-12",
+   "text": "Elaborate on the importance of maintaining software and addressing security threats.",
+   "marks": 8,
+   "modelAnswer": [
+    "Regularly installing software updates and patches helps protect software against vulnerabilities and helps it perform optimally.",
+    "Updates can also fix bugs that cause crashes.",
+    "Use updated antivirus software to scan for and remove malware.",
+    "Apply operating system updates to protect against newly discovered security vulnerabilities.",
+    "Create strong passwords using upper- and lower-case letters, numbers, and special characters, and manage them carefully."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Describe software maintenance.",
+     "marks": 2,
+     "why": "Keeping software current is a core maintenance action.",
+     "how": "Mention regularly installing software updates and patches.",
+     "accept": [
+      [
+       "updates",
+       "patches"
+      ],
+      [
+       "installing updates"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain a security benefit of updates.",
+     "marks": 2,
+     "why": "Updates help protect against security weaknesses and threats.",
+     "how": "Say that updates protect against vulnerabilities or fix bugs.",
+     "accept": [
+      [
+       "vulnerabilities"
+      ],
+      [
+       "security threats"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describe a way to address malware.",
+     "marks": 2,
+     "why": "Malware must be detected and removed using appropriate protection.",
+     "how": "Use updated antivirus software to scan for and remove malware.",
+     "accept": [
+      [
+       "antivirus"
+      ],
+      [
+       "scan",
+       "malware"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give additional security practices.",
+     "marks": 2,
+     "why": "OS updates and strong passwords help protect systems and accounts.",
+     "how": "Mention applying OS updates and using strong, managed passwords.",
+     "accept": [
+      [
+       "operating system updates"
+      ],
+      [
+       "strong passwords"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.8"
+  },
+  {
+   "id": "cs-w-4-2-13",
+   "text": "Describe common methods for identifying and removing malware infections and applying operating system updates for security.",
+   "marks": 8,
+   "modelAnswer": [
+    "Use antivirus software to scan for and remove malware.",
+    "Regularly update the antivirus definitions and perform full system scans.",
+    "A full system scan can help detect and remove malware that slows down a computer or steals data.",
+    "Install operating system updates to protect the computer from newly discovered security vulnerabilities."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the tool used to identify malware.",
+     "marks": 2,
+     "why": "Antivirus software is the recommended tool for scanning for malware.",
+     "how": "State that antivirus software is used.",
+     "accept": [
+      [
+       "antivirus software"
+      ],
+      [
+       "antivirus"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain how to keep malware detection useful.",
+     "marks": 2,
+     "why": "Current definitions help antivirus software identify threats.",
+     "how": "Say to update antivirus definitions regularly.",
+     "accept": [
+      [
+       "updated",
+       "definitions"
+      ],
+      [
+       "regularly update"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describe the scan and removal process.",
+     "marks": 2,
+     "why": "Scanning is how infections are detected and addressed.",
+     "how": "Perform a full system scan and remove detected malware.",
+     "accept": [
+      [
+       "full system scan"
+      ],
+      [
+       "scan"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain the purpose of OS updates.",
+     "marks": 2,
+     "why": "OS updates protect against newly discovered security weaknesses.",
+     "how": "Install operating system updates to address security vulnerabilities.",
+     "accept": [
+      [
+       "operating system updates"
+      ],
+      [
+       "security vulnerabilities"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.9"
+  },
+  {
+   "id": "cs-w-4-2-14",
+   "text": "Describe the different data backup methods, including using external storage devices and cloud solutions.",
+   "marks": 8,
+   "modelAnswer": [
+    "External hard drives or USB flash drives can be used to back up important files.",
+    "They provide a physical copy of data that can be accessed and stored safely.",
+    "Cloud storage services such as Google Drive, Dropbox, or OneDrive can back up data online.",
+    "Cloud storage allows files to be accessed from anywhere with an internet connection."
+   ],
+   "followUp": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name an external storage method.",
+     "marks": 2,
+     "why": "External physical storage is one of the backup methods in the section.",
+     "how": "Give an external hard drive or USB flash drive.",
+     "accept": [
+      [
+       "p:external",
+       "p:hard"
+      ],
+      [
+       "usb",
+       "flash",
+       "drive"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the benefit of external storage.",
+     "marks": 2,
+     "why": "The answer must explain what external storage provides.",
+     "how": "Say that it keeps a separate physical copy of important files.",
+     "accept": [
+      [
+       "physical copy"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Name a cloud backup method.",
+     "marks": 2,
+     "why": "Cloud services are the other specified backup method.",
+     "how": "Give cloud storage or an example service.",
+     "accept": [
+      [
+       "cloud storage"
+      ],
+      [
+       "google drive"
+      ],
+      [
+       "dropbox"
+      ],
+      [
+       "onedrive"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain the benefit of cloud storage.",
+     "marks": 2,
+     "why": "The answer should explain a key benefit of cloud backups.",
+     "how": "Say that files can be accessed online from anywhere with an internet connection.",
+     "accept": [
+      [
+       "internet connection"
+      ],
+      [
+       "anywhere"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.10"
+  },
+  {
+   "id": "cs-w-4-3-1",
+   "text": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "marks": 2,
+   "modelAnswer": [
+    "The first step is to identify the problem.",
+    "It is important because the problem must be clearly understood before a cause can be tested or a solution planned."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Names the first step.",
+     "marks": 1,
+     "why": "The answer must name the correct first step.",
+     "how": "State that the first step is to identify the problem.",
+     "accept": [
+      [
+       "identify the problem"
+      ],
+      [
+       "p:identify"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains why identification matters.",
+     "marks": 1,
+     "why": "The reason shows why the step comes first.",
+     "how": "Explain that understanding the problem guides later cause-testing and solution-planning.",
+     "accept": [
+      [
+       "understood"
+      ],
+      [
+       "before",
+       "solution"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.1"
+  },
+  {
+   "id": "cs-w-4-3-2",
+   "text": "Q4.2. After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "marks": 2,
+   "modelAnswer": [
+    "The next step is to establish a theory of probable cause.",
+    "It suggests a likely reason for the problem, which can then be tested to determine the cause."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Names the next step.",
+     "marks": 1,
+     "why": "The answer must identify the next troubleshooting step.",
+     "how": "State that a theory of probable cause is established.",
+     "accept": [
+      [
+       "theory",
+       "probable cause"
+      ],
+      [
+       "p:establish",
+       "cause"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains the role of the theory.",
+     "marks": 1,
+     "why": "The answer must show how the theory advances the solution.",
+     "how": "Explain that the likely cause can be tested to determine what is wrong.",
+     "accept": [
+      [
+       "likely",
+       "cause"
+      ],
+      [
+       "test"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.2"
+  },
+  {
+   "id": "cs-w-4-3-3",
+   "text": "Q4.3. Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "Testing a theory checks whether a suspected cause is correct before a solution is chosen.",
+    "For example, if a laptop will not turn on, connect its power adapter and check whether it starts."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains why the theory is tested.",
+     "marks": 1,
+     "why": "Testing prevents choosing a fix based only on a guess.",
+     "how": "Say that testing checks whether the suspected cause is correct.",
+     "accept": [
+      [
+       "test",
+       "cause"
+      ],
+      [
+       "suspected",
+       "correct"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives an example.",
+     "marks": 1,
+     "why": "A relevant example demonstrates application of the step.",
+     "how": "Give a practical test, such as checking a laptop's power adapter.",
+     "accept": [
+      [
+       "laptop",
+       "power"
+      ],
+      [
+       "example"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.3"
+  },
+  {
+   "id": "cs-w-4-3-4",
+   "text": "Q4.4. Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "marks": 2,
+   "modelAnswer": [
+    "Implement the Solution means carrying out the selected plan to resolve the problem.",
+    "For example, reconnect a loose cable or replace a faulty component."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains implementation.",
+     "marks": 1,
+     "why": "The answer must explain that the planned fix is put into action.",
+     "how": "State that the selected plan or fix is carried out.",
+     "accept": [
+      [
+       "carry",
+       "plan"
+      ],
+      [
+       "implement",
+       "solution"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States the purpose or gives an example.",
+     "marks": 1,
+     "why": "An outcome or example makes the explanation clear.",
+     "how": "Explain that the action resolves the problem, with a suitable example.",
+     "accept": [
+      [
+       "resolve",
+       "problem"
+      ],
+      [
+       "faulty"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.4"
+  },
+  {
+   "id": "cs-w-4-3-5",
+   "text": "Q4.5. Why is it necessary to verify full system functionality after implementing a solution?",
+   "marks": 2,
+   "modelAnswer": [
+    "Verification checks that the solution resolved the original problem.",
+    "It also confirms that the system and its related functions work properly."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that the solution is checked.",
+     "marks": 1,
+     "why": "The fix must be checked rather than assumed to work.",
+     "how": "Say that verification confirms whether the fix worked.",
+     "accept": [
+      [
+       "p:verif",
+       "solution"
+      ],
+      [
+       "p:check",
+       "solution"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Mentions full system operation.",
+     "marks": 1,
+     "why": "The check should cover the system's functioning, not merely the action taken.",
+     "how": "Explain that the system and its related functions should work properly.",
+     "accept": [
+      [
+       "system",
+       "work"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 4.5"
+  },
+  {
+   "id": "cs-w-4-3-6",
+   "text": "Q4.1. Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "marks": 8,
+   "modelAnswer": [
+    "Troubleshooting identifies and resolves faults in a system.",
+    "Resolving faults helps computing systems operate smoothly and efficiently.",
+    "Finding issues quickly reduces downtime and lost productivity.",
+    "It can also help protect data and improve system security.",
+    "Therefore, troubleshooting supports reliable and effective use of computing systems."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains identification and resolution of problems.",
+     "marks": 2,
+     "why": "This states the basic purpose of troubleshooting.",
+     "how": "Describe how troubleshooting finds faults and addresses them.",
+     "accept": [
+      [
+       "p:identif",
+       "p:resolv"
+      ],
+      [
+       "fault"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Links troubleshooting to reliable operation.",
+     "marks": 2,
+     "why": "The question asks about maintaining smooth operation.",
+     "how": "Explain that resolving faults helps systems operate smoothly and efficiently.",
+     "accept": [
+      [
+       "smoothly"
+      ],
+      [
+       "efficiently"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains how troubleshooting limits interruption.",
+     "marks": 2,
+     "why": "Reduced interruption is a key practical benefit.",
+     "how": "Show that early problem-solving reduces downtime and lost productivity.",
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "productivity"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives the correct overall conclusion.",
+     "marks": 2,
+     "why": "Computing systems also depend on data protection and security.",
+     "how": "Connect troubleshooting with protecting data, security, or reliable use.",
+     "accept": [
+      [
+       "reliable"
+      ],
+      [
+       "effective"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.1"
+  },
+  {
+   "id": "cs-w-4-3-7",
+   "text": "Q4.2. Explain the systematic process of troubleshooting. Describe each step in detail.",
+   "marks": 8,
+   "modelAnswer": [
+    "1. Identify the problem: observe and clearly describe what is wrong.",
+    "2. Establish a theory of probable cause: suggest a likely reason for the problem.",
+    "3. Test the theory to determine the cause: check whether the suspected cause is correct.",
+    "4. Establish a plan of action to resolve the problem: decide what steps or repair are needed.",
+    "5. Implement the solution: carry out the selected plan.",
+    "6. Verify full system functionality: test that the problem is fixed and the system works properly.",
+    "7. Document findings, actions, and outcomes: record what was found, what was done, and the result."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Gives the first two steps.",
+     "marks": 2,
+     "why": "The opening steps establish the issue and a possible explanation.",
+     "how": "Name identification and establishing a theory of probable cause.",
+     "accept": [
+      [
+       "identify",
+       "problem"
+      ],
+      [
+       "theory",
+       "probable cause"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives testing and planning steps.",
+     "marks": 2,
+     "why": "The theory must be checked before a repair plan is carried out.",
+     "how": "Explain testing the theory, then deciding on a plan of action.",
+     "accept": [
+      [
+       "test",
+       "theory"
+      ],
+      [
+       "plan",
+       "action"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives implementation and verification.",
+     "marks": 2,
+     "why": "The selected fix must be put into action and checked.",
+     "how": "Name implementing the solution and verifying full functionality.",
+     "accept": [
+      [
+       "implement",
+       "solution"
+      ],
+      [
+       "verify"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives documentation and completes the process.",
+     "marks": 2,
+     "why": "The final record is part of the complete systematic process.",
+     "how": "State that findings, actions, and outcomes are documented.",
+     "accept": [
+      [
+       "document"
+      ],
+      [
+       "findings",
+       "outcomes"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.2"
+  },
+  {
+   "id": "cs-w-4-3-8",
+   "text": "Q4.3. Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "marks": 8,
+   "modelAnswer": [
+    "Identify the problem by observing and describing that the printer does not print.",
+    "Check whether the printer is switched on and connected to the computer or network.",
+    "Check whether paper is loaded and whether ink or toner is available.",
+    "A theory of probable cause could be that the printer is disconnected, out of paper, or low on ink or toner."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies the printer problem.",
+     "marks": 2,
+     "why": "The case must begin with a clear statement of the observed problem.",
+     "how": "State that the printer does not print.",
+     "accept": [
+      [
+       "printer",
+       "not print"
+      ],
+      [
+       "does not print"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Suggests relevant initial checks.",
+     "marks": 2,
+     "why": "Basic checks help describe and narrow down the issue.",
+     "how": "Check power and connection, or other basic printer conditions.",
+     "accept": [
+      [
+       "p:connect"
+      ],
+      [
+       "switched on"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Provides a relevant probable cause.",
+     "marks": 2,
+     "why": "Paper and ink or toner are plausible causes of a printer not printing.",
+     "how": "Suggest checking paper and ink or toner.",
+     "accept": [
+      [
+       "paper"
+      ],
+      [
+       "ink"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Forms a theory of probable cause.",
+     "marks": 2,
+     "why": "The answer must distinguish a possible cause from the observed problem.",
+     "how": "State one or more reasonable suspected causes.",
+     "accept": [
+      [
+       "probable cause"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.3"
+  },
+  {
+   "id": "cs-w-4-3-9",
+   "text": "Q4.4. Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "marks": 8,
+   "modelAnswer": [
+    "Documenting findings, actions, and outcomes provides a record of the troubleshooting process.",
+    "The record can be used for future reference.",
+    "It shows which checks and solutions have already been tried, helping avoid repeated work.",
+    "It also helps another person understand the problem and the results of the actions taken."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that documentation creates a record.",
+     "marks": 2,
+     "why": "The answer must explain what documentation provides.",
+     "how": "Say that findings, actions, and outcomes are recorded.",
+     "accept": [
+      [
+       "record"
+      ],
+      [
+       "p:document"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains future usefulness.",
+     "marks": 2,
+     "why": "The book's MCQ identifies future reference as an important purpose.",
+     "how": "Explain that the record can be consulted later.",
+     "accept": [
+      [
+       "future reference"
+      ],
+      [
+       "future"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains how the record supports further work.",
+     "marks": 2,
+     "why": "A record can help avoid repeating the same unsuccessful checks.",
+     "how": "Mention that it shows what has already been tried.",
+     "accept": [
+      [
+       "repeated"
+      ],
+      [
+       "already tried"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Concludes with the wider value of documentation.",
+     "marks": 2,
+     "why": "A complete answer describes the value of sharing the troubleshooting history.",
+     "how": "Explain that another person can understand the actions and results.",
+     "accept": [
+      [
+       "another person"
+      ],
+      [
+       "understand"
+      ],
+      [
+       "results"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.4"
+  },
+  {
+   "id": "cs-w-4-3-10",
+   "text": "Q4.5. Analyze the various ways troubleshooting is vital in computing systems, particularly in preventing downtime, ensuring data integrity, and improving security. Provide specific examples and scenarios to support your analysis.",
+   "marks": 8,
+   "modelAnswer": [
+    "Troubleshooting is vital because it finds and resolves computing problems before they cause greater harm.",
+    "It can prevent downtime: for example, quickly identifying a failed connection can restore access to a system and reduce lost productivity.",
+    "It can support data integrity: identifying a software bug that causes incorrect database results helps prevent inaccurate data from being used.",
+    "It can improve security: detecting malware or outdated software allows the issue to be addressed.",
+    "These examples show that troubleshooting supports reliable, accurate, and secure computing."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains the effect on downtime.",
+     "marks": 2,
+     "why": "The question specifically asks about preventing downtime.",
+     "how": "Explain that early detection and repair reduce system interruption.",
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "productivity"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains data integrity with an example.",
+     "marks": 2,
+     "why": "Data accuracy is one of the three named areas.",
+     "how": "Use an example such as finding a bug that gives incorrect database results.",
+     "accept": [
+      [
+       "data integrity"
+      ],
+      [
+       "database"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains a security benefit.",
+     "marks": 2,
+     "why": "Security is another named area of the question.",
+     "how": "Discuss detecting malware, vulnerabilities, or outdated software.",
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "malware"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Connects examples to the conclusion.",
+     "marks": 2,
+     "why": "Specific scenarios support the analysis rather than leaving it as a list.",
+     "how": "Give relevant examples and state that resolving issues improves reliable operation.",
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "fix"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.5"
+  },
+  {
+   "id": "cs-w-4-3-11",
+   "text": "Q4.6. Describe basic software-related troubleshooting strategies, including handling application freezing and unresponsive peripherals.",
+   "marks": 8,
+   "modelAnswer": [
+    "If an application freezes, wait briefly to see whether it responds.",
+    "If it remains unresponsive, close and reopen it if possible; restart the system if needed.",
+    "For an unresponsive peripheral, check that it has power and is correctly connected.",
+    "Reconnect the peripheral and test it again to see whether it responds."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognizes an application freeze.",
+     "marks": 2,
+     "why": "The answer must address the frozen-application situation.",
+     "how": "Describe a safe response to an application that stops responding.",
+     "accept": [
+      [
+       "application"
+      ],
+      [
+       "freezing"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives an application troubleshooting action.",
+     "marks": 2,
+     "why": "Closing and reopening the application is a basic troubleshooting action.",
+     "how": "Suggest closing and reopening the application if possible.",
+     "accept": [
+      [
+       "close"
+      ],
+      [
+       "reopen"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Addresses the peripheral issue.",
+     "marks": 2,
+     "why": "The question also asks about unresponsive peripherals.",
+     "how": "Identify that a peripheral is not responding and check its setup.",
+     "accept": [
+      [
+       "peripheral"
+      ],
+      [
+       "device"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives a relevant peripheral check and final action.",
+     "marks": 2,
+     "why": "Checking power and connection tests common causes.",
+     "how": "Check the peripheral's power and connection, reconnect it, and test again.",
+     "accept": [
+      [
+       "power"
+      ],
+      [
+       "connection"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.6"
+  },
+  {
+   "id": "cs-w-4-3-12",
+   "text": "Q4.7. Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+   "marks": 8,
+   "modelAnswer": [
+    "Hardware failures can be suspected when a system repeatedly behaves abnormally.",
+    "Possible RAM problems include frequent crashes, freezes, or memory errors.",
+    "Possible hard drive problems include slow access, unusual noises, missing or corrupted files, and read or write errors.",
+    "These signs should be investigated; one symptom alone does not prove that a component has failed."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Introduces possible hardware-failure signs.",
+     "marks": 2,
+     "why": "The answer must address recognizing hardware faults.",
+     "how": "Explain that repeated unusual behaviour can indicate a hardware issue.",
+     "accept": [
+      [
+       "hardware"
+      ],
+      [
+       "failure"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives RAM-related warning signs.",
+     "marks": 2,
+     "why": "RAM is specifically named in the question.",
+     "how": "Mention symptoms such as crashes, freezes, or memory errors.",
+     "accept": [
+      [
+       "ram"
+      ],
+      [
+       "memory"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives hard-drive-related warning signs.",
+     "marks": 2,
+     "why": "Hard-drive failure is specifically named in the question.",
+     "how": "Mention slow access, unusual sounds, missing files, or read/write errors.",
+     "accept": [
+      [
+       "hard drive"
+      ],
+      [
+       "drive"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives a careful conclusion.",
+     "marks": 2,
+     "why": "Symptoms are indicators to investigate, not automatic proof.",
+     "how": "State that the symptoms should be checked before concluding a component has failed.",
+     "accept": [
+      [
+       "signs"
+      ],
+      [
+       "investigated"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.7"
+  },
+  {
+   "id": "cs-w-4-3-13",
+   "text": "Q4.8. Elaborate on the importance of maintaining software and addressing security threats.",
+   "marks": 8,
+   "modelAnswer": [
+    "Maintaining software helps keep a system reliable and functioning properly.",
+    "Software updates can fix problems and address security weaknesses.",
+    "Security threats, such as malware, should be identified and dealt with.",
+    "This helps protect the system and its data from damage or unauthorised access."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains why software is maintained.",
+     "marks": 2,
+     "why": "The answer must discuss software maintenance.",
+     "how": "Mention updates or other maintenance that keeps software current.",
+     "accept": [
+      [
+       "maintaining software"
+      ],
+      [
+       "updates"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Links maintenance to security.",
+     "marks": 2,
+     "why": "Updates can address security weaknesses.",
+     "how": "Explain that maintenance and updates can fix security problems.",
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "weakness"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Names a threat and its importance.",
+     "marks": 2,
+     "why": "The question explicitly asks about security threats.",
+     "how": "Discuss addressing malware or another security threat.",
+     "accept": [
+      [
+       "threat"
+      ],
+      [
+       "malware"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "States the protective result.",
+     "marks": 2,
+     "why": "The outcome should relate to protecting systems or information.",
+     "how": "Explain that addressing threats helps protect systems and data.",
+     "accept": [
+      [
+       "protect"
+      ],
+      [
+       "data"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.8"
+  },
+  {
+   "id": "cs-w-4-3-14",
+   "text": "Q4.9. Describe common methods for identifying and removing malware infections and applying operating system updates for security.",
+   "marks": 8,
+   "modelAnswer": [
+    "Run a scan with reputable security software to identify malware.",
+    "Follow the software's instructions to quarantine or remove detected threats.",
+    "Check the system again after removal.",
+    "Use the operating system's update facility to check for and install available updates.",
+    "Restart the system if required so updates can be completed."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains how malware is detected.",
+     "marks": 2,
+     "why": "Scanning is a common way to identify malware.",
+     "how": "Mention scanning with reputable security software.",
+     "accept": [
+      [
+       "scan"
+      ],
+      [
+       "security software"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains how an infection is addressed.",
+     "marks": 2,
+     "why": "Identified threats must be handled, not just detected.",
+     "how": "State that detected malware is quarantined or removed using the security tool.",
+     "accept": [
+      [
+       "remove"
+      ],
+      [
+       "quarantine"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describes applying updates.",
+     "marks": 2,
+     "why": "The question asks specifically about operating-system updates.",
+     "how": "Check for and install operating-system updates.",
+     "accept": [
+      [
+       "operating system"
+      ],
+      [
+       "updates"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Concludes with security and a suitable follow-up.",
+     "marks": 2,
+     "why": "The answer should connect updates and follow-up to system security.",
+     "how": "Explain that updates improve security and restart if the system requires it.",
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "restart"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.9"
+  },
+  {
+   "id": "cs-w-4-3-15",
+   "text": "Q4.10. Describe the different data backup methods, including using external storage devices and cloud solutions.",
+   "marks": 8,
+   "modelAnswer": [
+    "A data backup is a separate copy that can be used if the original data is lost or damaged.",
+    "One method is to copy data to an external storage device, such as an external hard drive or USB drive.",
+    "Another method is to store data using a cloud service over the internet.",
+    "Keeping a backup makes it possible to restore important data when needed."
+   ],
+   "followUp": "Q4.1. What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "noteId": "cs-n-4-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines the purpose of backing up data.",
+     "marks": 2,
+     "why": "The answer must explain the purpose of a backup.",
+     "how": "State that a backup is a separate copy of data.",
+     "accept": [
+      [
+       "backup"
+      ],
+      [
+       "copy"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives an external-storage method.",
+     "marks": 2,
+     "why": "External storage devices are explicitly requested.",
+     "how": "Name an external hard drive or USB drive as a backup location.",
+     "accept": [
+      [
+       "external"
+      ],
+      [
+       "hard drive"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives a cloud method.",
+     "marks": 2,
+     "why": "Cloud solutions are explicitly requested.",
+     "how": "Explain that data may be stored using a cloud service over the internet.",
+     "accept": [
+      [
+       "cloud"
+      ],
+      [
+       "internet"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explains the benefit of the methods.",
+     "marks": 2,
+     "why": "A complete answer explains why keeping a backup matters.",
+     "how": "Say that a backup can help restore data if the original is lost or damaged.",
+     "accept": [
+      [
+       "restore"
+      ],
+      [
+       "lost"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 4.10"
+  }
+ ],
+ "report": {
+  "unit": 4,
+  "title": "System Troubleshooting",
+  "dropped": [
+   "Written cs-m-4-1#6 (Long 4.2): independent check disagreed",
+   "Written cs-m-4-1#9 (Long 4.5): independent check disagreed",
+   "Written cs-m-4-2#6 (Long 4.2): independent check disagreed",
+   "Your-turn cs-m-4-2: 1 with unusable answer patterns",
+   "Your-turn cs-m-4-3: 1 with unusable answer patterns"
+  ]
+ }
+}

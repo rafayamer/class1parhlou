@@ -1,0 +1,142 @@
+{
+ "shortTheory": [
+  {
+   "question": "Define a system. What are its basic components?",
+   "answer": "A system is a collection of parts that work together to achieve a common goal. A system is described by its objectives components, communication among components and environment in which it works."
+  },
+  {
+   "question": "What are the main components of the Von Neumann architecture?",
+   "answer": "The Von Neumann architecture has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms."
+  },
+  {
+   "question": "What is the Von Neumann computer architecture? List its key components.",
+   "answer": "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms. The key components are memory, CPU, input devices, and output devices."
+  },
+  {
+   "question": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+   "answer": "Fetching: The central processing unit retrieves an instruction from the computer’s memory. Decoding: The Control Unit (CU) decodes the instruction. Execution: The CPU processes the instruction. Storing: The outcome of the computation is either returned to memory or sent to an output device."
+  },
+  {
+   "question": "What is the Von Neumann bottleneck?",
+   "answer": "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+  },
+  {
+   "question": "What is a key advantage of the Von Neumann architecture?",
+   "answer": "Flexibility: Programs can be easily changed by changing memory contents."
+  }
+ ],
+ "definitions": [
+  {
+   "term": "System",
+   "text": "A system is a collection of parts that work together to achieve a common goal."
+  },
+  {
+   "term": "Basic description of a system",
+   "text": "A system is described by its objectives components, communication among components and environment in which it works."
+  },
+  {
+   "term": "Components",
+   "text": "Components are the building blocks of any system. Each component plays a specific role and contributes to the overall functionality of the system."
+  },
+  {
+   "term": "Environment of a system",
+   "text": "The environment of a system includes everything external to the system that interacts with it. It consists of all external factors that affect the system's operation."
+  },
+  {
+   "term": "Computer",
+   "text": "A computer is a complex system designed to process data and perform tasks according to a set of instructions."
+  },
+  {
+   "term": "Von Neumann architecture",
+   "text": "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms."
+  },
+  {
+   "term": "Memory",
+   "text": "Contains both input data and the instructions (program) required for CPU processing."
+  },
+  {
+   "term": "Central Processing Unit (CPU)",
+   "text": "Performs addition and subtraction, and executes commands provided by the memory."
+  },
+  {
+   "term": "Arithmetic Logic Unit (ALU)",
+   "text": "The Arithmetic Logic Unit (ALU) performs mathematical computations and logical operations."
+  },
+  {
+   "term": "Control Unit (CU)",
+   "text": "A Control Unit (CU) is a peripheral that governs the activities of the CPU by instructing the ALU and memory to execute tasks according to the program instructions."
+  },
+  {
+   "term": "Input Devices",
+   "text": "Enable users to input data and instructions into the computer system."
+  },
+  {
+   "term": "Output Devices",
+   "text": "Present or communicate the outcomes of the tasks executed by the computer."
+  },
+  {
+   "term": "System bus",
+   "text": "A system bus is a communication mechanism that facilitates the movement of data between components inside a computational system."
+  },
+  {
+   "term": "Von Neumann bottleneck",
+   "text": "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+  }
+ ],
+ "formulas": [],
+ "fullMarks": [
+  "For a system question, begin with the definition, then explain its objective, components, communication among components, and environment.",
+  "For the Von Neumann architecture, name all four main components: memory, CPU, input devices, and output devices. Explain the function of each.",
+  "In an instruction-cycle answer, write the stages in order: Fetching, Decoding, Execution, and Storing. Give a brief, accurate explanation of each stage.",
+  "For a full architecture explanation, describe the CU and ALU separately: the CU decodes and directs operations, while the ALU performs mathematical and logical operations.",
+  "Draw a clear, labelled Von Neumann architecture diagram if it helps your answer. Label memory, CPU, CU, ALU, input device, and output device; show the direction of data flow.",
+  "For the bottleneck, state that the shared memory area limits how quickly the CPU can retrieve both instructions and data. Do not describe it simply as a slow CPU.",
+  "For computer-environment questions, organize the answer using the examples in the unit: user input, network communication, and power supply. Explain what the computer receives or relies on in each example."
+ ],
+ "important": [
+  {
+   "ref": "Short 1.1: Define a system. What are its basic components?",
+   "why": "Directly matches the system fundamentals and is allocated a short-question slot for Unit 1."
+  },
+  {
+   "ref": "Short 1.5: What are the main components of the Von Neumann architecture?",
+   "why": "A concise, likely short question testing the architecture’s four main components."
+  },
+  {
+   "ref": "Short 1.6: What is the Von Neumann computer architecture? List its key components.",
+   "why": "Tests both the architecture definition and its components, which are core examinable points."
+  },
+  {
+   "ref": "Short 1.7: What are the four main steps in the Von Neumann architecture's instruction cycle?",
+   "why": "The fetch-decode-execute-store sequence is a standard short-answer topic."
+  },
+  {
+   "ref": "Short 1.8: What is the Von Neumann bottleneck?",
+   "why": "A key disadvantage of the architecture and a direct short-question reference."
+  },
+  {
+   "ref": "Short 1.9: What is a key advantage of the Von Neumann architecture?",
+   "why": "Tests a main strength of the architecture and is suitable for a short question."
+  },
+  {
+   "ref": "Long 1.1: Define and describe the concept of a system. Explain the fundamental components, objectives, environment, and methods of communication within a system.",
+   "why": "Unit 1 has an 8-mark detailed-question slot, and this reference covers the central system concepts."
+  },
+  {
+   "ref": "Long 1.6: Explain the Von Neumann architecture of a computer. Include a discussion on the main components, their functions, and the step-by-step process of how the architecture operates.",
+   "why": "A standard 8-mark long question combining the architecture, component functions, and instruction cycle."
+  },
+  {
+   "ref": "Long 1.7: Provide a detailed explanation of how a computer interacts with its environment. Include examples of user input, network communication, and power supply.",
+   "why": "Directly matches the unit’s computer-environment examples and is eligible for the Unit 1 long-question slot."
+  }
+ ],
+ "mistakes": [
+  "Listing only the CPU and memory as the Von Neumann components. Fix: name all four—memory, CPU, input devices, and output devices.",
+  "Mixing up the instruction-cycle order or leaving out Storing. Fix: learn and write Fetching → Decoding → Execution → Storing.",
+  "Saying the ALU controls the whole CPU or that the CU does the calculations. Fix: the ALU calculates and performs logical operations; the CU decodes instructions and directs activities.",
+  "Describing the bottleneck as a failure or shortage of memory. Fix: explain that the single memory area limits how quickly the CPU retrieves instructions and data.",
+  "Giving examples of computer parts instead of explaining the system’s basic components. Fix: include objective, components, communication, and environment.",
+  "Leaving out examples when explaining a computer’s interaction with its environment. Fix: include user input, network communication, and reliance on a power supply."
+ ]
+}

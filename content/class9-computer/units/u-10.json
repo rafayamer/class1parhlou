@@ -1,0 +1,4350 @@
+{
+ "chapter": {
+  "id": "cs-u-10",
+  "number": 10,
+  "title": "Emerging Technologies in Computer Science",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "cs-m-10-1",
+    "position": 1,
+    "title": "10.1 Introduction to Artificial Intelligence (AI)",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 10, section 10.1, pages 211–215",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 10.1 (pages 211–215) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-10-1-1",
+      "text": "Define Artificial Intelligence (AI).",
+      "marks": 2,
+      "modelAnswer": [
+       "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+      ],
+      "followUp": "Define Artificial Intelligence (AI).",
+      "noteId": "cs-n-10-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "States that AI simulates human thinking ability.",
+        "marks": 1,
+        "why": "The definition must identify AI as simulating human thinking.",
+        "how": "Include the idea of simulating human thinking in the definition.",
+        "accept": [
+         [
+          "simulation",
+          "human thinking"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explains that computer systems think and learn in a manner like humans.",
+        "marks": 1,
+        "why": "The definition must say that computer systems think and learn in a human-like manner.",
+        "how": "State that computer systems think and learn in a manner like humans.",
+        "accept": [
+         [
+          "computer systems",
+          "think",
+          "learn"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.1"
+     },
+     {
+      "id": "cs-w-10-1-2",
+      "text": "What is the historical context and evolution of AI?",
+      "marks": 2,
+      "modelAnswer": [
+       "The term AI was first invented by John McCarthy in 1956 during the Dartmouth Conference.",
+       "In the 1950s–1960s, early AI research focused on problem-solving and symbolic methods.",
+       "Expert systems developed in the 1970s–1980s, and machine learning rose in the 1990s.",
+       "From the 2000s onward, deep learning, natural language processing, and robotics expanded AI's capabilities.",
+       "Voice assistants were used in 2011, and ChatGPT was introduced in 2023."
+      ],
+      "followUp": "Define Artificial Intelligence (AI).",
+      "noteId": "cs-n-10-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identifies John McCarthy, 1956, and the Dartmouth Conference.",
+        "marks": 1,
+        "why": "The historical starting point and its date are key facts in the section.",
+        "how": "State who introduced the term AI, when, and at which conference.",
+        "accept": [
+         [
+          "John McCarthy",
+          "1956",
+          "Dartmouth"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives milestones from different stages in AI's evolution.",
+        "marks": 1,
+        "why": "The answer should show how AI developed over time.",
+        "how": "Mention relevant developments such as symbolic methods, expert systems, machine learning, or newer AI advances.",
+        "accept": [
+         [
+          "1950",
+          "symbolic"
+         ],
+         [
+          "expert systems",
+          "machine learning"
+         ],
+         [
+          "deep learning",
+          "ChatGPT"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.2"
+     },
+     {
+      "id": "cs-w-10-1-3",
+      "text": "Provide two examples of AI applications in healthcare.",
+      "marks": 2,
+      "modelAnswer": [
+       "AI is used for diagnosing diseases and personalizing treatment plans.",
+       "It can also predict patient outcomes."
+      ],
+      "followUp": "Define Artificial Intelligence (AI).",
+      "noteId": "cs-n-10-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Gives one example of an AI application in healthcare.",
+        "marks": 1,
+        "why": "The answer needs a valid healthcare application of AI.",
+        "how": "Name one use, such as diagnosing diseases or personalizing treatment.",
+        "accept": [
+         [
+          "diagnosing diseases"
+         ],
+         [
+          "personalizing treatment"
+         ],
+         [
+          "predicting patient outcomes"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives a second distinct healthcare application of AI.",
+        "marks": 1,
+        "why": "The question asks for two examples.",
+        "how": "Add another valid use, such as predicting patient outcomes.",
+        "accept": [
+         [
+          "diagnosing diseases",
+          "personalizing treatment"
+         ],
+         [
+          "diagnosing diseases",
+          "predicting patient outcomes"
+         ],
+         [
+          "personalizing treatment",
+          "predicting patient outcomes"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask you to define AI; learn the textbook definition accurately.",
+      "For a history question, give the 1956 Dartmouth Conference and John McCarthy, then list milestones in date order.",
+      "A short application question may ask for two examples from one domain. Give two distinct uses, not two versions of the same use.",
+      "A long question about education should name the applications and explain their benefits, rather than only listing them.",
+      "For full marks, use the subject terms from your textbook, such as personalized learning, administrative tasks, and student performance."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think of the words ‘simulation’ and ‘human thinking’.",
+        "Include what computer systems do and the way they do it."
+       ],
+       "accept": [
+        [
+         "simulation",
+         "human thinking",
+         "computer systems",
+         "think",
+         "learn"
+        ],
+        [
+         "simulate",
+         "human thinking",
+         "computers",
+         "learn"
+        ]
+       ],
+       "question": "Define Artificial Intelligence (AI).",
+       "solution": [
+        "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+       ],
+       "answer": "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+      },
+      {
+       "hints": [
+        "The healthcare list includes diagnosing diseases.",
+        "Give two distinct examples; personalizing treatment plans and predicting patient outcomes are also in the section."
+       ],
+       "accept": [
+        [
+         "diagnosing diseases",
+         "personalizing treatment"
+        ],
+        [
+         "diagnosing diseases",
+         "predicting patient outcomes"
+        ],
+        [
+         "personalizing treatment",
+         "predicting patient outcomes"
+        ]
+       ],
+       "question": "Provide two examples of AI applications in healthcare.",
+       "solution": [
+        "AI is used for diagnosing diseases and personalizing treatment plans.",
+        "It can also predict patient outcomes."
+       ],
+       "answer": "AI is used for diagnosing diseases and personalizing treatment plans. It can also predict patient outcomes."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This identifies the AI field being used in the textbook's voice-assistant example.",
+        "text": "Siri uses Natural Language Processing (NLP)."
+       },
+       {
+        "why": "This explains how NLP helps the computer make sense of a spoken question.",
+        "text": "NLP helps the computer understand what you are saying."
+       },
+       {
+        "why": "This states the result of applying NLP in the example.",
+        "text": "Siri uses that understanding to give a helpful answer."
+       }
+      ],
+      "question": "How does Siri use Natural Language Processing (NLP)?",
+      "answer": "Siri uses NLP to understand what you are saying and give a helpful answer."
+     },
+     "explain": [
+      {
+       "title": "What is AI?",
+       "body": "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans. In simple terms, AI lets computer systems carry out tasks that seem to need human thinking."
+      },
+      {
+       "title": "How did AI develop?",
+       "body": "The term AI was first invented by John McCarthy in 1956 during the Dartmouth Conference. Early work focused on problem-solving and symbolic methods. Expert systems followed, then machine learning rose in the 1990s. From the 2000s onward, deep learning, NLP, and robotics expanded AI's capabilities."
+      },
+      {
+       "title": "Where is AI used?",
+       "body": "AI is used in areas such as healthcare, education, gaming, transportation, finance, social media, agriculture, and e-commerce. For example, healthcare systems can help diagnose diseases, personalize treatment plans, and predict patient outcomes."
+      },
+      {
+       "title": "What are the subfields of AI?",
+       "body": "Machine learning enables computers to learn from experience and improve over time without being explicitly programmed. Deep learning is a special kind of machine learning using neural networks. NLP helps computers understand and use human language. Computer vision helps computers interpret images and videos. Robotics is the science of building and programming robots."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse AI with the Internet of Things; AI simulates human thinking, while IoT connects devices and systems.",
+      "Do not say John McCarthy created the first AI program: the section says he invented the term AI in 1956, while the Logic Theorist was created in 1955 by Allen Newell and Herbert A. Simon.",
+      "Do not mix up NLP and computer vision: NLP concerns language, while computer vision concerns images and videos.",
+      "When giving examples, make sure they belong to the domain asked about; for healthcare, use diagnosis, personalized treatment, or patient-outcome prediction.",
+      "In a history answer, keep dates and developments in chronological order."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-10-2",
+    "position": 2,
+    "title": "10.2 AI Algorithms and Techniques",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 10, section 10.2, pages 215–217",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 10.2 (pages 215–217) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-10-2-1",
+      "text": "Define Artificial Intelligence (AI).",
+      "marks": 2,
+      "modelAnswer": [
+       "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+      ],
+      "followUp": "Q10.1. Define Artificial Intelligence (AI).",
+      "noteId": "cs-n-10-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "States that AI involves using algorithms and techniques.",
+        "marks": 1,
+        "why": "The definition identifies what AI uses.",
+        "how": "Write that AI involves using algorithms and techniques.",
+        "accept": [
+         [
+          "algorithms",
+          "techniques"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "States that machines perform tasks that typically require human intelligence.",
+        "marks": 1,
+        "why": "The definition identifies what machines are enabled to do.",
+        "how": "Include the idea of machines performing tasks that typically require human intelligence.",
+        "accept": [
+         [
+          "machines",
+          "human intelligence"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.1"
+     },
+     {
+      "id": "cs-w-10-2-3",
+      "text": "Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+      "marks": 8,
+      "modelAnswer": [
+       "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable.",
+       "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable.",
+       "Examples of explainable algorithms include decision trees, linear regression and rule-based systems.",
+       "Examples of unexplainable algorithms include neural networks and deep learning models."
+      ],
+      "followUp": "Q10.1. Define Artificial Intelligence (AI).",
+      "noteId": "cs-n-10-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Defines explainable (whitebox) algorithms as transparent and understandable.",
+        "marks": 2,
+        "why": "The defining feature of whitebox models is the interpretability of their decisions.",
+        "how": "Give the whitebox definition using transparency and understandability.",
+        "accept": [
+         [
+          "whitebox",
+          "transparent",
+          "understandable"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Defines unexplainable (blackbox) algorithms as not easily interpretable.",
+        "marks": 2,
+        "why": "The main difference is whether the decision-making process can be understood.",
+        "how": "Explain that the blackbox decision-making process is not easily interpreted or understood.",
+        "accept": [
+         [
+          "blackbox",
+          "not easily interpretable"
+         ],
+         [
+          "blackbox",
+          "difficult",
+          "understand"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Gives examples of explainable algorithms.",
+        "marks": 2,
+        "why": "Correct examples show understanding of which models the section classifies as whitebox.",
+        "how": "Name decision trees, linear regression, or rule-based systems as explainable examples.",
+        "accept": [
+         [
+          "decision trees",
+          "linear regression",
+          "rule-based systems"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Gives examples of unexplainable algorithms.",
+        "marks": 2,
+        "why": "Correct examples show understanding of which models the section classifies as blackbox.",
+        "how": "Name neural networks and deep learning models as unexplainable examples.",
+        "accept": [
+         [
+          "neural networks",
+          "deep learning"
+         ]
+        ]
+       }
+      ],
+      "source": "Long 10.2"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask you to define AI or explain how AI techniques advance machine learning models. Use the section's exact key phrases where possible.",
+      "A long question may ask you to differentiate whitebox and blackbox models. State each definition separately, then give examples of each type.",
+      "For full marks, do not only list examples: explain that whitebox decisions are transparent and understandable, while blackbox decisions are not easily interpretable."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start with what AI involves using.",
+        "Finish by stating what kind of tasks machines can perform."
+       ],
+       "accept": [
+        [
+         "algorithms",
+         "techniques",
+         "machines",
+         "human intelligence"
+        ]
+       ],
+       "question": "Q10.1. Define Artificial Intelligence (AI).",
+       "solution": [
+        "Artificial Intelligence (AI) involves using algorithms and techniques",
+        "to enable machines to perform tasks that typically require human intelligence."
+       ],
+       "answer": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+      },
+      {
+       "hints": [
+        "Compare how understandable each type's decision-making process is.",
+        "Give examples of both types from the section."
+       ],
+       "accept": [
+        [
+         "whitebox",
+         "transparent",
+         "understandable",
+         "blackbox",
+         "not easily interpretable",
+         "decision trees",
+         "neural networks"
+        ],
+        [
+         "whitebox",
+         "transparent",
+         "understandable",
+         "blackbox",
+         "difficult",
+         "understand",
+         "decision trees",
+         "neural networks"
+        ]
+       ],
+       "question": "Q10.2. Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+       "solution": [
+        "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable.",
+        "Examples include decision trees, linear regression and rule-based systems.",
+        "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable.",
+        "Examples include neural networks and deep learning models."
+       ],
+       "answer": "Whitebox algorithms have a transparent and understandable decision-making process; blackbox algorithms have a decision-making process that is not easily interpretable. Decision trees are whitebox examples, while neural networks are blackbox examples."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The decision tree begins by asking whether the animal has feathers.",
+        "text": "Has feathers?"
+       },
+       {
+        "why": "Following the True branch takes us to the next question in the tree.",
+        "text": "True → Can fly?"
+       },
+       {
+        "why": "Following the False branch from “Can fly?” reaches the final animal identification.",
+        "text": "False → Penguin"
+       }
+      ],
+      "question": "Use the decision tree in Figure 10.3 to identify an animal that has feathers but cannot fly.",
+      "answer": "Penguin"
+     },
+     "explain": [
+      {
+       "title": "AI algorithms",
+       "body": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence. This section focuses on how different algorithms make decisions."
+      },
+      {
+       "title": "Explainable (whitebox) algorithms",
+       "body": "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable. Decision trees follow questions to reach a result. Linear regression finds a line that best fits data points. Rule-based systems follow rules written by humans."
+      },
+      {
+       "title": "Unexplainable (blackbox) algorithms",
+       "body": "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable. Neural networks and deep learning models are examples."
+      }
+     ],
+     "mistakes": [
+      "Do not mix up the examples: decision trees are explainable; neural networks are given as blackbox examples.",
+      "Do not define the difference only by saying one model is more complex. The key difference is whether its decision-making process is understandable.",
+      "Do not describe linear regression as a sequence of questions; that is how a decision tree works.",
+      "When explaining a rule-based system, mention that humans write its if-then rules."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-10-3",
+    "position": 3,
+    "title": "10.3 Introduction to Internet of Things (IoT)",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 10, section 10.3, pages 217–220",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 10.3 (pages 217–220) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-10-3-1",
+      "text": "Define the Internet of Things (IoT).",
+      "marks": 2,
+      "modelAnswer": [
+       "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet."
+      ],
+      "followUp": "Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the connected physical objects and their equipment.",
+        "marks": 1,
+        "why": "The definition identifies IoT as a network of physical objects equipped with technology.",
+        "how": "State that the objects, or things, are equipped with sensors, software, and other technologies.",
+        "accept": [
+         [
+          "network of physical objects",
+          "sensors"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State that the objects exchange data with devices and systems over the internet.",
+        "marks": 1,
+        "why": "Data exchange over the internet is the central purpose in the textbook definition.",
+        "how": "Include the data exchange and internet connection in the definition.",
+        "accept": [
+         [
+          "exchange of data",
+          "internet"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.5"
+     },
+     {
+      "id": "cs-w-10-3-2",
+      "text": "Describe the significance of IoT in connecting devices and systems.",
+      "marks": 2,
+      "modelAnswer": [
+       "IoT allows the seamless integration of the physical and digital worlds.",
+       "Connected devices can collect and share data, which can be analysed to improve efficiency, provide better services, and create new opportunities in fields such as healthcare, agriculture, and smart homes."
+      ],
+      "followUp": "Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explain the connection between the physical and digital worlds.",
+        "marks": 1,
+        "why": "Explaining how IoT connects the physical and digital worlds states its significance.",
+        "how": "State that IoT enables their seamless integration.",
+        "accept": [
+         [
+          "physical",
+          "digital"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give an outcome of collecting and sharing data.",
+        "marks": 1,
+        "why": "Data sharing explains how this connection can lead to useful outcomes.",
+        "how": "Mention improved efficiency, better services, or new opportunities.",
+        "accept": [
+         [
+          "collect",
+          "share",
+          "data"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.6"
+     },
+     {
+      "id": "cs-w-10-3-3",
+      "text": "Describe the components of an IoT system. Explain how these components work together to enable IoT applications.",
+      "marks": 8,
+      "modelAnswer": [
+       "An IoT system typically consists of sensors, actuators, devices, networks, and data analysis.",
+       "Sensors detect and measure physical properties and collect data from the environment.",
+       "Networks connect sensors and devices to the internet, allowing them to share data.",
+       "Data analysis processes and analyses the collected data to gain insights and make decisions.",
+       "Data analysis can be done on the device itself, in the cloud, or on a central server.",
+       "Devices use the data collected by sensors to perform specific tasks.",
+       "Actuators convert energy into motion and can act on data to generate output.",
+       "Together, these components enable IoT applications such as smart homes, healthcare, and transportation."
+      ],
+      "followUp": "Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Name the components of an IoT system.",
+        "marks": 2,
+        "why": "Naming the five components shows knowledge of the complete IoT system.",
+        "how": "List sensors, actuators, devices, networks, and data analysis.",
+        "accept": [
+         [
+          "sensors",
+          "actuators",
+          "devices",
+          "networks",
+          "data analysis"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain the sensor function.",
+        "marks": 2,
+        "why": "Sensors provide the data on which the rest of the system can act.",
+        "how": "State that sensors detect or measure physical properties and collect environmental data.",
+        "accept": [
+         [
+          "sensors",
+          "collect",
+          "data"
+         ],
+         [
+          "detect",
+          "measure"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Explain the roles of networks and data analysis.",
+        "marks": 2,
+        "why": "The explanation should show how information is communicated and used.",
+        "how": "State that networks enable data sharing and data analysis processes data to gain insights or make decisions.",
+        "accept": [
+         [
+          "networks",
+          "internet",
+          "share"
+         ],
+         [
+          "data analysis",
+          "insights"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the correct overall explanation of how components work together.",
+        "marks": 2,
+        "why": "The final point connects the components to the tasks and outputs of an IoT application.",
+        "how": "Explain that devices use data to perform tasks and actuators can act on data to generate output.",
+        "accept": [
+         [
+          "devices",
+          "tasks",
+          "actuators",
+          "output"
+         ],
+         [
+          "devices",
+          "perform",
+          "actuators"
+         ]
+        ]
+       }
+      ],
+      "source": "Long 10.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask you to define IoT or explain its significance. Learn the textbook definition and include data exchange over the internet.",
+      "A long question may ask you to name and describe all five IoT components. State each component and its function, then explain how they work together.",
+      "For an applications question, give examples from the correct domain, such as connected vehicles, smart traffic lights, and real-time tracking in transportation.",
+      "For security and privacy questions, explain the concern and give relevant measures: strong, unique passwords, regular updates, and encryption."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start by saying what IoT is a network of.",
+        "Include the equipment on the objects and explain that they exchange data over the internet."
+       ],
+       "accept": [
+        [
+         "network of physical objects",
+         "sensors",
+         "exchange of data",
+         "internet"
+        ],
+        [
+         "things",
+         "software",
+         "data",
+         "internet"
+        ]
+       ],
+       "question": "Define the Internet of Things (IoT).",
+       "solution": [
+        "IoT is a network of physical objects, or \"things,\"",
+        "that are equipped with sensors, software, and other technologies",
+        "to facilitate the exchange of data with other devices and systems over the internet."
+       ],
+       "answer": "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet."
+      },
+      {
+       "hints": [
+        "Think about how IoT brings two worlds together.",
+        "Explain what connected devices do with data and give the benefits."
+       ],
+       "accept": [
+        [
+         "physical",
+         "digital",
+         "collect",
+         "share",
+         "data"
+        ],
+        [
+         "efficiency",
+         "better services"
+        ]
+       ],
+       "question": "Describe the significance of IoT in connecting devices and systems.",
+       "solution": [
+        "IoT allows for the seamless integration of the physical and digital worlds.",
+        "This connection enables devices to collect and share data.",
+        "The data can be analysed to improve efficiency, provide better services, and create new opportunities in fields such as healthcare, agriculture, and smart homes."
+       ],
+       "answer": "IoT allows for the seamless integration of the physical and digital worlds. Devices can collect and share data, which can be analysed to improve efficiency, provide better services, and create new opportunities."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "Connected appliances are examples of physical objects that can form part of an IoT system.",
+        "text": "A smart home can contain internet-connected temperature controls, lighting, and surveillance cameras."
+       },
+       {
+        "why": "Sensors collect information from the environment for the system to use.",
+        "text": "Sensors can collect data, such as a room's temperature or whether movement is detected."
+       },
+       {
+        "why": "Networks allow connected sensors and devices to share data.",
+        "text": "A network connects the sensors and appliances so they can communicate over the internet."
+       },
+       {
+        "why": "Analysed data can help the system make decisions and support useful actions.",
+        "text": "Data can be analysed so the connected devices can perform tasks, such as controlling the temperature or lighting."
+       }
+      ],
+      "question": "How does a smart home system show a practical use of IoT?",
+      "answer": "A smart home connects appliances such as temperature controls, lighting, and surveillance cameras to the internet so they can share data and perform useful tasks."
+     },
+     "explain": [
+      {
+       "title": "What IoT means",
+       "body": "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet. In simple terms, everyday objects connect and share information."
+      },
+      {
+       "title": "The components of an IoT system",
+       "body": "Sensors detect and measure physical properties and collect data. Actuators convert energy into motion and can act on data to generate output. Devices use sensor data to perform tasks. Networks let sensors and devices share data. Data analysis processes that data to gain insights and make decisions."
+      },
+      {
+       "title": "Where IoT is used",
+       "body": "IoT can connect physical and digital systems in fields such as healthcare, agriculture, and smart homes. In healthcare, devices can track vital signs and remind patients to take medication. In transportation, connected vehicles, smart traffic lights, and real-time tracking systems are examples."
+      },
+      {
+       "title": "Protecting IoT data",
+       "body": "More connected devices can mean more risk of cyber-attacks. Use strong, unique passwords, keep software and firmware up to date, and encrypt data transmitted between devices to help protect personal data and privacy."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse sensors with actuators: sensors collect data, while actuators can act on data to generate output.",
+      "Do not leave out networks or data analysis when naming the components of an IoT system.",
+      "Do not define IoT only as devices connected to the internet; include the exchange of data.",
+      "Do not give security advice without explaining what it protects. Link passwords, updates, and encryption to preventing unauthorized access or protecting data."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-10-4",
+    "position": 4,
+    "title": "10.4 Implications and Future of Emerging Technologies",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 10, section 10.4, pages 220–222",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 10.4 (pages 220–222) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-10-4-1",
+      "text": "What are the potential risks associated with AI and IoT?",
+      "marks": 2,
+      "modelAnswer": [
+       "AI and IoT can create data privacy risks because personal and sensitive information may be misused or accessed by unauthorized parties.",
+       "Algorithmic bias can cause AI systems to perpetuate or amplify biases, leading to unfair outcomes.",
+       "Therefore, data privacy risks and algorithmic bias are potential risks associated with AI and IoT."
+      ],
+      "followUp": "What are the potential risks associated with AI and IoT?",
+      "noteId": "cs-n-10-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identifies data privacy as a risk.",
+        "marks": 1,
+        "why": "Identifying a risk shows understanding of the concerns raised by collecting and using data.",
+        "how": "State that personal or sensitive information may be misused or accessed without authorization.",
+        "accept": [
+         [
+          "data privacy"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives the second risk and the final answer.",
+        "marks": 1,
+        "why": "Identifying bias shows understanding that AI can produce unfair outcomes.",
+        "how": "State that biased training data can lead to unfair outcomes.",
+        "accept": [
+         [
+          "algorithmic bias"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.7"
+     },
+     {
+      "id": "cs-w-10-4-2",
+      "text": "Discuss the societal impact of AI and IoT on daily life.",
+      "marks": 2,
+      "modelAnswer": [
+       "In daily life, smart home devices such as thermostats and security systems offer convenience and energy efficiency.",
+       "In healthcare, wearable devices monitor health metrics and provide real-time data to medical professionals.",
+       "AI and IoT therefore improve daily life through smart homes, healthcare monitoring, and other smart solutions."
+      ],
+      "followUp": "What are the potential risks associated with AI and IoT?",
+      "noteId": "cs-n-10-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explains an impact on homes or everyday convenience.",
+        "marks": 1,
+        "why": "A relevant example shows how these technologies affect everyday activities.",
+        "how": "Mention smart home devices such as thermostats or security systems and their convenience or energy efficiency.",
+        "accept": [
+         [
+          "smart home"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives a second daily-life impact and the final answer.",
+        "marks": 1,
+        "why": "A further example demonstrates another daily-life benefit.",
+        "how": "Mention wearable devices that monitor health metrics or provide real-time data to medical professionals.",
+        "accept": [
+         [
+          "healthcare"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.8"
+     },
+     {
+      "id": "cs-w-10-4-3",
+      "text": "Explain the concept of algorithmic bias.",
+      "marks": 2,
+      "modelAnswer": [
+       "AI systems are trained on large datasets.",
+       "If these datasets contain biases, AI models can perpetuate or amplify those biases.",
+       "This can lead to unfair outcomes in applications such as hiring, law enforcement, and lending."
+      ],
+      "followUp": "What are the potential risks associated with AI and IoT?",
+      "noteId": "cs-n-10-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explains the role of biased training data.",
+        "marks": 1,
+        "why": "The explanation must connect bias in the data used to train an AI system with the system's behaviour.",
+        "how": "State that AI systems are trained on datasets and that biased datasets can affect their models.",
+        "accept": [
+         [
+          "datasets",
+          "biases"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives the effect and the final answer.",
+        "marks": 1,
+        "why": "Stating the consequence explains why algorithmic bias matters.",
+        "how": "Explain that the AI may perpetuate or amplify bias and produce unfair outcomes.",
+        "accept": [
+         [
+          "unfair outcomes"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.9"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "The exercise asks short questions about risks, daily-life impact, algorithmic bias, and ethical considerations; answer directly and include a clear example or consequence.",
+      "Long questions ask you to analyze privacy, evaluate work impacts, or explain regulatory frameworks and bias. Organize each answer as: issue, explanation, example, and response or strategy.",
+      "For risks and regulations, use the section's key terms: data privacy, algorithmic bias, data protection laws, ethical guidelines, bias-mitigation standards, and security standards.",
+      "For a question on impact, distinguish daily life, work environments, and society at large, and give a relevant example for each part asked."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Name the two risks highlighted in the section.",
+        "Explain what may happen to personal data and what biased AI training data can cause."
+       ],
+       "accept": [
+        [
+         "data privacy",
+         "algorithmic bias"
+        ],
+        [
+         "unauthorized",
+         "unfair outcomes"
+        ]
+       ],
+       "question": "What are the potential risks associated with AI and IoT?",
+       "solution": [
+        "AI and IoT devices collect vast amounts of data.",
+        "Personal and sensitive information can be misused or accessed by unauthorized parties, creating data privacy risks.",
+        "AI systems trained on biased datasets can perpetuate or amplify those biases.",
+        "This can lead to unfair outcomes in applications such as hiring, law enforcement, and lending.",
+        "Therefore, data privacy risks and algorithmic bias are potential risks associated with AI and IoT."
+       ],
+       "answer": "Data privacy risks and algorithmic bias are potential risks associated with AI and IoT."
+      }
+     ],
+     "example": {
+      "steps": [],
+      "question": "No worked example is provided in this section.",
+      "answer": "There is no worked example in this section."
+     },
+     "explain": [
+      {
+       "title": "Data privacy",
+       "body": "“As AI and IoT devices collect vast amounts of data, concerns about data privacy become paramount.” Personal and sensitive information must be protected from misuse and unauthorized access."
+      },
+      {
+       "title": "Algorithmic bias",
+       "body": "“Training of AI systems is conducted on large datasets, and if these datasets comprise biases, the AI models can inadvertently perpetuate or even amplify these biases.” This can lead to unfair outcomes."
+      },
+      {
+       "title": "Policy and standards",
+       "body": "The section says comprehensive policy and regulatory frameworks are essential to mitigate AI and IoT risks. Examples include data protection laws, ethical guidelines, bias-mitigation standards, and IoT security standards."
+      },
+      {
+       "title": "Impact on people and society",
+       "body": "AI and IoT can support smart homes, healthcare, and transportation; improve efficiency at work; and help smart cities manage resources, traffic, and public services."
+      }
+     ],
+     "mistakes": [
+      "Do not describe data privacy as only a technical issue; explain that personal or sensitive information may be misused or accessed by unauthorized parties.",
+      "Do not confuse algorithmic bias with a simple programming error; connect biased training data to the possibility of unfair outcomes.",
+      "When asked for strategies, do not only list risks. Include measures such as data protection laws, representative data, bias detection, encryption, and secure authentication.",
+      "For societal impact questions, support your points with examples from the section, such as wearable health devices or smart-city resource management."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-10-5",
+    "position": 5,
+    "title": "Unit 10 exercise",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 10, end-of-chapter exercise, pages 222–224; Chapter 10 exercise",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 10 and attempt the end-of-chapter exercise (pages 222–224)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-10-5-1",
+      "text": "Q10.1. Define Artificial Intelligence (AI).",
+      "marks": 2,
+      "modelAnswer": [
+       "Artificial Intelligence (AI) is the ability of machines to perform tasks that normally require human intelligence."
+      ],
+      "followUp": "Q10.5. Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identifies machines performing tasks.",
+        "marks": 1,
+        "why": "The answer must identify AI as a capability of machines.",
+        "how": "State that machines can perform tasks.",
+        "accept": [
+         [
+          "machines",
+          "tasks"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Links the tasks to human intelligence.",
+        "marks": 1,
+        "why": "This distinguishes AI tasks from ordinary automated tasks.",
+        "how": "Explain that these tasks normally require human intelligence.",
+        "accept": [
+         [
+          "human intelligence"
+         ],
+         [
+          "normally require human"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.1"
+     },
+     {
+      "id": "cs-w-10-5-3",
+      "text": "Q10.3. Provide two examples of AI applications in healthcare.",
+      "marks": 2,
+      "modelAnswer": [
+       "Automated diagnosis.",
+       "Remote patient monitoring."
+      ],
+      "followUp": "Q10.5. Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Gives one AI healthcare application.",
+        "marks": 1,
+        "why": "One valid healthcare application is required for this mark.",
+        "how": "Name automated diagnosis or personalized drug development.",
+        "accept": [
+         [
+          "automated diagnosis"
+         ],
+         [
+          "personalized drug"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Gives a second AI healthcare application.",
+        "marks": 1,
+        "why": "A second distinct example completes the response.",
+        "how": "Name another valid application, such as remote patient monitoring.",
+        "accept": [
+         [
+          "remote patient monitoring"
+         ],
+         [
+          "personalized drug"
+         ],
+         [
+          "automated diagnosis"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.3"
+     },
+     {
+      "id": "cs-w-10-5-4",
+      "text": "Q10.4. Explain the role of AI techniques in advancing machine learning models.",
+      "marks": 2,
+      "modelAnswer": [
+       "AI techniques enable machine learning models to learn patterns from data.",
+       "They help improve the performance and accuracy of the models."
+      ],
+      "followUp": "Q10.5. Define the Internet of Things (IoT).",
+      "noteId": "cs-n-10-5",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explains how AI techniques help models use data.",
+        "marks": 1,
+        "why": "Learning patterns from data is central to machine learning.",
+        "how": "State that the techniques let models learn patterns from data.",
+        "accept": [
+         [
+          "learn patterns",
+          "data"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Identifies improved model performance or accuracy.",
+        "marks": 1,
+        "why": "The answer should state the benefit to the models.",
+        "how": "Explain that learning can improve accuracy or performance.",
+        "accept": [
+         [
+          "improve",
+          "accuracy"
+         ],
+         [
+          "improve",
+          "performance"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 10.4"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Section A tests definitions, examples and the key differences between AI and IoT concepts. Read every option carefully, especially options ending in “All of the above.”",
+      "Short questions are commonly worth 2 marks: give a direct definition or two distinct points, and include a relevant example when asked.",
+      "For long questions, organize the answer into clear points. Define the concept, describe applications or risks, and explain their effects or solutions.",
+      "For compare questions, state the difference directly and include an example of each type where useful.",
+      "For ethical or policy questions, name principles or frameworks and explain how they protect people; also mention limitations such as enforcement."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Start with how IoT connects things.",
+        "Add what the connected devices do with data."
+       ],
+       "accept": [
+        [
+         "network",
+         "devices",
+         "data"
+        ],
+        [
+         "connect",
+         "devices",
+         "exchange"
+        ]
+       ],
+       "question": "Q10.5. Define the Internet of Things (IoT).",
+       "solution": [
+        "IoT is a network of physical devices connected to the internet.",
+        "These devices collect and exchange data."
+       ],
+       "answer": "A network of connected physical devices that collect and exchange data."
+      },
+      {
+       "hints": [
+        "Think about unfair decisions.",
+        "Explain how the data used by an AI system may contribute."
+       ],
+       "accept": [
+        [
+         "unfair",
+         "biased data"
+        ],
+        [
+         "unfair",
+         "societal biases"
+        ],
+        [
+         "unfair",
+         "existing biases"
+        ]
+       ],
+       "question": "Q10.9. Explain the concept of algorithmic bias.",
+       "solution": [
+        "Algorithmic bias occurs when an AI system produces unfair results or decisions.",
+        "Biased data can cause it to perpetuate existing societal biases."
+       ],
+       "answer": "Algorithmic bias is when AI produces unfair decisions, often because biased data reproduces existing societal biases."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This introduces the concept and answers what the two model types mean.",
+        "text": "Explainable, or whitebox, AI models have decision-making processes that people can understand."
+       },
+       {
+        "why": "A specific model example makes the explanation concrete.",
+        "text": "A decision tree is an example because its decision path can be followed."
+       },
+       {
+        "why": "This gives the contrasting meaning of a blackbox model.",
+        "text": "Unexplainable, or blackbox, AI models make decisions whose reasoning is difficult for people to understand."
+       },
+       {
+        "why": "This supplies a suitable example of a model commonly treated as blackbox.",
+        "text": "Neural networks are often treated as blackbox models because their internal reasoning can be difficult to interpret."
+       },
+       {
+        "why": "This states the central difference directly, which is important for full marks.",
+        "text": "The key difference is the ability to understand how the model reaches its decision, not simply its performance."
+       }
+      ],
+      "question": "Q10.2. Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+      "answer": "Explainable, or whitebox, AI models have decision-making processes that people can understand. A decision tree is an example because its decision path can be followed. Unexplainable, or blackbox, AI models make decisions whose reasoning is difficult for people to understand. Neural networks are often treated as blackbox models because their internal reasoning can be difficult to interpret. The key difference is the ability to understand how the model reaches its decision, not simply its performance."
+     },
+     "explain": [
+      {
+       "title": "Artificial Intelligence",
+       "body": "AI enables machines to perform tasks that normally require human intelligence. Machine learning is an AI approach in which systems learn patterns from data. AI is used in fields such as healthcare and education."
+      },
+      {
+       "title": "Explainable and unexplainable AI",
+       "body": "Whitebox models have decision-making processes that people can understand; decision trees are an example. Blackbox models are difficult to interpret; neural networks are often treated as blackbox models."
+      },
+      {
+       "title": "Internet of Things",
+       "body": "IoT connects physical devices and systems so they can collect, exchange and use data. Sensors gather information, networks transfer it, and processing systems or applications use it to provide a service or action."
+      },
+      {
+       "title": "Benefits and risks",
+       "body": "AI and IoT can improve services, support monitoring and automation, and change transport, education and healthcare. Risks include privacy and security problems, unfair decisions, job displacement and lack of transparency."
+      },
+      {
+       "title": "Responsible technology",
+       "body": "Responsible AI and IoT should be fair, transparent and accountable, protect privacy and data rights, and include security and human oversight. Representative data and regular checks can help reduce algorithmic bias."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse a model’s accuracy with whether people can understand its decision-making process.",
+      "When defining IoT, mention connected devices and their collection or exchange of data.",
+      "Do not describe algorithmic bias only as low accuracy; explain that it can produce unfair decisions and perpetuate societal biases.",
+      "For long questions, avoid listing examples without explaining how they work or why they matter.",
+      "When discussing AI and IoT risks, include both technical risks, such as security and privacy, and social effects, such as fairness and employment."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "cs-n-10-1",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-10-1",
+   "title": "Introduction to Artificial Intelligence",
+   "keywords": [
+    "AI",
+    "artificial intelligence",
+    "machine learning",
+    "deep learning",
+    "NLP",
+    "computer vision",
+    "robotics"
+   ],
+   "answer": "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans.",
+   "explanation": "AI is a field of computer science that enables computer systems to simulate human thinking and learning. Its uses include healthcare, education, gaming, transportation, and farming.",
+   "simple": "AI helps computers do tasks that seem to need human thinking, such as understanding a question or recognizing a picture.",
+   "examples": [],
+   "steps": [
+    "Remember the textbook definition of AI.",
+    "Recall the main historical milestones, from the Dartmouth Conference in 1956 to ChatGPT in 2023.",
+    "Connect each AI subfield to what it does: learning, language, images, or robots.",
+    "Give a real application when asked how AI is used."
+   ],
+   "checkQuestion": "Name two subfields of AI.",
+   "checkAnswer": "Machine learning, deep learning, natural language processing, computer vision, and robotics.",
+   "checkAccept": [
+    [
+     "machine learning",
+     "natural language processing"
+    ],
+    [
+     "computer vision",
+     "robotics"
+    ],
+    [
+     "machine learning",
+     "computer vision"
+    ],
+    [
+     "natural language processing",
+     "robotics"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-10-2",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-10-2",
+   "title": "Explainable and Unexplainable AI Algorithms",
+   "keywords": [
+    "AI",
+    "whitebox",
+    "blackbox",
+    "decision tree",
+    "linear regression",
+    "rule-based system"
+   ],
+   "answer": "Explainable (whitebox) algorithms have a transparent and understandable decision-making process.",
+   "explanation": "AI algorithms can be grouped by how easy it is to understand their decisions. Whitebox algorithms show an understandable decision-making process; blackbox algorithms make decisions that are not easily interpreted.",
+   "simple": "Whitebox means you can follow how the AI reached its decision. Blackbox means that process is hard to understand.",
+   "examples": [
+    "A decision tree asks questions such as “Has feathers?” and follows the answers to identify an animal.",
+    "A neural network can process an image and identify it as a cat, even though its decision-making process may be difficult to interpret."
+   ],
+   "steps": [
+    "Identify whether the decision-making process is transparent and understandable.",
+    "If it is, classify the algorithm as explainable (whitebox).",
+    "If it is not easily interpreted, classify it as unexplainable (blackbox).",
+    "Use examples to support your answer: decision trees are whitebox; neural networks and deep learning models are blackbox examples."
+   ],
+   "checkQuestion": "Which type of AI algorithm has a transparent and understandable decision-making process?",
+   "checkAnswer": "Decision Trees are explainable (whitebox) algorithms.",
+   "checkAccept": [
+    [
+     "transparent",
+     "understandable"
+    ],
+    [
+     "whitebox"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-10-3",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-10-3",
+   "title": "Introduction to Internet of Things (IoT)",
+   "keywords": [
+    "IoT",
+    "Internet of Things",
+    "sensor",
+    "actuator",
+    "network",
+    "data analysis"
+   ],
+   "answer": "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet.",
+   "explanation": "IoT connects physical objects to the internet so they can collect, share, and use data. An IoT system uses sensors, actuators, devices, networks, and data analysis. These parts support applications such as smart homes, healthcare, and transportation. Secure passwords, regular updates, and encryption help protect IoT devices and data.",
+   "simple": "IoT means everyday objects connect to the internet and share data. Sensors gather information, and connected devices can use it to perform tasks.",
+   "examples": [
+    "In a smart home, connected temperature controls, lights, and surveillance cameras can work as part of an IoT system.",
+    "In healthcare, IoT devices can track vital signs and alert healthcare providers in an emergency."
+   ],
+   "steps": [
+    "Sensors collect data from the environment.",
+    "Networks connect sensors and devices to the internet so they can share data.",
+    "Data analysis processes the collected data to gain insights and make decisions.",
+    "Devices use the data to perform specific tasks; actuators can act on data to generate output.",
+    "Use strong, unique passwords, regular updates, and encryption to improve security."
+   ],
+   "checkQuestion": "Which IoT component detects and measures physical properties such as temperature?",
+   "checkAnswer": "Sensors collect data from the environment.",
+   "checkAccept": [
+    [
+     "sensors"
+    ],
+    [
+     "detect",
+     "temperature"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-10-4",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-10-4",
+   "title": "Benefits, risks, and responsible use of AI and IoT",
+   "keywords": [
+    "AI",
+    "IoT",
+    "data privacy",
+    "algorithmic bias",
+    "ethical guidelines",
+    "security standards"
+   ],
+   "answer": "AI and IoT bring benefits to daily life, work environments, and society, but they also raise concerns such as data privacy and algorithmic bias. Appropriate laws, ethical guidelines, bias-mitigation standards, and security standards help address these concerns.",
+   "explanation": "AI and IoT can make life, work, and public services more efficient, but they also create risks. Data privacy and algorithmic bias are two key concerns. Laws, ethical guidelines, bias-mitigation standards, and security standards can help address them.",
+   "simple": "New technology can be helpful, but we must protect people's information and make sure AI treats people fairly.",
+   "examples": [
+    "A smart home device may collect personal information, so it needs strong security to protect that data.",
+    "If an AI system learns from biased training data, it may make unfair decisions."
+   ],
+   "steps": [
+    "Identify the benefit or risk being discussed.",
+    "Explain how it affects people, workplaces, or society.",
+    "Give a relevant example.",
+    "For a risk, describe a suitable measure to reduce it."
+   ],
+   "checkQuestion": "What can algorithmic bias cause?",
+   "checkAnswer": "Algorithmic bias can lead to unfair outcomes.",
+   "checkAccept": [
+    [
+     "unfair outcomes"
+    ],
+    [
+     "unfair",
+     "bias"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-10-5",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-10-5",
+   "title": "Artificial Intelligence and the Internet of Things",
+   "keywords": [
+    "AI",
+    "machine learning",
+    "explainable AI",
+    "blackbox",
+    "IoT",
+    "algorithmic bias",
+    "privacy",
+    "ethics"
+   ],
+   "answer": "AI and IoT are technologies that can make services more useful and connected, but they should be developed and used ethically.",
+   "explanation": "AI enables computers to perform tasks that usually require human intelligence, while IoT connects physical devices so they can collect and exchange data. Both technologies can improve services and daily life, but they also raise concerns about privacy, security, fairness, jobs and accountability.",
+   "simple": "AI helps computers do intelligent tasks. IoT lets connected devices share information. Both can be useful, but people must use them responsibly.",
+   "examples": [],
+   "steps": [
+    "AI means machines can perform tasks that normally need human intelligence.",
+    "Machine learning uses data so a system can learn patterns and make predictions.",
+    "A whitebox model has decisions that people can understand; a blackbox model is difficult to interpret.",
+    "IoT devices use sensors, connectivity and data processing to share information and provide services.",
+    "Check AI and IoT systems for security, privacy, fairness and effects on people’s work."
+   ],
+   "checkQuestion": "What does IoT connect?",
+   "checkAnswer": "IoT connects devices that collect and exchange data.",
+   "checkAccept": [
+    [
+     "connect",
+     "devices"
+    ],
+    [
+     "connect",
+     "things"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "cs-q-10-1-1",
+   "stem": "Which option best describes Artificial Intelligence?",
+   "options": [
+    "The simulation of human thinking ability in computer systems",
+    "Connecting devices through the internet",
+    "Building computer hardware only",
+    "Storing files on a computer"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the textbook describes AI as the simulation of human thinking ability in computer systems.",
+    "Incorrect: connecting devices describes the Internet of Things, not AI.",
+    "Incorrect: AI is not limited to building computer hardware.",
+    "Incorrect: storing files is not the definition of AI."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-2",
+   "stem": "When and where was the term AI first invented, according to the section?",
+   "options": [
+    "John McCarthy at the Dartmouth Conference in 1956",
+    "Allen Newell at the Dartmouth Conference in 1966",
+    "Herbert A. Simon in 1997",
+    "John McCarthy in 2023"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section says John McCarthy first invented the term AI in 1956 during the Dartmouth Conference.",
+    "Incorrect: the section dates the Dartmouth Conference to 1956, not 1966.",
+    "Incorrect: 1997 is the year of the Deep Blue chess milestone, not the naming of AI.",
+    "Incorrect: 2023 is associated with ChatGPT, not the first use of the term AI."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-3",
+   "stem": "In which period did early AI research focus on problem-solving and symbolic methods?",
+   "options": [
+    "1950s–1960s",
+    "1970s–1980s",
+    "1990s",
+    "2000s onward"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section places early problem-solving and symbolic methods in the 1950s–1960s.",
+    "Incorrect: the 1970s–1980s are linked to the development of expert systems.",
+    "Incorrect: the 1990s saw the rise of machine learning.",
+    "Incorrect: the 2000s onward brought advances in deep learning, NLP, and robotics."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-4",
+   "stem": "What does Natural Language Processing (NLP) help computers do?",
+   "options": [
+    "It helps computers understand and use human language.",
+    "It helps computers interpret images and videos.",
+    "It builds and programs robots.",
+    "It connects computers to the internet."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: NLP helps computers understand and communicate with us in our language.",
+    "Incorrect: interpreting images and videos is the role of computer vision.",
+    "Incorrect: building and programming robots is robotics.",
+    "Incorrect: connecting devices to the internet is not the definition of NLP."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-5",
+   "stem": "Which AI field enables computers to interpret images and videos?",
+   "options": [
+    "Computer vision",
+    "Robotics",
+    "Deep learning",
+    "Natural language processing"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: computer vision enables computers to see and understand the visual world.",
+    "Incorrect: robotics concerns building and programming robots.",
+    "Incorrect: deep learning uses neural networks to learn from data, rather than specifically interpreting visual material.",
+    "Incorrect: NLP focuses on human language."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-6",
+   "stem": "Which statement best describes machine learning in this section?",
+   "options": [
+    "Computers learn from experience and improve over time without being explicitly programmed.",
+    "Computers only follow a fixed list of instructions and cannot improve.",
+    "Computers build physical robots without using data.",
+    "Computers translate every image into spoken language."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section says computers learn from experience and improve over time without being explicitly programmed.",
+    "Incorrect: this contradicts the section's description of learning from experience.",
+    "Incorrect: this is not the definition of machine learning.",
+    "Incorrect: this describes no machine-learning definition given in the section."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-7",
+   "stem": "Which statement about deep learning agrees with the section?",
+   "options": [
+    "Deep learning uses neural networks inspired by how our brains work.",
+    "Deep learning is a type of robotics that only builds machines.",
+    "Deep learning is another name for the Dartmouth Conference.",
+    "Deep learning is used only for storing data."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section describes deep learning as a special kind of machine learning that uses neural networks inspired by the brain.",
+    "Incorrect: deep learning is not defined as robotics.",
+    "Incorrect: the Dartmouth Conference is a historical event, not deep learning.",
+    "Incorrect: deep learning is used to learn from data and recognize patterns, not just to store data."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-1-8",
+   "stem": "Which is an example of an AI application in agriculture from the section?",
+   "options": [
+    "Predicting crop yields using data from sensors and drones",
+    "Using a printed map to locate a farm",
+    "Repairing a tractor without gathering information",
+    "Recording a crop name in a notebook"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section describes AI systems using data from sensors and drones to monitor crop health and predict yields.",
+    "Incorrect: a printed map alone is not the AI application described.",
+    "Incorrect: repairing a tractor without information is not an example given in the section.",
+    "Incorrect: writing a crop name in a notebook does not use AI."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-1",
+   "moduleId": "cs-m-10-1"
+  },
+  {
+   "id": "cs-q-10-2-1",
+   "stem": "How does a decision tree help a computer make a decision?",
+   "options": [
+    "It follows a sequence of questions to reach an answer",
+    "It always uses hidden layers",
+    "It learns only from images",
+    "It follows rules that cannot be seen"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: a decision tree follows questions, with each answer leading to another question or a final answer.",
+    "Incorrect: hidden layers are associated with neural networks, not the defining feature of decision trees.",
+    "Incorrect: decision trees are not limited to learning from images.",
+    "Incorrect: a decision tree is an explainable method, not a set of unseen rules."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-2",
+   "stem": "Which description best matches linear regression?",
+   "options": [
+    "It finds a straight line that best fits data points",
+    "It follows a series of animal-identification questions",
+    "It uses only human-written if-then rules",
+    "It makes every decision by processing image pixels"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: linear regression finds a line that best fits data points and can help show a relationship between two features.",
+    "Incorrect: a sequence of questions is the decision-tree description.",
+    "Incorrect: human-written if-then rules describe rule-based systems.",
+    "Incorrect: processing image pixels is not the definition of linear regression."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-3",
+   "stem": "What is a rule-based system?",
+   "options": [
+    "A set of human-written if-then rules",
+    "A straight line fitted to data points",
+    "A sequence of hidden neural layers",
+    "A model whose decisions are always impossible to explain"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: rule-based systems use rules written by humans to guide computer decisions.",
+    "Incorrect: a straight line fitted to data points describes linear regression.",
+    "Incorrect: hidden layers are part of the neural-network example.",
+    "Incorrect: this is not the definition of a rule-based system."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-4",
+   "stem": "Which feature makes an AI algorithm explainable (whitebox)?",
+   "options": [
+    "The decision-making process is transparent and understandable",
+    "The algorithm always gives a perfect answer",
+    "The algorithm does not use data",
+    "The algorithm is only used in healthcare"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: whitebox algorithms have a transparent and understandable decision-making process.",
+    "Incorrect: explainability does not guarantee perfect answers.",
+    "Incorrect: the definition does not say that a whitebox algorithm avoids data.",
+    "Incorrect: whitebox algorithms are not limited to healthcare."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-5",
+   "stem": "What is a key feature of an unexplainable (blackbox) algorithm?",
+   "options": [
+    "The decision-making process is not easily interpretable",
+    "The model must be a flowchart",
+    "The model uses only one question",
+    "The decision-making process is always written by a human"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: blackbox algorithms have decision-making processes that are not easily interpreted.",
+    "Incorrect: a flowchart is more closely associated with an explainable decision tree.",
+    "Incorrect: the number of questions is not the defining feature of a blackbox algorithm.",
+    "Incorrect: the section does not define blackbox algorithms as having human-written decisions."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-6",
+   "stem": "Which is given as an example of a blackbox algorithm?",
+   "options": [
+    "Neural networks",
+    "Decision trees",
+    "Rule-based systems",
+    "Linear regression"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: neural networks are given as an example of unexplainable (blackbox) algorithms.",
+    "Incorrect: decision trees are presented as explainable (whitebox) algorithms.",
+    "Incorrect: rule-based systems are described using visible, human-written rules.",
+    "Incorrect: linear regression is listed among the explainable examples."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-7",
+   "stem": "Which example best illustrates a rule-based system?",
+   "options": [
+    "Use an if-then rule to decide when a game character should jump",
+    "Fit a straight line to study-time and grade data",
+    "Follow questions to identify an animal",
+    "Process an image through neural-network layers"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: “if the character is about to hit an obstacle, then jump” is the section's rule-based example.",
+    "Incorrect: fitting a line to study and grade data illustrates linear regression.",
+    "Incorrect: following questions to identify an animal illustrates a decision tree.",
+    "Incorrect: processing an image through layers illustrates a neural network."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-2-8",
+   "stem": "Which task is the best example of linear regression?",
+   "options": [
+    "Predicting a grade from study hours using a fitted line",
+    "Identifying an animal by following questions",
+    "Jumping when a written game rule says an obstacle is near",
+    "Identifying an image using a neural network"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section describes using a line to predict grades from study hours.",
+    "Incorrect: identifying an animal through questions is a decision-tree example.",
+    "Incorrect: responding to a written if-then instruction is a rule-based example.",
+    "Incorrect: identifying an image with a neural network is a neural-network example."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-2",
+   "moduleId": "cs-m-10-2"
+  },
+  {
+   "id": "cs-q-10-3-1",
+   "stem": "Which IoT component detects and measures properties such as temperature and motion?",
+   "options": [
+    "Detecting and measuring physical properties",
+    "Converting energy into motion",
+    "Connecting devices through communication pathways",
+    "Processing data to gain insights"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because sensors detect and measure physical properties.",
+    "This describes an actuator, which converts energy into motion.",
+    "This describes networks, which connect sensors and devices.",
+    "This describes data analysis, which processes collected data."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-2",
+   "stem": "Which component can act on data to generate an output in an IoT system?",
+   "options": [
+    "An actuator",
+    "A sensor",
+    "A network",
+    "A device"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because an actuator can act on data to generate output.",
+    "A sensor collects data from the environment rather than generating an output from it.",
+    "A network provides communication pathways for sharing data.",
+    "A device uses sensor data to perform specific tasks, but the component described is an actuator."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-3",
+   "stem": "What is the role of a network in an IoT system?",
+   "options": [
+    "A communication pathway connecting sensors and devices to the internet",
+    "A device that measures humidity",
+    "A method for converting energy into motion",
+    "A process for setting a strong password"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because networks connect sensors and devices to the internet and allow them to share data.",
+    "This describes a sensor.",
+    "This describes an actuator.",
+    "This is a security practice, not the role of a network."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-4",
+   "stem": "Which description best explains data analysis in an IoT system?",
+   "options": [
+    "Processing and analysing collected data to gain insights and make decisions",
+    "Connecting devices to a wired or wireless pathway",
+    "Detecting movement in the environment",
+    "Converting energy into motion"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because data analysis processes and analyses collected data to support insights and decisions.",
+    "This describes the role of a network.",
+    "This is an example of a sensor detecting a physical property.",
+    "This describes an actuator."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-5",
+   "stem": "Which is an example of an IoT application in transportation?",
+   "options": [
+    "Smart traffic lights",
+    "Medication reminders",
+    "A smart refrigerator",
+    "A sensor measuring light in a room"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because smart traffic lights are given as an example of IoT in transportation.",
+    "This is an example of how IoT can be used in healthcare.",
+    "A smart refrigerator is an example of an internet-connected everyday device, not a transportation application.",
+    "This describes a sensor function rather than a transportation application."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-6",
+   "stem": "Which practice helps prevent unauthorized access to IoT devices?",
+   "options": [
+    "Strong, unique passwords",
+    "Sharing one password among all devices",
+    "Turning off all software updates",
+    "Sending unencrypted data"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because strong, unique passwords help prevent unauthorized access.",
+    "Sharing one password is not the recommended way to protect each device.",
+    "The textbook recommends keeping software and firmware up to date.",
+    "The textbook recommends encryption to protect transmitted data."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-7",
+   "stem": "Why should data transmitted between IoT devices be encrypted?",
+   "options": [
+    "To protect transmitted data from being intercepted",
+    "To measure temperature more accurately",
+    "To connect a device to a wired network",
+    "To turn sensor data into motion"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct because encryption helps protect transmitted data from being intercepted by hackers.",
+    "Encryption is a security measure, not a way to improve a sensor's temperature measurement.",
+    "Encryption does not provide the network connection itself.",
+    "This describes the function of an actuator, not encryption."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-3-8",
+   "stem": "In which areas can IoT help improve efficiency, provide better services, or create new opportunities?",
+   "options": [
+    "Healthcare",
+    "Agriculture",
+    "Smart homes",
+    "All of these"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Healthcare is one of the fields in which IoT can create opportunities, but it is not the only one listed.",
+    "Agriculture is specifically named as a field where IoT can create opportunities, but it is not the only one listed.",
+    "Smart homes are a field in which IoT can improve services, but they are not the only one listed.",
+    "This is correct because the textbook names healthcare, agriculture, and smart homes."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-3",
+   "moduleId": "cs-m-10-3"
+  },
+  {
+   "id": "cs-q-10-4-1",
+   "stem": "What is the main concern addressed by data privacy measures?",
+   "options": [
+    "Protecting personal information collected by devices",
+    "Making devices use less electricity",
+    "Teaching devices to make decisions",
+    "Connecting devices to a network"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: data privacy measures protect personal and sensitive information from misuse or unauthorized access.",
+    "Incorrect: reducing electricity use may be useful, but it is not the main purpose of data privacy measures.",
+    "Incorrect: teaching devices to make decisions is not the purpose of data privacy measures.",
+    "Incorrect: connecting devices is an IoT function, not the main purpose of data privacy measures."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-2",
+   "stem": "Why can algorithmic bias be a problem?",
+   "options": [
+    "AI models always use too little data",
+    "Biased training data can lead to unfair outcomes",
+    "IoT devices cannot collect information",
+    "AI systems cannot be used in workplaces"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Incorrect: the section identifies bias in training data, not necessarily a shortage of data, as a concern.",
+    "Correct: biased training data can cause AI systems to perpetuate or amplify bias and produce unfair outcomes.",
+    "Incorrect: IoT devices can collect large amounts of data, which creates privacy concerns.",
+    "Incorrect: the section describes AI use in workplaces, including automating tasks and supporting decisions."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-3",
+   "stem": "Which option is not identified in the section as an IoT security measure?",
+   "options": [
+    "Regular software updates",
+    "Secure authentication",
+    "Encryption",
+    "Removing all sensors from IoT devices"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Incorrect: regular software updates are identified as a security measure for IoT devices.",
+    "Incorrect: secure authentication is identified as a security measure for IoT devices.",
+    "Incorrect: encryption is identified as a security measure for IoT devices.",
+    "Correct: the section recommends security measures such as updates, encryption, and secure authentication, not removing all sensors."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-4",
+   "stem": "What is one purpose of ethical guidelines for AI?",
+   "options": [
+    "Making AI decisions transparent and understandable",
+    "Collecting as much personal data as possible",
+    "Replacing data protection laws",
+    "Avoiding all use of AI in healthcare"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: the section says ethical guidelines should help ensure fairness, transparency, and accountability.",
+    "Incorrect: collecting more personal data is not the purpose of ethical guidelines and may increase privacy concerns.",
+    "Incorrect: ethical guidelines do not replace data protection laws.",
+    "Incorrect: the section does not recommend avoiding all AI use in healthcare."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-5",
+   "stem": "Which statement about the societal impact of AI and IoT is incorrect?",
+   "options": [
+    "Wearable devices can monitor health metrics",
+    "Smart home devices can offer convenience and energy efficiency",
+    "AI can automate repetitive work tasks",
+    "IoT can only be used in factories"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Incorrect: wearable devices monitoring health metrics is an example of their impact on daily life.",
+    "Incorrect: smart home devices can provide convenience and energy efficiency.",
+    "Incorrect: automating repetitive tasks is one way AI affects work environments.",
+    "Correct: the section gives examples in homes, healthcare, transportation, industry, and smart cities, not only factories."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-6",
+   "stem": "Which is a policy or standards-based approach to reducing AI bias?",
+   "options": [
+    "Bias mitigation standards",
+    "Smart home thermostats",
+    "Wearable health devices",
+    "Traffic congestion"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: bias-mitigation standards can guide the identification and reduction of bias in AI models.",
+    "Incorrect: a smart thermostat is an example of an IoT device, not an approach to reducing AI bias.",
+    "Incorrect: a wearable health device is an example of technology in daily life, not a bias-reduction standard.",
+    "Incorrect: traffic congestion is a societal challenge that smart cities may help address."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-7",
+   "stem": "Why are policy and regulatory frameworks important for AI and IoT?",
+   "options": [
+    "They help protect personal data and support fairer AI decisions",
+    "They ensure that AI systems never make mistakes",
+    "They remove the need for secure IoT devices",
+    "They prevent all changes to workplaces"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: frameworks can help mitigate risks by supporting data protection, fairness, and security.",
+    "Incorrect: regulations cannot guarantee that an AI system will never make mistakes.",
+    "Incorrect: frameworks include security standards rather than removing the need for secure devices.",
+    "Incorrect: the section describes changes to work environments and does not say frameworks prevent them."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-4-8",
+   "stem": "Which is an example of a possible societal benefit of IoT?",
+   "options": [
+    "Managing resources efficiently in smart cities",
+    "Making every AI algorithm a blackbox",
+    "Increasing unauthorized access to personal data",
+    "Removing all workplace automation"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Correct: smart cities can use IoT to manage resources efficiently and improve public services.",
+    "Incorrect: making algorithms blackboxes is not described as a societal benefit.",
+    "Incorrect: unauthorized access to personal data is a risk, not a benefit.",
+    "Incorrect: removing all workplace automation is not identified as an IoT benefit."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-10-4",
+   "moduleId": "cs-m-10-4"
+  },
+  {
+   "id": "cs-q-10-5-1",
+   "stem": "Q10.1. Which of the following is not a subfield of AI?",
+   "options": [
+    "Machine Learning",
+    "Natural Language Processing",
+    "Computer Vision",
+    "Robotics"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Machine Learning is a subfield of AI.",
+    "Natural Language Processing is a subfield of AI.",
+    "Computer Vision is a subfield of AI.",
+    "Robotics is not listed here as an AI subfield; it is a field that can use AI."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-2",
+   "stem": "Q10.2. Which of these AI algorithms is considered an \"explainable\" model?",
+   "options": [
+    "Neural Networks",
+    "Decision Trees",
+    "Random Forests",
+    "Convolutional Neural Networks"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Neural Networks can be difficult to interpret, so they are often treated as blackbox models.",
+    "Decision Trees show decision paths in a form that people can follow.",
+    "Random Forests combine many trees, making their overall decisions harder to interpret.",
+    "Convolutional Neural Networks can be difficult to interpret, so they are often treated as blackbox models."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-3",
+   "stem": "Q10.3. Which of these is a security concern in IoT deployments?",
+   "options": [
+    "Device vulnerability",
+    "Data privacy",
+    "Lack of standardization",
+    "All of the above"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Vulnerable devices can be attacked, so this is a concern but not the only one.",
+    "IoT data can expose private information, so this is a concern but not the only one.",
+    "Lack of standardization can create security weaknesses, so this is a concern but not the only one.",
+    "All three listed issues can create security or privacy concerns in IoT deployments."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-4",
+   "stem": "Q10.4. Which of the following is an application of AI in healthcare?",
+   "options": [
+    "Personalized drug development",
+    "Automated diagnosis",
+    "Remote patient monitoring",
+    "All of the above"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "AI can help personalize drug development, but this is not the only listed application.",
+    "AI can support automated diagnosis, but this is not the only listed application.",
+    "AI can support remote patient monitoring, but this is not the only listed application.",
+    "All three listed activities are applications of AI in healthcare."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-6",
+   "stem": "Q10.6. What is the key difference between explainable (whitebox) and unexplainable\n(blackbox) AI models?",
+   "options": [
+    "The complexity of the model",
+    "The ability to understand the decision-making process",
+    "The performance of the model",
+    "The training data used"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Complexity may affect how easy a model is to explain, but it is not the key difference.",
+    "The key difference is whether people can understand how the model makes its decisions.",
+    "Performance is not what defines a model as whitebox or blackbox.",
+    "Training data can affect a model, but it does not define whether its decisions are understandable."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-7",
+   "stem": "Q10.7. Which of the following is an application of IoT in the transportation domain?",
+   "options": [
+    "Smart traffic management",
+    "Vehicle-to-Vehicle (V2V) communication",
+    "Predictive maintenance of vehicles",
+    "All of the above"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Connected sensors and systems can support smart traffic management, but this is not the only listed application.",
+    "Connected vehicles can exchange information through V2V communication, but this is not the only listed application.",
+    "IoT data can help predict when vehicles need maintenance, but this is not the only listed application.",
+    "All three listed examples are applications of IoT in transportation."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-8",
+   "stem": "Q10.8. What is a potential impact of AI and IoT on the job market?",
+   "options": [
+    "Job displacement due to automation",
+    "Increased demand for specialized skills",
+    "Transformation of job roles and responsibilities",
+    "All of the above"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Automation can displace some jobs, but this is not the only potential impact.",
+    "New technologies can increase demand for specialized skills, but this is not the only potential impact.",
+    "Technology can change job roles and responsibilities, but this is not the only potential impact.",
+    "All three listed outcomes are potential impacts on the job market."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-9",
+   "stem": "Q10.9. What is the key concern associated with algorithmic bias in AI-powered\ndecision-making processes?",
+   "options": [
+    "Lack of transparency",
+    "Perpetuation of existing societal biases",
+    "Reduced accuracy of the model",
+    "All of the above"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Lack of transparency is a concern in AI, but the key concern associated with bias is that unfair patterns may continue.",
+    "Algorithmic bias can perpetuate existing societal biases in decisions, which is the key concern asked about.",
+    "Reduced accuracy can be a problem, but it is not the key concern associated specifically with algorithmic bias.",
+    "The listed issues are not all the key concern associated specifically with algorithmic bias."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  },
+  {
+   "id": "cs-q-10-5-10",
+   "stem": "Q10.10. Which of the following is an ethical principle that should be considered in the\ndevelopment and deployment of AI and IoT technologies?",
+   "options": [
+    "Transparency and accountability",
+    "Respect for privacy and data rights",
+    "Fairness and non-discrimination",
+    "All of the above"
+   ],
+   "correctIndex": 3,
+   "rationales": [
+    "Transparency and accountability are important principles, but they are not the only ones listed.",
+    "Respect for privacy and data rights is important, but it is not the only principle listed.",
+    "Fairness and non-discrimination are important, but they are not the only principles listed.",
+    "All three listed principles should be considered when developing and deploying AI and IoT."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-10-5",
+   "moduleId": "cs-m-10-5"
+  }
+ ],
+ "written": [
+  {
+   "id": "cs-w-10-1-1",
+   "text": "Define Artificial Intelligence (AI).",
+   "marks": 2,
+   "modelAnswer": [
+    "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+   ],
+   "followUp": "Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that AI simulates human thinking ability.",
+     "marks": 1,
+     "why": "The definition must identify AI as simulating human thinking.",
+     "how": "Include the idea of simulating human thinking in the definition.",
+     "accept": [
+      [
+       "simulation",
+       "human thinking"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains that computer systems think and learn in a manner like humans.",
+     "marks": 1,
+     "why": "The definition must say that computer systems think and learn in a human-like manner.",
+     "how": "State that computer systems think and learn in a manner like humans.",
+     "accept": [
+      [
+       "computer systems",
+       "think",
+       "learn"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.1"
+  },
+  {
+   "id": "cs-w-10-1-2",
+   "text": "What is the historical context and evolution of AI?",
+   "marks": 2,
+   "modelAnswer": [
+    "The term AI was first invented by John McCarthy in 1956 during the Dartmouth Conference.",
+    "In the 1950s–1960s, early AI research focused on problem-solving and symbolic methods.",
+    "Expert systems developed in the 1970s–1980s, and machine learning rose in the 1990s.",
+    "From the 2000s onward, deep learning, natural language processing, and robotics expanded AI's capabilities.",
+    "Voice assistants were used in 2011, and ChatGPT was introduced in 2023."
+   ],
+   "followUp": "Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies John McCarthy, 1956, and the Dartmouth Conference.",
+     "marks": 1,
+     "why": "The historical starting point and its date are key facts in the section.",
+     "how": "State who introduced the term AI, when, and at which conference.",
+     "accept": [
+      [
+       "John McCarthy",
+       "1956",
+       "Dartmouth"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives milestones from different stages in AI's evolution.",
+     "marks": 1,
+     "why": "The answer should show how AI developed over time.",
+     "how": "Mention relevant developments such as symbolic methods, expert systems, machine learning, or newer AI advances.",
+     "accept": [
+      [
+       "1950",
+       "symbolic"
+      ],
+      [
+       "expert systems",
+       "machine learning"
+      ],
+      [
+       "deep learning",
+       "ChatGPT"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.2"
+  },
+  {
+   "id": "cs-w-10-1-3",
+   "text": "Provide two examples of AI applications in healthcare.",
+   "marks": 2,
+   "modelAnswer": [
+    "AI is used for diagnosing diseases and personalizing treatment plans.",
+    "It can also predict patient outcomes."
+   ],
+   "followUp": "Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Gives one example of an AI application in healthcare.",
+     "marks": 1,
+     "why": "The answer needs a valid healthcare application of AI.",
+     "how": "Name one use, such as diagnosing diseases or personalizing treatment.",
+     "accept": [
+      [
+       "diagnosing diseases"
+      ],
+      [
+       "personalizing treatment"
+      ],
+      [
+       "predicting patient outcomes"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives a second distinct healthcare application of AI.",
+     "marks": 1,
+     "why": "The question asks for two examples.",
+     "how": "Add another valid use, such as predicting patient outcomes.",
+     "accept": [
+      [
+       "diagnosing diseases",
+       "personalizing treatment"
+      ],
+      [
+       "diagnosing diseases",
+       "predicting patient outcomes"
+      ],
+      [
+       "personalizing treatment",
+       "predicting patient outcomes"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.3"
+  },
+  {
+   "id": "cs-w-10-2-1",
+   "text": "Define Artificial Intelligence (AI).",
+   "marks": 2,
+   "modelAnswer": [
+    "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+   ],
+   "followUp": "Q10.1. Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States that AI involves using algorithms and techniques.",
+     "marks": 1,
+     "why": "The definition identifies what AI uses.",
+     "how": "Write that AI involves using algorithms and techniques.",
+     "accept": [
+      [
+       "algorithms",
+       "techniques"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "States that machines perform tasks that typically require human intelligence.",
+     "marks": 1,
+     "why": "The definition identifies what machines are enabled to do.",
+     "how": "Include the idea of machines performing tasks that typically require human intelligence.",
+     "accept": [
+      [
+       "machines",
+       "human intelligence"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.1"
+  },
+  {
+   "id": "cs-w-10-2-3",
+   "text": "Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+   "marks": 8,
+   "modelAnswer": [
+    "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable.",
+    "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable.",
+    "Examples of explainable algorithms include decision trees, linear regression and rule-based systems.",
+    "Examples of unexplainable algorithms include neural networks and deep learning models."
+   ],
+   "followUp": "Q10.1. Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines explainable (whitebox) algorithms as transparent and understandable.",
+     "marks": 2,
+     "why": "The defining feature of whitebox models is the interpretability of their decisions.",
+     "how": "Give the whitebox definition using transparency and understandability.",
+     "accept": [
+      [
+       "whitebox",
+       "transparent",
+       "understandable"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Defines unexplainable (blackbox) algorithms as not easily interpretable.",
+     "marks": 2,
+     "why": "The main difference is whether the decision-making process can be understood.",
+     "how": "Explain that the blackbox decision-making process is not easily interpreted or understood.",
+     "accept": [
+      [
+       "blackbox",
+       "not easily interpretable"
+      ],
+      [
+       "blackbox",
+       "difficult",
+       "understand"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Gives examples of explainable algorithms.",
+     "marks": 2,
+     "why": "Correct examples show understanding of which models the section classifies as whitebox.",
+     "how": "Name decision trees, linear regression, or rule-based systems as explainable examples.",
+     "accept": [
+      [
+       "decision trees",
+       "linear regression",
+       "rule-based systems"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives examples of unexplainable algorithms.",
+     "marks": 2,
+     "why": "Correct examples show understanding of which models the section classifies as blackbox.",
+     "how": "Name neural networks and deep learning models as unexplainable examples.",
+     "accept": [
+      [
+       "neural networks",
+       "deep learning"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.2"
+  },
+  {
+   "id": "cs-w-10-3-1",
+   "text": "Define the Internet of Things (IoT).",
+   "marks": 2,
+   "modelAnswer": [
+    "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet."
+   ],
+   "followUp": "Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the connected physical objects and their equipment.",
+     "marks": 1,
+     "why": "The definition identifies IoT as a network of physical objects equipped with technology.",
+     "how": "State that the objects, or things, are equipped with sensors, software, and other technologies.",
+     "accept": [
+      [
+       "network of physical objects",
+       "sensors"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State that the objects exchange data with devices and systems over the internet.",
+     "marks": 1,
+     "why": "Data exchange over the internet is the central purpose in the textbook definition.",
+     "how": "Include the data exchange and internet connection in the definition.",
+     "accept": [
+      [
+       "exchange of data",
+       "internet"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.5"
+  },
+  {
+   "id": "cs-w-10-3-2",
+   "text": "Describe the significance of IoT in connecting devices and systems.",
+   "marks": 2,
+   "modelAnswer": [
+    "IoT allows the seamless integration of the physical and digital worlds.",
+    "Connected devices can collect and share data, which can be analysed to improve efficiency, provide better services, and create new opportunities in fields such as healthcare, agriculture, and smart homes."
+   ],
+   "followUp": "Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the connection between the physical and digital worlds.",
+     "marks": 1,
+     "why": "Explaining how IoT connects the physical and digital worlds states its significance.",
+     "how": "State that IoT enables their seamless integration.",
+     "accept": [
+      [
+       "physical",
+       "digital"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give an outcome of collecting and sharing data.",
+     "marks": 1,
+     "why": "Data sharing explains how this connection can lead to useful outcomes.",
+     "how": "Mention improved efficiency, better services, or new opportunities.",
+     "accept": [
+      [
+       "collect",
+       "share",
+       "data"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.6"
+  },
+  {
+   "id": "cs-w-10-3-3",
+   "text": "Describe the components of an IoT system. Explain how these components work together to enable IoT applications.",
+   "marks": 8,
+   "modelAnswer": [
+    "An IoT system typically consists of sensors, actuators, devices, networks, and data analysis.",
+    "Sensors detect and measure physical properties and collect data from the environment.",
+    "Networks connect sensors and devices to the internet, allowing them to share data.",
+    "Data analysis processes and analyses the collected data to gain insights and make decisions.",
+    "Data analysis can be done on the device itself, in the cloud, or on a central server.",
+    "Devices use the data collected by sensors to perform specific tasks.",
+    "Actuators convert energy into motion and can act on data to generate output.",
+    "Together, these components enable IoT applications such as smart homes, healthcare, and transportation."
+   ],
+   "followUp": "Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Name the components of an IoT system.",
+     "marks": 2,
+     "why": "Naming the five components shows knowledge of the complete IoT system.",
+     "how": "List sensors, actuators, devices, networks, and data analysis.",
+     "accept": [
+      [
+       "sensors",
+       "actuators",
+       "devices",
+       "networks",
+       "data analysis"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the sensor function.",
+     "marks": 2,
+     "why": "Sensors provide the data on which the rest of the system can act.",
+     "how": "State that sensors detect or measure physical properties and collect environmental data.",
+     "accept": [
+      [
+       "sensors",
+       "collect",
+       "data"
+      ],
+      [
+       "detect",
+       "measure"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain the roles of networks and data analysis.",
+     "marks": 2,
+     "why": "The explanation should show how information is communicated and used.",
+     "how": "State that networks enable data sharing and data analysis processes data to gain insights or make decisions.",
+     "accept": [
+      [
+       "networks",
+       "internet",
+       "share"
+      ],
+      [
+       "data analysis",
+       "insights"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct overall explanation of how components work together.",
+     "marks": 2,
+     "why": "The final point connects the components to the tasks and outputs of an IoT application.",
+     "how": "Explain that devices use data to perform tasks and actuators can act on data to generate output.",
+     "accept": [
+      [
+       "devices",
+       "tasks",
+       "actuators",
+       "output"
+      ],
+      [
+       "devices",
+       "perform",
+       "actuators"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.3"
+  },
+  {
+   "id": "cs-w-10-3-5",
+   "text": "Analyze the potential privacy concerns associated with IoT deployments.",
+   "marks": 8,
+   "modelAnswer": [
+    "IoT devices collect and share data, including personal data, so connected systems can create privacy concerns.",
+    "As more devices connect to the internet, the risk of cyber-attacks increases.",
+    "If IoT systems are not secure, personal data and privacy could be put at risk.",
+    "Strong, unique passwords for all IoT devices can help prevent unauthorized access.",
+    "Regular software and firmware updates help protect devices against known vulnerabilities.",
+    "Encryption helps protect data transmitted between devices from being intercepted by hackers.",
+    "These security measures help protect personal data and privacy."
+   ],
+   "followUp": "Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the data-collection concern.",
+     "marks": 2,
+     "why": "Privacy risks arise in part because IoT devices collect and share data.",
+     "how": "Explain that connected devices collect and share data, which may include personal data.",
+     "accept": [
+      [
+       "collect",
+       "share",
+       "data"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identify a threat to IoT privacy or security.",
+     "marks": 2,
+     "why": "Identifying security threats explains how privacy can be put at risk.",
+     "how": "Mention the increased risk of cyber-attacks or unauthorized access.",
+     "accept": [
+      [
+       "cyber-attacks"
+      ],
+      [
+       "unauthorized access"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain a possible consequence of weak security.",
+     "marks": 2,
+     "why": "The answer must connect the threat to possible harm to personal data and privacy.",
+     "how": "State that personal data or privacy may be exposed if IoT systems are not secure.",
+     "accept": [
+      [
+       "personal data",
+       "exposed"
+      ],
+      [
+       "privacy",
+       "secure"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the correct final set of protective measures.",
+     "marks": 2,
+     "why": "The final point earns credit for suitable measures to reduce the stated risks.",
+     "how": "Include strong, unique passwords, regular updates, and encryption.",
+     "accept": [
+      [
+       "strong",
+       "passwords",
+       "updates",
+       "encryption"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.5"
+  },
+  {
+   "id": "cs-w-10-4-1",
+   "text": "What are the potential risks associated with AI and IoT?",
+   "marks": 2,
+   "modelAnswer": [
+    "AI and IoT can create data privacy risks because personal and sensitive information may be misused or accessed by unauthorized parties.",
+    "Algorithmic bias can cause AI systems to perpetuate or amplify biases, leading to unfair outcomes.",
+    "Therefore, data privacy risks and algorithmic bias are potential risks associated with AI and IoT."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies data privacy as a risk.",
+     "marks": 1,
+     "why": "Identifying a risk shows understanding of the concerns raised by collecting and using data.",
+     "how": "State that personal or sensitive information may be misused or accessed without authorization.",
+     "accept": [
+      [
+       "data privacy"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the second risk and the final answer.",
+     "marks": 1,
+     "why": "Identifying bias shows understanding that AI can produce unfair outcomes.",
+     "how": "State that biased training data can lead to unfair outcomes.",
+     "accept": [
+      [
+       "algorithmic bias"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.7"
+  },
+  {
+   "id": "cs-w-10-4-2",
+   "text": "Discuss the societal impact of AI and IoT on daily life.",
+   "marks": 2,
+   "modelAnswer": [
+    "In daily life, smart home devices such as thermostats and security systems offer convenience and energy efficiency.",
+    "In healthcare, wearable devices monitor health metrics and provide real-time data to medical professionals.",
+    "AI and IoT therefore improve daily life through smart homes, healthcare monitoring, and other smart solutions."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains an impact on homes or everyday convenience.",
+     "marks": 1,
+     "why": "A relevant example shows how these technologies affect everyday activities.",
+     "how": "Mention smart home devices such as thermostats or security systems and their convenience or energy efficiency.",
+     "accept": [
+      [
+       "smart home"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives a second daily-life impact and the final answer.",
+     "marks": 1,
+     "why": "A further example demonstrates another daily-life benefit.",
+     "how": "Mention wearable devices that monitor health metrics or provide real-time data to medical professionals.",
+     "accept": [
+      [
+       "healthcare"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.8"
+  },
+  {
+   "id": "cs-w-10-4-3",
+   "text": "Explain the concept of algorithmic bias.",
+   "marks": 2,
+   "modelAnswer": [
+    "AI systems are trained on large datasets.",
+    "If these datasets contain biases, AI models can perpetuate or amplify those biases.",
+    "This can lead to unfair outcomes in applications such as hiring, law enforcement, and lending."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains the role of biased training data.",
+     "marks": 1,
+     "why": "The explanation must connect bias in the data used to train an AI system with the system's behaviour.",
+     "how": "State that AI systems are trained on datasets and that biased datasets can affect their models.",
+     "accept": [
+      [
+       "datasets",
+       "biases"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives the effect and the final answer.",
+     "marks": 1,
+     "why": "Stating the consequence explains why algorithmic bias matters.",
+     "how": "Explain that the AI may perpetuate or amplify bias and produce unfair outcomes.",
+     "accept": [
+      [
+       "unfair outcomes"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.9"
+  },
+  {
+   "id": "cs-w-10-4-4",
+   "text": "Outline the importance of ethical considerations in AI and IoT.",
+   "marks": 2,
+   "modelAnswer": [
+    "Ethical guidelines help ensure that AI systems are fair, transparent, and accountable.",
+    "Ethical considerations also support responsible development and deployment of AI and IoT technologies."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Names relevant ethical principles.",
+     "marks": 1,
+     "why": "These principles support responsible development and use of AI systems.",
+     "how": "Mention fairness and transparency as aims of ethical guidelines.",
+     "accept": [
+      [
+       "fair",
+       "transparent"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains the need for responsible use and gives the final answer.",
+     "marks": 1,
+     "why": "Accountability is another principle explicitly identified in the section.",
+     "how": "Mention accountability and connect ethical considerations with responsible development or deployment.",
+     "accept": [
+      [
+       "responsible development",
+       "accountable"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.10"
+  },
+  {
+   "id": "cs-w-10-4-5",
+   "text": "Analyze the potential privacy concerns associated with IoT deployments.",
+   "marks": 8,
+   "modelAnswer": [
+    "IoT devices collect vast amounts of data.",
+    "Some of this data may be personal or sensitive information.",
+    "This information may be misused or accessed by unauthorized parties, creating privacy concerns.",
+    "Data privacy requires robust security measures to protect data from breaches and unauthorized access.",
+    "Data protection laws, encryption, and secure authentication can help protect information."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains that IoT devices collect large amounts of data.",
+     "marks": 2,
+     "why": "Explaining the amount of data collected establishes why IoT can raise privacy concerns.",
+     "how": "State that AI and IoT devices collect vast amounts of data.",
+     "accept": [
+      [
+       "vast amounts of data"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identifies personal or sensitive data as a concern.",
+     "marks": 2,
+     "why": "Identifying the kind of information involved shows what may be at risk.",
+     "how": "Explain that personal and sensitive information can be at risk.",
+     "accept": [
+      [
+       "personal",
+       "sensitive information"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains how privacy can be compromised.",
+     "marks": 2,
+     "why": "Describing misuse or unauthorized access explains the possible harm.",
+     "how": "Mention misuse, data breaches, or access by unauthorized parties.",
+     "accept": [
+      [
+       "unauthorized"
+      ],
+      [
+       "misused"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives the final answer with ways to protect data.",
+     "marks": 2,
+     "why": "A suitable response measure completes the analysis.",
+     "how": "Recommend robust security measures, data protection laws, encryption, or secure authentication.",
+     "accept": [
+      [
+       "security measures"
+      ],
+      [
+       "data protection"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.5"
+  },
+  {
+   "id": "cs-w-10-4-8",
+   "text": "Describe the concept of algorithmic bias and its implications in AI-powered decision-making processes. Suggest strategies to mitigate the risks of algorithmic bias.",
+   "marks": 8,
+   "modelAnswer": [
+    "AI systems are trained on large datasets.",
+    "If these datasets contain biases, AI models can inadvertently perpetuate or even amplify them.",
+    "This can lead to unfair outcomes in applications such as hiring, law enforcement, and lending.",
+    "Training data should be analyzed, and diverse and representative data should be collected.",
+    "Bias detection and mitigation techniques and standards should also be used."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains how biased data can affect AI.",
+     "marks": 2,
+     "why": "The source of the bias is necessary to explain the concept.",
+     "how": "State that AI is trained on large datasets and biased datasets can affect its models.",
+     "accept": [
+      [
+       "training data"
+      ],
+      [
+       "biased"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains how AI may reproduce or increase bias.",
+     "marks": 2,
+     "why": "Explaining how the model treats bias shows what happens after training.",
+     "how": "State that AI models can perpetuate or amplify biases.",
+     "accept": [
+      [
+       "perpetuate"
+      ],
+      [
+       "amplify"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains the impact of algorithmic bias.",
+     "marks": 2,
+     "why": "The implications for decisions and people must be stated.",
+     "how": "Mention unfair outcomes, for example in hiring, law enforcement, or lending.",
+     "accept": [
+      [
+       "unfair outcomes"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives mitigation strategies and the final answer.",
+     "marks": 2,
+     "why": "Mitigation strategies address the cause and help reduce the risk.",
+     "how": "Recommend analyzing training data, using diverse and representative data, and applying bias detection or mitigation techniques.",
+     "accept": [
+      [
+       "diverse"
+      ],
+      [
+       "representative"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.8"
+  },
+  {
+   "id": "cs-w-10-4-9",
+   "text": "Develop a set of ethical principles and guidelines for the responsible development and deployment of AI and IoT technologies.",
+   "marks": 8,
+   "modelAnswer": [
+    "AI and IoT should be developed and deployed according to ethical guidelines.",
+    "AI systems should be fair and transparent, and the organizations using them should be accountable.",
+    "Personal data should be collected, stored, and processed securely.",
+    "AI training data and models should be checked for bias, and bias-mitigation techniques should be used.",
+    "IoT devices should be protected through regular software updates, encryption, and secure authentication."
+   ],
+   "followUp": "What are the potential risks associated with AI and IoT?",
+   "noteId": "cs-n-10-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Includes fairness and transparency.",
+     "marks": 2,
+     "why": "Fairness and transparency are explicit aims of ethical guidelines in the section.",
+     "how": "State that AI development and deployment should be fair and transparent.",
+     "accept": [
+      [
+       "fair",
+       "transparent"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Includes accountability.",
+     "marks": 2,
+     "why": "Accountability is an essential ethical principle named in the section.",
+     "how": "Require organizations to be accountable for AI systems and their use.",
+     "accept": [
+      [
+       "accountable"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Includes protection of personal information.",
+     "marks": 2,
+     "why": "Respecting data privacy addresses a major AI and IoT risk.",
+     "how": "Recommend secure collection, storage, and processing of personal data.",
+     "accept": [
+      [
+       "personal data",
+       "securely"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Includes bias mitigation and device security in the final answer.",
+     "marks": 2,
+     "why": "Addressing bias and security makes the principles relevant to both AI and IoT.",
+     "how": "Recommend bias detection and mitigation and IoT security measures such as updates, encryption, and secure authentication.",
+     "accept": [
+      [
+       "bias",
+       "encryption"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.9"
+  },
+  {
+   "id": "cs-w-10-5-1",
+   "text": "Q10.1. Define Artificial Intelligence (AI).",
+   "marks": 2,
+   "modelAnswer": [
+    "Artificial Intelligence (AI) is the ability of machines to perform tasks that normally require human intelligence."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies machines performing tasks.",
+     "marks": 1,
+     "why": "The answer must identify AI as a capability of machines.",
+     "how": "State that machines can perform tasks.",
+     "accept": [
+      [
+       "machines",
+       "tasks"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Links the tasks to human intelligence.",
+     "marks": 1,
+     "why": "This distinguishes AI tasks from ordinary automated tasks.",
+     "how": "Explain that these tasks normally require human intelligence.",
+     "accept": [
+      [
+       "human intelligence"
+      ],
+      [
+       "normally require human"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.1"
+  },
+  {
+   "id": "cs-w-10-5-3",
+   "text": "Q10.3. Provide two examples of AI applications in healthcare.",
+   "marks": 2,
+   "modelAnswer": [
+    "Automated diagnosis.",
+    "Remote patient monitoring."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Gives one AI healthcare application.",
+     "marks": 1,
+     "why": "One valid healthcare application is required for this mark.",
+     "how": "Name automated diagnosis or personalized drug development.",
+     "accept": [
+      [
+       "automated diagnosis"
+      ],
+      [
+       "personalized drug"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Gives a second AI healthcare application.",
+     "marks": 1,
+     "why": "A second distinct example completes the response.",
+     "how": "Name another valid application, such as remote patient monitoring.",
+     "accept": [
+      [
+       "remote patient monitoring"
+      ],
+      [
+       "personalized drug"
+      ],
+      [
+       "automated diagnosis"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.3"
+  },
+  {
+   "id": "cs-w-10-5-4",
+   "text": "Q10.4. Explain the role of AI techniques in advancing machine learning models.",
+   "marks": 2,
+   "modelAnswer": [
+    "AI techniques enable machine learning models to learn patterns from data.",
+    "They help improve the performance and accuracy of the models."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains how AI techniques help models use data.",
+     "marks": 1,
+     "why": "Learning patterns from data is central to machine learning.",
+     "how": "State that the techniques let models learn patterns from data.",
+     "accept": [
+      [
+       "learn patterns",
+       "data"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identifies improved model performance or accuracy.",
+     "marks": 1,
+     "why": "The answer should state the benefit to the models.",
+     "how": "Explain that learning can improve accuracy or performance.",
+     "accept": [
+      [
+       "improve",
+       "accuracy"
+      ],
+      [
+       "improve",
+       "performance"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.4"
+  },
+  {
+   "id": "cs-w-10-5-5",
+   "text": "Q10.5. Define the Internet of Things (IoT).",
+   "marks": 2,
+   "modelAnswer": [
+    "The Internet of Things (IoT) is a network of physical devices connected to the internet.",
+    "These devices collect and exchange data."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines IoT as a network of physical or smart devices.",
+     "marks": 1,
+     "why": "A definition must identify IoT as a connected network of things.",
+     "how": "Mention a network of connected devices.",
+     "accept": [
+      [
+       "network",
+       "devices"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Mentions devices collecting or exchanging data.",
+     "marks": 1,
+     "why": "Data collection or exchange describes the purpose of connected IoT devices.",
+     "how": "State that devices collect and exchange data.",
+     "accept": [
+      [
+       "collect",
+       "data"
+      ],
+      [
+       "exchange",
+       "data"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.5"
+  },
+  {
+   "id": "cs-w-10-5-6",
+   "text": "Q10.6. Describe the significance of IoT in connecting devices and systems.",
+   "marks": 2,
+   "modelAnswer": [
+    "IoT connects devices and systems so that they can communicate and share data.",
+    "This supports monitoring, coordination and automation."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies IoT's connecting role.",
+     "marks": 1,
+     "why": "The answer must explain that IoT links devices and systems.",
+     "how": "State that IoT connects devices or systems.",
+     "accept": [
+      [
+       "connects",
+       "devices",
+       "systems"
+      ],
+      [
+       "connected",
+       "devices"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains a result of connecting devices.",
+     "marks": 1,
+     "why": "The significance comes from data exchange and the services it enables.",
+     "how": "Mention data sharing, monitoring, communication or automation.",
+     "accept": [
+      [
+       "share",
+       "data"
+      ],
+      [
+       "communication"
+      ],
+      [
+       "automation"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.6"
+  },
+  {
+   "id": "cs-w-10-5-7",
+   "text": "Q10.7. What are the potential risks associated with AI and IoT?",
+   "marks": 2,
+   "modelAnswer": [
+    "AI and IoT can create privacy and security risks, and AI decisions may be biased or difficult to understand.",
+    "Automation can also displace some workers."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Names a privacy, security or bias risk.",
+     "marks": 1,
+     "why": "At least one technical or fairness risk must be identified.",
+     "how": "Give a relevant risk of AI or IoT.",
+     "accept": [
+      [
+       "privacy"
+      ],
+      [
+       "security"
+      ],
+      [
+       "bias"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Names another distinct risk.",
+     "marks": 1,
+     "why": "A second risk demonstrates that the student understands multiple possible harms.",
+     "how": "Add a second relevant risk, such as job displacement.",
+     "accept": [
+      [
+       "job displacement"
+      ],
+      [
+       "lack of transparency"
+      ],
+      [
+       "privacy"
+      ],
+      [
+       "security"
+      ],
+      [
+       "bias"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.7"
+  },
+  {
+   "id": "cs-w-10-5-8",
+   "text": "Q10.8. Discuss the societal impact of AI and IoT on daily life.",
+   "marks": 2,
+   "modelAnswer": [
+    "AI and IoT can make daily services more connected, efficient and personalized.",
+    "They can also create concerns about privacy, security and changes to employment."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies a benefit for society or daily life.",
+     "marks": 1,
+     "why": "A complete response should describe a positive effect on everyday life.",
+     "how": "Mention improved services, automation or connectivity.",
+     "accept": [
+      [
+       "efficient"
+      ],
+      [
+       "personalized"
+      ],
+      [
+       "connected"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identifies a possible negative impact.",
+     "marks": 1,
+     "why": "The impact is balanced by recognizing possible social challenges.",
+     "how": "Mention effects on privacy, security or jobs.",
+     "accept": [
+      [
+       "privacy"
+      ],
+      [
+       "security"
+      ],
+      [
+       "employment"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.8"
+  },
+  {
+   "id": "cs-w-10-5-9",
+   "text": "Q10.9. Explain the concept of algorithmic bias.",
+   "marks": 2,
+   "modelAnswer": [
+    "Algorithmic bias occurs when an AI system produces unfair results or decisions.",
+    "It may happen when biased data causes the system to perpetuate existing societal biases."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines bias as unfair system results or decisions.",
+     "marks": 1,
+     "why": "The core idea of algorithmic bias is unfairness in outcomes.",
+     "how": "State that the system produces unfair outcomes.",
+     "accept": [
+      [
+       "unfair results"
+      ],
+      [
+       "unfair decisions"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Connects bias to data or existing social patterns.",
+     "marks": 1,
+     "why": "Explaining a cause or effect shows understanding beyond a bare definition.",
+     "how": "Explain that biased data can reproduce societal bias.",
+     "accept": [
+      [
+       "biased data"
+      ],
+      [
+       "societal biases"
+      ],
+      [
+       "existing biases"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.9"
+  },
+  {
+   "id": "cs-w-10-5-10",
+   "text": "Q10.10. Outline the importance of ethical considerations in AI and IoT.",
+   "marks": 2,
+   "modelAnswer": [
+    "Ethical considerations help make AI and IoT fair, transparent and accountable.",
+    "They also protect privacy and data rights and discourage discrimination."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Names a principle for responsible use.",
+     "marks": 1,
+     "why": "Ethical principles help guide responsible decisions and technology.",
+     "how": "Mention fairness, transparency or accountability.",
+     "accept": [
+      [
+       "fair"
+      ],
+      [
+       "transparent"
+      ],
+      [
+       "accountable"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Mentions protecting privacy, rights or people from discrimination.",
+     "marks": 1,
+     "why": "Protecting people and their information is a central reason for ethics.",
+     "how": "Include respect for privacy and data rights.",
+     "accept": [
+      [
+       "privacy"
+      ],
+      [
+       "data rights"
+      ],
+      [
+       "non-discrimination"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 10.10"
+  },
+  {
+   "id": "cs-w-10-5-12",
+   "text": "Q10.2. Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+   "marks": 8,
+   "modelAnswer": [
+    "Explainable, or whitebox, AI models have decision-making processes that people can understand.",
+    "A decision tree is an example because its decision path can be followed.",
+    "Unexplainable, or blackbox, AI models make decisions whose reasoning is difficult for people to understand.",
+    "Neural networks are often treated as blackbox models because their internal reasoning can be difficult to interpret.",
+    "The key difference is the ability to understand how the model reaches its decision, not simply its performance."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines explainable or whitebox models.",
+     "marks": 2,
+     "why": "The defining feature of whitebox AI is understandable reasoning.",
+     "how": "State that people can understand the model's decision-making process.",
+     "accept": [
+      [
+       "whitebox",
+       "understand"
+      ],
+      [
+       "explainable",
+       "understand"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Defines unexplainable or blackbox models.",
+     "marks": 2,
+     "why": "The contrast requires an accurate explanation of blackbox models.",
+     "how": "State that their decision-making process is difficult to understand.",
+     "accept": [
+      [
+       "blackbox",
+       "difficult"
+      ],
+      [
+       "unexplainable",
+       "difficult"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Makes the key comparison explicit.",
+     "marks": 2,
+     "why": "The comparison must focus on how decisions are made, not simply model performance.",
+     "how": "Compare the understandability of the models' reasoning.",
+     "accept": [
+      [
+       "decision-making process"
+      ],
+      [
+       "reasoning"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Gives suitable examples of model types.",
+     "marks": 2,
+     "why": "Examples make the distinction concrete.",
+     "how": "Use a decision tree as an explainable example or a neural network as a commonly blackbox example.",
+     "accept": [
+      [
+       "decision trees"
+      ],
+      [
+       "neural networks"
+      ],
+      [
+       "random forests"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.2"
+  },
+  {
+   "id": "cs-w-10-5-14",
+   "text": "Q10.4. Explore the applications of IoT in the transportation domain.",
+   "marks": 8,
+   "modelAnswer": [
+    "In smart traffic management, connected sensors can collect information about traffic flow and help manage signals or routes.",
+    "Vehicle-to-Vehicle (V2V) communication allows vehicles to exchange information, which can help drivers respond to road conditions.",
+    "IoT sensors can monitor the condition of vehicles and support predictive maintenance.",
+    "Maintenance can be planned when data indicates a possible problem, rather than waiting for a breakdown.",
+    "These applications can improve the efficiency and safety of transportation and help reduce congestion."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains smart traffic management.",
+     "marks": 2,
+     "why": "Traffic management is a key IoT transportation application.",
+     "how": "Describe connected sensors or systems monitoring traffic and helping manage it.",
+     "accept": [
+      [
+       "smart traffic management"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explains V2V communication.",
+     "marks": 2,
+     "why": "Vehicle communication is another specific transportation application.",
+     "how": "State that vehicles can exchange information.",
+     "accept": [
+      [
+       "vehicle-to-vehicle"
+      ],
+      [
+       "v2v"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains predictive maintenance.",
+     "marks": 2,
+     "why": "The answer should include a further practical use of IoT data.",
+     "how": "Describe using sensor data to identify when a vehicle may need maintenance.",
+     "accept": [
+      [
+       "predictive maintenance"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explains the benefits of the applications.",
+     "marks": 2,
+     "why": "An explanation of benefits completes the discussion.",
+     "how": "Link the applications to safety, efficiency or reduced congestion.",
+     "accept": [
+      [
+       "safety"
+      ],
+      [
+       "efficiency"
+      ],
+      [
+       "reduce congestion"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.4"
+  },
+  {
+   "id": "cs-w-10-5-15",
+   "text": "Q10.5. Analyze the potential privacy concerns associated with IoT deployments.",
+   "marks": 8,
+   "modelAnswer": [
+    "IoT devices may collect large amounts of personal information, such as location, usage patterns or information from connected sensors.",
+    "If this data is not protected, it may be exposed through weak device security or unauthorized access.",
+    "Data may also be used for tracking or shared in ways users do not expect, especially when data practices are unclear.",
+    "Users should be told what information is collected and how it will be used, and their consent should be respected.",
+    "IoT systems should protect data and give users suitable control over their information."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identifies the collection of personal or sensitive data.",
+     "marks": 2,
+     "why": "Privacy risks begin with the type and amount of information devices collect.",
+     "how": "Explain that connected devices may collect information about people.",
+     "accept": [
+      [
+       "collect",
+       "personal information"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identifies a privacy harm or exposure.",
+     "marks": 2,
+     "why": "The answer must explain how personal information might be exposed or misused.",
+     "how": "Discuss tracking, unauthorized access or breaches.",
+     "accept": [
+      [
+       "exposed"
+      ],
+      [
+       "unauthorized access"
+      ],
+      [
+       "tracking"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains a cause of IoT privacy problems.",
+     "marks": 2,
+     "why": "A reason for the risks is needed to analyse the concern.",
+     "how": "Mention poor security, unclear data handling or sharing.",
+     "accept": [
+      [
+       "weak device security"
+      ],
+      [
+       "practices",
+       "unclear"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Suggests privacy safeguards.",
+     "marks": 2,
+     "why": "Practical protections show how privacy concerns can be addressed.",
+     "how": "Recommend consent, data protection and user control.",
+     "accept": [
+      [
+       "consent"
+      ],
+      [
+       "data protection"
+      ],
+      [
+       "user control"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.5"
+  },
+  {
+   "id": "cs-w-10-5-16",
+   "text": "Q10.6. Evaluate the impact of AI and IoT on the job market and work environments.",
+   "marks": 8,
+   "modelAnswer": [
+    "AI and IoT can automate routine tasks and make work environments more connected and data-driven.",
+    "Automation may improve efficiency, but it can also displace workers whose tasks are replaced.",
+    "At the same time, demand can grow for specialized skills and workers who can develop, operate or maintain these technologies.",
+    "Job roles and responsibilities may change, so workers may need training and opportunities to learn new skills.",
+    "Overall, AI and IoT can create benefits and challenges for employment, and their effects depend on how workplaces manage the transition."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explains workplace automation.",
+     "marks": 2,
+     "why": "Automation is a major way these technologies affect work.",
+     "how": "Describe tasks or processes that technologies can automate.",
+     "accept": [
+      [
+       "automation"
+      ],
+      [
+       "automate tasks"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Identifies possible job displacement.",
+     "marks": 2,
+     "why": "Evaluation must acknowledge possible negative employment effects.",
+     "how": "Explain that some jobs or tasks may be replaced.",
+     "accept": [
+      [
+       "job displacement"
+      ],
+      [
+       "displace workers"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Identifies increased demand for skills or new roles.",
+     "marks": 2,
+     "why": "The impact also includes new opportunities and changing skill needs.",
+     "how": "Mention specialized skills, retraining or new jobs.",
+     "accept": [
+      [
+       "specialized skills"
+      ],
+      [
+       "new skills"
+      ],
+      [
+       "new jobs"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explains changes to work environments or roles.",
+     "marks": 2,
+     "why": "The answer should evaluate changes to how work is organized and performed.",
+     "how": "Describe changing responsibilities or more connected workplaces.",
+     "accept": [
+      [
+       "work environments"
+      ],
+      [
+       "job roles"
+      ],
+      [
+       "connected"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.6"
+  },
+  {
+   "id": "cs-w-10-5-17",
+   "text": "Q10.7. Explain the role of policy and regulatory frameworks in addressing the challenges of AI and IoT. Provide examples of existing frameworks and discuss their effectiveness.",
+   "marks": 8,
+   "modelAnswer": [
+    "Policy and regulatory frameworks establish rules and responsibilities for developing and using AI and IoT.",
+    "They can address privacy, security, fairness, transparency and accountability.",
+    "For example, the European Union's General Data Protection Regulation (GDPR) sets requirements for handling personal data and protecting data rights.",
+    "NIST guidance provides recommendations for managing technology-related risks, including cybersecurity risks.",
+    "Such frameworks can clarify expectations and encourage organizations to protect people and their information.",
+    "Their effectiveness depends on suitable coverage, enforcement and updating the rules as technologies and risks change."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "States what regulation aims to protect or ensure.",
+     "marks": 2,
+     "why": "The answer must identify the challenges that policies address.",
+     "how": "Mention privacy, security, fairness or accountability.",
+     "accept": [
+      [
+       "privacy"
+      ],
+      [
+       "security"
+      ],
+      [
+       "fairness"
+      ],
+      [
+       "accountability"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Names a relevant framework or guidance.",
+     "marks": 2,
+     "why": "The question asks for examples of existing frameworks.",
+     "how": "Give an example such as the GDPR or NIST guidance.",
+     "accept": [
+      [
+       "general data protection regulation"
+      ],
+      [
+       "gdpr"
+      ],
+      [
+       "nist"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describes the purpose or contribution of a framework.",
+     "marks": 2,
+     "why": "The student should explain what the example contributes.",
+     "how": "Explain that it sets expectations or protects data and users.",
+     "accept": [
+      [
+       "data protection"
+      ],
+      [
+       "guidance"
+      ],
+      [
+       "rules"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Evaluates effectiveness and limitations.",
+     "marks": 2,
+     "why": "Evaluation must consider whether frameworks work in practice.",
+     "how": "Explain that effectiveness depends on enforcement, coverage and keeping rules current.",
+     "accept": [
+      [
+       "enforcement"
+      ],
+      [
+       "adaptation"
+      ],
+      [
+       "effectiveness"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.7"
+  },
+  {
+   "id": "cs-w-10-5-18",
+   "text": "Q10.8. Describe the concept of algorithmic bias and its implications in AI-powered decision-making processes. Suggest strategies to mitigate the risks of algorithmic bias.",
+   "marks": 8,
+   "modelAnswer": [
+    "Algorithmic bias occurs when an AI system produces unfair decisions or outcomes.",
+    "It can arise from biased training data or from assumptions in how the system is designed.",
+    "The system may then perpetuate existing societal biases in decisions such as selection, access to services or other important areas.",
+    "This can unfairly disadvantage individuals or groups and reduce trust in AI systems.",
+    "Risks can be reduced by using representative data and checking data and models for unfair patterns.",
+    "Systems should be tested regularly, made as transparent as possible and reviewed by people.",
+    "Clear accountability is also needed so that problems can be identified and corrected."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Defines algorithmic bias.",
+     "marks": 2,
+     "why": "The definition must identify the unfair results that make an algorithm biased.",
+     "how": "State that AI can produce unfair decisions or outcomes.",
+     "accept": [
+      [
+       "unfair outcomes"
+      ],
+      [
+       "unfair decisions"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Connects bias to data or existing social inequalities.",
+     "marks": 2,
+     "why": "The answer should explain a cause or social effect of the bias.",
+     "how": "Explain that biased data can reproduce existing societal biases.",
+     "accept": [
+      [
+       "societal biases"
+      ],
+      [
+       "biased data"
+      ],
+      [
+       "perpetuate"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explains possible effects on people or decisions.",
+     "marks": 2,
+     "why": "Implications show why algorithmic bias matters.",
+     "how": "Describe unfair treatment or discrimination in important decisions.",
+     "accept": [
+      [
+       "harm"
+      ],
+      [
+       "discrimination"
+      ],
+      [
+       "individuals"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Suggests ways to reduce bias.",
+     "marks": 2,
+     "why": "Mitigation strategies are needed to answer the final part.",
+     "how": "Recommend representative data, testing, oversight or transparency.",
+     "accept": [
+      [
+       "representative data"
+      ],
+      [
+       "testing"
+      ],
+      [
+       "human oversight"
+      ],
+      [
+       "transparency"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.8"
+  },
+  {
+   "id": "cs-w-10-5-19",
+   "text": "Q10.9. Develop a set of ethical principles and guidelines for the responsible development and deployment of AI and IoT technologies.",
+   "marks": 8,
+   "modelAnswer": [
+    "AI and IoT systems should be fair and should not discriminate against individuals or groups.",
+    "Their design and decisions should be as transparent as possible, and organizations should be accountable for their effects.",
+    "Systems should respect privacy and data rights by collecting only appropriate data and protecting it from unauthorized access.",
+    "Security should be considered throughout development and deployment, including for connected devices.",
+    "People should have suitable human oversight and a way to raise concerns about important decisions.",
+    "Systems should be tested and monitored after deployment so that errors, unfair outcomes and security problems can be corrected.",
+    "These guidelines help ensure responsible development and use of AI and IoT technologies."
+   ],
+   "followUp": "Q10.5. Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-5",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Includes fairness and non-discrimination.",
+     "marks": 2,
+     "why": "Fair treatment is a fundamental ethical principle.",
+     "how": "Require systems to avoid unfair treatment of individuals or groups.",
+     "accept": [
+      [
+       "fair",
+       "discriminate"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Includes transparency or accountability.",
+     "marks": 2,
+     "why": "People should be able to question decisions and responsibility should be clear.",
+     "how": "Require clear decision processes and responsible oversight.",
+     "accept": [
+      [
+       "transparent"
+      ],
+      [
+       "accountable"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Includes privacy, data rights or security.",
+     "marks": 2,
+     "why": "AI and IoT systems must protect personal data and connected devices.",
+     "how": "Set rules for consent, data protection and security.",
+     "accept": [
+      [
+       "privacy"
+      ],
+      [
+       "data rights"
+      ],
+      [
+       "security"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Includes a guideline for responsible implementation.",
+     "marks": 2,
+     "why": "Practical guidelines make principles part of design and use.",
+     "how": "Require human review and ongoing checks during development and deployment.",
+     "accept": [
+      [
+       "human oversight"
+      ],
+      [
+       "human review"
+      ],
+      [
+       "responsible development"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 10.9"
+  }
+ ],
+ "report": {
+  "unit": 10,
+  "title": "Emerging Technologies in Computer Science",
+  "dropped": [
+   "Written cs-m-10-1#3 (Long 10.1): independent check disagreed",
+   "Written cs-m-10-2#1 (Short 10.4): independent check disagreed",
+   "Written cs-m-10-3#3 (Long 10.4): model answer misses a marking point",
+   "Written cs-m-10-4#5 (Long 10.6): independent check disagreed",
+   "Written cs-m-10-4#6 (Long 10.7): independent check disagreed",
+   "Your-turn cs-m-10-4: 1 with unusable answer patterns",
+   "MCQ cs-m-10-5#4: independent check disagreed",
+   "Written cs-m-10-5#1 (Short 10.2): independent check disagreed, model answer misses a marking point",
+   "Written cs-m-10-5#10 (Long 10.1): independent check disagreed, model answer misses a marking point",
+   "Written cs-m-10-5#12 (Long 10.3): model answer misses a marking point"
+  ]
+ }
+}

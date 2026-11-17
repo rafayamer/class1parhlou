@@ -1,0 +1,110 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "7:16",
+   "figure": "",
+   "steps": [
+    "Pattern recognition is the process of identifying similarities, common features, or repeated patterns in problems.",
+    "When problems have similar patterns, a solution that worked for one problem may be used or adapted to solve another.",
+    "Recognising patterns helps us focus on the important similarities instead of treating every problem as completely new.",
+    "It can make problem-solving quicker and more efficient by reducing repeated work.",
+    "For example, if we notice that several problems require adding a list of numbers, we can use the same basic steps to solve each one."
+   ],
+   "finalAnswer": "Pattern recognition finds similarities between problems so that useful solutions can be reused or adapted."
+  },
+  {
+   "accept": [],
+   "id": "7:17",
+   "figure": "",
+   "steps": [
+    "Abstraction is the process of focusing on the important details of a problem and ignoring details that are not needed for its solution.",
+    "It is important because it reduces complexity and makes a problem easier to understand and solve.",
+    "For example, a map shows roads and locations needed for navigation but leaves out details such as the colour of buildings.",
+    "In a student marks program, we may use a student's marks and ignore unrelated details such as the colour of the student's clothes.",
+    "Abstraction helps us create a simpler model of a problem that is suitable for designing an algorithm."
+   ],
+   "finalAnswer": "Abstraction simplifies a problem by keeping relevant details and ignoring irrelevant ones."
+  },
+  {
+   "accept": [],
+   "id": "7:18",
+   "figure": "Flowchart for finding the larger of two numbers: Start (oval) → Input A and B (parallelogram) → Is A > B? (diamond). Yes → Display A is larger (parallelogram) → End (oval). No → Is B > A? (diamond). Yes → Display B is larger (parallelogram) → End (oval). No → Display “Both numbers are equal” (parallelogram) → End (oval). Connect each step with arrows; label the decision branches Yes and No.",
+   "steps": [
+    "An algorithm is a finite, ordered set of clear instructions for solving a problem or completing a task.",
+    "An algorithm is an important part of computational thinking because it provides step-by-step instructions that can be followed by a person or a computer.",
+    "Example: Algorithm to find the larger of two numbers:",
+    "1. Start.",
+    "2. Input two numbers A and B.",
+    "3. If A is greater than B, display “A is larger”.",
+    "4. Otherwise, if B is greater than A, display “B is larger”.",
+    "5. Otherwise, display “Both numbers are equal”.",
+    "6. Stop.",
+    "To draw the corresponding flowchart, begin with a Start oval and connect it by arrows to an Input A and B parallelogram.",
+    "Draw a decision diamond labelled “Is A > B?” and label its outgoing arrows Yes and No.",
+    "On the Yes branch, draw a parallelogram to display “A is larger”, then connect it to an End oval.",
+    "On the No branch, draw a second decision diamond labelled “Is B > A?”.",
+    "From the second decision, draw a Yes branch to display “B is larger” and a No branch to display “Both numbers are equal”; connect both output steps to End."
+   ],
+   "finalAnswer": "An algorithm is a finite, ordered set of clear steps; the example compares two numbers and displays the larger number or that they are equal."
+  },
+  {
+   "accept": [],
+   "id": "7:19",
+   "figure": "",
+   "steps": [
+    "A flowchart represents the steps of an algorithm using standard symbols connected by arrows.",
+    "Pseudocode describes the steps of an algorithm using simple, structured statements that resemble a programming language.",
+    "Both methods help plan an algorithm before writing a computer program.",
+    "A flowchart is visual and makes the sequence of steps and decisions easy to follow.",
+    "A flowchart can become difficult to draw or change when an algorithm is large or has many branches.",
+    "Pseudocode is usually quicker to write and easier to modify, especially for a long algorithm.",
+    "Pseudocode is not a visual representation, and its style may differ from one person to another.",
+    "A flowchart may be preferred when explaining a simple process or decision to someone visually.",
+    "Pseudocode may be preferred when planning a longer algorithm that will later be converted into a program."
+   ],
+   "finalAnswer": "Flowcharts show algorithms visually, while pseudocode describes them in structured words; each is useful for planning and explaining algorithms."
+  },
+  {
+   "accept": [],
+   "id": "7:20",
+   "figure": "",
+   "steps": [
+    "A dry run is the manual execution of an algorithm by following its steps without running it on a computer.",
+    "For a flowchart, follow the arrows and decision branches using chosen input values.",
+    "For pseudocode, trace each instruction in order and keep track of the values of variables and the output.",
+    "A dry run helps check whether the steps are in the correct order and whether decisions produce the expected results.",
+    "It can reveal mistakes such as a missing condition, an incorrect calculation, or an output that is not produced.",
+    "Testing the algorithm with different inputs, including boundary or equal values where appropriate, helps validate its correctness."
+   ],
+   "finalAnswer": "A dry run traces an algorithm by hand with test inputs to find errors and check that it gives the expected output."
+  },
+  {
+   "accept": [],
+   "id": "7:21",
+   "figure": "",
+   "steps": [
+    "LARP stands for Learning Algorithms through Role-Play.",
+    "It is a way of learning algorithms in which students act out the instructions and roles involved in solving a problem.",
+    "Students can take roles such as the computer, the user, or a data item and follow the algorithm step by step.",
+    "LARP makes abstract instructions easier to understand because learners can see and practise how each step works.",
+    "It also helps students find unclear or missing steps by observing what happens when the algorithm is followed."
+   ],
+   "finalAnswer": "LARP means Learning Algorithms through Role-Play and helps students practise and understand algorithms by acting them out."
+  },
+  {
+   "accept": [],
+   "id": "7:22",
+   "figure": "",
+   "steps": [
+    "LARP helps learners practise computational thinking by carrying out an algorithm step by step and observing its results.",
+    "It can help students break a problem into steps, recognise repeated actions, focus on relevant information, and test the sequence of instructions.",
+    "For example, students can role-play an algorithm that finds the larger of two numbers.",
+    "One student acts as the computer, two students provide the numbers, and the computer follows the comparison steps and announces the result.",
+    "If the numbers are equal and the algorithm has no instruction for that case, the role-play reveals the missing condition.",
+    "Students can then add an equality check and act out the revised algorithm again to test it."
+   ],
+   "finalAnswer": "LARP lets students act out and test algorithms, helping them apply computational thinking and improve unclear or incomplete steps."
+  }
+ ]
+}

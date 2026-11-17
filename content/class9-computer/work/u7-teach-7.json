@@ -1,0 +1,329 @@
+{
+ "note": {
+  "explanation": "Algorithms and flowcharts can contain errors, or bugs. Debugging means finding and fixing them. You can trace the steps, use comments, check decision conditions, and test smaller parts separately.",
+  "examples": [
+   "If an algorithm tries to divide by zero while it runs, that is a runtime error.",
+   "If a decision uses the wrong condition and gives the wrong result, that is a logical error."
+  ],
+  "checkAnswer": "A logical error.",
+  "keywords": [
+   "error",
+   "bug",
+   "syntax error",
+   "runtime error",
+   "logical error",
+   "debugging"
+  ],
+  "simple": "Debugging is checking an algorithm to find what is wrong and then fixing it.",
+  "checkQuestion": "An algorithm runs, but gives the wrong answer because a decision condition is incorrect. What type of error is this?",
+  "title": "Error Identification and Debugging",
+  "steps": [
+   "Read any error message carefully.",
+   "Trace the algorithm step by step with sample data.",
+   "Check that decision conditions are correct.",
+   "Use comments to clarify what each part should do.",
+   "Break the problem into smaller parts and test them separately."
+  ],
+  "answer": "Debugging is the process of finding and fixing errors in an algorithm or flowchart.",
+  "checkAccept": [
+   [
+    "logical error"
+   ],
+   [
+    "logical"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Syntax error",
+    "Runtime error",
+    "Logical error",
+    "Missing comment"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "An algorithm runs without stopping, but produces the wrong result because it uses an incorrect decision condition. What kind of error is this?",
+   "rationales": [
+    "A syntax error is caused by something written incorrectly in the algorithm or flowchart.",
+    "A runtime error happens while the algorithm is executing, such as an attempt to divide by zero.",
+    "A logical error makes an algorithm behave incorrectly even though it can still run.",
+    "A missing comment may make an algorithm harder to understand but is not itself one of the three main error types described here."
+   ]
+  },
+  {
+   "options": [
+    "The algorithm contains a spelling mistake in a step.",
+    "The algorithm tries to divide by zero while executing.",
+    "The algorithm gives a wrong answer because its logic is incorrect.",
+    "The algorithm has no comments."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which situation is an example of a runtime error?",
+   "rationales": [
+    "Writing a step incorrectly is an example of a syntax error.",
+    "Trying to divide by zero is an impossible operation that can cause an error during execution.",
+    "Incorrect logic that gives a wrong result is a logical error.",
+    "Comments help explain an algorithm, but having no comments is not the runtime-error example given in this section."
+   ]
+  },
+  {
+   "options": [
+    "Trace the steps",
+    "Remove all decision steps",
+    "Change every variable name",
+    "Ignore the error message"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which technique involves going through an algorithm step by step to find where it goes wrong?",
+   "rationales": [
+    "Tracing means following each step to identify where the problem occurs.",
+    "Removing all decision steps does not help locate the cause and may change what the algorithm is meant to do.",
+    "Changing every variable name is not a debugging technique described in this section.",
+    "Ignoring an error message can mean missing useful information about the problem."
+   ]
+  },
+  {
+   "options": [
+    "Use comments to explain what each part should do.",
+    "Delete the algorithm and start a different problem.",
+    "Avoid checking decision conditions.",
+    "Use only larger test problems."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How can comments help with debugging?",
+   "rationales": [
+    "Comments explain the intended purpose of parts of an algorithm, which can help reveal mistakes.",
+    "Deleting the algorithm does not explain or fix the error in the existing work.",
+    "Checking conditions is an important debugging technique, so avoiding it would not help.",
+    "Testing smaller parts separately is recommended, rather than using only larger problems."
+   ]
+  },
+  {
+   "options": [
+    "A variable has been used before it is defined.",
+    "A condition gives the wrong result but the algorithm still runs.",
+    "A flowchart uses an incorrect symbol.",
+    "A comment does not describe a step."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the LARP message “Undefined Variable” most likely mean?",
+   "rationales": [
+    "The message means that a variable is being used without having been defined yet.",
+    "A wrong condition is a logical error, not the meaning of “Undefined Variable.”",
+    "An incorrect symbol may cause a syntax error, but it does not describe an undefined variable.",
+    "A comment that does not describe a step may be unclear, but that is not what this message means."
+   ]
+  },
+  {
+   "options": [
+    "A missing step",
+    "An undefined variable",
+    "An invalid operation",
+    "A comment written in the wrong place"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which LARP error message is associated with an operation that is not allowed, such as dividing by zero?",
+   "rationales": [
+    "“Missing Step” means an important step may have been left out.",
+    "“Undefined Variable” means a variable has not been defined before it is used.",
+    "“Invalid Operation” refers to an operation that is not allowed, such as dividing by zero.",
+    "The section does not identify a misplaced comment as the message for an operation that is not allowed."
+   ]
+  },
+  {
+   "options": [
+    "Test the entire problem only after completing it.",
+    "Break the algorithm into smaller parts and test each part separately.",
+    "Remove all input values from the algorithm.",
+    "Use comments instead of checking the algorithm."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which debugging technique is especially useful when a problem is difficult to check all at once?",
+   "rationales": [
+    "Testing only after completing the entire problem makes it harder to isolate the part causing an error.",
+    "Simplifying the problem means breaking it into smaller parts and testing each part separately.",
+    "Removing all input values does not help test whether the algorithm works with data.",
+    "Comments can help, but they do not replace testing and checking the algorithm."
+   ]
+  },
+  {
+   "options": [
+    "Logical errors are always pointed out by LARP.",
+    "Syntax errors are usually easiest to find because LARP often points them out.",
+    "Runtime errors happen only before an algorithm is executed.",
+    "Comments automatically fix syntax errors."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement about syntax and logical errors agrees with this section?",
+   "rationales": [
+    "Logical errors can be hard to find because the algorithm may still run.",
+    "The section says syntax errors are easiest to find because LARP usually points them out.",
+    "Runtime errors happen while the algorithm or flowchart is being executed.",
+    "Comments can explain parts of an algorithm, but they do not automatically fix syntax errors."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q7.12. List and explain two debugging techniques.",
+   "finalAnswer": "Trace the steps: go through each step to see where the algorithm goes wrong. Check conditions: ensure that all conditions in decision steps are correct.",
+   "marks": 2,
+   "source": "Short 7.12",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "trace",
+       "step"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming and explaining a technique shows how the student would look for an error.",
+     "description": "One valid debugging technique with a relevant explanation.",
+     "how": "Explain that tracing means going through the algorithm step by step to find where it goes wrong."
+    },
+    {
+     "accept": [
+      [
+       "condition"
+      ]
+     ],
+     "marks": 1,
+     "why": "A second technique and its purpose complete the requested answer.",
+     "description": "A second valid debugging technique with a relevant explanation; the model answer checks conditions.",
+     "how": "Explain that decision conditions should be checked for correctness."
+    }
+   ],
+   "modelAnswer": [
+    "Trace the steps: go through each step of the algorithm or flowchart to see where it goes wrong.",
+    "Check conditions: ensure that all conditions in decision steps are correct."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is most directly tested by a short question asking you to list and explain debugging techniques.",
+   "For full marks, name two different techniques and briefly explain how each helps find or fix an error.",
+   "If asked to identify an error type, distinguish syntax errors (written incorrectly), runtime errors (during execution), and logical errors (wrong behaviour or result).",
+   "Use the section's terms: trace the steps, use comments, check conditions, and simplify the problem."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Choose two different techniques from the section.",
+     "For each one, say what you do and how it helps you find an error."
+    ],
+    "accept": [
+     [
+      "trace",
+      "step",
+      "condition"
+     ],
+     [
+      "comment",
+      "explain",
+      "simplify",
+      "test"
+     ]
+    ],
+    "question": "Q7.12. List and explain two debugging techniques.",
+    "solution": [
+     "Trace the steps: go through each step of the algorithm or flowchart to see where it goes wrong.",
+     "Check conditions: ensure that all conditions in decision steps are correct."
+    ],
+    "answer": "Trace the steps to locate where an error occurs, and check that all decision conditions are correct."
+   },
+   {
+    "hints": [
+     "An average of three numbers needs the three inputs and a calculation of their sum divided by 3.",
+     "For each error type, identify what is wrong, then use the matching debugging technique to correct it."
+    ],
+    "accept": [
+     [
+      "average",
+      "3"
+     ],
+     [
+      "syntax",
+      "runtime",
+      "logical",
+      "fix"
+     ]
+    ],
+    "question": "Create a simple flowchart in LARP that calculates the average of three numbers. Introduce a syntax error, a runtime error, and a logical error in your flowchart. Then, try to fix them using the debugging techniques we discussed.",
+    "solution": [
+     "Create a flowchart that reads three numbers, adds them, divides their sum by 3, and displays the average.",
+     "Introduce a syntax error by writing a step incorrectly or using the wrong symbol; read the error message and correct the step or symbol.",
+     "Introduce a runtime error by attempting to divide by zero; trace the calculation and make sure the divisor is 3.",
+     "Introduce a logical error by using an incorrect calculation or condition; trace the steps with sample values and correct the logic.",
+     "Use comments to explain what each part should do, and test smaller parts separately."
+    ],
+    "answer": "The flowchart should calculate (number 1 + number 2 + number 3) / 3. Correct the syntax, prevent division by zero, and fix the incorrect logic by tracing and testing the flowchart."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the starting point of the flowchart shown in Figure 7.10.",
+     "text": "Start"
+    },
+    {
+     "why": "The flowchart displays a prompt before it reads the marks.",
+     "text": "WRITE \"enter Percentage%\""
+    },
+    {
+     "why": "The input is stored as Marks, the value used in the decisions.",
+     "text": "READ Marks"
+    },
+    {
+     "why": "For Marks = 90, this condition is false, so tracing continues along its False branch.",
+     "text": "Check Marks>90"
+    },
+    {
+     "why": "The next condition is true for Marks = 90, so the flowchart displays this grade.",
+     "text": "WRITE \"Grade is A\""
+    },
+    {
+     "why": "The flowchart finishes after displaying the grade.",
+     "text": "End"
+    }
+   ],
+   "question": "Using the decision steps shown in Figure 7.10, trace the flowchart when Marks = 90. What grade does it display?",
+   "answer": "Grade is A."
+  },
+  "explain": [
+   {
+    "title": "Three types of errors",
+    "body": "Syntax Errors: These occur when we write something incorrectly in our algorithm or flowchart. For example, missing a step or using the wrong symbol. Runtime Errors: These happen when the algorithm or flowchart is being executed. For example, trying to perform an impossible operation, such as dividing by zero. Logical Errors: These are mistakes in the logic of the algorithm that cause it to behave incorrectly. For example, using the wrong condition in a decision step."
+   },
+   {
+    "title": "Debugging",
+    "body": "Debugging is the process of finding and fixing errors in an algorithm or flowchart. Syntax errors are often easiest to find because LARP usually points them out. Logical errors can be harder because the algorithm may still run but produce incorrect results."
+   },
+   {
+    "title": "Debugging techniques",
+    "body": "Trace the Steps: Go through each step of your algorithm or flowchart to see identity where it goes wrong. Use Comments: Write comments or notes in your algorithm to explain what each part is supposed to do. Check Conditions: Ensure that all conditions in decision steps are correct. Simplify the Problem: Break down the algorithm into smaller parts and test each part separately."
+   },
+   {
+    "title": "Common LARP error messages",
+    "body": "Missing Step means you probably forgot an important step. Undefined Variable means you are using a variable that has not been defined yet. Invalid Operation means you are trying to perform an operation that is not allowed, like dividing by zero."
+   }
+  ],
+  "mistakes": [
+   "Calling every error a syntax error; runtime and logical errors are different types.",
+   "Confusing a logical error with a runtime error: a logical error can let the algorithm run but still produce a wrong result.",
+   "Naming a debugging technique without explaining what it does when the question asks you to explain it.",
+   "Checking only the output and not tracing the steps or checking the decision conditions.",
+   "Ignoring error messages instead of reading them for clues about where the problem is."
+  ]
+ }
+}

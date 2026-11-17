@@ -1,0 +1,413 @@
+{
+ "note": {
+  "explanation": "Big Data is extremely large and complex data that traditional tools cannot manage easily. Its Three Vs describe how much data there is, how quickly it moves, and the different forms it takes.",
+  "examples": [
+   "Social media posts, likes, and comments shared every day show Big Data's Volume.",
+   "A bank analysing transactions to spot unusual activity is an example of a Big Data application."
+  ],
+  "checkAnswer": "Velocity is the speed at which data is generated and processed.",
+  "keywords": [
+   "Big Data",
+   "Volume",
+   "Velocity",
+   "Variety",
+   "retail",
+   "healthcare",
+   "fraud",
+   "predictive modelling"
+  ],
+  "simple": "Think of Big Data as a huge, fast-moving collection of many kinds of information. Special tools help people find useful patterns in it.",
+  "checkQuestion": "Which of the Three Vs means the speed at which data is generated and processed?",
+  "title": "Big Data and its applications",
+  "steps": [
+   "Identify what is being described: amount, speed, or type of data.",
+   "Match it to Volume, Velocity, or Variety.",
+   "For an application, state the field and what it uses the data to do."
+  ],
+  "answer": "Big Data is extremely large and complex data that cannot be managed with traditional tools. Its Three Vs are Volume, Velocity, and Variety.",
+  "checkAccept": [
+   [
+    "velocity"
+   ],
+   [
+    "speed",
+    "data"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The sheer amount of data collected",
+    "The speed at which data is generated and processed",
+    "The different forms data can take",
+    "The accuracy of data"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which characteristic of Big Data describes the sheer amount of information collected?",
+   "rationales": [
+    "Correct: Volume means the sheer amount of data collected.",
+    "Incorrect: Speed of generation and processing is Velocity.",
+    "Incorrect: Different forms of data are described by Variety.",
+    "Incorrect: Accuracy is not one of the Three Vs given in this section."
+   ]
+  },
+  {
+   "options": [
+    "Volume",
+    "Velocity",
+    "Variety",
+    "Validation"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A stream of posts is generated and processed very quickly; which Big Data characteristic does this show?",
+   "rationales": [
+    "Incorrect: Volume concerns the amount of data, not how quickly it moves.",
+    "Correct: Velocity describes the speed at which data is generated and processed.",
+    "Incorrect: Variety concerns the different forms data can take.",
+    "Incorrect: Validation is not one of the Three Vs described here."
+   ]
+  },
+  {
+   "options": [
+    "A company's customer reviews, product photos, and sales figures",
+    "A large number of identical temperature readings",
+    "A single database containing only numbers",
+    "A very fast internet connection"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which example best demonstrates Variety in Big Data?",
+   "rationales": [
+    "Correct: It includes different data forms: text, images, and numbers.",
+    "Incorrect: Many readings may show Volume, but this example does not show different data forms.",
+    "Incorrect: This example contains only one form of data.",
+    "Incorrect: A fast connection is not an example of varied data."
+   ]
+  },
+  {
+   "options": [
+    "Predict future events using historical data",
+    "Store only photographs",
+    "Arrange data alphabetically",
+    "Delete all older records"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the purpose of predictive modelling?",
+   "rationales": [
+    "Correct: Predictive modelling forecasts future events based on historical data.",
+    "Incorrect: Predictive modelling is not a method for storing photographs.",
+    "Incorrect: Alphabetical arrangement is not the purpose of predictive modelling.",
+    "Incorrect: Deleting old records is not what predictive modelling means."
+   ]
+  },
+  {
+   "options": [
+    "Find the quickest routes and predict where rides will be needed",
+    "Create customer medical records",
+    "Measure the taste of refreshments",
+    "Turn transactions into encrypted codes"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How can a transportation company use Big Data, according to this section?",
+   "rationales": [
+    "Correct: Transportation companies analyse past trips to optimise routes and predict ride demand.",
+    "Incorrect: Medical records are associated with healthcare rather than this transportation example.",
+    "Incorrect: Measuring taste is not the transportation application described.",
+    "Incorrect: Encryption is a privacy measure, not the route-management use described."
+   ]
+  },
+  {
+   "options": [
+    "Detect unusual transactions that might indicate fraud",
+    "Recommend books based on a student's grades",
+    "Predict the weather using patient records",
+    "Create graphs of social media friendships"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which task is a Big Data application in finance?",
+   "rationales": [
+    "Correct: Banks analyse transactions to spot unusual activities that might indicate fraud.",
+    "Incorrect: Book recommendations are not the finance example in this section.",
+    "Incorrect: Patient records are used in healthcare, not for the described weather prediction.",
+    "Incorrect: Social-network connections are an example of graph analytics, not the finance application."
+   ]
+  },
+  {
+   "options": [
+    "SQL",
+    "Matplotlib",
+    "Excel",
+    "Pandas"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tool is used to manage and query databases?",
+   "rationales": [
+    "Correct: SQL is used to manage and query databases.",
+    "Incorrect: Matplotlib is used for creating graphs.",
+    "Incorrect: Excel is a spreadsheet program used to organise and analyse data.",
+    "Incorrect: Pandas is a Python library used for data manipulation."
+   ]
+  },
+  {
+   "options": [
+    "Interactive dashboards that let users explore data from different angles",
+    "Tools that prevent users from viewing any charts",
+    "Manual processing of every record",
+    "Removing all data from different regions"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What future visualization advancement is described in this section?",
+   "rationales": [
+    "Correct: The section describes interactive dashboards for exploring data from different angles.",
+    "Incorrect: The section describes making data easier to explore, not hiding charts.",
+    "Incorrect: Increased automation is expected to reduce repetitive manual work.",
+    "Incorrect: Removing regional data is not described as a future visualization advancement."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Explain why data visualization is important. How does it help in understanding complex information?",
+   "finalAnswer": "Data visualization turns numbers and information into visual representations. It makes data easier to understand and helps people notice patterns and insights in complex information.",
+   "marks": 2,
+   "source": "Short 9.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "visual",
+       "representations"
+      ],
+      [
+       "charts"
+      ],
+      [
+       "graphs"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies what data visualization does.",
+     "description": "State that visualization presents data visually.",
+     "how": "Explain that it turns information into visual representations such as charts or graphs."
+    },
+    {
+     "accept": [
+      [
+       "easier",
+       "understand"
+      ],
+      [
+       "patterns"
+      ],
+      [
+       "insights"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how visualization helps with complex information.",
+     "description": "Give its benefit for understanding data.",
+     "how": "Mention that it makes information easier to understand or helps reveal patterns and insights."
+    }
+   ],
+   "modelAnswer": [
+    "Data visualization turns numbers and information into visual representations.",
+    "It makes data easier to understand and helps people notice patterns and insights in complex information."
+   ]
+  },
+  {
+   "text": "Explain the concept of data visualization. How does it help in understanding complex data? Provide examples of different types of visualizations and their applications in real-life scenarios.",
+   "finalAnswer": "Data visualization turns numbers and information into visual representations, making data easier to understand. Charts, graphs, and interactive dashboards can show patterns and insights. For example, a chart can show which products are popular in different regions, and a graph can present survey results.",
+   "marks": 8,
+   "source": "Long 9.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "visual",
+       "representations"
+      ],
+      [
+       "numbers",
+       "information"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear concept is needed before explaining its uses.",
+     "description": "Define data visualization.",
+     "how": "Explain that it turns data or information into visual representations."
+    },
+    {
+     "accept": [
+      [
+       "easier",
+       "understand"
+      ],
+      [
+       "patterns"
+      ],
+      [
+       "insights"
+      ]
+     ],
+     "marks": 2,
+     "why": "This explains how visual presentation helps people interpret complex data.",
+     "description": "Explain its benefit for understanding data.",
+     "how": "State that it makes data easier to understand and can help reveal patterns or insights."
+    },
+    {
+     "accept": [
+      [
+       "chart"
+      ],
+      [
+       "graph"
+      ],
+      [
+       "dashboard"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer needs examples of visualization types.",
+     "description": "Name suitable forms of data visualization.",
+     "how": "Give examples such as charts, graphs, or interactive dashboards."
+    },
+    {
+     "accept": [
+      [
+       "popular",
+       "regions"
+      ],
+      [
+       "survey",
+       "results"
+      ],
+      [
+       "real-life"
+      ]
+     ],
+     "marks": 2,
+     "why": "Real-life examples show how visualization can be applied.",
+     "description": "Give an application of a visualization.",
+     "how": "Connect a chart, graph, or dashboard to a real situation, such as showing popular products in different regions or presenting survey results."
+    }
+   ],
+   "modelAnswer": [
+    "Data visualization turns numbers and information into visual representations.",
+    "It makes data easier to understand and helps people detect patterns and insights in complex data.",
+    "Charts, graphs, and interactive dashboards are examples of visualizations.",
+    "A chart could show which products are most popular in different regions.",
+    "A graph could display survey results so that the results and patterns are easier to see."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define Big Data or explain one of the Three Vs; give the meaning and a matching example.",
+   "For an application question, name the field and explain what information is analysed and what decision it helps make.",
+   "For predictive modelling, state that future events are forecast using historical data.",
+   "In a longer response, organise your answer with clear points and include relevant examples such as fraud detection, patient health, or route planning."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about how much data is being collected.",
+     "The Three Vs are Volume, Velocity, and Variety; match the phrase 'sheer amount' to one of them."
+    ],
+    "accept": [
+     [
+      "volume"
+     ],
+     [
+      "sheer",
+      "amount"
+     ]
+    ],
+    "question": "What does the 'Volume' characteristic of Big Data refer to?",
+    "solution": [
+     "Volume refers to the sheer amount of data collected.",
+     "Therefore, it means the sheer amount of data being collected."
+    ],
+    "answer": "The sheer amount of data being collected."
+   },
+   {
+    "hints": [
+     "Think of the visual forms people use to show data.",
+     "Explain both what visualization does and how it helps someone understand complicated information."
+    ],
+    "accept": [
+     [
+      "visual",
+      "representations",
+      "easier",
+      "understand"
+     ],
+     [
+      "charts",
+      "patterns"
+     ]
+    ],
+    "question": "Why is data visualization important. How does it help in understanding complex information?",
+    "solution": [
+     "Data visualization turns numbers and information into visual representations.",
+     "These visuals make data easier to understand and can help people notice patterns and insights."
+    ],
+    "answer": "It turns data into visual representations, making complex information easier to understand and helping people notice patterns."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The example in your textbook explains that a retailer can analyse data to find popular products at different times of the year.",
+     "text": "Question: How can a retailer use Big Data to make a better decision?"
+    },
+    {
+     "why": "The data must first be used to find a useful pattern or trend.",
+     "text": "Analyse a large amount of data to uncover trends and patterns."
+    },
+    {
+     "why": "The section's example connects the discovered trend to which products are popular at different times of the year.",
+     "text": "Determine which products are most popular at different times of the year."
+    },
+    {
+     "why": "Using the trend to stock the right items is the practical decision described in the textbook.",
+     "text": "Use this information to stock the right items and improve sales."
+    }
+   ],
+   "question": "How can a retailer use Big Data to make a better decision?",
+   "answer": "A retailer can analyse large amounts of data to find which products are popular at different times of the year, then stock the right items to improve sales."
+  },
+  "explain": [
+   {
+    "title": "Big Data and the Three Vs",
+    "body": "Your textbook defines Big Data as: “Big Data is a term used to describe extremely large data sets that are so complex they can't be managed with traditional tools.” Its Three Vs are Volume (amount), Velocity (speed), and Variety (different forms)."
+   },
+   {
+    "title": "Where Big Data is used",
+    "body": "Businesses use it to find trends and understand customers. Retailers can recommend products, healthcare workers can monitor health and predict disease outbreaks, banks can detect fraud, and transportation companies can improve routes and predict ride demand."
+   },
+   {
+    "title": "Tools and techniques",
+    "body": "Excel organises and analyses data; Python and its Pandas and Matplotlib libraries support data manipulation and graphs; R supports statistical analysis and visualization; SQL manages and queries databases. Predictive modelling forecasts future events from historical data, while graph analytics examines connections between data points."
+   },
+   {
+    "title": "Future data tools",
+    "body": "The section describes enhanced automation, improved data privacy, more integration of AI with data science, and advances in visualization such as interactive dashboards."
+   }
+  ],
+  "mistakes": [
+   "Mixing up the Three Vs: Volume is amount, Velocity is speed, and Variety is different forms.",
+   "Giving only the name of an application without explaining what the data helps people do.",
+   "Saying predictive modelling only describes past data; it uses historical data to forecast future events.",
+   "Confusing a tool with a technique: SQL is a tool, while predictive modelling and graph analytics are techniques.",
+   "Using a vague example that does not match the characteristic or field named in the question."
+  ]
+ }
+}

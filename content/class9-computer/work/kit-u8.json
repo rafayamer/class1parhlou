@@ -1,0 +1,195 @@
+{
+ "shortTheory": [
+  {
+   "question": "What is the purpose of the `<head>` tag in HTML?",
+   "answer": "This section contains meta-information about the HTML document, like the title."
+  },
+  {
+   "question": "Explain the difference between an ordered list and an unordered list in HTML.",
+   "answer": "You can create ordered (numbered) and unordered (bulleted) lists."
+  },
+  {
+   "question": "What are the different ways to apply CSS to an HTML document?",
+   "answer": "Integrating CSS with HTML is essential for styling web pages and it can be done in three primary ways: inline, internal, and external styles."
+  },
+  {
+   "question": "Describe the syntax for creating a hyperlink in HTML.",
+   "answer": "Links are created using the `<a>` tag.\n\n```html\n<a href=\"https://www.example.com\">Visit Example.com</a>\n```"
+  },
+  {
+   "question": "How do you link an external CSS file to an HTML document?",
+   "answer": "The most efficient method for larger projects is to use an external CSS file, which is linked to the HTML document with the `<link>` tag in the `<head>` section.\n\n```html\n<link rel=\"stylesheet\" href=\"styles.css\">\n```"
+  },
+  {
+   "question": "What is the use of the `<table>` tag in HTML?",
+   "answer": "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+  },
+  {
+   "question": "How can you include JavaScript in an HTML file?",
+   "answer": "```html\n<script src=\"script.js\" ></script>\n```"
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Web development",
+   "text": "Process of creating websites and web applications is called Web development. It means using various programming languages and tools to design, build, and maintain websites."
+  },
+  {
+   "term": "Front-end development",
+   "text": "This focuses on what users see and interact with on a website."
+  },
+  {
+   "term": "Back-end development",
+   "text": "This manages the behind-the-scenes functionality of a website, including servers, databases, and application logic."
+  },
+  {
+   "term": "HTML",
+   "text": "HTML is the standard language used to create web pages."
+  },
+  {
+   "term": "CSS",
+   "text": "Styling with Cascading Style Sheets (CSS) is very important for improving the visual appearance of webpages and improving user experience."
+  },
+  {
+   "term": "JavaScript",
+   "text": "JavaScript is a programming language that is used to make websites interactive and engaging."
+  },
+  {
+   "term": "HTML tags",
+   "text": "Elements that make up an HTML document are called tags."
+  },
+  {
+   "term": "Paired tags",
+   "text": "Comes in pairs an opening Tag and closing Tag i.e `<p>` ..... `</p>`."
+  },
+  {
+   "term": "Unpaired tags",
+   "text": "Do not need closing Tags. They are also known as self-closing Tags i.e., `<img>`, `<br>`."
+  },
+  {
+   "term": "Paragraphs in HTML",
+   "text": "Paragraphs in HTML are used to organize and separate text into readable sections. Each paragraph creates a block of text with space above and below it, making the content easier to read."
+  },
+  {
+   "term": "Links in HTML",
+   "text": "Links in HTML are used to connect one web page to another. They allow you to click on words or images to go to different parts of the same web page or to other web pages on the internet."
+  },
+  {
+   "term": "HTML lists",
+   "text": "Lists improve readability by breaking complex ideas into simpler parts, allowing users to scan for details easily. Overall, lists make the content more organized and accessible for everyone."
+  },
+  {
+   "term": "HTML tables",
+   "text": "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+  },
+  {
+   "term": "HTML comments",
+   "text": "HTML comments begin with `<!--` and end with `-->`. Any text placed within these markers will be treated as a comment and will not be rendered by the browser."
+  },
+  {
+   "term": "CSS rule",
+   "text": "CSS is composed of rules that consist of selectors and declarations. Selectors specify which HTML elements the styles will apply to, while declarations define the specific styles to be applied, including properties and their corresponding values."
+  },
+  {
+   "term": "Margin and padding",
+   "text": "Margins create space outside the element, while padding creates space inside the element."
+  },
+  {
+   "term": "Variable",
+   "text": "A variable is like a container that holds information which can be used and manipulated in your code."
+  },
+  {
+   "term": "String",
+   "text": "A sequence of characters used for text."
+  },
+  {
+   "term": "Number",
+   "text": "Represents both integer and floating-point numbers."
+  },
+  {
+   "term": "Boolean",
+   "text": "Represents true or false values."
+  },
+  {
+   "term": "Array",
+   "text": "A collection of values stored in a single variable."
+  },
+  {
+   "term": "Function",
+   "text": "Functions allow you to reuse code and perform specific tasks."
+  },
+  {
+   "term": "Event",
+   "text": "An event is an action that occurs when a user interacts with a webpage, like clicking a button or pressing a key."
+  },
+  {
+   "term": "Event handler",
+   "text": "An event handler is a function that runs when a specific event occurs."
+  },
+  {
+   "term": "Debugging",
+   "text": "Debugging is the process of finding and fixing issues in your code."
+  }
+ ],
+ "formulas": [],
+ "fullMarks": [
+  "For a definition question, start with the exact definition, then add a brief example or use if the question asks for one.",
+  "For HTML code, write a complete document structure with `<!DOCTYPE html>`, `<html>`, `<head>`, `<title>`, and `<body>` in the correct order.",
+  "Use opening and closing tags correctly, and nest elements properly. Remember that `<img>` is an unpaired tag in the examples given.",
+  "For a hyperlink, show both the `<a>` tag and its `href` attribute; put the clickable text between the opening and closing `<a>` tags.",
+  "For a CSS rule, identify the selector, then write declarations inside braces as `property: value;`. Keep each declaration correctly punctuated.",
+  "When asked how CSS or JavaScript is added, name the method and show a correct code example, such as a `<link>` tag for external CSS or a `<script>` tag for JavaScript.",
+  "For a code-writing answer, use clear indentation and finish with a short statement explaining what the code does."
+ ],
+ "important": [
+  {
+   "ref": "Short 8.1: What is the purpose of the `<head>` tag in HTML?",
+   "why": "A direct 2-mark question on the basic HTML document structure."
+  },
+  {
+   "ref": "Short 8.2: Explain the difference between an ordered list and an unordered list in HTML.",
+   "why": "Tests the commonly examined distinction between numbered and bulleted lists."
+  },
+  {
+   "ref": "Short 8.3: How do you add a comment in CSS?",
+   "why": "A short syntax question that can be answered with a small code example."
+  },
+  {
+   "ref": "Short 8.4: What are the different ways to apply CSS to an HTML document?",
+   "why": "Tests the three main CSS integration methods described in the unit."
+  },
+  {
+   "ref": "Short 8.5: How can you include JavaScript in an HTML file?",
+   "why": "A common short question on adding JavaScript to a page."
+  },
+  {
+   "ref": "Short 8.6: Describe the syntax for creating a hyperlink in HTML.",
+   "why": "A straightforward question on the `<a>` tag and `href` attribute."
+  },
+  {
+   "ref": "Short 8.7: What is the function of the `<div>` tag in HTML?",
+   "why": "Checks understanding of grouping content for layout and styling."
+  },
+  {
+   "ref": "Short 8.8: How do you link an external CSS file to an HTML document?",
+   "why": "Tests a key HTML code pattern using the `<link>` tag."
+  },
+  {
+   "ref": "Short 8.9: What is the use of the `<table>` tag in HTML?",
+   "why": "A direct question on displaying data in a structured format."
+  },
+  {
+   "ref": "Short 8.10: Explain the box model in CSS.",
+   "why": "A likely short question about spacing around and inside elements."
+  }
+ ],
+ "mistakes": [
+  "Writing `<link>` as the hyperlink tag. Use `<a href=\"URL\">clickable text</a>` for a hyperlink; `<link>` is used to connect an external CSS file.",
+  "Mixing up ordered and unordered lists. Use `<ol>` for a numbered list and `<ul>` for a bulleted list; use `<li>` for each item.",
+  "Leaving out the `href` attribute or placing the clickable text outside the `<a>` element. Include both correctly in the hyperlink code.",
+  "Putting an external stylesheet link in the body. Place `<link rel=\"stylesheet\" href=\"styles.css\">` in the `<head>` section.",
+  "Confusing a CSS selector with a declaration. The selector comes before `{ }`; declarations inside the braces use `property: value;`.",
+  "Writing HTML comment markers for a CSS comment. In a CSS file, write comments as `/* comment text */`.",
+  "Forgetting to close paired tags or nesting tags incorrectly. Check each opening tag has the correct closing tag and that elements are properly nested."
+ ]
+}

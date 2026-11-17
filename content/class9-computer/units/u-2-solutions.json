@@ -1,0 +1,633 @@
+{
+ "unit": 2,
+ "sections": [
+  {
+   "number": "2.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.4",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.5",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.6",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "2.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.1",
+     "question": "What is the primary purpose of the ASCII encoding scheme?",
+     "steps": [
+      "ASCII provides a standard way to represent text characters as binary numbers.",
+      "This allows computers to store and exchange text."
+     ],
+     "answer": "ASCII encodes text characters as binary numbers so computers can store and exchange text.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.2",
+     "question": "Explain the difference between ASCII and Unicode.",
+     "steps": [
+      "ASCII represents a limited set of characters, mainly English letters, digits and symbols.",
+      "Unicode can represent characters and symbols from many languages and writing systems.",
+      "Unicode uses unique code points for characters; ASCII uses a smaller set of codes."
+     ],
+     "answer": "ASCII has a limited character set, while Unicode represents characters from many languages and writing systems.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.3",
+     "question": "How does Unicode handle characters from different languages?",
+     "steps": [
+      "Unicode assigns a unique code point to each character.",
+      "This lets characters from different languages be represented and processed consistently by computers."
+     ],
+     "answer": "Unicode represents characters from different languages by assigning each one a unique code point.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.4",
+     "question": "What is the range of values for an unsigned 2-byte integer?",
+     "steps": [
+      "Given: 2 bytes = 16 bits.",
+      "For an unsigned integer, the range is from 0 to 2ⁿ − 1, where n is the number of bits.",
+      "Range = 0 to 2¹⁶ − 1 = 0 to 65,535."
+     ],
+     "answer": "0 to 65,535",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.5",
+     "question": "Explain how a negative integer is represented in binary.",
+     "steps": [
+      "A computer commonly represents a negative integer using two’s complement.",
+      "To form the two’s-complement representation, write the positive value in binary, invert each bit, and add 1.",
+      "In a fixed number of bits, the leftmost bit indicates the sign: 0 for a non-negative value and 1 for a negative value."
+     ],
+     "answer": "Negative integers are commonly represented using two’s complement: invert the bits of the positive value and add 1.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.6",
+     "question": "What is the benefit of using unsigned integers?",
+     "steps": [
+      "Unsigned integers represent only zero and positive whole numbers.",
+      "Because no bit is used to represent a sign, all the bits can represent the value, allowing a larger maximum positive value for the same number of bits."
+     ],
+     "answer": "Unsigned integers provide a larger range of non-negative values for the same number of bits.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.7",
+     "question": "How does the number of bits affect the range of integer values?",
+     "steps": [
+      "With n bits, there are 2ⁿ possible binary patterns.",
+      "For unsigned integers, the range is 0 to 2ⁿ − 1.",
+      "For signed integers using two’s complement, the range is −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1.",
+      "Therefore, increasing the number of bits increases the range of integer values."
+     ],
+     "answer": "More bits allow a computer to represent a wider range of integer values.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.8",
+     "question": "Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+     "steps": [
+      "Whole numbers are suitable for quantities such as counts that cannot be negative.",
+      "Using unsigned integers to store such quantities avoids representing a sign and allows a greater positive range for the same number of bits."
+     ],
+     "answer": "Unsigned whole numbers are used for non-negative quantities because they represent counts and provide a larger positive range.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.9",
+     "question": "How is the range of floating-point numbers calculated for single precision?",
+     "steps": [
+      "Single-precision floating-point format uses 32 bits: 1 sign bit, 8 exponent bits and 23 fraction bits.",
+      "The exponent is stored using a bias of 127. For normalized numbers, the exponent field ranges from 1 to 254, so the actual exponent ranges from 1 − 127 = −126 to 254 − 127 = 127.",
+      "The smallest positive normalized value is 1.0 × 2⁻¹²⁶ ≈ 1.175 × 10⁻³⁸.",
+      "The largest finite value is (2 − 2⁻²³) × 2¹²⁷ ≈ 3.403 × 10³⁸.",
+      "Including subnormal numbers, the smallest positive value is 2⁻¹⁴⁹ ≈ 1.401 × 10⁻⁴⁵. The sign bit allows both positive and negative values."
+     ],
+     "answer": "Single precision represents finite values up to approximately ±3.403 × 10³⁸; its smallest positive value is approximately 1.401 × 10⁻⁴⁵ when subnormal numbers are included.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 2.10",
+     "question": "Why is it important to understand the limitations of floating-point representation in scientific computing?",
+     "steps": [
+      "Floating-point numbers have limited precision, so some real numbers cannot be represented exactly. This can cause rounding errors.",
+      "Rounding errors can accumulate during calculations and affect the accuracy of scientific results.",
+      "A value outside the representable range may cause overflow; a value too close to zero may cause underflow.",
+      "Understanding these limitations helps programmers choose suitable data types and methods, and interpret calculated results correctly."
+     ],
+     "answer": "Understanding floating-point limitations helps prevent and manage rounding errors, overflow and underflow in scientific calculations.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.1",
+     "question": "Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points.",
+     "steps": [
+      "Unicode assigns each character a unique code point, so characters from different languages can be represented consistently by computers.",
+      "A Unicode code point is written in the form U+ followed by hexadecimal digits.",
+      "Examples: English capital A — U+0041; Arabic/Urdu letter ا — U+0627; Chinese character 中 — U+4E2D.",
+      "An encoding such as UTF-8 or UTF-16 converts Unicode code points into bytes for storage and transmission."
+     ],
+     "answer": "Unicode represents characters from different languages using unique code points, such as A (U+0041), ا (U+0627), and 中 (U+4E2D).",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.2",
+     "question": "Describe in detail how integers are stored in computer memory.",
+     "steps": [
+      "An integer is stored in a fixed number of binary digits called bits; a group of 8 bits is a byte.",
+      "For an unsigned 8-bit integer, all bits represent magnitude. Its range is 0 to 2⁸ − 1 = 255.",
+      "For a signed integer, one bit indicates the sign. Common representations are sign-and-magnitude, one’s complement and two’s complement.",
+      "In sign-and-magnitude, the most significant bit (MSB) is the sign (0 positive, 1 negative) and the remaining bits give the magnitude. For example, in 8 bits, +5 is 00000101 and −5 is 10000101.",
+      "In one’s complement, a negative number is made by changing every bit of its positive form. Thus +5 is 00000101 and −5 is 11111010 in 8 bits.",
+      "In two’s complement, a negative number is made by inverting the positive number’s bits and adding 1. Thus +5 is 00000101 and −5 is 11111011 in 8 bits.",
+      "Two’s complement is widely used because addition and subtraction can use the same arithmetic circuitry. In n-bit two’s complement, the range is −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1; for 8 bits it is −128 to 127.",
+      "If a calculation produces a value outside the range, an overflow occurs."
+     ],
+     "answer": "Integers are stored as binary bit patterns. Unsigned integers store magnitude only; signed integers use a sign-based representation, most commonly two’s complement. The number of bits determines the range, and exceeding that range causes overflow.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.3",
+     "question": "Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and negative integers.",
+     "steps": [
+      "To convert a positive decimal integer to binary, divide it repeatedly by 2 and record each remainder.",
+      "Continue until the quotient is 0. Read the remainders from bottom to top.",
+      "Example: 25 ÷ 2 gives remainders 1, 0, 0, 1, 1; therefore 25₁₀ = 11001₂.",
+      "To convert a positive binary integer to decimal, multiply each bit by its positional power of 2 and add the results.",
+      "Example: 11001₂ = 1×2⁴ + 1×2³ + 0×2² + 0×2¹ + 1×2⁰ = 25₁₀.",
+      "A negative integer is commonly stored in fixed-width two’s complement. First write its positive magnitude in binary using the chosen number of bits, invert all bits, and add 1.",
+      "Example using 8 bits: +13 = 00001101; invert to get 11110010; add 1 to get −13 = 11110011.",
+      "To convert a two’s-complement binary number back to decimal, check its MSB. If it is 0, convert it as an ordinary positive binary number. If it is 1, invert the bits, add 1 to find the magnitude, and attach a minus sign.",
+      "Example: 11110011 has MSB 1. Invert and add 1: 00001100 + 1 = 00001101 = 13; therefore 11110011₂ = −13₁₀ in 8-bit two’s complement."
+     ],
+     "answer": "25₁₀ = 11001₂; 11001₂ = 25₁₀. In 8-bit two’s complement, −13₁₀ = 11110011₂ and 11110011₂ = −13₁₀.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.4(a)",
+     "question": "Perform the following binary arithmetic operations: Multiplication of 101₂ by 11₂.",
+     "steps": [
+      "  101₂",
+      "×  11₂",
+      "──────",
+      "  101₂",
+      " 1010₂",
+      "──────",
+      " 1111₂"
+     ],
+     "answer": "1111₂",
+     "figure": "",
+     "accept": [
+      [
+       "1111"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.4(b)",
+     "question": "Perform the following binary arithmetic operations: Division of 1100₂ by 10₂.",
+     "steps": [
+      "1100₂ ÷ 10₂",
+      "10₂ goes into 11₂ once; subtract 10₂ to get remainder 1.",
+      "Bring down the next 0: 10₂. 10₂ goes into 10₂ once; subtract 10₂ to get remainder 0.",
+      "Bring down the final 0: 0₂. The next quotient bit is 0.",
+      "Quotient = 110₂; remainder = 0₂."
+     ],
+     "answer": "110₂, remainder 0₂",
+     "figure": "",
+     "accept": [
+      [
+       "110"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.6(a)",
+     "question": "Add the following binary numbers:\n  101₂\n+ 110₂",
+     "steps": [
+      "  101₂",
+      "+ 110₂",
+      "──────",
+      " 1011₂"
+     ],
+     "answer": "1011₂",
+     "figure": "",
+     "accept": [
+      [
+       "1011"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.6(b)",
+     "question": "Add the following binary numbers:\n 1100₂\n+1011₂",
+     "steps": [
+      "Given: 1100₂ and 1011₂.",
+      "Required: Add the binary numbers.",
+      "Rule: Add each column from right to left. In binary, 1 + 1 = 10₂; write 0 and carry 1.",
+      "  1100₂\n+ 1011₂\n-------\n 10111₂",
+      "Result: 1100₂ + 1011₂ = 10111₂."
+     ],
+     "answer": "10111₂",
+     "figure": "",
+     "accept": [
+      [
+       "10111"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.7(a)",
+     "question": "Convert the following numbers to 4-bit binary and add them: 7 + (-4)",
+     "steps": [
+      "Given: 7 and −4.",
+      "Required: Convert the numbers to 4-bit binary and add them.",
+      "Convert 7 to 4-bit binary: 7 = 0111₂.",
+      "Represent −4 in 4-bit two’s complement: 4 = 0100₂; invert the bits to get 1011₂, then add 1 to get 1100₂.",
+      "Add the 4-bit numbers, discarding the carry beyond the fourth bit:\n  0111₂\n+ 1100₂\n-------\n1 0011₂",
+      "Result: 0011₂ = 3."
+     ],
+     "answer": "0011₂ (3)",
+     "figure": "",
+     "accept": [
+      [
+       "0011"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.7(b)",
+     "question": "Convert the following numbers to 4-bit binary and add them: -5 + 3",
+     "steps": [
+      "Given: −5 and 3.",
+      "Required: Convert the numbers to 4-bit binary and add them.",
+      "Convert 3 to 4-bit binary: 3 = 0011₂.",
+      "Represent −5 in 4-bit two’s complement: 5 = 0101₂; invert the bits to get 1010₂, then add 1 to get 1011₂.",
+      "Add the 4-bit numbers:\n  1011₂\n+ 0011₂\n-------\n  1110₂",
+      "Result: 1110₂ is −2 in 4-bit two’s complement."
+     ],
+     "answer": "1110₂ (−2)",
+     "figure": "",
+     "accept": [
+      [
+       "1110"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.8(a)",
+     "question": "Solve the following: 1101₂ - 0100₂",
+     "steps": [
+      "Given: 1101₂ − 0100₂.",
+      "Required: Find the difference.",
+      "Rule: Subtract the binary digits from right to left, borrowing 1 from the next column when necessary.",
+      "  1101₂\n− 0100₂\n-------\n  1001₂",
+      "Result: 1101₂ − 0100₂ = 1001₂."
+     ],
+     "answer": "1001₂",
+     "figure": "",
+     "accept": [
+      [
+       "1001"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.8(b)",
+     "question": "Solve the following: 1010₂ - 0011₂",
+     "steps": [
+      "Given: 1010₂ − 0011₂.",
+      "Required: Find the difference.",
+      "Rule: Subtract the binary digits from right to left. When 0 − 1 occurs, borrow 1 from the next column; the borrowed 1 is 10₂ in the current column.",
+      "  1010₂\n− 0011₂\n-------\n  0111₂",
+      "Result: 1010₂ − 0011₂ = 0111₂."
+     ],
+     "answer": "0111₂",
+     "figure": "",
+     "accept": [
+      [
+       "0111"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.8(c)",
+     "question": "Solve the following: 1000₂ - 0110₂",
+     "steps": [
+      "Given: 1000₂ − 0110₂.",
+      "Required: Find the difference.",
+      "Rule: Subtract the binary digits from right to left. When 0 − 1 occurs, borrow 1 from the next column; the borrowed 1 is 10₂ in the current column.",
+      "  1000₂\n− 0110₂\n-------\n  0010₂",
+      "Result: 1000₂ − 0110₂ = 0010₂."
+     ],
+     "answer": "0010₂",
+     "figure": "",
+     "accept": [
+      [
+       "0010"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 2.8(d)",
+     "question": "Solve the following: 1110₂ - 100₂",
+     "steps": [
+      "Given: 1110₂ − 100₂.",
+      "Required: Find the difference.",
+      "Write both numbers with the same number of bits: 1110₂ − 0100₂.",
+      "Rule: Subtract the binary digits from right to left, borrowing 1 from the next column when necessary.",
+      "  1110₂\n− 0100₂\n-------\n  1010₂",
+      "Result: 1110₂ − 0100₂ = 1010₂."
+     ],
+     "answer": "1010₂",
+     "figure": "",
+     "accept": [
+      [
+       "1010"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 2.1",
+     "stem": "What does ASCII stand for?",
+     "options": [
+      "American Standard Code for Information Interchange",
+      "Advanced Standard Code for Information Interchange",
+      "American Standard Communication for Information Interchange",
+      "Advanced Standard Communication for Information Interchange"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "This is the expansion of ASCII: American Standard Code for Information Interchange.",
+      "ASCII stands for American, not Advanced, Standard Code for Information Interchange.",
+      "ASCII uses “Code,” not “Communication,” in its name.",
+      "ASCII uses “American” and “Code,” not “Advanced” and “Communication.”"
+     ]
+    },
+    {
+     "source": "MCQ 2.2",
+     "stem": "Which of the following numbers is a valid binary number?",
+     "options": [
+      "1101102",
+      "11011",
+      "110.11",
+      "1101A"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "This is invalid because binary digits can only be 0 and 1, not 2.",
+      "This is a valid binary number because it contains only 0s and 1s.",
+      "This can represent a binary fraction, but the expected answer here is a binary integer without a radix point.",
+      "This is invalid because A is not a binary digit."
+     ]
+    },
+    {
+     "source": "MCQ 2.3",
+     "stem": "How many bits are used in the standard ASCII encoding?",
+     "options": [
+      "7 bits",
+      "8 bits",
+      "16 bits",
+      "32 bits"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Standard ASCII uses 7 bits per character.",
+      "Eight bits are used by extended ASCII representations, not standard ASCII.",
+      "Standard ASCII does not use 16 bits per character.",
+      "Standard ASCII does not use 32 bits per character."
+     ]
+    },
+    {
+     "source": "MCQ 2.4",
+     "stem": "Which of the following is a key advantage of Unicode over ASCII?",
+     "options": [
+      "It uses fewer bits per character",
+      "It can represent characters from many different languages",
+      "It is backward compatible with binary",
+      "It is specific to the English language"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Unicode can use more storage than ASCII, so using fewer bits is not its key advantage.",
+      "Unicode supports characters from many languages and writing systems beyond ASCII’s limited character set.",
+      "Binary is a way of representing data, not a compatibility property that distinguishes Unicode from ASCII.",
+      "Unicode is not specific to English; it supports characters from many languages."
+     ]
+    },
+    {
+     "source": "MCQ 2.5",
+     "stem": "How many bytes are used to store a typical integer?",
+     "options": [
+      "1 byte",
+      "2 bytes",
+      "4 bytes",
+      "8 bytes"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "One byte is generally too small for a typical integer representation.",
+      "Two bytes may be used in some systems, but are not the typical size assumed here.",
+      "A typical integer is commonly stored in 4 bytes.",
+      "Eight bytes are commonly used for larger or 64-bit integers, rather than a typical integer."
+     ]
+    },
+    {
+     "source": "MCQ 2.6",
+     "stem": "What is the primary difference between signed and unsigned integers?",
+     "options": [
+      "Unsigned integers cannot be negative",
+      "Signed integers have a larger range",
+      "Unsigned integers are stored in floating-point format",
+      "Signed integers are only used for positive numbers"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Unsigned integers represent zero and positive values, whereas signed integers can also represent negative values.",
+      "Signed integers do not generally have a larger range of positive values than unsigned integers of the same width.",
+      "Unsigned integers are stored as integer values, not in floating-point format.",
+      "Signed integers can represent negative as well as positive values."
+     ]
+    },
+    {
+     "source": "MCQ 2.7",
+     "stem": "In the single precision, how many bits are used for the exponent?",
+     "options": [
+      "23 bits",
+      "8 bits",
+      "11 bits",
+      "52 bits"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Twenty-three bits are used for the single-precision fraction, not the exponent.",
+      "Single precision allocates 8 bits to the exponent.",
+      "Eleven exponent bits are used in double precision.",
+      "Fifty-two bits are used for the double-precision fraction, not the single-precision exponent."
+     ]
+    },
+    {
+     "source": "MCQ 2.8",
+     "stem": "What is the approximate range of values for single-precision floating-point numbers?",
+     "options": [
+      "1.4 x 10⁻⁴⁵ to 3.4 x 10³⁸",
+      "1.4 x 10⁻³⁸ to 3.4 x 10⁴⁵",
+      "4.9 x 10⁻³²⁴ to 1.8 x 10³⁰⁸",
+      "4.9 x 10⁻³⁰⁸ to 1.8 x 10³²⁴"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "This is the approximate range from the smallest positive single-precision subnormal value to the largest finite value.",
+      "These exponents do not give the approximate single-precision range.",
+      "This is approximately the range of double-precision floating-point values.",
+      "These exponents do not give the approximate double-precision range."
+     ]
+    },
+    {
+     "source": "MCQ 2.9",
+     "stem": "What are the tiny dots that make up an image called?",
+     "options": [
+      "Pixels",
+      "Bits",
+      "Bytes",
+      "Nodes"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Pixels are the tiny picture elements that make up a digital image.",
+      "Bits are units of digital information, not the name for the image’s tiny dots.",
+      "Bytes are groups of bits, not the name for the image’s tiny dots.",
+      "Nodes are points or devices in some kinds of networks or graphs, not image dots."
+     ]
+    },
+    {
+     "source": "MCQ 2.10",
+     "stem": "In an RGB color model, what does RGB stand for?",
+     "options": [
+      "Red, Green, Blue",
+      "Red, Gray, Black",
+      "Right, Green, Blue",
+      "Red, Green, Brown"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "RGB stands for Red, Green, Blue.",
+      "Gray and Black are not the words represented by the G and B in RGB.",
+      "“Right” is not the word represented by R in RGB.",
+      "Brown is not the word represented by B in RGB."
+     ]
+    }
+   ]
+  }
+ ]
+}

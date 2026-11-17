@@ -1,0 +1,48 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "6:10",
+   "figure": "",
+   "steps": [
+    "Unicode assigns each character a unique code point, so characters from different languages can be represented consistently by computers.",
+    "A Unicode code point is written in the form U+ followed by hexadecimal digits.",
+    "Examples: English capital A — U+0041; Arabic/Urdu letter ا — U+0627; Chinese character 中 — U+4E2D.",
+    "An encoding such as UTF-8 or UTF-16 converts Unicode code points into bytes for storage and transmission."
+   ],
+   "finalAnswer": "Unicode represents characters from different languages using unique code points, such as A (U+0041), ا (U+0627), and 中 (U+4E2D)."
+  },
+  {
+   "accept": [],
+   "id": "6:11",
+   "figure": "",
+   "steps": [
+    "A computer stores an integer as a pattern of binary digits (bits) in memory.",
+    "The data type determines how many bits are used to store the integer; for example, an 8-bit integer uses eight bits.",
+    "For an unsigned 8-bit integer, all eight bits represent the value, giving a range from 0 to 255.",
+    "Signed integers are commonly stored using two’s complement. In an 8-bit two’s-complement number, the range is −128 to 127.",
+    "A positive integer is written in binary and padded with leading zeroes to fill the available bits; for example, +13 is 00001101 in 8 bits.",
+    "To store a negative integer, write the positive value in binary using the chosen bit-width, invert every bit, and add 1.",
+    "For example, to store −13 in 8 bits: +13 = 00001101; invert the bits to get 11110010; add 1 to get 11110011. Thus, −13 is stored as 11110011.",
+    "In two’s complement, the leftmost bit indicates the sign: 0 represents a non-negative value and 1 represents a negative value."
+   ],
+   "finalAnswer": "Integers are stored as fixed-width binary patterns; signed integers are commonly represented using two’s complement."
+  },
+  {
+   "accept": [],
+   "id": "6:12",
+   "figure": "",
+   "steps": [
+    "To convert a positive decimal integer to binary, repeatedly divide the number by 2 and record each remainder.",
+    "Continue dividing the quotient by 2 until the quotient is 0; read the remainders from bottom to top.",
+    "Example: 25 ÷ 2 gives remainder 1; 12 ÷ 2 gives remainder 0; 6 ÷ 2 gives remainder 0; 3 ÷ 2 gives remainder 1; 1 ÷ 2 gives remainder 1. Reading upward, 25₁₀ = 11001₂.",
+    "To convert a binary integer to decimal, multiply each bit by its positional weight (a power of 2), starting with 2⁰ at the right, and add the results.",
+    "Example: 11001₂ = (1 × 2⁴) + (1 × 2³) + (0 × 2²) + (0 × 2¹) + (1 × 2⁰) = 16 + 8 + 1 = 25₁₀.",
+    "Negative integers are represented in a fixed number of bits using two’s complement. For an 8-bit representation of −25, first write +25 as 00011001.",
+    "Invert the bits: 00011001 becomes 11100110; add 1 to obtain 11100111. Therefore, −25 is 11100111 in 8-bit two’s complement.",
+    "To convert 11100111 from 8-bit two’s complement to decimal, its leading bit is 1, so it is negative. Invert the bits and add 1: 11100111 → 00011000 → 00011001, which is 25; therefore, its value is −25."
+   ],
+   "finalAnswer": "Decimal 25 is binary 11001; in 8-bit two’s complement, −25 is 11100111."
+  }
+ ]
+}

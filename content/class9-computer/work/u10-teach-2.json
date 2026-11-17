@@ -1,0 +1,419 @@
+{
+ "note": {
+  "explanation": "AI algorithms can be grouped by how easy it is to understand their decisions. Whitebox algorithms show an understandable decision-making process; blackbox algorithms make decisions that are not easily interpreted.",
+  "examples": [
+   "A decision tree asks questions such as “Has feathers?” and follows the answers to identify an animal.",
+   "A neural network can process an image and identify it as a cat, even though its decision-making process may be difficult to interpret."
+  ],
+  "checkAnswer": "Decision Trees are explainable (whitebox) algorithms.",
+  "keywords": [
+   "AI",
+   "whitebox",
+   "blackbox",
+   "decision tree",
+   "linear regression",
+   "rule-based system"
+  ],
+  "simple": "Whitebox means you can follow how the AI reached its decision. Blackbox means that process is hard to understand.",
+  "checkQuestion": "Which type of AI algorithm has a transparent and understandable decision-making process?",
+  "title": "Explainable and Unexplainable AI Algorithms",
+  "steps": [
+   "Identify whether the decision-making process is transparent and understandable.",
+   "If it is, classify the algorithm as explainable (whitebox).",
+   "If it is not easily interpreted, classify it as unexplainable (blackbox).",
+   "Use examples to support your answer: decision trees are whitebox; neural networks and deep learning models are blackbox examples."
+  ],
+  "answer": "Explainable (whitebox) algorithms have a transparent and understandable decision-making process.",
+  "checkAccept": [
+   [
+    "transparent",
+    "understandable"
+   ],
+   [
+    "whitebox"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It follows a sequence of questions to reach an answer",
+    "It always uses hidden layers",
+    "It learns only from images",
+    "It follows rules that cannot be seen"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does a decision tree help a computer make a decision?",
+   "rationales": [
+    "Correct: a decision tree follows questions, with each answer leading to another question or a final answer.",
+    "Incorrect: hidden layers are associated with neural networks, not the defining feature of decision trees.",
+    "Incorrect: decision trees are not limited to learning from images.",
+    "Incorrect: a decision tree is an explainable method, not a set of unseen rules."
+   ]
+  },
+  {
+   "options": [
+    "It finds a straight line that best fits data points",
+    "It follows a series of animal-identification questions",
+    "It uses only human-written if-then rules",
+    "It makes every decision by processing image pixels"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which description best matches linear regression?",
+   "rationales": [
+    "Correct: linear regression finds a line that best fits data points and can help show a relationship between two features.",
+    "Incorrect: a sequence of questions is the decision-tree description.",
+    "Incorrect: human-written if-then rules describe rule-based systems.",
+    "Incorrect: processing image pixels is not the definition of linear regression."
+   ]
+  },
+  {
+   "options": [
+    "A set of human-written if-then rules",
+    "A straight line fitted to data points",
+    "A sequence of hidden neural layers",
+    "A model whose decisions are always impossible to explain"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a rule-based system?",
+   "rationales": [
+    "Correct: rule-based systems use rules written by humans to guide computer decisions.",
+    "Incorrect: a straight line fitted to data points describes linear regression.",
+    "Incorrect: hidden layers are part of the neural-network example.",
+    "Incorrect: this is not the definition of a rule-based system."
+   ]
+  },
+  {
+   "options": [
+    "The decision-making process is transparent and understandable",
+    "The algorithm always gives a perfect answer",
+    "The algorithm does not use data",
+    "The algorithm is only used in healthcare"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which feature makes an AI algorithm explainable (whitebox)?",
+   "rationales": [
+    "Correct: whitebox algorithms have a transparent and understandable decision-making process.",
+    "Incorrect: explainability does not guarantee perfect answers.",
+    "Incorrect: the definition does not say that a whitebox algorithm avoids data.",
+    "Incorrect: whitebox algorithms are not limited to healthcare."
+   ]
+  },
+  {
+   "options": [
+    "The decision-making process is not easily interpretable",
+    "The model must be a flowchart",
+    "The model uses only one question",
+    "The decision-making process is always written by a human"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a key feature of an unexplainable (blackbox) algorithm?",
+   "rationales": [
+    "Correct: blackbox algorithms have decision-making processes that are not easily interpreted.",
+    "Incorrect: a flowchart is more closely associated with an explainable decision tree.",
+    "Incorrect: the number of questions is not the defining feature of a blackbox algorithm.",
+    "Incorrect: the section does not define blackbox algorithms as having human-written decisions."
+   ]
+  },
+  {
+   "options": [
+    "Neural networks",
+    "Decision trees",
+    "Rule-based systems",
+    "Linear regression"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is given as an example of a blackbox algorithm?",
+   "rationales": [
+    "Correct: neural networks are given as an example of unexplainable (blackbox) algorithms.",
+    "Incorrect: decision trees are presented as explainable (whitebox) algorithms.",
+    "Incorrect: rule-based systems are described using visible, human-written rules.",
+    "Incorrect: linear regression is listed among the explainable examples."
+   ]
+  },
+  {
+   "options": [
+    "Use an if-then rule to decide when a game character should jump",
+    "Fit a straight line to study-time and grade data",
+    "Follow questions to identify an animal",
+    "Process an image through neural-network layers"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which example best illustrates a rule-based system?",
+   "rationales": [
+    "Correct: “if the character is about to hit an obstacle, then jump” is the section's rule-based example.",
+    "Incorrect: fitting a line to study and grade data illustrates linear regression.",
+    "Incorrect: following questions to identify an animal illustrates a decision tree.",
+    "Incorrect: processing an image through layers illustrates a neural network."
+   ]
+  },
+  {
+   "options": [
+    "Predicting a grade from study hours using a fitted line",
+    "Identifying an animal by following questions",
+    "Jumping when a written game rule says an obstacle is near",
+    "Identifying an image using a neural network"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which task is the best example of linear regression?",
+   "rationales": [
+    "Correct: the section describes using a line to predict grades from study hours.",
+    "Incorrect: identifying an animal through questions is a decision-tree example.",
+    "Incorrect: responding to a written if-then instruction is a rule-based example.",
+    "Incorrect: identifying an image with a neural network is a neural-network example."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Define Artificial Intelligence (AI).",
+   "finalAnswer": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence.",
+   "marks": 2,
+   "source": "Short 10.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "algorithms",
+       "techniques"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition identifies what AI uses.",
+     "description": "States that AI involves using algorithms and techniques.",
+     "how": "Write that AI involves using algorithms and techniques."
+    },
+    {
+     "accept": [
+      [
+       "machines",
+       "human intelligence"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition identifies what machines are enabled to do.",
+     "description": "States that machines perform tasks that typically require human intelligence.",
+     "how": "Include the idea of machines performing tasks that typically require human intelligence."
+    }
+   ],
+   "modelAnswer": [
+    "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+   ]
+  },
+  {
+   "text": "Explain the role of AI techniques in advancing machine learning models.",
+   "finalAnswer": "AI techniques use algorithms to enable machines to perform tasks that typically require human intelligence and help advance the capabilities of AI, particularly through machine learning models.",
+   "marks": 2,
+   "source": "Short 10.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "algorithms",
+       "machines"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how AI techniques help machines perform tasks.",
+     "description": "Connects AI techniques and algorithms with enabling machines to perform tasks.",
+     "how": "Mention that AI uses algorithms and techniques to enable machines to perform tasks."
+    },
+    {
+     "accept": [
+      [
+       "advance",
+       "machine learning"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states how the techniques relate to machine learning models.",
+     "description": "Explains that AI techniques advance AI capabilities, particularly through machine learning models.",
+     "how": "State that AI techniques help advance AI capabilities, particularly through machine learning models."
+    }
+   ],
+   "modelAnswer": [
+    "AI involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence.",
+    "These techniques advance the capabilities of AI, particularly through machine learning models."
+   ]
+  },
+  {
+   "text": "Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+   "finalAnswer": "Explainable (whitebox) algorithms have a transparent and understandable decision-making process. Unexplainable (blackbox) algorithms have a decision-making process that is not easily interpretable. Decision trees, linear regression and rule-based systems are examples of explainable algorithms; neural networks and deep learning models are examples of unexplainable algorithms.",
+   "marks": 8,
+   "source": "Long 10.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "whitebox",
+       "transparent",
+       "understandable"
+      ]
+     ],
+     "marks": 2,
+     "why": "The defining feature of whitebox models is the interpretability of their decisions.",
+     "description": "Defines explainable (whitebox) algorithms as transparent and understandable.",
+     "how": "Give the whitebox definition using transparency and understandability."
+    },
+    {
+     "accept": [
+      [
+       "blackbox",
+       "not easily interpretable"
+      ],
+      [
+       "blackbox",
+       "difficult",
+       "understand"
+      ]
+     ],
+     "marks": 2,
+     "why": "The main difference is whether the decision-making process can be understood.",
+     "description": "Defines unexplainable (blackbox) algorithms as not easily interpretable.",
+     "how": "Explain that the blackbox decision-making process is not easily interpreted or understood."
+    },
+    {
+     "accept": [
+      [
+       "decision trees",
+       "linear regression",
+       "rule-based systems"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct examples show understanding of which models the section classifies as whitebox.",
+     "description": "Gives examples of explainable algorithms.",
+     "how": "Name decision trees, linear regression, or rule-based systems as explainable examples."
+    },
+    {
+     "accept": [
+      [
+       "neural networks",
+       "deep learning"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct examples show understanding of which models the section classifies as blackbox.",
+     "description": "Gives examples of unexplainable algorithms.",
+     "how": "Name neural networks and deep learning models as unexplainable examples."
+    }
+   ],
+   "modelAnswer": [
+    "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable.",
+    "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable.",
+    "Examples of explainable algorithms include decision trees, linear regression and rule-based systems.",
+    "Examples of unexplainable algorithms include neural networks and deep learning models."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define AI or explain how AI techniques advance machine learning models. Use the section's exact key phrases where possible.",
+   "A long question may ask you to differentiate whitebox and blackbox models. State each definition separately, then give examples of each type.",
+   "For full marks, do not only list examples: explain that whitebox decisions are transparent and understandable, while blackbox decisions are not easily interpretable."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start with what AI involves using.",
+     "Finish by stating what kind of tasks machines can perform."
+    ],
+    "accept": [
+     [
+      "algorithms",
+      "techniques",
+      "machines",
+      "human intelligence"
+     ]
+    ],
+    "question": "Q10.1. Define Artificial Intelligence (AI).",
+    "solution": [
+     "Artificial Intelligence (AI) involves using algorithms and techniques",
+     "to enable machines to perform tasks that typically require human intelligence."
+    ],
+    "answer": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+   },
+   {
+    "hints": [
+     "Compare how understandable each type's decision-making process is.",
+     "Give examples of both types from the section."
+    ],
+    "accept": [
+     [
+      "whitebox",
+      "transparent",
+      "understandable",
+      "blackbox",
+      "not easily interpretable",
+      "decision trees",
+      "neural networks"
+     ],
+     [
+      "whitebox",
+      "transparent",
+      "understandable",
+      "blackbox",
+      "difficult",
+      "understand",
+      "decision trees",
+      "neural networks"
+     ]
+    ],
+    "question": "Q10.2. Differentiate between explainable (whitebox) and unexplainable (blackbox) AI models.",
+    "solution": [
+     "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable.",
+     "Examples include decision trees, linear regression and rule-based systems.",
+     "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable.",
+     "Examples include neural networks and deep learning models."
+    ],
+    "answer": "Whitebox algorithms have a transparent and understandable decision-making process; blackbox algorithms have a decision-making process that is not easily interpretable. Decision trees are whitebox examples, while neural networks are blackbox examples."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The decision tree begins by asking whether the animal has feathers.",
+     "text": "Has feathers?"
+    },
+    {
+     "why": "Following the True branch takes us to the next question in the tree.",
+     "text": "True → Can fly?"
+    },
+    {
+     "why": "Following the False branch from “Can fly?” reaches the final animal identification.",
+     "text": "False → Penguin"
+    }
+   ],
+   "question": "Use the decision tree in Figure 10.3 to identify an animal that has feathers but cannot fly.",
+   "answer": "Penguin"
+  },
+  "explain": [
+   {
+    "title": "AI algorithms",
+    "body": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence. This section focuses on how different algorithms make decisions."
+   },
+   {
+    "title": "Explainable (whitebox) algorithms",
+    "body": "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable. Decision trees follow questions to reach a result. Linear regression finds a line that best fits data points. Rule-based systems follow rules written by humans."
+   },
+   {
+    "title": "Unexplainable (blackbox) algorithms",
+    "body": "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable. Neural networks and deep learning models are examples."
+   }
+  ],
+  "mistakes": [
+   "Do not mix up the examples: decision trees are explainable; neural networks are given as blackbox examples.",
+   "Do not define the difference only by saying one model is more complex. The key difference is whether its decision-making process is understandable.",
+   "Do not describe linear regression as a sequence of questions; that is how a decision tree works.",
+   "When explaining a rule-based system, mention that humans write its if-then rules."
+  ]
+ }
+}

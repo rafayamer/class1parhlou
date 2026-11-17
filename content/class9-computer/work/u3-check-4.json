@@ -1,0 +1,116 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 1,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 1,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 2,
+   "id": "q4"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": true,
+   "id": "w0",
+   "myAnswer": "A Boolean function maps one or more binary inputs to a binary output. For example, F(A, B) = A + B."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "A truth table lists every possible combination of a logic function’s inputs and shows the corresponding output for each combination. It helps analyze and verify the function."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w2",
+   "myAnswer": "An analog signal varies continuously over a range of values. A digital signal has distinct, discrete values, usually represented by 0 and 1."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w3",
+   "myAnswer": "A NOT gate outputs the complement of its single input: it changes 0 to 1 and 1 to 0.\n\n| A | Output (A̅) |\n|---|---|\n| 0 | 1 |\n| 1 | 0 |"
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w4",
+   "myAnswer": "A Karnaugh map simplifies Boolean expressions by grouping adjacent 1s, producing an equivalent expression with fewer terms or variables."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w5",
+   "myAnswer": "Boolean functions describe how binary inputs are processed to produce binary outputs. They are used to design and control the logic circuits in computers."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w6",
+   "myAnswer": "To construct a truth table, list every possible input combination and evaluate the expression for each row. For F = A + B:\n\n| A | B | F |\n|---|---|---|\n| 0 | 0 | 0 |\n| 0 | 1 | 1 |\n| 1 | 0 | 1 |\n| 1 | 1 | 1 |"
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w7",
+   "myAnswer": "The duality principle says that a Boolean identity remains valid when + and · are interchanged and 0 and 1 are interchanged. For example, the dual of A · 0 = 0 is A + 1 = 1."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w8",
+   "myAnswer": "A half-adder adds two bits, A and B, and produces Sum (S) and Carry (C). A full-adder adds three bits, A, B, and carry-in (Cin), and produces Sum (S) and carry-out (Cout).\n\nHalf-adder expressions: S = A ⊕ B; C = A · B.\n\n| A | B | S | C |\n|---|---|---|---|\n| 0 | 0 | 0 | 0 |\n| 0 | 1 | 1 | 0 |\n| 1 | 0 | 1 | 0 |\n| 1 | 1 | 0 | 1 |\n\nFull-adder expressions: S = A ⊕ B ⊕ Cin; Cout = A · B + A · Cin + B · Cin.\n\n| A | B | Cin | S | Cout |\n|---|---|---|---|---|\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 0 | 1 | 1 | 0 |\n| 0 | 1 | 0 | 1 | 0 |\n| 0 | 1 | 1 | 0 | 1 |\n| 1 | 0 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 0 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 1 |\n\nCircuit diagrams (gate connections):\nHalf-adder: A, B → XOR → S; A, B → AND → C.\nFull-adder: A, B, Cin → XOR combination → S; A·B, A·Cin, and B·Cin → OR → Cout."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w9",
+   "myAnswer": "For F(A, B, C) = Σm(1, 3, 5, 7):\n1. Draw a three-variable Karnaugh map, with A as the row variable and BC columns in Gray-code order 00, 01, 11, 10.\n2. Place 1s in cells m1, m3, m5, and m7; place 0s in the other cells.\n3. These four 1s form one adjacent group of four (the cells in columns 01 and 11 across both rows).\n4. Within this group, A and B vary, while C is always 1. The varying variables cancel, leaving F = C."
+  },
+  {
+   "candidateEquivalent": false,
+   "id": "w10",
+   "myAnswer": "To add two 4-bit numbers A3A2A1A0 and B3B2B1B0 with no input carry, use one half-adder at the least significant bit and three full-adders for the remaining positions. Connect each stage’s carry output to the next stage’s carry input.\n\nAt bit 0 (half-adder): S0 = A0 ⊕ B0; C1 = A0 · B0.\nAt bits i = 1, 2, 3 (full-adders): Si = Ai ⊕ Bi ⊕ Ci; Ci+1 = Ai·Bi + Ai·Ci + Bi·Ci. The final carry C4 is the most significant carry-out.\n\nHalf-adder truth table:\n| A | B | S | C |\n|---|---|---|---|\n| 0 | 0 | 0 | 0 |\n| 0 | 1 | 1 | 0 |\n| 1 | 0 | 1 | 0 |\n| 1 | 1 | 0 | 1 |\n\nFull-adder truth table:\n| A | B | Cin | S | Cout |\n|---|---|---|---|---|\n| 0 | 0 | 0 | 0 | 0 |\n| 0 | 0 | 1 | 1 | 0 |\n| 0 | 1 | 0 | 1 | 0 |\n| 0 | 1 | 1 | 0 | 1 |\n| 1 | 0 | 0 | 1 | 0 |\n| 1 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 0 | 0 | 1 |\n| 1 | 1 | 1 | 1 | 1 |\n\nRipple-carry circuit diagram (connections):\nA0, B0 → [HA] → S0, C1\nA1, B1, C1 → [FA] → S1, C2\nA2, B2, C2 → [FA] → S2, C3\nA3, B3, C3 → [FA] → S3, C4"
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w11",
+   "myAnswer": "F(A, B) = A · B + A · B̅ = A · (B + B̅) = A · 1 = A."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w12",
+   "myAnswer": "F = (A + B)̅ + (A · C)̅ = A̅ · B̅ + A̅ + C̅ = A̅ + C̅."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w13",
+   "myAnswer": "(A + B)̅ · (A + B) = 0, since a Boolean expression ANDed with its complement equals 0."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w14",
+   "myAnswer": "(A + B̅) · (A + B) = A + (B̅ · B) = A."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w15",
+   "myAnswer": "A + A̅ · (B̅ + C) = A + B̅ + C, using A + A̅X = A + X."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w16",
+   "myAnswer": "(A · B)̅ + A · B̅ = A̅ + B̅ + A · B̅ = A̅ + B̅."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w17",
+   "myAnswer": "A · B + A̅ · B̅ (the XNOR function)."
+  }
+ ]
+}

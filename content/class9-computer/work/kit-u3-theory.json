@@ -1,0 +1,272 @@
+{
+ "items": [
+  {
+   "id": "0",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "binary",
+       "inputs"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises that a Boolean function has binary inputs.",
+     "description": "Binary inputs",
+     "how": "Award 1 mark for stating that the function has one or more binary inputs."
+    },
+    {
+     "accept": [
+      [
+       "single",
+       "binary",
+       "output"
+      ],
+      [
+       "0",
+       "1",
+       "output"
+      ],
+      [
+       "False",
+       "True",
+       "output"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the single binary output and its possible values.",
+     "description": "Single binary output",
+     "how": "Award 1 mark for stating that it produces a single binary output; the values may be given as 0 and 1 or False and True."
+    }
+   ],
+   "modelAnswer": [
+    "A Boolean function is a function which has a one or more binary inputs and produces a single binary output.",
+    "The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+   ]
+  },
+  {
+   "id": "1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "truth table",
+       "AND",
+       "functionality"
+      ],
+      [
+       "truth table",
+       "AND",
+       "operation"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the truth table demonstrates the AND operation's functionality.",
+     "description": "Demonstrates AND functionality",
+     "how": "Award 1 mark for linking a truth table to demonstrating the functionality of the AND operation."
+    },
+    {
+     "accept": [
+      [
+       "all",
+       "possibilities",
+       "input"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes all possible input combinations.",
+     "description": "All input possibilities",
+     "how": "Award 1 mark for stating that the table shows all possibilities of the input variables."
+    }
+   ],
+   "modelAnswer": [
+    "A truth table is useful in demonstrating the functionality of the AND operation with all possibilities of the input variables."
+   ]
+  },
+  {
+   "id": "2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "analog",
+       "smoothly",
+       "continuously"
+      ],
+      [
+       "analog",
+       "any",
+       "value",
+       "range"
+      ]
+     ],
+     "marks": 1,
+     "why": "Describes analog signals as continuously varying or able to take any value in a range.",
+     "description": "Analog signals vary continuously",
+     "how": "Award 1 mark for stating that analog signals change smoothly and continuously over time, or can have any value within a given range."
+    },
+    {
+     "accept": [
+      [
+       "digital",
+       "two",
+       "values",
+       "0",
+       "1"
+      ],
+      [
+       "digital",
+       "only",
+       "0",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Distinguishes digital signals by their two possible values.",
+     "description": "Digital signals have two values",
+     "how": "Award 1 mark for stating that digital signals have only the values 0 and 1."
+    }
+   ],
+   "modelAnswer": [
+    "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range.",
+    "Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+   ]
+  },
+  {
+   "id": "3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "branch",
+       "mathematics",
+       "logic"
+      ],
+      [
+       "branch",
+       "mathematics",
+       "symbolic computation"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines Boolean algebra as mathematics concerned with logic or symbolic computation.",
+     "description": "Branch of mathematics",
+     "how": "Award 1 mark for identifying Boolean algebra as a branch of mathematics related to logic or symbolic computation."
+    },
+    {
+     "accept": [
+      [
+       "True",
+       "False",
+       "digital circuits",
+       "analysis",
+       "design"
+      ],
+      [
+       "0",
+       "1",
+       "digital circuits",
+       "analysis",
+       "design"
+      ]
+     ],
+     "marks": 1,
+     "why": "States its two values and its importance as a basis for digital-circuit analysis and design.",
+     "description": "Values and digital-circuit basis",
+     "how": "Award 1 mark for mentioning True and False (or 0 and 1) and that Boolean algebra is the basis for analysing and designing digital circuits."
+    }
+   ],
+   "modelAnswer": [
+    "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False.",
+    "It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+   ]
+  },
+  {
+   "id": "4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ALU",
+       "CPU",
+       "addition"
+      ],
+      [
+       "ALU",
+       "CPU",
+       "subtraction"
+      ],
+      [
+       "ALU",
+       "CPU",
+       "multiplication"
+      ],
+      [
+       "ALU",
+       "CPU",
+       "division"
+      ],
+      [
+       "Arithmetical Logic Units",
+       "CPU",
+       "addition"
+      ],
+      [
+       "Arithmetical Logic Units",
+       "CPU",
+       "subtraction"
+      ],
+      [
+       "Arithmetical Logic Units",
+       "CPU",
+       "multiplication"
+      ],
+      [
+       "Arithmetical Logic Units",
+       "CPU",
+       "division"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the use of Boolean functions in CPU ALUs for arithmetic operations.",
+     "description": "ALU arithmetic operations",
+     "how": "Award 1 mark for stating that Boolean functions are used in CPU ALUs for at least one arithmetic operation."
+    },
+    {
+     "accept": [
+      [
+       "binary",
+       "memory",
+       "storage",
+       "data"
+      ],
+      [
+       "binary",
+       "memory",
+       "storage",
+       "retrieval"
+      ],
+      [
+       "control",
+       "system",
+       "operation"
+      ],
+      [
+       "co-ordinated",
+       "system",
+       "operation"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives another use: handling binary data in memory or storage, or controlling system operation.",
+     "description": "Data handling or system control",
+     "how": "Award 1 mark for stating that Boolean functions process binary data in memory or storage, or control parts of the system's operation."
+    }
+   ],
+   "modelAnswer": [
+    "Boolean functions are used in Arithmetical Logic Units (ALUs) of CPUs to perform operations like addition, subtraction, multiplication, and even division. Boolean functions are used to process binary data in memory and storage devices, ensuring efficient data manipulation and retrieval.",
+    "Boolean functions are applied in computers to control various parts of the system's operation to function in co-ordinated manner."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,614 @@
+{
+ "note": {
+  "explanation": "HTML content is the information people read or interact with on a web page. For example, a paragraph uses `<p>...</p>`, and a link uses `<a href=\"address\">link text</a>`.",
+  "examples": [
+   "`<p>Welcome to my page.</p>`",
+   "`<a href=\"https://www.example.com\">Visit Example.com</a>`"
+  ],
+  "checkAnswer": "Use `<ul>` for a bulleted list and `<ol>` for a numbered list; put each item inside `<li>` tags.",
+  "keywords": [
+   "HTML content",
+   "heading",
+   "paragraph",
+   "hyperlink",
+   "image",
+   "list",
+   "table",
+   "comment"
+  ],
+  "simple": "HTML content is what a web page shows people. Tags tell the browser what kind of content each part is.",
+  "checkQuestion": "Which tags create a numbered list, and what tag wraps each list item?",
+  "title": "Creating Content with HTML",
+  "steps": [
+   "Use `<h1>` to `<h6>` for headings, from the main title to less important subheadings.",
+   "Put paragraph text between `<p>` and `</p>`.",
+   "Create a link with `<a href=\"address\">link text</a>`.",
+   "Add an image with `<img src=\"image.jpg\" alt=\"A description of the image\">`.",
+   "Use `<ul>` for a bulleted list or `<ol>` for a numbered list, with each item inside `<li>` tags.",
+   "Create a table with `<table>`, rows with `<tr>`, headings with `<th>`, and data cells with `<td>`. Comments go between `<!--` and `-->`."
+  ],
+  "answer": "HTML content is the information on a web page that users read and interact with, such as text, images, videos, links, and other elements.",
+  "checkAccept": [
+   [
+    "information",
+    "web page"
+   ],
+   [
+    "text",
+    "images",
+    "links"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "`<h1>`",
+    "`<p>`",
+    "`<a>`",
+    "`<li>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which tag is typically used for the main title of a web page?",
+   "rationales": [
+    "Correct: `<h1>` is typically used for the main title of the page.",
+    "Incorrect: `<p>` marks a paragraph, not the main heading.",
+    "Incorrect: `<a>` creates a link.",
+    "Incorrect: `<li>` marks an item in a list."
+   ]
+  },
+  {
+   "options": [
+    "`<p>`",
+    "`<tr>`",
+    "`<img>`",
+    "`<ul>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which HTML tag starts a paragraph?",
+   "rationales": [
+    "Correct: A paragraph starts with `<p>` and ends with `</p>`.",
+    "Incorrect: `<tr>` defines a table row.",
+    "Incorrect: `<img>` adds an image.",
+    "Incorrect: `<ul>` creates an unordered list."
+   ]
+  },
+  {
+   "options": [
+    "`<a href=\"address\">link text</a>`",
+    "`<link>link text</link>`",
+    "`<href=\"address\">link text</href>`",
+    "`<url>link text</url>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which code correctly creates a link to another web page?",
+   "rationales": [
+    "Correct: The `<a>` tag creates the link, and `href` gives its address.",
+    "Incorrect: `<link>` is not the link syntax shown for clickable page content.",
+    "Incorrect: `href` is an attribute, not an HTML tag.",
+    "Incorrect: `<url>` is not the tag used to create a hyperlink."
+   ]
+  },
+  {
+   "options": [
+    "`<img src=\"photo.jpg\" alt=\"A photo\">`",
+    "`<image href=\"photo.jpg\">`",
+    "`<img>photo.jpg</img>`",
+    "`<src=\"photo.jpg\" alt=\"A photo\">`"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which code adds an image and provides alternate text?",
+   "rationales": [
+    "Correct: `<img>` adds the image, while `src` and `alt` provide its file and description.",
+    "Incorrect: The section uses `<img>`, not `<image>`, and `href` is used for links.",
+    "Incorrect: The shown image syntax uses `src` and `alt` attributes, not image text between tags.",
+    "Incorrect: `src` is an attribute and must be used inside an HTML tag."
+   ]
+  },
+  {
+   "options": [
+    "`<ul>`",
+    "`<ol>`",
+    "`<li>`",
+    "`<table>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which tag creates a numbered list?",
+   "rationales": [
+    "Incorrect: `<ul>` creates a bulleted list.",
+    "Correct: `<ol>` creates an ordered, numbered list.",
+    "Incorrect: `<li>` marks an item inside a list.",
+    "Incorrect: `<table>` creates a table."
+   ]
+  },
+  {
+   "options": [
+    "`<td>`",
+    "`<th>`",
+    "`<tr>`",
+    "`<table>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which tag defines a row in an HTML table?",
+   "rationales": [
+    "Incorrect: `<td>` defines a data cell in a row.",
+    "Incorrect: `<th>` defines a table heading cell.",
+    "Correct: `<tr>` defines a table row.",
+    "Incorrect: `<table>` creates the table itself, not an individual row."
+   ]
+  },
+  {
+   "options": [
+    "`<!-- note -->`",
+    "`// note`",
+    "`/* note */`",
+    "`<comment>note</comment>`"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which syntax creates an HTML comment that is not rendered by the browser?",
+   "rationales": [
+    "Correct: HTML comments begin with `<!--` and end with `-->`.",
+    "Incorrect: `//` is not the HTML comment syntax in this section.",
+    "Incorrect: `/* ... */` is not the HTML comment syntax in this section.",
+    "Incorrect: `<comment>` is not the comment syntax shown for HTML."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Here is an example of how different heading levels can be used to organize content in a hierarchical structure:",
+   "finalAnswer": "HTML using `<h1>`, `<h2>`, and `<h3>` headings with paragraphs, as shown in the model answer.",
+   "marks": 8,
+   "source": "Example 8.5.1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<h1>",
+       "Main Title (h1)"
+      ],
+      [
+       "<p>This is the main title of the page.</p>"
+      ]
+     ],
+     "marks": 3,
+     "why": "The main heading and its paragraph show the top level of the content structure.",
+     "description": "Correctly writes the main heading and paragraph.",
+     "how": "Use `<h1>` for the main title and put its text in a paragraph."
+    },
+    {
+     "accept": [
+      [
+       "<h2>",
+       "Subheading 1 (h2)"
+      ],
+      [
+       "<p>This is a subheading under the main title.</p>"
+      ]
+     ],
+     "marks": 3,
+     "why": "The next heading level shows a subheading beneath the main title.",
+     "description": "Correctly writes the second-level heading and paragraph.",
+     "how": "Use `<h2>` for the subheading and include its paragraph."
+    },
+    {
+     "accept": [
+      [
+       "<h3>",
+       "Subheading 2 (h3)"
+      ],
+      [
+       "This is a subheading under Subheading 1."
+      ]
+     ],
+     "marks": 1,
+     "why": "A further heading level demonstrates the hierarchy continuing down the page.",
+     "description": "Correctly includes the third-level heading and its paragraph.",
+     "how": "Use `<h3>` beneath the `<h2>` section."
+    },
+    {
+     "accept": [
+      [
+       "</html>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The HTML document should be properly closed.",
+     "description": "Gives a complete HTML document ending.",
+     "how": "Close the document with `</html>`. This is the final marking point."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "    <head>",
+    "        <title>Importance of Headings in HTML</title>",
+    "    </head>",
+    "<body>",
+    "        <h1>Main Title (h1)</h1>",
+    "        <p>This is the main title of the page.</p>",
+    "        <h2>Subheading 1 (h2)</h2>",
+    "        <p>This is a subheading under the main title.</p>",
+    "        <h3>Subheading 2 (h3)</h3>",
+    "        <p>This is a subheading under Subheading 1.</p>",
+    "    </body>",
+    "</html>"
+   ]
+  },
+  {
+   "text": "Explain the difference between an ordered list and an unordered list in HTML.",
+   "finalAnswer": "An ordered list is numbered and uses `<ol>`; an unordered list is bulleted and uses `<ul>`. Both use `<li>` for each item.",
+   "marks": 2,
+   "source": "Short 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ordered",
+       "numbered",
+       "<ol>"
+      ],
+      [
+       "unordered",
+       "bulleted",
+       "<ul>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must distinguish the numbering or bullets and the corresponding list tags.",
+     "description": "States the difference and identifies both list tags.",
+     "how": "Say that `<ol>` makes a numbered list and `<ul>` makes a bulleted list."
+    },
+    {
+     "accept": [
+      [
+       "<li>"
+      ]
+     ],
+     "marks": 1,
+     "why": "Both types of list use list-item tags for their entries.",
+     "description": "Identifies the tag used for each item.",
+     "how": "Mention that each entry is placed inside `<li>` tags. This is the final marking point."
+    }
+   ],
+   "modelAnswer": [
+    "An ordered list is numbered and is created using `<ol>`.",
+    "An unordered list is bulleted and is created using `<ul>`.",
+    "In both lists, each item is placed inside `<li>` tags."
+   ]
+  },
+  {
+   "text": "Describe the syntax for creating a hyperlink in HTML.",
+   "finalAnswer": "`<a href=\"URL\">link text</a>` creates a hyperlink; `href` gives the destination and the text between the tags is clickable.",
+   "marks": 2,
+   "source": "Short 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<a",
+       "href="
+      ]
+     ],
+     "marks": 1,
+     "why": "The `<a>` tag and its `href` attribute form the essential link syntax.",
+     "description": "Shows the anchor tag and destination attribute.",
+     "how": "Write an opening `<a>` tag with an `href` attribute."
+    },
+    {
+     "accept": [
+      [
+       "</a>",
+       "link text"
+      ]
+     ],
+     "marks": 1,
+     "why": "The link needs clickable text and a closing anchor tag.",
+     "description": "Includes link text and closes the anchor element.",
+     "how": "Put the clickable text between the opening and closing `<a>` tags. This is the final marking point."
+    }
+   ],
+   "modelAnswer": [
+    "Use the `<a>` tag to create a hyperlink.",
+    "Write the destination in its `href` attribute and the clickable words between the tags: `<a href=\"https://www.example.com\">Visit Example.com</a>`."
+   ]
+  },
+  {
+   "text": "What is the use of the `<table>` tag in HTML?",
+   "finalAnswer": "The `<table>` tag creates a table to display data in a structured format; rows use `<tr>`, heading cells use `<th>`, and data cells use `<td>`.",
+   "marks": 2,
+   "source": "Short 8.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<table>",
+       "structured",
+       "data"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose of the table is to display data in an organized structure.",
+     "description": "Explains the use of the table tag.",
+     "how": "State that `<table>` displays data in a structured format."
+    },
+    {
+     "accept": [
+      [
+       "<tr>",
+       "<td>"
+      ],
+      [
+       "<tr>",
+       "<th>"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying the row and cell tags shows how the table is structured.",
+     "description": "Names the row and cell tags used inside a table.",
+     "how": "Mention `<tr>` for rows and `<td>` for data cells, or `<th>` for headings. This is the final marking point."
+    }
+   ],
+   "modelAnswer": [
+    "The `<table>` tag is used to display data in a structured format.",
+    "A table contains rows defined by `<tr>` tags, with headings in `<th>` tags and data cells in `<td>` tags."
+   ]
+  },
+  {
+   "text": "Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+   "finalAnswer": "A basic HTML page containing a header, paragraph, image, and hyperlink is shown in the model answer.",
+   "marks": 8,
+   "source": "Long 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<!DOCTYPE html>",
+       "<html>",
+       "<head>",
+       "<body>"
+      ]
+     ],
+     "marks": 2,
+     "why": "A valid page needs the basic document structure.",
+     "description": "Sets up the HTML document and body.",
+     "how": "Include the doctype, `<html>`, `<head>`, and `<body>`."
+    },
+    {
+     "accept": [
+      [
+       "<header>",
+       "</header>"
+      ],
+      [
+       "<h1>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The page must include a header containing its heading.",
+     "description": "Adds a visible page header.",
+     "how": "Use a `<header>` element and place a heading inside it."
+    },
+    {
+     "accept": [
+      [
+       "<p>",
+       "</p>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The requested page needs paragraph content.",
+     "description": "Adds a paragraph.",
+     "how": "Put some text inside `<p>` tags."
+    },
+    {
+     "accept": [
+      [
+       "<img",
+       "src=",
+       "alt="
+      ]
+     ],
+     "marks": 1,
+     "why": "The image element and its source are needed, and alternate text describes it.",
+     "description": "Adds an image with source and alternate text.",
+     "how": "Use `<img>` with `src` and `alt` attributes."
+    },
+    {
+     "accept": [
+      [
+       "<a",
+       "href=",
+       "</a>"
+      ],
+      [
+       "</body>",
+       "</html>"
+      ]
+     ],
+     "marks": 2,
+     "why": "A working hyperlink and a properly closed page complete the requested example.",
+     "description": "Adds a link and closes the document.",
+     "how": "Use an anchor with `href`, then close the body and HTML document. This is the final marking point."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "    <title>My Web Page</title>",
+    "</head>",
+    "<body>",
+    "    <header>",
+    "        <h1>Welcome to My Web Page</h1>",
+    "    </header>",
+    "    <p>This is a paragraph on my web page.</p>",
+    "    <img src=\"image.jpg\" alt=\"A description of the image\">",
+    "    <a href=\"https://www.example.com\">Visit Example.com</a>",
+    "</body>",
+    "</html>"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask you to state the purpose of a tag or distinguish two content types, such as ordered and unordered lists.",
+   "For code questions, earn marks by using the correct opening and closing tags and placing the content or attributes correctly.",
+   "For a table, identify `<table>`, `<tr>`, `<th>`, and `<td>` and show how rows and cells are arranged.",
+   "When writing a link or image, include the key attributes: `href` for a link, and `src` plus `alt` for an image.",
+   "In a longer HTML-writing answer, show the page structure and include every requested element; close the tags and document. "
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about whether the items are numbered or shown with bullets.",
+     "Name the tag for each list type, then say what tag contains each item."
+    ],
+    "accept": [
+     [
+      "ordered",
+      "numbered",
+      "<ol>"
+     ],
+     [
+      "unordered",
+      "bulleted",
+      "<ul>"
+     ],
+     [
+      "<li>"
+     ]
+    ],
+    "question": "Explain the difference between an ordered list and an unordered list in HTML.",
+    "solution": [
+     "An ordered list is numbered and is created using `<ol>`.",
+     "An unordered list is bulleted and is created using `<ul>`.",
+     "In both lists, each item is placed inside `<li>` tags."
+    ],
+    "answer": "An ordered list is numbered and uses `<ol>`; an unordered list is bulleted and uses `<ul>`. Both use `<li>` for each item."
+   },
+   {
+    "hints": [
+     "Which tag makes a clickable link?",
+     "Write the destination in `href`, place the clickable words between the tags, and close the anchor tag."
+    ],
+    "accept": [
+     [
+      "<a",
+      "href=",
+      "</a>"
+     ]
+    ],
+    "question": "Describe the syntax for creating a hyperlink in HTML.",
+    "solution": [
+     "Use the `<a>` tag to create a hyperlink.",
+     "Write the destination in its `href` attribute and the clickable words between the tags: `<a href=\"https://www.example.com\">Visit Example.com</a>`. "
+    ],
+    "answer": "`<a href=\"URL\">link text</a>` creates a hyperlink; `href` gives the destination and the text between the tags is clickable."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This declares an HTML document.",
+     "text": "<!DOCTYPE html>"
+    },
+    {
+     "why": "This opens the HTML document.",
+     "text": "<html>"
+    },
+    {
+     "why": "The head contains information about the page.",
+     "text": "    <head>"
+    },
+    {
+     "why": "The title is the page title shown by the browser.",
+     "text": "        <title>Importance of Headings in HTML</title>"
+    },
+    {
+     "why": "This closes the head section.",
+     "text": "    </head>"
+    },
+    {
+     "why": "The body contains the page content users see.",
+     "text": "<body>"
+    },
+    {
+     "why": "`<h1>` marks the main title.",
+     "text": "        <h1>Main Title (h1)</h1>"
+    },
+    {
+     "why": "A paragraph gives text under the main title.",
+     "text": "        <p>This is the main title of the page.</p>"
+    },
+    {
+     "why": "`<h2>` introduces a subheading below the main title.",
+     "text": "        <h2>Subheading 1 (h2)</h2>"
+    },
+    {
+     "why": "This paragraph explains the second-level heading.",
+     "text": "        <p>This is a subheading under the main title.</p>"
+    },
+    {
+     "why": "`<h3>` shows a further level in the content hierarchy.",
+     "text": "        <h3>Subheading 2 (h3)</h3>"
+    },
+    {
+     "why": "This paragraph belongs to the third-level heading.",
+     "text": "        <p>This is a subheading under Subheading 1.</p>"
+    },
+    {
+     "why": "This closes the visible content section.",
+     "text": "    </body>"
+    },
+    {
+     "why": "This closes the HTML document.",
+     "text": "</html>"
+    }
+   ],
+   "question": "Here is an example of how different heading levels can be used to organize content in a hierarchical structure:",
+   "answer": "The page uses `<h1>` for the main title, `<h2>` for its subheading, and `<h3>` for a subheading under that, with paragraphs under each heading."
+  },
+  "explain": [
+   {
+    "title": "Headings show content hierarchy",
+    "body": "Headings in HTML, ranging from `<h1>` to `<h6>`, are used to define the structure and hierarchy of content on a web page. Use `<h1>` for the main title and lower levels for subheadings. This helps organize content and helps search engines understand the page."
+   },
+   {
+    "title": "Paragraphs separate text",
+    "body": "Paragraphs in HTML are used to organize and separate text into readable sections. Each paragraph creates a block of text with space above and below it, making the content easier to read. Paragraphs starts with the `<p>` tag and it ends with `</p>`."
+   },
+   {
+    "title": "Links connect pages",
+    "body": "Links in HTML are used to connect one web page to another. They are created using the `<a>` tag. The `href` attribute gives the destination. A `mailto:` link opens an email program."
+   },
+   {
+    "title": "Images need useful alternate text",
+    "body": "Images are added using the `<img>` tag. The `src` attribute identifies the image file, and `alt` provides alternate text so visually impaired users can understand what the image represents."
+   },
+   {
+    "title": "Lists and tables organize information",
+    "body": "Use `<ul>` for an unordered, bulleted list and `<ol>` for an ordered, numbered list. Both use `<li>` for list items. A table uses `<table>` to contain `<tr>` rows, `<th>` headings, and `<td>` data cells."
+   },
+   {
+    "title": "Comments are not displayed",
+    "body": "HTML comments begin with `<!--` and end with `-->`. Text inside these markers is treated as a comment and is not rendered by the browser."
+   }
+  ],
+  "mistakes": [
+   "Using `<ul>` when a numbered list is needed, or `<ol>` when a bulleted list is needed.",
+   "Leaving out a closing tag such as `</p>` or `</a>` when the element requires one.",
+   "Putting a link destination outside the `href` attribute or forgetting the clickable link text.",
+   "Adding an image without the `src` attribute or useful `alt` text.",
+   "Mixing up table rows and cells: `<tr>` is a row, `<th>` is a heading cell, and `<td>` is a data cell.",
+   "Writing an HTML comment with the wrong markers or expecting its text to appear on the page."
+  ]
+ }
+}

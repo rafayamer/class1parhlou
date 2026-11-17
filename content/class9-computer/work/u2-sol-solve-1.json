@@ -1,0 +1,89 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "6:0",
+   "figure": "",
+   "steps": [
+    "ASCII provides a standard way to represent text characters as binary numbers.",
+    "This allows computers to store and exchange text."
+   ],
+   "finalAnswer": "ASCII encodes text characters as binary numbers so computers can store and exchange text."
+  },
+  {
+   "accept": [],
+   "id": "6:1",
+   "figure": "",
+   "steps": [
+    "ASCII represents a limited set of characters, mainly English letters, digits and symbols.",
+    "Unicode can represent characters and symbols from many languages and writing systems.",
+    "Unicode uses unique code points for characters; ASCII uses a smaller set of codes."
+   ],
+   "finalAnswer": "ASCII has a limited character set, while Unicode represents characters from many languages and writing systems."
+  },
+  {
+   "accept": [],
+   "id": "6:2",
+   "figure": "",
+   "steps": [
+    "Unicode assigns a unique code point to each character.",
+    "This lets characters from different languages be represented and processed consistently by computers."
+   ],
+   "finalAnswer": "Unicode represents characters from different languages by assigning each one a unique code point."
+  },
+  {
+   "accept": [],
+   "id": "6:3",
+   "figure": "",
+   "steps": [
+    "Given: 2 bytes = 16 bits.",
+    "For an unsigned integer, the range is from 0 to 2ⁿ − 1, where n is the number of bits.",
+    "Range = 0 to 2¹⁶ − 1 = 0 to 65,535."
+   ],
+   "finalAnswer": "0 to 65,535"
+  },
+  {
+   "accept": [],
+   "id": "6:4",
+   "figure": "",
+   "steps": [
+    "A computer commonly represents a negative integer using two’s complement.",
+    "To form the two’s-complement representation, write the positive value in binary, invert each bit, and add 1.",
+    "In a fixed number of bits, the leftmost bit indicates the sign: 0 for a non-negative value and 1 for a negative value."
+   ],
+   "finalAnswer": "Negative integers are commonly represented using two’s complement: invert the bits of the positive value and add 1."
+  },
+  {
+   "accept": [],
+   "id": "6:5",
+   "figure": "",
+   "steps": [
+    "Unsigned integers represent only zero and positive whole numbers.",
+    "Because no bit is used to represent a sign, all the bits can represent the value, allowing a larger maximum positive value for the same number of bits."
+   ],
+   "finalAnswer": "Unsigned integers provide a larger range of non-negative values for the same number of bits."
+  },
+  {
+   "accept": [],
+   "id": "6:6",
+   "figure": "",
+   "steps": [
+    "With n bits, there are 2ⁿ possible binary patterns.",
+    "For unsigned integers, the range is 0 to 2ⁿ − 1.",
+    "For signed integers using two’s complement, the range is −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1.",
+    "Therefore, increasing the number of bits increases the range of integer values."
+   ],
+   "finalAnswer": "More bits allow a computer to represent a wider range of integer values."
+  },
+  {
+   "accept": [],
+   "id": "6:7",
+   "figure": "",
+   "steps": [
+    "Whole numbers are suitable for quantities such as counts that cannot be negative.",
+    "Using unsigned integers to store such quantities avoids representing a sign and allows a greater positive range for the same number of bits."
+   ],
+   "finalAnswer": "Unsigned whole numbers are used for non-negative quantities because they represent counts and provide a larger positive range."
+  }
+ ]
+}

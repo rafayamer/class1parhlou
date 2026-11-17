@@ -1,0 +1,3526 @@
+{
+ "chapter": {
+  "id": "cs-u-3",
+  "number": 3,
+  "title": "Digital Systems and Logic Design",
+  "status": "SAMPLE_UNREVIEWED",
+  "modules": [
+   {
+    "id": "cs-m-3-1",
+    "position": 1,
+    "title": "3.1 Basics of Digital Systems",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.1, pages 49–52",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.1 (pages 49–52) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-3-1-1",
+      "text": "Sound Waves\n\nLet us consider a situation where one person is speaking into a microphone while the other person is receiving sound through speakers as illustrated in the figure 3.1.",
+      "marks": 8,
+      "modelAnswer": [
+       "A person speaking into a microphone produces sound waves, which are analog signals.",
+       "The microphone captures these sound waves.",
+       "An ADC converts the analog signal into digital data.",
+       "The digital data can be transmitted over long distances with little or no degradation in quality.",
+       "At the receiver, a DAC converts the digital signals back into analog signals.",
+       "The speakers translate these analog signals into sound waves.",
+       "The listener hears the other person's voice."
+      ],
+      "followUp": "Q3.3. Explain the difference between analog and digital signals.",
+      "noteId": "cs-n-3-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Identify the voice and microphone input as sound waves or an analog signal.",
+        "marks": 2,
+        "why": "The answer must identify the voice captured by the microphone as an analog signal.",
+        "how": "State that speaking produces sound waves and that these are analog signals captured by the microphone.",
+        "accept": [
+         [
+          "microphone",
+          "analog"
+         ],
+         [
+          "sound waves"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Explain the microphone-side conversion.",
+        "marks": 2,
+        "why": "The conversion at the sending end is a key part of the signal path.",
+        "how": "State that an ADC converts the analog sound signal into digital data.",
+        "accept": [
+         [
+          "ADC",
+          "digital"
+         ],
+         [
+          "analog to digital"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Describe the transmission of the digital data.",
+        "marks": 2,
+        "why": "The digital data is transmitted to the receiver with little or no degradation.",
+        "how": "Mention that the digital data can be transmitted over long distances with little or no degradation in quality.",
+        "accept": [
+         [
+          "transmitted",
+          "long distances"
+         ],
+         [
+          "digital data",
+          "long distances"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Explain the receiver-side conversion and output.",
+        "marks": 2,
+        "why": "The answer must complete the process at the receiving end and give the correct outcome.",
+        "how": "State that a DAC changes the digital signal back into an analog signal, which the speakers turn into sound waves.",
+        "accept": [
+         [
+          "DAC",
+          "speakers",
+          "analog"
+         ],
+         [
+          "digital to analog",
+          "speakers"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.1"
+     },
+     {
+      "id": "cs-w-3-1-2",
+      "text": "Q3.3. Explain the difference between analog and digital signals.",
+      "marks": 2,
+      "modelAnswer": [
+       "Analog signals change with time smoothly and continuously and can have any value within a given range.",
+       "Digital signals have only two values, 0 and 1."
+      ],
+      "followUp": "Q3.3. Explain the difference between analog and digital signals.",
+      "noteId": "cs-n-3-1",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Describe analog signals.",
+        "marks": 1,
+        "why": "This states the key property that distinguishes an analog signal.",
+        "how": "Say that analog signals change continuously and can have any value within a range.",
+        "accept": [
+         [
+          "continuously",
+          "any value"
+         ],
+         [
+          "continuous",
+          "range"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the final distinction for digital signals.",
+        "marks": 1,
+        "why": "This gives the defining values used by a digital signal and completes the comparison.",
+        "how": "State that digital signals have only two values, 0 and 1.",
+        "accept": [
+         [
+          "0",
+          "1"
+         ],
+         [
+          "two values"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 3.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "A short question may ask you to compare analog and digital signals. State that analog signals are continuous and can have any value in a range, while digital signals have only 0 and 1.",
+      "Be ready to explain the direction of conversion: ADC changes analog to digital; DAC changes digital to analog.",
+      "For a microphone-and-speaker example, write the full signal path in order: sound waves, microphone, ADC, digital data, DAC, speaker, sound waves.",
+      "A question about logic levels may ask what the voltage states represent. Use the convention in your textbook: a higher voltage such as 5 volts represents 1, and a low voltage such as 0 volts represents 0."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Think about whether each type of signal changes continuously or uses separate values.",
+        "Include the possible values for a digital signal and the range of possible values for an analog signal."
+       ],
+       "accept": [
+        [
+         "analog",
+         "continuously",
+         "digital",
+         "0",
+         "1"
+        ],
+        [
+         "continuous",
+         "range",
+         "two values"
+        ]
+       ],
+       "question": "Q3.3. Explain the difference between analog and digital signals.",
+       "solution": [
+        "Analog signals change with time smoothly and continuously.",
+        "Analog signals can have any value within a given range.",
+        "Digital signals have only two values, 0 and 1."
+       ],
+       "answer": "Analog signals change smoothly and continuously and can have any value within a range; digital signals have only two values, 0 and 1."
+      },
+      {
+       "hints": [
+        "A truth table lists the possible input values.",
+        "It also shows the output for each input combination, so you can check how a logic operation behaves."
+       ],
+       "accept": [
+        [
+         "input combinations",
+         "output"
+        ],
+        [
+         "possible inputs",
+         "outputs"
+        ],
+        [
+         "truth table",
+         "logic operation"
+        ]
+       ],
+       "question": "Q3.2. What is the significance of the truth table in digital logic?",
+       "solution": [
+        "A truth table lists the possible input combinations for a digital logic operation.",
+        "It shows the output for each input combination.",
+        "It makes the behaviour of the logic operation clear."
+       ],
+       "answer": "A truth table shows the output of a digital logic operation for every possible input combination."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The microphone receives the speaker's voice as sound waves, which are analog signals.",
+        "text": "A person speaking into a microphone produces sound waves, which are analog signals."
+       },
+       {
+        "why": "The ADC changes the captured analog signal into a form a digital system can process.",
+        "text": "An ADC converts the analog sound signal into digital data."
+       },
+       {
+        "why": "Digital data can be sent over long distances with little or no loss of quality.",
+        "text": "The digital data can be transmitted over long distances with little or no degradation in quality."
+       },
+       {
+        "why": "A DAC changes the received digital signal back into a form that can be heard.",
+        "text": "At the receiver, a DAC converts the digital signals back into analog signals."
+       },
+       {
+        "why": "The speaker turns the analog signal into sound waves for the listener.",
+        "text": "The speakers translate these analog signals into sound waves."
+       }
+      ],
+      "question": "Let us consider a situation where one person is speaking into a microphone while the other person is receiving sound through speakers as illustrated in the figure 3.1.",
+      "answer": "The microphone captures sound as an analog signal. An ADC converts it into digital data for transmission. At the receiver, a DAC converts the digital data back into an analog signal, and the speakers produce sound waves."
+     },
+     "explain": [
+      {
+       "title": "Analog signals",
+       "body": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range. Examples include voice signal (speaking), body's temperature and radio-wave signals."
+      },
+      {
+       "title": "Digital signals",
+       "body": "Digital signals are the signals which have only two values that are in the form of '0' and '1'. These are utilized in digital electronics and computing systems."
+      },
+      {
+       "title": "ADC and DAC",
+       "body": "Analog to Digital Conversion (ADC): ADC is the conversion of analog signals into digital signals, which are discrete and can be easily processed by computerized devices like computers and smart phones. Digital to Analog Conversion (DAC): DAC is the conversion whereby analog signals are converted to digital signals, making it possible for human to perceive the information, for instance through speakers, as depicted in figure 3. 1."
+      },
+      {
+       "title": "Digital logic and logic levels",
+       "body": "Digital logic uses binary numbers, 0 and 1, to represent and manipulate information. In digital circuits, the two states are represented by different voltage levels. Conventionally, a higher voltage such as 5 volts refers to binary 1, while a low voltage such as 0 volts refers to binary 0. These voltage levels are called logic levels."
+      }
+     ],
+     "mistakes": [
+      "Do not reverse ADC and DAC: ADC means analog to digital, while DAC means digital to analog.",
+      "Do not describe analog signals as having only 0 and 1; that is the description of digital signals.",
+      "Do not say digital signals have infinitely many possible values; the section describes them as having two values.",
+      "When writing the microphone-to-speaker process, do not leave out either converter.",
+      "Do not reverse the conventional logic levels: 5 volts represents 1, and 0 volts represents 0."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-3-2",
+    "position": 2,
+    "title": "3.2 Boolean Algebra and Logic Gates",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.2, pages 52–60",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.2 (pages 52–60) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-3-2-1",
+      "text": "Consider a Boolean function with two inputs, A and B. We can construct a function F that represents the AND operation:\nF ( A, B ) = A · B",
+      "marks": 2,
+      "modelAnswer": [
+       "F(A, B) = A · B",
+       "The output is 1 only when A = 1 and B = 1."
+      ],
+      "followUp": "Q3.1. Define a Boolean function and give an example.",
+      "noteId": "cs-n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State the Boolean function.",
+        "marks": 1,
+        "why": "The Boolean expression identifies the function being constructed.",
+        "how": "Write F(A, B) = A · B.",
+        "accept": [
+         [
+          "F(A,B)=A·B"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the output condition.",
+        "marks": 1,
+        "why": "The output condition shows the meaning of the AND function.",
+        "how": "State that the output is 1 only when both inputs are 1.",
+        "accept": [
+         [
+          "1",
+          "A=1",
+          "B=1"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.2.1"
+     },
+     {
+      "id": "cs-w-3-2-2",
+      "text": "Now, let us construct a more complex Boolean function with three inputs, A, B, and C:\n\nF (A, B, C) = A · B + A̅ · C",
+      "marks": 8,
+      "modelAnswer": [
+       "F(A, B, C) = A · B + A̅ · C",
+       "| A | B | C | A·B | A̅ | A̅·C | F(A, B, C) |",
+       "| 0 | 0 | 0 | 0 | 1 | 0 | 0 |",
+       "| 0 | 0 | 1 | 0 | 1 | 1 | 1 |",
+       "| 0 | 1 | 0 | 0 | 1 | 0 | 0 |",
+       "| 0 | 1 | 1 | 0 | 1 | 1 | 1 |",
+       "| 1 | 0 | 0 | 0 | 0 | 0 | 0 |",
+       "| 1 | 0 | 1 | 0 | 0 | 0 | 0 |",
+       "| 1 | 1 | 0 | 1 | 0 | 0 | 1 |",
+       "| 1 | 1 | 1 | 1 | 0 | 0 | 1 |",
+       "Final output values in row order: 0, 1, 0, 1, 0, 0, 1, 1."
+      ],
+      "followUp": "Q3.1. Define a Boolean function and give an example.",
+      "noteId": "cs-n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Find the intermediate AND and NOT values.",
+        "marks": 2,
+        "why": "The intermediate columns apply the operations in the given expression.",
+        "how": "Make columns for A · B, A̅ and A̅ · C.",
+        "accept": [
+         [
+          "A·B",
+          "A̅",
+          "A̅·C"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "List the input combinations.",
+        "marks": 2,
+        "why": "A complete truth table must include every input combination.",
+        "how": "Use all eight combinations of A, B and C, as shown in the model answer.",
+        "accept": [
+         [
+          "0|0|0"
+         ],
+         [
+          "0|0|1"
+         ],
+         [
+          "0|1|0"
+         ],
+         [
+          "0|1|1"
+         ],
+         [
+          "1|0|0"
+         ],
+         [
+          "1|0|1"
+         ],
+         [
+          "1|1|0"
+         ],
+         [
+          "1|1|1"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Evaluate the function for each row.",
+        "marks": 3,
+        "why": "The final output column shows the function's value for each combination.",
+        "how": "Calculate (A · B) + (A̅ · C) for every row.",
+        "accept": [
+         [
+          "0,1,0,1,0,0,1,1"
+         ]
+        ]
+       },
+       {
+        "id": "d",
+        "description": "Give the final output sequence.",
+        "marks": 1,
+        "why": "The final answer must agree with the completed output column.",
+        "how": "Write the output values in row order.",
+        "accept": [
+         [
+          "0,1,0,1,0,0,1,1"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.2.2"
+     },
+     {
+      "id": "cs-w-3-2-3",
+      "text": "Q3.1. Define a Boolean function and give an example.",
+      "marks": 2,
+      "modelAnswer": [
+       "A Boolean function is a function which has one or more binary inputs and produces a single binary output.",
+       "For example, F(A, B) = A · B."
+      ],
+      "followUp": "Q3.1. Define a Boolean function and give an example.",
+      "noteId": "cs-n-3-2",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Define a Boolean function.",
+        "marks": 1,
+        "why": "The definition must identify its inputs and output.",
+        "how": "State that it has one or more binary inputs and produces a single binary output.",
+        "accept": [
+         [
+          "binary inputs",
+          "single binary output"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give an example.",
+        "marks": 1,
+        "why": "An example shows how a Boolean function is written.",
+        "how": "Use F(A, B) = A · B.",
+        "accept": [
+         [
+          "F(A,B)=A·B"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 3.1"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Be ready to define a Boolean function and give an example such as F(A, B) = A · B.",
+      "A short question may ask for the function of a gate and its truth table. Write every input case and its output.",
+      "For a truth-table question, show the input columns first, then any intermediate operation columns, and finish with the function's output column.",
+      "For a long response about computer uses, name and explain the uses: arithmetic in ALUs, data processing, and control logic."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Recall which two values a Boolean function uses.",
+        "Include the number of inputs, the output, and an example expression."
+       ],
+       "accept": [
+        [
+         "binary inputs",
+         "single binary output",
+         "F(A,B)=A·B"
+        ],
+        [
+         "0",
+         "1",
+         "F(A,B)=A·B"
+        ]
+       ],
+       "question": "Q3.1. Define a Boolean function and give an example.",
+       "solution": [
+        "A Boolean function is a function which has one or more binary inputs and produces a single binary output.",
+        "The inputs and output can only have the values 0 and 1.",
+        "For example, F(A, B) = A · B."
+       ],
+       "answer": "A Boolean function has one or more binary inputs and produces a single binary output; for example, F(A, B) = A · B."
+      },
+      {
+       "hints": [
+        "NOT changes an input to its opposite.",
+        "Make one row for A = 0 and one for A = 1."
+       ],
+       "accept": [
+        [
+         "opposite",
+         "0",
+         "1"
+        ],
+        [
+         "NOT",
+         "0",
+         "1"
+        ]
+       ],
+       "question": "Q3.4. Describe the function of a NOT gate with its truth table.",
+       "solution": [
+        "A NOT gate gives the opposite of its input.",
+        "| A | NOT A (P) |",
+        "| 0 | 1 |",
+        "| 1 | 0 |"
+       ],
+       "answer": "A NOT gate gives the opposite of its input: A = 0 gives P = 1, and A = 1 gives P = 0."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This is the three-input function the example asks us to make a truth table for.",
+        "text": "F (A, B, C) = A · B + A̅ · C"
+       },
+       {
+        "why": "The truth table includes every possible combination of three binary inputs.",
+        "text": "List the input rows: 000, 001, 010, 011, 100, 101, 110, 111."
+       },
+       {
+        "why": "The first AND column evaluates the first term of the function for each row.",
+        "text": "Find A · B: 0, 0, 0, 0, 0, 0, 1, 1."
+       },
+       {
+        "why": "The NOT column reverses the value of A in each row.",
+        "text": "Find A̅: 1, 1, 1, 1, 0, 0, 0, 0."
+       },
+       {
+        "why": "The second AND column evaluates the second term of the function.",
+        "text": "Find A̅ · C: 0, 1, 0, 1, 0, 0, 0, 0."
+       },
+       {
+        "why": "The plus sign means OR, so combine the two term values in each row.",
+        "text": "Find F = (A · B) + (A̅ · C): 0, 1, 0, 1, 0, 0, 1, 1."
+       }
+      ],
+      "question": "EXAMPLE 2: Now, let us construct a more complex Boolean function with three inputs, A, B, and C:\n\nF (A, B, C) = A · B + A̅ · C",
+      "answer": "The output values of F in row order 000 to 111 are 0, 1, 0, 1, 0, 0, 1, 1."
+     },
+     "explain": [
+      {
+       "title": "Binary variables",
+       "body": "Binary variables have only two possible values: 0 and 1. In logic, these may also be described as False and True."
+      },
+      {
+       "title": "AND, OR and NOT",
+       "body": "AND gives 1 only when both inputs are 1. OR gives 1 when at least one input is 1. NOT takes one input and gives its opposite."
+      },
+      {
+       "title": "Boolean functions",
+       "body": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. It is built using logic operations such as AND, OR and NOT."
+      },
+      {
+       "title": "Truth tables and logic gates",
+       "body": "A truth table shows the output for every possible input combination. Logic gates are physical devices in electronic circuits that perform Boolean operations."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse AND and OR: AND needs both inputs to be 1, while OR needs at least one input to be 1.",
+      "Do not leave out an input combination when making a truth table.",
+      "For NOT, reverse the input: 0 becomes 1 and 1 becomes 0.",
+      "When evaluating a multi-part function, calculate each operation column before the final output column.",
+      "In Boolean logic, 1 + 1 for OR is 1, not 2."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-3-3",
+    "position": 3,
+    "title": "3.3 Simplification of Boolean Functions",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, section 3.3, pages 60–67",
+     "verified": true
+    },
+    "readingTasks": [
+     "Read section 3.3 (pages 60–67) in your textbook."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-3-3-1",
+      "text": "Simplify the expression A + A̅ · B.",
+      "marks": 2,
+      "modelAnswer": [
+       "A + A̅ · B = (A + A̅) · (A + B) (Distributive Law)",
+       "= 1 · (A + B) (Complement Law)",
+       "= A + B (Identity Law)"
+      ],
+      "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+      "noteId": "cs-n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Apply the distributive law.",
+        "marks": 0.5,
+        "why": "The distributive-law step begins the simplification correctly.",
+        "how": "Rewrite the expression as (A + A̅) · (A + B).",
+        "accept": [
+         [
+          "(A + A̅) · (A + B)"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Use the complement law.",
+        "marks": 0.5,
+        "why": "The complement law reduces A + A̅ to 1.",
+        "how": "Replace A + A̅ with 1.",
+        "accept": [
+         [
+          "1 · (A + B)"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct final answer.",
+        "marks": 1,
+        "why": "The final expression is the simplified function.",
+        "how": "Use the identity law to finish with A + B.",
+        "accept": [
+         [
+          "A+B"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.3.1"
+     },
+     {
+      "id": "cs-w-3-3-2",
+      "text": "Simplify the expression A̅·B̅ + A̅ · B.",
+      "marks": 2,
+      "modelAnswer": [
+       "A̅·B̅ + A̅ · B = A̅ · (B̅ + B) (Distributive Law)",
+       "= A̅ · 1 (Complement Law)",
+       "= A̅ (Identity Law)"
+      ],
+      "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+      "noteId": "cs-n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Factor and apply the complement law.",
+        "marks": 1,
+        "why": "Factoring out the common term reveals the complement pair.",
+        "how": "Rewrite as A̅ · (B̅ + B), then use B̅ + B = 1.",
+        "accept": [
+         [
+          "A̅·(B̅+B)"
+         ],
+         [
+          "A̅·1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give the correct final answer.",
+        "marks": 1,
+        "why": "The final answer follows from the identity law.",
+        "how": "Simplify A̅ · 1 to A̅.",
+        "accept": [
+         [
+          "A̅"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.3.2"
+     },
+     {
+      "id": "cs-w-3-3-3",
+      "text": "Simplify the expression (A + B) · (A + B̅)",
+      "marks": 2,
+      "modelAnswer": [
+       "(A + B) · (A + B̅) = A·(A+B̅)+B·(A+B̅) (Distributive Law)",
+       "= A + A·B̅ + B·B̅ (Distributive Law and Absorption Law)",
+       "= A + A·B̅ (Complement and Identity Laws)",
+       "= A (Absorption Law)"
+      ],
+      "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+      "noteId": "cs-n-3-3",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Expand the expression.",
+        "marks": 0.5,
+        "why": "Expansion by the distributive law exposes terms that can be reduced.",
+        "how": "Apply the distributive law to obtain A + A·B̅ + B·B̅.",
+        "accept": [
+         [
+          "A+A·B̅+B·B̅"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Reduce the expanded expression.",
+        "marks": 0.5,
+        "why": "The complement and absorption laws remove redundant terms.",
+        "how": "Use B·B̅ = 0 and A + A·B̅ = A.",
+        "accept": [
+         [
+          "A+A·B̅"
+         ],
+         [
+          "A"
+         ]
+        ]
+       },
+       {
+        "id": "c",
+        "description": "Give the correct final answer.",
+        "marks": 1,
+        "why": "A is the simplified function.",
+        "how": "State A as the final result.",
+        "accept": [
+         [
+          "A"
+         ]
+        ]
+       }
+      ],
+      "source": "Example 3.3.3"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "This section is tested mainly through short simplification questions and longer questions asking you to simplify several expressions using Boolean algebra rules.",
+      "For a long question, show each equality on a new line and name the law used when it helps make your method clear.",
+      "Marks are usually earned for choosing a valid rule, applying it correctly, and writing the simplest equivalent expression as the final answer."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "Look for a common factor in both terms.",
+        "Factor out A, then use B + B̅ = 1."
+       ],
+       "accept": [
+        [
+         "A"
+        ]
+       ],
+       "question": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+       "solution": [
+        "F (A, B) = A · B + A · B̅",
+        "= A · (B + B̅) (Distributive Law)",
+        "= A · 1 (Complement Law)",
+        "F (A, B) = A (Identity Law)"
+       ],
+       "answer": "F (A, B) = A"
+      },
+      {
+       "hints": [
+        "Expand the bracket after A̅.",
+        "Use A + A̅·X = A + X on the terms that appear."
+       ],
+       "accept": [
+        [
+         "A+B̅+C"
+        ]
+       ],
+       "question": "Simplify the following expressions\n\n(c) A + A̅ · (B̅ + C)",
+       "solution": [
+        "A + A̅ · (B̅ + C) = A + A̅·B̅ + A̅·C (Distributive Law)",
+        "= A + B̅ + A̅·C (A + A̅·B̅ = A + B̅)",
+        "= A + B̅ + C (A + A̅·C = A + C)"
+       ],
+       "answer": "A + B̅ + C"
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "The distributive law rewrites the expression so that A and A̅ are together.",
+        "text": "A + A̅ · B = (A + A̅) · (A + B) (Distributive Law)"
+       },
+       {
+        "why": "A variable OR its complement is always 1.",
+        "text": "= 1 · (A + B) (Complement Law)"
+       },
+       {
+        "why": "Multiplying by 1 leaves the expression unchanged.",
+        "text": "= A + B (Identity Law)"
+       }
+      ],
+      "question": "Simplify the expression A + A̅ · B.",
+      "answer": "A + B"
+     },
+     "explain": [
+      {
+       "title": "What simplification means",
+       "body": "Simplification means applying of some Boolean algebra rules to make the functions less complicated. A shorter function can need fewer gates in its digital circuit."
+      },
+      {
+       "title": "Useful basic laws",
+       "body": "Remember the identities A + 0 = A and A · 1 = A; the complements A + A̅ = 1 and A · A̅ = 0; and the absorption laws A + (A · B) = A and A · (A + B) = A."
+      },
+      {
+       "title": "De Morgan's theorems",
+       "body": "When a whole bracket is complemented, change OR to AND and complement each variable: (A + B)̅ = A̅ · B̅. For a complemented product, change AND to OR: (A · B)̅ = A̅ + B̅."
+      },
+      {
+       "title": "Show your working",
+       "body": "Use one valid rule at a time and write the new expression on the next line. This makes your method easy to follow and helps you earn working marks."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse + (OR) with · (AND); they have different laws.",
+      "When applying De Morgan's theorem, complement every variable and change the operation inside the bracket.",
+      "Do not skip steps when factoring or expanding; a missing or incorrect term can lose working marks.",
+      "Do not stop at an expression that can still be reduced by a complement or absorption law.",
+      "Write the final simplified expression clearly and keep its variables and complements correct."
+     ]
+    }
+   },
+   {
+    "id": "cs-m-3-4",
+    "position": 4,
+    "title": "Unit 3 exercise",
+    "status": "SAMPLE_UNREVIEWED",
+    "video": null,
+    "bookReference": {
+     "text": "Your textbook, Unit 3, end-of-chapter exercise, pages 67–68; Chapter 3 exercise",
+     "verified": true
+    },
+    "readingTasks": [
+     "Revise Unit 3 and attempt the end-of-chapter exercise (pages 67–68)."
+    ],
+    "writtenQuestions": [
+     {
+      "id": "cs-w-3-4-1",
+      "text": "Q3.1. Define a Boolean function and give an example.",
+      "marks": 2,
+      "modelAnswer": [
+       "A Boolean function maps one or more binary inputs to a binary output.",
+       "For example, F(A, B) = A + B."
+      ],
+      "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+      "noteId": "cs-n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Define a Boolean function.",
+        "marks": 1,
+        "why": "The definition must show that a Boolean function relates binary inputs to an output.",
+        "how": "State that it maps binary input values to a binary output.",
+        "accept": [
+         [
+          "binary inputs",
+          "binary output"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "Give a Boolean function example.",
+        "marks": 1,
+        "why": "An example demonstrates the definition.",
+        "how": "Write a correct expression, such as F(A, B) = A + B.",
+        "accept": [
+         [
+          "F(A,B)=A+B"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 3.1"
+     },
+     {
+      "id": "cs-w-3-4-2",
+      "text": "Q3.2. What is the significance of the truth table in digital logic?",
+      "marks": 2,
+      "modelAnswer": [
+       "A truth table lists every possible input combination.",
+       "It shows the corresponding output of a logic function for each combination."
+      ],
+      "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+      "noteId": "cs-n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "State what inputs are listed.",
+        "marks": 1,
+        "why": "A truth table must cover the full set of possible inputs.",
+        "how": "Say that every possible input combination is included.",
+        "accept": [
+         [
+          "every possible",
+          "input"
+         ],
+         [
+          "all",
+          "input combinations"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State what the table shows.",
+        "marks": 1,
+        "why": "The table is useful because it shows the output for each input combination.",
+        "how": "Explain that it records the corresponding output of the logic function.",
+        "accept": [
+         [
+          "corresponding output"
+         ],
+         [
+          "output for each"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 3.2"
+     },
+     {
+      "id": "cs-w-3-4-5",
+      "text": "Q3.5. What is the purpose of a Karnaugh map in simplifying Boolean expressions?",
+      "marks": 2,
+      "modelAnswer": [
+       "A Karnaugh map groups adjacent 1s.",
+       "The groups give a simpler Boolean expression with fewer terms or variables."
+      ],
+      "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+      "noteId": "cs-n-3-4",
+      "section": 0,
+      "number": 0,
+      "matching": "method",
+      "rubric": [
+       {
+        "id": "a",
+        "description": "Explain the map method.",
+        "marks": 1,
+        "why": "Grouping adjacent cells is the central Karnaugh map method.",
+        "how": "State that adjacent 1s are grouped.",
+        "accept": [
+         [
+          "groups",
+          "adjacent",
+          "1"
+         ]
+        ]
+       },
+       {
+        "id": "b",
+        "description": "State the purpose.",
+        "marks": 1,
+        "why": "The purpose of grouping is to reduce the Boolean expression.",
+        "how": "Explain that the groups produce a simpler expression.",
+        "accept": [
+         [
+          "simpler",
+          "Boolean expression"
+         ],
+         [
+          "simplify",
+          "expression"
+         ]
+        ]
+       }
+      ],
+      "source": "Short 3.5"
+     }
+    ],
+    "lesson": {
+     "examTips": [
+      "Section A tests recognition of Boolean symbols, duality, gates, adders, and binary-to-decimal conversion; choose the option that follows the stated definition or rule.",
+      "Short questions usually earn marks for a precise definition or distinction and one relevant example, truth table, or purpose.",
+      "For long Boolean simplifications, write one algebraic step per line and name or show the law used; the working earns marks as well as the final result.",
+      "For truth-table questions, include every input combination and label the input and output columns.",
+      "For adder and Karnaugh-map questions, show the required truth tables or groupings, Boolean expressions, and clearly labelled circuit connections."
+     ],
+     "yourTurn": [
+      {
+       "hints": [
+        "A NOT gate has one input and gives its opposite.",
+        "Write the two possible input values, 0 and 1, and reverse each one."
+       ],
+       "accept": [
+        [
+         "0",
+         "1",
+         "1",
+         "0"
+        ],
+        [
+         "0→1",
+         "1→0"
+        ],
+        [
+         "reverses",
+         "input"
+        ]
+       ],
+       "question": "Q3.4. Describe the function of a NOT gate with its truth table.",
+       "solution": [
+        "A NOT gate gives the complement of its input.",
+        "Input A | Output A̅",
+        "0 | 1",
+        "1 | 0"
+       ],
+       "answer": "A NOT gate reverses its input: 0 becomes 1 and 1 becomes 0."
+      },
+      {
+       "hints": [
+        "A Karnaugh map uses groups of neighbouring cells.",
+        "Group adjacent 1s; the groups remove changing variables and give a shorter expression."
+       ],
+       "accept": [
+        [
+         "adjacent",
+         "1",
+         "simpler"
+        ],
+        [
+         "groups",
+         "Boolean expression"
+        ]
+       ],
+       "question": "Q3.5. What is the purpose of a Karnaugh map in simplifying Boolean expressions?",
+       "solution": [
+        "A Karnaugh map groups adjacent 1s.",
+        "The groups give a simpler Boolean expression with fewer terms or variables."
+       ],
+       "answer": "A Karnaugh map groups adjacent 1s to obtain a simpler Boolean expression with fewer terms or variables."
+      }
+     ],
+     "example": {
+      "steps": [
+       {
+        "why": "This names the Boolean expression whose output values we will find.",
+        "text": "Example: Construct a truth table for F = A + B."
+       },
+       {
+        "why": "Two binary inputs have four possible combinations, and all must appear in the table.",
+        "text": "There are two inputs, so list all four possible input combinations."
+       },
+       {
+        "why": "The plus sign means OR, so the output is 1 if either input is 1.",
+        "text": "Evaluate F using the OR operation for each combination."
+       },
+       {
+        "why": "This row has no 1 inputs, so the OR output is 0.",
+        "text": "A | B | F = A + B"
+       },
+       {
+        "why": "For OR, one input is 1, so the output is 1.",
+        "text": "0 | 1 | 1"
+       },
+       {
+        "why": "For OR, one input is 1, so the output is 1.",
+        "text": "1 | 0 | 1"
+       },
+       {
+        "why": "Both inputs are 1, so the OR output is 1.",
+        "text": "1 | 1 | 1"
+       }
+      ],
+      "question": "Q3.2. Describe how to construct a truth table for a Boolean expression with an example.",
+      "answer": "For F = A + B, the truth table is: 00 → 0, 01 → 1, 10 → 1, 11 → 1."
+     },
+     "explain": [
+      {
+       "title": "Binary signals and Boolean functions",
+       "body": "Digital systems use binary values, 0 and 1. A Boolean function describes how input values determine an output, for example F(A, B) = A + B."
+      },
+      {
+       "title": "Logic gates and truth tables",
+       "body": "AND, OR, and NOT gates carry out Boolean operations. A truth table lists every possible input combination and the output for each one."
+      },
+      {
+       "title": "Boolean laws and duality",
+       "body": "Boolean laws help simplify expressions. To form a dual, interchange + and ·, and interchange 0 and 1; for example, the dual of A · 0 = 0 is A + 1 = 1."
+      },
+      {
+       "title": "Adders",
+       "body": "A half-adder adds two bits: Sum = A ⊕ B and Carry = A · B. A full-adder also adds an input carry: Sum = A ⊕ B ⊕ Cin and Cout = A · B + A · Cin + B · Cin."
+      },
+      {
+       "title": "Karnaugh maps",
+       "body": "A Karnaugh map arranges output values so adjacent 1s can be grouped. Each larger valid group can remove variables and produce a simpler expression."
+      }
+     ],
+     "mistakes": [
+      "Do not confuse Boolean OR (+) with arithmetic addition; it outputs 1 if at least one input is 1.",
+      "Do not use XOR as a synonym for OR: XOR outputs 1 only when its inputs differ.",
+      "When forming a dual, interchange both operators (+ and ·) and constants (0 and 1).",
+      "Do not omit input combinations from a truth table.",
+      "In a half-adder, the carry is A · B and the sum is A ⊕ B; do not swap them.",
+      "When simplifying, keep complements attached to the correct variables and show each law-based step."
+     ]
+    }
+   }
+  ]
+ },
+ "notes": [
+  {
+   "id": "cs-n-3-1",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-3-1",
+   "title": "Analog and Digital Signals",
+   "keywords": [
+    "analog",
+    "digital",
+    "ADC",
+    "DAC",
+    "continuous",
+    "binary",
+    "logic levels"
+   ],
+   "answer": "An ADC converts analog signals into digital signals.",
+   "explanation": "An analog signal changes smoothly and can take any value in a range. A digital signal has only two possible values, 0 and 1. An ADC changes an analog signal into digital form; a DAC changes digital data back into an analog signal.",
+   "simple": "Analog is smooth and can have many values. Digital uses just 0 and 1. ADC changes analog to digital; DAC changes digital to analog.",
+   "examples": [
+    "A voice entering a microphone is an analog signal; an ADC converts it into digital data.",
+    "A DAC converts digital data into an analog signal that a speaker turns into sound."
+   ],
+   "steps": [
+    "A microphone captures sound waves, which are analog signals.",
+    "An ADC converts the analog signal into digital data made of 0s and 1s.",
+    "The digital data can be processed, stored, or transmitted.",
+    "A DAC changes the digital data back into an analog signal.",
+    "A speaker turns the analog signal into sound waves."
+   ],
+   "checkQuestion": "Which converter changes an analog signal into a digital signal?",
+   "checkAnswer": "An ADC converts analog signals into digital signals.",
+   "checkAccept": [
+    [
+     "ADC"
+    ],
+    [
+     "analog to digital converter"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-3-2",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-3-2",
+   "title": "Boolean functions and basic logic",
+   "keywords": [
+    "Boolean function",
+    "binary",
+    "AND",
+    "OR",
+    "NOT",
+    "truth table",
+    "logic gate"
+   ],
+   "answer": "A Boolean function uses binary inputs and logic operations to produce a binary output.",
+   "explanation": "A Boolean function takes one or more binary inputs and gives one binary output. Its inputs and output are only 0 or 1. AND, OR and NOT are used to build Boolean functions.",
+   "simple": "A Boolean function is a rule that takes in 0s and 1s and gives back a 0 or 1.",
+   "examples": [
+    "For F(A, B) = A · B, the output is 1 only when A = 1 and B = 1.",
+    "For P = ¬A, if A = 1 then P = 0."
+   ],
+   "steps": [
+    "Write the input values: A = 0 and B = 1.",
+    "For AND, the output is 1 only if both inputs are 1, so A · B = 0.",
+    "For OR, the output is 1 if at least one input is 1, so A + B = 1."
+   ],
+   "checkQuestion": "If A = 0 and B = 1, what are A · B and A + B?",
+   "checkAnswer": "For A = 1 and B = 0, A · B = 0 and A + B = 1.",
+   "checkAccept": [
+    [
+     "A·B=0",
+     "A+B=1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-3-3",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-3-3",
+   "title": "Simplifying Boolean Functions",
+   "keywords": [
+    "Boolean simplification",
+    "identity law",
+    "complement law",
+    "absorption law",
+    "De Morgan",
+    "distributive law"
+   ],
+   "answer": "A",
+   "explanation": "Boolean simplification uses algebra rules to make a function shorter while keeping the same output. For example, A + A·B = A by the absorption law. Another example is A + A̅·B = A + B, using the distributive, complement and identity laws.",
+   "simple": "Use Boolean rules to remove unnecessary parts of an expression without changing its value.",
+   "examples": [],
+   "steps": [
+    "Look for a pair or pattern that matches a Boolean law.",
+    "Apply one law at a time and show its name if required.",
+    "Continue until no part can be simplified further."
+   ],
+   "checkQuestion": "Simplify A + A·B.",
+   "checkAnswer": "A",
+   "checkAccept": [
+    [
+     "A"
+    ]
+   ]
+  },
+  {
+   "id": "cs-n-3-4",
+   "subjectId": "pb-9-cs",
+   "moduleId": "cs-m-3-4",
+   "title": "Digital systems and Boolean logic",
+   "keywords": [
+    "Boolean",
+    "truth table",
+    "logic gate",
+    "Karnaugh map",
+    "half-adder",
+    "duality"
+   ],
+   "answer": "A half-adder produces its carry using the AND operation: Carry = A · B.",
+   "explanation": "Boolean algebra works with two values, 0 and 1. It describes how logic gates combine binary inputs to produce binary outputs.",
+   "simple": "Think of Boolean algebra as rules for working with switches that are either off (0) or on (1).",
+   "examples": [
+    "If F = A + B, then F is 1 whenever at least one input is 1.",
+    "For a half-adder, Sum = A ⊕ B and Carry = A · B."
+   ],
+   "steps": [
+    "Write down the possible binary input combinations.",
+    "Apply the Boolean expression to each input combination.",
+    "Use the resulting outputs to describe or build the logic circuit."
+   ],
+   "checkQuestion": "Which operation produces a carry in a half-adder?",
+   "checkAnswer": "A · B",
+   "checkAccept": [
+    [
+     "A·B"
+    ],
+    [
+     "A AND B"
+    ],
+    [
+     "AND"
+    ]
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "cs-q-3-1-1",
+   "stem": "Which statement best describes an analog signal?",
+   "options": [
+    "It changes smoothly and continuously with time.",
+    "It has only the values 0 and 1.",
+    "It is always stored as binary data.",
+    "It can only be produced by a computer."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: an analog signal changes smoothly and continuously over time.",
+    "This describes a digital signal, not an analog signal.",
+    "Binary data is digital, so this is not the defining feature of an analog signal.",
+    "Analog signals occur in natural examples such as sound and temperature, not only in computers."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-1-2",
+   "stem": "Which values are used by digital signals in this section?",
+   "options": [
+    "Continuous values across a range",
+    "Only the values 0 and 1",
+    "An unlimited number of binary digits at every instant",
+    "Only values greater than 5 volts"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "Continuous values across a range describe analog signals.",
+    "This is correct: digital signals have two values, 0 and 1.",
+    "A digital signal uses two possible values; this option does not describe them.",
+    "The section does not define digital signals by values greater than 5 volts."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-1-3",
+   "stem": "Which device operation converts an analog signal into digital form?",
+   "options": [
+    "DAC",
+    "ADC",
+    "Speaker",
+    "Microphone"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A DAC converts digital data back into an analog signal.",
+    "This is correct: an ADC converts an analog signal into digital form.",
+    "A speaker produces sound from an analog signal; it does not perform the stated conversion.",
+    "A microphone captures sound, but the conversion into digital form is done by an ADC."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-1-4",
+   "stem": "Which operation converts digital data back into an analog signal?",
+   "options": [
+    "ADC",
+    "DAC",
+    "Binary data",
+    "Logic level"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "An ADC converts in the opposite direction, from analog to digital.",
+    "This is correct: a DAC converts digital data into an analog signal.",
+    "Binary data is digital information, not the converter that changes it to analog.",
+    "A logic level represents a digital state; it is not the converter."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-1-5",
+   "stem": "Which is an example of an analog signal?",
+   "options": [
+    "Sound waves",
+    "Binary data in a computer",
+    "A digital signal",
+    "A logic level"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "This is correct: sound waves are given as an example of an analog signal.",
+    "Binary data is an example of digital information.",
+    "A digital signal has discrete values rather than continuously changing values.",
+    "A logic level represents a digital state, not an analog signal."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-1-6",
+   "stem": "In the convention described in the section, what does a higher voltage such as 5 volts represent?",
+   "options": [
+    "A high voltage such as 5 volts conventionally represents 0.",
+    "A low voltage such as 0 volts conventionally represents 1.",
+    "A high voltage such as 5 volts conventionally represents 1.",
+    "Voltage levels are not used to represent digital states."
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "The section says a higher voltage conventionally represents binary 1, not 0.",
+    "The section says a low voltage such as 0 volts represents binary 0, not 1.",
+    "This is correct: a higher voltage such as 5 volts conventionally represents binary 1.",
+    "Different voltage levels represent the two digital states and are called logic levels."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-1",
+   "moduleId": "cs-m-3-1"
+  },
+  {
+   "id": "cs-q-3-2-1",
+   "stem": "Which statement describes the AND operation?",
+   "options": [
+    "A · B is 1 when at least one input is 1.",
+    "A · B is 1 only when both inputs are 1.",
+    "A · B always gives the opposite of A.",
+    "A · B is 0 only when both inputs are 0."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This describes the OR operation, not AND.",
+    "This is the rule for AND: both inputs must be 1 for the output to be 1.",
+    "This describes a NOT operation on A, not an AND operation.",
+    "For AND, the output is also 0 when just one input is 0."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-2",
+   "stem": "If A = 1 and B = 0, what is the value of A · B?",
+   "options": [
+    "0",
+    "1",
+    "A",
+    "B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "The AND output is 0 because both inputs are not 1.",
+    "The AND output is 1 only when both inputs are 1.",
+    "A is an input variable, not the evaluated output.",
+    "B is an input variable, not the evaluated output."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-3",
+   "stem": "What is the value of A + B when A = 0 and B = 1?",
+   "options": [
+    "0",
+    "1",
+    "A",
+    "A̅"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "OR is 0 only when both inputs are 0.",
+    "OR is 1 when at least one input is 1.",
+    "A is an input variable, not the evaluated output.",
+    "A̅ is the NOT of A, not the result of A + B."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-4",
+   "stem": "Which expression represents the NOT operation on A?",
+   "options": [
+    "A",
+    "A̅",
+    "A · B",
+    "A + B"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A is the original input, not its opposite.",
+    "A̅ represents the opposite value of A.",
+    "A · B is the AND operation on two inputs.",
+    "A + B is the OR operation on two inputs."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-5",
+   "stem": "A truth table shows that both inputs are 1. What is the output of an AND operation?",
+   "options": [
+    "0",
+    "1",
+    "A",
+    "B"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "The AND output is 0 if at least one input is 0.",
+    "When both inputs are 1, the AND output is 1.",
+    "A is an input, not the output value.",
+    "B is an input, not the output value."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-6",
+   "stem": "Which statement describes an OR gate?",
+   "options": [
+    "It outputs 1 only when both inputs are 1.",
+    "It outputs 1 when at least one input is 1.",
+    "It gives the opposite of its single input.",
+    "It outputs 1 only when exactly one input is 1."
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "This describes an AND gate.",
+    "This describes an OR gate.",
+    "This describes a NOT gate.",
+    "This describes an XOR gate."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-7",
+   "stem": "Which statement about Boolean functions is correct?",
+   "options": [
+    "A Boolean function can use only 0 and 1 as its input and output values.",
+    "A Boolean function must have exactly three inputs.",
+    "A Boolean function always gives an output of 1.",
+    "A Boolean function uses only the NOT operation."
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Boolean function inputs and outputs have the two values 0 and 1.",
+    "A Boolean function can have one or more inputs; it need not have exactly three.",
+    "Its output may be either 0 or 1, depending on the inputs and operations.",
+    "Boolean functions can be constructed using AND, OR and NOT."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-2-8",
+   "stem": "What is a logic gate?",
+   "options": [
+    "A gate that performs a Boolean operation in an electronic circuit",
+    "A table listing only decimal numbers",
+    "A device that stores written words",
+    "A type of binary input"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A logic gate is a physical electronic device that performs a Boolean operation.",
+    "A truth table lists input combinations and their outputs; this option does not describe a gate.",
+    "This is not the meaning of a logic gate in digital circuits.",
+    "A binary input is a value, not a physical gate."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-2",
+   "moduleId": "cs-m-3-2"
+  },
+  {
+   "id": "cs-q-3-3-1",
+   "stem": "Using the identity law, what is A + 0?",
+   "options": [
+    "A",
+    "0",
+    "1",
+    "A̅"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A is correct because adding 0 leaves A unchanged.",
+    "0 is wrong because the identity law does not replace A with 0.",
+    "1 is wrong because A + 0 is not always 1.",
+    "A̅ is wrong because adding 0 does not complement A."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-3-2",
+   "stem": "What is the value of A + A̅?",
+   "options": [
+    "A",
+    "0",
+    "1",
+    "A̅"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "A is wrong because the complement law gives 1 for A + A̅.",
+    "0 is wrong because A · A̅, not A + A̅, equals 0.",
+    "1 is correct by the complement law.",
+    "A̅ is wrong because the expression contains both A and its complement."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-3-3",
+   "stem": "Simplify A · (A + B).",
+   "options": [
+    "A",
+    "B",
+    "A + B",
+    "A · B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A is correct by the absorption law A · (A + B) = A.",
+    "B is wrong because the expression does not reduce to B.",
+    "A + B is wrong because the absorption law removes the extra B term.",
+    "A · B is wrong because the expression is not equivalent to A · B for all inputs."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-3-4",
+   "stem": "By De Morgan's theorem, what is (A + B)̅?",
+   "options": [
+    "A̅ + B̅",
+    "A̅ · B̅",
+    "A + B",
+    "A · B"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A̅ + B̅ is wrong because the complement of a sum becomes a product.",
+    "A̅ · B̅ is correct by De Morgan's theorem.",
+    "A + B is wrong because it has no complements.",
+    "A · B is wrong because both variables must be complemented."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-3-5",
+   "stem": "Simplify A + A̅ · B.",
+   "options": [
+    "A + B",
+    "A · B",
+    "A",
+    "B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A + B is correct by the distributive, complement and identity laws.",
+    "A · B is wrong because the expression can be 1 when A = 1 and B = 0.",
+    "A is wrong because the expression can be 1 when A = 0 and B = 1.",
+    "B is wrong because the expression can be 1 when A = 1 and B = 0."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-3-6",
+   "stem": "Simplify A̅ · B̅ + A̅ · B.",
+   "options": [
+    "A̅",
+    "B",
+    "A̅ + B̅",
+    "A̅ · B"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "A̅ is correct because factoring A̅ gives A̅ · (B̅ + B) = A̅.",
+    "B is wrong because the expression is 1 whenever A = 0, regardless of B.",
+    "A̅ + B̅ is wrong because the expression is 0 when A = 1 and B = 0.",
+    "A̅ · B is wrong because the original expression is also 1 when A = 0 and B = 0."
+   ],
+   "status": "SAMPLE_UNREVIEWED",
+   "noteId": "cs-n-3-3",
+   "moduleId": "cs-m-3-3"
+  },
+  {
+   "id": "cs-q-3-4-1",
+   "stem": "Q3.1. Which of the following Boolean expressions represents the OR operation?",
+   "options": [
+    "(a) A · B",
+    "(b) A + B",
+    "(c) A̅",
+    "(d) A ⊕ B"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "A · B represents the AND operation, not OR.",
+    "A + B is the Boolean notation for OR.",
+    "A̅ represents the complement of A, or NOT A.",
+    "A ⊕ B represents exclusive OR, which is different from ordinary OR."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-3-4",
+   "moduleId": "cs-m-3-4"
+  },
+  {
+   "id": "cs-q-3-4-2",
+   "stem": "Q3.2. What is the dual of the Boolean expression A · 0 = 0?",
+   "options": [
+    "(a) A + 1 = 1",
+    "(b) A + 0 = A",
+    "(c) A · 1 = A",
+    "(d) A · 0 = 0"
+   ],
+   "correctIndex": 0,
+   "rationales": [
+    "Interchanging · with + and 0 with 1 gives A + 1 = 1.",
+    "This is a valid Boolean identity, but it is not the dual of the given expression.",
+    "This is a valid Boolean identity, but it is not the dual of the given expression.",
+    "This repeats the original expression instead of forming its dual."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-3-4",
+   "moduleId": "cs-m-3-4"
+  },
+  {
+   "id": "cs-q-3-4-3",
+   "stem": "Q3.3. Which logic gate outputs true only if both inputs are true?",
+   "options": [
+    "(a) OR gate",
+    "(b) AND gate",
+    "(c) XOR gate",
+    "(d) NOT gate"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "An OR gate outputs true when at least one input is true.",
+    "An AND gate outputs true only when both inputs are true.",
+    "An XOR gate outputs true when its inputs are different.",
+    "A NOT gate has one input and reverses its value."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-3-4",
+   "moduleId": "cs-m-3-4"
+  },
+  {
+   "id": "cs-q-3-4-4",
+   "stem": "Q3.4. In a half-adder circuit, the carry is generated by which operation?",
+   "options": [
+    "(a) XOR operation",
+    "(b) AND operation",
+    "(c) OR operation",
+    "(d) NOT operation"
+   ],
+   "correctIndex": 1,
+   "rationales": [
+    "XOR generates the sum output of a half-adder.",
+    "AND generates the carry when both input bits are 1.",
+    "OR is not the half-adder carry operation.",
+    "NOT reverses a value and does not generate the half-adder carry."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-3-4",
+   "moduleId": "cs-m-3-4"
+  },
+  {
+   "id": "cs-q-3-4-5",
+   "stem": "Q3.5. What is the decimal equivalent of the binary number 1101?",
+   "options": [
+    "(a) 11",
+    "(b) 12",
+    "(c) 13",
+    "(d) 14"
+   ],
+   "correctIndex": 2,
+   "rationales": [
+    "1101₂ = 8 + 4 + 1 = 13, not 11.",
+    "1101₂ = 8 + 4 + 1 = 13, not 12.",
+    "1101₂ = 1 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 13.",
+    "1101₂ = 8 + 4 + 1 = 13, not 14."
+   ],
+   "status": "APPROVED",
+   "noteId": "cs-n-3-4",
+   "moduleId": "cs-m-3-4"
+  }
+ ],
+ "written": [
+  {
+   "id": "cs-w-3-1-1",
+   "text": "Sound Waves\n\nLet us consider a situation where one person is speaking into a microphone while the other person is receiving sound through speakers as illustrated in the figure 3.1.",
+   "marks": 8,
+   "modelAnswer": [
+    "A person speaking into a microphone produces sound waves, which are analog signals.",
+    "The microphone captures these sound waves.",
+    "An ADC converts the analog signal into digital data.",
+    "The digital data can be transmitted over long distances with little or no degradation in quality.",
+    "At the receiver, a DAC converts the digital signals back into analog signals.",
+    "The speakers translate these analog signals into sound waves.",
+    "The listener hears the other person's voice."
+   ],
+   "followUp": "Q3.3. Explain the difference between analog and digital signals.",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the voice and microphone input as sound waves or an analog signal.",
+     "marks": 2,
+     "why": "The answer must identify the voice captured by the microphone as an analog signal.",
+     "how": "State that speaking produces sound waves and that these are analog signals captured by the microphone.",
+     "accept": [
+      [
+       "microphone",
+       "analog"
+      ],
+      [
+       "sound waves"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the microphone-side conversion.",
+     "marks": 2,
+     "why": "The conversion at the sending end is a key part of the signal path.",
+     "how": "State that an ADC converts the analog sound signal into digital data.",
+     "accept": [
+      [
+       "ADC",
+       "digital"
+      ],
+      [
+       "analog to digital"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describe the transmission of the digital data.",
+     "marks": 2,
+     "why": "The digital data is transmitted to the receiver with little or no degradation.",
+     "how": "Mention that the digital data can be transmitted over long distances with little or no degradation in quality.",
+     "accept": [
+      [
+       "transmitted",
+       "long distances"
+      ],
+      [
+       "digital data",
+       "long distances"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain the receiver-side conversion and output.",
+     "marks": 2,
+     "why": "The answer must complete the process at the receiving end and give the correct outcome.",
+     "how": "State that a DAC changes the digital signal back into an analog signal, which the speakers turn into sound waves.",
+     "accept": [
+      [
+       "DAC",
+       "speakers",
+       "analog"
+      ],
+      [
+       "digital to analog",
+       "speakers"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.1"
+  },
+  {
+   "id": "cs-w-3-1-2",
+   "text": "Q3.3. Explain the difference between analog and digital signals.",
+   "marks": 2,
+   "modelAnswer": [
+    "Analog signals change with time smoothly and continuously and can have any value within a given range.",
+    "Digital signals have only two values, 0 and 1."
+   ],
+   "followUp": "Q3.3. Explain the difference between analog and digital signals.",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Describe analog signals.",
+     "marks": 1,
+     "why": "This states the key property that distinguishes an analog signal.",
+     "how": "Say that analog signals change continuously and can have any value within a range.",
+     "accept": [
+      [
+       "continuously",
+       "any value"
+      ],
+      [
+       "continuous",
+       "range"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the final distinction for digital signals.",
+     "marks": 1,
+     "why": "This gives the defining values used by a digital signal and completes the comparison.",
+     "how": "State that digital signals have only two values, 0 and 1.",
+     "accept": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "two values"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.3"
+  },
+  {
+   "id": "cs-w-3-2-1",
+   "text": "Consider a Boolean function with two inputs, A and B. We can construct a function F that represents the AND operation:\nF ( A, B ) = A · B",
+   "marks": 2,
+   "modelAnswer": [
+    "F(A, B) = A · B",
+    "The output is 1 only when A = 1 and B = 1."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the Boolean function.",
+     "marks": 1,
+     "why": "The Boolean expression identifies the function being constructed.",
+     "how": "Write F(A, B) = A · B.",
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the output condition.",
+     "marks": 1,
+     "why": "The output condition shows the meaning of the AND function.",
+     "how": "State that the output is 1 only when both inputs are 1.",
+     "accept": [
+      [
+       "1",
+       "A=1",
+       "B=1"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.2.1"
+  },
+  {
+   "id": "cs-w-3-2-2",
+   "text": "Now, let us construct a more complex Boolean function with three inputs, A, B, and C:\n\nF (A, B, C) = A · B + A̅ · C",
+   "marks": 8,
+   "modelAnswer": [
+    "F(A, B, C) = A · B + A̅ · C",
+    "| A | B | C | A·B | A̅ | A̅·C | F(A, B, C) |",
+    "| 0 | 0 | 0 | 0 | 1 | 0 | 0 |",
+    "| 0 | 0 | 1 | 0 | 1 | 1 | 1 |",
+    "| 0 | 1 | 0 | 0 | 1 | 0 | 0 |",
+    "| 0 | 1 | 1 | 0 | 1 | 1 | 1 |",
+    "| 1 | 0 | 0 | 0 | 0 | 0 | 0 |",
+    "| 1 | 0 | 1 | 0 | 0 | 0 | 0 |",
+    "| 1 | 1 | 0 | 1 | 0 | 0 | 1 |",
+    "| 1 | 1 | 1 | 1 | 0 | 0 | 1 |",
+    "Final output values in row order: 0, 1, 0, 1, 0, 0, 1, 1."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Find the intermediate AND and NOT values.",
+     "marks": 2,
+     "why": "The intermediate columns apply the operations in the given expression.",
+     "how": "Make columns for A · B, A̅ and A̅ · C.",
+     "accept": [
+      [
+       "A·B",
+       "A̅",
+       "A̅·C"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "List the input combinations.",
+     "marks": 2,
+     "why": "A complete truth table must include every input combination.",
+     "how": "Use all eight combinations of A, B and C, as shown in the model answer.",
+     "accept": [
+      [
+       "0|0|0"
+      ],
+      [
+       "0|0|1"
+      ],
+      [
+       "0|1|0"
+      ],
+      [
+       "0|1|1"
+      ],
+      [
+       "1|0|0"
+      ],
+      [
+       "1|0|1"
+      ],
+      [
+       "1|1|0"
+      ],
+      [
+       "1|1|1"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Evaluate the function for each row.",
+     "marks": 3,
+     "why": "The final output column shows the function's value for each combination.",
+     "how": "Calculate (A · B) + (A̅ · C) for every row.",
+     "accept": [
+      [
+       "0,1,0,1,0,0,1,1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final output sequence.",
+     "marks": 1,
+     "why": "The final answer must agree with the completed output column.",
+     "how": "Write the output values in row order.",
+     "accept": [
+      [
+       "0,1,0,1,0,0,1,1"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.2.2"
+  },
+  {
+   "id": "cs-w-3-2-3",
+   "text": "Q3.1. Define a Boolean function and give an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "A Boolean function is a function which has one or more binary inputs and produces a single binary output.",
+    "For example, F(A, B) = A · B."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Define a Boolean function.",
+     "marks": 1,
+     "why": "The definition must identify its inputs and output.",
+     "how": "State that it has one or more binary inputs and produces a single binary output.",
+     "accept": [
+      [
+       "binary inputs",
+       "single binary output"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give an example.",
+     "marks": 1,
+     "why": "An example shows how a Boolean function is written.",
+     "how": "Use F(A, B) = A · B.",
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.1"
+  },
+  {
+   "id": "cs-w-3-2-4",
+   "text": "Q3.2. What is the significance of the truth table in digital logic?",
+   "marks": 2,
+   "modelAnswer": [
+    "A truth table lists all possible combinations of the input variables.",
+    "It shows the output of the logic operation or Boolean function for each combination."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what input cases it covers.",
+     "marks": 1,
+     "why": "A truth table must show each possible input case.",
+     "how": "Say that it lists all possible input combinations.",
+     "accept": [
+      [
+       "all possible combinations"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State what the table shows for each case.",
+     "marks": 1,
+     "why": "The table's purpose is to show the result for each input case.",
+     "how": "Say that it gives the output of the operation or function.",
+     "accept": [
+      [
+       "output"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.2"
+  },
+  {
+   "id": "cs-w-3-2-5",
+   "text": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "marks": 2,
+   "modelAnswer": [
+    "A NOT gate gives the opposite of its input.",
+    "| A | NOT A (P) |",
+    "| 0 | 1 |",
+    "| 1 | 0 |"
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Describe the operation.",
+     "marks": 1,
+     "why": "The key function of NOT is to reverse the input value.",
+     "how": "State that the output is the opposite of the input.",
+     "accept": [
+      [
+       "opposite",
+       "input"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the truth table.",
+     "marks": 1,
+     "why": "The truth table must show both possible input values and their outputs.",
+     "how": "Write 0 → 1 and 1 → 0.",
+     "accept": [
+      [
+       "A",
+       "P",
+       "0",
+       "1"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.4"
+  },
+  {
+   "id": "cs-w-3-2-6",
+   "text": "Q3.1. Explain the usage of Boolean functions in computers.",
+   "marks": 8,
+   "modelAnswer": [
+    "Boolean functions are used in Arithmetic Logic Units (ALUs) of CPUs to perform arithmetic operations such as addition, subtraction, multiplication and division.",
+    "They are used to process binary data in memory and storage devices, helping with data manipulation and retrieval.",
+    "They are used in control logic to coordinate different parts of a computer system's operation.",
+    "Cell phones and calculators also use Boolean functions to evaluate inputs and produce the required output."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the arithmetic use.",
+     "marks": 2,
+     "why": "The textbook identifies arithmetic operations in ALUs as one computer use.",
+     "how": "Mention that ALUs use Boolean functions for operations such as addition and subtraction.",
+     "accept": [
+      [
+       "arithmetic operations",
+       "ALUs"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Explain the data-processing use.",
+     "marks": 2,
+     "why": "Boolean functions also support the processing and handling of binary data.",
+     "how": "Mention binary data processing in memory and storage.",
+     "accept": [
+      [
+       "binary data",
+       "memory"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain the control use.",
+     "marks": 2,
+     "why": "Control logic is another distinct use of Boolean functions.",
+     "how": "State that Boolean functions help coordinate system operations.",
+     "accept": [
+      [
+       "control logic",
+       "coordinate"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give an everyday-device example.",
+     "marks": 2,
+     "why": "Examples from everyday devices support the explanation.",
+     "how": "Mention a cell phone or calculator using Boolean logic to evaluate inputs and produce results.",
+     "accept": [
+      [
+       "cell phones"
+      ],
+      [
+       "calculators"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.1"
+  },
+  {
+   "id": "cs-w-3-2-7",
+   "text": "Q3.2. Describe how to construct a truth table for a Boolean expression with an example.",
+   "marks": 8,
+   "modelAnswer": [
+    "Example: F(A, B) = A · B",
+    "List every input combination for A and B: 00, 01, 10 and 11.",
+    "The AND output is 1 only when both inputs are 1.",
+    "| A | B | F(A, B) |",
+    "| 0 | 0 | 0 |",
+    "| 0 | 1 | 0 |",
+    "| 1 | 0 | 0 |",
+    "| 1 | 1 | 1 |",
+    "The output values in row order are 0, 0, 0, 1."
+   ],
+   "followUp": "Q3.1. Define a Boolean function and give an example.",
+   "noteId": "cs-n-3-2",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "List the input combinations.",
+     "marks": 2,
+     "why": "A truth table needs every possible combination of input values.",
+     "how": "For two inputs, list 00, 01, 10 and 11.",
+     "accept": [
+      [
+       "four",
+       "two inputs"
+      ],
+      [
+       "00",
+       "01",
+       "10",
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State an example expression.",
+     "marks": 2,
+     "why": "The example must clearly identify the expression being evaluated.",
+     "how": "Use F(A, B) = A · B.",
+     "accept": [
+      [
+       "F(A,B)=A·B"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Explain the rule used to calculate outputs.",
+     "marks": 2,
+     "why": "Applying the AND rule correctly determines each result.",
+     "how": "State that AND is 1 only when both inputs are 1.",
+     "accept": [
+      [
+       "both inputs are 1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the complete table and output sequence.",
+     "marks": 2,
+     "why": "The completed output column is the result of constructing the truth table.",
+     "how": "Show the output for all four rows.",
+     "accept": [
+      [
+       "0,0,0,1"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.2"
+  },
+  {
+   "id": "cs-w-3-3-1",
+   "text": "Simplify the expression A + A̅ · B.",
+   "marks": 2,
+   "modelAnswer": [
+    "A + A̅ · B = (A + A̅) · (A + B) (Distributive Law)",
+    "= 1 · (A + B) (Complement Law)",
+    "= A + B (Identity Law)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the distributive law.",
+     "marks": 0.5,
+     "why": "The distributive-law step begins the simplification correctly.",
+     "how": "Rewrite the expression as (A + A̅) · (A + B).",
+     "accept": [
+      [
+       "(A + A̅) · (A + B)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the complement law.",
+     "marks": 0.5,
+     "why": "The complement law reduces A + A̅ to 1.",
+     "how": "Replace A + A̅ with 1.",
+     "accept": [
+      [
+       "1 · (A + B)"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "The final expression is the simplified function.",
+     "how": "Use the identity law to finish with A + B.",
+     "accept": [
+      [
+       "A+B"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.3.1"
+  },
+  {
+   "id": "cs-w-3-3-2",
+   "text": "Simplify the expression A̅·B̅ + A̅ · B.",
+   "marks": 2,
+   "modelAnswer": [
+    "A̅·B̅ + A̅ · B = A̅ · (B̅ + B) (Distributive Law)",
+    "= A̅ · 1 (Complement Law)",
+    "= A̅ (Identity Law)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor and apply the complement law.",
+     "marks": 1,
+     "why": "Factoring out the common term reveals the complement pair.",
+     "how": "Rewrite as A̅ · (B̅ + B), then use B̅ + B = 1.",
+     "accept": [
+      [
+       "A̅·(B̅+B)"
+      ],
+      [
+       "A̅·1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "The final answer follows from the identity law.",
+     "how": "Simplify A̅ · 1 to A̅.",
+     "accept": [
+      [
+       "A̅"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.3.2"
+  },
+  {
+   "id": "cs-w-3-3-3",
+   "text": "Simplify the expression (A + B) · (A + B̅)",
+   "marks": 2,
+   "modelAnswer": [
+    "(A + B) · (A + B̅) = A·(A+B̅)+B·(A+B̅) (Distributive Law)",
+    "= A + A·B̅ + B·B̅ (Distributive Law and Absorption Law)",
+    "= A + A·B̅ (Complement and Identity Laws)",
+    "= A (Absorption Law)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Expand the expression.",
+     "marks": 0.5,
+     "why": "Expansion by the distributive law exposes terms that can be reduced.",
+     "how": "Apply the distributive law to obtain A + A·B̅ + B·B̅.",
+     "accept": [
+      [
+       "A+A·B̅+B·B̅"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Reduce the expanded expression.",
+     "marks": 0.5,
+     "why": "The complement and absorption laws remove redundant terms.",
+     "how": "Use B·B̅ = 0 and A + A·B̅ = A.",
+     "accept": [
+      [
+       "A+A·B̅"
+      ],
+      [
+       "A"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "A is the simplified function.",
+     "how": "State A as the final result.",
+     "accept": [
+      [
+       "A"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.3.3"
+  },
+  {
+   "id": "cs-w-3-3-4",
+   "text": "Simplify the expression A̅ + B · (A + B̅)",
+   "marks": 2,
+   "modelAnswer": [
+    "A̅ + B · (A + B̅) = A̅ + A·B + B·B̅ (Distributive Law)",
+    "= A̅ + A·B (Complement Law)",
+    "= A̅ + B (A + A̅·B = A + B)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Expand and remove the zero term.",
+     "marks": 1,
+     "why": "Expanding and using the complement law reduces the expression correctly.",
+     "how": "Use B·(A + B̅) = A·B + B·B̅ and B·B̅ = 0.",
+     "accept": [
+      [
+       "A̅+B·A+B·B̅"
+      ],
+      [
+       "A̅+A·B"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 1,
+     "why": "The final expression is the equivalent simplified function.",
+     "how": "Use A̅ + A·B = A̅ + B.",
+     "accept": [
+      [
+       "A̅+B"
+      ]
+     ]
+    }
+   ],
+   "source": "Example 3.3.4"
+  },
+  {
+   "id": "cs-w-3-3-8",
+   "text": "Simplify the following expressions\n\n(b) (A + B̅) · (A + B)",
+   "marks": 8,
+   "modelAnswer": [
+    "(A + B̅) · (A + B) = A·A + A·B + A·B̅ + B̅·B (Distributive Law)",
+    "= A + A·B + A·B̅ (Idempotent and Complement Laws)",
+    "= A (Absorption Law)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Expand using the distributive law.",
+     "marks": 2,
+     "why": "Expanding both brackets makes the complement pair visible.",
+     "how": "Multiply each term in the first bracket by each term in the second.",
+     "accept": [
+      [
+       "A+A·B+A·B̅+B̅·B"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the complement law.",
+     "marks": 2,
+     "why": "The complement product B̅·B is zero.",
+     "how": "Replace B̅·B with 0 and remove the zero term.",
+     "accept": [
+      [
+       "A+A·B+A·B̅"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 4,
+     "why": "The remaining expression reduces to A by absorption.",
+     "how": "Apply absorption or the distributive identity to obtain A.",
+     "accept": [
+      [
+       "A"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(b)"
+  },
+  {
+   "id": "cs-w-3-3-9",
+   "text": "Simplify the following expressions\n\n(c) A + A̅ · (B̅ + C)",
+   "marks": 8,
+   "modelAnswer": [
+    "A + A̅ · (B̅ + C) = A + A̅·B̅ + A̅·C (Distributive Law)",
+    "= A + B̅ + A̅·C (A + A̅·B̅ = A + B̅)",
+    "= A + B̅ + C (A + A̅·C = A + C)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply the distributive law.",
+     "marks": 2,
+     "why": "Expansion separates the terms that can be simplified.",
+     "how": "Expand A̅ · (B̅ + C).",
+     "accept": [
+      [
+       "A+A̅·B̅+A̅·C"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Use the complement and absorption pattern.",
+     "marks": 2,
+     "why": "The expression A + A̅·X reduces to A + X.",
+     "how": "Simplify A + A̅·B̅ to A + B̅.",
+     "accept": [
+      [
+       "A+B̅+C"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 4,
+     "why": "The final expression is the simplified function.",
+     "how": "State A + B̅ + C.",
+     "accept": [
+      [
+       "A+B̅+C"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(c)"
+  },
+  {
+   "id": "cs-w-3-3-10",
+   "text": "Simplify the following expressions\n\n(d) \\overline{A · B} + A · B̅",
+   "marks": 8,
+   "modelAnswer": [
+    "\\overline{A · B} + A · B̅ = A̅ + B̅ + A · B̅ (De Morgan's Theorem)",
+    "= A̅ + B̅ (Absorption Law)"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply De Morgan's theorem.",
+     "marks": 3,
+     "why": "De Morgan's theorem changes the complemented product into a sum.",
+     "how": "Rewrite \\overline{A · B} as A̅ + B̅.",
+     "accept": [
+      [
+       "A̅+B̅+A·B̅"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Remove the redundant term.",
+     "marks": 3,
+     "why": "The extra product term is absorbed by B̅.",
+     "how": "Use B̅ + A·B̅ = B̅.",
+     "accept": [
+      [
+       "A̅+B̅"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the correct final answer.",
+     "marks": 2,
+     "why": "The final answer gives the simplified function.",
+     "how": "State A̅ + B̅.",
+     "accept": [
+      [
+       "A̅+B̅"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(d)"
+  },
+  {
+   "id": "cs-w-3-3-11",
+   "text": "Simplify the following expressions\n\n(e) (A · B) + (A̅ · B̅)",
+   "marks": 8,
+   "modelAnswer": [
+    "(A · B) + (A̅ · B̅)",
+    "This expression has no like terms or removable terms.",
+    "Final answer: A · B + A̅ · B̅"
+   ],
+   "followUp": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "noteId": "cs-n-3-3",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Recognise that the expression is already simplified.",
+     "marks": 6,
+     "why": "The terms represent different input combinations and do not combine to a shorter equivalent term using the listed laws.",
+     "how": "Keep the two product terms unchanged.",
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the correct final answer.",
+     "marks": 2,
+     "why": "The final answer must preserve both product terms.",
+     "how": "State A · B + A̅ · B̅.",
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(e)"
+  },
+  {
+   "id": "cs-w-3-4-1",
+   "text": "Q3.1. Define a Boolean function and give an example.",
+   "marks": 2,
+   "modelAnswer": [
+    "A Boolean function maps one or more binary inputs to a binary output.",
+    "For example, F(A, B) = A + B."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Define a Boolean function.",
+     "marks": 1,
+     "why": "The definition must show that a Boolean function relates binary inputs to an output.",
+     "how": "State that it maps binary input values to a binary output.",
+     "accept": [
+      [
+       "binary inputs",
+       "binary output"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give a Boolean function example.",
+     "marks": 1,
+     "why": "An example demonstrates the definition.",
+     "how": "Write a correct expression, such as F(A, B) = A + B.",
+     "accept": [
+      [
+       "F(A,B)=A+B"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.1"
+  },
+  {
+   "id": "cs-w-3-4-2",
+   "text": "Q3.2. What is the significance of the truth table in digital logic?",
+   "marks": 2,
+   "modelAnswer": [
+    "A truth table lists every possible input combination.",
+    "It shows the corresponding output of a logic function for each combination."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State what inputs are listed.",
+     "marks": 1,
+     "why": "A truth table must cover the full set of possible inputs.",
+     "how": "Say that every possible input combination is included.",
+     "accept": [
+      [
+       "every possible",
+       "input"
+      ],
+      [
+       "all",
+       "input combinations"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State what the table shows.",
+     "marks": 1,
+     "why": "The table is useful because it shows the output for each input combination.",
+     "how": "Explain that it records the corresponding output of the logic function.",
+     "accept": [
+      [
+       "corresponding output"
+      ],
+      [
+       "output for each"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.2"
+  },
+  {
+   "id": "cs-w-3-4-5",
+   "text": "Q3.5. What is the purpose of a Karnaugh map in simplifying Boolean expressions?",
+   "marks": 2,
+   "modelAnswer": [
+    "A Karnaugh map groups adjacent 1s.",
+    "The groups give a simpler Boolean expression with fewer terms or variables."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Explain the map method.",
+     "marks": 1,
+     "why": "Grouping adjacent cells is the central Karnaugh map method.",
+     "how": "State that adjacent 1s are grouped.",
+     "accept": [
+      [
+       "groups",
+       "adjacent",
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the purpose.",
+     "marks": 1,
+     "why": "The purpose of grouping is to reduce the Boolean expression.",
+     "how": "Explain that the groups produce a simpler expression.",
+     "accept": [
+      [
+       "simpler",
+       "Boolean expression"
+      ],
+      [
+       "simplify",
+       "expression"
+      ]
+     ]
+    }
+   ],
+   "source": "Short 3.5"
+  },
+  {
+   "id": "cs-w-3-4-6",
+   "text": "Q3.1. Explain the usage of Boolean functions in computers.",
+   "marks": 8,
+   "modelAnswer": [
+    "Computers process information in binary form, using 0 and 1.",
+    "A Boolean function describes the relationship between binary inputs and a binary output.",
+    "The basic Boolean operations are implemented by logic gates such as AND, OR, and NOT.",
+    "These gates are combined to form logic circuits.",
+    "Boolean functions therefore describe how a circuit responds to its input conditions.",
+    "They are used in computer circuits for operations such as making decisions and processing data."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the values used.",
+     "marks": 2,
+     "why": "Boolean functions operate on binary values.",
+     "how": "Explain that their inputs and outputs use 0 and 1.",
+     "accept": [
+      [
+       "binary",
+       "0",
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Connect functions to gates.",
+     "marks": 2,
+     "why": "Boolean operations are implemented by logic gates.",
+     "how": "Give gates such as AND, OR, and NOT as implementations.",
+     "accept": [
+      [
+       "logic gates"
+      ],
+      [
+       "AND",
+       "OR",
+       "NOT"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Describe computer use.",
+     "marks": 2,
+     "why": "The answer must explain where these functions are used.",
+     "how": "State that they describe or control computer logic circuits.",
+     "accept": [
+      [
+       "circuits",
+       "computer"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Explain their role.",
+     "marks": 2,
+     "why": "This states the practical role of Boolean functions in processing and decision-making.",
+     "how": "Explain that they determine outputs from input conditions.",
+     "accept": [
+      [
+       "processing",
+       "data"
+      ],
+      [
+       "making decisions"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.1"
+  },
+  {
+   "id": "cs-w-3-4-7",
+   "text": "Q3.2. Describe how to construct a truth table for a Boolean expression with an example.",
+   "marks": 8,
+   "modelAnswer": [
+    "Example: Construct a truth table for F = A + B.",
+    "There are two inputs, so list all four possible input combinations.",
+    "Evaluate F using the OR operation for each combination.",
+    "A | B | F = A + B",
+    "0 | 0 | 0",
+    "0 | 1 | 1",
+    "1 | 0 | 1",
+    "1 | 1 | 1"
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "List the input combinations.",
+     "marks": 2,
+     "why": "A truth table must include every possible input combination.",
+     "how": "For two inputs, list 00, 01, 10, and 11.",
+     "accept": [
+      [
+       "four",
+       "two inputs"
+      ],
+      [
+       "00",
+       "01",
+       "10",
+       "11"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Give the example expression.",
+     "marks": 2,
+     "why": "The example expression and its operation must be identified.",
+     "how": "Use F = A + B and identify + as OR.",
+     "accept": [
+      [
+       "F=A+B"
+      ],
+      [
+       "OR"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Evaluate the first two rows.",
+     "marks": 2,
+     "why": "Correctly evaluating rows shows how the expression is applied.",
+     "how": "For OR, 00 gives 0 and 01 gives 1.",
+     "accept": [
+      [
+       "0|0|0",
+       "0|1|1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Evaluate the last two rows.",
+     "marks": 2,
+     "why": "The remaining rows complete the truth table and its final result.",
+     "how": "For OR, 10 and 11 both give 1.",
+     "accept": [
+      [
+       "1|0|1",
+       "1|1|1"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.2"
+  },
+  {
+   "id": "cs-w-3-4-8",
+   "text": "Q3.3. Describe the concept of duality in Boolean algebra and provide an example to illustrate it.",
+   "marks": 8,
+   "modelAnswer": [
+    "Duality is a principle of Boolean algebra used to form the dual of an expression.",
+    "Interchange + and · in the expression.",
+    "Also interchange 0 and 1.",
+    "For example, start with A · 0 = 0.",
+    "Interchanging · with + and 0 with 1 gives A + 1 = 1.",
+    "Therefore, the dual of A · 0 = 0 is A + 1 = 1."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "State the principle.",
+     "marks": 2,
+     "why": "The answer must identify the Boolean algebra principle being described.",
+     "how": "Name duality and explain that an expression is changed by prescribed substitutions.",
+     "accept": [
+      [
+       "duality"
+      ],
+      [
+       "dual"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "State the operator interchange.",
+     "marks": 2,
+     "why": "The two operators must be interchanged to form the dual.",
+     "how": "Replace + by · and · by +.",
+     "accept": [
+      [
+       "+",
+       "·"
+      ],
+      [
+       "OR",
+       "AND"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "State the constant interchange.",
+     "marks": 2,
+     "why": "The constants must also be interchanged.",
+     "how": "Replace 0 by 1 and 1 by 0.",
+     "accept": [
+      [
+       "0",
+       "1"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the example and its dual.",
+     "marks": 2,
+     "why": "A correct example demonstrates how duality is applied.",
+     "how": "Show that A · 0 = 0 has dual A + 1 = 1.",
+     "accept": [
+      [
+       "A·0=0",
+       "A+1=1"
+      ],
+      [
+       "A+1=1"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.3"
+  },
+  {
+   "id": "cs-w-3-4-12",
+   "text": "Q3.7. Simplify the following Boolean function using Boolean algebra rules: F (A, B) = A · B + A · B̅",
+   "marks": 8,
+   "modelAnswer": [
+    "F(A, B) = A · B + A · B̅",
+    "F(A, B) = A · (B + B̅)",
+    "F(A, B) = A · 1",
+    "F(A, B) = A"
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Factor the expression.",
+     "marks": 2,
+     "why": "Factoring the common term is the key first algebra step.",
+     "how": "Write A · B + A · B̅ = A · (B + B̅).",
+     "accept": [
+      [
+       "A·(B+B̅)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the complement law.",
+     "marks": 2,
+     "why": "A variable ORed with its complement equals 1.",
+     "how": "Use B + B̅ = 1.",
+     "accept": [
+      [
+       "A·1"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Apply the identity law.",
+     "marks": 2,
+     "why": "The identity law reduces the remaining product.",
+     "how": "Use A · 1 = A.",
+     "accept": [
+      [
+       "A·1"
+      ],
+      [
+       "F(A,B)=A"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final answer.",
+     "marks": 2,
+     "why": "The simplified final expression must be stated.",
+     "how": "State F(A, B) = A.",
+     "accept": [
+      [
+       "A"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.7"
+  },
+  {
+   "id": "cs-w-3-4-14",
+   "text": "Q3.9. Simplify the following expressions (a) \\overline{A + B} · (A + B)",
+   "marks": 8,
+   "modelAnswer": [
+    "overline(A + B) · (A + B)",
+    "Let X = A + B.",
+    "The expression is X̅ · X.",
+    "By the complement law, X̅ · X = 0.",
+    "Answer: 0"
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Identify the expression and its complement.",
+     "marks": 2,
+     "why": "Recognising a quantity and its complement identifies the applicable law.",
+     "how": "Let X = A + B, so the expression is X̅ · X.",
+     "accept": [
+      [
+       "X=A+B"
+      ],
+      [
+       "complement"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Apply the complement law.",
+     "marks": 2,
+     "why": "A quantity ANDed with its complement is 0.",
+     "how": "Use X̅ · X = 0.",
+     "accept": [
+      [
+       "X̅·X=0"
+      ],
+      [
+       "complement law"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Give the final answer.",
+     "marks": 4,
+     "why": "The final simplified value is required.",
+     "how": "State the expression equals 0.",
+     "accept": [
+      [
+       "0"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(a)"
+  },
+  {
+   "id": "cs-w-3-4-16",
+   "text": "Q3.9. Simplify the following expressions (c) A + A̅ · (B̅ + C)",
+   "marks": 8,
+   "modelAnswer": [
+    "A + A̅ · (B̅ + C)",
+    "= A + A̅ · B̅ + A̅ · C",
+    "= A + B̅ + A̅ · C",
+    "= A + B̅ + C"
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Start with the given expression.",
+     "marks": 2,
+     "why": "The expression must be correctly identified before applying Boolean laws.",
+     "how": "Copy the expression accurately.",
+     "accept": [
+      [
+       "A+A̅·(B̅+C)"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Expand the bracket.",
+     "marks": 2,
+     "why": "Distributing the product across the sum makes absorption clear.",
+     "how": "Use A̅ · (B̅ + C) = A̅ · B̅ + A̅ · C.",
+     "accept": [
+      [
+       "A+A̅·B̅+A̅·C"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Apply absorption.",
+     "marks": 2,
+     "why": "Absorption simplifies A + A̅ · B̅ to A + B̅.",
+     "how": "Use X + X̅Y = X + Y.",
+     "accept": [
+      [
+       "A+B̅+A̅·C"
+      ],
+      [
+       "A+B̅+C"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final answer.",
+     "marks": 2,
+     "why": "The final expression must be stated in simplified form.",
+     "how": "State A + B̅ + C.",
+     "accept": [
+      [
+       "A+B̅+C"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(c)"
+  },
+  {
+   "id": "cs-w-3-4-17",
+   "text": "Q3.9. Simplify the following expressions (d) \\overline{A · B} + A · B̅",
+   "marks": 8,
+   "modelAnswer": [
+    "overline(A · B) + A · B̅",
+    "= A̅ + B̅ + A · B̅",
+    "= A̅ + B̅",
+    "Answer: A̅ + B̅"
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Apply De Morgan's law.",
+     "marks": 2,
+     "why": "De Morgan's law correctly expands the complemented product.",
+     "how": "Change overline(A · B) into A̅ + B̅.",
+     "accept": [
+      [
+       "A̅+B̅"
+      ],
+      [
+       "A'+B'"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Rewrite the full expression.",
+     "marks": 2,
+     "why": "The expansion must be combined with the remaining term.",
+     "how": "Substitute the expansion into the expression.",
+     "accept": [
+      [
+       "A̅+B̅+A·B̅"
+      ],
+      [
+       "A'+B'+A·B'"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Apply absorption.",
+     "marks": 2,
+     "why": "The extra product term is absorbed by the existing sum.",
+     "how": "Use A̅ + A · B̅ = A̅ + B̅.",
+     "accept": [
+      [
+       "B̅+A̅"
+      ],
+      [
+       "A̅+B̅"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final answer.",
+     "marks": 2,
+     "why": "The simplified final expression must be stated.",
+     "how": "State A̅ + B̅.",
+     "accept": [
+      [
+       "A̅+B̅"
+      ],
+      [
+       "A'+B'"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(d)"
+  },
+  {
+   "id": "cs-w-3-4-18",
+   "text": "Q3.9. Simplify the following expressions (e) (A · B) + (A̅ · B̅)",
+   "marks": 8,
+   "modelAnswer": [
+    "(A · B) + (A̅ · B̅)",
+    "The first product is 1 when A = 1 and B = 1.",
+    "The second product is 1 when A = 0 and B = 0.",
+    "Thus, the function is 1 when A and B are equal.",
+    "This is the XNOR (equivalence) function.",
+    "The simplified expression is A · B + A̅ · B̅."
+   ],
+   "followUp": "Q3.4. Describe the function of a NOT gate with its truth table.",
+   "noteId": "cs-n-3-4",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "rubric": [
+    {
+     "id": "a",
+     "description": "Write the expression.",
+     "marks": 2,
+     "why": "The original expression must be accurately represented.",
+     "how": "Keep both product terms and their complements correctly placed.",
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ],
+      [
+       "A·B+A'·B'"
+      ]
+     ]
+    },
+    {
+     "id": "b",
+     "description": "Interpret the expression.",
+     "marks": 2,
+     "why": "Checking input pairs shows when the function is 1 and confirms its meaning.",
+     "how": "State that it is 1 when A and B are equal.",
+     "accept": [
+      [
+       "equal"
+      ],
+      [
+       "00",
+       "11"
+      ],
+      [
+       "A=1",
+       "B=1"
+      ]
+     ]
+    },
+    {
+     "id": "c",
+     "description": "Name the function.",
+     "marks": 2,
+     "why": "The expression is the equivalence (XNOR) function.",
+     "how": "Identify it as XNOR or equivalence.",
+     "accept": [
+      [
+       "XNOR"
+      ],
+      [
+       "equivalence"
+      ]
+     ]
+    },
+    {
+     "id": "d",
+     "description": "Give the final expression.",
+     "marks": 2,
+     "why": "This is already the simplified sum-of-products form.",
+     "how": "State the expression remains A · B + A̅ · B̅.",
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ],
+      [
+       "A·B+A'·B'"
+      ]
+     ]
+    }
+   ],
+   "source": "Long 3.9(e)"
+  }
+ ],
+ "report": {
+  "unit": 3,
+  "title": "Digital Systems and Logic Design",
+  "dropped": [
+   "Written cs-m-3-3#4 (Long 3.7): model answer misses a marking point",
+   "Written cs-m-3-3#5 (Long 3.8): model answer misses a marking point",
+   "Written cs-m-3-3#6 (Long 3.9(a)): model answer misses a marking point",
+   "Written cs-m-3-4#2 (Short 3.3): model answer misses a marking point",
+   "Written cs-m-3-4#3 (Short 3.4): independent check disagreed",
+   "Written cs-m-3-4#8 (Long 3.4): independent check disagreed",
+   "Written cs-m-3-4#9 (Long 3.5): independent check disagreed",
+   "Written cs-m-3-4#10 (Long 3.6): independent check disagreed, model answer misses a marking point",
+   "Written cs-m-3-4#12 (Long 3.8): model answer misses a marking point",
+   "Written cs-m-3-4#14 (Long 3.9(b)): model answer misses a marking point"
+  ]
+ }
+}

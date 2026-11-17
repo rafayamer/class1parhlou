@@ -1,0 +1,394 @@
+{
+ "unit": 3,
+ "sections": [
+  {
+   "number": "3.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "3.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "3.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "3.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 3.1",
+     "question": "Define a Boolean function and give an example.",
+     "steps": [
+      "A Boolean function is a function whose input variables and output have only two possible values: 0 and 1.",
+      "Example: F = A + B is an OR function. It gives output 1 when at least one of its inputs is 1."
+     ],
+     "answer": "A Boolean function takes binary inputs (0 or 1) and produces a binary output; for example, F = A + B.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 3.2",
+     "question": "What is the significance of the truth table in digital logic?",
+     "steps": [
+      "A truth table shows the output of a logic function for every possible combination of its input values.",
+      "It helps us understand and analyse the operation of a logic gate or digital circuit.",
+      "It can also be used to check whether a Boolean expression or circuit gives the required output."
+     ],
+     "answer": "A truth table lists all possible input combinations and their corresponding outputs, helping analyse and verify digital logic.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 3.3",
+     "question": "Explain the difference between analog and digital signals.",
+     "steps": [
+      "An analog signal varies continuously and can have any value within a range.",
+      "A digital signal has discrete values; in computers and digital circuits these are represented by 0 and 1.",
+      "Analog signals can represent gradual changes, whereas digital signals represent information using distinct levels."
+     ],
+     "answer": "Analog signals vary continuously, while digital signals use discrete values, usually 0 and 1.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 3.4",
+     "question": "Describe the function of a NOT gate with its truth table.",
+     "steps": [
+      "A NOT gate has one input and one output. It produces the complement, or opposite, of its input.",
+      "Boolean expression: Y = NOT A = Ā.",
+      "Truth table: A = 0 gives Y = 1; A = 1 gives Y = 0."
+     ],
+     "answer": "A NOT gate inverts its input: Y = Ā. Truth table: A | Y; 0 | 1; 1 | 0.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 3.5",
+     "question": "What is the purpose of a Karnaugh map in simplifying Boolean expressions?",
+     "steps": [
+      "A Karnaugh map (K-map) is a diagram used to simplify Boolean expressions.",
+      "Adjacent 1s in the map are grouped to obtain a simpler expression with fewer terms and variables.",
+      "The simplified expression can be used to design a logic circuit with fewer gates."
+     ],
+     "answer": "A Karnaugh map simplifies Boolean expressions by grouping adjacent values, helping reduce the number of terms and gates.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.1",
+     "question": "Explain the usage of Boolean functions in computers.",
+     "steps": [
+      "Computers use Boolean functions to process binary data, represented by 0s and 1s.",
+      "Boolean functions describe the operations performed by logic gates in computer circuits.",
+      "They are used in arithmetic and logical operations, decision-making, and the control of digital systems."
+     ],
+     "answer": "Boolean functions are used by computer circuits to process binary data and perform arithmetic, logical, and control operations.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.2",
+     "question": "Describe how to construct a truth table for a Boolean expression with an example.",
+     "steps": [
+      "Identify the input variables and the Boolean expression to be evaluated.",
+      "For n input variables, list all 2ⁿ possible input combinations, usually in binary counting order.",
+      "Add columns for any intermediate operations, evaluating the expression one operation at a time.",
+      "Calculate the final output for every input combination and check that all combinations are included.",
+      "Example: F = (A AND B) OR NOT A. Add columns AB and NOT A, then combine them with OR.",
+      "Truth table: A B | AB | NOT A | F; 0 0 | 0 | 1 | 1; 0 1 | 0 | 1 | 1; 1 0 | 0 | 0 | 0; 1 1 | 1 | 0 | 1."
+     ],
+     "answer": "A truth table lists every possible input combination and the output of the Boolean expression. For F = (A AND B) OR NOT A: 00 → 1, 01 → 1, 10 → 0, 11 → 1.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.3",
+     "question": "Describe the concept of duality in Boolean algebra and provide an example to illustrate it.",
+     "steps": [
+      "The principle of duality states that the dual of a valid Boolean identity is also valid.",
+      "To obtain the dual, interchange OR (+) with AND (·), and interchange 0 with 1.",
+      "For example, the identity A + 0 = A has the dual A · 1 = A."
+     ],
+     "answer": "Boolean duality interchanges + with · and 0 with 1; for example, A + 0 = A has the dual A · 1 = A.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.4",
+     "question": "Compare and contrast half-adders and full-adders, including their truth tables, Boolean expressions, and circuit diagrams.",
+     "steps": [],
+     "answer": "",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.5",
+     "question": "How do Karnaugh maps simplify Boolean expressions? Provide a detailed example with steps.",
+     "steps": [
+      "A Karnaugh map (K-map) is a graphical method for simplifying Boolean expressions. Each cell represents one minterm.",
+      "Arrange the cells in Gray-code order so that adjacent cells differ in only one variable. Place a 1 in each cell where the function is 1.",
+      "Make the largest possible rectangular groups of adjacent 1s. The group size must be a power of 2: 1, 2, 4, 8, and so on. The first and last cells of a row or column are also adjacent.",
+      "For each group, keep only the variables that remain unchanged within that group. Remove variables that change. OR the resulting terms to obtain the simplified expression.",
+      "Example: Simplify F(A, B, C) = Σm(1, 3, 5, 7).",
+      "Use columns AB in Gray-code order 00, 01, 11, 10 and rows C = 0, 1.",
+      "K-map:",
+      "C \\ AB | 00 | 01 | 11 | 10",
+      "0       | 0  | 0  | 0  | 0",
+      "1       | 1  | 1  | 1  | 1",
+      "The four 1s in the C = 1 row form one group of four.",
+      "Within this group, A and B change, so they are eliminated. C remains 1 throughout the group.",
+      "Therefore, F = C."
+     ],
+     "answer": "A K-map simplifies a Boolean expression by grouping adjacent 1s and retaining only the variables that remain unchanged; in the example, F = C.",
+     "figure": "Draw a three-variable Karnaugh map with columns AB in Gray-code order 00, 01, 11, 10 and rows C = 0, 1. Enter 1 in the cells for minterms 1, 3, 5 and 7. The four 1s fill the entire C = 1 row; group them together and label the group C.",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.6",
+     "question": "Design a 4-bit binary adder using both half-adders and full-adders. Explain each step with truth tables, Boolean expressions, and circuit diagrams.",
+     "steps": [],
+     "answer": "",
+     "figure": "",
+     "accept": [],
+     "checked": false,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.7",
+     "question": "Simplify the following Boolean function using Boolean algebra rules: F (A, B) = A · B + A · B̅",
+     "steps": [
+      "F(A, B) = A · B + A · B̅",
+      "Take A as the common factor: F = A · (B + B̅).",
+      "By the complement law, B + B̅ = 1.",
+      "Therefore, F = A · 1 = A."
+     ],
+     "answer": "F(A, B) = A",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.8",
+     "question": "Use De Morgan's laws to simplify the following function: F (A, B, C) = \\overline{A + B} + \\overline{AC}",
+     "steps": [
+      "F(A, B, C) = (A + B)̅ + (A · C)̅",
+      "By De Morgan’s law, (A + B)̅ = A̅ · B̅ and (A · C)̅ = A̅ + C̅.",
+      "Therefore, F = A̅ · B̅ + A̅ + C̅.",
+      "By the absorption law, A̅ + A̅ · B̅ = A̅.",
+      "Therefore, F = A̅ + C̅."
+     ],
+     "answer": "F(A, B, C) = A̅ + C̅",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.9(a)",
+     "question": "Simplify the following expressions: \\overline{A + B} · (A + B)",
+     "steps": [
+      "(A + B)̅ · (A + B)",
+      "Let X = A + B. Then the expression is X̅ · X.",
+      "By the complement law, X̅ · X = 0.",
+      "Therefore, (A + B)̅ · (A + B) = 0."
+     ],
+     "answer": "0",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.9(b)",
+     "question": "Simplify the following expressions: (A + B̅) · (A + B)",
+     "steps": [
+      "(A + B̅) · (A + B)",
+      "Using the identity (X + Y) · (X + Z) = X + Y · Z:",
+      "(A + B̅) · (A + B) = A + (B̅ · B).",
+      "By the complement law, B̅ · B = 0.",
+      "Therefore, A + 0 = A."
+     ],
+     "answer": "A",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.9(c)",
+     "question": "Simplify the following expressions: A + A̅ · (B̅ + C)",
+     "steps": [
+      "A + A̅ · (B̅ + C)",
+      "Using the distributive law, A + A̅ · X = (A + A̅) · (A + X), where X = B̅ + C.",
+      "Therefore, A + A̅ · (B̅ + C) = (A + A̅) · (A + B̅ + C).",
+      "By the complement law, A + A̅ = 1.",
+      "Therefore, 1 · (A + B̅ + C) = A + B̅ + C."
+     ],
+     "answer": "A + B̅ + C",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.9(d)",
+     "question": "Simplify the following expressions: \\overline{A · B} + A · B̅",
+     "steps": [
+      "\\overline{A\\cdot B}+A\\cdot\\overline{B}",
+      "=\\overline{A}+\\overline{B}+A\\cdot\\overline{B} \\quad\\text{(De Morgan's law)}",
+      "=\\overline{A}+\\overline{B} \\quad\\text{(absorption law: }X+X\\cdot Y=X\\text{)}"
+     ],
+     "answer": "\\overline{A}+\\overline{B}",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 3.9(e)",
+     "question": "Simplify the following expressions: (A · B) + (A̅ · B̅)",
+     "steps": [
+      "A\\cdot B+\\overline{A}\\cdot\\overline{B}",
+      "This expression is already in its simplest sum-of-products form.",
+      "It represents the XNOR operation: the output is 1 when A and B have the same value."
+     ],
+     "answer": "A\\cdot B+\\overline{A}\\cdot\\overline{B} (XNOR)",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 3.1",
+     "stem": "Which of the following Boolean expressions represents the OR operation?",
+     "options": [
+      "A · B",
+      "A + B",
+      "A̅",
+      "A ⊕ B"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A · B represents the AND operation, which is true only when both inputs are true.",
+      "A + B represents the OR operation, which is true when at least one input is true.",
+      "A̅ represents the NOT operation, which complements A.",
+      "A ⊕ B represents the XOR operation, which is true when the inputs differ."
+     ]
+    },
+    {
+     "source": "MCQ 3.2",
+     "stem": "What is the dual of the Boolean expression A · 0 = 0?",
+     "options": [
+      "A + 1 = 1",
+      "A + 0 = A",
+      "A · 1 = A",
+      "A · 0 = 0"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "A + 1 = 1 is the dual, obtained by interchanging AND with OR and 0 with 1.",
+      "A + 0 = A is a valid identity, but it is not the dual of the given expression.",
+      "A · 1 = A is a valid identity, but it is not the dual of the given expression.",
+      "A · 0 = 0 is the original expression, not its dual."
+     ]
+    },
+    {
+     "source": "MCQ 3.3",
+     "stem": "Which logic gate outputs true only if both inputs are true?",
+     "options": [
+      "OR gate",
+      "AND gate",
+      "XOR gate",
+      "NOT gate"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "An OR gate outputs true when at least one input is true.",
+      "An AND gate outputs true only when both inputs are true.",
+      "An XOR gate outputs true when its inputs differ.",
+      "A NOT gate complements a single input rather than combining two inputs."
+     ]
+    },
+    {
+     "source": "MCQ 3.4",
+     "stem": "In a half-adder circuit, the carry is generated by which operation?",
+     "options": [
+      "XOR operation",
+      "AND operation",
+      "OR operation",
+      "NOT operation"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "XOR produces the sum bit in a half-adder, not the carry.",
+      "AND produces the carry bit in a half-adder because a carry occurs when both inputs are true.",
+      "OR does not produce the half-adder carry because it is true even when only one input is true.",
+      "NOT complements an input and does not generate the half-adder carry."
+     ]
+    },
+    {
+     "source": "MCQ 3.5",
+     "stem": "What is the decimal equivalent of the binary number 1101?",
+     "options": [
+      "11",
+      "12",
+      "13",
+      "14"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "1101₂ equals 13₁₀, not 11.",
+      "1101₂ equals 13₁₀, not 12.",
+      "1101₂ equals 8 + 4 + 1 = 13₁₀.",
+      "1101₂ equals 13₁₀, not 14."
+     ]
+    }
+   ]
+  }
+ ]
+}

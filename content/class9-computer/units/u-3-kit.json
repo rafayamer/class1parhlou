@@ -1,0 +1,426 @@
+{
+ "unit": 3,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 3.4",
+   "Short 3.5",
+   "Long 3.3",
+   "Long 3.4",
+   "Long 3.5",
+   "Long 3.6",
+   "Long 3.8",
+   "Long 3.9"
+  ],
+  "definitions": [
+   {
+    "term": "Analog signals",
+    "text": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range."
+   },
+   {
+    "term": "Digital signals",
+    "text": "Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+   },
+   {
+    "term": "Binary variables",
+    "text": "Binary variables that can have only have two values, 0 and 1."
+   },
+   {
+    "term": "Boolean algebra",
+    "text": "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False. It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+   },
+   {
+    "term": "Boolean function",
+    "text": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+   },
+   {
+    "term": "Logic gates",
+    "text": "Logic gates are physical devices in electronic circuits that perform Boolean operations. Each type of logic gate corresponds to a basic Boolean operation."
+   },
+   {
+    "term": "Identity Laws",
+    "text": "A + 0 = A\nA · 1 = A"
+   },
+   {
+    "term": "Null Laws",
+    "text": "A + 1 = 1\nA · 0 = 0"
+   },
+   {
+    "term": "Idempotent Laws",
+    "text": "A + A = A\nA · A = A"
+   },
+   {
+    "term": "Complement Laws",
+    "text": "A + A̅ = 1\nA · A̅ = 0"
+   },
+   {
+    "term": "Commutative Laws",
+    "text": "A + B = B + A\nA · B = B · A"
+   },
+   {
+    "term": "Associative Laws",
+    "text": "(A + B) + C = A + (B + C)\n(A · B) · C = A · (B · C)"
+   },
+   {
+    "term": "Distributive Laws",
+    "text": "A · (B + C) = (A · B) + (A · C)\nA + (B · C) = (A + B) · (A + C)"
+   },
+   {
+    "term": "Absorption Laws",
+    "text": "A + (A · B) = A\nA · (A + B) = A"
+   },
+   {
+    "term": "De Morgan's Theorems",
+    "text": "(A + B)̅ = A̅ · B̅\n(A · B)̅ = A̅ + B̅"
+   },
+   {
+    "term": "Double Negation Law",
+    "text": "A̿ = A"
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "P = A · B",
+    "use": "AND operation: output is 1 only when both inputs are 1. A, B and P are dimensionless binary values; no SI units."
+   },
+   {
+    "formula": "P = A + B",
+    "use": "OR operation: output is 1 when at least one input is 1. A, B and P are dimensionless binary values; no SI units."
+   },
+   {
+    "formula": "P = A̅ or P = ¬A",
+    "use": "NOT operation: gives the opposite of the input. A and P are dimensionless binary values; no SI units."
+   },
+   {
+    "formula": "A + 0 = A; A · 1 = A",
+    "use": "Identity laws for simplifying a Boolean expression. All symbols are dimensionless binary values; no SI units."
+   },
+   {
+    "formula": "A + 1 = 1; A · 0 = 0",
+    "use": "Null laws for simplifying a Boolean expression. All symbols are dimensionless binary values; no SI units."
+   },
+   {
+    "formula": "A + A = A; A · A = A",
+    "use": "Idempotent laws for repeated variables. A is dimensionless; no SI units."
+   },
+   {
+    "formula": "A + A̅ = 1; A · A̅ = 0",
+    "use": "Complement laws when a variable and its complement appear together. A is dimensionless; no SI units."
+   },
+   {
+    "formula": "A + B = B + A; A · B = B · A",
+    "use": "Commutative laws for changing the order of inputs. A and B are dimensionless; no SI units."
+   },
+   {
+    "formula": "(A + B) + C = A + (B + C); (A · B) · C = A · (B · C)",
+    "use": "Associative laws for regrouping OR or AND operations. A, B and C are dimensionless; no SI units."
+   },
+   {
+    "formula": "A · (B + C) = (A · B) + (A · C); A + (B · C) = (A + B) · (A + C)",
+    "use": "Distributive laws for expanding or factoring Boolean expressions. A, B and C are dimensionless; no SI units."
+   },
+   {
+    "formula": "A + (A · B) = A; A · (A + B) = A",
+    "use": "Absorption laws for removing a redundant term. A and B are dimensionless; no SI units."
+   },
+   {
+    "formula": "(A + B)̅ = A̅ · B̅; (A · B)̅ = A̅ + B̅",
+    "use": "De Morgan's theorems for complementing an OR or AND expression. A and B are dimensionless; no SI units."
+   },
+   {
+    "formula": "A̿ = A",
+    "use": "Double negation law: two complements cancel. A is dimensionless; no SI units."
+   },
+   {
+    "formula": "F(A, B) = A · B + A · B̅ = A · (B + B̅) = A · 1 = A",
+    "use": "Simplify the examinable function using the complement, identity and distributive laws. A, B and F are dimensionless binary values; no SI units."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 3.1",
+    "why": "Direct definition question; prepare the exact definition and a simple AND example."
+   },
+   {
+    "ref": "Short 3.2",
+    "why": "A direct short question about showing outputs for all possible inputs."
+   },
+   {
+    "ref": "Short 3.3",
+    "why": "Direct comparison question; continuous versus two-valued signals is a key contrast."
+   },
+   {
+    "ref": "Short 3.4",
+    "why": "The question is in the examinable exercise list; learn the opposite-output rule and both truth-table rows."
+   }
+  ],
+  "fullMarks": [
+   "For a definition question, give the complete wording and include the key detail: Boolean inputs and outputs can only be 0 or 1.",
+   "For analog versus digital, state both contrasts clearly: analog changes continuously and can have any value in a range; digital has only 0 and 1.",
+   "For a truth-table question, list every input combination in order. With two inputs there are four rows; with three inputs there are eight rows.",
+   "For a Boolean expression, show intermediate columns or steps for each operation before writing the final output.",
+   "When simplifying, write the law used beside each step, such as Complement Law or Identity Law, and clearly state the final simplified expression.",
+   "Use the symbols consistently: + means OR, · means AND, and the bar means NOT. Do not treat Boolean 1 + 1 as ordinary arithmetic addition.",
+   "For a computer-uses question, name the applications and briefly explain each: arithmetic in ALUs, binary data processing in memory and storage, and control logic."
+  ],
+  "mistakes": [
+   "Mistake: Treating + as ordinary arithmetic addition. Fix: In Boolean algebra, + means OR, so 1 + 1 = 1.",
+   "Mistake: Saying an analog signal has only two values. Fix: Analog varies continuously and can have any value in a given range; digital has 0 or 1.",
+   "Mistake: Leaving out input combinations from a truth table. Fix: Include all combinations: four rows for two inputs and eight rows for three inputs.",
+   "Mistake: Forgetting the bar when writing a complemented variable. Fix: Copy the bar carefully and keep it over the correct variable or whole expression.",
+   "Mistake: Jumping straight to a simplified answer without showing the Boolean laws. Fix: Write each transformation on a new line and label the law used.",
+   "Mistake: Giving only one use of Boolean functions in computers. Fix: Include arithmetic operations, data processing, and control logic, with a brief explanation of each."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a Boolean function.",
+    "answer": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+   },
+   {
+    "question": "What is the significance of a truth table in digital logic?",
+    "answer": "A truth table is useful in demonstrating the functionality of the AND operation with all possibilities of the input variables."
+   },
+   {
+    "question": "Explain the difference between analog and digital signals.",
+    "answer": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range. Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+   },
+   {
+    "question": "What is Boolean algebra?",
+    "answer": "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False. It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+   },
+   {
+    "question": "What are the uses of Boolean functions in computers?",
+    "answer": "Boolean functions are used in Arithmetical Logic Units (ALUs) of CPUs to perform operations like addition, subtraction, multiplication, and even division. Boolean functions are used to process binary data in memory and storage devices, ensuring efficient data manipulation and retrieval. Boolean functions are applied in computers to control various parts of the system's operation to function in co-ordinated manner."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-3-1-t0",
+   "text": "Define a Boolean function.",
+   "marks": 2,
+   "modelAnswer": [
+    "A Boolean function is a function which has a one or more binary inputs and produces a single binary output.",
+    "The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+   ],
+   "followUp": "Define a Boolean function.",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "binary",
+       "inputs"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises that a Boolean function has binary inputs.",
+     "description": "Binary inputs",
+     "how": "Award 1 mark for stating that the function has one or more binary inputs."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "single",
+       "binary",
+       "output"
+      ],
+      [
+       "0",
+       "1",
+       "output"
+      ],
+      [
+       "False",
+       "True",
+       "output"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the single binary output and its possible values.",
+     "description": "Single binary output",
+     "how": "Award 1 mark for stating that it produces a single binary output; the values may be given as 0 and 1 or False and True."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-3-1-t1",
+   "text": "What is the significance of a truth table in digital logic?",
+   "marks": 2,
+   "modelAnswer": [
+    "A truth table is useful in demonstrating the functionality of the AND operation with all possibilities of the input variables."
+   ],
+   "followUp": "What is the significance of a truth table in digital logic?",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "truth table",
+       "AND",
+       "functionality"
+      ],
+      [
+       "truth table",
+       "AND",
+       "operation"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the truth table demonstrates the AND operation's functionality.",
+     "description": "Demonstrates AND functionality",
+     "how": "Award 1 mark for linking a truth table to demonstrating the functionality of the AND operation."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "all",
+       "possibilities",
+       "input"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes all possible input combinations.",
+     "description": "All input possibilities",
+     "how": "Award 1 mark for stating that the table shows all possibilities of the input variables."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-3-1-t2",
+   "text": "Explain the difference between analog and digital signals.",
+   "marks": 2,
+   "modelAnswer": [
+    "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range.",
+    "Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+   ],
+   "followUp": "Explain the difference between analog and digital signals.",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "analog",
+       "smoothly",
+       "continuously"
+      ],
+      [
+       "analog",
+       "any",
+       "value",
+       "range"
+      ]
+     ],
+     "marks": 1,
+     "why": "Describes analog signals as continuously varying or able to take any value in a range.",
+     "description": "Analog signals vary continuously",
+     "how": "Award 1 mark for stating that analog signals change smoothly and continuously over time, or can have any value within a given range."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "digital",
+       "two",
+       "values",
+       "0",
+       "1"
+      ],
+      [
+       "digital",
+       "only",
+       "0",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Distinguishes digital signals by their two possible values.",
+     "description": "Digital signals have two values",
+     "how": "Award 1 mark for stating that digital signals have only the values 0 and 1."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-3-1-t3",
+   "text": "What is Boolean algebra?",
+   "marks": 2,
+   "modelAnswer": [
+    "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False.",
+    "It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+   ],
+   "followUp": "What is Boolean algebra?",
+   "noteId": "cs-n-3-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "branch",
+       "mathematics",
+       "logic"
+      ],
+      [
+       "branch",
+       "mathematics",
+       "symbolic computation"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines Boolean algebra as mathematics concerned with logic or symbolic computation.",
+     "description": "Branch of mathematics",
+     "how": "Award 1 mark for identifying Boolean algebra as a branch of mathematics related to logic or symbolic computation."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "True",
+       "False",
+       "digital circuits",
+       "analysis",
+       "design"
+      ],
+      [
+       "0",
+       "1",
+       "digital circuits",
+       "analysis",
+       "design"
+      ]
+     ],
+     "marks": 1,
+     "why": "States its two values and its importance as a basis for digital-circuit analysis and design.",
+     "description": "Values and digital-circuit basis",
+     "how": "Award 1 mark for mentioning True and False (or 0 and 1) and that Boolean algebra is the basis for analysing and designing digital circuits."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 6,
+  "writtenBuilt": 4
+ }
+}

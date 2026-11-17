@@ -1,0 +1,108 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "8:8",
+   "figure": "",
+   "steps": [
+    "The `<table>` tag is used to create a table in an HTML document.",
+    "A table can contain rows, headings, and data cells. The `<tr>` tag creates a row, `<th>` creates a heading cell, and `<td>` creates a data cell.",
+    "Example: `<table><tr><th>Name</th><th>Age</th></tr><tr><td>Ali</td><td>14</td></tr></table>`"
+   ],
+   "finalAnswer": "The `<table>` tag creates a table in an HTML document, containing rows and heading or data cells."
+  },
+  {
+   "accept": [],
+   "id": "8:9",
+   "figure": "",
+   "steps": [
+    "The CSS box model describes how the space occupied by an HTML element is calculated.",
+    "From the inside out, the four parts are: content, padding, border, and margin.",
+    "Content is the text or other material inside the element.",
+    "Padding is the space between the content and the border.",
+    "Border surrounds the padding and content.",
+    "Margin is the outer space between the element's border and other elements.",
+    "Example: `div { margin: 10px; border: 2px solid black; padding: 5px; }`"
+   ],
+   "finalAnswer": "The CSS box model consists of content, padding, border, and margin."
+  },
+  {
+   "accept": [],
+   "id": "8:10",
+   "figure": "",
+   "steps": [
+    "HTML (HyperText Markup Language) provides the structure and content of a web page, such as headings, paragraphs, and images.",
+    "CSS (Cascading Style Sheets) controls the appearance and layout of that content, such as colours, fonts, and spacing.",
+    "JavaScript adds behaviour and interactivity to a web page, such as responding to a button click or updating content.",
+    "In brief, HTML gives a page its structure, CSS its presentation, and JavaScript its behaviour."
+   ],
+   "finalAnswer": "HTML structures a web page, CSS styles it, and JavaScript makes it interactive."
+  },
+  {
+   "accept": [],
+   "id": "8:11",
+   "figure": "",
+   "steps": [
+    "Choose a code editor, such as Visual Studio Code or Notepad, to write and edit web files.",
+    "Install or use a web browser, such as Google Chrome or Mozilla Firefox, to open and test the pages.",
+    "Create a project folder and save files in it, for example `index.html`, `style.css`, and `script.js`.",
+    "Write the page structure in the HTML file, its styles in the CSS file, and any required interactivity in the JavaScript file.",
+    "Open the HTML file in the browser and check that the page works and displays correctly.",
+    "Edit the files and refresh the browser to test changes. A code editor's live preview or developer tools can also help with testing and debugging."
+   ],
+   "finalAnswer": "Set up a code editor and browser, create the project files, then write, open, and test the web page."
+  },
+  {
+   "accept": [],
+   "id": "8:12",
+   "figure": "",
+   "steps": [
+    "A basic HTML page with a header, paragraph, image, and hyperlink is shown below:",
+    "```html\n<!DOCTYPE html>\n<html>\n<head>\n  <title>My Web Page</title>\n</head>\n<body>\n  <h1>Welcome to My Web Page</h1>\n  <p>This is a paragraph on my web page.</p>\n  <img src=\"image.jpg\" alt=\"A sample image\">\n  <a href=\"https://example.com\">Visit Example</a>\n</body>\n</html>\n```",
+    "The `<h1>` tag displays the header, `<p>` displays the paragraph, `<img>` inserts the image, and `<a>` creates the hyperlink."
+   ],
+   "finalAnswer": "The HTML page uses `<h1>`, `<p>`, `<img>`, and `<a>` to include a header, paragraph, image, and hyperlink."
+  },
+  {
+   "accept": [],
+   "id": "8:13",
+   "figure": "A two-column table with a header row labelled Name and Age, and two data rows: Ali | 14 and Sara | 13. The table has collapsed borders, padded cells, a coloured header, and alternating row backgrounds.",
+   "steps": [
+    "Create the table in HTML using `<table>`, `<tr>`, `<th>`, and `<td>` tags.",
+    "Example table:\n```html\n<table>\n  <tr><th>Name</th><th>Age</th></tr>\n  <tr><td>Ali</td><td>14</td></tr>\n  <tr><td>Sara</td><td>13</td></tr>\n</table>\n```",
+    "Apply CSS to set the table width and border, collapse borders, and add padding and text alignment to the cells.",
+    "Example styles:\n```css\ntable {\n  width: 50%;\n  border-collapse: collapse;\n}\nth, td {\n  border: 1px solid black;\n  padding: 8px;\n  text-align: left;\n}\nth {\n  background-color: lightblue;\n}\ntr:nth-child(even) {\n  background-color: lightgray;\n}\n```",
+    "The CSS gives the table collapsed borders, padded cells, a coloured heading row, and alternating row backgrounds."
+   ],
+   "finalAnswer": "CSS styles a table by setting its borders, spacing, alignment, and colours."
+  },
+  {
+   "accept": [],
+   "id": "8:14",
+   "figure": "",
+   "steps": [
+    "A CSS selector selects the HTML element or elements to which a style rule is applied.",
+    "Element selector: selects elements by tag name. Example: `p { color: blue; }` selects all paragraphs.",
+    "ID selector: selects the element with a specified `id`, using `#`. Example: `#title { color: red; }`. An ID should be unique on a page.",
+    "Class selector: selects elements with a specified class, using a dot (`.`). Example: `.note { font-size: 18px; }`. A class can be used on several elements.",
+    "Universal selector: selects all elements, using `*`. Example: `* { box-sizing: border-box; }`.",
+    "Grouping selector: applies the same rules to several selectors, separated by commas. Example: `h1, h2 { color: green; }`.",
+    "Descendant selector: selects an element inside another element. Example: `div p { color: gray; }` selects paragraphs inside a `div`."
+   ],
+   "finalAnswer": "CSS selectors target elements by tag, ID, class, universal selection, grouping, or their relationship to other elements."
+  },
+  {
+   "accept": [],
+   "id": "8:15",
+   "figure": "",
+   "steps": [
+    "A responsive web page adjusts its layout and content to fit different screen sizes, such as phones, tablets, and computers.",
+    "Set the viewport in the HTML `<head>` so the page uses the device's screen width: `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">`.",
+    "Use flexible sizes, such as percentages or `max-width`, instead of fixed widths where appropriate. Example: `img { max-width: 100%; height: auto; }`.",
+    "Use CSS media queries to apply styles at different screen widths. Example:\n```css\n.container { width: 90%; margin: auto; }\n@media (max-width: 600px) {\n  .container { width: 100%; }\n  .columns { display: block; }\n}\n```",
+    "Test the page at different viewport sizes and adjust the styles so the content remains readable and usable."
+   ],
+   "finalAnswer": "Create a responsive page with a viewport setting, flexible sizing, and media queries for different screen widths."
+  }
+ ]
+}

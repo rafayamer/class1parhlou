@@ -1,0 +1,368 @@
+{
+ "note": {
+  "explanation": "Transmission modes describe the direction and timing of data flow between devices. Simplex is one-way, Half-Duplex is two-way but takes turns, and Full-Duplex is two-way at the same time.",
+  "examples": [],
+  "checkAnswer": "Half-Duplex",
+  "keywords": [
+   "Simplex",
+   "Half-Duplex",
+   "Full-Duplex",
+   "unidirectional",
+   "simultaneously"
+  ],
+  "simple": "Ask two questions: Can data go both ways? Can it go both ways at the same time?",
+  "checkQuestion": "Two people use walkie-talkies and take turns speaking. Which transmission mode is this?",
+  "title": "Choosing a Transmission Mode",
+  "steps": [
+   "Check whether data travels in one direction or both directions.",
+   "If it travels in one direction only, the mode is Simplex.",
+   "If it travels in both directions but the devices take turns, the mode is Half-Duplex.",
+   "If both devices can send and receive at the same time, the mode is Full-Duplex."
+  ],
+  "answer": "Simplex sends in one direction only; Half-Duplex allows both directions one at a time; Full-Duplex allows both directions simultaneously.",
+  "checkAccept": [
+   [
+    "Half-Duplex"
+   ],
+   [
+    "half duplex"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Simplex",
+    "Half-Duplex",
+    "Full-Duplex",
+    "Circuit switching"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A device sends data to another device, and data never travels back. Which transmission mode is being used?",
+   "rationales": [
+    "This is correct because Simplex communication sends data in one direction only.",
+    "This is incorrect because Half-Duplex allows data to travel both ways, but not at the same time.",
+    "This is incorrect because Full-Duplex allows data to travel both ways simultaneously.",
+    "This is incorrect because circuit switching is a method of establishing a communication path, not a transmission mode described here."
+   ]
+  },
+  {
+   "options": [
+    "A keyboard sending data to a computer",
+    "Two people talking on a modern telephone",
+    "Two users taking turns with walkie-talkies",
+    "Two computers sending and receiving data at the same time"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is an example of Simplex communication?",
+   "rationales": [
+    "This is correct because the keyboard sends data to the computer in one direction.",
+    "This is incorrect because a modern telephone conversation is an example of Full-Duplex communication.",
+    "This is incorrect because taking turns in both directions is Half-Duplex communication.",
+    "This is incorrect because simultaneous communication in both directions is Full-Duplex."
+   ]
+  },
+  {
+   "options": [
+    "Data travels in one direction only.",
+    "Data travels in both directions, but devices take turns.",
+    "Data travels in both directions at the same time.",
+    "Data is sent only after being encrypted."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement describes Half-Duplex communication?",
+   "rationales": [
+    "This is incorrect because one-way data flow describes Simplex communication.",
+    "This is correct because Half-Duplex allows both directions, but only one device transmits at a time.",
+    "This is incorrect because simultaneous two-way data flow describes Full-Duplex communication.",
+    "This is incorrect because encryption does not define a transmission mode."
+   ]
+  },
+  {
+   "options": [
+    "Simplex",
+    "Half-Duplex",
+    "Full-Duplex",
+    "None of these"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A telephone conversation lets both people talk and listen at the same time. Which mode does this show?",
+   "rationales": [
+    "This is incorrect because Simplex communication is one-way.",
+    "This is incorrect because Half-Duplex devices take turns transmitting.",
+    "This is correct because Full-Duplex allows both devices to transmit and receive simultaneously.",
+    "This is incorrect because Full-Duplex directly describes the situation."
+   ]
+  },
+  {
+   "options": [
+    "Full-Duplex",
+    "Simplex",
+    "Half-Duplex",
+    "Packet switching"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A walkie-talkie user must wait for the other person to finish speaking before replying. Which mode is this?",
+   "rationales": [
+    "This is incorrect because Full-Duplex allows simultaneous two-way communication.",
+    "This is incorrect because Simplex allows communication in only one direction.",
+    "This is correct because Half-Duplex allows both directions, but the users take turns.",
+    "This is incorrect because packet switching is a way of sending data in packets, not the mode shown here."
+   ]
+  },
+  {
+   "options": [
+    "Direction of data flow",
+    "The colour of the devices",
+    "The size of the computer screen",
+    "The number of programs installed"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What feature is used to distinguish Simplex, Half-Duplex, and Full-Duplex communication?",
+   "rationales": [
+    "This is correct because the modes describe the direction and timing of data flow.",
+    "This is incorrect because device colour does not determine a communication mode.",
+    "This is incorrect because screen size does not determine a communication mode.",
+    "This is incorrect because installed programs do not determine a communication mode."
+   ]
+  },
+  {
+   "options": [
+    "A television signal received by viewers",
+    "A telephone conversation where both people can speak at once",
+    "A walkie-talkie conversation with turn-taking",
+    "A keyboard sending keystrokes to a computer"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which situation is the best example of Full-Duplex communication?",
+   "rationales": [
+    "This is incorrect because a one-way broadcast to viewers is Simplex communication.",
+    "This is correct because both people can send and receive at the same time.",
+    "This is incorrect because turn-taking is Half-Duplex communication.",
+    "This is incorrect because a keyboard sending data to a computer is Simplex communication."
+   ]
+  },
+  {
+   "options": [
+    "Simplex communication",
+    "Half-Duplex communication",
+    "Full-Duplex communication",
+    "No communication"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which mode allows both devices to transmit and receive data simultaneously?",
+   "rationales": [
+    "This is incorrect because Simplex communication sends data in one direction only.",
+    "This is incorrect because Half-Duplex devices cannot transmit simultaneously.",
+    "This is correct because Full-Duplex permits simultaneous data flow in both directions.",
+    "This is incorrect because the situation describes active two-way communication."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (a) it is of 10 kilobits.",
+   "finalAnswer": "20 seconds",
+   "marks": 8,
+   "source": "Long 6.2(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "10000 bits"
+      ]
+     ],
+     "marks": 2,
+     "why": "The message size must be expressed in bits to use the given transmission rate.",
+     "description": "Convert the message size to bits.",
+     "how": "Use 1 kilobit = 1000 bits: 10 × 1000 = 10000 bits."
+    },
+    {
+     "accept": [
+      [
+       "10000/500"
+      ],
+      [
+       "10000 ÷ 500"
+      ]
+     ],
+     "marks": 3,
+     "why": "Time is found by dividing the number of bits by the transmission rate.",
+     "description": "Set up and evaluate the time calculation.",
+     "how": "Time = 10000 ÷ 500 = 20."
+    },
+    {
+     "accept": [
+      [
+       "20 seconds"
+      ],
+      [
+       "20 s"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final value must include the correct unit of time.",
+     "description": "State the final answer with its unit.",
+     "how": "Write 20 seconds."
+    }
+   ],
+   "modelAnswer": [
+    "1 kilobit = 1000 bits",
+    "10 kilobits = 10 × 1000 = 10000 bits",
+    "Time = Amount of data ÷ Transmission rate",
+    "Time = 10000 ÷ 500 = 20 seconds",
+    "Answer: 20 seconds"
+   ]
+  },
+  {
+   "text": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (b) it is of 10 kilobytes.",
+   "finalAnswer": "160 seconds",
+   "marks": 8,
+   "source": "Long 6.2(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "80000 bits"
+      ]
+     ],
+     "marks": 2,
+     "why": "The data size must be converted into bits before using the rate in bits per second.",
+     "description": "Convert the message size to bits.",
+     "how": "Use 1 kilobyte = 1000 bytes and 1 byte = 8 bits: 10 × 1000 × 8 = 80000 bits."
+    },
+    {
+     "accept": [
+      [
+       "80000/500"
+      ],
+      [
+       "80000 ÷ 500"
+      ]
+     ],
+     "marks": 3,
+     "why": "Dividing the total bits by bits per second gives the transmission time.",
+     "description": "Set up and evaluate the time calculation.",
+     "how": "Time = 80000 ÷ 500 = 160."
+    },
+    {
+     "accept": [
+      [
+       "160 seconds"
+      ],
+      [
+       "160 s"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final result must include the appropriate time unit.",
+     "description": "State the final answer with its unit.",
+     "how": "Write 160 seconds."
+    }
+   ],
+   "modelAnswer": [
+    "1 kilobyte = 1000 bytes and 1 byte = 8 bits",
+    "10 kilobytes = 10 × 1000 × 8 = 80000 bits",
+    "Time = Amount of data ÷ Transmission rate",
+    "Time = 80000 ÷ 500 = 160 seconds",
+    "Answer: 160 seconds"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to define or distinguish the three transmission modes. Give the direction of data flow and state whether communication can happen simultaneously.",
+   "For a mode-identification question, name the mode and connect it to a clue: one-way, taking turns, or both ways at the same time.",
+   "For the transmission-time numerical, convert the message size to bits, use Time = Amount of data ÷ Transmission rate, and show the unit in the final answer.",
+   "Use the examples from your textbook accurately: keyboard to computer is Simplex, walkie-talkies are Half-Duplex, and telephone conversations are Full-Duplex."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First change kilobits into bits.",
+     "Divide the number of bits by 500 bits per second."
+    ],
+    "accept": [
+     [
+      "20 seconds"
+     ],
+     [
+      "20 s"
+     ]
+    ],
+    "question": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (a) it is of 10 kilobits.",
+    "solution": [
+     "1 kilobit = 1000 bits",
+     "10 kilobits = 10 × 1000 = 10000 bits",
+     "Time = Amount of data ÷ Transmission rate",
+     "Time = 10000 ÷ 500 = 20 seconds"
+    ],
+    "answer": "20 seconds"
+   },
+   {
+    "hints": [
+     "Change kilobytes to bytes, then bytes to bits.",
+     "Divide the total bits by the rate of 500 bits per second."
+    ],
+    "accept": [
+     [
+      "160 seconds"
+     ],
+     [
+      "160 s"
+     ]
+    ],
+    "question": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (b) it is of 10 kilobytes.",
+    "solution": [
+     "1 kilobyte = 1000 bytes and 1 byte = 8 bits",
+     "10 kilobytes = 10 × 1000 × 8 = 80000 bits",
+     "Time = Amount of data ÷ Transmission rate",
+     "Time = 80000 ÷ 500 = 160 seconds"
+    ],
+    "answer": "160 seconds"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The textbook gives keyboard-to-computer communication as its Simplex example.",
+     "text": "Keyboard to computer is an example of simplex communication."
+    },
+    {
+     "why": "Data travels from the keyboard to the computer, in one direction.",
+     "text": "The communication mode is Simplex."
+    }
+   ],
+   "question": "Identify the transmission mode in this example: Keyboard to computer.",
+   "answer": "Simplex communication."
+  },
+  "explain": [
+   {
+    "title": "Simplex: one direction",
+    "body": "In Simplex communication, data transmission is unidirectional, meaning it flows in only one direction. The keyboard sends data to the computer; data does not travel back along this communication."
+   },
+   {
+    "title": "Half-Duplex: both directions, taking turns",
+    "body": "In Half-Duplex communication, data transmission can occur in both directions, but not simultaneously. One device must wait for the other to finish transmitting before it can start. Walkie-talkies are a useful example."
+   },
+   {
+    "title": "Full-Duplex: both directions at once",
+    "body": "Full-duplex communication allows for simultaneous data delivery in both directions. Both devices may transmit and receive data simultaneously at the same time. Telephone conversations are an example."
+   }
+  ],
+  "mistakes": [
+   "Do not call Half-Duplex one-way communication: it works in both directions, but devices take turns.",
+   "Do not say Full-Duplex devices must wait for each other; they can send and receive simultaneously.",
+   "Do not confuse the direction of communication with the direction a person is speaking in an example. Identify whether the devices can communicate one way, take turns, or communicate both ways at once.",
+   "For the numerical, do not divide kilobytes directly by a rate in bits per second; first convert the size to bits."
+  ]
+ }
+}

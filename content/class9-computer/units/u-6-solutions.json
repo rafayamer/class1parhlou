@@ -1,0 +1,670 @@
+{
+ "unit": 6,
+ "sections": [
+  {
+   "number": "6.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.3",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.4",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.5",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.6",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.7",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.8",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.9",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.10",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.11",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.12",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.13",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "6.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.1",
+     "question": "Define data communication and list its key components.",
+     "steps": [
+      "Data communication is the exchange of data between two or more devices through a transmission medium.",
+      "Its key components are: sender, receiver, message, transmission medium and protocol.",
+      "A protocol is a set of rules that governs communication between devices."
+     ],
+     "answer": "Data communication is the exchange of data between devices; its components are sender, receiver, message, transmission medium and protocol.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.2",
+     "question": "Explain the role of routers in a computer network.",
+     "steps": [
+      "A router connects two or more different networks.",
+      "It examines the destination IP address of a packet and forwards the packet towards its destination.",
+      "A router selects an appropriate path for sending data between networks."
+     ],
+     "answer": "A router connects networks and forwards packets towards their destinations using IP addresses.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.3",
+     "question": "What are the main functions of the Network Layer in the OSI model?",
+     "steps": [
+      "The Network Layer provides logical addressing, such as IP addresses, to identify devices on a network.",
+      "It determines routes and forwards packets from the source network to the destination network.",
+      "It may divide packets into smaller units and reassemble them at the destination."
+     ],
+     "answer": "The Network Layer provides logical addressing, routing and packet forwarding between networks.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.4",
+     "question": "Describe the difference between packet switching and circuit switching.",
+     "steps": [
+      "In circuit switching, a dedicated communication path is established between the sender and receiver before data is sent.",
+      "The dedicated path remains reserved for the duration of the communication.",
+      "In packet switching, data is divided into packets that may travel through different paths to the destination.",
+      "Packets are reassembled at the destination; network resources are shared among users."
+     ],
+     "answer": "Circuit switching reserves a dedicated path, whereas packet switching sends data in packets over shared network paths.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.5",
+     "question": "What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+     "steps": [
+      "DHCP stands for Dynamic Host Configuration Protocol.",
+      "It automatically assigns IP addresses to devices joining a network.",
+      "It can also provide other network settings, such as the subnet mask, default gateway and DNS server address."
+     ],
+     "answer": "DHCP automatically assigns IP addresses and other network settings to devices.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.6",
+     "question": "How does encapsulation ensure secure communication in a network?",
+     "steps": [
+      "Encapsulation is the process of adding protocol information, such as headers, to data as it moves down the network layers.",
+      "The receiving device removes these headers as the data moves up the layers; this process is called decapsulation.",
+      "Encapsulation organises data for transmission, but it does not by itself make communication secure.",
+      "Encryption is used to protect data from being read by unauthorised users."
+     ],
+     "answer": "Encapsulation prepares data for transmission but does not itself provide security; encryption protects data from unauthorised reading.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.7",
+     "question": "Differentiate between TCP and UDP in terms of data transfer reliability.",
+     "steps": [
+      "TCP is a reliable, connection-oriented protocol.",
+      "It checks that data is delivered in order and uses acknowledgements and retransmissions to recover lost data.",
+      "UDP is a connectionless protocol and does not guarantee delivery, order or retransmission of lost data.",
+      "UDP has less overhead and is generally faster than TCP."
+     ],
+     "answer": "TCP provides reliable, ordered data transfer, while UDP does not guarantee delivery or order.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.8",
+     "question": "Explain the importance of encryption in network security.",
+     "steps": [
+      "Encryption converts readable data (plaintext) into an unreadable form (ciphertext) using an encryption key.",
+      "Only a user with the correct decryption key can convert the ciphertext back into readable data.",
+      "Encryption helps prevent unauthorised users from understanding data sent over a network."
+     ],
+     "answer": "Encryption protects network data by making it unreadable to unauthorised users.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.9",
+     "question": "What are the advantages of using a star topology in a network?",
+     "steps": [
+      "A star topology is easy to install and manage because each computer is connected directly to a central hub or switch.",
+      "If one cable or computer fails, the other computers on the network continue to work.",
+      "Faults can be detected and isolated easily because each connection is separate.",
+      "New computers can be added to the network without interrupting the other computers.",
+      "Data travels through the central hub or switch, which helps manage communication on the network."
+     ],
+     "answer": "Star topology is easy to manage, troubleshoot, and expand, and a failure in one connection does not normally affect the rest of the network.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 6.10",
+     "question": "How do firewalls contribute to network security?",
+     "steps": [
+      "A firewall is a hardware device or software that monitors and controls incoming and outgoing network traffic.",
+      "It checks network traffic against security rules and blocks unauthorised access.",
+      "It helps protect computers and networks from hackers, malicious software, and other network threats.",
+      "A firewall allows legitimate communication while restricting suspicious or unwanted traffic."
+     ],
+     "answer": "A firewall protects a network by checking traffic and blocking unauthorised or suspicious access.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.1",
+     "question": "Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+     "steps": [
+      "A computer network connects computers and other devices so they can communicate and share resources.",
+      "Resource sharing reduces cost and duplication. For example, several computers can use one network printer, shared storage, or a common internet connection.",
+      "Data communication allows users and devices to exchange information. Examples include sending email, sharing files, messaging, and accessing information on a website.",
+      "Networks support collaboration, such as users working on shared documents or communicating through video calls.",
+      "Networks can provide centralized management of files, accounts and security, making it easier to control access and back up information.",
+      "Networks can also support remote access, allowing an authorized user to reach resources from another location."
+     ],
+     "answer": "Computer networks are used to share hardware, software, files and internet connections, and to communicate data between users and devices. They also support collaboration, centralized management and remote access.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.2(a)",
+     "question": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (a) it is of 10 kilobits.",
+     "steps": [
+      "Given: Data rate = 500 bits per second (bps); message size = 10 kilobits = 10,000 bits.",
+      "Required: Time to transmit the message.",
+      "Formula: Time = Data size ÷ Data rate.",
+      "Substitution: Time = 10,000 bits ÷ 500 bits per second.",
+      "Working: Time = 20 seconds.",
+      "Result: The message takes 20 seconds to transmit."
+     ],
+     "answer": "20 seconds",
+     "figure": "",
+     "accept": [
+      [
+       "20",
+       "seconds"
+      ],
+      [
+       "20",
+       "s"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.2(b)",
+     "question": "In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message if: (b) it is of 10 kilobytes.",
+     "steps": [
+      "Given: Data rate = 500 bits per second (bps); message size = 10 kilobytes = 10 × 1,024 bytes = 10,240 bytes.",
+      "Convert to bits: 10,240 bytes × 8 bits per byte = 81,920 bits.",
+      "Required: Time to transmit the message.",
+      "Formula: Time = Data size ÷ Data rate.",
+      "Substitution: Time = 81,920 bits ÷ 500 bits per second.",
+      "Working: Time = 163.84 seconds.",
+      "Result: The message takes 163.84 seconds to transmit."
+     ],
+     "answer": "163.84 seconds",
+     "figure": "",
+     "accept": [
+      [
+       "163.84",
+       "seconds"
+      ],
+      [
+       "163.84",
+       "s"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.3",
+     "question": "Describe how data is transmitted across computer networks using packet switching and circuit switching.",
+     "steps": [
+      "In packet switching, a message is divided into small units called packets.",
+      "Each packet may travel independently through the network using an available route.",
+      "The packets are reassembled in the correct order at the destination.",
+      "Packet switching uses network resources efficiently, but packets may take different routes or arrive at different times.",
+      "In circuit switching, a dedicated communication path is established between the sender and receiver before data is sent.",
+      "The path remains reserved for the duration of the communication and is released when the communication ends.",
+      "Circuit switching provides a continuous connection, but the reserved path cannot be used by others during that time."
+     ],
+     "answer": "Packet switching sends separate packets that are reassembled at the destination, while circuit switching reserves a dedicated path for the communication.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.4",
+     "question": "Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DHCP.",
+     "steps": [
+      "Protocols are rules that define how data is formatted, transmitted, received, and interpreted in a network.",
+      "They allow devices and software from different sources to communicate correctly.",
+      "TCP/IP is a suite of protocols used for communication over the Internet; IP addresses and routes data, while TCP helps deliver it reliably.",
+      "HTTP (Hypertext Transfer Protocol) is used to transfer web pages and other web resources between a web server and a browser.",
+      "DNS (Domain Name System) translates human-readable domain names into IP addresses.",
+      "DHCP (Dynamic Host Configuration Protocol) automatically assigns network settings, including IP addresses, to devices joining a network."
+     ],
+     "answer": "Protocols make network communication possible; TCP/IP transfers data, HTTP transfers web resources, DNS finds IP addresses for domain names, and DHCP assigns network settings.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.5",
+     "question": "Evaluate different methods of network security, including firewalls, encryption, and antivirus software.",
+     "steps": [
+      "A firewall monitors network traffic and blocks unauthorised or suspicious connections; it helps prevent unwanted access to a network.",
+      "Encryption converts readable data into coded form so that unauthorised people cannot understand it; the data can be read by someone with the correct key.",
+      "Antivirus software detects, blocks, and removes viruses and other malicious software from a computer.",
+      "These methods protect against different threats and are most effective when used together and kept up to date.",
+      "Security methods reduce risk, but users should also use strong passwords and avoid suspicious files and links."
+     ],
+     "answer": "Firewalls control network access, encryption protects the privacy of data, and antivirus software detects and removes malware; using them together provides stronger security.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.6",
+     "question": "Describe real-world applications of computer networks in business, education, and healthcare.",
+     "steps": [
+      "In business, networks allow employees to share files, printers, and other resources.",
+      "Businesses use networks for communication, such as email and video conferencing, and for accessing shared databases and online services.",
+      "In education, networks give students and teachers access to learning resources, online courses, and educational websites.",
+      "Schools use networks to share information, communicate, and support online learning.",
+      "In healthcare, networks let healthcare professionals share patient records and medical information.",
+      "Healthcare networks support communication between hospitals, clinics, laboratories, and other healthcare providers.",
+      "Networks can also support telemedicine, allowing patients to consult healthcare professionals remotely."
+     ],
+     "answer": "Computer networks support resource sharing and communication in business, access to learning resources in education, and sharing of patient information and telemedicine in healthcare.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.7",
+     "question": "Compare and contrast the different types of network topologies (star, ring, bus, and mesh).",
+     "steps": [
+      "In a star topology, every device connects to a central hub or switch. It is easy to add devices and isolate a faulty link, but failure of the central device can stop the network; it also requires more cable.",
+      "In a ring topology, each device connects to two neighbouring devices, forming a closed loop. Data travels around the ring. It can provide orderly access, but a break or failed device may disrupt communication unless a protection method is used.",
+      "In a bus topology, all devices share one main cable called the backbone. It is simple and uses less cable, but a backbone fault can stop the network; performance can decline as traffic increases.",
+      "In a mesh topology, devices have multiple interconnections. It offers several possible paths and good reliability, but needs more cables, ports and installation cost.",
+      "Comparison: star is easy to manage but depends on its central device; ring uses a loop but is sensitive to breaks; bus is economical but depends on its backbone; mesh is resilient but expensive and complex."
+     ],
+     "answer": "Star: central connection, easy to expand, central-device failure is serious. Ring: closed loop, orderly transmission, a break may disrupt service. Bus: shared backbone, economical, backbone failure affects all devices. Mesh: multiple paths, highly reliable, costly and complex.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.8(a)",
+     "question": "Consider a shift cipher with a shift amount of 4. (a) Encrypt the message \"SECURITY\".",
+     "steps": [
+      "Given: Shift amount = 4 letters forward; message = SECURITY.",
+      "Required: Encrypt the message.",
+      "Formula: Replace each letter with the letter four places after it in the alphabet, wrapping around from Z to A.",
+      "Working: S→W, E→I, C→G, U→Y, R→V, I→M, T→X, Y→C.",
+      "Result: SECURITY encrypts to WIGYVMXC."
+     ],
+     "answer": "WIGYVMXC",
+     "figure": "",
+     "accept": [
+      [
+       "WIGYVMXC"
+      ],
+      [
+       "w:WIGYVMXC"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.8(b)",
+     "question": "Consider a shift cipher with a shift amount of 4. (b) Decrypt the message \"WMXYVMI\".",
+     "steps": [
+      "Given: Shift amount = 4 letters; encrypted message = WMXYVMI.",
+      "Required: Decrypt the message.",
+      "Formula: Replace each encrypted letter with the letter four places before it in the alphabet, wrapping around from A to Z.",
+      "Working: W→S, M→I, X→T, Y→U, V→R, M→I, I→E.",
+      "Result: WMXYVMI decrypts to SITURIE."
+     ],
+     "answer": "SITURIE",
+     "figure": "",
+     "accept": [
+      [
+       "SITURIE"
+      ],
+      [
+       "w:SITURIE"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.9(a)",
+     "question": "An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible. (a) Show the calculation for the total number of IPv4 addresses.",
+     "steps": [
+      "Given: Number of bits in an IPv4 address = 32 bits.",
+      "Required: Total number of unique IPv4 addresses.",
+      "Formula: Total number of possible addresses = 2ⁿ, where n is the number of bits.",
+      "Substitution: Total = 2³² addresses.",
+      "Working: 2³² = 4,294,967,296.",
+      "Result: The total number of unique IPv4 addresses is 4,294,967,296 addresses."
+     ],
+     "answer": "4,294,967,296 addresses",
+     "figure": "",
+     "accept": [
+      [
+       "4294967296"
+      ],
+      [
+       "4,294,967,296"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 6.9(b)",
+     "question": "An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible. (b) How many addresses are left if 10% of the total addresses are reserved for special purposes?",
+     "steps": [
+      "Given: Total IPv4 addresses = 4,294,967,296 addresses; reserved fraction = 10%.",
+      "Required: Number of addresses left after reserving 10%.",
+      "Formula: Addresses left = Total addresses × (100% − reserved percentage).",
+      "Substitution: Addresses left = 4,294,967,296 × 90%.",
+      "Working: Addresses left = 4,294,967,296 × 0.9 = 3,865,470,566.4.",
+      "Result: Approximately 3,865,470,566 whole addresses are left."
+     ],
+     "answer": "Approximately 3,865,470,566 addresses (90% of the total is 3,865,470,566.4).",
+     "figure": "",
+     "accept": [
+      [
+       "3865470566.4"
+      ],
+      [
+       "3,865,470,566.4"
+      ],
+      [
+       "3865470566"
+      ],
+      [
+       "3,865,470,566"
+      ]
+     ],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 6.1",
+     "stem": "What is the primary objective of computer networks?",
+     "options": [
+      "Increase computational power",
+      "Enable resource sharing and data communication",
+      "Enhance graphic capabilities",
+      "Improve software development"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Increasing computational power can be a benefit of distributed systems, but it is not the primary objective of computer networks.",
+      "Computer networks primarily enable devices to share resources and communicate data.",
+      "Enhancing graphic capabilities is not a primary objective of computer networks.",
+      "Improving software development is not a primary objective of computer networks."
+     ]
+    },
+    {
+     "source": "MCQ 6.2",
+     "stem": "Which device is used to connect multiple networks and direct data packets between them?",
+     "options": [
+      "Switch",
+      "Hub",
+      "Router",
+      "Modem"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "A switch connects devices within a network, rather than routing packets between different networks.",
+      "A hub broadcasts signals among connected devices and does not direct packets between networks.",
+      "A router connects networks and forwards data packets between them.",
+      "A modem converts signals for transmission over a communication medium and does not primarily route packets between networks."
+     ]
+    },
+    {
+     "source": "MCQ 6.3",
+     "stem": "Which layer of the OSI model is responsible for node-to-node data transfer and error detection?",
+     "options": [
+      "Physical Layer",
+      "Data Link Layer",
+      "Network Layer",
+      "Transport Layer"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "The Physical Layer transmits raw bits over a physical medium and does not provide node-to-node error detection.",
+      "The Data Link Layer handles node-to-node data transfer and performs error detection on frames.",
+      "The Network Layer routes packets between networks rather than handling node-to-node frame transfer.",
+      "The Transport Layer provides end-to-end communication between hosts rather than node-to-node transfer."
+     ]
+    },
+    {
+     "source": "MCQ 6.4",
+     "stem": "What is the function of the Domain Name System (DNS)?",
+     "options": [
+      "Assign IP addresses dynamically",
+      "Translate domain names to IP addresses",
+      "Secure data communication",
+      "Monitor network traffic"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Dynamic IP address assignment is typically performed by DHCP, not DNS.",
+      "DNS translates human-readable domain names into IP addresses.",
+      "DNS does not itself secure data communication.",
+      "DNS resolves domain names, not monitors network traffic."
+     ]
+    },
+    {
+     "source": "MCQ 6.5",
+     "stem": "Which method of data transmission uses a dedicated communication path?",
+     "options": [
+      "Packet Switching",
+      "Circuit Switching",
+      "Full-Duplex",
+      "Half-Duplex"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Packet switching shares network links among packets and does not reserve a dedicated path for the entire communication.",
+      "Circuit switching establishes a dedicated communication path for the duration of a connection.",
+      "Full-duplex describes simultaneous two-way communication, not whether a path is dedicated.",
+      "Half-duplex describes two-way communication that occurs in one direction at a time, not a dedicated path."
+     ]
+    },
+    {
+     "source": "MCQ 6.6",
+     "stem": "What is encapsulation in the context of network communication?",
+     "options": [
+      "Converting data into a secure format",
+      "Wrapping data with protocol information",
+      "Monitoring network traffic",
+      "Translating domain names to IP addresses"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Converting data into a secure format is encryption, not encapsulation.",
+      "Encapsulation wraps data with protocol information, such as headers and sometimes trailers, as it passes through network layers.",
+      "Monitoring network traffic is a network management or security function, not encapsulation.",
+      "Translating domain names to IP addresses is performed by DNS, not encapsulation."
+     ]
+    },
+    {
+     "source": "MCQ 6.7",
+     "stem": "Which protocol is used for reliable data transfer in the TCP/IP model?",
+     "options": [
+      "HTTP",
+      "FTP",
+      "TCP",
+      "UDP"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "HTTP is an application-layer protocol and relies on another protocol for reliable transport.",
+      "FTP is an application-layer file-transfer protocol and typically relies on TCP for reliable transport.",
+      "TCP provides reliable, ordered data transfer in the TCP/IP model.",
+      "UDP provides connectionless transport without guaranteeing reliable delivery."
+     ]
+    },
+    {
+     "source": "MCQ 6.8",
+     "stem": "What is the main purpose of a firewall in network security?",
+     "options": [
+      "Convert data into a secure format",
+      "Monitor and control network traffic",
+      "Assign IP addresses",
+      "Translate domain names"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "A firewall may support secure communication policies, but its main purpose is not to convert data into a secure format.",
+      "A firewall monitors and controls network traffic according to security rules.",
+      "Assigning IP addresses is generally handled by DHCP rather than a firewall.",
+      "Translating domain names is performed by DNS rather than a firewall."
+     ]
+    },
+    {
+     "source": "MCQ 6.9",
+     "stem": "Which network topology connects all devices to a central hub?",
+     "options": [
+      "Ring",
+      "Mesh",
+      "Bus",
+      "Star"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "In a ring topology, devices connect in a circular arrangement rather than to a central hub.",
+      "A mesh topology connects devices with multiple interconnections rather than through one central hub.",
+      "In a bus topology, devices share a common backbone cable rather than connecting to a central hub.",
+      "In a star topology, each device connects to a central hub or switch."
+     ]
+    },
+    {
+     "source": "MCQ 6.10",
+     "stem": "What is a key benefit of using computer networks in businesses?",
+     "options": [
+      "Increase computational power",
+      "Enable resource sharing and efficient communication",
+      "Enhance graphic capabilities",
+      "Improve software development"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Networks can distribute computing tasks, but increased computational power is not the key general business benefit listed here.",
+      "Networks let businesses share resources and communicate efficiently, supporting collaboration and productivity.",
+      "Enhancing graphic capabilities is not a key general business benefit of computer networks.",
+      "Improving software development may be enabled by collaboration, but it is not the key general benefit described here."
+     ]
+    }
+   ]
+  }
+ ]
+}

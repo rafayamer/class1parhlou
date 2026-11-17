@@ -1,0 +1,546 @@
+{
+ "note": {
+  "explanation": "A computer works as a system: its components work together to process data and perform tasks. Input devices let users give commands, processing components handle data, storage keeps data, and output devices present results. The motherboard and system bus help components communicate.",
+  "examples": [
+   "Clicking a document with a mouse gives the computer input; the operating system determines what action to take, and the computer displays the file.",
+   "A printer is a peripheral that can produce output from a computer."
+  ],
+  "checkAnswer": "The system bus carries data between the CPU and other connected components.",
+  "keywords": [
+   "computer system",
+   "CPU",
+   "RAM",
+   "operating system",
+   "system bus",
+   "motherboard"
+  ],
+  "simple": "A computer system is a team of parts. Each part has a job, and the parts communicate to get work done.",
+  "checkQuestion": "What carries data between the CPU and other interconnected components?",
+  "title": "Computer as a System",
+  "steps": [
+   "A user gives input using a device such as a mouse or keyboard.",
+   "The input device sends a signal to the computer.",
+   "The operating system receives information from interface components and determines what action to take.",
+   "The CPU performs computations and executes commands; data and instructions may be held in RAM or permanent storage.",
+   "An output device, such as a monitor, presents the result."
+  ],
+  "answer": "A computer is a complex system designed to process data and perform tasks according to a set of instructions.",
+  "checkAccept": [
+   [
+    "system bus"
+   ],
+   [
+    "bus",
+    "data"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To provide electrical power to the computer",
+    "To permanently store all data",
+    "To display results to the user",
+    "To transmit data between the CPU and other components"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "What is the main role of a system bus in a computer?",
+   "rationales": [
+    "This is the role of the power supply, not the system bus.",
+    "Permanent storage is provided by a hard drive or SSD.",
+    "A monitor or printer presents results to the user.",
+    "Correct: the system bus carries data between the CPU and interconnected components."
+   ]
+  },
+  {
+   "options": [
+    "It performs computations and executes commands.",
+    "It permanently stores software.",
+    "It connects the computer to the Internet.",
+    "It presents results on a screen."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which component is responsible for computations and executing commands?",
+   "rationales": [
+    "Correct: the CPU performs computations and executes commands.",
+    "A hard drive or SSD provides permanent storage.",
+    "Network equipment or a network connection enables communication with other systems.",
+    "A monitor presents output on a screen."
+   ]
+  },
+  {
+   "options": [
+    "It stores data permanently for future processing.",
+    "It temporarily stores data and instructions for the CPU.",
+    "It sends control signals through the system bus.",
+    "It receives user input from the keyboard."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the role of RAM in a computer?",
+   "rationales": [
+    "This describes permanent storage such as a hard drive or SSD.",
+    "Correct: RAM is transient storage for data and instructions used by the CPU.",
+    "The system bus carries data and signals between components.",
+    "A keyboard is an input device."
+   ]
+  },
+  {
+   "options": [
+    "A mouse",
+    "A monitor",
+    "A printer",
+    "A keyboard"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which device is an output device?",
+   "rationales": [
+    "A mouse is an input device used to interact with the computer.",
+    "Correct: a monitor presents results from computer operations.",
+    "A printer is also an output device, so this is not the single intended answer if the question asks for one; the monitor is the keyed example.",
+    "A keyboard is an input device."
+   ]
+  },
+  {
+   "options": [
+    "It is the primary circuit board that interconnects computer components.",
+    "It permanently stores data and software.",
+    "It performs every computation in the computer.",
+    "It supplies electrical power to the computer."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the motherboard's function in a computer?",
+   "rationales": [
+    "Correct: the motherboard is the primary circuit board that interconnects components.",
+    "A hard drive or SSD permanently stores data and software.",
+    "The CPU performs computations and executes commands.",
+    "The power supply provides electrical power."
+   ]
+  },
+  {
+   "options": [
+    "A user types on a keyboard and the computer processes the input to display text.",
+    "A hard drive stores files without any interaction with other components.",
+    "A printer provides electrical power to the computer.",
+    "The CPU connects the computer to the Internet."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which example best describes interaction between a computer and its environment?",
+   "rationales": [
+    "Correct: this is the section's example of user input being processed and displayed.",
+    "This does not describe the environment interacting with the computer, and storage is not isolated from other components.",
+    "A printer is a peripheral; it does not provide the computer's electrical power.",
+    "The CPU is not what connects a computer to the Internet."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q1.3. Describe the main components of a computer system.",
+   "finalAnswer": "A computer system has interface, processing, and communication components. Interface components include input devices such as a keyboard and mouse, and output devices such as a monitor and printer. Processing components include the CPU, RAM, storage, operating system, and application software. Communication components include the motherboard and system bus, which connect components and transmit data and signals.",
+   "marks": 2,
+   "source": "Short Q1.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "interface",
+       "input",
+       "output"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Interface devices allow users to interact with the computer and receive results.",
+     "description": "Identify interface components and their role.",
+     "how": "Name input and output devices, with examples."
+    },
+    {
+     "accept": [
+      [
+       "CPU",
+       "RAM",
+       "operating system"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "These are key processing components.",
+     "description": "Identify processing components.",
+     "how": "Mention the CPU, RAM, and operating system; storage or application software may also be included."
+    },
+    {
+     "accept": [
+      [
+       "motherboard",
+       "bus"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Communication components connect computer parts and help transfer information.",
+     "description": "Identify communication components and their function.",
+     "how": "State that the motherboard interconnects components and the system bus carries data or signals."
+    },
+    {
+     "accept": [
+      [
+       "communication components"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The response must correctly describe the computer's component groups as a whole.",
+     "description": "Give a complete final description of the main component groups.",
+     "how": "Bring the interface, processing, and communication groups together in the answer."
+    }
+   ],
+   "modelAnswer": [
+    "A computer system has interface, processing, and communication components.",
+    "Interface components include input devices such as a keyboard and mouse, and output devices such as a monitor and printer.",
+    "Processing components include the CPU, RAM, storage, operating system, and application software.",
+    "Communication components include the motherboard and system bus, which connect components and transmit data and signals."
+   ]
+  },
+  {
+   "text": "Q1.5. Describe the main characteristics of a computer as a system, including its objectives, components, and interactions among these components.",
+   "finalAnswer": "A computer is a complex system designed to process data and perform tasks according to a set of instructions. Its objective is to perform computations, process data, and execute tasks efficiently. It has interface components, processing components, and communication components. These components interact: for example, a mouse or keyboard sends input, the operating system determines the appropriate action, the CPU processes commands, storage supplies or keeps data, and an output device presents results.",
+   "marks": 8,
+   "source": "Long Q1.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "complex system",
+       "process data"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear definition establishes what is being described.",
+     "description": "Define a computer as a system.",
+     "how": "State that it is a complex system designed to process data and perform tasks according to instructions."
+    },
+    {
+     "accept": [
+      [
+       "objective",
+       "computations"
+      ],
+      [
+       "process data",
+       "tasks"
+      ]
+     ],
+     "marks": 2,
+     "why": "The computer's objective is a main characteristic asked for in the question.",
+     "description": "Describe the computer's objective.",
+     "how": "Explain that it performs computations, processes data, and executes tasks efficiently."
+    },
+    {
+     "accept": [
+      [
+       "interface",
+       "processing",
+       "communication"
+      ]
+     ],
+     "marks": 2,
+     "why": "Naming the component groups shows knowledge of the computer's structure.",
+     "description": "Describe the main component groups.",
+     "how": "Include interface, processing, and communication components, with suitable examples."
+    },
+    {
+     "accept": [
+      [
+       "input",
+       "operating system",
+       "CPU",
+       "output"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must correctly explain the components working together.",
+     "description": "Explain interaction among components.",
+     "how": "Trace input through the operating system and processing to an output device."
+    }
+   ],
+   "modelAnswer": [
+    "A computer is a complex system designed to process data and perform tasks according to a set of instructions.",
+    "Its objective is to perform computations, process data, and execute different tasks efficiently.",
+    "Interface components include input devices such as the keyboard and mouse, and output devices such as monitors and printers.",
+    "Processing components include the CPU, RAM, storage, operating system, and application software.",
+    "Communication components include the motherboard and system bus.",
+    "The motherboard interconnects components, while the system bus transmits data between the CPU and other components.",
+    "When a user opens a file using a mouse or keyboard, the input device sends a signal to the computer.",
+    "The operating system determines the appropriate action, processing components handle the task, and an output device presents the result."
+   ]
+  },
+  {
+   "text": "Q1.7. Provide a detailed explanation of how a computer interacts with its environment. Include examples of user input, network communication, and power supply.",
+   "finalAnswer": "A computer system environment includes external devices that interact with the computer. A power supply provides electrical power so the computer can work. A network connects it to other systems and the Internet, allowing it to send and receive data to browse websites or download files. Peripherals such as printers, scanners, and external discs expand its capabilities. For example, a user types on a keyboard and the computer processes the input to display text on the screen.",
+   "marks": 8,
+   "source": "Long Q1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "external devices",
+       "computer"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should identify what the computer environment includes.",
+     "description": "Describe the computer system environment.",
+     "how": "Explain that it includes external devices that interact with the computer."
+    },
+    {
+     "accept": [
+      [
+       "power supply",
+       "electrical power"
+      ]
+     ],
+     "marks": 2,
+     "why": "Power is one of the three specific interactions required by the question.",
+     "description": "Explain the role of the power supply.",
+     "how": "State that it provides electrical power for the computer to work."
+    },
+    {
+     "accept": [
+      [
+       "network",
+       "send",
+       "receive"
+      ]
+     ],
+     "marks": 2,
+     "why": "Network communication is another specific interaction required by the question.",
+     "description": "Explain network communication.",
+     "how": "State that a network connects the computer to other systems or the Internet and allows data to be sent and received."
+    },
+    {
+     "accept": [
+      [
+       "user",
+       "keyboard",
+       "display"
+      ],
+      [
+       "user input",
+       "screen"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must accurately describe user input being processed and displayed.",
+     "description": "Give an example of user input and its result.",
+     "how": "Explain that keyboard input is processed and text appears on the screen."
+    }
+   ],
+   "modelAnswer": [
+    "The computer system environment includes external devices that interact with the computer.",
+    "A power supply provides electrical power to allow the computer to work.",
+    "A network connects the computer to other systems and the Internet.",
+    "The computer can send and receive data over the Internet to browse websites or download files.",
+    "Peripherals such as printers, scanners, and external discs expand the computer's capabilities.",
+    "For example, a user types on the keyboard, and the computer processes the input to display text on the screen."
+   ]
+  },
+  {
+   "text": "Q1.8. Describe the process of retrieving and displaying a file using a computer, based on the interactions among different components. Provide a step-by-step explanation of how input is processed, data is transferred, and results are displayed on the screen.",
+   "finalAnswer": "The user double-clicks a file icon with a mouse or presses a key combination. The mouse or keyboard sends a signal to the computer through its connection. The operating system receives the information from the interface component and determines the appropriate action. The file is retrieved from storage, and the CPU processes the required instructions and data, using RAM as transient storage. Data is transferred between components through the system bus. The monitor displays the file's contents.",
+   "marks": 8,
+   "source": "Long Q1.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "double-click",
+       "mouse"
+      ],
+      [
+       "keyboard",
+       "file"
+      ]
+     ],
+     "marks": 2,
+     "why": "The sequence begins with a user action that provides input.",
+     "description": "Describe the user's input.",
+     "how": "Give the textbook example of double-clicking a file or using a key combination."
+    },
+    {
+     "accept": [
+      [
+       "input device",
+       "signal"
+      ]
+     ],
+     "marks": 2,
+     "why": "The computer must receive a signal before it can act on the request.",
+     "description": "Explain how input reaches the computer.",
+     "how": "State that the mouse or keyboard sends a signal to the computer."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "storage"
+      ],
+      [
+       "operating system",
+       "CPU"
+      ]
+     ],
+     "marks": 2,
+     "why": "The operating system and processing or storage components take part in carrying out the request.",
+     "description": "Explain how the request is handled and the file retrieved.",
+     "how": "Describe the OS determining the action and the file being retrieved from storage for processing."
+    },
+    {
+     "accept": [
+      [
+       "monitor",
+       "display"
+      ],
+      [
+       "screen",
+       "file"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must identify the output that completes the file-opening process.",
+     "description": "State how the result is presented.",
+     "how": "Explain that the monitor or screen displays the file."
+    }
+   ],
+   "modelAnswer": [
+    "The user double-clicks a file icon with a mouse or presses a key combination.",
+    "The mouse or keyboard sends a signal to the computer through its connection.",
+    "The operating system receives information from the interface component and determines the appropriate action.",
+    "The file is retrieved from storage for processing.",
+    "The CPU processes the required instructions and data, using RAM as transient storage.",
+    "The system bus transfers data between the CPU and other interconnected components.",
+    "The monitor, an output device, displays the file's contents."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to describe the main components of a computer system. Group them as interface, processing, and communication components, then give examples.",
+   "A long question may ask how a computer interacts with its environment or how a file is opened. Present the actions in a clear sequence and name the components involved.",
+   "Marks are earned for correct component names, their functions, relevant examples, and a logical order of events.",
+   "Use the textbook's terms: CPU, RAM, operating system, motherboard, system bus, input device, and output device."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start by grouping the components into three types.",
+     "Give examples of interface, processing, and communication components and say what they do."
+    ],
+    "accept": [
+     [
+      "interface",
+      "processing",
+      "communication"
+     ],
+     [
+      "CPU",
+      "RAM",
+      "motherboard",
+      "bus"
+     ]
+    ],
+    "question": "Q1.3. Describe the main components of a computer system.",
+    "solution": [
+     "A computer system has interface, processing, and communication components.",
+     "Interface components include input devices such as a keyboard and mouse, and output devices such as a monitor and printer.",
+     "Processing components include the CPU, RAM, storage, operating system, and application software.",
+     "Communication components include the motherboard and system bus, which connect components and transmit data and signals."
+    ],
+    "answer": "A computer system has interface, processing, and communication components. Interface components include input devices such as a keyboard and mouse, and output devices such as a monitor and printer. Processing components include the CPU, RAM, storage, operating system, and application software. Communication components include the motherboard and system bus, which connect components and transmit data and signals."
+   },
+   {
+    "hints": [
+     "First identify what the computer's environment includes.",
+     "Cover all three examples named in the question: user input, network communication, and power supply."
+    ],
+    "accept": [
+     [
+      "external devices",
+      "power supply",
+      "network",
+      "keyboard",
+      "screen"
+     ],
+     [
+      "electrical power",
+      "send",
+      "receive",
+      "user input"
+     ]
+    ],
+    "question": "Q1.7. Provide a detailed explanation of how a computer interacts with its environment. Include examples of user input, network communication, and power supply.",
+    "solution": [
+     "The computer system environment includes external devices that interact with the computer.",
+     "A power supply provides electrical power to allow the computer to work.",
+     "A network connects the computer to other systems and the Internet.",
+     "The computer sends and receives data over the Internet to browse websites or download files.",
+     "Peripherals such as printers, scanners, and external discs expand the computer's capabilities.",
+     "For example, a user types on the keyboard, and the computer processes the input to display text on the screen."
+    ],
+    "answer": "A computer's environment includes external devices that interact with it. A power supply provides electrical power. A network connects the computer to other systems and the Internet so it can send and receive data. Peripherals such as printers, scanners, and external discs expand its capabilities. For example, a user types on a keyboard and the computer processes the input to display text on the screen."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The user begins the process by giving a command through an interface component.",
+     "text": "The user double-clicks a file icon with a mouse or presses a key combination to open it."
+    },
+    {
+     "why": "The computer must receive the user's request before it can respond.",
+     "text": "The mouse or keyboard sends a signal to the computer."
+    },
+    {
+     "why": "The operating system determines what action should follow the input.",
+     "text": "The operating system receives information from the interface component and determines the appropriate action."
+    },
+    {
+     "why": "The requested file's data must be available for the computer to process it.",
+     "text": "The file is retrieved from storage, and the CPU processes the required instructions and data."
+    },
+    {
+     "why": "The user needs an output device to see the result.",
+     "text": "The monitor displays the file's contents."
+    }
+   ],
+   "question": "When you open a file using your mouse or keyboard, how do computer components interact to display it?",
+   "answer": "The input device sends the user's request, the operating system determines the action, the computer retrieves and processes the file, and the monitor displays it."
+  },
+  "explain": [
+   {
+    "title": "A computer has an objective",
+    "body": "A computer is a complex system designed to process data and perform tasks according to a set of instructions. Its objective is to perform computations, process data, and execute tasks efficiently."
+   },
+   {
+    "title": "The components have different jobs",
+    "body": "Interface components let users interact with the computer and receive results. Processing components include the CPU, RAM, storage, operating system, and application software. Communication components connect computer parts and help information move between them."
+   },
+   {
+    "title": "Components communicate and work together",
+    "body": "The motherboard is the primary circuit board that interconnects components. The system bus transmits data between the CPU and other components. For example, opening a file starts with mouse or keyboard input; the operating system determines the action and the file is shown on the screen."
+   },
+   {
+    "title": "A computer also interacts with its environment",
+    "body": "The environment includes external devices and connections such as a power supply, network, and peripherals. A computer needs electrical power, can send and receive data over a network, and can use peripherals such as printers and scanners."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse RAM, which is transient storage, with a hard drive or SSD, which provides permanent storage.",
+   "Do not describe the CPU as the component that receives all user input and decides what action to take; the operating system determines the appropriate action.",
+   "Do not mix up input devices, such as a keyboard and mouse, with output devices, such as a monitor and printer.",
+   "Do not say that the motherboard itself performs all computations; it interconnects the components.",
+   "When explaining a process, do not skip the order from user input to processing and then output."
+  ]
+ }
+}

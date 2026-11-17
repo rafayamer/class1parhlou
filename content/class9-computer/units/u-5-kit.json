@@ -1,0 +1,294 @@
+{
+ "unit": 5,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 5.1",
+   "MCQ 5.3",
+   "MCQ 5.5",
+   "MCQ 5.6",
+   "MCQ 5.7",
+   "MCQ 5.9",
+   "MCQ 5.10",
+   "Short 5.2",
+   "Short 5.3",
+   "Short 5.4",
+   "Short 5.6",
+   "Short 5.7",
+   "Short 5.8",
+   "Long 5.2",
+   "Long 5.3",
+   "Long 5.4",
+   "Long 5.5",
+   "Long 5.6"
+  ],
+  "definitions": [
+   {
+    "term": "System software",
+    "text": "System software is designed to manage the system resources and provide a platform for application software to run."
+   },
+   {
+    "term": "Application software",
+    "text": "Application software is designed to help users perform specific tasks."
+   },
+   {
+    "term": "Operating System (OS)",
+    "text": "An Operating System (OS) is a type of system software that manages all the hardware and software on a computer."
+   }
+  ],
+  "formulas": [],
+  "important": [
+   {
+    "ref": "Short 5.1",
+    "why": "Directly listed as examinable and matches the unit’s core definition."
+   },
+   {
+    "ref": "Short 5.5",
+    "why": "Directly listed as examinable and tests an important comparison."
+   }
+  ],
+  "fullMarks": [
+   "For a definition question, begin with the exact definition, then give examples if the question asks for them.",
+   "For a comparison, state both purposes clearly and give examples of each type; do not mix system-software examples with application-software examples.",
+   "For the long answer on importance, start by explaining that system software is essential and acts as an intermediary between hardware and user applications.",
+   "Explain how it helps hardware components work together and provides a stable environment for applications.",
+   "Include the main functions: managing hardware resources, providing a user interface, and running applications.",
+   "For each function, add a short explanation or relevant example, such as the operating system allocating CPU time and memory to applications.",
+   "Finish with a clear concluding sentence linking system software to the smooth operation of the computer system."
+  ],
+  "mistakes": [
+   "Writing that application software manages hardware. Fix: system software manages hardware; application software helps users perform specific tasks.",
+   "Giving examples without saying which software type they belong to. Fix: label each example as system software or application software.",
+   "Defining system software only as an operating system. Fix: include its role in managing system resources and providing a platform for applications.",
+   "Listing operating-system functions without explaining them. Fix: briefly explain resource management, the user interface, and running applications.",
+   "Confusing a device driver or utility program with application software. Fix: remember that device drivers and utility programs are examples of system software."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define system software and give two examples.",
+    "answer": "System software is designed to manage the system resources and provide a platform for application software to run. Examples include Microsoft Windows, macOS, and Linux."
+   },
+   {
+    "question": "Differentiate between system software and application software.",
+    "answer": "System software manages and operates computer hardware, making it possible for application software to run. Application software helps the user to perform specific tasks. System software includes operating systems and device drivers. Application software includes word processors, web browsers, and games."
+   },
+   {
+    "question": "State the main functions of system software.",
+    "answer": "The main functions of system software include managing hardware resources, providing a user interface, and running applications."
+   },
+   {
+    "question": "Why is system software important in a computing system?",
+    "answer": "System software is essential for the operation of a computer system, acting as an intermediary between the hardware and the user applications. It ensures that the hardware components of a computer work together efficiently and provides a stable environment for application software to run."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-5-1-t0",
+   "text": "Define system software and give two examples.",
+   "marks": 2,
+   "modelAnswer": [
+    "System software is designed to manage the system resources and provide a platform for application software to run. Examples include Microsoft Windows, macOS, and Linux."
+   ],
+   "followUp": "Define system software and give two examples.",
+   "noteId": "cs-n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "manage",
+       "system resources",
+       "platform",
+       "application software"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for the definition’s key functions: managing resources and providing a platform for applications.",
+     "description": "Defines system software by its role in managing resources and supporting application software.",
+     "how": "The answer must identify both system-resource management and a platform for application software to run."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "Microsoft Windows",
+       "macOS"
+      ],
+      [
+       "Microsoft Windows",
+       "Linux"
+      ],
+      [
+       "macOS",
+       "Linux"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for giving two valid examples of system software.",
+     "description": "Gives two examples of system software.",
+     "how": "The answer must name at least two of Microsoft Windows, macOS, and Linux."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-5-1-t1",
+   "text": "Differentiate between system software and application software.",
+   "marks": 2,
+   "modelAnswer": [
+    "System software manages and operates computer hardware, making it possible for application software to run. Application software helps the user to perform specific tasks. System software includes operating systems and device drivers. Application software includes word processors, web browsers, and games."
+   ],
+   "followUp": "Differentiate between system software and application software.",
+   "noteId": "cs-n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "system software",
+       "manages",
+       "computer hardware",
+       "application software"
+      ],
+      [
+       "system software",
+       "operates",
+       "computer hardware",
+       "application software"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for distinguishing system software by its role in managing or operating hardware and enabling application software.",
+     "description": "Explains the role of system software.",
+     "how": "The answer must connect system software with hardware management or operation and application software running."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "application software",
+       "specific tasks"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for stating that application software helps users perform specific tasks.",
+     "description": "Explains the role of application software.",
+     "how": "The answer must identify application software and its use for specific tasks."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-5-1-t2",
+   "text": "State the main functions of system software.",
+   "marks": 2,
+   "modelAnswer": [
+    "The main functions of system software include managing hardware resources, providing a user interface, and running applications."
+   ],
+   "followUp": "State the main functions of system software.",
+   "noteId": "cs-n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "managing",
+       "hardware resources"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying management of hardware resources as a main function.",
+     "description": "Identifies hardware-resource management.",
+     "how": "The answer must state that system software manages hardware resources."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "user interface",
+       "running applications"
+      ],
+      [
+       "providing",
+       "user interface",
+       "running applications"
+      ],
+      [
+       "user interface",
+       "applications"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for identifying the other stated functions: providing a user interface and running applications.",
+     "description": "Identifies the user-interface and application-running functions.",
+     "how": "The answer must state that system software provides a user interface and runs applications."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-5-1-t3",
+   "text": "Why is system software important in a computing system?",
+   "marks": 2,
+   "modelAnswer": [
+    "System software is essential for the operation of a computer system, acting as an intermediary between the hardware and the user applications. It ensures that the hardware components of a computer work together efficiently and provides a stable environment for application software to run."
+   ],
+   "followUp": "Why is system software important in a computing system?",
+   "noteId": "cs-n-5-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "intermediary",
+       "hardware",
+       "user applications"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for explaining that system software acts between hardware and user applications.",
+     "description": "Identifies system software as an intermediary between hardware and user applications.",
+     "how": "The answer must connect the intermediary role with both hardware and user applications."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "hardware components",
+       "work together efficiently"
+      ],
+      [
+       "stable environment",
+       "application software",
+       "run"
+      ]
+     ],
+     "marks": 1,
+     "why": "Award for explaining either the efficient coordination of hardware components or the stable environment for applications.",
+     "description": "Explains how system software supports efficient hardware operation or a stable application environment.",
+     "how": "The answer must state that hardware components work together efficiently, or that system software provides a stable environment for applications to run."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 1,
+  "writtenBuilt": 4
+ }
+}

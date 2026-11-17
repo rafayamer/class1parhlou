@@ -1,0 +1,549 @@
+{
+ "note": {
+  "explanation": "CSS styles HTML elements. A CSS rule has a selector that chooses the elements and declarations that tell the browser what styles to apply.",
+  "examples": [
+   "h1 { color: red; } changes the text colour of all h1 headings to red.",
+   "body { background-color: blue; } gives the page a blue background."
+  ],
+  "checkAnswer": "A selector chooses the HTML elements to style; declarations give the properties and values.",
+  "keywords": [
+   "CSS",
+   "selector",
+   "declaration",
+   "inline",
+   "internal",
+   "external",
+   "background",
+   "transition"
+  ],
+  "simple": "Think of CSS as instructions for how HTML content should look.",
+  "checkQuestion": "In a CSS rule, what does the selector do?",
+  "title": "Styling webpages with CSS",
+  "steps": [
+   "Write a selector for the HTML element you want to style.",
+   "Add braces after the selector.",
+   "Inside the braces, write each property followed by a colon and its value.",
+   "End each declaration with a semicolon."
+  ],
+  "answer": "CSS styles HTML elements using rules made of selectors and declarations.",
+  "checkAccept": [
+   [
+    "chooses",
+    "elements"
+   ],
+   [
+    "selects",
+    "elements"
+   ],
+   [
+    "targets",
+    "elements"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The selector identifies which HTML elements the rule styles.",
+    "The selector gives the value of a CSS property.",
+    "The selector links an external CSS file.",
+    "The selector creates an HTML element."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the role of a selector in a CSS rule?",
+   "rationales": [
+    "Correct: a selector specifies which HTML elements the styles apply to.",
+    "Incorrect: a declaration gives a property and its value.",
+    "Incorrect: the HTML link tag is used to link an external CSS file.",
+    "Incorrect: HTML tags create elements; CSS selectors target them."
+   ]
+  },
+  {
+   "options": [
+    "color: red;",
+    "color = red;",
+    "color red;",
+    "color: red"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is a correctly written CSS declaration?",
+   "rationales": [
+    "Correct: a CSS declaration uses a property, colon, value, and semicolon.",
+    "Incorrect: CSS declarations use a colon, not an equals sign.",
+    "Incorrect: the property and value need a colon between them.",
+    "Incorrect: the declaration is missing its ending semicolon."
+   ]
+  },
+  {
+   "options": [
+    "<h1 style=\"color: blue;\">Hello</h1>",
+    "<h1 css=\"color: blue;\">Hello</h1>",
+    "<style h1=\"color: blue;\">Hello</style>",
+    "<h1 link=\"color: blue;\">Hello</h1>"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which example applies an inline style to a heading?",
+   "rationales": [
+    "Correct: inline CSS is placed directly on an element using the style attribute.",
+    "Incorrect: css is not the attribute used for inline styles.",
+    "Incorrect: this is not the correct way to apply an inline style to h1.",
+    "Incorrect: link is not the attribute for an inline CSS declaration."
+   ]
+  },
+  {
+   "options": [
+    "In the head section, inside a style tag",
+    "In the body, inside a script tag",
+    "In a paragraph, inside a font tag",
+    "In a table, inside a link tag"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Where does internal CSS go in an HTML document?",
+   "rationales": [
+    "Correct: internal CSS is included in the head section using the style tag.",
+    "Incorrect: a script tag is used for JavaScript, not internal CSS.",
+    "Incorrect: this is not the method for adding internal CSS.",
+    "Incorrect: internal CSS is not placed in a table or link tag."
+   ]
+  },
+  {
+   "options": [
+    "background-color",
+    "font-style",
+    "background-position",
+    "animation-duration"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which CSS property sets the background colour of an element?",
+   "rationales": [
+    "Correct: background-color sets an element's background colour.",
+    "Incorrect: font-style controls the style of text, such as italic.",
+    "Incorrect: background-position places a background image.",
+    "Incorrect: animation-duration sets how long an animation takes."
+   ]
+  },
+  {
+   "options": [
+    "margin",
+    "padding",
+    "font-size",
+    "background-size"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which property creates space inside an element?",
+   "rationales": [
+    "Incorrect: margin creates space outside an element.",
+    "Correct: padding creates space inside an element.",
+    "Incorrect: font-size changes the size of text.",
+    "Incorrect: background-size controls the size of a background image."
+   ]
+  },
+  {
+   "options": [
+    "display: grid;",
+    "font-weight: grid;",
+    "background-color: grid;",
+    "animation-name: grid;"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which declaration makes an element a CSS Grid container?",
+   "rationales": [
+    "Correct: display: grid; sets the element to use CSS Grid layout.",
+    "Incorrect: font-weight controls the weight of text.",
+    "Incorrect: background-color requires a colour value, not grid.",
+    "Incorrect: animation-name identifies an animation, not a layout."
+   ]
+  },
+  {
+   "options": [
+    "It gradually changes a property between styles.",
+    "It permanently removes an element.",
+    "It links a CSS file to an HTML document.",
+    "It arranges items into rows and columns."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does a CSS transition do?",
+   "rationales": [
+    "Correct: a transition makes a property change gradually instead of instantly.",
+    "Incorrect: a transition does not remove an HTML element.",
+    "Incorrect: the link tag links an external CSS file.",
+    "Incorrect: CSS Grid arranges items into rows and columns."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Write a CSS rule that changes the color and size of all headings on a web page to red and 24 pixels, respectively.",
+   "finalAnswer": "h1 { color: red; font-size: 24px; }",
+   "marks": 2,
+   "source": "Example 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "h1",
+       "color:red"
+      ]
+     ],
+     "marks": 1,
+     "why": "The selector and colour declaration identify the elements and set their text colour.",
+     "description": "Write the h1 selector and red colour declaration.",
+     "how": "Use h1 as the selector and write color: red; inside the braces."
+    },
+    {
+     "accept": [
+      [
+       "font-size:24px"
+      ]
+     ],
+     "marks": 1,
+     "why": "The size declaration completes the requested styling.",
+     "description": "Give the heading a 24-pixel font size.",
+     "how": "Write font-size: 24px; inside the rule."
+    }
+   ],
+   "modelAnswer": [
+    "h1 {",
+    "    color: red;",
+    "    font-size: 24px;",
+    "}"
+   ]
+  },
+  {
+   "text": "Write the CSS rule shown in your textbook to style the font of a paragraph.",
+   "finalAnswer": "P { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; font-style: italic; }",
+   "marks": 2,
+   "source": "Example 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p",
+       "font-family:arial"
+      ]
+     ],
+     "marks": 1,
+     "why": "The selector and font family start the requested paragraph styling.",
+     "description": "Select paragraphs and set the font family.",
+     "how": "Use P as the selector and specify Arial, sans-serif."
+    },
+    {
+     "accept": [
+      [
+       "font-size:16px",
+       "font-weight:bold",
+       "font-style:italic"
+      ]
+     ],
+     "marks": 1,
+     "why": "These declarations include the specified size, weight, and style.",
+     "description": "Add the paragraph's other three font declarations.",
+     "how": "Set 16px size, bold weight, and italic style."
+    }
+   ],
+   "modelAnswer": [
+    "P {",
+    "    font-family: Arial, sans-serif;",
+    "    font-size: 16px;",
+    "    font-weight: bold;",
+    "    font-style: italic;",
+    "}"
+   ]
+  },
+  {
+   "text": "Write the HTML tag used in the example to link an external CSS file named styles.css.",
+   "finalAnswer": "<link rel=\"stylesheet\" href=\"styles.css\">",
+   "marks": 2,
+   "source": "Example 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "rel=\"stylesheet\""
+      ]
+     ],
+     "marks": 1,
+     "why": "The rel attribute identifies the linked file as a stylesheet.",
+     "description": "Identify the linked resource as a stylesheet.",
+     "how": "Include rel=\"stylesheet\" in the link tag."
+    },
+    {
+     "accept": [
+      [
+       "href=\"styles.css\""
+      ]
+     ],
+     "marks": 1,
+     "why": "The href attribute must point to the requested CSS file.",
+     "description": "Give the external stylesheet's filename.",
+     "how": "Set href to styles.css."
+    }
+   ],
+   "modelAnswer": [
+    "<link rel=\"stylesheet\" href=\"styles.css\">"
+   ]
+  },
+  {
+   "text": "What are the different ways to apply CSS to an HTML document?",
+   "finalAnswer": "Inline styles, internal styles, and external styles.",
+   "marks": 2,
+   "source": "Short Q8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inline"
+      ],
+      [
+       "internal"
+      ]
+     ],
+     "marks": 1,
+     "why": "These are two of the three methods named in the section.",
+     "description": "Name inline and internal styles.",
+     "how": "State that CSS can be added inline or internally."
+    },
+    {
+     "accept": [
+      [
+       "external"
+      ]
+     ],
+     "marks": 1,
+     "why": "External styles are the third method and complete the answer.",
+     "description": "Name external styles.",
+     "how": "State that CSS can also be added using an external stylesheet."
+    }
+   ],
+   "modelAnswer": [
+    "CSS can be applied using inline styles, internal styles, and external styles."
+   ]
+  },
+  {
+   "text": "How do you link an external CSS file to an HTML document?",
+   "finalAnswer": "Use the <link> tag in the <head> section, for example: <link rel=\"stylesheet\" href=\"styles.css\">.",
+   "marks": 2,
+   "source": "Short Q8.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "link",
+       "head"
+      ]
+     ],
+     "marks": 1,
+     "why": "The link tag must be placed in the head section.",
+     "description": "State the tag and where it goes.",
+     "how": "Explain that the link tag is put in the head section."
+    },
+    {
+     "accept": [
+      [
+       "rel=\"stylesheet\"",
+       "href=\"styles.css\""
+      ]
+     ],
+     "marks": 1,
+     "why": "The attributes identify the resource as a stylesheet and point to its file.",
+     "description": "Give the example link attributes.",
+     "how": "Include rel=\"stylesheet\" and an href with the CSS filename."
+    }
+   ],
+   "modelAnswer": [
+    "Place a <link> tag in the <head> section.",
+    "<link rel=\"stylesheet\" href=\"styles.css\">"
+   ]
+  },
+  {
+   "text": "How do you add animations and transitions using CSS? Provide examples and explain the properties involved.",
+   "finalAnswer": "Define animation keyframes with @keyframes and apply them using animation properties; use transition on an element and define its changed style, such as a hover state.",
+   "marks": 8,
+   "source": "Long Q8.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "@keyframes",
+       "from",
+       "to"
+      ]
+     ],
+     "marks": 2,
+     "why": "Keyframes define the start and end points, and can include intermediate animation steps.",
+     "description": "Explain and show how keyframes define an animation.",
+     "how": "Give an @keyframes example with from and to styles."
+    },
+    {
+     "accept": [
+      [
+       "animation-name",
+       "animation-duration"
+      ]
+     ],
+     "marks": 2,
+     "why": "These properties apply the named animation and specify how long it runs.",
+     "description": "Show how an animation is applied to an element.",
+     "how": "Use animation-name and animation-duration in an element's rule."
+    },
+    {
+     "accept": [
+      [
+       "transition",
+       "2s"
+      ]
+     ],
+     "marks": 2,
+     "why": "The transition property specifies which style changes should happen gradually and for how long.",
+     "description": "Explain and give a transition declaration.",
+     "how": "Show a property such as background-color or width with a transition duration."
+    },
+    {
+     "accept": [
+      [
+       "hover",
+       "background-color:yellow",
+       "width:200px"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final example shows the changed style that triggers the transition when the element is hovered over.",
+     "description": "Give a hover-state example with changed styles.",
+     "how": "Write a .box:hover rule that changes the background colour and width."
+    }
+   ],
+   "modelAnswer": [
+    "Define keyframes to specify the start and end points of an animation:",
+    "@keyframes example {",
+    "    from { background-color: red; }",
+    "    to { background-color: yellow; }",
+    "}",
+    "Apply the animation using animation-name and animation-duration:",
+    ".animated-box {",
+    "    animation-name: example;",
+    "    animation-duration: 4s;",
+    "}",
+    "A transition changes properties gradually instead of instantly:",
+    ".box {",
+    "    width: 100px;",
+    "    height: 100px;",
+    "    background-color: red;",
+    "    transition: background-color 2s, width 2s;",
+    "}",
+    "Define the changed styles for the hover state:",
+    ".box:hover {",
+    "    background-color: yellow;",
+    "    width: 200px;",
+    "}"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for the three ways to apply CSS or the tag used to link an external stylesheet. Name the methods clearly and show the link tag accurately.",
+   "A longer question may ask you to explain animation and transitions. Define each, give a relevant CSS example, and explain what the important properties do.",
+   "For code questions, marks are commonly earned for the correct selector or tag, correctly written property-value declarations, and the requested final effect. Keep braces, colons, semicolons, and filenames accurate."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Name the three methods for adding CSS.",
+     "Think about where the CSS is written: on an element, in the page head, or in a separate file."
+    ],
+    "accept": [
+     [
+      "inline",
+      "internal",
+      "external"
+     ]
+    ],
+    "question": "What are the different ways to apply CSS to an HTML document?",
+    "solution": [
+     "CSS can be applied using inline styles, internal styles, and external styles.",
+     "Inline styles are added to an HTML element using the style attribute.",
+     "Internal styles are placed in the head section using the style tag.",
+     "External styles are written in a separate CSS file linked using the link tag."
+    ],
+    "answer": "Inline styles, internal styles, and external styles."
+   },
+   {
+    "hints": [
+     "Use the HTML tag that links a stylesheet.",
+     "Put it in the head section and include rel=\"stylesheet\" and the CSS filename in href."
+    ],
+    "accept": [
+     [
+      "link",
+      "head",
+      "rel=\"stylesheet\"",
+      "href=\"styles.css\""
+     ]
+    ],
+    "question": "How do you link an external CSS file to an HTML document?",
+    "solution": [
+     "Place a <link> tag in the <head> section.",
+     "Set rel=\"stylesheet\" to identify the linked file as a stylesheet.",
+     "Set href to the CSS file's name.",
+     "<link rel=\"stylesheet\" href=\"styles.css\">"
+    ],
+    "answer": "Use the <link> tag in the <head> section, for example: <link rel=\"stylesheet\" href=\"styles.css\">."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This selects all h1 elements so the rule styles their headings.",
+     "text": "h1 {"
+    },
+    {
+     "why": "The color property sets the heading text colour to red.",
+     "text": "    color: red;"
+    },
+    {
+     "why": "The font-size property sets the heading text size to 24 pixels.",
+     "text": "    font-size: 24px;"
+    },
+    {
+     "why": "The closing brace marks the end of the CSS rule.",
+     "text": "}"
+    }
+   ],
+   "question": "Write a CSS rule that changes the color and size of all headings on a web page to red and 24 pixels, respectively.",
+   "answer": "h1 { color: red; font-size: 24px; }"
+  },
+  "explain": [
+   {
+    "title": "CSS rules",
+    "body": "CSS is composed of rules that consist of selectors and declarations. Selectors specify which HTML elements the styles will apply to, while declarations define the specific styles to be applied, including properties and their corresponding values. A rule follows this format: selector { property: value; }."
+   },
+   {
+    "title": "Three ways to add CSS",
+    "body": "Inline styles go directly on an HTML element using the style attribute. Internal styles go in the head section using the style tag. External styles are kept in a separate CSS file and linked in the head using the link tag."
+   },
+   {
+    "title": "Fonts and backgrounds",
+    "body": "Font properties include font-family, font-size, font-weight, and font-style. Background properties include background-color, background-image, background-repeat, background-position, and background-size."
+   },
+   {
+    "title": "Layouts, animations, and transitions",
+    "body": "CSS Grid arranges items in rows and columns; Flexbox arranges items flexibly in a row or column. Margins create space outside an element, while padding creates space inside it. Keyframes define animation stages, and transitions make style changes happen gradually."
+   }
+  ],
+  "mistakes": [
+   "Writing an equals sign instead of a colon between a CSS property and its value.",
+   "Forgetting semicolons between declarations or leaving out the braces around a CSS rule.",
+   "Mixing up the three methods: inline uses a style attribute, internal uses a style tag, and external uses a linked CSS file.",
+   "Putting the external stylesheet link outside the head section or omitting its rel or href attribute.",
+   "Confusing margin (space outside) with padding (space inside).",
+   "Describing a transition as an animation without showing the changed style or the transition property."
+  ]
+ }
+}

@@ -1,0 +1,207 @@
+{
+ "shortTheory": [
+  {
+   "question": "Define a Boolean function.",
+   "answer": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+  },
+  {
+   "question": "What is the significance of a truth table in digital logic?",
+   "answer": "A truth table is useful in demonstrating the functionality of the AND operation with all possibilities of the input variables."
+  },
+  {
+   "question": "Explain the difference between analog and digital signals.",
+   "answer": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range. Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+  },
+  {
+   "question": "What is Boolean algebra?",
+   "answer": "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False. It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+  },
+  {
+   "question": "What are the uses of Boolean functions in computers?",
+   "answer": "Boolean functions are used in Arithmetical Logic Units (ALUs) of CPUs to perform operations like addition, subtraction, multiplication, and even division. Boolean functions are used to process binary data in memory and storage devices, ensuring efficient data manipulation and retrieval. Boolean functions are applied in computers to control various parts of the system's operation to function in co-ordinated manner."
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Analog signals",
+   "text": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range."
+  },
+  {
+   "term": "Digital signals",
+   "text": "Digital signals are the signals which have only two values that are in the form of '0' and '1'."
+  },
+  {
+   "term": "Binary variables",
+   "text": "Binary variables that can have only have two values, 0 and 1."
+  },
+  {
+   "term": "Boolean algebra",
+   "text": "Boolean algebra is a branch of mathematics relate to logic and symbolic computation, using two values namely True and False. It is an essential branch of digital circuits since it is the basis for the analysis and design of circuits."
+  },
+  {
+   "term": "Boolean function",
+   "text": "A Boolean function is a function which has a one or more binary inputs and produces a single binary output. The inputs and outputs can only have two values: False (represented by 0) and True (represented by 1)."
+  },
+  {
+   "term": "Logic gates",
+   "text": "Logic gates are physical devices in electronic circuits that perform Boolean operations. Each type of logic gate corresponds to a basic Boolean operation."
+  },
+  {
+   "term": "Identity Laws",
+   "text": "A + 0 = A\nA · 1 = A"
+  },
+  {
+   "term": "Null Laws",
+   "text": "A + 1 = 1\nA · 0 = 0"
+  },
+  {
+   "term": "Idempotent Laws",
+   "text": "A + A = A\nA · A = A"
+  },
+  {
+   "term": "Complement Laws",
+   "text": "A + A̅ = 1\nA · A̅ = 0"
+  },
+  {
+   "term": "Commutative Laws",
+   "text": "A + B = B + A\nA · B = B · A"
+  },
+  {
+   "term": "Associative Laws",
+   "text": "(A + B) + C = A + (B + C)\n(A · B) · C = A · (B · C)"
+  },
+  {
+   "term": "Distributive Laws",
+   "text": "A · (B + C) = (A · B) + (A · C)\nA + (B · C) = (A + B) · (A + C)"
+  },
+  {
+   "term": "Absorption Laws",
+   "text": "A + (A · B) = A\nA · (A + B) = A"
+  },
+  {
+   "term": "De Morgan's Theorems",
+   "text": "(A + B)̅ = A̅ · B̅\n(A · B)̅ = A̅ + B̅"
+  },
+  {
+   "term": "Double Negation Law",
+   "text": "A̿ = A"
+  }
+ ],
+ "formulas": [
+  {
+   "formula": "P = A · B",
+   "use": "AND operation: output is 1 only when both inputs are 1. A, B and P are dimensionless binary values; no SI units."
+  },
+  {
+   "formula": "P = A + B",
+   "use": "OR operation: output is 1 when at least one input is 1. A, B and P are dimensionless binary values; no SI units."
+  },
+  {
+   "formula": "P = A̅ or P = ¬A",
+   "use": "NOT operation: gives the opposite of the input. A and P are dimensionless binary values; no SI units."
+  },
+  {
+   "formula": "A + 0 = A; A · 1 = A",
+   "use": "Identity laws for simplifying a Boolean expression. All symbols are dimensionless binary values; no SI units."
+  },
+  {
+   "formula": "A + 1 = 1; A · 0 = 0",
+   "use": "Null laws for simplifying a Boolean expression. All symbols are dimensionless binary values; no SI units."
+  },
+  {
+   "formula": "A + A = A; A · A = A",
+   "use": "Idempotent laws for repeated variables. A is dimensionless; no SI units."
+  },
+  {
+   "formula": "A + A̅ = 1; A · A̅ = 0",
+   "use": "Complement laws when a variable and its complement appear together. A is dimensionless; no SI units."
+  },
+  {
+   "formula": "A + B = B + A; A · B = B · A",
+   "use": "Commutative laws for changing the order of inputs. A and B are dimensionless; no SI units."
+  },
+  {
+   "formula": "(A + B) + C = A + (B + C); (A · B) · C = A · (B · C)",
+   "use": "Associative laws for regrouping OR or AND operations. A, B and C are dimensionless; no SI units."
+  },
+  {
+   "formula": "A · (B + C) = (A · B) + (A · C); A + (B · C) = (A + B) · (A + C)",
+   "use": "Distributive laws for expanding or factoring Boolean expressions. A, B and C are dimensionless; no SI units."
+  },
+  {
+   "formula": "A + (A · B) = A; A · (A + B) = A",
+   "use": "Absorption laws for removing a redundant term. A and B are dimensionless; no SI units."
+  },
+  {
+   "formula": "(A + B)̅ = A̅ · B̅; (A · B)̅ = A̅ + B̅",
+   "use": "De Morgan's theorems for complementing an OR or AND expression. A and B are dimensionless; no SI units."
+  },
+  {
+   "formula": "A̿ = A",
+   "use": "Double negation law: two complements cancel. A is dimensionless; no SI units."
+  },
+  {
+   "formula": "F(A, B) = A · B + A · B̅ = A · (B + B̅) = A · 1 = A",
+   "use": "Simplify the examinable function using the complement, identity and distributive laws. A, B and F are dimensionless binary values; no SI units."
+  }
+ ],
+ "fullMarks": [
+  "For a definition question, give the complete wording and include the key detail: Boolean inputs and outputs can only be 0 or 1.",
+  "For analog versus digital, state both contrasts clearly: analog changes continuously and can have any value in a range; digital has only 0 and 1.",
+  "For a truth-table question, list every input combination in order. With two inputs there are four rows; with three inputs there are eight rows.",
+  "For a Boolean expression, show intermediate columns or steps for each operation before writing the final output.",
+  "When simplifying, write the law used beside each step, such as Complement Law or Identity Law, and clearly state the final simplified expression.",
+  "Use the symbols consistently: + means OR, · means AND, and the bar means NOT. Do not treat Boolean 1 + 1 as ordinary arithmetic addition.",
+  "For a computer-uses question, name the applications and briefly explain each: arithmetic in ALUs, binary data processing in memory and storage, and control logic."
+ ],
+ "important": [
+  {
+   "ref": "Q3.1. Which of the following Boolean expressions represents the OR operation?  \n(a) A · B (b) A + B (c) A̅ (d) A ⊕ B",
+   "why": "A likely MCQ: remember that + represents Boolean OR."
+  },
+  {
+   "ref": "Q3.2. What is the dual of the Boolean expression A · 0 = 0?  \n(a) A + 1 = 1 (b) A + 0 = A (c) A · 1 = A (d) A · 0 = 0",
+   "why": "Tests the standard duality rule: interchange + with · and 0 with 1."
+  },
+  {
+   "ref": "Q3.3. Which logic gate outputs true only if both inputs are true?  \n(a) OR gate (b) AND gate (c) XOR gate (d) NOT gate",
+   "why": "A likely MCQ on the defining output condition of an AND gate."
+  },
+  {
+   "ref": "Short 3.1: Define a Boolean function and give an example.",
+   "why": "Direct definition question; prepare the exact definition and a simple AND example."
+  },
+  {
+   "ref": "Short 3.2: What is the significance of the truth table in digital logic?",
+   "why": "A direct short question about showing outputs for all possible inputs."
+  },
+  {
+   "ref": "Short 3.3: Explain the difference between analog and digital signals.",
+   "why": "Direct comparison question; continuous versus two-valued signals is a key contrast."
+  },
+  {
+   "ref": "Short 3.4: Describe the function of a NOT gate with its truth table.",
+   "why": "The question is in the examinable exercise list; learn the opposite-output rule and both truth-table rows."
+  },
+  {
+   "ref": "Long 3.1. Explain the usage of Boolean functions in computers.",
+   "why": "Examinable exercise question covering arithmetic, data processing and control; Unit 3 is not assigned a 2027 long-question slot."
+  },
+  {
+   "ref": "Long 3.2. Describe how to construct a truth table for a Boolean expression with an example.",
+   "why": "Useful full-method practice; Unit 3 is not assigned a 2027 long-question slot."
+  },
+  {
+   "ref": "Long 3.7. Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "why": "Tests core Boolean simplification; show factoring, complement and identity steps. Unit 3 is not assigned a 2027 long-question slot."
+  }
+ ],
+ "mistakes": [
+  "Mistake: Treating + as ordinary arithmetic addition. Fix: In Boolean algebra, + means OR, so 1 + 1 = 1.",
+  "Mistake: Saying an analog signal has only two values. Fix: Analog varies continuously and can have any value in a given range; digital has 0 or 1.",
+  "Mistake: Leaving out input combinations from a truth table. Fix: Include all combinations: four rows for two inputs and eight rows for three inputs.",
+  "Mistake: Forgetting the bar when writing a complemented variable. Fix: Copy the bar carefully and keep it over the correct variable or whole expression.",
+  "Mistake: Jumping straight to a simplified answer without showing the Boolean laws. Fix: Write each transformation on a new line and label the law used.",
+  "Mistake: Giving only one use of Boolean functions in computers. Fix: Include arithmetic operations, data processing, and control logic, with a brief explanation of each."
+ ]
+}

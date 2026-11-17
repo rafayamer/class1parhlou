@@ -1,0 +1,1501 @@
+{
+ "note": {
+  "explanation": "HTML provides the structure of a web page, CSS controls its appearance, and JavaScript adds behaviour. They work together to create websites.",
+  "examples": [
+   "HTML: <p>Hello!</p> creates a paragraph.",
+   "CSS: p { color: blue; } makes paragraph text blue."
+  ],
+  "checkAnswer": "HTML",
+  "keywords": [
+   "HTML",
+   "CSS",
+   "JavaScript",
+   "selector",
+   "box model",
+   "responsive",
+   "hyperlink"
+  ],
+  "simple": "Think of a web page as a house: HTML is its structure, CSS is its decoration, and JavaScript makes things happen.",
+  "checkQuestion": "Which language controls the appearance of a web page?",
+  "title": "How HTML, CSS, and JavaScript work together",
+  "steps": [
+   "Use HTML tags to arrange content such as headings, paragraphs, images, and links.",
+   "Use CSS rules to style that content.",
+   "Use JavaScript to respond to user actions and change page content or appearance."
+  ],
+  "answer": "CSS controls the appearance of a web page.",
+  "checkAccept": [
+   [
+    "CSS"
+   ],
+   [
+    "style"
+   ],
+   [
+    "appearance"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "<div>",
+    "<span>",
+    "<head>",
+    "<footer>"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.1. Which of the following tag is not a correct HTML tag?  (a) `<div>` (b) `<span>` (c) `<head>` (d) `<footer>`",
+   "rationales": [
+    "The question is defective: `<div>` is a correct HTML tag, just like all the other options, so there is no unique correct answer.",
+    "`<span>` is also a valid HTML tag.",
+    "`<head>` is also a valid HTML tag.",
+    "`<footer>` is also a valid HTML tag."
+   ]
+  },
+  {
+   "options": [
+    "Cascading Style Sheets",
+    "Computer Style Sheets",
+    "Creative Style Sheets",
+    "Colorful Style Sheets"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.2. What does CSS stand for?  (a) Cascading Style Sheets (b) Computer Style Sheets  (c) Creative Style Sheets (d) Colorful Style Sheets",
+   "rationales": [
+    "CSS stands for Cascading Style Sheets.",
+    "Computer Style Sheets is not the expansion of CSS.",
+    "Creative Style Sheets is not the expansion of CSS.",
+    "Colorful Style Sheets is not the expansion of CSS."
+   ]
+  },
+  {
+   "options": [
+    "<link>",
+    "<a>",
+    "<href>",
+    "<nav>"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.3. Which of the following tag is used to create a hyperlink in HTML?  (a) `<link>` (b) `<a>` (c) `<href>` (d) `<nav>`",
+   "rationales": [
+    "`<link>` commonly links external resources, such as a CSS file, rather than creating an ordinary page hyperlink.",
+    "The `<a>` tag creates a hyperlink, usually with its destination in the `href` attribute.",
+    "`href` is an attribute, not an HTML tag.",
+    "`<nav>` marks a navigation section; it does not itself create a hyperlink."
+   ]
+  },
+  {
+   "options": [
+    "color",
+    "background-color",
+    "bgcolor",
+    "background"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.4. Which property is used to change the background color in CSS?  (a) color (b) background-color  (c) bgcolor (d) background",
+   "rationales": [
+    "`color` sets the foreground text color, not specifically the background color.",
+    "`background-color` is the CSS property used to set an element's background color.",
+    "`bgcolor` is not the standard CSS property for this purpose.",
+    "`background` is a shorthand property, but `background-color` is the property specifically for background color."
+   ]
+  },
+  {
+   "options": [
+    "class",
+    "style",
+    "font",
+    "styles"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.5. Which HTML attribute is used to define inline styles?  (a) class (b) style (c) font (d) styles",
+   "rationales": [
+    "`class` assigns a class name that can be targeted by CSS; it does not contain the inline style itself.",
+    "The `style` attribute contains inline CSS declarations.",
+    "`font` is not the HTML attribute used to define inline styles.",
+    "`styles` is not the correct attribute; the singular attribute is `style`."
+   ]
+  },
+  {
+   "options": [
+    "selector {property: value;}",
+    "selector: {property=value;}",
+    "selector {property=value}",
+    "selector: {property: value;}"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.6. Which of the following is the correct syntax for a CSS rule?  (a) `selector {property: value;}` (b) `selector: {property=value;}`  (c) `selector {property=value}` (d) `selector: {property: value;}`",
+   "rationales": [
+    "A CSS rule places declarations inside braces and separates a property from its value with a colon.",
+    "This uses an incorrect colon after the selector and an equals sign between the property and value.",
+    "This incorrectly uses an equals sign between the property and value.",
+    "This incorrectly places a colon after the selector."
+   ]
+  },
+  {
+   "options": [
+    "/* */",
+    "//",
+    "<!--",
+    "/**/"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.7. In JavaScript, which markup is used for comments?  (a) `/* */` (b) `//` (c) `<!--` (d) `/**/`",
+   "rationales": [
+    "`/* ... */` is used for a JavaScript block comment, not the single-line comment asked for here.",
+    "`//` begins a single-line JavaScript comment.",
+    "`<!--` begins an HTML comment, not the usual JavaScript comment syntax.",
+    "`/**/` is not a complete comment form as written; block comments use `/* ... */`."
+   ]
+  },
+  {
+   "options": [
+    "<script src=\"script.js\"></script>",
+    "<java src=\"script.js\"></java>",
+    "<js src=\"script.js\"></js>",
+    "<code src=\"script.js\"></code>"
+   ],
+   "fromBook": true,
+   "correctIndex": 0,
+   "stem": "Q8.8. How do you include JavaScript in an HTML document?  (a) `<script src=\"script.js\"></script>` (b) `<java src=\"script.js\"></java>`  (c) `<js src=\"script.js\"></js>` (d) `<code src=\"script.js\"></code>`",
+   "rationales": [
+    "The `script` element with its `src` attribute loads an external JavaScript file.",
+    "`<java>` is not the HTML element used to load JavaScript.",
+    "`<js>` is not the HTML element used to load JavaScript.",
+    "`<code>` displays code content; it is not used to load a JavaScript file."
+   ]
+  },
+  {
+   "options": [
+    "<ol>",
+    "<ul>",
+    "<li>",
+    "<list>"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.9. Which HTML tag is used to create an unordered list?  (a) `<ol>` (b) `<ul>` (c) `<li>` (d) `<list>`",
+   "rationales": [
+    "`<ol>` creates an ordered list, normally numbered.",
+    "`<ul>` creates an unordered list, normally shown with bullets.",
+    "`<li>` creates an individual list item inside a list.",
+    "`<list>` is not the standard HTML tag for creating a list."
+   ]
+  },
+  {
+   "options": [
+    "<br>",
+    "<hr>",
+    "<line>",
+    "<hline>"
+   ],
+   "fromBook": true,
+   "correctIndex": 1,
+   "stem": "Q8.10. Which tag is used to display a horizontal line in HTML?  (a) `<br>` (b) `<hr>` (c) `<line>` (d) `<hline>`",
+   "rationales": [
+    "`<br>` creates a line break, not a horizontal line.",
+    "`<hr>` represents a thematic break and is commonly displayed as a horizontal line.",
+    "`<line>` is not the HTML tag used for a horizontal rule.",
+    "`<hline>` is not a standard HTML tag."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q8.1. What is the purpose of the `<head>` tag in HTML?",
+   "finalAnswer": "The `<head>` contains document information and links to resources; its contents are generally not displayed as page content.",
+   "marks": 2,
+   "source": "Short 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "metadata"
+      ],
+      [
+       "title"
+      ],
+      [
+       "information"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should identify the kind of information placed in the head.",
+     "description": "Identifies document information or metadata, such as the title.",
+     "how": "State that the head contains document information, metadata, or the page title."
+    },
+    {
+     "accept": [
+      [
+       "not displayed"
+      ],
+      [
+       "page content"
+      ],
+      [
+       "resources"
+      ]
+     ],
+     "marks": 1,
+     "why": "This distinguishes the head from the visible body of the page.",
+     "description": "Explains that head content is generally not displayed as page content or can link resources.",
+     "how": "Mention that it is generally not visible in the page body, or that it links resources such as CSS."
+    }
+   ],
+   "modelAnswer": [
+    "The `<head>` tag contains information about the HTML document, such as its title and links to resources.",
+    "Its contents are generally not displayed as the visible page content."
+   ]
+  },
+  {
+   "text": "Q8.2. Explain the difference between an ordered list and an unordered list in HTML.",
+   "finalAnswer": "An ordered list uses `<ol>` and displays items in a sequence, usually numbered; an unordered list uses `<ul>` and displays items without a numbered sequence, usually with bullets.",
+   "marks": 2,
+   "source": "Short 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<ol>"
+      ],
+      [
+       "ordered"
+      ],
+      [
+       "numbered"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ordered-list tag and its sequence are the first half of the comparison.",
+     "description": "Gives `<ol>` and explains that its items have an order, usually numbering.",
+     "how": "Name `<ol>` and say its items are numbered or arranged in sequence."
+    },
+    {
+     "accept": [
+      [
+       "<ul>"
+      ],
+      [
+       "unordered"
+      ],
+      [
+       "bullets"
+      ]
+     ],
+     "marks": 1,
+     "why": "The unordered-list tag and its display complete the comparison.",
+     "description": "Gives `<ul>` and explains that its items are usually displayed with bullets.",
+     "how": "Name `<ul>` and say its items are not numbered and are usually bulleted."
+    }
+   ],
+   "modelAnswer": [
+    "An ordered list is written with the `<ol>` tag and displays its items in a sequence, usually with numbers.",
+    "An unordered list is written with the `<ul>` tag and displays its items without a numbered sequence, usually with bullets."
+   ]
+  },
+  {
+   "text": "Q8.3. How do you add a comment in CSS?",
+   "finalAnswer": "Write the comment between `/*` and `*/`, for example: `/* This is a comment */`.",
+   "marks": 2,
+   "source": "Short 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "/*"
+      ]
+     ],
+     "marks": 1,
+     "why": "The opening marker starts a CSS comment.",
+     "description": "Gives the opening CSS comment marker.",
+     "how": "Write `/*`."
+    },
+    {
+     "accept": [
+      [
+       "*/"
+      ]
+     ],
+     "marks": 1,
+     "why": "The closing marker completes the CSS comment syntax.",
+     "description": "Gives the closing CSS comment marker.",
+     "how": "Write `*/` and show that the comment text is between the two markers."
+    }
+   ],
+   "modelAnswer": [
+    "Write the comment between `/*` and `*/`.",
+    "Example: `/* This is a comment */`."
+   ]
+  },
+  {
+   "text": "Q8.4. What are the different ways to apply CSS to an HTML document?",
+   "finalAnswer": "CSS can be applied inline with the `style` attribute, internally with a `<style>` element, or externally by linking a CSS file.",
+   "marks": 2,
+   "source": "Short 8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inline"
+      ],
+      [
+       "style attribute"
+      ]
+     ],
+     "marks": 1,
+     "why": "Inline CSS is one of the main methods of applying CSS.",
+     "description": "Names inline CSS and identifies the `style` attribute.",
+     "how": "Mention inline styles in the HTML element's `style` attribute."
+    },
+    {
+     "accept": [
+      [
+       "internal"
+      ],
+      [
+       "external"
+      ],
+      [
+       "<style>"
+      ],
+      [
+       "stylesheet"
+      ]
+     ],
+     "marks": 1,
+     "why": "Internal and external stylesheets are the other main methods.",
+     "description": "Names internal CSS and external CSS.",
+     "how": "Mention a `<style>` element and/or a linked external stylesheet."
+    }
+   ],
+   "modelAnswer": [
+    "Inline CSS is written in an HTML element's `style` attribute.",
+    "Internal CSS is written inside a `<style>` element, while external CSS is written in a separate file linked to the HTML document."
+   ]
+  },
+  {
+   "text": "Q8.5. How can you include JavaScript in an HTML file?",
+   "finalAnswer": "JavaScript can be written inside a `<script>` element or included from an external file using `<script src=\"script.js\"></script>`.",
+   "marks": 2,
+   "source": "Short 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<script>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The script element is the HTML element used to include JavaScript.",
+     "description": "Names the `<script>` element.",
+     "how": "State that JavaScript is added using `<script>`."
+    },
+    {
+     "accept": [
+      [
+       "src"
+      ],
+      [
+       "external"
+      ],
+      [
+       "script.js"
+      ]
+     ],
+     "marks": 1,
+     "why": "An external script file can be connected through the script element's `src` attribute.",
+     "description": "Explains that an external JavaScript file can be linked using `src`.",
+     "how": "Give or describe `<script src=\"script.js\"></script>`."
+    }
+   ],
+   "modelAnswer": [
+    "JavaScript may be written between opening and closing `<script>` tags in the HTML file.",
+    "An external file can be included as `<script src=\"script.js\"></script>`."
+   ]
+  },
+  {
+   "text": "Q8.6. Describe the syntax for creating a hyperlink in HTML.",
+   "finalAnswer": "Use `<a href=\"URL\">link text</a>`, where `href` gives the destination and the text between the tags is clickable.",
+   "marks": 2,
+   "source": "Short 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<a"
+      ],
+      [
+       "href"
+      ]
+     ],
+     "marks": 1,
+     "why": "The anchor tag and destination attribute form the hyperlink.",
+     "description": "Gives the `<a>` tag with an `href` attribute.",
+     "how": "Write or describe `<a href=\"URL\">`."
+    },
+    {
+     "accept": [
+      [
+       "link text"
+      ],
+      [
+       "clickable"
+      ],
+      [
+       "</a>"
+      ]
+     ],
+     "marks": 1,
+     "why": "The link text and closing tag complete the hyperlink.",
+     "description": "Shows that link text is placed between the opening and closing anchor tags.",
+     "how": "Complete the syntax as `<a href=\"URL\">link text</a>`."
+    }
+   ],
+   "modelAnswer": [
+    "Use the anchor tag with the destination in the `href` attribute.",
+    "Syntax: `<a href=\"URL\">link text</a>`."
+   ]
+  },
+  {
+   "text": "Q8.7. What is the function of the `<div>` tag in HTML?",
+   "finalAnswer": "The `<div>` tag groups content into a block-level container so that the content can be organised or styled together.",
+   "marks": 2,
+   "source": "Short 8.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "container"
+      ],
+      [
+       "groups"
+      ],
+      [
+       "group"
+      ]
+     ],
+     "marks": 1,
+     "why": "Grouping content is the main purpose of a div.",
+     "description": "Explains that `<div>` groups content or acts as a container.",
+     "how": "State that it groups elements or content."
+    },
+    {
+     "accept": [
+      [
+       "block"
+      ],
+      [
+       "style"
+      ],
+      [
+       "organise"
+      ]
+     ],
+     "marks": 1,
+     "why": "The container can be organised and styled as a block.",
+     "description": "Mentions its block-level nature or its use in organising or styling content.",
+     "how": "Explain that the grouped content can be styled or arranged together."
+    }
+   ],
+   "modelAnswer": [
+    "The `<div>` tag groups content into a block-level container.",
+    "The grouped content can then be organised or styled together."
+   ]
+  },
+  {
+   "text": "Q8.8. How do you link an external CSS file to an HTML document?",
+   "finalAnswer": "Place `<link rel=\"stylesheet\" href=\"style.css\">` inside the HTML document's `<head>`.",
+   "marks": 2,
+   "source": "Short 8.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<link"
+      ],
+      [
+       "rel=\"stylesheet\""
+      ]
+     ],
+     "marks": 1,
+     "why": "The link element identifies the resource as a stylesheet.",
+     "description": "Uses a `<link>` element and a stylesheet relationship.",
+     "how": "Include `<link rel=\"stylesheet\"`."
+    },
+    {
+     "accept": [
+      [
+       "href"
+      ],
+      [
+       "<head>"
+      ],
+      [
+       "style.css"
+      ]
+     ],
+     "marks": 1,
+     "why": "The `href` gives the file location and the link belongs in the head.",
+     "description": "Specifies the CSS file with `href` and places the link in the head.",
+     "how": "Show `href=\"style.css\"` in the head section."
+    }
+   ],
+   "modelAnswer": [
+    "Place a link element in the `<head>` section of the HTML document.",
+    "Use `<link rel=\"stylesheet\" href=\"style.css\">`."
+   ]
+  },
+  {
+   "text": "Q8.9. What is the use of the `<table>` tag in HTML?",
+   "finalAnswer": "The `<table>` tag creates a table for displaying data in rows and columns.",
+   "marks": 2,
+   "source": "Short 8.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "table"
+      ],
+      [
+       "tabular"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must identify the element's purpose as creating a table.",
+     "description": "States that `<table>` creates or represents a table.",
+     "how": "Say that the tag creates a table."
+    },
+    {
+     "accept": [
+      [
+       "rows"
+      ],
+      [
+       "columns"
+      ],
+      [
+       "data"
+      ]
+     ],
+     "marks": 1,
+     "why": "Rows and columns explain how table information is arranged.",
+     "description": "Explains that tabular data is arranged in rows and columns.",
+     "how": "Mention displaying data in rows and columns."
+    }
+   ],
+   "modelAnswer": [
+    "The `<table>` tag is used to create a table in HTML.",
+    "It displays information as data arranged in rows and columns."
+   ]
+  },
+  {
+   "text": "Q8.10. Explain the box model in CSS.",
+   "finalAnswer": "The CSS box model describes an element as content surrounded by padding, a border, and a margin.",
+   "marks": 2,
+   "source": "Short 8.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "content"
+      ],
+      [
+       "padding"
+      ]
+     ],
+     "marks": 1,
+     "why": "Content and padding are inner parts of the box model.",
+     "description": "Names content and padding.",
+     "how": "Include content and padding in the model."
+    },
+    {
+     "accept": [
+      [
+       "border"
+      ],
+      [
+       "margin"
+      ]
+     ],
+     "marks": 1,
+     "why": "Border and margin complete the four main parts.",
+     "description": "Names border and margin.",
+     "how": "Include border and margin in the model."
+    }
+   ],
+   "modelAnswer": [
+    "The CSS box model describes each element as a box.",
+    "From inside to outside, it consists of content, padding, border, and margin."
+   ]
+  },
+  {
+   "text": "Q8.1. Discuss the fundamental differences between HTML, CSS, and JavaScript in the context of web development.",
+   "finalAnswer": "HTML structures web content, CSS controls its presentation, and JavaScript adds behaviour and interactivity.",
+   "marks": 8,
+   "source": "Long 8.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "HTML"
+      ],
+      [
+       "structure"
+      ],
+      [
+       "content"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct account of HTML's role is essential to distinguishing the three technologies.",
+     "description": "Explains that HTML provides the structure or content of a page.",
+     "how": "Describe HTML as using elements or tags to organise page content."
+    },
+    {
+     "accept": [
+      [
+       "CSS"
+      ],
+      [
+       "style"
+      ],
+      [
+       "appearance"
+      ]
+     ],
+     "marks": 2,
+     "why": "CSS's presentation role is a central difference.",
+     "description": "Explains that CSS controls presentation or appearance.",
+     "how": "Mention colours, fonts, layout, or other visual styling."
+    },
+    {
+     "accept": [
+      [
+       "JavaScript"
+      ],
+      [
+       "behaviour"
+      ],
+      [
+       "interactivity"
+      ]
+     ],
+     "marks": 2,
+     "why": "JavaScript adds behaviour, which differs from structure and styling.",
+     "description": "Explains that JavaScript adds behaviour or interactivity.",
+     "how": "Give user actions or dynamic changes as examples."
+    },
+    {
+     "accept": [
+      [
+       "together"
+      ],
+      [
+       "work together"
+      ],
+      [
+       "web page"
+      ]
+     ],
+     "marks": 2,
+     "why": "Explaining how the three technologies combine demonstrates the full web-development context.",
+     "description": "Connects the three roles in a complete web page.",
+     "how": "State that they work together: structure, presentation, and behaviour."
+    }
+   ],
+   "modelAnswer": [
+    "HTML (HyperText Markup Language) structures the content of a web page using elements such as headings, paragraphs, images, and links.",
+    "CSS (Cascading Style Sheets) controls how that content looks, including colours, fonts, spacing, and layout.",
+    "JavaScript adds behaviour and interactivity, such as responding when a user clicks a button.",
+    "Together, HTML provides the structure, CSS provides the presentation, and JavaScript provides the behaviour of a web page."
+   ]
+  },
+  {
+   "text": "Q8.2. Explain the process of setting up a development environment for web development. By discussing the necessary softwares and tools.",
+   "finalAnswer": "Set up a code editor, a web browser, a project folder, and HTML, CSS, and JavaScript files; write and save the code, then open the HTML file in the browser to test it.",
+   "marks": 8,
+   "source": "Long 8.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "code editor"
+      ],
+      [
+       "editor"
+      ],
+      [
+       "visual studio code"
+      ]
+     ],
+     "marks": 2,
+     "why": "A code editor is the main tool for writing and editing the web files.",
+     "description": "Names a suitable code editor.",
+     "how": "Give a code editor as a necessary tool."
+    },
+    {
+     "accept": [
+      [
+       "browser"
+      ],
+      [
+       "web browser"
+      ]
+     ],
+     "marks": 2,
+     "why": "A browser displays the page and is needed to test its result.",
+     "description": "Names a web browser for viewing and testing the page.",
+     "how": "State that a browser is used to open and check the HTML page."
+    },
+    {
+     "accept": [
+      [
+       "HTML"
+      ],
+      [
+       "CSS"
+      ],
+      [
+       "JavaScript"
+      ],
+      [
+       "project folder"
+      ]
+     ],
+     "marks": 2,
+     "why": "The project needs organised files for its page, styling, and behaviour.",
+     "description": "Describes preparing a project folder and relevant web files.",
+     "how": "Mention creating or saving HTML, CSS, and JavaScript files."
+    },
+    {
+     "accept": [
+      [
+       "save"
+      ],
+      [
+       "test"
+      ],
+      [
+       "open"
+      ],
+      [
+       "browser"
+      ]
+     ],
+     "marks": 2,
+     "why": "Testing the saved page is part of setting up a usable development workflow.",
+     "description": "Explains how to open and test the work in a browser.",
+     "how": "Describe saving the files and checking the HTML page in the browser."
+    }
+   ],
+   "modelAnswer": [
+    "Install or use a code editor to write and edit HTML, CSS, and JavaScript files.",
+    "Use a web browser to display and test the web page.",
+    "Create a project folder and save the HTML file and any separate CSS and JavaScript files in it.",
+    "Write the code in the editor and save the files.",
+    "Open the HTML file in the browser to check the result, then make corrections in the editor as needed."
+   ]
+  },
+  {
+   "text": "Q8.3. Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+   "finalAnswer": "A valid HTML page containing a heading, paragraph, image, and hyperlink.",
+   "marks": 8,
+   "source": "Long 8.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<html>"
+      ],
+      [
+       "<body>"
+      ]
+     ],
+     "marks": 2,
+     "why": "A basic HTML document needs its main document and body structure.",
+     "description": "Includes a recognisable HTML document and body.",
+     "how": "Write opening and closing HTML and body tags."
+    },
+    {
+     "accept": [
+      [
+       "<h1>"
+      ],
+      [
+       "<header>"
+      ],
+      [
+       "heading"
+      ]
+     ],
+     "marks": 2,
+     "why": "The page must include the requested header.",
+     "description": "Includes a heading or header element.",
+     "how": "Add a heading or a `<header>` element."
+    },
+    {
+     "accept": [
+      [
+       "<p>"
+      ],
+      [
+       "<img"
+      ]
+     ],
+     "marks": 2,
+     "why": "The paragraph and image are two required page elements.",
+     "description": "Includes a paragraph and an image element.",
+     "how": "Add both a `<p>` and an `<img>` element."
+    },
+    {
+     "accept": [
+      [
+       "<a"
+      ],
+      [
+       "href"
+      ]
+     ],
+     "marks": 2,
+     "why": "The hyperlink is the last required element and needs a destination.",
+     "description": "Includes a link using an anchor and `href`.",
+     "how": "Add `<a href=\"...\">link text</a>`."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<head>",
+    "    <title>My Web Page</title>",
+    "</head>",
+    "<body>",
+    "    <header>",
+    "        <h1>Welcome to My Web Page</h1>",
+    "    </header>",
+    "    <p>This is a paragraph on my web page.</p>",
+    "    <img src=\"image.jpg\" alt=\"A sample image\">",
+    "    <a href=\"https://example.com\">Visit this website</a>",
+    "</body>",
+    "</html>"
+   ]
+  },
+  {
+   "text": "Q8.4. How do you style a table using CSS? Create a sample table and apply styles to it.",
+   "finalAnswer": "Create an HTML table and use CSS selectors and declarations to style its borders, cells, headings, and spacing.",
+   "marks": 8,
+   "source": "Long 8.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<table>"
+      ],
+      [
+       "<tr>"
+      ],
+      [
+       "<td>"
+      ]
+     ],
+     "marks": 2,
+     "why": "The example must have a table structure.",
+     "description": "Creates a sample table with rows and cells.",
+     "how": "Include table, row, and cell elements."
+    },
+    {
+     "accept": [
+      [
+       "<th>"
+      ],
+      [
+       "heading"
+      ],
+      [
+       "data"
+      ]
+     ],
+     "marks": 2,
+     "why": "Table headings or data make the sample meaningful and complete.",
+     "description": "Includes suitable table headings and data.",
+     "how": "Show at least one heading row and one data row."
+    },
+    {
+     "accept": [
+      [
+       "border"
+      ],
+      [
+       "border-collapse"
+      ],
+      [
+       "padding"
+      ]
+     ],
+     "marks": 2,
+     "why": "CSS should visibly style table borders and cell spacing.",
+     "description": "Uses CSS to style borders and cell spacing.",
+     "how": "Apply border and padding, or a suitable border-collapse rule."
+    },
+    {
+     "accept": [
+      [
+       "table"
+      ],
+      [
+       "th"
+      ],
+      [
+       "background-color"
+      ],
+      [
+       "text-align"
+      ]
+     ],
+     "marks": 2,
+     "why": "Selectors and other styles show how the table's appearance is controlled.",
+     "description": "Applies appropriate CSS selectors and an additional visual style.",
+     "how": "Style the table or its headings with a selector and a property such as background color or text alignment."
+    }
+   ],
+   "modelAnswer": [
+    "HTML:",
+    "<table>",
+    "    <tr><th>Name</th><th>Class</th></tr>",
+    "    <tr><td>Ali</td><td>9</td></tr>",
+    "</table>",
+    "CSS:",
+    "table {",
+    "    border-collapse: collapse;",
+    "    width: 100%;",
+    "}",
+    "th, td {",
+    "    border: 1px solid black;",
+    "    padding: 8px;",
+    "    text-align: left;",
+    "}",
+    "th {",
+    "    background-color: lightgray;",
+    "}"
+   ]
+  },
+  {
+   "text": "Q8.5. Describe the different CSS selectors and provide examples of each.",
+   "finalAnswer": "CSS selectors include element, class, ID, and grouping selectors; each selects elements to which the CSS declarations apply.",
+   "marks": 8,
+   "source": "Long 8.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "element selector"
+      ],
+      [
+       "p {"
+      ],
+      [
+       "paragraph"
+      ]
+     ],
+     "marks": 2,
+     "why": "An element selector is a basic way of selecting HTML elements.",
+     "description": "Explains and gives an element selector example.",
+     "how": "Give an example such as `p { color: blue; }`."
+    },
+    {
+     "accept": [
+      [
+       "class selector"
+      ],
+      [
+       "."
+      ],
+      [
+       "class=\""
+      ]
+     ],
+     "marks": 2,
+     "why": "Class selectors allow the same style to be applied to elements sharing a class.",
+     "description": "Explains and gives a class selector example.",
+     "how": "Show a class name selected with a dot, such as `.note`."
+    },
+    {
+     "accept": [
+      [
+       "ID selector"
+      ],
+      [
+       "#"
+      ],
+      [
+       "id=\""
+      ]
+     ],
+     "marks": 2,
+     "why": "An ID selector demonstrates selection by an element's ID.",
+     "description": "Explains and gives an ID selector example.",
+     "how": "Show an ID selected with `#`, such as `#header`."
+    },
+    {
+     "accept": [
+      [
+       "grouping"
+      ],
+      [
+       "h1, h2"
+      ],
+      [
+       "selectors"
+      ]
+     ],
+     "marks": 2,
+     "why": "A grouping selector shows how one rule can select several element types.",
+     "description": "Explains and gives a grouping-selector example.",
+     "how": "Give a comma-separated example such as `h1, h2`."
+    }
+   ],
+   "modelAnswer": [
+    "An element selector selects all elements of a specified type: `p { color: blue; }` selects paragraphs.",
+    "A class selector selects elements with a specified class and begins with a dot: `.note { color: green; }`.",
+    "An ID selector selects an element with a specified ID and begins with `#`: `#header { background-color: gray; }`.",
+    "A grouping selector applies one rule to several selectors separated by commas: `h1, h2 { color: navy; }`."
+   ]
+  },
+  {
+   "text": "Q8.6. Explain the process of creating a responsive web page using CSS with the help of examples and explanations.",
+   "finalAnswer": "A responsive page adapts to different screen sizes by using flexible layouts and media queries that change CSS styles at selected widths.",
+   "marks": 8,
+   "source": "Long 8.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "screen sizes"
+      ],
+      [
+       "devices"
+      ],
+      [
+       "responsive"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain what responsive design achieves.",
+     "description": "States that the layout adapts to different screen sizes or devices.",
+     "how": "Describe the page adjusting for mobile, tablet, or desktop screens."
+    },
+    {
+     "accept": [
+      [
+       "flexible"
+      ],
+      [
+       "width"
+      ],
+      [
+       "layout"
+      ]
+     ],
+     "marks": 2,
+     "why": "Flexible layout choices help content fit different screen widths.",
+     "description": "Mentions a flexible layout or sizing approach.",
+     "how": "Give a flexible width or layout as an example."
+    },
+    {
+     "accept": [
+      [
+       "@media"
+      ],
+      [
+       "media query"
+      ]
+     ],
+     "marks": 2,
+     "why": "Media queries allow CSS rules to depend on the device or screen dimensions.",
+     "description": "Uses a media query in the explanation or example.",
+     "how": "Write an `@media` rule with a screen-width condition."
+    },
+    {
+     "accept": [
+      [
+       "max-width"
+      ],
+      [
+       "small screens"
+      ],
+      [
+       "mobile"
+      ],
+      [
+       "columns"
+      ]
+     ],
+     "marks": 2,
+     "why": "A specific responsive change demonstrates how the technique works.",
+     "description": "Gives an appropriate change for a smaller screen.",
+     "how": "For example, change a multi-column layout to one column at a smaller width."
+    }
+   ],
+   "modelAnswer": [
+    "A responsive web page adjusts its layout to suit different screen sizes, such as phones, tablets, and computers.",
+    "Use flexible dimensions and layouts so that the content can fit different available widths.",
+    "A media query applies CSS only when its condition is met.",
+    "Example:",
+    ".container {",
+    "    width: 80%;",
+    "    margin: auto;",
+    "}",
+    "@media (max-width: 600px) {",
+    "    .container {",
+    "        width: 100%;",
+    "    }",
+    "}",
+    "In this example, the container uses 80% width normally and changes to 100% width when the screen is 600 pixels wide or less."
+   ]
+  },
+  {
+   "text": "Q8.7. Write a JavaScript function that changes the background color of a web page when a button is clicked. Provide the complete code and explain how it works.",
+   "finalAnswer": "A page with a button whose click event runs a JavaScript function that changes the document background color.",
+   "marks": 8,
+   "source": "Long 8.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<button"
+      ],
+      [
+       "button"
+      ]
+     ],
+     "marks": 2,
+     "why": "The user needs a button to initiate the change.",
+     "description": "Includes a button in the page.",
+     "how": "Write a button element with suitable text."
+    },
+    {
+     "accept": [
+      [
+       "function"
+      ],
+      [
+       "onclick"
+      ],
+      [
+       "addEventListener"
+      ]
+     ],
+     "marks": 2,
+     "why": "A function and click handling connect the user's action to the change.",
+     "description": "Defines or invokes a function in response to a button click.",
+     "how": "Use an onclick handler or a click event listener."
+    },
+    {
+     "accept": [
+      [
+       "backgroundColor"
+      ],
+      [
+       "background-color"
+      ],
+      [
+       "document.body.style"
+      ]
+     ],
+     "marks": 2,
+     "why": "The code must change the page's background colour.",
+     "description": "Changes the body background colour in JavaScript.",
+     "how": "Set `document.body.style.backgroundColor` to a colour."
+    },
+    {
+     "accept": [
+      [
+       "click"
+      ],
+      [
+       "changes"
+      ],
+      [
+       "background"
+      ]
+     ],
+     "marks": 2,
+     "why": "An explanation of the event and result shows understanding of the code.",
+     "description": "Explains that clicking the button runs the function and changes the background.",
+     "how": "Describe the click event and the resulting colour change."
+    }
+   ],
+   "modelAnswer": [
+    "<!DOCTYPE html>",
+    "<html>",
+    "<body>",
+    "    <button onclick=\"changeColor()\">Change Background</button>",
+    "    <script>",
+    "        function changeColor() {",
+    "            document.body.style.backgroundColor = \"lightblue\";",
+    "        }",
+    "    </script>",
+    "</body>",
+    "</html>",
+    "When the button is clicked, `changeColor()` runs.",
+    "The function sets the background color of the page body to light blue."
+   ]
+  },
+  {
+   "text": "Q8.8. How do you add animations and transitions using CSS? Provide examples and explain the properties involved.",
+   "finalAnswer": "CSS transitions smoothly change a property between states, while CSS animations use keyframes to define a sequence of style changes over time.",
+   "marks": 8,
+   "source": "Long 8.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "transition"
+      ],
+      [
+       "smoothly"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response should explain the purpose of a transition.",
+     "description": "Explains that a transition smoothly changes a property between states.",
+     "how": "Describe a smooth change and name a property such as `transition`."
+    },
+    {
+     "accept": [
+      [
+       "transition:"
+      ],
+      [
+       "duration"
+      ],
+      [
+       "0.5s"
+      ]
+     ],
+     "marks": 2,
+     "why": "A working transition example needs a property and a time or duration.",
+     "description": "Provides an example of a transition declaration.",
+     "how": "Give a declaration such as `transition: background-color 0.5s;`."
+    },
+    {
+     "accept": [
+      [
+       "@keyframes"
+      ],
+      [
+       "keyframes"
+      ]
+     ],
+     "marks": 2,
+     "why": "Keyframes define the stages of a CSS animation.",
+     "description": "Explains or demonstrates animation using keyframes.",
+     "how": "Show an `@keyframes` rule with at least one animation stage."
+    },
+    {
+     "accept": [
+      [
+       "animation:"
+      ],
+      [
+       "animation-duration"
+      ],
+      [
+       "animation-name"
+      ]
+     ],
+     "marks": 2,
+     "why": "The animation property applies and controls the defined keyframes.",
+     "description": "Applies an animation and names a relevant animation property.",
+     "how": "Give an animation declaration with a name and duration."
+    }
+   ],
+   "modelAnswer": [
+    "A transition smoothly changes a CSS property when its value changes.",
+    "Example:",
+    "button {",
+    "    background-color: blue;",
+    "    transition: background-color 0.5s;",
+    "}",
+    "button:hover {",
+    "    background-color: green;",
+    "}",
+    "The `transition` property gives the background-color change a duration of 0.5 seconds.",
+    "An animation uses keyframes to describe stages of a change over time.",
+    "Example:",
+    "@keyframes move {",
+    "    from { transform: translateX(0); }",
+    "    to { transform: translateX(100px); }",
+    "}",
+    ".box {",
+    "    animation: move 2s;",
+    "}",
+    "The `@keyframes` rule defines the movement from the starting position to the ending position.",
+    "The `animation` property applies the animation and sets its name and duration."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions often ask for a tag, attribute, property, or syntax; give the correct name and a brief example to secure both marks.",
+   "For compare-and-explain questions, state both sides clearly, using the correct HTML tags such as `<ol>` and `<ul>`.",
+   "Long questions that ask for code should include complete opening and closing tags, correctly placed attributes, and the requested elements or styles.",
+   "For CSS questions, use the rule format `selector {property: value;}` and show where each rule applies.",
+   "For longer explanations, define the idea, give a correct code example, and explain how the example works; these are separate opportunities to earn marks."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Name the tag that makes a clickable link.",
+     "The destination goes in an attribute, followed by the words shown as the link."
+    ],
+    "accept": [
+     [
+      "<a"
+     ],
+     [
+      "href"
+     ],
+     [
+      "link text"
+     ]
+    ],
+    "question": "Q8.6. Describe the syntax for creating a hyperlink in HTML.",
+    "solution": [
+     "Use the anchor tag `<a>` to create a hyperlink.",
+     "Put its destination in the `href` attribute.",
+     "Write the visible link text between the opening and closing tags.",
+     "Syntax: `<a href=\"URL\">link text</a>`."
+    ],
+    "answer": "Use `<a href=\"URL\">link text</a>`."
+   },
+   {
+    "hints": [
+     "An external script is connected with an HTML element.",
+     "Give the element, its file-location attribute, and the closing tag."
+    ],
+    "accept": [
+     [
+      "<script"
+     ],
+     [
+      "src"
+     ],
+     [
+      "script.js"
+     ],
+     [
+      "</script>"
+     ]
+    ],
+    "question": "Q8.5. How can you include JavaScript in an HTML file?",
+    "solution": [
+     "Use the `<script>` element to include JavaScript.",
+     "For an external JavaScript file, place its filename in the `src` attribute.",
+     "Example: `<script src=\"script.js\"></script>`."
+    ],
+    "answer": "Use `<script src=\"script.js\"></script>` to include an external JavaScript file."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The doctype identifies the document as HTML5.",
+     "text": "<!DOCTYPE html>"
+    },
+    {
+     "why": "The opening html tag begins the HTML document.",
+     "text": "<html>"
+    },
+    {
+     "why": "The head contains document information such as the page title.",
+     "text": "<head>"
+    },
+    {
+     "why": "The title appears as the document title in the browser.",
+     "text": "    <title>My Web Page</title>"
+    },
+    {
+     "why": "This closes the document information section.",
+     "text": "</head>"
+    },
+    {
+     "why": "The body contains the content shown on the page.",
+     "text": "<body>"
+    },
+    {
+     "why": "A header groups introductory content for the page.",
+     "text": "    <header>"
+    },
+    {
+     "why": "The h1 element provides the main heading.",
+     "text": "        <h1>Welcome to My Web Page</h1>"
+    },
+    {
+     "why": "This closes the header section.",
+     "text": "    </header>"
+    },
+    {
+     "why": "The paragraph tag displays a paragraph of text.",
+     "text": "    <p>This is a paragraph on my web page.</p>"
+    },
+    {
+     "why": "The image tag displays an image, and alt supplies alternative text.",
+     "text": "    <img src=\"image.jpg\" alt=\"A sample image\">"
+    },
+    {
+     "why": "The anchor and href create a hyperlink to the given destination.",
+     "text": "    <a href=\"https://example.com\">Visit this website</a>"
+    },
+    {
+     "why": "This closes the visible page content.",
+     "text": "</body>"
+    },
+    {
+     "why": "This closes the HTML document.",
+     "text": "</html>"
+    }
+   ],
+   "question": "Q8.3. Create a basic HTML page that includes a header, a paragraph, an image, and a hyperlink.",
+   "answer": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Web Page</title>\n</head>\n<body>\n    <header>\n        <h1>Welcome to My Web Page</h1>\n    </header>\n    <p>This is a paragraph on my web page.</p>\n    <img src=\"image.jpg\" alt=\"A sample image\">\n    <a href=\"https://example.com\">Visit this website</a>\n</body>\n</html>"
+  },
+  "explain": [
+   {
+    "title": "HTML gives a page its structure",
+    "body": "HTML tags organise content into elements such as headings, paragraphs, images, lists, links, and tables."
+   },
+   {
+    "title": "CSS controls the appearance",
+    "body": "CSS rules use a selector and declarations in braces, for example `p { color: blue; }`. CSS can be inline, internal, or external."
+   },
+   {
+    "title": "JavaScript adds behaviour",
+    "body": "JavaScript can respond to events such as button clicks. A `<script>` element can contain code or load an external file using `src`."
+   },
+   {
+    "title": "HTML links and lists use particular tags",
+    "body": "Use `<a href=\"URL\">text</a>` for a hyperlink. Use `<ol>` for an ordered list and `<ul>` for an unordered list; put list items in `<li>` tags."
+   },
+   {
+    "title": "CSS changes layout and effects",
+    "body": "The box model has content, padding, border, and margin. Responsive CSS can adapt a layout with flexible sizing and media queries; transitions and animations add movement."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse an HTML tag with an attribute: `<a>` is a tag, while `href` is an attribute.",
+   "Do not write CSS property and value with an equals sign; use a colon inside the braces.",
+   "Do not confuse `color` with `background-color`; they affect different parts of an element.",
+   "Remember that `<ol>` is ordered and `<ul>` is unordered.",
+   "When linking an external CSS file, use a `<link>` element with `rel=\"stylesheet\"` and `href` in the document head.",
+   "In code questions, check that tags are properly opened and closed and that every requested element is present.",
+   "The first Section A question is defective: all four listed options are valid HTML tags, so it has no unique correct option."
+  ]
+ }
+}

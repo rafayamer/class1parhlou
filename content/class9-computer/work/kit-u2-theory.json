@@ -1,0 +1,303 @@
+{
+ "items": [
+  {
+   "id": "0",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ASCII"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the encoding scheme being asked about.",
+     "description": "Names ASCII.",
+     "how": "Award for identifying ASCII as the scheme."
+    },
+    {
+     "accept": [
+      [
+       "exchange",
+       "text",
+       "reliably"
+      ],
+      [
+       "computers",
+       "devices",
+       "text",
+       "reliably"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the purpose of ASCII.",
+     "description": "Explains that ASCII lets computers or devices exchange text reliably.",
+     "how": "Award for the reliable exchange of text information."
+    }
+   ],
+   "modelAnswer": [
+    "ASCII enables different computers and devices to exchange text information reliably."
+   ]
+  },
+  {
+   "id": "1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ASCII",
+       "7 bits",
+       "128"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the limitation of ASCII stated in the answer.",
+     "description": "ASCII is limited to 7 bits and can represent 128 characters.",
+     "how": "Award for both the 7-bit limit and the 128-character capacity."
+    },
+    {
+     "accept": [
+      [
+       "Unicode",
+       "million",
+       "UTF-8"
+      ],
+      [
+       "Unicode",
+       "million",
+       "UTF-16"
+      ],
+      [
+       "Unicode",
+       "million",
+       "UTF-32"
+      ],
+      [
+       "Unicode",
+       "over a million",
+       "encodings"
+      ]
+     ],
+     "marks": 1,
+     "why": "Contrasts Unicode's capacity with ASCII's limitation.",
+     "description": "Unicode can represent over a million characters through encoding forms such as UTF-8, UTF-16, and UTF-32.",
+     "how": "Award for Unicode's capacity of over a million characters and its use of encoding forms."
+    }
+   ],
+   "modelAnswer": [
+    "Unlike ASCII, which is limited to 7 bits and can represent only 128 characters, Unicode can represent over a million characters through different forms of encoding such as UTF-8, UTF-16, and UTF-32."
+   ]
+  },
+  {
+   "id": "2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "Unicode",
+       "mapping"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies Unicode's role as mapping characters.",
+     "description": "Unicode maps graphic characters.",
+     "how": "Award for stating that Unicode maps characters."
+    },
+    {
+     "accept": [
+      [
+       "all",
+       "graphic characters",
+       "world"
+      ],
+      [
+       "all",
+       "graphic characters",
+       "writing systems"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the broad range of characters Unicode aims to map.",
+     "description": "The characters are those used in the world's writing systems.",
+     "how": "Award for referring to graphic characters used across the world's writing systems."
+    }
+   ],
+   "modelAnswer": [
+    "Unicode is an attempt at mapping all graphic characters used in any of the world's writing systems."
+   ]
+  },
+  {
+   "id": "3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2 bytes",
+       "16 bits"
+      ],
+      [
+       "2-byte",
+       "16 bits"
+      ],
+      [
+       "65535",
+       "2^16-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the unsigned integer's maximum value.",
+     "description": "The maximum value is 65,535 (2¹⁶ − 1).",
+     "how": "Award for the maximum value and its 16-bit expression."
+    },
+    {
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the minimum value in the stated range.",
+     "description": "The minimum value is 0.",
+     "how": "Award for stating zero as the minimum."
+    }
+   ],
+   "modelAnswer": [
+    "For a 2-byte whole number (16 bits), the maximum value is 2¹⁶ − 1 = 65,535. The minimum value is 0."
+   ]
+  },
+  {
+   "id": "4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "two's complement"
+      ],
+      [
+       "twos complement"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the method used to represent negative values.",
+     "description": "Negative values are stored using two's complement.",
+     "how": "Award for identifying two's complement."
+    },
+    {
+     "accept": [
+      [
+       "invert",
+       "bits",
+       "add 1"
+      ],
+      [
+       "change",
+       "0s",
+       "1s",
+       "add 1"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the operations used to find the two's complement.",
+     "description": "Invert all bits, then add 1.",
+     "how": "Award for both inverting the bits and adding 1."
+    }
+   ],
+   "modelAnswer": [
+    "To store negative values, computers use two's complement: invert all the bits, then add 1 to the least significant bit (LSB)."
+   ]
+  },
+  {
+   "id": "5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "quantities",
+       "can't be negative"
+      ],
+      [
+       "quantities",
+       "cannot be negative"
+      ],
+      [
+       "not",
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "States why unsigned integers suit some quantities.",
+     "description": "Whole numbers often represent quantities that cannot be negative.",
+     "how": "Award for explaining that the quantities are non-negative."
+    },
+    {
+     "accept": [
+      [
+       "all",
+       "bits",
+       "larger",
+       "maximum"
+      ],
+      [
+       "all available bits",
+       "larger",
+       "signed"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the range advantage of unsigned integers.",
+     "description": "All available bits represent the value, giving a larger maximum than a same-size signed integer.",
+     "how": "Award for linking use of all bits to a larger maximum value than for a signed integer of the same size."
+    }
+   ],
+   "modelAnswer": [
+    "Whole numbers often represent quantities that can't be negative. Unsigned integers use all available bits for the value, so their maximum is larger than that of a same-size signed integer."
+   ]
+  },
+  {
+   "id": "6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "more bits",
+       "bigger values"
+      ],
+      [
+       "more bits",
+       "larger values"
+      ],
+      [
+       "more bits",
+       "larger range"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains how adding bits affects the values that can be stored.",
+     "description": "More bits allow larger values to be stored.",
+     "how": "Award for stating that more bits increase the range or size of values that can be represented."
+    },
+    {
+     "accept": [
+      [
+       "2^n-1"
+      ],
+      [
+       "2ⁿ-1"
+      ],
+      [
+       "maximum",
+       "2^n",
+       "-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the maximum-value rule in terms of the number of bits.",
+     "description": "For n bits, the maximum value is 2ⁿ − 1.",
+     "how": "Award for the correct formula for the maximum value."
+    }
+   ],
+   "modelAnswer": [
+    "Using more bits allows bigger values to be stored. If n is the number of bits, the maximum value is 2ⁿ − 1."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,551 @@
+{
+ "note": {
+  "explanation": "The Von Neumann architecture uses one memory space for both instructions and data. The CPU fetches an instruction, decodes it, executes it, and stores or sends out the result.",
+  "examples": [
+   "A keyboard is an input device; a monitor is an output device.",
+   "The data bus transports data between computer components."
+  ],
+  "checkAnswer": "Fetching, decoding, execution, and storing.",
+  "keywords": [
+   "Von Neumann",
+   "CPU",
+   "memory",
+   "ALU",
+   "Control Unit",
+   "instruction cycle",
+   "system bus",
+   "bottleneck"
+  ],
+  "simple": "Think of the computer as following a recipe: it gets instructions from memory, understands them, does the work, and saves or displays the result.",
+  "checkQuestion": "What are the four steps in the Von Neumann instruction cycle?",
+  "title": "How a Von Neumann Computer Works",
+  "steps": [
+   "Fetch the next instruction from memory.",
+   "Decode the instruction to determine what it requires.",
+   "Execute it using the ALU and/or Control Unit.",
+   "Store the result in memory or send it to an output device."
+  ],
+  "answer": "The Von Neumann architecture has memory, a CPU, input devices, and output devices. Instructions and data share the same memory.",
+  "checkAccept": [
+   [
+    "fetching",
+    "decoding",
+    "execution",
+    "storing"
+   ],
+   [
+    "fetch",
+    "decode",
+    "execute",
+    "store"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It stores only program instructions.",
+    "It stores both input data and the instructions needed by the CPU.",
+    "It displays the results of processing.",
+    "It controls the movement of the mouse."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the role of memory in the Von Neumann architecture?",
+   "rationales": [
+    "Memory stores data as well as instructions, not instructions alone.",
+    "This is correct: memory contains input data and the program instructions required for CPU processing.",
+    "Presenting results is the role of an output device.",
+    "A mouse is an input device; memory does not control it."
+   ]
+  },
+  {
+   "options": [
+    "Arithmetic Logic Unit",
+    "Program Counter",
+    "Control Unit",
+    "Output device"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which CPU component carries out mathematical and logical calculations?",
+   "rationales": [
+    "This is correct: the ALU performs mathematical computations and logical operations.",
+    "The Program Counter stores the address of the subsequent instruction.",
+    "The Control Unit decodes instructions and manages activities; it does not perform the calculations itself.",
+    "An output device presents or communicates results."
+   ]
+  },
+  {
+   "options": [
+    "It stores the result in a designated memory location or sends it to an output device.",
+    "It decodes the opcode.",
+    "It retrieves an instruction from memory.",
+    "It stores the address of the subsequent instruction."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What happens during the storing stage of the instruction cycle?",
+   "rationales": [
+    "This is correct: the result is stored in memory or sent to an output device.",
+    "Decoding is the stage in which the Control Unit determines the required action.",
+    "Retrieving an instruction is fetching.",
+    "The Program Counter stores the address of the subsequent instruction."
+   ]
+  },
+  {
+   "options": [
+    "It transports control electrical signals.",
+    "It maintains destination information for data.",
+    "It transports data between components.",
+    "It performs calculations."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the function of the data bus?",
+   "rationales": [
+    "The control bus transports control electrical signals.",
+    "The address bus maintains destination information for data.",
+    "This is correct: the data bus transports data between components.",
+    "The ALU performs calculations."
+   ]
+  },
+  {
+   "options": [
+    "Instructions are processed one after another.",
+    "Instructions and data are stored in separate memories.",
+    "Several CPUs must process every instruction.",
+    "Programs cannot be changed once stored."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes sequential execution?",
+   "rationales": [
+    "This is correct: instructions are processed one after another in a sequence.",
+    "The architecture's single memory store holds both instructions and data.",
+    "Using several CPUs is not the definition of sequential execution.",
+    "Programs can be changed by changing memory contents."
+   ]
+  },
+  {
+   "options": [
+    "Programs are stored in memory and can be changed by the computer.",
+    "The CPU can only execute one type of instruction.",
+    "Input devices store the program permanently.",
+    "Instructions are never stored in memory."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the stored program concept mean?",
+   "rationales": [
+    "This is correct: programs are stored in memory and can be changed by the computer.",
+    "This is not the meaning of the stored program concept.",
+    "Input devices do not permanently store the program.",
+    "This contradicts the stored program concept."
+   ]
+  },
+  {
+   "options": [
+    "It makes programs difficult to change.",
+    "A single memory area can limit how quickly the CPU retrieves instructions and data.",
+    "It requires separate memory areas for data and instructions.",
+    "It prevents the use of output devices."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What causes the Von Neumann bottleneck?",
+   "rationales": [
+    "The architecture is flexible because programs can be changed by changing memory contents.",
+    "This is correct: the single memory area can limit the CPU's ability to retrieve instructions and data quickly.",
+    "The architecture stores instructions and data in the same memory area.",
+    "The architecture includes output devices to communicate results."
+   ]
+  },
+  {
+   "options": [
+    "The Control Unit sends the final result to the monitor.",
+    "The ALU decodes the opcode.",
+    "The Control Unit decodes the instruction and determines the required procedures and data.",
+    "The Program Counter performs mathematical calculations."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What does the Control Unit do during decoding?",
+   "rationales": [
+    "The result may be sent to an output device during storing; this is not the decoding function.",
+    "The Control Unit decodes the opcode; the ALU carries out calculations.",
+    "This is correct: the Control Unit decodes the opcode and determines the required procedures and data.",
+    "The Program Counter stores the address of the subsequent instruction."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are the main components of the Von Neumann architecture?",
+   "finalAnswer": "Memory, Central Processing Unit (CPU), input devices, and output devices.",
+   "marks": 2,
+   "source": "Short Q1.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "memory"
+      ]
+     ],
+     "marks": 1,
+     "why": "Memory is one of the architecture's four main components.",
+     "description": "Identify memory and the CPU.",
+     "how": "Name memory and the Central Processing Unit (CPU)."
+    },
+    {
+     "accept": [
+      [
+       "input",
+       "output"
+      ]
+     ],
+     "marks": 1,
+     "why": "Input and output devices complete the four main components.",
+     "description": "Identify input and output devices.",
+     "how": "Name both input devices and output devices."
+    }
+   ],
+   "modelAnswer": [
+    "The main components are memory, the Central Processing Unit (CPU), input devices, and output devices."
+   ]
+  },
+  {
+   "text": "What is the Von Neumann computer architecture? List its key components.",
+   "finalAnswer": "It is a computer model with memory, a CPU, input mechanisms, and output mechanisms. Its key components are memory, CPU, input devices, and output devices.",
+   "marks": 2,
+   "source": "Short Q1.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "computer",
+       "memory",
+       "CPU"
+      ]
+     ],
+     "marks": 1,
+     "why": "A description of the architecture shows understanding of the model.",
+     "description": "Describe the architecture.",
+     "how": "State that it is a computer model with memory, a CPU, input, and output."
+    },
+    {
+     "accept": [
+      [
+       "input",
+       "output"
+      ]
+     ],
+     "marks": 1,
+     "why": "Listing the input and output mechanisms completes the component list.",
+     "description": "List the key components.",
+     "how": "Include memory, CPU, input devices, and output devices."
+    }
+   ],
+   "modelAnswer": [
+    "The Von Neumann architecture is a computer model with memory, a CPU, input mechanisms, and output mechanisms.",
+    "Its key components are memory, the Central Processing Unit (CPU), input devices, and output devices."
+   ]
+  },
+  {
+   "text": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+   "finalAnswer": "Fetching, decoding, execution, and storing.",
+   "marks": 2,
+   "source": "Short Q1.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "fetching",
+       "decoding"
+      ]
+     ],
+     "marks": 1,
+     "why": "Fetching and decoding are the first two steps.",
+     "description": "Name the first two steps.",
+     "how": "Write fetching and decoding."
+    },
+    {
+     "accept": [
+      [
+       "execution",
+       "storing"
+      ]
+     ],
+     "marks": 1,
+     "why": "Execution and storing complete the four-step cycle.",
+     "description": "Name the last two steps.",
+     "how": "Write execution and storing."
+    }
+   ],
+   "modelAnswer": [
+    "The four steps are fetching, decoding, execution, and storing."
+   ]
+  },
+  {
+   "text": "What is the Von Neumann bottleneck?",
+   "finalAnswer": "It occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly.",
+   "marks": 2,
+   "source": "Short Q1.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "single",
+       "memory"
+      ]
+     ],
+     "marks": 1,
+     "why": "The bottleneck is caused by the shared single memory area.",
+     "description": "Identify the cause.",
+     "how": "State that instructions and data use a single memory area."
+    },
+    {
+     "accept": [
+      [
+       "CPU",
+       "instructions",
+       "data",
+       "quick"
+      ]
+     ],
+     "marks": 1,
+     "why": "The limitation is on how quickly the CPU retrieves instructions and data.",
+     "description": "Explain the effect.",
+     "how": "Explain that the shared memory can limit the speed of retrieval."
+    }
+   ],
+   "modelAnswer": [
+    "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+   ]
+  },
+  {
+   "text": "What is a key advantage of the Von Neumann architecture?",
+   "finalAnswer": "A key advantage is flexibility: programs can be easily changed by changing memory contents.",
+   "marks": 2,
+   "source": "Short Q1.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "flexibility"
+      ]
+     ],
+     "marks": 1,
+     "why": "Flexibility is one of the stated advantages.",
+     "description": "Name a key advantage.",
+     "how": "State flexibility or simplified design."
+    },
+    {
+     "accept": [
+      [
+       "program",
+       "memory"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explaining the advantage shows how it applies to the architecture.",
+     "description": "Explain flexibility.",
+     "how": "Say that programs can be changed by changing memory contents."
+    }
+   ],
+   "modelAnswer": [
+    "A key advantage is flexibility.",
+    "Programs can be easily changed by changing memory contents."
+   ]
+  },
+  {
+   "text": "Explain the Von Neumann architecture of a computer. Include a discussion on the main components, their functions, and the step-by-step process of how the architecture operates.",
+   "finalAnswer": "The Von Neumann architecture has memory, a CPU, input devices, and output devices. Memory contains data and instructions. The CPU includes the ALU, which performs mathematical and logical operations, and the Control Unit, which directs activities and decodes instructions. Input devices enter data and instructions; output devices present results. The CPU fetches an instruction from memory, the Control Unit decodes it, the CPU executes it using the ALU and/or Control Unit, and the result is stored in memory or sent to an output device.",
+   "marks": 8,
+   "source": "Long Q1.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "memory",
+       "CPU",
+       "input",
+       "output"
+      ]
+     ],
+     "marks": 2,
+     "why": "Identifying all four main components establishes the architecture being described.",
+     "description": "Name the four main components.",
+     "how": "Include memory, CPU, input devices, and output devices."
+    },
+    {
+     "accept": [
+      [
+       "ALU",
+       "Control Unit",
+       "calculations"
+      ]
+     ],
+     "marks": 2,
+     "why": "The functions of the CPU's main parts explain how processing is controlled and carried out.",
+     "description": "Describe the CPU components and functions.",
+     "how": "Explain that the ALU performs mathematical and logical operations and the Control Unit directs or decodes tasks."
+    },
+    {
+     "accept": [
+      [
+       "fetch",
+       "decode",
+       "execute"
+      ]
+     ],
+     "marks": 2,
+     "why": "The instruction cycle explains how instructions are processed.",
+     "description": "Explain fetching, decoding, and execution.",
+     "how": "Give the steps in the correct order and identify the CPU's processing."
+    },
+    {
+     "accept": [
+      [
+       "store",
+       "memory",
+       "output"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct final stage explains where the result goes.",
+     "description": "Give the final step and complete the answer.",
+     "how": "State that the result is stored in memory or sent to an output device."
+    }
+   ],
+   "modelAnswer": [
+    "The Von Neumann architecture is a computer model with memory, a Central Processing Unit (CPU), input devices, and output devices.",
+    "Memory contains both input data and the instructions required for CPU processing.",
+    "The CPU includes the Arithmetic Logic Unit (ALU) and the Control Unit (CU).",
+    "The ALU performs mathematical computations and logical operations; the CU directs activities and decodes instructions.",
+    "Input devices enter data and instructions into the computer system.",
+    "Output devices present or communicate the outcomes of tasks executed by the computer.",
+    "First, the CPU fetches an instruction from memory; the CU then decodes it.",
+    "The CPU executes the instruction using the ALU and/or CU, and the result is stored in memory or sent to an output device."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions commonly ask you to name the four components, list the instruction-cycle steps, define the bottleneck, or state an advantage.",
+   "For a component question, name all four: memory, CPU, input devices, and output devices.",
+   "For an instruction-cycle question, keep the textbook order: fetching, decoding, execution, storing.",
+   "For a long question, earn marks by naming each component, explaining its function, and describing the instruction cycle in order.",
+   "Use the words ALU and Control Unit correctly: the ALU calculates; the Control Unit directs and decodes."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the stages from getting an instruction to dealing with its result.",
+     "Use the four textbook stage names in order."
+    ],
+    "accept": [
+     [
+      "fetching",
+      "decoding",
+      "execution",
+      "storing"
+     ],
+     [
+      "fetch",
+      "decode",
+      "execute",
+      "store"
+     ]
+    ],
+    "question": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+    "solution": [
+     "First, the CPU fetches an instruction from memory.",
+     "Next, the Control Unit decodes the instruction to determine the required action.",
+     "Then, the CPU executes the instruction; the ALU handles calculations and the CU manages data transfers.",
+     "Finally, the result is stored in memory or sent to an output device.",
+     "Therefore, the four steps are fetching, decoding, execution, and storing."
+    ],
+    "answer": "Fetching, decoding, execution, and storing."
+   },
+   {
+    "hints": [
+     "The cause involves the architecture's shared memory.",
+     "Explain what this single memory area limits the CPU from doing quickly."
+    ],
+    "accept": [
+     [
+      "single",
+      "memory",
+      "CPU",
+      "instructions",
+      "data"
+     ],
+     [
+      "bottleneck",
+      "memory",
+      "retrieve"
+     ]
+    ],
+    "question": "What is the Von Neumann bottleneck?",
+    "solution": [
+     "In the Von Neumann architecture, instructions and data use a single memory area.",
+     "This can limit the CPU's ability to retrieve instructions and data quickly.",
+     "This limitation is called the Von Neumann bottleneck."
+    ],
+    "answer": "It occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The calculator application is the example used in the section to illustrate the instruction process.",
+     "text": "Question: Use the Von Neumann instruction cycle to explain how a two-digit addition is carried out in a basic calculator application."
+    },
+    {
+     "why": "Fetching obtains the instruction the CPU must carry out from memory.",
+     "text": "Fetching: The CPU retrieves the addition instruction from memory and places it in the Instruction Register (IR); the Program Counter (PC) stores the address of the subsequent instruction."
+    },
+    {
+     "why": "The Control Unit must determine what operation and data the instruction requires.",
+     "text": "Decoding: The Control Unit decodes the opcode and determines the required procedures and data."
+    },
+    {
+     "why": "The ALU performs the arithmetic while the Control Unit manages required data transfers.",
+     "text": "Execution: The ALU carries out the addition, while the Control Unit handles any data transmission activities."
+    },
+    {
+     "why": "The result must be saved or communicated so it can be used or seen.",
+     "text": "Storing: The result is stored in a designated memory location or sent to an output device, such as a display."
+    }
+   ],
+   "question": "Use the Von Neumann instruction cycle to explain how a two-digit addition is carried out in a basic calculator application.",
+   "answer": "The CPU fetches the instruction, the Control Unit decodes it, the ALU executes the addition, and the result is stored in memory or sent to a display."
+  },
+  "explain": [
+   {
+    "title": "The architecture and its parts",
+    "body": "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms. Memory holds input data and instructions. Input devices enter data and instructions; output devices present results."
+   },
+   {
+    "title": "The CPU and system bus",
+    "body": "The CPU has two main components: the Arithmetic Logic Unit (ALU) and the Control Unit (CU). The ALU performs mathematical computations and logical operations. The CU directs tasks and decodes instructions. A system bus is a communication mechanism that facilitates the movement of data between components inside a computational system. Its data bus transports data, address bus maintains data destination information, and control bus transports control electrical signals."
+   },
+   {
+    "title": "The instruction cycle",
+    "body": "The CPU processes instructions through four steps: fetching, decoding, execution, and storing. The CPU fetches an instruction from memory, the CU decodes it, the CPU executes it, and the result is stored in memory or sent to an output device."
+   },
+   {
+    "title": "Main characteristics and trade-offs",
+    "body": "Program instructions and data share a single memory store, instructions are processed one after another, and programs are stored in memory and can be changed. This gives simplified design and flexibility. However, the shared memory can cause the Von Neumann bottleneck, and having data and instructions in the same area can create security risks."
+   }
+  ],
+  "mistakes": [
+   "Leaving out one of the four components: memory, CPU, input devices, and output devices.",
+   "Mixing up the ALU and Control Unit: the ALU performs calculations; the CU directs activities and decodes instructions.",
+   "Putting the four instruction-cycle steps in the wrong order or replacing the textbook terms with unclear wording.",
+   "Saying the bottleneck is simply a slow CPU; it is caused by a single memory area limiting quick retrieval of instructions and data.",
+   "Confusing the buses: the data bus transports data, the address bus gives destination information, and the control bus transports control signals."
+  ]
+ }
+}

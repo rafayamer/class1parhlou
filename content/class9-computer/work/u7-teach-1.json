@@ -1,0 +1,860 @@
+{
+ "note": {
+  "explanation": "Computational thinking is a way to work through complex problems so that the solution can be carried out by a computer. Its four key components are decomposition, pattern recognition, abstraction, and algorithms.",
+  "examples": [
+   "To build a birdhouse, split the task into designing it, gathering materials, cutting the wood, assembling the pieces, decorating it, and installing it.",
+   "The areas of squares with sides 1, 2, and 3 are 1, 4, and 9. These are also the sums 1, 1 + 3, and 1 + 3 + 5."
+  ],
+  "checkAnswer": "Decomposition means breaking a complex problem into smaller, manageable parts.",
+  "keywords": [
+   "computational thinking",
+   "decomposition",
+   "pattern recognition",
+   "abstraction",
+   "algorithm",
+   "problem solving"
+  ],
+  "simple": "Think of computational thinking as a problem-solving toolkit: split a big task into parts, notice patterns, ignore details that do not matter, and follow clear steps.",
+  "checkQuestion": "What is decomposition?",
+  "title": "Computational Thinking: Four Useful Tools",
+  "steps": [
+   "Understand the problem and what needs to be done.",
+   "Use decomposition to divide a complex task into smaller tasks.",
+   "Use pattern recognition to spot similarities or regularities.",
+   "Use abstraction to focus on necessary details and leave out unnecessary ones.",
+   "Write an algorithm: a precise sequence of instructions to reach the goal."
+  ],
+  "answer": "Computational thinking is a problem-solving process that uses skills such as decomposition, pattern recognition, abstraction, and algorithms.",
+  "checkAccept": [
+   [
+    "breaking",
+    "smaller"
+   ],
+   [
+    "p:decompos",
+    "manageable"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Breaking a complex task into smaller tasks",
+    "Looking for similarities between problems",
+    "Hiding complex details and showing necessary parts",
+    "Following a precise sequence of instructions"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A student divides the task of organizing a school event into choosing a date, booking a place, and inviting guests. Which computational-thinking component is being used?",
+   "rationales": [
+    "This is correct because decomposition divides a complex problem into smaller, manageable tasks.",
+    "This is incorrect because pattern recognition looks for similarities or regularities.",
+    "This is incorrect because abstraction focuses on necessary details and hides complex details.",
+    "This is incorrect because an algorithm is a sequence of instructions, not the act of splitting a task."
+   ]
+  },
+  {
+   "options": [
+    "Decomposition",
+    "Pattern recognition",
+    "Abstraction",
+    "Algorithm"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A student notices that several maths problems can be solved using the same method. Which component helps the student notice this?",
+   "rationales": [
+    "This is incorrect because decomposition breaks a problem into smaller parts.",
+    "This is correct because pattern recognition involves finding similarities or regularities among problems.",
+    "This is incorrect because abstraction focuses on essential details rather than identifying similarities.",
+    "This is incorrect because an algorithm is a sequence of instructions for a task."
+   ]
+  },
+  {
+   "options": [
+    "Keeping every detail in the problem",
+    "Focusing on necessary details and hiding complex details",
+    "Dividing the problem into smaller tasks",
+    "Writing instructions in a programming language"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which action best shows abstraction?",
+   "rationales": [
+    "This is incorrect because abstraction leaves out unnecessary details rather than keeping every detail.",
+    "This is correct because abstraction hides complex details while exposing the necessary parts.",
+    "This is incorrect because dividing a problem into smaller tasks is decomposition.",
+    "This is incorrect because abstraction is not defined as writing code in a programming language."
+   ]
+  },
+  {
+   "options": [
+    "A list of materials",
+    "A precise sequence of instructions to achieve a specific goal",
+    "A picture showing a task",
+    "A collection of repeated patterns"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which description best fits an algorithm?",
+   "rationales": [
+    "This is incorrect because a list of materials alone does not give instructions in order.",
+    "This is correct because an algorithm is a precise sequence of instructions for a goal.",
+    "This is incorrect because a picture alone is not necessarily a sequence of instructions.",
+    "This is incorrect because repeated patterns are not the definition of an algorithm."
+   ]
+  },
+  {
+   "options": [
+    "Planning a trip by writing clear steps",
+    "Ignoring the goal of a task",
+    "Making a problem more complicated",
+    "Using only mathematical calculations"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is an example of computational thinking being used outside computer science?",
+   "rationales": [
+    "This is correct because computational thinking can help solve everyday problems such as planning a trip.",
+    "This is incorrect because computational thinking requires working toward a problem's solution.",
+    "This is incorrect because computational thinking aims to make complex problems more manageable.",
+    "This is incorrect because computational thinking is not limited to mathematical calculations."
+   ]
+  },
+  {
+   "options": [
+    "The area increases by 1 each time",
+    "The area can be found by adding consecutive odd numbers",
+    "The area stays the same as the side length",
+    "The area decreases as the side length increases"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A student compares the areas of squares with side lengths 1, 2, 3, and 4. Which pattern should the student notice?",
+   "rationales": [
+    "This is incorrect because the areas are 1, 4, 9, and 16, so they do not increase by 1.",
+    "This is correct because the areas are sums of consecutive odd numbers: 1, 1 + 3, 1 + 3 + 5, and 1 + 3 + 5 + 7.",
+    "This is incorrect because the areas are not equal to the side lengths except when the side length is 1.",
+    "This is incorrect because the area increases as the side length increases."
+   ]
+  },
+  {
+   "options": [
+    "A recipe with steps in order",
+    "A drawing of a finished cake",
+    "A list of cake flavours",
+    "A description of why cakes are popular"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which item is most clearly an algorithm for baking a cake?",
+   "rationales": [
+    "This is correct because an ordered list of steps gives instructions for achieving the goal.",
+    "This is incorrect because a picture of the result does not explain the steps to make it.",
+    "This is incorrect because a list of flavours does not give instructions for baking.",
+    "This is incorrect because an explanation of popularity does not describe how to bake a cake."
+   ]
+  },
+  {
+   "options": [
+    "It is only useful when writing computer programs",
+    "It can help with problem-solving in fields and situations beyond computer science",
+    "It means ignoring all details of a problem",
+    "It is another name for pattern recognition"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which statement about computational thinking is supported by this section?",
+   "rationales": [
+    "This is incorrect because the section says computational thinking is used in many fields and daily life.",
+    "This is correct because computational thinking can be used in fields such as biology and mathematics and in everyday problem-solving.",
+    "This is incorrect because only abstraction hides unnecessary details, and computational thinking has other components too.",
+    "This is incorrect because pattern recognition is only one component of computational thinking."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q7.1. Define computational thinking.",
+   "finalAnswer": "Computational thinking is a problem-solving process that uses skills and techniques to solve complex problems in a way that can be executed by a computer.",
+   "marks": 2,
+   "source": "Short 7.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "problem-solving",
+       "process"
+      ],
+      [
+       "problem solving",
+       "process"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must identify computational thinking as a problem-solving process.",
+     "description": "States that computational thinking is a problem-solving process.",
+     "how": "Begin the definition by calling computational thinking a problem-solving process."
+    },
+    {
+     "accept": [
+      [
+       "complex problems",
+       "computer"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition must explain the kind of problems it addresses and the computer-executable approach.",
+     "description": "Mentions solving complex problems in a way that can be executed by a computer.",
+     "how": "Include both complex problems and execution by a computer."
+    }
+   ],
+   "modelAnswer": [
+    "Computational thinking is a problem-solving process that involves a set of skills and techniques.",
+    "It is used to solve complex problems in a way that can be executed by a computer."
+   ]
+  },
+  {
+   "text": "Q7.2. What is decomposition in computational thinking?",
+   "finalAnswer": "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components.",
+   "marks": 2,
+   "source": "Short 7.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "breaking",
+       "problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "Breaking the problem down is the essential action in decomposition.",
+     "description": "Says that a complicated problem is broken down.",
+     "how": "State that decomposition breaks a problem into parts."
+    },
+    {
+     "accept": [
+      [
+       "smaller",
+       "manageable"
+      ],
+      [
+       "smaller",
+       "convenient"
+      ]
+     ],
+     "marks": 1,
+     "why": "The parts must be smaller and easier to manage than the original problem.",
+     "description": "Identifies the resulting parts as smaller and manageable or convenient.",
+     "how": "Explain that the smaller parts are more manageable."
+    }
+   ],
+   "modelAnswer": [
+    "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components."
+   ]
+  },
+  {
+   "text": "Q7.3. Explain pattern recognition with an example.",
+   "finalAnswer": "Pattern recognition involves looking for similarities or patterns among and within problems. For example, if you always forget your homework on Mondays, you may notice this pattern and set a reminder on Sundays.",
+   "marks": 2,
+   "source": "Short 7.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "similarities",
+       "problems"
+      ],
+      [
+       "p:pattern",
+       "similarities"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain that pattern recognition finds similarities or regularities.",
+     "description": "Defines pattern recognition as finding similarities or patterns.",
+     "how": "Mention similarities or regularities among problems."
+    },
+    {
+     "accept": [
+      [
+       "homework",
+       "mondays"
+      ],
+      [
+       "p:example",
+       "p:pattern"
+      ],
+      [
+       "square",
+       "odd"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example shows how recognising a pattern can be applied.",
+     "description": "Gives a relevant example of a recognised pattern.",
+     "how": "For example, mention regularly forgetting homework on Mondays and setting a Sunday reminder."
+    }
+   ],
+   "modelAnswer": [
+    "Pattern recognition involves looking for similarities or patterns among and within problems.",
+    "For example, if you always forget your homework on Mondays, you might recognise this pattern and set a reminder specifically for Sundays."
+   ]
+  },
+  {
+   "text": "Q7.4. Describe abstraction and its importance in problem-solving.",
+   "finalAnswer": "Abstraction is the process of hiding complex details while exposing only the necessary parts. It reduces complexity and helps us focus on a high-level overview without getting lost in details.",
+   "marks": 2,
+   "source": "Short 7.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hiding",
+       "details",
+       "necessary"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition distinguishes necessary information from complex or unnecessary details.",
+     "description": "Defines abstraction as hiding complex details while exposing necessary parts.",
+     "how": "Include both hiding details and showing necessary parts."
+    },
+    {
+     "accept": [
+      [
+       "reduce",
+       "complexity"
+      ],
+      [
+       "focus",
+       "main"
+      ],
+      [
+       "focus",
+       "necessary"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain how abstraction helps solve problems.",
+     "description": "Explains that abstraction reduces complexity or helps focus on the main details.",
+     "how": "State that it makes a problem easier to understand or solve by focusing on what matters."
+    }
+   ],
+   "modelAnswer": [
+    "Abstraction is the process of hiding the complex details while exposing only the necessary parts.",
+    "It helps reduce complexity and lets us focus on a high-level overview without getting lost in details."
+   ]
+  },
+  {
+   "text": "Q7.5. What is an algorithm?",
+   "finalAnswer": "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal.",
+   "marks": 2,
+   "source": "Short 7.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "sequence",
+       "instructions"
+      ]
+     ],
+     "marks": 1,
+     "why": "An algorithm must consist of instructions arranged in a sequence.",
+     "description": "Identifies an algorithm as a sequence of instructions.",
+     "how": "Use the phrase sequence of instructions or equivalent wording."
+    },
+    {
+     "accept": [
+      [
+       "goal"
+      ],
+      [
+       "solve",
+       "problem"
+      ],
+      [
+       "complete",
+       "task"
+      ]
+     ],
+     "marks": 1,
+     "why": "The instructions must work toward a specific outcome.",
+     "description": "Says that the sequence achieves a goal or completes a task.",
+     "how": "Mention the specific goal the instructions are intended to achieve."
+    }
+   ],
+   "modelAnswer": [
+    "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal."
+   ]
+  },
+  {
+   "text": "Q7.3. Define computational thinking and explain its significance in modern problem-solving. Provide examples to illustrate how computational thinking can be applied in different fields.",
+   "finalAnswer": "Computational thinking is a problem-solving process that uses skills and techniques to solve complex problems in a way that can be executed by a computer. It is significant because it helps make complicated problems manageable and supports clear, logical solutions. Its components are decomposition, pattern recognition, abstraction, and algorithms. For example, a biologist can break a complex investigation into smaller tasks, a mathematician can recognise patterns in numbers, and a person planning a trip can focus on necessary details and follow ordered steps.",
+   "marks": 8,
+   "source": "Long 7.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "problem-solving",
+       "complex problems",
+       "computer"
+      ],
+      [
+       "problem solving",
+       "complex problems",
+       "computer"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear definition establishes what computational thinking is.",
+     "description": "Defines computational thinking as a problem-solving process for complex problems that can be executed by a computer.",
+     "how": "Include the problem-solving process, complex problems, and computer execution."
+    },
+    {
+     "accept": [
+      [
+       "manageable"
+      ],
+      [
+       "simplif"
+      ],
+      [
+       "problem-solving",
+       "efficient"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question asks why computational thinking matters in modern problem-solving.",
+     "description": "Explains that it helps simplify or manage problems and find solutions.",
+     "how": "Describe how the approach helps solve problems clearly or efficiently."
+    },
+    {
+     "accept": [
+      [
+       "decomposition",
+       "pattern recognition",
+       "abstraction",
+       "algorithm"
+      ]
+     ],
+     "marks": 2,
+     "why": "The key components are central to the section's definition and explanation.",
+     "description": "Names the four components of computational thinking.",
+     "how": "List decomposition, pattern recognition, abstraction, and algorithms."
+    },
+    {
+     "accept": [
+      [
+       "biology",
+       "mathemat",
+       "trip"
+      ],
+      [
+       "biology",
+       "daily"
+      ],
+      [
+       "mathemat",
+       "daily"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples demonstrate that computational thinking applies in different fields and everyday life.",
+     "description": "Gives relevant examples from different fields or everyday problem-solving.",
+     "how": "Use examples such as biology, mathematics, or planning a trip."
+    }
+   ],
+   "modelAnswer": [
+    "Computational thinking is a problem-solving process that involves a set of skills and techniques to solve complex problems in a way that can be executed by a computer.",
+    "It is significant because it helps make complicated problems manageable and supports clear, logical ways of solving them.",
+    "Its key components are decomposition, pattern recognition, abstraction, and algorithms.",
+    "In biology, a complex investigation can be divided into smaller tasks.",
+    "In mathematics, a student can recognise patterns in numbers, such as the pattern in square areas.",
+    "In daily life, someone planning a trip can focus on necessary details and follow a sequence of steps."
+   ]
+  },
+  {
+   "text": "Q7.4. Discuss the concept of decomposition in computational thinking. Why is it important?",
+   "finalAnswer": "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components. It is important because smaller tasks are easier to understand and handle one at a time. For example, building a birdhouse can be divided into designing it, gathering materials, cutting the wood, assembling the pieces, painting and decorating it, and installing it.",
+   "marks": 8,
+   "source": "Long 7.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "breaking",
+       "complicated problem"
+      ],
+      [
+       "breaking",
+       "complex problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition must state the central action of decomposition.",
+     "description": "Defines decomposition as breaking down a complicated problem.",
+     "how": "Explain that a large or complicated problem is divided into parts."
+    },
+    {
+     "accept": [
+      [
+       "smaller",
+       "manageable"
+      ],
+      [
+       "smaller",
+       "convenient"
+      ]
+     ],
+     "marks": 2,
+     "why": "The smaller components make the original problem easier to deal with.",
+     "description": "Identifies the components as smaller and more manageable or convenient.",
+     "how": "Say that the resulting parts are easier to handle."
+    },
+    {
+     "accept": [
+      [
+       "easier",
+       "understand"
+      ],
+      [
+       "one at a time"
+      ],
+      [
+       "easier",
+       "handle"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain why decomposition is useful.",
+     "description": "Explains that tasks can be understood or handled more easily, often one at a time.",
+     "how": "Connect smaller tasks with easier problem-solving."
+    },
+    {
+     "accept": [
+      [
+       "birdhouse",
+       "design",
+       "materials",
+       "assemble"
+      ],
+      [
+       "birdhouse",
+       "cut",
+       "paint",
+       "install"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example shows how a complex task can be decomposed.",
+     "description": "Provides stages of the birdhouse example or another suitable decomposition.",
+     "how": "List several smaller stages of building a birdhouse."
+    }
+   ],
+   "modelAnswer": [
+    "Decomposition is the method of breaking down a complicated problem into smaller, more convenient components.",
+    "It is important because smaller tasks are easier to understand and handle one at a time.",
+    "For example, building a birdhouse can be divided into designing it and gathering materials.",
+    "The other tasks are cutting the wood, assembling the pieces, painting and decorating it, and installing it."
+   ]
+  },
+  {
+   "text": "Q7.5. Explain pattern recognition in the context of computational thinking. How does identifying patterns help in problem-solving?",
+   "finalAnswer": "Pattern recognition involves looking for similarities or patterns among and within problems. Identifying patterns helps us understand regularities and can show a method that is useful for solving a problem. For example, the area of a square can be found by adding consecutive odd numbers: a square with side length 3 has area 1 + 3 + 5 = 9.",
+   "marks": 8,
+   "source": "Long 7.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "similarities",
+       "patterns",
+       "problems"
+      ],
+      [
+       "regularities",
+       "problems"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct explanation must describe what pattern recognition looks for.",
+     "description": "Defines pattern recognition as finding similarities, patterns, or regularities in problems.",
+     "how": "Mention similarities or regularities among or within problems."
+    },
+    {
+     "accept": [
+      [
+       "understand",
+       "regularities"
+      ],
+      [
+       "help",
+       "solve"
+      ],
+      [
+       "method",
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The question asks how identifying patterns helps with problem-solving.",
+     "description": "Explains that patterns help identify regularities or useful ways to solve problems.",
+     "how": "Link recognising a pattern to understanding or solving a problem."
+    },
+    {
+     "accept": [
+      [
+       "square",
+       "odd numbers"
+      ],
+      [
+       "homework",
+       "mondays"
+      ],
+      [
+       "similar",
+       "problems"
+      ]
+     ],
+     "marks": 2,
+     "why": "A suitable example makes the explanation clear.",
+     "description": "Gives a relevant example of pattern recognition.",
+     "how": "Use the square-area pattern or another clear example."
+    },
+    {
+     "accept": [
+      [
+       "1+3+5=9"
+      ],
+      [
+       "side length 3",
+       "area 9"
+      ],
+      [
+       "reminder",
+       "sundays"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct detail in the example demonstrates understanding of the identified pattern.",
+     "description": "Correctly states a result or action that follows from the example.",
+     "how": "For the square example, show that 1 + 3 + 5 = 9."
+    }
+   ],
+   "modelAnswer": [
+    "Pattern recognition involves looking for similarities or patterns among and within problems.",
+    "Identifying patterns helps us understand regularities and may show a method that can be used to solve a problem.",
+    "For example, the areas of squares follow a pattern of adding consecutive odd numbers.",
+    "For a square with side length 3, the area is 3² = 9, and 1 + 3 + 5 = 9."
+   ]
+  },
+  {
+   "text": "Q7.6. What is an abstraction in computational thinking? Discuss its importance and provide examples of how abstraction can be used to simplify complex problems.",
+   "finalAnswer": "Abstraction is the process of hiding the complex details while exposing only the necessary parts. It is important because it reduces complexity and lets us focus on a high-level overview without getting lost in details. For example, a high-level algorithm for making tea says to boil water, add tea leaves or a tea bag, steep it for a few minutes, then pour it into a cup and add milk or sugar if desired.",
+   "marks": 8,
+   "source": "Long 7.6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hiding",
+       "complex details",
+       "necessary"
+      ],
+      [
+       "hiding",
+       "details",
+       "necessary parts"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition distinguishes between complex details and necessary information.",
+     "description": "Defines abstraction as hiding complex details while exposing necessary parts.",
+     "how": "Include both the details that are hidden and the necessary parts that are shown."
+    },
+    {
+     "accept": [
+      [
+       "reduce",
+       "complexity"
+      ],
+      [
+       "simplif",
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain why abstraction is important.",
+     "description": "Explains that abstraction reduces complexity or simplifies problems.",
+     "how": "State that focusing on essentials makes a complex problem easier to manage."
+    },
+    {
+     "accept": [
+      [
+       "focus",
+       "high-level"
+      ],
+      [
+       "focus",
+       "main"
+      ],
+      [
+       "without",
+       "details"
+      ]
+     ],
+     "marks": 2,
+     "why": "Focusing on a high-level view is a key benefit of abstraction.",
+     "description": "Explains that abstraction helps focus on the main or high-level view.",
+     "how": "Say that it avoids getting lost in unnecessary details."
+    },
+    {
+     "accept": [
+      [
+       "boil water",
+       "tea",
+       "steep"
+      ],
+      [
+       "high-level steps",
+       "tea"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant example shows abstraction in use.",
+     "description": "Gives the high-level tea-making example or another appropriate example.",
+     "how": "List the main tea-making steps without unnecessary detail."
+    }
+   ],
+   "modelAnswer": [
+    "Abstraction is the process of hiding the complex details while exposing only the necessary parts.",
+    "It is important because it reduces complexity and helps us focus on a high-level overview without getting lost in details.",
+    "For example, the high-level steps for making tea are to boil water, add tea leaves or a tea bag, and steep for a few minutes.",
+    "Then pour the tea into a cup and add milk or sugar if desired."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask you to define computational thinking or one of its components. Learn the textbook definitions and use their key words.",
+   "A question asking you to explain a component usually needs both its meaning and a suitable example.",
+   "For an algorithm question, make each instruction clear and put the instructions in the correct order.",
+   "Marks are usually earned for the correct definition, a clear explanation of its importance, and a relevant example.",
+   "For the square-area pattern, check that the sums use consecutive odd numbers: 1, then 1 + 3, then 1 + 3 + 5."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what pattern recognition looks for.",
+     "Explain that it finds similarities, then give an example such as forgetting homework on Mondays and setting a Sunday reminder."
+    ],
+    "accept": [
+     [
+      "similarities",
+      "p:pattern",
+      "homework",
+      "mondays"
+     ],
+     [
+      "similarities",
+      "p:pattern",
+      "square",
+      "odd"
+     ]
+    ],
+    "question": "Q7.3. Explain pattern recognition with an example.",
+    "solution": [
+     "Pattern recognition involves looking for similarities or patterns among and within problems.",
+     "For example, if you always forget your homework on Mondays, you might recognise this pattern and set a reminder specifically for Sundays."
+    ],
+    "answer": "Pattern recognition involves looking for similarities or patterns among and within problems. For example, if you always forget your homework on Mondays, you might recognise this pattern and set a reminder on Sundays."
+   },
+   {
+    "hints": [
+     "Abstraction hides some details but keeps what is needed.",
+     "Mention how this reduces complexity and helps you focus on the high-level view."
+    ],
+    "accept": [
+     [
+      "hiding",
+      "details",
+      "necessary",
+      "complexity"
+     ],
+     [
+      "abstraction",
+      "necessary parts",
+      "focus"
+     ]
+    ],
+    "question": "Q7.4. Describe abstraction and its importance in problem-solving.",
+    "solution": [
+     "Abstraction is the process of hiding the complex details while exposing only the necessary parts.",
+     "It helps reduce complexity by allowing us to focus on the high-level overview without getting lost in the details."
+    ],
+    "answer": "Abstraction is the process of hiding complex details while exposing only the necessary parts. It reduces complexity and helps us focus on the main idea."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The first instruction tells the reader to select where the tree will be planted.",
+     "text": "Choose a suitable spot in your garden."
+    },
+    {
+     "why": "The hole is prepared to fit the tree's root ball.",
+     "text": "Dig a hole that is twice the width of the tree's root ball."
+    },
+    {
+     "why": "The tree must be placed upright before the hole is filled.",
+     "text": "Place the tree in the hole, making sure it is upright."
+    },
+    {
+     "why": "Filling and gently pressing the soil removes air pockets around the roots.",
+     "text": "Fill the hole with soil, pressing it down gently to remove air pockets."
+    },
+    {
+     "why": "Water helps the tree settle after planting.",
+     "text": "Water the tree generously to help it settle."
+    },
+    {
+     "why": "Mulch helps retain moisture around the tree.",
+     "text": "Add mulch around the base of the tree to retain moisture."
+    },
+    {
+     "why": "Regular watering helps the tree become established.",
+     "text": "Water the tree regularly until it is established."
+    }
+   ],
+   "question": "EXAMPLE 2: Planting a Tree: Here is a simple algorithm to plant a tree, an activity that can be very meaningful and beneficial:",
+   "answer": "Choose a suitable spot, dig a hole twice the width of the root ball, place the tree upright, fill the hole with soil, water it generously, add mulch, and water it regularly until established."
+  },
+  "explain": [
+   {
+    "title": "Computational thinking",
+    "body": "Computational thinking is a problem-solving process. It uses a set of skills and techniques to solve complex problems in a way that can be executed by a computer. It can also help with problems in everyday life and fields beyond computer science."
+   },
+   {
+    "title": "Decomposition and pattern recognition",
+    "body": "Decomposition divides a complex problem into smaller, manageable tasks. Pattern recognition looks for similarities or regularities among and within problems. For example, square areas follow the sums of consecutive odd numbers: 1, 1 + 3, 1 + 3 + 5, and so on."
+   },
+   {
+    "title": "Abstraction",
+    "body": "Abstraction is the process of hiding the complex details while exposing only the necessary parts. This reduces complexity and lets us focus on the high-level overview. For making tea, the high-level steps are to boil water, add tea, steep it, and pour it into a cup."
+   },
+   {
+    "title": "Algorithms",
+    "body": "An algorithm is a precise sequence of instructions that can be followed to achieve a specific goal. The steps must be clear and in the order needed to complete the task."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse decomposition, which breaks a problem into smaller parts, with abstraction, which hides complex details and focuses on necessary parts.",
+   "Do not define pattern recognition as writing instructions; it means looking for similarities or regularities.",
+   "An algorithm needs ordered instructions for a goal, not just a list of objects or materials.",
+   "When using the square-area pattern, do not add consecutive counting numbers; add consecutive odd numbers."
+  ]
+ }
+}

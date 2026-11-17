@@ -1,0 +1,763 @@
+{
+ "note": {
+  "explanation": "An unsigned 2-byte whole number uses 16 bits. Its values range from 0 to 2¹⁶ − 1, which is 65,535.",
+  "examples": [
+   "An unsigned 1-byte whole number ranges from 0 to 255.",
+   "An 8-bit signed integer ranges from −128 to 127."
+  ],
+  "checkAnswer": "0 to 65,535",
+  "keywords": [
+   "integer",
+   "whole number",
+   "unsigned",
+   "signed",
+   "byte",
+   "bits",
+   "two's complement"
+  ],
+  "simple": "More bits let a computer store a wider range of whole-number values. Signed integers can be negative; unsigned whole numbers cannot.",
+  "checkQuestion": "What is the range of values for an unsigned 2-byte integer?",
+  "title": "Storing whole numbers and integers",
+  "steps": [
+   "A byte has 8 bits, so 2 bytes have 16 bits.",
+   "For an unsigned number, the minimum value is 0.",
+   "Find the maximum using 2ⁿ − 1: 2¹⁶ − 1 = 65,535."
+  ],
+  "answer": "The range is 0 to 65,535.",
+  "checkAccept": [
+   [
+    "0",
+    "65535"
+   ],
+   [
+    "0 to 65535"
+   ],
+   [
+    "0–65535"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "255",
+    "127",
+    "128",
+    "256"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the maximum value of an unsigned 1-byte whole number?",
+   "rationales": [
+    "This is correct because 8 bits can represent unsigned values from 0 to 2⁸ − 1 = 255.",
+    "This is the maximum positive value for a 1-byte signed integer, not an unsigned one.",
+    "This is the magnitude of the minimum 1-byte signed integer, not the unsigned maximum.",
+    "This is one greater than the maximum value representable by 8 unsigned bits."
+   ]
+  },
+  {
+   "options": [
+    "255",
+    "127",
+    "128",
+    "−127"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the maximum positive value of a 1-byte signed integer?",
+   "rationales": [
+    "This is the maximum for an unsigned 1-byte whole number, not a signed integer.",
+    "This is correct because one of the 8 bits is the sign bit, leaving the maximum positive value 2⁷ − 1 = 127.",
+    "This is the magnitude of the minimum signed value, not the maximum positive value.",
+    "This is not the maximum positive value; the maximum is 127."
+   ]
+  },
+  {
+   "options": [
+    "−128 to 127",
+    "0 to 255",
+    "−127 to 128",
+    "−255 to 255"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the range of an 8-bit signed integer?",
+   "rationales": [
+    "This is correct because the minimum is −2⁷ = −128 and the maximum is 2⁷ − 1 = 127.",
+    "This is the range for an 8-bit unsigned whole number.",
+    "This reverses the endpoints and does not give the two's-complement range.",
+    "Eight bits cannot represent this range as a signed integer."
+   ]
+  },
+  {
+   "options": [
+    "Invert all bits, then add 1",
+    "Add 1, then invert all bits",
+    "Change only the sign bit",
+    "Remove the least significant bit"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does the textbook describe finding the two's complement of a binary number?",
+   "rationales": [
+    "This is correct: first invert the bits, then add 1 to the least significant bit.",
+    "This gives the steps in the wrong order.",
+    "Changing only the sign bit is not the two's-complement method described.",
+    "Removing a bit does not find a two's complement."
+   ]
+  },
+  {
+   "options": [
+    "8 bits",
+    "16 bits",
+    "32 bits",
+    "4 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How many bits are in a 2-byte integer?",
+   "rationales": [
+    "Eight bits make up 1 byte, not 2 bytes.",
+    "This is correct because 2 bytes contain 2 × 8 = 16 bits.",
+    "Thirty-two bits make up 4 bytes.",
+    "Four bits are half a byte, not 2 bytes."
+   ]
+  },
+  {
+   "options": [
+    "They include zero and positive integers, but not negative integers.",
+    "They include negative integers but not zero.",
+    "They include only positive integers.",
+    "They include fractions and negative integers."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes whole numbers as defined in this section?",
+   "rationales": [
+    "This is correct because whole numbers are non-negative integers and include zero.",
+    "Whole numbers include zero and do not include negative integers.",
+    "Whole numbers include zero as well as positive integers.",
+    "Fractions and negative integers are not whole numbers."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Let's convert the decimal number -5 to an 8-bit binary number:",
+   "finalAnswer": "11111011₂",
+   "marks": 2,
+   "source": "Example 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "00000101"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Starting with the binary representation of 5 is the first step in the method.",
+     "description": "Write the 8-bit binary representation of 5.",
+     "how": "Show 00000101₂."
+    },
+    {
+     "accept": [
+      [
+       "11111010"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Inverting every bit is necessary to form the complement.",
+     "description": "Invert all bits.",
+     "how": "Change 00000101₂ to 11111010₂."
+    },
+    {
+     "accept": [
+      [
+       "11111010",
+       "1"
+      ],
+      [
+       "11111011"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Adding 1 completes the two's-complement conversion.",
+     "description": "Add 1 to the inverted binary number.",
+     "how": "Show 11111010₂ + 1₂ = 11111011₂."
+    },
+    {
+     "accept": [
+      [
+       "11111011"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The final binary value is the requested 8-bit representation of −5.",
+     "description": "Give the correct final answer.",
+     "how": "State −5 = 11111011₂ in 8-bit two's complement."
+    }
+   ],
+   "modelAnswer": [
+    "Start with the binary representation of 5: 00000101₂.",
+    "Invert all the bits: 11111010₂.",
+    "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+    "So, −5 in 8-bit two's complement is 11111011₂."
+   ]
+  },
+  {
+   "text": "What is the range of values for an unsigned 2-byte integer?",
+   "finalAnswer": "0 to 65,535",
+   "marks": 2,
+   "source": "Short 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "16",
+       "bits"
+      ],
+      [
+       "2^16"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The range depends on the number of bits available.",
+     "description": "Identify the number of bits.",
+     "how": "State that 2 bytes contain 16 bits."
+    },
+    {
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Unsigned whole numbers cannot be negative.",
+     "description": "Give the minimum value.",
+     "how": "State that the minimum is 0."
+    },
+    {
+     "accept": [
+      [
+       "2^16-1"
+      ],
+      [
+       "65535"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The unsigned maximum is calculated as 2ⁿ − 1.",
+     "description": "Calculate the maximum value.",
+     "how": "Use 2¹⁶ − 1 = 65,535."
+    },
+    {
+     "accept": [
+      [
+       "0",
+       "65535"
+      ],
+      [
+       "0 to 65535"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The complete range must include both endpoints.",
+     "description": "Give the correct final range.",
+     "how": "Write 0 to 65,535."
+    }
+   ],
+   "modelAnswer": [
+    "A 2-byte integer has 2 × 8 = 16 bits.",
+    "For an unsigned integer, the minimum value is 0.",
+    "Maximum value = 2¹⁶ − 1 = 65,535.",
+    "The range is 0 to 65,535."
+   ]
+  },
+  {
+   "text": "Explain how a negative integer is represented in binary.",
+   "finalAnswer": "A negative integer is represented using two's complement: invert all the bits of its positive binary representation, then add 1.",
+   "marks": 2,
+   "source": "Short 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "two's complement"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Naming the representation method identifies how negative values are stored.",
+     "description": "Name the method.",
+     "how": "State that computers use two's complement."
+    },
+    {
+     "accept": [
+      [
+       "invert",
+       "bits"
+      ],
+      [
+       "complement"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Inverting the bits is the first required operation.",
+     "description": "Give the first operation.",
+     "how": "Explain that every 0 changes to 1 and every 1 changes to 0."
+    },
+    {
+     "accept": [
+      [
+       "add 1"
+      ],
+      [
+       "+1"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Adding 1 after inversion completes the method.",
+     "description": "Give the second operation.",
+     "how": "State that 1 is added to the least significant bit."
+    },
+    {
+     "accept": [
+      [
+       "invert",
+       "add 1"
+      ],
+      [
+       "two's complement",
+       "add 1"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The final answer must correctly describe the complete method.",
+     "description": "State the correct final explanation.",
+     "how": "Describe two's complement as inversion followed by adding 1."
+    }
+   ],
+   "modelAnswer": [
+    "To store negative values, computers use a method called two's complement.",
+    "Start with the binary representation of the positive value.",
+    "Invert all the bits (change 0s to 1s and 1s to 0s).",
+    "Add 1 to the Least Significant Bit (LSB)."
+   ]
+  },
+  {
+   "text": "How does the number of bits affect the range of integer values?",
+   "finalAnswer": "More bits allow a wider range of integer values. For n unsigned bits the maximum is 2ⁿ − 1; for n signed bits the maximum is 2ⁿ⁻¹ − 1 and the minimum is −2ⁿ⁻¹.",
+   "marks": 2,
+   "source": "Short 2.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "more bits",
+       "wider range"
+      ],
+      [
+       "more bits",
+       "larger range"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The main relationship between bit count and range must be explained.",
+     "description": "Describe the effect of increasing the number of bits.",
+     "how": "State that more bits allow a wider range of values."
+    },
+    {
+     "accept": [
+      [
+       "2^n-1"
+      ],
+      [
+       "2^n",
+       "-1"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The unsigned maximum formula shows how its range depends on n.",
+     "description": "Give the unsigned maximum formula.",
+     "how": "State that it is 2ⁿ − 1."
+    },
+    {
+     "accept": [
+      [
+       "2^(n-1)-1"
+      ],
+      [
+       "2^n-1",
+       "signed"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "A signed integer uses one bit as the sign bit, reducing its maximum positive value.",
+     "description": "Give the signed maximum formula.",
+     "how": "State that it is 2ⁿ⁻¹ − 1."
+    },
+    {
+     "accept": [
+      [
+       "-2^(n-1)"
+      ],
+      [
+       "-2^n-1"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The minimum signed value completes the signed range.",
+     "description": "Give the correct final minimum formula.",
+     "how": "State that the minimum is −2ⁿ⁻¹."
+    }
+   ],
+   "modelAnswer": [
+    "As the number of bits increases, the range of integer values becomes wider.",
+    "For n unsigned bits, the maximum value is 2ⁿ − 1.",
+    "For n signed bits, one bit is reserved as the sign bit.",
+    "The maximum signed value is 2ⁿ⁻¹ − 1 and the minimum is −2ⁿ⁻¹."
+   ]
+  },
+  {
+   "text": "Why are whole numbers commonly used in computing for quantities that cannot be negative?",
+   "finalAnswer": "Whole numbers include zero and all positive integers, so they can represent quantities that cannot be negative.",
+   "marks": 2,
+   "source": "Short 2.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "zero"
+      ],
+      [
+       "non-negative"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Whole numbers include zero and do not go below zero.",
+     "description": "Explain the non-negative nature of whole numbers.",
+     "how": "Mention zero or that whole numbers are non-negative."
+    },
+    {
+     "accept": [
+      [
+       "positive integers"
+      ],
+      [
+       "positive"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Whole numbers include the positive counts needed for these quantities.",
+     "description": "Explain which other values whole numbers include.",
+     "how": "Mention positive integers."
+    },
+    {
+     "accept": [
+      [
+       "cannot be negative"
+      ],
+      [
+       "!negative"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The answer must connect whole numbers to the kind of quantity being represented.",
+     "description": "Relate whole numbers to non-negative quantities.",
+     "how": "Explain that such quantities have no negative values."
+    },
+    {
+     "accept": [
+      [
+       "zero",
+       "positive",
+       "cannot be negative"
+      ],
+      [
+       "non-negative",
+       "quantities"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The final explanation should give the reason whole numbers suit these quantities.",
+     "description": "Give the correct final reason.",
+     "how": "Connect zero and positive values with quantities that cannot be negative."
+    }
+   ],
+   "modelAnswer": [
+    "Whole numbers are a set of non-negative integers.",
+    "They include zero and all the positive integers.",
+    "Quantities such as the number of students cannot be negative.",
+    "Therefore, whole numbers are suitable for representing such quantities."
+   ]
+  },
+  {
+   "text": "Describe in detail how integers are stored in computer memory.",
+   "finalAnswer": "Integers are stored as bits in memory. Unsigned whole numbers use all bits for the value, with maximum 2ⁿ − 1. Signed integers reserve the most significant bit as the sign bit, have maximum 2ⁿ⁻¹ − 1 and minimum −2ⁿ⁻¹, and store negative values using two's complement.",
+   "marks": 8,
+   "source": "Long 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "bits",
+       "memory"
+      ],
+      [
+       "bytes",
+       "bits"
+      ]
+     ],
+     "marks": 2,
+     "why": "An explanation should establish that memory stores numbers using bits and that byte size determines how many bits are available.",
+     "description": "Explain the bit and byte storage idea.",
+     "how": "State that integers are stored in bits and give the 8-bits-per-byte relationship or a byte-size example."
+    },
+    {
+     "accept": [
+      [
+       "unsigned",
+       "2^n-1"
+      ],
+      [
+       "whole numbers",
+       "2^n-1"
+      ]
+     ],
+     "marks": 2,
+     "why": "Unsigned storage uses all available bits for non-negative values, so its range formula is important.",
+     "description": "Explain unsigned integer storage and range.",
+     "how": "State that unsigned values are non-negative and the maximum is 2ⁿ − 1."
+    },
+    {
+     "accept": [
+      [
+       "sign bit",
+       "2^(n-1)-1"
+      ],
+      [
+       "most significant bit",
+       "signed"
+      ]
+     ],
+     "marks": 2,
+     "why": "The signed representation reserves a bit for the sign, which affects its range.",
+     "description": "Explain the signed sign bit and range.",
+     "how": "Identify the most significant bit as the sign bit and give the signed maximum and minimum formulas."
+    },
+    {
+     "accept": [
+      [
+       "two's complement",
+       "invert",
+       "add 1"
+      ],
+      [
+       "11111011"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct final explanation must state how negative values are represented.",
+     "description": "Give the negative-value method and complete the answer.",
+     "how": "Explain that negative values use two's complement: invert the bits and add 1."
+    }
+   ],
+   "modelAnswer": [
+    "Integers are stored in computer memory as bits; 1 byte has 8 bits.",
+    "An unsigned integer represents non-negative whole numbers and uses all its bits to store the value.",
+    "For n bits, the maximum unsigned value is 2ⁿ − 1.",
+    "For example, a 1-byte unsigned integer has a maximum value of 2⁸ − 1 = 255.",
+    "For signed integers, one bit is reserved as the sign bit, which is the most significant bit.",
+    "For n bits, the maximum signed value is 2ⁿ⁻¹ − 1 and the minimum is −2ⁿ⁻¹.",
+    "Negative values are stored using two's complement: invert all the bits and add 1.",
+    "For example, −5 in 8-bit two's complement is 11111011₂."
+   ]
+  },
+  {
+   "text": "Explain the process of converting a decimal integer to its binary representation and vice versa. Include examples of both positive and negative integers.",
+   "finalAnswer": "Positive integers can be written as sums of powers of 2. For example, 5₁₀ = 00000101₂. To represent −5 in 8-bit two's complement, invert 00000101₂ to get 11111010₂, then add 1 to get 11111011₂. For binary to decimal, add the place values of the 1 bits; 00000101₂ = 5₁₀, and 11111011₂ represents −5 in 8-bit two's complement.",
+   "marks": 8,
+   "source": "Long 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "powers of 2"
+      ],
+      [
+       "binary",
+       "decimal"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response needs to explain how positive integers are expressed in binary.",
+     "description": "Explain positive decimal-to-binary conversion.",
+     "how": "Describe binary place values or show a correct positive example."
+    },
+    {
+     "accept": [
+      [
+       "00000101",
+       "5"
+      ],
+      [
+       "5",
+       "00000101"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct positive example demonstrates the conversion in both directions.",
+     "description": "Give a correct positive conversion example.",
+     "how": "Show that 5₁₀ = 00000101₂ or an equivalent correct example."
+    },
+    {
+     "accept": [
+      [
+       "invert",
+       "add 1"
+      ],
+      [
+       "two's complement",
+       "add 1"
+      ]
+     ],
+     "marks": 2,
+     "why": "Negative integers require the two's-complement process described in the section.",
+     "description": "Explain the negative conversion method.",
+     "how": "Invert the positive value's bits and add 1."
+    },
+    {
+     "accept": [
+      [
+       "11111011"
+      ],
+      [
+       "-5",
+       "11111011"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct final negative example shows that the method has been applied correctly.",
+     "description": "Give the correct final negative result.",
+     "how": "State that −5 is 11111011₂ in 8-bit two's complement."
+    }
+   ],
+   "modelAnswer": [
+    "A positive decimal integer is written in binary using place values that are powers of 2.",
+    "For example, 5₁₀ = 00000101₂.",
+    "To convert binary to decimal, add the place values of the bits that are 1.",
+    "Thus, 00000101₂ = 5₁₀.",
+    "To represent −5, start with the binary representation of 5: 00000101₂.",
+    "Invert all the bits: 11111010₂.",
+    "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+    "So, −5 in 8-bit two's complement is 11111011₂."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Short questions may ask for whole-number definitions, integer ranges, or how negative integers are represented.",
+   "For a range question, show the number of bits and the correct formula before giving the range.",
+   "For a two's-complement question, show the positive binary form, invert every bit, then add 1; these working steps can earn marks as well as the answer.",
+   "In a longer explanation, distinguish unsigned whole numbers from signed integers and state how the sign bit affects the range."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "First work out how many bits are in 2 bytes.",
+     "For an unsigned number, use minimum 0 and maximum 2ⁿ − 1."
+    ],
+    "accept": [
+     [
+      "0",
+      "65535"
+     ],
+     [
+      "0 to 65535"
+     ],
+     [
+      "0–65535"
+     ]
+    ],
+    "question": "What is the range of values for an unsigned 2-byte integer?",
+    "solution": [
+     "A 2-byte integer has 2 × 8 = 16 bits.",
+     "For an unsigned integer, the minimum value is 0.",
+     "Maximum value = 2¹⁶ − 1 = 65,535.",
+     "The range is 0 to 65,535."
+    ],
+    "answer": "0 to 65,535"
+   },
+   {
+    "hints": [
+     "Start with the 8-bit binary representation of positive 5.",
+     "Invert every bit, then add 1."
+    ],
+    "accept": [
+     [
+      "11111011"
+     ],
+     [
+      "-5",
+      "11111011"
+     ]
+    ],
+    "question": "Explain how a negative integer is represented in binary.",
+    "solution": [
+     "To store negative values, computers use a method called two's complement.",
+     "For example, start with the binary representation of 5: 00000101₂.",
+     "Invert all the bits: 11111010₂.",
+     "Add 1: 11111010₂ + 1₂ = 11111011₂.",
+     "So, −5 in 8-bit two's complement is 11111011₂."
+    ],
+    "answer": "A negative integer is represented using two's complement: invert all the bits of its positive binary representation, then add 1."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The method begins with the 8-bit binary form of the positive value 5.",
+     "text": "Start with the binary representation of 5: 00000101₂."
+    },
+    {
+     "why": "Two's complement requires changing every 0 to 1 and every 1 to 0.",
+     "text": "Invert all the bits: 11111010₂."
+    },
+    {
+     "why": "Adding 1 after inversion completes the two's-complement form.",
+     "text": "Add 1: 11111010₂ + 1₂ = 11111011₂."
+    },
+    {
+     "why": "This states the requested 8-bit representation of −5.",
+     "text": "So, -5 in 8-bit two's complement is 11111011₂."
+    }
+   ],
+   "question": "Let's convert the decimal number -5 to an 8-bit binary number:",
+   "answer": "−5 in 8-bit two's complement is 11111011₂."
+  },
+  "explain": [
+   {
+    "title": "Whole numbers",
+    "body": "Whole numbers are a set of non-negative integers. They include zero and all the positive integers. Mathematically, the set of whole numbers is: W = {0,1,2,3...}. They suit quantities that cannot be negative, such as the number of students."
+   },
+   {
+    "title": "Unsigned whole-number ranges",
+    "body": "A byte has 8 bits. For an unsigned whole number with n bits, the maximum value is 2ⁿ − 1. So, 1 byte has a maximum of 255, 2 bytes a maximum of 65,535, and 4 bytes a maximum of 4,294,967,295."
+   },
+   {
+    "title": "Signed integers",
+    "body": "Integers extend the concept of whole numbers to include negative numbers. In computer programming, we call them signed integers. One bit is reserved as the sign bit (the most significant bit). For n bits, the maximum positive value is 2ⁿ⁻¹ − 1."
+   },
+   {
+    "title": "Negative integers and two's complement",
+    "body": "To store negative values, computers use a method called two's complement. Invert all the bits, then add 1 to the Least Significant Bit (LSB). For 8-bit integers, the minimum is −2⁷ = −128."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse unsigned and signed ranges: an unsigned 1-byte number has maximum 255, while a signed 1-byte integer has maximum 127.",
+   "For a signed integer, remember that one bit is reserved as the sign bit.",
+   "Do not stop after inverting the bits when finding two's complement; you must add 1.",
+   "Keep the number of bits fixed in a two's-complement example, such as 8 bits.",
+   "Do not confuse the maximum signed value, 2ⁿ⁻¹ − 1, with the minimum, −2ⁿ⁻¹."
+  ]
+ }
+}

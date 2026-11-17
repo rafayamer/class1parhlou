@@ -1,0 +1,419 @@
+{
+ "note": {
+  "explanation": "A network topology describes how devices (nodes) are arranged and connected. The main types in this section are bus, star, ring, and mesh.",
+  "examples": [
+   "In a star topology, a central switch or hub connects to the other devices.",
+   "In a mesh topology, every device connects to every other device."
+  ],
+  "checkAnswer": "Mesh topology.",
+  "keywords": [
+   "topology",
+   "node",
+   "bus",
+   "star",
+   "ring",
+   "mesh"
+  ],
+  "simple": "Topology is the shape or pattern of the connections between devices in a network.",
+  "checkQuestion": "Which topology connects each device to every other device?",
+  "title": "Network Topologies",
+  "steps": [
+   "Identify how the devices are connected.",
+   "Match that arrangement to bus, star, ring, or mesh.",
+   "Remember the important feature or weakness of that topology."
+  ],
+  "answer": "A network topology is the arrangement of devices in a network.",
+  "checkAccept": [
+   [
+    "mesh"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "All devices share one communication line",
+    "Each device connects to a central switch",
+    "Devices connect in a circular pathway",
+    "Each device connects to every other device"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which description matches a bus topology?",
+   "rationales": [
+    "Correct: in a bus topology, all devices share one communication line called a bus.",
+    "This describes a star topology.",
+    "This describes a ring topology.",
+    "This describes a mesh topology."
+   ]
+  },
+  {
+   "options": [
+    "A central hub or switch",
+    "A circular pathway",
+    "A single shared cable only",
+    "A direct connection between every pair of devices"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which feature identifies a star topology?",
+   "rationales": [
+    "Correct: nodes communicate with one another via a central switch or hub.",
+    "A circular pathway identifies a ring topology.",
+    "A single shared communication line identifies a bus topology.",
+    "Direct connections between every device identify a mesh topology."
+   ]
+  },
+  {
+   "options": [
+    "Data travels in one direction through devices in a circle",
+    "All devices share one central cable",
+    "A central hub repeats data to all nodes",
+    "Every device has a direct connection to every other device"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does data travel in the ring topology described in this section?",
+   "rationales": [
+    "Correct: data travels in one direction, passing through each device.",
+    "This is the arrangement of a bus topology.",
+    "A central hub is used in a star topology, not a ring.",
+    "This describes the connections in a mesh topology."
+   ]
+  },
+  {
+   "options": [
+    "It provides high redundancy and reliability",
+    "It uses only one communication line",
+    "It needs a central hub for all communication",
+    "It sends data in a circle in one direction"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a key feature of a mesh topology?",
+   "rationales": [
+    "Correct: connecting each device to every other device provides high redundancy and reliability.",
+    "One shared communication line is the bus topology's feature.",
+    "A central hub is the central feature of star topology.",
+    "One-direction circular travel describes ring topology."
+   ]
+  },
+  {
+   "options": [
+    "The whole network goes down",
+    "Data automatically travels in the opposite direction",
+    "Only the central switch stops working",
+    "The network becomes a mesh"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "According to the section, what can happen if the main cable in a bus topology fails?",
+   "rationales": [
+    "Correct: the section says that if the main cable fails, the whole network goes down.",
+    "The section does not say that bus data automatically changes direction.",
+    "A bus topology does not use a central switch as its defining connection.",
+    "A cable failure does not change the topology into a mesh."
+   ]
+  },
+  {
+   "options": [
+    "The whole network is affected",
+    "Every device remains directly connected to every other device",
+    "The central hub repeats the data",
+    "The main bus cable becomes a second ring"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the section say may happen if one connection fails in a ring topology?",
+   "rationales": [
+    "Correct: the section says that one failed connection affects the whole network.",
+    "This describes mesh connections, not the effect of a ring connection failure.",
+    "Repeating data is the role given to the hub in a star topology.",
+    "The section does not say that a failed ring connection turns the bus cable into a ring."
+   ]
+  },
+  {
+   "options": [
+    "It works as a data flow repeater",
+    "It forms the circular pathway",
+    "It is the shared bus cable",
+    "It connects every device directly to every other device"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What role does the hub have in a star topology, according to the section?",
+   "rationales": [
+    "Correct: the section states that the hub works as a data flow repeater.",
+    "A circular pathway is a feature of ring topology.",
+    "The shared cable is the bus in a bus topology.",
+    "Direct connections between all devices describe mesh topology."
+   ]
+  },
+  {
+   "options": [
+    "There are multiple alternative routes if a link fails",
+    "All devices depend on one main cable",
+    "Data must pass through a single central hub",
+    "Data can travel only in one direction around a circle"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why can data be rerouted in a mesh topology if one link fails?",
+   "rationales": [
+    "Correct: multiple connections provide alternative routes for data.",
+    "Dependence on one main cable is associated with bus topology.",
+    "Passing through a central hub describes star topology.",
+    "One-direction travel around a circle describes ring topology."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What are the advantages of using a star topology in a network?",
+   "finalAnswer": "A star topology connects each node to a central switch or hub. The hub works as a data flow repeater, and a hub broadcasts data.",
+   "marks": 2,
+   "source": "Short 6.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "central",
+       "switch"
+      ],
+      [
+       "central",
+       "hub"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the central connection that defines the star arrangement.",
+     "description": "Identifies the central switch or hub.",
+     "how": "State that each node communicates via a central switch or hub."
+    },
+    {
+     "accept": [
+      [
+       "repeater"
+      ],
+      [
+       "broadcast"
+      ]
+     ],
+     "marks": 1,
+     "why": "A function of the hub is a relevant advantage or feature of the star network in this section.",
+     "description": "Gives a function of the hub.",
+     "how": "Mention that the hub repeats data or broadcasts it."
+    }
+   ],
+   "modelAnswer": [
+    "Each node communicates with the others via a central switch or hub.",
+    "The hub works as a data flow repeater and broadcasts data."
+   ]
+  },
+  {
+   "text": "Compare and contrast the different types of network topologies (star, ring, bus, and mesh).",
+   "finalAnswer": "Bus topology uses one shared communication line; if its main cable fails, the whole network goes down. Star topology connects each node through a central switch or hub, which works as a data flow repeater. Ring topology connects devices in a circular pathway and data travels in one direction; one failed connection can affect the whole network, although a 2-way ring can help to some extent. Mesh topology connects each device to every other device, providing high redundancy and reliability because data can use alternative routes.",
+   "marks": 8,
+   "source": "Long 6.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "bus",
+       "shared"
+      ],
+      [
+       "bus",
+       "single",
+       "line"
+      ]
+     ],
+     "marks": 2,
+     "why": "Describing the bus arrangement and its key weakness shows understanding of this topology.",
+     "description": "Explains bus topology.",
+     "how": "State that devices share one bus cable and that its failure can bring down the network."
+    },
+    {
+     "accept": [
+      [
+       "star",
+       "central"
+      ],
+      [
+       "hub"
+      ],
+      [
+       "switch"
+      ]
+     ],
+     "marks": 2,
+     "why": "The central device is the defining arrangement of star topology.",
+     "description": "Explains star topology.",
+     "how": "State that nodes communicate via a central switch or hub and give its repeater role."
+    },
+    {
+     "accept": [
+      [
+       "ring",
+       "circular"
+      ],
+      [
+       "one direction"
+      ],
+      [
+       "connection",
+       "affected"
+      ]
+     ],
+     "marks": 2,
+     "why": "The circular arrangement, direction of travel, and failure effect distinguish ring topology.",
+     "description": "Explains ring topology.",
+     "how": "State that devices form a circle, data travels in one direction, and a failed connection can affect the network."
+    },
+    {
+     "accept": [
+      [
+       "mesh",
+       "every other"
+      ],
+      [
+       "mesh",
+       "redundancy"
+      ],
+      [
+       "mesh",
+       "alternative routes"
+      ]
+     ],
+     "marks": 2,
+     "why": "The direct connections and resulting reliability distinguish mesh topology.",
+     "description": "Explains mesh topology and its benefit.",
+     "how": "State that every device connects to every other device and that this provides alternative routes or high reliability."
+    }
+   ],
+   "modelAnswer": [
+    "In a bus topology, all devices share a single communication line called a bus.",
+    "If the main cable fails, the whole network goes down.",
+    "In a star topology, each node communicates with the others via a central switch or hub.",
+    "The hub works as a data flow repeater.",
+    "In a ring topology, each device is connected in a circular pathway with other devices.",
+    "Data travels in one direction, passing through each device; if one connection fails, the whole network is affected.",
+    "In a mesh topology, each device is connected to every other device.",
+    "This provides high redundancy and reliability because data can be rerouted through other links."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is tested with a short question about the advantages of star topology and a long question comparing star, ring, bus, and mesh.",
+   "For a comparison question, name each topology and state how its devices are connected.",
+   "Earn marks by adding the section's key features: bus shares one line; star uses a central switch or hub; ring is circular and sends data in one direction; mesh connects every device to every other device.",
+   "Add relevant strengths or weaknesses, such as mesh reliability or the effect of a failed bus cable or ring connection."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "What is at the centre of a star topology?",
+     "Include the hub's role as a data flow repeater."
+    ],
+    "accept": [
+     [
+      "central",
+      "hub",
+      "repeater"
+     ],
+     [
+      "central",
+      "switch",
+      "repeater"
+     ],
+     [
+      "broadcast",
+      "hub"
+     ]
+    ],
+    "question": "What are the advantages of using a star topology in a network?",
+    "solution": [
+     "Each node communicates with the others via a central switch or hub.",
+     "The hub works as a data flow repeater and broadcasts data."
+    ],
+    "answer": "A star topology connects each node through a central switch or hub. The hub works as a data flow repeater and broadcasts data."
+   },
+   {
+    "hints": [
+     "Start by stating how devices are arranged in each topology.",
+     "Then compare how data travels and what happens if a connection fails."
+    ],
+    "accept": [
+     [
+      "bus",
+      "shared",
+      "star",
+      "central",
+      "ring",
+      "circular",
+      "mesh",
+      "reliability"
+     ],
+     [
+      "bus",
+      "single",
+      "line",
+      "star",
+      "hub",
+      "ring",
+      "one direction",
+      "mesh",
+      "alternative routes"
+     ]
+    ],
+    "question": "Compare and contrast the different types of network topologies (star, ring, bus, and mesh).",
+    "solution": [
+     "In a bus topology, all devices share a single communication line called a bus. If the main cable fails, the whole network goes down.",
+     "In a star topology, each node communicates with the others via a central switch or hub. The hub works as a data flow repeater.",
+     "In a ring topology, devices are connected in a circular pathway and data travels in one direction. If one connection fails, the whole network is affected; a 2-way ring can solve this issue to some extent.",
+     "In a mesh topology, each device is connected to every other device. This provides high redundancy and reliability because data can be rerouted through other links."
+    ],
+    "answer": "Bus uses one shared line; star uses a central switch or hub; ring connects devices in a circle and sends data in one direction; mesh connects each device to every other device and provides alternative routes."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This introduces the classroom comparison used to represent a star network.",
+     "text": "Think of a school principal's office connected to all classrooms through intercoms."
+    },
+    {
+     "why": "This identifies which part represents the hub and which parts represent the nodes.",
+     "text": "The principal's office is the hub, and the classrooms are the nodes."
+    }
+   ],
+   "question": "Think of a school principal's office connected to all classrooms through intercoms. The principal's office is the hub, and the classrooms are the nodes.",
+   "answer": "The principal's office represents the hub, and the classrooms represent the nodes in a star topology."
+  },
+  "explain": [
+   {
+    "title": "What topology means",
+    "body": "Network topologies are methods used to define the arrangement of different devices in a computer network, where each device is called a node. The reliability and performance of a network are impacted by the way its devices are linked."
+   },
+   {
+    "title": "Bus topology",
+    "body": "In a Bus topology, all devices share a single communication line called a bus. Each device is connected to this central cable. If the main cable fails, the whole network goes down."
+   },
+   {
+    "title": "Star and ring topologies",
+    "body": "In a star topology each node in network communicates with the others via a central switch or hub. The hub works as a data flow repeater. In a Ring topology, each device is connected in a circular pathway with other devices. Data travels in one direction, passing through each device."
+   },
+   {
+    "title": "Mesh topology",
+    "body": "In a Mesh topology, each device is connected to every other device. This provides high redundancy and reliability. If one link fails, data can be rerouted through other links."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse a bus, which has one shared communication line, with a star, which uses a central switch or hub.",
+   "Do not say that ring data travels in every direction; this section says it travels in one direction.",
+   "Do not describe mesh as having only one connection path; its multiple links provide alternative routes.",
+   "When comparing topologies, do not give only their names—include how the devices are connected and an important feature or weakness."
+  ]
+ }
+}

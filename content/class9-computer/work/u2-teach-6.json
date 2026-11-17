@@ -1,0 +1,269 @@
+{
+ "note": {
+  "explanation": "Images are made from pixels. Each pixel has a colour, represented in a colour image by Red, Green, and Blue (RGB) values. Computers store image, audio, and video files as binary data: sequences of 0s and 1s.",
+  "examples": [
+   "A pixel with RGB values (255, 0, 0) is bright red.",
+   "A video frame rate tells how many frames are shown each second."
+  ],
+  "checkAnswer": "A pixel.",
+  "keywords": [
+   "pixels",
+   "RGB",
+   "sampling",
+   "quantization",
+   "frame rate",
+   "binary data"
+  ],
+  "simple": "A digital picture is made from tiny coloured dots. A computer stores the information about those dots using 0s and 1s.",
+  "checkQuestion": "What are the tiny dots that make up a digital image called?",
+  "title": "How computers store images, audio, and video",
+  "steps": [
+   "Identify whether the file is an image, audio, or video.",
+   "For an image, think of pixels and their RGB colour values.",
+   "For audio, remember sampling and quantization.",
+   "For video, remember that frames are shown in sequence and measured in frames per second.",
+   "Remember that all these files are stored as binary data."
+  ],
+  "answer": "Images use pixels and RGB colour values; audio uses sampling and quantization; videos use frames. Computers store all of them as binary data.",
+  "checkAccept": [
+   [
+    "p:pixel"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A small coloured dot in an image",
+    "A number of samples recorded each second",
+    "A picture shown in a video",
+    "A unit equal to 1024 bytes"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a pixel in a digital image?",
+   "rationales": [
+    "Correct: an image is made up of tiny dots called pixels.",
+    "Incorrect: the number of samples per second is the sampling rate.",
+    "Incorrect: an image shown in a video is called a frame.",
+    "Incorrect: 1024 bytes make one kilobyte, not a pixel."
+   ]
+  },
+  {
+   "options": [
+    "Red, Green, Blue",
+    "Red, Grey, Black",
+    "Right, Green, Blue",
+    "Red, Green, Brown"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In a colour image, what do the letters RGB stand for?",
+   "rationales": [
+    "Correct: RGB represents Red, Green, and Blue.",
+    "Incorrect: grey and black are not the colours represented by RGB.",
+    "Incorrect: RGB means Red, Green, Blue, not Right, Green, Blue.",
+    "Incorrect: RGB does not stand for Red, Green, Brown."
+   ]
+  },
+  {
+   "options": [
+    "It supports transparency and maintains high quality without losing data.",
+    "It is used only for video.",
+    "It always loses image quality to save space.",
+    "It is an uncompressed audio format."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about PNG images is correct?",
+   "rationales": [
+    "Correct: PNG supports transparency and maintains high quality without losing data.",
+    "Incorrect: PNG is an image format, not a video format.",
+    "Incorrect: JPEG is the format described as compressing an image with possible quality loss.",
+    "Incorrect: WAV is the uncompressed audio format."
+   ]
+  },
+  {
+   "options": [
+    "Recording a sound wave at regular intervals",
+    "Converting each sound sample into a number",
+    "Showing video frames in sequence",
+    "Compressing an image to save space"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is sampling in digital audio?",
+   "rationales": [
+    "Correct: sampling records the sound wave at regular intervals.",
+    "Incorrect: converting each sample into a number is quantization.",
+    "Incorrect: video frames are shown in sequence to make video.",
+    "Incorrect: image compression is not audio sampling."
+   ]
+  },
+  {
+   "options": [
+    "The number of frames shown per second",
+    "The number of colours in one pixel",
+    "The number of audio tracks in a file",
+    "The number of bytes in a kilobyte"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does the frame rate of a video measure?",
+   "rationales": [
+    "Correct: frame rate is the number of frames shown per second.",
+    "Incorrect: RGB values describe a pixel's colour, not frame rate.",
+    "Incorrect: audio tracks are a feature supported by some video formats, not a frame-rate measure.",
+    "Incorrect: a kilobyte contains 1024 bytes; this is unrelated to frame rate."
+   ]
+  },
+  {
+   "options": [
+    "MP3",
+    "WAV",
+    "AAC",
+    "GIF"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "Which format is described as being used for simple animations and images with few colours?",
+   "rationales": [
+    "Incorrect: MP3 is a compressed audio format.",
+    "Incorrect: WAV is an uncompressed audio format.",
+    "Incorrect: AAC is an audio format used for efficient compression.",
+    "Correct: GIF is used for simple animations and images with few colours."
+   ]
+  },
+  {
+   "options": [
+    "A Solid State Drive uses flash memory for faster access times.",
+    "An HDD uses remote internet servers to store files.",
+    "Cloud storage uses spinning disks inside the computer.",
+    "An SSD stores files only as printed images."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement correctly describes a storage device?",
+   "rationales": [
+    "Correct: an SSD uses flash memory and provides faster access times.",
+    "Incorrect: spinning disks are used by an HDD; remote servers describe cloud storage.",
+    "Incorrect: cloud storage is on remote servers, not spinning disks in the computer.",
+    "Incorrect: an SSD stores digital data, not only printed images."
+   ]
+  },
+  {
+   "options": [
+    "8 bits",
+    "1024 bits",
+    "1024 bytes",
+    "8 bytes"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "How many bytes are in 1 kilobyte (KB), according to the section?",
+   "rationales": [
+    "Incorrect: 8 bits make 1 byte.",
+    "Incorrect: 1024 bits are not 1024 bytes.",
+    "Correct: 1 kilobyte equals 1024 bytes.",
+    "Incorrect: 8 bytes are not 1 kilobyte."
+   ]
+  }
+ ],
+ "written": [],
+ "lesson": {
+  "examTips": [
+   "This section can be tested with MCQs asking about pixels, RGB, file formats, sampling, quantization, frame rate, or storage devices.",
+   "For a short response, define the term clearly and include its key detail—for example, sampling records a sound wave at regular intervals.",
+   "When comparing formats or devices, name each one and state the correct feature. Avoid mixing audio, image, and video formats."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Recall the name for the tiny dots in an image.",
+     "The section says images are made up of tiny dots called pixels."
+    ],
+    "accept": [
+     [
+      "p:pixel"
+     ]
+    ],
+    "question": "What are the tiny dots that make up an image called?",
+    "solution": [
+     "Images are made up of tiny dots.",
+     "These tiny dots are called pixels."
+    ],
+    "answer": "Pixels."
+   },
+   {
+    "hints": [
+     "Expand each of the three letters in RGB.",
+     "The colours are Red, Green, and Blue."
+    ],
+    "accept": [
+     [
+      "rgb"
+     ],
+     [
+      "red",
+      "green",
+      "blue"
+     ]
+    ],
+    "question": "In an RGB color model, what does RGB stand for?",
+    "solution": [
+     "R stands for Red.",
+     "G stands for Green.",
+     "B stands for Blue."
+    ],
+    "answer": "Red, Green, Blue."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The section gives this as an example of representing a pixel's colour with three numbers.",
+     "text": "The pixel has RGB values (255, 0, 0)."
+    },
+    {
+     "why": "The first number is the red value, and 255 is the highest value in the stated 0-to-255 range.",
+     "text": "Red = 255."
+    },
+    {
+     "why": "The green and blue values are both 0, so the pixel is bright red.",
+     "text": "The pixel is bright red."
+    }
+   ],
+   "question": "A pixel with RGB values (255, 0, 0): what color is it?",
+   "answer": "Bright red."
+  },
+  "explain": [
+   {
+    "title": "Images use pixels and RGB",
+    "body": "Images are made up of tiny dots called pixels. Each pixel has a color. In a color image, a pixel's color can be represented by three numbers: Red, Green, and Blue (RGB), each typically from 0 to 255."
+   },
+   {
+    "title": "Audio uses sampling and quantization",
+    "body": "Sampling records a sound wave at regular intervals. The number of samples per second is the sampling rate. Quantization converts each sample into a number; more bits per sample give a more accurate sound representation."
+   },
+   {
+    "title": "Video uses frames",
+    "body": "Videos are made up of many images shown rapidly in sequence, along with audio. Each image in a video is called a frame. Frame rate is the number of frames shown per second, measured in FPS."
+   },
+   {
+    "title": "Files are stored as binary data",
+    "body": "All these files (images, audio, and video) are stored as binary data, which means they are represented by sequences of 0s and 1s. HDDs use spinning disks, SSDs use flash memory, and cloud storage keeps files on remote servers accessed via the internet."
+   },
+   {
+    "title": "Formats and storage units",
+    "body": "JPEG compresses images but might lose some quality; PNG supports transparency and maintains quality without losing data; GIF is used for simple animations and images with few colours. MP3 compresses audio but may lose some quality, WAV is uncompressed, and AAC offers efficient compression. Data size is measured in bytes and multiples such as KB, MB, and GB."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse a pixel with a bit or a byte; a pixel is a tiny dot in an image.",
+   "Do not mix up sampling and quantization: sampling records the sound wave at intervals, while quantization turns each sample into a number.",
+   "Do not confuse frame rate with image resolution; frame rate is frames per second.",
+   "Do not claim every compressed format keeps all quality: JPEG and MP3 may lose some quality.",
+   "Remember the section's units: 1 KB = 1024 bytes, not 1000 bytes."
+  ]
+ }
+}

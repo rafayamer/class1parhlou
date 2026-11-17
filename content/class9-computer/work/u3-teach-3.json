@@ -1,0 +1,695 @@
+{
+ "note": {
+  "explanation": "Boolean simplification uses algebra rules to make a function shorter while keeping the same output. For example, A + A·B = A by the absorption law. Another example is A + A̅·B = A + B, using the distributive, complement and identity laws.",
+  "examples": [],
+  "checkAnswer": "A",
+  "keywords": [
+   "Boolean simplification",
+   "identity law",
+   "complement law",
+   "absorption law",
+   "De Morgan",
+   "distributive law"
+  ],
+  "simple": "Use Boolean rules to remove unnecessary parts of an expression without changing its value.",
+  "checkQuestion": "Simplify A + A·B.",
+  "title": "Simplifying Boolean Functions",
+  "steps": [
+   "Look for a pair or pattern that matches a Boolean law.",
+   "Apply one law at a time and show its name if required.",
+   "Continue until no part can be simplified further."
+  ],
+  "answer": "A",
+  "checkAccept": [
+   [
+    "A"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A",
+    "0",
+    "1",
+    "A̅"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Using the identity law, what is A + 0?",
+   "rationales": [
+    "A is correct because adding 0 leaves A unchanged.",
+    "0 is wrong because the identity law does not replace A with 0.",
+    "1 is wrong because A + 0 is not always 1.",
+    "A̅ is wrong because adding 0 does not complement A."
+   ]
+  },
+  {
+   "options": [
+    "A",
+    "0",
+    "1",
+    "A̅"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the value of A + A̅?",
+   "rationales": [
+    "A is wrong because the complement law gives 1 for A + A̅.",
+    "0 is wrong because A · A̅, not A + A̅, equals 0.",
+    "1 is correct by the complement law.",
+    "A̅ is wrong because the expression contains both A and its complement."
+   ]
+  },
+  {
+   "options": [
+    "A",
+    "B",
+    "A + B",
+    "A · B"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Simplify A · (A + B).",
+   "rationales": [
+    "A is correct by the absorption law A · (A + B) = A.",
+    "B is wrong because the expression does not reduce to B.",
+    "A + B is wrong because the absorption law removes the extra B term.",
+    "A · B is wrong because the expression is not equivalent to A · B for all inputs."
+   ]
+  },
+  {
+   "options": [
+    "A̅ + B̅",
+    "A̅ · B̅",
+    "A + B",
+    "A · B"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "By De Morgan's theorem, what is (A + B)̅?",
+   "rationales": [
+    "A̅ + B̅ is wrong because the complement of a sum becomes a product.",
+    "A̅ · B̅ is correct by De Morgan's theorem.",
+    "A + B is wrong because it has no complements.",
+    "A · B is wrong because both variables must be complemented."
+   ]
+  },
+  {
+   "options": [
+    "A + B",
+    "A · B",
+    "A",
+    "B"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Simplify A + A̅ · B.",
+   "rationales": [
+    "A + B is correct by the distributive, complement and identity laws.",
+    "A · B is wrong because the expression can be 1 when A = 1 and B = 0.",
+    "A is wrong because the expression can be 1 when A = 0 and B = 1.",
+    "B is wrong because the expression can be 1 when A = 1 and B = 0."
+   ]
+  },
+  {
+   "options": [
+    "A̅",
+    "B",
+    "A̅ + B̅",
+    "A̅ · B"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Simplify A̅ · B̅ + A̅ · B.",
+   "rationales": [
+    "A̅ is correct because factoring A̅ gives A̅ · (B̅ + B) = A̅.",
+    "B is wrong because the expression is 1 whenever A = 0, regardless of B.",
+    "A̅ + B̅ is wrong because the expression is 0 when A = 1 and B = 0.",
+    "A̅ · B is wrong because the original expression is also 1 when A = 0 and B = 0."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Simplify the expression A + A̅ · B.",
+   "finalAnswer": "A + B",
+   "marks": 2,
+   "source": "Example 3.3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "(A + A̅) · (A + B)"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The distributive-law step begins the simplification correctly.",
+     "description": "Apply the distributive law.",
+     "how": "Rewrite the expression as (A + A̅) · (A + B)."
+    },
+    {
+     "accept": [
+      [
+       "1 · (A + B)"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The complement law reduces A + A̅ to 1.",
+     "description": "Use the complement law.",
+     "how": "Replace A + A̅ with 1."
+    },
+    {
+     "accept": [
+      [
+       "A+B"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final expression is the simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "Use the identity law to finish with A + B."
+    }
+   ],
+   "modelAnswer": [
+    "A + A̅ · B = (A + A̅) · (A + B) (Distributive Law)",
+    "= 1 · (A + B) (Complement Law)",
+    "= A + B (Identity Law)"
+   ]
+  },
+  {
+   "text": "Simplify the expression A̅·B̅ + A̅ · B.",
+   "finalAnswer": "A̅",
+   "marks": 2,
+   "source": "Example 3.3.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A̅·(B̅+B)"
+      ],
+      [
+       "A̅·1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Factoring out the common term reveals the complement pair.",
+     "description": "Factor and apply the complement law.",
+     "how": "Rewrite as A̅ · (B̅ + B), then use B̅ + B = 1."
+    },
+    {
+     "accept": [
+      [
+       "A̅"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final answer follows from the identity law.",
+     "description": "Give the correct final answer.",
+     "how": "Simplify A̅ · 1 to A̅."
+    }
+   ],
+   "modelAnswer": [
+    "A̅·B̅ + A̅ · B = A̅ · (B̅ + B) (Distributive Law)",
+    "= A̅ · 1 (Complement Law)",
+    "= A̅ (Identity Law)"
+   ]
+  },
+  {
+   "text": "Simplify the expression (A + B) · (A + B̅)",
+   "finalAnswer": "A",
+   "marks": 2,
+   "source": "Example 3.3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A+A·B̅+B·B̅"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "Expansion by the distributive law exposes terms that can be reduced.",
+     "description": "Expand the expression.",
+     "how": "Apply the distributive law to obtain A + A·B̅ + B·B̅."
+    },
+    {
+     "accept": [
+      [
+       "A+A·B̅"
+      ],
+      [
+       "A"
+      ]
+     ],
+     "marks": 0.5,
+     "why": "The complement and absorption laws remove redundant terms.",
+     "description": "Reduce the expanded expression.",
+     "how": "Use B·B̅ = 0 and A + A·B̅ = A."
+    },
+    {
+     "accept": [
+      [
+       "A"
+      ]
+     ],
+     "marks": 1,
+     "why": "A is the simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "State A as the final result."
+    }
+   ],
+   "modelAnswer": [
+    "(A + B) · (A + B̅) = A·(A+B̅)+B·(A+B̅) (Distributive Law)",
+    "= A + A·B̅ + B·B̅ (Distributive Law and Absorption Law)",
+    "= A + A·B̅ (Complement and Identity Laws)",
+    "= A (Absorption Law)"
+   ]
+  },
+  {
+   "text": "Simplify the expression A̅ + B · (A + B̅)",
+   "finalAnswer": "A̅ + B",
+   "marks": 2,
+   "source": "Example 3.3.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A̅+B·A+B·B̅"
+      ],
+      [
+       "A̅+A·B"
+      ]
+     ],
+     "marks": 1,
+     "why": "Expanding and using the complement law reduces the expression correctly.",
+     "description": "Expand and remove the zero term.",
+     "how": "Use B·(A + B̅) = A·B + B·B̅ and B·B̅ = 0."
+    },
+    {
+     "accept": [
+      [
+       "A̅+B"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final expression is the equivalent simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "Use A̅ + A·B = A̅ + B."
+    }
+   ],
+   "modelAnswer": [
+    "A̅ + B · (A + B̅) = A̅ + A·B + B·B̅ (Distributive Law)",
+    "= A̅ + A·B (Complement Law)",
+    "= A̅ + B (A + A̅·B = A + B)"
+   ]
+  },
+  {
+   "text": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+   "finalAnswer": "F(A, B) = A",
+   "marks": 8,
+   "source": "Long 3.7",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A·(B+B̅)"
+      ]
+     ],
+     "marks": 2,
+     "why": "Factoring A is the key first step.",
+     "description": "Factor out the common variable.",
+     "how": "Rewrite A·B + A·B̅ as A·(B + B̅)."
+    },
+    {
+     "accept": [
+      [
+       "A·1"
+      ]
+     ],
+     "marks": 2,
+     "why": "The complement law evaluates the bracket.",
+     "description": "Apply the complement law.",
+     "how": "Use B + B̅ = 1."
+    },
+    {
+     "accept": [
+      [
+       "F=A"
+      ]
+     ],
+     "marks": 4,
+     "why": "The final answer must state the simplified function correctly.",
+     "description": "Give the correct final answer.",
+     "how": "Use the identity law A·1 = A and state F = A."
+    }
+   ],
+   "modelAnswer": [
+    "F (A, B) = A · B + A · B̅",
+    "= A · (B + B̅) (Distributive Law)",
+    "= A · 1 (Complement Law)",
+    "F (A, B) = A (Identity Law)"
+   ]
+  },
+  {
+   "text": "Use De Morgan's laws to simplify the following function:\n\nF (A, B, C) = \\overline{A + B} + \\overline{AC}",
+   "finalAnswer": "F(A, B, C) = A̅ + C̅",
+   "marks": 8,
+   "source": "Long 3.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A̅·B̅+A̅+C̅"
+      ]
+     ],
+     "marks": 3,
+     "why": "Both complemented brackets must be transformed correctly.",
+     "description": "Apply De Morgan's theorems.",
+     "how": "Rewrite the terms as A̅·B̅ and A̅ + C̅."
+    },
+    {
+     "accept": [
+      [
+       "A̅+C̅"
+      ]
+     ],
+     "marks": 3,
+     "why": "The absorption law removes the redundant product term.",
+     "description": "Simplify the resulting expression.",
+     "how": "Use A̅ + A̅·B̅ = A̅."
+    },
+    {
+     "accept": [
+      [
+       "F=A̅+C̅"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer identifies the simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "State F = A̅ + C̅."
+    }
+   ],
+   "modelAnswer": [
+    "F (A, B, C) = \\overline{A + B} + \\overline{A·C}",
+    "= A̅·B̅ + (A̅ + C̅) (De Morgan's Theorem)",
+    "= A̅·B̅ + A̅ + C̅",
+    "F (A, B, C) = A̅ + C̅ (Absorption Law)"
+   ]
+  },
+  {
+   "text": "Simplify the following expressions\n\n(a) \\overline{A + B} · (A + B)",
+   "finalAnswer": "0",
+   "marks": 8,
+   "source": "Long 3.9(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "(A+B)̅·(A+B)"
+      ]
+     ],
+     "marks": 2,
+     "why": "The expression is a term multiplied by its complement.",
+     "description": "Identify the complement pair.",
+     "how": "Recognise that the two factors are complements."
+    },
+    {
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "marks": 6,
+     "why": "A term AND its complement always equals zero.",
+     "description": "Apply the complement law and state the answer.",
+     "how": "Use X̅·X = 0, where X = A + B."
+    }
+   ],
+   "modelAnswer": [
+    "\\overline{A + B} · (A + B) = 0 (Complement Law)"
+   ]
+  },
+  {
+   "text": "Simplify the following expressions\n\n(b) (A + B̅) · (A + B)",
+   "finalAnswer": "A",
+   "marks": 8,
+   "source": "Long 3.9(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A+A·B+A·B̅+B̅·B"
+      ]
+     ],
+     "marks": 2,
+     "why": "Expanding both brackets makes the complement pair visible.",
+     "description": "Expand using the distributive law.",
+     "how": "Multiply each term in the first bracket by each term in the second."
+    },
+    {
+     "accept": [
+      [
+       "A+A·B+A·B̅"
+      ]
+     ],
+     "marks": 2,
+     "why": "The complement product B̅·B is zero.",
+     "description": "Apply the complement law.",
+     "how": "Replace B̅·B with 0 and remove the zero term."
+    },
+    {
+     "accept": [
+      [
+       "A"
+      ]
+     ],
+     "marks": 4,
+     "why": "The remaining expression reduces to A by absorption.",
+     "description": "Give the correct final answer.",
+     "how": "Apply absorption or the distributive identity to obtain A."
+    }
+   ],
+   "modelAnswer": [
+    "(A + B̅) · (A + B) = A·A + A·B + A·B̅ + B̅·B (Distributive Law)",
+    "= A + A·B + A·B̅ (Idempotent and Complement Laws)",
+    "= A (Absorption Law)"
+   ]
+  },
+  {
+   "text": "Simplify the following expressions\n\n(c) A + A̅ · (B̅ + C)",
+   "finalAnswer": "A + B̅ + C",
+   "marks": 8,
+   "source": "Long 3.9(c)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A+A̅·B̅+A̅·C"
+      ]
+     ],
+     "marks": 2,
+     "why": "Expansion separates the terms that can be simplified.",
+     "description": "Apply the distributive law.",
+     "how": "Expand A̅ · (B̅ + C)."
+    },
+    {
+     "accept": [
+      [
+       "A+B̅+C"
+      ]
+     ],
+     "marks": 2,
+     "why": "The expression A + A̅·X reduces to A + X.",
+     "description": "Use the complement and absorption pattern.",
+     "how": "Simplify A + A̅·B̅ to A + B̅."
+    },
+    {
+     "accept": [
+      [
+       "A+B̅+C"
+      ]
+     ],
+     "marks": 4,
+     "why": "The final expression is the simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "State A + B̅ + C."
+    }
+   ],
+   "modelAnswer": [
+    "A + A̅ · (B̅ + C) = A + A̅·B̅ + A̅·C (Distributive Law)",
+    "= A + B̅ + A̅·C (A + A̅·B̅ = A + B̅)",
+    "= A + B̅ + C (A + A̅·C = A + C)"
+   ]
+  },
+  {
+   "text": "Simplify the following expressions\n\n(d) \\overline{A · B} + A · B̅",
+   "finalAnswer": "A̅ + B̅",
+   "marks": 8,
+   "source": "Long 3.9(d)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A̅+B̅+A·B̅"
+      ]
+     ],
+     "marks": 3,
+     "why": "De Morgan's theorem changes the complemented product into a sum.",
+     "description": "Apply De Morgan's theorem.",
+     "how": "Rewrite \\overline{A · B} as A̅ + B̅."
+    },
+    {
+     "accept": [
+      [
+       "A̅+B̅"
+      ]
+     ],
+     "marks": 3,
+     "why": "The extra product term is absorbed by B̅.",
+     "description": "Remove the redundant term.",
+     "how": "Use B̅ + A·B̅ = B̅."
+    },
+    {
+     "accept": [
+      [
+       "A̅+B̅"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer gives the simplified function.",
+     "description": "Give the correct final answer.",
+     "how": "State A̅ + B̅."
+    }
+   ],
+   "modelAnswer": [
+    "\\overline{A · B} + A · B̅ = A̅ + B̅ + A · B̅ (De Morgan's Theorem)",
+    "= A̅ + B̅ (Absorption Law)"
+   ]
+  },
+  {
+   "text": "Simplify the following expressions\n\n(e) (A · B) + (A̅ · B̅)",
+   "finalAnswer": "A · B + A̅ · B̅",
+   "marks": 8,
+   "source": "Long 3.9(e)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ]
+     ],
+     "marks": 6,
+     "why": "The terms represent different input combinations and do not combine to a shorter equivalent term using the listed laws.",
+     "description": "Recognise that the expression is already simplified.",
+     "how": "Keep the two product terms unchanged."
+    },
+    {
+     "accept": [
+      [
+       "A·B+A̅·B̅"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final answer must preserve both product terms.",
+     "description": "Give the correct final answer.",
+     "how": "State A · B + A̅ · B̅."
+    }
+   ],
+   "modelAnswer": [
+    "(A · B) + (A̅ · B̅)",
+    "This expression has no like terms or removable terms.",
+    "Final answer: A · B + A̅ · B̅"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This section is tested mainly through short simplification questions and longer questions asking you to simplify several expressions using Boolean algebra rules.",
+   "For a long question, show each equality on a new line and name the law used when it helps make your method clear.",
+   "Marks are usually earned for choosing a valid rule, applying it correctly, and writing the simplest equivalent expression as the final answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Look for a common factor in both terms.",
+     "Factor out A, then use B + B̅ = 1."
+    ],
+    "accept": [
+     [
+      "A"
+     ]
+    ],
+    "question": "Simplify the following Boolean function using Boolean algebra rules:\n\nF (A, B) = A · B + A · B̅",
+    "solution": [
+     "F (A, B) = A · B + A · B̅",
+     "= A · (B + B̅) (Distributive Law)",
+     "= A · 1 (Complement Law)",
+     "F (A, B) = A (Identity Law)"
+    ],
+    "answer": "F (A, B) = A"
+   },
+   {
+    "hints": [
+     "Expand the bracket after A̅.",
+     "Use A + A̅·X = A + X on the terms that appear."
+    ],
+    "accept": [
+     [
+      "A+B̅+C"
+     ]
+    ],
+    "question": "Simplify the following expressions\n\n(c) A + A̅ · (B̅ + C)",
+    "solution": [
+     "A + A̅ · (B̅ + C) = A + A̅·B̅ + A̅·C (Distributive Law)",
+     "= A + B̅ + A̅·C (A + A̅·B̅ = A + B̅)",
+     "= A + B̅ + C (A + A̅·C = A + C)"
+    ],
+    "answer": "A + B̅ + C"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The distributive law rewrites the expression so that A and A̅ are together.",
+     "text": "A + A̅ · B = (A + A̅) · (A + B) (Distributive Law)"
+    },
+    {
+     "why": "A variable OR its complement is always 1.",
+     "text": "= 1 · (A + B) (Complement Law)"
+    },
+    {
+     "why": "Multiplying by 1 leaves the expression unchanged.",
+     "text": "= A + B (Identity Law)"
+    }
+   ],
+   "question": "Simplify the expression A + A̅ · B.",
+   "answer": "A + B"
+  },
+  "explain": [
+   {
+    "title": "What simplification means",
+    "body": "Simplification means applying of some Boolean algebra rules to make the functions less complicated. A shorter function can need fewer gates in its digital circuit."
+   },
+   {
+    "title": "Useful basic laws",
+    "body": "Remember the identities A + 0 = A and A · 1 = A; the complements A + A̅ = 1 and A · A̅ = 0; and the absorption laws A + (A · B) = A and A · (A + B) = A."
+   },
+   {
+    "title": "De Morgan's theorems",
+    "body": "When a whole bracket is complemented, change OR to AND and complement each variable: (A + B)̅ = A̅ · B̅. For a complemented product, change AND to OR: (A · B)̅ = A̅ + B̅."
+   },
+   {
+    "title": "Show your working",
+    "body": "Use one valid rule at a time and write the new expression on the next line. This makes your method easy to follow and helps you earn working marks."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse + (OR) with · (AND); they have different laws.",
+   "When applying De Morgan's theorem, complement every variable and change the operation inside the bracket.",
+   "Do not skip steps when factoring or expanding; a missing or incorrect term can lose working marks.",
+   "Do not stop at an expression that can still be reduced by a complement or absorption law.",
+   "Write the final simplified expression clearly and keep its variables and complements correct."
+  ]
+ }
+}

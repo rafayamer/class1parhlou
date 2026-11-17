@@ -1,0 +1,126 @@
+{
+ "items": [
+  {
+   "accept": [
+    [
+     "10111"
+    ]
+   ],
+   "id": "6:16",
+   "figure": "",
+   "steps": [
+    "Given: 1100₂ and 1011₂.",
+    "Required: Add the binary numbers.",
+    "Rule: Add each column from right to left. In binary, 1 + 1 = 10₂; write 0 and carry 1.",
+    "  1100₂\n+ 1011₂\n-------\n 10111₂",
+    "Result: 1100₂ + 1011₂ = 10111₂."
+   ],
+   "finalAnswer": "10111₂"
+  },
+  {
+   "accept": [
+    [
+     "0011"
+    ]
+   ],
+   "id": "6:17",
+   "figure": "",
+   "steps": [
+    "Given: 7 and −4.",
+    "Required: Convert the numbers to 4-bit binary and add them.",
+    "Convert 7 to 4-bit binary: 7 = 0111₂.",
+    "Represent −4 in 4-bit two’s complement: 4 = 0100₂; invert the bits to get 1011₂, then add 1 to get 1100₂.",
+    "Add the 4-bit numbers, discarding the carry beyond the fourth bit:\n  0111₂\n+ 1100₂\n-------\n1 0011₂",
+    "Result: 0011₂ = 3."
+   ],
+   "finalAnswer": "0011₂ (3)"
+  },
+  {
+   "accept": [
+    [
+     "1110"
+    ]
+   ],
+   "id": "6:18",
+   "figure": "",
+   "steps": [
+    "Given: −5 and 3.",
+    "Required: Convert the numbers to 4-bit binary and add them.",
+    "Convert 3 to 4-bit binary: 3 = 0011₂.",
+    "Represent −5 in 4-bit two’s complement: 5 = 0101₂; invert the bits to get 1010₂, then add 1 to get 1011₂.",
+    "Add the 4-bit numbers:\n  1011₂\n+ 0011₂\n-------\n  1110₂",
+    "Result: 1110₂ is −2 in 4-bit two’s complement."
+   ],
+   "finalAnswer": "1110₂ (−2)"
+  },
+  {
+   "accept": [
+    [
+     "1001"
+    ]
+   ],
+   "id": "6:19",
+   "figure": "",
+   "steps": [
+    "Given: 1101₂ − 0100₂.",
+    "Required: Find the difference.",
+    "Rule: Subtract the binary digits from right to left, borrowing 1 from the next column when necessary.",
+    "  1101₂\n− 0100₂\n-------\n  1001₂",
+    "Result: 1101₂ − 0100₂ = 1001₂."
+   ],
+   "finalAnswer": "1001₂"
+  },
+  {
+   "accept": [
+    [
+     "0111"
+    ]
+   ],
+   "id": "6:20",
+   "figure": "",
+   "steps": [
+    "Given: 1010₂ − 0011₂.",
+    "Required: Find the difference.",
+    "Rule: Subtract the binary digits from right to left. When 0 − 1 occurs, borrow 1 from the next column; the borrowed 1 is 10₂ in the current column.",
+    "  1010₂\n− 0011₂\n-------\n  0111₂",
+    "Result: 1010₂ − 0011₂ = 0111₂."
+   ],
+   "finalAnswer": "0111₂"
+  },
+  {
+   "accept": [
+    [
+     "0010"
+    ]
+   ],
+   "id": "6:21",
+   "figure": "",
+   "steps": [
+    "Given: 1000₂ − 0110₂.",
+    "Required: Find the difference.",
+    "Rule: Subtract the binary digits from right to left. When 0 − 1 occurs, borrow 1 from the next column; the borrowed 1 is 10₂ in the current column.",
+    "  1000₂\n− 0110₂\n-------\n  0010₂",
+    "Result: 1000₂ − 0110₂ = 0010₂."
+   ],
+   "finalAnswer": "0010₂"
+  },
+  {
+   "accept": [
+    [
+     "1010"
+    ]
+   ],
+   "id": "6:22",
+   "figure": "",
+   "steps": [
+    "Given: 1110₂ − 100₂.",
+    "Required: Find the difference.",
+    "Write both numbers with the same number of bits: 1110₂ − 0100₂.",
+    "Rule: Subtract the binary digits from right to left, borrowing 1 from the next column when necessary.",
+    "  1110₂\n− 0100₂\n-------\n  1010₂",
+    "Result: 1110₂ − 0100₂ = 1010₂."
+   ],
+   "finalAnswer": "1010₂"
+  }
+ ]
+}

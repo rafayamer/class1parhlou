@@ -1,0 +1,228 @@
+{
+ "shortTheory": [
+  {
+   "question": "Define data communication and list its key components.",
+   "answer": "Data communication involves the exchange of data between a sender and a receiver through a communication medium. Key components include the sender, receiver, message, protocol, and medium."
+  },
+  {
+   "question": "Explain the role of routers in a computer network.",
+   "answer": "A router is a networking device that interconnects networks or allows devices to connect to it. It directs data packets between different networks."
+  },
+  {
+   "question": "What are the main functions of the Network Layer in the OSI model?",
+   "answer": "The Network Layer is responsible for data transfer between different networks. It determines the best path for data to travel from the source to the destination. The Network Layer uses IP addresses to route data between networks!"
+  },
+  {
+   "question": "What is the purpose of DHCP?",
+   "answer": "DHCP automatically assigns IP addresses to devices on a network, simplifying network management."
+  },
+  {
+   "question": "Differentiate between TCP and UDP in terms of data transfer reliability.",
+   "answer": "Transmission Control Protocol (TCP): Ensures reliable data transfer. User Datagram Protocol (UDP ): Provides faster, but less reliable, data transfer."
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Computer network",
+   "text": "A computer network is a system of linked devices and computers that may exchange data and operate together."
+  },
+  {
+   "term": "Resource sharing",
+   "text": "Computer networks allow devices to share resources, such as printers and storage, reducing costs and improving efficiency."
+  },
+  {
+   "term": "Data communication",
+   "text": "Data communication involves the exchange of data between a sender and a receiver through a communication medium."
+  },
+  {
+   "term": "Sender",
+   "text": "The device that sends the data."
+  },
+  {
+   "term": "Receiver",
+   "text": "The device that receives the data."
+  },
+  {
+   "term": "Message",
+   "text": "The data being communicated."
+  },
+  {
+   "term": "Protocol",
+   "text": "A set of rules governing data communication."
+  },
+  {
+   "term": "Medium",
+   "text": "The physical or wireless path through which data travels."
+  },
+  {
+   "term": "Router",
+   "text": "A router is a networking device that interconnects networks or allows devices to connect to it. It directs data packets between different networks."
+  },
+  {
+   "term": "Network topology",
+   "text": "Network topologies are methods used to define the arrangement of different devices in a computer network, where each device is called a node."
+  },
+  {
+   "term": "Bus topology",
+   "text": "In a Bus topology, all devices share a single communication line called a bus. Each device is connected to this central cable."
+  },
+  {
+   "term": "Star topology",
+   "text": "In a star topology each node in network communicates with the others via a central switch or hub. The hub works as a data flow repeater."
+  },
+  {
+   "term": "Ring topology",
+   "text": "In a Ring topology, each device is connected in a circular pathway with other devices. Data travels in one direction, passing through each device."
+  },
+  {
+   "term": "Mesh topology",
+   "text": "In a Mesh topology, each device is connected to every other device. This provides high redundancy and reliability."
+  },
+  {
+   "term": "Simplex communication",
+   "text": "In Simplex communication, data transmission is unidirectional, meaning it flows in only one direction."
+  },
+  {
+   "term": "OSI Model",
+   "text": "The Open Systems Interconnection (OSI) Model is a framework used to understand how different networking protocols interact. It has 7 layers, each with a specific function."
+  },
+  {
+   "term": "Network Layer",
+   "text": "The Network Layer is responsible for data transfer between different networks. It determines the best path for data to travel from the source to the destination."
+  },
+  {
+   "term": "IPv4",
+   "text": "IPv4 is the fourth version of the Internet Protocol and the most widely used today. It uses a 32-bit address scheme, allowing for approximately 4.3 billion unique addresses."
+  },
+  {
+   "term": "Protocols",
+   "text": "Protocols are sets of rules that govern data communication."
+  },
+  {
+   "term": "DNS",
+   "text": "DNS translates domain names to IP addresses, making it easier for users to access websites."
+  },
+  {
+   "term": "DHCP",
+   "text": "DHCP automatically assigns IP addresses to devices on a network, simplifying network management."
+  },
+  {
+   "term": "TCP/IP",
+   "text": "TCP/IP (Transmission Control Protocol/Internet Protocol) is the fundamental suite of protocols for internet communication."
+  },
+  {
+   "term": "TCP",
+   "text": "Transmission Control Protocol (TCP): Ensures reliable data transfer."
+  },
+  {
+   "term": "UDP",
+   "text": "User Datagram Protocol (UDP ): Provides faster, but less reliable, data transfer."
+  },
+  {
+   "term": "HTTP",
+   "text": "HyperText Transfer Protocol (HTTP) is used for transferring web pages over the internet."
+  },
+  {
+   "term": "Business use of networks",
+   "text": "In business, networks enable efficient communication, resource sharing, and data management."
+  },
+  {
+   "term": "Education use of networks",
+   "text": "Educational institutions use networks to provide online learning platforms, virtual classrooms, and access to educational resources."
+  },
+  {
+   "term": "Healthcare use of networks",
+   "text": "Healthcare networks facilitate the sharing of patient information, telemedicine, and access to medical databases."
+  }
+ ],
+ "formulas": [
+  {
+   "formula": "t = N ÷ R  (t in s, N in bit, R in bit s⁻¹)",
+   "use": "Find transmission time from the message size in bits and transmission rate."
+  },
+  {
+   "formula": "1 byte = 8 bits",
+   "use": "Convert a message size in bytes to bits before calculating its transmission time."
+  },
+  {
+   "formula": "Number of IPv4 addresses = 2³² = 4,294,967,296  (addresses are a count)",
+   "use": "Find the total possible addresses in a 32-bit IPv4 address space."
+  },
+  {
+   "formula": "Addresses left = total addresses × (1 − reserved percentage ÷ 100)  (addresses are a count)",
+   "use": "Find the number remaining when a percentage of the IPv4 addresses is reserved."
+  }
+ ],
+ "fullMarks": [
+  "For a definition question, write the complete definition first, then add the requested list or explanation. For data communication, list all five components: sender, receiver, message, protocol, and medium.",
+  "For a router answer, state that it connects networks and directs packets between them. For a Network Layer answer, include data transfer between networks, best-path selection, and IP addresses.",
+  "For TCP and UDP, make the contrast clear: TCP is reliable; UDP is faster but less reliable. Do not say that UDP is more reliable.",
+  "For a topology comparison, describe how devices are connected and how data travels in each topology. Include the central hub or switch for star, the single shared cable for bus, the circular path for ring, and connections between every pair of devices for mesh.",
+  "For transmission-time numericals, write the given message size and rate, convert the message size to bits, write t = N ÷ R, substitute with units, and give the final time in seconds.",
+  "For the IPv4 calculation, show 2³² and its result, 4,294,967,296. For a reserved percentage, show the percentage calculation and state the remaining number of addresses.",
+  "For questions about real-world applications, use a separate example for each requested area: business, education, and healthcare. Finish with a clear sentence explaining how networks help in each area."
+ ],
+ "important": [
+  {
+   "ref": "Short 6.1: Define data communication and list its key components.",
+   "why": "Directly tests a core definition and a five-part list."
+  },
+  {
+   "ref": "Short 6.2: Explain the role of routers in a computer network.",
+   "why": "A concise, central networking-device question."
+  },
+  {
+   "ref": "Short 6.3: What are the main functions of the Network Layer in the OSI model?",
+   "why": "Tests routing, path selection, and IP addresses."
+  },
+  {
+   "ref": "Short 6.5: What is the purpose of the Dynamic Host Configuration Protocol (DHCP)?",
+   "why": "A straightforward protocol and network-service question."
+  },
+  {
+   "ref": "Short 6.7: Differentiate between TCP and UDP in terms of data transfer reliability.",
+   "why": "A common comparison question with two clear points."
+  },
+  {
+   "ref": "Long 6.1: Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+   "why": "A standard long question covering network objectives and examples."
+  },
+  {
+   "ref": "Long 6.2(a): In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message",
+   "why": "Tests a likely numerical using the given rate and message size."
+  },
+  {
+   "ref": "Long 6.2(b): In a Simplex communication system, assume data is transmitted at a rate of 500 bits per second (bps). Compute the time to transmit a message",
+   "why": "Tests the same transmission-time method with a different data-size unit."
+  },
+  {
+   "ref": "Long 6.4: Discuss the role and importance of protocols in data communication. Explain the functions of key protocols such as TCP/IP, HTTP, DNS, and DH",
+   "why": "A broad long question on protocols and their functions."
+  },
+  {
+   "ref": "Long 6.6: Describe real-world applications of computer networks in business, education, and healthcare.",
+   "why": "Directly matches the unit’s three application areas."
+  },
+  {
+   "ref": "Long 6.7: Compare and contrast the different types of network topologies (star, ring, bus, and mesh).",
+   "why": "A standard comparison that can be answered with a labelled diagram and key features."
+  },
+  {
+   "ref": "Long 6.9(a): An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible. (a) Show the calculation for the total num",
+   "why": "Tests the 2³² calculation and showing working."
+  },
+  {
+   "ref": "Long 6.9(b): An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible. (b) How many addresses are left if 10% of ",
+   "why": "Tests applying a percentage to the IPv4 address total."
+  }
+ ],
+ "mistakes": [
+  "Leaving out one or more data-communication components. Fix: memorise and write all five—sender, receiver, message, protocol, and medium.",
+  "Describing a router as a device that only connects devices within one network. Fix: state that it connects networks and directs packets between them.",
+  "Mixing up the Network Layer and Transport Layer. Fix: link the Network Layer to routing between networks, best paths, and IP addresses.",
+  "Saying TCP is faster but less reliable, or UDP is reliable. Fix: TCP ensures reliable transfer; UDP provides faster but less reliable transfer.",
+  "Confusing star and bus topology. Fix: star devices connect through a central hub or switch; bus devices share one central cable.",
+  "Using bytes instead of bits in the transmission-time formula when the rate is in bits per second. Fix: convert the message size to bits first and check that the units cancel to seconds.",
+  "Giving only the IPv4 total without showing the calculation or the reserved-address working. Fix: show 2³², the total, the percentage calculation, and the final number of addresses left."
+ ]
+}

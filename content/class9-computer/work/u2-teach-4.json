@@ -1,0 +1,878 @@
+{
+ "note": {
+  "explanation": "Binary arithmetic uses the digits 0 and 1. Addition uses carries; subtraction can be done by adding the subtrahend's two's complement; multiplication and division follow familiar decimal methods using binary digits.",
+  "examples": [
+   "101₂ + 11₂ = 1111₂",
+   "1100₂ ÷ 10₂ = 110₂"
+  ],
+  "checkAnswer": "1011₂",
+  "keywords": [
+   "binary",
+   "addition",
+   "subtraction",
+   "carry",
+   "two's complement",
+   "multiplication",
+   "division"
+  ],
+  "simple": "Work with just 0 and 1. For subtraction, change the subtrahend to its two's complement, add it, and discard the final carry.",
+  "checkQuestion": "Add 101₂ and 110₂.",
+  "title": "Binary Arithmetic Operations",
+  "steps": [
+   "For addition, add the bits from right to left and carry 1 when needed.",
+   "For subtraction, invert the subtrahend's bits and add 1.",
+   "Add the minuend and the two's complement.",
+   "Discard the carry bit if one appears.",
+   "For multiplication and division, use the familiar long-operation steps with binary digits."
+  ],
+  "answer": "Binary addition, subtraction, multiplication and division are performed using the digits 0 and 1 and the rules for each operation.",
+  "checkAccept": [
+   [
+    "1011"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "0",
+    "1",
+    "10",
+    "11"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the result of 1₂ + 1₂?",
+   "rationales": [
+    "0 is the result bit, but it leaves out the carry.",
+    "1 is not the full value of the sum.",
+    "10₂ is the result: write 0 and carry 1.",
+    "11₂ would represent 3, but 1 + 1 equals 2."
+   ]
+  },
+  {
+   "options": [
+    "1010₂",
+    "1000₂",
+    "1110₂",
+    "1100₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is 101₂ + 11₂?",
+   "rationales": [
+    "1010₂ is not the sum; the rightmost columns have been added incorrectly.",
+    "1000₂ is not the sum because the middle bits are missing.",
+    "1110₂ is too large; it results from an incorrect carry.",
+    "1100₂ is not the correct result of adding the aligned digits."
+   ]
+  },
+  {
+   "options": [
+    "1001₂",
+    "1010₂",
+    "0110₂",
+    "1111₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is the two's complement of 0110₂?",
+   "rationales": [
+    "1001₂ is the inverted number before adding 1, not the two's complement.",
+    "Invert 0110₂ to get 1001₂, then add 1 to get 1010₂.",
+    "0110₂ is the original number, not its two's complement.",
+    "1111₂ is not obtained by inverting 0110₂ and adding 1."
+   ]
+  },
+  {
+   "options": [
+    "0011₂",
+    "0101₂",
+    "1011₂",
+    "1100₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Using the section's two's-complement method, what is 1001₂ − 0110₂?",
+   "rationales": [
+    "The two's complement of 0110₂ is 1010₂; adding gives 10011₂, and discarding the carry gives 0011₂.",
+    "0101₂ is not the result of adding the two's complement and discarding the carry.",
+    "1011₂ is the wrong result because the carry and bit positions have been handled incorrectly.",
+    "1100₂ is not the result of this subtraction."
+   ]
+  },
+  {
+   "options": [
+    "1111₂",
+    "1011₂",
+    "1001₂",
+    "1101₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is 101₂ × 11₂?",
+   "rationales": [
+    "The partial products are 101₂ and 1010₂; their sum is 1111₂.",
+    "1011₂ does not include the correctly shifted second partial product.",
+    "1001₂ is not the sum of the two partial products.",
+    "1101₂ is not the product of 101₂ and 11₂."
+   ]
+  },
+  {
+   "options": [
+    "11₂",
+    "110₂",
+    "100₂",
+    "101₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What is 1100₂ ÷ 10₂?",
+   "rationales": [
+    "11₂ is too small; dividing by 10₂ shifts the value right by one place.",
+    "110₂ is the quotient because 110₂ × 10₂ = 1100₂.",
+    "100₂ does not multiply by 10₂ to give 1100₂.",
+    "101₂ is not the quotient of this division."
+   ]
+  },
+  {
+   "options": [
+    "1001₂",
+    "1010₂",
+    "1100₂",
+    "1110₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "When subtracting in a fixed 4-bit calculation, what is the two's complement of 0100₂?",
+   "rationales": [
+    "1001₂ is the inversion of 0110₂, not the two's complement of 0100₂.",
+    "1010₂ is not obtained by inverting 0100₂ and adding 1.",
+    "Invert 0100₂ to get 1011₂ and add 1 to get 1100₂.",
+    "1110₂ is not the two's complement of 0100₂."
+   ]
+  },
+  {
+   "options": [
+    "Shift the next digit down to the remainder.",
+    "Change the divisor to decimal.",
+    "Stop before using all the dividend's digits.",
+    "Add the divisor to the dividend portion."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In binary long division, what do you do after subtracting the divisor from the current dividend portion?",
+   "rationales": [
+    "The division steps say to shift the next binary digit down to the remainder.",
+    "The method stays in binary; it does not change the divisor to decimal.",
+    "The process is repeated until all dividend digits have been used.",
+    "The stated step is subtraction, not addition."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Add the binary numbers: 1101₂ + 1011₂.",
+   "finalAnswer": "11000₂",
+   "marks": 8,
+   "source": "Example 2.4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1101",
+       "1011"
+      ]
+     ],
+     "marks": 2,
+     "why": "Correct alignment is needed to add each binary place.",
+     "description": "Align the binary numbers by their rightmost bits.",
+     "how": "Write 1101₂ above 1011₂ with the rightmost bits aligned."
+    },
+    {
+     "accept": [
+      [
+       "carry",
+       "1"
+      ]
+     ],
+     "marks": 3,
+     "why": "Correct carries determine the result bits.",
+     "description": "Add columns from right to left, carrying 1 when the column totals 2 or 3.",
+     "how": "Show or correctly use the carries through the columns."
+    },
+    {
+     "accept": [
+      [
+       "11000"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final answer is the required result.",
+     "description": "Give the correct binary sum.",
+     "how": "Write the final answer as 11000₂."
+    }
+   ],
+   "modelAnswer": [
+    "  1101₂",
+    "+ 1011₂",
+    "-------",
+    " 11000₂"
+   ]
+  },
+  {
+   "text": "Subtract 6 from 9 in Binary.",
+   "finalAnswer": "0011₂ = 3₁₀",
+   "marks": 8,
+   "source": "Example 2.4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1001",
+       "0110"
+      ]
+     ],
+     "marks": 2,
+     "why": "The method begins by writing the minuend and subtrahend in binary.",
+     "description": "Convert 9 and 6 to binary.",
+     "how": "State 9₁₀ = 1001₂ and 6₁₀ = 0110₂."
+    },
+    {
+     "accept": [
+      [
+       "1010"
+      ]
+     ],
+     "marks": 3,
+     "why": "The two's complement is the value added to perform the subtraction.",
+     "description": "Invert the subtrahend and add 1.",
+     "how": "Show that 0110₂ inverts to 1001₂ and that 1001₂ + 1₂ = 1010₂."
+    },
+    {
+     "accept": [
+      [
+       "0011"
+      ]
+     ],
+     "marks": 3,
+     "why": "The carry must be discarded to obtain the correct 4-bit result.",
+     "description": "Add, discard the carry bit and state the answer.",
+     "how": "Show 1001₂ + 1010₂ = 10011₂, discard the carry, and give 0011₂ = 3₁₀."
+    }
+   ],
+   "modelAnswer": [
+    "Minuend = 9₁₀ = 1001₂",
+    "Subtrahend = 6₁₀ = 0110₂",
+    "Invert the bits of 0110₂: 1001₂",
+    "Add 1 to the inverted number: 1001₂ + 1₂ = 1010₂",
+    "1001₂ + 1010₂ = 10011₂",
+    "Discard the carry bit: 0011₂ = 3₁₀",
+    "So, 9 − 6 = 3."
+   ]
+  },
+  {
+   "text": "Multiply 101₂ and 11₂.",
+   "finalAnswer": "1111₂",
+   "marks": 8,
+   "source": "Example 2.4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "101",
+       "11"
+      ]
+     ],
+     "marks": 2,
+     "why": "The numbers must be aligned for the partial products.",
+     "description": "Set up the binary multiplication.",
+     "how": "Write 101₂ above 11₂ with the rightmost bits aligned."
+    },
+    {
+     "accept": [
+      [
+       "101",
+       "1010"
+      ]
+     ],
+     "marks": 3,
+     "why": "The shifted partial products are the main steps in long multiplication.",
+     "description": "Find the partial products and shift the second row one place left.",
+     "how": "Show the rows 101 and 1010."
+    },
+    {
+     "accept": [
+      [
+       "1111"
+      ]
+     ],
+     "marks": 3,
+     "why": "Adding the partial products gives the final product.",
+     "description": "Add the partial products and give the answer.",
+     "how": "Write 101₂ + 1010₂ = 1111₂."
+    }
+   ],
+   "modelAnswer": [
+    "    101₂",
+    "  ×  11₂",
+    "  ------",
+    "     101",
+    "   +1010",
+    "  ------",
+    "    1111₂",
+    "So, 101₂ × 11₂ = 1111₂."
+   ]
+  },
+  {
+   "text": "Divide 1100₂ by 10₂.",
+   "finalAnswer": "110₂",
+   "marks": 8,
+   "source": "Example 2.4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "11"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first comparison sets up the quotient.",
+     "description": "Compare the divisor with the first dividend portion.",
+     "how": "Compare 10₂ with 11₂."
+    },
+    {
+     "accept": [
+      [
+       "10"
+      ],
+      [
+       "subtract"
+      ]
+     ],
+     "marks": 3,
+     "why": "Subtracting and bringing down each digit carries the division forward.",
+     "description": "Subtract the divisor and bring down the remaining digits in order.",
+     "how": "Show the successive comparisons and subtractions."
+    },
+    {
+     "accept": [
+      [
+       "110"
+      ]
+     ],
+     "marks": 3,
+     "why": "The quotient is the required final answer.",
+     "description": "State the quotient after all dividend digits are used.",
+     "how": "Give 110₂."
+    }
+   ],
+   "modelAnswer": [
+    "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+    "Bring down the next digit 0.",
+    "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+    "Bring down the next digit 0; no more digits are left.",
+    "1100₂ ÷ 10₂ = 110₂."
+   ]
+  },
+  {
+   "text": "Q2.4. Perform the following binary arithmetic operations: (a) Multiplication of 101₂ by 11₂.",
+   "finalAnswer": "1111₂",
+   "marks": 8,
+   "source": "Long Q2.4(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "101",
+       "11"
+      ]
+     ],
+     "marks": 2,
+     "why": "The multiplication must be set up with the bits aligned.",
+     "description": "Set up the binary multiplication.",
+     "how": "Write 101₂ × 11₂ with rightmost bits aligned."
+    },
+    {
+     "accept": [
+      [
+       "101",
+       "1010"
+      ]
+     ],
+     "marks": 3,
+     "why": "The shifted partial products show the multiplication method.",
+     "description": "Find the partial products and shift the second row.",
+     "how": "Show partial products 101 and 1010."
+    },
+    {
+     "accept": [
+      [
+       "1111"
+      ]
+     ],
+     "marks": 3,
+     "why": "Their sum is the final product.",
+     "description": "Add the partial products and state the answer.",
+     "how": "Give 1111₂."
+    }
+   ],
+   "modelAnswer": [
+    "    101₂",
+    "  ×  11₂",
+    "  ------",
+    "     101",
+    "   +1010",
+    "  ------",
+    "    1111₂",
+    "So, 101₂ × 11₂ = 1111₂."
+   ]
+  },
+  {
+   "text": "Q2.4. Perform the following binary arithmetic operations: (b) Division of 1100₂ by 10₂.",
+   "finalAnswer": "110₂",
+   "marks": 8,
+   "source": "Long Q2.4(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "11"
+      ]
+     ],
+     "marks": 2,
+     "why": "The first comparison starts the division correctly.",
+     "description": "Compare the divisor with the first dividend portion.",
+     "how": "Compare 10₂ with 11₂."
+    },
+    {
+     "accept": [
+      [
+       "subtract"
+      ],
+      [
+       "bring down"
+      ]
+     ],
+     "marks": 3,
+     "why": "Repeated subtraction and bringing down digits generate the quotient.",
+     "description": "Carry out the comparison, subtraction and shift steps.",
+     "how": "Show the intermediate division steps."
+    },
+    {
+     "accept": [
+      [
+       "110"
+      ]
+     ],
+     "marks": 3,
+     "why": "The quotient is the final result asked for.",
+     "description": "Give the final quotient.",
+     "how": "Write 110₂."
+    }
+   ],
+   "modelAnswer": [
+    "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+    "Bring down the next digit 0.",
+    "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+    "Bring down the next digit 0; no more digits are left.",
+    "1100₂ ÷ 10₂ = 110₂."
+   ]
+  },
+  {
+   "text": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+   "finalAnswer": "1011₂",
+   "marks": 8,
+   "source": "Long Q2.6(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "101",
+       "110"
+      ]
+     ],
+     "marks": 2,
+     "why": "Aligning the numbers puts matching place values in the same column.",
+     "description": "Set up the addition with rightmost bits aligned.",
+     "how": "Write 101₂ above 110₂."
+    },
+    {
+     "accept": [
+      [
+       "carry",
+       "1"
+      ]
+     ],
+     "marks": 3,
+     "why": "The carry from 1 + 1 must be included in the next column.",
+     "description": "Add each column and handle the carry.",
+     "how": "Correctly add from right to left."
+    },
+    {
+     "accept": [
+      [
+       "1011"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final sum is the requested result.",
+     "description": "State the binary sum.",
+     "how": "Give 1011₂."
+    }
+   ],
+   "modelAnswer": [
+    "  101₂",
+    "+ 110₂",
+    "------",
+    " 1011₂"
+   ]
+  },
+  {
+   "text": "Q2.6. Add the following binary numbers: (b) 1100₂ + 1011₂.",
+   "finalAnswer": "10111₂",
+   "marks": 8,
+   "source": "Long Q2.6(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1100",
+       "1011"
+      ]
+     ],
+     "marks": 2,
+     "why": "The bits must be aligned by place value.",
+     "description": "Set up the addition.",
+     "how": "Write the two numbers with their rightmost bits aligned."
+    },
+    {
+     "accept": [
+      [
+       "carry",
+       "1"
+      ]
+     ],
+     "marks": 3,
+     "why": "Correct carries are required to obtain the correct sum.",
+     "description": "Add the columns from right to left.",
+     "how": "Handle each carry correctly."
+    },
+    {
+     "accept": [
+      [
+       "10111"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final binary sum completes the problem.",
+     "description": "State the answer.",
+     "how": "Give 10111₂."
+    }
+   ],
+   "modelAnswer": [
+    "  1100₂",
+    "+ 1011₂",
+    "-------",
+    " 10111₂"
+   ]
+  },
+  {
+   "text": "Q2.8. Solve the following (a) 1101₂ − 0100₂.",
+   "finalAnswer": "1001₂",
+   "marks": 8,
+   "source": "Long Q2.8(a)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0100"
+      ]
+     ],
+     "marks": 2,
+     "why": "The subtrahend must be identified for the complement method.",
+     "description": "Identify and invert the subtrahend.",
+     "how": "Invert 0100₂ to get 1011₂."
+    },
+    {
+     "accept": [
+      [
+       "1100"
+      ]
+     ],
+     "marks": 3,
+     "why": "Adding 1 to the inverted bits forms the two's complement.",
+     "description": "Find the two's complement and add it to the minuend.",
+     "how": "Show 1011₂ + 1₂ = 1100₂ and add it to 1101₂."
+    },
+    {
+     "accept": [
+      [
+       "1001"
+      ]
+     ],
+     "marks": 3,
+     "why": "Discarding the carry gives the correct final answer.",
+     "description": "Discard the carry and state the result.",
+     "how": "Give 1001₂."
+    }
+   ],
+   "modelAnswer": [
+    "Subtrahend = 0100₂",
+    "Invert the bits of 0100₂: 1011₂",
+    "Add 1: 1011₂ + 1₂ = 1100₂",
+    "1101₂ + 1100₂ = 11001₂",
+    "Discard the carry bit: 1001₂"
+   ]
+  },
+  {
+   "text": "Q2.8. Solve the following (b) 1010₂ − 0011₂.",
+   "finalAnswer": "0111₂",
+   "marks": 8,
+   "source": "Long Q2.8(b)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0011"
+      ]
+     ],
+     "marks": 2,
+     "why": "The subtrahend is the number whose two's complement is needed.",
+     "description": "Invert the subtrahend.",
+     "how": "Invert 0011₂ to get 1100₂."
+    },
+    {
+     "accept": [
+      [
+       "1101"
+      ]
+     ],
+     "marks": 3,
+     "why": "Adding 1 completes the complement before the addition.",
+     "description": "Find the two's complement and add it to the minuend.",
+     "how": "Show 1100₂ + 1₂ = 1101₂, then add to 1010₂."
+    },
+    {
+     "accept": [
+      [
+       "0111"
+      ]
+     ],
+     "marks": 3,
+     "why": "The carry is discarded to give the answer in the original width.",
+     "description": "Discard the carry and state the result.",
+     "how": "Give 0111₂."
+    }
+   ],
+   "modelAnswer": [
+    "Subtrahend = 0011₂",
+    "Invert the bits of 0011₂: 1100₂",
+    "Add 1: 1100₂ + 1₂ = 1101₂",
+    "1010₂ + 1101₂ = 10111₂",
+    "Discard the carry bit: 0111₂"
+   ]
+  },
+  {
+   "text": "Q2.8. Solve the following (c) 1000₂ − 0110₂.",
+   "finalAnswer": "0010₂",
+   "marks": 8,
+   "source": "Long Q2.8(c)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0110"
+      ]
+     ],
+     "marks": 2,
+     "why": "The complement process is applied to the subtrahend.",
+     "description": "Invert the subtrahend.",
+     "how": "Invert 0110₂ to get 1001₂."
+    },
+    {
+     "accept": [
+      [
+       "1010"
+      ]
+     ],
+     "marks": 3,
+     "why": "The two's complement is formed by adding 1 to the inverted number.",
+     "description": "Find the complement and add it to the minuend.",
+     "how": "Show 1001₂ + 1₂ = 1010₂, then add to 1000₂."
+    },
+    {
+     "accept": [
+      [
+       "0010"
+      ]
+     ],
+     "marks": 3,
+     "why": "The final carry must be discarded.",
+     "description": "Discard the carry and state the difference.",
+     "how": "Give 0010₂."
+    }
+   ],
+   "modelAnswer": [
+    "Subtrahend = 0110₂",
+    "Invert the bits of 0110₂: 1001₂",
+    "Add 1: 1001₂ + 1₂ = 1010₂",
+    "1000₂ + 1010₂ = 10010₂",
+    "Discard the carry bit: 0010₂"
+   ]
+  },
+  {
+   "text": "Q2.8. Solve the following (d) 1110₂ − 100₂.",
+   "finalAnswer": "1010₂",
+   "marks": 8,
+   "source": "Long Q2.8(d)",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0100"
+      ]
+     ],
+     "marks": 2,
+     "why": "The subtrahend must be written in the same 4-bit width.",
+     "description": "Pad and invert the subtrahend.",
+     "how": "Write 100₂ as 0100₂ and invert it to 1011₂."
+    },
+    {
+     "accept": [
+      [
+       "1100"
+      ]
+     ],
+     "marks": 3,
+     "why": "The inverted number plus 1 is the two's complement used in the addition.",
+     "description": "Find the complement and add it to the minuend.",
+     "how": "Show 1011₂ + 1₂ = 1100₂, then add to 1110₂."
+    },
+    {
+     "accept": [
+      [
+       "1010"
+      ]
+     ],
+     "marks": 3,
+     "why": "Discarding the carry leaves the correct 4-bit difference.",
+     "description": "Discard the carry and state the result.",
+     "how": "Give 1010₂."
+    }
+   ],
+   "modelAnswer": [
+    "Write the subtrahend in 4 bits: 100₂ = 0100₂",
+    "Invert the bits of 0100₂: 1011₂",
+    "Add 1: 1011₂ + 1₂ = 1100₂",
+    "1110₂ + 1100₂ = 11010₂",
+    "Discard the carry bit: 1010₂"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short calculations and longer questions that ask you to perform binary addition, subtraction, multiplication or division.",
+   "For addition, line up the rightmost bits and show carries clearly; each correct column and carry can earn method marks.",
+   "For subtraction, show the subtrahend's inversion, the addition of 1, the addition to the minuend and the discarded carry.",
+   "For multiplication, show both partial products and the left shift in the second row.",
+   "For division, show the comparisons, subtractions and digits brought down, then state the quotient."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Align 101₂ and 110₂ at their rightmost bits.",
+     "Start at the right: 1 + 0 = 1; then add 0 + 1, and finally add 1 + 1 with its carry."
+    ],
+    "accept": [
+     [
+      "1011"
+     ]
+    ],
+    "question": "Q2.6. Add the following binary numbers: (a) 101₂ + 110₂.",
+    "solution": [
+     "  101₂",
+     "+ 110₂",
+     "------",
+     " 1011₂"
+    ],
+    "answer": "1011₂"
+   },
+   {
+    "hints": [
+     "Compare 10₂ with the first two digits of 1100₂.",
+     "Subtract when the divisor fits, bring down the next digit, and continue until all dividend digits are used."
+    ],
+    "accept": [
+     [
+      "110"
+     ]
+    ],
+    "question": "Q2.4. Perform the following binary arithmetic operations: (b) Division of 1100₂ by 10₂.",
+    "solution": [
+     "Compare 10₂ with the first two digits 11₂; subtract 10₂ from 11₂.",
+     "Bring down the next digit 0.",
+     "Compare 10₂ with 10₂; subtract 10₂ from 10₂.",
+     "Bring down the next digit 0; no more digits are left.",
+     "1100₂ ÷ 10₂ = 110₂."
+    ],
+    "answer": "110₂"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This names the decimal numbers being subtracted and writes them in binary for the calculation.",
+     "text": "Minuend = 9₁₀ = 1001₂; Subtrahend = 6₁₀ = 0110₂"
+    },
+    {
+     "why": "Inverting each bit is the first part of finding the two's complement.",
+     "text": "Invert the bits of 0110₂: Inversion: 1001₂"
+    },
+    {
+     "why": "Adding 1 to the inverted number completes the two's complement.",
+     "text": "Add 1 to the inverted number: 1001₂ + 1₂ = 1010₂ = −6₁₀"
+    },
+    {
+     "why": "Adding the two's complement to the minuend performs the subtraction.",
+     "text": "1001₂ + 1010₂ = 10011₂"
+    },
+    {
+     "why": "The final carry is discarded, leaving the 4-bit difference.",
+     "text": "Discard the carry bit: 0011₂ = 3₁₀"
+    },
+    {
+     "why": "This states the result of the original subtraction.",
+     "text": "So, 9 − 6 = 3"
+    }
+   ],
+   "question": "Subtract 6 from 9 in Binary",
+   "answer": "9 − 6 = 3"
+  },
+  "explain": [
+   {
+    "title": "Binary operations",
+    "body": "“Arithmetic operations include addition, subtraction, multiplication and division, and are performed on two numbers at a time. Binary arithmetic operations are similar to decimal operations but follow binary rules.” This means you use the same kinds of operations as in decimal arithmetic, but work with binary digits."
+   },
+   {
+    "title": "Adding binary digits",
+    "body": "“Binary addition uses only two digits: 0 and 1.” The rules are: 0 + 0 = 0; 0 + 1 = 1; 1 + 0 = 1; and 1 + 1 = 0 with a carry of 1 to the next higher bit."
+   },
+   {
+    "title": "Subtracting with two's complement",
+    "body": "“In binary arithmetic, subtraction can also be carried out by adding the two's complement or the value of the subtrahend to the minuend.” Find the two's complement by inverting the bits and adding 1, add it to the minuend, then discard the carry bit."
+   },
+   {
+    "title": "Multiplication and division",
+    "body": "“Binary numbers are base-2 numbers, consisting of only 0s and 1s. Multiplying binary numbers follows similar principles to multiplying decimal numbers, but with simpler rules.” For division, compare, subtract when possible, bring down the next digit, and repeat until all dividend digits are used."
+   }
+  ],
+  "mistakes": [
+   "Forgetting to carry 1 when adding 1 + 1.",
+   "For subtraction, stopping after inverting the bits instead of also adding 1.",
+   "Adding the two's complement but forgetting to discard the final carry bit.",
+   "In multiplication, forgetting to shift the second partial product one place left.",
+   "In division, skipping a dividend digit or writing the quotient before completing the steps."
+  ]
+ }
+}

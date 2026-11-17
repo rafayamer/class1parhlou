@@ -1,0 +1,666 @@
+{
+ "note": {
+  "explanation": "Data science uses data to understand problems and make better decisions. It brings together computer science, mathematics and statistics, and business knowledge. A data science workflow moves from identifying a problem to collecting, cleaning, analysing, interpreting, and visualizing data.",
+  "examples": [
+   "A school collects students’ arrival times, checks the data for errors, looks for patterns, works out likely reasons for lateness, and presents the results in a chart.",
+   "A sports team analyses performance data to find patterns and develop better strategies."
+  ],
+  "checkAnswer": "Data cleaning",
+  "keywords": [
+   "data science",
+   "workflow",
+   "data cleaning",
+   "data analysis",
+   "data interpretation",
+   "data visualization"
+  ],
+  "simple": "Data science is detective work with data: find information, check it, look for clues, understand what they mean, and show the results clearly.",
+  "checkQuestion": "In the workflow, what step comes after data collection?",
+  "title": "How data science turns data into insights",
+  "steps": [
+   "Identify and clearly define the problem.",
+   "Collect information from suitable sources.",
+   "Clean the data by fixing errors and organizing it.",
+   "Analyse the data to look for patterns or answers.",
+   "Interpret the results and draw conclusions.",
+   "Visualize the data with charts or graphs to make it easier to understand."
+  ],
+  "answer": "Data science combines computer skills, math, and business knowledge to turn raw data into useful insights.",
+  "checkAccept": [
+   [
+    "data cleaning"
+   ],
+   [
+    "cleaning"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To turn raw data into useful insights",
+    "To make data harder to understand",
+    "To replace all decisions with guesses",
+    "To collect information without a problem to solve"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a main purpose of data science?",
+   "rationales": [
+    "Correct: data science uses data to find useful insights and support decisions.",
+    "Incorrect: data visualization and analysis aim to make findings easier to understand.",
+    "Incorrect: data science helps people make better-informed decisions, not guesses.",
+    "Incorrect: data collection is guided by a problem or question to investigate."
+   ]
+  },
+  {
+   "options": [
+    "Mathematics and statistics",
+    "Music and drama",
+    "Geography and art",
+    "History and literature"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which fields are used to analyse data and find patterns?",
+   "rationales": [
+    "Correct: mathematics and statistics help analyse data and identify patterns.",
+    "Incorrect: these are not the fields named in the section as supporting data analysis.",
+    "Incorrect: these are not the fields named in the section as supporting data analysis.",
+    "Incorrect: these are not the fields named in the section as supporting data analysis."
+   ]
+  },
+  {
+   "options": [
+    "Data analysis",
+    "Problem identification",
+    "Data visualization",
+    "Data cleaning"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which step begins the data science workflow?",
+   "rationales": [
+    "Incorrect: analysis happens after the problem is defined and data is collected and cleaned.",
+    "Correct: the workflow begins by understanding and clearly defining the problem.",
+    "Incorrect: visualization is used later to communicate results.",
+    "Incorrect: cleaning follows data collection, not problem identification."
+   ]
+  },
+  {
+   "options": [
+    "Removing errors and organizing the collected data",
+    "Making a chart before gathering any information",
+    "Deciding what the results mean",
+    "Choosing which problem to solve"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does data cleaning involve?",
+   "rationales": [
+    "Correct: data cleaning fixes mistakes and organizes data so it can be used.",
+    "Incorrect: a chart is a form of visualization, and this option places it before collecting data.",
+    "Incorrect: deciding what results mean is data interpretation.",
+    "Incorrect: choosing and defining the problem is problem identification."
+   ]
+  },
+  {
+   "options": [
+    "Finding patterns in the data",
+    "Explaining what the analysed results mean",
+    "Gathering information from sources",
+    "Fixing mistakes in the data"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which action is data interpretation?",
+   "rationales": [
+    "Incorrect: looking for patterns or answers is data analysis.",
+    "Correct: interpretation means understanding analysed results and drawing conclusions.",
+    "Incorrect: gathering information is data collection.",
+    "Incorrect: correcting errors is data cleaning."
+   ]
+  },
+  {
+   "options": [
+    "It makes data easier to understand using charts and graphs",
+    "It replaces the need to collect data",
+    "It guarantees that every conclusion is correct",
+    "It removes the need to define a problem"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is data visualization useful?",
+   "rationales": [
+    "Correct: charts and graphs can present data in a way that is easier to understand.",
+    "Incorrect: visualization presents data; it does not replace data collection.",
+    "Incorrect: a chart cannot guarantee that the analysis or conclusion is correct.",
+    "Incorrect: the workflow still begins by clearly defining the problem."
+   ]
+  },
+  {
+   "options": [
+    "Computer science",
+    "Business knowledge",
+    "Mathematics and statistics",
+    "Data visualization"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which field helps with handling and organizing data?",
+   "rationales": [
+    "Correct: computer science helps with handling and organizing data.",
+    "Incorrect: business knowledge helps apply insights to real-life problems and decisions.",
+    "Incorrect: mathematics and statistics help analyse data and find patterns.",
+    "Incorrect: visualization is a workflow step, not one of the three fields listed."
+   ]
+  },
+  {
+   "options": [
+    "Data collection",
+    "Data interpretation",
+    "Data cleaning",
+    "Data visualization"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "A student makes a bar chart to show which sports are most popular. Which workflow step is this?",
+   "rationales": [
+    "Incorrect: collection is gathering the information, such as by conducting a survey.",
+    "Incorrect: interpretation is understanding the results and drawing conclusions.",
+    "Incorrect: cleaning is fixing errors and organizing the collected information.",
+    "Correct: making a chart to communicate data is data visualization."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Explain why data visualization is important. How does it help in understanding complex information?",
+   "finalAnswer": "Data visualization uses charts and graphs to make data easier to understand and to show patterns clearly.",
+   "marks": 2,
+   "source": "Short 9.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "charts",
+       "graphs"
+      ],
+      [
+       "charts",
+       "visualization"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies what data visualization uses to present information.",
+     "description": "State that visualization presents data using visual forms.",
+     "how": "Mention charts or graphs."
+    },
+    {
+     "accept": [
+      [
+       "easier to understand"
+      ],
+      [
+       "show patterns"
+      ],
+      [
+       "clear"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how visualization helps people understand information.",
+     "description": "Explain its benefit for understanding data.",
+     "how": "Say that it makes data easier to understand or shows patterns clearly."
+    }
+   ],
+   "modelAnswer": [
+    "Data visualization uses charts and graphs to present data.",
+    "It makes complex information easier to understand and helps show patterns clearly."
+   ]
+  },
+  {
+   "text": "Describe the process of conducting a survey to gather data about students' favourite extracurricular activities.",
+   "finalAnswer": "Define the question, collect survey responses, clean and organize the data, analyse it, interpret the results, and present them using a suitable chart.",
+   "marks": 8,
+   "source": "Long 9.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "define the question"
+      ],
+      [
+       "identify the problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The workflow begins with a clearly defined problem or question.",
+     "description": "Identify what the survey needs to find out.",
+     "how": "State that the aim is to find students’ favourite extracurricular activities."
+    },
+    {
+     "accept": [
+      [
+       "survey",
+       "responses"
+      ],
+      [
+       "collect",
+       "data"
+      ]
+     ],
+     "marks": 2,
+     "why": "Responses must be gathered before they can be analysed.",
+     "description": "Describe how information is collected.",
+     "how": "Explain that students answer a survey and their responses are gathered."
+    },
+    {
+     "accept": [
+      [
+       "clean",
+       "organize"
+      ],
+      [
+       "clean",
+       "errors"
+      ]
+     ],
+     "marks": 2,
+     "why": "Errors should be fixed and the data organized before analysis.",
+     "description": "Include the data-cleaning step.",
+     "how": "Say that responses are checked, errors corrected, and data organized."
+    },
+    {
+     "accept": [
+      [
+       "final answer"
+      ],
+      [
+       "chart",
+       "results"
+      ],
+      [
+       "analyse",
+       "interpret",
+       "chart"
+      ]
+     ],
+     "marks": 2,
+     "why": "A complete process includes making sense of the results and communicating them.",
+     "description": "Analyse, interpret, and present the survey findings.",
+     "how": "Explain that responses are analysed, conclusions are drawn, and findings are shown clearly."
+    }
+   ],
+   "modelAnswer": [
+    "Clearly define the question: which extracurricular activities do students like best?",
+    "Collect data by asking students to complete a survey about their favourite activities.",
+    "Clean the data by checking responses, fixing errors, and organizing the information.",
+    "Analyse the responses to find patterns, such as which activities receive the most choices.",
+    "Interpret the results and draw a conclusion about students’ preferences.",
+    "Use a suitable chart, such as a bar chart, to show the results clearly."
+   ]
+  },
+  {
+   "text": "Explain the concept of data visualization. How does it help in understanding complex data? Provide examples of different types of visualizations and their applications in real-life scenarios.",
+   "finalAnswer": "Data visualization presents data in charts or graphs to make it easier to understand. For example, a bar chart can compare students’ sports preferences, and a line graph can show how a value changes over time.",
+   "marks": 8,
+   "source": "Long 9.8",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "charts",
+       "graphs"
+      ],
+      [
+       "visual",
+       "data"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear definition establishes what data visualization means.",
+     "description": "Define data visualization.",
+     "how": "Explain that it presents data visually, using charts or graphs."
+    },
+    {
+     "accept": [
+      [
+       "easier to understand"
+      ],
+      [
+       "show patterns"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must explain how visuals help make complex information understandable.",
+     "description": "State the benefit of visualization.",
+     "how": "Mention that visuals make data easier to understand or help reveal patterns."
+    },
+    {
+     "accept": [
+      [
+       "bar chart",
+       "compare"
+      ],
+      [
+       "bar chart",
+       "preferences"
+      ]
+     ],
+     "marks": 2,
+     "why": "An example shows how a visualization can be used in a real situation.",
+     "description": "Give one suitable visualization and application.",
+     "how": "For example, use a bar chart to compare students’ preferences for sports."
+    },
+    {
+     "accept": [
+      [
+       "line graph",
+       "over time"
+      ],
+      [
+       "line graph",
+       "changes"
+      ]
+     ],
+     "marks": 2,
+     "why": "A second appropriate example demonstrates another use of visualization.",
+     "description": "Give another visualization and application.",
+     "how": "For example, use a line graph to show a value changing over time."
+    }
+   ],
+   "modelAnswer": [
+    "Data visualization presents data using charts or graphs.",
+    "It makes complex information easier to understand and helps people see patterns.",
+    "A bar chart can compare the number of students who prefer different sports.",
+    "A line graph can show how temperature changes over time."
+   ]
+  },
+  {
+   "text": "Discuss the importance and benefits of data visualization. Why is it essential for businesses and decision-makers to use charts, graphs, and dashboards?",
+   "finalAnswer": "Data visualization makes data easier to understand, helps reveal patterns, and supports informed decisions. Businesses and decision-makers can use charts, graphs, and dashboards to communicate insights clearly.",
+   "marks": 8,
+   "source": "Long 9.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "easier to understand"
+      ],
+      [
+       "clear"
+      ]
+     ],
+     "marks": 2,
+     "why": "Improving understanding is a central benefit of data visualization.",
+     "description": "Explain how visuals make data clearer.",
+     "how": "State that charts, graphs, or dashboards make information easier to understand."
+    },
+    {
+     "accept": [
+      [
+       "patterns"
+      ],
+      [
+       "trends"
+      ]
+     ],
+     "marks": 2,
+     "why": "Visual presentation can help people notice patterns in data.",
+     "description": "Describe how visualization helps reveal information.",
+     "how": "Mention that visuals help identify patterns or trends."
+    },
+    {
+     "accept": [
+      [
+       "informed decisions"
+      ],
+      [
+       "better decisions"
+      ]
+     ],
+     "marks": 2,
+     "why": "The section explains that data insights help people make better decisions.",
+     "description": "Connect visualization and data insights to decision-making.",
+     "how": "Explain that businesses and decision-makers use the information to make informed choices."
+    },
+    {
+     "accept": [
+      [
+       "communicate insights clearly"
+      ],
+      [
+       "charts",
+       "graphs",
+       "dashboards"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point should give a correct summary of the role of visual tools.",
+     "description": "State the final benefit for businesses and decision-makers.",
+     "how": "Say that charts, graphs, and dashboards communicate insights clearly."
+    }
+   ],
+   "modelAnswer": [
+    "Data visualization makes data easier to understand by presenting it in charts, graphs, and dashboards.",
+    "It can help people notice patterns and important information in complex data.",
+    "Businesses can use these visuals to understand information about their customers and products.",
+    "Decision-makers can use the insights to make better-informed decisions and communicate findings clearly."
+   ]
+  },
+  {
+   "text": "Differentiate between nominal, ordinal, discrete, and continuous data. For each type, describe a suitable visualization technique and provide a specific example of how this technique can be used to represent that type of data effectively.",
+   "finalAnswer": "Nominal data names categories without order and can be shown with a bar or pie chart; ordinal data has ordered categories and can be shown with a bar chart; discrete data consists of countable separate values and can be shown with a histogram or dot plot; continuous data can take measured values across a range and can be shown with a line graph, scatter plot, or box plot.",
+   "marks": 8,
+   "source": "Long 9.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "nominal",
+       "categories",
+       "bar chart"
+      ],
+      [
+       "nominal",
+       "no order",
+       "pie chart"
+      ]
+     ],
+     "marks": 2,
+     "why": "Nominal data is categorized without order, and the answer needs an appropriate visual example.",
+     "description": "Explain nominal data and give a suitable visualization.",
+     "how": "Describe unordered categories and name a bar chart or pie chart with a fitting example."
+    },
+    {
+     "accept": [
+      [
+       "ordinal",
+       "order",
+       "bar chart"
+      ],
+      [
+       "ordinal",
+       "ordered",
+       "stacked bar chart"
+      ]
+     ],
+     "marks": 2,
+     "why": "Ordinal categories have an order, which should be reflected in the answer.",
+     "description": "Explain ordinal data and give a suitable visualization.",
+     "how": "Describe ordered categories and name a bar chart or stacked bar chart with a fitting example."
+    },
+    {
+     "accept": [
+      [
+       "discrete",
+       "countable",
+       "dot plot"
+      ],
+      [
+       "discrete",
+       "separate values",
+       "histogram"
+      ]
+     ],
+     "marks": 2,
+     "why": "Discrete data consists of countable separate values and needs a suitable representation.",
+     "description": "Explain discrete data and give a suitable visualization.",
+     "how": "Describe countable values and name a dot plot or histogram with a fitting example."
+    },
+    {
+     "accept": [
+      [
+       "continuous",
+       "measured",
+       "line graph"
+      ],
+      [
+       "continuous",
+       "range",
+       "scatter plot"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final point must correctly describe continuous data and give an appropriate visualization.",
+     "description": "Explain continuous data and give a suitable visualization.",
+     "how": "Describe measured values across a range and name a line graph, scatter plot, or box plot with a fitting example."
+    }
+   ],
+   "modelAnswer": [
+    "Nominal data places items into categories without implying an order; a bar chart or pie chart can show students’ favourite sports.",
+    "Ordinal data has categories with an order; a bar chart can show ratings such as low, medium, and high.",
+    "Discrete data has distinct, countable values; a dot plot or histogram can show the number of students absent each day.",
+    "Continuous data is measured and can take values across a range; a line graph can show students’ heights or another measurement."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define data science or explain why data visualization is useful. Give a direct meaning and one clear benefit.",
+   "A question may ask you to put the data science workflow in order. Keep the book’s sequence: problem identification, data collection, data cleaning, data analysis, data interpretation, and data visualization.",
+   "In a longer answer, explain what happens at each relevant step and use a simple example, such as investigating why students arrive late.",
+   "Marks are earned by naming the correct fields or workflow steps, explaining their purpose, and using a relevant example.",
+   "Do not mix up analysis (looking for patterns) and interpretation (understanding the results and drawing conclusions)."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about how a chart helps a reader.",
+     "Mention that charts and graphs make patterns and information clearer."
+    ],
+    "accept": [
+     [
+      "easier to understand"
+     ],
+     [
+      "show patterns"
+     ],
+     [
+      "charts",
+      "graphs"
+     ]
+    ],
+    "question": "Q9.9. Explain why data visualization is important. How does it help in understanding complex information?",
+    "solution": [
+     "Data visualization presents data using charts and graphs.",
+     "These visuals make complex information easier to understand.",
+     "They can also help people see patterns in the data."
+    ],
+    "answer": "Data visualization uses charts and graphs to make complex information easier to understand and to show patterns."
+   },
+   {
+    "hints": [
+     "Think about how a visual display supports a decision.",
+     "Include the benefits of seeing information clearly and spotting patterns."
+    ],
+    "accept": [
+     [
+      "easier to understand",
+      "informed decisions"
+     ],
+     [
+      "patterns",
+      "better decisions"
+     ],
+     [
+      "communicate insights",
+      "decisions"
+     ]
+    ],
+    "question": "Q9.9. Discuss the importance and benefits of data visualization. Why is it essential for businesses and decision-makers to use charts, graphs, and dashboards?",
+    "solution": [
+     "Data visualization presents information in charts, graphs, and dashboards.",
+     "It makes data easier to understand and can help people notice patterns.",
+     "Businesses and decision-makers can use these insights to make informed decisions.",
+     "Visuals also help communicate findings clearly."
+    ],
+    "answer": "Data visualization makes data easier to understand, helps reveal patterns, supports informed decisions, and communicates insights clearly."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This is the problem the school wants to investigate.",
+     "text": "Imagine a school wants to understand why some students arrive late."
+    },
+    {
+     "why": "Arrival times are gathered as the information needed for the investigation.",
+     "text": "They start by collecting data on arrival times (data collection)."
+    },
+    {
+     "why": "Errors must be corrected before the data is useful.",
+     "text": "Next, they clean the data by fixing any errors (data cleaning)."
+    },
+    {
+     "why": "The school looks through the data for possible causes and patterns.",
+     "text": "They then analyse the data to find patterns, like whether bad weather or traffic is causing the delays (data analysis)."
+    },
+    {
+     "why": "The school works out what the patterns mean.",
+     "text": "They interpret these patterns to understand why students are late (data interpretation)."
+    },
+    {
+     "why": "A chart communicates the findings in a clear visual form.",
+     "text": "Finally, they create a chart to show the most common reasons for being late (data visualization)."
+    },
+    {
+     "why": "This sums up how the steps work together as a process.",
+     "text": "This entire process of collecting, cleaning, analysing, interpreting, and visualizing data is what data science is all about!"
+    }
+   ],
+   "question": "Imagine a school wants to understand why some students arrive late.",
+   "answer": "The school collects and cleans arrival-time data, analyses it for patterns, interprets the patterns, and creates a chart to show the most common reasons for lateness."
+  },
+  "explain": [
+   {
+    "title": "What data science does",
+    "body": "Data science is like being a detective, but instead of solving crimes, you solve problems using data. It combines computer skills, math, and business knowledge to turn raw data into useful insights."
+   },
+   {
+    "title": "Why data science is useful",
+    "body": "Data science helps people make better decisions. Businesses can learn what customers like, sports teams can improve strategies, and doctors can predict health trends and provide better care."
+   },
+   {
+    "title": "Different fields work together",
+    "body": "Computer Science: For handling and organizing data. Mathematics and Statistics: For analysing data and finding patterns. Business Knowledge: For applying these insights to real-life problems and making informed decisions."
+   },
+   {
+    "title": "The data science workflow",
+    "body": "Data Science Workflow, refers to the systematic process used by data scientists to extract insights and knowledge from data. The steps are problem identification, data collection, data cleaning, data analysis, data interpretation, and data visualization."
+   },
+   {
+    "title": "The last steps make findings useful",
+    "body": "Analysis looks closely at data to find patterns or answers. Interpretation means understanding the analysed data and drawing conclusions. Visualization uses charts and graphs to make data easier to understand."
+   }
+  ],
+  "mistakes": [
+   "Starting the workflow with data collection instead of problem identification.",
+   "Confusing data analysis (finding patterns) with data interpretation (understanding results and drawing conclusions).",
+   "Treating data cleaning as the same as collecting data; cleaning means fixing errors and organizing data after collection.",
+   "Saying that visualization is only decoration; charts and graphs help people understand data.",
+   "Listing the fields of data science without explaining their roles: computer science handles and organizes data, mathematics and statistics analyse it, and business knowledge applies insights."
+  ]
+ }
+}

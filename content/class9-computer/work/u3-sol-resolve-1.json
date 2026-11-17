@@ -1,0 +1,101 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "3:3",
+   "figure": "NOT gate diagram:\nA ───|>o─── Y\n\nThe small circle at the output indicates inversion.",
+   "steps": [
+    "A NOT gate, also called an inverter, produces the complement of its input.",
+    "When the input is 0, the output is 1; when the input is 1, the output is 0.",
+    "Boolean expression: Y = NOT A (or Y = A̅).",
+    "Truth table:",
+    "A | Y",
+    "0 | 1",
+    "1 | 0"
+   ],
+   "finalAnswer": "A NOT gate reverses its input: Y = A̅."
+  },
+  {
+   "accept": [],
+   "id": "3:6",
+   "figure": "Example circuit for Y = A + B:\n\nA ───┐\n     ├── OR ─── Y\nB ───┘\n\nHere, + denotes the OR operation.",
+   "steps": [
+    "A truth table shows the output of a Boolean expression for every possible combination of its input values.",
+    "First, identify the input variables and the number of input combinations. For n inputs, there are 2ⁿ combinations.",
+    "List all possible input combinations, using 0 and 1 for each input.",
+    "Evaluate the Boolean expression for each combination and enter the result in the output column.",
+    "Example: Construct the truth table for Y = A + B, where + denotes OR.",
+    "The inputs A and B have 2² = 4 possible combinations.",
+    "Truth table:",
+    "A | B | Y = A + B",
+    "0 | 0 | 0",
+    "0 | 1 | 1",
+    "1 | 0 | 1",
+    "1 | 1 | 1"
+   ],
+   "finalAnswer": "A truth table lists every input combination and the output obtained by evaluating the Boolean expression."
+  },
+  {
+   "accept": [],
+   "id": "3:8",
+   "figure": "Half-adder circuit:\n\nA ──┬── XOR ── S\n    │\nB ──┴── AND ── C\n\nFull-adder circuit using two XOR gates, two AND gates and one OR gate:\n\nA ─────┐\n       ├── XOR ── X ──┐\nB ─────┘               ├── XOR ── S\nCin ───────────────────┘\n\nA ─────┐\n       ├── AND ── P ──┐\nB ─────┘               │\n                       ├── OR ── Cout\nX ─────┐               │\n       ├── AND ── Q ──┘\nCin ───┘",
+   "steps": [
+    "A half-adder adds two one-bit binary numbers. It has two inputs, A and B, and two outputs, Sum (S) and Carry (C).",
+    "Half-adder Boolean expressions: S = A XOR B; C = A AND B.",
+    "Half-adder truth table:",
+    "A | B | S | C",
+    "0 | 0 | 0 | 0",
+    "0 | 1 | 1 | 0",
+    "1 | 0 | 1 | 0",
+    "1 | 1 | 0 | 1",
+    "A full-adder adds three one-bit inputs: A, B and the carry input (Cin). It has two outputs, Sum (S) and Carry output (Cout).",
+    "Full-adder Boolean expressions: S = A XOR B XOR Cin; Cout = (A AND B) OR (A AND Cin) OR (B AND Cin).",
+    "Full-adder truth table:",
+    "A | B | Cin | S | Cout",
+    "0 | 0 | 0 | 0 | 0",
+    "0 | 0 | 1 | 1 | 0",
+    "0 | 1 | 0 | 1 | 0",
+    "0 | 1 | 1 | 0 | 1",
+    "1 | 0 | 0 | 1 | 0",
+    "1 | 0 | 1 | 0 | 1",
+    "1 | 1 | 0 | 0 | 1",
+    "1 | 1 | 1 | 1 | 1",
+    "A half-adder has no carry input, so it is used to add two bits when there is no incoming carry.",
+    "A full-adder has a carry input, so it can add two bits together with the carry from the previous stage."
+   ],
+   "finalAnswer": "A half-adder adds two bits; a full-adder adds two bits and an incoming carry."
+  },
+  {
+   "accept": [],
+   "id": "3:10",
+   "figure": "4-bit ripple-carry adder (A0 and B0 are the least significant bits):\n\nA0 ─────┐\n        ├── HA ── S0\nB0 ─────┘       └── C1 ─────────┐\n                                │\nA1 ────────────────────────┐    │\n                           ├── FA ── S1\nB1 ────────────────────────┘    └── C2 ─────────┐\nCin = C1 ────────────────────────┘               │\n                                                 │\nA2 ───────────────────────────────────────┐     │\n                                           ├── FA ── S2\nB2 ───────────────────────────────────────┘     └── C3 ─────────┐\nCin = C2 ────────────────────────────────────────┘               │\n                                                                 │\nA3 ───────────────────────────────────────────────────────┐      │\n                                                          ├── FA ── S3\nB3 ───────────────────────────────────────────────────────┘      └── C4\nCin = C3 ─────────────────────────────────────────────────┘\n\nThe final result is C4 S3 S2 S1 S0.",
+   "steps": [
+    "To add two 4-bit binary numbers, connect one half-adder and three full-adders in series. The carry output of each stage becomes the carry input of the next stage.",
+    "Let the two numbers be A3A2A1A0 and B3B2B1B0, where A0 and B0 are the least significant bits.",
+    "Stage 1: Connect A0 and B0 to a half-adder. S0 = A0 XOR B0; C1 = A0 AND B0.",
+    "Stages 2–4: Connect A1, B1, C1 to the first full-adder; A2, B2, C2 to the second full-adder; and A3, B3, C3 to the third full-adder.",
+    "For each full-adder stage i (i = 1, 2, 3): Si = Ai XOR Bi XOR Ci; Ci+1 = (Ai AND Bi) OR (Ai AND Ci) OR (Bi AND Ci).",
+    "The outputs are S3S2S1S0, with C4 as the final carry. Thus, the complete sum is C4S3S2S1S0.",
+    "Half-adder truth table (used for the least significant bit):",
+    "A | B | S | C",
+    "0 | 0 | 0 | 0",
+    "0 | 1 | 1 | 0",
+    "1 | 0 | 1 | 0",
+    "1 | 1 | 0 | 1",
+    "Full-adder truth table (used for the other three bits):",
+    "A | B | Cin | S | Cout",
+    "0 | 0 | 0 | 0 | 0",
+    "0 | 0 | 1 | 1 | 0",
+    "0 | 1 | 0 | 1 | 0",
+    "0 | 1 | 1 | 0 | 1",
+    "1 | 0 | 0 | 1 | 0",
+    "1 | 0 | 1 | 0 | 1",
+    "1 | 1 | 0 | 0 | 1",
+    "1 | 1 | 1 | 1 | 1",
+    "Half-adder Boolean expressions: S = A XOR B; C = A AND B.",
+    "Full-adder Boolean expressions: S = A XOR B XOR Cin; Cout = (A AND B) OR (A AND Cin) OR (B AND Cin)."
+   ],
+   "finalAnswer": "A 4-bit adder uses one half-adder for the least significant bits and three cascaded full-adders for the remaining bits."
+  }
+ ]
+}

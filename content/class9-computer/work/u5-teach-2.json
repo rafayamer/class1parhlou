@@ -1,0 +1,947 @@
+{
+ "note": {
+  "explanation": "System software helps the computer and its hardware work properly and provides a platform for applications. Its main parts in this section are operating systems, utility programs and device drivers.",
+  "examples": [
+   "Windows is an operating system that manages computer resources and provides a user interface.",
+   "A printer driver translates computer instructions into instructions the printer can understand."
+  ],
+  "checkAnswer": "A device driver helps the operating system and a hardware device communicate.",
+  "keywords": [
+   "system software",
+   "operating system",
+   "utility programs",
+   "device drivers",
+   "GUI",
+   "CLI"
+  ],
+  "simple": "System software is the computer's helper software: it manages the computer, keeps it working well and helps it communicate with devices.",
+  "checkQuestion": "What does a device driver help the computer and a hardware device do?",
+  "title": "Introduction to System Software",
+  "steps": [
+   "An operating system manages the computer's hardware and software.",
+   "It manages resources such as the CPU, memory, disk drives and peripheral devices.",
+   "It provides a user interface, such as a GUI or CLI, and runs applications.",
+   "Utility programs help maintain the computer, protect it or manage files.",
+   "Device drivers translate instructions so that the operating system and hardware devices can communicate."
+  ],
+  "answer": "System software manages computer resources, supports applications and helps hardware devices work with the operating system.",
+  "checkAccept": [
+   [
+    "communicate"
+   ],
+   [
+    "instructions"
+   ],
+   [
+    "p:translat"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It manages hardware and software and provides an interface for users.",
+    "It creates documents for users.",
+    "It scans only for viruses.",
+    "It translates documents into another language."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes the role of an operating system?",
+   "rationales": [
+    "This is correct because an operating system manages hardware and software and provides a way for users and applications to interact with the computer.",
+    "This is incorrect because creating documents is a task of application software.",
+    "This is incorrect because virus scanning is a function of antivirus utility software.",
+    "This is incorrect because document translation is not the operating system's main role."
+   ]
+  },
+  {
+   "options": [
+    "Command-Line Interface",
+    "Graphical User Interface",
+    "Backup interface",
+    "Device-driver interface"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which type of user interface uses windows, icons and menus?",
+   "rationales": [
+    "This is incorrect because a command-line interface requires users to type text commands.",
+    "This is correct because a graphical user interface uses visual elements such as windows, icons and menus.",
+    "This is incorrect because backup is a utility function, not one of the two user-interface types described.",
+    "This is incorrect because a device driver helps hardware communicate with the operating system; it is not this type of user interface."
+   ]
+  },
+  {
+   "options": [
+    "A GUI",
+    "A CLI",
+    "A backup program",
+    "A printer driver"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which interface requires the user to type text commands?",
+   "rationales": [
+    "This is incorrect because a GUI uses visual elements such as icons and menus.",
+    "This is correct because a command-line interface requires users to type commands.",
+    "This is incorrect because a backup program copies files or folders for recovery.",
+    "This is incorrect because a printer driver enables communication with a printer."
+   ]
+  },
+  {
+   "options": [
+    "Disk Cleanup",
+    "Antivirus software",
+    "Backup software",
+    "File compression tools"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which utility scans for temporary and other unnecessary files that can safely be deleted?",
+   "rationales": [
+    "This is correct because Disk Cleanup scans for temporary, cached and other unnecessary files.",
+    "This is incorrect because antivirus software scans for viruses and malware.",
+    "This is incorrect because backup software saves copies of files and folders for later recovery.",
+    "This is incorrect because file compression tools reduce file size and can place files in an archive."
+   ]
+  },
+  {
+   "options": [
+    "It checks the printer for viruses.",
+    "It translates computer instructions into instructions the printer can understand.",
+    "It creates a backup of printed documents.",
+    "It compresses the printer's files."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What does a printer driver do?",
+   "rationales": [
+    "This is incorrect because virus scanning is a task of antivirus software.",
+    "This is correct because a printer driver helps the computer send the correct signals to the printer.",
+    "This is incorrect because a printer driver does not create backups.",
+    "This is incorrect because compressing files is not the printer driver's role."
+   ]
+  },
+  {
+   "options": [
+    "To allocate CPU time and memory to applications",
+    "To change the computer's wallpaper",
+    "To create ZIP archives",
+    "To scan email attachments for malware"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "When several applications run at the same time, how does the operating system help them run?",
+   "rationales": [
+    "This is correct because the operating system manages resources such as CPU time and memory for applications.",
+    "This is incorrect because changing wallpaper is not the resource-management function described.",
+    "This is incorrect because creating archives is a function of file compression tools.",
+    "This is incorrect because scanning for malware is a function of antivirus software."
+   ]
+  },
+  {
+   "options": [
+    "A ZIP archive",
+    "A real-time virus scan",
+    "A regular copy of files to cloud storage",
+    "A printer driver update"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which action is an example of using backup software?",
+   "rationales": [
+    "This is incorrect because a ZIP archive is made using file compression tools.",
+    "This is incorrect because real-time protection is a function of antivirus software.",
+    "This is correct because backup software can schedule copies of files to cloud storage or another location.",
+    "This is incorrect because a driver update helps a hardware device work with the operating system."
+   ]
+  },
+  {
+   "options": [
+    "To reduce file size and make transfer easier",
+    "To allocate CPU time to a file",
+    "To install an operating system",
+    "To scan files for known malware signatures"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why might someone compress a large folder before emailing it?",
+   "rationales": [
+    "This is correct because compression reduces file size and can make uploading and sending easier and quicker.",
+    "This is incorrect because allocating CPU time is managed by the operating system.",
+    "This is incorrect because installing an operating system is not the purpose of file compression.",
+    "This is incorrect because scanning for malware is a function of antivirus software."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Define system software and provide two examples.",
+   "finalAnswer": "System software manages and supports the operation of a computer system. Examples include an operating system and a device driver.",
+   "marks": 2,
+   "source": "Short 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:manag"
+      ],
+      [
+       "p:support"
+      ]
+     ],
+     "marks": 1,
+     "why": "The definition establishes what system software does.",
+     "description": "Defines system software as software that manages or supports the computer system.",
+     "how": "State that it manages or supports the operation of the computer system."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "driver"
+      ],
+      [
+       "windows",
+       "linux"
+      ],
+      [
+       "utility"
+      ]
+     ],
+     "marks": 1,
+     "why": "Examples show that the student can identify system software.",
+     "description": "Gives two valid examples.",
+     "how": "Name two, such as an operating system and a device driver."
+    }
+   ],
+   "modelAnswer": [
+    "System software manages and supports the operation of a computer system.",
+    "Examples include an operating system and a device driver."
+   ]
+  },
+  {
+   "text": "Explain the primary functions of an operating system.",
+   "finalAnswer": "An operating system manages hardware resources, provides a user interface and runs applications. It allocates resources such as CPU time and memory and helps applications run without interfering with each other.",
+   "marks": 2,
+   "source": "Short 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hardware",
+       "resources"
+      ],
+      [
+       "cpu",
+       "memory"
+      ]
+     ],
+     "marks": 1,
+     "why": "Resource management is a primary operating-system function.",
+     "description": "Explains that the operating system manages computer resources.",
+     "how": "Mention hardware resources such as CPU time or memory."
+    },
+    {
+     "accept": [
+      [
+       "user interface"
+      ],
+      [
+       "gui"
+      ],
+      [
+       "runs applications"
+      ],
+      [
+       "p:application"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify other core functions, not only resource management.",
+     "description": "Names providing an interface or running applications.",
+     "how": "State that the OS provides a user interface and/or loads and runs applications."
+    }
+   ],
+   "modelAnswer": [
+    "The operating system manages hardware resources such as the CPU, memory, disk drives and peripheral devices.",
+    "It provides a user interface and loads and runs applications.",
+    "It allocates resources and helps applications run efficiently without interfering with each other."
+   ]
+  },
+  {
+   "text": "What is utility software and why is it important?",
+   "finalAnswer": "Utility software consists of programs that help maintain and manage a computer system. It is important because it supports efficient, secure and reliable operation; examples include Disk Cleanup, antivirus software, backup software and file compression tools.",
+   "marks": 2,
+   "source": "Short 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "p:program"
+      ],
+      [
+       "p:maintain"
+      ],
+      [
+       "p:manage"
+      ]
+     ],
+     "marks": 1,
+     "why": "A definition is needed to distinguish utility software from other software.",
+     "description": "Defines utility software as programs that help manage or maintain a computer system.",
+     "how": "Describe its role in maintaining or managing the system."
+    },
+    {
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "efficiency"
+      ],
+      [
+       "disk cleanup"
+      ],
+      [
+       "antivirus"
+      ],
+      [
+       "backup"
+      ]
+     ],
+     "marks": 1,
+     "why": "Its importance is shown through the benefits or examples given.",
+     "description": "Explains a benefit and/or gives valid utility examples.",
+     "how": "Mention security, efficiency, reliability or a relevant utility program."
+    }
+   ],
+   "modelAnswer": [
+    "Utility software consists of programs that help maintain and manage a computer system.",
+    "It is important because it supports efficient, secure and reliable operation.",
+    "Examples include Disk Cleanup, antivirus software, backup software and file compression tools."
+   ]
+  },
+  {
+   "text": "Describe the role of device drivers in a computer system.",
+   "finalAnswer": "Device drivers facilitate communication between hardware devices and the operating system. They translate general instructions from the computer into specific instructions that a device can understand; for example, a printer driver helps the computer send the correct signals to a printer.",
+   "marks": 2,
+   "source": "Short 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hardware",
+       "operating system"
+      ],
+      [
+       "device",
+       "communicate"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must identify the communication role of drivers.",
+     "description": "Explains that drivers facilitate communication between hardware and the operating system.",
+     "how": "State which parts communicate through the driver."
+    },
+    {
+     "accept": [
+      [
+       "p:translat"
+      ],
+      [
+       "printer",
+       "signals"
+      ],
+      [
+       "specific instructions"
+      ]
+     ],
+     "marks": 1,
+     "why": "Translation or an accurate device example shows how the role works.",
+     "description": "Explains instruction translation or gives an appropriate example.",
+     "how": "Mention a printer driver or explain how instructions are converted for a device."
+    }
+   ],
+   "modelAnswer": [
+    "Device drivers facilitate communication between hardware devices and the operating system.",
+    "A driver translates general instructions from the computer into specific instructions that a device can understand.",
+    "For example, a printer driver helps the computer send the correct signals to the printer."
+   ]
+  },
+  {
+   "text": "Differentiate between system software and application software with examples.",
+   "finalAnswer": "System software manages and supports the computer system and provides an environment for applications to run; examples include an operating system and device drivers. Application software is designed for specific tasks for users; Microsoft Word is an example.",
+   "marks": 2,
+   "source": "Short 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manages",
+       "system"
+      ],
+      [
+       "operating system",
+       "driver"
+      ]
+     ],
+     "marks": 1,
+     "why": "The distinction depends on explaining the purpose of system software.",
+     "description": "Describes system software and gives a suitable example.",
+     "how": "State that it manages or supports the computer system and name an example."
+    },
+    {
+     "accept": [
+      [
+       "specific tasks",
+       "microsoft word"
+      ],
+      [
+       "user",
+       "application"
+      ]
+     ],
+     "marks": 1,
+     "why": "The comparison is complete only when application software is also described.",
+     "description": "Describes application software and gives a suitable example.",
+     "how": "Say that it performs specific user tasks and give an example such as Microsoft Word."
+    }
+   ],
+   "modelAnswer": [
+    "System software manages and supports the computer system and provides an environment for applications to run.",
+    "Examples of system software are an operating system and device drivers.",
+    "Application software is designed to perform specific tasks for users.",
+    "Microsoft Word is an example of application software."
+   ]
+  },
+  {
+   "text": "Discuss the importance of system software in a computing system.",
+   "finalAnswer": "System software is important because it manages computer hardware and software and provides a stable environment for applications to run. The operating system manages resources, provides a user interface and runs applications. Utility programs help maintain efficiency, security and reliability, while device drivers enable communication between the operating system and hardware devices.",
+   "marks": 8,
+   "source": "Long 5.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "manages",
+       "hardware"
+      ],
+      [
+       "stable environment"
+      ]
+     ],
+     "marks": 2,
+     "why": "The response should establish why system software is needed in the whole computer system.",
+     "description": "Explains that system software manages hardware and supports a stable environment for applications.",
+     "how": "Describe system software's overall role in operating the computer and supporting applications."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "resources"
+      ],
+      [
+       "user interface",
+       "applications"
+      ]
+     ],
+     "marks": 2,
+     "why": "The operating system is a central part of system software.",
+     "description": "Explains operating-system functions.",
+     "how": "Mention resource management, a user interface or running applications."
+    },
+    {
+     "accept": [
+      [
+       "utility",
+       "security"
+      ],
+      [
+       "disk cleanup"
+      ],
+      [
+       "antivirus"
+      ]
+     ],
+     "marks": 2,
+     "why": "Utilities contribute to a computer's maintenance and safe operation.",
+     "description": "Explains the contribution of utility programs with examples.",
+     "how": "Name a utility and connect it to maintenance, performance, security or backups."
+    },
+    {
+     "accept": [
+      [
+       "device driver",
+       "communicat"
+      ],
+      [
+       "driver",
+       "hardware"
+      ]
+     ],
+     "marks": 2,
+     "why": "The concluding point must show how devices work with the operating system.",
+     "description": "Explains the role of device drivers and gives the correct final point.",
+     "how": "State that drivers facilitate communication between hardware devices and the operating system."
+    }
+   ],
+   "modelAnswer": [
+    "System software is important because it manages the hardware and software of a computer and provides a stable environment for application software to run.",
+    "The operating system manages resources such as the CPU, memory, disk drives and peripheral devices.",
+    "It provides a user interface and loads, runs and manages applications.",
+    "Utility programs support the efficient, secure and reliable operation of the computer.",
+    "For example, Disk Cleanup removes unnecessary files, antivirus software scans for threats and backup software saves copies of files.",
+    "Device drivers facilitate communication between hardware devices and the operating system.",
+    "For example, a printer driver helps the computer send the correct signals to a printer.",
+    "Therefore, system software helps the computer, its applications and its hardware devices work together."
+   ]
+  },
+  {
+   "text": "Describe the roles of operating systems, utility software, and device drivers, providing examples of each.",
+   "finalAnswer": "An operating system manages computer hardware and software, provides a user interface and runs applications; Windows is an example. Utility software helps maintain and manage the computer; Disk Cleanup and antivirus software are examples. Device drivers facilitate communication between hardware and the operating system; a printer driver is an example.",
+   "marks": 8,
+   "source": "Long 5.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "operating system",
+       "manages",
+       "windows"
+      ],
+      [
+       "operating system",
+       "resources",
+       "user interface"
+      ]
+     ],
+     "marks": 3,
+     "why": "The answer must describe the operating system's role and support it with an example.",
+     "description": "Explains operating-system functions and gives an example.",
+     "how": "Mention management of hardware/software, resources, interface or applications, and name an OS."
+    },
+    {
+     "accept": [
+      [
+       "utility",
+       "disk cleanup"
+      ],
+      [
+       "utility",
+       "antivirus"
+      ],
+      [
+       "utility",
+       "backup"
+      ]
+     ],
+     "marks": 3,
+     "why": "Utility software is a distinct category and needs a role and example.",
+     "description": "Explains what utility software does and gives a valid example.",
+     "how": "Connect a utility to maintenance, security, backup or file compression."
+    },
+    {
+     "accept": [
+      [
+       "device driver",
+       "printer"
+      ],
+      [
+       "driver",
+       "communicat"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final category is correctly identified when its device-communication role is explained.",
+     "description": "Explains the driver role and gives an example.",
+     "how": "State that a driver enables communication and name a printer driver or another device driver."
+    }
+   ],
+   "modelAnswer": [
+    "An operating system manages the hardware and software on a computer.",
+    "It manages resources, provides a user interface and runs applications; Windows is an example.",
+    "Utility software performs tasks that help maintain and manage the computer system.",
+    "Disk Cleanup removes unnecessary files, while antivirus software scans files and incoming data for known threats.",
+    "Device drivers facilitate communication between hardware devices and the operating system.",
+    "A printer driver helps the computer send the correct signals to a printer."
+   ]
+  },
+  {
+   "text": "Explain the differences between system software and application software.",
+   "finalAnswer": "System software manages and supports the computer system and provides an environment for applications to run; examples include operating systems, utility programs and device drivers. Application software performs specific tasks for users, such as creating documents or presentations; Microsoft Word is an example.",
+   "marks": 8,
+   "source": "Long 5.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "system software",
+       "manages",
+       "computer"
+      ],
+      [
+       "system software",
+       "hardware"
+      ]
+     ],
+     "marks": 2,
+     "why": "The definition of system software is the basis of the comparison.",
+     "description": "Explains the purpose of system software.",
+     "how": "State that it manages or supports the computer system."
+    },
+    {
+     "accept": [
+      [
+       "operating system",
+       "driver"
+      ],
+      [
+       "utility",
+       "operating system"
+      ]
+     ],
+     "marks": 2,
+     "why": "Examples make the system-software category clear.",
+     "description": "Gives valid examples of system software.",
+     "how": "Name examples such as an operating system, utility program or device driver."
+    },
+    {
+     "accept": [
+      [
+       "specific tasks",
+       "users"
+      ],
+      [
+       "application software",
+       "user"
+      ]
+     ],
+     "marks": 2,
+     "why": "The purpose of application software must be contrasted with system software.",
+     "description": "Explains that application software performs user tasks.",
+     "how": "Describe it as software designed for specific tasks for users."
+    },
+    {
+     "accept": [
+      [
+       "microsoft word"
+      ],
+      [
+       "documents"
+      ],
+      [
+       "presentation"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant application example completes the comparison.",
+     "description": "Gives an application example and the correct final distinction.",
+     "how": "Name an example such as Microsoft Word and connect it to a user task."
+    }
+   ],
+   "modelAnswer": [
+    "System software manages and supports the computer system and provides an environment for applications to run.",
+    "Examples of system software include operating systems, utility programs and device drivers.",
+    "Application software is designed to perform specific tasks for users.",
+    "For example, Microsoft Word is used to create and edit text documents.",
+    "Thus, system software supports and manages the computer, while application software helps users perform particular tasks."
+   ]
+  },
+  {
+   "text": "Describe the process of using utility software to optimize system performance and maintain security. Provide detailed steps and examples of common utility tools.",
+   "finalAnswer": "Use Disk Cleanup to scan for and remove unnecessary files, antivirus software to scan files and incoming data and provide real-time protection, and backup software to schedule copies of files to an external drive, cloud storage or a network location. File compression tools can reduce file sizes for storage or transfer.",
+   "marks": 8,
+   "source": "Long 5.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "disk cleanup",
+       "temporary"
+      ],
+      [
+       "disk cleanup",
+       "unnecessary"
+      ]
+     ],
+     "marks": 2,
+     "why": "Removing unnecessary files is one described way to reclaim disk space.",
+     "description": "Explains Disk Cleanup and its effect.",
+     "how": "Say that it scans for and removes temporary, cached or unnecessary files."
+    },
+    {
+     "accept": [
+      [
+       "antivirus",
+       "malware"
+      ],
+      [
+       "antivirus",
+       "real-time"
+      ],
+      [
+       "antivirus",
+       "virus"
+      ]
+     ],
+     "marks": 2,
+     "why": "Security maintenance requires identifying the antivirus function.",
+     "description": "Explains how antivirus software protects the computer.",
+     "how": "Mention scanning for viruses or malware and/or real-time protection."
+    },
+    {
+     "accept": [
+      [
+       "backup",
+       "external"
+      ],
+      [
+       "backup",
+       "cloud"
+      ],
+      [
+       "backup",
+       "network"
+      ]
+     ],
+     "marks": 2,
+     "why": "Backups help recover files and are an important maintenance step.",
+     "description": "Explains regular backups and gives a storage location.",
+     "how": "Describe scheduling copies to an external drive, cloud storage or network location."
+    },
+    {
+     "accept": [
+      [
+       "compression",
+       "file size"
+      ],
+      [
+       "zip",
+       "transfer"
+      ],
+      [
+       "zip",
+       "storage"
+      ]
+     ],
+     "marks": 2,
+     "why": "This completes the answer with another utility and its appropriate purpose.",
+     "description": "Explains file compression and gives the correct final point.",
+     "how": "State that compression reduces file size for storage or transfer."
+    }
+   ],
+   "modelAnswer": [
+    "Run Disk Cleanup to scan the hard drive for temporary, cached and other unnecessary files that can safely be deleted.",
+    "Removing these files can reclaim disk space and may improve performance.",
+    "Use antivirus software to scan files and incoming data for known viruses and malware signatures.",
+    "Keep its real-time protection enabled to help prevent virus attacks.",
+    "Schedule backup software to copy files and folders to an external drive, cloud storage or a network location.",
+    "Backups allow files to be retrieved if they are accidentally deleted.",
+    "Use file compression tools to place one or more files in an archive such as ZIP.",
+    "Compression reduces file size, making files easier to store or transfer."
+   ]
+  },
+  {
+   "text": "Explain how to install, update, and troubleshoot device drivers for hardware components.",
+   "finalAnswer": "When a new device is connected, install its driver if needed so it can communicate with the operating system. Keep the driver updated to ensure compatibility and optimal performance. If the device does not work correctly, check that the driver is installed and up to date and verify that the device and driver are compatible.",
+   "marks": 8,
+   "source": "Long 5.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "install",
+       "driver",
+       "device"
+      ],
+      [
+       "new device",
+       "driver"
+      ]
+     ],
+     "marks": 2,
+     "why": "Installation is the first stage described for a newly connected device.",
+     "description": "Describes installing a driver when required for a new device.",
+     "how": "Explain that a new device often requires its driver to be installed."
+    },
+    {
+     "accept": [
+      [
+       "update",
+       "compatibility"
+      ],
+      [
+       "latest driver",
+       "performance"
+      ],
+      [
+       "driver updates"
+      ]
+     ],
+     "marks": 2,
+     "why": "Updates support compatibility and optimal performance.",
+     "description": "Describes keeping the driver updated.",
+     "how": "Mention checking for the latest driver updates and why they matter."
+    },
+    {
+     "accept": [
+      [
+       "check",
+       "installed"
+      ],
+      [
+       "troubleshoot",
+       "driver"
+      ],
+      [
+       "verify",
+       "compatibility"
+      ]
+     ],
+     "marks": 2,
+     "why": "Troubleshooting should include checking the driver and its compatibility.",
+     "description": "Gives a sensible driver troubleshooting check.",
+     "how": "Check that the driver is installed, current and compatible with the device."
+    },
+    {
+     "accept": [
+      [
+       "communicat",
+       "operating system"
+      ],
+      [
+       "device",
+       "driver",
+       "operating system"
+      ]
+     ],
+     "marks": 2,
+     "why": "The correct final point links driver maintenance to the driver's purpose.",
+     "description": "Explains the driver's communication role.",
+     "how": "Conclude that drivers let the operating system and hardware device communicate and work together."
+    }
+   ],
+   "modelAnswer": [
+    "When you connect a new device, install its driver if one is needed.",
+    "The driver translates general instructions from the computer into instructions the device can understand.",
+    "Check for the latest driver updates to ensure compatibility and optimal performance.",
+    "If the device does not work correctly, check that the driver is installed and up to date.",
+    "Also check that the driver is compatible with the hardware device.",
+    "A correctly installed and updated driver helps the device and the operating system work together smoothly."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short questions asking for definitions, functions or examples of operating systems, utility programs and device drivers.",
+   "A long question may ask you to describe all three categories of system software. Give each category its role and at least one example.",
+   "For operating-system functions, earn marks by naming resource management, the user interface and running applications, then briefly explaining them.",
+   "For utility questions, match the tool to its job: Disk Cleanup removes unnecessary files, antivirus software scans for threats, backup software saves copies, and compression tools reduce file size.",
+   "For a device-driver answer, state both that it enables communication between hardware and the operating system and how it translates instructions."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the operating system as a manager of computer parts and programs.",
+     "Include its resource management, user interface and application-running roles."
+    ],
+    "accept": [
+     [
+      "hardware",
+      "resources"
+     ],
+     [
+      "user interface"
+     ],
+     [
+      "applications"
+     ]
+    ],
+    "question": "Explain the primary functions of an operating system.",
+    "solution": [
+     "The operating system manages hardware resources such as the CPU, memory, disk drives and peripheral devices.",
+     "It provides a user interface, such as a GUI or CLI, for users to interact with the computer.",
+     "It loads applications into memory, allocates resources and manages their execution.",
+     "It helps applications run efficiently without interfering with each other."
+    ],
+    "answer": "An operating system manages hardware resources, provides a user interface and runs applications efficiently."
+   },
+   {
+    "hints": [
+     "A driver is a kind of translator.",
+     "Say what two things communicate and use the printer-driver example."
+    ],
+    "accept": [
+     [
+      "hardware",
+      "operating system"
+     ],
+     [
+      "p:translat"
+     ],
+     [
+      "printer",
+      "driver"
+     ]
+    ],
+    "question": "Describe the role of device drivers in a computer system.",
+    "solution": [
+     "Device drivers facilitate communication between hardware devices and the operating system.",
+     "A driver translates general instructions from the computer into specific instructions that the device can understand.",
+     "For example, a printer driver helps the computer send the correct signals to a printer."
+    ],
+    "answer": "Device drivers help the operating system and hardware devices communicate by translating instructions; a printer driver is one example."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The operating system must first load the application so that it can run.",
+     "text": "When you open a word processor like Microsoft Word, the operating system loads the application into the computer's memory"
+    },
+    {
+     "why": "The application needs processing time from the CPU to carry out its tasks.",
+     "text": "and allocates CPU time for it to run."
+    },
+    {
+     "why": "This explains how the operating system manages more than one application at once.",
+     "text": "If you open multiple applications, the OS manages the distribution of resources so that all applications can run simultaneously without performance issues."
+    }
+   ],
+   "question": "When you open a word processor like Microsoft Word, what does the operating system do?",
+   "answer": "It loads the application into memory and allocates CPU time for it to run."
+  },
+  "explain": [
+   {
+    "title": "Operating system",
+    "body": "An Operating System (OS) is a type of system software that manages all the hardware and software on a computer. It acts as an intermediary between the computer hardware and the user applications. It ensures that programs do not interfere with one another and gives applications a consistent way to interact with hardware."
+   },
+   {
+    "title": "Operating-system functions",
+    "body": "The OS manages resources such as the CPU, memory, disk drives and peripheral devices. It provides a user interface and loads applications into memory, allocates resources and manages their execution."
+   },
+   {
+    "title": "Two kinds of user interface",
+    "body": "A Graphical User Interface (GUI) uses visual elements such as windows, icons and menus. A Command-Line Interface (CLI) requires users to type text commands; it can be more flexible and powerful but more difficult for beginners."
+   },
+   {
+    "title": "Utility programs",
+    "body": "Utility programs help maintain and manage a computer. Disk Cleanup removes unnecessary files; antivirus software scans for viruses and malware; backup software saves copies of files; file compression tools reduce file size and can create archives such as ZIP or RAR."
+   },
+   {
+    "title": "Device drivers",
+    "body": "A device driver is like a translator between the computer and its gadgets. Device drivers facilitate communication between hardware devices and the operating system. For example, a printer driver helps the computer send the correct signals to a printer."
+   }
+  ],
+  "mistakes": [
+   "Do not say that an operating system only runs applications; it also manages hardware resources and provides a user interface.",
+   "Do not confuse a GUI, which uses visual elements, with a CLI, which requires typed commands.",
+   "Do not mix up utility jobs: antivirus software scans for threats, while backup software saves copies for recovery.",
+   "Do not describe a device driver as the device itself; it helps the operating system and device communicate.",
+   "In a longer answer, do not merely list software names; state the function of each and give a matching example."
+  ]
+ }
+}

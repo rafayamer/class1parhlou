@@ -1,0 +1,110 @@
+{
+ "shortTheory": [
+  {
+   "question": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "answer": "The first step in troubleshooting is to identify the problem. This means recognizing that something is not working as it should."
+  },
+  {
+   "question": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "answer": "Once you have identified the problem, the next step is to come up with a theory about what might be causing it. This involves thinking about what could have gone wrong."
+  },
+  {
+   "question": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "answer": "After establishing a theory, you need to test it to see if it is correct. This involves checking if the suspected cause is actually the reason for the problem. For example, if you think the laptop's battery is dead, you can test this theory by plugging in the power cord and seeing if the computer turns on."
+  },
+  {
+   "question": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "answer": "Once you have a plan, you need to put it into action. This means doing whatever is necessary to fix the problem."
+  },
+  {
+   "question": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "answer": "After implementing the solution, you need to check to make sure that the problem is fully resolved and the system is working properly again."
+  }
+ ],
+ "definitions": [
+  {
+   "term": "Downtime",
+   "text": "Downtime occurs when a computer system is not operational."
+  },
+  {
+   "term": "Data integrity",
+   "text": "Data integrity means ensuring that data is accurate and reliable."
+  },
+  {
+   "term": "Peripherals",
+   "text": "Peripherals are external devices like keyboards, mice, and printers."
+  },
+  {
+   "term": "Data Management and Backups",
+   "text": "Data Management and Backups mean storing, and organizing data so it is easy to find and use. It helps make sure the data is available, accurate, and ready when needed. Regular backups involve making copies of data regularly to ensure it can be recovered if it is lost, damaged, or during a disaster."
+  },
+  {
+   "term": "Systematic process of troubleshooting",
+   "text": "A systematic approach to troubleshooting involves the following steps:\n\n1. Identify Problem\n2. Establish a Theory of Probable Cause\n3. Test the Theory to Determine the Cause\n4. Establish a Plan of Action to Resolve the Problem\n5. Implement the Solution\n6. Verify Full System Functionality\n7. Document Findings, Actions, and Outcomes"
+  }
+ ],
+ "formulas": [],
+ "fullMarks": [
+  "For a question about the troubleshooting process, write the steps in the correct order and use the step names as printed.",
+  "For a step-based answer, explain what the step does and add a relevant example where the question asks for one.",
+  "For a case study, first state the observed problem, then give a probable cause and explain how you would test it. Do not present an untested guess as a confirmed cause.",
+  "When describing hardware failures, list the symptoms clearly and pair them with an appropriate diagnostic method.",
+  "For backup questions, explain both external storage and cloud solutions, including how each helps recover or access data.",
+  "For an importance question, use separate points and connect each benefit—such as less downtime, data integrity, or improved performance—to a clear outcome.",
+  "Finish by answering the question directly; for example, state whether the system works properly after verification or what the backup method protects."
+ ],
+ "important": [
+  {
+   "ref": "Short 4.1: What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "why": "Directly tests the first step and has a short-question slot in the pattern."
+  },
+  {
+   "ref": "Short 4.2: After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "why": "Tests the next step in the ordered process and its purpose."
+  },
+  {
+   "ref": "Short 4.3: Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "why": "A standard short question on checking a probable cause with an example."
+  },
+  {
+   "ref": "Short 4.4: Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "why": "A direct question on one of the named troubleshooting steps."
+  },
+  {
+   "ref": "Short 4.5: Why is it necessary to verify full system functionality after implementing a solution?",
+   "why": "Tests the purpose of the verification step after a fix."
+  },
+  {
+   "ref": "Long 4.1: Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "why": "A broad question that can assess several benefits from the unit."
+  },
+  {
+   "ref": "Long 4.2: Explain the systematic process of troubleshooting. Describe each step in detail.",
+   "why": "Covers the complete seven-step process; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+  },
+  {
+   "ref": "Long 4.3: Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "why": "A practical scenario for applying problem identification and probable-cause reasoning; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+  },
+  {
+   "ref": "Long 4.4: Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "why": "Tests the final step and why a record helps with future problems; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+  },
+  {
+   "ref": "Long 4.7: Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+   "why": "A focused question on listed symptoms and diagnostic tools; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+  },
+  {
+   "ref": "Long 4.10: Describe the different data backup methods, including using external storage devices and cloud solutions.",
+   "why": "Tests the two backup methods described in the unit; note that the 2027 pattern does not assign a Unit 4 long-question slot."
+  }
+ ],
+ "mistakes": [
+  "Mixing up the order of the seven troubleshooting steps. Fix: learn them in sequence, from Identify Problem to Document Findings, Actions, and Outcomes.",
+  "Treating a suspected cause as proven before testing it. Fix: explain how the theory will be tested before deciding that it is the cause.",
+  "Skipping verification after applying a fix. Fix: state how you will check that the problem is resolved and the system works properly.",
+  "Giving RAM or hard-drive symptoms without naming a diagnostic method. Fix: pair RAM symptoms with a memory diagnostic tool and drive symptoms with a SMART status check or drive-health tool.",
+  "Describing cloud backup as a physical copy kept beside the computer. Fix: state that cloud storage keeps files online and allows access over an internet connection.",
+  "Writing only that documentation is useful without saying what to record. Fix: include the problem, suspected cause, actions taken, and outcome."
+ ]
+}

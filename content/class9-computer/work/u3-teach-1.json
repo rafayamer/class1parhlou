@@ -1,0 +1,383 @@
+{
+ "note": {
+  "explanation": "An analog signal changes smoothly and can take any value in a range. A digital signal has only two possible values, 0 and 1. An ADC changes an analog signal into digital form; a DAC changes digital data back into an analog signal.",
+  "examples": [
+   "A voice entering a microphone is an analog signal; an ADC converts it into digital data.",
+   "A DAC converts digital data into an analog signal that a speaker turns into sound."
+  ],
+  "checkAnswer": "An ADC converts analog signals into digital signals.",
+  "keywords": [
+   "analog",
+   "digital",
+   "ADC",
+   "DAC",
+   "continuous",
+   "binary",
+   "logic levels"
+  ],
+  "simple": "Analog is smooth and can have many values. Digital uses just 0 and 1. ADC changes analog to digital; DAC changes digital to analog.",
+  "checkQuestion": "Which converter changes an analog signal into a digital signal?",
+  "title": "Analog and Digital Signals",
+  "steps": [
+   "A microphone captures sound waves, which are analog signals.",
+   "An ADC converts the analog signal into digital data made of 0s and 1s.",
+   "The digital data can be processed, stored, or transmitted.",
+   "A DAC changes the digital data back into an analog signal.",
+   "A speaker turns the analog signal into sound waves."
+  ],
+  "answer": "An ADC converts analog signals into digital signals.",
+  "checkAccept": [
+   [
+    "ADC"
+   ],
+   [
+    "analog to digital converter"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It changes smoothly and continuously with time.",
+    "It has only the values 0 and 1.",
+    "It is always stored as binary data.",
+    "It can only be produced by a computer."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes an analog signal?",
+   "rationales": [
+    "This is correct: an analog signal changes smoothly and continuously over time.",
+    "This describes a digital signal, not an analog signal.",
+    "Binary data is digital, so this is not the defining feature of an analog signal.",
+    "Analog signals occur in natural examples such as sound and temperature, not only in computers."
+   ]
+  },
+  {
+   "options": [
+    "Continuous values across a range",
+    "Only the values 0 and 1",
+    "An unlimited number of binary digits at every instant",
+    "Only values greater than 5 volts"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which values are used by digital signals in this section?",
+   "rationales": [
+    "Continuous values across a range describe analog signals.",
+    "This is correct: digital signals have two values, 0 and 1.",
+    "A digital signal uses two possible values; this option does not describe them.",
+    "The section does not define digital signals by values greater than 5 volts."
+   ]
+  },
+  {
+   "options": [
+    "DAC",
+    "ADC",
+    "Speaker",
+    "Microphone"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which device operation converts an analog signal into digital form?",
+   "rationales": [
+    "A DAC converts digital data back into an analog signal.",
+    "This is correct: an ADC converts an analog signal into digital form.",
+    "A speaker produces sound from an analog signal; it does not perform the stated conversion.",
+    "A microphone captures sound, but the conversion into digital form is done by an ADC."
+   ]
+  },
+  {
+   "options": [
+    "ADC",
+    "DAC",
+    "Binary data",
+    "Logic level"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which operation converts digital data back into an analog signal?",
+   "rationales": [
+    "An ADC converts in the opposite direction, from analog to digital.",
+    "This is correct: a DAC converts digital data into an analog signal.",
+    "Binary data is digital information, not the converter that changes it to analog.",
+    "A logic level represents a digital state; it is not the converter."
+   ]
+  },
+  {
+   "options": [
+    "Sound waves",
+    "Binary data in a computer",
+    "A digital signal",
+    "A logic level"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is an example of an analog signal?",
+   "rationales": [
+    "This is correct: sound waves are given as an example of an analog signal.",
+    "Binary data is an example of digital information.",
+    "A digital signal has discrete values rather than continuously changing values.",
+    "A logic level represents a digital state, not an analog signal."
+   ]
+  },
+  {
+   "options": [
+    "A high voltage such as 5 volts conventionally represents 0.",
+    "A low voltage such as 0 volts conventionally represents 1.",
+    "A high voltage such as 5 volts conventionally represents 1.",
+    "Voltage levels are not used to represent digital states."
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "In the convention described in the section, what does a higher voltage such as 5 volts represent?",
+   "rationales": [
+    "The section says a higher voltage conventionally represents binary 1, not 0.",
+    "The section says a low voltage such as 0 volts represents binary 0, not 1.",
+    "This is correct: a higher voltage such as 5 volts conventionally represents binary 1.",
+    "Different voltage levels represent the two digital states and are called logic levels."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Sound Waves\n\nLet us consider a situation where one person is speaking into a microphone while the other person is receiving sound through speakers as illustrated in the figure 3.1.",
+   "finalAnswer": "The microphone captures voice as analog sound waves. An ADC converts the sound signal into digital data, which can be transmitted with little or no degradation. At the receiver, a DAC converts the digital signal back into an analog signal, and the speakers turn it into sound waves.",
+   "marks": 8,
+   "source": "Example 3.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "microphone",
+       "analog"
+      ],
+      [
+       "sound waves"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must identify the voice captured by the microphone as an analog signal.",
+     "description": "Identify the voice and microphone input as sound waves or an analog signal.",
+     "how": "State that speaking produces sound waves and that these are analog signals captured by the microphone."
+    },
+    {
+     "accept": [
+      [
+       "ADC",
+       "digital"
+      ],
+      [
+       "analog to digital"
+      ]
+     ],
+     "marks": 2,
+     "why": "The conversion at the sending end is a key part of the signal path.",
+     "description": "Explain the microphone-side conversion.",
+     "how": "State that an ADC converts the analog sound signal into digital data."
+    },
+    {
+     "accept": [
+      [
+       "transmit"
+      ],
+      [
+       "transmitted"
+      ],
+      [
+       "long distances"
+      ]
+     ],
+     "marks": 2,
+     "why": "The digital data is transmitted to the receiver with little or no degradation.",
+     "description": "Describe the transmission of the digital data.",
+     "how": "Mention that the digital data can be transmitted over long distances with little or no degradation in quality."
+    },
+    {
+     "accept": [
+      [
+       "DAC",
+       "speaker",
+       "sound waves"
+      ],
+      [
+       "digital to analog",
+       "speaker"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must complete the process at the receiving end and give the correct outcome.",
+     "description": "Explain the receiver-side conversion and output.",
+     "how": "State that a DAC changes the digital signal back into an analog signal, which the speakers turn into sound waves."
+    }
+   ],
+   "modelAnswer": [
+    "A person speaking into a microphone produces sound waves, which are analog signals.",
+    "The microphone captures these sound waves.",
+    "An ADC converts the analog signal into digital data.",
+    "The digital data can be transmitted over long distances with little or no degradation in quality.",
+    "At the receiver, a DAC converts the digital signals back into analog signals.",
+    "The speakers translate these analog signals into sound waves.",
+    "The listener hears the other person's voice."
+   ]
+  },
+  {
+   "text": "Q3.3. Explain the difference between analog and digital signals.",
+   "finalAnswer": "Analog signals change smoothly and continuously over time and can have any value within a given range. Digital signals have only two values, 0 and 1.",
+   "marks": 2,
+   "source": "Short 3.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "continuously",
+       "any value"
+      ],
+      [
+       "continuous",
+       "range"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states the key property that distinguishes an analog signal.",
+     "description": "Describe analog signals.",
+     "how": "Say that analog signals change continuously and can have any value within a range."
+    },
+    {
+     "accept": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "two values"
+      ]
+     ],
+     "marks": 1,
+     "why": "This gives the defining values used by a digital signal and completes the comparison.",
+     "description": "Give the final distinction for digital signals.",
+     "how": "State that digital signals have only two values, 0 and 1."
+    }
+   ],
+   "modelAnswer": [
+    "Analog signals change with time smoothly and continuously and can have any value within a given range.",
+    "Digital signals have only two values, 0 and 1."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to compare analog and digital signals. State that analog signals are continuous and can have any value in a range, while digital signals have only 0 and 1.",
+   "Be ready to explain the direction of conversion: ADC changes analog to digital; DAC changes digital to analog.",
+   "For a microphone-and-speaker example, write the full signal path in order: sound waves, microphone, ADC, digital data, DAC, speaker, sound waves.",
+   "A question about logic levels may ask what the voltage states represent. Use the convention in your textbook: a higher voltage such as 5 volts represents 1, and a low voltage such as 0 volts represents 0."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about whether each type of signal changes continuously or uses separate values.",
+     "Include the possible values for a digital signal and the range of possible values for an analog signal."
+    ],
+    "accept": [
+     [
+      "analog",
+      "continuously",
+      "digital",
+      "0",
+      "1"
+     ],
+     [
+      "continuous",
+      "range",
+      "two values"
+     ]
+    ],
+    "question": "Q3.3. Explain the difference between analog and digital signals.",
+    "solution": [
+     "Analog signals change with time smoothly and continuously.",
+     "Analog signals can have any value within a given range.",
+     "Digital signals have only two values, 0 and 1."
+    ],
+    "answer": "Analog signals change smoothly and continuously and can have any value within a range; digital signals have only two values, 0 and 1."
+   },
+   {
+    "hints": [
+     "A truth table lists the possible input values.",
+     "It also shows the output for each input combination, so you can check how a logic operation behaves."
+    ],
+    "accept": [
+     [
+      "input combinations",
+      "output"
+     ],
+     [
+      "possible inputs",
+      "outputs"
+     ],
+     [
+      "truth table",
+      "logic operation"
+     ]
+    ],
+    "question": "Q3.2. What is the significance of the truth table in digital logic?",
+    "solution": [
+     "A truth table lists the possible input combinations for a digital logic operation.",
+     "It shows the output for each input combination.",
+     "It makes the behaviour of the logic operation clear."
+    ],
+    "answer": "A truth table shows the output of a digital logic operation for every possible input combination."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The microphone receives the speaker's voice as sound waves, which are analog signals.",
+     "text": "A person speaking into a microphone produces sound waves, which are analog signals."
+    },
+    {
+     "why": "The ADC changes the captured analog signal into a form a digital system can process.",
+     "text": "An ADC converts the analog sound signal into digital data."
+    },
+    {
+     "why": "Digital data can be sent over long distances with little or no loss of quality.",
+     "text": "The digital data can be transmitted over long distances with little or no degradation in quality."
+    },
+    {
+     "why": "A DAC changes the received digital signal back into a form that can be heard.",
+     "text": "At the receiver, a DAC converts the digital signals back into analog signals."
+    },
+    {
+     "why": "The speaker turns the analog signal into sound waves for the listener.",
+     "text": "The speakers translate these analog signals into sound waves."
+    }
+   ],
+   "question": "Let us consider a situation where one person is speaking into a microphone while the other person is receiving sound through speakers as illustrated in the figure 3.1.",
+   "answer": "The microphone captures sound as an analog signal. An ADC converts it into digital data for transmission. At the receiver, a DAC converts the digital data back into an analog signal, and the speakers produce sound waves."
+  },
+  "explain": [
+   {
+    "title": "Analog signals",
+    "body": "Analog signals are signals that changes with time smoothly and continuously over time. They can have any value within given range. Examples include voice signal (speaking), body's temperature and radio-wave signals."
+   },
+   {
+    "title": "Digital signals",
+    "body": "Digital signals are the signals which have only two values that are in the form of '0' and '1'. These are utilized in digital electronics and computing systems."
+   },
+   {
+    "title": "ADC and DAC",
+    "body": "Analog to Digital Conversion (ADC): ADC is the conversion of analog signals into digital signals, which are discrete and can be easily processed by computerized devices like computers and smart phones. Digital to Analog Conversion (DAC): DAC is the conversion whereby analog signals are converted to digital signals, making it possible for human to perceive the information, for instance through speakers, as depicted in figure 3. 1."
+   },
+   {
+    "title": "Digital logic and logic levels",
+    "body": "Digital logic uses binary numbers, 0 and 1, to represent and manipulate information. In digital circuits, the two states are represented by different voltage levels. Conventionally, a higher voltage such as 5 volts refers to binary 1, while a low voltage such as 0 volts refers to binary 0. These voltage levels are called logic levels."
+   }
+  ],
+  "mistakes": [
+   "Do not reverse ADC and DAC: ADC means analog to digital, while DAC means digital to analog.",
+   "Do not describe analog signals as having only 0 and 1; that is the description of digital signals.",
+   "Do not say digital signals have infinitely many possible values; the section describes them as having two values.",
+   "When writing the microphone-to-speaker process, do not leave out either converter.",
+   "Do not reverse the conventional logic levels: 5 volts represents 1, and 0 volts represents 0."
+  ]
+ }
+}

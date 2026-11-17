@@ -1,0 +1,516 @@
+{
+ "note": {
+  "explanation": "A number system uses a base to decide its place values and which digits are allowed. To convert from decimal, divide by the new base and read the remainders from bottom to top. To convert a binary number to decimal, add the place values of its 1s.",
+  "examples": [
+   "83₁₀ = 1010011₂",
+   "83₁₀ = 123₈"
+  ],
+  "checkAnswer": "1010₂ = 10₁₀",
+  "keywords": [
+   "number system",
+   "decimal",
+   "binary",
+   "octal",
+   "hexadecimal",
+   "base",
+   "remainder"
+  ],
+  "simple": "A base tells you how many different digit values a number system uses. For example, binary uses only 0 and 1, while octal uses 0 through 7.",
+  "checkQuestion": "Convert 1010₂ to decimal.",
+  "title": "Numbering Systems: Bases and Conversion",
+  "steps": [
+   "Identify the base you are converting from and the base you are converting to.",
+   "For decimal to binary, octal or hexadecimal, divide repeatedly by 2, 8 or 16, respectively.",
+   "Write down each remainder and continue until the quotient is 0.",
+   "Read the remainders from bottom to top.",
+   "For binary to decimal, multiply each digit by its place value and add the results."
+  ],
+  "answer": "The number systems in this section are decimal (base 10), binary (base 2), octal (base 8), and hexadecimal (base 16).",
+  "checkAccept": [
+   [
+    "10"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "Base 2, using digits 0 and 1",
+    "Base 8, using digits 0 to 7",
+    "Base 10, using digits 0 to 9",
+    "Base 16, using digits 0 to 9 and A to F"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement correctly describes the binary number system?",
+   "rationales": [
+    "Correct: binary is base 2 and uses the digits 0 and 1.",
+    "Incorrect: this describes the octal system.",
+    "Incorrect: this describes the decimal system.",
+    "Incorrect: this describes the hexadecimal system."
+   ]
+  },
+  {
+   "options": [
+    "101101₂",
+    "10201₂",
+    "1102₂",
+    "1A01₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which of the following is a valid binary number?",
+   "rationales": [
+    "Correct: every digit is either 0 or 1.",
+    "Incorrect: the digit 2 is not allowed in binary.",
+    "Incorrect: the digit 2 is not allowed in binary.",
+    "Incorrect: the letter A is not a binary digit."
+   ]
+  },
+  {
+   "options": [
+    "1101₂",
+    "101₂",
+    "111₂",
+    "1001₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the decimal value of 1101₂?",
+   "rationales": [
+    "Correct: 1 × 2³ + 1 × 2² + 0 × 2¹ + 1 × 2⁰ = 13.",
+    "Incorrect: 101₂ is 5 in decimal.",
+    "Incorrect: 111₂ is 7 in decimal.",
+    "Incorrect: 1001₂ is 9 in decimal."
+   ]
+  },
+  {
+   "options": [
+    "73₈",
+    "63₈",
+    "37₈",
+    "83₈"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Convert 59₁₀ to octal.",
+   "rationales": [
+    "Correct: 59 ÷ 8 gives remainders 3 and 7, read bottom to top as 73₈.",
+    "Incorrect: 63₈ equals 51₁₀.",
+    "Incorrect: 37₈ equals 31₁₀.",
+    "Incorrect: 8 is not a permitted octal digit."
+   ]
+  },
+  {
+   "options": [
+    "2A₁₆",
+    "2B₁₆",
+    "1A₁₆",
+    "A2₁₆"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Convert 42₁₀ to hexadecimal.",
+   "rationales": [
+    "Correct: 42 ÷ 16 gives remainder 10 (A) and quotient 2, so the result is 2A₁₆.",
+    "Incorrect: 2B₁₆ equals 43₁₀.",
+    "Incorrect: 1A₁₆ equals 26₁₀.",
+    "Incorrect: A2₁₆ equals 162₁₀."
+   ]
+  },
+  {
+   "options": [
+    "4 bits",
+    "3 bits",
+    "2 bits",
+    "8 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How many binary bits correspond to one hexadecimal digit?",
+   "rationales": [
+    "Correct: 16 = 2⁴, so each hexadecimal digit corresponds to four bits.",
+    "Incorrect: three bits correspond to one octal digit.",
+    "Incorrect: two bits can represent only four different values.",
+    "Incorrect: eight bits correspond to a byte, not one hexadecimal digit."
+   ]
+  },
+  {
+   "options": [
+    "653₈",
+    "635₈",
+    "653₁₀",
+    "563₈"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Convert 110101011₂ to octal.",
+   "rationales": [
+    "Correct: group from the right as 110 101 011, which gives 6, 5, 3.",
+    "Incorrect: the groups give 6, 5, 3, not 6, 3, 5.",
+    "Incorrect: the conversion gives an octal numeral, not a decimal numeral.",
+    "Incorrect: the groups give 6, 5, 3, not 5, 6, 3."
+   ]
+  },
+  {
+   "options": [
+    "8F9₁₆",
+    "8F8₁₆",
+    "9F8₁₆",
+    "8E9₁₆"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Convert 2297₁₀ to hexadecimal.",
+   "rationales": [
+    "Correct: repeated division gives remainders 9, 15 (F), and 8, read bottom to top as 8F9₁₆.",
+    "Incorrect: the middle remainder is 15, which is F, not 8.",
+    "Incorrect: the remainders read bottom to top begin with 8, not 9.",
+    "Incorrect: the middle remainder is 15, which is F, not E."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Example 2.1: Convert 83 to binary",
+   "finalAnswer": "1010011₂",
+   "marks": 2,
+   "source": "Example 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "83",
+       "41",
+       "1"
+      ]
+     ],
+     "marks": 1,
+     "why": "The repeated divisions and remainders establish the binary digits.",
+     "description": "Correct repeated division by 2 with remainders.",
+     "how": "Divide by 2 until the quotient is 0 and record each remainder."
+    },
+    {
+     "accept": [
+      [
+       "1010011"
+      ]
+     ],
+     "marks": 1,
+     "why": "The remainders must be read in the required order to give the answer.",
+     "description": "Correct binary result read from bottom to top.",
+     "how": "Read the recorded remainders from bottom to top."
+    }
+   ],
+   "modelAnswer": [
+    "83 / 2 = 41 remainder 1",
+    "41 / 2 = 20 remainder 1",
+    "20 / 2 = 10 remainder 0",
+    "10 / 2 = 5 remainder 0",
+    "5 / 2 = 2 remainder 1",
+    "2 / 2 = 1 remainder 0",
+    "1 / 2 = 0 remainder 1",
+    "Reading the remainders from bottom to top gives 1010011₂."
+   ]
+  },
+  {
+   "text": "Example 2.2: Consider the 9-bit binary number 110101011₂. This number can be divided into groups of three Bits from right to left:",
+   "finalAnswer": "653₈",
+   "marks": 2,
+   "source": "Example 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "110 101 011"
+      ],
+      [
+       "110101011"
+      ]
+     ],
+     "marks": 1,
+     "why": "Grouping from the right preserves the binary place values for conversion to octal.",
+     "description": "Correct groups of three bits.",
+     "how": "Group the bits from right to left in sets of three."
+    },
+    {
+     "accept": [
+      [
+       "653"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each group must be mapped to its corresponding octal digit.",
+     "description": "Correct octal result.",
+     "how": "Convert each group to one octal digit and keep the group order."
+    }
+   ],
+   "modelAnswer": [
+    "110 101 011",
+    "110₂ = 6",
+    "101₂ = 5",
+    "011₂ = 3",
+    "So, 110101011₂ = 653₈."
+   ]
+  },
+  {
+   "text": "Example 2.3: Convert 83 to octal",
+   "finalAnswer": "123₈",
+   "marks": 2,
+   "source": "Example 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "83",
+       "8",
+       "3"
+      ],
+      [
+       "10",
+       "8",
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct division by 8 produces the remainders needed for the conversion.",
+     "description": "Correct repeated division by 8 and remainders.",
+     "how": "Continue dividing the quotient by 8 until it becomes 0."
+    },
+    {
+     "accept": [
+      [
+       "123"
+      ]
+     ],
+     "marks": 1,
+     "why": "The remainders give the answer only when read from bottom to top.",
+     "description": "Correct octal result.",
+     "how": "Read the remainders from bottom to top."
+    }
+   ],
+   "modelAnswer": [
+    "83 / 8 = 10 remainder 3",
+    "10 / 8 = 1 remainder 2",
+    "1 / 8 = 0 remainder 1",
+    "Reading the remainders from bottom to top gives 123₈."
+   ]
+  },
+  {
+   "text": "Example 2.4: Therefore, the binary number 1101011010110010 equals to the hexadecimal number D6B2.",
+   "finalAnswer": "D6B2₁₆",
+   "marks": 2,
+   "source": "Example 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1101",
+       "0110",
+       "1011",
+       "0010"
+      ]
+     ],
+     "marks": 1,
+     "why": "Four-bit groups correspond to single hexadecimal digits.",
+     "description": "Correct four-bit grouping.",
+     "how": "Group the binary digits from the right in sets of four."
+    },
+    {
+     "accept": [
+      [
+       "D6B2"
+      ],
+      [
+       "D",
+       "6",
+       "B",
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each four-bit group must be converted to the correct hexadecimal digit.",
+     "description": "Correct hexadecimal result.",
+     "how": "Use the binary-to-hexadecimal correspondence for each group."
+    }
+   ],
+   "modelAnswer": [
+    "1101  0110  1011  0010",
+    "1101 = D",
+    "0110 = 6",
+    "1011 = B",
+    "0010 = 2",
+    "Therefore, 1101011010110010₂ = D6B2₁₆."
+   ]
+  },
+  {
+   "text": "Example 2.5: Convert 2297 to hexadecimal",
+   "finalAnswer": "8F9₁₆",
+   "marks": 2,
+   "source": "Example 2.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2297",
+       "16",
+       "9"
+      ],
+      [
+       "143",
+       "16",
+       "F"
+      ]
+     ],
+     "marks": 1,
+     "why": "Repeated division by 16 gives the hexadecimal remainders.",
+     "description": "Correct repeated division and remainders.",
+     "how": "Divide by 16 repeatedly until the quotient is 0; write 15 as F."
+    },
+    {
+     "accept": [
+      [
+       "8F9"
+      ]
+     ],
+     "marks": 1,
+     "why": "Reading the remainders in the correct order gives the final hexadecimal number.",
+     "description": "Correct hexadecimal result.",
+     "how": "Read the remainders from bottom to top."
+    }
+   ],
+   "modelAnswer": [
+    "2297 / 16 = 143 remainder 9",
+    "143 / 16 = 8 remainder F",
+    "8 / 16 = 0 remainder 8",
+    "Reading the remainders from bottom to top gives 8F9₁₆."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question on this section may ask you to convert a number between decimal, binary, octal, and hexadecimal.",
+   "For decimal-to-base conversions, show each division, quotient, and remainder; reading the remainders from bottom to top is an important marked step.",
+   "For binary-to-octal or binary-to-hexadecimal conversions, show the groups of three or four bits and then the digit corresponding to each group.",
+   "In place-value conversions to decimal, show each digit multiplied by its power of the base, then add the terms.",
+   "Check that each digit is allowed in its number system: binary uses 0–1, octal 0–7, decimal 0–9, and hexadecimal 0–9 and A–F."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Divide 45 by 8 and write down the remainder.",
+     "Keep dividing each quotient by 8 until it becomes 0, then read the remainders upwards for each number."
+    ],
+    "accept": [
+     [
+      "55",
+      "200",
+      "100"
+     ]
+    ],
+    "question": "Work in pairs to convert the following decimal numbers to octal: 45, 128, 64.",
+    "solution": [
+     "45 / 8 = 5 remainder 5",
+     "5 / 8 = 0 remainder 5",
+     "Reading from bottom to top: 45₁₀ = 55₈.",
+     "128 / 8 = 16 remainder 0",
+     "16 / 8 = 2 remainder 0",
+     "2 / 8 = 0 remainder 2",
+     "Reading from bottom to top: 128₁₀ = 200₈.",
+     "64 / 8 = 8 remainder 0",
+     "8 / 8 = 1 remainder 0",
+     "1 / 8 = 0 remainder 1",
+     "Reading from bottom to top: 64₁₀ = 100₈."
+    ],
+    "answer": "45₁₀ = 55₈, 128₁₀ = 200₈, and 64₁₀ = 100₈."
+   },
+   {
+    "hints": [
+     "Write the octal digits as coefficients of powers of 8, starting with 8⁰ at the right.",
+     "For each number, multiply the digits by their place values and add the results."
+    ],
+    "accept": [
+     [
+      "47",
+      "84",
+      "193"
+     ]
+    ],
+    "question": "Convert these octal numbers to decimal: 57, 124, 301.",
+    "solution": [
+     "57₈ = 5 × 8¹ + 7 × 8⁰ = 40 + 7 = 47₁₀.",
+     "124₈ = 1 × 8² + 2 × 8¹ + 4 × 8⁰ = 64 + 16 + 4 = 84₁₀.",
+     "301₈ = 3 × 8² + 0 × 8¹ + 1 × 8⁰ = 192 + 0 + 1 = 193₁₀."
+    ],
+    "answer": "57₈ = 47₁₀, 124₈ = 84₁₀, and 301₈ = 193₁₀."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The first division gives the first remainder, which will become the rightmost binary digit.",
+     "text": "83 / 2 = 41 remainder 1"
+    },
+    {
+     "why": "Continue dividing the quotient by 2 and record the remainder each time.",
+     "text": "41 / 2 = 20 remainder 1"
+    },
+    {
+     "why": "The quotient is divided again, and its remainder is recorded.",
+     "text": "20 / 2 = 10 remainder 0"
+    },
+    {
+     "why": "Continue until the quotient becomes 0.",
+     "text": "10 / 2 = 5 remainder 0"
+    },
+    {
+     "why": "This division gives another remainder for the binary number.",
+     "text": "5 / 2 = 2 remainder 1"
+    },
+    {
+     "why": "Keep dividing the quotient and recording the remainder.",
+     "text": "2 / 2 = 1 remainder 0"
+    },
+    {
+     "why": "The quotient is now 0, so the divisions stop.",
+     "text": "1 / 2 = 0 remainder 1"
+    },
+    {
+     "why": "The algorithm reads the remainders from bottom to top.",
+     "text": "Reading the remainders from bottom to top gives 1010011₂."
+    }
+   ],
+   "question": "Convert 83 to binary",
+   "answer": "83₁₀ = 1010011₂"
+  },
+  "explain": [
+   {
+    "title": "Decimal uses base 10",
+    "body": "The decimal number system is a base-10 number system that consists of digit from 0 to 9 and we use it in everyday life. That's why each digit of the number represents a power of 10. In the decimal system the place values starting from the rightmost digits are 10⁰, 10¹, 10², and so on. For example, 523 = 5 × 10² + 2 × 10¹ + 3 × 10⁰ = 523."
+   },
+   {
+    "title": "Binary uses base 2",
+    "body": "In binary, the place values are arranged from the right to left, starting with 2⁰, and ending at 2ⁿ,where each position represents a power of 2. Binary digits are 0 and 1. Computers use binary because digital circuits have two states: on and off, represented by 1 and 0."
+   },
+   {
+    "title": "Octal uses base 8",
+    "body": "Octal is a positional numeral system with base eight, which implies that a digit to be used ranges from 0 to 7. The last digit is a single digit power of 8 while the other digits are the coefficients. In the decimal system, the place values starting from the 8⁰, 8¹, 8² and so on. Each octal digit represents three binary digits (bits) because 8 = 2³."
+   },
+   {
+    "title": "Hexadecimal uses base 16",
+    "body": "The hexadecimal is a base 16 number system with digit number from 0 to 9 and alphabets from A to F; each digit represents 16 to the power of the position of the digit. The letter A to F stand for the numeric value of 10 to 15. Since 16 = 2⁴, each hexadecimal digit corresponds to four binary bits."
+   },
+   {
+    "title": "Convert by repeated division",
+    "body": "To convert a decimal number to binary, octal, or hexadecimal, repeatedly divide by 2, 8, or 16 respectively. Record each remainder, continue until the quotient is 0, then read the remainders from bottom to top."
+   }
+  ],
+  "mistakes": [
+   "Reading the remainders from top to bottom instead of bottom to top in decimal-to-base conversions.",
+   "Using a digit that is not allowed in the base, such as 2 in binary or 8 in octal.",
+   "For binary-to-octal or binary-to-hexadecimal conversions, grouping from the left instead of from the right.",
+   "Forgetting to add leading zeroes when a binary number needs complete groups of three or four bits.",
+   "Leaving out the place-value powers or arithmetic when converting a positional number to decimal."
+  ]
+ }
+}

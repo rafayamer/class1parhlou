@@ -1,0 +1,378 @@
+{
+ "unit": 10,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 10.8",
+   "MCQ 10.9",
+   "MCQ 10.10",
+   "Short 10.2",
+   "Short 10.7",
+   "Short 10.8",
+   "Short 10.9",
+   "Short 10.10",
+   "Long 10.2",
+   "Long 10.5",
+   "Long 10.6",
+   "Long 10.7",
+   "Long 10.8",
+   "Long 10.9"
+  ],
+  "definitions": [
+   {
+    "term": "Artificial Intelligence (AI)",
+    "text": "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+   },
+   {
+    "term": "Machine Learning",
+    "text": "Machine learning is a type of artificial intelligence where computers learn from experience and improve over time without being explicitly programmed."
+   },
+   {
+    "term": "Deep Learning",
+    "text": "Deep learning is a special kind of machine learning. It uses complex structures called neural networks, which are inspired by how our brains work."
+   },
+   {
+    "term": "Natural Language Processing (NLP)",
+    "text": "Natural Language Processing, or NLP, is a technology that helps computers understand and talk to us in our language."
+   },
+   {
+    "term": "Computer Vision",
+    "text": "Computer vision is a field of artificial intelligence that enables computers to see and understand the visual world."
+   },
+   {
+    "term": "Robotics",
+    "text": "Robotics is the science of building and programming robots."
+   },
+   {
+    "term": "Explainable (Whitebox) Algorithms",
+    "text": "Explainable or whitebox algorithms are those where the decision-making process is transparent and understandable."
+   },
+   {
+    "term": "Unexplainable (Blackbox) Algorithms",
+    "text": "Unexplainable or blackbox algorithms are those where the decision-making process is not easily interpretable."
+   },
+   {
+    "term": "Linear Regression",
+    "text": "Linear regression is a way to find the relationship between two features."
+   },
+   {
+    "term": "Rule-Based Systems",
+    "text": "Rule-based systems are like a set of \"if-then\" rules that computers follow to make decisions. These rules are written by humans to help the computer understand what to do in different situations."
+   },
+   {
+    "term": "Internet of Things (IoT)",
+    "text": "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet. This facilitates the development of new, innovative services and the implementation of more intelligent, efficient operations."
+   },
+   {
+    "term": "Sensors",
+    "text": "These are devices that detect and measure physical properties like temperature, humidity, light, and motion. Sensors collect data from the environment."
+   },
+   {
+    "term": "Actuators",
+    "text": "These are devices that convert energy into motion. In IoT, an actuator can act on data to generate output."
+   },
+   {
+    "term": "Devices in an IoT system",
+    "text": "These include everyday objects like smartwatches, refrigerators, and cars that are connected to the internet. Devices use the data collected by sensors to perform specific tasks."
+   },
+   {
+    "term": "Networks in an IoT system",
+    "text": "These are the communication pathways that connect sensors and devices to the internet, allowing them to share data. Networks can be wired or wireless."
+   },
+   {
+    "term": "Data Analysis in an IoT system",
+    "text": "This involves processing and analysing the data collected by sensors to gain insights and make decisions. Data analysis can be done on the device itself, in the cloud, or on a central server."
+   }
+  ],
+  "formulas": [],
+  "important": [
+   {
+    "ref": "Short 10.1",
+    "why": "A direct definition question and a strong 2-mark possibility."
+   },
+   {
+    "ref": "Short 10.3",
+    "why": "A straightforward application question that can be answered with examples stated in the unit."
+   },
+   {
+    "ref": "Short 10.4",
+    "why": "Tests the stated role of AI algorithms and techniques; a likely 2-mark explanation."
+   },
+   {
+    "ref": "Short 10.5",
+    "why": "A core unit definition and a strong 2-mark possibility."
+   },
+   {
+    "ref": "Short 10.6",
+    "why": "Tests the unit’s key explanation of why IoT is useful."
+   }
+  ],
+  "fullMarks": [
+   "For a definition question, begin with the term and reproduce its complete definition; do not replace key words such as “simulation,” “sensors,” or “exchange of data” with vague wording.",
+   "For a question asking for examples, give the requested number of clear examples. For healthcare AI, name uses such as diagnosing diseases and personalizing treatment plans.",
+   "For an explanation question, state the main idea first, then explain how it works or what benefit it provides. Link AI techniques to enabling machines to perform tasks that typically require human intelligence.",
+   "For IoT components, name the components clearly—sensors, actuators, devices, networks, and data analysis—and explain each component’s role in the system.",
+   "For an IoT working-process answer, show the connection: sensors collect data, networks share it, data analysis processes it, and devices or actuators use it to perform tasks or generate output.",
+   "For IoT significance, mention both the connection between the physical and digital worlds and the benefits of collecting and sharing data, such as improved efficiency and better services.",
+   "Use examples that directly match the domain in the question. For transportation IoT, include connected vehicles, smart traffic lights, or real-time tracking systems."
+  ],
+  "mistakes": [
+   "Mistake: Saying AI is simply a computer or robot. Fix: Explain that AI simulates human thinking ability so computer systems can think and learn in a manner like humans.",
+   "Mistake: Giving only one healthcare example when asked for two. Fix: Give two distinct uses, such as diagnosing diseases and personalizing treatment plans.",
+   "Mistake: Describing IoT as only internet-connected devices. Fix: Include that the devices exchange data and that IoT uses sensors, software, and other technologies.",
+   "Mistake: Mixing up sensors and actuators. Fix: Sensors detect and measure physical properties; actuators convert energy into motion and can act on data to generate output.",
+   "Mistake: Listing IoT components without explaining how they work together. Fix: Describe how data is collected, shared, analysed, and then used by devices or actuators.",
+   "Mistake: Giving general technology examples that do not answer the domain asked about. Fix: For transportation, use examples such as connected vehicles, smart traffic lights, and real-time tracking systems."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define Artificial Intelligence (AI).",
+    "answer": "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+   },
+   {
+    "question": "Provide two examples of AI applications in healthcare.",
+    "answer": "AI is used for diagnosing diseases, personalizing treatment plans, and predicting patient outcomes."
+   },
+   {
+    "question": "Explain the role of AI techniques in advancing machine learning models.",
+    "answer": "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+   },
+   {
+    "question": "Define the Internet of Things (IoT).",
+    "answer": "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet. This facilitates the development of new, innovative services and the implementation of more intelligent, efficient operations."
+   },
+   {
+    "question": "Describe the significance of IoT in connecting devices and systems.",
+    "answer": "IoT is significant because it allows for the seamless integration of the physical and digital worlds. This connection enables devices to collect and share data, which can be analysed to improve efficiency, provide better services, and create new opportunities in various fields such as healthcare, agriculture, and smart homes."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-10-1-t0",
+   "text": "Define Artificial Intelligence (AI).",
+   "marks": 2,
+   "modelAnswer": [
+    "Artificial Intelligence denotes the simulation of human thinking ability in computer systems to think and learn in a manner like humans."
+   ],
+   "followUp": "Define Artificial Intelligence (AI).",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "simulation",
+       "human thinking",
+       "computer systems"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies AI as simulating human thinking in computer systems.",
+     "description": "Simulation of human thinking ability in computer systems.",
+     "how": "Award 1 mark when the answer includes the simulation of human thinking in computer systems."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "think",
+       "learn",
+       "like humans"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that the systems think and learn in a human-like manner.",
+     "description": "Machines think and learn in a manner like humans.",
+     "how": "Award 1 mark when the answer says both think and learn, and indicates that this is like humans."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-10-1-t1",
+   "text": "Provide two examples of AI applications in healthcare.",
+   "marks": 2,
+   "modelAnswer": [
+    "AI is used for diagnosing diseases, personalizing treatment plans, and predicting patient outcomes."
+   ],
+   "followUp": "Provide two examples of AI applications in healthcare.",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "diagnosing diseases"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives one stated healthcare application of AI.",
+     "description": "Using AI to diagnose diseases.",
+     "how": "Award 1 mark for identifying disease diagnosis as an AI application in healthcare."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "personalizing treatment plans"
+      ],
+      [
+       "predicting patient outcomes"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives another stated healthcare application of AI.",
+     "description": "Personalizing treatment plans or predicting patient outcomes.",
+     "how": "Award 1 mark for identifying either application."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-10-1-t2",
+   "text": "Explain the role of AI techniques in advancing machine learning models.",
+   "marks": 2,
+   "modelAnswer": [
+    "Artificial Intelligence (AI) involves using algorithms and techniques to enable machines to perform tasks that typically require human intelligence."
+   ],
+   "followUp": "Explain the role of AI techniques in advancing machine learning models.",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "algorithms",
+       "techniques"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies algorithms and techniques as the means used by AI.",
+     "description": "AI involves using algorithms and techniques.",
+     "how": "Award 1 mark when both algorithms and techniques are mentioned."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "machines",
+       "tasks",
+       "human intelligence"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that these methods enable machines to perform tasks requiring human intelligence.",
+     "description": "Enabling machines to perform tasks that typically require human intelligence.",
+     "how": "Award 1 mark when the answer links machines performing tasks with human intelligence."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-10-1-t3",
+   "text": "Define the Internet of Things (IoT).",
+   "marks": 2,
+   "modelAnswer": [
+    "IoT is a network of physical objects, or \"things,\" that are equipped with sensors, software, and other technologies to facilitate the exchange of data with other devices and systems over the internet. This facilitates the development of new, innovative services and the implementation of more intelligent, efficient operations."
+   ],
+   "followUp": "Define the Internet of Things (IoT).",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "network",
+       "physical objects",
+       "sensors",
+       "software"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies IoT as a network of physical objects equipped with relevant technologies.",
+     "description": "A network of physical objects or things equipped with sensors and software.",
+     "how": "Award 1 mark when the answer identifies a network of physical objects and mentions sensors and software."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "exchange of data",
+       "devices",
+       "systems",
+       "internet"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that IoT enables data exchange with devices and systems over the internet.",
+     "description": "Facilitating data exchange with other devices and systems over the internet.",
+     "how": "Award 1 mark when the answer includes data exchange, other devices or systems, and the internet."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-10-1-t4",
+   "text": "Describe the significance of IoT in connecting devices and systems.",
+   "marks": 2,
+   "modelAnswer": [
+    "IoT is significant because it allows for the seamless integration of the physical and digital worlds. This connection enables devices to collect and share data, which can be analysed to improve efficiency, provide better services, and create new opportunities in various fields such as healthcare, agriculture, and smart homes."
+   ],
+   "followUp": "Describe the significance of IoT in connecting devices and systems.",
+   "noteId": "cs-n-10-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "physical",
+       "digital worlds",
+       "integration"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies IoT's role in integrating the physical and digital worlds.",
+     "description": "Seamless integration of the physical and digital worlds.",
+     "how": "Award 1 mark when the answer mentions integration or connection of the physical and digital worlds."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "collect",
+       "share data",
+       "improve efficiency"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that connected devices share data that can be used to improve efficiency.",
+     "description": "Devices collect and share data that can be analysed to improve efficiency.",
+     "how": "Award 1 mark when the answer links devices collecting and sharing data with improving efficiency."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 3,
+  "writtenBuilt": 5
+ }
+}

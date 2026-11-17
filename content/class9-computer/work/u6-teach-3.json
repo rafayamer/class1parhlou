@@ -1,0 +1,289 @@
+{
+ "note": {
+  "explanation": "A switch connects devices within a network and uses MAC addresses to send data to the intended device. A router connects different networks and directs data packets between them. An access point connects wireless devices to a wired network.",
+  "examples": [
+   "A switch sends a packet to the computer whose MAC address matches the packet’s destination address.",
+   "A router directs packets between a home network and another network."
+  ],
+  "checkAnswer": "A router directs data packets between different networks.",
+  "keywords": [
+   "switch",
+   "router",
+   "access point",
+   "MAC address",
+   "packet",
+   "wired network"
+  ],
+  "simple": "A switch directs data inside a network, a router directs data between networks, and an access point links wireless devices to a wired network.",
+  "checkQuestion": "What does a router do with data packets?",
+  "title": "Networking Devices",
+  "steps": [
+   "Identify whether the data is moving within one network or between networks.",
+   "For devices communicating within a network, a switch uses destination MAC addresses to forward data.",
+   "For data moving between networks, a router finds a path and directs the packets.",
+   "For wireless devices joining a wired network, an access point receives and transmits data wirelessly."
+  ],
+  "answer": "Switches connect and direct data between devices within a network; routers direct packets between networks; access points connect wireless devices to a wired network.",
+  "checkAccept": [
+   [
+    "router",
+    "directs data packets",
+    "between different networks"
+   ],
+   [
+    "router",
+    "packets",
+    "different networks"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It sends every packet to every connected device.",
+    "It uses destination MAC addresses to forward data to the intended device.",
+    "It assigns SIM cards to computers.",
+    "It connects only wireless devices to the internet."
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How does a switch usually forward a packet after it has learned devices’ addresses?",
+   "rationales": [
+    "This is incorrect because the switch forwards data only to the device with the matching destination MAC address.",
+    "This is correct because a switch reads the destination MAC address and sends the packet to the matching device.",
+    "This is incorrect because a SIM card identifies a subscriber on a mobile network and is not assigned by a switch.",
+    "This is incorrect because a switch connects multiple network devices and is not limited to wireless devices."
+   ]
+  },
+  {
+   "options": [
+    "It interconnects networks and directs data packets between them.",
+    "It translates domain names into MAC addresses.",
+    "It connects only printers within one network.",
+    "It transmits data only through radio waves."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes the role of a router?",
+   "rationales": [
+    "This is correct because routers interconnect networks and direct packets between them.",
+    "This is incorrect because the section does not describe a router as translating domain names into MAC addresses.",
+    "This is incorrect because connecting devices within a network is associated with a switch, and routers are not limited to printers.",
+    "This is incorrect because transmitting data wirelessly is part of an access point’s role, not the router’s only role."
+   ]
+  },
+  {
+   "options": [
+    "A hardware address used by a device",
+    "A list of possible routes used by a router",
+    "A cable connecting an access point to a computer",
+    "A mobile internet subscription"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "What does a router use to help decide the best path for data packets?",
+   "rationales": [
+    "This is incorrect because the section identifies a MAC address as a device’s hardware address used by a switch.",
+    "This is correct because a routing table lists possible paths and helps a router choose an efficient route.",
+    "This is incorrect because an Ethernet cable is a connection medium, not a list of paths.",
+    "This is incorrect because a mobile subscription does not provide the router with a list of packet routes."
+   ]
+  },
+  {
+   "options": [
+    "It connects wireless devices to a wired network.",
+    "It assigns MAC addresses to routers.",
+    "It replaces the need for all network devices.",
+    "It sends packets only between different networks."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the main role of an Access Point (AP)?",
+   "rationales": [
+    "This is correct because an access point facilitates wireless devices’ connection to a wired network.",
+    "This is incorrect because the section does not say that access points assign MAC addresses.",
+    "This is incorrect because an access point is itself a networking device and does not replace all other devices.",
+    "This is incorrect because directing packets between different networks is the router’s role."
+   ]
+  },
+  {
+   "options": [
+    "It receives data from the wired network and transmits it wirelessly to devices.",
+    "It stores every packet permanently.",
+    "It changes wireless devices into wired devices.",
+    "It uses destination MAC addresses to choose a route between networks."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does an access point send data to wireless devices?",
+   "rationales": [
+    "This is correct because an access point receives wired-network data and transmits it wirelessly to devices.",
+    "This is incorrect because the section describes transmitting and receiving data, not permanently storing every packet.",
+    "This is incorrect because an access point connects wireless devices to a wired network; it does not change the devices themselves.",
+    "This is incorrect because forwarding by destination MAC address within a network describes a switch."
+   ]
+  },
+  {
+   "options": [
+    "A switch works at the Data Link layer and uses MAC addresses.",
+    "A switch works only through a SIM card.",
+    "A switch uses radio waves to connect wireless devices to a wired network.",
+    "A switch finds the best path between different networks."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about a switch is correct?",
+   "rationales": [
+    "This is correct because the section places the switch at Layer 2, the Data Link layer, and says it uses MAC addresses.",
+    "This is incorrect because the section associates a SIM card with identifying a subscriber on a mobile network, not with switch operation.",
+    "This is incorrect because connecting wireless devices to a wired network is the access point’s role.",
+    "This is incorrect because finding paths between networks is the router’s role."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Explain the role of routers in a computer network.",
+   "finalAnswer": "A router interconnects networks and directs data packets between them. It finds the best path for each packet to deliver it to its destination.",
+   "marks": 2,
+   "source": "Short 6.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "interconnects networks"
+      ],
+      [
+       "connects different networks"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies what networks a router connects.",
+     "description": "States that a router interconnects networks.",
+     "how": "Write that a router connects or interconnects different networks."
+    },
+    {
+     "accept": [
+      [
+       "directs data packets",
+       "between"
+      ],
+      [
+       "finds the best path",
+       "packets"
+      ]
+     ],
+     "marks": 1,
+     "why": "This explains how a router handles data travelling between networks.",
+     "description": "States that a router directs packets or finds their best path.",
+     "how": "Mention that the router directs packets between networks or finds the best path to their destination."
+    }
+   ],
+   "modelAnswer": [
+    "A router interconnects networks or allows devices to connect to it.",
+    "It directs data packets between different networks.",
+    "Its main job is to find the best path for each packet to deliver it to its destination."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to explain the role of a router. State that it interconnects networks and directs data packets between them.",
+   "Questions may ask you to distinguish a switch, router, and access point. Link each device to its main job.",
+   "For a question about a switch, mention the Data Link layer and MAC addresses; explain that it forwards data to the device with the destination address.",
+   "For a question about an access point, include both directions of data transfer: it receives from the wired network and transmits wirelessly, and it sends wireless-device data back to the wired network."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the device that connects separate networks.",
+     "Include what it does with packets and how it chooses a path."
+    ],
+    "accept": [
+     [
+      "interconnects networks",
+      "directs data packets"
+     ],
+     [
+      "connects different networks",
+      "best path"
+     ]
+    ],
+    "question": "Explain the role of routers in a computer network.",
+    "solution": [
+     "A router interconnects networks or allows devices to connect to it.",
+     "It directs data packets between different networks.",
+     "Its main job is to find the best path for each packet to deliver it to its destination."
+    ],
+    "answer": "A router interconnects networks and directs data packets between them, finding the best path for each packet to reach its destination."
+   },
+   {
+    "hints": [
+     "Think of sharing devices and information over a network.",
+     "Give examples of shared resources and explain how networks help people exchange information."
+    ],
+    "accept": [
+     [
+      "share",
+      "printers",
+      "communicate"
+     ],
+     [
+      "resource sharing",
+      "data communication"
+     ]
+    ],
+    "question": "Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+    "solution": [
+     "Computer networks enable resource sharing and data communication.",
+     "For resource sharing, network users can use shared devices such as printers and shared information or files.",
+     "For data communication, connected devices can send and receive information over the network.",
+     "Routers can direct packets between networks, while switches connect devices within a network."
+    ],
+    "answer": "Computer networks enable resource sharing and data communication. For example, users can share printers and files, and connected devices can send and receive information over the network."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "A packet contains data and the address of its destination, so the router needs this information to direct it.",
+     "text": "Each packet contains part of the data and the address of the destination."
+    },
+    {
+     "why": "The router uses the destination information to choose where the packet should go next.",
+     "text": "The main job of router is to find the best path for each data packet to deliver its destination."
+    },
+    {
+     "why": "A routing table helps the router compare possible paths and make an efficient decision.",
+     "text": "A router uses a routing table to decide the best path for data packets."
+    }
+   ],
+   "question": "How Does a Router Work?",
+   "answer": "A router examines the destination address in each packet and uses a routing table to find the best path for delivering it."
+  },
+  "explain": [
+   {
+    "title": "Switch",
+    "body": "Switch is a network device that connects multiple network devices such as computers, printers, and servers, within a network and allows these devices to communicate with each other efficiently. A switch uses MAC addresses to forward data to the correct device. It works at the Data Link layer, which is Layer 2 of the OSI model."
+   },
+   {
+    "title": "Router",
+    "body": "A router is a networking device that interconnects networks or allows devices to connect to it. It directs data packets between different networks. It finds the best path for each data packet to deliver it to its destination."
+   },
+   {
+    "title": "Access Point",
+    "body": "An Access Point (AP) is a networking device that facilitates the connection of wireless devices to a wired network. It receives data from the wired network and transmits it wirelessly to your devices. It also receives data from wireless devices and sends it to the wired network."
+   },
+   {
+    "title": "How the devices differ",
+    "body": "A switch directs data to devices within a network, using MAC addresses. A router directs packets between networks. An access point provides a wireless link between devices and a wired network."
+   }
+  ],
+  "mistakes": [
+   "Do not say that a router and a switch do the same job: a router directs packets between networks, while a switch connects devices within a network.",
+   "Do not say that a switch always broadcasts data to every device; after learning device addresses, it sends data to the intended destination.",
+   "Do not confuse a MAC address with a routing table: a MAC address identifies a device for switch forwarding, while a routing table helps a router choose a path.",
+   "Do not describe an access point as only sending data out; it also receives data from wireless devices and sends it to the wired network."
+  ]
+ }
+}

@@ -24,7 +24,7 @@ out.activity = {};
 if (S.science) {
   const KIND = S.sectionKinds;
   let section = null, activity = null;
-  for (let p = 1; p <= 260; p++) {
+  for (let p = 1; p <= 400; p++) {
     const f = join(ROOT, "pages", `p${String(p).padStart(3, "0")}.md`);
     if (!existsSync(f)) continue;
     let figIndex = 0;
@@ -32,7 +32,7 @@ if (S.science) {
       const line = raw.replace(/\*\*/g, "").replace(/^#+\s*/, "").trim();
       if (!line) continue;
       let m;
-      if ((m = /^Chapter\s+(\d+)\b/i.exec(line))) { unit = Number(m[1]); section = null; q = null; example = null; activity = null; }
+      if ((m = new RegExp(`^${S.unitWord}\\s+(\\d+)\\b`, "i").exec(line))) { unit = Number(m[1]); section = null; q = null; example = null; activity = null; }
       else if ((m = /^SECTION\s+([A-E])\b/i.exec(line))) { section = m[1].toUpperCase(); q = null; part = null; example = null; activity = null; }
       else if ((m = /^EXAMPLE\s+(\d+(?:\.\d+)?)/i.exec(line))) { example = m[1]; activity = null; section = null; }
       else if ((m = /^ACTIVITY\s*([0-9.]+)/i.exec(line))) { activity = m[1].includes(".") ? m[1] : `${unit}.${m[1]}`; example = null; section = null; }

@@ -1,0 +1,48 @@
+{
+ "mcqs": [
+  {
+   "correctIndex": 0,
+   "id": "q0"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q1"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q2"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q3"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q4"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q5"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q6"
+  },
+  {
+   "correctIndex": 0,
+   "id": "q7"
+  }
+ ],
+ "written": [
+  {
+   "candidateEquivalent": false,
+   "id": "w0",
+   "myAnswer": "A star topology is easy to install and manage. Devices can be added or removed without disrupting the rest of the network, and faults are easier to locate. If one device’s connection fails, the other devices can continue working; however, failure of the central hub or switch can bring down the network."
+  },
+  {
+   "candidateEquivalent": true,
+   "id": "w1",
+   "myAnswer": "In a bus topology, all devices share one main communication cable, so failure of that cable can bring down the network. In a star topology, each device connects to a central hub or switch, which repeats data; a failure in one device’s link usually affects only that device, but failure of the hub or switch can affect the whole network. In a ring topology, devices form a circle and data travels in one direction; a failed connection can affect the network, though a two-way ring can provide some protection. In a mesh topology, devices have multiple links (in a full mesh, each connects to every other device), providing redundancy and alternative routes if a link fails."
+  }
+ ]
+}

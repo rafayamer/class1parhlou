@@ -1,0 +1,371 @@
+{
+ "note": {
+  "explanation": "A real number with a fractional part can be written in binary and stored using a sign bit, an exponent, and a mantissa. To convert a decimal fraction to binary, repeatedly multiply it by 2 and record each integer part.",
+  "examples": [
+   "0.375₁₀ = 0.011₂",
+   "5.75 is represented as 1.4375 × 2²."
+  ],
+  "checkAnswer": "The sign bit, exponent, and mantissa.",
+  "keywords": [
+   "floating-point",
+   "real values",
+   "binary fraction",
+   "sign bit",
+   "exponent",
+   "mantissa",
+   "single precision"
+  ],
+  "simple": "Computers store decimal numbers with fractions by expressing them in binary and dividing their storage into parts.",
+  "checkQuestion": "What are the three main components used to represent a floating-point value?",
+  "title": "Storing Real Values in Computer Memory",
+  "steps": [
+   "Separate the number into its integer and fractional parts.",
+   "To convert a fractional part to binary, multiply it by 2.",
+   "Record the integer part of each result, from top to bottom.",
+   "Continue with each new fractional part until it reaches zero or the required precision is achieved.",
+   "For single precision, use 1 sign bit, 8 exponent bits, and 23 mantissa bits."
+  ],
+  "answer": "A floating-point value is represented using a sign bit, an exponent, and a mantissa.",
+  "checkAccept": [
+   [
+    "sign bit",
+    "exponent",
+    "mantissa"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "0.101₂",
+    "0.110₂",
+    "0.011₂",
+    "0.111₂"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is 0.375₁₀ in binary?",
+   "rationales": [
+    "This is not the result of recording the integer parts from the repeated multiplication steps.",
+    "This is not the result of recording the integer parts from the repeated multiplication steps.",
+    "Correct: multiplying 0.375 by 2 repeatedly gives integer parts 0, 1, 1.",
+    "This is not the result of recording the integer parts from the repeated multiplication steps."
+   ]
+  },
+  {
+   "options": [
+    "1 bit",
+    "8 bits",
+    "11 bits",
+    "23 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How many bits are assigned to the sign in the single-precision format described in the section?",
+   "rationales": [
+    "Correct: the first bit is the sign bit.",
+    "Eight bits are assigned to the exponent, not the sign.",
+    "Eleven bits are used for the exponent in double precision, not for the sign.",
+    "Twenty-three bits are assigned to the mantissa, not the sign."
+   ]
+  },
+  {
+   "options": [
+    "1 bit",
+    "8 bits",
+    "11 bits",
+    "23 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "How many bits are assigned to the exponent in single precision?",
+   "rationales": [
+    "One bit is assigned to the sign.",
+    "Correct: single precision uses 8 exponent bits.",
+    "Eleven exponent bits are used in double precision.",
+    "Twenty-three bits are assigned to the mantissa."
+   ]
+  },
+  {
+   "options": [
+    "127",
+    "1023",
+    "255",
+    "−127"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What bias is used for the exponent in single precision, according to the section's method?",
+   "rationales": [
+    "Correct: the single-precision exponent is stored with a bias of 127.",
+    "1023 is the bias stated for double precision.",
+    "255 is not the bias given for single precision.",
+    "The bias is added to the actual exponent; it is not −127."
+   ]
+  },
+  {
+   "options": [
+    "1 sign bit, 8 exponent bits, 23 mantissa bits",
+    "1 sign bit, 11 exponent bits, 52 mantissa bits",
+    "8 sign bits, 1 exponent bit, 23 mantissa bits",
+    "1 sign bit, 23 exponent bits, 8 mantissa bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which bit allocation describes single precision in this section?",
+   "rationales": [
+    "Correct: this allocation totals 32 bits and matches the section.",
+    "This describes the bit allocation of double precision, not single precision.",
+    "This reverses the sign and exponent allocation.",
+    "This swaps the exponent and mantissa allocations."
+   ]
+  },
+  {
+   "options": [
+    "4.9 × 10⁻³²⁴",
+    "1.4 × 10⁻⁴⁵",
+    "3.4 × 10³⁸",
+    "1.8 × 10³⁰⁸"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "According to the section, approximately what is the smallest positive number representable in single precision?",
+   "rationales": [
+    "This is the approximate smallest positive number given for double precision.",
+    "Correct: the section gives approximately 1.4 × 10⁻⁴⁵ for single precision.",
+    "This is the approximate upper end of the single-precision range, not the smallest positive value.",
+    "This is an approximate upper-range value associated with double precision, not the single-precision minimum."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Convert 0.375 to Binary.",
+   "finalAnswer": "0.011₂",
+   "marks": 2,
+   "source": "Example 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "0.75"
+      ],
+      [
+       "0.75×2=0.75"
+      ]
+     ],
+     "marks": 1,
+     "why": "The repeated multiplication method must be applied to the fractional part.",
+     "description": "Show the repeated multiplication by 2 and record the integer parts.",
+     "how": "Multiply each new fractional part by 2 and record the integer parts in order."
+    },
+    {
+     "accept": [
+      [
+       "0.011"
+      ]
+     ],
+     "marks": 1,
+     "why": "The binary digits must be written in the correct order as the final result.",
+     "description": "Give the correct binary fraction.",
+     "how": "Write the recorded integer parts from top to bottom after the binary point."
+    }
+   ],
+   "modelAnswer": [
+    "0.375 × 2 = 0.75 (Integer part: 0)",
+    "0.75 × 2 = 1.5 (Integer part: 1)",
+    "0.5 × 2 = 1.0 (Integer part: 1)",
+    "0.375₁₀ = 0.011₂"
+   ]
+  },
+  {
+   "text": "How is the range of floating-point numbers calculated for single precision?",
+   "finalAnswer": "The exponent uses 8 bits and a bias of 127, giving an actual exponent range of −126 to +127. The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸.",
+   "marks": 2,
+   "source": "Short 2.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "8 bits",
+       "127"
+      ],
+      [
+       "exponent",
+       "127"
+      ]
+     ],
+     "marks": 1,
+     "why": "The exponent bit allocation and bias are needed to explain how the range is determined.",
+     "description": "State the exponent bit count and bias.",
+     "how": "Explain that single precision uses 8 exponent bits and a bias of 127."
+    },
+    {
+     "accept": [
+      [
+       "-126",
+       "127"
+      ],
+      [
+       "1.4×10^-45",
+       "3.4×10^38"
+      ]
+     ],
+     "marks": 1,
+     "why": "The exponent limits and approximate value range are the result of the calculation.",
+     "description": "Give the exponent limits and approximate value range.",
+     "how": "State the actual exponent range and the approximate range of values."
+    }
+   ],
+   "modelAnswer": [
+    "Single precision uses 8 bits for the exponent and a bias of 127.",
+    "The actual exponent range is −126 to +127.",
+    "The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+   ]
+  },
+  {
+   "text": "Why is it important to understand the limitations of floating-point representation in scientific computing?",
+   "finalAnswer": "Floating-point values can have round-off errors, so their limitations must be understood and the errors monitored to maintain accuracy in scientific computing.",
+   "marks": 2,
+   "source": "Short 2.10",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "round-off"
+      ],
+      [
+       "round off"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifying possible round-off error states an important limitation of floating-point computation.",
+     "description": "Identify possible round-off errors.",
+     "how": "Explain that floating-point computations can produce round-off errors."
+    },
+    {
+     "accept": [
+      [
+       "accuracy",
+       "monitor"
+      ],
+      [
+       "maintain accuracy"
+      ]
+     ],
+     "marks": 1,
+     "why": "Monitoring errors explains why the limitation matters in scientific work.",
+     "description": "Explain the need to monitor errors.",
+     "how": "State that errors should be monitored to maintain accuracy."
+    }
+   ],
+   "modelAnswer": [
+    "Floating-point computation can have round-off errors.",
+    "In scientific computing, these errors must be monitored to maintain accuracy."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to convert a decimal fraction to binary. Show each multiplication by 2 and record the integer parts in order.",
+   "For single-precision questions, state the allocation clearly: 1 sign bit, 8 exponent bits, and 23 mantissa bits.",
+   "When asked for the single-precision range, include the exponent bias and actual exponent range as well as the approximate range of values.",
+   "For questions about accuracy, mention round-off errors and explain why they should be monitored."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Start by multiplying 0.375 by 2.",
+     "Keep multiplying each new fractional part by 2; write down the integer parts from top to bottom."
+    ],
+    "accept": [
+     [
+      "0.011"
+     ]
+    ],
+    "question": "Convert 0.375 to Binary.",
+    "solution": [
+     "0.375 × 2 = 0.75 (Integer part: 0)",
+     "0.75 × 2 = 1.5 (Integer part: 1)",
+     "0.5 × 2 = 1.0 (Integer part: 1)",
+     "The integer parts recorded are 0, 1, 1.",
+     "0.375₁₀ = 0.011₂"
+    ],
+    "answer": "0.375₁₀ = 0.011₂"
+   },
+   {
+    "hints": [
+     "Recall how many bits single precision gives to its exponent and what bias it uses.",
+     "State the actual exponent range and the approximate range of values given in the section."
+    ],
+    "accept": [
+     [
+      "8 bits",
+      "127",
+      "-126",
+      "1.4×10^-45",
+      "3.4×10^38"
+     ]
+    ],
+    "question": "How is the range of floating-point numbers calculated for single precision?",
+    "solution": [
+     "Single precision uses 8 bits for the exponent and a bias of 127.",
+     "The actual exponent range is −126 to +127.",
+     "The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+    ],
+    "answer": "The exponent uses 8 bits and a bias of 127, giving an actual exponent range of −126 to +127. The approximate range of values is 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This identifies the number's fractional part, which is the part being converted.",
+     "text": "Fractional part: 0.375"
+    },
+    {
+     "why": "The repeated multiplications produce the binary digits as the integer parts.",
+     "text": "0.375 × 2 = 0.75 (Integer part: 0)"
+    },
+    {
+     "why": "Continue with the new fractional part and record its integer part.",
+     "text": "0.75 × 2 = 1.5 (Integer part: 1)"
+    },
+    {
+     "why": "Repeat until the fractional part becomes zero.",
+     "text": "0.5 × 2 = 1.0 (Integer part: 1)"
+    },
+    {
+     "why": "Writing the recorded integer parts from top to bottom gives the binary fraction.",
+     "text": "0.375₁₀ = 0.011₂"
+    }
+   ],
+   "question": "Converting 0.375 to Binary",
+   "answer": "0.375₁₀ = 0.011₂"
+  },
+  "explain": [
+   {
+    "title": "What is a floating-point number?",
+    "body": "In computers, real values, also known as floating-point numbers, are used to represent number with fractions and/or decimals. A floating-point number = sign × mantissa × 2^exponent."
+   },
+   {
+    "title": "Convert a decimal fraction to binary",
+    "body": "To convert the fractional part of a real (floating-point) number from decimal (base-10) to binary (base-2), multiply the fractional part by 2 and write down the integral part of the result. Repeat this process with the new fractional part until the value of the fractional part becomes zero or until the required precision is achieved."
+   },
+   {
+    "title": "Single precision",
+    "body": "In this standard, 4 bytes (or 32 bits) are assigned where the 1st bit is the sign bit, and the next 8 bits are for the exponent and the remaining 23 bits are for the mantissa. The approximate range of values from 1.4 × 10⁻⁴⁵ to 3.4 × 10³⁸."
+   },
+   {
+    "title": "Double precision and accuracy",
+    "body": "In double precision, the exponent is represented using 11 bits. The exponent is stored in a biased form, with a bias of 1023. Floating-point computations may also have round-off errors, so scientific computing requires monitoring these errors to maintain accuracy."
+   }
+  ],
+  "mistakes": [
+   "Writing the integer parts in reverse order when converting a fraction to binary; record them from top to bottom.",
+   "Stopping before the fractional part reaches zero when the conversion is exact.",
+   "Confusing the exponent bits with the mantissa bits in single precision: the allocation is 1, 8, and 23 bits.",
+   "Forgetting that the exponent is stored with a bias, or stating the bias for double precision when asked about single precision.",
+   "Ignoring possible round-off errors when explaining the limits of floating-point values."
+  ]
+ }
+}

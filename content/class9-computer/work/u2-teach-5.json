@@ -1,0 +1,491 @@
+{
+ "note": {
+  "explanation": "ASCII assigns a number to each character. Unicode can represent characters from many writing systems, and UTF-8, UTF-16 and UTF-32 are ways of encoding Unicode characters.",
+  "examples": [],
+  "checkAnswer": "ASCII uses 7 bits and can represent 128 characters.",
+  "keywords": [
+   "ASCII",
+   "Unicode",
+   "UTF-8",
+   "UTF-16",
+   "UTF-32",
+   "encoding"
+  ],
+  "simple": "Encoding gives characters a computer-readable form, such as a number or a sequence of bits.",
+  "checkQuestion": "How many bits does standard ASCII use?",
+  "title": "Common Text Encoding Schemes",
+  "steps": [
+   "Identify the character.",
+   "Look up its code or Unicode code point.",
+   "Use the encoding scheme to represent it in binary.",
+   "State how many bits or bytes the encoding uses, when required."
+  ],
+  "answer": "ASCII represents characters using code numbers from 0 to 127. Unicode maps graphic characters used in the world's writing systems and can be encoded in forms such as UTF-8, UTF-16 and UTF-32.",
+  "checkAccept": [
+   [
+    "7 bits"
+   ],
+   [
+    "7",
+    "ASCII"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "It represents one character using a code from 0 to 127.",
+    "It represents every character using exactly 4 bytes.",
+    "It is a variable-length form of Unicode.",
+    "It can represent more than a million characters."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement describes standard ASCII?",
+   "rationales": [
+    "Correct: standard ASCII assigns each character a code number between 0 and 127.",
+    "This describes the fixed character length of UTF-32, not standard ASCII.",
+    "This describes UTF-8, not ASCII.",
+    "This describes Unicode's broad character coverage, not ASCII."
+   ]
+  },
+  {
+   "options": [
+    "8",
+    "32",
+    "128",
+    "256"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "How many characters can the standard ASCII table represent?",
+   "rationales": [
+    "Eight is the number of bits in a byte, not the number of standard ASCII characters.",
+    "Thirty-two is not the size of the standard ASCII character set.",
+    "Correct: standard ASCII has codes from 0 through 127, giving 128 characters.",
+    "Two hundred and fifty-six is the number of characters in extended ASCII."
+   ]
+  },
+  {
+   "options": [
+    "It uses 1 to 4 bytes and is backward compatible with ASCII.",
+    "It always uses 4 bytes and is not compatible with ASCII.",
+    "It uses only 7 bits and represents 128 characters.",
+    "It uses 2 or 4 bytes and cannot encode Unicode."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which description of UTF-8 is correct?",
+   "rationales": [
+    "Correct: UTF-8 is variable-length, uses 1 to 4 bytes, and is backward compatible with ASCII.",
+    "This confuses UTF-8 with UTF-32 and incorrectly says it is incompatible with ASCII.",
+    "This describes the limits of standard ASCII, not UTF-8.",
+    "UTF-16 uses 2 or 4 bytes; it does not mean UTF-8 cannot encode Unicode."
+   ]
+  },
+  {
+   "options": [
+    "It is an attempt at mapping graphic characters used in the world's writing systems.",
+    "It is limited to the 128 characters in standard ASCII.",
+    "It is a fixed-length encoding that always uses 4 bytes.",
+    "It is another name for the ASCII table."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is Unicode designed to do?",
+   "rationales": [
+    "Correct: Unicode maps graphic characters used in writing systems around the world.",
+    "Unicode can represent far more characters than standard ASCII.",
+    "UTF-32 uses 4 bytes per character; Unicode itself has different encoding forms.",
+    "Unicode and ASCII are different character encoding standards."
+   ]
+  },
+  {
+   "options": [
+    "It includes 256 characters and uses 8 bits.",
+    "It includes 128 characters and uses 7 bits.",
+    "It uses 1 to 4 bytes for every character.",
+    "It uses exactly 2 bytes for every character."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about extended ASCII matches the section?",
+   "rationales": [
+    "Correct: the extended version includes 256 characters and uses 8 bits.",
+    "This describes the size and bit length of standard ASCII.",
+    "This describes UTF-8's variable byte length.",
+    "This is not the section's description of extended ASCII."
+   ]
+  },
+  {
+   "options": [
+    "A is represented as 00000000 00000000 00000000 01000001.",
+    "A is represented as 01000001.",
+    "A is represented as 00000000 01000001.",
+    "A is represented as 11011000 10101000."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which binary representation of the letter A is given for UTF-32?",
+   "rationales": [
+    "Correct: the section gives A in UTF-32 as this 4-byte sequence.",
+    "This is the UTF-8 representation of A in the section.",
+    "This is the UTF-16 representation of A in the section.",
+    "This is the UTF-8 representation given for the Urdu letter ب."
+   ]
+  },
+  {
+   "options": [
+    "U+0041",
+    "U+0628",
+    "U+0048",
+    "U+0080"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Which Unicode code point is given for the Urdu letter ب?",
+   "rationales": [
+    "U+0041 is the code point given for the letter A.",
+    "Correct: the section gives U+0628 for the Urdu letter ب.",
+    "The section does not give U+0048 for ب.",
+    "The section does not give U+0080 for ب."
+   ]
+  },
+  {
+   "options": [
+    "1 to 4 bytes",
+    "Exactly 1 byte",
+    "Exactly 2 bytes",
+    "Exactly 4 bytes"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "How many bytes does UTF-32 use for each character?",
+   "rationales": [
+    "This is the byte range given for UTF-8.",
+    "This is not the fixed length of UTF-32.",
+    "This is not the fixed length of UTF-32.",
+    "Correct: UTF-32 stores every character in 4 bytes."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the primary purpose of the ASCII encoding scheme?",
+   "finalAnswer": "ASCII assigns code numbers to characters so computers can represent and process text.",
+   "marks": 2,
+   "source": "Short 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "code numbers",
+       "characters"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must state what ASCII does to characters.",
+     "description": "States that ASCII assigns code numbers to characters.",
+     "how": "Explain that each alphabet, number or symbol is given a code number."
+    },
+    {
+     "accept": [
+      [
+       "computers",
+       "text"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must connect encoding to computer-readable text.",
+     "description": "States that the codes let computers represent or process text.",
+     "how": "Mention that the codes are used by computers to represent or process text."
+    }
+   ],
+   "modelAnswer": [
+    "ASCII gives each alphabet, number or symbol a code number.",
+    "These code numbers let computers represent and process text."
+   ]
+  },
+  {
+   "text": "Explain the difference between ASCII and Unicode.",
+   "finalAnswer": "ASCII is limited to 7 bits and 128 characters, while Unicode can represent over a million characters from many writing systems.",
+   "marks": 2,
+   "source": "Short 2.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "7 bits",
+       "128"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must give ASCII's stated limitation.",
+     "description": "Identifies ASCII as limited to 7 bits and 128 characters.",
+     "how": "State both the 7-bit limit and the 128-character capacity."
+    },
+    {
+     "accept": [
+      [
+       "Unicode",
+       "million"
+      ],
+      [
+       "Unicode",
+       "many",
+       "languages"
+      ],
+      [
+       "Unicode",
+       "writing systems"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain Unicode's wider character coverage.",
+     "description": "States that Unicode represents many characters or writing systems.",
+     "how": "Compare Unicode's broad coverage with ASCII's limited set."
+    }
+   ],
+   "modelAnswer": [
+    "ASCII uses 7 bits and can represent only 128 characters.",
+    "Unicode can represent over a million characters from writing systems around the world."
+   ]
+  },
+  {
+   "text": "How does Unicode handle characters from different languages?",
+   "finalAnswer": "Unicode maps graphic characters used in the world's writing systems and represents them through encoding forms such as UTF-8, UTF-16 and UTF-32.",
+   "marks": 2,
+   "source": "Short 2.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "maps",
+       "characters"
+      ],
+      [
+       "graphic characters"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must explain Unicode's character-mapping purpose.",
+     "description": "States that Unicode maps graphic characters.",
+     "how": "Use the idea of mapping characters used in writing systems."
+    },
+    {
+     "accept": [
+      [
+       "UTF-8"
+      ],
+      [
+       "UTF-16"
+      ],
+      [
+       "UTF-32"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must show how Unicode characters are encoded.",
+     "description": "Names a Unicode encoding form.",
+     "how": "Give one or more of UTF-8, UTF-16 and UTF-32."
+    }
+   ],
+   "modelAnswer": [
+    "Unicode maps graphic characters used in the world's writing systems.",
+    "It represents these characters through encoding forms such as UTF-8, UTF-16 and UTF-32."
+   ]
+  },
+  {
+   "text": "Explain how characters are encoded using Unicode. Provide examples of characters from different languages and their corresponding Unicode code points.",
+   "finalAnswer": "Unicode maps graphic characters used in writing systems. For example, the letter A is U+0041 and the Urdu letter ب is U+0628. Unicode code points are represented in encoding forms such as UTF-8, UTF-16 and UTF-32.",
+   "marks": 8,
+   "source": "Long 2.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "maps",
+       "graphic characters"
+      ],
+      [
+       "writing systems"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear explanation of Unicode's purpose is the foundation of the answer.",
+     "description": "Explains that Unicode maps graphic characters used in writing systems.",
+     "how": "Describe Unicode as a character-mapping system for writing systems."
+    },
+    {
+     "accept": [
+      [
+       "U+0041",
+       "A"
+      ]
+     ],
+     "marks": 2,
+     "why": "A correct code point example shows how the system identifies a character.",
+     "description": "Gives the letter A with code point U+0041.",
+     "how": "Write the character A and its code point together."
+    },
+    {
+     "accept": [
+      [
+       "U+0628",
+       "ب"
+      ]
+     ],
+     "marks": 2,
+     "why": "An example from another language demonstrates Unicode's broader character coverage.",
+     "description": "Gives the Urdu letter ب with code point U+0628.",
+     "how": "Write the Urdu character and its code point together."
+    },
+    {
+     "accept": [
+      [
+       "UTF-8",
+       "UTF-16",
+       "UTF-32"
+      ],
+      [
+       "UTF-8",
+       "UTF-16"
+      ],
+      [
+       "UTF-8",
+       "UTF-32"
+      ],
+      [
+       "UTF-16",
+       "UTF-32"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer must correctly name Unicode's encoding forms to complete the explanation.",
+     "description": "Names the Unicode encoding forms and gives the complete answer.",
+     "how": "State that Unicode code points are represented using forms such as UTF-8, UTF-16 and UTF-32."
+    }
+   ],
+   "modelAnswer": [
+    "Unicode is an attempt at mapping all graphic characters used in the world's writing systems.",
+    "The letter A is represented in Unicode as U+0041.",
+    "The Urdu letter ب is represented in Unicode as U+0628.",
+    "Unicode uses different encoding forms, such as UTF-8, UTF-16 and UTF-32, to represent characters."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask for ASCII's purpose, its character limit, or how it differs from Unicode.",
+   "A long question may ask you to explain Unicode and give code-point examples from different languages.",
+   "For full marks, state the key facts clearly: ASCII uses 7 bits for 128 characters; Unicode covers many writing systems; and UTF-8, UTF-16 and UTF-32 are Unicode encoding forms.",
+   "When giving examples, pair each character with its correct code point, such as A with U+0041 and ب with U+0628."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think about what ASCII gives to each character.",
+     "Mention code numbers and how computers use them for text."
+    ],
+    "accept": [
+     [
+      "code numbers",
+      "characters",
+      "computers"
+     ],
+     [
+      "assigns",
+      "codes",
+      "text"
+     ],
+     [
+      "numerical representation",
+      "characters"
+     ]
+    ],
+    "question": "What is the primary purpose of the ASCII encoding scheme?",
+    "solution": [
+     "ASCII gives each alphabet, number or symbol a code number.",
+     "These code numbers let computers represent and process text."
+    ],
+    "answer": "ASCII assigns code numbers to characters so computers can represent and process text."
+   },
+   {
+    "hints": [
+     "Compare how many characters each scheme can represent.",
+     "Include ASCII's 7-bit, 128-character limit and Unicode's coverage of many writing systems."
+    ],
+    "accept": [
+     [
+      "ASCII",
+      "7 bits",
+      "128",
+      "Unicode",
+      "many"
+     ],
+     [
+      "ASCII",
+      "128",
+      "Unicode",
+      "million"
+     ],
+     [
+      "ASCII",
+      "limited",
+      "Unicode",
+      "writing systems"
+     ]
+    ],
+    "question": "Explain the difference between ASCII and Unicode.",
+    "solution": [
+     "ASCII uses 7 bits and can represent only 128 characters.",
+     "Unicode can represent over a million characters from writing systems around the world."
+    ],
+    "answer": "ASCII is limited to 7 bits and 128 characters, while Unicode can represent over a million characters from many writing systems."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This identifies the character and encoding form being represented.",
+     "text": "Represent the letter ‘A’ in UTF-8."
+    },
+    {
+     "why": "The section gives U+0041 as the Unicode code point for A.",
+     "text": "The letter ‘A’ is Unicode, represented as U+0041."
+    },
+    {
+     "why": "This gives the binary form and the storage length stated for UTF-8.",
+     "text": "It is 01000001 in the binary format and occupies 8 bits or 1 byte."
+    }
+   ],
+   "question": "Represent the letter ‘A’ in UTF-8.",
+   "answer": "U+0041 = 01000001; it occupies 8 bits or 1 byte."
+  },
+  "explain": [
+   {
+    "title": "ASCII",
+    "body": "ASCII is an acronym that stands for American Standard Code for Information Interchange. It is a character encoding standard adopted for representing in devices such as computers and similar systems that use text. Each alphabet, number or symbol is given a code number between 0 and 127."
+   },
+   {
+    "title": "Extended ASCII",
+    "body": "While the standard ASCII Table includes 128 characters, there is an extended version that includes 256 characters. This extended ASCII uses 8 bits and includes additional symbols, accented letters, and other characters."
+   },
+   {
+    "title": "Unicode",
+    "body": "Unicode is an attempt at mapping all graphic characters used in any of the world's writing system. Unlike ASCII, which is limited to 7bits and can represent only 128 characters, Unicode can represent over a million characters through different forms of encodings such as, UTF-8, UTF-16, and UTF-32."
+   },
+   {
+    "title": "UTF encoding forms",
+    "body": "UTF is an acronym that stands for Unicode Transformation Format. UTF-8 is variable-length and uses 1 to 4 bytes; UTF-16 uses either 2 bytes or 4 bytes per character at most; UTF-32 uses a fixed length of 4 bytes per character."
+   }
+  ],
+  "mistakes": [
+   "Do not confuse standard ASCII's 128 characters with extended ASCII's 256 characters.",
+   "Do not say Unicode is limited to English or to 128 characters.",
+   "Do not mix up the byte lengths: UTF-8 uses 1 to 4 bytes, UTF-16 uses 2 or 4 bytes, and UTF-32 uses 4 bytes.",
+   "When giving a code-point example, keep the character and code point paired correctly: A is U+0041 and ب is U+0628.",
+   "Do not write a code point as though it were the binary representation; for example, U+0041 and 01000001 are different forms."
+  ]
+ }
+}

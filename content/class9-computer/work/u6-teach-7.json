@@ -1,0 +1,352 @@
+{
+ "note": {
+  "explanation": "IPv4 uses 32 bits, so it has 2³² = 4,294,967,296 possible addresses. IPv6 uses 128 bits and was designed to provide many more addresses as the number of internet-connected devices grew. The textbook’s IPv4 example, 172.16.254.1, has four decimal parts, each corresponding to an 8-bit binary group.",
+  "examples": [
+   "IPv4: 172.16.254.1 has four 8-bit groups.",
+   "IPv6: 2001:0000:130F:0000:0000:0900:876A:130B is an example of an IPv6 address."
+  ],
+  "checkAnswer": "IPv6 uses a 128-bit address scheme.",
+  "keywords": [
+   "IPv4",
+   "IPv6",
+   "IP address",
+   "32-bit",
+   "128-bit",
+   "octet"
+  ],
+  "simple": "IPv4 is like a set of 4.3 billion address labels. IPv6 uses far more bits, so it can provide vastly more labels for connected devices.",
+  "checkQuestion": "How many bits does an IPv6 address use?",
+  "title": "IPv4 and IPv6 address sizes",
+  "steps": [
+   "Count the bits in an IPv4 address: 32.",
+   "Calculate its possible addresses: 2³² = 4,294,967,296.",
+   "An IPv4 address is written as four decimal numbers, each from 0 to 255.",
+   "Count the bits in an IPv6 address: 128.",
+   "Remember that IPv6 was designed to address the depletion of IPv4 addresses."
+  ],
+  "answer": "IPv4 uses 32 bits; IPv6 uses 128 bits.",
+  "checkAccept": [
+   [
+    "128"
+   ],
+   [
+    "128 bits"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "32 bits",
+    "16 bits",
+    "64 bits",
+    "128 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How many bits are used in an IPv4 address scheme?",
+   "rationales": [
+    "Correct: IPv4 uses a 32-bit address scheme.",
+    "Incorrect: IPv4 addresses are not 16 bits long.",
+    "Incorrect: 64 bits is not the IPv4 address size given in the section.",
+    "Incorrect: 128 bits is the size of an IPv6 address."
+   ]
+  },
+  {
+   "options": [
+    "2³²",
+    "2¹⁶",
+    "2⁶⁴",
+    "2¹²⁸"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which calculation gives the total number of possible IPv4 addresses?",
+   "rationales": [
+    "Correct: 32 bits have 2³² possible combinations.",
+    "Incorrect: 2¹⁶ represents combinations of 16 bits, not 32.",
+    "Incorrect: 2⁶⁴ represents combinations of 64 bits.",
+    "Incorrect: 2¹²⁸ is the number of combinations for 128 bits."
+   ]
+  },
+  {
+   "options": [
+    "4,294,967,296",
+    "32,000,000",
+    "128,000,000",
+    "4,294,967"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How many unique addresses are possible in IPv4?",
+   "rationales": [
+    "Correct: 2³² equals 4,294,967,296.",
+    "Incorrect: This is not the total number of IPv4 combinations.",
+    "Incorrect: This is not the total number of IPv4 combinations.",
+    "Incorrect: This is far less than 2³²."
+   ]
+  },
+  {
+   "options": [
+    "Four decimal numbers, each from 0 to 255",
+    "Two decimal numbers, each from 0 to 127",
+    "Eight decimal numbers, each from 0 to 255",
+    "Four decimal numbers, each from 0 to 999"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How are IPv4 addresses written according to the section?",
+   "rationales": [
+    "Correct: An IPv4 address is written in four sets of decimal numbers from 0 to 255.",
+    "Incorrect: IPv4 is not written as two decimal numbers.",
+    "Incorrect: The section specifies four sets, not eight.",
+    "Incorrect: Each number must be from 0 to 255, not 0 to 999."
+   ]
+  },
+  {
+   "options": [
+    "128 bits",
+    "32 bits",
+    "8 bits",
+    "256 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is the size of the IPv6 address scheme?",
+   "rationales": [
+    "Correct: IPv6 uses a 128-bit address scheme.",
+    "Incorrect: 32 bits is the IPv4 address size.",
+    "Incorrect: 8 bits is the size of one IPv4 group, not an IPv6 address.",
+    "Incorrect: The section gives 128 bits, not 256."
+   ]
+  },
+  {
+   "options": [
+    "To provide many more unique addresses as internet use grows",
+    "To make every IPv4 address shorter",
+    "To replace computer networks",
+    "To convert all addresses into decimal numbers"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why was IPv6 developed?",
+   "rationales": [
+    "Correct: IPv6 was developed to address IPv4 address depletion as internet use and connected devices grew.",
+    "Incorrect: The section does not say IPv6 was made to shorten IPv4 addresses.",
+    "Incorrect: IPv6 is an Internet Protocol version, not a replacement for computer networks.",
+    "Incorrect: The section does not describe decimal conversion as the reason for IPv6."
+   ]
+  },
+  {
+   "options": [
+    "IPv6 uses more bits than IPv4",
+    "IPv4 uses more bits than IPv6",
+    "Both use 32 bits",
+    "Both use 128 bits"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement correctly compares the IPv4 and IPv6 address sizes?",
+   "rationales": [
+    "Correct: IPv6 uses 128 bits, while IPv4 uses 32 bits.",
+    "Incorrect: The bit sizes are the other way around.",
+    "Incorrect: IPv6 does not use 32 bits.",
+    "Incorrect: IPv4 does not use 128 bits."
+   ]
+  },
+  {
+   "options": [
+    "An IPv4 address",
+    "An IPv6 address",
+    "Both IPv4 and IPv6 addresses",
+    "Neither kind of IP address"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "Which kind of address is a unique identifier assigned to a device connected to the Internet?",
+   "rationales": [
+    "Incorrect: IPv4 addresses are IP identifiers, but the definition applies to IP addresses generally.",
+    "Incorrect: IPv6 addresses are IP identifiers, but the definition applies to IP addresses generally.",
+    "Correct: Both IPv4 and IPv6 are versions of IP addresses that identify connected devices.",
+    "Incorrect: The section identifies IP addresses as unique identifiers for connected devices."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q6.9. An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible.\n(a) Show the calculation for the total number of IPv4 addresses.\n(b) How many addresses are left if 10% of the total addresses are reserved for special purposes?",
+   "finalAnswer": "(a) 2³² = 4,294,967,296 unique addresses. (b) 90% of 4,294,967,296 = 3,865,470,566.4, or approximately 3,865,470,566 whole addresses.",
+   "marks": 8,
+   "source": "Long 6.9",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "2^32",
+       "4294967296"
+      ],
+      [
+       "2³²",
+       "4294967296"
+      ]
+     ],
+     "marks": 2,
+     "why": "The calculation must show that all combinations of 32 bits are counted.",
+     "description": "Set up the total-address calculation using the 32-bit length.",
+     "how": "Write 2³² for the possible combinations of 32 bits."
+    },
+    {
+     "accept": [
+      [
+       "4294967296"
+      ]
+     ],
+     "marks": 2,
+     "why": "The evaluated total is needed for the remaining calculation.",
+     "description": "Evaluate the power of 2 correctly.",
+     "how": "Give 4,294,967,296 as the total number of IPv4 addresses."
+    },
+    {
+     "accept": [
+      [
+       "10%",
+       "429496729.6"
+      ],
+      [
+       "0.1",
+       "429496729.6"
+      ]
+     ],
+     "marks": 2,
+     "why": "Finding the reserved portion shows how the remaining number is determined.",
+     "description": "Calculate 10% of the total addresses reserved for special purposes.",
+     "how": "Multiply 4,294,967,296 by 10% to get 429,496,729.6."
+    },
+    {
+     "accept": [
+      [
+       "3865470566.4"
+      ],
+      [
+       "3865470566",
+       "approximately"
+      ]
+     ],
+     "marks": 2,
+     "why": "The final result answers how many addresses remain after reserving 10%.",
+     "description": "State the number of addresses left.",
+     "how": "Subtract the reserved 10%, or calculate 90% of the total, to get 3,865,470,566.4 (approximately 3,865,470,566 whole addresses)."
+    }
+   ],
+   "modelAnswer": [
+    "Total number of unique IPv4 addresses = 2³²",
+    "2³² = 4,294,967,296",
+    "Addresses reserved = 10% of 4,294,967,296",
+    "Addresses reserved = 429,496,729.6",
+    "Addresses left = 4,294,967,296 − 429,496,729.6",
+    "Addresses left = 3,865,470,566.4",
+    "Approximately 3,865,470,566 whole addresses are left."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "This topic can be tested with a short definition or comparison question about IPv4 and IPv6, or a long numerical question using the 32-bit IPv4 address size.",
+   "For a calculation, show 2³² before writing 4,294,967,296; the formula and the evaluated answer can earn separate marks.",
+   "For a reserved-address part, show the percentage calculation and then state the number left.",
+   "Remember the key comparison: IPv4 uses 32 bits; IPv6 uses 128 bits."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "The IPv4 address is 32 bits long.",
+     "Each bit can be 0 or 1, so use 2³² for all possible combinations."
+    ],
+    "accept": [
+     [
+      "4294967296"
+     ],
+     [
+      "2^32"
+     ],
+     [
+      "2³²"
+     ]
+    ],
+    "question": "Q6.9. An IPv4 address is a 32-bit number. Calculate the total number of unique IPv4 addresses possible.\n(a) Show the calculation for the total number of IPv4 addresses.",
+    "solution": [
+     "Total number of unique IPv4 addresses = 2³²",
+     "2³² = 4,294,967,296"
+    ],
+    "answer": "2³² = 4,294,967,296 unique IPv4 addresses."
+   },
+   {
+    "hints": [
+     "If 10% are reserved, what percentage is left?",
+     "Calculate 90% of 4,294,967,296, or subtract 10% from the total."
+    ],
+    "accept": [
+     [
+      "3865470566.4"
+     ],
+     [
+      "approximately",
+      "3865470566"
+     ],
+     [
+      "90%",
+      "4294967296"
+     ]
+    ],
+    "question": "(b) How many addresses are left if 10% of the total addresses are reserved for special purposes?",
+    "solution": [
+     "Addresses reserved = 10% of 4,294,967,296",
+     "Addresses reserved = 429,496,729.6",
+     "Addresses left = 4,294,967,296 − 429,496,729.6",
+     "Addresses left = 3,865,470,566.4",
+     "Approximately 3,865,470,566 whole addresses are left."
+    ],
+    "answer": "3,865,470,566.4 addresses, or approximately 3,865,470,566 whole addresses."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The figure shows the decimal IPv4 address and its matching binary groups.",
+     "text": "The figure gives the IPv4 address 172.16.254.1."
+    },
+    {
+     "why": "Each decimal number in the address matches one 8-bit group.",
+     "text": "Write the corresponding groups as 10101100.00010000.11111110.00000001."
+    },
+    {
+     "why": "Four groups of 8 bits make 32 bits in total.",
+     "text": "The address has 4 × 8 = 32 bits."
+    }
+   ],
+   "question": "Using the IPv4 address shown in Figure 6.13, write 172.16.254.1 in binary groups.",
+   "answer": "10101100.00010000.11111110.00000001"
+  },
+  "explain": [
+   {
+    "title": "Internet Protocol addresses identify devices",
+    "body": "Internet Protocol (IP) addresses are unique identifiers assigned to devices connected to the Internet. The two primary versions are IPv4 and IPv6."
+   },
+   {
+    "title": "IPv4 uses 32 bits",
+    "body": "IPv4 is the fourth version of the Internet Protocol and the most widely used today. It uses a 32-bit address scheme, allowing for approximately 4.3 billion unique addresses. The total is 2³² = 4,294,967,296. IPv4 addresses are written in four sets of decimal numbers, each ranging from 0 to 255."
+   },
+   {
+    "title": "IPv6 uses 128 bits",
+    "body": "IPv6 is the most recent version of the Internet Protocol designed to replace IPv4. It uses a 128-bit address scheme, allowing for an almost limitless number of unique addresses. It was developed to address the depletion of IPv4 addresses as the internet and connected devices grew."
+   }
+  ],
+  "mistakes": [
+   "Writing 32 as the total number of IPv4 addresses instead of calculating 2³².",
+   "Confusing the 32-bit IPv4 address size with the 128-bit IPv6 address size.",
+   "Forgetting that an IPv4 address has four decimal groups, each from 0 to 255.",
+   "Calculating the 10% reserved but forgetting to subtract it from the total to find the addresses left.",
+   "Leaving out the working in a numerical answer when the question asks to show the calculation."
+  ]
+ }
+}

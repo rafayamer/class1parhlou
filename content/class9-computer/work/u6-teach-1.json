@@ -1,0 +1,370 @@
+{
+ "note": {
+  "explanation": "A computer network links devices so they can exchange data and work together. Nodes are the connected devices, and links connect those nodes. Switches forward data within a network; routers connect different networks. Networks help people share resources, communicate, and collaborate.",
+  "examples": [
+   "Several office computers share one printer.",
+   "Employees at different locations meet through video conferencing."
+  ],
+  "checkAnswer": "A switch forwards data between nodes within a network.",
+  "keywords": [
+   "computer network",
+   "node",
+   "link",
+   "switch",
+   "router",
+   "resource sharing"
+  ],
+  "simple": "A network is a group of connected devices that can share information and resources.",
+  "checkQuestion": "What does a switch do in a network?",
+  "title": "Network as a System",
+  "steps": [
+   "Identify the nodes: these are devices connected to the network.",
+   "Identify the links: these connect the nodes, either by wire or wirelessly.",
+   "Use switches to forward data within a network.",
+   "Use routers to connect different networks and direct data packets."
+  ],
+  "answer": "A computer network is a system of linked devices and computers that may exchange data and operate together.",
+  "checkAccept": [
+   [
+    "switch",
+    "forward",
+    "nodes"
+   ],
+   [
+    "switch",
+    "data",
+    "network"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "A device connected to a network",
+    "A connection between two networks",
+    "A program used to send email",
+    "A type of network objective"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "In a computer network, what is a node?",
+   "rationales": [
+    "Correct: a node is a device connected to the network.",
+    "A connection is a link, not a node.",
+    "The section defines nodes as devices, not programs.",
+    "A node is a network component, not an objective."
+   ]
+  },
+  {
+   "options": [
+    "A wired or wireless connection between nodes",
+    "A computer that stores files",
+    "A device that connects different networks",
+    "A shared printer"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which option describes a network link?",
+   "rationales": [
+    "Correct: links connect nodes and may be wired or wireless.",
+    "A computer that stores files is a device, not a link.",
+    "A router connects different networks.",
+    "A printer may be a network node or shared resource, not a link."
+   ]
+  },
+  {
+   "options": [
+    "Connect different networks and direct data packets",
+    "Forward data only to the port for a destination MAC address",
+    "Provide storage for all network files",
+    "Connect a computer to a printer with a cable"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is a router's role in a computer network?",
+   "rationales": [
+    "Correct: routers connect different networks and direct data packets between them.",
+    "This describes how a switch forwards packets within a network.",
+    "The section does not identify storage as a router's role.",
+    "A cable is a link; connecting one computer to a printer is not the router's defined role."
+   ]
+  },
+  {
+   "options": [
+    "It connects multiple nodes within a network to forward data",
+    "It connects different networks and directs data packets",
+    "It replaces the need for all links",
+    "It creates the data being sent"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement best describes a switch?",
+   "rationales": [
+    "Correct: a switch connects multiple nodes within a network to forward data.",
+    "This is the role of a router.",
+    "Switches do not replace the connections between nodes.",
+    "A switch forwards data; it does not create the message."
+   ]
+  },
+  {
+   "options": [
+    "Sharing one printer among several computers",
+    "Giving every employee a separate printer",
+    "Disconnecting computers from one another",
+    "Stopping employees from exchanging messages"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which is an example of resource sharing through a network?",
+   "rationales": [
+    "Correct: multiple computers can share a single printer through a network.",
+    "Separate printers do not demonstrate sharing a resource.",
+    "Disconnecting devices prevents network sharing.",
+    "Stopping communication goes against a network's objectives."
+   ]
+  },
+  {
+   "options": [
+    "The Internet connects networks worldwide",
+    "The Internet is a single printer shared by offices",
+    "The Internet is a type of network link",
+    "The Internet is a device that forwards data only within one network"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Which statement about the Internet is correct?",
+   "rationales": [
+    "Correct: the section describes the Internet as the largest network, connecting networks worldwide.",
+    "The Internet is not a printer.",
+    "The Internet is a network, not an individual link.",
+    "Forwarding data within one network describes a switch, not the Internet."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Q6.2. Explain the role of routers in a computer network.",
+   "finalAnswer": "Routers connect different networks and direct data packets between them.",
+   "marks": 2,
+   "source": "Short 6.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "connect",
+       "different networks"
+      ]
+     ],
+     "marks": 1,
+     "why": "This identifies what networks a router connects.",
+     "description": "States that routers connect different networks.",
+     "how": "Write that a router connects different networks."
+    },
+    {
+     "accept": [
+      [
+       "direct",
+       "data packets"
+      ]
+     ],
+     "marks": 1,
+     "why": "This states the router's packet-handling role.",
+     "description": "States that routers direct data packets between networks.",
+     "how": "Add that routers direct data packets between them."
+    }
+   ],
+   "modelAnswer": [
+    "Routers connect different networks.",
+    "They direct data packets between them."
+   ]
+  },
+  {
+   "text": "Q6.1. Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+   "finalAnswer": "The primary objectives of computer networks are resource sharing, data communication and collaboration. Networks allow devices to share resources, such as printers and storage. For example, multiple office computers can share a single printer. Networks also facilitate communication through email, instant messaging and video conferencing. For example, employees in different locations can collaborate through video conferencing tools.",
+   "marks": 8,
+   "source": "Long 6.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "resource sharing",
+       "data communication",
+       "collaboration"
+      ]
+     ],
+     "marks": 2,
+     "why": "Naming the main objectives shows the core purpose of computer networks.",
+     "description": "Identifies resource sharing, data communication and collaboration as objectives.",
+     "how": "State all three objectives of computer networks."
+    },
+    {
+     "accept": [
+      [
+       "share",
+       "printer"
+      ],
+      [
+       "share",
+       "storage"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant shared resource explains how a network can reduce costs and improve efficiency.",
+     "description": "Explains resource sharing and gives a suitable example.",
+     "how": "Explain that devices share resources and give the shared-printer example."
+    },
+    {
+     "accept": [
+      [
+       "data communication",
+       "email"
+      ],
+      [
+       "data communication",
+       "instant messaging"
+      ],
+      [
+       "data communication",
+       "video conferencing"
+      ]
+     ],
+     "marks": 2,
+     "why": "This explains how networks enable people to communicate.",
+     "description": "Explains data communication and names suitable communication methods.",
+     "how": "Mention email, instant messaging or video conferencing."
+    },
+    {
+     "accept": [
+      [
+       "employees",
+       "different locations",
+       "video conferencing"
+      ],
+      [
+       "collaborate",
+       "video conferencing"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear example links the network objective to its real-world use.",
+     "description": "Gives an example of people using a network to communicate or collaborate.",
+     "how": "Give the example of employees in different locations collaborating through video conferencing."
+    }
+   ],
+   "modelAnswer": [
+    "The primary objectives of computer networks are resource sharing, data communication and collaboration.",
+    "Resource sharing: Computer networks allow devices to share resources, such as printers and storage, reducing costs and improving efficiency.",
+    "Example: In an office network, multiple computers can share a single printer, reducing the need for multiple printers.",
+    "Data communication: Networks facilitate data transfer, enabling communication through emails, instant messaging, and video conferencing.",
+    "Example: Employees in different locations can collaborate through video conferencing tools like Zoom or Microsoft Teams.",
+    "Connectivity and collaboration: Networks connect devices, allowing for remote access and collaboration, improving productivity and flexibility.",
+    "Example: A team can work on a shared document in real-time using cloud-based services like Google Drive."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short question may ask you to define a computer network or explain the role of a switch or router. Use the textbook's precise definition or state the device's job clearly.",
+   "A long question may ask for the objectives of computer networks with examples. Name the objectives, explain each one, and give the textbook-style example.",
+   "For a question about components, distinguish nodes (connected devices), links (connections), switches (forward data within a network) and routers (connect different networks).",
+   "Examples earn marks when they clearly match the objective: a shared printer shows resource sharing, while video conferencing shows data communication."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the device that joins separate networks.",
+     "Include both what it connects and what it does with data packets."
+    ],
+    "accept": [
+     [
+      "different networks",
+      "data packets"
+     ],
+     [
+      "connect",
+      "networks",
+      "direct",
+      "packets"
+     ]
+    ],
+    "question": "Q6.2. Explain the role of routers in a computer network.",
+    "solution": [
+     "Routers connect different networks.",
+     "They direct data packets between them."
+    ],
+    "answer": "Routers connect different networks and direct data packets between them."
+   },
+   {
+    "hints": [
+     "Recall the three objectives listed in the section.",
+     "Give the shared-printer example for resource sharing and the video-conferencing example for communication."
+    ],
+    "accept": [
+     [
+      "resource sharing",
+      "data communication",
+      "collaboration",
+      "printer",
+      "video conferencing"
+     ],
+     [
+      "share",
+      "printer",
+      "email",
+      "video conferencing"
+     ]
+    ],
+    "question": "Q6.1. Discuss the objectives of computer networks and provide examples of how they facilitate resource sharing and data communication.",
+    "solution": [
+     "The primary objectives of computer networks are resource sharing, data communication and collaboration.",
+     "Resource sharing: Computer networks allow devices to share resources, such as printers and storage, reducing costs and improving efficiency.",
+     "Example: In an office network, multiple computers can share a single printer, reducing the need for multiple printers.",
+     "Data communication: Networks facilitate data transfer, enabling communication through emails, instant messaging, and video conferencing.",
+     "Example: Employees in different locations can collaborate through video conferencing tools like Zoom or Microsoft Teams.",
+     "Connectivity and collaboration: Networks connect devices, allowing for remote access and collaboration, improving productivity and flexibility.",
+     "Example: A team can work on a shared document in real-time using cloud-based services like Google Drive."
+    ],
+    "answer": "The objectives are resource sharing, data communication and collaboration. For example, office computers can share one printer, and employees in different locations can communicate through video conferencing."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "The section compares passengers with the data being sent.",
+     "text": "When traveling, passengers (data) might be split into groups (packets) and assigned different flights (paths). In packet switching each group has a ticket with the final destination (IP address)."
+    },
+    {
+     "why": "This connects the different routes in the example to the devices that direct data across networks.",
+     "text": "These groups might take different routes, through various airports (routers), to reach the final destination."
+    }
+   ],
+   "question": "EXAMPLE: Air Travel System — How does sending people via air travel relate to packet switching?",
+   "answer": "Data can be split into packets, and the packets may take different routes through routers to reach the final destination."
+  },
+  "explain": [
+   {
+    "title": "A computer network is a system",
+    "body": "A computer network is a system of linked devices and computers that may exchange data and operate together. This is the textbook definition. Networks can be small, like a LAN, or large, like a WAN or the Internet."
+   },
+   {
+    "title": "Nodes and links",
+    "body": "Nodes: Devices that are connected to the network, such as computers, smartphones, and printers. Links: The connections between nodes, which can be wired (like Ethernet cables) or wireless (like Wi-Fi)."
+   },
+   {
+    "title": "Switches and routers",
+    "body": "Switches: Devices that connect multiple nodes within a network to forward data. Routers: Devices that connect different networks and direct data packets between them. A switch forwards data within a network; a router directs data between networks."
+   },
+   {
+    "title": "Objectives of networks",
+    "body": "The primary objective of computer network is to enable resource sharing, data communication and collaboration. A shared office printer is an example of resource sharing. Email, instant messaging and video conferencing are examples of data communication."
+   }
+  ],
+  "mistakes": [
+   "Do not swap the jobs of a switch and a router: a switch connects nodes within a network; a router connects different networks.",
+   "Do not describe a node as a connection. A node is a connected device; a link is the connection between nodes.",
+   "When asked for objectives, do not list only resource sharing. Include data communication and collaboration as well.",
+   "Give examples that match the objective: a shared printer is resource sharing; video conferencing is data communication.",
+   "Do not confuse a network with the Internet. The Internet is the largest network, connecting networks worldwide."
+  ]
+ }
+}

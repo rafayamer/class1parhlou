@@ -1,0 +1,506 @@
+{
+ "unit": 1,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 1.4",
+   "MCQ 1.6",
+   "MCQ 1.7",
+   "MCQ 1.10",
+   "Short 1.2",
+   "Short 1.3",
+   "Short 1.4",
+   "Short 1.10",
+   "Long 1.2",
+   "Long 1.3",
+   "Long 1.4",
+   "Long 1.5",
+   "Long 1.8"
+  ],
+  "definitions": [
+   {
+    "term": "System",
+    "text": "A system is a collection of parts that work together to achieve a common goal."
+   },
+   {
+    "term": "Basic description of a system",
+    "text": "A system is described by its objectives components, communication among components and environment in which it works."
+   },
+   {
+    "term": "Components",
+    "text": "Components are the building blocks of any system. Each component plays a specific role and contributes to the overall functionality of the system."
+   },
+   {
+    "term": "Environment of a system",
+    "text": "The environment of a system includes everything external to the system that interacts with it. It consists of all external factors that affect the system's operation."
+   },
+   {
+    "term": "Computer",
+    "text": "A computer is a complex system designed to process data and perform tasks according to a set of instructions."
+   },
+   {
+    "term": "Von Neumann architecture",
+    "text": "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms."
+   },
+   {
+    "term": "Memory",
+    "text": "Contains both input data and the instructions (program) required for CPU processing."
+   },
+   {
+    "term": "Central Processing Unit (CPU)",
+    "text": "Performs addition and subtraction, and executes commands provided by the memory."
+   },
+   {
+    "term": "Arithmetic Logic Unit (ALU)",
+    "text": "The Arithmetic Logic Unit (ALU) performs mathematical computations and logical operations."
+   },
+   {
+    "term": "Control Unit (CU)",
+    "text": "A Control Unit (CU) is a peripheral that governs the activities of the CPU by instructing the ALU and memory to execute tasks according to the program instructions."
+   },
+   {
+    "term": "Input Devices",
+    "text": "Enable users to input data and instructions into the computer system."
+   },
+   {
+    "term": "Output Devices",
+    "text": "Present or communicate the outcomes of the tasks executed by the computer."
+   },
+   {
+    "term": "System bus",
+    "text": "A system bus is a communication mechanism that facilitates the movement of data between components inside a computational system."
+   },
+   {
+    "term": "Von Neumann bottleneck",
+    "text": "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+   }
+  ],
+  "formulas": [],
+  "important": [
+   {
+    "ref": "Short 1.1",
+    "why": "Directly matches the system fundamentals and is allocated a short-question slot for Unit 1."
+   },
+   {
+    "ref": "Short 1.5",
+    "why": "A concise, likely short question testing the architecture’s four main components."
+   },
+   {
+    "ref": "Short 1.6",
+    "why": "Tests both the architecture definition and its components, which are core examinable points."
+   },
+   {
+    "ref": "Short 1.7",
+    "why": "The fetch-decode-execute-store sequence is a standard short-answer topic."
+   },
+   {
+    "ref": "Short 1.8",
+    "why": "A key disadvantage of the architecture and a direct short-question reference."
+   },
+   {
+    "ref": "Short 1.9",
+    "why": "Tests a main strength of the architecture and is suitable for a short question."
+   },
+   {
+    "ref": "Long 1.1",
+    "why": "Unit 1 has an 8-mark detailed-question slot, and this reference covers the central system concepts."
+   },
+   {
+    "ref": "Long 1.6",
+    "why": "A standard 8-mark long question combining the architecture, component functions, and instruction cycle."
+   },
+   {
+    "ref": "Long 1.7",
+    "why": "Directly matches the unit’s computer-environment examples and is eligible for the Unit 1 long-question slot."
+   }
+  ],
+  "fullMarks": [
+   "For a system question, begin with the definition, then explain its objective, components, communication among components, and environment.",
+   "For the Von Neumann architecture, name all four main components: memory, CPU, input devices, and output devices. Explain the function of each.",
+   "In an instruction-cycle answer, write the stages in order: Fetching, Decoding, Execution, and Storing. Give a brief, accurate explanation of each stage.",
+   "For a full architecture explanation, describe the CU and ALU separately: the CU decodes and directs operations, while the ALU performs mathematical and logical operations.",
+   "Draw a clear, labelled Von Neumann architecture diagram if it helps your answer. Label memory, CPU, CU, ALU, input device, and output device; show the direction of data flow.",
+   "For the bottleneck, state that the shared memory area limits how quickly the CPU can retrieve both instructions and data. Do not describe it simply as a slow CPU.",
+   "For computer-environment questions, organize the answer using the examples in the unit: user input, network communication, and power supply. Explain what the computer receives or relies on in each example."
+  ],
+  "mistakes": [
+   "Listing only the CPU and memory as the Von Neumann components. Fix: name all four—memory, CPU, input devices, and output devices.",
+   "Mixing up the instruction-cycle order or leaving out Storing. Fix: learn and write Fetching → Decoding → Execution → Storing.",
+   "Saying the ALU controls the whole CPU or that the CU does the calculations. Fix: the ALU calculates and performs logical operations; the CU decodes instructions and directs activities.",
+   "Describing the bottleneck as a failure or shortage of memory. Fix: explain that the single memory area limits how quickly the CPU retrieves instructions and data.",
+   "Giving examples of computer parts instead of explaining the system’s basic components. Fix: include objective, components, communication, and environment.",
+   "Leaving out examples when explaining a computer’s interaction with its environment. Fix: include user input, network communication, and reliance on a power supply."
+  ],
+  "shortTheory": [
+   {
+    "question": "Define a system. What are its basic components?",
+    "answer": "A system is a collection of parts that work together to achieve a common goal. A system is described by its objectives components, communication among components and environment in which it works."
+   },
+   {
+    "question": "What are the main components of the Von Neumann architecture?",
+    "answer": "The Von Neumann architecture has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms."
+   },
+   {
+    "question": "What is the Von Neumann computer architecture? List its key components.",
+    "answer": "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms. The key components are memory, CPU, input devices, and output devices."
+   },
+   {
+    "question": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+    "answer": "Fetching: The central processing unit retrieves an instruction from the computer’s memory. Decoding: The Control Unit (CU) decodes the instruction. Execution: The CPU processes the instruction. Storing: The outcome of the computation is either returned to memory or sent to an output device."
+   },
+   {
+    "question": "What is the Von Neumann bottleneck?",
+    "answer": "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+   },
+   {
+    "question": "What is a key advantage of the Von Neumann architecture?",
+    "answer": "Flexibility: Programs can be easily changed by changing memory contents."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-1-1-t0",
+   "text": "Define a system. What are its basic components?",
+   "marks": 2,
+   "modelAnswer": [
+    "A system is a collection of parts that work together to achieve a common goal. A system is described by its objectives components, communication among components and environment in which it works."
+   ],
+   "followUp": "Define a system. What are its basic components?",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "collection of parts",
+       "work together",
+       "common goal"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies what a system is and the purpose its parts share.",
+     "description": "A system is a collection of parts that work together toward a common goal.",
+     "how": "Award 1 mark when the answer identifies a collection of parts working together for a shared goal; all three ideas are required (equivalent wording accepted)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "objectives",
+       "components",
+       "communication",
+       "environment"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the four elements used to describe a system.",
+     "description": "A system is described by its objectives, components, communication among components, and working environment.",
+     "how": "Award 1 mark when all four elements are named; equivalent wording for communication among components or the environment is accepted."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-1-1-t1",
+   "text": "What are the main components of the Von Neumann architecture?",
+   "marks": 2,
+   "modelAnswer": [
+    "The Von Neumann architecture has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms."
+   ],
+   "followUp": "What are the main components of the Von Neumann architecture?",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "memory",
+       "CPU"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies memory and the central processing unit as two primary components.",
+     "description": "The primary components include memory and the CPU.",
+     "how": "Award 1 mark for naming both memory and the CPU (Central Processing Unit)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "input mechanisms",
+       "output mechanisms"
+      ],
+      [
+       "input devices",
+       "output devices"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies both input and output components.",
+     "description": "The primary components include input mechanisms and output mechanisms.",
+     "how": "Award 1 mark for naming both input and output mechanisms or devices."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-1-1-t2",
+   "text": "What is the Von Neumann computer architecture? List its key components.",
+   "marks": 2,
+   "modelAnswer": [
+    "The Von Neumann architecture is a computer paradigm that delineates a system in which the hardware of the computer has four primary components: the memory, the Central Processing Unit (CPU), input mechanisms, and output mechanisms.",
+    "The key components are memory, CPU, input devices, and output devices."
+   ],
+   "followUp": "What is the Von Neumann computer architecture? List its key components.",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "computer paradigm",
+       "hardware",
+       "four primary components"
+      ],
+      [
+       "computer system",
+       "hardware",
+       "four primary components"
+      ]
+     ],
+     "marks": 1,
+     "why": "Defines the architecture as a computer paradigm or system with four primary hardware components.",
+     "description": "The Von Neumann architecture is a computer paradigm describing hardware with four primary components.",
+     "how": "Award 1 mark for identifying it as a computer paradigm or system and stating that the hardware has four primary components."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "memory",
+       "CPU",
+       "input devices",
+       "output devices"
+      ],
+      [
+       "memory",
+       "central processing unit",
+       "input devices",
+       "output devices"
+      ],
+      [
+       "memory",
+       "CPU",
+       "input mechanisms",
+       "output mechanisms"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the four key components.",
+     "description": "The four components are memory, CPU, input devices, and output devices.",
+     "how": "Award 1 mark when all four components are named; equivalent terms for the CPU and input/output devices are accepted."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-1-1-t3",
+   "text": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+   "marks": 2,
+   "modelAnswer": [
+    "Fetching: The central processing unit retrieves an instruction from the computer’s memory. Decoding: The Control Unit (CU) decodes the instruction.",
+    "Execution: The CPU processes the instruction. Storing: The outcome of the computation is either returned to memory or sent to an output device."
+   ],
+   "followUp": "What are the four main steps in the Von Neumann architecture's instruction cycle?",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "fetching",
+       "instruction",
+       "memory",
+       "decoding",
+       "control unit"
+      ],
+      [
+       "fetching",
+       "instruction",
+       "memory",
+       "decoding",
+       "CU"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies fetching and decoding, including their essential actions.",
+     "description": "Fetching retrieves an instruction from memory; decoding is performed by the Control Unit.",
+     "how": "Award 1 mark for both stages: retrieving an instruction from memory and decoding it with the Control Unit (CU)."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "execution",
+       "CPU",
+       "processes",
+       "storing",
+       "memory",
+       "output device"
+      ],
+      [
+       "execution",
+       "CPU",
+       "processes",
+       "storing",
+       "memory"
+      ],
+      [
+       "execution",
+       "CPU",
+       "processes",
+       "storing",
+       "output device"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies execution and storing, including the result destination.",
+     "description": "Execution processes the instruction; storing sends the result to memory or an output device.",
+     "how": "Award 1 mark for both stages: the CPU processes the instruction, and the result is returned to memory or sent to an output device."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-1-1-t4",
+   "text": "What is the Von Neumann bottleneck?",
+   "marks": 2,
+   "modelAnswer": [
+    "The Von Neumann bottleneck occurs when a single memory area limits the CPU's ability to retrieve instructions and data quickly."
+   ],
+   "followUp": "What is the Von Neumann bottleneck?",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "single memory area"
+      ],
+      [
+       "one memory area"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the single memory area as the limiting factor.",
+     "description": "The bottleneck occurs because of a single memory area.",
+     "how": "Award 1 mark for stating that the bottleneck involves one or a single memory area."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "limits",
+       "CPU",
+       "retrieve",
+       "instructions",
+       "data",
+       "quickly"
+      ],
+      [
+       "restricts",
+       "CPU",
+       "retrieve",
+       "instructions",
+       "data",
+       "quickly"
+      ],
+      [
+       "limits",
+       "CPU",
+       "fetch",
+       "instructions",
+       "data"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains that this limits how quickly the CPU can retrieve both instructions and data.",
+     "description": "The memory area limits the CPU’s retrieval speed for instructions and data.",
+     "how": "Award 1 mark for stating that CPU retrieval of instructions and data is limited or slowed."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-1-1-t5",
+   "text": "What is a key advantage of the Von Neumann architecture?",
+   "marks": 2,
+   "modelAnswer": [
+    "Flexibility: Programs can be easily changed by changing memory contents."
+   ],
+   "followUp": "What is a key advantage of the Von Neumann architecture?",
+   "noteId": "cs-n-1-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "flexibility"
+      ],
+      [
+       "programs",
+       "changed"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies flexibility or the ability to change programs as the advantage.",
+     "description": "The architecture is flexible because programs can be changed.",
+     "how": "Award 1 mark for identifying flexibility or stating that programs can be changed."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "changing",
+       "memory contents"
+      ],
+      [
+       "change",
+       "memory contents"
+      ]
+     ],
+     "marks": 1,
+     "why": "States how the programs are changed.",
+     "description": "Programs are changed by changing the contents of memory.",
+     "how": "Award 1 mark for explaining that the program changes when memory contents are changed."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 0,
+  "writtenBuilt": 6
+ }
+}

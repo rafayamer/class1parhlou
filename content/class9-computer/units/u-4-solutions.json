@@ -1,0 +1,449 @@
+{
+ "unit": 4,
+ "sections": [
+  {
+   "number": "4.1",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "4.2",
+   "solutions": [],
+   "mcqs": []
+  },
+  {
+   "number": "4.R",
+   "solutions": [
+    {
+     "kind": "EXERCISE",
+     "source": "Short 4.1",
+     "question": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+     "steps": [
+      "The first step is to identify the problem.",
+      "Gather information from the user and observe the system to understand the symptoms.",
+      "This step is important because an accurate understanding of the problem helps prevent incorrect solutions and guides the troubleshooting process."
+     ],
+     "answer": "The first step is to identify the problem by gathering information about its symptoms.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 4.2",
+     "question": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+     "steps": [
+      "After identifying the problem, establish a theory of probable cause.",
+      "Consider the most likely cause of the symptoms, using the information gathered and checking simple causes first.",
+      "This helps narrow down the possible causes and directs the next steps of troubleshooting."
+     ],
+     "answer": "Establish a theory of probable cause to narrow down what may be causing the problem.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 4.3",
+     "question": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+     "steps": [
+      "Testing a theory determines whether the suspected cause is correct.",
+      "Test the theory in a safe and systematic way. If it is confirmed, continue to plan a solution; if it is not confirmed, establish another theory or seek further information.",
+      "Example: If a computer does not connect to the internet, check whether the network cable is unplugged. Reconnect it and test the connection. If the connection works, the theory is confirmed."
+     ],
+     "answer": "Testing a theory confirms or rejects a suspected cause; for example, reconnecting a loose network cable can test whether it caused an internet connection problem.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 4.4",
+     "question": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+     "steps": [
+      "Implement the solution means carrying out the selected plan of action to resolve the problem.",
+      "Make the necessary changes, such as repairing or replacing a faulty component, changing a setting, or installing an update.",
+      "Follow the plan carefully and take appropriate precautions while making changes."
+     ],
+     "answer": "Implement the solution by carrying out the chosen plan to fix the problem.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Short 4.5",
+     "question": "Why is it necessary to verify full system functionality after implementing a solution?",
+     "steps": [
+      "After implementing a solution, verify that the entire system is functioning properly.",
+      "Test the system and its related functions to confirm that the original problem has been resolved and that no new problems have been introduced.",
+      "If appropriate, take steps to prevent the problem from happening again."
+     ],
+     "answer": "Verification confirms that the fix worked, the full system functions properly, and no new problems were created.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.1",
+     "question": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+     "steps": [
+      "Troubleshooting is a systematic way of finding and resolving problems in a system.",
+      "It helps users identify the cause of a problem instead of making random changes.",
+      "In computing systems, it reduces downtime and helps computers, software, networks, and peripheral devices operate smoothly.",
+      "It can save time and cost, protect data, and help prevent the same problem from occurring again."
+     ],
+     "answer": "Troubleshooting helps identify and fix system problems systematically, reducing downtime and supporting smooth and reliable operation.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.2",
+     "question": "Explain the systematic process of troubleshooting. Describe each step in detail.",
+     "steps": [
+      "Identify the problem: Gather information from the user, observe the symptoms, and note any error messages or recent changes. Ask questions and, if possible, reproduce the problem to understand exactly what is happening.",
+      "Establish a theory of probable cause: Consider the most likely causes first, such as a loose connection, incorrect setting, faulty component, or software problem. Check simple causes before moving on to more complex ones.",
+      "Test the theory: Carry out a safe check or test to see whether the suspected cause explains the symptoms. If the test confirms the theory, continue to plan a solution; if not, form and test another theory.",
+      "Establish a plan of action and implement the solution: Choose a solution that addresses the cause with the least risk and disruption. Explain the plan if needed, carry it out carefully, and make changes one at a time where possible.",
+      "Verify full system functionality and, if applicable, implement preventive measures: Check that the original problem is fixed and that other functions still work. Take steps to prevent recurrence, such as correcting settings, updating software, or replacing a faulty part.",
+      "Document findings, actions, and outcomes: Record the symptoms, the cause, the tests performed, the solution, and the results. This record helps with future troubleshooting and provides a history of the repair."
+     ],
+     "answer": "Troubleshooting involves identifying the problem, testing a probable cause, implementing a solution, verifying the system, preventing recurrence, and documenting the results.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.3",
+     "question": "Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+     "steps": [
+      "Identify the problem: A user reports that a printer will not print. Ask whether the problem affects one document or all documents, check for an error message, and try to reproduce the problem by printing a test page.",
+      "Gather and check basic information: Confirm that the printer is powered on and shows no paper-jam or low-supply warning. Check that paper is loaded and that the computer is connected to the correct printer.",
+      "Establish a theory of probable cause: Because the printer is powered on but no job appears at the printer, a likely cause is that the computer is sending the job to the wrong printer or that the printer connection is unavailable. Other possible causes include a paused print queue, a paper jam, or an empty ink or toner supply.",
+      "Test the most likely theory: Check the selected printer in the computer's print settings and compare it with the printer's name. If it is incorrect, select the correct printer and print a test page. If it is correct, check the connection and print queue, then test the next likely cause.",
+      "Establish and implement a solution: If the wrong printer was selected, set the correct printer as the destination. If the connection is loose, reconnect it; if the queue is paused or stuck, resume it or clear the stuck job; if a jam or supply problem is indicated, clear the jam or replace the supply as appropriate.",
+      "Verify the result and document it: Print a test page and confirm that it comes out correctly. Record the reported symptoms, the cause found, the action taken, and the outcome."
+     ],
+     "answer": "Check the symptoms and basic printer conditions, test the most likely cause first, correct the fault, and verify the repair with a test page.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.4",
+     "question": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+     "steps": [
+      "Documenting findings, actions, and outcomes is an important part of troubleshooting.",
+      "Record the problem observed, the possible causes, and the tests performed.",
+      "Write down each action taken and its result, including any changes made to the system.",
+      "This record helps the user or technician avoid repeating unsuccessful steps and identify a successful solution.",
+      "It also provides a useful history for future troubleshooting and helps communicate the problem to other technicians."
+     ],
+     "answer": "Keeping a record of findings, actions, and outcomes helps solve problems efficiently and supports future troubleshooting.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.5",
+     "question": "Analyze the various ways troubleshooting is vital in computing systems, particularly in preventing downtime, ensuring data integrity, and improving security. Provide specific examples and scenarios to support your analysis.",
+     "steps": [
+      "Troubleshooting helps restore a computer or network to normal operation by locating the cause of a fault and applying an appropriate solution.",
+      "It prevents downtime: For example, if a school computer cannot connect to the network, checking the network cable, Wi-Fi connection, and network settings can identify the fault quickly and allow lessons or office work to continue.",
+      "It can prevent a small fault from causing a longer interruption: For example, checking a printer's paper supply and print queue may restore printing before a whole office is delayed.",
+      "It helps ensure data integrity: Data integrity means that data remains accurate and complete. For example, if a computer shuts down unexpectedly while a file is being saved, troubleshooting the power or storage problem and checking the file can reduce the risk of damaged or incomplete data.",
+      "It supports safe handling of data: Before repairing a faulty storage device or reinstalling software, a technician can identify the problem and make a backup where possible, reducing the chance of losing important files.",
+      "It improves security by helping to identify and correct weaknesses: For example, if a computer shows signs of malware, troubleshooting can include scanning it with updated security software, removing the threat, and checking for suspicious programs or settings.",
+      "It helps prevent security problems from returning: Applying security updates, changing a compromised password, and checking that the firewall and antivirus protection are active can reduce the risk of another attack.",
+      "It makes future repairs easier: Recording the symptoms, cause, solution, and result gives staff useful information if the same problem occurs again."
+     ],
+     "answer": "Troubleshooting reduces downtime, protects data integrity, and improves security by finding faults, correcting their causes, and preventing recurrence.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.6",
+     "question": "Describe basic software-related troubleshooting strategies, including handling application freezing and unresponsive peripherals.",
+     "steps": [
+      "When an application freezes, wait briefly to see whether it responds.",
+      "Close the unresponsive application using the operating system’s task manager or force-quit option, and then restart it.",
+      "Save work frequently; if the problem continues, restart the computer and check for software updates or error messages.",
+      "If a peripheral such as a mouse, keyboard, or printer is unresponsive, check that it is connected properly and switched on.",
+      "For a wireless peripheral, check its battery and wireless connection; for a USB device, try another port.",
+      "Restart the device or computer, and install or update the correct device driver if necessary."
+     ],
+     "answer": "For software problems, close and restart the application and check for updates; for unresponsive peripherals, check power, connections, settings, and drivers.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.7",
+     "question": "Explain how to recognize hardware failures, particularly focusing on RAM and hard drive issues.",
+     "steps": [
+      "Hardware failures may be indicated by error messages, unusual sounds, repeated crashes, failure to start, or poor performance.",
+      "RAM problems may cause frequent freezing, unexpected restarts, error messages, or failure to boot.",
+      "If RAM is suspected, turn off the computer and have the memory modules and their connections checked; a memory diagnostic can also help identify errors.",
+      "Hard drive problems may be indicated by clicking or grinding sounds, slow file access, missing or corrupted files, or disk error messages.",
+      "If a hard drive problem is suspected, back up important data as soon as possible and use a disk-checking tool or seek technical assistance.",
+      "Do not ignore signs of hardware failure, because continued use may lead to data loss."
+     ],
+     "answer": "RAM faults can cause crashes or boot problems, while hard drive faults can cause unusual sounds, slow access, and damaged or missing files.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.8",
+     "question": "Elaborate on the importance of maintaining software and addressing security threats.",
+     "steps": [
+      "Software maintenance is the work of keeping software reliable, secure, and suitable for users after it has been installed.",
+      "Install software updates and patches because they can fix errors, improve performance, and close security weaknesses that attackers could exploit.",
+      "Keep the operating system, applications, and security software up to date so that the computer can detect and respond to newer threats.",
+      "Use antivirus or other security software to scan files and programs for malware, and remove or quarantine threats that are detected.",
+      "Use a firewall to monitor network traffic and help block unauthorised access to the computer or network.",
+      "Use strong, unique passwords and change a password if it may have been exposed; do not share passwords with unauthorised people.",
+      "Download software and files only from trusted sources, and avoid suspicious links or attachments because they may contain malware.",
+      "Back up important data regularly so that files can be restored if malware, a software fault, or a hardware failure causes data loss.",
+      "Check that updates, security scans, and backups have completed successfully, and investigate warnings rather than ignoring them."
+     ],
+     "answer": "Maintain software with updates, security tools, safe usage, and regular backups to fix faults and protect against security threats.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.9",
+     "question": "Describe common methods for identifying and removing malware infections and applying operating system updates for security.",
+     "steps": [
+      "Use reputable, updated antivirus or anti-malware software to scan the computer for infections.",
+      "If malware is detected, follow the security program’s instructions to quarantine or remove it, and restart the computer if required.",
+      "Uninstall suspicious or unwanted programs and avoid opening unknown attachments or links.",
+      "Keep the operating system and applications updated by using their official update tools.",
+      "Install security updates promptly because they fix weaknesses that attackers may use.",
+      "Restart the computer when requested and check that updates were installed successfully."
+     ],
+     "answer": "Scan with updated security software, quarantine or remove detected malware, and install operating system security updates promptly.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    },
+    {
+     "kind": "EXERCISE",
+     "source": "Long 4.10",
+     "question": "Describe the different data backup methods, including using external storage devices and cloud solutions.",
+     "steps": [
+      "A data backup is a separate copy of important files that can be used to restore data if the original files are lost, damaged, or deleted.",
+      "External storage devices: Copy files from the computer to a USB flash drive or an external hard drive. Connect the device, select the files or folders to protect, and copy them to the device; disconnect and store it safely after the backup.",
+      "An external hard drive can hold a large amount of data and is useful for backing up many files. A USB flash drive is portable and can be used for smaller backups, but it may be lost or damaged easily.",
+      "Cloud backup: Copy files through the internet to an online storage service. The files are stored on remote servers and can usually be accessed or restored by signing in to the account from an internet-connected device.",
+      "Cloud storage can keep a copy away from the computer, which helps if the computer or local storage device is damaged. It requires internet access and the account should be protected with a strong password.",
+      "Back up important data regularly, check that the copies can be opened or restored, and keep backup devices or accounts secure. For important data, keeping more than one copy using different methods gives added protection."
+     ],
+     "answer": "Back up data by copying it to external devices such as USB drives or external hard drives, or by uploading it to cloud storage.",
+     "figure": "",
+     "accept": [],
+     "checked": true,
+     "note": ""
+    }
+   ],
+   "mcqs": [
+    {
+     "source": "MCQ 4.1",
+     "stem": "What is the first step in the systematic process of troubleshooting?",
+     "options": [
+      "Establish a Theory of Probable Cause",
+      "Implement the Solution",
+      "Identify Problem",
+      "Document Findings, Actions, and Outcomes"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Establishing a theory comes after the issue has been identified.",
+      "Implementing a solution happens after the cause and plan have been determined.",
+      "Identifying the problem is the first step in the troubleshooting process.",
+      "Documenting findings and outcomes is typically the final step."
+     ]
+    },
+    {
+     "source": "MCQ 4.2",
+     "stem": "Why is effective troubleshooting important for maintaining systems?",
+     "options": [
+      "It helps save money on repairs",
+      "It prevents the need for professional help",
+      "It ensures systems operate smoothly and efficiently",
+      "It allows for more frequent system updates"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Saving money on repairs can be a benefit, but it is not the main reason effective troubleshooting matters.",
+      "Troubleshooting does not prevent the need for professional help in every situation.",
+      "Effective troubleshooting helps systems operate smoothly and efficiently.",
+      "Troubleshooting is not primarily intended to enable more frequent system updates."
+     ]
+    },
+    {
+     "source": "MCQ 4.3",
+     "stem": "Which step involves coming up with a theory about what might be causing a problem?",
+     "options": [
+      "Test the Theory to Determine the Cause",
+      "Establish a Theory of Probable Cause",
+      "Implement the Solution",
+      "Verify Full System Functionality"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Testing a theory determines whether it is correct rather than creating the theory.",
+      "Establishing a theory of probable cause means proposing what might be causing the problem.",
+      "Implementing a solution occurs after the cause and resolution plan are established.",
+      "Verifying functionality checks the system after a solution has been implemented."
+     ]
+    },
+    {
+     "source": "MCQ 4.4",
+     "stem": "After implementing a solution, what is the next step in the troubleshooting process?",
+     "options": [
+      "Document Findings, Actions, and Outcomes",
+      "Test the Theory to Determine the Cause",
+      "Verify Full System Functionality",
+      "Establish a Plan of Action to Resolve the Problem"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Documentation follows verification of the system’s functionality.",
+      "Testing the theory takes place before implementing a solution.",
+      "Verifying full system functionality is the next step after implementing a solution.",
+      "Establishing a plan of action happens before implementing the solution."
+     ]
+    },
+    {
+     "source": "MCQ 4.5",
+     "stem": "Which of the following is an example of identifying a problem in troubleshooting?",
+     "options": [
+      "Testing a laptop battery by plugging in the power cord",
+      "Coming up with a plan to replace a laptop battery",
+      "Noticing that a laptop does not turn on when the power button is pressed",
+      "Writing down that a laptop battery was replaced"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Testing a battery is an action taken to investigate a problem, not an example of initially identifying it.",
+      "Planning to replace a battery is part of deciding how to resolve a problem.",
+      "Noticing that the laptop does not turn on describes identifying the problem.",
+      "Writing down a battery replacement is documenting an action and its outcome."
+     ]
+    },
+    {
+     "source": "MCQ 4.6",
+     "stem": "Why is documenting findings, actions, and outcomes important in troubleshooting?",
+     "options": [
+      "It helps solve problems faster",
+      "It provides a record for future reference",
+      "It allows for more efficient testing",
+      "It ensures the solution is implemented correctly"
+     ],
+     "correctIndex": 1,
+     "rationales": [
+      "Documentation may support later troubleshooting, but its primary purpose is to keep a record rather than directly solve problems faster.",
+      "Recording findings, actions, and outcomes provides useful information for future reference.",
+      "Documentation does not itself make testing more efficient.",
+      "Documentation records what was done but does not ensure the solution was implemented correctly."
+     ]
+    },
+    {
+     "source": "MCQ 4.7",
+     "stem": "What is the purpose of establishing a plan of action in troubleshooting?",
+     "options": [
+      "To identify the problem",
+      "To verify full system functionality",
+      "To determine the cause of the problem",
+      "To decide on the steps needed to resolve the issue"
+     ],
+     "correctIndex": 3,
+     "rationales": [
+      "The problem is identified in an earlier step, before making a plan of action.",
+      "Verifying full functionality occurs after the solution is implemented.",
+      "Determining the cause is part of testing the theory, before establishing a plan of action.",
+      "A plan of action determines the steps needed to resolve the issue."
+     ]
+    },
+    {
+     "source": "MCQ 4.8",
+     "stem": "Why is troubleshooting important in computing systems?",
+     "options": [
+      "It ensures hardware components are always up to date",
+      "It prevents the need for data backups",
+      "It helps keep systems running smoothly and securely",
+      "It eliminates the need for software updates"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Troubleshooting may reveal outdated hardware, but it does not ensure components are always up to date.",
+      "Troubleshooting does not eliminate the need for data backups.",
+      "Troubleshooting helps keep computing systems running smoothly and securely by identifying and resolving issues.",
+      "Troubleshooting does not eliminate the need for software updates."
+     ]
+    },
+    {
+     "source": "MCQ 4.9",
+     "stem": "What does troubleshooting help prevent by quickly identifying and resolving issues?",
+     "options": [
+      "The need for professional help",
+      "The need for software updates",
+      "Downtime and lost productivity",
+      "The need for regular maintenance"
+     ],
+     "correctIndex": 2,
+     "rationales": [
+      "Troubleshooting can reduce the need for outside help in some cases, but that is not the main issue it prevents.",
+      "Troubleshooting does not remove the need for software updates.",
+      "Quickly identifying and resolving issues helps prevent downtime and lost productivity.",
+      "Troubleshooting does not eliminate the need for regular maintenance."
+     ]
+    },
+    {
+     "source": "MCQ 4.10",
+     "stem": "Which of the following is an example of ensuring data integrity through troubleshooting?",
+     "options": [
+      "Identifying a software bug that causes incorrect database results",
+      "Replacing a faulty printer",
+      "Using a cooling pad to prevent laptop overheating",
+      "Updating the operating system regularly"
+     ],
+     "correctIndex": 0,
+     "rationales": [
+      "Finding a bug that produces incorrect database results helps protect the accuracy and integrity of data.",
+      "Replacing a faulty printer addresses a hardware issue but does not specifically ensure data integrity.",
+      "Using a cooling pad helps prevent overheating rather than protect data accuracy.",
+      "Regularly updating an operating system can improve security and performance, but it is not specifically an example of ensuring data integrity through troubleshooting."
+     ]
+    }
+   ]
+  }
+ ]
+}

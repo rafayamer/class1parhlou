@@ -1,0 +1,614 @@
+{
+ "unit": 2,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 2.7",
+   "MCQ 2.8",
+   "MCQ 2.9",
+   "MCQ 2.10",
+   "Short 2.8",
+   "Short 2.9",
+   "Short 2.10"
+  ],
+  "definitions": [
+   {
+    "term": "Decimal system",
+    "text": "The decimal number system is a base-10 number system that consists of digit from 0 to 9 and we use it in everyday life."
+   },
+   {
+    "term": "Binary system",
+    "text": "In binary, the place values are arranged from the right to left, starting with 2⁰, and ending at 2ⁿ,where each position represents a power of 2."
+   },
+   {
+    "term": "Octal system",
+    "text": "Octal is a positional numeral system with base eight, which implies that a digit to be used ranges from 0 to 7."
+   },
+   {
+    "term": "Hexadecimal system",
+    "text": "The hexadecimal is a base 16 number system with digit number from 0 to 9 and alphabets from A to F; each digit represents 16 to the power of the position of the digit."
+   },
+   {
+    "term": "Whole numbers",
+    "text": "Whole numbers are a set of non-negative integers. They include zero and all the positive integers."
+   },
+   {
+    "term": "Integers",
+    "text": "Integers extend the concept of whole numbers to include negative numbers. In computer programming, we call them signed integers."
+   },
+   {
+    "term": "Two's complement",
+    "text": "To store negative values, computers use a method called two's complement."
+   },
+   {
+    "term": "Two's complement steps",
+    "text": "1. Invert all the bits (change 0s to 1s and 1s to 0s).\n2. Add 1 to the Least Significant Bit (LSB)."
+   },
+   {
+    "term": "Decimal-to-binary conversion rule",
+    "text": "1. To convert decimal number to binary form, divide the decimal number by 2.\n2. Record the remainder.\n3. Divide the number by 2 until the quotient which is left after division is 0.\n4. Meaning it is represented by the remainders and it's read from the bottom to the top of the binary number."
+   },
+   {
+    "term": "Decimal-to-octal conversion rule",
+    "text": "1. To convert the decimal number to an equivalent octal number, divide the number by 8.\n2. Write down the remainder.\n3. After that divide the obtained quotient by 8.\n4. Continue the divisions until one of the numbers results in 0.\n5. Octal is a base eight number and the octal number is the remainder read from the bottom up to the top."
+   },
+   {
+    "term": "Decimal-to-hexadecimal conversion rule",
+    "text": "1. Convert the decimal number to an absolute value by dividing it by 16.\n2. Record the quotient and the remainder.\n3. Continue dividing the quotient by 16 and write down the remainder until the quotient is zero.\n4. The hexadecimal number, as you might have guessed, is the remainder read from bottom to top."
+   },
+   {
+    "term": "Binary addition rules",
+    "text": "1. 0 + 0 = 0\n2. 0 + 1 = 1\n3. 1 + 0 = 1\n4. 1 + 1 = 0 (with a carry of 1 to the next higher bit)"
+   },
+   {
+    "term": "Binary multiplication steps",
+    "text": "1. Write down the binary numbers, aligning them by the least significant bit (rightmost bit).\n2. Multiply each bit of the second number by each bit of the first number, similar to the long multiplication method in decimal.\n3. Shift the partial results one place to the left for each new row, starting from the second row.\n4. Add all the partial results to get the final product."
+   },
+   {
+    "term": "Floating-point number",
+    "text": "In computers, real values, also known as floating-point numbers, are used to represent number with fractions and/or decimals."
+   },
+   {
+    "term": "ASCII",
+    "text": "ASCII is an acronym that stands for American Standard Code for Information Interchange. It is a character encoding standard adopted for representing in devices such as computers and similar systems that use text."
+   },
+   {
+    "term": "Unicode",
+    "text": "Unicode is an attempt at mapping all graphic characters used in any of the world's writing system."
+   },
+   {
+    "term": "UTF-8",
+    "text": "It is a variable-length encoding scheme, meaning it can use a different numbers of bytes (from 1 to 4) to represent a character."
+   },
+   {
+    "term": "UTF-16",
+    "text": "UTF-16 is another variable character encoding mechanism, although it uses either 2 bytes or 4 bytes per character at most."
+   },
+   {
+    "term": "UTF-32",
+    "text": "UTF-32 is a method of encoding that uses a fixed length, with all characters stored in 4 bytes per character."
+   },
+   {
+    "term": "Pixel",
+    "text": "Images are made up of tiny dots called pixels."
+   },
+   {
+    "term": "Sampling",
+    "text": "Recording the sound wave at regular intervals."
+   },
+   {
+    "term": "Quantization",
+    "text": "Converting each sample into a number."
+   },
+   {
+    "term": "Frame",
+    "text": "Each image in a video is called a frame."
+   },
+   {
+    "term": "Binary data",
+    "text": "All these files (images, audio, and video)are stored as binary data, which means they are represented by sequences of 0s and 1s."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "Decimal value = Σ(digit × baseᵖᵒˢⁱᵗⁱᵒⁿ)",
+    "use": "Convert a positional number to decimal by multiplying each digit by its place value and adding; quantities are number values, so SI units are not applicable."
+   },
+   {
+    "formula": "Unsigned n-bit range: 0 to 2ⁿ − 1",
+    "use": "Find the possible values for an unsigned integer; n is a bit count and the result is a number value, so SI units are not applicable."
+   },
+   {
+    "formula": "Signed n-bit range: −2ⁿ⁻¹ to 2ⁿ⁻¹ − 1",
+    "use": "Find the two's-complement range for a signed integer; n is a bit count and the result is a number value, so SI units are not applicable."
+   },
+   {
+    "formula": "Two's complement = invert all bits + 1",
+    "use": "Represent a negative integer in binary using a fixed number of bits; bits are counts, so SI units are not applicable."
+   },
+   {
+    "formula": "Floating-point number = sign × mantissa × 2ᵉˣᵖᵒⁿᵉⁿᵗ",
+    "use": "Describe the components used to represent a real number; sign, mantissa, and exponent are number representation fields, so SI units are not applicable."
+   },
+   {
+    "formula": "Stored exponent = actual exponent + bias",
+    "use": "Find the exponent field in the floating-point examples; exponents and bias are number representation values, so SI units are not applicable."
+   },
+   {
+    "formula": "1 byte = 8 bits",
+    "use": "Convert between bytes and bits; both are data-size units, not SI units."
+   },
+   {
+    "formula": "1 KB = 1024 bytes; 1 MB = 1024 KB; 1 GB = 1024 MB; 1 TB = 1024 GB",
+    "use": "Convert between the data-size units used in the unit; these are data-size units, not SI units."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 2.1",
+    "why": "A direct, examinable short question on the purpose of a key text-encoding scheme."
+   },
+   {
+    "ref": "Short 2.2",
+    "why": "A core comparison question and a likely 2-mark short answer."
+   },
+   {
+    "ref": "Short 2.3",
+    "why": "Tests Unicode's main advantage: supporting writing systems beyond ASCII."
+   },
+   {
+    "ref": "Short 2.4",
+    "why": "A standard range calculation using the unsigned integer rule."
+   },
+   {
+    "ref": "Short 2.5",
+    "why": "Two's complement is a central examinable representation method."
+   },
+   {
+    "ref": "Short 2.6",
+    "why": "A likely short question testing the difference between signed and unsigned storage."
+   },
+   {
+    "ref": "Short 2.7",
+    "why": "Checks understanding of how storage width changes the representable range."
+   },
+   {
+    "ref": "Long 2.4(a)",
+    "why": "A standard worked binary multiplication exercise for arithmetic practice."
+   },
+   {
+    "ref": "Long 2.6(a)",
+    "why": "A concise binary addition exercise that checks carries."
+   },
+   {
+    "ref": "Long 2.7(a)",
+    "why": "Practises fixed-width two's-complement addition; the supplied pattern does not allocate Unit 2 a detailed question."
+   }
+  ],
+  "fullMarks": [
+   "For a number-system conversion, show the place values or repeated division clearly. For decimal-to-binary/octal/hexadecimal, write the remainders and read them from bottom to top.",
+   "When converting binary to octal or hexadecimal, group bits from the right: groups of 3 for octal and 4 for hexadecimal. Add leading zeroes if the leftmost group is incomplete.",
+   "For a negative number in a fixed bit width, first write the positive value using exactly that many bits, invert every bit, then add 1. State the final bit width.",
+   "For binary addition, subtraction, multiplication, and division, align digits correctly and show carries, partial products, or the division steps. Include the base-2 subscript in the final answer.",
+   "For signed or unsigned integer range questions, write the number of bits first, use the correct range formula, and show both the minimum and maximum values.",
+   "For ASCII and Unicode questions, state what each encoding can represent and include a clear example or code point when asked. Do not confuse a Unicode code point with its binary encoding.",
+   "For a question about the stated 2027 paper pattern, prepare Unit 2 short answers and its one MCQ carefully: Unit 2 is not listed in the detailed-question allocation."
+  ],
+  "mistakes": [
+   "Mistake: Reading decimal-to-binary remainders from top to bottom. Fix: Read the remainders from bottom to top.",
+   "Mistake: Grouping bits from the left when converting binary to octal or hexadecimal. Fix: Group from the right, using 3-bit groups for octal and 4-bit groups for hexadecimal.",
+   "Mistake: Forgetting leading zeroes when making a fixed-width binary number. Fix: Use exactly the required number of bits before doing two's complement or signed addition.",
+   "Mistake: Finding a negative value by only inverting the bits. Fix: Invert every bit and then add 1.",
+   "Mistake: Forgetting that the most significant bit is the sign bit in signed integers. Fix: Identify whether the integer is signed or unsigned before calculating its range.",
+   "Mistake: Treating a carry beyond the fixed bit width as part of a two's-complement answer. Fix: Keep the required bit width and discard the extra carry when the method requires it.",
+   "Mistake: Saying ASCII and Unicode represent the same range of characters. Fix: State that standard ASCII represents 128 characters, while Unicode supports characters from many writing systems."
+  ],
+  "shortTheory": [
+   {
+    "question": "What is the primary purpose of the ASCII encoding scheme?",
+    "answer": "ASCII enables different computers and devices to exchange text information reliably."
+   },
+   {
+    "question": "Explain the difference between ASCII and Unicode.",
+    "answer": "Unlike ASCII, which is limited to 7bits and can represent only 128 characters, Unicode can represent over a million characters through different forms of encodings such as, UTF-8, UTF-16, and UTF-32."
+   },
+   {
+    "question": "How does Unicode handle characters from different languages?",
+    "answer": "Unicode is an attempt at mapping all graphic characters used in any of the world's writing system."
+   },
+   {
+    "question": "What is the range of values for an unsigned 2-byte integer?",
+    "answer": "2-Byte whole number (16 bits): Maximum value = 2¹⁶ - 1 = 65,535. The minimum value is 0."
+   },
+   {
+    "question": "Explain how a negative integer is represented in binary.",
+    "answer": "To store negative values, computers use a method called two's complement. To find the two's complement of a binary number, follow these steps: Invert all the bits (change 0s to 1s and 1s to 0s). Add 1 to the Least Significant Bit (LSB)."
+   },
+   {
+    "question": "What is the benefit of using unsigned integers?",
+    "answer": "Whole numbers are often used to represent quantities that can't be negative. Using unsigned integers allows all available bits to represent the value, so the maximum value is larger than for a signed integer of the same size."
+   },
+   {
+    "question": "How does the number of bits affect the range of integer values?",
+    "answer": "Similarly, using 2 or 4 bytes, we get more bits to store data allowing us to store bigger values. If n is the number of bits, the maximum value that can be represented is 2ⁿ -1"
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "cs-w-2-1-t0",
+   "text": "What is the primary purpose of the ASCII encoding scheme?",
+   "marks": 2,
+   "modelAnswer": [
+    "ASCII enables different computers and devices to exchange text information reliably."
+   ],
+   "followUp": "What is the primary purpose of the ASCII encoding scheme?",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ASCII"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the encoding scheme being asked about.",
+     "description": "Names ASCII.",
+     "how": "Award for identifying ASCII as the scheme."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "exchange",
+       "text",
+       "reliably"
+      ],
+      [
+       "computers",
+       "devices",
+       "text",
+       "reliably"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the purpose of ASCII.",
+     "description": "Explains that ASCII lets computers or devices exchange text reliably.",
+     "how": "Award for the reliable exchange of text information."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t1",
+   "text": "Explain the difference between ASCII and Unicode.",
+   "marks": 2,
+   "modelAnswer": [
+    "Unlike ASCII, which is limited to 7 bits and can represent only 128 characters, Unicode can represent over a million characters through different forms of encoding such as UTF-8, UTF-16, and UTF-32."
+   ],
+   "followUp": "Explain the difference between ASCII and Unicode.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "ASCII",
+       "7 bits",
+       "128"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the limitation of ASCII stated in the answer.",
+     "description": "ASCII is limited to 7 bits and can represent 128 characters.",
+     "how": "Award for both the 7-bit limit and the 128-character capacity."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "Unicode",
+       "million",
+       "UTF-8"
+      ],
+      [
+       "Unicode",
+       "million",
+       "UTF-16"
+      ],
+      [
+       "Unicode",
+       "million",
+       "UTF-32"
+      ],
+      [
+       "Unicode",
+       "over a million",
+       "encodings"
+      ]
+     ],
+     "marks": 1,
+     "why": "Contrasts Unicode's capacity with ASCII's limitation.",
+     "description": "Unicode can represent over a million characters through encoding forms such as UTF-8, UTF-16, and UTF-32.",
+     "how": "Award for Unicode's capacity of over a million characters and its use of encoding forms."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t2",
+   "text": "How does Unicode handle characters from different languages?",
+   "marks": 2,
+   "modelAnswer": [
+    "Unicode is an attempt at mapping all graphic characters used in any of the world's writing systems."
+   ],
+   "followUp": "How does Unicode handle characters from different languages?",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "Unicode",
+       "mapping"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies Unicode's role as mapping characters.",
+     "description": "Unicode maps graphic characters.",
+     "how": "Award for stating that Unicode maps characters."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "all",
+       "graphic characters",
+       "world"
+      ],
+      [
+       "all",
+       "graphic characters",
+       "writing systems"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the broad range of characters Unicode aims to map.",
+     "description": "The characters are those used in the world's writing systems.",
+     "how": "Award for referring to graphic characters used across the world's writing systems."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t3",
+   "text": "What is the range of values for an unsigned 2-byte integer?",
+   "marks": 2,
+   "modelAnswer": [
+    "For a 2-byte whole number (16 bits), the maximum value is 2¹⁶ − 1 = 65,535. The minimum value is 0."
+   ],
+   "followUp": "What is the range of values for an unsigned 2-byte integer?",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "2 bytes",
+       "16 bits"
+      ],
+      [
+       "2-byte",
+       "16 bits"
+      ],
+      [
+       "65535",
+       "2^16-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the unsigned integer's maximum value.",
+     "description": "The maximum value is 65,535 (2¹⁶ − 1).",
+     "how": "Award for the maximum value and its 16-bit expression."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "0"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the minimum value in the stated range.",
+     "description": "The minimum value is 0.",
+     "how": "Award for stating zero as the minimum."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t4",
+   "text": "Explain how a negative integer is represented in binary.",
+   "marks": 2,
+   "modelAnswer": [
+    "To store negative values, computers use two's complement: invert all the bits, then add 1 to the least significant bit (LSB)."
+   ],
+   "followUp": "Explain how a negative integer is represented in binary.",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "two's complement"
+      ],
+      [
+       "twos complement"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names the method used to represent negative values.",
+     "description": "Negative values are stored using two's complement.",
+     "how": "Award for identifying two's complement."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "invert",
+       "bits",
+       "add 1"
+      ],
+      [
+       "change",
+       "0s",
+       "1s",
+       "add 1"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the operations used to find the two's complement.",
+     "description": "Invert all bits, then add 1.",
+     "how": "Award for both inverting the bits and adding 1."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t5",
+   "text": "What is the benefit of using unsigned integers?",
+   "marks": 2,
+   "modelAnswer": [
+    "Whole numbers often represent quantities that can't be negative. Unsigned integers use all available bits for the value, so their maximum is larger than that of a same-size signed integer."
+   ],
+   "followUp": "What is the benefit of using unsigned integers?",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "quantities",
+       "can't be negative"
+      ],
+      [
+       "quantities",
+       "cannot be negative"
+      ],
+      [
+       "not",
+       "negative"
+      ]
+     ],
+     "marks": 1,
+     "why": "States why unsigned integers suit some quantities.",
+     "description": "Whole numbers often represent quantities that cannot be negative.",
+     "how": "Award for explaining that the quantities are non-negative."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "all",
+       "bits",
+       "larger",
+       "maximum"
+      ],
+      [
+       "all available bits",
+       "larger",
+       "signed"
+      ]
+     ],
+     "marks": 1,
+     "why": "States the range advantage of unsigned integers.",
+     "description": "All available bits represent the value, giving a larger maximum than a same-size signed integer.",
+     "how": "Award for linking use of all bits to a larger maximum value than for a signed integer of the same size."
+    }
+   ]
+  },
+  {
+   "id": "cs-w-2-1-t6",
+   "text": "How does the number of bits affect the range of integer values?",
+   "marks": 2,
+   "modelAnswer": [
+    "Using more bits allows bigger values to be stored. If n is the number of bits, the maximum value is 2ⁿ − 1."
+   ],
+   "followUp": "How does the number of bits affect the range of integer values?",
+   "noteId": "cs-n-2-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "more bits",
+       "bigger values"
+      ],
+      [
+       "more bits",
+       "larger values"
+      ],
+      [
+       "more bits",
+       "larger range"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explains how adding bits affects the values that can be stored.",
+     "description": "More bits allow larger values to be stored.",
+     "how": "Award for stating that more bits increase the range or size of values that can be represented."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "2^n-1"
+      ],
+      [
+       "2ⁿ-1"
+      ],
+      [
+       "maximum",
+       "2^n",
+       "-1"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the maximum-value rule in terms of the number of bits.",
+     "description": "For n bits, the maximum value is 2ⁿ − 1.",
+     "how": "Award for the correct formula for the maximum value."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 1,
+  "importantDropped": 2,
+  "writtenBuilt": 7
+ }
+}

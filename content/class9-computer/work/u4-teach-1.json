@@ -1,0 +1,894 @@
+{
+ "note": {
+  "explanation": "Troubleshooting means finding out what is wrong with a system and following steps to fix it. Work through the steps in order, then check that the system works and record what you did.",
+  "examples": [
+   "If a laptop will not turn on, possible causes include a dead battery, a faulty power cord, or an internal hardware issue.",
+   "If a printer is not working properly, a paper jam may be the cause; clearing it may fix the problem."
+  ],
+  "checkAnswer": "Identify the problem.",
+  "keywords": [
+   "troubleshooting",
+   "systematic process",
+   "probable cause",
+   "data integrity",
+   "downtime",
+   "verify functionality"
+  ],
+  "simple": "Be a tech detective: notice the problem, work out what might cause it, test your idea, fix it, check the result, and write down what happened.",
+  "checkQuestion": "What is the first step in the systematic process of troubleshooting?",
+  "title": "Troubleshooting systems step by step",
+  "steps": [
+   "Identify Problem",
+   "Establish a Theory of Probable Cause",
+   "Test the Theory to Determine the Cause",
+   "Establish a Plan of Action to Resolve the Problem",
+   "Implement the Solution",
+   "Verify Full System Functionality",
+   "Document Findings, Actions, and Outcomes"
+  ],
+  "answer": "Troubleshooting helps identify and fix system problems quickly so systems can operate smoothly and efficiently.",
+  "checkAccept": [
+   [
+    "identify problem"
+   ],
+   [
+    "first step",
+    "identify"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "To decide what might be causing the problem",
+    "To make sure the system is fully working after the fix",
+    "To record what was done and the outcome",
+    "To put the planned fix into action"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A laptop will not turn on. Which action best matches establishing a theory of probable cause?",
+   "rationales": [
+    "This is correct because establishing a theory means suggesting a possible cause, such as a dead battery.",
+    "This describes verifying full system functionality after a solution.",
+    "This describes documenting findings, actions, and outcomes.",
+    "This describes implementing the solution."
+   ]
+  },
+  {
+   "options": [
+    "Replace the laptop battery immediately",
+    "Plug in the power cord and see whether the laptop turns on",
+    "Write down that the laptop did not turn on",
+    "Decide that the battery might be dead"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "You suspect a laptop battery is dead. Which action tests this theory?",
+   "rationales": [
+    "This is a possible solution, not a test to determine whether the theory is correct.",
+    "This is correct because plugging in the power cord tests whether the suspected battery problem is causing the issue.",
+    "This records the problem but does not test the theory.",
+    "This establishes a theory but does not test it."
+   ]
+  },
+  {
+   "options": [
+    "Document the outcome",
+    "Implement the solution",
+    "Verify full system functionality",
+    "Establish a theory of probable cause"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What should you do after implementing a solution?",
+   "rationales": [
+    "Documentation is the final step, after checking that the system works.",
+    "Implementing the solution is the step that comes before verification.",
+    "This is correct because you must check that the problem is resolved and the system works properly.",
+    "A theory of probable cause is established earlier in the process."
+   ]
+  },
+  {
+   "options": [
+    "It provides a record for future reference",
+    "It guarantees that the problem will never happen again",
+    "It replaces the need to test a theory",
+    "It means the solution does not need to be checked"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "Why is it useful to document troubleshooting findings, actions, and outcomes?",
+   "rationales": [
+    "This is correct because the record can help with future troubleshooting of similar problems.",
+    "Documentation cannot guarantee that a problem will never happen again.",
+    "Recording information does not replace testing a suspected cause.",
+    "The system still needs to be checked after a solution is implemented."
+   ]
+  },
+  {
+   "options": [
+    "A computer is not operational",
+    "A computer is running more quickly",
+    "A computer has accurate and reliable data",
+    "A computer has had its findings recorded"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does downtime mean?",
+   "rationales": [
+    "This is correct because downtime occurs when a computer system is not operational.",
+    "Running more quickly describes improved performance, not downtime.",
+    "Accurate and reliable data describes data integrity.",
+    "Recording findings is part of documentation, not downtime."
+   ]
+  },
+  {
+   "options": [
+    "It helps identify data corruption and prevent it from happening again",
+    "It ensures that hardware is always up to date",
+    "It removes the need for data backups",
+    "It makes every system immune to cyber-attacks"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How can troubleshooting support data integrity?",
+   "rationales": [
+    "This is correct because troubleshooting can find the source of data corruption and help prevent it from recurring.",
+    "Troubleshooting does not ensure that hardware is always up to date.",
+    "Troubleshooting does not remove the need for backups.",
+    "Troubleshooting can help identify security issues but cannot make a system immune to all attacks."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "What is the first step in the systematic process of troubleshooting, and why is it important?",
+   "finalAnswer": "The first step is to identify the problem. It is important because you must recognize what is not working as it should before you can find its cause or fix it.",
+   "marks": 2,
+   "source": "Short 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "identify problem"
+      ],
+      [
+       "identify",
+       "first step"
+      ]
+     ],
+     "marks": 1,
+     "why": "Naming the first step shows knowledge of the correct troubleshooting sequence.",
+     "description": "State the first step.",
+     "how": "Write that the first step is to identify the problem."
+    },
+    {
+     "accept": [
+      [
+       "recognize"
+      ],
+      [
+       "what is not working"
+      ],
+      [
+       "before",
+       "cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reason explains why troubleshooting begins by recognizing the issue.",
+     "description": "Explain why identifying the problem matters.",
+     "how": "Say that you need to recognize what is not working before finding its cause or fixing it."
+    }
+   ],
+   "modelAnswer": [
+    "The first step is to identify the problem.",
+    "It is important because you must recognize what is not working as it should before finding its cause or fixing it."
+   ]
+  },
+  {
+   "text": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+   "finalAnswer": "The next step is to establish a theory of probable cause. It helps by suggesting what might have caused the problem, so that the suspected cause can be tested.",
+   "marks": 2,
+   "source": "Short 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "theory of probable cause"
+      ],
+      [
+       "probable cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correctly naming the next step shows understanding of the process order.",
+     "description": "Name the next step.",
+     "how": "State that it is establishing a theory of probable cause."
+    },
+    {
+     "accept": [
+      [
+       "what might have caused"
+      ],
+      [
+       "possible cause"
+      ],
+      [
+       "test"
+      ]
+     ],
+     "marks": 1,
+     "why": "Explaining the purpose shows how a theory guides the next action.",
+     "description": "Explain how the theory helps.",
+     "how": "Say that it suggests a possible cause which can then be tested."
+    }
+   ],
+   "modelAnswer": [
+    "The next step is to establish a theory of probable cause.",
+    "It suggests what might have caused the problem, so that the suspected cause can be tested."
+   ]
+  },
+  {
+   "text": "Describe the importance of testing a theory during the troubleshooting process. Provide an example.",
+   "finalAnswer": "Testing a theory checks whether the suspected cause is actually the reason for the problem. For example, if you think a laptop's battery is dead, plug in the power cord and see if the computer turns on.",
+   "marks": 2,
+   "source": "Short 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "checks",
+       "suspected cause"
+      ],
+      [
+       "determine the cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "The purpose of testing is to check whether the theory is correct.",
+     "description": "Explain why a theory is tested.",
+     "how": "Say that testing checks whether the suspected cause is actually responsible."
+    },
+    {
+     "accept": [
+      [
+       "power cord",
+       "turns on"
+      ],
+      [
+       "battery",
+       "plug"
+      ]
+     ],
+     "marks": 1,
+     "why": "A relevant example demonstrates how the theory is tested.",
+     "description": "Give an example.",
+     "how": "Use the book's laptop battery example: plug in the power cord and check whether the computer turns on."
+    }
+   ],
+   "modelAnswer": [
+    "Testing a theory checks whether the suspected cause is actually the reason for the problem.",
+    "For example, if you think a laptop's battery is dead, plug in the power cord and see if the computer turns on."
+   ]
+  },
+  {
+   "text": "Explain what the \"Implement the Solution\" step entails in a troubleshooting.",
+   "finalAnswer": "Implement the Solution means putting the plan into action by doing what is necessary to fix the problem. For example, if the plan is to replace a battery, buy and install a new battery.",
+   "marks": 2,
+   "source": "Short 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "putting the plan into action"
+      ],
+      [
+       "necessary",
+       "fix the problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "The response must explain that implementation carries out the chosen plan.",
+     "description": "Explain what implementation means.",
+     "how": "State that it means putting the plan into action to fix the problem."
+    },
+    {
+     "accept": [
+      [
+       "replace",
+       "battery"
+      ],
+      [
+       "install",
+       "new battery"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example makes the step clear.",
+     "description": "Give an example of implementation.",
+     "how": "For example, buy and install a new battery if replacing the battery is the plan."
+    }
+   ],
+   "modelAnswer": [
+    "Implement the Solution means putting the plan into action by doing what is necessary to fix the problem.",
+    "For example, if the plan is to replace a battery, buy and install a new battery."
+   ]
+  },
+  {
+   "text": "Why is it necessary to verify full system functionality after implementing a solution?",
+   "finalAnswer": "Verification checks that the problem is fully resolved and that the system is working properly again.",
+   "marks": 2,
+   "source": "Short 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "problem",
+       "resolved"
+      ],
+      [
+       "fully resolved"
+      ]
+     ],
+     "marks": 1,
+     "why": "A fix is not confirmed until the original problem has been checked.",
+     "description": "State that verification confirms the problem is resolved.",
+     "how": "Say that it checks whether the problem is fully resolved."
+    },
+    {
+     "accept": [
+      [
+       "system",
+       "working properly"
+      ],
+      [
+       "functionality"
+      ]
+     ],
+     "marks": 1,
+     "why": "The system must also be checked to ensure it works as expected after the fix.",
+     "description": "State that verification checks the system's operation.",
+     "how": "Say that it confirms the system is working properly again."
+    }
+   ],
+   "modelAnswer": [
+    "Verification checks that the problem is fully resolved.",
+    "It also checks that the system is working properly again."
+   ]
+  },
+  {
+   "text": "Discuss the importance of troubleshooting in maintaining the smooth operation of systems, especially computing systems.",
+   "finalAnswer": "Troubleshooting helps find and fix problems quickly so systems operate smoothly and efficiently. It can prevent downtime, protect data integrity, improve security and performance, extend equipment life, save costs, and improve user experience.",
+   "marks": 8,
+   "source": "Long 4.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "find",
+       "fix",
+       "problems"
+      ],
+      [
+       "operate smoothly"
+      ]
+     ],
+     "marks": 2,
+     "why": "The central purpose of troubleshooting is to identify problems and restore smooth operation.",
+     "description": "Explain the general purpose.",
+     "how": "Describe how troubleshooting finds and fixes problems so systems work smoothly."
+    },
+    {
+     "accept": [
+      [
+       "downtime"
+      ],
+      [
+       "data integrity"
+      ]
+     ],
+     "marks": 2,
+     "why": "Reducing downtime and protecting reliable data are important benefits for computing systems.",
+     "description": "Discuss availability and data.",
+     "how": "Explain that resolving problems quickly can reduce downtime and help prevent data corruption."
+    },
+    {
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "performance"
+      ]
+     ],
+     "marks": 2,
+     "why": "Troubleshooting can identify security vulnerabilities and causes of poor performance.",
+     "description": "Discuss security and performance.",
+     "how": "Explain that troubleshooting can identify security issues or slow performance and help resolve them."
+    },
+    {
+     "accept": [
+      [
+       "equipment life"
+      ],
+      [
+       "save costs"
+      ],
+      [
+       "user experience"
+      ]
+     ],
+     "marks": 2,
+     "why": "These further benefits show how troubleshooting supports people and equipment.",
+     "description": "Give additional benefits.",
+     "how": "Mention extending equipment life, saving costs, or improving user experience."
+    }
+   ],
+   "modelAnswer": [
+    "Troubleshooting helps identify and fix problems quickly so systems operate smoothly and efficiently.",
+    "It can reduce downtime, which helps prevent lost productivity.",
+    "It can help find the source of data corruption and protect data integrity.",
+    "It can identify security vulnerabilities and help protect the system.",
+    "It can find causes of slow performance, such as insufficient memory, software conflicts, or hardware malfunctions.",
+    "Fixing small issues early can extend equipment life and save the cost of expensive repairs or replacements.",
+    "When systems work reliably, users can complete tasks efficiently and have a better experience."
+   ]
+  },
+  {
+   "text": "Explain the systematic process of troubleshooting. Describe each step in detail.",
+   "finalAnswer": "The seven steps are: identify the problem; establish a theory of probable cause; test the theory to determine the cause; establish a plan of action to resolve the problem; implement the solution; verify full system functionality; and document findings, actions, and outcomes.",
+   "marks": 8,
+   "source": "Long 4.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "identify problem"
+      ],
+      [
+       "establish",
+       "theory",
+       "probable cause"
+      ]
+     ],
+     "marks": 2,
+     "why": "The process begins by recognizing the issue and considering a likely cause.",
+     "description": "Describe the first two steps.",
+     "how": "Identify the problem, then establish a theory of probable cause."
+    },
+    {
+     "accept": [
+      [
+       "test the theory"
+      ],
+      [
+       "determine the cause"
+      ]
+     ],
+     "marks": 1,
+     "why": "Testing checks whether the suspected cause is correct.",
+     "description": "Describe testing the theory.",
+     "how": "Explain that the theory is tested to determine the cause."
+    },
+    {
+     "accept": [
+      [
+       "plan of action"
+      ],
+      [
+       "resolve the problem"
+      ]
+     ],
+     "marks": 1,
+     "why": "A plan sets out what to do once the cause is confirmed.",
+     "description": "Describe planning the action.",
+     "how": "State that a plan of action is established to resolve the problem."
+    },
+    {
+     "accept": [
+      [
+       "implement the solution"
+      ],
+      [
+       "put",
+       "action"
+      ]
+     ],
+     "marks": 1,
+     "why": "The planned fix must be carried out.",
+     "description": "Describe implementing the solution.",
+     "how": "Explain that implementation puts the plan into action."
+    },
+    {
+     "accept": [
+      [
+       "verify full system functionality"
+      ],
+      [
+       "working properly"
+      ]
+     ],
+     "marks": 1,
+     "why": "Checking the system confirms that the solution worked.",
+     "description": "Describe verification.",
+     "how": "State that you verify the system is working properly."
+    },
+    {
+     "accept": [
+      [
+       "document findings"
+      ],
+      [
+       "actions",
+       "outcomes"
+      ]
+     ],
+     "marks": 2,
+     "why": "A complete answer includes recording the work and its result for future reference.",
+     "description": "Describe the final step and present the full sequence.",
+     "how": "Document findings, actions, and outcomes, and give the seven steps in order."
+    }
+   ],
+   "modelAnswer": [
+    "1. Identify Problem: Recognize what is not working as it should.",
+    "2. Establish a Theory of Probable Cause: Think about what might have caused the problem.",
+    "3. Test the Theory to Determine the Cause: Check whether the suspected cause is actually responsible.",
+    "4. Establish a Plan of Action to Resolve the Problem: Decide what steps are needed to fix the issue.",
+    "5. Implement the Solution: Put the plan into action.",
+    "6. Verify Full System Functionality: Check that the problem is fully resolved and the system works properly.",
+    "7. Document Findings, Actions, and Outcomes: Record the problem, suspected cause, actions taken, and outcome for future reference."
+   ]
+  },
+  {
+   "text": "Using a case study where a printer is not printing, explain how you would identify the problem and establish a theory of probable cause.",
+   "finalAnswer": "Identify the problem by recognizing that the printer is not printing. Establish a theory of probable cause by considering what might be wrong, such as a paper jam, and then check whether that cause explains the problem.",
+   "marks": 8,
+   "source": "Long 4.3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "printer",
+       "not printing"
+      ],
+      [
+       "identify",
+       "problem"
+      ]
+     ],
+     "marks": 2,
+     "why": "The case study begins by clearly stating the observed problem.",
+     "description": "Identify the printer problem.",
+     "how": "State that the printer is not printing."
+    },
+    {
+     "accept": [
+      [
+       "theory of probable cause"
+      ],
+      [
+       "possible cause"
+      ]
+     ],
+     "marks": 2,
+     "why": "A probable cause is a reasonable explanation to investigate.",
+     "description": "Establish a possible cause.",
+     "how": "Suggest a likely cause, such as a paper jam."
+    },
+    {
+     "accept": [
+      [
+       "paper jam"
+      ],
+      [
+       "check"
+      ]
+     ],
+     "marks": 2,
+     "why": "Checking the suspected cause connects the theory to the observed problem.",
+     "description": "Relate the theory to the case.",
+     "how": "Explain that you would check whether the paper jam is causing the printer not to print."
+    },
+    {
+     "accept": [
+      [
+       "not printing",
+       "paper jam",
+       "cause"
+      ],
+      [
+       "printer",
+       "check",
+       "cause"
+      ]
+     ],
+     "marks": 2,
+     "why": "A clear case-based explanation shows how identification and theory work together.",
+     "description": "Explain the reasoning in the case.",
+     "how": "Connect the observed printing problem with the suspected cause and its investigation."
+    }
+   ],
+   "modelAnswer": [
+    "Identify the problem: The printer is not printing.",
+    "Establish a theory of probable cause: Consider what might be wrong, such as a paper jam.",
+    "Check the suspected cause to see whether the paper jam explains why the printer is not printing."
+   ]
+  },
+  {
+   "text": "Discuss the importance of documenting findings, actions, and outcomes during the troubleshooting process.",
+   "finalAnswer": "Documentation records the problem, the suspected cause, the actions taken, and the outcome. It is important because it provides information for future reference and can help people troubleshoot similar problems more efficiently.",
+   "marks": 8,
+   "source": "Long 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "records",
+       "problem"
+      ],
+      [
+       "document",
+       "findings"
+      ]
+     ],
+     "marks": 2,
+     "why": "The answer should identify what troubleshooting documentation records.",
+     "description": "State what is recorded.",
+     "how": "Include the problem, suspected cause, actions, and outcome."
+    },
+    {
+     "accept": [
+      [
+       "future reference"
+      ],
+      [
+       "record",
+       "future"
+      ]
+     ],
+     "marks": 2,
+     "why": "A central reason for documenting is that the information remains available later.",
+     "description": "Explain future reference.",
+     "how": "Say that the record can be referred to in the future."
+    },
+    {
+     "accept": [
+      [
+       "similar problems"
+      ],
+      [
+       "troubleshoot",
+       "efficiently"
+      ]
+     ],
+     "marks": 2,
+     "why": "Past records can help resolve similar issues more efficiently.",
+     "description": "Explain how records help with later problems.",
+     "how": "Describe how the record can help someone troubleshoot a similar problem."
+    },
+    {
+     "accept": [
+      [
+       "others"
+      ],
+      [
+       "actions",
+       "outcome"
+      ]
+     ],
+     "marks": 2,
+     "why": "Clear documentation helps the original user or others understand what was done and what happened.",
+     "description": "Explain the usefulness of a clear record.",
+     "how": "Mention that others can use the recorded actions and outcome to understand or investigate the issue."
+    }
+   ],
+   "modelAnswer": [
+    "Documentation records what the problem was, what was thought to be causing it, what was done to fix it, and the outcome.",
+    "It is important because it provides information for future reference.",
+    "The record can help you or others troubleshoot similar problems more efficiently in the future.",
+    "For example, you can record that a laptop would not turn on because of a dead battery, that the battery was replaced, and that the laptop is now working properly."
+   ]
+  },
+  {
+   "text": "Analyze the various ways troubleshooting is vital in computing systems, particularly in preventing downtime, ensuring data integrity, and improving security. Provide specific examples and scenarios to support your analysis.",
+   "finalAnswer": "Troubleshooting can quickly identify and resolve problems, reducing downtime and lost productivity. It can find the source of data corruption, helping keep data accurate and reliable. It can also identify vulnerabilities and security breaches so action can be taken to protect the system.",
+   "marks": 8,
+   "source": "Long 4.5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "preventing downtime"
+      ],
+      [
+       "reduce",
+       "downtime"
+      ]
+     ],
+     "marks": 2,
+     "why": "Downtime can stop work and reduce productivity, so its prevention is a key benefit.",
+     "description": "Explain prevention of downtime.",
+     "how": "Explain that quickly resolving issues helps keep systems operational and reduces lost productivity."
+    },
+    {
+     "accept": [
+      [
+       "data integrity"
+      ],
+      [
+       "accurate",
+       "reliable"
+      ]
+     ],
+     "marks": 2,
+     "why": "Data integrity is about keeping data accurate and reliable.",
+     "description": "Explain the data-integrity benefit.",
+     "how": "Describe how troubleshooting can find the source of data corruption and help prevent it happening again."
+    },
+    {
+     "accept": [
+      [
+       "security"
+      ],
+      [
+       "vulnerabilities"
+      ]
+     ],
+     "marks": 2,
+     "why": "Finding vulnerabilities or breaches allows protective action to be taken.",
+     "description": "Explain the security benefit.",
+     "how": "Say that troubleshooting can identify security vulnerabilities or breaches so the system can be protected."
+    },
+    {
+     "accept": [
+      [
+       "example"
+      ],
+      [
+       "scenario"
+      ],
+      [
+       "software bug"
+      ]
+     ],
+     "marks": 2,
+     "why": "A relevant scenario supports the explanation with an application of the ideas.",
+     "description": "Give a relevant example.",
+     "how": "For example, identify a software bug causing incorrect database results, or resolve a system fault before it causes extended downtime."
+    }
+   ],
+   "modelAnswer": [
+    "Troubleshooting helps find and resolve system problems quickly.",
+    "This can prevent downtime, when a system is not operational, and reduce lost productivity.",
+    "For example, quickly finding why a computer system has stopped working can help restore it sooner.",
+    "Troubleshooting also helps ensure data integrity, which means that data is accurate and reliable.",
+    "For example, finding the software bug that causes incorrect information to be stored or processed can help prevent data corruption from happening again.",
+    "Troubleshooting can improve security by identifying vulnerabilities and security breaches.",
+    "Taking quick action after finding a security issue helps protect the system and its data."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "Expect short questions asking for a particular troubleshooting step, its purpose, or why verification and documentation matter.",
+   "For a question about the complete process, write all seven steps in the book's order and briefly explain each one.",
+   "In a case study, clearly separate the observed problem from the theory of probable cause, then explain how you would test it.",
+   "For questions about importance, organise your answer around benefits such as preventing downtime, ensuring data integrity, improving security and performance, extending equipment life, saving costs, and improving user experience.",
+   "Marks are earned for the correct step or benefit, a clear explanation, and a relevant example where the question asks for one."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Think of the step that comes just after identifying the problem.",
+     "It asks you to suggest what might have caused the issue, such as a dead battery or faulty power cord."
+    ],
+    "accept": [
+     [
+      "theory of probable cause"
+     ],
+     [
+      "probable cause"
+     ]
+    ],
+    "question": "After identifying a problem, what is the next step in troubleshooting, and how does it help in resolving the issue?",
+    "solution": [
+     "The next step is to establish a theory of probable cause.",
+     "This means thinking about what might have caused the problem.",
+     "The suspected cause can then be tested to determine whether it is actually responsible."
+    ],
+    "answer": "Establish a theory of probable cause. It suggests what might have caused the problem, so the suspected cause can be tested."
+   },
+   {
+    "hints": [
+     "Ask yourself what needs to be checked after the fix has been carried out.",
+     "Confirm both that the original problem is gone and that the system works as expected."
+    ],
+    "accept": [
+     [
+      "problem",
+      "resolved"
+     ],
+     [
+      "system",
+      "working properly"
+     ],
+     [
+      "full system functionality"
+     ]
+    ],
+    "question": "Why is it necessary to verify full system functionality after implementing a solution?",
+    "solution": [
+     "After implementing the solution, check that the original problem is fully resolved.",
+     "Check that the system is working properly again."
+    ],
+    "answer": "Verification confirms that the problem is fully resolved and that the system is working properly again."
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "You must first notice and state what is not working.",
+     "text": "Identify Problem"
+    },
+    {
+     "why": "Thinking of possible causes gives you something specific to investigate.",
+     "text": "Establish a Theory of Probable Cause"
+    },
+    {
+     "why": "A suspected cause must be checked to see whether it is actually responsible.",
+     "text": "Test the Theory to Determine the Cause"
+    },
+    {
+     "why": "Once the cause is confirmed, decide what action will resolve it.",
+     "text": "Establish a Plan of Action to Resolve the Problem"
+    },
+    {
+     "why": "The plan must be carried out to try to fix the issue.",
+     "text": "Implement the Solution"
+    },
+    {
+     "why": "Checking the system confirms that the issue is resolved and the system works properly.",
+     "text": "Verify Full System Functionality"
+    },
+    {
+     "why": "A record can help you or others troubleshoot similar problems in the future.",
+     "text": "Document Findings, Actions, and Outcomes"
+    }
+   ],
+   "question": "A laptop does not turn on, and you suspect that its battery is dead. Show the systematic troubleshooting process.",
+   "answer": "Follow the seven steps in order: identify the problem, establish and test a theory, plan and implement a solution, verify functionality, and document the outcome."
+  },
+  "explain": [
+   {
+    "title": "Follow a systematic process",
+    "body": "Troubleshooting is done in steps so that possible issues are not overlooked. First identify the problem, then consider and test a probable cause, plan and implement a solution, verify the system, and document what happened."
+   },
+   {
+    "title": "Identify and test a probable cause",
+    "body": "After noticing a problem, think about what might have caused it. For example, a laptop that will not turn on might have a dead battery, a faulty power cord, or an internal hardware issue. Test the theory to see whether it explains the problem."
+   },
+   {
+    "title": "Check the result and keep a record",
+    "body": "After applying a solution, verify that the system works properly again. Then record the problem, suspected cause, actions, and outcome so the information can help with similar problems later."
+   },
+   {
+    "title": "Why troubleshooting matters",
+    "body": "Troubleshooting helps keep systems running smoothly. It can reduce downtime, protect data integrity, improve security and performance, extend equipment life, save costs, and improve the user's experience."
+   },
+   {
+    "title": "Data integrity",
+    "body": "Data integrity means ensuring that data is accurate and reliable. Troubleshooting can help identify the source of data corruption and prevent it from happening again."
+   }
+  ],
+  "mistakes": [
+   "Writing the troubleshooting steps out of order or missing one of the seven steps.",
+   "Confusing identifying the problem with establishing a theory about its cause.",
+   "Giving a possible cause but not explaining how to test it.",
+   "Skipping verification after implementing a solution.",
+   "Forgetting to document the findings, actions, and outcome.",
+   "Listing benefits without explaining them or giving an example when the question asks for one."
+  ]
+ }
+}

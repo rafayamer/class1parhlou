@@ -1,0 +1,282 @@
+{
+ "items": [
+  {
+   "id": "0",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "meta-information"
+      ],
+      [
+       "meta information"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the kind of information stored in the head section.",
+     "description": "States that the <head> contains meta-information.",
+     "how": "Award 1 mark for identifying meta-information."
+    },
+    {
+     "accept": [
+      [
+       "title"
+      ],
+      [
+       "document",
+       "information"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the title or another example of document information.",
+     "description": "Says it can contain information such as the document title.",
+     "how": "Award 1 mark for giving the title or another suitable example."
+    }
+   ],
+   "modelAnswer": [
+    "This section contains meta-information about the HTML document, like the title."
+   ]
+  },
+  {
+   "id": "1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "ordered",
+       "numbered"
+      ],
+      [
+       "ordered",
+       "numbers"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies ordered lists as numbered.",
+     "description": "States that an ordered list is numbered.",
+     "how": "Award 1 mark for linking ordered lists with numbering."
+    },
+    {
+     "accept": [
+      [
+       "unordered",
+       "bulleted"
+      ],
+      [
+       "unordered",
+       "bullet"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies unordered lists as bulleted.",
+     "description": "States that an unordered list is bulleted.",
+     "how": "Award 1 mark for linking unordered lists with bullets."
+    }
+   ],
+   "modelAnswer": [
+    "You can create ordered (numbered) and unordered (bulleted) lists."
+   ]
+  },
+  {
+   "id": "2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "inline"
+      ],
+      [
+       "internal"
+      ]
+     ],
+     "marks": 1,
+     "why": "Names CSS application methods.",
+     "description": "Names inline and/or internal CSS.",
+     "how": "Award 1 mark for naming at least one of inline or internal CSS."
+    },
+    {
+     "accept": [
+      [
+       "external"
+      ],
+      [
+       "inline",
+       "internal",
+       "external"
+      ]
+     ],
+     "marks": 1,
+     "why": "Includes the external method, completing the three methods when combined with the first point.",
+     "description": "Names external CSS as a method; the three methods are inline, internal, and external.",
+     "how": "Award 1 mark for naming external CSS."
+    }
+   ],
+   "modelAnswer": [
+    "Integrating CSS with HTML is essential for styling web pages and it can be done in three primary ways: inline, internal, and external styles."
+   ]
+  },
+  {
+   "id": "3",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<a"
+      ],
+      [
+       "anchor"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the HTML anchor tag used to create links.",
+     "description": "States that hyperlinks are created using the <a> tag.",
+     "how": "Award 1 mark for identifying the anchor tag."
+    },
+    {
+     "accept": [
+      [
+       "href",
+       "</a>"
+      ],
+      [
+       "href",
+       "URL",
+       "text"
+      ]
+     ],
+     "marks": 1,
+     "why": "Recognises the href destination attribute and the link's closing or displayed text structure.",
+     "description": "Gives the href attribute as part of the hyperlink syntax.",
+     "how": "Award 1 mark for including href and a valid link structure or its destination and text."
+    }
+   ],
+   "modelAnswer": [
+    "Links are created using the `<a>` tag.",
+    "<a href=\"https://www.example.com\">Visit Example.com</a>"
+   ]
+  },
+  {
+   "id": "4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<link",
+       "head"
+      ],
+      [
+       "link",
+       "head"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the link tag and its location in the document.",
+     "description": "Says the external CSS file is linked using <link> in the <head>.",
+     "how": "Award 1 mark for identifying the link tag in the head section."
+    },
+    {
+     "accept": [
+      [
+       "stylesheet",
+       "href"
+      ],
+      [
+       "rel",
+       "href"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the stylesheet relationship and the external file reference.",
+     "description": "Includes the stylesheet and href attributes in the link element.",
+     "how": "Award 1 mark for including the stylesheet and href details."
+    }
+   ],
+   "modelAnswer": [
+    "The most efficient method for larger projects is to use an external CSS file, which is linked to the HTML document with the `<link>` tag in the `<head>` section.",
+    "<link rel=\"stylesheet\" href=\"styles.css\">"
+   ]
+  },
+  {
+   "id": "5",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "data",
+       "structured"
+      ],
+      [
+       "information",
+       "structured"
+      ]
+     ],
+     "marks": 1,
+     "why": "States that tables present data in an organised structure.",
+     "description": "Says tables display data or information in a structured format.",
+     "how": "Award 1 mark for identifying structured data display."
+    },
+    {
+     "accept": [
+      [
+       "comparison",
+       "organization"
+      ],
+      [
+       "compare",
+       "organize"
+      ],
+      [
+       "comparison",
+       "organise"
+      ]
+     ],
+     "marks": 1,
+     "why": "Gives the stated benefits of comparing and organizing information.",
+     "description": "Mentions easy comparison and organization of information.",
+     "how": "Award 1 mark for stating comparison and organization as benefits."
+    }
+   ],
+   "modelAnswer": [
+    "Tables in HTML are used to display data in a structured format, allowing for easy comparison and organization of information."
+   ]
+  },
+  {
+   "id": "6",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "<script"
+      ],
+      [
+       "script tag"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the script element used to include JavaScript.",
+     "description": "Uses the <script> tag.",
+     "how": "Award 1 mark for identifying the script tag."
+    },
+    {
+     "accept": [
+      [
+       "src",
+       "script.js"
+      ],
+      [
+       "src",
+       "javascript file"
+      ]
+     ],
+     "marks": 1,
+     "why": "Identifies the src attribute and the external JavaScript file it references.",
+     "description": "Shows the script file being referenced with src.",
+     "how": "Award 1 mark for including src with a JavaScript filename."
+    }
+   ],
+   "modelAnswer": [
+    "<script src=\"script.js\" ></script>"
+   ]
+  }
+ ]
+}
