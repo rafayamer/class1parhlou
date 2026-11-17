@@ -25,6 +25,7 @@ class FakeRepository : ParhlouRepository {
             SubjectOption("pb-$grade-phy", "Physics", available = false, note = "Coming soon"),
             SubjectOption("pb-$grade-chem", "Chemistry", available = false, note = "Coming soon"),
             SubjectOption("pb-$grade-bio", "Biology", available = false, note = "Coming soon"),
+            SubjectOption("pb-$grade-cs", "Computer Science", available = false, note = "Coming soon"),
         )
     }
 
@@ -72,8 +73,9 @@ class FakeRepository : ParhlouRepository {
         const val MATHS_9 = "pb-9-math"
         const val PHYSICS_9 = "pb-9-phy"
         const val CHEMISTRY_9 = "pb-9-chem"
+        const val COMPUTER_9 = "pb-9-cs"
         /** Subjects whose published courses the app downloads. */
-        val LIVE_SUBJECTS = listOf(MATHS_9, PHYSICS_9, CHEMISTRY_9)
+        val LIVE_SUBJECTS = listOf(MATHS_9, PHYSICS_9, CHEMISTRY_9, COMPUTER_9)
 
         private val unitTitles = listOf(
             "Real Numbers", "Logarithms", "Sets and Functions", "Factorization and Algebraic Manipulation",

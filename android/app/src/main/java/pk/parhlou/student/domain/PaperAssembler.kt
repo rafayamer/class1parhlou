@@ -77,8 +77,23 @@ object PaperAssembler {
 
     /** The board pattern of a subject's paper (Mathematics 75 marks; Physics and Chemistry 60 marks: 12 MCQs, 15 of 24 shorts,
      * 2 of 3 long questions of 9 marks). */
-    fun patternFor(subjectId: String): PaperBlueprint =
-        if (subjectId.endsWith("-phy") || subjectId.endsWith("-chem")) physicsPattern() else boardPattern()
+    fun patternFor(subjectId: String): PaperBlueprint = when {
+        subjectId.endsWith("-phy") || subjectId.endsWith("-chem") -> physicsPattern()
+        subjectId.endsWith("-cs") -> computerPattern()
+        else -> boardPattern()
+    }
+
+    /** Computer Science & Entrepreneurship 9 (PECTAA): 10 MCQs; three short-answer questions, 4 of 6 parts each (2 marks);
+     * 2 of 3 long questions of 8 marks. 50 marks, 2 hours. */
+    fun computerPattern(duration: Int = 120) = PaperBlueprint(
+        id = "pattern", title = "pattern", durationMinutes = duration, totalMarks = 50.0,
+        sections = listOf(
+            BlueprintSection("MCQ", count = 10, attempt = 10, marksEach = 1.0, minutes = 15),
+            BlueprintSection("Short questions", count = 18, attempt = 12, marksEach = 2.0),
+            BlueprintSection("Long questions", count = 3, attempt = 2, marksEach = 8.0),
+        ),
+        official = false,
+    )
 
     /** Physics 9 (PECTAA): 12 MCQs; three short-answer questions, 5 of 8 parts each (2 marks); 2 of 3 long questions,
      * each (a) 4 marks + (b) 5 marks = 9. 60 marks, 2 hours. */

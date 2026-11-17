@@ -144,6 +144,57 @@ Rules:
   [FIGURE <label if printed, e.g. Fig. 2.1>: one-line description of exactly what it shows, with every label and value on it].
 - Ignore running headers, the 'Not for sale' and 'PCTB' watermark and any website watermark; but put the printed page number on the first line as 'PAGE <n>'.`,
   },
+  computer: {
+    key: "computer",
+    id: "pb-9-cs",
+    root: "content/class9-computer",
+    name: "Computer Science",
+    short: "computer science",
+    book: "Computer Science and Entrepreneurship 9, National Curriculum 2023, English medium",
+    idPrefix: "cs-",
+    unitWord: "Unit",
+    unitHeading: (u) => new RegExp(`^#\\s*Unit\\s*${u}\\b`, "mi"),
+    // The unit's end-of-unit exercise (sections A–C) is its own module.
+    reviewHeading: /^#{0,4}\s*SECTION A\b/i,
+    reviewTitle: (u) => `Unit ${u} exercise`,
+    answerKeyAtBack: false,
+    backMatter: /^#{0,4}\s*(BIBLIOGRAPHY|GLOSSARY|INDEX|REFERENCES)\s*$/im,
+    writtenMarks: [2, 8],
+    marksBrief: "2 for a short question and 8 for a long (detailed) question",
+    science: true,
+    lessonFigures: true,
+    // A long question is one detailed 8-mark question (no parts).
+    long: { single: true, a: 8, b: 0, total: 8 },
+    sectionKinds: { B: "Short", C: "Long" },
+    sourceExample: (u) => `"Short ${u}.3", "Long ${u}.2" or "Example ${u}.1" (the book's own labels)`,
+    examiner: "Class 9 computer science examiner (Punjab board)",
+    sectionBrief: `This is one numbered section of the unit, with its examples and activities. The unit's exercise is given after it.
+mcqs: NEW board-style MCQs on this section only (fromBook false); do not copy the book's exercise MCQs here.
+written: this section's worked examples (source "Example n.m") and the unit exercise items that test THIS section
+(short and long questions; source like "Short n.m"), verbatim.`,
+    reviewBrief: `This is the unit's END-OF-UNIT EXERCISE (Sections A–C). mcqs: include ALL of Section A verbatim with the correct answer (fromBook true).
+written: every item of Sections B and C verbatim, one per item, with source labels "Short n.m" (2 marks) and "Long n.m" (8 marks).
+explain: 4–6 cards summarising the whole unit. example: one long question answered as a full-marks board answer. yourTurn: two short questions.`,
+    checkRules: `Computer science answers: conversions between number systems must give the exact value (1011₂ = 11₁₀ = B₁₆); truth tables
+and Boolean results must match row for row; code must do what is asked (equivalent code is fine). For theory questions, equivalent means
+the same points as the textbook answer, in any wording.`,
+    ocr: `You transcribe one page of a Pakistani Class 9 Computer Science and Entrepreneurship textbook (Punjab, English medium,
+National Curriculum 2023) exactly.
+Rules:
+- Copy every word, number, symbol and line of code exactly as printed, in reading order. Do not summarise, correct, solve or add anything.
+- Number bases as subscripts: 1011₂, 7F₁₆, 25₁₀. Boolean algebra with ·, +, ⊕ and an overbar written as A̅ (or NOT A). Code, HTML, CSS and
+  JavaScript in fenced code blocks (\`\`\`), keeping indentation. Truth tables and other tables as Markdown tables.
+- Use Markdown: '# Unit <n> <title>' for unit titles, '##' for numbered sections (e.g. '## 2.1 Number Systems'), '###' for sub-headings.
+- Mark these blocks on their own line exactly:
+  'EXAMPLE <n.m>:' for worked examples (copy the book's number; if unnumbered, 'EXAMPLE:'), then 'SOLUTION:' before its working;
+  'ACTIVITY <n.m>' for class activities; 'DID YOU KNOW?' / 'REMEMBER:' / 'KEY POINT:' for boxes; 'STUDENT LEARNING OUTCOMES' and 'SUMMARY'.
+  The END-OF-UNIT exercise ("Exercise") exactly as: 'SECTION A: MULTIPLE CHOICE QUESTIONS', 'SECTION B: SHORT QUESTIONS',
+  'SECTION C: LONG QUESTIONS'. Each item there as 'Q<unit>.<k>.' where k is the item's number as printed (unit 2, item 5 → 'Q2.5.');
+  parts as '(a)', '(b)'; MCQ options as '(a) ... (b) ... (c) ... (d) ...'.
+- For a picture, diagram, flowchart, circuit, screenshot or graph write
+  [FIGURE <label if printed, e.g. Fig. 2.1>: one-line description of exactly what it shows, with every label and value on it].
+- Ignore running headers, the 'Not for sale' and 'PCTB' watermark and any website watermark; but put the printed page number on the first line as 'PAGE <n>'.`,
+  },
 };
 // Physics labels its exercise parts the same way.
 SUBJECTS.physics.sectionKinds = { B: "Short", C: "CRQ", D: "Comprehensive", E: "Numerical" };

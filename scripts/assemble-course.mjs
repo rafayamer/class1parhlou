@@ -11,7 +11,9 @@ const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 const IDP = S.idPrefix;
 // A long question is two parts: Mathematics (a) 4 + (b) 4 = 8 marks; Physics (a) 4 + (b) 5 = 9; Chemistry (a) 5 + (b) 4 = 9.
 const LONG = S.long ?? (PHY ? { a: 4, b: 5, total: 9 } : { a: 4, b: 4, total: 8 });
-const poolOf = (marks) => (marks === 4 ? "fours" : "fives");
+const poolOf = (marks) => (marks === 4 ? "fours" : marks === 8 ? "eights" : "fives");
+/** A long question that is one whole question (Computer Science: one detailed 8-mark question). */
+const singleLong = (id, w) => ({ ...w, id, text: w.text, marks: w.marks });
 const whyKey = (unit, s) => createHash("sha1").update(`${unit}|${s.kind}|${s.source}|${s.steps.join("\n")}`).digest("hex").slice(0, 16);
 
 const ROOT = S.root;
@@ -265,10 +267,11 @@ for (const u of units) {
   const fives = examWritten.filter((w) => w.marks === 5);
   if (!unitOut) pools.set(n, {
     mcqs: examQuiz.filter((q) => q.status === "APPROVED").concat(examQuiz.filter((q) => q.status !== "APPROVED")),
-    shorts: examWritten.filter((w) => w.marks === 2), fours, fives,
+    shorts: examWritten.filter((w) => w.marks === 2), fours, fives, eights: examWritten.filter((w) => w.marks === 8),
   });
   const longs = [];
-  if (LONG.a === 4 && LONG.b === 4) for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
+  if (LONG.single) examWritten.filter((w) => w.marks === LONG.total).slice(0, 3).forEach((w) => longs.push(singleLong(`${IDP}L-${n}-${longs.length + 1}`, w)));
+  else if (LONG.a === 4 && LONG.b === 4) for (let i = 0; i + 1 < fours.length && longs.length < 3; i += 2) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, fours[i], fours[i + 1]));
   else {
     const [pa, pb] = LONG.a === 4 ? [fours, fives] : [fives, fours];
     for (let i = 0; i < Math.min(pa.length, pb.length) && longs.length < 3; i++) longs.push(longOf(`${IDP}L-${n}-${longs.length + 1}`, pa[i], pb[i]));
@@ -332,6 +335,12 @@ function boardPapers() {
           const list = pools.get(u)[key];
           return { w: list[(k + salt) % list.length], u };
         };
+        if (LONG.single) {
+          const one = partFrom(q.units ?? q.a, poolOf(LONG.total), 0);
+          if (!one) { problems.push(`Q${q.q}: no ${LONG.total}-mark question`); continue; }
+          qs.push(singleLong(`${IDP}BP-${set}-Q${q.q}`, one.w));
+          continue;
+        }
         const a = partFrom(q.a ?? q.units, poolOf(LONG.a), 0);
         const b = partFrom(q.b ?? q.units, poolOf(LONG.b), 1, q.units ? a?.u : undefined);
         if (!a || !b) { problems.push(`Q${q.q}: no ${a ? LONG.b : LONG.a}-mark question for part ${a ? "b" : "a"}`); continue; }
@@ -381,6 +390,7 @@ function modelPaper() {
   }
   for (const part of P.long) {
     const qs = part.questions.map((q) => {
+      if (LONG.single) { const w = writtenBy.get(slots.get(`${q.q}|a`)?.id) ?? writtenBy.get(slots.get(`${q.q}|`)?.id); if (!w) missing.push(`Q${q.q}`); return w ? singleLong(`${IDP}MP-2027-Q${q.q}`, w) : null; }
       const [a, b] = ["a", "b"].map((x) => { const w = writtenBy.get(slots.get(`${q.q}|${x}`)?.id); if (!w) missing.push(`Q${q.q}(${x})`); return w; });
       return a && b ? longOf(`${IDP}MP-2027-Q${q.q}`, a, b) : null;
     });
