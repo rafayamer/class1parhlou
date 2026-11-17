@@ -144,6 +144,52 @@ Rules:
   [FIGURE <label if printed, e.g. Fig. 2.1>: one-line description of exactly what it shows, with every label and value on it].
 - Ignore running headers, the 'Not for sale' and 'PCTB' watermark and any website watermark; but put the printed page number on the first line as 'PAGE <n>'.`,
   },
+  biology: {
+    key: "biology",
+    id: "pb-9-bio",
+    root: "content/class9-biology",
+    name: "Biology",
+    short: "biology",
+    book: "Biology 9, National Curriculum 2023, English medium",
+    idPrefix: "bio-",
+    unitWord: "Chapter",
+    unitHeading: (u) => new RegExp(`^#\\s*Chapter\\s*${u}\\b`, "mi"),
+    reviewHeading: /^#{0,4}\s*SECTION A\b/i,
+    reviewTitle: (u) => `Chapter ${u} exercise`,
+    answerKeyAtBack: false,
+    backMatter: /^#{0,4}\s*(BIBLIOGRAPHY|GLOSSARY|INDEX)\s*$/im,
+    writtenMarks: [2, 4, 5],
+    science: true,
+    lessonFigures: true,
+    long: { a: 5, b: 4, total: 9 },
+    sectionKinds: { B: "Short", C: "Long", D: "Inquisitive" },
+    sourceExample: (u) => `"Short ${u}.3", "Long ${u}.2", "Inquisitive ${u}.1" or "Example ${u}.2" (the book's own labels)`,
+    examiner: "Class 9 biology examiner (Punjab board)",
+    sectionBrief: `This is one numbered section of the chapter, with its activities. The chapter's exercise is given after it.
+mcqs: NEW board-style MCQs on this section only (fromBook false); do not copy the book's exercise MCQs here.
+written: the chapter exercise items that test THIS section (short, long and inquisitive; source like "Short n.m"), verbatim.`,
+    reviewBrief: `This is the chapter's END-OF-CHAPTER EXERCISE (Sections A–D). mcqs: include ALL of Section A verbatim with the correct answer (fromBook true).
+written: every item of Sections B–D verbatim, one part per item, with source labels "Short n.m", "Long n.m", "Inquisitive n.m"
+(add the part letter when there are parts). explain: 4–6 cards summarising the whole chapter. example: one long question answered as a
+full-marks board answer (with a labelled diagram described where the board expects one). yourTurn: two short questions.`,
+    checkRules: `Biology answers: equivalent means the same biological points as the textbook answer, in any wording, with correct terms
+(e.g. mitosis vs meiosis, prokaryote vs eukaryote are NOT interchangeable). Scientific names must be correct. For a calculation, the value
+and unit must match.`,
+    ocr: `You transcribe one page of a Pakistani Class 9 Biology textbook (Punjab, English medium, National Curriculum 2023) exactly.
+Rules:
+- Copy every word, number and scientific name exactly as printed, in reading order. Do not summarise, correct, solve or add anything.
+- Use plain Unicode: subscripts and superscripts as CO₂, H₂O, C₆H₁₂O₆, Ca²⁺; arrows →, ⇌; °C, %, μm.
+- Use Markdown: '# Chapter <n> <title>' for chapter titles, '##' for numbered sections (e.g. '## 3.2 Cell Organelles'), '###' for sub-headings.
+- Mark these blocks on their own line exactly:
+  'ACTIVITY <n.m>' for activities; 'KEY POINTS' and 'STUDENT LEARNING OUTCOMES' for those parts; 'DO YOU KNOW?' / 'REMEMBER:' / 'SCIENCE, TECHNOLOGY AND SOCIETY:' for boxes.
+  The END-OF-CHAPTER exercise exactly as: 'SECTION A: MULTIPLE CHOICE QUESTIONS' (part A), 'SECTION B: SHORT ANSWER QUESTIONS' (part B,
+  "Write short answers"), 'SECTION C: LONG QUESTIONS' (part C), 'SECTION D: INQUISITIVE QUESTIONS' (part D).
+  Each item there as 'Q<chapter>.<k>.' where k is the item's number as printed (chapter 3, item 5 → 'Q3.5.'); parts as '(a)', '(b)';
+  MCQ options as '(a) ... (b) ... (c) ... (d) ...'.
+- Tables as Markdown tables. For a picture, diagram, micrograph, flowchart or graph write
+  [FIGURE <label if printed, e.g. Fig. 3.4>: one-line description of exactly what it shows, with every label on it].
+- Ignore running headers, the 'Not for sale' footer and any watermark ('Web version of PCTB Textbook'); but put the printed page number on the first line as 'PAGE <n>'.`,
+  },
   computer: {
     key: "computer",
     id: "pb-9-cs",

@@ -74,8 +74,9 @@ class FakeRepository : ParhlouRepository {
         const val PHYSICS_9 = "pb-9-phy"
         const val CHEMISTRY_9 = "pb-9-chem"
         const val COMPUTER_9 = "pb-9-cs"
+        const val BIOLOGY_9 = "pb-9-bio"
         /** Subjects whose published courses the app downloads. */
-        val LIVE_SUBJECTS = listOf(MATHS_9, PHYSICS_9, CHEMISTRY_9, COMPUTER_9)
+        val LIVE_SUBJECTS = listOf(MATHS_9, PHYSICS_9, CHEMISTRY_9, BIOLOGY_9, COMPUTER_9)
 
         private val unitTitles = listOf(
             "Real Numbers", "Logarithms", "Sets and Functions", "Factorization and Algebraic Manipulation",

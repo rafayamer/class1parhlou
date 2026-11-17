@@ -78,7 +78,7 @@ object PaperAssembler {
     /** The board pattern of a subject's paper (Mathematics 75 marks; Physics and Chemistry 60 marks: 12 MCQs, 15 of 24 shorts,
      * 2 of 3 long questions of 9 marks). */
     fun patternFor(subjectId: String): PaperBlueprint = when {
-        subjectId.endsWith("-phy") || subjectId.endsWith("-chem") -> physicsPattern()
+        subjectId.endsWith("-phy") || subjectId.endsWith("-chem") || subjectId.endsWith("-bio") -> physicsPattern()
         subjectId.endsWith("-cs") -> computerPattern()
         else -> boardPattern()
     }

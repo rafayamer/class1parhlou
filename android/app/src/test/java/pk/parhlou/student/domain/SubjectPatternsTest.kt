@@ -12,6 +12,7 @@ class SubjectPatternsTest {
         assertEquals(60.0, attempted("pb-9-phy"), 0.0)
         assertEquals(60.0, attempted("pb-9-chem"), 0.0)
         assertEquals(50.0, attempted("pb-9-cs"), 0.0)
+        assertEquals(60.0, attempted("pb-9-bio"), 0.0)
         assertEquals(50.0, PaperAssembler.patternFor("pb-9-cs").totalMarks, 0.0)
     }
 }

@@ -66,7 +66,7 @@ data class Chapter(
 )
 
 /** How the book names its parts: Mathematics has units; the sciences (ids "phy-…", "chem-…") have chapters. */
-val Chapter.word: String get() = if (id.startsWith("phy-") || id.startsWith("chem-")) "Chapter" else "Unit"
+val Chapter.word: String get() = if (id.startsWith("phy-") || id.startsWith("chem-") || id.startsWith("bio-")) "Chapter" else "Unit"
 
 /** Everything a student needs to revise one unit for the board exam. */
 data class ExamKit(
