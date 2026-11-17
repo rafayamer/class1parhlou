@@ -555,8 +555,7 @@ fun SubjectsScreen(
     ParhlouScreen("Your books", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         if (subjects.isEmpty()) Muted("You haven't chosen any available subjects.")
-        if (subjects.any { s -> s.chapters.any { c -> c.modules.any { it.solutions.isNotEmpty() } } })
-            TaskRow(Icons.Filled.Lightbulb, "Step-by-step solutions", "Every example and exercise question, solved", onSolutions)
+        // Solutions live inside each book (its "Solutions" tab), so the list shows only the books.
         subjects.forEach { s ->
             pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(s.id) }, modifier = Modifier.fillMaxWidth()) {
                 Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
