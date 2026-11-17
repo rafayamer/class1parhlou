@@ -564,9 +564,9 @@ fun ParhlouApp(
             if (p == null) Missing(nav) else PracticalScreen(p, onBack = nav.back(), onPrint = {
                 scope.launch {
                     val f = withContext(Dispatchers.IO) {
-                        PaperPdf.notes(java.io.File(context.cacheDir, "papers/${p.id}.pdf"), "${p.label}: ${p.title}", practicalNotes(p), owner.name)
+                        runCatching { PaperPdf.notes(java.io.File(context.cacheDir, "papers/${p.id}.pdf"), "${p.label}: ${p.title}", practicalNotes(p), owner.name) }.getOrNull()
                     }
-                    shareFile(context, f, "application/pdf", p.title)
+                    if (f != null) shareFile(context, f, "application/pdf", p.title) else pdfFailed(context)
                 }
             })
         }
@@ -611,8 +611,8 @@ fun ParhlouApp(
                 onSubject = { paperSubjectId = it },
                 onExercisePdf = { e, answers ->
                     scope.launch {
-                        val f = withContext(Dispatchers.IO) { makePdf(pk.parhlou.student.domain.PdfAction("paper_pdf", "exercise", 0, e, answers)) }
-                        if (f != null) shareFile(context, f, "application/pdf", if ('.' in e) "Exercise $e" else "Chapter $e exercise")
+                        val f = withContext(Dispatchers.IO) { runCatching { makePdf(pk.parhlou.student.domain.PdfAction("paper_pdf", "exercise", 0, e, answers)) }.getOrNull() }
+                        if (f != null) shareFile(context, f, "application/pdf", if ('.' in e) "Exercise $e" else "Chapter $e exercise") else pdfFailed(context)
                     }
                 },
                 attemptsLeft = { id -> (pk.parhlou.student.domain.PaperAttempts.MAX - pk.parhlou.student.domain.PaperAttempts.used(progress.history(), id)).coerceAtLeast(0) },
@@ -641,9 +641,9 @@ fun ParhlouApp(
                     onPrint = { withScheme ->
                         scope.launch {
                             val file = withContext(Dispatchers.IO) {
-                                PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}${if (withScheme) "-scheme" else ""}.pdf"), b, paper, withScheme, subjectNameOf(b.id))
+                                runCatching { PaperPdf.write(java.io.File(context.cacheDir, "papers/${b.id}${if (withScheme) "-scheme" else ""}.pdf"), b, paper, withScheme, subjectNameOf(b.id)) }.getOrNull()
                             }
-                            shareFile(context, file, "application/pdf", "Print or share your paper")
+                            if (file != null) shareFile(context, file, "application/pdf", "Print or share your paper") else pdfFailed(context)
                         }
                     },
                     onWrittenOnPaper = { nav.navigate("printed/${b.id}") },
