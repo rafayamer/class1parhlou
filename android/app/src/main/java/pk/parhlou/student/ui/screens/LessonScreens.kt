@@ -93,6 +93,7 @@ private fun Explain(lesson: Lesson, moduleId: String, onNext: () -> Unit) {
     Sheet {
         Text(c.title, style = MaterialTheme.typography.titleMedium)
         Text(c.body, style = MaterialTheme.typography.bodyLarge)
+        c.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
     }
     if (card < lesson.explain.lastIndex) BigButton("Next idea", onClick = { card++ })
     else BigButton("Show me an example", onClick = onNext)

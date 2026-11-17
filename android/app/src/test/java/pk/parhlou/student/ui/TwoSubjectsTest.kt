@@ -54,7 +54,32 @@ class TwoSubjectsTest {
             .put("calculation", JSONArray().put("Thickness = 15 mm ÷ 10 = 1.5 mm")).put("result", "One coin is about 1.5 mm thick.")
             .put("precautions", JSONArray().put("Keep the stack straight.")).put("viva", JSONArray().put(JSONObject().put("question", "Why measure 10 coins?").put("answer", "To reduce the error of one small reading.")))
             .put("bookText", "Stack ten coins and measure their height.").put("checked", true).put("inExam", true)))
+        // The first lesson's first idea card shows a book diagram.
+        s.getJSONArray("chapters").getJSONObject(0).getJSONArray("modules").getJSONObject(0).put("lesson", JSONObject()
+            .put("explain", JSONArray().put(JSONObject().put("title", "Parallax").put("body", "Look straight at the scale.").put("figures", JSONArray().put("phy-p012-2"))))
+            .put("yourTurn", JSONArray()).put("examTips", JSONArray()).put("mistakes", JSONArray()))
         return b
+    }
+
+    @Test fun lessonIdeaCardsCarryBookDiagrams() {
+        val (_, physics) = both()
+        val first = physics.subject(FakeRepository.PHYSICS_9)!!.chapters.first().modules.first()
+        assertEquals(listOf("phy-p012-2"), physics.module(first.id)?.lesson?.explain?.first()?.figures)
+    }
+
+    @Test fun aStudentCanAddPhysicsFromBooks() {
+        val (maths, physics) = both()
+        val repo = BundleRepository.stack(listOf(maths, physics), packed)
+        val store = LocalStore(ApplicationProvider.getApplicationContext())
+        runBlocking {
+            store.clearAll()
+            store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
+        }
+        rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("tab-subjects").performClick()
+        rule.onNodeWithTag("add-${FakeRepository.PHYSICS_9}").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Physics · Class 9")).fetchSemanticsNodes().isNotEmpty() }
     }
 
     private fun both(): Pair<BundleRepository, BundleRepository> {

@@ -55,6 +55,8 @@ Rules:
     // Pages after the last chapter.
     backMatter: /^#{0,4}\s*(BIBLIOGRAPHY|GLOSSARY|INDEX)\s*$/im,
     writtenMarks: [2, 4, 5],
+    // Lessons show the book's teaching diagrams on their idea cards.
+    lessonFigures: true,
     sourceExample: (u) => `"Numerical ${u}.3", "Short ${u}.5", "CRQ ${u}.2", "Comprehensive ${u}.1" or "Example ${u}.2" (the book's own labels)`,
     examiner: "Class 9 physics examiner (Punjab board)",
     sectionBrief: `This is one numbered section of the chapter, with its worked examples and activities. The chapter's exercise is given after it.

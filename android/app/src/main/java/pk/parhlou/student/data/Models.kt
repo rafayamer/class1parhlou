@@ -153,7 +153,8 @@ data class Lesson(
     val recap: List<RecapItem> = emptyList(),
 )
 
-data class LessonCard(val title: String, val body: String)
+/** One idea of a lesson, with the book diagrams that explain it (asset ids). */
+data class LessonCard(val title: String, val body: String, val figures: List<String> = emptyList())
 
 data class WorkedExample(val question: String, val steps: List<ExampleStep>, val answer: String)
 

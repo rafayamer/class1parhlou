@@ -510,6 +510,7 @@ if (existsSync(whyFile)) {
 }
 // Book figures (book-figures.mjs + figure-links.mjs): the diagrams a question needs and the book's answer figures.
 const linksFile = `${ROOT}/figure-links.json`;
+const STOP = new Set(["with", "that", "this", "from", "shows", "showing", "shown", "labelled", "label", "labels", "which", "their", "there", "into", "each", "when", "they", "have", "also", "used", "figure"]);
 if (existsSync(linksFile)) {
   const links = JSON.parse(readFileSync(linksFile, "utf8"));
   const unmark = (t, keep) => t.replace(/\[FIGURE[^:\]]*:\s*([^\]]*)\]/g, (_, d) => (keep ? "" : `(Figure: ${d.trim()})`)).replace(/\n{3,}/g, "\n\n").trim();
@@ -543,6 +544,34 @@ if (existsSync(linksFile)) {
     p.bookText = unmark(p.bookText, f.length > 0);
   }
   console.log(`Figures: ${withFig} questions show a book figure`);
+  // Lessons show the book's teaching diagrams: the figures printed in a section that belong to no question, example or
+  // activity, each on the idea card it explains best (most shared words with the figure's description).
+  if (S.lessonFigures) {
+    const all = JSON.parse(readFileSync(`${ROOT}/figures.json`, "utf8"));
+    const figs = Array.isArray(all) ? all : all.figures ?? Object.values(all);
+    const used = new Set(Object.values(links).flatMap((g) => Object.values(g).flat()));
+    const words = (t) => new Set((t.toLowerCase().match(/[a-z]{4,}/g) ?? []).filter((w) => !STOP.has(w)));
+    let placed = 0;
+    for (const c of cleaned.subject.chapters) {
+      const of = `${ROOT}/work/u${c.number}-outline.json`;
+      if (!existsSync(of)) continue;
+      const sections = JSON.parse(readFileSync(of, "utf8")).sections.filter((x) => !x.review);
+      for (const m of c.modules) {
+        const sec = sections.find((x) => m.title.startsWith(`${x.number} `));
+        const cards = m.lesson?.explain;
+        if (!sec || !cards?.length) continue;
+        const pages = new Set([...sec.text.split("\n\nCHAPTER EXERCISE (pick only")[0].matchAll(/PAGE\s+(\d+)/g)].map((x) => +x[1]));
+        for (const f of figs.filter((f) => pages.has(f.page) && !used.has(f.id))) {
+          const fw = words(f.description);
+          let best = 0, score = -1;
+          cards.forEach((card, i) => { const cw = words(`${card.title} ${card.body}`); const n = [...fw].filter((w) => cw.has(w)).length; if (n > score) { score = n; best = i; } });
+          (cards[best].figures ??= []).push(f.id);
+          used.add(f.id); placed++;
+        }
+      }
+    }
+    console.log(`Lessons: ${placed} teaching diagrams placed on idea cards`);
+  }
 }
 const problems = bundleProblems(cleaned, SUBJECT);
 writeFileSync(OUT, JSON.stringify(cleaned));

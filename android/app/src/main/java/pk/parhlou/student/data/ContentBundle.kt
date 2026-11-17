@@ -152,7 +152,7 @@ object ContentBundle {
     )
 
     private fun readLesson(l: JSONObject) = Lesson(
-        explain = l.optJSONArray("explain")?.list { LessonCard(it.getString("title"), it.getString("body")) }.orEmpty(),
+        explain = l.optJSONArray("explain")?.list { LessonCard(it.getString("title"), it.getString("body"), it.optJSONArray("figures")?.strings().orEmpty()) }.orEmpty(),
         example = l.optJSONObject("example")?.let { e ->
             WorkedExample(e.getString("question"), e.getJSONArray("steps").list { ExampleStep(it.getString("text"), it.optString("why")) }, e.optString("answer"))
         },
