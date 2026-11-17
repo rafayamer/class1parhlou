@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { db, explain } from "../supabase";
 import type { Bundle, ContentVersion } from "../types";
 import { bundleProblems } from "../validate";
@@ -47,16 +47,21 @@ export function Content() {
   };
   useEffect(() => { loadLists(); }, []);
 
-  // Open the saved draft if there is one, else the published version.
+  // Open the saved draft if there is one, else the published version. Switching subjects quickly starts several loads;
+  // only the one for the subject chosen last may fill the editor (a slower, older load is ignored).
+  const opening = useRef("");
   const open = async (s: string) => {
-    setStatus(""); setBundle(null);
+    opening.current = s;
+    setStatus(""); setBundle(null); setSource("");
     const draft = await db.from("content_drafts").select("bundle,updated_at").eq("subject_id", s).maybeSingle();
+    if (opening.current !== s) return;
     if (draft.data) {
       setSource(`Draft saved ${when(draft.data.updated_at)}`);
       setBundle(draft.data.bundle as Bundle); setBaseline(JSON.stringify(draft.data.bundle));
       return;
     }
     const pub = await db.from("app_content").select("bundle,version").eq("subject_id", s).eq("status", "PUBLISHED").maybeSingle();
+    if (opening.current !== s) return;
     if (pub.error || !pub.data) return setStatus(pub.error ? explain(pub.error) : "No published version for this subject.");
     setSource(`Published version ${pub.data.version}`);
     setBundle(pub.data.bundle as Bundle); setBaseline(JSON.stringify(pub.data.bundle));
