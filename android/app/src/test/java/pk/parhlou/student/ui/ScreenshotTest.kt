@@ -170,6 +170,26 @@ class ScreenshotTest {
         rule.onNodeWithTag("quit-confirm").performClick()
         rule.waitUntil(5_000) { exists("Assalam-o-Alaikum") }
         save("23-ustaad-after-quit")
+
+        // Now sit it in the app: keyboard, hand in, result.
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.onNodeWithTag("tab-tests").performClick()
+        rule.waitUntil(3_000) { exists("Make a paper") }
+        rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()
+        rule.waitUntil(3_000) { exists("Start in the app") }
+        rule.onNodeWithText("Start in the app").performScrollTo().performClick()
+        rule.waitUntil(5_000) { exists("Time left") }
+        rule.onAllNodes(androidx.compose.ui.test.hasText("∑ Maths symbols"))[0].performScrollTo().performClick()
+        rule.onAllNodes(androidx.compose.ui.test.hasTestTag("key-a/b"))[0].performScrollTo().performClick()
+        rule.onAllNodes(androidx.compose.ui.test.hasTestTag("key-√"))[0].performScrollTo().performClick()
+        rule.onAllNodes(androidx.compose.ui.test.hasText("Hide ∑ symbols"))[0].performScrollTo()
+        save("24-maths-keyboard")
+        rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
+        rule.waitUntil(20_000) { org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle(); !exists("Hand in paper") }
+        rule.waitForIdle()
+        save("25-result")
     }
 
     @Test fun moreLight() = shootMore(false)

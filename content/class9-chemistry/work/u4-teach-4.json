@@ -1,0 +1,681 @@
+{
+ "note": {
+  "explanation": "Use the empirical formula and the molar mass to find the molecular formula. First divide the molar mass by the empirical formula mass to find n. Then multiply every subscript in the empirical formula by n.",
+  "examples": [],
+  "checkAnswer": "n = 3; molecular formula = C3H6O3.",
+  "keywords": [
+   "empirical formula",
+   "molecular formula",
+   "molar mass",
+   "formula mass",
+   "simplest ratio"
+  ],
+  "simple": "The empirical formula is the simplest ratio. The molecular formula tells the actual number of each kind of atom. Find how many times the simplest formula fits, then multiply its subscripts by that number.",
+  "checkQuestion": "The empirical formula is CH2O and the molar mass is 90 g mol⁻¹. What is the molecular formula?",
+  "title": "Finding a molecular formula",
+  "steps": [
+   "Find the empirical formula mass.",
+   "Calculate n = molar mass / empirical formula mass.",
+   "Multiply each subscript in the empirical formula by n."
+  ],
+  "answer": "Molecular formula = n(Empirical Formula), where n = Molar Mass / Empirical Formula mass.",
+  "checkAccept": [
+   [
+    "C3H6O3"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "C2H4O2",
+    "CH2O",
+    "C4H8O4",
+    "C2H2O"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "A compound has empirical formula CH2O and molar mass 60 g mol⁻¹. What is its molecular formula?",
+   "rationales": [
+    "Correct: the empirical formula mass is 30, so n = 60/30 = 2 and the subscripts are doubled.",
+    "This is the empirical formula, not the molecular formula when n = 2.",
+    "This formula would require n = 4 and a molar mass of 120 g mol⁻¹.",
+    "This does not result from multiplying every empirical-formula subscript by the same whole number."
+   ]
+  },
+  {
+   "options": [
+    "2",
+    "3",
+    "4",
+    "6"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "A compound has empirical formula CH2O and molar mass 90 g mol⁻¹. What is n?",
+   "rationales": [
+    "This would give a molecular mass of 60 g mol⁻¹, not 90 g mol⁻¹.",
+    "Correct: the empirical formula mass is 12 + 2 + 16 = 30, and 90/30 = 3.",
+    "This would give a molecular mass of 120 g mol⁻¹.",
+    "This would give a molecular mass of 180 g mol⁻¹."
+   ]
+  },
+  {
+   "options": [
+    "The simplest whole-number ratio of atoms",
+    "The actual number of molecules in a sample",
+    "The mass of one mole of a compound",
+    "The number of atoms in one molecule"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What does an empirical formula show?",
+   "rationales": [
+    "Correct: an empirical formula gives the simplest whole-number ratio of atoms in a compound.",
+    "A formula does not state how many molecules are in a sample.",
+    "This describes molar mass, not empirical formula.",
+    "The molecular formula gives the actual number of each type of atom in a molecule."
+   ]
+  },
+  {
+   "options": [
+    "The molecular formula is the same as the empirical formula",
+    "The molecular formula has every subscript doubled",
+    "The compound has no molecular formula",
+    "The empirical formula must be recalculated"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "What is true when n = 1?",
+   "rationales": [
+    "Correct: when n is one, the molecular formula is the same as the empirical formula.",
+    "Doubling the subscripts would make n equal to 2.",
+    "A value of n = 1 gives a molecular formula directly.",
+    "The empirical formula is already the simplest whole-number ratio."
+   ]
+  },
+  {
+   "options": [
+    "C2H6",
+    "CH3",
+    "C4H12",
+    "C2H3"
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "The empirical formula of a compound is CH3 and n = 2. What is its molecular formula?",
+   "rationales": [
+    "Correct: multiplying both subscripts in CH3 by 2 gives C2H6.",
+    "This is the empirical formula and does not apply the value n = 2.",
+    "The carbon subscript has been multiplied by 4 instead of 2.",
+    "The hydrogen subscript has not been multiplied by 2."
+   ]
+  },
+  {
+   "options": [
+    "CH",
+    "C2H2",
+    "C6H6",
+    "C3H3"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "A compound has empirical formula CH and n = 6. What is its molecular formula?",
+   "rationales": [
+    "This is the empirical formula and does not apply n = 6.",
+    "This would result from multiplying the subscripts by 2.",
+    "Correct: multiplying both subscripts in CH by 6 gives C6H6.",
+    "This would result from multiplying the subscripts by 3."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Empirical formula of a compound is CH. Its molecular mass is 78 g mol⁻¹. Find out its molecular formula.",
+   "finalAnswer": "C6H6",
+   "marks": 4,
+   "source": "Example 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "n(Empirical Formula)"
+      ]
+     ],
+     "marks": 1,
+     "why": "The relationship connects the empirical and molecular formulas.",
+     "description": "State the molecular-formula relationship.",
+     "how": "Write Molecular formula = n(Empirical formula)."
+    },
+    {
+     "accept": [
+      [
+       "78/13"
+      ],
+      [
+       "6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The value of n determines how many times the empirical formula is repeated.",
+     "description": "Calculate n using the empirical formula mass.",
+     "how": "Find the empirical formula mass of CH and divide 78 by it."
+    },
+    {
+     "accept": [
+      [
+       "(CH)6"
+      ],
+      [
+       "C6H6"
+      ]
+     ],
+     "marks": 1,
+     "why": "Each subscript must be multiplied by n.",
+     "description": "Apply n to the empirical formula.",
+     "how": "Multiply both subscripts in CH by 6."
+    },
+    {
+     "accept": [
+      [
+       "C6H6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final formula is the requested answer.",
+     "description": "Give the correct molecular formula.",
+     "how": "State C6H6."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical Formula = CH; Molecular mass = 78 g mol⁻¹",
+    "Molecular formula = n(Empirical formula)",
+    "n = molar mass / empirical formula mass",
+    "= 78/13 = 6",
+    "Molecular Formula = (CH)₆ = C₆H₆"
+   ]
+  },
+  {
+   "text": "Write down the names of three such compounds which have different empirical and molecular formulas.",
+   "finalAnswer": "Hydrogen peroxide (H2O2; empirical formula HO), benzene (C6H6; empirical formula CH), and glucose (C6H12O6; empirical formula CH2O).",
+   "marks": 2,
+   "source": "In-text Exercise 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "hydrogen peroxide"
+      ],
+      [
+       "H2O2"
+      ]
+     ],
+     "marks": 1,
+     "why": "A valid example must have a molecular formula different from its empirical formula.",
+     "description": "Give valid compounds with different empirical and molecular formulas.",
+     "how": "Name any two suitable compounds and show their formulas."
+    },
+    {
+     "accept": [
+      [
+       "benzene"
+      ],
+      [
+       "C6H6"
+      ],
+      [
+       "glucose"
+      ],
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "A third suitable example completes the request.",
+     "description": "Give the third valid compound.",
+     "how": "Name one more compound whose molecular and empirical formulas differ."
+    }
+   ],
+   "modelAnswer": [
+    "Hydrogen peroxide: molecular formula H₂O₂; empirical formula HO.",
+    "Benzene: molecular formula C₆H₆; empirical formula CH.",
+    "Glucose: molecular formula C₆H₁₂O₆; empirical formula CH₂O."
+   ]
+  },
+  {
+   "text": "1. The empirical formula of a compound is CH₂O. Its molar mass is 180g mol⁻¹. Determine its molecular formula.",
+   "finalAnswer": "C6H12O6",
+   "marks": 4,
+   "source": "In-text Exercise 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "12+2+16"
+      ],
+      [
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The empirical formula mass is needed to calculate n.",
+     "description": "Find the empirical formula mass.",
+     "how": "Add the atomic masses in CH₂O to get 30."
+    },
+    {
+     "accept": [
+      [
+       "180/30"
+      ],
+      [
+       "6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ratio of molar mass to empirical formula mass gives n.",
+     "description": "Calculate n.",
+     "how": "Divide 180 by 30."
+    },
+    {
+     "accept": [
+      [
+       "(CH2O)6"
+      ],
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "Every subscript in the empirical formula must be multiplied by n.",
+     "description": "Apply n to the empirical formula.",
+     "how": "Multiply the subscripts in CH₂O by 6."
+    },
+    {
+     "accept": [
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molecular formula is the requested final result.",
+     "description": "Give the correct molecular formula.",
+     "how": "State C₆H₁₂O₆."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical Formula = CH₂O; molar mass = 180 g mol⁻¹",
+    "Empirical formula mass = 12 + 2(1) + 16 = 30",
+    "n = molar mass / empirical formula mass",
+    "n = 180/30 = 6",
+    "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆"
+   ]
+  },
+  {
+   "text": "2. The empirical formula of a compound is CH₂O. Its molar mass is 60g mol⁻¹. Determine its molecular formula.",
+   "finalAnswer": "C2H4O2",
+   "marks": 4,
+   "source": "In-text Exercise 4.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "12+2+16"
+      ],
+      [
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The empirical formula mass is needed to calculate n.",
+     "description": "Find the empirical formula mass.",
+     "how": "Add the atomic masses in CH₂O to get 30."
+    },
+    {
+     "accept": [
+      [
+       "60/30"
+      ],
+      [
+       "2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ratio of molar mass to empirical formula mass gives n.",
+     "description": "Calculate n.",
+     "how": "Divide 60 by 30."
+    },
+    {
+     "accept": [
+      [
+       "(CH2O)2"
+      ],
+      [
+       "C2H4O2"
+      ]
+     ],
+     "marks": 1,
+     "why": "Every subscript in the empirical formula must be multiplied by n.",
+     "description": "Apply n to the empirical formula.",
+     "how": "Multiply the subscripts in CH₂O by 2."
+    },
+    {
+     "accept": [
+      [
+       "C2H4O2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The molecular formula is the requested final result.",
+     "description": "Give the correct molecular formula.",
+     "how": "State C₂H₄O₂."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical Formula = CH₂O; molar mass = 60 g mol⁻¹",
+    "Empirical formula mass = 12 + 2(1) + 16 = 30",
+    "n = molar mass / empirical formula mass",
+    "n = 60/30 = 2",
+    "Molecular formula = (CH₂O)₂ = C₂H₄O₂"
+   ]
+  },
+  {
+   "text": "Q1.2. Find out the molecular formula of a compound whose empirical formula is CH₂O and its molar mass is 180.",
+   "finalAnswer": "C6H12O6",
+   "marks": 4,
+   "source": "Short Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "30"
+      ]
+     ],
+     "marks": 1,
+     "why": "The empirical formula mass is needed to find n.",
+     "description": "Find the empirical formula mass.",
+     "how": "Calculate the mass of CH₂O as 30."
+    },
+    {
+     "accept": [
+      [
+       "180/30"
+      ],
+      [
+       "6"
+      ]
+     ],
+     "marks": 1,
+     "why": "This ratio gives the multiplier n.",
+     "description": "Calculate n.",
+     "how": "Divide the molar mass by the empirical formula mass."
+    },
+    {
+     "accept": [
+      [
+       "(CH2O)6"
+      ],
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The multiplier must be applied to every subscript.",
+     "description": "Apply n to the empirical formula.",
+     "how": "Multiply each subscript in CH₂O by 6."
+    },
+    {
+     "accept": [
+      [
+       "C6H12O6"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct molecular formula earns the final mark.",
+     "description": "State the answer.",
+     "how": "Give C₆H₁₂O₆."
+    }
+   ],
+   "modelAnswer": [
+    "Empirical formula = CH₂O",
+    "Empirical formula mass = 12 + 2(1) + 16 = 30",
+    "n = 180/30 = 6",
+    "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆"
+   ]
+  },
+  {
+   "text": "Q1.1. Different compounds will never have the same molecule formula but they can have the same empirical formula. Explain",
+   "finalAnswer": "An empirical formula gives the simplest whole-number ratio of atoms, so different molecular formulas can reduce to the same empirical formula. For example, C2H4 and C3H6 both have empirical formula CH2.",
+   "marks": 4,
+   "source": "CRQ Q1.1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "simplest whole-number ratio"
+      ],
+      [
+       "simplest ratio"
+      ]
+     ],
+     "marks": 1,
+     "why": "The meaning of empirical formula explains why different formulas can reduce to one ratio.",
+     "description": "Explain what an empirical formula represents.",
+     "how": "State that it gives the simplest whole-number ratio of atoms."
+    },
+    {
+     "accept": [
+      [
+       "molecular formula"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer must distinguish the molecular formula from the empirical formula.",
+     "description": "Contrast the formulas.",
+     "how": "Explain that a molecular formula gives the actual numbers of atoms in a molecule."
+    },
+    {
+     "accept": [
+      [
+       "C2H4"
+      ],
+      [
+       "C3H6"
+      ]
+     ],
+     "marks": 1,
+     "why": "An example demonstrates two different molecular formulas with the same simplest ratio.",
+     "description": "Give a suitable example.",
+     "how": "Use C₂H₄ and C₃H₆."
+    },
+    {
+     "accept": [
+      [
+       "CH2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The example must identify the shared empirical formula.",
+     "description": "State the common empirical formula.",
+     "how": "Reduce both examples to CH₂."
+    }
+   ],
+   "modelAnswer": [
+    "A molecular formula gives the actual number of each type of atom in a molecule.",
+    "An empirical formula gives the simplest whole-number ratio of atoms.",
+    "Different molecular formulas can have the same empirical formula: C₂H₄ and C₃H₆ both reduce to CH₂."
+   ]
+  },
+  {
+   "text": "Q1.2. The chemical formula for sand is SiO₂ but the sand does not exist in the form of discrete molecules like H₂O. How has its formula been determined keeping in view its structure?",
+   "finalAnswer": "SiO2 is the empirical formula for the repeating structure of sand: silicon and oxygen atoms occur in a 1:2 ratio. It represents the simplest ratio of atoms, not a discrete SiO2 molecule.",
+   "marks": 4,
+   "source": "Investigative Q1.2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "1:2"
+      ],
+      [
+       "one silicon"
+      ],
+      [
+       "two oxygen"
+      ]
+     ],
+     "marks": 1,
+     "why": "The ratio of atoms in the structure determines the formula.",
+     "description": "Give the silicon-to-oxygen ratio.",
+     "how": "State that the ratio is 1:2."
+    },
+    {
+     "accept": [
+      [
+       "empirical formula"
+      ],
+      [
+       "simplest ratio"
+      ]
+     ],
+     "marks": 1,
+     "why": "A repeating solid structure is represented by its simplest ratio.",
+     "description": "Identify what SiO₂ represents.",
+     "how": "Explain that it gives the simplest ratio of atoms."
+    },
+    {
+     "accept": [
+      [
+       "repeating structure"
+      ],
+      [
+       "crystal structure"
+      ],
+      [
+       "network"
+      ]
+     ],
+     "marks": 1,
+     "why": "The answer should relate the formula to sand's extended structure.",
+     "description": "Refer to the solid structure.",
+     "how": "Explain that the atoms form a repeating structure rather than separate molecules."
+    },
+    {
+     "accept": [
+      [
+       "SiO2"
+      ]
+     ],
+     "marks": 1,
+     "why": "The correct formula completes the response.",
+     "description": "State the formula.",
+     "how": "Give SiO₂ as the simplest ratio formula."
+    }
+   ],
+   "modelAnswer": [
+    "Sand has a repeating structure rather than separate SiO₂ molecules.",
+    "In this structure, silicon and oxygen atoms are present in the ratio 1:2.",
+    "The formula gives the simplest whole-number ratio of these atoms.",
+    "Therefore, the formula is SiO₂."
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A short-answer question may give an empirical formula and molar mass and ask for the molecular formula.",
+   "Show the empirical formula mass, the calculation of n, and the multiplication of every subscript; these steps can earn method marks.",
+   "Write the final formula clearly with the correct subscripts. Do not leave the answer as n or as an unexpanded bracket."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Find the empirical formula mass of CH₂O.",
+     "Use n = 180/30, then multiply every subscript in CH₂O by n."
+    ],
+    "accept": [
+     [
+      "C6H12O6"
+     ]
+    ],
+    "question": "1. The empirical formula of a compound is CH₂O. Its molar mass is 180g mol⁻¹. Determine its molecular formula.",
+    "solution": [
+     "Empirical formula = CH₂O",
+     "Empirical formula mass = 12 + 2(1) + 16 = 30",
+     "n = molar mass / empirical formula mass",
+     "n = 180/30 = 6",
+     "Molecular formula = (CH₂O)₆ = C₆H₁₂O₆"
+    ],
+    "answer": "C₆H₁₂O₆"
+   },
+   {
+    "hints": [
+     "The empirical formula mass of CH₂O is 30.",
+     "Calculate n = 60/30, then multiply every subscript in CH₂O by n."
+    ],
+    "accept": [
+     [
+      "C2H4O2"
+     ]
+    ],
+    "question": "2. The empirical formula of a compound is CH₂O. Its molar mass is 60g mol⁻¹. Determine its molecular formula.",
+    "solution": [
+     "Empirical formula = CH₂O",
+     "Empirical formula mass = 12 + 2(1) + 16 = 30",
+     "n = molar mass / empirical formula mass",
+     "n = 60/30 = 2",
+     "Molecular formula = (CH₂O)₂ = C₂H₄O₂"
+    ],
+    "answer": "C₂H₄O₂"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "These are the given empirical formula and molecular mass.",
+     "text": "Empirical Formula = CH  Molecular mass = 78 g mol⁻¹"
+    },
+    {
+     "why": "This is the relationship used to find the molecular formula.",
+     "text": "Molecular formula = n(Empirical formula)"
+    },
+    {
+     "why": "The multiplier n is found by dividing the molar mass by the empirical formula mass.",
+     "text": "n = molar mass / empirical formula mass"
+    },
+    {
+     "why": "The empirical formula mass of CH is 13, so this gives n = 6.",
+     "text": "= 78/13 = 6"
+    },
+    {
+     "why": "Multiplying both subscripts of CH by 6 gives the molecular formula.",
+     "text": "Molecular Formula = (CH)₆ = C₆H₆"
+    }
+   ],
+   "question": "Empirical formula of a compound is CH. Its molecular mass is 78 g mol⁻¹. Find out its molecular formula.",
+   "answer": "C₆H₆"
+  },
+  "explain": [
+   {
+    "title": "Empirical formula",
+    "body": "The empirical formula gives the simplest whole-number ratio of atoms in a compound. For example, CH₂O is a simplest ratio."
+   },
+   {
+    "title": "Molecular formula",
+    "body": "The molecular formula tells how many atoms of each element are present in a molecule. The textbook states: “Molecular formula of a compound can be found out if we know its empirical formula.”"
+   },
+   {
+    "title": "Find the multiplier",
+    "body": "Use the textbook relationship: “Molecular formula = n (Empirical Formula)” and “Where n = Molar Mass / Empirical Formula mass”. Find the empirical formula mass, divide the molar mass by it, and multiply each subscript by n."
+   },
+   {
+    "title": "When n equals one",
+    "body": "If n is one, the molecular formula is the same as the empirical formula."
+   }
+  ],
+  "mistakes": [
+   "Using the molar mass as n instead of dividing it by the empirical formula mass.",
+   "Calculating the empirical formula mass incorrectly; include every atom in the empirical formula.",
+   "Multiplying only one subscript instead of multiplying every subscript by n.",
+   "Giving the empirical formula instead of expanding it to the molecular formula when n is greater than one."
+  ]
+ }
+}

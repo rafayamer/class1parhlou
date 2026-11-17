@@ -1,0 +1,446 @@
+{
+ "note": {
+  "explanation": "Relative atomic mass is a weighted average: isotopes that are more abundant have a greater effect on the average. Multiply each isotope’s mass by its percentage abundance, add the products, and divide by 100.",
+  "examples": [
+   "For krypton, the textbook’s calculation gives a relative atomic mass of 83.7.",
+   "For lead, using the four isotope abundances in the in-text exercise gives 207.22."
+  ],
+  "checkAnswer": "82.5",
+  "keywords": [
+   "relative atomic mass",
+   "isotopic abundance",
+   "relative isotopic mass",
+   "amu",
+   "weighted average"
+  ],
+  "simple": "Imagine each isotope’s abundance as its share of the element. The most common isotope has the biggest influence on the average mass.",
+  "checkQuestion": "An element has two isotopes of masses 80 and 85, with abundances 50% and 50%. What is its relative atomic mass?",
+  "title": "Calculating relative atomic mass",
+  "steps": [
+   "Write each isotope’s mass and abundance.",
+   "Multiply each mass by its percentage abundance.",
+   "Add the products.",
+   "Divide the total by 100."
+  ],
+  "answer": "Relative atomic mass is calculated from the masses and abundances of an element’s isotopes.",
+  "checkAccept": [
+   [
+    "82.5"
+   ]
+  ]
+ },
+ "mcqs": [
+  {
+   "options": [
+    "The mass of an atom compared with the mass of a proton",
+    "The mass of an atom compared with one-twelfth the mass of carbon-12",
+    "The mass of an atom compared with the mass of an electron",
+    "The total number of protons and neutrons in an atom"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "Relative atomic mass is measured on a scale based on which reference?",
+   "rationales": [
+    "This is incorrect because a proton is not the reference used for the relative atomic mass scale.",
+    "This is correct because one-twelfth the mass of a carbon-12 atom defines the atomic mass unit.",
+    "This is incorrect because the electron’s mass is not the reference for this scale.",
+    "This describes the mass number, not relative atomic mass."
+   ]
+  },
+  {
+   "options": [
+    "0.5 amu",
+    "12 amu",
+    "1 amu",
+    "24 amu"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "What is the mass of one atomic mass unit (amu)?",
+   "rationales": [
+    "This is incorrect because an amu is defined as one-twelfth, not one-half, of the mass of carbon-12.",
+    "This is incorrect because 12 amu is the mass of a carbon-12 atom on this scale.",
+    "This is correct because one amu is one-twelfth the mass of a carbon-12 atom.",
+    "This is incorrect because 24 amu is not the definition of an amu."
+   ]
+  },
+  {
+   "options": [
+    "The isotope with the greatest mass",
+    "The isotope with the lowest mass",
+    "All isotopes contribute equally, whatever their abundance",
+    "The relative isotopic masses and their abundances"
+   ],
+   "fromBook": false,
+   "correctIndex": 3,
+   "stem": "Which information is needed to calculate an element’s relative atomic mass from its isotopes?",
+   "rationales": [
+    "This is incorrect because the heaviest isotope alone does not determine the average.",
+    "This is incorrect because the lightest isotope alone does not determine the average.",
+    "This is incorrect because isotope contributions depend on their abundances.",
+    "This is correct because the calculation uses each isotope’s mass and its abundance."
+   ]
+  },
+  {
+   "options": [
+    "23.5",
+    "24.5",
+    "25.0",
+    "49.0"
+   ],
+   "fromBook": false,
+   "correctIndex": 1,
+   "stem": "An element has isotopes of masses 24 and 25 with abundances 50% each. What is its relative atomic mass?",
+   "rationales": [
+    "This is incorrect because it is below the average of the two equally abundant isotope masses.",
+    "This is correct because (24 × 50 + 25 × 50) / 100 = 24.5.",
+    "This is incorrect because the average of 24 and 25 is 24.5, not 25.0.",
+    "This is incorrect because the weighted products must be divided by 100."
+   ]
+  },
+  {
+   "options": [
+    "81",
+    "82",
+    "83",
+    "84"
+   ],
+   "fromBook": false,
+   "correctIndex": 2,
+   "stem": "An element has isotopes of masses 82 and 84, with abundances 50% and 50%. What is its relative atomic mass?",
+   "rationales": [
+    "This is incorrect because it is below the average of the two isotope masses.",
+    "This is incorrect because 82 is the mass of only the lighter isotope.",
+    "This is correct because the two equally abundant isotopes give an average of (82 + 84) / 2 = 83.",
+    "This is incorrect because 84 is the mass of only the heavier isotope."
+   ]
+  },
+  {
+   "options": [
+    "The average is pulled more towards the mass of the more abundant isotope.",
+    "The average is always exactly halfway between the isotope masses.",
+    "The average is always the mass of the heaviest isotope.",
+    "The average does not depend on isotope abundance."
+   ],
+   "fromBook": false,
+   "correctIndex": 0,
+   "stem": "How does a more abundant isotope affect an element’s relative atomic mass?",
+   "rationales": [
+    "This is correct because the more abundant isotope contributes more to the weighted average.",
+    "This is incorrect because the average is halfway between the masses only when the abundances are equal.",
+    "This is incorrect because the average is not necessarily equal to the heaviest isotope’s mass.",
+    "This is incorrect because isotope abundance is essential to the calculation."
+   ]
+  }
+ ],
+ "written": [
+  {
+   "text": "Relative atomic mass of krypton",
+   "finalAnswer": "83.7",
+   "marks": 2,
+   "source": "Example 1",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "80*2.0",
+       "82*12.0",
+       "83*12.0",
+       "84*57.0",
+       "85*17.0"
+      ]
+     ],
+     "marks": 1,
+     "why": "The weighted calculation must use all five isotope masses and abundances.",
+     "description": "Correct substitution of all isotope masses and abundances.",
+     "how": "Write the five mass-abundance products in the numerator and divide by 100."
+    },
+    {
+     "accept": [
+      [
+       "83.7"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final relative atomic mass is the required result.",
+     "description": "Correct final relative atomic mass.",
+     "how": "Evaluate the weighted sum and give the answer."
+    }
+   ],
+   "modelAnswer": [
+    "Relative atomic mass of krypton",
+    "= (80 × 2.0 + 82 × 12.0 + 83 × 12.0 + 84 × 57.0 + 85 × 17.0) / 100",
+    "= 83.7"
+   ]
+  },
+  {
+   "text": "Calculate the relative atomic mass of light isotope of chlorine when its relative atomic mass is taken as 35.45.",
+   "finalAnswer": "34.95",
+   "marks": 4,
+   "source": "Example 2",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "35.45",
+       "75.77",
+       "37",
+       "24.23"
+      ]
+     ],
+     "marks": 1,
+     "why": "The calculation must use the given average and both isotope abundances.",
+     "description": "Correct use of the supplied isotope data.",
+     "how": "Use 75.77% for the light isotope and 24.23% for Cl-37."
+    },
+    {
+     "accept": [
+      [
+       "35.45=(Cl*75.77+37*24.23)/100"
+      ]
+     ],
+     "marks": 1,
+     "why": "The weighted-average equation sets up the unknown isotope mass correctly.",
+     "description": "Correct weighted-average equation.",
+     "how": "Substitute the unknown light isotope mass as Cl."
+    },
+    {
+     "accept": [
+      [
+       "3545=Cl*75.77+37*24.23"
+      ],
+      [
+       "2648.49/75.77=Cl"
+      ]
+     ],
+     "marks": 1,
+     "why": "Correct rearrangement is needed to isolate the unknown isotope mass.",
+     "description": "Correct rearrangement and calculation.",
+     "how": "Multiply by 100, subtract the Cl-37 contribution, then divide by 75.77."
+    },
+    {
+     "accept": [
+      [
+       "34.95"
+      ]
+     ],
+     "marks": 1,
+     "why": "This is the relative isotopic mass requested.",
+     "description": "Correct final answer.",
+     "how": "State the relative atomic mass of the light isotope as 34.95."
+    }
+   ],
+   "modelAnswer": [
+    "Relative isotopic abundance of Cl-37 = 24.23%",
+    "Relative isotopic abundance of light isotope of chlorine = 75.77%",
+    "Relative atomic mass of chlorine = 35.45",
+    "Relative atomic mass of chlorine",
+    "= (Cl × 75.77 + 37 × 24.23) / 100",
+    "35.45 = (Cl × 75.77 + 37 × 24.23) / 100",
+    "3545 = Cl × 75.77 + 37 × 24.23",
+    "3545 − 896.51 = Cl × 75.77",
+    "2648.49 / 75.77 = Cl",
+    "34.95 = Cl",
+    "Relative atomic mass of light isotope of chlorine is 34.95."
+   ]
+  },
+  {
+   "text": "Calculate the relative atomic mass of Lead (Pb). Isotopic abundances of isotopes are 2.0, 24.0, 22.0, 52.0 respectively.\n\n²⁰⁴Pb  ²⁰⁶Pb  ²⁰⁷Pb  ²⁰⁸Pb",
+   "finalAnswer": "207.22",
+   "marks": 4,
+   "source": "In-text exercise",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "204*2.0",
+       "206*24.0",
+       "207*22.0",
+       "208*52.0"
+      ]
+     ],
+     "marks": 2,
+     "why": "Every isotope must be paired with its stated abundance in the weighted sum.",
+     "description": "Correct substitution of isotope masses and abundances.",
+     "how": "Multiply 204, 206, 207, and 208 by their respective percentages."
+    },
+    {
+     "accept": [
+      [
+       "/100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Abundances are given as percentages, so the weighted total must be divided by 100.",
+     "description": "Correct percentage calculation.",
+     "how": "Add the products and divide the sum by 100."
+    },
+    {
+     "accept": [
+      [
+       "207.22"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final average is the quantity requested.",
+     "description": "Correct final relative atomic mass.",
+     "how": "Give the calculated result."
+    }
+   ],
+   "modelAnswer": [
+    "Relative atomic mass of Pb",
+    "= (204 × 2.0 + 206 × 24.0 + 207 × 22.0 + 208 × 52.0) / 100",
+    "= (408 + 4944 + 4554 + 10816) / 100",
+    "= 20722 / 100",
+    "= 207.22"
+   ]
+  },
+  {
+   "text": "Q2.4. Find out the relative atomic mass of mercury from the following data.\n\n| Isotope | Relative Abundance | Isotope | Relative Abundance |\n|---|---:|---|---:|\n| ¹⁹⁶Hg | 0.0146% | ¹⁹⁹Hg | 16.34% |\n| ¹⁹⁸Hg | 10.02% | ²⁰⁰Hg | 23.13% |\n| ²⁰¹Hg | 13.22% | ²⁰²Hg | 29.80% |\n| ²⁰⁴Hg | 6.85% | | |",
+   "finalAnswer": "199.39",
+   "marks": 4,
+   "source": "Descriptive 2.4",
+   "rubric": [
+    {
+     "accept": [
+      [
+       "196*0.0146",
+       "198*10.02",
+       "199*16.34",
+       "200*23.13",
+       "201*13.22",
+       "202*29.80",
+       "204*6.85"
+      ]
+     ],
+     "marks": 2,
+     "why": "Each isotope’s mass must be weighted by its own abundance.",
+     "description": "Correct substitution of all seven isotope masses and abundances.",
+     "how": "Write the seven mass-abundance products in the weighted sum."
+    },
+    {
+     "accept": [
+      [
+       "19938.7016/100"
+      ]
+     ],
+     "marks": 1,
+     "why": "Dividing by 100 applies the percentage abundances according to the textbook formula.",
+     "description": "Correct summation and division by 100.",
+     "how": "Add the products and divide the total by 100."
+    },
+    {
+     "accept": [
+      [
+       "199.39"
+      ]
+     ],
+     "marks": 1,
+     "why": "The final calculated value answers the question.",
+     "description": "Correct final relative atomic mass using the data as printed.",
+     "how": "Give the result to two decimal places."
+    }
+   ],
+   "modelAnswer": [
+    "Relative atomic mass of Hg",
+    "= (196 × 0.0146 + 198 × 10.02 + 199 × 16.34 + 200 × 23.13 + 201 × 13.22 + 202 × 29.80 + 204 × 6.85) / 100",
+    "= 19938.7016 / 100",
+    "= 199.387016",
+    "Relative atomic mass of mercury = 199.39"
+   ]
+  }
+ ],
+ "lesson": {
+  "examTips": [
+   "A board question may ask you to define relative atomic mass or the atomic mass unit. Learn the textbook definitions accurately.",
+   "For a numerical question, show the formula, substitute every isotope mass and percentage abundance, add the products, and divide by 100.",
+   "For a question where one isotope mass is unknown, write the weighted-average equation first and show each rearrangement step.",
+   "Marks are commonly awarded for correct substitution, calculation, and the final answer, so do not write only the answer."
+  ],
+  "yourTurn": [
+   {
+    "hints": [
+     "Pair each lead isotope’s mass with the abundance printed after it.",
+     "Multiply each mass by its percentage, add the products, and divide by 100."
+    ],
+    "accept": [
+     [
+      "207.22"
+     ]
+    ],
+    "question": "Calculate the relative atomic mass of Lead (Pb). Isotopic abundances of isotopes are 2.0, 24.0, 22.0, 52.0 respectively.\n\n²⁰⁴Pb  ²⁰⁶Pb  ²⁰⁷Pb  ²⁰⁸Pb",
+    "solution": [
+     "Relative atomic mass of Pb",
+     "= (204 × 2.0 + 206 × 24.0 + 207 × 22.0 + 208 × 52.0) / 100",
+     "= (408 + 4944 + 4554 + 10816) / 100",
+     "= 20722 / 100",
+     "= 207.22"
+    ],
+    "answer": "207.22"
+   },
+   {
+    "hints": [
+     "Use each mercury isotope mass with the abundance shown beside it.",
+     "Add the seven mass-abundance products and divide by 100, as in your textbook."
+    ],
+    "accept": [
+     [
+      "199.39"
+     ]
+    ],
+    "question": "Q2.4. Find out the relative atomic mass of mercury from the following data.\n\n| Isotope | Relative Abundance | Isotope | Relative Abundance |\n|---|---:|---|---:|\n| ¹⁹⁶Hg | 0.0146% | ¹⁹⁹Hg | 16.34% |\n| ¹⁹⁸Hg | 10.02% | ²⁰⁰Hg | 23.13% |\n| ²⁰¹Hg | 13.22% | ²⁰²Hg | 29.80% |\n| ²⁰⁴Hg | 6.85% | | |",
+    "solution": [
+     "Relative atomic mass of Hg",
+     "= (196 × 0.0146 + 198 × 10.02 + 199 × 16.34 + 200 × 23.13 + 201 × 13.22 + 202 × 29.80 + 204 × 6.85) / 100",
+     "= 19938.7016 / 100",
+     "= 199.387016",
+     "Relative atomic mass of mercury = 199.39"
+    ],
+    "answer": "199.39"
+   }
+  ],
+  "example": {
+   "steps": [
+    {
+     "why": "This names the quantity being calculated.",
+     "text": "Relative atomic mass of krypton"
+    },
+    {
+     "why": "Each isotope mass is multiplied by its percentage abundance, and the sum is divided by 100.",
+     "text": "= (80 × 2.0 + 82 × 12.0 + 83 × 12.0 + 84 × 57.0 + 85 × 17.0) / 100"
+    },
+    {
+     "why": "This is the weighted average of the krypton isotopes.",
+     "text": "= 83.7"
+    }
+   ],
+   "question": "Relative atomic mass of krypton",
+   "answer": "83.7"
+  },
+  "explain": [
+   {
+    "title": "Why relative atomic mass is useful",
+    "body": "Atoms are extremely small, so their masses are compared on a scale rather than measured in kilograms for ordinary chemical calculations. The scale lets chemists compare atom masses and work out the ratios for chemical reactions."
+   },
+   {
+    "title": "The atomic mass unit",
+    "body": "The textbook defines the atomic mass unit as one-twelfth the mass of an atom of carbon-12. On this scale, a carbon-12 atom has a mass of exactly 12."
+   },
+   {
+    "title": "Finding the average from isotopes",
+    "body": "An element’s isotopes can have different masses and different natural abundances. Multiply each relative isotopic mass by its percentage abundance, add the products, and divide by 100 to find the relative atomic mass."
+   },
+   {
+    "title": "When an isotope mass is unknown",
+    "body": "Use the same weighted-average formula, but write the unknown isotope mass as a variable. Substitute the known average and abundances, then rearrange the equation to find the unknown."
+   }
+  ],
+  "mistakes": [
+   "Adding isotope masses without weighting them by their abundances.",
+   "Pairing an isotope mass with the wrong abundance.",
+   "Forgetting to divide the weighted sum by 100.",
+   "Using an abundance as a whole number in the formula but forgetting that it is a percentage.",
+   "For an unknown isotope mass, stopping at the equation instead of showing how the variable is isolated."
+  ]
+ }
+}
