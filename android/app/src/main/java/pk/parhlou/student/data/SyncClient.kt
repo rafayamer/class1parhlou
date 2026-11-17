@@ -38,6 +38,7 @@ class SyncClient(
             .put("medium", s.medium ?: JSONObject.NULL).put("subjects", JSONArray(s.subjectIds.toList()))
             .put("pathway", s.pathway?.name ?: JSONObject.NULL).put("days", s.studyDaysPerWeek).put("minutes", s.minutesPerDay)
             .put("completed", s.completed).put("name", s.name)
+            .put("email", s.email).put("phone", s.phone).put("favorite", s.favoriteSubject ?: JSONObject.NULL)
         val body = JSONObject().put("settings", settings).put("updated_at", Instant.now().toString()).toString()
         return call("POST", "/rest/v1/learner_settings?on_conflict=user_id", body,
             mapOf("Prefer" to "resolution=merge-duplicates,return=minimal"))?.first?.let { it in 200..299 } == true
@@ -56,6 +57,7 @@ class SyncClient(
             pathway = str("pathway")?.let { runCatching { Pathway.valueOf(it) }.getOrNull() },
             studyDaysPerWeek = o.optInt("days", 5), minutesPerDay = o.optInt("minutes", 60),
             completed = o.optBoolean("completed"), name = o.optString("name"),
+            email = o.optString("email"), phone = o.optString("phone"), favoriteSubject = str("favorite"),
         )
     }
 

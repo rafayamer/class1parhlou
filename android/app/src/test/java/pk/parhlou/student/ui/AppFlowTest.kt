@@ -12,6 +12,8 @@ import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
 import org.junit.Before
+import androidx.compose.ui.test.performTextInput
+import androidx.compose.ui.test.performTextClearance
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -42,6 +44,7 @@ class AppFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick()
 
         // Step 2: Federal Board is shown but disabled; Punjab Class 9 English Maths is selectable.
+        aboutYou()
         rule.onNodeWithText("Punjab Boards").performScrollTo().performClick()
         rule.onNodeWithText("Class 9").performScrollTo().performClick()
         rule.onNodeWithText("English").performScrollTo().performClick()
@@ -72,6 +75,7 @@ class AppFlowTest {
         rule.onNodeWithText("Get started").performClick()
         rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
+        aboutYou()
         rule.onNodeWithText("Punjab Boards").performScrollTo().performClick()
         rule.onNodeWithText("Class 9").performScrollTo().performClick()
         rule.onNodeWithText("English").performScrollTo().performClick()
@@ -118,4 +122,18 @@ class AppFlowTest {
 
     private fun androidx.compose.ui.test.junit4.ComposeContentTestRule.onAllNodesWithTextExists(text: String): Boolean =
         onAllNodes(androidx.compose.ui.test.hasText(text)).fetchSemanticsNodes().isNotEmpty()
+
+    /** Sign-up step 2: full name and email are needed (Continue stays off until they're valid); phone is optional. */
+    private fun aboutYou() {
+        rule.waitUntil(3_000) { rule.onAllNodesWithTextExists("About you") }
+        rule.onNodeWithText("Continue").assertIsNotEnabled()
+        rule.onNodeWithTag("profile-name").performTextInput("Ayesha Khan")
+        rule.onNodeWithTag("profile-email").performTextInput("ayesha@")
+        rule.onNodeWithText("Continue").assertIsNotEnabled()
+        rule.onNodeWithTag("profile-email").performTextInput("example.com")
+        rule.onNodeWithTag("profile-phone").performTextInput("12345")
+        rule.onNodeWithText("Continue").assertIsNotEnabled()
+        rule.onNodeWithTag("profile-phone").performTextClearance()
+        rule.onNodeWithText("Continue").performScrollTo().performClick()
+    }
 }

@@ -185,7 +185,7 @@ fun HomeScreen(
             pk.parhlou.student.ui.components.Ustad(56.dp, pk.parhlou.student.ui.components.moodFor(rewards))
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
-                Text(if (onboarding.name.isBlank()) "Assalam-o-Alaikum!" else "Assalam-o-Alaikum, ${onboarding.name}!", style = MaterialTheme.typography.titleLarge)
+                Text(if (onboarding.name.isBlank()) "Assalam-o-Alaikum!" else "Assalam-o-Alaikum, ${onboarding.firstName}!", style = MaterialTheme.typography.titleLarge)
                 Text(pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
@@ -426,6 +426,7 @@ fun ProfileScreen(
     /** Loads what's left of this month's AI allowance; null result = not available (offline or no server). */
     allowance: suspend () -> pk.parhlou.student.ai.Allowance? = { null },
     onSendFeedback: suspend (String) -> Boolean = { false },
+    onEditProfile: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
@@ -466,6 +467,7 @@ fun ProfileScreen(
                 accountMessage?.let { Muted(it) }
             }
         }
+        TaskRow(Icons.Filled.Person, "Edit profile", "Name, email, phone, board, subjects", onEditProfile)
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
         TaskRow(Icons.Filled.SmartToy, "My Ustaad", "What Ustaad knows about you and how it explains", onMyUstaad)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
@@ -551,6 +553,8 @@ fun SubjectsScreen(
     onSolutions: () -> Unit = {},
     /** Adds a subject the board offers that the student hasn't chosen yet. */
     onAddSubject: ((String) -> Unit)? = null,
+    /** Opens Edit profile, where subjects are added and removed. */
+    onEditSubjects: (() -> Unit)? = null,
 ) {
     ParhlouScreen("Your books", onBack = onBack) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
@@ -572,6 +576,8 @@ fun SubjectsScreen(
             Text("Add a subject", style = MaterialTheme.typography.titleMedium)
             more.forEach { o -> SecondaryButton("+ ${o.name}", onClick = { onAddSubject?.invoke(o.id) }, modifier = Modifier.testTag("add-${o.id}")) }
         }
+        if (onEditSubjects != null) androidx.compose.material3.TextButton(onClick = onEditSubjects,
+            modifier = Modifier.heightIn(min = 48.dp).testTag("edit-subjects")) { Text("Add or remove subjects") }
     }
 }
 

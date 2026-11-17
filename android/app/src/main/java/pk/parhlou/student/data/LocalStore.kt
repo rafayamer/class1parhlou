@@ -47,6 +47,9 @@ class LocalStore(private val context: Context) {
         val email = stringPreferencesKey("auth_email")
         val guest = booleanPreferencesKey("guest")
         val name = stringPreferencesKey("name")
+        val contactEmail = stringPreferencesKey("contact_email")
+        val phone = stringPreferencesKey("phone")
+        val favorite = stringPreferencesKey("favorite_subject")
         val synced = intPreferencesKey("synced_lines")
         val seenBuild = intPreferencesKey("whats_new_seen_build")
         val askedNotify = booleanPreferencesKey("asked_notifications")
@@ -73,6 +76,9 @@ class LocalStore(private val context: Context) {
             p[K.minutes] = state.minutesPerDay
             p[K.completed] = state.completed
             p[K.name] = state.name
+            p[K.contactEmail] = state.email
+            p[K.phone] = state.phone
+            state.favoriteSubject?.let { p[K.favorite] = it } ?: p.remove(K.favorite)
         }
     }
 
@@ -236,6 +242,9 @@ class LocalStore(private val context: Context) {
         minutesPerDay = this[K.minutes] ?: 60,
         completed = this[K.completed] ?: false,
         name = this[K.name] ?: "",
+        email = this[K.contactEmail] ?: "",
+        phone = this[K.phone] ?: "",
+        favoriteSubject = this[K.favorite],
     )
 }
 

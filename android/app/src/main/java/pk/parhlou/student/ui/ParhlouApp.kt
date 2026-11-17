@@ -143,6 +143,7 @@ object Routes {
     const val PROFILE = "profile"
     const val SIGN_IN = "signin"
     const val HISTORY = "history"
+    const val EDIT_PROFILE = "profile/edit"
     const val PLANNER = "planner"
     const val WEAK_TOPICS = "weak-topics"
     const val SOLUTIONS = "solutions"
@@ -391,6 +392,7 @@ fun ParhlouApp(
                     if (s.completed) nav.navigate(Routes.HOME) { popUpTo(0) }
                 },
                 onExit = { nav.popBackStack() },
+                signInEmail = session?.email,
             )
         }
         composable(Routes.HOME) { WithTabBarSpace {
@@ -448,7 +450,7 @@ fun ParhlouApp(
             TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back(),
                 onGoToPaper = activeExam?.let { id -> { nav.navigate("assessment/$id") } },
                 onQuitPaper = activeExam?.let { id -> { quitPaper(id) } },
-                store = store, prefs = prefs, studentName = state.name,
+                store = store, prefs = prefs, studentName = state.firstName,
                 profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
                 moduleOf = { repo.module(it) }, noteTitle = { noteTitles[it] },
                 onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") },
@@ -461,10 +463,16 @@ fun ParhlouApp(
             MyUstaadScreen(StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }),
                 onChange = { p -> scope.launch { store.setUstaadPrefs(p) } }, onBack = nav.back())
         }
+        composable(Routes.EDIT_PROFILE) {
+            pk.parhlou.student.ui.screens.EditProfileScreen(repo, state, session?.email,
+                onSave = { s -> scope.launch { store.saveOnboarding(s); account?.syncNow(s) } },
+                onBack = { nav.popBackStack() })
+        }
         composable(Routes.PROFILE) { WithTabBarSpace {
             val soundOn by store.soundOn.collectAsState(initial = true)
             ProfileScreen(
                 repo, state, progress,
+                onEditProfile = { nav.navigate(Routes.EDIT_PROFILE) },
                 soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
                 allowance = { ai.allowance() },
                 onSendFeedback = { ai.sendFeedback(it, "profile", "build ${pk.parhlou.student.BuildConfig.VERSION_CODE}") },
@@ -504,7 +512,8 @@ fun ParhlouApp(
         composable(Routes.SUBJECTS) { WithTabBarSpace {
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
                 onSolutions = { nav.navigate(Routes.SOLUTIONS) },
-                onAddSubject = { id -> scope.launch { store.saveOnboarding(state.copy(subjectIds = state.subjectIds + id)) } })
+                onAddSubject = { id -> scope.launch { store.saveOnboarding(state.copy(subjectIds = state.subjectIds + id)) } },
+                onEditSubjects = { nav.navigate(Routes.EDIT_PROFILE) })
         } }
         composable(
             Routes.SESSION,
@@ -753,7 +762,7 @@ fun ParhlouApp(
                 onHome = { nav.popBackStack(Routes.HOME, inclusive = false) },
                 topicOf = { key -> topicOf(repo, subjects, key) },
                 profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
-                language = prefs.language, studentName = state.name,
+                language = prefs.language, studentName = state.firstName,
             )
         }
         composable(Routes.HISTORY) {

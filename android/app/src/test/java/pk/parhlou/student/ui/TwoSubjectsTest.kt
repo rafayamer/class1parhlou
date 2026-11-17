@@ -13,6 +13,8 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
+import kotlinx.coroutines.flow.first
+import androidx.compose.ui.test.performTextInput
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -80,6 +82,31 @@ class TwoSubjectsTest {
         rule.onNodeWithTag("tab-subjects").performClick()
         rule.onNodeWithTag("add-${FakeRepository.PHYSICS_9}").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Physics · Class 9")).fetchSemanticsNodes().isNotEmpty() }
+    }
+
+    @Test fun editProfileChangesDetailsAndRemovesASubject() {
+        val (maths, physics) = both()
+        val repo = BundleRepository.stack(listOf(maths, physics), packed)
+        val store = LocalStore(ApplicationProvider.getApplicationContext())
+        runBlocking {
+            store.clearAll()
+            store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9, FakeRepository.PHYSICS_9), Pathway.COMPLETE_ACADEMY, 5, 60,
+                completed = true, name = "Ayesha Khan", email = "ayesha@example.com"))
+        }
+        rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("tab-subjects").performClick()
+        rule.onNodeWithTag("edit-subjects").performScrollTo().performClick()
+        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Edit profile")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("profile-phone").performTextInput("0300 1234567")
+        rule.onAllNodes(androidx.compose.ui.test.hasText("Physics"))[0].performScrollTo().performClick()
+        rule.onNodeWithTag("favorite-${FakeRepository.MATHS_9}").performScrollTo().performClick()
+        rule.onNodeWithTag("profile-save").performScrollTo().performClick()
+        rule.waitUntil(5_000) { runBlocking { store.onboarding.first().subjectIds } == setOf(FakeRepository.MATHS_9) }
+        val saved = runBlocking { store.onboarding.first() }
+        assertEquals("0300 1234567", saved.phone)
+        assertEquals(FakeRepository.MATHS_9, saved.favoriteSubject)
+        assertEquals("Ayesha", saved.firstName)
     }
 
     private fun both(): Pair<BundleRepository, BundleRepository> {

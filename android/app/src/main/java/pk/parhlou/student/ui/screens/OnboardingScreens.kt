@@ -74,48 +74,59 @@ fun OnboardingScreen(
     initial: OnboardingState,
     onSave: (OnboardingState) -> Unit,
     onExit: () -> Unit,
+    /** The sign-in email, when signed in: it fills the email field and can't be changed here. */
+    signInEmail: String? = null,
 ) {
-    var state by remember { mutableStateOf(initial) }
+    var state by remember { mutableStateOf(if (signInEmail != null && initial.email.isBlank()) initial.copy(email = signInEmail) else initial) }
     var step by remember { mutableIntStateOf(firstIncompleteStep(initial)) }
     fun update(s: OnboardingState) { state = s; onSave(s) }
 
     ParhlouScreen(
-        title = "Set up · step ${step + 1} of 4",
+        title = "Set up · step ${step + 1} of 5",
         onBack = { if (step == 0) onExit() else step-- },
     ) {
         LinearProgressIndicator(
-            progress = { (step + 1) / 4f },
-            modifier = Modifier.fillMaxWidth().semantics { contentDescription = "Step ${step + 1} of 4" },
+            progress = { (step + 1) / 5f },
+            modifier = Modifier.fillMaxWidth().semantics { contentDescription = "Step ${step + 1} of 5" },
         )
         AnimatedContent(targetState = step, transitionSpec = rememberStepTransition(), label = "onboardingStep") { s ->
             Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
                 when (s) {
                     0 -> ConsentStep(state.consentAcknowledged) { update(state.copy(consentAcknowledged = it)) }
-                    1 -> AcademicStep(repo, state) { update(it) }
-                    2 -> PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
+                    1 -> {
+                        Text("About you", style = MaterialTheme.typography.titleLarge)
+                        AboutYouFields(state, { update(it) }, emailLocked = signInEmail != null)
+                    }
+                    2 -> {
+                        AcademicStep(repo, state) { update(it) }
+                        FavoriteSubjectPicker(repo, state) { update(it) }
+                    }
+                    3 -> PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
                     else -> AvailabilityStep(state) { update(it) }
                 }
             }
         }
         val canContinue = when (step) {
             0 -> state.consentAcknowledged
-            1 -> state.boardCode != null && state.grade != null && state.medium != null && state.subjectIds.isNotEmpty()
-            2 -> state.pathway != null
+            1 -> ProfileRules.aboutOk(state)
+            2 -> state.boardCode != null && state.grade != null && state.medium != null && state.subjectIds.isNotEmpty()
+            3 -> state.pathway != null
             else -> state.studyDaysPerWeek > 0 && state.minutesPerDay > 0
         }
         BigButton(
-            text = if (step == 3) "Finish setup" else "Continue",
+            text = if (step == 4) "Finish setup" else "Continue",
             enabled = canContinue,
-            onClick = { if (step < 3) step++ else update(state.copy(completed = true)) },
+            onClick = { if (step < 4) step++ else update(state.copy(completed = true)) },
         )
     }
 }
 
 private fun firstIncompleteStep(s: OnboardingState): Int = when {
     !s.consentAcknowledged -> 0
-    s.boardCode == null || s.grade == null || s.medium == null || s.subjectIds.isEmpty() -> 1
-    s.pathway == null -> 2
-    else -> 3
+    !ProfileRules.aboutOk(s) -> 1
+    s.boardCode == null || s.grade == null || s.medium == null || s.subjectIds.isEmpty() -> 2
+    s.pathway == null -> 3
+    else -> 4
 }
 
 @Composable
@@ -135,7 +146,7 @@ private fun ConsentStep(acknowledged: Boolean, onChange: (Boolean) -> Unit) {
 }
 
 @Composable
-private fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChange: (OnboardingState) -> Unit) {
+internal fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChange: (OnboardingState) -> Unit) {
     Text("Your board and class", style = MaterialTheme.typography.titleLarge)
     repo.boards().forEach { b ->
         ChoiceCard(
@@ -143,7 +154,7 @@ private fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChan
             subtitle = if (b.available) null else "Coming soon",
             selected = state.boardCode == b.code,
             enabled = b.available,
-            onClick = { onChange(state.copy(boardCode = b.code, subjectIds = emptySet())) },
+            onClick = { if (state.boardCode != b.code) onChange(state.copy(boardCode = b.code, subjectIds = emptySet(), favoriteSubject = null)) },
         )
     }
     if (state.boardCode != null) {
@@ -152,7 +163,7 @@ private fun AcademicStep(repo: ParhlouRepository, state: OnboardingState, onChan
             listOf(9, 10).forEach { g ->
                 Column(Modifier.weight(1f)) {
                     ChoiceCard("Class $g", selected = state.grade == g,
-                        onClick = { onChange(state.copy(grade = g, subjectIds = emptySet())) })
+                        onClick = { if (state.grade != g) onChange(state.copy(grade = g, subjectIds = emptySet(), favoriteSubject = null)) })
                 }
             }
         }

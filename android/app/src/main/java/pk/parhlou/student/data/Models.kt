@@ -267,6 +267,15 @@ data class OnboardingState(
     val studyDaysPerWeek: Int = 5,
     val minutesPerDay: Int = 60,
     val completed: Boolean = false,
-    /** First name, used in the greeting. Kept on the phone and in the student's own server settings. */
+    /** Full name (the greeting uses the first word). Kept on the phone and in the student's own server settings. */
     val name: String = "",
-)
+    /** Contact email the student gave (their sign-in email when signed in). */
+    val email: String = "",
+    /** Mobile number; optional. */
+    val phone: String = "",
+    /** The subject the student likes most (one of [subjectIds]); optional. */
+    val favoriteSubject: String? = null,
+) {
+    /** The name to greet with: the first word of the full name. */
+    val firstName: String get() = name.trim().substringBefore(' ')
+}
