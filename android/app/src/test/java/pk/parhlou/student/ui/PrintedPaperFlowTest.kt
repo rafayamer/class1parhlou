@@ -140,6 +140,47 @@ class PrintedPaperFlowTest {
         rule.onNodeWithTag("continue-on-paper").performScrollTo().performClick()
         assertTrue(scan)
     }
+
+    /** When Ustaad can't read the pages (offline, or the AI is down), the student is told and can still hand in. */
+    @Test fun unreadablePagesCanStillBeHandedIn() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = LocalStore(context)
+        val blind = object : ParhlouAi by ai {
+            override suspend fun readScriptPage(image: String, page: Int, questions: List<Pair<String, String>>, mcqCount: Int): ScriptPage? = null
+        }
+        val desk = ExamDesk(context, repo, store, blind, ProgressStore())
+        kotlinx.coroutines.runBlocking { desk.reset(paper); desk.startOnPaper(blueprint.id) }
+        val f = File(desk.printedStore(blueprint.id).photoDir(), "p0.jpg")
+        f.outputStream().use { Bitmap.createBitmap(300, 400, Bitmap.Config.ARGB_8888).compress(Bitmap.CompressFormat.JPEG, 80, it) }
+        desk.printedStore(blueprint.id).add(Photo(f, 300, 400, null))
+        var marked = false
+        rule.setContent {
+            ParhlouTheme { PrintedPaperScreen(blueprint, paper, desk, store, androidx.compose.runtime.rememberCoroutineScope(), readsHandwriting = true, onMarked = { marked = true }, onBack = {}) }
+        }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("hand-in-printed")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("hand-in-printed").performScrollTo().performClick()
+        rule.waitUntil(10_000) { rule.onAllNodes(hasTestTag("nothing-read")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("mark-printed").performScrollTo().performClick()
+        rule.onNodeWithText("Hand in").performClick()
+        rule.waitUntil(20_000) { org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle(); marked }
+        assertTrue(kotlinx.coroutines.runBlocking { store.activeExam.first() } == null)
+    }
+
+    /** No pages at all: Hand in asks once, then hands in. */
+    @Test fun aBlankPaperCanBeHandedIn() {
+        val context = ApplicationProvider.getApplicationContext<android.content.Context>()
+        val store = LocalStore(context)
+        val desk = ExamDesk(context, repo, store, ai, ProgressStore())
+        kotlinx.coroutines.runBlocking { desk.reset(paper); desk.startOnPaper(blueprint.id) }
+        var marked = false
+        rule.setContent {
+            ParhlouTheme { PrintedPaperScreen(blueprint, paper, desk, store, androidx.compose.runtime.rememberCoroutineScope(), readsHandwriting = true, onMarked = { marked = true }, onBack = {}) }
+        }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("hand-in-printed")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("hand-in-printed").performScrollTo().performClick()
+        rule.onNode(hasText("Hand in") and androidx.compose.ui.test.hasClickAction() and !hasTestTag("hand-in-printed")).performClick()
+        rule.waitUntil(20_000) { org.robolectric.Shadows.shadowOf(android.os.Looper.getMainLooper()).idle(); marked }
+    }
 }
 
 @androidx.compose.runtime.Composable

@@ -217,4 +217,39 @@ class PrototypeFlowTest {
         rule.onNodeWithTag("paper-$paperId").performScrollTo().performClick()
         rule.waitUntil(3_000) { exists("Before you start") }
     }
+
+    /** A student starts a paper on paper, finds Ask Ustaad locked, quits the paper there: no try used, Ustaad opens. */
+    @Test
+    fun quittingAPaperUnlocksUstaadAndUsesNoTry() {
+        launch()
+        rule.onNodeWithText("Continue").performScrollTo().performClick()
+        openChapterTest()
+        rule.onNodeWithTag("start-on-paper").performScrollTo().performClick()
+        rule.waitUntil(5_000) { runBlocking { store.activeExam.first() } == paperId }
+        // Back to Home, then Ask Ustaad: locked, with a way back to the paper and a way out.
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("printed-clock")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithContentDescription("Back").performClick()
+        rule.waitUntil(5_000) { exists("Before you start") }
+        rule.onNodeWithTag("paper-running").assertExists()
+        rule.onNodeWithTag("quit-paper").performScrollTo().performClick()
+        rule.onNodeWithTag("quit-confirm").performClick()
+        rule.waitUntil(5_000) { runBlocking { store.activeExam.first() } == null }
+        rule.waitUntil(5_000) { exists("Assalam-o-Alaikum") }
+        rule.onNodeWithText("Ask Ustaad is locked").assertDoesNotExist()
+        assertEquals("", runBlocking { store.examLog(paperId).first() })
+    }
+
+    /** From the locked Ask Ustaad screen, the paper can be quit too. */
+    @Test
+    fun lockedUstaadOffersToQuitThePaper() = runBlocking<Unit> {
+        store.appendExamEvent(paperId, pk.parhlou.student.domain.ExamEventType.STARTED, System.currentTimeMillis())
+        launch()
+        rule.onNodeWithText("Ask Ustaad").performClick()
+        rule.waitUntil(5_000) { exists("Ask Ustaad is locked") }
+        rule.onNodeWithText("Back to my paper").assertExists()
+        rule.onNodeWithTag("quit-paper").performScrollTo().performClick()
+        rule.onNodeWithTag("quit-confirm").performClick()
+        rule.waitUntil(5_000) { exists("Assalam-o-Alaikum") }
+        assertEquals(null, store.activeExam.first())
+    }
 }

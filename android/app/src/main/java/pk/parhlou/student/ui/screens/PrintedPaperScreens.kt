@@ -78,6 +78,28 @@ fun PrintedPaperScreen(
     val assigned = remember { mutableStateMapOf<String, String>() }
     val scope = rememberCoroutineScope()
     val scanned = remember(version) { store.pages().size }
+    var confirmBlank by remember { mutableStateOf(false) }
+    var confirmEmpty by remember { mutableStateOf<pk.parhlou.student.domain.ScriptReading?>(null) }
+    var markError by remember { mutableStateOf<String?>(null) }
+    val markNow = { reading0: pk.parhlou.student.domain.ScriptReading ->
+        marking = true; markError = null
+        appScope.launch {
+            val ok = runCatching { desk.submitPrinted(blueprint, paper, reading0) }.isSuccess
+            withContext(Dispatchers.Main.immediate) {
+                marking = false
+                if (ok) onMarked() else markError = "Couldn't mark your paper just now. Check the internet and tap again; your pages are saved."
+            }
+        }
+        Unit
+    }
+    val emptyReading = remember(paper) { pk.parhlou.student.domain.ScriptReading(emptyMap(), emptyMap(), emptyMap(), emptyList(), emptyList()) }
+    if (confirmBlank || confirmEmpty != null) androidx.compose.material3.AlertDialog(
+        onDismissRequest = { confirmBlank = false; confirmEmpty = null },
+        title = { Text("Hand in with no answers?") },
+        text = { Text(if (confirmBlank) "You haven't scanned any pages, so this paper scores 0. It uses one of your tries." else "Ustaad found no answers on your pages, so this paper scores 0. It uses one of your tries.") },
+        confirmButton = { TextButton(onClick = { val r = confirmEmpty ?: emptyReading; confirmBlank = false; confirmEmpty = null; markNow(r) }) { Text("Hand in") } },
+        dismissButton = { TextButton(onClick = { confirmBlank = false; confirmEmpty = null }) { Text("Cancel") } },
+    )
 
     if (scanning) {
         androidx.compose.ui.window.Dialog(
@@ -133,7 +155,7 @@ fun PrintedPaperScreen(
         Sheet {
             Text(if (scanned == 0) "No pages scanned yet" else "$scanned page${if (scanned == 1) "" else "s"} scanned", style = MaterialTheme.typography.titleMedium)
             SecondaryButton(if (scanned == 0) "Scan my pages" else "Add or fix pages", onClick = { scanning = true }, enabled = !scanClosed)
-            if (scanned > 0 && pages == null && reading == null) {
+            if (scanned > 0 && pages == null && reading == null && !running) {
                 BigButton("Read my pages", onClick = {
                     reading = 0 to scanned
                     scope.launch {
@@ -150,8 +172,26 @@ fun PrintedPaperScreen(
                 Muted("Each page takes a few seconds. Keep the app open.")
             }
         }
+        if (pages == null && reading == null && running) {
+            // Handing in is always possible while the paper runs, even before (or without) scanning.
+            BigButton(if (scanned == 0) "Hand in" else "Read my pages and hand in", modifier = Modifier.testTag("hand-in-printed"), onClick = {
+                if (scanned == 0) confirmBlank = true
+                else {
+                    reading = 0 to scanned
+                    scope.launch {
+                        val read = desk.readScript(blueprint, paper) { done, total -> reading = done to total }
+                        withContext(Dispatchers.Main.immediate) { pages = read; reading = null }
+                    }
+                }
+            })
+        }
         val read = pages ?: return@ParhlouScreen
         val result = ScriptAssembler.assemble(read, paper, numbering, assigned)
+        if (read.isNotEmpty() && read.all { it.legibility == "UNREADABLE" }) Sheet(Modifier.testTag("nothing-read")) {
+            Text("Ustaad couldn't read your pages", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
+            Muted("This happens when there's no internet, Ustaad is busy, or the photos are dark or blurred. Your pages are saved.")
+            SecondaryButton("Try reading again", onClick = { pages = null })
+        }
 
         if (result.remarks.isNotEmpty()) Sheet(Modifier.testTag("script-remarks")) {
             Text("Please check", style = MaterialTheme.typography.titleMedium)
@@ -191,13 +231,11 @@ fun PrintedPaperScreen(
         }
         Muted("If something was read wrongly, fix that page (retake it flat, in good light) and read again. The examiners also look at your pages themselves, so the photos decide.")
         if (marking) StatusPill("Two examiners are marking your paper…")
-        else BigButton(if (running) "Hand in and mark my paper" else "Mark my paper", enabled = result.answers.isNotEmpty() || result.mcq.isNotEmpty(), onClick = {
-            marking = true
-            appScope.launch {
-                desk.submitPrinted(blueprint, paper, result)
-                withContext(Dispatchers.Main.immediate) { onMarked() }
-            }
+        else BigButton(if (running) "Hand in and mark my paper" else "Mark my paper", modifier = Modifier.testTag("mark-printed"), onClick = {
+            if (result.answers.isEmpty() && result.mcq.isEmpty()) { confirmEmpty = result; return@BigButton }
+            markNow(result)
         })
+        markError?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyLarge) }
         TextButton(onClick = { pages = null }, modifier = Modifier.heightIn(min = 48.dp)) { Text("Read the pages again") }
     }
 }

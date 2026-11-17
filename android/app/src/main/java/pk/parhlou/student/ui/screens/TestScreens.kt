@@ -263,6 +263,8 @@ fun AssessmentStartScreen(
     onStartOnPaper: (() -> Unit)? = null,
     /** The running paper is being written on paper. */
     onPaper: Boolean = false,
+    /** Abandons the running paper: it is cleared and does not use a try. */
+    onQuit: (() -> Unit)? = null,
 ) {
     val problems = BlueprintValidator.problems(blueprint)
     val attemptsLeft = (pk.parhlou.student.domain.PaperAttempts.MAX - attemptsUsed).coerceAtLeast(0)
@@ -300,6 +302,7 @@ fun AssessmentStartScreen(
                 Text("⏱ ${clock.label(now)} left", style = MaterialTheme.typography.headlineMedium)
                 Muted(if (onPaper) "You're writing on paper. Ask Ustaad is locked until you hand in." else "Your paper is running. Ask Ustaad is locked until you hand in.")
             }
+            if (onQuit != null) QuitPaper(onQuit)
         }
         if (!started && !submitted && attemptsLeft > 0 && problems.isEmpty()) {
             Text("How will you write?", style = MaterialTheme.typography.titleLarge)
@@ -362,6 +365,20 @@ fun AssessmentStartScreen(
             )
         }
     }
+}
+
+/** "Quit this paper": asks once, then the paper is cleared without using a try, and Ask Ustaad opens again. */
+@Composable
+fun QuitPaper(onQuit: () -> Unit) {
+    var ask by remember { mutableStateOf(false) }
+    TextButton(onClick = { ask = true }, modifier = Modifier.heightIn(min = 48.dp).testTag("quit-paper")) { Text("Quit this paper") }
+    if (ask) AlertDialog(
+        onDismissRequest = { ask = false },
+        title = { Text("Quit this paper?") },
+        text = { Text("Your answers and scanned pages for it are removed. It won't count as a try, and Ask Ustaad opens again.") },
+        confirmButton = { TextButton(onClick = { ask = false; onQuit() }, modifier = Modifier.testTag("quit-confirm")) { Text("Quit paper") } },
+        dismissButton = { TextButton(onClick = { ask = false }) { Text("Keep going") } },
+    )
 }
 
 /**

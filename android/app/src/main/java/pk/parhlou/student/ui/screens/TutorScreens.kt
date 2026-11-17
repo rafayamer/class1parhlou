@@ -166,6 +166,9 @@ fun TutorScreen(
     onMyUstaad: () -> Unit = {},
     /** Builds the paper or notes PDF a student asked for; null where PDFs can't be made. */
     makePdf: (suspend (pk.parhlou.student.domain.PdfAction) -> java.io.File?)? = null,
+    /** While a paper runs: go back to it, or quit it (cleared, no try used) to use Ustaad now. */
+    onGoToPaper: (() -> Unit)? = null,
+    onQuitPaper: (() -> Unit)? = null,
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -314,6 +317,8 @@ fun TutorScreen(
             Sheet {
                 Text("Ask Ustaad is locked", style = MaterialTheme.typography.titleMedium)
                 Text("You have a paper in progress. Ustaad will help as soon as you hand it in.", style = MaterialTheme.typography.bodyLarge)
+                onGoToPaper?.let { pk.parhlou.student.ui.components.BigButton("Back to my paper", onClick = it) }
+                onQuitPaper?.let { QuitPaper(it) }
             }
             return@ParhlouScreen
         }

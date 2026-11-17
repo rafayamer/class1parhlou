@@ -276,6 +276,15 @@ fun ParhlouApp(
             (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
     }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
+    /** Abandons a running paper: everything for it is cleared, no try is used, Do Not Disturb ends and Ask Ustaad unlocks. */
+    fun quitPaper(id: String, then: () -> Unit = {}) {
+        scope.launch {
+            val p = paperOf(id)
+            if (p != null) desk.reset(p) else store.resetExam(id, emptyList())
+            pk.parhlou.student.ui.FocusMode.off(context)
+            withContext(Dispatchers.Main.immediate) { then() }
+        }
+    }
     // "Make me a paper / notes" from Ask Ustaad: built from the course on the phone, never invented.
     fun makePdf(action: pk.parhlou.student.domain.PdfAction): java.io.File? {
         // The subject the student named, else the one chosen on the Papers tab.
@@ -396,7 +405,10 @@ fun ParhlouApp(
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
-                    if (active != null && blueprints.any { it.id == active }) nav.navigate("exam/$active?scan=true")
+                    if (active != null && blueprints.any { it.id == active }) scope.launch {
+                        val onPaper = store.draft(desk.modeKey(active)).first() == "paper"
+                        nav.navigate(if (onPaper) "printed/$active" else "exam/$active?scan=true")
+                    }
                     else nav.navigate(Routes.SCAN)
                 },
             )
@@ -426,6 +438,8 @@ fun ParhlouApp(
             val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
             androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.screens.LocalLessonVideos provides { q: String -> ai.lessonVideos(q) }) {
             TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back(),
+                onGoToPaper = activeExam?.let { id -> { nav.navigate("assessment/$id") } },
+                onQuitPaper = activeExam?.let { id -> { quitPaper(id) } },
                 store = store, prefs = prefs, studentName = state.name,
                 profile = { StudentProfile.build(state, subjects, progress.history(), prefs, { noteTitles[it] }).summary() },
                 moduleOf = { repo.module(it) }, noteTitle = { noteTitles[it] },
@@ -649,6 +663,7 @@ fun ParhlouApp(
                     },
                     onWrittenOnPaper = { nav.navigate("printed/${b.id}") },
                     onPaper = store.draft(desk.modeKey(b.id)).collectAsState(initial = "").value == "paper",
+                    onQuit = { quitPaper(b.id) { nav.navigate(Routes.TUTOR) { popUpTo(Routes.HOME) } } },
                     onStartOnPaper = {
                         scope.launch {
                             desk.startOnPaper(b.id)
