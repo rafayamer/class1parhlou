@@ -42,7 +42,7 @@ export function Content() {
     if (v.error) return setStatus(explain(v.error));
     setVersions(v.data as ContentVersion[]);
     setDrafts(d.data ?? []);
-    const subjects = [...new Set((v.data ?? []).map((r) => r.subject_id))];
+    const subjects = [...new Set([...(v.data ?? []), ...(d.data ?? [])].map((r) => r.subject_id))];
     if (!subject && subjects.length) setSubject(subjects[0]);
   };
   useEffect(() => { loadLists(); }, []);
@@ -71,7 +71,8 @@ export function Content() {
   });
   const problems = useMemo(() => (bundle ? bundleProblems(bundle, subject) : []), [bundle, subject]);
   const dirty = bundle != null && JSON.stringify(bundle) !== baseline;
-  const subjects = [...new Set(versions.map((v) => v.subject_id))];
+  // A new subject has only a draft until its first publish, so drafts are listed too.
+  const subjects = [...new Set([...versions, ...drafts].map((v) => v.subject_id))];
   const history = versions.filter((v) => v.subject_id === subject);
 
   const saveDraft = async () => {
