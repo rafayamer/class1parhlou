@@ -127,7 +127,7 @@ class MainActivity : ComponentActivity() {
                     }, ready = ready)
                 }
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
-                    ParhlouApp(repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, ai = ai, account = account,
+                    ParhlouApp(repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, requireInternet = true, ai = ai, account = account,
                         versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
                 }
                 }

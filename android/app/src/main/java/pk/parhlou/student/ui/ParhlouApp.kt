@@ -10,11 +10,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -178,6 +180,8 @@ fun ParhlouApp(
     /** Sign-in and sync; null in builds without a Supabase address. */
     account: Account? = null,
     versionLabel: String = "",
+    /** The real app needs the internet: while offline everything is blurred behind "Connect to the internet". */
+    requireInternet: Boolean = false,
 ) {
     val context = LocalContext.current
     remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
@@ -348,7 +352,11 @@ fun ParhlouApp(
         else fadeIn(tween(260)) + slideInHorizontally(tween(320, easing = FastOutSlowInEasing)) { -it / 6 }
     }
 
-    Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
+    val systemOnline = rememberOnline()
+    var retried by remember { mutableIntStateOf(0) }
+    val offline = requireInternet && !systemOnline && remember(retried, systemOnline) { !Connectivity.isOnline(context) }
+    Box(Modifier.fillMaxSize()) {
+    Box(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).then(if (offline) Modifier.blur(androidx.compose.ui.unit.Dp(12f)) else Modifier)) {
     NavHost(
         nav,
         startDestination = if (state.completed) Routes.HOME else Routes.WELCOME,
@@ -773,6 +781,8 @@ fun ParhlouApp(
             backdrop = backdrop,
         )
     }
+    }
+    if (offline) OfflineCover(onRetry = { retried++ })
     }
 }
 

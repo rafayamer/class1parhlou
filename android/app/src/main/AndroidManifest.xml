@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Internet is used only to reach the Parhlou AI gateway. Photos are picked with the system photo picker. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <!-- Do Not Disturb during papers, only after the student allows it. -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
