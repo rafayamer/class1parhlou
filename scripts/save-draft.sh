@@ -16,7 +16,9 @@ assert bundle.get("format") == 1 and bundle.get("subjectId"), "not a content bun
 tag = "$parhlou_draft$"
 subject = bundle["subjectId"]
 chapters = bundle["subject"]["chapters"]
-head = dict(bundle, subject=dict(bundle["subject"], chapters=[]))
+# Large top-level lists (notes, quiz, papers, written) are sent in pieces too.
+BIG = [k for k, v in bundle.items() if isinstance(v, list) and len(json.dumps(v, ensure_ascii=False)) > 200_000]
+head = dict(bundle, subject=dict(bundle["subject"], chapters=[]), **{k: [] for k in BIG})
 def lit(v):
     t = json.dumps(v, ensure_ascii=False)
     assert tag not in t
@@ -29,6 +31,18 @@ for c in chapters:
     queries.append(
         f"update public.content_drafts set bundle = jsonb_set(bundle, '{{subject,chapters}}', (bundle->'subject'->'chapters') || jsonb_build_array({lit(c)})), "
         f"updated_at = now() where subject_id = '{subject}'")
+for k in BIG:
+    piece, size = [], 0
+    def flush():
+        queries.append(
+            f"update public.content_drafts set bundle = jsonb_set(bundle, '{{{k}}}', (bundle->'{k}') || {lit(piece)}), "
+            f"updated_at = now() where subject_id = '{subject}'")
+    for item in bundle[k]:
+        n = len(json.dumps(item, ensure_ascii=False))
+        if piece and size + n > 400_000:
+            flush(); piece, size = [], 0
+        piece.append(item); size += n
+    if piece: flush()
 queries.append(f"select subject_id, updated_at, jsonb_array_length(bundle->'subject'->'chapters') as units, length(bundle::text) as size "
                f"from public.content_drafts where subject_id = '{subject}'")
 for i, q in enumerate(queries):
