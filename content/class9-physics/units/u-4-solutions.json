@@ -459,11 +459,25 @@
      "kind": "EXERCISE",
      "source": "Numerical 4.4",
      "question": "A see-saw is balanced with two children sitting near either end. Child A weighs 30 kg and sits 2 metres away from the pivot, while child B weighs 40 kg and sits 1.5 metres from the pivot. Calculate the total moment on each side and determine if the sea-saw is in equilibrium.",
-     "steps": [],
-     "answer": "(60 N)",
+     "steps": [
+      "Given: m_A = 30 kg, d_A = 2 m; m_B = 40 kg, d_B = 1.5 m; take g = 10 N kg⁻¹.",
+      "Weight of A: W_A = m_Ag = 30 × 10 = 300 N.",
+      "Moment due to A = W_A d_A = 300 × 2 = 600 N m (anticlockwise).",
+      "Weight of B: W_B = m_Bg = 40 × 10 = 400 N.",
+      "Moment due to B = W_B d_B = 400 × 1.5 = 600 N m (clockwise).",
+      "The moments are equal and opposite, so the net moment is 600 − 600 = 0 N m."
+     ],
+     "answer": "Each side produces a moment of 600 N m (equivalently 60 kgf m using kgf). The moments are equal and opposite, so the see-saw is in rotational equilibrium. The printed 60 corresponds to the kgf m convention.",
      "figure": "",
-     "accept": [],
-     "checked": false,
+     "accept": [
+      [
+       "600"
+      ],
+      [
+       "60"
+      ]
+     ],
+     "checked": true,
      "note": ""
     },
     {

@@ -1,0 +1,358 @@
+{
+ "items": [
+  {
+   "accept": [],
+   "id": "4:13:4",
+   "figure": {
+    "functions": [],
+    "arrangement": "parallel",
+    "components": [],
+    "kind": "forces",
+    "outside": [],
+    "circles": [],
+    "forces": [
+     {
+      "size": 1,
+      "label": "F upward",
+      "angle": 90
+     },
+     {
+      "size": 1,
+      "label": "F downward",
+      "angle": 270
+     }
+    ],
+    "y_max": 0,
+    "description": "Draw the equal and opposite forces on two parallel vertical lines of action separated by distance d. The force on the left acts upward and the force on the right acts downward; together they form a clockwise couple.",
+    "title": "A couple",
+    "segments": [],
+    "x_min": 0,
+    "categories": [],
+    "x_max": 0,
+    "angles": [],
+    "both": [],
+    "shade": {
+     "side": "",
+     "expression": "",
+     "strict": false
+    },
+    "points": [],
+    "rows": [],
+    "y_min": 0,
+    "values": [],
+    "polygons": [],
+    "sets": [],
+    "headers": [],
+    "intervals": []
+   },
+   "steps": [
+    "Draw two parallel lines of action separated by distance d.",
+    "Choose a force scale, for example 1 cm = F. Draw equal arrows of length 1 cm: the left force upward and the right force downward.",
+    "The forces are equal and opposite, so the resultant force is F − F = 0.",
+    "About the midpoint between the lines, each force produces a clockwise moment F(d/2).",
+    "Resultant torque = F(d/2) + F(d/2) = Fd, clockwise."
+   ],
+   "finalAnswer": "The resultant force is zero, but the resultant torque is non-zero: the couple produces a clockwise torque of magnitude Fd."
+  },
+  {
+   "accept": [
+    [
+     "5FLJ"
+    ]
+   ],
+   "id": "5:8:39",
+   "figure": {
+    "functions": [],
+    "arrangement": "parallel",
+    "components": [],
+    "kind": "graph",
+    "outside": [],
+    "circles": [],
+    "forces": [],
+    "y_max": 2,
+    "description": "Use horizontal displacement and vertical force axes. The axes are scaled in units of L and F respectively. The force is F from displacement 0 to L, then rises to 2F at L and stays at 2F until displacement 3L.",
+    "title": "Force-displacement graph",
+    "segments": [
+     {
+      "to": "B",
+      "from": "A",
+      "label": "F"
+     },
+     {
+      "to": "C",
+      "from": "B",
+      "label": "force increases at L"
+     },
+     {
+      "to": "D",
+      "from": "C",
+      "label": "2F"
+     }
+    ],
+    "x_min": 0,
+    "categories": [],
+    "x_max": 3,
+    "angles": [],
+    "both": [],
+    "shade": {
+     "side": "",
+     "expression": "",
+     "strict": false
+    },
+    "points": [
+     {
+      "x": 0,
+      "y": 1,
+      "label": "A (0,F)"
+     },
+     {
+      "x": 1,
+      "y": 1,
+      "label": "B (L,F)"
+     },
+     {
+      "x": 1,
+      "y": 2,
+      "label": "C (L,2F)"
+     },
+     {
+      "x": 3,
+      "y": 2,
+      "label": "D (3L,2F)"
+     }
+    ],
+    "rows": [],
+    "y_min": 0,
+    "values": [],
+    "polygons": [],
+    "sets": [],
+    "headers": [],
+    "intervals": []
+   },
+   "steps": [
+    "Choose graph scales: on the displacement axis, 1 division = L; on the force axis, 1 division = F.",
+    "Draw F = F from x = 0 to x = L, then show the force increasing to 2F at x = L and remaining at 2F until x = 3L.",
+    "Work done is the area under the force-displacement graph.",
+    "First section: W₁ = F × L = FL.",
+    "Second section: W₂ = 2F × 2L = 4FL.",
+    "Total work: W = W₁ + W₂ = FL + 4FL = 5FL.",
+    "Since F is in newtons and L is in metres, the work unit is N m = J."
+   ],
+   "finalAnswer": "Total work done = 5FL J."
+  },
+  {
+   "accept": [],
+   "id": "8:11:13",
+   "figure": {
+    "functions": [],
+    "arrangement": "parallel",
+    "components": [],
+    "kind": "geometry",
+    "outside": [
+     "Strong field: closely spaced lines",
+     "Weak field: widely spaced lines",
+     "Uniform field: parallel, equally spaced lines"
+    ],
+    "circles": [],
+    "forces": [],
+    "y_max": 3,
+    "description": "Three schematic regions of magnetic field lines. The strong-field lines are closely spaced, the weak-field lines are widely spaced, and the uniform-field lines are parallel and equally spaced. The straight lines represent local field-line patterns.",
+    "title": "Magnetic field strength shown by line density",
+    "segments": [
+     {
+      "to": "s1r",
+      "from": "s1l",
+      "label": ""
+     },
+     {
+      "to": "s2r",
+      "from": "s2l",
+      "label": ""
+     },
+     {
+      "to": "s3r",
+      "from": "s3l",
+      "label": ""
+     },
+     {
+      "to": "s4r",
+      "from": "s4l",
+      "label": ""
+     },
+     {
+      "to": "w1r",
+      "from": "w1l",
+      "label": ""
+     },
+     {
+      "to": "w2r",
+      "from": "w2l",
+      "label": ""
+     },
+     {
+      "to": "w3r",
+      "from": "w3l",
+      "label": ""
+     },
+     {
+      "to": "u1r",
+      "from": "u1l",
+      "label": ""
+     },
+     {
+      "to": "u2r",
+      "from": "u2l",
+      "label": ""
+     },
+     {
+      "to": "u3r",
+      "from": "u3l",
+      "label": ""
+     },
+     {
+      "to": "u4r",
+      "from": "u4l",
+      "label": ""
+     }
+    ],
+    "x_min": 0,
+    "categories": [],
+    "x_max": 8,
+    "angles": [],
+    "both": [],
+    "shade": {
+     "side": "",
+     "expression": "",
+     "strict": false
+    },
+    "points": [
+     {
+      "x": 0,
+      "y": 0,
+      "label": "s1l"
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "label": "s1r"
+     },
+     {
+      "x": 0,
+      "y": 0.25,
+      "label": "s2l"
+     },
+     {
+      "x": 2,
+      "y": 0.25,
+      "label": "s2r"
+     },
+     {
+      "x": 0,
+      "y": 0.5,
+      "label": "s3l"
+     },
+     {
+      "x": 2,
+      "y": 0.5,
+      "label": "s3r"
+     },
+     {
+      "x": 0,
+      "y": 0.75,
+      "label": "s4l"
+     },
+     {
+      "x": 2,
+      "y": 0.75,
+      "label": "s4r"
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "label": "w1l"
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "label": "w1r"
+     },
+     {
+      "x": 3,
+      "y": 1.5,
+      "label": "w2l"
+     },
+     {
+      "x": 5,
+      "y": 1.5,
+      "label": "w2r"
+     },
+     {
+      "x": 3,
+      "y": 3,
+      "label": "w3l"
+     },
+     {
+      "x": 5,
+      "y": 3,
+      "label": "w3r"
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "label": "u1l"
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "label": "u1r"
+     },
+     {
+      "x": 6,
+      "y": 0.75,
+      "label": "u2l"
+     },
+     {
+      "x": 8,
+      "y": 0.75,
+      "label": "u2r"
+     },
+     {
+      "x": 6,
+      "y": 1.5,
+      "label": "u3l"
+     },
+     {
+      "x": 8,
+      "y": 1.5,
+      "label": "u3r"
+     },
+     {
+      "x": 6,
+      "y": 2.25,
+      "label": "u4l"
+     },
+     {
+      "x": 8,
+      "y": 2.25,
+      "label": "u4r"
+     }
+    ],
+    "rows": [],
+    "y_min": 0,
+    "values": [],
+    "polygons": [],
+    "sets": [],
+    "headers": [],
+    "intervals": []
+   },
+   "steps": [
+    "Draw several magnetic field lines in each example, keeping the lines distinct and showing their relative spacing.",
+    "In a strong-field region, draw the lines close together; in a weak-field region, draw them farther apart.",
+    "For a uniform field, draw parallel lines with equal spacing.",
+    "Magnetic field strength is indicated by the density of field lines: the number of lines passing through unit area perpendicular to the field.",
+    "The closer the lines, the stronger the magnetic field; the farther apart they are, the weaker the field."
+   ],
+   "finalAnswer": "A magnetic field is stronger where its lines of force are more densely spaced and weaker where they are more widely spaced. Parallel, equally spaced lines represent a uniform field."
+  }
+ ]
+}

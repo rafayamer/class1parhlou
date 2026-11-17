@@ -1,0 +1,504 @@
+{
+ "unit": 6,
+ "examinable": true,
+ "kit": {
+  "inExam": true,
+  "excluded": [
+   "MCQ 6.2",
+   "MCQ 6.4",
+   "MCQ 6.5",
+   "Short 6.2",
+   "Short 6.6",
+   "Short 6.9",
+   "CRQ 6.1",
+   "CRQ 6.3",
+   "CRQ 6.4",
+   "CRQ 6.6",
+   "CRQ 6.7",
+   "CRQ 6.8",
+   "CRQ 6.9",
+   "CRQ 6.10",
+   "Comprehensive 6.1",
+   "Comprehensive 6.2",
+   "Comprehensive 6.5",
+   "Numerical 6.3",
+   "Numerical 6.8",
+   "Numerical 6.10",
+   "Numerical 6.11",
+   "Numerical 6.12",
+   "Activity 6.1",
+   "Activity 6.6"
+  ],
+  "definitions": [
+   {
+    "term": "Deforming force",
+    "text": "Such a force is known as deforming force."
+   },
+   {
+    "term": "Elastic object",
+    "text": "An object is said to be elastic, if after removal of the deforming force, it restores to its original size and shape."
+   },
+   {
+    "term": "Elasticity",
+    "text": "This property of the material is known as elasticity."
+   },
+   {
+    "term": "Inelastic materials",
+    "text": "Some materials such as clay dough or plasticine do not return to their original shape after the removal of the deforming force. They are known as inelastic materials."
+   },
+   {
+    "term": "Elastic limit",
+    "text": "Most of the materials are elastic up to a certain limit known as elastic limit."
+   },
+   {
+    "term": "Hooke’s law",
+    "text": "If a force F is applied on a spring to stretch or compress it, the extension or compression x has been found directly proportional to the applied force within the elastic limit."
+   },
+   {
+    "term": "Density",
+    "text": "Density of a substance is defined as its mass per unit volume."
+   },
+   {
+    "term": "Pressure",
+    "text": "Pressure is defined as the force exerted normally on unit area of an object."
+   },
+   {
+    "term": "Atmospheric pressure",
+    "text": "This force per unit area is the atmospheric pressure."
+   },
+   {
+    "term": "Barometer",
+    "text": "Instruments which measure the atmospheric pressure are called barometers."
+   },
+   {
+    "term": "Pascal’s law",
+    "text": "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss."
+   }
+  ],
+  "formulas": [
+   {
+    "formula": "F ∝ x",
+    "use": "Hooke’s law: force and extension are proportional within the elastic limit (F in N, x in m)."
+   },
+   {
+    "formula": "F = kx",
+    "use": "Find spring force from its extension (F in N, k in N m⁻¹, x in m)."
+   },
+   {
+    "formula": "k = F ÷ x",
+    "use": "Find spring constant (k in N m⁻¹, F in N, x in m)."
+   },
+   {
+    "formula": "k = ΔF ÷ Δx",
+    "use": "Find the gradient of the straight part of a force–extension graph (k in N m⁻¹, ΔF in N, Δx in m)."
+   },
+   {
+    "formula": "ρ = m ÷ V",
+    "use": "Find density (ρ in kg m⁻³, m in kg, V in m³)."
+   },
+   {
+    "formula": "V = length × breadth × thickness",
+    "use": "Find the volume of a rectangular solid (each length in m; V in m³)."
+   },
+   {
+    "formula": "V = A h",
+    "use": "Find the volume of a liquid column or prism (V in m³, A in m², h in m)."
+   },
+   {
+    "formula": "m = ρV",
+    "use": "Find mass from density and volume (m in kg, ρ in kg m⁻³, V in m³)."
+   },
+   {
+    "formula": "P = F ÷ A",
+    "use": "Find pressure from a normal force on a surface (P in Pa or N m⁻², F in N, A in m²)."
+   },
+   {
+    "formula": "1 Pa = 1 N m⁻²",
+    "use": "Convert between pascals and newtons per square metre (Pa and N m⁻² are equivalent units of pressure)."
+   },
+   {
+    "formula": "P = ρgh",
+    "use": "Find pressure due to a liquid or fluid column; also used for barometers (P in Pa, ρ in kg m⁻³, g in m s⁻², h in m)."
+   },
+   {
+    "formula": "F = mg",
+    "use": "Find the weight force of a mass (F in N, m in kg, g in m s⁻²)."
+   },
+   {
+    "formula": "F = ρAhg",
+    "use": "Find the force due to the weight of a liquid column over area A (F in N, ρ in kg m⁻³, A in m², h in m, g in m s⁻²)."
+   },
+   {
+    "formula": "P = F ÷ A = ρAhg ÷ A = ρgh",
+    "use": "Derive pressure at depth h in a liquid (P in Pa, ρ in kg m⁻³, g in m s⁻², h in m)."
+   },
+   {
+    "formula": "P₁ = P₂; F₁ ÷ A₁ = F₂ ÷ A₂",
+    "use": "Apply Pascal’s law to two pistons in a hydraulic system (P in Pa, F in N, A in m²)."
+   },
+   {
+    "formula": "F₂ = F₁ × A₂ ÷ A₁",
+    "use": "Find the output force of a hydraulic press or brake (F₁ and F₂ in N, A₁ and A₂ in m²)."
+   },
+   {
+    "formula": "A = πr²",
+    "use": "Find the circular cross-sectional area of a piston (A in m², r in m; π is dimensionless)."
+   },
+   {
+    "formula": "Pₐₜₘ = 1.013 × 10⁵ Pa",
+    "use": "Use the standard atmospheric pressure at sea level (Pₐₜₘ in Pa)."
+   }
+  ],
+  "important": [
+   {
+    "ref": "Short 6.1",
+    "why": "A direct application of pressure and contact area, likely for a short-answer question."
+   },
+   {
+    "ref": "Short 6.3",
+    "why": "A standard everyday example of pressure increasing when contact area decreases."
+   },
+   {
+    "ref": "Short 6.4",
+    "why": "A key law with a common two-part short-answer format."
+   },
+   {
+    "ref": "Short 6.5",
+    "why": "A direct definition question; the answer needs the removal of force and restoration of shape and size."
+   },
+   {
+    "ref": "Short 6.8",
+    "why": "Tests a central concept and the relationship P = ρgh."
+   },
+   {
+    "ref": "Short 6.10",
+    "why": "A likely short question linking Pascal’s law to a familiar application."
+   }
+  ],
+  "fullMarks": [
+   "For a definition or law, write the complete statement clearly; for Pascal’s law include both “enclosed fluid” and “equally … without loss.”",
+   "For a numerical, write the given quantities first and convert them to SI units before substituting: cm to m, cm² to m², litres to m³, and g to kg.",
+   "Show the formula, substitution with units, calculation, and final answer with its SI unit. Keep suitable significant figures.",
+   "For spring questions, use extension x (not the spring’s full length) and show that the force–extension relationship applies only within the elastic limit.",
+   "For pressure questions, identify the area actually in contact and use the area perpendicular to the normal force. For maximum and minimum pressure, use the smallest and largest faces respectively.",
+   "For liquid pressure, state that it depends on liquid density and depth, then use P = ρgh. Do not include atmospheric pressure unless the question asks for total pressure.",
+   "For hydraulic systems, show equal pressure at both pistons before calculating the unknown force; label the small and large piston areas correctly.",
+   "In an explanation of hydraulic brakes, describe the pressure transfer through the brake fluid and how the pistons press the brake pads against the discs or drums."
+  ],
+  "mistakes": [
+   "Using the spring’s total length instead of its extension. Fix: calculate extension as the change in length, then use k = F ÷ x.",
+   "Leaving extensions, dimensions, or areas in cm or cm² in an SI calculation. Fix: convert lengths to m and areas to m² before substituting.",
+   "Using mass in place of force when finding pressure. Fix: first find weight using F = mg, then use P = F ÷ A.",
+   "Choosing the wrong face of a brick for maximum or minimum pressure. Fix: the smallest contact area gives maximum pressure; the largest gives minimum pressure.",
+   "Thinking liquid pressure depends on the container’s shape or the area of its base. Fix: for pressure at a depth, use P = ρgh; it depends on density, depth, and g.",
+   "Swapping the small and large piston areas in a hydraulic calculation. Fix: label A₁ and A₂ carefully and use F₁ ÷ A₁ = F₂ ÷ A₂.",
+   "Writing that pressure is transmitted equally by any fluid without mentioning confinement. Fix: state that pressure applied at one point in an enclosed fluid is transmitted equally to all parts without loss."
+  ],
+  "shortTheory": [
+   {
+    "question": "State Hooke’s law.",
+    "answer": "If a force F is applied on a spring to stretch or compress it, the extension or compression x has been found directly proportional to the applied force within the elastic limit."
+   },
+   {
+    "question": "Define density.",
+    "answer": "Density of a substance is defined as its mass per unit volume."
+   },
+   {
+    "question": "Define pressure.",
+    "answer": "Pressure is defined as the force exerted normally on unit area of an object."
+   },
+   {
+    "question": "State Pascal’s law.",
+    "answer": "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss."
+   },
+   {
+    "question": "Why is it painful to walk bare footed on pebbles?",
+    "answer": "But when we walk on pebbles, the contact area is reduced. Then the pressure due to reaction force becomes so high that it becomes painful."
+   },
+   {
+    "question": "What is the relationship between liquid pressure and the depth of the liquid?",
+    "answer": "Equation 6.4 shows that pressure in a liquid increases with depth. The value of pressure depends on the depth and density of the liquid."
+   }
+  ]
+ },
+ "written": [
+  {
+   "id": "phy-w-6-1-t0",
+   "text": "State Hooke’s law.",
+   "marks": 2,
+   "modelAnswer": [
+    "If a force F is applied on a spring to stretch or compress it, the extension or compression x has been found directly proportional to the applied force within the elastic limit."
+   ],
+   "followUp": "State Hooke’s law.",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "elastic limit"
+      ]
+     ],
+     "marks": 1,
+     "why": "The law applies only within the elastic limit.",
+     "description": "States the condition under which Hooke’s law applies.",
+     "how": "Award 1 mark for mentioning the elastic limit."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "directly proportional",
+       "force"
+      ],
+      [
+       "x∝F"
+      ],
+      [
+       "extension",
+       "directly proportional"
+      ],
+      [
+       "compression",
+       "directly proportional"
+      ]
+     ],
+     "marks": 1,
+     "why": "The defining relationship is that the extension or compression varies directly with the applied force.",
+     "description": "States the proportional relationship between extension or compression and applied force.",
+     "how": "Award 1 mark for expressing that extension or compression is directly proportional to force."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-6-1-t1",
+   "text": "Define density.",
+   "marks": 2,
+   "modelAnswer": [
+    "Density of a substance is defined as its mass per unit volume."
+   ],
+   "followUp": "Define density.",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "mass"
+      ]
+     ],
+     "marks": 1,
+     "why": "Mass is the quantity used in the definition of density.",
+     "description": "Identifies mass as the quantity being measured per unit volume.",
+     "how": "Award 1 mark for mentioning mass."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "unit volume"
+      ]
+     ],
+     "marks": 1,
+     "why": "Density is mass per unit volume.",
+     "description": "States that the mass is measured per unit volume.",
+     "how": "Award 1 mark for mentioning unit volume."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-6-1-t2",
+   "text": "Define pressure.",
+   "marks": 2,
+   "modelAnswer": [
+    "Pressure is defined as the force exerted normally on unit area of an object."
+   ],
+   "followUp": "Define pressure.",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "force"
+      ],
+      [
+       "normal force"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pressure is defined using a force acting normally on a surface.",
+     "description": "Identifies the force as acting normally.",
+     "how": "Award 1 mark for mentioning force acting normally."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "unit area"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pressure is force per unit area.",
+     "description": "States that the force acts on unit area.",
+     "how": "Award 1 mark for mentioning unit area."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-6-1-t3",
+   "text": "State Pascal’s law.",
+   "marks": 2,
+   "modelAnswer": [
+    "When pressure is applied at one point in an enclosed fluid, it is transmitted equally to all parts of fluid without loss."
+   ],
+   "followUp": "State Pascal’s law.",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "pressure",
+       "enclosed fluid"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pascal’s law concerns pressure applied to an enclosed fluid.",
+     "description": "States that pressure is applied at a point in an enclosed fluid.",
+     "how": "Award 1 mark for mentioning applied pressure and an enclosed fluid."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "transmitted equally",
+       "all parts"
+      ],
+      [
+       "equally",
+       "all parts",
+       "without loss"
+      ]
+     ],
+     "marks": 1,
+     "why": "The applied pressure is transmitted equally throughout the fluid without loss.",
+     "description": "States that pressure is transmitted equally to all parts of the fluid.",
+     "how": "Award 1 mark for mentioning equal transmission to all parts."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-6-1-t4",
+   "text": "Why is it painful to walk bare footed on pebbles?",
+   "marks": 2,
+   "modelAnswer": [
+    "But when we walk on pebbles, the contact area is reduced. Then the pressure due to reaction force becomes so high that it becomes painful."
+   ],
+   "followUp": "Why is it painful to walk bare footed on pebbles?",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "contact area",
+       "reduced"
+      ]
+     ],
+     "marks": 1,
+     "why": "Pebbles reduce the area over which the reaction force acts.",
+     "description": "States that the contact area is reduced when walking on pebbles.",
+     "how": "Award 1 mark for mentioning reduced contact area."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "pressure",
+       "high",
+       "painful"
+      ],
+      [
+       "pressure",
+       "high",
+       "pain"
+      ]
+     ],
+     "marks": 1,
+     "why": "The reduced contact area produces high pressure, making walking painful.",
+     "description": "Links the high pressure due to the reaction force with the pain.",
+     "how": "Award 1 mark for stating that the high pressure causes pain."
+    }
+   ]
+  },
+  {
+   "id": "phy-w-6-1-t5",
+   "text": "What is the relationship between liquid pressure and the depth of the liquid?",
+   "marks": 2,
+   "modelAnswer": [
+    "Equation 6.4 shows that pressure in a liquid increases with depth. The value of pressure depends on the depth and density of the liquid."
+   ],
+   "followUp": "What is the relationship between liquid pressure and the depth of the liquid?",
+   "noteId": "phy-n-6-1",
+   "section": 0,
+   "number": 0,
+   "matching": "method",
+   "source": "theory",
+   "rubric": [
+    {
+     "id": "a",
+     "accept": [
+      [
+       "pressure",
+       "increases",
+       "depth"
+      ]
+     ],
+     "marks": 1,
+     "why": "Liquid pressure increases as depth increases.",
+     "description": "States that pressure in a liquid increases with depth.",
+     "how": "Award 1 mark for mentioning that pressure increases with depth."
+    },
+    {
+     "id": "b",
+     "accept": [
+      [
+       "depth",
+       "density"
+      ]
+     ],
+     "marks": 1,
+     "why": "The pressure value depends on both the depth and the liquid’s density.",
+     "description": "States that liquid pressure depends on depth and density.",
+     "how": "Award 1 mark for mentioning both depth and density."
+    }
+   ]
+  }
+ ],
+ "report": {
+  "definitionsDropped": 0,
+  "importantDropped": 8,
+  "writtenBuilt": 6
+ }
+}

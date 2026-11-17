@@ -175,12 +175,57 @@
      "kind": "EXERCISE",
      "source": "CRQ 8.2",
      "question": "A steel bar has to be magnetised by placing it inside a solenoid such that end A of a bar becomes N-pole and end B becomes S-pole. Draw circuit diagram of solenoid showing steel bar inside it.",
-     "steps": [],
-     "answer": "",
+     "steps": [
+      "Place the steel bar AB inside a solenoid and connect the solenoid, a cell and a switch in series.",
+      "Choose the current direction so that, when viewed from end A, the current around the solenoid is anticlockwise.",
+      "By the end rule for a solenoid, an anticlockwise current at an end makes that end a north pole.",
+      "Therefore A becomes N and the opposite end B becomes S."
+     ],
+     "answer": "The diagram shows a steel bar AB inside a solenoid connected in series with a cell and switch. Conventional current is anticlockwise when viewed from A, making A the north pole and B the south pole.",
      "figure": "",
      "accept": [],
-     "checked": false,
-     "note": ""
+     "checked": true,
+     "note": "",
+     "drawn": {
+      "kind": "circuit",
+      "title": "Magnetising a steel bar in a solenoid",
+      "description": "Draw a cell, switch and solenoid in series. Show the steel bar inside the coil, with A at the left end and B at the right. Connect the cell polarity so the conventional current appears anticlockwise when viewed from end A. Label A as N and ",
+      "functions": [],
+      "shade": null,
+      "xMin": -10,
+      "xMax": 10,
+      "yMin": -10,
+      "yMax": 10,
+      "points": [],
+      "segments": [],
+      "polygons": [],
+      "angles": [],
+      "circles": [],
+      "intervals": [],
+      "sets": [],
+      "both": [],
+      "outside": [],
+      "categories": [],
+      "values": [],
+      "headers": [],
+      "rows": [],
+      "forces": [],
+      "components": [
+       {
+        "type": "cell",
+        "label": "cell"
+       },
+       {
+        "type": "switch",
+        "label": "switch"
+       },
+       {
+        "type": "coil",
+        "label": "solenoid aro"
+       }
+      ],
+      "arrangement": "series"
+     }
     },
     {
      "kind": "EXERCISE",
@@ -239,23 +284,262 @@
      "kind": "EXERCISE",
      "source": "Comprehensive 8.2",
      "question": "Describe the strength of a magnetic field in terms of magnetic lines of force. Explain it by drawing a few diagrams for the fields as examples.",
-     "steps": [],
-     "answer": "",
+     "steps": [
+      "Draw several magnetic field lines in each example, keeping the lines distinct and showing their relative spacing.",
+      "In a strong-field region, draw the lines close together; in a weak-field region, draw them farther apart.",
+      "For a uniform field, draw parallel lines with equal spacing.",
+      "Magnetic field strength is indicated by the density of field lines: the number of lines passing through unit area perpendicular to the field.",
+      "The closer the lines, the stronger the magnetic field; the farther apart they are, the weaker the field."
+     ],
+     "answer": "A magnetic field is stronger where its lines of force are more densely spaced and weaker where they are more widely spaced. Parallel, equally spaced lines represent a uniform field.",
      "figure": "",
      "accept": [],
-     "checked": false,
-     "note": ""
+     "checked": true,
+     "note": "",
+     "drawn": {
+      "kind": "geometry",
+      "title": "Magnetic field strength shown by line density",
+      "description": "Three schematic regions of magnetic field lines. The strong-field lines are closely spaced, the weak-field lines are widely spaced, and the uniform-field lines are parallel and equally spaced. The straight lines represent local field-line p",
+      "functions": [],
+      "shade": null,
+      "xMin": 0,
+      "xMax": 8,
+      "yMin": 0,
+      "yMax": 3,
+      "points": [
+       {
+        "x": 0,
+        "y": 0,
+        "label": "s1l"
+       },
+       {
+        "x": 2,
+        "y": 0,
+        "label": "s1r"
+       },
+       {
+        "x": 0,
+        "y": 0.25,
+        "label": "s2l"
+       },
+       {
+        "x": 2,
+        "y": 0.25,
+        "label": "s2r"
+       },
+       {
+        "x": 0,
+        "y": 0.5,
+        "label": "s3l"
+       },
+       {
+        "x": 2,
+        "y": 0.5,
+        "label": "s3r"
+       },
+       {
+        "x": 0,
+        "y": 0.75,
+        "label": "s4l"
+       },
+       {
+        "x": 2,
+        "y": 0.75,
+        "label": "s4r"
+       },
+       {
+        "x": 3,
+        "y": 0,
+        "label": "w1l"
+       },
+       {
+        "x": 5,
+        "y": 0,
+        "label": "w1r"
+       },
+       {
+        "x": 3,
+        "y": 1.5,
+        "label": "w2l"
+       },
+       {
+        "x": 5,
+        "y": 1.5,
+        "label": "w2r"
+       },
+       {
+        "x": 3,
+        "y": 3,
+        "label": "w3l"
+       },
+       {
+        "x": 5,
+        "y": 3,
+        "label": "w3r"
+       },
+       {
+        "x": 6,
+        "y": 0,
+        "label": "u1l"
+       },
+       {
+        "x": 8,
+        "y": 0,
+        "label": "u1r"
+       },
+       {
+        "x": 6,
+        "y": 0.75,
+        "label": "u2l"
+       },
+       {
+        "x": 8,
+        "y": 0.75,
+        "label": "u2r"
+       },
+       {
+        "x": 6,
+        "y": 1.5,
+        "label": "u3l"
+       },
+       {
+        "x": 8,
+        "y": 1.5,
+        "label": "u3r"
+       }
+      ],
+      "segments": [
+       {
+        "from": "s1l",
+        "to": "s1r",
+        "label": ""
+       },
+       {
+        "from": "s2l",
+        "to": "s2r",
+        "label": ""
+       },
+       {
+        "from": "s3l",
+        "to": "s3r",
+        "label": ""
+       },
+       {
+        "from": "s4l",
+        "to": "s4r",
+        "label": ""
+       },
+       {
+        "from": "w1l",
+        "to": "w1r",
+        "label": ""
+       },
+       {
+        "from": "w2l",
+        "to": "w2r",
+        "label": ""
+       },
+       {
+        "from": "w3l",
+        "to": "w3r",
+        "label": ""
+       },
+       {
+        "from": "u1l",
+        "to": "u1r",
+        "label": ""
+       },
+       {
+        "from": "u2l",
+        "to": "u2r",
+        "label": ""
+       },
+       {
+        "from": "u3l",
+        "to": "u3r",
+        "label": ""
+       }
+      ],
+      "polygons": [],
+      "angles": [],
+      "circles": [],
+      "intervals": [],
+      "sets": [],
+      "both": [],
+      "outside": [
+       "Strong fie",
+       "Weak field",
+       "Uniform fi"
+      ],
+      "categories": [],
+      "values": [],
+      "headers": [],
+      "rows": [],
+      "forces": [],
+      "components": [],
+      "arrangement": "parallel"
+     }
     },
     {
      "kind": "EXERCISE",
      "source": "Comprehensive 8.3",
      "question": "What is a circuit breaker? Describe its working with the help of a diagram.",
-     "steps": [],
-     "answer": "",
+     "steps": [
+      "A circuit breaker is an automatic safety switch that breaks a circuit when the current becomes excessive.",
+      "It is connected in series with the circuit it protects.",
+      "During an overload or short circuit, the large current produces a strong magnetic effect in the breaker’s electromagnet.",
+      "The electromagnet attracts an armature, separating the contacts and opening the circuit.",
+      "After the fault is removed, the breaker can be reset."
+     ],
+     "answer": "A circuit breaker is an automatic switch that protects a circuit from excessive current. Excess current strengthens its electromagnet, which opens the contacts and breaks the circuit.",
      "figure": "",
      "accept": [],
-     "checked": false,
-     "note": ""
+     "checked": true,
+     "note": "",
+     "drawn": {
+      "kind": "circuit",
+      "title": "Circuit breaker",
+      "description": "Draw a supply, breaker contacts and load in series. Show the breaker contacts mechanically linked to an electromagnet coil, so that excessive current pulls the contacts apart and opens the circuit. Label the switch 'circuit breaker'.",
+      "functions": [],
+      "shade": null,
+      "xMin": -10,
+      "xMax": 10,
+      "yMin": -10,
+      "yMax": 10,
+      "points": [],
+      "segments": [],
+      "polygons": [],
+      "angles": [],
+      "circles": [],
+      "intervals": [],
+      "sets": [],
+      "both": [],
+      "outside": [],
+      "categories": [],
+      "values": [],
+      "headers": [],
+      "rows": [],
+      "forces": [],
+      "components": [
+       {
+        "type": "cell",
+        "label": "cell / suppl"
+       },
+       {
+        "type": "switch",
+        "label": "breaker cont"
+       },
+       {
+        "type": "coil",
+        "label": "electromagne"
+       },
+       {
+        "type": "bulb",
+        "label": "load"
+       }
+      ],
+      "arrangement": "series"
+     }
     },
     {
      "kind": "EXERCISE",
