@@ -6,6 +6,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -114,9 +115,11 @@ fun TestsScreen(
     val half = blueprints.firstOrNull { it.id.endsWith("mock-half") }
     val mine = blueprints.filter { !it.official && it.chapterId == null && !it.id.endsWith("mock-half") }
     ParhlouScreen("Papers", onBack = onBack) {
-        if (subjects.size > 1) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+        // One line of subject chips that scrolls sideways, so five subjects fit on any phone.
+        if (subjects.size > 1) Row(horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.fillMaxWidth().horizontalScroll(androidx.compose.foundation.rememberScrollState())) {
             subjects.forEach { (id, name) ->
-                androidx.compose.material3.FilterChip(selected = id == selectedSubject, onClick = { onSubject(id) }, label = { Text(name) },
+                androidx.compose.material3.FilterChip(selected = id == selectedSubject, onClick = { onSubject(id) }, label = { Text(name, maxLines = 1, softWrap = false) },
                     modifier = Modifier.heightIn(min = 48.dp).testTag("papers-subject-$id"))
             }
         }

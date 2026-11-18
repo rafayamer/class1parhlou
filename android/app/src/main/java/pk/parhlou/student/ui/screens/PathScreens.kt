@@ -66,12 +66,19 @@ private val Flame = Color(0xFFFF7A00)
  * The section to practise today: a weak section first, then the first examined section not yet strong, then the
  * weakest examined section.
  */
-fun todaysModule(subjects: List<Subject>, progress: ProgressStore): Module? {
-    val all = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.filter { it.inExam && (c.kit?.inExam != false) } } }
-        .ifEmpty { subjects.flatMap { s -> s.chapters.flatMap { it.modules } } }
-    return all.firstOrNull { progress.state(it.id) == LearningState.REPAIR_REQUIRED }
-        ?: all.firstOrNull { Rewards.sectionLevel(progress.evidence(it.id)) < 2 }
-        ?: all.minByOrNull { Rewards.sectionLevel(progress.evidence(it.id)) }
+fun todaysModule(subjects: List<Subject>, progress: ProgressStore, day: Long = java.time.LocalDate.now().toEpochDay()): Module? {
+    fun examModules(s: Subject) = s.chapters.flatMap { c -> c.modules.filter { it.inExam && (c.kit?.inExam != false) } }
+        .ifEmpty { s.chapters.flatMap { it.modules } }
+    val all = subjects.flatMap(::examModules)
+    // Something to fix comes first, whatever the subject.
+    all.firstOrNull { progress.state(it.id) == LearningState.REPAIR_REQUIRED }?.let { return it }
+    // Otherwise the subjects take turns, one per day, so every subject moves forward (not Maths first until it's finished).
+    val open = subjects.filter { s -> examModules(s).any { Rewards.sectionLevel(progress.evidence(it.id)) < 2 } }
+    if (open.isNotEmpty()) {
+        val s = open[Math.floorMod(day, open.size.toLong()).toInt()]
+        return examModules(s).first { Rewards.sectionLevel(progress.evidence(it.id)) < 2 }
+    }
+    return all.minByOrNull { Rewards.sectionLevel(progress.evidence(it.id)) }
 }
 
 /** Streak, today's XP against the goal, and level, at the top of Home. */

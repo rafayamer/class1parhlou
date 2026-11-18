@@ -146,7 +146,7 @@ object Routes {
     const val EDIT_PROFILE = "profile/edit"
     const val PLANNER = "planner"
     const val WEAK_TOPICS = "weak-topics"
-    const val SOLUTIONS = "solutions"
+    const val SOLUTIONS = "solutions?subject={subject}"
     const val KIT = "kit/{id}"
     const val PRACTICAL = "practical/{id}"
     const val WHATS_NEW = "whats-new"
@@ -408,7 +408,7 @@ fun ParhlouApp(
                 onPlanTask = ::openPlanTask,
                 onPlanner = { nav.navigate(Routes.PLANNER) },
                 onHistory = { nav.navigate(Routes.HISTORY) },
-                onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                onSolutions = { nav.navigate("solutions") },
                 onStartSession = { m, min -> nav.navigate("session/${m ?: "today"}?min=$min") },
                 onKit = { nav.navigate("kit/$it") },
                 onProgress = { nav.navigate(Routes.PROGRESS) },
@@ -511,7 +511,7 @@ fun ParhlouApp(
         } }
         composable(Routes.SUBJECTS) { WithTabBarSpace {
             SubjectsScreen(repo, state, onOpen = { nav.navigate("subject/$it") }, onBack = null,
-                onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                onSolutions = { nav.navigate("solutions") },
                 onAddSubject = { id -> scope.launch { store.saveOnboarding(state.copy(subjectIds = state.subjectIds + id)) } },
                 onEditSubjects = { nav.navigate(Routes.EDIT_PROFILE) })
         } }
@@ -564,8 +564,10 @@ fun ParhlouApp(
             val context = LocalContext.current
             WhatsNewScreen(remember { WhatsNew.load(context) }, versionLabel, onDone = { nav.popBackStack() })
         }
-        composable(Routes.SOLUTIONS) {
-            SolutionsFinderScreen(subjects, onOpen = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
+        composable(Routes.SOLUTIONS, arguments = listOf(androidx.navigation.navArgument("subject") { type = androidx.navigation.NavType.StringType; nullable = true; defaultValue = null })) { entry ->
+            // A book's Solutions tab shows that book only; elsewhere every subject's solutions.
+            val only = entry.arguments?.getString("subject")
+            SolutionsFinderScreen(subjects.filter { only == null || it.id == only }, onOpen = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
         }
         composable(Routes.SOLUTION) { entry ->
             val module = repo.module(entry.arguments?.getString("module").orEmpty())
@@ -586,7 +588,7 @@ fun ParhlouApp(
                 SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
                     onOpenKit = { nav.navigate("kit/$it") },
                     onStartSession = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
-                    onSolutions = { nav.navigate(Routes.SOLUTIONS) },
+                    onSolutions = { nav.navigate("solutions?subject=${subject.id}") },
                     onOpenPractical = { nav.navigate("practical/$it") })
         }
         composable(Routes.PRACTICAL) { entry ->
@@ -637,7 +639,11 @@ fun ParhlouApp(
                     // Subjects with one exercise per chapter (Physics): each chapter's exercise.
                     dotted.ifEmpty { chapters.filter { c -> c.modules.any { m -> m.solutions.any { it.kind == pk.parhlou.student.data.SolutionKind.EXERCISE } } }.map { "${it.number}" } }
                 },
-                exerciseLabel = if (paperSubject?.subject?.id == FakeRepository.MATHS_9 || paperSubject == null) "Exercise" else "Chapter exercise",
+                exerciseLabel = when {
+                    paperSubject?.subject?.id == FakeRepository.MATHS_9 || paperSubject == null -> "Exercise"
+                    paperSubject.subject.chapters.firstOrNull()?.word == "Unit" -> "Unit exercise"
+                    else -> "Chapter exercise"
+                },
                 subjects = subjects.map { it.id to it.name },
                 selectedSubject = paperSubject?.subject?.id,
                 onSubject = { paperSubjectId = it },

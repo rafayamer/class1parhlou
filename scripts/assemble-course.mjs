@@ -430,6 +430,13 @@ const bundle = {
 };
 
 const cleaned = cleanAll(bundle);
+// Titles printed in capitals ("THE CELL") read as shouting in the app: they become title case ("The Cell").
+const SMALL = new Set(["a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with"]);
+const titleCase = (t) => t.toLowerCase().replace(/[a-z][a-z'’]*/g, (w, i) => (i > 0 && SMALL.has(w) ? w : w[0].toUpperCase() + w.slice(1)));
+for (const c of cleaned.subject.chapters) {
+  if (/[A-Z]{3}/.test(c.title) && c.title === c.title.toUpperCase()) c.title = titleCase(c.title);
+  for (const m of c.modules) if (/[A-Z]{3}/.test(m.title) && m.title === m.title.toUpperCase()) m.title = titleCase(m.title);
+}
 
 // ── Content audit (audit-content.mjs): corrections proof-read against the printed pages, and re-worked solutions ──
 const auditFile = `${ROOT}/audit-fixes.json`;

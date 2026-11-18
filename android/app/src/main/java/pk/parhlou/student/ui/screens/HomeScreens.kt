@@ -249,7 +249,8 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
     val pct = if (papers.isNotEmpty()) papers.takeLast(3).average() else if (levels.isEmpty()) 0.0 else levels.average() / 5 * 100
     val started = papers.isNotEmpty() || levels.any { it > 0 }
     val ranked = modules.zip(levels).filter { it.second > 0 || papers.isNotEmpty() }
-    val weak = modules.zip(levels).minByOrNull { it.second }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
+    // A weak topic is one the student has tried and is still shaky on (never an untouched topic).
+    val weak = ranked.filter { it.second in 1..2 }.minByOrNull { it.second }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
     val strong = ranked.maxByOrNull { it.second }?.takeIf { it.second >= 2 }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
     val examIn = pk.parhlou.student.domain.ExamCountdown.daysLeft(s.examDate)
     pk.parhlou.student.ui.components.Chunky(modifier = Modifier.fillMaxWidth().testTag("journey-${s.id}"), shape = RoundedCornerShape(22.dp), onClick = onOpen) {
