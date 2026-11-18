@@ -27,6 +27,8 @@ export function costSoFar() {
 const KEY = process.env.OPENAI_API_KEY ?? "proxy-injected";
 
 const headers = { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" };
+const REQUEST_MS = 60_000; // one HTTP request
+const JOB_MS = Number(process.env.LUNA_JOB_MINUTES ?? 15) * 60_000; // one background job
 const sleep = (ms) => new Promise((s) => setTimeout(s, ms));
 const textOf = (j) => (j.output ?? []).flatMap((o) => o.content ?? []).filter((c) => c.type === "output_text").map((c) => c.text).join("");
 
@@ -40,15 +42,21 @@ export async function luna(body, stage, item, { background = true } = {}) {
   for (let attempt = 1; ; attempt++) {
     try {
       const r = await fetch("https://api.openai.com/v1/responses", {
-        method: "POST", headers,
+        method: "POST", headers, signal: AbortSignal.timeout(REQUEST_MS),
         body: JSON.stringify({ model: "gpt-6-luna", ...body, ...(background ? { background: true, store: true } : { store: false }) }),
       });
       let j = await r.json().catch(() => ({}));
       if (!r.ok) throw new Error(`${r.status} ${JSON.stringify(j).slice(0, 300)}`);
+      // A job that never finishes is cancelled after JOB_MS and tried again, instead of being waited on forever.
+      const deadline = Date.now() + JOB_MS;
       while (j.status === "queued" || j.status === "in_progress") {
+        if (Date.now() > deadline) {
+          await fetch(`https://api.openai.com/v1/responses/${j.id}/cancel`, { method: "POST", headers, signal: AbortSignal.timeout(REQUEST_MS) }).catch(() => {});
+          throw new Error(`response still ${j.status} after ${JOB_MS / 60000} min`);
+        }
         await sleep(4000);
-        const p = await fetch(`https://api.openai.com/v1/responses/${j.id}`, { headers });
-        if (p.ok) j = await p.json();
+        const p = await fetch(`https://api.openai.com/v1/responses/${j.id}`, { headers, signal: AbortSignal.timeout(REQUEST_MS) }).catch(() => null);
+        if (p?.ok) j = await p.json();
       }
       logCost(stage, item, j.usage);
       if (j.status && j.status !== "completed") throw new Error(`response ${j.status}: ${JSON.stringify(j.incomplete_details ?? j.error ?? {})}`);
