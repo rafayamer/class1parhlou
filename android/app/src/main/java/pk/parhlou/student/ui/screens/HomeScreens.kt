@@ -216,10 +216,20 @@ fun HomeScreen(
 
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
-        // "Do this now" is the plan's first task (a topic to fix comes first), else the next lesson.
+        // "Do this now": the plan's first task (a topic to fix comes first), else the next lesson. Shown once.
         val first = plan.firstOrNull()?.takeIf { onboarding.pathway != Pathway.TEST_SERIES }
         val now: Pair<String, () -> Unit> = if (first != null) first.title to { onPlanTask(first) } else task.title to go
-        subjects.forEach { s -> SubjectJourneyCard(s, progress, now.first, now.second, onSubjects) }
+        Sheet(Modifier.testTag("do-this-now")) {
+            Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
+            Text(now.first, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
+            pk.parhlou.student.ui.components.AccentButton("Continue", onClick = now.second)
+        }
+        // Each subject's card shows that subject's own next section.
+        subjects.forEach { s ->
+            val next = todaysModule(listOf(s), progress)
+            val title = next?.let { "Next: ${it.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")}" } ?: "Revise with a paper"
+            SubjectJourneyCard(s, progress, title, { if (next != null) onStartSession(next.id, onboarding.minutesPerDay) else onSubjects() }, onSubjects)
+        }
 
         Box(Modifier.appear(4)) {
             val titles = remember(repo, subjects) {
@@ -271,9 +281,8 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
                 if (strong != null) JourneyFact("💪", strong, "strong", Modifier.weight(1f))
                 if (weak != null) JourneyFact("⚠️", weak, "work on", Modifier.weight(1f))
             } else Muted("Do a few lessons and quizzes, and your expected marks and strong and weak topics show here.")
-            Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
             Text(taskTitle, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
-            pk.parhlou.student.ui.components.AccentButton("Continue", onClick = go)
+            pk.parhlou.student.ui.components.SecondaryButton("Study next", onClick = go, modifier = Modifier.testTag("study-next-${s.id}"))
         }
     }
 }
