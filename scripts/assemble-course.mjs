@@ -214,11 +214,13 @@ for (const u of units) {
 
   // Practice comes from past papers (D-027): board MCQs first (most repeated first), then the book's own review MCQs;
   // MCQs written for the course are used only where a section still has fewer than 5.
+  // Where the question was in each board paper ("Lahore 2023 (Group I)" → "Q2(iv)"), so the app can rebuild real past papers.
+  const refsOf = (q) => Object.fromEntries((q.labels ?? []).filter((l) => !l.model).map((l) => [l.tag, l.label]));
   const noteOf = (moduleId) => u.notes.find((x) => x.moduleId === moduleId)?.id ?? null;
   const ppMcqs = (pastPapers?.mcqs ?? []).filter((q) => q.moduleId?.startsWith(`${IDP}m-${n0}-`))
     .sort((a, b) => b.count - a.count || b.year - a.year)
     .map((q) => ({ id: q.id, stem: q.stem, options: q.options, correctIndex: q.correctIndex, rationales: q.rationales,
-      status: "APPROVED", noteId: noteOf(q.moduleId), moduleId: q.moduleId, tags: q.tags }));
+      status: "APPROVED", noteId: noteOf(q.moduleId), moduleId: q.moduleId, tags: q.tags, refs: refsOf(q) }));
   const seen = new Set();
   const realFirst = [...ppMcqs, ...u.quiz.filter((q) => q.id.startsWith(`${IDP}b-`))];
   const made = u.quiz.filter((q) => !q.id.startsWith(`${IDP}b-`));
@@ -239,7 +241,7 @@ for (const u of units) {
   const ppWritten = (pastPapers?.written ?? []).filter((w) => w.moduleId?.startsWith(`${IDP}m-${n0}-`))
     .sort((a, b) => b.count - a.count || b.year - a.year)
     .map((w) => ({ id: w.id, text: w.text, marks: w.marks, modelAnswer: w.modelAnswer, followUp: w.followUp, noteId: noteOf(w.moduleId),
-      section: 0, number: 0, matching: "method", rubric: w.rubric, tags: w.tags, source: w.bookSource || "", ppModule: w.moduleId }));
+      section: 0, number: 0, matching: "method", rubric: w.rubric, tags: w.tags, refs: refsOf(w), source: w.bookSource || "", ppModule: w.moduleId }));
   u.written = [...ppWritten, ...u.written];
   // A marking point worth nothing ("Gives a direct answer", 0 marks) is not a marking point.
   for (const w of u.written) if (w.rubric?.some((c) => !(c.marks > 0))) w.rubric = w.rubric.filter((c) => c.marks > 0);

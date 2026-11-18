@@ -108,12 +108,20 @@ fun TestsScreen(
     onSubject: (String) -> Unit = {},
     /** "Exercise" for Mathematics (exercises 1.1, 1.2 …); "Chapter exercise" for subjects with one exercise per chapter. */
     exerciseLabel: String = "Exercise",
+    /** The Guess paper (most repeated board questions in the board pattern) and a line on how it was made. */
+    guessId: String? = null,
+    guessNote: String? = null,
+    /** Real board papers rebuilt from the bank, newest first. */
+    pastIds: List<String> = emptyList(),
 ) {
     var picker by rememberSaveable { mutableStateOf("") } // "", "exercise", "chapter"
-    val board = blueprints.filter { it.official }
+    val guess = blueprints.firstOrNull { it.id == guessId }
+    val past = pastIds.mapNotNull { id -> blueprints.firstOrNull { it.id == id } }
+    var showAllPast by rememberSaveable { mutableStateOf(false) }
+    val board = blueprints.filter { it.official && it.id != guessId && it.id !in pastIds }
     val chapterTests = blueprints.filter { !it.official && it.chapterId != null }
     val half = blueprints.firstOrNull { it.id.endsWith("mock-half") }
-    val mine = blueprints.filter { !it.official && it.chapterId == null && !it.id.endsWith("mock-half") }
+    val mine = blueprints.filter { !it.official && it.chapterId == null && !it.id.endsWith("mock-half") && it.id != guessId && it.id !in pastIds }
     ParhlouScreen("Papers", onBack = onBack) {
         // One line of subject chips that scrolls sideways, so five subjects fit on any phone.
         if (subjects.size > 1) Row(horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -127,6 +135,15 @@ fun TestsScreen(
             Text("🔒 Quick check first", style = MaterialTheme.typography.titleMedium)
             Muted("A short quiz. Pass $READINESS_PASS_PERCENT% to unlock papers.")
             BigButton("Start the check", onClick = onReadiness)
+        }
+
+        // The flagship: the paper most likely to come, from how often each question came in real board papers.
+        if (guess != null) Sheet(Modifier.testTag("guess-paper")) {
+            Text("🔮 Guess paper 2027", style = MaterialTheme.typography.titleLarge)
+            Muted("The 2027 board pattern, filled with the questions that came most often in Punjab board papers (2018–2024).")
+            guessNote?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
+            BigButton("Open the guess paper", enabled = readinessPassed && guess.id in available, onClick = { onOpen(guess.id) },
+                modifier = Modifier.testTag("paper-${guess.id}"))
         }
 
         Text("Board papers", style = MaterialTheme.typography.titleLarge)
@@ -171,6 +188,15 @@ fun TestsScreen(
         }
         if (picker == "chapter") ScopePicker("Choose a chapter", onClose = { picker = "" }) {
             chapterTests.forEach { b -> PaperCard(b, b.id in available, readinessPassed, attemptsLeft(b.id), onOpen) }
+        }
+
+        if (past.isNotEmpty()) {
+            Text("Real past papers", style = MaterialTheme.typography.titleLarge)
+            Muted("Punjab board papers, question for question, keeping the questions that are still in the 2027 syllabus.")
+            (if (showAllPast) past else past.take(6)).forEach { PaperCard(it, it.id in available, readinessPassed, attemptsLeft(it.id), onOpen) }
+            if (past.size > 6) TextButton(onClick = { showAllPast = !showAllPast }, modifier = Modifier.heightIn(min = 48.dp).testTag("all-past")) {
+                Text(if (showAllPast) "Show fewer" else "Show all ${past.size} past papers")
+            }
         }
 
         if (mine.isNotEmpty()) {

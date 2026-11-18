@@ -186,6 +186,8 @@ data class McqQuestion(
     val moduleId: String? = null,
     /** Board papers this question came in, e.g. "Lahore 2023 (Group I)". Empty for book-only questions. */
     val pastPapers: List<String> = emptyList(),
+    /** Where it was in each of those papers: "Lahore 2023 (Group I)" → "Q1(iv)". */
+    val pastRefs: Map<String, String> = emptyMap(),
 )
 
 /** One marking point of a rubric. [accept] lists alternative pattern groups; see ai/TextMatch.kt for the syntax. */
@@ -212,6 +214,8 @@ data class WrittenQuestion(
     val number: Int = 0,
     /** Board papers this question came in, e.g. "Lahore 2023 (Group I)". Empty for book-only questions. */
     val pastPapers: List<String> = emptyList(),
+    /** Where it was in each of those papers: "Lahore 2023 (Group I)" → "Q2(iv)". */
+    val pastRefs: Map<String, String> = emptyMap(),
 )
 
 /** The questions of one published paper. */

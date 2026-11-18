@@ -20,4 +20,8 @@ interface ParhlouRepository {
     fun paper(blueprintId: String): PaperContent?
     /** Notes the tutor may answer from for this subject. Never notes of another board or subject. */
     fun notes(subjectId: String): List<ConceptNote>
+    /** Every written question of a subject's course (book and past papers); empty where the course has none on the phone. */
+    fun writtenBank(subjectId: String): List<WrittenQuestion> = emptyList()
+    /** Every MCQ of a subject's course (book and past papers). */
+    fun mcqBank(subjectId: String): List<McqQuestion> = emptyList()
 }

@@ -75,6 +75,12 @@ class AuditShotsTest {
             rule.waitUntil(3_000) { exists("Your books") }
         }
         rule.onNodeWithTag("tab-tests").performClick(); rule.waitUntil(3_000) { exists("Make a paper") }; save("a07-papers")
+        rule.onNodeWithTag("guess-paper").performScrollTo(); save("a07b-guess")
+        rule.onNodeWithText("Real past papers").performScrollTo(); save("a07c-real-past")
+        rule.onNodeWithText("Open the guess paper").performScrollTo().performClick(); rule.waitUntil(5_000) { exists("Before you start") }; save("a07d-guess-start")
+        rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(3_000) { exists("Make a paper") }
+        rule.onAllNodes(hasText("· Mathematics past paper", substring = true))[0].performScrollTo().performClick(); rule.waitUntil(5_000) { exists("Before you start") }; save("a07e-past-start")
+        rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(3_000) { exists("Make a paper") }
         for (id in listOf(FakeRepository.BIOLOGY_9, FakeRepository.COMPUTER_9)) {
             rule.onNodeWithTag("papers-subject-$id").performScrollTo().performClick(); rule.waitForIdle(); save("a07-papers-$id")
         }

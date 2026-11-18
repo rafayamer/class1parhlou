@@ -238,7 +238,11 @@ fun ParhlouApp(
     val chapterBlueprints = subjectIds.flatMap { repo.blueprints(it) }
     // Each subject has its own papers: chapter tests, mocks in its own board pattern, a board-paper template and a question bank.
     class SubjectPapers(val subject: pk.parhlou.student.data.Subject, val blueprints: List<pk.parhlou.student.data.PaperBlueprint>,
-                        val mocks: List<MockPaper>, val template: pk.parhlou.student.data.PaperBlueprint?, val bank: PaperPicker.Bank)
+                        val mocks: List<MockPaper>, val template: pk.parhlou.student.data.PaperBlueprint?, val bank: PaperPicker.Bank,
+                        /** The Guess paper: the board pattern filled with the questions that came most often in board papers. */
+                        val guess: pk.parhlou.student.domain.MyPaper? = null,
+                        /** Real board papers rebuilt from the bank (the part still in the 2027 syllabus), newest first. */
+                        val past: List<pk.parhlou.student.domain.PastPapers.Real> = emptyList())
     val perSubject = remember(repo, subjectIds) {
         subjects.associate { s ->
             val own = repo.blueprints(s.id)
@@ -248,8 +252,14 @@ fun ParhlouApp(
             }
             val prefix = if (s.id == FakeRepository.MATHS_9) "" else s.id.substringAfterLast('-') + "-"
             val mocks = MockScope.entries.map { PaperAssembler.assemble(it, s.chapters, pool, PaperAssembler.patternFor(s.id), prefix) }
-            s.id to SubjectPapers(s, own, mocks, own.firstOrNull { it.official && it.chapterId == null && it.id.contains("board-") },
-                questionBank(repo, listOf(s), own))
+            val template = own.firstOrNull { it.official && it.chapterId == null && it.id.contains("board-") }
+            val bank = questionBank(repo, listOf(s), own)
+            val guess = template?.let { t -> repo.paper(t.id)?.let { tp ->
+                val slots = PaperPicker.slots(t, tp, bank, emptySet(), 0L, guess = true)
+                PaperPicker.build("${prefix}guess-2027", "🔮 Guess paper 2027 · ${s.name}", t, tp, slots, PaperPicker.localPick(slots), bank, byAi = false)
+            } }
+            val past = pk.parhlou.student.domain.PastPapers.rebuild(s.name, prefix, bank.mcqs, bank.written)
+            s.id to SubjectPapers(s, own, mocks, template, bank, guess, past)
         }
     }
     // The subject whose papers the Papers tab shows (and "make me a paper" uses); the first subject by default.
@@ -268,19 +278,23 @@ fun ParhlouApp(
             perSubject.values.firstNotNullOfOrNull { sp -> sp.template?.let { t -> PaperPicker.fromJson(a.getString(i), t, sp.bank) } }
         } } }.getOrDefault(emptyList())
     }.associateBy { it.blueprint.id }
-    val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint }
+    val guessPapers = perSubject.values.mapNotNull { it.guess }.associateBy { it.blueprint.id }
+    val realPast = perSubject.values.flatMap { it.past }.associateBy { it.blueprint.id }
+    val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint } +
+        guessPapers.values.map { it.blueprint } + realPast.values.map { it.blueprint }
     /** The papers the Papers tab lists: only the chosen subject's. */
     val shownBlueprints = paperSubject?.let { sp ->
-        val ids = (sp.blueprints.map { it.id } + sp.mocks.filterIsInstance<MockPaper.Ready>().map { it.blueprint.id }).toSet()
+        val ids = (sp.blueprints.map { it.id } + sp.mocks.filterIsInstance<MockPaper.Ready>().map { it.blueprint.id } +
+            listOfNotNull(sp.guess?.blueprint?.id) + sp.past.map { it.blueprint.id }).toSet()
         myPapers.values.filter { m -> sp.template != null && PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) != null }.map { it.blueprint } +
             blueprints.filter { it.id in ids }
     } ?: blueprints
     /** The subject a paper belongs to, by name, for its printed header. */
     fun subjectNameOf(blueprintId: String): String = perSubject.values.firstOrNull { sp ->
-        sp.blueprints.any { it.id == blueprintId } || sp.mocks.any { (it as? MockPaper.Ready)?.blueprint?.id == blueprintId } ||
+        sp.blueprints.any { it.id == blueprintId } || sp.guess?.blueprint?.id == blueprintId || sp.past.any { it.blueprint.id == blueprintId } || sp.mocks.any { (it as? MockPaper.Ready)?.blueprint?.id == blueprintId } ||
             (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
     }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
-    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
+    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper ?: guessPapers[id]?.paper ?: realPast[id]?.paper
     /** Opens study for a section: a section never taught opens its lesson first (teach, then practise); after that, the practice session. */
     fun startStudy(moduleId: String?, minutes: Int) {
         val m = moduleId?.let { repo.module(it) } ?: todaysModule(subjects, progress)
@@ -635,6 +649,12 @@ fun ParhlouApp(
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
+                guessId = paperSubject?.guess?.blueprint?.id,
+                guessNote = paperSubject?.guess?.let { g ->
+                    val all = g.paper.mcqs.map { it.pastPapers.size } + g.paper.written.map { it.pastPapers.size }
+                    "${all.count { it > 0 }} of ${all.size} questions came in real board papers; together they appeared ${all.sum()} times."
+                },
+                pastIds = paperSubject?.past?.map { it.blueprint.id }.orEmpty(),
                 pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
                 onMakePaper = if (template != null) ({ nav.navigate(Routes.MAKE_PAPER) }) else null,
                 exercises = remember(paperSubject) {
@@ -839,8 +859,9 @@ private fun questionBank(repo: pk.parhlou.student.data.ParhlouRepository, subjec
     val chapterOfModule = modules.associate { (m, c) -> m.id to c }
     val titleOfModule = modules.associate { (m, c) -> m.id to "${c.word} ${c.number} · ${m.title}" }
     return PaperPicker.Bank(
-        mcqs = (papers.flatMap { it.mcqs } + quiz).distinctBy { it.id },
-        written = papers.flatMap { it.written }.distinctBy { it.id },
+        // The whole course: every MCQ and written question, past-paper questions included, not only those already in a paper.
+        mcqs = (papers.flatMap { it.mcqs } + quiz + subjects.flatMap { repo.mcqBank(it.id) }).distinctBy { it.id },
+        written = (papers.flatMap { it.written } + subjects.flatMap { repo.writtenBank(it.id) }).distinctBy { it.id },
         unitOfNote = { key -> key?.let { chapterOfModule[noteModule[it] ?: it]?.number } },
         topicOfNote = { key -> key?.let { titleOfModule[noteModule[it] ?: it] }.orEmpty() },
     )

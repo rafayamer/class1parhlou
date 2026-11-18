@@ -180,14 +180,17 @@ object ContentBundle {
         },
         followUp = q.getString("followUp"), noteId = q.textOrNull("noteId"),
         section = q.optInt("section", 0), number = q.optInt("number", 0),
-        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(),
+        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(), pastRefs = refs(q),
     )
+
+    private fun refs(q: JSONObject): Map<String, String> =
+        q.optJSONObject("refs")?.let { o -> o.keys().asSequence().associateWith { o.getString(it) } }.orEmpty()
 
     fun readMcq(q: JSONObject) = McqQuestion(
         q.getString("id"), q.getString("stem"), q.getJSONArray("options").strings(), q.getInt("correctIndex"),
         q.getJSONArray("rationales").strings(), status(q.optString("status")), q.textOrNull("noteId"),
         moduleId = if (q.has("moduleId")) q.textOrNull("moduleId") else null,
-        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(),
+        pastPapers = q.optJSONArray("tags")?.strings().orEmpty(), pastRefs = refs(q),
     )
 
     fun readNote(n: JSONObject) = ConceptNote(
@@ -224,6 +227,8 @@ object ContentBundle {
             blueprints = bundle.getJSONArray("blueprints").list(::readBlueprint),
             papers = bundle.getJSONArray("papers").list(::readPaper),
             base = base,
+            // Every written question of the course, past-paper questions included (they feed the paper engine).
+            written = bundle.optJSONArray("written")?.list(::readWritten).orEmpty(),
         )
     }
 }
@@ -241,12 +246,16 @@ class BundleRepository(
     private val blueprints: List<PaperBlueprint>,
     private val papers: List<PaperContent>,
     private val base: ParhlouRepository,
+    private val written: List<WrittenQuestion> = emptyList(),
 ) : ParhlouRepository {
     private val modules = subject.chapters.flatMap { it.modules }
     val subjectId: String get() = subject.id
 
     /** The same course on top of another repository, so several subjects' bundles stack into one repository. */
-    fun over(newBase: ParhlouRepository) = BundleRepository(version, subject, notes, quiz, readiness, blueprints, papers, newBase)
+    fun over(newBase: ParhlouRepository) = BundleRepository(version, subject, notes, quiz, readiness, blueprints, papers, newBase, written)
+
+    override fun writtenBank(subjectId: String): List<WrittenQuestion> = if (subjectId == subject.id) written else base.writtenBank(subjectId)
+    override fun mcqBank(subjectId: String): List<McqQuestion> = if (subjectId == subject.id) quiz else base.mcqBank(subjectId)
 
     companion object {
         /** Every subject's bundle in one repository; the packed content is the bottom layer. */

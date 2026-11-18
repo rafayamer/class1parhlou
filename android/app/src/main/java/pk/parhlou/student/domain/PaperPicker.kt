@@ -56,11 +56,17 @@ object PaperPicker {
         val topicOfNote: (String?) -> String,
     )
 
-    fun slots(template: PaperBlueprint, templatePaper: PaperContent, bank: Bank, seen: Set<String>, seed: Long): List<PickSlot> {
+    /**
+     * The candidates for each place in the paper, best first. Normally: most repeated in board papers first, questions the
+     * student has already done pushed back, and a little variety. [guess] (the Guess paper): purely by how often each question
+     * came in board papers, the same for everyone.
+     */
+    fun slots(template: PaperBlueprint, templatePaper: PaperContent, bank: Bank, seen: Set<String>, seed: Long, guess: Boolean = false): List<PickSlot> {
         val rnd = Random(seed)
         val jitter = mutableMapOf<String, Double>()
         fun score(id: String, note: String?, pastPapers: Int) =
-            minOf(pastPapers, 8) * 1.5 - (if (id in seen) 3.0 else 0.0) + jitter.getOrPut(id) { rnd.nextDouble() * 1.2 }
+            if (guess) pastPapers * 10.0 + (id.hashCode() and 0xff) / 1000.0
+            else minOf(pastPapers, 8) * 1.5 - (if (id in seen) 3.0 else 0.0) + jitter.getOrPut(id) { rnd.nextDouble() * 1.2 }
         fun cand(id: String, note: String?, pastPapers: Int) = PickCandidate(id, bank.topicOfNote(note), id in seen, score(id, note, pastPapers))
         val out = mutableListOf<PickSlot>()
         templatePaper.mcqs.groupBy { bank.unitOfNote(it.noteId ?: it.moduleId) }.forEach { (unit, qs) ->
