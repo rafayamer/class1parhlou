@@ -213,5 +213,7 @@ private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam
         }
         Text(m.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center,
             maxLines = 2, overflow = TextOverflow.Ellipsis, modifier = Modifier.offset(x = shift).width(150.dp))
+        if (!inExam) Text("Not in 2027 exam", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
+            textAlign = TextAlign.Center, modifier = Modifier.offset(x = shift).width(150.dp).testTag("not-in-exam-${m.id}"))
     }
 }

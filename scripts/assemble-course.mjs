@@ -149,7 +149,10 @@ for (const u of units) {
   const alignBy = new Map((aligned?.items ?? []).map((a) => [a.source, a]));
   const unitOut = syllabus.excludedUnits.includes(n0);
   for (const m of u.chapter.modules) {
-    m.inExam = !unitOut && !syllabus.excludedModules.includes(m.id);
+    // A whole numbered section the smart syllabus deletes ("1.2 States of Matter") is out of the exam too (not partial deletions).
+    const secNo = /^(\d+\.\d+)\s/.exec(m.title)?.[1];
+    const topicOut = !!secNo && (syllabus.excludedTopics?.[String(n0)] ?? []).some((t) => !t.partial && (t.section ?? /^(\d+\.\d+)\s/.exec(t.title)?.[1]) === secNo);
+    m.inExam = !unitOut && !syllabus.excludedModules.includes(m.id) && !topicOut;
     m.solutions = m.solutions.map((x) => {
       let y = { ...x, inExam: !isExcluded(syllabus, n0, x.source) };
       const a = x.kind === "EXERCISE" ? alignBy.get(x.source) : null;

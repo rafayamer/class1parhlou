@@ -281,6 +281,12 @@ fun ParhlouApp(
             (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
     }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper
+    /** Opens study for a section: a section never taught opens its lesson first (teach, then practise); after that, the practice session. */
+    fun startStudy(moduleId: String?, minutes: Int) {
+        val m = moduleId?.let { repo.module(it) } ?: todaysModule(subjects, progress)
+        val taught = m == null || m.lesson == null || progress.evidence(m.id).any { it == Evidence.LessonCompleted }
+        if (m != null && !taught) nav.navigate("module/${m.id}") else nav.navigate("session/${moduleId ?: "today"}?min=$minutes")
+    }
     /** Abandons a running paper: everything for it is cleared, no try is used, Do Not Disturb ends and Ask Ustaad unlocks. */
     fun quitPaper(id: String, then: () -> Unit = {}) {
         scope.launch {
@@ -409,7 +415,7 @@ fun ParhlouApp(
                 onPlanner = { nav.navigate(Routes.PLANNER) },
                 onHistory = { nav.navigate(Routes.HISTORY) },
                 onSolutions = { nav.navigate("solutions") },
-                onStartSession = { m, min -> nav.navigate("session/${m ?: "today"}?min=$min") },
+                onStartSession = { m, min -> startStudy(m, min) },
                 onKit = { nav.navigate("kit/$it") },
                 onProgress = { nav.navigate(Routes.PROGRESS) },
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
@@ -587,7 +593,7 @@ fun ParhlouApp(
             if (subject == null) Missing(nav) else
                 SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
                     onOpenKit = { nav.navigate("kit/$it") },
-                    onStartSession = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
+                    onStartSession = { startStudy(it, state.minutesPerDay) },
                     onSolutions = { nav.navigate("solutions?subject=${subject.id}") },
                     onOpenPractical = { nav.navigate("practical/$it") })
         }
@@ -738,7 +744,7 @@ fun ParhlouApp(
                     val profile = StudentProfile.build(state, subjects, history, prefs, { noteTitles[it] }).summary()
                     val aiPick = if (ai.readsPhotos) ai.pickPaper(slots, profile) else null
                     val n = myPapers.size + 1
-                    val made = PaperPicker.build("my-paper-${System.currentTimeMillis()}", "My paper $n (2027 pattern)", t, tPaper, slots,
+                    val made = PaperPicker.build("my-paper-${System.currentTimeMillis()}", "${paperSubject?.subject?.name ?: "My"} paper $n (2027 pattern)", t, tPaper, slots,
                         aiPick ?: PaperPicker.localPick(slots), bank, byAi = aiPick != null) ?: return@make null
                     val list = runCatching { org.json.JSONArray(myPapersJson) }.getOrDefault(org.json.JSONArray()).put(PaperPicker.toJson(made))
                     store.saveDraft(MY_PAPERS, list.toString())
