@@ -20,6 +20,7 @@ class ProgressStore(private val store: LocalStore? = null, private val scope: Co
     suspend fun load() {
         val saved = store?.progressLog() ?: return
         log.clear()
+        resetIndex()
         log.addAll(EvidenceCodec.parse(saved))
     }
 
@@ -29,10 +30,28 @@ class ProgressStore(private val store: LocalStore? = null, private val scope: Co
         if (store != null && scope != null) scope.launch { store.appendProgress(line) }
     }
 
-    /** Every recorded event, oldest first. */
-    fun history(): List<LoggedEvidence> = log.toList()
+    // The log only grows (or is reloaded), so lookups use an index brought up to date on demand instead of scanning the
+    // whole log for every section on every screen redraw. Reading log.size keeps Compose watching for new entries.
+    private val byKey = HashMap<String, MutableList<Evidence>>()
+    private var indexed = 0
+    private var historyCache: List<LoggedEvidence> = emptyList()
+    private fun resetIndex() { byKey.clear(); indexed = 0; historyCache = emptyList() }
+    private fun catchUp(): Int {
+        val n = log.size
+        if (n < indexed) resetIndex()
+        for (i in indexed until n) log[i].let { e -> byKey.getOrPut(e.key) { mutableListOf() }.add(e.evidence) }
+        indexed = n
+        return n
+    }
 
-    fun evidence(moduleId: String): List<Evidence> = log.filter { it.key == moduleId }.map { it.evidence }
+    /** Every recorded event, oldest first. */
+    fun history(): List<LoggedEvidence> {
+        val n = catchUp()
+        if (historyCache.size != n) historyCache = log.toList()
+        return historyCache
+    }
+
+    fun evidence(moduleId: String): List<Evidence> { catchUp(); return byKey[moduleId]?.toList() ?: emptyList() }
 
     fun state(moduleId: String): LearningState = ProgressCalculator.stateOf(evidence(moduleId))
 

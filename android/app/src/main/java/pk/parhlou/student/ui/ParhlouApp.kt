@@ -235,7 +235,7 @@ fun ParhlouApp(
     fun openTutor(seed: TutorSeed?) { tutorSeed = seed; nav.navigate(Routes.TUTOR) }
     val subjectIds = state.subjectIds.toList()
     val subjects = subjectIds.mapNotNull { repo.subject(it) }
-    val chapterBlueprints = subjectIds.flatMap { repo.blueprints(it) }
+    val chapterBlueprints = remember(repo, subjectIds) { subjectIds.flatMap { repo.blueprints(it) } }
     // Each subject has its own papers: chapter tests, mocks in its own board pattern, a board-paper template and a question bank.
     class SubjectPapers(val subject: pk.parhlou.student.data.Subject, val blueprints: List<pk.parhlou.student.data.PaperBlueprint>,
                         val mocks: List<MockPaper>, val template: pk.parhlou.student.data.PaperBlueprint?, val bank: PaperPicker.Bank,
@@ -243,8 +243,9 @@ fun ParhlouApp(
                         val guess: pk.parhlou.student.domain.MyPaper? = null,
                         /** Real board papers rebuilt from the bank (the part still in the 2027 syllabus), newest first. */
                         val past: List<pk.parhlou.student.domain.PastPapers.Real> = emptyList())
-    val perSubject = remember(repo, subjectIds) {
-        subjects.associate { s ->
+    // Built off the main thread (question banks, the Guess paper and rebuilt past papers take real work), so screens never stutter.
+    val perSubject by androidx.compose.runtime.produceState(emptyMap<String, SubjectPapers>(), repo, subjectIds) {
+        value = withContext(Dispatchers.Default) { subjects.associate { s ->
             val own = repo.blueprints(s.id)
             val pool = s.chapters.associate { c ->
                 val papers = own.filter { it.chapterId == c.id }.mapNotNull { repo.paper(it.id) }
@@ -260,13 +261,13 @@ fun ParhlouApp(
             } }
             val past = pk.parhlou.student.domain.PastPapers.rebuild(s.name, prefix, bank.mcqs, bank.written)
             s.id to SubjectPapers(s, own, mocks, template, bank, guess, past)
-        }
+        } }
     }
     // The subject whose papers the Papers tab shows (and "make me a paper" uses); the first subject by default.
     var paperSubjectId by rememberSaveable { mutableStateOf<String?>(null) }
     val paperSubject = perSubject[paperSubjectId] ?: perSubject.values.firstOrNull()
     val mocks = paperSubject?.mocks.orEmpty()
-    val readyMocks = perSubject.values.flatMap { it.mocks }.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id }
+    val readyMocks = remember(perSubject) { perSubject.values.flatMap { it.mocks }.filterIsInstance<MockPaper.Ready>().associateBy { it.blueprint.id } }
     // "Make my paper": full board-pattern papers chosen for this student, kept on the phone.
     val template = paperSubject?.template
     val bank = paperSubject?.bank ?: questionBank(repo, subjects, chapterBlueprints)
@@ -278,17 +279,19 @@ fun ParhlouApp(
             perSubject.values.firstNotNullOfOrNull { sp -> sp.template?.let { t -> PaperPicker.fromJson(a.getString(i), t, sp.bank) } }
         } } }.getOrDefault(emptyList())
     }.associateBy { it.blueprint.id }
-    val guessPapers = perSubject.values.mapNotNull { it.guess }.associateBy { it.blueprint.id }
-    val realPast = perSubject.values.flatMap { it.past }.associateBy { it.blueprint.id }
-    val blueprints = myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint } +
-        guessPapers.values.map { it.blueprint } + realPast.values.map { it.blueprint }
+    val guessPapers = remember(perSubject) { perSubject.values.mapNotNull { it.guess }.associateBy { it.blueprint.id } }
+    val realPast = remember(perSubject) { perSubject.values.flatMap { it.past }.associateBy { it.blueprint.id } }
+    val blueprints = remember(myPapers, chapterBlueprints, readyMocks, guessPapers, realPast) {
+        myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint } +
+            guessPapers.values.map { it.blueprint } + realPast.values.map { it.blueprint }
+    }
     /** The papers the Papers tab lists: only the chosen subject's. */
-    val shownBlueprints = paperSubject?.let { sp ->
+    val shownBlueprints = remember(paperSubject, myPapers, blueprints) { paperSubject?.let { sp ->
         val ids = (sp.blueprints.map { it.id } + sp.mocks.filterIsInstance<MockPaper.Ready>().map { it.blueprint.id } +
             listOfNotNull(sp.guess?.blueprint?.id) + sp.past.map { it.blueprint.id }).toSet()
         myPapers.values.filter { m -> sp.template != null && PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) != null }.map { it.blueprint } +
             blueprints.filter { it.id in ids }
-    } ?: blueprints
+    } ?: blueprints }
     /** The subject a paper belongs to, by name, for its printed header. */
     fun subjectNameOf(blueprintId: String): String = perSubject.values.firstOrNull { sp ->
         sp.blueprints.any { it.id == blueprintId } || sp.guess?.blueprint?.id == blueprintId || sp.past.any { it.blueprint.id == blueprintId } || sp.mocks.any { (it as? MockPaper.Ready)?.blueprint?.id == blueprintId } ||

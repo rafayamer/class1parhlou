@@ -36,7 +36,7 @@ jobs:
       - name: Build APK
         working-directory: android
         run: >
-          ./gradlew :app:assembleDebug
+          ./gradlew :app:assembleRelease
           -PbuildNumber=${{ github.run_number }}
           -PparhlouAiUrl=$PARHLOU_AI_URL
           -PsupabaseAnonKey=$SUPABASE_PUBLISHABLE_KEY
@@ -45,7 +45,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp android/app/build/outputs/apk/debug/app-debug.apk parhlou.apk
+          cp android/app/build/outputs/apk/release/app-release.apk parhlou.apk
           # Release notes = the newest entry of the in-app "What's new" page, so both always say the same.
           python3 -c "
           import json

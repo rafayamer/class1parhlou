@@ -40,9 +40,12 @@ android {
 
     buildTypes {
         debug { signingConfig = signingConfigs.getByName("prototype") }
+        // The APK students install: optimised (R8) and signed with the same prototype key, so it updates any earlier build.
         release {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("prototype")
         }
     }
     compileOptions {

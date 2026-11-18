@@ -50,23 +50,29 @@ export function Content() {
   // Open the saved draft if there is one, else the published version. Switching subjects quickly starts several loads;
   // only the one for the subject chosen last may fill the editor (a slower, older load is ignored).
   const opening = useRef("");
+  // The subject chosen right now: a load (or a reload after publishing) for any other subject is dropped.
+  const chosen = useRef("");
+  chosen.current = subject;
   const open = async (s: string) => {
+    if (s !== chosen.current) return;
     opening.current = s;
     setStatus(""); setBundle(null); setSource("");
     const draft = await db.from("content_drafts").select("bundle,updated_at").eq("subject_id", s).maybeSingle();
-    if (opening.current !== s) return;
+    if (opening.current !== s || chosen.current !== s) return;
     if (draft.data) {
       setSource(`Draft saved ${when(draft.data.updated_at)}`);
       setBundle(draft.data.bundle as Bundle); setBaseline(JSON.stringify(draft.data.bundle));
       return;
     }
     const pub = await db.from("app_content").select("bundle,version").eq("subject_id", s).eq("status", "PUBLISHED").maybeSingle();
-    if (opening.current !== s) return;
+    if (opening.current !== s || chosen.current !== s) return;
     if (pub.error || !pub.data) return setStatus(pub.error ? explain(pub.error) : "No published version for this subject.");
     setSource(`Published version ${pub.data.version}`);
     setBundle(pub.data.bundle as Bundle); setBaseline(JSON.stringify(pub.data.bundle));
   };
   useEffect(() => { if (subject) open(subject); }, [subject]);
+  // If a stale load of another subject ever lands, load the chosen subject again.
+  useEffect(() => { if (bundle && subject && (bundle as { subjectId?: string }).subjectId !== subject) open(subject); }, [bundle, subject]);
 
   const edit: Edit = (change) => setBundle((b) => {
     if (!b) return b;
@@ -74,14 +80,16 @@ export function Content() {
     change(next);
     return next;
   });
-  const problems = useMemo(() => (bundle ? bundleProblems(bundle, subject) : []), [bundle, subject]);
+  // A bundle of another subject is never shown or published (it can only be a stale load): treat it as still loading.
+  const shown = bundle && (bundle as { subjectId?: string }).subjectId === subject ? bundle : null;
+  const problems = useMemo(() => (shown ? bundleProblems(shown, subject) : []), [shown, subject]);
   const dirty = bundle != null && JSON.stringify(bundle) !== baseline;
   // A new subject has only a draft until its first publish, so drafts are listed too.
   const subjects = [...new Set([...versions, ...drafts].map((v) => v.subject_id))];
   const history = versions.filter((v) => v.subject_id === subject);
 
   const saveDraft = async () => {
-    if (!bundle) return;
+    if (!shown) return;
     setBusy(true);
     const { error } = await db.rpc("owner_save_draft", { p_subject: subject, p_bundle: bundle });
     setBusy(false);
@@ -90,7 +98,7 @@ export function Content() {
     loadLists();
   };
   const publish = async () => {
-    if (!bundle || problems.length) return;
+    if (!shown || problems.length) return;
     if (!confirm("Publish this content to every student? Phones pick it up the next time the app opens.")) return;
     setBusy(true);
     const { data, error } = await db.rpc("owner_publish_content", { p_subject: subject, p_bundle: bundle });
@@ -114,7 +122,7 @@ export function Content() {
       <div className="row spread">
         <div>
           <h1>Content</h1>
-          <p className="muted">{bundle ? source : "Loading…"}{dirty ? " · unsaved changes" : ""}</p>
+          <p className="muted">{shown ? source : "Loading…"}{dirty ? " · unsaved changes" : ""}</p>
         </div>
         <div className="row">
           <label className="field" style={{ minWidth: 200, margin: 0 }}>
@@ -126,7 +134,7 @@ export function Content() {
         </div>
       </div>
 
-      {bundle && (
+      {shown && (
         <div className="card">
           <div className="row spread">
             <div>
@@ -153,12 +161,12 @@ export function Content() {
         ))}
       </div>
 
-      {bundle && tab === "units" && <UnitsEditor bundle={bundle} edit={edit} />}
-      {bundle && tab === "notes" && <NotesEditor bundle={bundle} edit={edit} />}
-      {bundle && tab === "mcqs" && <McqEditor bundle={bundle} edit={edit} />}
-      {bundle && tab === "written" && <WrittenEditor bundle={bundle} edit={edit} />}
-      {bundle && tab === "papers" && <BlueprintEditor bundle={bundle} edit={edit} />}
-      {bundle && tab === "json" && <JsonEditor bundle={bundle} onApply={(b) => setBundle(b)} />}
+      {shown && tab === "units" && <UnitsEditor bundle={shown} edit={edit} />}
+      {shown && tab === "notes" && <NotesEditor bundle={shown} edit={edit} />}
+      {shown && tab === "mcqs" && <McqEditor bundle={shown} edit={edit} />}
+      {shown && tab === "written" && <WrittenEditor bundle={shown} edit={edit} />}
+      {shown && tab === "papers" && <BlueprintEditor bundle={shown} edit={edit} />}
+      {shown && tab === "json" && <JsonEditor bundle={shown} onApply={(b) => setBundle(b)} />}
       {tab === "history" && (
         <div className="card scroll">
           <table>
