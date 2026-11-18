@@ -18,7 +18,8 @@ import { isExcluded } from "./syllabus.mjs";
 import { S } from "./subject.mjs";
 const PHY = !!S.science; // Physics, Chemistry: chapters with sections A–E
 // The latest official model paper: Mathematics 2027; Physics 2026 (the 2027 one is not published yet).
-const MODEL_TAG = PHY ? "Official model paper (2026)" : "Official model paper 2027";
+// The newest official model papers are PECTAA's 2026 ones (no 2027 model paper is published yet).
+const MODEL_TAG = "Official model paper (2026)";
 
 const ROOT = S.root;
 const WORK = join(ROOT, "work", "pp");
