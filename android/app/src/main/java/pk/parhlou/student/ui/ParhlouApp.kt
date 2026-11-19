@@ -279,16 +279,24 @@ fun ParhlouApp(
             perSubject.values.firstNotNullOfOrNull { sp -> sp.template?.let { t -> PaperPicker.fromJson(a.getString(i), t, sp.bank) } }
         } } }.getOrDefault(emptyList())
     }.associateBy { it.blueprint.id }
+    // Practice tests the student made (chapters + length), kept as recipes and rebuilt from the bank.
+    val practiceJson by store.draft(PRACTICE_TESTS).collectAsState(initial = "")
+    val practice = remember(practiceJson, perSubject) {
+        pk.parhlou.student.domain.PracticeTests.parseAll(practiceJson).mapNotNull { r ->
+            perSubject[r.subjectId]?.bank?.let { b -> pk.parhlou.student.domain.PracticeTests.build(r, b) }
+        }.associateBy { it.first.id }
+    }
     val guessPapers = remember(perSubject) { perSubject.values.mapNotNull { it.guess }.associateBy { it.blueprint.id } }
     val realPast = remember(perSubject) { perSubject.values.flatMap { it.past }.associateBy { it.blueprint.id } }
-    val blueprints = remember(myPapers, chapterBlueprints, readyMocks, guessPapers, realPast) {
+    val blueprints = remember(myPapers, chapterBlueprints, readyMocks, guessPapers, realPast, practice) {
         myPapers.values.map { it.blueprint } + chapterBlueprints + readyMocks.values.map { it.blueprint } +
-            guessPapers.values.map { it.blueprint } + realPast.values.map { it.blueprint }
+            guessPapers.values.map { it.blueprint } + realPast.values.map { it.blueprint } + practice.values.map { it.first }
     }
     /** The papers the Papers tab lists: only the chosen subject's. */
     val shownBlueprints = remember(paperSubject, myPapers, blueprints) { paperSubject?.let { sp ->
         val ids = (sp.blueprints.map { it.id } + sp.mocks.filterIsInstance<MockPaper.Ready>().map { it.blueprint.id } +
-            listOfNotNull(sp.guess?.blueprint?.id) + sp.past.map { it.blueprint.id }).toSet()
+            listOfNotNull(sp.guess?.blueprint?.id) + sp.past.map { it.blueprint.id } +
+            practice.values.map { it.first.id }.filter { pid -> pk.parhlou.student.domain.PracticeTests.parseAll(practiceJson).any { it.id == pid && it.subjectId == sp.subject.id } }).toSet()
         myPapers.values.filter { m -> sp.template != null && PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) != null }.map { it.blueprint } +
             blueprints.filter { it.id in ids }
     } ?: blueprints }
@@ -297,7 +305,7 @@ fun ParhlouApp(
         sp.blueprints.any { it.id == blueprintId } || sp.guess?.blueprint?.id == blueprintId || sp.past.any { it.blueprint.id == blueprintId } || sp.mocks.any { (it as? MockPaper.Ready)?.blueprint?.id == blueprintId } ||
             (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
     }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
-    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper ?: guessPapers[id]?.paper ?: realPast[id]?.paper
+    fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper ?: guessPapers[id]?.paper ?: realPast[id]?.paper ?: practice[id]?.second
     /** Opens study for a section: a section never taught opens its lesson first (teach, then practise); after that, the practice session. */
     fun startStudy(moduleId: String?, minutes: Int) {
         val m = moduleId?.let { repo.module(it) } ?: todaysModule(subjects, progress)
@@ -658,6 +666,27 @@ fun ParhlouApp(
                     "${all.count { it > 0 }} of ${all.size} questions came in real board papers; together they appeared ${all.sum()} times."
                 },
                 pastIds = paperSubject?.past?.map { it.blueprint.id }.orEmpty(),
+                pastTags = paperSubject?.past?.associate { it.blueprint.id to it.tag }.orEmpty(),
+                chapters = paperSubject?.subject?.chapters?.map { it.number to it.title }.orEmpty(),
+                onPractice = paperSubject?.let { sp -> { chs: List<Int>, len: pk.parhlou.student.domain.PracticeTests.Length ->
+                    val recipe = pk.parhlou.student.domain.PracticeTests.Recipe("practice-${System.currentTimeMillis()}", sp.subject.id, sp.subject.name,
+                        chs, len, System.currentTimeMillis(), System.currentTimeMillis())
+                    if (pk.parhlou.student.domain.PracticeTests.build(recipe, sp.bank) == null)
+                        android.widget.Toast.makeText(context, "Not enough questions in those chapters yet. Add another chapter.", android.widget.Toast.LENGTH_LONG).show()
+                    else scope.launch {
+                        store.saveDraft(PRACTICE_TESTS, pk.parhlou.student.domain.PracticeTests.add(practiceJson, recipe))
+                        withContext(Dispatchers.Main.immediate) { nav.navigate("assessment/${recipe.id}") }
+                    }
+                } },
+                results = remember(progress.history().size, shownBlueprints) {
+                    val ids = shownBlueprints.associateBy { it.id }
+                    progress.history().reversed().mapNotNull { e ->
+                        val id = e.key.removePrefix(ProgressStore.PAPER_PREFIX).takeIf { e.key.startsWith(ProgressStore.PAPER_PREFIX) } ?: return@mapNotNull null
+                        val pct = (e.evidence as? Evidence.DemoCheckedExam)?.percent ?: (e.evidence as? Evidence.ExamMarked)?.percent ?: return@mapNotNull null
+                        ids[id]?.let { Triple(id, it.title, pct) }
+                    }.distinctBy { it.first }
+                },
+                onResult = { nav.navigate("checked/$it") },
                 pendingMocks = mocks.filterIsInstance<MockPaper.NeedsQuestions>(),
                 onMakePaper = if (template != null) ({ nav.navigate(Routes.MAKE_PAPER) }) else null,
                 exercises = remember(paperSubject) {
@@ -851,6 +880,7 @@ private val REMINDER_CHOICES = listOf(16, 18, 20, 21, -1)
 private fun hourLabel(h: Int) = "${if (h % 12 == 0) 12 else h % 12} ${if (h < 12) "am" else "pm"}"
 
 private const val MY_PAPERS = "my_papers"
+private const val PRACTICE_TESTS = "practice_tests"
 
 /** Every published question of the student's subjects (papers and section quizzes), for "Make my paper". */
 private fun questionBank(repo: pk.parhlou.student.data.ParhlouRepository, subjects: List<pk.parhlou.student.data.Subject>,

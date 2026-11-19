@@ -56,7 +56,7 @@ class NavigationTest {
     private val screens = mapOf(
         "home" to { onHome() },
         "subjects" to { !onHome() && exists("Your books") },
-        "tests" to { !onHome() && exists("Board papers") },
+        "tests" to { !onHome() && exists("Practice test") },
         "profile" to { !onHome() && exists("Clear this phone") },
     )
 

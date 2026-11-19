@@ -69,7 +69,7 @@ class AppFlowTest {
     }
 
     @Test
-    fun testSeriesPapersStayLockedUntilReadinessIsPassed() {
+    fun papersOpenWithoutALockAndOfferPracticeTests() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Get started") }
         rule.onNodeWithText("Get started").performClick()
@@ -84,17 +84,14 @@ class AppFlowTest {
         rule.onNodeWithText("Test Series").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
-
-        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Take your readiness check") }
-        rule.onNodeWithText("Continue").performScrollTo().performClick()
-        rule.waitUntil(3_000) { rule.onAllNodesWithTextExists("Board papers") }
-        // Papers stay locked behind the quick check: the chapter, half- and full-book papers can't be opened yet.
-        rule.onNodeWithTag("readiness").assertExists()
-        for (tag in listOf("scope-chapter", "scope-half", "scope-full")) rule.onNodeWithTag(tag).assertIsNotEnabled()
-        // Quarter, half and full mocks can't be built from Unit 1 alone; they're named, with nothing to tap.
-        val notReady = rule.onAllNodes(androidx.compose.ui.test.hasText("ready once Unit", substring = true))
-        assertEquals(3, notReady.fetchSemanticsNodes().size)
-        notReady.assertAll(androidx.compose.ui.test.hasClickAction().not())
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("tab-tests")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("tab-tests").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithTextExists("✏️ Practice test") }
+        // No lock in front of papers any more; practice tests start disabled until a chapter is picked.
+        rule.onNodeWithTag("readiness").assertDoesNotExist()
+        rule.onNodeWithTag("practice-quick").performScrollTo().assertIsNotEnabled()
+        rule.onNodeWithTag("practice-ch-1").performScrollTo().performClick()
+        rule.onNodeWithTag("practice-quick").performScrollTo().assertIsEnabled()
         // No developer wording on papers.
         assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("not official", substring = true)).fetchSemanticsNodes().size)
     }

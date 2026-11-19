@@ -75,7 +75,7 @@ class ScreenshotTest {
 
         // Papers: board papers, make a paper, then a chapter test.
         rule.onNodeWithTag("tab-tests").performClick()
-        rule.waitUntil(3_000) { exists("Board papers") }
+        rule.waitUntil(3_000) { exists("Practice test") }
         save("5-papers-$mode")
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
         rule.onNodeWithTag("scope-picker").performScrollTo()
@@ -154,7 +154,7 @@ class ScreenshotTest {
         rule.setContent { ParhlouTheme(dark = false) { ParhlouApp(FakeRepository(), store) } }
         rule.waitUntil(5_000) { exists("Do this now") }
         rule.onNodeWithTag("tab-tests").performClick()
-        rule.waitUntil(3_000) { exists("Make a paper") }
+        rule.waitUntil(3_000) { exists("Practice test") }
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()
@@ -174,7 +174,7 @@ class ScreenshotTest {
         // Now sit it in the app: keyboard, hand in, result.
         rule.onNodeWithContentDescription("Back").performClick()
         rule.onNodeWithTag("tab-tests").performClick()
-        rule.waitUntil(3_000) { exists("Make a paper") }
+        rule.waitUntil(3_000) { exists("Practice test") }
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("paper-${pk.parhlou.student.data.SampleContent.CHAPTER_TEST}").performScrollTo().performClick()

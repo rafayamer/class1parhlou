@@ -37,7 +37,8 @@ object PastPapers {
 
     /** Every board paper that has at least [MIN_QUESTIONS] questions in the bank, newest first. */
     fun rebuild(subjectName: String, idPrefix: String, mcqs: List<McqQuestion>, written: List<WrittenQuestion>): List<Real> {
-        val tags = (mcqs.flatMap { it.pastRefs.keys } + written.flatMap { it.pastRefs.keys }).toSet()
+        // Class 9 papers only (a few Class 10 papers were read for repeated questions; they aren't this year's papers).
+        val tags = (mcqs.flatMap { it.pastRefs.keys } + written.flatMap { it.pastRefs.keys }).filter { "Class 10" !in it }.toSet()
         return tags.mapNotNull { tag ->
             val m = mcqs.filter { tag in it.pastRefs }.distinctBy { it.id }.sortedBy { order(it.pastRefs.getValue(tag)).let { (a, b) -> a * 1000 + b } }
             val w = written.filter { tag in it.pastRefs }.distinctBy { it.id }.sortedBy { order(it.pastRefs.getValue(tag)).let { (a, b) -> a * 1000 + b } }

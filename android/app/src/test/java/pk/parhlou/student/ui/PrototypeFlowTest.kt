@@ -211,7 +211,7 @@ class PrototypeFlowTest {
 
     /** Papers → Chapter → the unit's chapter test. */
     private fun openChapterTest() {
-        rule.waitUntil(3_000) { exists("Board papers") }
+        rule.waitUntil(3_000) { exists("Practice test") }
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("scope-picker")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("paper-$paperId").performScrollTo().performClick()

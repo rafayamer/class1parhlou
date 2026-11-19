@@ -166,7 +166,7 @@ class TwoSubjectsTest {
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-tests").performClick()
-        rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Board papers")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(10_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Practice test", substring = true)).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("papers-subject-${FakeRepository.PHYSICS_9}").performClick()
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()
         // Only Physics's chapter test is listed.

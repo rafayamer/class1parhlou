@@ -144,7 +144,7 @@ private fun search(all: List<SolutionRef>, query: String): List<SolutionRef> {
 }
 
 @Composable
-private fun TaskRowLike(title: String, subtitle: String, onClick: () -> Unit) {
+internal fun TaskRowLike(title: String, subtitle: String, onClick: () -> Unit) {
     pk.parhlou.student.ui.components.TapCard(onClick = onClick, modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp), shape = RoundedCornerShape(20.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(2.dp)) {
             Text(title, style = MaterialTheme.typography.titleMedium)
