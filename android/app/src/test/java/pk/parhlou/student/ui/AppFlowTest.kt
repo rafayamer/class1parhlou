@@ -38,22 +38,19 @@ class AppFlowTest {
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Get started") }
         rule.onNodeWithText("Get started").performClick()
 
-        // Step 1: cannot continue without acknowledging the notice.
+        // Step 1: about you and the privacy notice; Continue stays off until both are done.
         rule.onNodeWithText("Continue").assertIsNotEnabled()
-        rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
-        rule.onNodeWithText("Continue").performScrollTo().performClick()
+        aboutYou()
 
         // Step 2: Federal Board is shown but disabled; Punjab Class 9 English Maths is selectable.
-        aboutYou()
         rule.onNodeWithText("Punjab Boards").performScrollTo().performClick()
         rule.onNodeWithText("Class 9").performScrollTo().performClick()
         rule.onNodeWithText("English").performScrollTo().performClick()
         rule.onNodeWithText("Mathematics").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().assertIsEnabled().performClick()
 
-        // Step 3 and 4
+        // Step 3: how you'll study, and when.
         rule.onNodeWithText("Complete Academy").performScrollTo().performClick()
-        rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
 
         // Home: one Continue action pointing at the first sample module.
@@ -73,8 +70,6 @@ class AppFlowTest {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
         rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Get started") }
         rule.onNodeWithText("Get started").performClick()
-        rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
-        rule.onNodeWithText("Continue").performScrollTo().performClick()
         aboutYou()
         rule.onNodeWithText("Punjab Boards").performScrollTo().performClick()
         rule.onNodeWithText("Class 9").performScrollTo().performClick()
@@ -82,7 +77,6 @@ class AppFlowTest {
         rule.onNodeWithText("Mathematics").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Test Series").performScrollTo().performClick()
-        rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("tab-tests")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-tests").performClick()
@@ -131,6 +125,9 @@ class AppFlowTest {
         rule.onNodeWithTag("profile-phone").performTextInput("12345")
         rule.onNodeWithText("Continue").assertIsNotEnabled()
         rule.onNodeWithTag("profile-phone").performTextClearance()
+        // The privacy notice must be accepted too.
+        rule.onNodeWithText("Continue").assertIsNotEnabled()
+        rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
     }
 }

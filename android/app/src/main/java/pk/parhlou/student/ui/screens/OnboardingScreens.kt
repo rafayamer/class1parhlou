@@ -18,6 +18,7 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -82,57 +83,60 @@ fun OnboardingScreen(
     fun update(s: OnboardingState) { state = s; onSave(s) }
 
     ParhlouScreen(
-        title = "Set up · step ${step + 1} of 5",
+        title = "Set up · step ${step + 1} of 3",
         onBack = { if (step == 0) onExit() else step-- },
     ) {
         LinearProgressIndicator(
-            progress = { (step + 1) / 5f },
-            modifier = Modifier.fillMaxWidth().semantics { contentDescription = "Step ${step + 1} of 5" },
+            progress = { (step + 1) / 3f },
+            modifier = Modifier.fillMaxWidth().semantics { contentDescription = "Step ${step + 1} of 3" },
         )
         AnimatedContent(targetState = step, transitionSpec = rememberStepTransition(), label = "onboardingStep") { s ->
             Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                // Three short steps: who you are (and the privacy notice), what you study, how you'll study.
                 when (s) {
-                    0 -> ConsentStep(state.consentAcknowledged) { update(state.copy(consentAcknowledged = it)) }
-                    1 -> {
+                    0 -> {
                         Text("About you", style = MaterialTheme.typography.titleLarge)
                         AboutYouFields(state, { update(it) }, emailLocked = signInEmail != null)
+                        ConsentStep(state.consentAcknowledged) { update(state.copy(consentAcknowledged = it)) }
                     }
-                    2 -> {
+                    1 -> {
                         AcademicStep(repo, state) { update(it) }
                         FavoriteSubjectPicker(repo, state) { update(it) }
                     }
-                    3 -> PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
-                    else -> AvailabilityStep(state) { update(it) }
+                    else -> {
+                        PathwayStep(state.pathway) { update(state.copy(pathway = it)) }
+                        AvailabilityStep(state) { update(it) }
+                    }
                 }
             }
         }
         val canContinue = when (step) {
-            0 -> state.consentAcknowledged
-            1 -> ProfileRules.aboutOk(state)
-            2 -> state.boardCode != null && state.grade != null && state.medium != null && state.subjectIds.isNotEmpty()
-            3 -> state.pathway != null
-            else -> state.studyDaysPerWeek > 0 && state.minutesPerDay > 0
+            0 -> state.consentAcknowledged && ProfileRules.aboutOk(state)
+            1 -> state.boardCode != null && state.grade != null && state.medium != null && state.subjectIds.isNotEmpty()
+            else -> state.pathway != null && state.studyDaysPerWeek > 0 && state.minutesPerDay > 0
         }
         BigButton(
-            text = if (step == 4) "Finish setup" else "Continue",
+            text = if (step == 2) "Finish setup" else "Continue",
             enabled = canContinue,
-            onClick = { if (step < 4) step++ else update(state.copy(completed = true)) },
+            onClick = { if (step < 2) step++ else update(state.copy(completed = true)) },
         )
     }
 }
 
 private fun firstIncompleteStep(s: OnboardingState): Int = when {
-    !s.consentAcknowledged -> 0
-    !ProfileRules.aboutOk(s) -> 1
-    s.boardCode == null || s.grade == null || s.medium == null || s.subjectIds.isEmpty() -> 2
-    s.pathway == null -> 3
-    else -> 4
+    !s.consentAcknowledged || !ProfileRules.aboutOk(s) -> 0
+    s.boardCode == null || s.grade == null || s.medium == null || s.subjectIds.isEmpty() -> 1
+    else -> 2
 }
 
 @Composable
 private fun ConsentStep(acknowledged: Boolean, onChange: (Boolean) -> Unit) {
-    Text("Welcome to your academy", style = MaterialTheme.typography.titleLarge)
-    Sheet {
+    var details by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(false) }
+    Muted("We keep your study data safe and private. Ustaad only helps with studies.")
+    androidx.compose.material3.TextButton(onClick = { details = !details }, modifier = Modifier.heightIn(min = 44.dp)) {
+        Text(if (details) "Hide details" else "What we store and who sees it")
+    }
+    if (details) Sheet {
         Text("What we store", style = MaterialTheme.typography.titleMedium)
         Muted("Your name, class, subjects, answers and results. Chats with Ustaad are kept for 30 days. Photos of answer sheets are kept only to mark them.")
         Text("Who can see it", style = MaterialTheme.typography.titleMedium)
