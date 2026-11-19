@@ -106,6 +106,7 @@ import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Quiz
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.MaterialTheme
 import androidx.navigation.compose.currentBackStackEntryAsState
 import pk.parhlou.student.data.PaperContent
@@ -130,6 +131,7 @@ object Routes {
     const val SUBJECT = "subject/{id}"
     const val MODULE = "module/{id}"
     const val TESTS = "tests"
+    const val LEAGUE = "league"
     const val READINESS = "readiness"
     const val ASSESSMENT = "assessment/{id}"
     const val EXAM = "exam/{id}?scan={scan}"
@@ -162,6 +164,7 @@ private val navItems = listOf(
     NavItem(Routes.HOME, "Home", Icons.Filled.Home),
     NavItem(Routes.SUBJECTS, "Books", Icons.AutoMirrored.Filled.MenuBook),
     NavItem(Routes.TESTS, "Papers", Icons.Filled.Quiz),
+    NavItem(Routes.LEAGUE, "League", Icons.Filled.Star),
     NavItem(Routes.PROFILE, "Profile", Icons.Filled.Person),
 )
 
@@ -183,6 +186,8 @@ fun ParhlouApp(
     versionLabel: String = "",
     /** The real app needs the internet: while offline everything is blurred behind "Connect to the internet". */
     requireInternet: Boolean = false,
+    /** Leagues and friends; tests pass a fake. */
+    socialClient: pk.parhlou.student.data.SocialClient? = null,
 ) {
     val context = LocalContext.current
     remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
@@ -443,6 +448,8 @@ fun ParhlouApp(
                 onStartSession = { m, min -> startStudy(m, min) },
                 onKit = { nav.navigate("kit/$it") },
                 onProgress = { nav.navigate(Routes.PROGRESS) },
+                quests = progress.history().let { h -> pk.parhlou.student.domain.Quests.today(h, Rewards.summary(h, state.minutesPerDay, System.currentTimeMillis()).dailyGoalXp, System.currentTimeMillis()) },
+                onLeague = { goTop(Routes.LEAGUE) },
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -499,6 +506,20 @@ fun ParhlouApp(
                 onSave = { s -> scope.launch { store.saveOnboarding(s); account?.syncNow(s) } },
                 onBack = { nav.popBackStack() })
         }
+        composable(Routes.LEAGUE) { WithTabBarSpace {
+            val social = remember(account, socialClient) { socialClient ?: pk.parhlou.student.data.SocialClient(account?.sync) }
+            val now = System.currentTimeMillis()
+            val history = progress.history()
+            val rewards = remember(history, state.minutesPerDay) { Rewards.summary(history, state.minutesPerDay, now) }
+            pk.parhlou.student.ui.screens.LeagueScreen(
+                rewards = rewards,
+                quests = remember(history, rewards.dailyGoalXp) { pk.parhlou.student.domain.Quests.today(history, rewards.dailyGoalXp, now) },
+                weekXp = remember(history) { pk.parhlou.student.domain.Social.weekXp(history, now) },
+                signedIn = session != null || socialClient != null,
+                social = social,
+                onSignIn = { scope.launch { store.setGuest(false) }; nav.navigate(Routes.SIGN_IN) },
+            )
+        } }
         composable(Routes.PROFILE) { WithTabBarSpace {
             val soundOn by store.soundOn.collectAsState(initial = true)
             ProfileScreen(

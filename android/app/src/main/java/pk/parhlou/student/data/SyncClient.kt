@@ -28,6 +28,18 @@ class SyncClient(
         return http(method, "$supabaseUrl$path", h, body)
     }
 
+    /** Calls a database function as the signed-in student; the reply body on success, null otherwise (signed out, offline, refused). */
+    suspend fun rpc(fn: String, args: JSONObject = JSONObject()): String? =
+        call("POST", "/rest/v1/rpc/$fn", args.toString())?.takeIf { it.first in 200..299 }?.second
+
+    /** Like [rpc], but also returns the server's error code (e.g. CODE_NOT_FOUND) when it refuses. */
+    suspend fun rpcOrError(fn: String, args: JSONObject = JSONObject()): Pair<String?, String?> {
+        val (status, text) = call("POST", "/rest/v1/rpc/$fn", args.toString()) ?: return null to "OFFLINE"
+        if (status in 200..299) return text to null
+        val msg = runCatching { JSONObject(text).optString("message") }.getOrNull().orEmpty()
+        return null to (Regex("[A-Z_]{4,}").find(msg)?.value ?: "FAILED")
+    }
+
     /** Creates or renames the student's profile on the server. */
     suspend fun register(name: String): Boolean =
         call("POST", "/rest/v1/rpc/register_learner", JSONObject().put("p_display_name", name).toString())?.first == 200

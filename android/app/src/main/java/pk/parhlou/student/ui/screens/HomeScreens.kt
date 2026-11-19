@@ -161,6 +161,9 @@ fun HomeScreen(
     onStartSession: (String?, Int) -> Unit = { _, _ -> },
     onKit: (String) -> Unit = {},
     onProgress: () -> Unit = {},
+    /** Today's quests (League tab); empty hides the card. */
+    quests: List<pk.parhlou.student.domain.Quests.Quest> = emptyList(),
+    onLeague: () -> Unit = {},
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -223,6 +226,14 @@ fun HomeScreen(
             Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
             Text(now.first, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
             pk.parhlou.student.ui.components.AccentButton("Continue", onClick = now.second)
+        }
+        if (quests.isNotEmpty()) Sheet(Modifier.testTag("home-quests")) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Today's quests", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+                Text("${quests.count { it.done }}/${quests.size} ✅", style = MaterialTheme.typography.labelLarge)
+            }
+            quests.forEach { q -> Text("${if (q.done) "✅" else "🎯"}  ${q.title}  (${q.progress.coerceAtMost(q.target)}/${q.target})", style = MaterialTheme.typography.bodyMedium) }
+            TextButton(onClick = onLeague, modifier = Modifier.heightIn(min = 44.dp).testTag("open-league")) { Text("League and friends") }
         }
         // Each subject's card shows that subject's own next section.
         subjects.forEach { s ->
