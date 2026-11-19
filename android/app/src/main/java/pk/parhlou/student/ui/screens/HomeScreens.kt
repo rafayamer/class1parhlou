@@ -486,8 +486,15 @@ fun ProfileScreen(
         left?.let { a ->
             Sheet(Modifier.testTag("allowance")) {
                 Text("This month with Ustaad", style = MaterialTheme.typography.titleMedium)
+                if (a.capUsd > 0) {
+                    androidx.compose.material3.LinearProgressIndicator(progress = { a.usedShare },
+                        modifier = Modifier.fillMaxWidth().height(10.dp).testTag("ai-meter"),
+                        color = if (a.usedShare >= 0.9f) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary)
+                    Text("${(a.usedShare * 100).toInt()}% of this month's AI used  ·  $${"%.2f".format(a.usedUsd)} of $${"%.2f".format(a.capUsd)}",
+                        style = MaterialTheme.typography.bodyLarge, modifier = Modifier.testTag("ai-used"))
+                }
                 a.lines().forEach { (icon, line) -> Text("$icon  $line", style = MaterialTheme.typography.bodyLarge) }
-                Muted("More on ${a.resetsOn}. Unused time carries over for up to 4 months.")
+                Muted("Resets on ${a.resetsOn}. Lessons, quizzes, solutions and papers never need AI time.")
             }
         }
         var feedbackOpen by remember { mutableStateOf(false) }

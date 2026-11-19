@@ -9,14 +9,16 @@ import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, pickContent, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
 import { PROMPT_VERSION, type Video } from "./core.ts";
-import { DEFAULT_PRICES, creditBalance, grantExpiry, needsMonthlyGrant, priceOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
+import { DEFAULT_PRICES, creditBalance, grantExpiry, monthStart, needsMonthlyGrant, nextMonthStart, overCap, priceOf, usdOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
 import { updateMemory } from "./examiner.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
 
 interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number;
-  monthlyCredits: number; creditMonths: number; prices: Prices }
+  monthlyCredits: number; creditMonths: number; prices: Prices;
+  /** Money: what one million tokens cost, and each student's monthly AI allowance in US dollars (0 = no cap). */
+  usdIn: number; usdOut: number; monthlyUsd: number }
 let cache: Live | null = null;
 
 async function live(db: any): Promise<Live> {
@@ -37,6 +39,9 @@ async function live(db: any): Promise<Live> {
     monthlyCredits: Number(setting("monthly_credits", 1000)),
     creditMonths: Number(setting("credit_months", 4)),
     prices: { ...DEFAULT_PRICES, ...(setting("credit_prices", {}) as Prices) },
+    usdIn: Number(setting("usd_per_million_input", 0.10)),
+    usdOut: Number(setting("usd_per_million_output", 0.50)),
+    monthlyUsd: Number(setting("monthly_usd_per_student", 3)),
   };
   return cache;
 }
@@ -80,10 +85,15 @@ Deno.serve(async (request) => {
   // ── Credits: the month's grant is given on the first request of the month; each request costs its price. ──────
   // (Before the credits table exists, everything works as before, without credits.)
   const credits = await creditState(db, caller, userId, settings);
+  // Each student's AI allowance in money: this calendar month's spend against the cap.
+  const usd = await monthSpend(db, caller);
+  const allowance = { used: Math.round(usd * 100) / 100, cap: settings.monthlyUsd, resetsOn: nextMonthStart(new Date()) };
   if ((body as any)?.task === "credits") {
     return json({ result: credits ? { balance: credits.balance, resetsOn: credits.resetsOn, monthly: settings.monthlyCredits,
-      prices: settings.prices, left: whatsLeft(credits.balance, settings.prices) } : null });
+      prices: settings.prices, left: whatsLeft(credits.balance, settings.prices), usd: allowance } : { usd: allowance } });
   }
+  const free = ["feedback", "mark_mcqs", "videos"].includes(String((body as any)?.task));
+  if (!free && overCap(usd, settings.monthlyUsd)) return json({ error: "AI_LIMIT", resetsOn: allowance.resetsOn, usd: allowance }, 402);
   if ((body as any)?.task === "feedback") {
     const text = String((body as any)?.text ?? "").trim().slice(0, 3000);
     if (!text) return json({ error: "BAD_REQUEST" }, 400);
@@ -105,7 +115,7 @@ Deno.serve(async (request) => {
     const subject = String((body as any)?.subject ?? "maths").replace(/[^\p{L} ]/gu, "").toLowerCase().slice(0, 30) || "maths";
     const found = await videos(db, (/\bclass\s*9\b/i.test(q) ? q : `class 9 ${subject} ${q}`).slice(0, 120));
     if (credits && price.credits > 0) await spend(db, caller, userId, price);
-    await db.from("ai_usage").insert({ caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
+    await logUsage(db, { caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
     return json({ result: { videos: found } });
   }
 
@@ -142,10 +152,11 @@ Deno.serve(async (request) => {
       [reply?.reply, reply?.finalAnswer ? `Final answer: ${reply.finalAnswer}` : ""].filter(Boolean).join("\n"), apiKey);
   }
   if (outcome.usage) {
-    await db.from("ai_usage").insert({
+    await logUsage(db, {
       caller, task: outcome.usage.task, model: outcome.usage.model, prompt_version: outcome.usage.promptVersion,
       input_tokens: outcome.usage.inputTokens, output_tokens: outcome.usage.outputTokens,
       attempts: outcome.usage.attempts, ok: outcome.usage.ok,
+      usd: usdOf(outcome.usage.inputTokens, outcome.usage.outputTokens, settings.usdIn, settings.usdOut),
     });
     const mark = markRecord(body, (outcome.body as any)?.result, userId, outcome.usage);
     if (mark) await db.from("ai_marks").insert(mark);
@@ -174,6 +185,21 @@ async function videos(db: any, query: string): Promise<Video[]> {
 const SCRIPT_PAGES_PER_DAY = 60;
 
 // ── Credits ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+/** Logs one AI call. Before the cost column exists (database not yet updated), the call is logged without its cost. */
+async function logUsage(db: any, row: Record<string, unknown>) {
+  const { error } = await db.from("ai_usage").insert(row);
+  if (error && "usd" in row) { const { usd: _drop, ...rest } = row; await db.from("ai_usage").insert(rest); }
+}
+
+/** What this caller's AI calls cost this calendar month (UTC), in US dollars. */
+async function monthSpend(db: any, caller: string): Promise<number> {
+  try {
+    const { data, error } = await db.from("ai_usage").select("usd").eq("caller", caller).gte("created_at", monthStart(new Date()));
+    if (error) return 0; // column not added yet: no cap
+    return (data ?? []).reduce((s: number, r: any) => s + Number(r.usd ?? 0), 0);
+  } catch { return 0; }
+}
+
 async function creditState(db: any, holder: string, userId: string | null, s: Live): Promise<{ balance: number; resetsOn: string } | null> {
   try {
     const since = new Date(Date.now() - (s.creditMonths + 1) * 31 * 86_400_000).toISOString();
@@ -219,8 +245,9 @@ async function saveChat(db: any, holder: string, userId: string | null, memory: 
     if (since >= 10) {
       const { data: recent } = await db.from("chat_messages").select("role,text").eq("holder", holder).order("id", { ascending: false }).limit(20);
       const out = await updateMemory(memory.summary, (recent ?? []).reverse(), (u, i) => fetch(u, i), apiKey);
-      await db.from("ai_usage").insert({ caller: holder, task: "memory_update", model: out.usage.model, prompt_version: out.usage.promptVersion,
-        input_tokens: out.usage.inputTokens, output_tokens: out.usage.outputTokens, attempts: 1, ok: out.usage.ok });
+      await logUsage(db, { caller: holder, task: "memory_update", model: out.usage.model, prompt_version: out.usage.promptVersion,
+        input_tokens: out.usage.inputTokens, output_tokens: out.usage.outputTokens, attempts: 1, ok: out.usage.ok,
+        usd: usdOf(out.usage.inputTokens, out.usage.outputTokens, settings.usdIn, settings.usdOut) });
       if (out.summary) { summary = out.summary; since = 0; }
     }
     await db.from("student_memory").upsert({ holder, user_id: userId, summary, messages_since: since, updated_at: new Date().toISOString() });

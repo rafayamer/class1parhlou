@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { db, explain } from "../supabase";
 import { Check, Num } from "../ui";
 
-const KEYS = ["ai_enabled", "daily_calls_per_install", "daily_calls_total", "daily_photo_questions", "usd_per_million_input", "usd_per_million_output", "pkr_per_usd"] as const;
+const KEYS = ["ai_enabled", "daily_calls_per_install", "daily_calls_total", "daily_photo_questions", "monthly_usd_per_student", "usd_per_million_input", "usd_per_million_output", "pkr_per_usd"] as const;
 type Key = (typeof KEYS)[number];
 type Values = Record<Key, number | boolean>;
 
@@ -19,6 +19,7 @@ export function Settings() {
       daily_calls_per_install: Number(get("daily_calls_per_install", 300)),
       daily_calls_total: Number(get("daily_calls_total", 2000)),
       daily_photo_questions: Number(get("daily_photo_questions", 20)),
+      monthly_usd_per_student: Number(get("monthly_usd_per_student", 3)),
       usd_per_million_input: Number(get("usd_per_million_input", 0)),
       usd_per_million_output: Number(get("usd_per_million_output", 0)),
       pkr_per_usd: Number(get("pkr_per_usd", 0)),
@@ -52,6 +53,7 @@ export function Settings() {
         <Num label="AI calls per student per day" value={v.daily_calls_per_install as number} onChange={set("daily_calls_per_install")} />
         <Num label="AI calls in total per day (all students)" value={v.daily_calls_total as number} onChange={set("daily_calls_total")} />
         <Num label="Ask Ustaad photo questions per student per day" value={v.daily_photo_questions as number} onChange={set("daily_photo_questions")} />
+        <Num label="AI allowance per student per month (US $, 0 = no limit)" value={v.monthly_usd_per_student as number} onChange={set("monthly_usd_per_student")} />
       </div>
       <div className="card">
         <h2 style={{ marginTop: 0 }}>Prices for the cost estimate</h2>

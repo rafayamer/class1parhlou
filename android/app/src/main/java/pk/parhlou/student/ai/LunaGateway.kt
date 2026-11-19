@@ -148,8 +148,12 @@ class LunaGateway(
     @Volatile var creditsResetOn: String? = null
 
     override suspend fun allowance(): Allowance? = call(JSONObject().put("task", "credits"))?.let { r ->
-        val left = r.optJSONObject("left") ?: return@let null
-        Allowance(r.optInt("balance"), r.optString("resetsOn"), left.keys().asSequence().associateWith { left.optInt(it) })
+        val usd = r.optJSONObject("usd")
+        val left = r.optJSONObject("left")
+        if (left == null && usd == null) return@let null
+        Allowance(r.optInt("balance"), r.optString("resetsOn").ifBlank { usd?.optString("resetsOn").orEmpty() },
+            left?.let { l -> l.keys().asSequence().associateWith { l.optInt(it) } }.orEmpty(),
+            usedUsd = usd?.optDouble("used", 0.0) ?: 0.0, capUsd = usd?.optDouble("cap", 0.0) ?: 0.0)
     }
 
     override suspend fun sendFeedback(text: String, screen: String, appVersion: String): Boolean =

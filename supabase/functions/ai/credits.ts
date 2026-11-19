@@ -57,3 +57,21 @@ export function whatsLeft(balance: number, prices: Prices): Record<string, numbe
   for (const [k, v] of Object.entries({ ...DEFAULT_PRICES, ...prices })) if (v > 0) out[k] = Math.floor(balance / v);
   return out;
 }
+
+// ── Money: each student's monthly AI allowance in US dollars ─────────────────────────────────────────────────────
+/** The cost of one AI call from its tokens and the price per million tokens. */
+export function usdOf(inputTokens: number, outputTokens: number, usdPerMillionIn: number, usdPerMillionOut: number): number {
+  return Math.round(((inputTokens || 0) * usdPerMillionIn + (outputTokens || 0) * usdPerMillionOut) / 1e6 * 1e6) / 1e6;
+}
+/** The first moment of this calendar month (UTC), as an ISO string. */
+export function monthStart(now: Date): string {
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1)).toISOString();
+}
+/** The day the allowance starts again: the first of next month (UTC), as YYYY-MM-DD. */
+export function nextMonthStart(now: Date): string {
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)).toISOString().slice(0, 10);
+}
+/** True when the month's spend has reached the cap (a cap of 0 or less means no cap). */
+export function overCap(spentUsd: number, capUsd: number): boolean {
+  return capUsd > 0 && spentUsd >= capUsd;
+}

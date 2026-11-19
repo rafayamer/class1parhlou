@@ -146,7 +146,11 @@ object MarkingValidator {
  * This month's AI allowance, as things the student can still do (questions to Ustaad, photo questions, papers marked…),
  * worked out on the server from the credit balance and the price of each thing.
  */
-data class Allowance(val balance: Int, val resetsOn: String, val left: Map<String, Int>) {
+data class Allowance(val balance: Int, val resetsOn: String, val left: Map<String, Int>,
+                     /** This month's AI use in US dollars against the student's cap (0 = no cap). */
+                     val usedUsd: Double = 0.0, val capUsd: Double = 0.0) {
+    /** Share of the month's AI allowance used, 0-1 (0 when there is no cap). */
+    val usedShare: Float get() = if (capUsd > 0) (usedUsd / capUsd).toFloat().coerceIn(0f, 1f) else 0f
     /** "About 420 questions to Ustaad" style lines, most useful first. */
     fun lines(): List<Pair<String, String>> = listOfNotNull(
         left["chat"]?.let { "💬" to "About $it questions to Ustaad" },
