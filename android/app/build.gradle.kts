@@ -40,6 +40,16 @@ android {
             keyAlias = "parhlou"
             keyPassword = "parhlou-prototype"
         }
+        // The private release key (Play Store upload key). The prototype key above is public in this repository, so any
+        // build for real students must use this one. CI writes it from the RELEASE_KEYSTORE_B64 secret; never commit it.
+        System.getenv("RELEASE_KEYSTORE")?.takeIf { file(it).isFile }?.let { path ->
+            create("release") {
+                storeFile = file(path)
+                storePassword = System.getenv("RELEASE_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("RELEASE_KEY_ALIAS") ?: "upload"
+                keyPassword = System.getenv("RELEASE_KEY_PASSWORD") ?: System.getenv("RELEASE_KEYSTORE_PASSWORD")
+            }
+        }
     }
 
     buildTypes {
@@ -49,7 +59,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("prototype")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("prototype")
         }
     }
     compileOptions {

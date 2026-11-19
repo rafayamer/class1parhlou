@@ -33,8 +33,19 @@ jobs:
       - name: Test
         working-directory: android
         run: ./gradlew :app:testDebugUnitTest :scanner:testDebugUnitTest
+      - name: Private release key (when the owner has added it)
+        env:
+          RELEASE_KEYSTORE_B64: ${{ secrets.RELEASE_KEYSTORE_B64 }}
+        run: |
+          if [ -n "$RELEASE_KEYSTORE_B64" ]; then
+            echo "$RELEASE_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "RELEASE_KEYSTORE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+          fi
       - name: Build APK
         working-directory: android
+        env:
+          RELEASE_KEYSTORE_PASSWORD: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         run: >
           ./gradlew :app:assembleRelease
           -PbuildNumber=${{ github.run_number }}

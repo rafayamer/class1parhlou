@@ -127,7 +127,7 @@ class AppFlowTest {
         rule.onNodeWithTag("profile-phone").performTextClearance()
         // The privacy notice must be accepted too.
         rule.onNodeWithText("Continue").assertIsNotEnabled()
-        rule.onNodeWithText("I have read this and want to continue").performScrollTo().performClick()
+        rule.onNodeWithText("I (and my parent or guardian) agree to the terms and privacy policy").performScrollTo().performClick()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
     }
 }

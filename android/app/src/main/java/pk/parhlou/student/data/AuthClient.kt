@@ -40,7 +40,9 @@ class AuthClient(
     suspend fun sendLink(email: String): AuthResult {
         val clean = email.trim().lowercase()
         if (!Regex("^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$").matches(clean)) return AuthResult.Failed("Enter a valid email address.")
-        val body = JSONObject().put("email", clean).put("create_user", true).toString()
+        // PKCE: the link in the email carries only a one-time code, which is useless without the secret kept on this phone.
+        val body = JSONObject().put("email", clean).put("create_user", true)
+            .put("code_challenge", newChallenge()).put("code_challenge_method", "s256").toString()
         val (status, text) = http("POST", "$supabaseUrl/auth/v1/otp?redirect_to=${Uri.encode(REDIRECT)}", headers(), body)
             ?: return AuthResult.Failed("No internet connection. Try again when you're online.")
         return when (status) {
@@ -63,23 +65,36 @@ class AuthClient(
      * back to pk.parhlou.student://auth#access_token=… exactly like the email link, so [handleRedirect] finishes it.
      * A Google account with the same email as an existing Parhlou account signs in to that same account.
      */
-    fun googleSignInUrl(): String = "$supabaseUrl/auth/v1/authorize?provider=google&redirect_to=${Uri.encode(REDIRECT)}"
+    suspend fun googleSignInUrl(): String =
+        "$supabaseUrl/auth/v1/authorize?provider=google&redirect_to=${Uri.encode(REDIRECT)}&code_challenge=${newChallenge()}&code_challenge_method=s256"
 
-    /** Handles the link from the sign-in email: pk.parhlou.student://auth#access_token=...&refresh_token=... */
+    /**
+     * Handles the link from the sign-in email or Google: pk.parhlou.student://auth?code=…, exchanged for a session with the
+     * secret saved when the link was asked for. Links carrying the session itself (#access_token=…) are refused: another app
+     * that grabbed such a link could sign in as the student.
+     */
     suspend fun handleRedirect(uri: Uri): AuthResult? {
         if (uri.scheme != "pk.parhlou.student" || uri.host != "auth") return null
         val params = (uri.fragment ?: uri.query ?: "").split('&').mapNotNull {
             val i = it.indexOf('='); if (i <= 0) null else it.substring(0, i) to Uri.decode(it.substring(i + 1))
         }.toMap()
         params["error_description"]?.let { return AuthResult.Failed(it.replace('+', ' ')) }
-        val access = params["access_token"] ?: return AuthResult.Failed("This sign-in link is not valid.")
-        val refresh = params["refresh_token"] ?: return AuthResult.Failed("This sign-in link is not valid.")
-        val expiresIn = params["expires_in"]?.toLongOrNull() ?: 3600
-        val (status, text) = http("GET", "$supabaseUrl/auth/v1/user", headers(access), null)
+        val code = params["code"] ?: return AuthResult.Failed("This sign-in link is not valid. Ask for a new one.")
+        val verifier = store.draft(PKCE_KEY).first().ifBlank { return AuthResult.Failed("Open the newest sign-in email on this phone, or type the code instead.") }
+        val body = JSONObject().put("auth_code", code).put("code_verifier", verifier).toString()
+        val (status, text) = http("POST", "$supabaseUrl/auth/v1/token?grant_type=pkce", headers(), body)
             ?: return AuthResult.Failed("No internet connection.")
         if (status != 200) return AuthResult.Failed("This sign-in link has expired. Ask for a new one.")
-        val user = JSONObject(text)
-        return save(Session(access, refresh, now() + expiresIn * 1000, user.getString("id"), user.optString("email")))
+        store.saveDraft(PKCE_KEY, "")
+        return parseSession(JSONObject(text))?.let { save(it) } ?: AuthResult.Failed("Sign-in failed.")
+    }
+
+    /** A fresh PKCE secret, kept on the phone; returns its SHA-256 challenge (base64url) for the server. */
+    private suspend fun newChallenge(): String {
+        val bytes = ByteArray(48).also { java.security.SecureRandom().nextBytes(it) }
+        val verifier = android.util.Base64.encodeToString(bytes, android.util.Base64.URL_SAFE or android.util.Base64.NO_PADDING or android.util.Base64.NO_WRAP)
+        store.saveDraft(PKCE_KEY, verifier)
+        return challengeOf(verifier)
     }
 
     /** A valid access token, refreshed if it is about to expire. Null when signed out or the session can't be renewed. */
@@ -114,5 +129,9 @@ class AuthClient(
 
     companion object {
         const val REDIRECT = "pk.parhlou.student://auth"
+        private const val PKCE_KEY = "auth_pkce_verifier"
+        fun challengeOf(verifier: String): String = android.util.Base64.encodeToString(
+            java.security.MessageDigest.getInstance("SHA-256").digest(verifier.toByteArray()),
+            android.util.Base64.URL_SAFE or android.util.Base64.NO_PADDING or android.util.Base64.NO_WRAP)
     }
 }

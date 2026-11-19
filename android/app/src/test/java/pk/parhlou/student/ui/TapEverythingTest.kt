@@ -90,12 +90,16 @@ class TapEverythingTest {
             val node = rule.onAllNodes(SemanticsMatcher.keyIsDefined(SemanticsActions.OnClick))
                 .fetchSemanticsNodes().firstOrNull { describeMerged(it) == label } ?: continue
             val before = snapshot()
+            val app = org.robolectric.Shadows.shadowOf(androidx.test.core.app.ApplicationProvider.getApplicationContext<android.app.Application>())
+            while (app.nextStartedActivity != null) { /* clear */ }
             rule.onAllNodes(SemanticsMatcher("id ${node.id}") { it.id == node.id })[0].performSemanticsAction(SemanticsActions.OnClick)
             rule.mainClock.advanceTimeBy(1_000)
             rule.waitForIdle()
+            // Opening a web page or the share sheet counts as doing something.
+            if (app.nextStartedActivity != null) continue
             if (snapshot() == before) {
                 // Navigation can still be settling: give it a moment more before calling the tap dead.
-                rule.waitUntil(3_000) { snapshot() != before }
+                runCatching { rule.waitUntil(3_000) { snapshot() != before } }
             }
             if (snapshot() == before) dead += "$route: \"$label\""
         }

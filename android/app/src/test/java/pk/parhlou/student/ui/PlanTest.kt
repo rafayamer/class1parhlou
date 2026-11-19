@@ -47,6 +47,7 @@ class PlanTest {
         rule.onNodeWithText("Send Rs 1497 to", substring = true).assertExists()
         rule.onNodeWithText("Easypaisa").performScrollTo().performClick()
         rule.onNodeWithText("0345 7654321", substring = true).assertExists()
+        rule.onNodeWithTag("parent-ok").performScrollTo().performClick()
         rule.onNodeWithTag("txn-input").performScrollTo().performTextInput("used-1234")
         rule.onNodeWithTag("paid").performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodes(hasText("already been used", substring = true)).fetchSemanticsNodes().isNotEmpty() }

@@ -45,6 +45,7 @@ class FakeSupabase {
     var marks = JSONArray()
     var refreshStatus = 200
     var online = true
+    var lastChallenge = ""
     val http: HttpCall = { method, url, headers, body ->
         calls += Triple(method, url.substringAfter("https://sb.test"), body)
         if (!online) null else route(method, url.substringAfter("https://sb.test"), headers, body)
@@ -53,9 +54,12 @@ class FakeSupabase {
         .put("user", JSONObject().put("id", "user-1").put("email", "ali@example.test")).toString()
 
     private fun route(method: String, path: String, headers: Map<String, String>, body: String?): Pair<Int, String> = when {
-        path.startsWith("/auth/v1/otp") -> 200 to "{}"
+        path.startsWith("/auth/v1/otp") -> { lastChallenge = JSONObject(body!!).optString("code_challenge"); 200 to "{}" }
         path == "/auth/v1/verify" -> if (JSONObject(body!!).getString("token") == "123456") 200 to session("tok-1") else 403 to "{}"
         path == "/auth/v1/user" -> if (headers["Authorization"] == "Bearer link-token") 200 to """{"id":"user-1","email":"ali@example.test"}""" else 401 to "{}"
+        path == "/auth/v1/token?grant_type=pkce" -> JSONObject(body!!).let { b ->
+            val ok = b.getString("auth_code") == "good-code" && pk.parhlou.student.data.AuthClient.challengeOf(b.getString("code_verifier")) == lastChallenge
+            if (ok) 200 to session("tok-pkce") else 400 to "{}" }
         path.startsWith("/auth/v1/token") -> refreshStatus to (if (refreshStatus == 200) session("tok-2") else "{}")
         path == "/auth/v1/logout" -> 204 to ""
         path == "/rest/v1/rpc/register_learner" -> 200 to "\"tenant\""
@@ -98,17 +102,25 @@ class AccountTest {
     }
 
     @Test fun signInLinkFromTheEmail() = runBlocking {
-        val ok = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth#access_token=link-token&refresh_token=r&expires_in=3600&type=magiclink"))
+        assertEquals(AuthResult.Sent, auth.sendLink("ali@example.test"))
+        assertTrue("the email asks for a PKCE link", fake.lastChallenge.length >= 43)
+        // A link carrying a session directly (the old, interceptable kind) is refused.
+        assertTrue(auth.handleRedirect(Uri.parse("pk.parhlou.student://auth#access_token=link-token&refresh_token=r&expires_in=3600")) is AuthResult.Failed)
+        assertTrue(auth.handleRedirect(Uri.parse("pk.parhlou.student://auth?code=stolen-code")) is AuthResult.Failed)
+        val ok = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth?code=good-code"))
         assertTrue(ok is AuthResult.SignedIn)
         assertEquals("user-1", store.session.first()!!.userId)
+        assertTrue("the code works once", auth.handleRedirect(Uri.parse("pk.parhlou.student://auth?code=good-code")) is AuthResult.Failed)
         val expired = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth#error=access_denied&error_description=Email+link+is+invalid+or+has+expired"))
         assertEquals("Email link is invalid or has expired", (expired as AuthResult.Failed).message)
         assertNull(auth.handleRedirect(Uri.parse("https://example.test/other")))
     }
 
     @Test fun googleSignInComesBackThroughTheSameLink() = runBlocking {
-        assertEquals("https://sb.test/auth/v1/authorize?provider=google&redirect_to=pk.parhlou.student%3A%2F%2Fauth", auth.googleSignInUrl())
-        val r = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth#access_token=link-token&refresh_token=r2&expires_in=3600&provider_token=x"))
+        val url = auth.googleSignInUrl()
+        assertTrue(url.startsWith("https://sb.test/auth/v1/authorize?provider=google&redirect_to=pk.parhlou.student%3A%2F%2Fauth&code_challenge="))
+        fake.lastChallenge = Uri.parse(url).getQueryParameter("code_challenge")!!
+        val r = auth.handleRedirect(Uri.parse("pk.parhlou.student://auth?code=good-code"))
         assertTrue(r is AuthResult.SignedIn)
     }
 

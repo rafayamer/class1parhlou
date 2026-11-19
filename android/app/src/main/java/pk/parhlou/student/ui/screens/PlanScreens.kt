@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -92,6 +93,8 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
         var payer by rememberSaveable { mutableStateOf("") }
         var error by remember { mutableStateOf<String?>(null) }
         var sending by remember { mutableStateOf(false) }
+        var parentOk by rememberSaveable { mutableStateOf(false) }
+        val context = androidx.compose.ui.platform.LocalContext.current
         val wallet = i.wallets.firstOrNull { it.method == method } ?: i.wallets.first()
         Sheet(Modifier.testTag("plan-pay")) {
             Text("1. How long?", style = MaterialTheme.typography.titleMedium)
@@ -114,8 +117,18 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
                 modifier = Modifier.fillMaxWidth().testTag("txn-input"))
             OutlinedTextField(payer, { payer = it.take(60) }, singleLine = true, label = { Text("Number you paid from (optional)") },
                 modifier = Modifier.fillMaxWidth())
+            // Under-18s can't make a binding purchase (Contract Act 1872): a parent or guardian confirms the payment.
+            androidx.compose.foundation.layout.Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth().testTag("parent-ok").then(Modifier.clickable { parentOk = !parentOk })) {
+                androidx.compose.material3.Checkbox(parentOk, { parentOk = it })
+                Text("I'm the parent or guardian, or my parent or guardian made this payment and agrees to the terms.",
+                    style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+            }
+            androidx.compose.material3.TextButton(onClick = { pk.parhlou.student.ui.Legal.open(context, pk.parhlou.student.ui.Legal.REFUNDS) }) {
+                Text("Refund policy: full refund within 7 days")
+            }
             error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
-            BigButton(if (sending) "Sending…" else "I've paid", enabled = !sending && Plans.cleanTxn(txn).length >= 4,
+            BigButton(if (sending) "Sending…" else "I've paid", enabled = !sending && parentOk && Plans.cleanTxn(txn).length >= 4,
                 modifier = Modifier.testTag("paid"), onClick = {
                     sending = true; error = null
                     scope.launch {

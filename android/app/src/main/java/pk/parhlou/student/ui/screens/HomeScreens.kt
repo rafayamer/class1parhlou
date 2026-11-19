@@ -515,6 +515,9 @@ fun ProfileScreen(
         if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Plus", planLabel, onPlus)
         var feedbackOpen by remember { mutableStateOf(false) }
         TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
+        val legalContext = androidx.compose.ui.platform.LocalContext.current
+        TaskRow(Icons.Filled.Feedback, "Privacy, terms and refunds", "How we keep your data safe",
+            { pk.parhlou.student.ui.Legal.open(legalContext, pk.parhlou.student.ui.Legal.PRIVACY) })
         if (feedbackOpen) FeedbackBox(onSend = onSendFeedback, onClose = { feedbackOpen = false })
         TaskRow(Icons.Filled.Notifications, "Daily reminder", reminderLabel, onReminder)
         TaskRow(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff, "Sounds",

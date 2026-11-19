@@ -57,6 +57,10 @@ object Social {
         return history.filter { !Instant.ofEpochMilli(it.at).atZone(zone).toLocalDate().isBefore(monday) }.sumOf { Rewards.xpOf(it.evidence) }
     }
 
+    /** The error in a reply like {"error":"CODE_NOT_FOUND"}, else null. */
+    fun errorOf(text: String?): String? = text?.trim()?.takeIf { it.startsWith("{") }
+        ?.let { runCatching { JSONObject(it).optString("error").takeIf { e -> e.isNotBlank() } }.getOrNull() }
+
     /** A friendly line for a server refusal. */
     fun explain(code: String?): String = when (code) {
         "CODE_NOT_FOUND" -> "No one has that code. Check it and try again."
@@ -64,6 +68,8 @@ object Social {
         "TOO_MANY_FRIENDS" -> "You have 100 friends already."
         "TOO_MANY_GROUPS" -> "You've made 10 groups already."
         "GROUP_FULL" -> "That group is full."
+        "TOO_MANY_TRIES" -> "Too many wrong codes today. Try again tomorrow."
+        "NAME_NOT_ALLOWED" -> "Please choose a different name: letters and numbers only, nothing rude."
         "OFFLINE" -> "Connect to the internet and try again."
         else -> "That didn't work. Please try again."
     }

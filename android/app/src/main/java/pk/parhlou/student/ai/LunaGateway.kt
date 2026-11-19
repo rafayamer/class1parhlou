@@ -108,6 +108,7 @@ class LunaGateway(
             .put("subjectIds", JSONArray(req.subjectIds.toList())).put("moduleId", req.moduleId ?: JSONObject.NULL)
             .put("examActive", req.examActive)
         call(body)?.let(UstaadAnswer::parse)?.let { return it }
+        if (signInNeeded) return UstaadAnswer("OFFLINE", "Sign in to ask Ustaad (Profile → Sign in). It's free, and keeps your progress safe.")
         creditsResetOn?.let { date ->
             return UstaadAnswer("OFFLINE", "This month's Ustaad time is used up. It comes back on $date. Your lessons, practice and papers still work.")
         }
@@ -139,6 +140,7 @@ class LunaGateway(
         val (status, text) = transport(endpoint, headers, body.toString()) ?: return null
         // This month's AI allowance is used up: remember when it comes back, so screens can say so kindly.
         if (status == 402) { creditsResetOn = runCatching { JSONObject(text).optString("resetsOn") }.getOrNull().orEmpty().ifBlank { "the 1st" }; return null }
+        signInNeeded = status == 401 && text.contains("SIGN_IN_REQUIRED")
         if (status != 200) return null
         creditsResetOn = null
         JSONObject(text).optJSONObject("result")
@@ -146,6 +148,8 @@ class LunaGateway(
 
     /** Set when the last request was refused because this month's allowance is used up. */
     @Volatile var creditsResetOn: String? = null
+    /** Set when the server asked for an account (AI that costs money needs one). */
+    @Volatile var signInNeeded: Boolean = false
 
     override suspend fun allowance(): Allowance? = call(JSONObject().put("task", "credits"))?.let { r ->
         val usd = r.optJSONObject("usd")

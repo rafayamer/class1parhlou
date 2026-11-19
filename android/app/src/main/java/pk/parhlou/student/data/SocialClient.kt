@@ -14,6 +14,7 @@ open class SocialClient(private val sync: SyncClient?) {
     /** Adds a friend by code: the new list, or an error code. */
     open suspend fun addFriend(code: String): Pair<List<Social.Friend>?, String?> {
         val (text, err) = sync?.rpcOrError("friend_add", JSONObject().put("p_code", code)) ?: return null to "OFFLINE"
+        Social.errorOf(text)?.let { return null to it }
         return text?.let(Social::friends) to err
     }
     open suspend fun removeFriend(code: String): Boolean = sync?.rpc("friend_remove", JSONObject().put("p_code", code)) != null
@@ -21,6 +22,7 @@ open class SocialClient(private val sync: SyncClient?) {
     open suspend fun nudges(): List<Social.Nudge> = sync?.rpc("my_nudges")?.let(Social::nudges).orEmpty()
     open suspend fun groups(): List<Social.Group> = sync?.rpc("my_groups")?.let(Social::groups).orEmpty()
     open suspend fun createGroup(name: String): String? = sync?.rpcOrError("group_create", JSONObject().put("p_name", name)).let { it?.second ?: if (it == null) "OFFLINE" else null }
-    open suspend fun joinGroup(code: String): String? = sync?.rpcOrError("group_join", JSONObject().put("p_code", code)).let { it?.second ?: if (it == null) "OFFLINE" else null }
+    open suspend fun joinGroup(code: String): String? = sync?.rpcOrError("group_join", JSONObject().put("p_code", code))
+        .let { it?.second ?: Social.errorOf(it?.first) ?: if (it == null) "OFFLINE" else null }
     open suspend fun leaveGroup(code: String): Boolean = sync?.rpc("group_leave", JSONObject().put("p_code", code)) != null
 }

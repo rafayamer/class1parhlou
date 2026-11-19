@@ -140,13 +140,22 @@ private fun ConsentStep(acknowledged: Boolean, onChange: (Boolean) -> Unit) {
         Text("What we store", style = MaterialTheme.typography.titleMedium)
         Muted("Your name, class, subjects, answers and results. Chats with Ustaad are kept for 30 days. Photos of answer sheets are kept only to mark them.")
         Text("Who can see it", style = MaterialTheme.typography.titleMedium)
-        Muted("You, a parent or teacher you link, and Parhlou's team, who may review your account and chats to keep you safe and improve your lessons. Every review is recorded. Marks are never public.")
+        Muted("You, and Parhlou's team, who may review your account and chats to keep you safe and improve your lessons. Every review is recorded. In leagues, other students see only your first name, avatar and weekly XP. Marks are never public.")
         Text("Staying safe", style = MaterialTheme.typography.titleMedium)
         Muted("Ustaad only helps with studies. Messages about sex or illegal things are refused and flagged to Parhlou's safety team, who may contact your parent.")
         Text("If you are under 18", style = MaterialTheme.typography.titleMedium)
-        Muted("A parent or guardian will be asked to approve your account before paid features are used.")
+        Muted("Ask a parent or guardian to read this with you. Only a parent or guardian may pay for Plus.")
+        Text("Your rights", style = MaterialTheme.typography.titleMedium)
+        Muted("Download, correct or delete your data any time from Profile.")
     }
-    CheckRow("I have read this and want to continue", checked = acknowledged, onChange = onChange)
+    val context = androidx.compose.ui.platform.LocalContext.current
+    androidx.compose.foundation.layout.Row {
+        androidx.compose.material3.TextButton(onClick = { pk.parhlou.student.ui.Legal.open(context, pk.parhlou.student.ui.Legal.PRIVACY) },
+            modifier = Modifier.heightIn(min = 44.dp)) { Text("Privacy policy") }
+        androidx.compose.material3.TextButton(onClick = { pk.parhlou.student.ui.Legal.open(context, pk.parhlou.student.ui.Legal.TERMS) },
+            modifier = Modifier.heightIn(min = 44.dp)) { Text("Terms of use") }
+    }
+    CheckRow("I (and my parent or guardian) agree to the terms and privacy policy", checked = acknowledged, onChange = onChange)
 }
 
 @Composable

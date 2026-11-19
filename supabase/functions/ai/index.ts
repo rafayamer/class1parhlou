@@ -18,7 +18,7 @@ const CACHE_MS = 30_000;
 interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number;
   monthlyCredits: number; creditMonths: number; prices: Prices;
   /** Money: what one million tokens cost, and each student's monthly AI allowance in US dollars (0 = no cap). */
-  usdIn: number; usdOut: number; monthlyUsd: number; freeUsd: number }
+  usdIn: number; usdOut: number; monthlyUsd: number; freeUsd: number; dailyUsdTotal: number }
 let cache: Live | null = null;
 
 async function live(db: any): Promise<Live> {
@@ -43,6 +43,7 @@ async function live(db: any): Promise<Live> {
     usdOut: Number(setting("usd_per_million_output", 0.50)),
     monthlyUsd: Number(setting("monthly_usd_per_student", 3)),
     freeUsd: Number(setting("free_monthly_usd", 0.5)),
+    dailyUsdTotal: Number(setting("daily_usd_total", 1)),
   };
   return cache;
 }
@@ -50,9 +51,15 @@ async function live(db: any): Promise<Live> {
 /** Picks the subject bundle a request is about (see pickContent). */
 const pick = (contents: Content[], body: any): Content => pickContent(contents, body);
 
+const MAX_BODY_BYTES = 16_000_000;
+/** Tasks that never call OpenAI. */
+const FREE_TASKS = ["feedback", "mark_mcqs", "videos"];
+
 Deno.serve(async (request) => {
   if (request.method !== "POST") return json({ error: "METHOD_NOT_ALLOWED" }, 405);
   if (!APP_KEY || request.headers.get("apikey") !== APP_KEY) return json({ error: "AUTH_REQUIRED" }, 401);
+  // Refuse oversized requests before reading them (5 photos of up to ~2.8 MB each, plus text).
+  if (Number(request.headers.get("content-length") ?? 0) > MAX_BODY_BYTES) return json({ error: "TOO_LARGE" }, 413);
   const apiKey = Deno.env.get("OPENAI_API_KEY");
   if (!apiKey) return json({ error: "AI_NOT_CONFIGURED" }, 503);
 
@@ -94,7 +101,11 @@ Deno.serve(async (request) => {
     return json({ result: credits ? { balance: credits.balance, resetsOn: credits.resetsOn, monthly: settings.monthlyCredits,
       prices: settings.prices, left: whatsLeft(credits.balance, settings.prices), usd: allowance } : { usd: allowance } });
   }
-  const free = ["feedback", "mark_mcqs", "videos"].includes(String((body as any)?.task));
+  const free = FREE_TASKS.includes(String((body as any)?.task));
+  // AI that costs money needs an account: a made-up install id per request must not get a fresh allowance each time.
+  if (!free && !userId && (body as any)?.task !== "credits") return json({ error: "SIGN_IN_REQUIRED" }, 401);
+  // Project-wide money ceiling per 24 hours: a last line of defence for the OpenAI balance, whatever happens.
+  if (!free && settings.dailyUsdTotal > 0 && await spentSince(db, since) >= settings.dailyUsdTotal) return json({ error: "QUOTA_LIMIT" }, 429);
   if (!free && overCap(usd, cap)) return json({ error: "AI_LIMIT", resetsOn: allowance.resetsOn, usd: allowance }, 402);
   if ((body as any)?.task === "feedback") {
     const text = String((body as any)?.text ?? "").trim().slice(0, 3000);
@@ -191,6 +202,15 @@ const SCRIPT_PAGES_PER_DAY = 60;
 async function logUsage(db: any, row: Record<string, unknown>) {
   const { error } = await db.from("ai_usage").insert(row);
   if (error && "usd" in row) { const { usd: _drop, ...rest } = row; await db.from("ai_usage").insert(rest); }
+}
+
+/** What all AI calls cost since [since], in US dollars (0 if the column is missing). */
+async function spentSince(db: any, since: string): Promise<number> {
+  try {
+    const { data, error } = await db.from("ai_usage").select("usd").gte("created_at", since).gt("usd", 0).limit(20000);
+    if (error) return 0;
+    return (data ?? []).reduce((s: number, r: any) => s + Number(r.usd ?? 0), 0);
+  } catch { return 0; }
 }
 
 /** True when the student has paid for Plus up to today or later; null when plans are not set up yet. */

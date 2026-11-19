@@ -196,14 +196,14 @@ class LocalStore(private val context: Context) {
     // ---- Account session and sync state ---------------------------------------------------------------
 
     val session: Flow<Session?> = context.dataStore.data.map { p ->
-        val access = p[K.access] ?: return@map null
-        Session(access, p[K.refresh] ?: "", p[K.expires] ?: 0L, p[K.userId] ?: "", p[K.email] ?: "")
+        val access = p[K.access]?.let(TokenCipher::open) ?: return@map null
+        Session(access, p[K.refresh]?.let(TokenCipher::open) ?: "", p[K.expires] ?: 0L, p[K.userId] ?: "", p[K.email] ?: "")
     }
 
     suspend fun saveSession(s: Session?) {
         context.dataStore.edit { p ->
             if (s == null) { p.remove(K.access); p.remove(K.refresh); p.remove(K.expires); p.remove(K.userId); p.remove(K.email) }
-            else { p[K.access] = s.accessToken; p[K.refresh] = s.refreshToken; p[K.expires] = s.expiresAt; p[K.userId] = s.userId; p[K.email] = s.email }
+            else { p[K.access] = TokenCipher.seal(s.accessToken); p[K.refresh] = TokenCipher.seal(s.refreshToken); p[K.expires] = s.expiresAt; p[K.userId] = s.userId; p[K.email] = s.email }
         }
     }
 
