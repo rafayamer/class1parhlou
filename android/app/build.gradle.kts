@@ -23,6 +23,10 @@ android {
         // Never put an OpenAI key here: it lives only on the server.
         buildConfigField("String", "PARHLOU_AI_URL", "\"${project.findProperty("parhlouAiUrl") ?: ""}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${project.findProperty("supabaseAnonKey") ?: ""}\"")
+        // AdMob (free plan only). Google's public test IDs until the founder's own AdMob app and ad unit are set:
+        // -PadmobAppId=ca-app-pub-…~… -PadmobInterstitial=ca-app-pub-…/…
+        manifestPlaceholders["admobAppId"] = project.findProperty("admobAppId") ?: "ca-app-pub-3940256099942544~3347511713"
+        buildConfigField("String", "ADMOB_INTERSTITIAL", "\"${project.findProperty("admobInterstitial") ?: "ca-app-pub-3940256099942544/1033173712"}\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // The scanner's OpenCV library is native: ship it for 64-bit and 32-bit ARM phones only.
         ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
@@ -93,6 +97,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
     implementation("androidx.work:work-runtime-ktx:2.10.0")
     implementation("androidx.exifinterface:exifinterface:1.4.1")
+    implementation("com.google.android.gms:play-services-ads:23.6.0")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")

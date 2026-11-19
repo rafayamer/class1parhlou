@@ -2,7 +2,39 @@
 
 These steps are done once by the owner. The automatic safety rules stop the assistant from deploying to the live server, changing the live database or publishing content on its own.
 
-## This round: student care, allowance and Google sign-in (about 15 minutes)
+## Newest round: $3 AI cap, League, Plus payments and ads (about 20 minutes)
+
+### 1. Apply three database updates, in this order (5 minutes, needed)
+For each file: open it, **Copy raw file**, paste into https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new and **Run**.
+1. `supabase/migrations/20261119000001_ai_dollar_cap.sql`: the monthly AI allowance in dollars, shown as a meter in Profile.
+2. `supabase/migrations/20261119000002_social.sql`: League tab (weekly leagues, friends by code, 👏 nudges, class groups).
+3. `supabase/migrations/20261119000003_plans_payments.sql`: Free and Plus plans, and the **Payments** page in the owner panel.
+
+Then redeploy the AI server code (Step 1 below) so the gateway gives Plus students $3 and free students $0.50 a month.
+Until 3 is applied, everyone keeps the $3 allowance as before.
+
+### 2. Payments by JazzCash / Easypaisa (5 minutes)
+No registered business is needed: students send money to **your personal wallet**, then type the transaction ID (TID) in the app.
+1. Owner panel → **Payments** → **Plans**: set the price (default Rs 499 a month), the two allowances, and your JazzCash and/or
+   Easypaisa number and account name → **Save**. Until a number is saved, the app says "Payments open soon".
+2. When a student pays, they appear under **Payments to check**. Match the TID and amount with the SMS in your wallet app, then
+   **Approve** (Plus switches on for the months paid) or **Reject** with a short reason (the student sees it).
+3. Keep a simple record of payments for tax. Personal wallets have monthly receiving limits (check yours in the app); when sales
+   grow, register a sole proprietorship (NTN from FBR, free online) and move to a JazzCash/Easypaisa merchant account or Google
+   Play Billing.
+
+### 3. Ads (AdMob, 15 minutes, can wait)
+The app already shows test ads to free-plan students after every second finished quiz (at most one every 10 minutes, never in
+lessons, papers or Ask Ustaad). They are child-safe: child-directed, G-rated, never personalised, no advertising ID.
+1. Make an account at https://admob.google.com with your Google account (an individual is fine; payments need your CNIC-linked bank
+   account and tax info later).
+2. **Apps → Add app → Android → not published yet**, name Parhlou. Copy the **App ID** (`ca-app-pub-…~…`).
+3. **Ad units → Interstitial**, name "After quiz". Copy its ID (`ca-app-pub-…/…`).
+4. In AdMob **Settings → Blocking controls**, set the max ad content rating to **G**, and turn on "treat as child-directed".
+5. Send me both IDs (they're not secret) and I'll put them in the build. To switch ads off at any time: owner panel → Payments →
+   untick "Show ads".
+
+## Earlier round: student care, allowance and Google sign-in (about 15 minutes)
 
 ### A. Apply the student-care database update (2 minutes, needed)
 

@@ -388,7 +388,7 @@ test("paper_report: weak topics must be the paper's own; numbers come from the a
 });
 
 // ── Credits, safety, PDF requests, memory ─────────────────────────────────────────────────────────────────────────
-import { creditBalance, needsMonthlyGrant, priceOf, whatsLeft, grantExpiry, DEFAULT_PRICES, usdOf, monthStart, nextMonthStart, overCap } from "./credits.ts";
+import { creditBalance, needsMonthlyGrant, priceOf, whatsLeft, grantExpiry, DEFAULT_PRICES, usdOf, monthStart, nextMonthStart, overCap, capFor } from "./credits.ts";
 
 test("credits: oldest grant is spent first, unused credits carry over, and expire after 4 months", () => {
   const jan = "2027-01-01T00:00:00Z", feb = "2027-02-01T00:00:00Z";
@@ -493,4 +493,10 @@ test("the monthly AI allowance is counted in dollars and resets on the 1st", () 
   assert.equal(overCap(2.99, 3), false);
   assert.equal(overCap(3, 3), true);
   assert.equal(overCap(50, 0), false, "a cap of 0 means no cap");
+});
+
+test("Plus gets the full AI allowance, the free plan the smaller one", () => {
+  assert.equal(capFor(true, 3, 0.5), 3);
+  assert.equal(capFor(false, 3, 0.5), 0.5);
+  assert.equal(capFor(null, 3, 0.5), 3, "unknown plan (plans not set up): full allowance as before");
 });

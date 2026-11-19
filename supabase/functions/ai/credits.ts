@@ -72,6 +72,13 @@ export function nextMonthStart(now: Date): string {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)).toISOString().slice(0, 10);
 }
 /** True when the month's spend has reached the cap (a cap of 0 or less means no cap). */
+/**
+ * The month's AI allowance in US dollars for a student's plan: Plus gets the full allowance, the free plan the smaller one.
+ * `plus` is null when the plan is unknown (no account, or plans not set up yet): then the full allowance applies, as before plans.
+ */
+export function capFor(plus: boolean | null, plusUsd: number, freeUsd: number): number {
+  return plus === false ? freeUsd : plusUsd;
+}
 export function overCap(spentUsd: number, capUsd: number): boolean {
   return capUsd > 0 && spentUsd >= capUsd;
 }

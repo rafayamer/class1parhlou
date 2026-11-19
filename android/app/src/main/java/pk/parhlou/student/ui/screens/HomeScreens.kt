@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material.icons.filled.Forum
 import androidx.compose.material.icons.filled.Feedback
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.automirrored.filled.VolumeUp
 import androidx.compose.material.icons.automirrored.filled.VolumeOff
 import androidx.compose.foundation.layout.PaddingValues
@@ -448,6 +449,9 @@ fun ProfileScreen(
     allowance: suspend () -> pk.parhlou.student.ai.Allowance? = { null },
     onSendFeedback: suspend (String) -> Boolean = { false },
     onEditProfile: () -> Unit = {},
+    /** Free vs Plus; null hides the row. The label says the current plan. */
+    onPlus: (() -> Unit)? = null,
+    planLabel: String = "Free plan",
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
@@ -508,6 +512,7 @@ fun ProfileScreen(
                 Muted("Resets on ${a.resetsOn}. Lessons, quizzes, solutions and papers never need AI time.")
             }
         }
+        if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Plus", planLabel, onPlus)
         var feedbackOpen by remember { mutableStateOf(false) }
         TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
         if (feedbackOpen) FeedbackBox(onSend = onSendFeedback, onClose = { feedbackOpen = false })

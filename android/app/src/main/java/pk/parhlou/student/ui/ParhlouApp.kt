@@ -132,6 +132,7 @@ object Routes {
     const val MODULE = "module/{id}"
     const val TESTS = "tests"
     const val LEAGUE = "league"
+    const val PLUS = "plus"
     const val READINESS = "readiness"
     const val ASSESSMENT = "assessment/{id}"
     const val EXAM = "exam/{id}?scan={scan}"
@@ -188,6 +189,10 @@ fun ParhlouApp(
     requireInternet: Boolean = false,
     /** Leagues and friends; tests pass a fake. */
     socialClient: pk.parhlou.student.data.SocialClient? = null,
+    /** The student's plan and payments; tests pass a fake. */
+    planClient: pk.parhlou.student.data.PlanClient? = null,
+    /** Ads on the free plan (between activities only); tests and previews have none. */
+    ads: pk.parhlou.student.ads.Ads = pk.parhlou.student.ads.NoAds,
 ) {
     val context = LocalContext.current
     remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
@@ -229,6 +234,9 @@ fun ParhlouApp(
     // Upload new progress whenever the app goes to the background.
     LifecycleEventEffect(Lifecycle.Event.ON_STOP) { account?.let { a -> scope.launch { a.syncNow() } } }
     val needsSignIn = account != null && session == null && !guest
+    val plans = remember(account, planClient) { planClient ?: pk.parhlou.student.data.PlanClient(account?.sync) }
+    var plan by remember { mutableStateOf<pk.parhlou.student.domain.Plans.Info?>(null) }
+    LaunchedEffect(session?.email, planClient) { plan = if (session != null || planClient != null) plans.info() else null }
     val desk = remember(repo, ai, account) {
         ExamDesk(context.applicationContext, repo, store, ai, progress) { paperId ->
             if (account == null) emptyMap() else account.sync.paperMarks(paperId)
@@ -506,6 +514,11 @@ fun ParhlouApp(
                 onSave = { s -> scope.launch { store.saveOnboarding(s); account?.syncNow(s) } },
                 onBack = { nav.popBackStack() })
         }
+        composable(Routes.PLUS) {
+            pk.parhlou.student.ui.screens.PlanScreen(plans, signedIn = session != null || planClient != null,
+                onSignIn = { scope.launch { store.setGuest(false) }; nav.navigate(Routes.SIGN_IN) },
+                onPlanChanged = { plan = it }, onBack = { nav.popBackStack() })
+        }
         composable(Routes.LEAGUE) { WithTabBarSpace {
             val social = remember(account, socialClient) { socialClient ?: pk.parhlou.student.data.SocialClient(account?.sync) }
             val now = System.currentTimeMillis()
@@ -525,6 +538,9 @@ fun ParhlouApp(
             ProfileScreen(
                 repo, state, progress,
                 onEditProfile = { nav.navigate(Routes.EDIT_PROFILE) },
+                onPlus = { nav.navigate(Routes.PLUS) },
+                planLabel = plan?.let { p -> if (p.plus) "Plus until ${p.paidUntil}" else "Free plan · upgrade for more Ask Ustaad, no ads" }
+                    ?: "More Ask Ustaad and no ads",
                 soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
                 allowance = { ai.allowance() },
                 onSendFeedback = { ai.sendFeedback(it, "profile", "build ${pk.parhlou.student.BuildConfig.VERSION_CODE}") },
@@ -602,6 +618,8 @@ fun ParhlouApp(
                         progress.add(module.id, Evidence.QuizCompleted(r.accuracy))
                         progress.add("session", Evidence.SessionCompleted(r.xp))
                         nav.popBackStack()
+                        // Free plan: an ad may follow a finished quiz (never inside lessons or papers).
+                        if (plan?.showAds != false) ads.afterQuiz()
                     },
                     onClose = { nav.popBackStack() },
                 )

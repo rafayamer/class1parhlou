@@ -79,6 +79,8 @@ class MainActivity : ComponentActivity() {
             runCatching { pk.parhlou.student.update.ReminderWorker.schedule(applicationContext, store.reminderHour.first()) }
         }
         val account = account
+        // Ads for free-plan students (child-safe, non-personalised); nothing loads until a quiz is finished.
+        val adMob = pk.parhlou.student.ads.AdMobAds(this, BuildConfig.ADMOB_INTERSTITIAL)
         setContent {
             ParhlouTheme { ProvideMotion {
                 // Parhlou's own sounds, following the student's sound switch.
@@ -127,7 +129,7 @@ class MainActivity : ComponentActivity() {
                     }, ready = ready)
                 }
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
-                    ParhlouApp(repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, requireInternet = true, ai = ai, account = account,
+                    ParhlouApp(ads = adMob, repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, requireInternet = true, ai = ai, account = account,
                         versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
                 }
                 }

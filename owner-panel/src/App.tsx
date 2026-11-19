@@ -9,10 +9,12 @@ import { Learners } from "./pages/Learners";
 import { AiLog } from "./pages/AiLog";
 import { Care } from "./pages/Care";
 import { Student } from "./pages/Student";
+import { Payments } from "./pages/Payments";
 
 const PAGES = [
   ["dashboard", "Dashboard"],
   ["content", "Content"],
+  ["payments", "Payments"],
   ["settings", "AI settings"],
   ["learners", "Learners"],
   ["care", "Student care"],
@@ -80,6 +82,7 @@ export function App() {
         {viewing ? <Student userId={viewing} onBack={() => setViewing(null)} /> : <>
         {page === "dashboard" && <Dashboard />}
         {page === "content" && <Content />}
+        {page === "payments" && <Payments />}
         {page === "settings" && <Settings />}
         {page === "learners" && <Learners onView={setViewing} />}
         {page === "care" && <Care onView={setViewing} />}

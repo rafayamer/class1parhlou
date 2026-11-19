@@ -9,7 +9,7 @@ import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, pickContent, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
 import { PROMPT_VERSION, type Video } from "./core.ts";
-import { DEFAULT_PRICES, creditBalance, grantExpiry, monthStart, needsMonthlyGrant, nextMonthStart, overCap, priceOf, usdOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
+import { DEFAULT_PRICES, creditBalance, grantExpiry, monthStart, needsMonthlyGrant, nextMonthStart, overCap, capFor, priceOf, usdOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
 import { updateMemory } from "./examiner.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
@@ -18,7 +18,7 @@ const CACHE_MS = 30_000;
 interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number;
   monthlyCredits: number; creditMonths: number; prices: Prices;
   /** Money: what one million tokens cost, and each student's monthly AI allowance in US dollars (0 = no cap). */
-  usdIn: number; usdOut: number; monthlyUsd: number }
+  usdIn: number; usdOut: number; monthlyUsd: number; freeUsd: number }
 let cache: Live | null = null;
 
 async function live(db: any): Promise<Live> {
@@ -42,6 +42,7 @@ async function live(db: any): Promise<Live> {
     usdIn: Number(setting("usd_per_million_input", 0.10)),
     usdOut: Number(setting("usd_per_million_output", 0.50)),
     monthlyUsd: Number(setting("monthly_usd_per_student", 3)),
+    freeUsd: Number(setting("free_monthly_usd", 0.5)),
   };
   return cache;
 }
@@ -86,14 +87,15 @@ Deno.serve(async (request) => {
   // (Before the credits table exists, everything works as before, without credits.)
   const credits = await creditState(db, caller, userId, settings);
   // Each student's AI allowance in money: this calendar month's spend against the cap.
-  const usd = await monthSpend(db, caller);
-  const allowance = { used: Math.round(usd * 100) / 100, cap: settings.monthlyUsd, resetsOn: nextMonthStart(new Date()) };
+  const [usd, plus] = await Promise.all([monthSpend(db, caller), userId ? isPlus(db, userId) : Promise.resolve(false)]);
+  const cap = capFor(plus, settings.monthlyUsd, settings.freeUsd);
+  const allowance = { used: Math.round(usd * 100) / 100, cap, resetsOn: nextMonthStart(new Date()), plan: plus ? "plus" : "free" };
   if ((body as any)?.task === "credits") {
     return json({ result: credits ? { balance: credits.balance, resetsOn: credits.resetsOn, monthly: settings.monthlyCredits,
       prices: settings.prices, left: whatsLeft(credits.balance, settings.prices), usd: allowance } : { usd: allowance } });
   }
   const free = ["feedback", "mark_mcqs", "videos"].includes(String((body as any)?.task));
-  if (!free && overCap(usd, settings.monthlyUsd)) return json({ error: "AI_LIMIT", resetsOn: allowance.resetsOn, usd: allowance }, 402);
+  if (!free && overCap(usd, cap)) return json({ error: "AI_LIMIT", resetsOn: allowance.resetsOn, usd: allowance }, 402);
   if ((body as any)?.task === "feedback") {
     const text = String((body as any)?.text ?? "").trim().slice(0, 3000);
     if (!text) return json({ error: "BAD_REQUEST" }, 400);
@@ -189,6 +191,15 @@ const SCRIPT_PAGES_PER_DAY = 60;
 async function logUsage(db: any, row: Record<string, unknown>) {
   const { error } = await db.from("ai_usage").insert(row);
   if (error && "usd" in row) { const { usd: _drop, ...rest } = row; await db.from("ai_usage").insert(rest); }
+}
+
+/** True when the student has paid for Plus up to today or later; null when plans are not set up yet. */
+async function isPlus(db: any, userId: string): Promise<boolean | null> {
+  try {
+    const { data, error } = await db.from("subscriptions").select("paid_until").eq("user_id", userId).maybeSingle();
+    if (error) return null;
+    return !!data && String(data.paid_until) >= new Date().toISOString().slice(0, 10);
+  } catch { return null; }
 }
 
 /** What this caller's AI calls cost this calendar month (UTC), in US dollars. */
