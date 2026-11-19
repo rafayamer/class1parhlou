@@ -91,6 +91,20 @@ class LiveUpdateTest {
     private fun release(tag: String, asset: String = "parhlou.apk", url: String = "https://github.com/rafayamer/class1parhlou/releases/download/$tag/parhlou.apk") =
         """{"tag_name":"$tag","published_at":"2026-11-13T10:00:00Z","assets":[{"name":"$asset","browser_download_url":"$url"}]}"""
 
+    @Test fun aHalfDownloadedUpdateIsNeverOffered() {
+        val ctx = androidx.test.core.app.ApplicationProvider.getApplicationContext<android.content.Context>()
+        val whole = ByteArray(1000) { it.toByte() }
+        val file = java.io.File(java.io.File(ctx.cacheDir, "updates").apply { mkdirs() }, "parhlou-12.apk")
+        val sha = java.security.MessageDigest.getInstance("SHA-256").digest(whole).joinToString("") { "%02x".format(it) }
+        val info = pk.parhlou.student.update.UpdateInfo(12, "https://github.com/x/y.apk", "", size = 1000, sha256 = sha)
+        val updater = AppUpdater(ctx, "x/y", 7)
+        file.writeBytes(whole.copyOf(600))
+        assertNull("cut-off download", updater.downloaded(info))
+        whole.copyOf().also { it[5] = 99 }.let(file::writeBytes)
+        assertNull("damaged download", updater.downloaded(info))
+        file.delete()
+    }
+
     @Test fun updateIsOfferedOnlyForAHigherBuildWithAnApkFromGitHub() {
         val offer = AppUpdater.latest(release("build-12"), currentBuild = 7)!!
         assertEquals(12, offer.build)
