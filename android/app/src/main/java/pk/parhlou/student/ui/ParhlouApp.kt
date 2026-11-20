@@ -93,6 +93,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
@@ -399,16 +400,39 @@ fun ParhlouApp(
     // Everything the app draws is recorded into this layer so the glass tab bar can blur/refract it.
     val backdrop = rememberPrismalGlassLayer()
     val reduced = LocalReducedMotion.current
+    // iOS-style navigation: a new screen slides in from the right while the one behind drifts left and dims; going back
+    // reverses it. Switching tabs cross-fades instead (tabs are places, not steps).
+    val tabRoutes = navItems.map { it.route }.toSet()
+    val push = androidx.compose.animation.core.CubicBezierEasing(0.2f, 0.9f, 0.1f, 1f)
+    fun AnimatedContentTransitionScope<NavBackStackEntry>.isTabSwitch() =
+        initialState.destination.route in tabRoutes && targetState.destination.route in tabRoutes
     val enter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
-        if (reduced) EnterTransition.None
-        else fadeIn(tween(260)) + slideInHorizontally(tween(320, easing = FastOutSlowInEasing)) { it / 6 }
+        when {
+            reduced -> EnterTransition.None
+            isTabSwitch() -> fadeIn(tween(220))
+            else -> slideInHorizontally(tween(380, easing = push)) { it } + fadeIn(tween(160))
+        }
     }
     val exit: AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition = {
-        if (reduced) ExitTransition.None else fadeOut(tween(180))
+        when {
+            reduced -> ExitTransition.None
+            isTabSwitch() -> fadeOut(tween(160))
+            else -> slideOutHorizontally(tween(380, easing = push)) { -it / 4 } + fadeOut(tween(380), targetAlpha = 0.6f)
+        }
     }
     val popEnter: AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition = {
-        if (reduced) EnterTransition.None
-        else fadeIn(tween(260)) + slideInHorizontally(tween(320, easing = FastOutSlowInEasing)) { -it / 6 }
+        when {
+            reduced -> EnterTransition.None
+            isTabSwitch() -> fadeIn(tween(220))
+            else -> slideInHorizontally(tween(380, easing = push)) { -it / 4 } + fadeIn(tween(380), initialAlpha = 0.6f)
+        }
+    }
+    val popExit: AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition = {
+        when {
+            reduced -> ExitTransition.None
+            isTabSwitch() -> fadeOut(tween(160))
+            else -> slideOutHorizontally(tween(340, easing = push)) { it } + fadeOut(tween(340), targetAlpha = 0.9f)
+        }
     }
 
     val systemOnline = rememberOnline()
@@ -423,7 +447,7 @@ fun ParhlouApp(
         enterTransition = enter,
         exitTransition = exit,
         popEnterTransition = popEnter,
-        popExitTransition = exit,
+        popExitTransition = popExit,
     ) {
         composable(Routes.WELCOME) {
             WelcomeScreen(onStart = { nav.navigate(if (needsSignIn) Routes.SIGN_IN else Routes.ONBOARDING) })

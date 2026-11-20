@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.ui.components.appear
 import android.graphics.BitmapFactory
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
@@ -131,7 +132,7 @@ fun TestsScreen(
     var page by rememberSaveable(selectedSubject) { mutableStateOf("home") }
     androidx.activity.compose.BackHandler(enabled = page != "home") { page = "home" }
     val pageTitle = when (page) { "past" -> "Past papers"; "make" -> "Make my own test"; "more" -> "More papers"; else -> "Papers" }
-    ParhlouScreen(pageTitle, onBack = if (page != "home") ({ page = "home" }) else onBack) {
+    ParhlouScreen(pageTitle, onBack = if (page != "home") ({ page = "home" }) else onBack, largeTitle = page == "home" && onBack == null) {
         // One line of subject chips that scrolls sideways, so five subjects fit on any phone.
         if (page == "home" && subjects.size > 1) Row(horizontalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.fillMaxWidth().horizontalScroll(androidx.compose.foundation.rememberScrollState())) {
@@ -220,12 +221,12 @@ fun TestsScreen(
                 if (guess != null) pk.parhlou.student.ui.components.ActionCard("🔮", "Guess Paper 2027",
                     guessNote ?: "The questions most likely to come, in the board pattern",
                     enabled = guess.id in available, accent = pk.parhlou.student.ui.theme.LocalBrand.current.xp,
-                    modifier = Modifier.testTag("guess-paper")) { onOpen(guess.id) }
+                    modifier = Modifier.testTag("guess-paper").then(Modifier.appear(1))) { onOpen(guess.id) }
                 if (pastIds.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("📅", "Past papers",
-                    "${pastIds.size} real board papers, by board and year", modifier = Modifier.testTag("past-papers")) { page = "past" }
+                    "${pastIds.size} real board papers, by board and year", modifier = Modifier.testTag("past-papers").then(Modifier.appear(2))) { page = "past" }
                 if (onPractice != null && chapters.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("✏️", "Make my own test",
                     "Practice test: choose chapters and how long", accent = pk.parhlou.student.ui.theme.LocalBrand.current.success,
-                    modifier = Modifier.testTag("make-test")) { page = "make" }
+                    modifier = Modifier.testTag("make-test").then(Modifier.appear(3))) { page = "make" }
                 if (results.isNotEmpty() || mine.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Your results")
                     Column(Modifier.testTag("my-results"), verticalArrangement = Arrangement.spacedBy(8.dp)) {

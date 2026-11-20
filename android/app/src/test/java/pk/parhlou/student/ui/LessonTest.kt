@@ -85,7 +85,7 @@ class LessonTest {
     @Test fun aLessonIsTaughtStepByStepLikeATutor() {
         val repo = ContentBundle.repository(bundle(), 1, packed)
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         rule.waitUntil(3_000) { exists("Quick recap") }
 

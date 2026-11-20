@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.ui.components.appear
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -95,7 +96,7 @@ fun LeagueScreen(
         }
     }
 
-    ParhlouScreen("League") {
+    ParhlouScreen("League", largeTitle = true) {
         pk.parhlou.student.ui.components.PlayerCard(
             name = me?.firstName?.takeIf { it.isNotBlank() && it != "Learner" } ?: playerName,
             avatar = me?.avatar ?: "🦉",
@@ -105,7 +106,7 @@ fun LeagueScreen(
             onInvite = ::invite,
         )
         // Streak and quests: everyone, signed in or not.
-        Sheet(Modifier.testTag("streak-card")) {
+        Sheet(Modifier.testTag("streak-card").then(Modifier.appear(1))) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("🔥 ${rewards.streakDays}", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
                 Column(Modifier.padding(start = 12.dp).weight(1f)) {
@@ -115,7 +116,7 @@ fun LeagueScreen(
                 }
             }
         }
-        Sheet(Modifier.testTag("quests")) {
+        Sheet(Modifier.testTag("quests").then(Modifier.appear(2))) {
             Text("Today's quests", style = MaterialTheme.typography.titleLarge)
             quests.forEach { q ->
                 Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -168,7 +169,7 @@ fun LeagueScreen(
 
         // This week's league.
         board?.let { b ->
-            Sheet(Modifier.testTag("league-board")) {
+            Sheet(Modifier.testTag("league-board").then(Modifier.appear(3))) {
                 Text("${Social.LEAGUE_ICONS[b.league.coerceIn(0, 6)]} ${Social.LEAGUES[b.league.coerceIn(0, 6)]} League", style = MaterialTheme.typography.titleLarge)
                 Muted("${b.daysLeft} day${if (b.daysLeft == 1) "" else "s"} left · top 7 move up, bottom 5 move down")
                 b.rows.forEach { r ->

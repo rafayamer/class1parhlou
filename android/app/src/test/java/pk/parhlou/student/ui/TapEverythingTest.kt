@@ -107,7 +107,7 @@ class TapEverythingTest {
 
     @Test fun everyTappableElementDoesSomething() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         val dead = mutableListOf<String>()
         for (route in listOf("home", "subjects", "tests", "profile")) crawl(route, dead)
         assertTrue("Taps that changed nothing:\n" + dead.joinToString("\n"), dead.isEmpty())

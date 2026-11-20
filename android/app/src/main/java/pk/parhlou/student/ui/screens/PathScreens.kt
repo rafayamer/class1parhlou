@@ -87,9 +87,11 @@ fun todaysModule(subjects: List<Subject>, progress: ProgressStore, day: Long = j
 fun RewardBar(r: RewardSummary, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
     Row(modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).clickable(onClickLabel = "Open your progress", onClick = onClick).testTag("reward-bar"),
         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        Chip("🔥", "${r.streakDays}", if (r.streakDays == 1) "day streak" else "day streak", if (r.studiedToday) Flame else MaterialTheme.colorScheme.outline,
+        val streak = pk.parhlou.student.ui.components.countUp(r.streakDays)
+        val today = pk.parhlou.student.ui.components.countUp(r.xpToday)
+        Chip("🔥", "$streak", if (r.streakDays == 1) "day streak" else "day streak", if (r.studiedToday) Flame else MaterialTheme.colorScheme.outline,
             "${r.streakDays} day streak" + if (r.freezes > 0) ", ${r.freezes} streak freeze" + (if (r.freezes > 1) "s" else "") else "", Modifier.weight(1f))
-        Chip("⚡", "${r.xpToday}/${r.dailyGoalXp}", if (r.goalMet) "goal met!" else "XP today", Gold,
+        Chip("⚡", "$today/${r.dailyGoalXp}", if (r.goalMet) "goal met!" else "XP today", Gold,
             "${r.xpToday} of ${r.dailyGoalXp} XP today", Modifier.weight(1f))
         Chip("⭐", "Lv ${r.level}", "${r.toNextLevel} XP to go", MaterialTheme.colorScheme.primary, "Level ${r.level}", Modifier.weight(1f))
     }

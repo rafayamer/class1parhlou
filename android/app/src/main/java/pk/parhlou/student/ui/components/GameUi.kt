@@ -110,8 +110,8 @@ fun PlayerCard(name: String, avatar: String, rewards: RewardSummary, league: Str
             }
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-            StatPill("🔥", "${rewards.streakDays}", "day streak", Modifier.weight(1f))
-            StatPill("⚡", "${rewards.totalXp}", "total XP", Modifier.weight(1f))
+            StatPill("🔥", "${countUp(rewards.streakDays)}", "day streak", Modifier.weight(1f))
+            StatPill("⚡", "${countUp(rewards.totalXp, 1200)}", "total XP", Modifier.weight(1f))
             StatPill(if (league != null) "🏆" else "🏅", league ?: "$badgeCount", if (league != null) "league" else "badges", Modifier.weight(1f))
         }
         TextButton(onClick = onInvite, modifier = Modifier.heightIn(min = 44.dp).testTag("invite")) {

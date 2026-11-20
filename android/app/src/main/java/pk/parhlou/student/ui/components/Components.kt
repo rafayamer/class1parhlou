@@ -11,6 +11,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.unit.Dp
@@ -90,6 +91,11 @@ fun ParhlouScreen(
     bottomBar: (@Composable () -> Unit)? = null,
     /** When this value changes, the content scrolls to its end (new chat message). */
     scrollToEndKey: Any? = null,
+    /**
+     * Apple-style large title for the main tabs: a big bold title at the top of the page that hands over to the small
+     * centred title in the bar as the page scrolls.
+     */
+    largeTitle: Boolean = false,
     content: @Composable ColumnScope.() -> Unit,
 ) {
     val bottomSpace = LocalBottomBarSpace.current
@@ -101,7 +107,10 @@ fun ParhlouScreen(
     }
     Surface(color = MaterialTheme.colorScheme.background, contentColor = MaterialTheme.colorScheme.onBackground) {
         Column(Modifier.fillMaxSize()) {
-            if (title != null) TitleBar(title, onBack, scrolled = scroll.value > 0)
+            val big = largeTitle && title != null
+            val handover = with(density) { 48.dp.toPx() }
+            val barTitle = if (big) ((scroll.value - handover * 0.5f) / handover).coerceIn(0f, 1f) else 1f
+            if (title != null) TitleBar(title, onBack, scrolled = scroll.value > 0, titleAlpha = barTitle)
             // The page ends above the tab bar (it no longer scrolls underneath), so nothing is ever hidden behind it.
             val navBar = androidx.compose.foundation.layout.WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
             val navInset = if (bottomSpace > 0.dp) navBar else 0.dp
@@ -117,8 +126,12 @@ fun ParhlouScreen(
                         .padding(top = if (title != null) 8.dp else 12.dp, bottom = 20.dp + barHeight + endInset)
                         .appear(0),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
-                    content = content,
-                )
+                ) {
+                    // Decorative: screen readers read the bar's title, so the page title is announced once.
+                    if (big) Text(title!!, style = MaterialTheme.typography.headlineLarge, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                        modifier = Modifier.clearAndSetSemantics {}.graphicsLayer { alpha = 1f - barTitle })
+                    content()
+                }
                 if (bottomBar != null) {
                     Surface(
                         color = MaterialTheme.colorScheme.background,
@@ -135,7 +148,7 @@ fun ParhlouScreen(
 
 /** Title bar: back button on the left, the title centred, and a hairline that appears once the page scrolls. */
 @Composable
-fun TitleBar(title: String, onBack: (() -> Unit)?, scrolled: Boolean = false, actions: (@Composable () -> Unit)? = null) {
+fun TitleBar(title: String, onBack: (() -> Unit)?, scrolled: Boolean = false, actions: (@Composable () -> Unit)? = null, titleAlpha: Float = 1f) {
     Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.background).statusBarsPadding()) {
         Row(
             Modifier.fillMaxWidth().height(60.dp).padding(horizontal = 12.dp),
@@ -146,7 +159,7 @@ fun TitleBar(title: String, onBack: (() -> Unit)?, scrolled: Boolean = false, ac
             }
             Text(title, style = MaterialTheme.typography.titleLarge, maxLines = 1, textAlign = TextAlign.Center,
                 overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
-                modifier = Modifier.weight(1f).semantics { heading() })
+                modifier = Modifier.weight(1f).graphicsLayer { alpha = titleAlpha }.semantics { heading() })
             Box(Modifier.width(52.dp), contentAlignment = Alignment.CenterEnd) { actions?.invoke() }
         }
         val line by animateFloatAsState(if (scrolled) 1f else 0f, label = "titleLine")

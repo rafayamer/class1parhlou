@@ -463,7 +463,7 @@ fun ProfileScreen(
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
     var confirmClear by remember { mutableStateOf(false) }
-    ParhlouScreen("Profile") {
+    ParhlouScreen("Profile", largeTitle = true) {
         UpdateBanner()
         Sheet {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -586,7 +586,7 @@ fun SubjectsScreen(
     /** Opens Edit profile, where subjects are added and removed. */
     onEditSubjects: (() -> Unit)? = null,
 ) {
-    ParhlouScreen("Your books", onBack = onBack) {
+    ParhlouScreen("Your books", onBack = onBack, largeTitle = onBack == null) {
         val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
         if (subjects.isEmpty()) Muted("You haven't chosen any available subjects.")
         // Solutions live inside each book (its "Solutions" tab), so the list shows only the books.

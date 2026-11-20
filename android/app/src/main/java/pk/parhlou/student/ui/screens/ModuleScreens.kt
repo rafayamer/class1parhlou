@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import pk.parhlou.student.ui.components.appear
 import androidx.compose.material3.TextButton
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.ui.draw.clip
@@ -263,12 +264,13 @@ private fun VideoRow(title: String, channel: String, onClick: () -> Unit) {
 
 @Composable
 private fun SectionStep(icon: String, title: String, subtitle: String, status: StepStatus, tag: String, onClick: () -> Unit) {
+    val order = remember(tag) { listOf("step-lesson", "step-practice", "step-solutions", "step-write", "step-improve").indexOf(tag) + 2 }
     val brand = pk.parhlou.student.ui.theme.LocalBrand.current
     val accent = when (status) { StepStatus.DONE -> brand.success; StepStatus.NEXT -> MaterialTheme.colorScheme.primary; StepStatus.TODO -> brand.line }
     Surface(
         onClick = onClick, shape = RoundedCornerShape(18.dp), color = MaterialTheme.colorScheme.surface,
         border = androidx.compose.foundation.BorderStroke(2.dp, accent),
-        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp).testTag(tag),
+        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp).testTag(tag).then(Modifier.appear(order)),
     ) {
         Row(Modifier.padding(horizontal = 14.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(44.dp).clip(CircleShape).background(accent.copy(alpha = 0.15f)), contentAlignment = Alignment.Center) {

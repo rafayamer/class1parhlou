@@ -338,11 +338,15 @@ private fun OptionCard(text: String, selected: Boolean, state: Boolean?, tag: St
     }
     val shake = remember { Animatable(0f) }
     val reduced = LocalReducedMotion.current
+    val pop = remember { Animatable(1f) }
     LaunchedEffect(state) {
         if (state == false && !reduced) for (x in listOf(14f, -12f, 9f, -6f, 3f, 0f)) shake.animateTo(x, tween(45))
+        // A right answer swells and springs back, like a satisfying click.
+        if (state == true && !reduced) { pop.snapTo(1.06f); pop.animateTo(1f, spring(dampingRatio = 0.35f, stiffness = Spring.StiffnessMedium)) }
     }
     Chunky(
-        modifier = modifier.fillMaxWidth().heightIn(min = 60.dp).graphicsLayer { translationX = shake.value * density }.testTag(tag),
+        modifier = modifier.fillMaxWidth().heightIn(min = 60.dp)
+            .graphicsLayer { translationX = shake.value * density; scaleX = pop.value; scaleY = pop.value }.testTag(tag),
         colors = colors, shape = RoundedCornerShape(16.dp), onClick = onClick, sound = Sfx.SELECT,
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 14.dp), contentAlignment = Alignment.CenterStart,
     ) {

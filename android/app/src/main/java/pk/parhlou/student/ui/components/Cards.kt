@@ -81,3 +81,17 @@ fun SectionHeader(title: String, modifier: Modifier = Modifier, action: String? 
             modifier = Modifier.heightIn(min = 44.dp).then(if (actionTag != null) Modifier.testTag(actionTag) else Modifier)) { Text(action) }
     }
 }
+
+/**
+ * A number that rolls up to its value (from 0 the first time, then from the old value when it changes), the way
+ * scores tick up in a game. Shows the value at once when the phone asks for less motion.
+ */
+@Composable
+fun countUp(target: Int, durationMs: Int = 900): Int {
+    if (LocalReducedMotion.current) return target
+    val a = remember { androidx.compose.animation.core.Animatable(0f) }
+    androidx.compose.runtime.LaunchedEffect(target) {
+        a.animateTo(target.toFloat(), androidx.compose.animation.core.tween(durationMs, easing = androidx.compose.animation.core.FastOutSlowInEasing))
+    }
+    return a.value.toInt()
+}

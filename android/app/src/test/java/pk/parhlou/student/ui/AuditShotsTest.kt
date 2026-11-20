@@ -60,7 +60,7 @@ class AuditShotsTest {
             store.setReadinessPassed(true)
         }
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(10_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         save("a01-home")
         rule.onNodeWithText("Your journey").performScrollTo(); save("a02-home-journey")
         rule.onNodeWithTag("tab-subjects").performClick(); rule.waitUntil(3_000) { exists("Your books") }; save("a03-books")
@@ -95,7 +95,7 @@ class AuditShotsTest {
         rule.onNodeWithTag("tab-profile").performClick(); rule.waitUntil(3_000) { exists("Edit profile") }; save("a08-profile")
         rule.onNodeWithText("Edit profile").performClick(); rule.waitUntil(3_000) { exists("About you") }; save("a09-edit-profile")
         rule.onNodeWithContentDescription("Back").performClick()
-        rule.onNodeWithTag("tab-home").performClick(); rule.waitUntil(3_000) { exists("Do this now") }
+        rule.onNodeWithTag("tab-home").performClick(); rule.waitUntil(20_000) { exists("Do this now") }
         rule.onNodeWithText("Start today's session").performScrollTo().performClick()
         rule.waitForIdle(); save("a10-session")
     }

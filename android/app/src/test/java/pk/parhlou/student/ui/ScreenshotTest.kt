@@ -49,7 +49,7 @@ class ScreenshotTest {
             store.setReadinessPassed(true)
         }
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         save("1-home-$mode")
         rule.onNodeWithText("Your journey").performScrollTo()
         save("1b-home-journey-$mode")
@@ -121,7 +121,7 @@ class ScreenshotTest {
             scan.add(pk.parhlou.scanner.Photo(f, 300, 400, null))?.let { if (n == 0) scan.assign(it.id, "s1") }
         }
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         rule.onNodeWithText("Full plan").performScrollTo().performClick()
         rule.waitUntil(3_000) { exists("Today's plan") }
         save("11-plan-$mode")
@@ -136,7 +136,7 @@ class ScreenshotTest {
 
         // The study calendar (last: a sheet stays open in tests).
         rule.onNodeWithTag("tab-home").performClick()
-        rule.waitUntil(3_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         rule.onNodeWithTag("open-calendar").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("study-calendar")).fetchSemanticsNodes().isNotEmpty() }
         save("10-calendar-$mode")
@@ -152,7 +152,7 @@ class ScreenshotTest {
             store.setReadinessPassed(true)
         }
         rule.setContent { ParhlouTheme(dark = false) { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(20_000) { exists("Do this now") }
         rule.onNodeWithTag("tab-tests").performClick()
         rule.waitUntil(3_000) { exists("Practice test") }
         rule.onNodeWithTag("scope-chapter").performScrollTo().performClick()

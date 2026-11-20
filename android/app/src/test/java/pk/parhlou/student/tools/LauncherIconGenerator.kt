@@ -46,24 +46,21 @@ class LauncherIconGenerator {
         val densities = mapOf("mdpi" to 1f, "hdpi" to 1.5f, "xhdpi" to 2f, "xxhdpi" to 3f, "xxxhdpi" to 4f)
         for ((name, d) in densities) {
             val dir = File(out!!, "mipmap-$name").apply { mkdirs() }
-            // Legacy icon (before Android 8): a teal rounded square with a sun ring, Ustaad inside.
+            // Legacy icon (before Android 8): the brand gradient in a rounded square, Ustaad in the middle.
             val legacy = (48 * d).toInt()
             val l = render(legacy) {
-                drawRoundRect(teal, Offset.Zero, size, CornerRadius(size.width * 0.22f))
-                drawCircle(sun, size.width * 0.40f, Offset(size.width / 2, size.width / 2))
-                drawCircle(Color.White, size.width * 0.36f, Offset(size.width / 2, size.width / 2))
-                val s = size.width * 0.78f
-                translate(size.width * 0.11f, size.width * 0.12f) { scale(1f, Offset.Zero) { drawUstaad(s, UstadMood.HAPPY, waistcoat = teal) } }
+                drawRoundRect(androidx.compose.ui.graphics.Brush.linearGradient(listOf(Color(0xFF0B7A7A), Color(0xFF4F53D6)), Offset.Zero, Offset(size.width, size.height)),
+                    Offset.Zero, size, CornerRadius(size.width * 0.24f))
+                val s = size.width * 0.80f
+                translate(size.width * 0.10f, size.width * 0.09f) { drawUstaad(s, UstadMood.HAPPY, waistcoat = Color(0xFF14B8A6)) }
             }
             File(dir, "ic_launcher.png").outputStream().use { l.compress(Bitmap.CompressFormat.PNG, 100, it) }
             File(dir, "ic_launcher_round.png").outputStream().use { l.compress(Bitmap.CompressFormat.PNG, 100, it) }
-            // Adaptive foreground (108 dp, the face inside the 66 dp safe zone), over a teal background layer.
+            // Adaptive foreground (108 dp): Ustaad inside the 66 dp safe zone, over the gradient background drawable.
             val fg = (108 * d).toInt()
             val f = render(fg) {
-                drawCircle(sun, size.width * 0.31f, Offset(size.width / 2, size.width / 2))
-                drawCircle(Color.White, size.width * 0.285f, Offset(size.width / 2, size.width / 2))
-                val s = size.width * 0.58f
-                translate(size.width * 0.21f, size.width * 0.20f) { drawUstaad(s, UstadMood.HAPPY, waistcoat = teal) }
+                val s = size.width * 0.62f
+                translate(size.width * 0.19f, size.width * 0.18f) { drawUstaad(s, UstadMood.HAPPY, waistcoat = Color(0xFF14B8A6)) }
             }
             File(dir, "ic_launcher_foreground.png").outputStream().use { f.compress(Bitmap.CompressFormat.PNG, 100, it) }
         }

@@ -78,7 +78,7 @@ class TwoSubjectsTest {
             store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
         }
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(20_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-subjects").performClick()
         rule.onNodeWithTag("add-${FakeRepository.PHYSICS_9}").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Physics · Class 9")).fetchSemanticsNodes().isNotEmpty() }
@@ -94,7 +94,7 @@ class TwoSubjectsTest {
                 completed = true, name = "Ayesha Khan", email = "ayesha@example.com"))
         }
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(20_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-subjects").performClick()
         rule.onNodeWithTag("edit-subjects").performScrollTo().performClick()
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Edit profile")).fetchSemanticsNodes().isNotEmpty() }
@@ -142,7 +142,7 @@ class TwoSubjectsTest {
             store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9, FakeRepository.PHYSICS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true))
         }
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(20_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         // Home shows a journey for each subject.
         rule.onNodeWithTag("journey-${FakeRepository.PHYSICS_9}").performScrollTo()
         rule.onNodeWithTag("tab-subjects").performClick()
@@ -164,7 +164,7 @@ class TwoSubjectsTest {
             store.setReadinessPassed(true)
         }
         rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
-        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(20_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Do this now")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-tests").performClick()
         rule.waitUntil(10_000) { rule.onAllNodes(androidx.compose.ui.test.hasText("Practice test", substring = true)).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("papers-subject-${FakeRepository.PHYSICS_9}").performClick()

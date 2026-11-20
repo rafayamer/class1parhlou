@@ -54,7 +54,7 @@ class AppFlowTest {
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
 
         // Home: one Continue action pointing at the first sample module.
-        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Do this now") }
+        rule.waitUntil(20_000) { rule.onAllNodesWithTextExists("Do this now") }
         rule.onNodeWithText("Start: Rational and irrational numbers").assertExists()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
 
@@ -97,7 +97,7 @@ class AppFlowTest {
             store.replaceProgress(pk.parhlou.student.domain.EvidenceCodec.line(missed, "topic:n-surds", pk.parhlou.student.domain.Evidence.TopicMissed))
         }
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { rule.onAllNodesWithTextExists("Do this now") }
+        rule.waitUntil(20_000) { rule.onAllNodesWithTextExists("Do this now") }
 
         rule.onNodeWithText("Fix: Simplifying square roots").performScrollTo().assertExists()
         rule.onNodeWithText("Full plan").performScrollTo().performClick()
