@@ -480,7 +480,7 @@ private fun VideoCards(a: UstaadAnswer) {
     val scope = rememberCoroutineScope()
     var asked by remember(a) { mutableStateOf<List<LessonVideo>?>(null) }
     var looking by remember(a) { mutableStateOf(false) }
-    fun open(url: String) = runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+    fun open(url: String) = pk.parhlou.student.ui.Links.open(context, url)
     val shown = a.videos.ifEmpty { asked.orEmpty() }
     val topic = a.topic.substringAfter("· ").ifBlank { a.questionAsRead.take(80) }
     if (shown.isEmpty() && a.videoQuery.isBlank() && a.kind == "SOLUTION" && topic.isNotBlank() && asked == null) {
@@ -489,7 +489,7 @@ private fun VideoCards(a: UstaadAnswer) {
             scope.launch {
                 val found = find?.invoke(topic)
                 looking = false
-                if (found.isNullOrEmpty()) open("https://www.youtube.com/results?search_query=" + Uri.encode("class 9 maths $topic")) else asked = found
+                if (found.isNullOrEmpty()) open("https://www.youtube.com/results?search_query=" + Uri.encode("class 9 $topic")) else asked = found
             }
         }, enabled = !looking, modifier = Modifier.heightIn(min = 48.dp).testTag("video-ask")) {
             Icon(Icons.Filled.PlayCircle, null, modifier = Modifier.size(20.dp))
@@ -499,7 +499,7 @@ private fun VideoCards(a: UstaadAnswer) {
     if (shown.isNotEmpty()) {
         Text("Watch a lesson on this", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
         shown.forEach { v ->
-            pk.parhlou.student.ui.components.TapCard(onClick = { open("https://www.youtube.com/watch?v=${v.id}") }, modifier = Modifier.fillMaxWidth().testTag("video-${v.id}"), shape = RoundedCornerShape(14.dp)) {
+            pk.parhlou.student.ui.components.TapCard(onClick = { pk.parhlou.student.ui.Links.youtubeId(v.id)?.let { open("https://www.youtube.com/watch?v=$it") } }, modifier = Modifier.fillMaxWidth().testTag("video-${v.id}"), shape = RoundedCornerShape(14.dp)) {
                 Row(Modifier.padding(12.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                     Icon(Icons.Filled.PlayCircle, null, tint = Color(0xFFE53935), modifier = Modifier.size(36.dp))
                     Column(Modifier.weight(1f)) {

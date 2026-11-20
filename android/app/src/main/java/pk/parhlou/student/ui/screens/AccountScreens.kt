@@ -61,10 +61,7 @@ fun SignInScreen(
                 onName(name.trim())
                 scope.launch {
                     val url = auth.googleSignInUrl()
-                    runCatching {
-                        context.startActivity(android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse(url))
-                            .addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
-                    }.onFailure { message = "No browser found to open Google sign-in." }
+                    if (!pk.parhlou.student.ui.Links.open(context, url)) message = "No browser found to open Google sign-in."
                 }
             })
             if (GOOGLE_SIGN_IN) Muted("or with your email")

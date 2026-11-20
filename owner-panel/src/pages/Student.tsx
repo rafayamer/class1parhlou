@@ -33,7 +33,9 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
   if (error) return <><button onClick={onBack}>← Back</button><p className="error">{error}</p></>;
   if (!p) return <p className="muted">Loading…</p>;
   const name = p.profile?.display_name || "This student";
-  const parent = (p.profile?.guardian_email as string | undefined) || (p.settings?.["guardianEmail"] as string | undefined) || "";
+  // The parent's email comes from what the student typed: use it only if it is a plain email address (no extra mail headers).
+  const typed = String((p.profile?.guardian_email as string | undefined) || (p.settings?.["guardianEmail"] as string | undefined) || "").trim();
+  const parent = /^[^\s@?&#<>"']+@[^\s@?&#<>"']+\.[A-Za-z]{2,}$/.test(typed) ? typed : "";
   const now = Date.now();
   const balance = p.credits.reduce((s, c) => {
     if (c.kind === "grant") return c.expires && Date.parse(c.expires) > now ? s + c.amount : s;

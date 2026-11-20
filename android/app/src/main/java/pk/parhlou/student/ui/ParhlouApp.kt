@@ -195,7 +195,7 @@ fun ParhlouApp(
     ads: pk.parhlou.student.ads.Ads = pk.parhlou.student.ads.NoAds,
 ) {
     val context = LocalContext.current
-    remember { initializePrismal(context) } // glass shaders must be loaded before the first frame
+    remember { initializePrismal(context); true } // glass shaders must be loaded before the first frame
     val scope = rememberCoroutineScope()
     val progress = remember { ProgressStore(store, scope) }
     val progressLoaded by produceState(false) { progress.load(); value = true }

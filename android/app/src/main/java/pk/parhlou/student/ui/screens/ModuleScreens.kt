@@ -153,16 +153,14 @@ private fun LearnStage(
             Muted("No teacher video has been linked and checked for this module yet. You can search YouTube for a lesson, or study from your book in step 3.")
             SecondaryButton("Find a lesson on YouTube", onClick = {
                 val query = Uri.encode("$courseLabel ${module.title}")
-                runCatching {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=$query")))
-                }
+                pk.parhlou.student.ui.Links.open(context, "https://www.youtube.com/results?search_query=$query")
             })
             Muted("Opens a YouTube search. Parhlou hasn't checked these videos and doesn't copy them.")
         } else {
             Text("${video.teacher} · ${video.channel}", style = MaterialTheme.typography.bodyLarge)
             Muted("Opens in YouTube. Parhlou does not copy or download videos.")
             SecondaryButton("Watch on YouTube", onClick = {
-                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(video.url)))
+                pk.parhlou.student.ui.Links.open(context, video.url)
             })
             SecondaryButton("I studied this video", onClick = { progress.add(module.id, Evidence.VideoStudyConfirmed) })
             Muted("This records that you studied. It doesn't count as mastering the topic.")

@@ -63,6 +63,8 @@ android {
         }
     }
     compileOptions {
+        // java.time (dates, streaks, the calendar) only exists from Android 8; this adds it for Android 7.x phones.
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -95,6 +97,7 @@ kotlin { compilerOptions { jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarg
 
 dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2026.06.01")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
     implementation(composeBom)
     implementation(project(":prismal"))
     implementation(project(":scanner"))
