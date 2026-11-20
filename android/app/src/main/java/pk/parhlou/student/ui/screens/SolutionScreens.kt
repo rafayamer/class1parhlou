@@ -237,7 +237,7 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
         s.figures.forEach { pk.parhlou.student.ui.components.BookFigure(it) }
         if (!s.checked) {
             Text("Answer (from your textbook): ${s.bookAnswer.ifBlank { s.answer }.ifBlank { "see your textbook" }}", style = MaterialTheme.typography.bodyLarge)
-            Muted("A step-by-step solution for this question is still being checked. Ask the tutor if you're stuck.")
+            Muted("A step-by-step solution for this question is still being checked. Ask Ustaad if you're stuck.")
             return@Sheet
         }
         if (s.accept.isNotEmpty() && verdict != true) {
@@ -270,7 +270,7 @@ private fun SolutionCard(s: BookSolution, key: String, onAskTutor: ((String) -> 
         if (onAskTutor != null) TextButton(
             onClick = { onAskTutor(if (steps in 1..s.steps.size) "Explain this step of ${s.source}: ${s.steps[steps - 1]}" else "Help me start ${s.source}: ${s.question}") },
             modifier = Modifier.heightIn(min = 48.dp),
-        ) { Text(if (steps > 0) "Ask the tutor about this step" else "Ask the tutor for a hint") }
+        ) { Text(if (steps > 0) "Ask Ustaad about this step" else "Ask Ustaad for a hint") }
         Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
             if (steps < s.steps.size) {
                 TextButton(onClick = { steps++ }, modifier = Modifier.heightIn(min = 48.dp)) { Text(if (steps == 0) "Show first step" else "Next step") }

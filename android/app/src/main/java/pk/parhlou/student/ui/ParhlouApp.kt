@@ -39,6 +39,7 @@ import pk.parhlou.student.ui.screens.ExamScreen
 import pk.parhlou.student.ui.screens.HomeScreen
 import pk.parhlou.student.ui.screens.JourneyScreen
 import pk.parhlou.student.ui.screens.ModuleScreen
+import pk.parhlou.student.ui.screens.LessonPlayer
 import pk.parhlou.student.ui.screens.OnboardingScreen
 import pk.parhlou.student.ui.screens.PlaceholderScreen
 import pk.parhlou.student.ui.screens.ReadinessScreen
@@ -157,6 +158,8 @@ object Routes {
     const val MY_USTAAD = "my-ustaad"
     /** A guided session; module "today" = today's pick. */
     const val SESSION = "session/{module}?min={min}"
+    /** A section's lesson, full screen in the same player as practice. */
+    const val LESSON = "lesson/{module}"
     const val SOLUTION = "solution/{module}/{index}"
 }
 
@@ -325,7 +328,7 @@ fun ParhlouApp(
     fun startStudy(moduleId: String?, minutes: Int) {
         val m = moduleId?.let { repo.module(it) } ?: todaysModule(subjects, progress)
         val taught = m == null || m.lesson == null || progress.evidence(m.id).any { it == Evidence.LessonCompleted }
-        if (m != null && !taught) nav.navigate("module/${m.id}") else nav.navigate("session/${moduleId ?: "today"}?min=$minutes")
+        if (m != null && !taught) nav.navigate("lesson/${m.id}") else nav.navigate("session/${moduleId ?: "today"}?min=$minutes")
     }
     /** Abandons a running paper: everything for it is cleared, no try is used, Do Not Disturb ends and Ask Ustaad unlocks. */
     fun quitPaper(id: String, then: () -> Unit = {}) {
@@ -380,7 +383,8 @@ fun ParhlouApp(
     fun weakTopics() = Weakness.topics(progress.history(), { noteTitles[it] }, System.currentTimeMillis())
     fun openPlanTask(t: PlanTask) = when (t.kind) {
         PlanKind.REPAIR -> openTutor(TutorSeed(noteId = t.target))
-        PlanKind.REVIEW, PlanKind.LEARN -> nav.navigate("module/${t.target}")
+        // Straight into the player: the lesson if the section isn't taught yet, else practice.
+        PlanKind.REVIEW, PlanKind.LEARN -> startStudy(t.target, state.minutesPerDay)
         PlanKind.PAPER -> nav.navigate("assessment/${t.target}")
         PlanKind.READINESS -> nav.navigate(Routes.READINESS)
     }
@@ -681,9 +685,10 @@ fun ParhlouApp(
         composable(Routes.SUBJECT) { entry ->
             val subject = repo.subject(entry.arguments?.getString("id").orEmpty())
             if (subject == null) Missing(nav) else
+                // A step on the path opens that section's page: its lesson, practice and the rest, with one "Continue".
                 SubjectScreen(subject, progress, onOpenModule = { nav.navigate("module/$it") }, onBack = nav.back(),
                     onOpenKit = { nav.navigate("kit/$it") },
-                    onStartSession = { startStudy(it, state.minutesPerDay) },
+                    onStartSession = { nav.navigate("module/$it") },
                     onSolutions = { nav.navigate("solutions?subject=${subject.id}") },
                     onOpenPractical = { nav.navigate("practical/$it") })
         }
@@ -715,6 +720,22 @@ fun ParhlouApp(
                 module = module, quiz = repo.moduleQuiz(id), progress = progress, store = store, ai = ai,
                 courseLabel = "class ${subject?.grade ?: ""} ${subject?.name ?: ""} Punjab board",
                 onAskTutor = { openTutor(it) }, onBack = nav.back(),
+                onOpenLesson = { nav.navigate("lesson/$it") },
+                onPractice = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
+            )
+        }
+        composable(Routes.LESSON) { entry ->
+            val id = entry.arguments?.getString("module").orEmpty()
+            val module = repo.module(id)
+            val lesson = module?.lesson
+            val sound by store.soundOn.collectAsState(initial = true)
+            if (module == null || lesson == null) Missing(nav) else LessonPlayer(
+                lesson = lesson, moduleId = module.id, title = module.title,
+                soundOn = sound, onToggleSound = { scope.launch { store.setSound(!sound) } },
+                onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
+                onFinished = { if (progress.evidence(module.id).none { it == Evidence.LessonCompleted }) progress.add(module.id, Evidence.LessonCompleted) },
+                onPractice = { nav.navigate("session/${module.id}?min=${state.minutesPerDay}") { popUpTo(Routes.LESSON) { inclusive = true } } },
+                onClose = { nav.popBackStack() },
             )
         }
         composable(Routes.TESTS) { WithTabBarSpace {

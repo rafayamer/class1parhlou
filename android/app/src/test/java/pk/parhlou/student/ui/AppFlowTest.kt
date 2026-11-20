@@ -58,11 +58,8 @@ class AppFlowTest {
         rule.onNodeWithText("Start: Rational and irrational numbers").assertExists()
         rule.onNodeWithText("Continue").performScrollTo().performClick()
 
-        // Module: five-stage rail, honest empty video state, quiz with rationales.
-        rule.onNodeWithText("2 Quiz").performScrollTo().performClick()
-        rule.onNodeWithText("Which of these numbers is irrational?").assertExists()
-        rule.onNodeWithText("√2").performScrollTo().performClick()
-        rule.onNodeWithText("Correct.").assertExists()
+        // Continue goes straight into the step-by-step player (the lesson, or practice once it's taught).
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("player-progress")).fetchSemanticsNodes().isNotEmpty() }
     }
 
     @Test

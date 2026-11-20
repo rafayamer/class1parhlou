@@ -90,33 +90,37 @@ class LessonTest {
         rule.waitUntil(3_000) { exists("Quick recap") }
 
         rule.onNodeWithText("Show answer").performClick()
-        rule.onNodeWithText("Start today's lesson").performScrollTo().performClick()
+        rule.onNodeWithTag("player-progress").assertExists()
+        rule.onNodeWithText("Start the lesson").performClick()
         rule.onNodeWithText("Idea 1 of 2").assertExists()
-        rule.onNodeWithText("Next idea").performScrollTo().performClick()
+        rule.onNodeWithText("Next idea").performClick()
         rule.onNodeWithText("What an irrational number is").assertExists()
-        rule.onNodeWithText("Show me an example").performScrollTo().performClick()
+        rule.onNodeWithText("Show me an example").performClick()
 
         // The worked example is revealed one step at a time, each with its reason.
         rule.onNodeWithText("0.25 = 25/100").assertExists()
         assertTrue(!exists("25/100 = 1/4"))
         rule.onNodeWithText("Why?").performScrollTo().performClick()
         rule.onNodeWithText("Two decimal places means hundredths.").assertExists()
-        rule.onNodeWithText("Next step").performScrollTo().performClick()
+        rule.onNodeWithText("Next step").performClick()
         rule.onNodeWithText("25/100 = 1/4").assertExists()
-        rule.onNodeWithText("Now your turn").performScrollTo().performClick()
+        rule.onNodeWithText("Now your turn").performClick()
 
         // A wrong answer gets a hint first; the right one is accepted.
         rule.onNodeWithTag("your-turn-answer").performTextInput("75/100")
-        rule.onNodeWithText("Check my answer").performScrollTo().performClick()
+        rule.onNodeWithTag("lesson-check").performClick()
         rule.onNodeWithText("Not yet. Hint: Start with 75/100.").assertExists()
         rule.onNodeWithTag("your-turn-answer").performTextReplacement("3/4")
-        rule.onNodeWithText("Check my answer").performScrollTo().performClick()
+        rule.onNodeWithTag("lesson-check").performClick()
         rule.onNodeWithText("Correct!").assertExists()
-        rule.onNodeWithText("Exam tips").performScrollTo().performClick()
+        rule.onNodeWithText("Exam tips").performClick()
         rule.onNodeWithText("Forgetting to reduce to lowest terms.", substring = true).assertExists()
-        rule.onNodeWithText("Finish lesson: go to the quiz").performScrollTo().performClick()
+        rule.onNodeWithTag("lesson-finish").performClick()
 
-        rule.waitUntil(3_000) { exists("Which of these numbers is irrational?") }
+        // The lesson ends with XP and goes straight on to practice, in the same player.
+        rule.waitUntil(3_000) { exists("Lesson complete") }
+        rule.onNodeWithTag("lesson-practice").performClick()
+        rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("session-check")).fetchSemanticsNodes().isNotEmpty() }
         val log = runBlocking { store.progressLog() }
         assertTrue(log, log.contains("|m-1-1|L"))
     }

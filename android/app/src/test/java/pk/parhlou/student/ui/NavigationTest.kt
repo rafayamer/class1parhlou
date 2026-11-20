@@ -121,7 +121,11 @@ class NavigationTest {
         for ((button, opens) in checks) {
             tapAboveBar(button)
             rule.waitUntil(3_000) { !onHome() && exists(opens) }
-            rule.onNodeWithContentDescription("Back").performTouchInput { click() }
+            // Pages go back with the arrow; the lesson and practice player closes with its X.
+            val way = listOf("Back", "Close lesson", "Close session").first {
+                rule.onAllNodes(androidx.compose.ui.test.hasContentDescription(it)).fetchSemanticsNodes().isNotEmpty()
+            }
+            rule.onNodeWithContentDescription(way).performTouchInput { click() }
             rule.waitUntil(3_000) { onHome() }
         }
     }

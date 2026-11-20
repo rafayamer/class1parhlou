@@ -111,7 +111,7 @@ class SolutionsFinderTest {
         rule.setContent { ParhlouTheme { SolutionDetailScreen(module, 1, onAskTutor = { asked = it }, onBack = {}) } }
         rule.onNodeWithText("Show first step").performScrollTo().performClick()
         rule.onAllNodesWithText("Write the given values.", substring = true).onFirst().assertExists()
-        rule.onNodeWithText("Ask the tutor about this step").performScrollTo().performClick()
+        rule.onNodeWithText("Ask Ustaad about this step").performScrollTo().performClick()
         assertEquals(true, asked?.contains("Write the given values."))
     }
 }

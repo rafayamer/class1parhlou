@@ -1,5 +1,16 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.material3.TextButton
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.text.font.FontWeight
+import pk.parhlou.student.ui.components.ChunkyButton
+import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.background
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.horizontalScroll
@@ -63,8 +74,13 @@ import pk.parhlou.student.ui.components.SecondaryButton
 import pk.parhlou.student.ui.components.Sheet
 import pk.parhlou.student.ui.components.StatusPill
 
-enum class Stage(val label: String) { LEARN("1 Learn"), UNDERSTAND("2 Quiz"), READ("3 Solutions"), WRITE("4 Write"), IMPROVE("5 Improve") }
+/** The parts of a section that open inside its page (the lesson and practice open full screen). */
+enum class Stage(val label: String) { READ("Book solutions"), WRITE("Write answers"), IMPROVE("Improve") }
 
+/**
+ * A section's page: how well it's known (a mastery ring), one "Continue" for the next step, and every step as a card:
+ * the lesson and practice open in the full-screen player; book solutions, written answers and improving open here.
+ */
 @Composable
 fun ModuleScreen(
     module: Module,
@@ -76,97 +92,143 @@ fun ModuleScreen(
     courseLabel: String,
     onAskTutor: (TutorSeed) -> Unit,
     onBack: () -> Unit,
+    onOpenLesson: (String) -> Unit = {},
+    onPractice: (String) -> Unit = {},
 ) {
-    var current by rememberSaveable { mutableStateOf(Stage.LEARN) }
+    var open by rememberSaveable { mutableStateOf<Stage?>(null) }
     LaunchedEffect(module.id) {
         if (progress.evidence(module.id).isEmpty()) progress.add(module.id, Evidence.ModuleOpened)
     }
+    androidx.activity.compose.BackHandler(enabled = open != null) { open = null }
 
-    ParhlouScreen(module.title, onBack = onBack) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            SampleBadge()
-            StatusPill(progress.state(module.id).label, warning = false)
+    ParhlouScreen(module.title, onBack = { if (open != null) open = null else onBack() }) {
+        val stage = open
+        if (stage == null) {
+            SectionHub(module, quiz.isNotEmpty(), progress, courseLabel,
+                onLesson = { onOpenLesson(module.id) }, onPractice = { onPractice(module.id) }, onOpen = { open = it },
+                onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, question = "Help me with ${module.title}")) })
+            return@ParhlouScreen
         }
-        // The five-stage rail (PRD §7). Every stage can be reopened; evidence is never overwritten.
-        Row(
-            Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            Stage.entries.forEach { s ->
-                FilterChip(
-                    selected = current == s, onClick = { current = s }, label = { Text(s.label) },
-                    modifier = Modifier.heightIn(min = 48.dp),
-                )
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            TextButton(onClick = { open = null }, modifier = Modifier.heightIn(min = 44.dp).testTag("all-steps")) { Text("← All steps") }
+            Spacer(Modifier.weight(1f))
+            Text(stage.label, style = MaterialTheme.typography.titleMedium)
+        }
+        AnimatedContent(targetState = stage, transitionSpec = rememberStepTransition(), label = "stage") { s ->
+            Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                when (s) {
+                    Stage.READ -> ReadStage(module, progress) { open = if (module.writtenQuestions.isNotEmpty()) Stage.WRITE else null }
+                    Stage.WRITE -> WriteStage(module, progress, store, ai) { open = Stage.IMPROVE }
+                    Stage.IMPROVE -> ImproveStage(
+                        module, progress, store, ai,
+                        onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, noteId = module.writtenQuestions.firstOrNull()?.noteId)) },
+                        onRetryQuiz = { onPractice(module.id) },
+                    )
+                }
             }
-        }
-        AnimatedContent(targetState = current, transitionSpec = rememberStepTransition(), label = "stage") { stage ->
-        Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        when (stage) {
-            Stage.LEARN -> LearnStage(
-                module, progress, courseLabel,
-                onAskTutor = { q -> onAskTutor(TutorSeed(moduleId = module.id, question = q)) },
-            ) { current = Stage.UNDERSTAND }
-            Stage.UNDERSTAND -> QuizContent(
-                questions = quiz,
-                passPercent = null,
-                onFinished = { summary -> progress.add(module.id, Evidence.QuizCompleted(summary.firstTryPercent)) },
-                onNext = { current = Stage.READ },
-                onAskTutor = { q, chosen -> onAskTutor(TutorSeed(moduleId = module.id, mcq = q, chosen = chosen)) },
-                onAnswered = { q, correct, attempt ->
-                    val note = q.noteId
-                    if (note != null && attempt == 1) progress.add(TOPIC_PREFIX + note, if (correct) Evidence.TopicCorrect else Evidence.TopicMissed)
-                },
-            )
-            Stage.READ -> ReadStage(module, progress) { current = Stage.WRITE }
-            Stage.WRITE -> WriteStage(module, progress, store, ai) { current = Stage.IMPROVE }
-            Stage.IMPROVE -> ImproveStage(
-                module, progress, store, ai,
-                onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, noteId = module.writtenQuestions.firstOrNull()?.noteId)) },
-                onRetryQuiz = { current = Stage.UNDERSTAND },
-            )
-        }
-        }
         }
     }
 }
 
+private enum class StepStatus { DONE, NEXT, TODO }
+
 @Composable
-private fun LearnStage(
+private fun SectionHub(
     module: Module,
+    hasPractice: Boolean,
     progress: ProgressStore,
     courseLabel: String,
-    onAskTutor: (String) -> Unit,
-    onNext: () -> Unit,
+    onLesson: () -> Unit,
+    onPractice: () -> Unit,
+    onOpen: (Stage) -> Unit,
+    onAskTutor: () -> Unit,
 ) {
     val context = LocalContext.current
-    module.lesson?.let { lesson ->
-        TutorLesson(lesson, module.id, onAskTutor = onAskTutor, onFinished = {
-            progress.add(module.id, Evidence.LessonCompleted)
-            onNext()
-        })
-        Text("Also helpful", style = MaterialTheme.typography.titleMedium)
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    val ev = progress.evidence(module.id)
+    val level = pk.parhlou.student.domain.Rewards.sectionLevel(ev)
+    val taught = module.lesson == null || Evidence.LessonCompleted in ev
+    val quizzes = ev.filterIsInstance<Evidence.QuizCompleted>()
+    val practised = quizzes.isNotEmpty()
+    val wrote = Evidence.WrittenSubmitted in ev
+    val read = Evidence.ReadingChecked in ev
+    // The one thing to do next.
+    val next: Pair<String, () -> Unit> = when {
+        !taught -> "Start the lesson" to onLesson
+        hasPractice && !practised -> "Practise this section" to onPractice
+        module.writtenQuestions.isNotEmpty() && !wrote -> "Write a board answer" to { onOpen(Stage.WRITE) }
+        else -> "Practise again" to onPractice
     }
-    Sheet {
-        Text("Teacher video", style = MaterialTheme.typography.titleMedium)
-        val video = module.video
-        if (video == null) {
-            Muted("No teacher video has been linked and checked for this module yet. You can search YouTube for a lesson, or study from your book in step 3.")
-            SecondaryButton("Find a lesson on YouTube", onClick = {
-                val query = Uri.encode("$courseLabel ${module.title}")
-                pk.parhlou.student.ui.Links.open(context, "https://www.youtube.com/results?search_query=$query")
-            })
-            Muted("Opens a YouTube search. Parhlou hasn't checked these videos and doesn't copy them.")
-        } else {
-            Text("${video.teacher} · ${video.channel}", style = MaterialTheme.typography.bodyLarge)
-            Muted("Opens in YouTube. Parhlou does not copy or download videos.")
-            SecondaryButton("Watch on YouTube", onClick = {
-                pk.parhlou.student.ui.Links.open(context, video.url)
-            })
-            SecondaryButton("I studied this video", onClick = { progress.add(module.id, Evidence.VideoStudyConfirmed) })
-            Muted("This records that you studied. It doesn't count as mastering the topic.")
+
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(24.dp)).background(MaterialTheme.colorScheme.primaryContainer).padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        pk.parhlou.student.ui.components.ProgressRing(level / 5f, 76.dp, 8.dp, brand.success, MaterialTheme.colorScheme.surface,
+            Modifier.semantics { contentDescription = "Mastery level $level of 5" }) {
+            Text("$level/5", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+        }
+        Column(Modifier.padding(start = 16.dp).weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(when (level) { 0 -> "Not started"; 5 -> "Mastered"; else -> "Level $level of 5" },
+                style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text(if (level >= 5) "You know this section well. Keep it fresh with practice."
+                else "Each strong practice (80%+) fills the ring.", style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer)
+            if (!module.inExam) StatusPill("Not in the exam · practice", warning = true)
         }
     }
-    if (module.lesson == null) BigButton("Next: quiz", onClick = onNext)
+    ChunkyButton(next.first, onClick = next.second, modifier = Modifier.testTag("section-continue"))
+
+    Text("Your steps", style = MaterialTheme.typography.titleLarge)
+    module.lesson?.let { l ->
+        SectionStep("📖", "Lesson", "${l.explain.size} idea${if (l.explain.size == 1) "" else "s"}" +
+            (if (l.example != null) ", a worked example" else "") + (if (l.yourTurn.isNotEmpty()) " and your turn" else ""),
+            if (taught) StepStatus.DONE else StepStatus.NEXT, "step-lesson", onLesson)
+    }
+    if (hasPractice) SectionStep("🎯", "Practice", if (practised) "Best first try: ${quizzes.maxOf { it.firstTryPercent }}%" else "Quick questions with instant feedback",
+        when { practised -> StepStatus.DONE; taught -> StepStatus.NEXT; else -> StepStatus.TODO }, "step-practice", onPractice)
+    if (module.solutions.isNotEmpty() || module.readingTasks.isNotEmpty())
+        SectionStep("📘", "Book solutions", "Every textbook question, step by step", if (read) StepStatus.DONE else StepStatus.TODO, "step-solutions") { onOpen(Stage.READ) }
+    if (module.writtenQuestions.isNotEmpty())
+        SectionStep("✍️", "Write answers", "Board-style answers, checked for you",
+            when { wrote -> StepStatus.DONE; taught && practised -> StepStatus.NEXT; else -> StepStatus.TODO }, "step-write") { onOpen(Stage.WRITE) }
+    SectionStep("🔁", "Improve", "What to fix next, and why", StepStatus.TODO, "step-improve") { onOpen(Stage.IMPROVE) }
+
+    // Extra help, kept small.
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
+        val video = module.video
+        TextButton(onClick = {
+            if (video != null) pk.parhlou.student.ui.Links.open(context, video.url)
+            else pk.parhlou.student.ui.Links.open(context, "https://www.youtube.com/results?search_query=" + Uri.encode("$courseLabel ${module.title}"))
+        }, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("video")) { Text(if (video != null) "🎬 Teacher video" else "🎬 Find a video") }
+        TextButton(onClick = onAskTutor, modifier = Modifier.weight(1f).heightIn(min = 48.dp)) { Text("💬 Ask Ustaad") }
+    }
+}
+
+@Composable
+private fun SectionStep(icon: String, title: String, subtitle: String, status: StepStatus, tag: String, onClick: () -> Unit) {
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    val accent = when (status) { StepStatus.DONE -> brand.success; StepStatus.NEXT -> MaterialTheme.colorScheme.primary; StepStatus.TODO -> brand.line }
+    Surface(
+        onClick = onClick, shape = RoundedCornerShape(18.dp), color = MaterialTheme.colorScheme.surface,
+        border = androidx.compose.foundation.BorderStroke(2.dp, accent),
+        modifier = Modifier.fillMaxWidth().heightIn(min = 64.dp).testTag(tag),
+    ) {
+        Row(Modifier.padding(horizontal = 14.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(44.dp).clip(CircleShape).background(accent.copy(alpha = 0.15f)), contentAlignment = Alignment.Center) {
+                Text(icon, style = MaterialTheme.typography.titleLarge)
+            }
+            Column(Modifier.padding(start = 12.dp).weight(1f)) {
+                Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Text(subtitle, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            when (status) {
+                StepStatus.DONE -> Text("✓ Done", style = MaterialTheme.typography.labelLarge, color = brand.success, fontWeight = FontWeight.Bold)
+                StepStatus.NEXT -> Text("Next ›", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+                StepStatus.TODO -> Text("›", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        }
+    }
 }
 
 @Composable
@@ -269,8 +331,8 @@ private fun ImproveStage(
     Sheet {
         Text("Where you are", style = MaterialTheme.typography.titleMedium)
         Text(progress.state(module.id).label, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.secondary)
-        if (quiz.isEmpty()) Muted("Do the quiz to see what to work on.")
-        else Muted("Best first-try quiz score: ${quiz.maxOf { it.firstTryPercent }}%")
+        if (quiz.isEmpty()) Muted("Do a practice to see what to work on.")
+        else Muted("Best first-try practice score: ${quiz.maxOf { it.firstTryPercent }}%")
         Muted("A module only counts as verified after a properly marked chapter test, not from practice alone.")
     }
     if (Evidence.WrittenSubmitted in evidence) {
@@ -285,7 +347,7 @@ private fun ImproveStage(
                     Text("Written practice: ${fmt(m.awarded)} / ${fmt(q.marks)}", style = MaterialTheme.typography.titleMedium)
                     when {
                         m.status == MarkStatus.COULD_NOT_CHECK || m.status == MarkStatus.NOT_ATTEMPTED ->
-                            Muted("Go back to step 4, compare with the model answer and write it out clearly.")
+                            Muted("Go back to Write answers, compare with the model answer and write it out clearly.")
                         missing.isEmpty() -> Muted("Every marking point was found. Well done.")
                         else -> missing.forEach { c ->
                             Text("What was missing: ${c.description}", style = MaterialTheme.typography.bodyLarge)
@@ -298,10 +360,10 @@ private fun ImproveStage(
             }
         }
     } else {
-        Muted("Do the written practice in step 4 to get it checked.")
+        Muted("Write a board answer (Write answers) to get it checked.")
     }
-    BigButton("Ask the tutor about this topic", onClick = onAskTutor)
-    SecondaryButton("Retry the quiz", onClick = onRetryQuiz)
+    BigButton("Practise again", onClick = onRetryQuiz)
+    SecondaryButton("Ask Ustaad about this topic", onClick = onAskTutor)
 }
 
 /** Shared MCQ runner for module quizzes and Test Series readiness checks. */
@@ -379,7 +441,7 @@ fun QuizContent(
             style = MaterialTheme.typography.titleMedium,
             color = if (c == q.sampleCorrectIndex) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.error)
         if (c != q.sampleCorrectIndex && onAskTutor != null) {
-            SecondaryButton("Ask the tutor why", onClick = { onAskTutor(q, c) })
+            SecondaryButton("Ask Ustaad why", onClick = { onAskTutor(q, c) })
         }
         BigButton(if (index == order.lastIndex) "See result" else "Next question", onClick = {
             if (index == order.lastIndex) {

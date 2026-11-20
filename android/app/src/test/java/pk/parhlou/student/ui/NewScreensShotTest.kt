@@ -68,8 +68,6 @@ class NewScreensShotTest {
         rule.setContent { ParhlouTheme(dark = dark) { ParhlouApp(repo, store) } }
         rule.waitUntil(8_000) { exists("Start today's session") }
         save("20-home-$mode")
-        rule.onNodeWithText("Your path").performScrollTo()
-        save("21-path-$mode")
         rule.onNodeWithTag("start-session").performScrollTo().performClick()
         rule.waitUntil(5_000) { exists("Check") }
         save("22-session-$mode")

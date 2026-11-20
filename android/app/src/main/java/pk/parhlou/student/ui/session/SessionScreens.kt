@@ -142,7 +142,7 @@ private fun SessionBody(
         return
     }
     val item = player.current ?: return
-    val progress by animateFloatAsState(player.progress, spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessLow), label = "progress")
+    val progress = player.progress
     fun check() {
         val a = answer ?: return
         val f = player.answer(a)
@@ -155,39 +155,32 @@ private fun SessionBody(
         feedback = f
     }
 
-    Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).statusBarsPadding().navigationBarsPadding().imePadding()) {
-        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = onClose) { Icon(Icons.Filled.Close, contentDescription = "Close session", tint = MaterialTheme.colorScheme.onSurfaceVariant) }
-            SessionProgress(progress, Modifier.weight(1f).testTag("session-progress"))
-            if (player.combo >= 2) ComboBadge(player.combo)
-            IconButton(onClick = onToggleSound) {
-                Icon(if (soundOn) Icons.AutoMirrored.Filled.VolumeUp else Icons.AutoMirrored.Filled.VolumeOff,
-                    contentDescription = if (soundOn) "Mute sounds" else "Turn sounds on")
+    val fb = feedback
+    pk.parhlou.student.ui.components.PlayerScaffold(
+        progress = progress, onClose = onClose, closeLabel = "Close session", soundOn = soundOn, onToggleSound = onToggleSound,
+        topEnd = { if (player.combo >= 2) ComboBadge(player.combo) },
+        bottom = {
+            if (fb == null) {
+                pk.parhlou.student.ui.components.PlayerBottom {
+                    ChunkyButton("Check", onClick = { check() }, colors = ChunkyDefaults.success(), enabled = answer != null,
+                        sound = Sfx.TAP, modifier = Modifier.testTag("session-check"))
+                }
+            } else {
+                AnimatedVisibility(visible = true, enter = slideInVertically { it } + fadeIn()) {
+                    FeedbackPanel(fb, onAsk = { onAskTutor(askText(item)) }, onContinue = {
+                        feedback = null
+                        val r = player.next()
+                        tick++
+                        if (r != null) { fx.finish(); result = r }
+                    })
+                }
             }
-        }
-        Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            Text(title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            UstadSays(item.instruction, if (feedback?.correct == false) UstadMood.THINKING else UstadMood.HAPPY, size = 48.dp)
-            // Each attempt starts fresh, even when a missed item comes straight back.
-            key(tick) { ItemBody(item, answer, feedback, onAnswer = { if (feedback == null) answer = it }, onSubmit = { if (feedback == null) check() }, fx = fx) }
-        }
-        val fb = feedback
-        if (fb == null) {
-            Box(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 14.dp)) {
-                ChunkyButton("Check", onClick = { check() }, colors = ChunkyDefaults.success(), enabled = answer != null,
-                    sound = Sfx.TAP, modifier = Modifier.testTag("session-check"))
-            }
-        } else {
-            AnimatedVisibility(visible = true, enter = slideInVertically { it } + fadeIn()) {
-                FeedbackPanel(fb, onAsk = { onAskTutor(askText(item)) }, onContinue = {
-                    feedback = null
-                    val r = player.next()
-                    tick++
-                    if (r != null) { fx.finish(); result = r }
-                })
-            }
-        }
+        },
+    ) {
+        Text(title, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        UstadSays(item.instruction, if (feedback?.correct == false) UstadMood.THINKING else UstadMood.HAPPY, size = 48.dp)
+        // Each attempt starts fresh, even when a missed item comes straight back.
+        key(tick) { ItemBody(item, answer, feedback, onAnswer = { if (feedback == null) answer = it }, onSubmit = { if (feedback == null) check() }, fx = fx) }
     }
 }
 
@@ -220,18 +213,6 @@ private fun FeedbackPanel(fb: Feedback, onAsk: () -> Unit, onContinue: () -> Uni
                 ChunkyButton("Continue", onClick = onContinue, colors = if (fb.correct) ChunkyDefaults.success() else ChunkyDefaults.danger(),
                     modifier = Modifier.weight(1f).testTag("session-continue"))
             }
-        }
-    }
-}
-
-/** The lesson's progress: a thick rounded bar that fills with a springy motion and a light shine on top. */
-@Composable
-private fun SessionProgress(progress: Float, modifier: Modifier) {
-    val brand = LocalBrand.current
-    Box(modifier.height(16.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant)) {
-        Box(Modifier.fillMaxWidth(progress.coerceIn(0f, 1f)).fillMaxHeight().clip(RoundedCornerShape(50)).background(brand.success)) {
-            Box(Modifier.fillMaxWidth().padding(horizontal = 6.dp).padding(top = 3.dp).height(4.dp).clip(RoundedCornerShape(50))
-                .background(Color.White.copy(alpha = 0.35f)))
         }
     }
 }
