@@ -98,6 +98,8 @@ android {
         unitTests.all { test ->
             // Robolectric renders whole screens; the default 512 MB runs out across the full suite.
             test.maxHeapSize = "2g"
+            // Robolectric holds on to memory across test classes; a fresh process every 15 keeps late tests from slowing to a crawl.
+            test.setForkEvery(15)
             // -PscreenshotDir=/path renders design screenshots (ScreenshotTest); skipped otherwise.
             project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
             project.findProperty("iconOut")?.let { test.systemProperty("parhlou.iconOut", it.toString()) }

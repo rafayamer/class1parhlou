@@ -121,7 +121,7 @@ class LessonTest {
         rule.waitUntil(3_000) { exists("Lesson complete") }
         rule.onNodeWithTag("lesson-practice").performClick()
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("session-check")).fetchSemanticsNodes().isNotEmpty() }
-        val log = runBlocking { store.progressLog() }
-        assertTrue(log, log.contains("|m-1-1|L"))
+        // Saved to the phone in the background.
+        rule.waitUntil(5_000) { runBlocking { store.progressLog() }.contains("|m-1-1|L") }
     }
 }

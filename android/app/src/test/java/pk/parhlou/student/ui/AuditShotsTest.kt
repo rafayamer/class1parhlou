@@ -76,13 +76,17 @@ class AuditShotsTest {
         }
         rule.onNodeWithTag("tab-tests").performClick(); rule.waitUntil(3_000) { exists("Practice test") }; save("a07-papers")
         rule.onNodeWithTag("guess-paper").performScrollTo(); save("a07b-guess")
-        rule.onNodeWithTag("past-papers").performScrollTo()
+        rule.onNodeWithTag("past-papers").performScrollTo().performClick(); rule.waitForIdle()
         rule.onNodeWithText("Lahore").performScrollTo().performClick(); rule.waitForIdle(); save("a07c-past-lahore")
         rule.onAllNodes(hasText("Lahore 20", substring = true))[0].performScrollTo().performClick(); rule.waitUntil(5_000) { exists("Before you start") }; save("a07e-past-start")
+        rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(5_000) { exists("Choose a board") || exists("Pick a board") }
         rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(5_000) { exists("Practice test") }
+        rule.onNodeWithTag("make-test").performScrollTo().performClick(); rule.waitForIdle()
         rule.onNodeWithTag("practice-ch-2").performScrollTo().performClick()
         rule.onNodeWithTag("practice-ch-3").performScrollTo().performClick(); save("a07f-practice-pick")
-        rule.onNodeWithTag("practice-half").performScrollTo().performClick(); rule.waitUntil(5_000) { exists("Before you start") }; save("a07g-practice-start")
+        rule.onNodeWithTag("practice-half").performScrollTo().performClick()
+        rule.onNodeWithTag("practice-start").performScrollTo().performClick(); rule.waitUntil(5_000) { exists("Before you start") }; save("a07g-practice-start")
+        rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(5_000) { exists("Which chapters") }
         rule.onAllNodes(androidx.compose.ui.test.hasContentDescription("Back"))[0].performClick(); rule.waitUntil(5_000) { exists("Practice test") }
         rule.onNodeWithTag("my-results").performScrollTo(); save("a07h-my-papers")
         for (id in listOf(FakeRepository.BIOLOGY_9, FakeRepository.COMPUTER_9)) {

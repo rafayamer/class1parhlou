@@ -77,9 +77,10 @@ class AppFlowTest {
         rule.onNodeWithText("Finish setup").performScrollTo().performClick()
         rule.waitUntil(5_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("tab-tests")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("tab-tests").performClick()
-        rule.waitUntil(10_000) { rule.onAllNodesWithTextExists("✏️ Practice test") }
+        rule.waitUntil(10_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("make-test")).fetchSemanticsNodes().isNotEmpty() }
         // No lock in front of papers any more; practice tests start disabled until a chapter is picked.
         rule.onNodeWithTag("readiness").assertDoesNotExist()
+        rule.onNodeWithTag("make-test").performScrollTo().performClick()
         rule.onNodeWithTag("practice-quick").performScrollTo().assertIsNotEnabled()
         rule.onNodeWithTag("practice-ch-1").performScrollTo().performClick()
         rule.onNodeWithTag("practice-quick").performScrollTo().assertIsEnabled()
