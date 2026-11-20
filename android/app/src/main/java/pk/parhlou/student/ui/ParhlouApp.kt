@@ -722,6 +722,7 @@ fun ParhlouApp(
                 onAskTutor = { openTutor(it) }, onBack = nav.back(),
                 onOpenLesson = { nav.navigate("lesson/$it") },
                 onPractice = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
+                videoQuery = pk.parhlou.student.domain.VideoSearch.query(subject?.name.orEmpty(), subject?.grade, repo.chapterOf(id)?.number, module.title),
             )
         }
         composable(Routes.LESSON) { entry ->

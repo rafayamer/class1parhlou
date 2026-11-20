@@ -269,8 +269,9 @@ fun HomeScreen(
 @Composable
 private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: String, go: () -> Unit, onOpen: () -> Unit) {
     val modules = s.chapters.flatMap { c -> c.modules.filter { it.inExam }.map { c to it } }
-    val levels = modules.map { (_, m) -> pk.parhlou.student.domain.Rewards.sectionLevel(progress.evidence(m.id)) }
-    val covered = if (modules.isEmpty()) 0 else levels.count { it >= 2 } * 100 / modules.size
+    val levels = modules.map { (_, m) -> pk.parhlou.student.domain.Rewards.sectionLevel(progress.evidence(m.id), m.lesson != null) }
+    // Every step on every section counts, so the ring moves after each lesson and practice.
+    val covered = if (modules.isEmpty()) 0 else levels.sum() * 100 / (modules.size * 5)
     // Expected marks: from paper results when there are any, else from how well each section is known.
     val papers = progress.history().filter { it.key.startsWith(pk.parhlou.student.data.ProgressStore.PAPER_PREFIX) }
         .mapNotNull { (it.evidence as? pk.parhlou.student.domain.Evidence.DemoCheckedExam)?.percent ?: (it.evidence as? pk.parhlou.student.domain.Evidence.ExamMarked)?.percent }
@@ -278,8 +279,8 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
     val started = papers.isNotEmpty() || levels.any { it > 0 }
     val ranked = modules.zip(levels).filter { it.second > 0 || papers.isNotEmpty() }
     // A weak topic is one the student has tried and is still shaky on (never an untouched topic).
-    val weak = ranked.filter { it.second in 1..2 }.minByOrNull { it.second }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
-    val strong = ranked.maxByOrNull { it.second }?.takeIf { it.second >= 2 }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
+    val weak = ranked.filter { it.second in 1 until pk.parhlou.student.domain.Rewards.LEARNED_LEVEL }.minByOrNull { it.second }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
+    val strong = ranked.maxByOrNull { it.second }?.takeIf { it.second >= pk.parhlou.student.domain.Rewards.LEARNED_LEVEL }?.first?.second?.title?.replace(Regex("^\\d+(\\.\\d+)*\\s*"), "")
     val examIn = pk.parhlou.student.domain.ExamCountdown.daysLeft(s.examDate)
     pk.parhlou.student.ui.components.Chunky(modifier = Modifier.fillMaxWidth().testTag("journey-${s.id}"), shape = RoundedCornerShape(22.dp), onClick = onOpen) {
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -504,20 +505,7 @@ fun ProfileScreen(
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
         // This month's Ustaad time, as things the student can still do.
         val left by androidx.compose.runtime.produceState<pk.parhlou.student.ai.Allowance?>(null) { value = allowance() }
-        left?.let { a ->
-            Sheet(Modifier.testTag("allowance")) {
-                Text("This month with Ustaad", style = MaterialTheme.typography.titleMedium)
-                if (a.capUsd > 0) {
-                    androidx.compose.material3.LinearProgressIndicator(progress = { a.usedShare },
-                        modifier = Modifier.fillMaxWidth().height(10.dp).testTag("ai-meter"),
-                        color = if (a.usedShare >= 0.9f) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary)
-                    Text("${(a.usedShare * 100).toInt()}% of this month's AI used  ·  $${"%.2f".format(a.usedUsd)} of $${"%.2f".format(a.capUsd)}",
-                        style = MaterialTheme.typography.bodyLarge, modifier = Modifier.testTag("ai-used"))
-                }
-                a.lines().forEach { (icon, line) -> Text("$icon  $line", style = MaterialTheme.typography.bodyLarge) }
-                Muted("Resets on ${a.resetsOn}. Lessons, quizzes, solutions and papers never need AI time.")
-            }
-        }
+        left?.let { a -> UstaadEnergy(a, onPlus) }
         if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Plus", planLabel, onPlus)
         var feedbackOpen by remember { mutableStateOf(false) }
         TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
@@ -739,3 +727,39 @@ private fun PracticalList(subject: Subject, onOpen: (String) -> Unit) {
         }
     }
 }
+
+/**
+ * Ustaad energy: how much of this month's Ask Ustaad and AI marking is left, as one bar. No money or credit counts:
+ * a student only needs to know how much is left and when it refills.
+ */
+@Composable
+fun UstaadEnergy(a: pk.parhlou.student.ai.Allowance, onPlus: (() -> Unit)?) {
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    val left = if (a.capUsd > 0) 1f - a.usedShare else 1f
+    val shown by androidx.compose.animation.core.animateFloatAsState(left, androidx.compose.animation.core.tween(900), label = "energy")
+    val low = a.capUsd > 0 && left < 0.15f
+    Sheet(Modifier.testTag("allowance")) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("⚡", style = MaterialTheme.typography.headlineSmall)
+            Column(Modifier.padding(start = 10.dp).weight(1f)) {
+                Text("Ustaad energy", style = MaterialTheme.typography.titleMedium, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                Text(if (a.capUsd > 0) "${(left * 100).toInt()}% left this month" else "Plenty left this month",
+                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("ai-used"))
+            }
+        }
+        Box(Modifier.fillMaxWidth().height(14.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant).testTag("ai-meter")) {
+            Box(Modifier.fillMaxWidth(shown.coerceIn(0f, 1f)).height(14.dp).clip(RoundedCornerShape(50))
+                .background(if (low) brand.danger else brand.sun))
+        }
+        Muted("Asking Ustaad, photo questions and AI paper marking use energy. It refills on ${prettyDate(a.resetsOn)}. " +
+            "Lessons, practice, solutions and papers never use it.")
+        if (low && onPlus != null) TextButton(onClick = onPlus, modifier = Modifier.heightIn(min = 44.dp)) { Text("Running low? Plus gives you much more") }
+    }
+}
+
+/** "2026-12-01" as "1 December"; anything else unchanged. */
+fun prettyDate(iso: String): String = runCatching {
+    val d = java.time.LocalDate.parse(iso.take(10))
+    "${d.dayOfMonth} ${d.month.getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ENGLISH)}"
+}.getOrDefault(iso)
+

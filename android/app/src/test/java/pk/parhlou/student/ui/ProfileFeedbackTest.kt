@@ -30,12 +30,14 @@ class ProfileFeedbackTest {
     @Test fun thisMonthShowsCountsNotCreditsAndFeedbackIsSent() {
         val sent = mutableListOf<String>()
         rule.setContent { ParhlouTheme { ProfileScreen(FakeRepository(), state, ProgressStore(), {}, {},
-            allowance = { Allowance(840, "2026-12-01", mapOf("chat" to 840, "photo" to 280, "mark_handwritten" to 420)) },
+            allowance = { Allowance(840, "2026-12-01", mapOf("chat" to 840), usedUsd = 0.9, capUsd = 3.0) },
             onSendFeedback = { sent += it; true }) } }
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("allowance")).fetchSemanticsNodes().isNotEmpty() }
-        rule.onNodeWithText("About 840 questions to Ustaad", substring = true).assertExists()
-        rule.onNodeWithText("280 photo questions", substring = true).assertExists()
+        // One simple energy bar: what's left and when it refills. No money, no credits.
+        rule.onNodeWithText("70% left this month").assertExists()
+        rule.onNodeWithText("refills on 1 December", substring = true).assertExists()
         assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("credit", substring = true, ignoreCase = true)).fetchSemanticsNodes().size)
+        assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("$", substring = true)).fetchSemanticsNodes().size)
 
         rule.onNodeWithText("Send feedback").performScrollTo().performClick()
         rule.onNodeWithTag("feedback-text").performTextInput("Please add a dark mode for papers")

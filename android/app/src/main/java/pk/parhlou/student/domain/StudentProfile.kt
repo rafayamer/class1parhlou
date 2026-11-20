@@ -40,7 +40,7 @@ data class StudentProfile(
             val subject = subjects.firstOrNull()
             val r = Rewards.summary(h, onboarding.minutesPerDay, now)
             val modules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules } }
-            val strong = modules.filter { m -> Rewards.sectionLevel(h.filter { it.key == m.id }.map { it.evidence }) >= 3 }.map { it.title }
+            val strong = modules.filter { m -> Rewards.sectionLevel(h.filter { it.key == m.id }.map { it.evidence }, m.lesson != null) >= Rewards.LEARNED_LEVEL }.map { it.title }
             val weak = Weakness.topics(h, noteTitle, now).map { it.title }
             val exam = subject?.let { s -> ExamCountdown.daysLeft(s.examDate)?.let { "${s.examName.ifBlank { "board exam" }} in about $it days" } }
             return StudentProfile(

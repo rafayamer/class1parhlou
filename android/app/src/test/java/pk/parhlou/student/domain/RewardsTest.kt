@@ -43,7 +43,10 @@ class RewardsTest {
         assertEquals(2, Rewards.level(100))
         assertEquals(3, Rewards.level(300))
         assertEquals(0, Rewards.sectionLevel(emptyList()))
-        assertEquals(3, Rewards.sectionLevel(listOf(Evidence.LessonCompleted, Evidence.QuizCompleted(90), Evidence.QuizCompleted(85), Evidence.QuizCompleted(50))))
+        assertEquals(4, Rewards.sectionLevel(listOf(Evidence.LessonCompleted, Evidence.QuizCompleted(90), Evidence.QuizCompleted(85), Evidence.QuizCompleted(50))))
+        assertEquals("learned after a lesson and one practice at 70%", Rewards.LEARNED_LEVEL, Rewards.sectionLevel(listOf(Evidence.LessonCompleted, Evidence.QuizCompleted(72))))
+        assertEquals("a section without a lesson can still be learned", Rewards.LEARNED_LEVEL, Rewards.sectionLevel(listOf(Evidence.QuizCompleted(75)), hasLesson = false))
+        assertEquals("a written board answer fills the ring", 5, Rewards.sectionLevel(listOf(Evidence.LessonCompleted, Evidence.QuizCompleted(95), Evidence.WrittenSubmitted)))
     }
 
     @Test fun sessionEvidenceRoundTrips() {

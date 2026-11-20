@@ -103,8 +103,10 @@ fun ParhlouScreen(
         Column(Modifier.fillMaxSize()) {
             if (title != null) TitleBar(title, onBack, scrolled = scroll.value > 0)
             // The page ends above the tab bar (it no longer scrolls underneath), so nothing is ever hidden behind it.
-            val navInset = if (bottomSpace > 0.dp) androidx.compose.foundation.layout.WindowInsets.navigationBars
-                .asPaddingValues().calculateBottomPadding() else 0.dp
+            val navBar = androidx.compose.foundation.layout.WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
+            val navInset = if (bottomSpace > 0.dp) navBar else 0.dp
+            // Pages without the tab bar scroll their last item clear of Android's navigation bar (gesture or 3-button).
+            val endInset = if (bottomSpace == 0.dp && bottomBar == null) navBar else 0.dp
             Box(Modifier.weight(1f).fillMaxWidth().padding(bottom = bottomSpace + navInset)) {
                 Column(
                     modifier = Modifier
@@ -112,7 +114,7 @@ fun ParhlouScreen(
                         .verticalScroll(scroll)
                         .then(if (title == null) Modifier.statusBarsPadding() else Modifier)
                         .padding(horizontal = 20.dp)
-                        .padding(top = if (title != null) 8.dp else 12.dp, bottom = 20.dp + barHeight)
+                        .padding(top = if (title != null) 8.dp else 12.dp, bottom = 20.dp + barHeight + endInset)
                         .appear(0),
                     verticalArrangement = Arrangement.spacedBy(16.dp),
                     content = content,

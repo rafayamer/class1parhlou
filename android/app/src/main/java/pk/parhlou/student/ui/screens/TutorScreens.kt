@@ -489,7 +489,7 @@ private fun VideoCards(a: UstaadAnswer) {
             scope.launch {
                 val found = find?.invoke(topic)
                 looking = false
-                if (found.isNullOrEmpty()) open("https://www.youtube.com/results?search_query=" + Uri.encode("class 9 $topic")) else asked = found
+                if (found.isNullOrEmpty()) open(pk.parhlou.student.domain.VideoSearch.searchUrl("9th class $topic lecture")) else asked = found
             }
         }, enabled = !looking, modifier = Modifier.heightIn(min = 48.dp).testTag("video-ask")) {
             Icon(Icons.Filled.PlayCircle, null, modifier = Modifier.size(20.dp))

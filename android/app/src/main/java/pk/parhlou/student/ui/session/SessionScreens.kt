@@ -134,7 +134,7 @@ private fun SessionBody(
         return
     }
     if (items.isEmpty()) {
-        Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).statusBarsPadding().padding(20.dp),
+        Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background).statusBarsPadding().navigationBarsPadding().padding(20.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)) {
             UstadSays("This section's practice questions are on their way. Open the lesson or the solutions meanwhile.", UstadMood.THINKING)
             pk.parhlou.student.ui.components.BigButton("Back", onClick = onClose)

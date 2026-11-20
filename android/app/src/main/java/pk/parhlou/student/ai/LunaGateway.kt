@@ -110,7 +110,7 @@ class LunaGateway(
         call(body)?.let(UstaadAnswer::parse)?.let { return it }
         if (signInNeeded) return UstaadAnswer("OFFLINE", "Sign in to ask Ustaad (Profile → Sign in). It's free, and keeps your progress safe.")
         creditsResetOn?.let { date ->
-            return UstaadAnswer("OFFLINE", "This month's Ustaad time is used up. It comes back on $date. Your lessons, practice and papers still work.")
+            return UstaadAnswer("OFFLINE", "Ustaad's energy for this month is used up. It refills on ${pk.parhlou.student.ui.screens.prettyDate(date)}. Your lessons, practice and papers still work.")
         }
         return UstaadOffline.answer(fallback, req).let {
             if (it.kind == "OFFLINE") it else it.copy(reply = it.reply + "\n\n_(Answered offline from your course notes.)_")

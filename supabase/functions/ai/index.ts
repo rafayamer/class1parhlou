@@ -136,7 +136,7 @@ Deno.serve(async (request) => {
     if ((mine ?? 0) >= settings.perInstall) return json({ error: "QUOTA_LIMIT" }, 429);
     // The app sends the subject's name; older builds only had Mathematics.
     const subject = String((body as any)?.subject ?? "maths").replace(/[^\p{L} ]/gu, "").toLowerCase().slice(0, 30) || "maths";
-    const found = await videos(db, (/\bclass\s*9\b/i.test(q) ? q : `class 9 ${subject} ${q}`).slice(0, 120));
+    const found = await videos(db, (/\b(class\s*9|9th\s*class)\b/i.test(q) ? q : `class 9 ${subject} ${q}`).slice(0, 120));
     if (credits && price.credits > 0) await spend(db, caller, userId, price);
     await logUsage(db, { caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
     return json({ result: { videos: found } });

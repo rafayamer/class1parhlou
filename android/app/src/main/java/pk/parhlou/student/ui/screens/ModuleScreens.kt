@@ -94,6 +94,8 @@ fun ModuleScreen(
     onBack: () -> Unit,
     onOpenLesson: (String) -> Unit = {},
     onPractice: (String) -> Unit = {},
+    /** The YouTube search for this section's lectures (VideoSearch.query). */
+    videoQuery: String = pk.parhlou.student.domain.VideoSearch.query("", null, null, module.title),
 ) {
     var open by rememberSaveable { mutableStateOf<Stage?>(null) }
     LaunchedEffect(module.id) {
@@ -104,7 +106,7 @@ fun ModuleScreen(
     ParhlouScreen(module.title, onBack = { if (open != null) open = null else onBack() }) {
         val stage = open
         if (stage == null) {
-            SectionHub(module, quiz.isNotEmpty(), progress, courseLabel,
+            SectionHub(module, quiz.isNotEmpty(), progress, videoQuery, ai,
                 onLesson = { onOpenLesson(module.id) }, onPractice = { onPractice(module.id) }, onOpen = { open = it },
                 onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, question = "Help me with ${module.title}")) })
             return@ParhlouScreen
@@ -137,7 +139,8 @@ private fun SectionHub(
     module: Module,
     hasPractice: Boolean,
     progress: ProgressStore,
-    courseLabel: String,
+    videoQuery: String,
+    ai: ParhlouAi,
     onLesson: () -> Unit,
     onPractice: () -> Unit,
     onOpen: (Stage) -> Unit,
@@ -146,7 +149,7 @@ private fun SectionHub(
     val context = LocalContext.current
     val brand = pk.parhlou.student.ui.theme.LocalBrand.current
     val ev = progress.evidence(module.id)
-    val level = pk.parhlou.student.domain.Rewards.sectionLevel(ev)
+    val level = pk.parhlou.student.domain.Rewards.sectionLevel(ev, module.lesson != null)
     val taught = module.lesson == null || Evidence.LessonCompleted in ev
     val quizzes = ev.filterIsInstance<Evidence.QuizCompleted>()
     val practised = quizzes.isNotEmpty()
@@ -171,8 +174,11 @@ private fun SectionHub(
         Column(Modifier.padding(start = 16.dp).weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text(when (level) { 0 -> "Not started"; 5 -> "Mastered"; else -> "Level $level of 5" },
                 style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onPrimaryContainer)
-            Text(if (level >= 5) "You know this section well. Keep it fresh with practice."
-                else "Each strong practice (80%+) fills the ring.", style = MaterialTheme.typography.bodyMedium,
+            Text(when {
+                    level >= 5 -> "Exam ready. Keep it fresh with practice."
+                    level >= pk.parhlou.student.domain.Rewards.LEARNED_LEVEL -> "Learned! Score 90% or write a board answer to fill the ring."
+                    else -> "Lesson, then practice: 70% or more and this section is learned."
+                }, style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onPrimaryContainer)
             if (!module.inExam) StatusPill("Not in the exam · practice", warning = true)
         }
@@ -194,14 +200,64 @@ private fun SectionHub(
             when { wrote -> StepStatus.DONE; taught && practised -> StepStatus.NEXT; else -> StepStatus.TODO }, "step-write") { onOpen(Stage.WRITE) }
     SectionStep("🔁", "Improve", "What to fix next, and why", StepStatus.TODO, "step-improve") { onOpen(Stage.IMPROVE) }
 
-    // Extra help, kept small.
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-        val video = module.video
-        TextButton(onClick = {
-            if (video != null) pk.parhlou.student.ui.Links.open(context, video.url)
-            else pk.parhlou.student.ui.Links.open(context, "https://www.youtube.com/results?search_query=" + Uri.encode("$courseLabel ${module.title}"))
-        }, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("video")) { Text(if (video != null) "🎬 Teacher video" else "🎬 Find a video") }
-        TextButton(onClick = onAskTutor, modifier = Modifier.weight(1f).heightIn(min = 48.dp)) { Text("💬 Ask Ustaad") }
+    VideoLessons(module, videoQuery, ai)
+    TextButton(onClick = onAskTutor, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("💬 Ask Ustaad about this section") }
+}
+
+/**
+ * Video lectures for a section: the checked teacher video if there is one, then the top YouTube lectures found by the
+ * server (shown here, each opening that exact video), else a well-aimed YouTube search.
+ */
+@Composable
+private fun VideoLessons(module: Module, query: String, ai: ParhlouAi) {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var found by remember(module.id) { mutableStateOf<List<pk.parhlou.student.ai.LessonVideo>?>(null) }
+    var looking by remember(module.id) { mutableStateOf(false) }
+    val search = pk.parhlou.student.domain.VideoSearch.searchUrl(query)
+    pk.parhlou.student.ui.components.StepCard(modifier = Modifier.testTag("video")) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("🎬", style = MaterialTheme.typography.titleLarge)
+            Column(Modifier.padding(start = 12.dp).weight(1f)) {
+                Text("Video lectures", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Text("Watch a teacher explain it, then come back to practise.", style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        }
+        module.video?.let { v ->
+            VideoRow("▶  ${v.teacher}", v.channel) { pk.parhlou.student.ui.Links.open(context, v.url) }
+        }
+        val list = found
+        when {
+            list == null -> TextButton(onClick = {
+                looking = true
+                scope.launch {
+                    val r = ai.lessonVideos(query).orEmpty()
+                    looking = false
+                    if (r.isEmpty()) pk.parhlou.student.ui.Links.open(context, search) else found = r.take(4)
+                }
+            }, enabled = !looking, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("find-videos")) {
+                Text(if (looking) "Finding lectures…" else "Find lectures for this section")
+            }
+            else -> {
+                list.forEach { v ->
+                    val url = pk.parhlou.student.domain.VideoSearch.watchUrl(v.id) ?: return@forEach
+                    VideoRow("▶  ${v.title}", v.channel) { pk.parhlou.student.ui.Links.open(context, url) }
+                }
+                TextButton(onClick = { pk.parhlou.student.ui.Links.open(context, search) }, modifier = Modifier.heightIn(min = 44.dp)) { Text("More on YouTube") }
+            }
+        }
+        Text("Opens in YouTube. Parhlou doesn't copy videos.", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+}
+
+@Composable
+private fun VideoRow(title: String, channel: String, onClick: () -> Unit) {
+    Surface(onClick = onClick, shape = RoundedCornerShape(14.dp), color = MaterialTheme.colorScheme.surfaceVariant, modifier = Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(horizontal = 12.dp, vertical = 10.dp)) {
+            Text(title, style = MaterialTheme.typography.bodyLarge, maxLines = 2, overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+            if (channel.isNotBlank()) Text(channel, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
     }
 }
 

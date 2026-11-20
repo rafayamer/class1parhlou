@@ -152,12 +152,25 @@ object Rewards {
         return best
     }
 
-    /** Mastery of one section, 0–5: the lesson, then each strong practice (80%+), like filling a level ring. */
-    fun sectionLevel(events: List<Evidence>): Int {
-        val lesson = if (events.any { it == Evidence.LessonCompleted }) 1 else 0
-        val strong = events.count { it is Evidence.QuizCompleted && it.firstTryPercent >= 80 }
-        val exam = if (events.any { it is Evidence.ExamMarked && it.percent >= 80 }) 1 else 0
-        return (lesson + strong + exam).coerceAtMost(5)
+    /** The level at which a section counts as learned and "Do this now" moves on to the next one. */
+    const val LEARNED_LEVEL = 3
+
+    /**
+     * Mastery of one section, 0–5, filling a ring one step at a time:
+     * 1 lesson done · 2 practised once · 3 a practice at 70%+ (learned) · 4 a practice at 90%+, or 70%+ twice ·
+     * 5 a board answer written, a paper at 80%+, or three practices at 70%+ (exam ready).
+     * A section without a lesson counts its first step once it has been practised.
+     */
+    fun sectionLevel(events: List<Evidence>, hasLesson: Boolean = true): Int {
+        val scores = events.filterIsInstance<Evidence.QuizCompleted>().map { it.firstTryPercent }
+        val good = scores.count { it >= 70 }
+        var n = 0
+        if (events.any { it == Evidence.LessonCompleted } || (!hasLesson && scores.isNotEmpty())) n++
+        if (scores.isNotEmpty()) n++
+        if (good >= 1) n++
+        if (scores.any { it >= 90 } || good >= 2) n++
+        if (Evidence.WrittenSubmitted in events || events.any { it is Evidence.ExamMarked && it.percent >= 80 } || good >= 3) n++
+        return n.coerceAtMost(5)
     }
 }
 

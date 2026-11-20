@@ -73,12 +73,13 @@ fun todaysModule(subjects: List<Subject>, progress: ProgressStore, day: Long = j
     // Something to fix comes first, whatever the subject.
     all.firstOrNull { progress.state(it.id) == LearningState.REPAIR_REQUIRED }?.let { return it }
     // Otherwise the subjects take turns, one per day, so every subject moves forward (not Maths first until it's finished).
-    val open = subjects.filter { s -> examModules(s).any { Rewards.sectionLevel(progress.evidence(it.id)) < 2 } }
+    fun level(m: Module) = Rewards.sectionLevel(progress.evidence(m.id), m.lesson != null)
+    val open = subjects.filter { s -> examModules(s).any { level(it) < Rewards.LEARNED_LEVEL } }
     if (open.isNotEmpty()) {
         val s = open[Math.floorMod(day, open.size.toLong()).toInt()]
-        return examModules(s).first { Rewards.sectionLevel(progress.evidence(it.id)) < 2 }
+        return examModules(s).first { level(it) < Rewards.LEARNED_LEVEL }
     }
-    return all.minByOrNull { Rewards.sectionLevel(progress.evidence(it.id)) }
+    return all.minByOrNull { level(it) }
 }
 
 /** Streak, today's XP against the goal, and level, at the top of Home. */
@@ -132,7 +133,7 @@ fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: Stri
         shown.forEach { c ->
             UnitHeader(c, onKit)
             c.modules.forEach { m ->
-                PathNode(m, Rewards.sectionLevel(progress.evidence(m.id)), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false, unit = c.number) { onStart(m.id) }
+                PathNode(m, Rewards.sectionLevel(progress.evidence(m.id), m.lesson != null), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false, unit = c.number) { onStart(m.id) }
             }
         }
     }
@@ -169,7 +170,7 @@ private fun PathNode(m: Module, level: Int, current: Boolean, index: Int, inExam
     val reduced = LocalReducedMotion.current
     val bounce = pk.parhlou.student.ui.components.rememberBob(reduced || !current, 700, times = 5)
     val shift = (sin(index * 0.9) * 70).dp
-    val done = level >= 2
+    val done = level >= Rewards.LEARNED_LEVEL
     val fill = when {
         !inExam -> MaterialTheme.colorScheme.surfaceVariant
         current -> MaterialTheme.colorScheme.primaryContainer
