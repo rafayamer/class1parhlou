@@ -34,6 +34,8 @@ sealed interface Evidence {
     data class SessionCompleted(val xp: Int) : Evidence
     /** "Was this helpful?" on a solution: 1 = yes, 0 = no (feedback for the owner; no effect on progress). */
     data class Helpful(val yes: Int) : Evidence
+    /** The daily chest, opened after finishing all of today's quests, with the bonus XP it gave (rewards only). */
+    data class ChestOpened(val xp: Int) : Evidence
 }
 
 /**

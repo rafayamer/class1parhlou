@@ -56,6 +56,13 @@ fun LeagueScreen(
     signedIn: Boolean,
     social: SocialClient,
     onSignIn: () -> Unit,
+    /** Every achievement, earned or not (Rewards.achievements). */
+    achievements: List<pk.parhlou.student.domain.Achievement> = emptyList(),
+    playerName: String = "You",
+    chestReady: Boolean = false,
+    chestOpened: Boolean = false,
+    /** Records today's chest and returns the XP it gave. */
+    onOpenChest: () -> Int = { 0 },
 ) {
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -78,7 +85,25 @@ fun LeagueScreen(
     }
     fun toast(t: String) = android.widget.Toast.makeText(context, t, android.widget.Toast.LENGTH_SHORT).show()
 
+    fun invite() {
+        val code = me?.friendCode
+        val text = if (code != null) "Study Class 9 with me on Parhlou! Add my friend code $code in the League tab and let's race to the top."
+            else "Study Class 9 with me on Parhlou: lessons, past papers and an AI tutor, with streaks and leagues."
+        runCatching {
+            context.startActivity(android.content.Intent.createChooser(android.content.Intent(android.content.Intent.ACTION_SEND)
+                .setType("text/plain").putExtra(android.content.Intent.EXTRA_TEXT, text), "Invite a friend"))
+        }
+    }
+
     ParhlouScreen("League") {
+        pk.parhlou.student.ui.components.PlayerCard(
+            name = me?.firstName?.takeIf { it.isNotBlank() && it != "Learner" } ?: playerName,
+            avatar = me?.avatar ?: "🦉",
+            rewards = rewards,
+            league = board?.let { Social.LEAGUES[it.league.coerceIn(0, 6)] },
+            badgeCount = achievements.count { it.earned },
+            onInvite = ::invite,
+        )
         // Streak and quests: everyone, signed in or not.
         Sheet(Modifier.testTag("streak-card")) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -103,16 +128,20 @@ fun LeagueScreen(
                 }
             }
             if (quests.all { it.done }) Text("🏆 All done today. Brilliant!", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+            pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
         }
-        if (rewards.badges.isNotEmpty()) Sheet {
-            Text("Badges", style = MaterialTheme.typography.titleLarge)
-            FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                rewards.badges.forEach { b ->
-                    Column(Modifier.clip(RoundedCornerShape(14.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(10.dp).width(140.dp)) {
-                        Text("🏅 ${b.title}", style = MaterialTheme.typography.titleSmall)
-                        Muted(b.description)
-                    }
-                }
+        if (achievements.isNotEmpty()) Sheet {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text("Achievements", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+                Text("${achievements.count { it.earned }}/${achievements.size}", style = MaterialTheme.typography.labelLarge)
+            }
+            // Earned first, then the ones closest to unlocking: six at a time keeps the league in view.
+            var all by rememberSaveable { mutableStateOf(false) }
+            val ordered = remember(achievements) { achievements.sortedWith(compareByDescending<pk.parhlou.student.domain.Achievement> { it.earned }
+                .thenByDescending { it.shownProgress.toFloat() / it.target }) }
+            pk.parhlou.student.ui.components.AchievementGrid(if (all) ordered else ordered.take(6))
+            if (achievements.size > 6) TextButton(onClick = { all = !all }, modifier = Modifier.heightIn(min = 44.dp).testTag("achievements-all")) {
+                Text(if (all) "Show fewer" else "Show all ${achievements.size}")
             }
         }
 

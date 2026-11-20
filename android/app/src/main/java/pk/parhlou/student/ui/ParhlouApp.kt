@@ -193,6 +193,8 @@ fun ParhlouApp(
     planClient: pk.parhlou.student.data.PlanClient? = null,
     /** Ads on the free plan (between activities only); tests and previews have none. */
     ads: pk.parhlou.student.ads.Ads = pk.parhlou.student.ads.NoAds,
+    /** Level-up, streak, badge and quest pop-ups on Home and League. Off in tests so pop-ups don't cover screens. */
+    celebrate: Boolean = false,
 ) {
     val context = LocalContext.current
     remember { initializePrismal(context); true } // glass shaders must be loaded before the first frame
@@ -367,6 +369,14 @@ fun ParhlouApp(
         blueprints.filter { paperOf(it.id) != null }.map { it.id to it.title },
         testSeries = state.pathway == Pathway.TEST_SERIES, minutesPerDay = state.minutesPerDay, now = System.currentTimeMillis(),
     )
+    /** Opens today's chest (once a day, after all quests) and returns the XP it gave. */
+    fun openChest(): Int {
+        val now = System.currentTimeMillis()
+        if (pk.parhlou.student.domain.Game.chestOpenedToday(progress.history(), now)) return 0
+        val xp = pk.parhlou.student.domain.Game.chestXp(java.time.LocalDate.now())
+        progress.add("chest", Evidence.ChestOpened(xp), now)
+        return xp
+    }
     fun weakTopics() = Weakness.topics(progress.history(), { noteTitles[it] }, System.currentTimeMillis())
     fun openPlanTask(t: PlanTask) = when (t.kind) {
         PlanKind.REPAIR -> openTutor(TutorSeed(noteId = t.target))
@@ -440,6 +450,11 @@ fun ParhlouApp(
             )
         }
         composable(Routes.HOME) { WithTabBarSpace {
+            val homeHistory = progress.history()
+            val homeNow = System.currentTimeMillis()
+            val homeRewards = remember(homeHistory, state.minutesPerDay) { Rewards.summary(homeHistory, state.minutesPerDay, homeNow) }
+            val homeQuests = remember(homeHistory, homeRewards.dailyGoalXp) { pk.parhlou.student.domain.Quests.today(homeHistory, homeRewards.dailyGoalXp, homeNow) }
+            if (celebrate) CelebrationHost(store, homeRewards, remember(homeHistory) { Rewards.achievements(homeHistory) }, homeQuests.all { it.done })
             HomeScreen(
                 repo = repo, onboarding = state, progress = progress,
                 onOpenModule = { nav.navigate("module/$it") },
@@ -456,8 +471,11 @@ fun ParhlouApp(
                 onStartSession = { m, min -> startStudy(m, min) },
                 onKit = { nav.navigate("kit/$it") },
                 onProgress = { nav.navigate(Routes.PROGRESS) },
-                quests = progress.history().let { h -> pk.parhlou.student.domain.Quests.today(h, Rewards.summary(h, state.minutesPerDay, System.currentTimeMillis()).dailyGoalXp, System.currentTimeMillis()) },
+                quests = homeQuests,
                 onLeague = { goTop(Routes.LEAGUE) },
+                chestReady = pk.parhlou.student.domain.Game.chestReady(homeQuests, homeHistory, homeNow),
+                chestOpened = pk.parhlou.student.domain.Game.chestOpenedToday(homeHistory, homeNow),
+                onOpenChest = ::openChest,
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -524,14 +542,22 @@ fun ParhlouApp(
             val now = System.currentTimeMillis()
             val history = progress.history()
             val rewards = remember(history, state.minutesPerDay) { Rewards.summary(history, state.minutesPerDay, now) }
+            val leagueQuests = remember(history, rewards.dailyGoalXp) { pk.parhlou.student.domain.Quests.today(history, rewards.dailyGoalXp, now) }
+            val leagueAchievements = remember(history) { Rewards.achievements(history) }
             pk.parhlou.student.ui.screens.LeagueScreen(
                 rewards = rewards,
-                quests = remember(history, rewards.dailyGoalXp) { pk.parhlou.student.domain.Quests.today(history, rewards.dailyGoalXp, now) },
+                quests = leagueQuests,
                 weekXp = remember(history) { pk.parhlou.student.domain.Social.weekXp(history, now) },
                 signedIn = session != null || socialClient != null,
                 social = social,
                 onSignIn = { scope.launch { store.setGuest(false) }; nav.navigate(Routes.SIGN_IN) },
+                achievements = leagueAchievements,
+                playerName = state.firstName?.takeIf { it.isNotBlank() } ?: "You",
+                chestReady = pk.parhlou.student.domain.Game.chestReady(leagueQuests, history, now),
+                chestOpened = pk.parhlou.student.domain.Game.chestOpenedToday(history, now),
+                onOpenChest = ::openChest,
             )
+            if (celebrate) CelebrationHost(store, rewards, leagueAchievements, leagueQuests.all { it.done })
         } }
         composable(Routes.PROFILE) { WithTabBarSpace {
             val soundOn by store.soundOn.collectAsState(initial = true)

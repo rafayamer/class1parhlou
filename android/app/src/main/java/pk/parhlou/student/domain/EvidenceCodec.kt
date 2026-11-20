@@ -18,6 +18,7 @@ object EvidenceCodec {
         Evidence.TopicCorrect -> "C"
         is Evidence.SessionCompleted -> "S:${e.xp}"
         is Evidence.Helpful -> "H:${e.yes}"
+        is Evidence.ChestOpened -> "K:${e.xp}"
     }
 
     fun decode(code: String): Evidence? {
@@ -36,6 +37,7 @@ object EvidenceCodec {
             "C" -> Evidence.TopicCorrect
             "S" -> number?.let { Evidence.SessionCompleted(it) }
             "H" -> number?.let { Evidence.Helpful(it) }
+            "K" -> number?.let { Evidence.ChestOpened(it.coerceIn(0, Game.CHEST_MAX_XP)) }
             else -> null
         }
     }

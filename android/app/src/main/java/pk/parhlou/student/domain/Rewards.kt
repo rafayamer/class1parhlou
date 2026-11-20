@@ -7,6 +7,12 @@ import java.time.ZoneId
 /** A badge the student has earned. */
 data class Badge(val id: String, val title: String, val description: String)
 
+/** An achievement in the gallery: earned once [progress] reaches [target]. */
+data class Achievement(val id: String, val icon: String, val title: String, val description: String, val progress: Int, val target: Int) {
+    val earned: Boolean get() = progress >= target
+    val shownProgress: Int get() = progress.coerceAtMost(target)
+}
+
 /** Everything the reward bar shows: XP, today's goal, streak, level and badges. */
 data class RewardSummary(
     val totalXp: Int,
@@ -39,6 +45,7 @@ object Rewards {
 
     fun xpOf(e: Evidence): Int = when (e) {
         is Evidence.SessionCompleted -> e.xp
+        is Evidence.ChestOpened -> e.xp.coerceIn(0, Game.CHEST_MAX_XP)
         Evidence.LessonCompleted -> LESSON_XP
         is Evidence.QuizCompleted -> 0 // sessions report their XP separately; module quizzes earn through sessions
         Evidence.WrittenSubmitted -> WRITTEN_XP
@@ -46,7 +53,8 @@ object Rewards {
         else -> 0
     }
 
-    private fun studied(e: Evidence) = e !is Evidence.ModuleOpened
+    /** Opening a module or the daily chest isn't study: neither keeps a streak alive. */
+    private fun studied(e: Evidence) = e !is Evidence.ModuleOpened && e !is Evidence.ChestOpened && e !is Evidence.Helpful
 
     /** The daily goal grows with the minutes the student chose (about 4 XP a minute). */
     fun dailyGoal(minutesPerDay: Int): Int = (minutesPerDay.coerceIn(10, 120) * 4 / 10) * 10
@@ -84,14 +92,7 @@ object Rewards {
             }
         }
         val lvl = level(total)
-        val badges = buildList {
-            if (history.any { it.evidence is Evidence.SessionCompleted }) add(Badge("first-session", "First steps", "Finished your first guided session"))
-            if (maxStreak(studyDays) >= 3) add(Badge("streak-3", "On a roll", "Studied 3 days in a row"))
-            if (maxStreak(studyDays) >= 7) add(Badge("streak-7", "Week warrior", "Studied 7 days in a row"))
-            if (maxStreak(studyDays) >= 30) add(Badge("streak-30", "Unstoppable", "Studied 30 days in a row"))
-            if (history.any { it.key.startsWith("paper:board-") }) add(Badge("board-paper", "Board ready", "Sat a full 75-mark board paper"))
-            if (total >= 1000) add(Badge("xp-1000", "1,000 XP", "Earned 1,000 XP"))
-        }
+        val badges = achievements(history, zone).filter { it.earned }.map { Badge(it.id, it.title, it.description) }
         return RewardSummary(
             totalXp = total,
             xpToday = xpByDay[today] ?: 0,
@@ -103,6 +104,39 @@ object Rewards {
             level = lvl,
             toNextLevel = 50 * (lvl + 1) * lvl - total,
             badges = badges,
+        )
+    }
+
+    /**
+     * Every achievement, earned or not, with progress towards it: the gallery shows locked ones too, so there's always a
+     * next goal in sight. Worked out from the study history, like everything else here.
+     */
+    fun achievements(history: List<LoggedEvidence>, zone: ZoneId = ZoneId.systemDefault()): List<Achievement> {
+        val studyDays = history.filter { studied(it.evidence) }.map { Instant.ofEpochMilli(it.at).atZone(zone).toLocalDate() }.toSortedSet()
+        val best = maxStreak(studyDays)
+        val total = history.sumOf { xpOf(it.evidence) }
+        val sessions = history.count { it.evidence is Evidence.SessionCompleted }
+        val lessons = history.count { it.evidence == Evidence.LessonCompleted }
+        val strongQuizzes = history.count { (it.evidence as? Evidence.QuizCompleted)?.firstTryPercent?.let { p -> p >= 80 } == true }
+        val papers = history.count { it.key.startsWith("paper:") && (it.evidence is Evidence.ExamMarked || it.evidence is Evidence.DemoCheckedExam) }
+        val boardPapers = history.count { it.key.startsWith("paper:board-") }
+        val chests = history.count { it.evidence is Evidence.ChestOpened }
+        val lvl = level(total)
+        return listOf(
+            Achievement("first-session", "🌱", "First steps", "Finish your first guided session", sessions, 1),
+            Achievement("streak-3", "🔥", "On a roll", "Study 3 days in a row", best, 3),
+            Achievement("streak-7", "📅", "Week warrior", "Study 7 days in a row", best, 7),
+            Achievement("lessons-10", "📘", "Bookworm", "Finish 10 lessons", lessons, 10),
+            Achievement("quiz-whiz", "🎯", "Quiz whiz", "Score 80% or more on 10 quizzes", strongQuizzes, 10),
+            Achievement("chests-7", "🎁", "Treasure hunter", "Open 7 daily chests", chests, 7),
+            Achievement("board-paper", "📝", "Board ready", "Sit a full board paper", boardPapers, 1),
+            Achievement("papers-5", "🏅", "Paper pro", "Finish 5 papers", papers, 5),
+            Achievement("xp-1000", "⚡", "1,000 XP", "Earn 1,000 XP", total, 1000),
+            Achievement("level-10", "🚀", "Level 10", "Reach level 10", lvl, 10),
+            Achievement("streak-30", "🏆", "Unstoppable", "Study 30 days in a row", best, 30),
+            Achievement("lessons-50", "🧠", "Scholar", "Finish 50 lessons", lessons, 50),
+            Achievement("xp-5000", "💎", "5,000 XP", "Earn 5,000 XP", total, 5000),
+            Achievement("streak-100", "👑", "Legend", "Study 100 days in a row", best, 100),
         )
     }
 

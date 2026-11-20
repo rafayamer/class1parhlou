@@ -62,7 +62,8 @@ class LeagueTest {
 
     @Test fun guestsSeeQuestsAndAreAskedToSignIn() {
         open(null)
-        rule.onNodeWithTag("quests").assertIsDisplayed()
+        rule.onNodeWithTag("player-card").assertIsDisplayed()
+        rule.onNodeWithTag("quests").performScrollTo().assertIsDisplayed()
         rule.onNodeWithTag("league-sign-in").performScrollTo().assertIsDisplayed()
     }
 

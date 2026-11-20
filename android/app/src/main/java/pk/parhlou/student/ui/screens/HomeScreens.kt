@@ -165,6 +165,9 @@ fun HomeScreen(
     /** Today's quests (League tab); empty hides the card. */
     quests: List<pk.parhlou.student.domain.Quests.Quest> = emptyList(),
     onLeague: () -> Unit = {},
+    chestReady: Boolean = false,
+    chestOpened: Boolean = false,
+    onOpenChest: () -> Int = { 0 },
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -234,7 +237,10 @@ fun HomeScreen(
                 Text("${quests.count { it.done }}/${quests.size} ✅", style = MaterialTheme.typography.labelLarge)
             }
             quests.forEach { q -> Text("${if (q.done) "✅" else "🎯"}  ${q.title}  (${q.progress.coerceAtMost(q.target)}/${q.target})", style = MaterialTheme.typography.bodyMedium) }
-            TextButton(onClick = onLeague, modifier = Modifier.heightIn(min = 44.dp).testTag("open-league")) { Text("League and friends") }
+            if (quests.all { it.done }) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
+            else Text("🎁 Finish all ${quests.size} to open today's bonus chest", style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary, modifier = Modifier.testTag("chest-teaser"))
+            TextButton(onClick = onLeague, modifier = Modifier.heightIn(min = 44.dp).testTag("open-league")) { Text("League, badges and friends") }
         }
         // Each subject's card shows that subject's own next section.
         subjects.forEach { s ->
