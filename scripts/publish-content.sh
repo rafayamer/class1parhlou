@@ -7,7 +7,7 @@ REF="${1:?project ref}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BUNDLE="${2:-$ROOT/supabase/functions/ai/content/sample.json}"
 if [ -z "${2:-}" ]; then
-  (cd "$ROOT/android" && ./gradlew --no-daemon -q :app:testDebugUnitTest --tests '*ContentExportTest' -PcontentExport="$BUNDLE" ${ROBOLECTRIC_DIR:+-ProbolectricDir=$ROBOLECTRIC_DIR})
+  (cd "$ROOT/android" && ./gradlew --no-daemon -q :app:testPrototypeDebugUnitTest --tests '*ContentExportTest' -PcontentExport="$BUNDLE" ${ROBOLECTRIC_DIR:+-ProbolectricDir=$ROBOLECTRIC_DIR})
 fi
 python3 - "$BUNDLE" <<'PY' | curl -sS -m 120 -X POST -H "Authorization: Bearer ${SUPABASE_ACCESS_TOKEN:?set SUPABASE_ACCESS_TOKEN}" -H "Content-Type: application/json" "https://api.supabase.com/v1/projects/$REF/database/query" --data-binary @-
 import json, sys

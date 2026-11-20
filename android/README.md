@@ -41,11 +41,20 @@ Requires JDK 17+ and the Android SDK (platform 36).
 ```
 
 ```bash
-./gradlew :app:testDebugUnitTest
+./gradlew :app:testPrototypeDebugUnitTest
 ```
 
 If Robolectric can't download its Android runtime jars (restricted networks), download the `android-all-instrumented` 12.1, 14 and 15 jars from Maven Central into a folder and run:
 
 ```bash
-./gradlew :app:testDebugUnitTest -ProbolectricDir=/path/to/jars
+./gradlew :app:testPrototypeDebugUnitTest -ProbolectricDir=/path/to/jars
 ```
+
+## Two versions of the app
+
+| Version | Build | What's different |
+|---|---|---|
+| **prototype** (shared APK) | `./gradlew :app:assemblePrototypeRelease` | Updates itself from GitHub releases; Plus paid by JazzCash/Easypaisa transfer. |
+| **play** (Google Play) | `./gradlew :app:bundlePlayRelease` → `.aab` | No self-updater, no permission to install apps, no wallet transfers (Play Billing only), ads only with real AdMob IDs (`-PadmobAppId=… -PadmobInterstitial=…`). |
+
+Every CI build attaches both to its GitHub release: `parhlou.apk` and `parhlou-play.aab`.

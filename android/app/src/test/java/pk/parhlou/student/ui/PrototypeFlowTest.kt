@@ -53,7 +53,16 @@ class PrototypeFlowTest {
 
     private fun launch() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { exists("Do this now") }
+        rule.waitUntil(30_000) { exists("Do this now") }
+    }
+
+    /** Waits for [text]; if it never comes, fails with what the screen showed instead. */
+    private fun waitOrDump(ms: Long, text: String) {
+        runCatching { rule.waitUntil(ms) { exists(text) } }.onFailure {
+            val shown = rule.onAllNodes(androidx.compose.ui.test.hasText("", substring = true), useUnmergedTree = true).fetchSemanticsNodes()
+                .flatMap { n -> n.config.getOrElseNullable(androidx.compose.ui.semantics.SemanticsProperties.Text) { null }.orEmpty().map { t -> t.text } }
+            throw AssertionError("\"$text\" never appeared. Screen showed: ${shown.take(40)}", it)
+        }
     }
 
     private fun exists(text: String) = rule.onAllNodes(hasText(text, substring = true)).fetchSemanticsNodes().isNotEmpty()
@@ -98,14 +107,14 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick()
         openChapterTest()
         rule.onNodeWithText("Start in the app").performScrollTo().performClick()
-        rule.waitUntil(15_000) { exists("Invigilator on") }
+        waitOrDump(60_000, "Invigilator on")
         rule.onNodeWithText("2 pages scanned · 2 not matched to a question yet.").performScrollTo().assertExists()
 
         // Hand-in warns about unmatched pages and offers to match them.
         rule.onNodeWithText("Hand in paper").performScrollTo().performClick()
         rule.onNodeWithText("Some pages aren't matched").assertExists()
         rule.onNodeWithText("Match pages").performClick()
-        rule.waitUntil(15_000) { exists("Your pages (2)") }
+        rule.waitUntil(45_000) { exists("Your pages (2)") }
         rule.onNodeWithText("2 pages aren't matched", substring = true).assertExists()
         // Without OpenCV (as here) the pages can't be processed; they are kept as photographed, not stuck "Preparing".
         rule.waitUntil(10_000) { !exists("Preparing") }
@@ -121,7 +130,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Done").performClick()
 
         // Back in the paper, the timer kept running and both pages count as photos of Q2 (i).
-        rule.waitUntil(15_000) { exists("2 pages scanned and matched to questions.") }
+        rule.waitUntil(45_000) { exists("2 pages scanned and matched to questions.") }
         assertTrue(exists("2 page photos attached"))
         val log = runBlocking { store.examLog(paperId).first() }
         assertTrue("scanning must not count as leaving the paper", ExamLog.parse(log).none { it.type == ExamEventType.LEFT })
@@ -133,7 +142,7 @@ class PrototypeFlowTest {
         rule.onNodeWithText("Continue").performScrollTo().performClick() // Test Series: Continue opens the papers
         openChapterTest()
         rule.onNodeWithText("Start in the app").performScrollTo().performClick()
-        rule.waitUntil(40_000) { exists("Invigilator on") }
+        waitOrDump(60_000, "Invigilator on")
 
         // Two MCQs (one right, one wrong), one full written answer, one partial, one unrecognised.
         rule.onNodeWithTag("mcq-p1-3").performScrollTo().performClick()

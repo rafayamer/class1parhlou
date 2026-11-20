@@ -55,3 +55,39 @@ Everything marked **Fixed** is in the code and tested. Items marked **You** need
 5. Make a support email and tell me; I'll add it to the policies.
 6. Copyright: write to PCTB for permission to use the textbooks in a learning app, or get a lawyer's opinion.
 7. Have a Pakistani lawyer read the three policy pages once before launch. They're written to be correct, but they're not legal advice.
+
+## Full audit (20 November 2026)
+
+A second, deeper pass over everything: every database function and policy, the AI server line by line, Android lint and
+manifest, the owner panel, the build pipelines and every dependency. All fixes are tested (database: 12 new tests; AI server:
+type-checked in CI from now on; app: full suite).
+
+| # | Severity | Finding | Fix |
+|---|----------|---------|-----|
+| A1 | High | **AI server bug:** after a student's 10th Ustaad message, every reply made an extra AI call that crashed before its cost was logged (undefined variable). Unlogged spend escaped every limit, and Ustaad's memory never saved. | Fixed. CI now type-checks the AI server before deploying, which catches this kind of bug. |
+| A2 | High | Spending was added up from at most 1,000 rows (the database API's page size), so heavy users and the whole-app daily ceiling were undercounted. | Sums now run inside the database (`ai_spend`), server-only. |
+| A3 | High | **App crash on Android 7.x:** dates, streaks and the calendar used Android 8+ code. | Core library desugaring: works on Android 7.1 and up. |
+| A4 | High (latent) | The internal function that grants the owner role was callable by any signed-in user. It isn't reachable through the API today, but would be if the private schema were ever exposed. | Locked to the server. |
+| A5 | Medium | Made-up install IDs could still create credit and chat rows, and use the YouTube search, without an account. | Without an account only feedback, MCQ checking and the allowance screen work. |
+| A6 | Medium | League XP and streaks are reported by the phone; any value up to 100,000 was accepted. | Capped at what real study can earn (1,500 XP per day of the week; a streak can't be older than the account). |
+| A7 | Medium | Avatars accepted any 4 characters (a short rude word other children would see); first names in leagues weren't filtered. | Avatars from the app's list only; unsuitable names show as "Learner"; existing rows cleaned. |
+| A8 | Medium | A student could move their profile to another organisation (tenant). | Students can change only their name and birth year. |
+| A9 | Medium | No limits on feedback, saved MCQ marks or synced events per student (storage abuse). | 20 feedback a day (300 shared by all guests), 3,000 marks and 20,000 events a day. |
+| A10 | Medium | Links from course content and server replies were opened without checking the kind of link; "Watch on YouTube" could crash. | One safe opener: https web pages only, never crashes; YouTube video IDs validated. |
+| A11 | Medium | The Play Store version would have contained the self-updater and the "install other apps" permission, which Play rejects. | Two versions: `prototype` (shared APK, as before) and `play` (no updater, no install permission, no wallet transfers, targets Android 16 as Play requires). |
+| A12 | Low | The owner panel's test runner (Vitest) had known critical vulnerabilities (developer machines only). | Upgraded; `npm audit` reports 0. |
+| A13 | Low | Build pipelines used movable version tags for third-party actions. | Pinned to exact commits. |
+| A14 | Low | The parent email used in the owner panel's "Email parent" link came straight from what the student typed. | Used only if it's a plain email address. |
+| A15 | Low | A crash inside an AI call returned a bare server error. | Returns `AI_UNAVAILABLE`; details only in the server log. |
+| A16 | Low | The paper-sitting test sometimes timed out on a busy machine, which could block a CI build. | Longer waits; if it ever fails it now reports what the screen showed. |
+
+**Checked and sound:** row security on every table; every privileged function has a fixed search path; no
+privileged function callable without an account; only the main screen is exposed to other apps (plus three standard,
+permission-protected Android components); no secrets in the code; no log output of personal data; HTTPS only; notifications
+use immutable intents; account deletion removes everything; payments computed on the server.
+
+**Run once in Supabase:** `supabase/migrations/20261120000001_audit_fixes.sql` (after the earlier ones). Until then the AI
+server falls back safely to adding up rows.
+
+**Still open (not code):** textbook copyright permission from PCTB; Google Play Billing for Plus in the Play version (needs a
+Play Console account and products); a private upload key for Play (Play Console can also reset it later).

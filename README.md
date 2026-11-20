@@ -15,7 +15,7 @@ Exam-focused learning academy for Pakistani students: Android student app + owne
 ## Checks
 
 ```bash
-cd android && ./gradlew :app:testDebugUnitTest :scanner:testDebugUnitTest
+cd android && ./gradlew :app:testPrototypeDebugUnitTest :scanner:testDebugUnitTest
 ```
 
 ```bash

@@ -25,7 +25,7 @@ Status: verified with the local runner only. Not yet run against a hosted Supaba
 Calls GPT-6 Luna for the tutor and Check Master. The OpenAI key lives only here, as a server secret.
 
 - `core.ts`: prompts, JSON schemas, validation, retry. `handler.ts`: looks up questions and keys on the server. `index.ts`: HTTP and database wiring, app-key check, per-install limit and project-wide daily cap.
-- `content/sample.json` is generated from the app's sample content: `cd android && ./gradlew :app:testDebugUnitTest --tests '*ContentExportTest' -PcontentExport=../supabase/functions/ai/content/sample.json`
+- `content/sample.json` is generated from the app's sample content: `cd android && ./gradlew :app:testPrototypeDebugUnitTest --tests '*ContentExportTest' -PcontentExport=../supabase/functions/ai/content/sample.json`
 - Offline tests: `node --experimental-strip-types --test supabase/functions/ai/core.test.ts`
 - Live checks (needs `OPENAI_API_KEY`): `node --experimental-strip-types supabase/functions/ai/live.ts`. Results are in `docs/ai-test-log.md`.
 

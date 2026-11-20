@@ -32,7 +32,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
       - name: Test
         working-directory: android
-        run: ./gradlew :app:testDebugUnitTest :scanner:testDebugUnitTest
+        run: ./gradlew :app:testPrototypeDebugUnitTest :scanner:testDebugUnitTest
       - name: Private release key (when the owner has added it)
         env:
           RELEASE_KEYSTORE_B64: ${{ secrets.RELEASE_KEYSTORE_B64 }}
@@ -47,7 +47,7 @@ jobs:
           RELEASE_KEYSTORE_PASSWORD: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
           RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
         run: >
-          ./gradlew :app:assembleRelease
+          ./gradlew :app:assemblePrototypeRelease :app:bundlePlayRelease
           -PbuildNumber=${{ github.run_number }}
           -PparhlouAiUrl=$PARHLOU_AI_URL
           -PsupabaseAnonKey=$SUPABASE_PUBLISHABLE_KEY
@@ -56,7 +56,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp android/app/build/outputs/apk/release/app-release.apk parhlou.apk
+          cp android/app/build/outputs/apk/prototype/release/app-prototype-release.apk parhlou.apk
+          # The Google Play version (no self-updater, no install permission): upload this .aab in Play Console.
+          cp android/app/build/outputs/bundle/playRelease/app-play-release.aab parhlou-play.aab
           # Release notes = the newest entry of the in-app "What's new" page, so both always say the same.
           python3 -c "
           import json
@@ -66,7 +68,7 @@ jobs:
           lines += ['', 'Automatic prototype build of ${{ github.sha }}. Not a Play Store release.']
           open('notes.md', 'w').write(chr(10).join(lines))
           "
-          gh release create "build-${{ github.run_number }}" parhlou.apk \
+          gh release create "build-${{ github.run_number }}" parhlou.apk parhlou-play.aab \
             --title "Parhlou prototype build ${{ github.run_number }}" \
             --notes-file notes.md \
             --target "${{ github.sha }}" --latest

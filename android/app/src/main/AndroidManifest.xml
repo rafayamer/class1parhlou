@@ -7,8 +7,6 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <!-- Do Not Disturb during papers, only after the student allows it. -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-    <!-- Prototype only: lets the app open Android's installer for a newer prototype build. Remove for the Play Store. -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <!-- Students are children: the advertising ID is never used (Google Play Families policy). -->
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
     <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" tools:node="remove" />

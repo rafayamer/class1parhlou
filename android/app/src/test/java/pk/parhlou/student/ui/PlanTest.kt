@@ -58,6 +58,12 @@ class PlanTest {
         assert(fake.sent == Triple("easypaisa", 3, "98765432"))
     }
 
+    @Test fun thePlayVersionOffersNoWalletTransfers() {
+        rule.setContent { ParhlouTheme { PlanScreen(Fake(free), signedIn = true, onSignIn = {}, onPlanChanged = {}, onBack = {}, manualPayments = false) } }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("plan-play-soon")).fetchSemanticsNodes().isNotEmpty() }
+        assert(rule.onAllNodes(hasTestTag("plan-pay")).fetchSemanticsNodes().isEmpty())
+    }
+
     @Test fun guestsAreAskedToSignIn() {
         rule.setContent { ParhlouTheme { PlanScreen(Fake(free), signedIn = false, onSignIn = {}, onPlanChanged = {}, onBack = {}) } }
         rule.onNodeWithTag("plan-price").assertExists()

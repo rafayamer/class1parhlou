@@ -31,5 +31,5 @@ All colours live in `android/app/src/main/java/pk/parhlou/student/ui/theme/Theme
 `screens/` holds home, tutor (empty and in conversation), units, quiz, the paper, and Check Master with the invigilator report, in light and dark. Regenerate:
 
 ```bash
-cd android && ./gradlew :app:testDebugUnitTest --tests '*ScreenshotTest' -PscreenshotDir=../docs/design/screens
+cd android && ./gradlew :app:testPrototypeDebugUnitTest --tests '*ScreenshotTest' -PscreenshotDir=../docs/design/screens
 ```

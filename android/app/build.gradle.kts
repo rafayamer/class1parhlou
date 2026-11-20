@@ -11,13 +11,12 @@ android {
     defaultConfig {
         applicationId = "pk.parhlou.student"
         minSdk = 25
-        targetSdk = 35
+        // Google Play requires new apps to target the newest Android (16, API 36) from 31 August 2026.
+        targetSdk = 36
         // CI passes -PbuildNumber=<run number>; the in-app updater compares it with the latest release.
         val buildNumber = (project.findProperty("buildNumber") as String?)?.toIntOrNull() ?: 1
         versionCode = buildNumber
         versionName = "0.2.$buildNumber"
-        // GitHub repository whose releases carry new prototype APKs. Empty = no update checks.
-        buildConfigField("String", "UPDATE_REPO", "\"${project.findProperty("updateRepo") ?: ""}\"")
         // AI gateway (Supabase Edge Function). Empty = the app uses the on-phone demo brain.
         // Set in ~/.gradle/gradle.properties or with -PparhlouAiUrl=... -PsupabaseAnonKey=...
         // Never put an OpenAI key here: it lives only on the server.
@@ -30,6 +29,27 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         // The scanner's OpenCV library is native: ship it for 64-bit and 32-bit ARM phones only.
         ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
+    }
+
+    // Two versions of the app:
+    //  - prototype: the APK shared directly. Updates itself from GitHub releases; Plus is paid by JazzCash/Easypaisa transfer.
+    //  - play: the Google Play version. No self-updater and no permission to install apps (Play doesn't allow either),
+    //    no manual payments (Play requires Google Play Billing for Plus), and ads only once real AdMob IDs are given.
+    flavorDimensions += "channel"
+    productFlavors {
+        create("prototype") {
+            dimension = "channel"
+            // GitHub repository whose releases carry new prototype APKs. Empty = no update checks.
+            buildConfigField("String", "UPDATE_REPO", "\"${project.findProperty("updateRepo") ?: ""}\"")
+            buildConfigField("boolean", "MANUAL_PAYMENTS", "true")
+            buildConfigField("boolean", "ADS", "true")
+        }
+        create("play") {
+            dimension = "channel"
+            buildConfigField("String", "UPDATE_REPO", "\"\"")
+            buildConfigField("boolean", "MANUAL_PAYMENTS", "false")
+            buildConfigField("boolean", "ADS", "${project.findProperty("admobInterstitial") != null}")
+        }
     }
 
     signingConfigs {

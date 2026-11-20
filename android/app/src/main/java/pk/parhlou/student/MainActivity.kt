@@ -80,7 +80,8 @@ class MainActivity : ComponentActivity() {
         }
         val account = account
         // Ads for free-plan students (child-safe, non-personalised); nothing loads until a quiz is finished.
-        val adMob = pk.parhlou.student.ads.AdMobAds(this, BuildConfig.ADMOB_INTERSTITIAL)
+        val adMob: pk.parhlou.student.ads.Ads =
+            if (BuildConfig.ADS) pk.parhlou.student.ads.AdMobAds(this, BuildConfig.ADMOB_INTERSTITIAL) else pk.parhlou.student.ads.NoAds
         setContent {
             ParhlouTheme { ProvideMotion {
                 // Parhlou's own sounds, following the student's sound switch.

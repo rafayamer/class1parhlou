@@ -39,7 +39,9 @@ import pk.parhlou.student.ui.components.Sheet
  */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPlanChanged: (Plans.Info) -> Unit, onBack: () -> Unit) {
+fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPlanChanged: (Plans.Info) -> Unit, onBack: () -> Unit,
+               /** False in the Play version: Google Play requires its own billing for Plus, so wallet transfers aren't offered. */
+               manualPayments: Boolean = pk.parhlou.student.BuildConfig.MANUAL_PAYMENTS) {
     val scope = rememberCoroutineScope()
     val clipboard = LocalClipboardManager.current
     var info by remember { mutableStateOf<Plans.Info?>(null) }
@@ -85,6 +87,7 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
             }
         }
         if (i.waiting) return@ParhlouScreen
+        if (!manualPayments) { Sheet(Modifier.testTag("plan-play-soon")) { Muted("Plus will be available to buy through Google Play soon.") }; return@ParhlouScreen }
         if (i.wallets.isEmpty()) { Sheet { Muted("Payments open soon.") }; return@ParhlouScreen }
 
         var months by rememberSaveable { mutableIntStateOf(1) }
