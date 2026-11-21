@@ -169,7 +169,10 @@ class PrototypeFlowTest {
         val log = runBlocking { store.examLog(paperId).first() }
         assertTrue(ExamLog.isSubmitted(log))
         assertEquals(ExamEventType.STARTED, ExamLog.parse(log).first().type)
-        val saved = ProgressStore(store).also { runBlocking { it.load() } }
+        // Progress is written to the phone's storage just after the result shows: wait for it, then check what was saved.
+        fun saved() = ProgressStore(store).also { runBlocking { it.load() } }
+        rule.waitUntil(10_000) { saved().state("m-1-1") == LearningState.DEMO_CHECKED && saved().papersSubmitted == 1 }
+        val saved = saved()
         assertEquals(LearningState.DEMO_CHECKED, saved.state("m-1-1"))
         assertEquals(0, saved.assessedCount(listOf("m-1-1", "m-1-2")))
         assertEquals(1, saved.papersSubmitted)
