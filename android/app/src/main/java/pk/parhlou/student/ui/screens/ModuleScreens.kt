@@ -387,12 +387,19 @@ private fun ImproveStage(
 ) {
     val evidence = progress.evidence(module.id)
     val quiz = evidence.filterIsInstance<Evidence.QuizCompleted>()
+    // The same mastery scale as the section page's ring, so the two never disagree.
+    val level = pk.parhlou.student.domain.Rewards.sectionLevel(evidence, module.lesson != null)
     Sheet {
         Text("Where you are", style = MaterialTheme.typography.titleMedium)
-        Text(progress.state(module.id).label, style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.secondary)
+        Text(when (level) { 0 -> "Not started"; 5 -> "Mastered"; else -> "Level $level of 5" },
+            style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.secondary)
         if (quiz.isEmpty()) Muted("Do a practice to see what to work on.")
         else Muted("Best first-try practice score: ${quiz.maxOf { it.firstTryPercent }}%")
-        Muted("A module only counts as verified after a properly marked chapter test, not from practice alone.")
+        Muted(when {
+            level >= 5 -> "Exam ready. A practice now and then keeps it fresh."
+            level >= pk.parhlou.student.domain.Rewards.LEARNED_LEVEL -> "Learned. Score 90% in a practice, or write a board answer, to master it."
+            else -> "Score 70% or more in a practice to learn this section."
+        })
     }
     if (Evidence.WrittenSubmitted in evidence) {
         module.writtenQuestions.forEach { q ->

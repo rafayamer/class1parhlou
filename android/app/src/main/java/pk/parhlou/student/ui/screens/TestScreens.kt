@@ -208,7 +208,7 @@ fun TestsScreen(
                 val best = results.maxOfOrNull { it.third }
                 Column(
                     Modifier.fillMaxWidth().clip(RoundedCornerShape(24.dp))
-                        .background(androidx.compose.ui.graphics.Brush.linearGradient(listOf(androidx.compose.ui.graphics.Color(0xFF0B7A7A), androidx.compose.ui.graphics.Color(0xFF4F53D6))))
+                        .background(pk.parhlou.student.ui.theme.heroGradient())
                         .padding(18.dp).testTag("papers-summary"),
                     verticalArrangement = Arrangement.spacedBy(4.dp),
                 ) {

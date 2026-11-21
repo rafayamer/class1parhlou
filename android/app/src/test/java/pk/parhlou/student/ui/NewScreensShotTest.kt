@@ -69,6 +69,16 @@ class NewScreensShotTest {
         rule.waitUntil(8_000) { exists("Start today's session") }
         save("20-home-$mode")
         rule.onNodeWithTag("start-session").performScrollTo().performClick()
+        rule.waitForIdle()
+        // A session teaches first (the lesson's ideas, example and "your turn"), then asks questions: step through to the first one.
+        val forward = listOf("lesson-next", "lesson-finish", "lesson-practice", "session-continue")
+        repeat(30) {
+            if (rule.onAllNodes(androidx.compose.ui.test.hasTestTag("session-check")).fetchSemanticsNodes().isNotEmpty()) return@repeat
+            val tag = forward.firstOrNull { rule.onAllNodes(androidx.compose.ui.test.hasTestTag(it)).fetchSemanticsNodes().isNotEmpty() }
+            if (tag != null) rule.onAllNodes(androidx.compose.ui.test.hasTestTag(tag))[0].performClick()
+            else if (exists("Show me the solution")) rule.onAllNodes(hasText("Show me the solution"))[0].performClick()
+            rule.waitForIdle()
+        }
         rule.waitUntil(5_000) { exists("Check") }
         save("22-session-$mode")
         save("22b-session-$mode")

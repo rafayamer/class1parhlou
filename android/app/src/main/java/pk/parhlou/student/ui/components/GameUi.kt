@@ -93,7 +93,7 @@ fun PlayerCard(name: String, avatar: String, rewards: RewardSummary, league: Str
     Column(
         Modifier.fillMaxWidth().clip(RoundedCornerShape(24.dp))
             // The same deep teal-to-indigo in light and dark themes, so white text always reads clearly.
-            .background(Brush.linearGradient(listOf(Color(0xFF0B7A7A), Color(0xFF4F53D6))))
+            .background(pk.parhlou.student.ui.theme.heroGradient())
             .padding(18.dp).testTag("player-card"),
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {

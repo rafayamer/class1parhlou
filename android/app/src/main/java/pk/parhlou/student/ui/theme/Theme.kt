@@ -10,6 +10,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -167,3 +168,17 @@ fun ParhlouTheme(dark: Boolean = isSystemInDarkTheme(), accent: Color? = null, c
         MaterialTheme(colorScheme = scheme, typography = Type, content = content)
     }
 }
+
+/**
+ * The brand gradient behind hero cards (player card, exam summary): deep enough for white text in light and dark, and it
+ * follows the owner's brand colour from the owner panel. With the built-in teal it runs teal to indigo.
+ */
+@Composable
+fun heroGradient(): androidx.compose.ui.graphics.Brush {
+    val start = androidx.compose.ui.graphics.lerp(LocalBrand.current.lip, MaterialTheme.colorScheme.primary, 0.55f)
+    // Dark mode's brand colours are brighter, so they are deepened more to keep white text readable.
+    val night = MaterialTheme.colorScheme.background.luminance() < 0.5f
+    val deep = androidx.compose.ui.graphics.lerp(start, Color.Black, if (night) 0.4f else 0.12f)
+    return androidx.compose.ui.graphics.Brush.linearGradient(listOf(deep, androidx.compose.ui.graphics.lerp(deep, Color(0xFF4F53D6), 0.75f)))
+}
+

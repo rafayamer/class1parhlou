@@ -59,6 +59,10 @@ class ProgressStore(private val store: LocalStore? = null, private val scope: Co
     fun assessedCount(moduleIds: List<String>): Int =
         moduleIds.count { ProgressCalculator.countsTowardMilestone(state(it)) }
 
+    /** Sections learned on the mastery scale (level 3 of 5: a practice at 70% or more), the same as each section's ring. */
+    fun learnedCount(modules: List<Module>): Int =
+        modules.count { pk.parhlou.student.domain.Rewards.sectionLevel(evidence(it.id), it.lesson != null) >= pk.parhlou.student.domain.Rewards.LEARNED_LEVEL }
+
     fun demoCheckedCount(moduleIds: List<String>): Int =
         moduleIds.count { state(it) == LearningState.DEMO_CHECKED }
 

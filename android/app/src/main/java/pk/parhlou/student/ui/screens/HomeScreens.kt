@@ -180,8 +180,6 @@ fun HomeScreen(
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
-    val moduleIds = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
-    val assessed = progress.assessedCount(moduleIds)
     val go = {
         when (task) {
             is NextTask.OpenModule -> onOpenModule(task.moduleId)
@@ -472,7 +470,7 @@ fun ProfileScreen(
     planLabel: String = "Free plan",
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
-    val ids = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
+    val modules = subjects.flatMap { s -> s.chapters.flatMap { c -> c.modules } }
     var confirmClear by remember { mutableStateOf(false) }
     ParhlouScreen("Profile", largeTitle = true) {
         UpdateBanner()
@@ -492,7 +490,7 @@ fun ProfileScreen(
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Stat("Quizzes done", progress.quizzesCompleted().toString(), Modifier.weight(1f))
-            Stat("Modules assessed", "${progress.assessedCount(ids)}", Modifier.weight(1f))
+            Stat("Sections learned", "${progress.learnedCount(modules)}", Modifier.weight(1f))
             Stat("Papers handed in", progress.papersSubmitted.toString(), Modifier.weight(1f))
         }
         if (accountsAvailable) {
@@ -567,23 +565,23 @@ private fun Stat(label: String, value: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun JourneyScreen(repo: ParhlouRepository, onboarding: OnboardingState, progress: ProgressStore, onBack: () -> Unit) {
-    val ids = onboarding.subjectIds.mapNotNull { repo.subject(it) }
-        .flatMap { s -> s.chapters.flatMap { c -> c.modules.map { it.id } } }
-    val assessed = progress.assessedCount(ids)
-    val demoChecked = progress.demoCheckedCount(ids)
+    // The same mastery scale as each section's ring (Rewards.sectionLevel).
+    val modules = onboarding.subjectIds.mapNotNull { repo.subject(it) }.flatMap { s -> s.chapters.flatMap { c -> c.modules } }
+    val learned = progress.learnedCount(modules)
+    val mastered = modules.count { pk.parhlou.student.domain.Rewards.sectionLevel(progress.evidence(it.id), it.lesson != null) >= 5 }
     ParhlouScreen("Journey", onBack = onBack) {
         Sheet {
             Icon(Icons.Filled.RocketLaunch, contentDescription = null, tint = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.size(48.dp))
             Text("Next milestone", style = MaterialTheme.typography.titleMedium)
             LinearProgressIndicator(
-                progress = { if (ids.isEmpty()) 0f else assessed / ids.size.toFloat() },
+                progress = { if (modules.isEmpty()) 0f else learned / modules.size.toFloat() },
                 modifier = Modifier.fillMaxWidth().height(10.dp)
-                    .semantics { contentDescription = "$assessed of ${ids.size} modules verified" },
+                    .semantics { contentDescription = "$learned of ${modules.size} sections learned" },
             )
-            Text("Verified: $assessed of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
-            Text("Practised: $demoChecked of ${ids.size} modules", style = MaterialTheme.typography.bodyLarge)
-            Muted("Your rocket moves on marked papers. Watching or reading alone doesn't count.")
+            Text("Learned: $learned of ${modules.size} sections", style = MaterialTheme.typography.bodyLarge)
+            Text("Mastered: $mastered of ${modules.size} sections", style = MaterialTheme.typography.bodyLarge)
+            Muted("A section is learned when you score 70% in its practice, and mastered at 90% or with a board answer.")
         }
     }
 }

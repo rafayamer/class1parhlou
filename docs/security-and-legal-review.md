@@ -91,3 +91,22 @@ server falls back safely to adding up rows.
 
 **Still open (not code):** textbook copyright permission from PCTB; Google Play Billing for Plus in the Play version (needs a
 Play Console account and products); a private upload key for Play (Play Console can also reset it later).
+
+## App design (owner panel), 21 November 2026
+
+The owner can now change the app's colour, a Home announcement, feature switches, XP numbers, maintenance mode and a minimum
+version from the owner panel (migration `20261121000001_app_customization.sql`). How it stays safe:
+
+- **Only the owner can write it.** `owner_set_config('app_customization', …)` checks the owner role, accepts only a JSON object
+  under 20 kB, and every save goes to the audit log (which also gives the panel its History and restore).
+- **Phones read only public values.** `public_app_settings()` returns the customisation and the ads switch, nothing else: no
+  AI prices, wallet numbers or owner email (tested in `customization.test.sql`).
+- **A bad value can't break the app.** The app re-checks everything: colours must be `#RRGGBB`, numbers are clamped to safe
+  ranges, the announcement button opens only `https://` links through the app's one safe link opener, text is cut to a
+  maximum length, and anything unreadable falls back to the built-in defaults. The panel applies the same limits and shows
+  problems before publishing.
+- **Mistakes are visible.** Turning on maintenance mode, raising the minimum version or switching a feature off for everyone
+  asks for confirmation, and the Dashboard shows a warning while maintenance or a minimum version is on.
+- **Students can always recover.** The maintenance screen has "Check again"; the app refreshes the settings every time it
+  opens.
+- "View as student" now shows the student's AI use this month against their plan's allowance (still logged on every look).
