@@ -1,5 +1,6 @@
 package pk.parhlou.student.tools
 
+import androidx.compose.ui.graphics.drawscope.clipPath
 import android.graphics.Bitmap
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Canvas
@@ -33,7 +34,16 @@ class MascotShotsTest {
         val img = ImageBitmap((side * moods.size).toInt(), side.toInt())
         CanvasDrawScope().draw(Density(1f), LayoutDirection.Ltr, Canvas(img), Size(side * moods.size, side)) {
             drawRect(Color(0xFFF7F9F8))
-            moods.forEachIndexed { i, m -> translate(i * side, 0f) { drawUstaad(side, m) } }
+            // As the app shows him: a portrait in a soft circle.
+            moods.forEachIndexed { i, m ->
+                translate(i * side, 0f) {
+                    val circle = androidx.compose.ui.graphics.Path().apply { addOval(androidx.compose.ui.geometry.Rect(0f, 0f, side, side)) }
+                    clipPath(circle) {
+                        drawRect(androidx.compose.ui.graphics.Brush.verticalGradient(listOf(Color(0xFFCFE8E8), Color(0xFF9DD0D0))))
+                        drawUstaad(side, m)
+                    }
+                }
+            }
         }
         File(dir!!).mkdirs()
         File(dir, "mascot.png").outputStream().use { img.asAndroidBitmap().compress(Bitmap.CompressFormat.PNG, 100, it) }

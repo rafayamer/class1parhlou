@@ -93,7 +93,7 @@ class NavigationTest {
 
     private fun launch() {
         rule.setContent { ParhlouTheme { ParhlouApp(FakeRepository(), store) } }
-        rule.waitUntil(5_000) { onHome() }
+        rule.waitUntil(20_000) { onHome() } // the first start in a fresh test process can be slow
     }
 
     @Test fun everyTabOpensItsSectionFromEveryOther() {
