@@ -474,7 +474,9 @@ export function toTutorReply(raw: any, allowedNoteIds: string[]): TutorReply | n
 }
 
 export type Fetch = (url: string, init: { method: string; headers: Record<string, string>; body: string }) => Promise<{ ok: boolean; status: number; json(): Promise<any> }>;
-export interface Usage { model: string; promptVersion: string; task: string; inputTokens: number; outputTokens: number; attempts: number; ok: boolean }
+export interface Usage { model: string; promptVersion: string; task: string; inputTokens: number; outputTokens: number; attempts: number; ok: boolean;
+  /** Why a call failed, for the owner's AI log: "openai_429_insufficient_quota", "invalid_reply"… (never the student's text). */
+  error?: string }
 
 /**
  * Runs one task: calls Luna, validates, retries once on an invalid reply, and never returns unvalidated output.
@@ -495,7 +497,14 @@ export async function runTask(t: Task, fetchFn: Fetch, apiKey: string): Promise<
       headers: { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify(request),
     });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      // Keep the reason (status and OpenAI's error code only) so the owner can see why Ustaad couldn't answer.
+      const body = await res.json().catch(() => null);
+      const code = String(body?.error?.code ?? body?.error?.type ?? "").replace(/[^a-z0-9_]/gi, "").slice(0, 60);
+      usage.error = `openai_${res.status}${code ? "_" + code : ""}`;
+      console.error("openai call failed", t.task, usage.error);
+      return null;
+    }
     const json = await res.json();
     usage.inputTokens += json?.usage?.input_tokens ?? 0;
     usage.outputTokens += json?.usage?.output_tokens ?? 0;
@@ -508,8 +517,15 @@ export async function runTask(t: Task, fetchFn: Fetch, apiKey: string): Promise<
     return toTutorReply(raw, t.task === "tutor" ? t.notes.map((n) => n.id) : []);
   };
 
-  let result = validate(await call());
-  if (result === null) result = validate(await call());
+  const attempt = async (request?: LunaRequest) => {
+    const raw = await call(request);
+    if (raw === null) return null;
+    const ok = validate(raw);
+    if (ok === null) usage.error = "invalid_reply";
+    return ok;
+  };
+  let result = await attempt();
+  if (result === null) result = await attempt();
   if (result !== null && t.task === "mark_written" && t.images.length > 0) {
     result = await doubleMark(t, result as WrittenMark, async (role) => validate(await call(markRequest(t, role))) as WrittenMark | null);
   }
@@ -517,7 +533,7 @@ export async function runTask(t: Task, fetchFn: Fetch, apiKey: string): Promise<
     usage.ok = false;
     if (t.task === "mark_written") return { result: notChecked(t.question), usage };
     if (t.task === "read_question") return { result: { readable: false, question: "" }, usage };
-    if (t.task === "ustaad") return { result: { ...locked(), kind: "CHAT", reply: "I couldn't think that through just now. Please ask me again." }, usage };
+    if (t.task === "ustaad") return { result: { ...locked(), kind: "CHAT", reply: "Ustaad can't answer right now. Please try again in a few minutes. Your lessons, practice and solutions still work." }, usage };
     return { result: { kind: "NOT_FOUND", answer: "I couldn't get a reliable answer just now. Please try again.", explanation: null, steps: [], noteId: null, checkQuestion: null }, usage };
   }
   usage.ok = true;

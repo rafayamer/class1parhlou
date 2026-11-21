@@ -8,6 +8,15 @@ insert into public.app_config (key, value) values
   ('monthly_usd_per_student', '3.5'::jsonb),
   ('free_monthly_usd', '0'::jsonb)
 on conflict (key) do update set value = excluded.value, updated_at = now();
+-- GPT-6 Luna's published prices (US$ per million tokens). They were 0, which counted every AI call as free, so no allowance
+-- or daily limit ever filled up. Prices the owner has already set are kept.
+update public.app_config set value = '0.10'::jsonb, updated_at = now() where key = 'usd_per_million_input' and (value #>> '{}')::numeric = 0;
+update public.app_config set value = '0.50'::jsonb, updated_at = now() where key = 'usd_per_million_output' and (value #>> '{}')::numeric = 0;
+insert into public.app_config (key, value) values ('usd_per_million_input', '0.10'::jsonb), ('usd_per_million_output', '0.50'::jsonb)
+on conflict (key) do nothing;
+
+-- Why an AI call failed ("openai_429_insufficient_quota", "invalid_reply"…), shown in the owner panel's AI log.
+alter table public.ai_usage add column if not exists error text check (error is null or length(error) <= 120);
 
 -- The first day of the Premium month that today falls in: paid_until minus whole months (31 March - 1 month = 28 February).
 create or replace function private.premium_month_start(p_until date) returns date

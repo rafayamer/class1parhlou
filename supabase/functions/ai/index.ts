@@ -38,8 +38,9 @@ async function live(db: any): Promise<Live> {
     total: Number(setting("daily_calls_total", 2000)),
     photosPerDay: Number(setting("daily_photo_questions", 20)),
     monthlyCredits: Number(setting("monthly_credits", 1000)),
-    usdIn: Number(setting("usd_per_million_input", 0.10)),
-    usdOut: Number(setting("usd_per_million_output", 0.50)),
+    // GPT-6 Luna's prices; 0 (never set) would make every call look free, so the published prices are used instead.
+    usdIn: Number(setting("usd_per_million_input", 0)) || 0.10,
+    usdOut: Number(setting("usd_per_million_output", 0)) || 0.50,
     monthlyUsd: Number(setting("monthly_usd_per_student", 3.5)),
     freeUsd: Number(setting("free_monthly_usd", 0)),
     dailyUsdTotal: Number(setting("daily_usd_total", 1)),
@@ -192,6 +193,7 @@ Deno.serve(async (request) => {
       input_tokens: outcome.usage.inputTokens, output_tokens: outcome.usage.outputTokens,
       attempts: outcome.usage.attempts, ok: outcome.usage.ok,
       usd: usdOf(outcome.usage.inputTokens, outcome.usage.outputTokens, settings.usdIn, settings.usdOut),
+      ...(outcome.usage.ok ? {} : { error: outcome.usage.error ?? "unknown" }),
     });
     const mark = markRecord(body, (outcome.body as any)?.result, userId, outcome.usage);
     if (mark) await db.from("ai_marks").insert(mark);
@@ -220,9 +222,12 @@ async function videos(db: any, query: string): Promise<Video[]> {
 const SCRIPT_PAGES_PER_DAY = 60;
 
 // ── Usage and money ──────────────────────────────────────────────────────────────────────────────────────────────────────────
-/** Logs one AI call. Before the cost column exists (database not yet updated), the call is logged without its cost. */
+/**
+ * Logs one AI call. Before the database has the newer columns (cost, failure reason), the call is logged without them.
+ */
 async function logUsage(db: any, row: Record<string, unknown>) {
-  const { error } = await db.from("ai_usage").insert(row);
+  let { error } = await db.from("ai_usage").insert(row);
+  if (error && "error" in row) { const { error: _reason, ...rest } = row; row = rest; ({ error } = await db.from("ai_usage").insert(row)); }
   if (error && "usd" in row) { const { usd: _drop, ...rest } = row; await db.from("ai_usage").insert(rest); }
 }
 

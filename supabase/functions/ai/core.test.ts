@@ -504,3 +504,14 @@ test("the monthly AI allowance is counted in dollars and resets on the 1st", () 
   assert.equal(overCap(50, 0), false, "a cap of 0 means no cap");
 });
 
+
+test("a failed AI call records why, so the owner can see it (out of credit, bad key, or an unusable reply)", async () => {
+  const quota = async () => ({ ok: false, status: 429, json: async () => ({ error: { code: "insufficient_quota", message: "You exceeded your current quota" } }) });
+  const out: any = await runTask(task(), quota as any, "k");
+  assert.equal(out.usage.ok, false);
+  assert.equal(out.usage.error, "openai_429_insufficient_quota");
+  const garbled: any = await runTask(task(), fakeFetch([reply({ nonsense: true })]), "k");
+  assert.equal(garbled.usage.error, "invalid_reply");
+  const fine: any = await runTask(task(), fakeFetch([mark(["MET", "MET", "MET"])]), "k");
+  assert.equal(fine.usage.error, undefined);
+});

@@ -39,12 +39,15 @@ object Premium {
 
     /** What the Premium screen lists, free vs Premium. */
     val COMPARISON = listOf(
-        Triple("Lessons and practice", "First quarter of each book", "Every chapter"),
-        Triple("Exam kit and book solutions", "First quarter of each book", "Every chapter"),
-        Triple("Past papers and Guess Paper 2027", "—", "All, no limits"),
-        Triple("Papers made for you", "—", "No limits"),
-        Triple("Ask Ustaad, AI marking and reports", "—", "1,000 credits a month"),
-        Triple("Ads", "Short ads after quizzes", "No ads"),
+        Triple("Lessons and practice", "Opening chapters", "Every chapter"),
+        Triple("Exam kit and book solutions", "Opening chapters", "Every chapter"),
+        Triple("Past board papers", "—", "Boards and years"),
+        Triple("Guess Paper 2027", "—", "Included"),
+        Triple("Papers made for you", "—", "Included"),
+        Triple("Ask Ustaad", "—", "Included"),
+        Triple("AI marking and examiner reports", "—", "Included"),
+        Triple("AI credits", "—", "1,000 a month"),
+        Triple("Ads", "Ads", "No ads"),
     )
 
     /** "Rs 3,999" with a thousands comma. */

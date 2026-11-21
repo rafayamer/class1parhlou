@@ -1,7 +1,7 @@
 -- Premium credits (1,000 a month = $3.50 of AI time, counted from the day the student paid) and promo codes.
 begin;
 create extension if not exists pgtap;
-select plan(19);
+select plan(22);
 
 select public.set_owner_email('head@example.test');
 insert into auth.users (id, email) values
@@ -13,6 +13,9 @@ grant all on made to authenticated;
 
 select is((select value from public.app_config where key = 'monthly_credits'), '1000'::jsonb, 'Premium gives 1,000 credits a month');
 select is((select value from public.app_config where key = 'monthly_usd_per_student'), '3.5'::jsonb, '1,000 credits are worth $3.50 of AI time');
+select is((select value from public.app_config where key = 'usd_per_million_input'), '0.10'::jsonb, 'GPT-6 Luna input price is set, so AI calls are not counted as free');
+select is((select value from public.app_config where key = 'usd_per_million_output'), '0.50'::jsonb, 'and its output price');
+select has_column('public', 'ai_usage', 'error', 'the AI log keeps why a call failed');
 select is(private.premium_month_start(current_date + 10), (current_date + 10 - interval '1 month')::date, 'the Premium month starts on the day the student paid');
 select is(private.premium_month_start('2027-03-31'::date) <= current_date, true, 'and never in the future');
 select is((select count(*)::int from public.promo_codes where note = 'Owner test code' and uses_left = 5 and days = 90), 1, 'the owner''s test code is ready, stored only as a hash');

@@ -414,7 +414,7 @@ fun PremiumInvite(pricePkr: Int, onOpen: () -> Unit) {
         Spacer(Modifier.width(14.dp))
         Column(Modifier.weight(1f)) {
             Text("Unlock Premium", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
-            Text("Every chapter, every paper, and 1,000 AI credits a month · ${pk.parhlou.student.domain.Premium.rupees(pricePkr)} a month",
+            Text("Every chapter, board papers and Ask Ustaad · ${pk.parhlou.student.domain.Premium.rupees(pricePkr)} a month",
                 style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.9f))
         }
         Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, tint = Color.White, modifier = Modifier.size(20.dp))

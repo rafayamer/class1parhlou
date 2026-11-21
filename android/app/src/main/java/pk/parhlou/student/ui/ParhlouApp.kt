@@ -381,7 +381,7 @@ fun ParhlouApp(
     }
     @Suppress("UNUSED_PARAMETER")
     fun paperLockMessage(id: String): String =
-        "Sit every board paper as often as you like, then get it checked like the board with an examiner's report. Premium includes 1,000 credits a month."
+        "Sit board papers as often as you like, then have them checked like the board, with an examiner's report. Premium includes 1,000 AI credits a month."
     /** About how many credits checking a paper and its report use (null: not shown). */
     fun paperCost(b: pk.parhlou.student.data.PaperBlueprint, paper: PaperContent): ((Boolean) -> pk.parhlou.student.domain.Credits.PaperCost)? =
         if (!showCosts) null else { onPaper -> pk.parhlou.student.domain.Credits.paper(pk.parhlou.student.domain.Credits.answersToMark(b, paper), onPaper, made = false, premiumAccess::estimate) }

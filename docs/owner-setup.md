@@ -24,10 +24,17 @@ pages, examiner reports and choosing a paper's questions. Locked things show blu
 - **Switch the paywall off** (a free week, a school demo): App design → Features → "Premium paywall". The server still gives AI
   only to Premium students unless you also raise "Free: AI allowance" above 0.
 
+### If Ask Ustaad says "Ustaad can't answer right now"
+The AI server couldn't get a usable answer from OpenAI. Owner panel → **AI log** → tick "Failed only": each failed call now
+says why, in plain words. The usual reasons: the OpenAI credit is used up (add credit at platform.openai.com → Settings →
+Billing), the OpenAI key was changed, or OpenAI was busy for a few minutes. (Needs the database update below.)
+
 ### Apply the Premium credits database update (2 minutes, needed)
 After the App design update below, open `supabase/migrations/20261121000002_premium_credits.sql` → **Copy raw file** → paste
 into https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new → **Run**. It sets 1,000 credits = $3.50, turns off
-free AI, adds promo codes (with your test code) and the cost estimates. The AI gateway updates itself from this push (Actions
+free AI, adds promo codes (with your test code) and the cost estimates. It also sets GPT-6 Luna's prices ($0.10 per million
+input tokens, $0.50 per million output): they were 0, so every AI call counted as free and no allowance or daily limit ever
+filled up. Prices you had already set are kept (AI settings → "Prices for the cost estimate"). The AI gateway updates itself from this push (Actions
 → "Deploy AI server"); until the database update runs it keeps the old allowances.
 
 ## Newest round: App design (5 minutes)

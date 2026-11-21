@@ -106,6 +106,9 @@ fun PremiumCard(title: String, message: String, pricePkr: Int, onUnlock: () -> U
             .border(1.dp, MaterialTheme.colorScheme.outlineVariant, RoundedCornerShape(24.dp)).padding(22.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
+        // The card can sit over any screen (even outside a screen's own colours), so its text colour is set here: light
+        // text on the dark card in dark mode, dark text on the light card otherwise.
+        androidx.compose.runtime.CompositionLocalProvider(androidx.compose.material3.LocalContentColor provides MaterialTheme.colorScheme.onSurface) {
         Box(Modifier.size(56.dp).clip(CircleShape).background(pk.parhlou.student.ui.theme.heroGradient()), contentAlignment = Alignment.Center) {
             Icon(Icons.Filled.Lock, contentDescription = null, tint = Color.White, modifier = Modifier.size(26.dp))
         }
@@ -113,7 +116,7 @@ fun PremiumCard(title: String, message: String, pricePkr: Int, onUnlock: () -> U
         Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
         Text(message, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         Column(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            for (perk in listOf("Every chapter of every book", "Every paper, with no limits", "1,000 credits a month for Ask Ustaad and AI marking", "No ads")) {
+            for (perk in listOf("Every chapter of every book", "Past board papers and the Guess Paper", "Ask Ustaad and AI marking, 1,000 credits a month", "No ads")) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Filled.Check, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(8.dp))
@@ -124,6 +127,7 @@ fun PremiumCard(title: String, message: String, pricePkr: Int, onUnlock: () -> U
         Text("${Premium.rupees(pricePkr)} a month", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
         BigButton("Unlock Premium", onClick = onUnlock, modifier = Modifier.testTag("premium-upgrade"))
         if (onBack != null) TextButton(onClick = onBack, modifier = Modifier.heightIn(min = 44.dp)) { Text("Not now") }
+        }
     }
 }
 
