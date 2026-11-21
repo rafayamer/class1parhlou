@@ -21,7 +21,7 @@ class HomeHeroTest {
 
     @Test fun tappingUstaadGivesStudyTips() {
         rule.setContent { ParhlouTheme { HomeHero("Ali", "Ready to study today?", UstadMood.HAPPY) } }
-        rule.onNodeWithText("Ali!").assertExists()
+        rule.onNodeWithText("Ali").assertExists()
         rule.onNodeWithText("Ready to study today?").assertExists()
         rule.onNodeWithTag("hero-ustaad").performClick()
         rule.waitForIdle()
@@ -29,5 +29,13 @@ class HomeHeroTest {
         rule.onNodeWithTag("hero-ustaad").performClick()
         rule.waitForIdle()
         rule.onNodeWithText("Got one wrong? That's exactly where your next marks are hiding.").assertExists()
+    }
+
+    @Test fun askUstaadIsPartOfTheTopCard() {
+        var asked = 0
+        rule.setContent { ParhlouTheme { HomeHero("Ali", "Ready to study today?", UstadMood.HAPPY, onAsk = { asked++ }) } }
+        rule.onNodeWithTag("home-ask").performClick()
+        rule.onNodeWithText("Scan question").performClick()
+        assert(asked == 2) { "the ask bar and the quick starts open Ask Ustaad" }
     }
 }

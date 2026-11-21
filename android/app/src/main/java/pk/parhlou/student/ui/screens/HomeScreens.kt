@@ -200,19 +200,18 @@ fun HomeScreen(
             line = homeMessage ?: pk.parhlou.student.ui.components.moodLine(rewards),
             mood = pk.parhlou.student.ui.components.moodFor(rewards),
             modifier = Modifier.appear(0),
+            onAsk = if (showTutor) onTutor else null,
         )
         banner?.let { b -> AnnouncementBanner(b, onDismiss = { onDismissBanner(b.id) }) }
-        // Ask Ustaad: one big tap, right under him, never covering anything.
-        if (showTutor) AskUstaadCard(onTutor, Modifier.appear(1))
         // Today's goal: the XP ring, the streak with this week's days, the level; and how yesterday's goal went.
-        GoalCard(rewards, onClick = onProgress, modifier = Modifier.appear(2))
+        GoalCard(rewards, onClick = onProgress, modifier = Modifier.appear(1))
         if (yesterday.xpToday > 0 || yesterday.goalMet) Text(
-            if (yesterday.goalMet) "✅ Yesterday's goal done (${yesterday.xpToday} XP)" else "Yesterday: ${yesterday.xpToday} of ${yesterday.dailyGoalXp} XP",
+            if (yesterday.goalMet) "Yesterday's goal done · ${yesterday.xpToday} XP" else "Yesterday: ${yesterday.xpToday} of ${yesterday.dailyGoalXp} XP",
             style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         // Today's session.
         if (today != null) TodayCard(today.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), onboarding.minutesPerDay,
-            onStart = { onStartSession(null, onboarding.minutesPerDay) }, onBusy = { onStartSession(null, 5) }, modifier = Modifier.appear(3))
+            onStart = { onStartSession(null, onboarding.minutesPerDay) }, onBusy = { onStartSession(null, 5) }, modifier = Modifier.appear(2))
 
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
@@ -220,15 +219,20 @@ fun HomeScreen(
         val first = plan.firstOrNull()?.takeIf { onboarding.pathway != Pathway.TEST_SERIES }
         val now: Pair<String, () -> Unit> = if (first != null) first.title to { onPlanTask(first) } else task.title to go
         NextStepCard(now.first, now.second)
-        if (quests.isNotEmpty()) Sheet(Modifier.testTag("home-quests")) {
+        if (quests.isNotEmpty()) Column(
+            Modifier.homeCard(MaterialTheme.colorScheme.surface, MaterialTheme.colorScheme.outlineVariant).padding(16.dp).testTag("home-quests"),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text("Today's quests", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
-                Text("${quests.count { it.done }}/${quests.size} ✅", style = MaterialTheme.typography.labelLarge)
+                Text("Today's quests", style = MaterialTheme.typography.titleMedium, fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold,
+                    modifier = Modifier.weight(1f))
+                Text("${quests.count { it.done }} of ${quests.size} done", style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
             quests.forEach { q -> QuestRow(q) }
             if (!showChest) Unit
             else if (quests.all { it.done }) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
-            else Text("🎁 Finish all ${quests.size} to open today's bonus chest", style = MaterialTheme.typography.bodyMedium,
+            else Text("Finish all ${quests.size} to open today's bonus chest", style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary, modifier = Modifier.testTag("chest-teaser"))
             TextButton(onClick = onLeague, modifier = Modifier.heightIn(min = 44.dp).testTag("open-league")) { Text("League, badges and friends") }
         }
@@ -279,7 +283,7 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium)
-                    if (examIn != null) Text("📅 $examIn days to the exam", style = MaterialTheme.typography.labelMedium,
+                    if (examIn != null) Text("$examIn days to the board exam", style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("home-countdown"))
                 }
                 ProgressRing(covered / 100f, "$covered%", "$covered% of the path done", MaterialTheme.colorScheme.surfaceVariant,
@@ -288,9 +292,9 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
             // Facts appear once there is something real to say; a new student sees one plain line instead of dashes.
             if (started || strong != null || weak != null) Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                 val outOf = pk.parhlou.student.domain.PaperAssembler.patternFor(s.id).totalMarks.toInt()
-                if (started) JourneyFact("🎯", "${(pct * outOf / 100).toInt().coerceIn(0, outOf)}/$outOf", "expected", Modifier.weight(1f))
-                if (strong != null) JourneyFact("💪", strong, "strong", Modifier.weight(1f))
-                if (weak != null) JourneyFact("⚠️", weak, "work on", Modifier.weight(1f))
+                if (started) JourneyFact("${(pct * outOf / 100).toInt().coerceIn(0, outOf)}/$outOf", "expected marks", Modifier.weight(1f))
+                if (strong != null) JourneyFact(strong, "strongest", Modifier.weight(1f))
+                if (weak != null) JourneyFact(weak, "work on", Modifier.weight(1f))
             } else Muted("Do a few lessons and quizzes, and your expected marks and strong and weak topics show here.")
             Text(taskTitle, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
             pk.parhlou.student.ui.components.SecondaryButton("Study next", onClick = go, modifier = Modifier.testTag("study-next-${s.id}"))
@@ -299,10 +303,10 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
 }
 
 @Composable
-private fun JourneyFact(icon: String, value: String, label: String, modifier: Modifier) {
+private fun JourneyFact(value: String, label: String, modifier: Modifier) {
     Column(modifier.clip(RoundedCornerShape(14.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally) {
-        Text("$icon $value", style = MaterialTheme.typography.labelLarge, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+        Text(value, style = MaterialTheme.typography.labelLarge, maxLines = 2, textAlign = androidx.compose.ui.text.style.TextAlign.Center,
             overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis)
         Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }

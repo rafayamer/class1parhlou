@@ -1,5 +1,8 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.material.icons.filled.School
+import androidx.compose.material.icons.filled.Assignment
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -75,7 +78,7 @@ fun WelcomeScreen(onStart: () -> Unit) {
                     drawCircle(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.10f), size.width * 0.45f, androidx.compose.ui.geometry.Offset(size.width * 0.95f, 0f))
                     drawCircle(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.07f), size.width * 0.35f, androidx.compose.ui.geometry.Offset(0f, size.height))
                 }
-                FloatingGlyphs(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.18f), Modifier.matchParentSize())
+                HeroArcs(Modifier.matchParentSize())
                 Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Box(Modifier.size(150.dp).clip(androidx.compose.foundation.shape.CircleShape)
                         .border(4.dp, androidx.compose.ui.graphics.Color.White.copy(alpha = 0.9f), androidx.compose.foundation.shape.CircleShape)) {
@@ -93,12 +96,13 @@ fun WelcomeScreen(onStart: () -> Unit) {
                 style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center,
             )
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
-                for ((icon, label) in listOf("📖" to "Lessons from your book", "🎯" to "Board-style papers", "🎓" to "Your own tutor")) {
+                for ((icon, label) in listOf(Icons.AutoMirrored.Filled.MenuBook to "Lessons from your book",
+                    Icons.Filled.Assignment to "Board-style papers", Icons.Filled.School to "Your own tutor")) {
                     Column(
                         Modifier.weight(1f).clip(RoundedCornerShape(18.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(12.dp),
                         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp),
                     ) {
-                        Text(icon, style = MaterialTheme.typography.headlineSmall)
+                        Icon(icon, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(26.dp))
                         Text(label, style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
                     }
                 }
