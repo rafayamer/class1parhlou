@@ -105,7 +105,7 @@ fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: Stri
         // Free students see Premium chapters blurred, with a tag; opening one shows what Premium unlocks.
         val access = pk.parhlou.student.ui.components.LocalPremium.current.access
         shown.forEach { c ->
-            val locked = !access.chapter(subjects.firstNotNullOfOrNull { s -> s.chapters.indexOf(c).takeIf { it >= 0 } })
+            val locked = subjects.firstNotNullOfOrNull { s -> s.chapters.indexOf(c).takeIf { it >= 0 }?.let { !access.chapter(it, s.chapters.size) } } ?: false
             UnitHeader(c, onKit, locked)
             Column(if (locked) Modifier.blur(2.5.dp).graphicsLayer { alpha = 0.55f } else Modifier) {
                 c.modules.forEach { m ->

@@ -34,7 +34,7 @@ class BoardPaperTest {
         assertEquals("F", BoardMarking.grade(32))
     }
 
-    @Test fun threeAttemptsPerPaperWithBestScore() {
+    @Test fun everyHandInIsCountedWithTheBestScore() {
         val h = listOf(
             LoggedEvidence(1, "paper:board-2027-a", Evidence.DemoCheckedExam(40)),
             LoggedEvidence(2, "paper:board-2027-a", Evidence.ExamMarked(72)),
@@ -42,10 +42,9 @@ class BoardPaperTest {
             LoggedEvidence(4, "m-1-1", Evidence.LessonCompleted),
         )
         assertEquals(2, PaperAttempts.used(h, "board-2027-a"))
-        assertEquals(1, PaperAttempts.left(h, "board-2027-a"))
         assertEquals(72, PaperAttempts.best(h, "board-2027-a"))
         val full = h + LoggedEvidence(5, "paper:board-2027-a", Evidence.ExamPendingReview)
-        assertEquals(0, PaperAttempts.left(full, "board-2027-a"))
+        assertEquals(3, PaperAttempts.used(full, "board-2027-a"))
         assertEquals(72, PaperAttempts.best(full, "board-2027-a"))
     }
 }

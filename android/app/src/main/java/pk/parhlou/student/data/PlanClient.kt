@@ -13,4 +13,10 @@ open class PlanClient(private val sync: SyncClient?) {
             .put("p_txn", Plans.cleanTxn(txn)).put("p_payer", payer.take(60)))
         return text?.let(Plans::parse) to err
     }
+    /** A promo code: Premium for the code's days. The updated plan, or an error code. */
+    open suspend fun redeem(code: String): Pair<Plans.Info?, String?> {
+        val s = sync ?: return null to "OFFLINE"
+        val (text, err) = s.rpcOrError("redeem_promo", JSONObject().put("p_code", Plans.cleanCode(code)))
+        return text?.let(Plans::parse) to err
+    }
 }

@@ -36,11 +36,11 @@ set local role authenticated;
 select set_config('request.jwt.claim.sub', 'c3000000-0000-0000-0000-0000000000ee', true);
 select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'spent_usd')::numeric, 0.20::numeric, 'the owner sees this month''s AI spending only');
 select is(public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'plan', 'free', 'and the student''s plan');
-select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'allowance_usd')::numeric, 0.05::numeric, 'and the free plan''s allowance');
+select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'allowance_usd')::numeric, 0::numeric, 'and the free plan''s allowance: no AI');
 
--- Premium: Rs 3,999 a month, and a small free AI allowance behind the app's three free tries.
+-- Premium: Rs 3,999 a month; free students get no AI.
 select is((select value from public.app_config where key = 'plus_price_pkr'), '3999'::jsonb, 'Premium costs Rs 3,999 a month');
-select is((select value from public.app_config where key = 'free_monthly_usd'), '0.05'::jsonb, 'free students keep only a small AI allowance');
+select is((select value from public.app_config where key = 'free_monthly_usd'), '0'::jsonb, 'free students get no AI allowance');
 
 select * from finish();
 rollback;

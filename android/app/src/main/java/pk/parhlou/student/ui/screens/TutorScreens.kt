@@ -170,10 +170,8 @@ fun TutorScreen(
     /** While a paper runs: go back to it, or quit it (cleared, no try used) to use Ustaad now. */
     onGoToPaper: (() -> Unit)? = null,
     onQuitPaper: (() -> Unit)? = null,
-    /** A free student's remaining Ask Ustaad tries (null: Premium, no limit), counting one per question, and Upgrade. */
-    aiTriesLeft: Int? = null,
+    /** After each question: the app asks the server for the credits left. */
     onAiUsed: () -> Unit = {},
-    onUpgrade: () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -201,9 +199,12 @@ fun TutorScreen(
         scope.launch { s.saveUstaadChats(UstaadChats.encode(all)) }
     }
 
+    // Premium's credits: shown under the box, and when they run out the box makes way for when they renew.
+    val credits = pk.parhlou.student.ui.components.LocalPremium.current.credits
+    val noCredits = credits != null && credits.hasCredits && credits.balance <= 0
+
     fun send(text: String, image: String? = null, shown: String = text) {
-        if (thinking || examActive || (text.isBlank() && image == null) || aiTriesLeft == 0) return
-        onAiUsed()
+        if (thinking || examActive || (text.isBlank() && image == null) || noCredits) return
         val history = messages.toList()
         messages += UstaadMessage("student", shown, image?.let { PhotoInput.thumbnail(it) ?: it })
         thinking = true
@@ -213,6 +214,7 @@ fun TutorScreen(
             messages += UstaadMessage("ustaad", answer.reply, answer = answer)
             thinking = false
             save()
+            onAiUsed()
         }
     }
 
@@ -245,21 +247,23 @@ fun TutorScreen(
         title = "Ask Ustaad",
         onBack = { if (showChats) showChats = false else onBack() },
         scrollToEndKey = if (messages.isEmpty() || showChats) null else messages.size + (if (thinking) 1 else 0),
-        bottomBar = if (showChats || examActive) null else if (aiTriesLeft == 0) ({
-            // A free student's three tries are used: the answers stay readable, and Premium carries on.
-            pk.parhlou.student.ui.components.PremiumCard("Keep asking with Premium",
-                "You've used your free questions. Ask Ustaad anything, any time, with Premium.",
-                pk.parhlou.student.ui.components.LocalPremium.current.pricePkr, onUnlock = onUpgrade, modifier = Modifier.testTag("tutor-upgrade"))
+        bottomBar = if (showChats || examActive) null else if (noCredits) ({
+            // This month's credits are used up: the answers stay readable, and they renew with the Premium month.
+            Column(
+                Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(16.dp)
+                    .testTag("tutor-no-credits"),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                Text("You've used this month's credits", style = MaterialTheme.typography.titleMedium)
+                Text("They renew on ${prettyDate(credits?.resetsOn.orEmpty())}. Lessons, practice and solutions still work.",
+                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
         }) else ({
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                if (aiTriesLeft != null) Row(
-                    Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(MaterialTheme.colorScheme.primary.copy(alpha = 0.08f))
-                        .padding(horizontal = 12.dp, vertical = 6.dp).testTag("tutor-tries"),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Text("$aiTriesLeft free ${if (aiTriesLeft == 1) "question" else "questions"} left", style = MaterialTheme.typography.labelMedium,
-                        modifier = Modifier.weight(1f))
-                    TextButton(onClick = onUpgrade, modifier = Modifier.heightIn(min = 36.dp)) { Text("Go Premium") }
+                credits?.takeIf { it.hasCredits }?.let { c ->
+                    Text("⚡ ${pk.parhlou.student.domain.Credits.format(c.balance)} credits left · about ${"%.1f".format(java.util.Locale.ENGLISH, c.estimate("chat"))} a question",
+                        style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(horizontal = 4.dp).testTag("tutor-credits"))
                 }
                 photo?.let { p ->
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {

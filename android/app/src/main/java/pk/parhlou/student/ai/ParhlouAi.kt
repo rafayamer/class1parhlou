@@ -143,20 +143,23 @@ object MarkingValidator {
 }
 
 /**
- * This month's AI allowance, as things the student can still do (questions to Ustaad, photo questions, papers marked…),
- * worked out on the server from the credit balance and the price of each thing.
+ * The student's AI credits: Premium gives [monthly] credits a month (1,000 = US$3.50 of AI time), counted from the day they
+ * paid; every AI call uses what it really cost. [estimates] are the credits each kind of AI work is likely to cost
+ * (chat, photo, mark, mark_photo, page, report, pick), from the server's real averages.
  */
-data class Allowance(val balance: Int, val resetsOn: String, val left: Map<String, Int>,
-                     /** This month's AI use in US dollars against the student's cap (0 = no cap). */
-                     val usedUsd: Double = 0.0, val capUsd: Double = 0.0) {
-    /** Share of the month's AI allowance used, 0-1 (0 when there is no cap). */
-    val usedShare: Float get() = if (capUsd > 0) (usedUsd / capUsd).toFloat().coerceIn(0f, 1f) else 0f
-    /** "About 420 questions to Ustaad" style lines, most useful first. */
-    fun lines(): List<Pair<String, String>> = listOfNotNull(
-        left["chat"]?.let { "💬" to "About $it questions to Ustaad" },
-        left["photo"]?.let { "📷" to "$it photo questions" },
-        left["mark_handwritten"]?.let { "📝" to "About ${it / 20} handwritten papers marked" },
-        left["mark_typed"]?.let { "✅" to "$it typed answers marked" },
-        left["pick_paper"]?.let { "🎯" to "$it papers made for you" },
-    )
+data class Allowance(
+    val balance: Int,
+    val resetsOn: String,
+    val monthly: Int = pk.parhlou.student.domain.Premium.MONTHLY_CREDITS,
+    /** "plus" (Premium) or "free". */
+    val plan: String = "plus",
+    val premiumUntil: String? = null,
+    val estimates: Map<String, Double> = emptyMap(),
+) {
+    /** True when this month has credits to spend (Premium, or a small free allowance the owner allows). */
+    val hasCredits: Boolean get() = monthly > 0
+    /** Share of the month's credits still left, 0-1. */
+    val leftShare: Float get() = if (monthly > 0) (balance.toFloat() / monthly).coerceIn(0f, 1f) else 0f
+    /** The credits one piece of AI work is likely to cost. */
+    fun estimate(key: String): Double = estimates[key] ?: pk.parhlou.student.domain.Credits.TYPICAL[key] ?: 1.0
 }

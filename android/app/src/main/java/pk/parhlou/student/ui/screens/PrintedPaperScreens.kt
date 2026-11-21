@@ -151,6 +151,11 @@ fun PrintedPaperScreen(
         }
         Sheet {
             Text(if (scanned == 0) "No pages scanned yet" else "$scanned page${if (scanned == 1) "" else "s"} scanned", style = MaterialTheme.typography.titleMedium)
+            // Reading pages uses credits (a page already read isn't read again).
+            val premium = pk.parhlou.student.ui.components.LocalPremium.current
+            if (scanned > 0 && premium.credits?.hasCredits == true) Text(
+                "⚡ Reading them: about ${kotlin.math.ceil(scanned * premium.estimate("page")).toInt()} credits, then each answer is marked.",
+                style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("pages-cost"))
             SecondaryButton(if (scanned == 0) "Scan my pages" else "Add or fix pages", onClick = { scanning = true }, enabled = !scanClosed)
             if (scanned > 0 && pages == null && reading == null && !running) {
                 BigButton("Read my pages", onClick = {
@@ -242,36 +247,40 @@ fun PrintedPaperScreen(
 
 private const val LATE_SCAN_MILLIS = 15 * 60_000L
 
-/** Most "My papers" a student keeps at once. */
-const val MAX_MY_PAPERS = 10
-
-/** "Make my paper": the AI examiner chooses a full 2027-pattern paper of real board questions for this student. */
+/**
+ * "Make my paper": the AI examiner chooses a full 2027-pattern paper of real board questions for this student. No limit on
+ * how many: first the student sees about how many credits making, checking and the report will use, and confirms.
+ */
 @Composable
 fun MakePaperScreen(
     make: suspend () -> MyPaper?,
     onOpen: (String) -> Unit,
     onBack: () -> Unit,
-    /** The student's saved papers (id to title); at [MAX_MY_PAPERS] one must be deleted before making another. */
-    saved: List<Pair<String, String>> = emptyList(),
-    onDelete: (String) -> Unit = {},
+    /** About how many credits a new paper uses; null: made straight away (no AI, or tests). */
+    cost: pk.parhlou.student.domain.Credits.PaperCost? = null,
 ) {
     var made by remember { mutableStateOf<MyPaper?>(null) }
     var failed by remember { mutableStateOf(false) }
     var attempt by remember { mutableIntStateOf(0) }
-    val full = saved.size >= MAX_MY_PAPERS && made == null
-    LaunchedEffect(attempt, full) { if (!full) { failed = false; made = make(); if (made == null) failed = true } }
+    var confirmed by remember { mutableStateOf(cost == null) }
+    LaunchedEffect(attempt, confirmed) { if (confirmed) { failed = false; made = make(); if (made == null) failed = true } }
     ParhlouScreen("Make my paper", onBack = onBack) {
         val p = made
         when {
-            full -> Sheet(Modifier.testTag("papers-full")) {
-                Text("You have $MAX_MY_PAPERS papers", style = MaterialTheme.typography.titleMedium)
-                Muted("Delete one to make another. Sit the ones you have first: each is a full board paper.")
-                saved.forEach { (id, title) ->
-                    androidx.compose.foundation.layout.Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                        TextButton(onClick = { onOpen(id) }, modifier = Modifier.weight(1f).heightIn(min = 48.dp)) { Text(title) }
-                        TextButton(onClick = { onDelete(id) }, modifier = Modifier.heightIn(min = 48.dp).testTag("delete-$id")) { Text("Delete") }
+            !confirmed && cost != null -> {
+                val credits = pk.parhlou.student.ui.components.LocalPremium.current.credits
+                Sheet(Modifier.testTag("make-paper-cost")) {
+                    Text("A full board paper, made for you", style = MaterialTheme.typography.titleLarge)
+                    Muted("Ustaad chooses real board questions: most repeated first, more from your weak topics, none you've done.")
+                    pk.parhlou.student.ui.components.CostLines(cost)
+                    credits?.takeIf { it.hasCredits }?.let { c ->
+                        Muted("You have ${pk.parhlou.student.domain.Credits.format(c.balance)} credits left this month.")
+                        if (c.balance < cost.total) Text("That's more than you have left. They renew on ${prettyDate(c.resetsOn)}.",
+                            color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
                     }
+                    Muted("Estimates: each AI step uses what it really costs, often less.")
                 }
+                BigButton("Make my paper · about ${cost.total} credits", onClick = { confirmed = true }, modifier = Modifier.testTag("make-paper-go"))
             }
             failed -> Sheet {
                 Text("Couldn't make a paper", style = MaterialTheme.typography.titleMedium)

@@ -37,6 +37,34 @@ class PlanTest {
             info = info.copy(lastRequest = Plans.Request("pending", months, 499 * months, Plans.cleanTxn(txn), ""))
             return info to null
         }
+        override suspend fun redeem(code: String): Pair<Plans.Info?, String?> {
+            if (Plans.cleanCode(code) != "PH1A2B3C4D5E6F") return null to "CODE_NOT_VALID"
+            info = info.copy(plus = true, paidUntil = "2027-02-19")
+            return info to null
+        }
+    }
+
+    @Test fun aPromoCodeTurnsOnPremium() {
+        val fake = Fake(free)
+        var changed: Plans.Info? = null
+        rule.setContent { ParhlouTheme { PlanScreen(fake, signedIn = true, onSignIn = {}, onPlanChanged = { changed = it }, onBack = {}, manualPayments = true) } }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("promo-open")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("promo-open").performScrollTo().performClick()
+        rule.onNodeWithTag("promo-input").performScrollTo().performTextInput("ph-0000-0000-0000")
+        rule.onNodeWithTag("promo-apply").performScrollTo().performClick()
+        rule.waitUntil(5_000) { rule.onAllNodes(hasText("isn't valid", substring = true)).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("promo-input").performScrollTo().performTextClearance()
+        rule.onNodeWithTag("promo-input").performTextInput("ph 1a2b-3c4d-5e6f")
+        rule.onNodeWithTag("promo-apply").performScrollTo().performClick()
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("promo-done")).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithText("Premium is on until 19 February", substring = true).assertExists()
+        assert(changed?.plus == true)
+    }
+
+    @Test fun thePlayVersionHasNoPromoCodes() {
+        rule.setContent { ParhlouTheme { PlanScreen(Fake(free), signedIn = true, onSignIn = {}, onPlanChanged = {}, onBack = {}, manualPayments = false) } }
+        rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("plan-play-soon")).fetchSemanticsNodes().isNotEmpty() }
+        assert(rule.onAllNodes(hasTestTag("promo-open")).fetchSemanticsNodes().isEmpty())
     }
 
     @Test fun payingForThreeMonths() {

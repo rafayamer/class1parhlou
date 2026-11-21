@@ -388,38 +388,47 @@ test("paper_report: weak topics must be the paper's own; numbers come from the a
 });
 
 // ── Credits, safety, PDF requests, memory ─────────────────────────────────────────────────────────────────────────
-import { creditBalance, needsMonthlyGrant, priceOf, whatsLeft, grantExpiry, DEFAULT_PRICES, usdOf, monthStart, nextMonthStart, overCap, capFor } from "./credits.ts";
+import { allowanceFor, creditsFor, creditsLeft, estimates, premiumMonth, MIN_CALLS_FOR_AVERAGE, usdOf, monthStart, nextMonthStart, overCap } from "./credits.ts";
 
-test("credits: oldest grant is spent first, unused credits carry over, and expire after 4 months", () => {
-  const jan = "2027-01-01T00:00:00Z", feb = "2027-02-01T00:00:00Z";
-  const rows: any[] = [
-    { kind: "grant", amount: 1000, created_at: jan, expires_at: grantExpiry(new Date(jan), 4) },
-    { kind: "spend", amount: 300, created_at: "2027-01-20T00:00:00Z", expires_at: null },
-    { kind: "grant", amount: 1000, created_at: feb, expires_at: grantExpiry(new Date(feb), 4) },
-    { kind: "spend", amount: 900, created_at: "2027-02-10T00:00:00Z", expires_at: null },  // 700 from January's, 200 from February's
-  ];
-  assert.equal(creditBalance(rows, new Date("2027-02-15T00:00:00Z")).balance, 800);
-  // January's grant is used up anyway; in June February's grant (800 left) has expired too.
-  assert.equal(creditBalance(rows, new Date("2027-06-02T00:00:00Z")).balance, 0);
-  // Unused credits carry over: two untouched grants add up while both are valid.
-  const two: any[] = [rows[0], rows[2]];
-  assert.equal(creditBalance(two, new Date("2027-03-01T00:00:00Z")).balance, 2000);
-  assert.equal(creditBalance(two, new Date("2027-05-02T00:00:00Z")).balance, 1000); // January's expired on 1 May
-  assert.equal(creditBalance(rows, new Date("2027-02-15T00:00:00Z")).resetsOn, "2027-03-01");
-  assert.equal(needsMonthlyGrant(rows, new Date("2027-02-15T00:00:00Z")), false);
-  assert.equal(needsMonthlyGrant(rows, new Date("2027-03-01T08:00:00Z")), true);
+test("credits: 1,000 credits are worth $3.50 of AI time, and each call costs what it really cost", () => {
+  assert.equal(creditsFor(3.5, 3.5, 1000), 1000);
+  assert.equal(creditsFor(0.0035, 3.5, 1000), 1);
+  assert.equal(creditsLeft(0, 3.5, 1000), 1000);
+  assert.equal(creditsLeft(1.75, 3.5, 1000), 500);
+  assert.equal(creditsLeft(0.00351, 3.5, 1000), 998, "part of a credit used counts as used");
+  assert.equal(creditsLeft(9, 3.5, 1000), 0, "never below zero");
 });
 
-test("credits: each request has a price by what it does; leftovers are shown as things you can still do", () => {
-  assert.deepEqual(priceOf({ task: "ustaad", image: "data:..." }, DEFAULT_PRICES), { task: "photo", credits: 3 });
-  assert.deepEqual(priceOf({ task: "ustaad" }, DEFAULT_PRICES), { task: "chat", credits: 1 });
-  assert.deepEqual(priceOf({ task: "mark_written", handwritten: true }, DEFAULT_PRICES), { task: "mark_handwritten", credits: 2 });
-  assert.deepEqual(priceOf({ task: "videos" }, DEFAULT_PRICES), { task: "videos", credits: 0 });
-  assert.deepEqual(priceOf({ task: "mark_mcqs" }, DEFAULT_PRICES).credits, 0);
-  const left = whatsLeft(420, DEFAULT_PRICES);
-  assert.equal(left.chat, 420);
-  assert.equal(left.photo, 140);
-  assert.equal(left.videos, undefined);
+test("credits: the Premium month runs from the day the student paid and stops when Premium ends", () => {
+  // Paid on 21 November for one month.
+  assert.deepEqual(premiumMonth("2026-12-21", new Date("2026-11-21T10:00:00Z")), { start: "2026-11-21", resetsOn: "2026-12-21" });
+  assert.deepEqual(premiumMonth("2026-12-21", new Date("2026-12-20T23:00:00Z")), { start: "2026-11-21", resetsOn: "2026-12-21" });
+  // Paid for three months: credits renew on the 21st each month.
+  assert.deepEqual(premiumMonth("2027-02-21", new Date("2026-12-05T00:00:00Z")), { start: "2026-11-21", resetsOn: "2026-12-21" });
+  assert.deepEqual(premiumMonth("2027-02-21", new Date("2027-01-30T00:00:00Z")), { start: "2027-01-21", resetsOn: "2027-02-21" });
+  // Month ends: 31 March back one month is 28 February.
+  assert.deepEqual(premiumMonth("2027-03-31", new Date("2027-03-10T00:00:00Z")), { start: "2027-02-28", resetsOn: "2027-03-31" });
+});
+
+test("credits: Premium gets the allowance, the free plan gets no AI, and unknown plans work as before", () => {
+  assert.deepEqual(allowanceFor(true, 3.5, 0), { allowed: true, capUsd: 3.5 });
+  assert.deepEqual(allowanceFor(false, 3.5, 0), { allowed: false, capUsd: 0 });
+  assert.deepEqual(allowanceFor(false, 3.5, 0.2), { allowed: true, capUsd: 0.2 }, "the owner can still give free students a little");
+  assert.deepEqual(allowanceFor(null, 3.5, 0), { allowed: true, capUsd: 3.5 });
+});
+
+test("credits: estimates use real averages once there are enough calls, typical costs before", () => {
+  const typical = estimates({}, 0.10, 0.50, 3.5, 1000);
+  // A question to Ustaad: 4,000 in + 1,200 out = $0.001 = 0.29 credits, rounded up to 0.3.
+  assert.equal(typical.chat, 0.3);
+  assert.ok(typical.photo > typical.chat && typical.mark_photo > typical.mark, "photos cost more");
+  for (const v of Object.values(typical)) assert.ok(v >= 0.1);
+  const few = estimates({ read_script: { usd: 0.035, calls: MIN_CALLS_FOR_AVERAGE - 1 } }, 0.10, 0.50, 3.5, 1000);
+  assert.equal(few.page, typical.page, "too few calls: still the typical cost");
+  const real = estimates({ read_script: { usd: 0.035, calls: 40 }, mark_written: { usd: 0.007, calls: 40 } }, 0.10, 0.50, 3.5, 1000);
+  assert.equal(real.page, 10, "$0.035 a page = 10 credits");
+  assert.equal(real.mark, 2);
+  assert.ok(real.mark_photo > real.mark, "handwritten marking scales from typed marking's real average");
 });
 
 test("safety: unsafe messages get the server's own reply, are flagged, and get no help; off-topic is nudged back", async () => {
@@ -495,8 +504,3 @@ test("the monthly AI allowance is counted in dollars and resets on the 1st", () 
   assert.equal(overCap(50, 0), false, "a cap of 0 means no cap");
 });
 
-test("Plus gets the full AI allowance, the free plan the smaller one", () => {
-  assert.equal(capFor(true, 3, 0.5), 3);
-  assert.equal(capFor(false, 3, 0.5), 0.5);
-  assert.equal(capFor(null, 3, 0.5), 3, "unknown plan (plans not set up): full allowance as before");
-});

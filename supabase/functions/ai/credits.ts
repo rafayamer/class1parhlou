@@ -1,61 +1,80 @@
-// Credits: each student gets a monthly grant; a grant expires a set number of months after it was given; spending always
-// uses the oldest grant that is still valid. Pure functions, so the rules are tested without a database.
+// Credits: Premium students get a monthly allowance of AI time, shown as credits (default 1,000 credits = US$3.50). Every AI
+// call is charged at what it really cost, so credits never drift from the OpenAI bill. Free students get no AI.
+// Pure functions, so the rules are tested without a database.
 
-export interface LedgerRow { kind: "grant" | "spend"; amount: number; created_at: string; expires_at: string | null }
-export interface Prices { [task: string]: number }
+/** What each kind of AI work typically sends and receives (tokens), used for estimates until real averages exist. */
+export const TYPICAL_TOKENS: Record<string, { input: number; output: number }> = {
+  chat: { input: 4000, output: 1200 },           // a question to Ask Ustaad
+  photo: { input: 6000, output: 2500 },          // a photo of a question: read it, then answer it
+  mark: { input: 3000, output: 3000 },           // one written answer marked by the AI examiner
+  mark_photo: { input: 6000, output: 4000 },     // one handwritten answer marked from its photos
+  page: { input: 3500, output: 2500 },           // one scanned answer page read
+  report: { input: 4000, output: 2500 },         // the examiner's analysis of a paper
+  pick: { input: 6000, output: 1500 },           // choosing a paper's questions for the student
+};
+/** Which logged AI task (ai_usage.task) each estimate learns from. */
+export const ESTIMATE_TASKS: Record<string, string> = {
+  chat: "ustaad", photo: "ustaad_photo", mark: "mark_written", page: "read_script", report: "paper_report", pick: "pick_paper",
+};
+/** Real averages are used once a task has this many recorded calls. */
+export const MIN_CALLS_FOR_AVERAGE = 10;
 
-export const DEFAULT_PRICES: Prices = { chat: 1, photo: 3, mark_typed: 1, mark_handwritten: 2, page_read: 2, analysis: 1, pick_paper: 2, videos: 0 };
+/** Credits for an amount of money, given that [monthlyCredits] are worth [monthlyUsd]. */
+export function creditsFor(usd: number, monthlyUsd: number, monthlyCredits: number): number {
+  return monthlyUsd > 0 ? (usd / monthlyUsd) * monthlyCredits : 0;
+}
 
-/** What's left now, and when the next grant arrives (the 1st of next month, UTC). */
-export function creditBalance(rows: LedgerRow[], now: Date): { balance: number; resetsOn: string } {
-  const grants = rows.filter((r) => r.kind === "grant").map((r) => ({ at: Date.parse(r.created_at), exp: Date.parse(r.expires_at!), left: r.amount }))
-    .sort((a, b) => a.at - b.at);
-  const spends = rows.filter((r) => r.kind === "spend").map((r) => ({ at: Date.parse(r.created_at), amount: r.amount })).sort((a, b) => a.at - b.at);
-  for (const s of spends) {
-    let need = s.amount;
-    for (const g of grants) {
-      if (need <= 0) break;
-      if (g.at > s.at || g.exp <= s.at || g.left <= 0) continue; // only grants that existed and were valid at the time
-      const take = Math.min(g.left, need);
-      g.left -= take; need -= take;
-    }
+/** Whole credits left this month (never below 0). */
+export function creditsLeft(usedUsd: number, monthlyUsd: number, monthlyCredits: number): number {
+  return Math.max(0, Math.floor(monthlyCredits - creditsFor(usedUsd, monthlyUsd, monthlyCredits) + 1e-9));
+}
+
+/**
+ * The Premium month a date falls in. Months run from the day the student paid, not the calendar: Premium paid on the 21st
+ * renews credits on the 21st of each month, and stops on [paidUntil]. Returns the month's first day and the day credits
+ * renew (or Premium ends, whichever is first), as YYYY-MM-DD.
+ */
+export function premiumMonth(paidUntil: string, now: Date): { start: string; resetsOn: string } {
+  const [y, m, d] = paidUntil.split("-").map(Number);
+  const today = now.toISOString().slice(0, 10);
+  const back = (n: number) => {
+    const last = new Date(Date.UTC(y, m - 1 - n + 1, 0)).getUTCDate(); // days in the target month
+    return new Date(Date.UTC(y, m - 1 - n, Math.min(d, last))).toISOString().slice(0, 10);
+  };
+  for (let n = 1; n <= 240; n++) {
+    const start = back(n);
+    if (start <= today) return { start, resetsOn: back(n - 1) };
   }
-  const t = now.getTime();
-  const balance = grants.filter((g) => g.exp > t && g.at <= t).reduce((s, g) => s + g.left, 0);
-  const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
-  return { balance, resetsOn: next.toISOString().slice(0, 10) };
+  return { start: today, resetsOn: paidUntil };
 }
 
-/** True when this month's grant hasn't been given yet. */
-export function needsMonthlyGrant(rows: LedgerRow[], now: Date): boolean {
-  const start = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), 1);
-  return !rows.some((r) => r.kind === "grant" && Date.parse(r.created_at) >= start);
-}
-
-export function grantExpiry(now: Date, months: number): string {
-  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + months, now.getUTCDate(), now.getUTCHours())).toISOString();
-}
-
-/** The price of one request, by what it does. Unknown tasks cost nothing. */
-export function priceOf(body: any, prices: Prices): { task: string; credits: number } {
-  const p = (k: string) => ({ task: k, credits: Math.max(0, Math.round(Number(prices[k] ?? DEFAULT_PRICES[k] ?? 0))) });
-  switch (body?.task) {
-    case "ustaad": return body.image ? p("photo") : p("chat");
-    case "tutor": case "mcq_feedback": return p("chat");
-    case "mark_written": return body.handwritten ? p("mark_handwritten") : p("mark_typed");
-    case "read_script": return p("page_read");
-    case "paper_report": return p("analysis");
-    case "pick_paper": return p("pick_paper");
-    case "videos": return p("videos");
-    default: return { task: String(body?.task ?? ""), credits: 0 };
-  }
-}
-
-/** "About 420 questions to Ustaad, 6 papers marked …" from a balance: how many of each thing are left this month. */
-export function whatsLeft(balance: number, prices: Prices): Record<string, number> {
+/**
+ * Credits each kind of AI work is likely to cost, to one decimal: the real average of recent calls when there are enough of
+ * them, otherwise the typical tokens at today's prices. [averages] maps a logged task to its average cost and call count.
+ */
+export function estimates(averages: Record<string, { usd: number; calls: number }>, usdIn: number, usdOut: number,
+                          monthlyUsd: number, monthlyCredits: number): Record<string, number> {
   const out: Record<string, number> = {};
-  for (const [k, v] of Object.entries({ ...DEFAULT_PRICES, ...prices })) if (v > 0) out[k] = Math.floor(balance / v);
+  for (const [key, t] of Object.entries(TYPICAL_TOKENS)) {
+    const real = averages[ESTIMATE_TASKS[key] ?? ""];
+    const typical = usdOf(t.input, t.output, usdIn, usdOut);
+    // Handwritten marking is learned from typed marking's average, scaled by how much bigger it typically is.
+    const usd = real && real.calls >= MIN_CALLS_FOR_AVERAGE ? real.usd
+      : key === "mark_photo" && (averages.mark_written?.calls ?? 0) >= MIN_CALLS_FOR_AVERAGE
+        ? averages.mark_written.usd * (typical / usdOf(TYPICAL_TOKENS.mark.input, TYPICAL_TOKENS.mark.output, usdIn, usdOut))
+        : typical;
+    out[key] = Math.max(0.1, Math.ceil(creditsFor(usd, monthlyUsd, monthlyCredits) * 10) / 10);
+  }
   return out;
+}
+
+/**
+ * Who may use AI, and how much: Premium gets the full monthly allowance; the free plan gets [freeUsd] (0 = no AI at all).
+ * `plus` is null when plans are not set up yet: then the full allowance applies, as before plans.
+ */
+export function allowanceFor(plus: boolean | null, plusUsd: number, freeUsd: number): { allowed: boolean; capUsd: number } {
+  if (plus === false) return { allowed: freeUsd > 0, capUsd: freeUsd };
+  return { allowed: true, capUsd: plusUsd };
 }
 
 // ── Money: each student's monthly AI allowance in US dollars ─────────────────────────────────────────────────────
@@ -72,13 +91,6 @@ export function nextMonthStart(now: Date): string {
   return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1)).toISOString().slice(0, 10);
 }
 /** True when the month's spend has reached the cap (a cap of 0 or less means no cap). */
-/**
- * The month's AI allowance in US dollars for a student's plan: Plus gets the full allowance, the free plan the smaller one.
- * `plus` is null when the plan is unknown (no account, or plans not set up yet): then the full allowance applies, as before plans.
- */
-export function capFor(plus: boolean | null, plusUsd: number, freeUsd: number): number {
-  return plus === false ? freeUsd : plusUsd;
-}
 export function overCap(spentUsd: number, capUsd: number): boolean {
   return capUsd > 0 && spentUsd >= capUsd;
 }

@@ -216,6 +216,7 @@ fun HomeScreen(
         // A quiet invitation to Premium for free students.
         val premium = pk.parhlou.student.ui.components.LocalPremium.current
         if (!premium.access.unlocked) PremiumInvite(premium.pricePkr, premium.upgrade)
+        else premium.credits?.takeIf { it.hasCredits }?.let { CreditsLine(it, premium.upgrade) }
 
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
@@ -503,9 +504,9 @@ fun ProfileScreen(
         TaskRow(Icons.Filled.History, "Practice history", "Your quizzes and papers", onHistory)
         TaskRow(Icons.Filled.SmartToy, "My Ustaad", "What Ustaad knows about you and how it explains", onMyUstaad)
         TaskRow(Icons.Filled.NewReleases, "What's new", "Everything this update added", onWhatsNew)
-        // This month's Ustaad time, as things the student can still do.
+        // This month's Premium credits.
         val left by androidx.compose.runtime.produceState<pk.parhlou.student.ai.Allowance?>(null) { value = allowance() }
-        left?.let { a -> UstaadEnergy(a, onPlus) }
+        left?.let { a -> CreditsCard(a, onPlus) }
         if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Premium", planLabel, onPlus)
         var feedbackOpen by remember { mutableStateOf(false) }
         TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
@@ -729,31 +730,38 @@ private fun PracticalList(subject: Subject, onOpen: (String) -> Unit) {
 }
 
 /**
- * Ustaad energy: how much of this month's Ask Ustaad and AI marking is left, as one bar. No money or credit counts:
- * a student only needs to know how much is left and when it refills.
+ * Premium credits: how many of this month's credits are left, as one bar, and when they renew. Everything the AI does uses
+ * credits at what it really cost; lessons, practice, solutions and MCQ checking never do.
  */
 @Composable
-fun UstaadEnergy(a: pk.parhlou.student.ai.Allowance, onPlus: (() -> Unit)?) {
+fun CreditsCard(a: pk.parhlou.student.ai.Allowance, onPlus: (() -> Unit)?) {
     val brand = pk.parhlou.student.ui.theme.LocalBrand.current
-    val left = if (a.capUsd > 0) 1f - a.usedShare else 1f
-    val shown by androidx.compose.animation.core.animateFloatAsState(left, androidx.compose.animation.core.tween(900), label = "energy")
-    val low = a.capUsd > 0 && left < 0.15f
+    val has = a.hasCredits
+    val shown by androidx.compose.animation.core.animateFloatAsState(if (has) a.leftShare else 0f, androidx.compose.animation.core.tween(900), label = "credits")
+    val low = has && a.leftShare < 0.15f
     Sheet(Modifier.testTag("allowance")) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text("⚡", style = MaterialTheme.typography.headlineSmall)
             Column(Modifier.padding(start = 10.dp).weight(1f)) {
-                Text("Ustaad energy", style = MaterialTheme.typography.titleMedium, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
-                Text(if (a.capUsd > 0) "${(left * 100).toInt()}% left this month" else "Plenty left this month",
+                Text("Credits", style = MaterialTheme.typography.titleMedium, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                Text(if (has) "${pk.parhlou.student.domain.Credits.format(a.balance)} of ${pk.parhlou.student.domain.Credits.format(a.monthly)} left this month"
+                    else "Part of Premium",
                     style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("ai-used"))
             }
         }
-        Box(Modifier.fillMaxWidth().height(14.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant).testTag("ai-meter")) {
-            Box(Modifier.fillMaxWidth(shown.coerceIn(0f, 1f)).height(14.dp).clip(RoundedCornerShape(50))
-                .background(if (low) brand.danger else brand.sun))
+        if (has) {
+            Box(Modifier.fillMaxWidth().height(14.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant).testTag("ai-meter")) {
+                Box(Modifier.fillMaxWidth(shown.coerceIn(0f, 1f)).height(14.dp).clip(RoundedCornerShape(50))
+                    .background(if (low) brand.danger else brand.sun))
+            }
+            val ends = a.premiumUntil != null && a.premiumUntil == a.resetsOn
+            Muted("Ask Ustaad, photo questions, AI marking, reading your answer pages and examiner reports use credits. " +
+                if (ends) "Your Premium ends on ${prettyDate(a.resetsOn)}: renew it to keep going." else "They renew on ${prettyDate(a.resetsOn)}.")
+        } else {
+            Muted("Premium gives you ${pk.parhlou.student.domain.Credits.format(pk.parhlou.student.domain.Premium.MONTHLY_CREDITS)} credits a month " +
+                "for Ask Ustaad, AI marking, papers and examiner reports.")
+            if (onPlus != null) TextButton(onClick = onPlus, modifier = Modifier.heightIn(min = 44.dp)) { Text("See Premium") }
         }
-        Muted("Asking Ustaad, photo questions and AI paper marking use energy. It refills on ${prettyDate(a.resetsOn)}. " +
-            "Lessons, practice, solutions and papers never use it.")
-        if (low && onPlus != null) TextButton(onClick = onPlus, modifier = Modifier.heightIn(min = 44.dp)) { Text("Running low? Premium gives you much more") }
     }
 }
 

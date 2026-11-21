@@ -111,13 +111,19 @@ version from the owner panel (migration `20261121000001_app_customization.sql`).
   opens.
 - "View as student" now shows the student's AI use this month against their plan's allowance (still logged on every look).
 
-## Premium paywall, 21 November 2026
+## Premium paywall and credits, 21 November 2026
 
-- Premium status comes from the server (`my_plan`); the phone keeps the last confirmed end date so Premium still works offline.
-- Free tries (the one past paper, 3 AI tries) are counted on the phone. Reinstalling resets them, so the server is the real
-  limit for anything that costs money: AI calls stop at the free plan's small monthly allowance ($0.05).
+- Premium status comes from the server (`my_plan`); the phone keeps the last confirmed end date so Premium still works offline,
+  and it lapses on the phone too once that date passes.
+- AI is enforced on the server, not the phone: every AI call checks `paid_until`, and free students get `PREMIUM_REQUIRED`
+  (free allowance $0). Premium students are stopped at their month's allowance ($3.50 = 1,000 credits, counted from the day they
+  paid) with `CREDITS_USED_UP`. The project-wide daily dollar ceiling still applies on top.
+- Promo codes: only a SHA-256 hash of each code is stored (the owner sees the code once). Codes are 48 random bits, each account
+  can redeem a code once, and 10 wrong codes in an hour block further tries for that hour. Redeeming needs a signed-in account.
+  The Play build hides promo codes, because Google Play requires its own billing for digital goods.
+- Cost estimates come from `ai_task_costs`, which only the gateway (service role) can call; students see only rounded credits.
 - Lessons, papers and solutions ship inside the app's course file, so the paywall hides them in the app but can't stop someone
   who unpacks and modifies the APK. That is normal for an offline-first app at this stage; if it ever matters, Premium chapters
-  can be delivered from the server per student instead.
+  can be delivered from the server per student instead. AI, which costs money, can't be unlocked this way.
 - Under-18s: the payment screen still asks for a parent or guardian's agreement, and the refund policy is unchanged.
 

@@ -20,23 +20,22 @@ import pk.parhlou.student.data.ProgressStore
 import pk.parhlou.student.ui.screens.ProfileScreen
 import pk.parhlou.student.ui.theme.ParhlouTheme
 
-/** Profile: what's left of this month with Ustaad, in plain counts, and feedback that reaches the owner. */
+/** Profile: this month's Premium credits, and feedback that reaches the owner. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34], qualifiers = "w393dp-h852dp")
 class ProfileFeedbackTest {
     @get:Rule val rule = createComposeRule()
     private val state = OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 30, completed = true)
 
-    @Test fun thisMonthShowsCountsNotCreditsAndFeedbackIsSent() {
+    @Test fun thisMonthsCreditsShowAndFeedbackIsSent() {
         val sent = mutableListOf<String>()
         rule.setContent { ParhlouTheme { ProfileScreen(FakeRepository(), state, ProgressStore(), {}, {},
-            allowance = { Allowance(840, "2026-12-01", mapOf("chat" to 840), usedUsd = 0.9, capUsd = 3.0) },
+            allowance = { Allowance(840, "2026-12-01", monthly = 1000, plan = "plus", premiumUntil = "2027-02-01") },
             onSendFeedback = { sent += it; true }) } }
         rule.waitUntil(3_000) { rule.onAllNodes(androidx.compose.ui.test.hasTestTag("allowance")).fetchSemanticsNodes().isNotEmpty() }
-        // One simple energy bar: what's left and when it refills. No money, no credits.
-        rule.onNodeWithText("70% left this month").assertExists()
-        rule.onNodeWithText("refills on 1 December", substring = true).assertExists()
-        assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("credit", substring = true, ignoreCase = true)).fetchSemanticsNodes().size)
+        // One bar: credits left of the month's 1,000, and when they renew. No money.
+        rule.onNodeWithText("840 of 1,000 left this month").assertExists()
+        rule.onNodeWithText("They renew on 1 December", substring = true).assertExists()
         assertEquals(0, rule.onAllNodes(androidx.compose.ui.test.hasText("$", substring = true)).fetchSemanticsNodes().size)
 
         rule.onNodeWithText("Send feedback").performScrollTo().performClick()

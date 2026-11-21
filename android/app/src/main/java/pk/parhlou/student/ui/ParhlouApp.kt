@@ -126,10 +126,8 @@ import pk.parhlou.student.ui.screens.PlannerScreen
 import pk.parhlou.student.ui.screens.ScanChooserScreen
 import pk.parhlou.student.ui.screens.WeakTopicsScreen
 
-/** Drafts that keep Premium working offline and remember a free student's free taste. */
+/** The draft that keeps Premium working offline: the last confirmed end date. */
 private const val PREMIUM_UNTIL = "premium_until"
-private const val SAMPLE_PAPER = "sample_paper"
-private const val AI_TRIES = "ai_tries"
 
 object Routes {
     const val WELCOME = "welcome"
@@ -260,19 +258,20 @@ fun ParhlouApp(
     LaunchedEffect(session?.email, planClient) { plan = if (session != null || planClient != null) plans.info() else null }
     // Premium: from the server when known, else the last confirmed end date saved on the phone (so it works offline).
     val premiumUntil by store.draft(PREMIUM_UNTIL).collectAsState(initial = "")
-    val samplePaper by store.draft(SAMPLE_PAPER).collectAsState(initial = "")
-    val aiTries by store.draft(AI_TRIES).collectAsState(initial = "")
     LaunchedEffect(plan) { plan?.let { p -> store.saveDraft(PREMIUM_UNTIL, if (p.plus) p.paidUntil.orEmpty() else "") } }
     val isPremium = plan?.plus ?: (premiumUntil.isNotBlank() && premiumUntil >= java.time.LocalDate.now().toString())
-    val access = pk.parhlou.student.domain.Premium.Access(
-        premium = isPremium, paywall = paywall && featureOn("paywall"),
-        samplePaper = samplePaper.ifBlank { null }, aiTriesUsed = aiTries.toIntOrNull() ?: 0,
-    )
+    val access = pk.parhlou.student.domain.Premium.Access(premium = isPremium, paywall = paywall && featureOn("paywall"))
+    // Premium's credits, from the server: asked again after AI work and when Home, Papers, Profile or Premium opens.
+    var credits by remember { mutableStateOf<pk.parhlou.student.ai.Allowance?>(null) }
+    var creditsAsked by remember { mutableIntStateOf(0) }
+    LaunchedEffect(session?.email, isPremium, creditsAsked) { credits = if (session != null && access.ai) ai.allowance() else null }
     val premiumAccess = pk.parhlou.student.ui.components.PremiumAccess(
         access = access, pricePkr = plan?.pricePkr ?: pk.parhlou.student.domain.Premium.PRICE_PKR,
-        useAi = { if (!access.unlocked) scope.launch { store.saveDraft(AI_TRIES, "${(store.draft(AI_TRIES).first().toIntOrNull() ?: 0) + 1}") } },
+        credits = credits, refreshCredits = { creditsAsked++ },
         upgrade = { nav.navigate(Routes.PLUS) },
     )
+    /** Credit estimates are shown to Premium students (and whenever the server says the student has credits). */
+    val showCosts = credits?.hasCredits == true || (access.paywall && access.premium)
     val desk = remember(repo, ai, account) {
         ExamDesk(context.applicationContext, repo, store, ai, progress) { paperId ->
             if (account == null) emptyMap() else account.sync.paperMarks(paperId)
@@ -355,28 +354,37 @@ fun ParhlouApp(
             (sp.template != null && myPapers[blueprintId]?.let { m -> PaperPicker.fromJson(PaperPicker.toJson(m), sp.template, sp.bank) } != null)
     }?.subject?.name ?: subjects.firstOrNull()?.name ?: "Mathematics"
     fun paperOf(id: String): PaperContent? = repo.paper(id) ?: readyMocks[id]?.paper ?: myPapers[id]?.paper ?: guessPapers[id]?.paper ?: realPast[id]?.paper ?: practice[id]?.second
-    // ---- Premium: which chapters and papers a free student can open.
-    /** A chapter's place in its book, counting from 0 (chapters 1 and 2 are free). */
-    fun chapterIndexOf(chapterId: String?): Int? = subjects.firstNotNullOfOrNull { s -> s.chapters.indexOfFirst { it.id == chapterId }.takeIf { it >= 0 } }
-    fun chapterIndexOfModule(moduleId: String): Int? = subjects.firstNotNullOfOrNull { s -> s.chapters.indexOfFirst { c -> c.modules.any { it.id == moduleId } }.takeIf { it >= 0 } }
+    // ---- Premium: the first quarter of every book is free; papers and AI are Premium.
+    /** Whether a chapter is open: its place in its book against the book's free quarter. */
+    fun chapterOpen(chapterId: String?): Boolean = subjects.firstNotNullOfOrNull { s ->
+        s.chapters.indexOfFirst { it.id == chapterId }.takeIf { it >= 0 }?.let { access.chapter(it, s.chapters.size) }
+    } ?: true
+    fun moduleOpen(moduleId: String): Boolean = subjects.firstNotNullOfOrNull { s ->
+        s.chapters.indexOfFirst { c -> c.modules.any { it.id == moduleId } }.takeIf { it >= 0 }?.let { access.chapter(it, s.chapters.size) }
+    } ?: true
     fun chapterLockTitle(moduleId: String?): String = repo.chapterOf(moduleId.orEmpty())?.let { "${it.word} ${it.number} is Premium" } ?: "This chapter is Premium"
-    val chapterLockMessage = "Chapters 1 and 2 of every book are free. Unlock every chapter's lessons, practice, exam kit and solutions with Premium."
-    /** Papers: the one free past paper, and chapter tests for chapters 1 and 2; everything else needs Premium. */
-    fun paperOpen(id: String): Boolean = when {
-        access.unlocked -> true
-        id in realPast -> access.pastPaper(id)
-        else -> chapterBlueprints.firstOrNull { it.id == id }?.chapterId?.let { access.chapter(chapterIndexOf(it)) } ?: false
+    /** "Units 1–3 of this book are free…": the free quarter of the book a section belongs to. */
+    fun chapterLockMessage(moduleId: String?): String {
+        val book = subjects.firstOrNull { s -> s.chapters.any { c -> c.modules.any { it.id == moduleId } || c.id == moduleId } }
+        val free = book?.let { pk.parhlou.student.domain.Premium.freeChapters(it.chapters.size) }
+        val word = book?.chapters?.firstOrNull()?.word ?: "Chapter"
+        val which = when (free) { null -> "The first quarter of every book is"; 1 -> "$word 1 of this book is"; else -> "${word}s 1–$free of this book are" }
+        return "$which free. Unlock every chapter's lessons, practice, exam kit and solutions with Premium."
     }
+    /** Every paper is Premium, with no limit on tries. */
+    fun paperOpen(@Suppress("UNUSED_PARAMETER") id: String): Boolean = access.papers
     fun paperLockTitle(id: String): String = when {
         id in guessPapers -> "Guess Paper 2027 is Premium"
-        id in realPast -> "You've used your free past paper"
-        id in practice || id in myPapers -> "Your own tests are Premium"
-        else -> "This paper is Premium"
+        id in realPast -> "Past papers are Premium"
+        id in practice || id in myPapers -> "Papers made for you are Premium"
+        else -> "Papers are Premium"
     }
-    fun paperLockMessage(id: String): String = when {
-        id in realPast -> "Your free paper was ${realPast[access.samplePaper]?.tag ?: "another past paper"}. Unlock every board's past papers, the Guess Paper and your own tests with Premium."
-        else -> "Sit real board-style papers and get an examiner's report on every one with Premium."
-    }
+    @Suppress("UNUSED_PARAMETER")
+    fun paperLockMessage(id: String): String =
+        "Sit every board paper as often as you like, then get it checked like the board with an examiner's report. Premium includes 1,000 credits a month."
+    /** About how many credits checking a paper and its report use (null: not shown). */
+    fun paperCost(b: pk.parhlou.student.data.PaperBlueprint, paper: PaperContent): ((Boolean) -> pk.parhlou.student.domain.Credits.PaperCost)? =
+        if (!showCosts) null else { onPaper -> pk.parhlou.student.domain.Credits.paper(pk.parhlou.student.domain.Credits.answersToMark(b, paper), onPaper, made = false, premiumAccess::estimate) }
     /** Opens study for a section: a section never taught opens its lesson first (teach, then practise); after that, the practice session. */
     fun startStudy(moduleId: String?, minutes: Int) {
         val m = moduleId?.let { repo.module(it) } ?: todaysModule(subjects, progress)
@@ -442,6 +450,8 @@ fun ParhlouApp(
         PlanKind.READINESS -> nav.navigate(Routes.READINESS)
     }
     val current = nav.currentBackStackEntryAsState().value?.destination?.route
+    // Credits change as the AI works: ask again when a screen that shows them opens.
+    LaunchedEffect(current) { if (current in setOf(Routes.HOME, Routes.TESTS, Routes.PROFILE, Routes.PLUS) && access.ai) creditsAsked++ }
     val shownNav = remember(appSettings, installId) { navItems.filter { it.route != Routes.LEAGUE || featureOn("league") } }
     val showBar = current in shownNav.map { it.route }
     fun goTop(route: String) = nav.navigate(route) {
@@ -599,13 +609,13 @@ fun ParhlouApp(
         }
         composable(Routes.TUTOR) {
             val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
-            // Ask Ustaad is Premium; a free student gets three tries. Nothing is sent behind the lock.
+            // Ask Ustaad is Premium, and uses its credits. Nothing is sent behind the lock.
             val locked = remember { !access.ai }
             androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.screens.LocalLessonVideos provides { q: String -> ai.lessonVideos(q) }) {
-            PremiumGate(locked, "Ask Ustaad is Premium", "You've used your ${pk.parhlou.student.domain.Premium.FREE_AI_TRIES} free questions. Ask Ustaad anything, any time, with Premium.",
+            PremiumGate(locked, "Ask Ustaad is Premium", "Ask Ustaad anything, any time, or send a photo of a question. Premium includes 1,000 credits a month.",
                 onBack = { nav.popBackStack() }, preview = { pk.parhlou.student.ui.components.LockedPreview() }) {
             TutorScreen(ai, state.subjectIds, tutorSeed, examActive = activeExam != null, onBack = nav.back(),
-                aiTriesLeft = access.aiTriesLeft, onAiUsed = premiumAccess.useAi, onUpgrade = premiumAccess.upgrade,
+                onAiUsed = premiumAccess.refreshCredits,
                 onGoToPaper = activeExam?.let { id -> { nav.navigate("assessment/$id") } },
                 onQuitPaper = activeExam?.let { id -> { quitPaper(id) } },
                 store = store, prefs = prefs, studentName = state.firstName,
@@ -661,10 +671,10 @@ fun ParhlouApp(
                 repo, state, progress,
                 onEditProfile = { nav.navigate(Routes.EDIT_PROFILE) },
                 onPlus = if (featureOn("plus")) ({ nav.navigate(Routes.PLUS) }) else null,
-                planLabel = if (isPremium) "Premium" + (plan?.paidUntil?.let { " until $it" } ?: "")
-                    else "Free plan · unlock every chapter, all papers and Ask Ustaad",
+                planLabel = if (isPremium) "Premium" + (plan?.paidUntil?.let { " until ${pk.parhlou.student.ui.screens.prettyDate(it)}" } ?: "")
+                    else "Free plan · unlock every chapter, every paper and 1,000 AI credits a month",
                 soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
-                allowance = { ai.allowance() },
+                allowance = { if (access.ai) ai.allowance() else pk.parhlou.student.ai.Allowance(0, "", monthly = 0, plan = "free") },
                 onSendFeedback = { ai.sendFeedback(it, "profile", "build ${pk.parhlou.student.BuildConfig.VERSION_CODE}") },
                 onPlaceholder = { nav.navigate("soon/$it") },
                 onClearDevice = { scope.launch { account?.auth?.signOut(); store.clearAll() } },
@@ -714,7 +724,7 @@ fun ParhlouApp(
             val module = remember(requested) {
                 if (requested == "today") todaysModule(subjects, progress) else repo.module(requested)
             }
-            if (module == null) Missing(nav) else PremiumGate(!access.chapter(chapterIndexOfModule(module.id)), chapterLockTitle(module.id), chapterLockMessage, onBack = { nav.popBackStack() }) {
+            if (module == null) Missing(nav) else PremiumGate(!moduleOpen(module.id), chapterLockTitle(module.id), chapterLockMessage(module.id), onBack = { nav.popBackStack() }) {
                 val chapter = subjects.flatMap { it.chapters }.firstOrNull { c -> c.modules.any { it.id == module.id } }
                 val noteId = remember(module.id) { subjectIds.flatMap { repo.notes(it) }.firstOrNull { it.moduleId == module.id }?.id }
                 val items = remember(module.id, minutes) {
@@ -764,7 +774,7 @@ fun ParhlouApp(
         composable(Routes.SOLUTION) { entry ->
             val module = repo.module(entry.arguments?.getString("module").orEmpty())
             val index = entry.arguments?.getString("index")?.toIntOrNull() ?: -1
-            if (module == null) Missing(nav) else PremiumGate(!access.chapter(chapterIndexOfModule(module.id)), chapterLockTitle(module.id), chapterLockMessage, onBack = { nav.popBackStack() }) { SolutionDetailScreen(
+            if (module == null) Missing(nav) else PremiumGate(!moduleOpen(module.id), chapterLockTitle(module.id), chapterLockMessage(module.id), onBack = { nav.popBackStack() }) { SolutionDetailScreen(
                 module, index,
                 onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
                 onBack = nav.back(),
@@ -801,7 +811,7 @@ fun ParhlouApp(
             val id = entry.arguments?.getString("id").orEmpty()
             val chapter = subjects.flatMap { it.chapters }.firstOrNull { it.id == id }
             if (chapter == null) Missing(nav) else
-                PremiumGate(!access.chapter(chapterIndexOf(chapter.id)), "${chapter.word} ${chapter.number} exam kit is Premium", chapterLockMessage, onBack = { nav.popBackStack() }) {
+                PremiumGate(!chapterOpen(chapter.id), "${chapter.word} ${chapter.number} exam kit is Premium", chapterLockMessage(chapter.id), onBack = { nav.popBackStack() }) {
                     ExamKitScreen(chapter, onOpenSolution = { m, i -> nav.navigate("solution/$m/$i") }, onBack = nav.back())
                 }
         }
@@ -810,7 +820,7 @@ fun ParhlouApp(
             val module = repo.module(id)
             val subject = subjectIds.mapNotNull { repo.subject(it) }
                 .firstOrNull { s -> s.chapters.any { c -> c.modules.any { it.id == id } } }
-            if (module == null) Missing(nav) else PremiumGate(!access.chapter(chapterIndexOfModule(id)), chapterLockTitle(id), chapterLockMessage, onBack = { nav.popBackStack() }) { ModuleScreen(
+            if (module == null) Missing(nav) else PremiumGate(!moduleOpen(id), chapterLockTitle(id), chapterLockMessage(id), onBack = { nav.popBackStack() }) { ModuleScreen(
                 module = module, quiz = repo.moduleQuiz(id), progress = progress, store = store, ai = ai,
                 courseLabel = "class ${subject?.grade ?: ""} ${subject?.name ?: ""} Punjab board",
                 onAskTutor = { openTutor(it) }, onBack = nav.back(),
@@ -825,7 +835,7 @@ fun ParhlouApp(
             val module = repo.module(id)
             val lesson = module?.lesson
             val sound by store.soundOn.collectAsState(initial = true)
-            if (module == null || lesson == null) Missing(nav) else PremiumGate(!access.chapter(chapterIndexOfModule(id)), chapterLockTitle(id), chapterLockMessage, onBack = { nav.popBackStack() }) { LessonPlayer(
+            if (module == null || lesson == null) Missing(nav) else PremiumGate(!moduleOpen(id), chapterLockTitle(id), chapterLockMessage(id), onBack = { nav.popBackStack() }) { LessonPlayer(
                 lesson = lesson, moduleId = module.id, title = module.title,
                 soundOn = sound, onToggleSound = { scope.launch { store.setSound(!sound) } },
                 onAskTutor = { q -> openTutor(TutorSeed(moduleId = module.id, question = q)) },
@@ -888,15 +898,16 @@ fun ParhlouApp(
                 selectedSubject = paperSubject?.subject?.id,
                 onSubject = { paperSubjectId = it },
                 onExercisePdf = { e, answers ->
-                    // Worked answers are solutions: free for chapters 1 and 2, Premium after that.
+                    // Worked answers are solutions: free for the book's first quarter, Premium after that.
                     val unit = e.substringBefore('.').toIntOrNull()
-                    if (answers && unit != null && !access.chapter(unit - 1)) nav.navigate(Routes.PLUS)
+                    val book = paperSubject?.subject ?: subjects.firstOrNull()
+                    if (answers && unit != null && !access.chapter(unit - 1, book?.chapters?.size ?: 0)) nav.navigate(Routes.PLUS)
                     else scope.launch {
                         val f = withContext(Dispatchers.IO) { runCatching { makePdf(pk.parhlou.student.domain.PdfAction("paper_pdf", "exercise", 0, e, answers)) }.getOrNull() }
                         if (f != null) shareFile(context, f, "application/pdf", if ('.' in e) "Exercise $e" else "Chapter $e exercise") else pdfFailed(context)
                     }
                 },
-                attemptsLeft = { id -> (pk.parhlou.student.domain.PaperAttempts.MAX - pk.parhlou.student.domain.PaperAttempts.used(progress.history(), id)).coerceAtLeast(0) },
+                attemptsUsed = { id -> pk.parhlou.student.domain.PaperAttempts.used(progress.history(), id) },
                 isLocked = { !paperOpen(it) },
             )
         } }
@@ -911,8 +922,6 @@ fun ParhlouApp(
             val b = blueprints.firstOrNull { it.id == entry.arguments?.getString("id") }
             val paper = b?.let { paperOf(it.id) }
             if (b == null || paper == null) Missing(nav) else PremiumGate(!paperOpen(b.id), paperLockTitle(b.id), paperLockMessage(b.id), onBack = { nav.popBackStack() }) {
-                // The first past paper a free student opens becomes their free one.
-                LaunchedEffect(b.id) { if (!access.unlocked && b.id in realPast && access.samplePaper == null) store.saveDraft(SAMPLE_PAPER, b.id) }
                 val log by store.examLog(b.id).collectAsState(initial = "")
                 AssessmentStartScreen(
                     blueprint = b, examLog = log,
@@ -933,6 +942,7 @@ fun ParhlouApp(
                     onWrittenOnPaper = { nav.navigate("printed/${b.id}") },
                     onPaper = store.draft(desk.modeKey(b.id)).collectAsState(initial = "").value == "paper",
                     onQuit = { quitPaper(b.id) { nav.navigate(Routes.TUTOR) { popUpTo(Routes.HOME) } } },
+                    cost = paperCost(b, paper),
                     onStartOnPaper = {
                         scope.launch {
                             desk.startOnPaper(b.id)
@@ -974,8 +984,11 @@ fun ParhlouApp(
         }
         composable(Routes.MAKE_PAPER) {
             val prefs by store.ustaadPrefs.collectAsState(initial = UstaadPrefs(UstaadPrefs.LANGUAGES[0], UstaadPrefs.STYLES[0], 0))
-            PremiumGate(!access.papers, "Your own papers are Premium", "Make full board-pattern papers chosen for you, then sit them like the real exam, with Premium.",
+            PremiumGate(!access.papers, "Papers made for you are Premium", "Make as many full board-pattern papers as you like, chosen for you, then sit them like the real exam, with Premium.",
                 onBack = { nav.popBackStack() }) { MakePaperScreen(
+                cost = template?.let { t -> repo.paper(t.id)?.let { tp ->
+                    if (!showCosts) null else pk.parhlou.student.domain.Credits.paper(pk.parhlou.student.domain.Credits.answersToMark(t, tp), onPaper = true, made = true, premiumAccess::estimate)
+                } },
                 make = make@{
                     val t = template ?: return@make null
                     val tPaper = repo.paper(t.id) ?: return@make null
@@ -985,7 +998,7 @@ fun ParhlouApp(
                         .flatMap { p -> p.mcqs.map { it.id } + p.written.map { it.id } }.toSet()
                     val slots = PaperPicker.slots(t, tPaper, bank, seen, System.currentTimeMillis())
                     val profile = StudentProfile.build(state, subjects, history, prefs, { noteTitles[it] }).summary()
-                    val aiPick = if (ai.readsPhotos) ai.pickPaper(slots, profile) else null
+                    val aiPick = if (ai.readsPhotos) ai.pickPaper(slots, profile).also { premiumAccess.refreshCredits() } else null
                     val n = myPapers.size + 1
                     val made = PaperPicker.build("my-paper-${System.currentTimeMillis()}", "${paperSubject?.subject?.name ?: "My"} paper $n (2027 pattern)", t, tPaper, slots,
                         aiPick ?: PaperPicker.localPick(slots), bank, byAi = aiPick != null) ?: return@make null
@@ -995,16 +1008,6 @@ fun ParhlouApp(
                 },
                 onOpen = { nav.navigate("assessment/$it") { popUpTo(Routes.TESTS) } },
                 onBack = nav.back(),
-                saved = myPapers.values.map { it.blueprint.id to it.blueprint.title },
-                onDelete = { del ->
-                    scope.launch {
-                        val a = runCatching { org.json.JSONArray(myPapersJson) }.getOrDefault(org.json.JSONArray())
-                        val kept = org.json.JSONArray()
-                        for (i in 0 until a.length()) { val e = a.get(i); val id = runCatching { org.json.JSONObject(e.toString()).optString("id") }.getOrNull(); if (id != del) kept.put(e) }
-                        store.saveDraft(MY_PAPERS, kept.toString())
-                        paperOf(del)?.let { desk.reset(it) }
-                    }
-                },
             ) }
         }
         composable(Routes.RESULT) { entry ->

@@ -2,7 +2,6 @@ package pk.parhlou.student.domain
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -10,36 +9,32 @@ import org.junit.Test
 class PremiumTest {
     private val free = Premium.Access(premium = false, paywall = true)
 
-    @Test fun chaptersOneAndTwoAreFree() {
-        assertTrue(free.chapter(0))
-        assertTrue(free.chapter(1))
-        assertFalse("chapter 3 is Premium", free.chapter(2))
-        assertTrue("a chapter that can't be found stays open", free.chapter(null))
-        assertTrue(free.copy(premium = true).chapter(9))
-        assertTrue("with the paywall off everything is open", free.copy(paywall = false).chapter(9))
+    @Test fun theFirstQuarterOfEachBookIsFree() {
+        assertEquals(3, Premium.freeChapters(13))  // Class 9 Maths
+        assertEquals(2, Premium.freeChapters(9))   // Class 9 Physics
+        assertEquals(3, Premium.freeChapters(12))
+        assertEquals(1, Premium.freeChapters(4))
+        assertEquals(1, Premium.freeChapters(1))
+        assertTrue(free.chapter(2, 13))
+        assertFalse("chapter 4 of 13 is Premium", free.chapter(3, 13))
+        assertFalse("chapter 3 of 9 is Premium", free.chapter(2, 9))
+        assertTrue("a chapter that can't be found stays open", free.chapter(null, 13))
+        assertTrue(free.copy(premium = true).chapter(12, 13))
+        assertTrue("with the paywall off everything is open", free.copy(paywall = false).chapter(12, 13))
     }
 
-    @Test fun oneFreePastPaperOfTheStudentsChoice() {
-        assertTrue("before choosing, any past paper can be the free one", free.pastPaper("lahore-2024"))
-        val chose = free.copy(samplePaper = "lahore-2024")
-        assertTrue(chose.pastPaper("lahore-2024"))
-        assertFalse(chose.pastPaper("multan-2023"))
-        assertFalse("Guess Paper and own tests are Premium", free.papers)
+    @Test fun papersAndAiArePremiumWithNoFreeAllowance() {
+        assertFalse(free.papers)
+        assertFalse("no free AI tries", free.ai)
         assertTrue(free.copy(premium = true).papers)
+        assertTrue(free.copy(premium = true).ai)
+        assertTrue(Premium.Access.OPEN.ai)
     }
 
-    @Test fun threeFreeTriesOfAskUstaadAndAiMarking() {
-        assertEquals(3, free.aiTriesLeft)
-        assertTrue(free.ai)
-        val used = free.copy(aiTriesUsed = 3)
-        assertEquals(0, used.aiTriesLeft)
-        assertFalse(used.ai)
-        assertNull("Premium has no limit", used.copy(premium = true).aiTriesLeft)
-        assertTrue(used.copy(premium = true).ai)
-    }
-
-    @Test fun priceReadsLikeMoney() {
+    @Test fun priceAndCreditsReadLikeMoney() {
         assertEquals(3999, Premium.PRICE_PKR)
         assertEquals("Rs 3,999", Premium.rupees(3999))
+        assertEquals(1000, Premium.MONTHLY_CREDITS)
+        assertEquals("1,000", Credits.format(1000))
     }
 }

@@ -47,11 +47,16 @@ import pk.parhlou.student.domain.Premium
 data class PremiumAccess(
     val access: Premium.Access = Premium.Access.OPEN,
     val pricePkr: Int = Premium.PRICE_PKR,
-    /** Counts one Ask Ustaad question or AI marking towards a free student's three tries. */
-    val useAi: () -> Unit = {},
+    /** This month's credits, when the server has said (null offline, signed out, or before it answers). */
+    val credits: pk.parhlou.student.ai.Allowance? = null,
+    /** Asks the server for the credits again, after some AI work. */
+    val refreshCredits: () -> Unit = {},
     /** Opens the Premium screen. */
     val upgrade: () -> Unit = {},
-)
+) {
+    /** The credits one piece of AI work is likely to cost: the server's estimate, or the typical one. */
+    fun estimate(key: String): Double = credits?.estimate(key) ?: pk.parhlou.student.domain.Credits.TYPICAL[key] ?: 1.0
+}
 
 /** Open by default, so tests and previews see everything; the app provides the real status. */
 val LocalPremium = compositionLocalOf { PremiumAccess() }
@@ -108,7 +113,7 @@ fun PremiumCard(title: String, message: String, pricePkr: Int, onUnlock: () -> U
         Text(title, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
         Text(message, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         Column(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            for (perk in listOf("Every chapter of every book", "Guess Paper, all past papers and your own tests", "Ask Ustaad and AI marking, no ads")) {
+            for (perk in listOf("Every chapter of every book", "Every paper, with no limits", "1,000 credits a month for Ask Ustaad and AI marking", "No ads")) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Filled.Check, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(8.dp))
@@ -133,6 +138,57 @@ fun PremiumTag(modifier: Modifier = Modifier) {
         Icon(Icons.Filled.Lock, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(12.dp))
         Spacer(Modifier.width(4.dp))
         Text("Premium", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold)
+    }
+}
+
+/**
+ * "About N credits": what a paper will use, item by item, and what the student has left. Shown before making or sitting a
+ * paper; [onConfirm] goes ahead.
+ */
+@Composable
+fun CreditConfirm(title: String, cost: pk.parhlou.student.domain.Credits.PaperCost, onConfirm: () -> Unit, onDismiss: () -> Unit, confirmLabel: String = "Go ahead") {
+    val credits = LocalPremium.current.credits
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        modifier = Modifier.testTag("credit-confirm"),
+        title = { Text(title) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                CostLines(cost)
+                Text(credits?.let { "You have ${pk.parhlou.student.domain.Credits.format(it.balance)} credits left this month." }
+                    ?: "Credits are counted when the paper is checked.", style = MaterialTheme.typography.bodyMedium)
+                if (credits != null && credits.balance < cost.total) Text(
+                    "That's more than you have left. MCQs are still checked, and anything not checked waits until your credits renew on " +
+                        "${pk.parhlou.student.ui.screens.prettyDate(credits.resetsOn)}.",
+                    style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.error)
+                Text("Estimates: each AI step uses what it really costs, often less.", style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+        },
+        confirmButton = { TextButton(onClick = onConfirm, modifier = Modifier.testTag("credit-confirm-ok")) { Text(confirmLabel) } },
+        dismissButton = { TextButton(onClick = onDismiss) { Text("Cancel") } },
+    )
+}
+
+/** Making, checking and the report, each with its credits, then the total. */
+@Composable
+fun CostLines(cost: pk.parhlou.student.domain.Credits.PaperCost, modifier: Modifier = Modifier) {
+    Column(modifier.testTag("paper-cost"), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        if (cost.make > 0) CostLine("Ustaad chooses the questions", cost.make)
+        CostLine("Checking your answers", cost.check)
+        CostLine("Examiner's report", cost.analyse)
+        Row(Modifier.fillMaxWidth().padding(top = 4.dp)) {
+            Text("About", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+            Text("⚡ ${cost.total} credits", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold, modifier = Modifier.testTag("paper-cost-total"))
+        }
+    }
+}
+
+@Composable
+private fun CostLine(what: String, credits: Int) {
+    Row(Modifier.fillMaxWidth()) {
+        Text(what, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.weight(1f))
+        Text("$credits", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }
 

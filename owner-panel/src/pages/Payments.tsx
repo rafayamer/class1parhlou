@@ -5,8 +5,10 @@ import { Check, Num, Text } from "../ui";
 type Row = { id: number; email: string; method: string; months: number; amount_pkr: number; txn_ref: string; payer: string;
   status: string; note: string; created_at: string; paid_until: string | null };
 type Wallet = { number: string; name: string };
-type Plan = { free_monthly_usd: number; monthly_usd_per_student: number; plus_price_pkr: number; ads_enabled: boolean;
+type Plan = { free_monthly_usd: number; monthly_usd_per_student: number; monthly_credits: number; plus_price_pkr: number; ads_enabled: boolean;
   payment_accounts: Record<string, Wallet> };
+type Promo = { id: number; hint: string; days: number; uses_left: number; redeemed: number; note: string; expires_at: string | null;
+  disabled: boolean; created_at: string };
 const METHODS: [string, string][] = [["jazzcash", "JazzCash"], ["easypaisa", "Easypaisa"], ["bank", "Bank transfer"]];
 const methodName = (m: string) => METHODS.find(([id]) => id === m)?.[1] ?? m;
 
@@ -37,6 +39,7 @@ export function Payments() {
     <>
       <h1>Payments</h1>
       <PlanSettings />
+      <PromoCodes />
       <div className="card">
         <div className="row">
           <h2 style={{ margin: 0, flex: 1 }}>Payments to check</h2>
@@ -85,8 +88,9 @@ function PlanSettings() {
     if (error) return setStatus(explain(error));
     const get = (k: string, d: unknown) => (data ?? []).find((r) => r.key === k)?.value ?? d;
     const next: Plan = {
-      free_monthly_usd: Number(get("free_monthly_usd", 0.5)),
-      monthly_usd_per_student: Number(get("monthly_usd_per_student", 3)),
+      free_monthly_usd: Number(get("free_monthly_usd", 0)),
+      monthly_usd_per_student: Number(get("monthly_usd_per_student", 3.5)),
+      monthly_credits: Number(get("monthly_credits", 1000)),
       plus_price_pkr: Number(get("plus_price_pkr", 3999)),
       ads_enabled: get("ads_enabled", true) === true,
       payment_accounts: (get("payment_accounts", {}) ?? {}) as Record<string, Wallet>,
@@ -115,8 +119,13 @@ function PlanSettings() {
     <div className="card">
       <h2 style={{ marginTop: 0 }}>Plans</h2>
       <Num label="Premium price per month (Rs)" value={v.plus_price_pkr} onChange={(x) => setV({ ...v, plus_price_pkr: x })} />
-      <Num label="Premium: AI allowance per month (US $)" step={0.5} value={v.monthly_usd_per_student} onChange={(x) => setV({ ...v, monthly_usd_per_student: x })} />
-      <Num label="Free: AI allowance per month (US $) — the app also limits free students to 3 tries" step={0.1} value={v.free_monthly_usd} onChange={(x) => setV({ ...v, free_monthly_usd: x })} />
+      <Num label="Premium: credits per month" step={100} value={v.monthly_credits} onChange={(x) => setV({ ...v, monthly_credits: x })} />
+      <Num label="Premium: what those credits are worth in AI time (US $ a month)" step={0.5} value={v.monthly_usd_per_student} onChange={(x) => setV({ ...v, monthly_usd_per_student: x })} />
+      <p className="muted small">
+        {v.monthly_credits.toLocaleString()} credits = ${v.monthly_usd_per_student.toFixed(2)}, so 1 credit = ${v.monthly_credits > 0 ? (v.monthly_usd_per_student / v.monthly_credits).toFixed(4) : "—"} of AI time.
+        Every AI call uses what it really cost. Credits renew each month from the day the student paid, and stop when Premium ends.
+      </p>
+      <Num label="Free: AI allowance per month (US $, 0 = no AI for free students)" step={0.1} value={v.free_monthly_usd} onChange={(x) => setV({ ...v, free_monthly_usd: x })} />
       <Check label="Show ads to free-plan students (after some quizzes only)" value={v.ads_enabled} onChange={(x) => setV({ ...v, ads_enabled: x })} />
       <h3>Where students send money</h3>
       <p className="muted small">Your own wallet numbers. Leave a number empty to hide that option in the app.</p>
@@ -130,6 +139,60 @@ function PlanSettings() {
         <button className="primary" disabled={!changed.length} onClick={save}>Save {changed.length ? `(${changed.length})` : ""}</button>
         <button disabled={!changed.length} onClick={() => setV(saved)}>Undo changes</button>
       </div>
+      {status && <p role="status">{status}</p>}
+    </div>
+  );
+}
+
+/** Promo codes: Premium for some days, for testing or for teachers. A code is shown once; only its hash is kept. */
+function PromoCodes() {
+  const [rows, setRows] = useState<Promo[] | null>(null);
+  const [days, setDays] = useState(30);
+  const [uses, setUses] = useState(1);
+  const [note, setNote] = useState("");
+  const [made, setMade] = useState<string | null>(null);
+  const [status, setStatus] = useState("");
+  const load = () => db.rpc("owner_promos").then(({ data, error }) => {
+    if (error) { setStatus(explain(error)); setRows([]); } else setRows((data ?? []) as Promo[]);
+  });
+  useEffect(() => { load(); }, []);
+  const create = async () => {
+    setStatus("Making a code…"); setMade(null);
+    const { data, error } = await db.rpc("owner_promo_create", { p_days: days, p_uses: uses, p_note: note.trim() });
+    if (error) return setStatus(explain(error));
+    setMade(String(data)); setStatus(""); setNote(""); load();
+  };
+  const disable = async (r: Promo) => {
+    const { error } = await db.rpc("owner_promo_disable", { p_id: r.id });
+    setStatus(error ? explain(error) : `Code …${r.hint} switched off.`);
+    load();
+  };
+  return (
+    <div className="card">
+      <h2 style={{ marginTop: 0 }}>Promo codes</h2>
+      <p className="muted small">A student types the code on the Premium screen (direct-download app only) and gets Premium for its days, with credits.
+        Each account can use a code once. Codes are shown only when made: copy it then.</p>
+      <div className="row">
+        <Num label="Days of Premium" value={days} onChange={(x) => setDays(Math.max(1, Math.min(366, Math.round(x))))} />
+        <Num label="How many students can use it" value={uses} onChange={(x) => setUses(Math.max(1, Math.min(10000, Math.round(x))))} />
+        <Text label="Note (who it's for)" value={note} onChange={setNote} />
+      </div>
+      <button className="primary" onClick={create}>Make a code</button>
+      {made && <p role="status">New code: <code style={{ fontSize: "1.2em" }}>{made}</code> — copy it now, it won't be shown again.</p>}
+      {!rows ? <p className="muted">Loading…</p> : !rows.length ? <p className="muted">No codes yet.</p> : (
+        <div style={{ overflowX: "auto" }}>
+          <table>
+            <thead><tr><th>Code</th><th>Note</th><th>Days</th><th>Used</th><th>Left</th><th>Code expires</th><th></th></tr></thead>
+            <tbody>{rows.map((r) => (
+              <tr key={r.id}>
+                <td><code>…{r.hint}</code></td><td>{r.note || "—"}</td><td>{r.days}</td><td>{r.redeemed}</td><td>{r.uses_left}</td>
+                <td>{r.expires_at ? new Date(r.expires_at).toLocaleDateString() : "never"}</td>
+                <td>{r.disabled ? <span className="muted">off</span> : <button onClick={() => disable(r)}>Switch off</button>}</td>
+              </tr>
+            ))}</tbody>
+          </table>
+        </div>
+      )}
       {status && <p role="status">{status}</p>}
     </div>
   );

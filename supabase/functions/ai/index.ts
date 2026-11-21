@@ -9,15 +9,16 @@ import bundled from "./content/sample.json" with { type: "json" };
 import { handle, markMcqs, markRecord, pickContent, type Content } from "./handler.ts";
 import { searchVideos } from "./youtube.ts";
 import { PROMPT_VERSION, type Video } from "./core.ts";
-import { DEFAULT_PRICES, creditBalance, grantExpiry, monthStart, needsMonthlyGrant, nextMonthStart, overCap, capFor, priceOf, usdOf, whatsLeft, type LedgerRow, type Prices } from "./credits.ts";
+import { allowanceFor, creditsFor, creditsLeft, estimates, monthStart, nextMonthStart, overCap, premiumMonth, usdOf } from "./credits.ts";
 import { updateMemory } from "./examiner.ts";
 
 const APP_KEY = Deno.env.get("PARHLOU_APP_KEY") ?? "";
 const CACHE_MS = 30_000;
 
 interface Live { at: number; contents: Content[]; enabled: boolean; perInstall: number; total: number; photosPerDay: number;
-  monthlyCredits: number; creditMonths: number; prices: Prices;
-  /** Money: what one million tokens cost, and each student's monthly AI allowance in US dollars (0 = no cap). */
+  /** Premium's monthly credits, worth monthlyUsd of AI time (default 1,000 credits = $3.50). */
+  monthlyCredits: number;
+  /** Money: what one million tokens cost, each Premium student's monthly AI allowance in US dollars, and the free plan's (0 = none). */
   usdIn: number; usdOut: number; monthlyUsd: number; freeUsd: number; dailyUsdTotal: number }
 let cache: Live | null = null;
 
@@ -37,12 +38,10 @@ async function live(db: any): Promise<Live> {
     total: Number(setting("daily_calls_total", 2000)),
     photosPerDay: Number(setting("daily_photo_questions", 20)),
     monthlyCredits: Number(setting("monthly_credits", 1000)),
-    creditMonths: Number(setting("credit_months", 4)),
-    prices: { ...DEFAULT_PRICES, ...(setting("credit_prices", {}) as Prices) },
     usdIn: Number(setting("usd_per_million_input", 0.10)),
     usdOut: Number(setting("usd_per_million_output", 0.50)),
-    monthlyUsd: Number(setting("monthly_usd_per_student", 3)),
-    freeUsd: Number(setting("free_monthly_usd", 0.5)),
+    monthlyUsd: Number(setting("monthly_usd_per_student", 3.5)),
+    freeUsd: Number(setting("free_monthly_usd", 0)),
     dailyUsdTotal: Number(setting("daily_usd_total", 1)),
   };
   return cache;
@@ -97,21 +96,29 @@ Deno.serve(async (request) => {
   // per-caller rows (credits, chats, memory), needs a real account: a made-up install id per request must get nothing.
   if (!userId && !GUEST_TASKS.includes(task)) return json({ error: "SIGN_IN_REQUIRED" }, 401);
 
-  // ── Credits: the month's grant is given on the first request of the month; each request costs its price. ──────
-  // (Before the credits table exists, everything works as before, without credits.)
-  const credits = userId ? await creditState(db, caller, userId, settings) : null;
-  // Each student's AI allowance in money: this calendar month's spend against the cap.
-  const [usd, plus] = await Promise.all([spend$(db, caller, monthStart(new Date())), userId ? isPlus(db, userId) : Promise.resolve(false)]);
-  const cap = capFor(plus, settings.monthlyUsd, settings.freeUsd);
-  const allowance = { used: Math.round(usd * 100) / 100, cap, resetsOn: nextMonthStart(new Date()), plan: plus ? "plus" : "free" };
-  if ((body as any)?.task === "credits") {
-    return json({ result: credits ? { balance: credits.balance, resetsOn: credits.resetsOn, monthly: settings.monthlyCredits,
-      prices: settings.prices, left: whatsLeft(credits.balance, settings.prices), usd: allowance } : { usd: allowance } });
+  // ── Credits: Premium gets monthlyCredits a month (worth monthlyUsd of AI time), counted from the day they paid and ending
+  // with Premium. Every AI call is charged at its real cost. The free plan gets free_monthly_usd (0 = no AI at all).
+  const plan = userId ? await planOf(db, userId) : { plus: false, paidUntil: null };
+  const now = new Date();
+  const month = plan.plus && plan.paidUntil ? premiumMonth(plan.paidUntil, now) : { start: monthStart(now).slice(0, 10), resetsOn: nextMonthStart(now) };
+  const { allowed, capUsd: cap } = allowanceFor(userId ? plan.plus : false, settings.monthlyUsd, settings.freeUsd);
+  const usd = userId ? await spend$(db, caller, `${month.start}T00:00:00.000Z`) : 0;
+  const allowance = { used: Math.round(usd * 100) / 100, cap, resetsOn: month.resetsOn, plan: plan.plus ? "plus" : "free" };
+  if (task === "credits") {
+    // One credit is always worth the same (Premium's monthlyUsd / monthlyCredits); a plan's month holds what its cap buys.
+    const monthly = allowed && cap > 0 ? Math.round(creditsFor(cap, settings.monthlyUsd, settings.monthlyCredits)) : 0;
+    return json({ result: {
+      plan: allowance.plan, premiumUntil: plan.paidUntil, monthly, resetsOn: month.resetsOn,
+      balance: monthly > 0 ? creditsLeft(usd, cap, monthly) : 0,
+      estimates: estimates(await taskCosts(db), settings.usdIn, settings.usdOut, settings.monthlyUsd, settings.monthlyCredits),
+      usd: allowance,
+    } });
   }
   const free = FREE_TASKS.includes(task);
   // Project-wide money ceiling per 24 hours: a last line of defence for the OpenAI balance, whatever happens.
   if (!free && settings.dailyUsdTotal > 0 && await spend$(db, null, since) >= settings.dailyUsdTotal) return json({ error: "QUOTA_LIMIT" }, 429);
-  if (!free && overCap(usd, cap)) return json({ error: "AI_LIMIT", resetsOn: allowance.resetsOn, usd: allowance }, 402);
+  if (!free && !allowed) return json({ error: "PREMIUM_REQUIRED" }, 402);
+  if (!free && overCap(usd, cap)) return json({ error: "CREDITS_USED_UP", resetsOn: allowance.resetsOn, usd: allowance }, 402);
   if (task === "feedback") {
     const text = String((body as any)?.text ?? "").trim().slice(0, 3000);
     if (!text) return json({ error: "BAD_REQUEST" }, 400);
@@ -124,11 +131,6 @@ Deno.serve(async (request) => {
       screen: String((body as any)?.screen ?? "").slice(0, 80) || null, app_version: String((body as any)?.appVersion ?? "").slice(0, 40) || null });
     return error ? json({ error: "NOT_AVAILABLE" }, 503) : json({ result: { ok: true } });
   }
-  const price = priceOf(body, settings.prices);
-  if (credits && price.credits > 0 && credits.balance < price.credits) {
-    return json({ error: "CREDITS_USED_UP", resetsOn: credits.resetsOn }, 402);
-  }
-
   // Lesson videos the student asked for ("Watch a lesson on this topic"): a cached YouTube search, no AI call.
   if ((body as any)?.task === "videos") {
     const q = String((body as any)?.query ?? "").replace(/[^\p{L}\p{N} .,'+-]/gu, " ").replace(/\s+/g, " ").trim().slice(0, 120);
@@ -137,7 +139,6 @@ Deno.serve(async (request) => {
     // The app sends the subject's name; older builds only had Mathematics.
     const subject = String((body as any)?.subject ?? "maths").replace(/[^\p{L} ]/gu, "").toLowerCase().slice(0, 30) || "maths";
     const found = await videos(db, (/\b(class\s*9|9th\s*class)\b/i.test(q) ? q : `class 9 ${subject} ${q}`).slice(0, 120));
-    if (credits && price.credits > 0) await spend(db, caller, userId, price);
     await logUsage(db, { caller, task: "videos", model: "youtube", prompt_version: PROMPT_VERSION, input_tokens: 0, output_tokens: 0, attempts: 1, ok: true });
     return json({ result: { videos: found } });
   }
@@ -180,7 +181,6 @@ Deno.serve(async (request) => {
     console.error("ai task failed", task, e instanceof Error ? e.message : String(e));
     return json({ error: "AI_UNAVAILABLE" }, 503);
   }
-  if (outcome.usage?.ok && credits && price.credits > 0) await spend(db, caller, userId, price);
   if (isUstaad && outcome.status === 200) {
     const reply = (outcome.body as any)?.result;
     await saveChat(db, caller, userId, memory, String((body as any)?.message ?? "") || "(sent a photo of a question)",
@@ -219,7 +219,7 @@ async function videos(db: any, query: string): Promise<Video[]> {
 
 const SCRIPT_PAGES_PER_DAY = 60;
 
-// ── Credits ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+// ── Usage and money ──────────────────────────────────────────────────────────────────────────────────────────────────────────
 /** Logs one AI call. Before the cost column exists (database not yet updated), the call is logged without its cost. */
 async function logUsage(db: any, row: Record<string, unknown>) {
   const { error } = await db.from("ai_usage").insert(row);
@@ -243,32 +243,30 @@ async function spend$(db: any, caller: string | null, since: string): Promise<nu
   } catch { return 0; }
 }
 
-/** True when the student has paid for Plus up to today or later; null when plans are not set up yet. */
-async function isPlus(db: any, userId: string): Promise<boolean | null> {
+/**
+ * The student's plan: Premium while paid_until is today or later. plus is null when plans are not set up yet (then AI works as
+ * before plans).
+ */
+async function planOf(db: any, userId: string): Promise<{ plus: boolean | null; paidUntil: string | null }> {
   try {
     const { data, error } = await db.from("subscriptions").select("paid_until").eq("user_id", userId).maybeSingle();
-    if (error) return null;
-    return !!data && String(data.paid_until) >= new Date().toISOString().slice(0, 10);
-  } catch { return null; }
+    if (error) return { plus: null, paidUntil: null };
+    const until = data?.paid_until ? String(data.paid_until) : null;
+    return { plus: !!until && until >= new Date().toISOString().slice(0, 10), paidUntil: until };
+  } catch { return { plus: null, paidUntil: null }; }
 }
 
-async function creditState(db: any, holder: string, userId: string | null, s: Live): Promise<{ balance: number; resetsOn: string } | null> {
+/** The average real cost of each kind of AI call over the last 30 days (ai_task_costs), cached for 10 minutes. */
+let costs: { at: number; byTask: Record<string, { usd: number; calls: number }> } | null = null;
+async function taskCosts(db: any): Promise<Record<string, { usd: number; calls: number }>> {
+  if (costs && Date.now() - costs.at < 600_000) return costs.byTask;
+  const byTask: Record<string, { usd: number; calls: number }> = {};
   try {
-    const since = new Date(Date.now() - (s.creditMonths + 1) * 31 * 86_400_000).toISOString();
-    const { data, error } = await db.from("credit_ledger").select("kind,amount,created_at,expires_at").eq("holder", holder).gte("created_at", since);
-    if (error) return null; // table not created yet: credits are off
-    let rows: LedgerRow[] = data ?? [];
-    const now = new Date();
-    if (needsMonthlyGrant(rows, now) && s.monthlyCredits > 0) {
-      const g = { holder, user_id: userId, kind: "grant", amount: s.monthlyCredits, expires_at: grantExpiry(now, s.creditMonths) };
-      await db.from("credit_ledger").insert(g);
-      rows = [...rows, { kind: "grant", amount: g.amount, created_at: now.toISOString(), expires_at: g.expires_at }];
-    }
-    return creditBalance(rows, now);
-  } catch { return null; }
-}
-async function spend(db: any, holder: string, userId: string | null, p: { task: string; credits: number }) {
-  try { await db.from("credit_ledger").insert({ holder, user_id: userId, kind: "spend", amount: p.credits, task: p.task }); } catch { /* best effort */ }
+    const { data, error } = await db.rpc("ai_task_costs", { p_since: new Date(Date.now() - 30 * 86_400_000).toISOString() });
+    if (!error) for (const r of data ?? []) byTask[String(r.task)] = { usd: Number(r.avg_usd ?? 0), calls: Number(r.calls ?? 0) };
+  } catch { /* function not created yet: typical costs are used */ }
+  costs = { at: Date.now(), byTask };
+  return byTask;
 }
 
 // ── Memory and saved chats (kept 30 days, at most 200 messages a student) ─────────────────────────────────────────

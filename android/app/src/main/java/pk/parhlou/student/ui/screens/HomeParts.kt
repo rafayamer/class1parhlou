@@ -414,9 +414,31 @@ fun PremiumInvite(pricePkr: Int, onOpen: () -> Unit) {
         Spacer(Modifier.width(14.dp))
         Column(Modifier.weight(1f)) {
             Text("Unlock Premium", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
-            Text("Every chapter, all papers, Ask Ustaad and AI marking · ${pk.parhlou.student.domain.Premium.rupees(pricePkr)} a month",
+            Text("Every chapter, every paper, and 1,000 AI credits a month · ${pk.parhlou.student.domain.Premium.rupees(pricePkr)} a month",
                 style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.9f))
         }
         Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, tint = Color.White, modifier = Modifier.size(20.dp))
+    }
+}
+
+/** Home's line for Premium students: credits left this month and when they renew; one tap to the Premium screen. */
+@Composable
+fun CreditsLine(credits: pk.parhlou.student.ai.Allowance, onOpen: () -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(MaterialTheme.colorScheme.surface)
+            .border(1.dp, MaterialTheme.colorScheme.outlineVariant, RoundedCornerShape(18.dp))
+            .clickable(onClickLabel = "See your credits", onClick = onOpen).padding(horizontal = 16.dp, vertical = 12.dp).testTag("home-credits"),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Icon(Icons.Filled.WorkspacePremium, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(20.dp))
+        Spacer(Modifier.width(10.dp))
+        Column(Modifier.weight(1f)) {
+            Text("Premium · ⚡ ${pk.parhlou.student.domain.Credits.format(credits.balance)} credits left", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            Text(if (credits.premiumUntil != null && credits.premiumUntil == credits.resetsOn) "Premium ends ${prettyDate(credits.resetsOn)}"
+                else "Renews ${prettyDate(credits.resetsOn)}", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        Box(Modifier.width(64.dp).height(8.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.surfaceVariant)) {
+            Box(Modifier.fillMaxWidth(credits.leftShare).height(8.dp).clip(RoundedCornerShape(50)).background(MaterialTheme.colorScheme.primary))
+        }
     }
 }

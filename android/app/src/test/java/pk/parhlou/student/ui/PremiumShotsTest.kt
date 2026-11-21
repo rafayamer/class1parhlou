@@ -1,6 +1,8 @@
 package pk.parhlou.student.ui
 
 import android.graphics.Bitmap
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -51,7 +53,6 @@ class PremiumShotsTest {
             store.clearAll()
             store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true, name = "Ayesha"))
             store.setReadinessPassed(true)
-            store.saveDraft("ai_tries", "1")
         }
         val root = File(System.getProperty("user.dir")!!).let { if (File(it, "../../content").exists()) File(it, "../../content") else File(it, "../content") }
         val repo = ContentBundle.repository(JSONObject(File(root, "class9-maths/bundle.json").readText()), 1, FakeRepository())
@@ -66,24 +67,61 @@ class PremiumShotsTest {
         rule.onNodeWithText("Mathematics · Class 9").performScrollTo().performClick()
         rule.waitUntil(5_000) { tag("learning-path") }
         if (exists("All units")) rule.onNodeWithText("All units").performClick()
-        val third = repo.subject(FakeRepository.MATHS_9)!!.chapters[2]
-        rule.onNodeWithTag("unit-locked-${third.id}").performScrollTo(); save("p04-path-locked")
-        rule.onNodeWithTag("path-${third.modules.first().id}").performScrollTo().performClick()
+        val fourth = repo.subject(FakeRepository.MATHS_9)!!.chapters[3]
+        rule.onNodeWithTag("unit-locked-${fourth.id}").performScrollTo(); save("p04-path-locked")
+        rule.onNodeWithTag("path-${fourth.modules.first().id}").performScrollTo().performClick()
         rule.waitUntil(5_000) { tag("premium-lock") }; save("p05-chapter-locked")
         rule.onNodeWithTag("premium-upgrade").performClick(); rule.waitUntil(5_000) { tag("plan-compare") }; save("p06-premium-screen")
         rule.onNodeWithTag("plan-compare").performScrollTo(); save("p07-premium-compare")
     }
 
-    @Test fun askUstaadTries() {
+    @Test fun askUstaadLocked() {
         assumeTrue(dir != null)
         val store = LocalStore(ApplicationProvider.getApplicationContext())
         runBlocking {
             store.clearAll()
             store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true, name = "Ayesha"))
-            store.saveDraft("ai_tries", "3")
         }
         rule.setContent { ParhlouTheme(dark = night) { ParhlouApp(FakeRepository(), store, paywall = true) } }
         rule.waitUntil(20_000) { tag("tab-home") }
         rule.onNodeWithTag("home-ask").performClick(); rule.waitUntil(5_000) { tag("premium-lock") }; save("p08-ask-locked")
+    }
+
+    /** What a Premium student sees: credits on Home, the cost before making a paper, the cost before sitting one. */
+    @Test fun premiumCredits() {
+        assumeTrue(dir != null)
+        val store = LocalStore(ApplicationProvider.getApplicationContext())
+        runBlocking {
+            store.clearAll()
+            store.saveOnboarding(OnboardingState(true, "PB", 9, "English", setOf(FakeRepository.MATHS_9), Pathway.COMPLETE_ACADEMY, 5, 60, completed = true, name = "Ayesha"))
+            store.setReadinessPassed(true)
+        }
+        val credits = pk.parhlou.student.ai.Allowance(820, "2026-12-21", monthly = 1000, premiumUntil = "2027-02-21")
+        rule.setContent { ParhlouTheme(dark = night) {
+            androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.components.LocalPremium provides
+                pk.parhlou.student.ui.components.PremiumAccess(pk.parhlou.student.domain.Premium.Access(premium = true, paywall = true), credits = credits)) {
+                androidx.compose.foundation.layout.Column(androidx.compose.ui.Modifier.fillMaxSize().background(androidx.compose.material3.MaterialTheme.colorScheme.background)) {
+                    pk.parhlou.student.ui.screens.MakePaperScreen(make = { null }, onOpen = {}, onBack = {}, cost = pk.parhlou.student.domain.Credits.PaperCost(1, 9, 1))
+                }
+            }
+        } }
+        rule.waitUntil(5_000) { tag("make-paper-cost") }; save("p09-make-paper-cost")
+    }
+
+    @Test fun sitPaperCost() {
+        assumeTrue(dir != null)
+        val credits = pk.parhlou.student.ai.Allowance(820, "2026-12-21", monthly = 1000)
+        val bp = pk.parhlou.student.data.PaperBlueprint("p", "Mathematics · Lahore 2024", 180, 75.0,
+            listOf(pk.parhlou.student.data.BlueprintSection("MCQ", 15, 15, 1.0), pk.parhlou.student.data.BlueprintSection("Short", 18, 12, 2.0)), official = true)
+        rule.setContent { ParhlouTheme(dark = night) {
+            androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.components.LocalPremium provides
+                pk.parhlou.student.ui.components.PremiumAccess(pk.parhlou.student.domain.Premium.Access(premium = true, paywall = true), credits = credits)) {
+                pk.parhlou.student.ui.screens.AssessmentStartScreen(bp, "", {}, {}, {}, {}, onStartOnPaper = {},
+                    cost = { onPaper -> pk.parhlou.student.domain.Credits.paper(12, onPaper, made = false) { k -> pk.parhlou.student.domain.Credits.TYPICAL.getValue(k) } })
+            }
+        } }
+        rule.waitUntil(5_000) { tag("start-on-paper") }
+        rule.onNodeWithTag("start-on-paper").performScrollTo().performClick()
+        rule.waitUntil(5_000) { tag("credit-confirm") }; save("p10-sit-paper-cost")
     }
 }

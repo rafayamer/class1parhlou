@@ -14,7 +14,8 @@ interface Portfolio {
   flags: { id: number; category: string; excerpt: string; status: string; created_at: string }[];
   feedback: { id: number; text: string; status: string; created_at: string }[];
   /** This month's AI use against the plan's allowance (the app shows it as the Ustaad energy bar). Needs migration 20261121000001. */
-  ai_month?: { plan: "free" | "plus"; paid_until: string | null; spent_usd: number; calls: number; allowance_usd: number };
+  ai_month?: { plan: "free" | "plus"; paid_until: string | null; spent_usd: number; calls: number; allowance_usd: number;
+    month_start?: string; monthly_credits?: number };
 }
 
 const WHAT: Record<string, string> = { O: "Opened a lesson", V: "Watched a video", L: "Lesson finished", R: "Book reading", Q: "Quiz", W: "Written practice",
@@ -40,6 +41,9 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
   const parent = /^[^\s@?&#<>"']+@[^\s@?&#<>"']+\.[A-Za-z]{2,}$/.test(typed) ? typed : "";
   const ai = p.ai_month;
   const used = ai && ai.allowance_usd > 0 ? Math.min(100, Math.round((Number(ai.spent_usd) / Number(ai.allowance_usd)) * 100)) : null;
+  // Credits: the month's credits are worth the allowance, so credits used = spend / allowance × monthly credits.
+  const monthly = ai?.monthly_credits ?? 1000;
+  const creditsUsed = ai && ai.allowance_usd > 0 ? Math.ceil((Number(ai.spent_usd) / Number(ai.allowance_usd)) * monthly) : null;
   const days = new Set(p.events.map((e) => e.at.slice(0, 10))).size;
   return (
     <>
@@ -50,9 +54,10 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
         <div className="card stat"><div className="n">{days}</div><div className="l">days studied</div></div>
         <div className="card stat"><div className="n">{p.marks.length}</div><div className="l">answers marked</div></div>
         <div className="card stat">
-          <div className="n">{used == null ? "—" : `${used}%`}</div>
-          <div className="l">{ai ? <>AI used this month · {ai.plan === "plus" ? "Premium" : "Free"} plan (${Number(ai.spent_usd).toFixed(2)} of ${Number(ai.allowance_usd).toFixed(2)}, {ai.calls} calls)</> : "AI used this month (needs the App design database update)"}</div>
-          {used != null && <div className="meter-bar" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={used} aria-label="AI allowance used"><span style={{ width: `${used}%` }} className={used >= 90 ? "hot" : ""} /></div>}
+          <div className="n">{creditsUsed == null ? "—" : `${Math.max(0, monthly - creditsUsed).toLocaleString()} left`}</div>
+          <div className="l">{ai ? <>Credits this month{ai.month_start ? ` (since ${ai.month_start})` : ""} · {ai.plan === "plus" ? `Premium until ${ai.paid_until}` : "Free plan, no AI"}
+            {" "}(${Number(ai.spent_usd).toFixed(2)} of ${Number(ai.allowance_usd).toFixed(2)}, {ai.calls} calls)</> : "Credits this month (needs the Premium credits database update)"}</div>
+          {used != null && <div className="meter-bar" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={used} aria-label="Credits used"><span style={{ width: `${used}%` }} className={used >= 90 ? "hot" : ""} /></div>}
         </div>
         <div className="card stat"><div className="n">{p.flags.filter((f) => f.status === "open").length}</div><div className="l">open safety flags</div></div>
       </div>

@@ -348,7 +348,8 @@ private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStor
             } else {
                 Muted("Your answer:")
                 Text(answer.ifBlank { "(nothing written)" }, style = MaterialTheme.typography.bodyLarge)
-                val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0) }
+                val refreshCredits = pk.parhlou.student.ui.components.LocalPremium.current.refreshCredits
+                val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0); refreshCredits() }
                 StatusPill(DEMO_CHECKER_LABEL)
                 val checked = mark
                 if (checked == null) Muted("Checking…") else WrittenMarkDetails(q, checked)
@@ -368,18 +369,21 @@ private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStor
         SecondaryButton("Edit my answer and check again", onClick = { submitted = false })
         BigButton("Next: improve", onClick = onNext)
     } else {
-        // AI marking is Premium; a free student's tries are shared with Ask Ustaad.
+        // AI marking is part of Premium, and uses its credits.
         val premium = pk.parhlou.student.ui.components.LocalPremium.current
         if (!premium.access.ai) pk.parhlou.student.ui.components.PremiumCard("AI marking is Premium",
-            "You've used your free AI markings. Get every answer marked like the board, with Premium.", premium.pricePkr, onUnlock = premium.upgrade,
+            "Get every answer marked like the board, step by step, with Premium's 1,000 credits a month.", premium.pricePkr, onUnlock = premium.upgrade,
             modifier = Modifier.testTag("write-upgrade"))
-        else BigButton("Check my answer", onClick = {
-            premium.useAi()
-            progress.add(module.id, Evidence.WrittenSubmitted)
-            justChecked = true
-            submitted = true
-        })
-        premium.access.aiTriesLeft?.takeIf { premium.access.ai }?.let { Muted("$it free AI ${if (it == 1) "marking" else "markings"} left") }
+        else {
+            BigButton("Check my answer", onClick = {
+                progress.add(module.id, Evidence.WrittenSubmitted)
+                justChecked = true
+                submitted = true
+            })
+            premium.credits?.takeIf { it.hasCredits }?.let { c ->
+                Muted("⚡ About ${"%.1f".format(java.util.Locale.ENGLISH, c.estimate("mark"))} credits · ${pk.parhlou.student.domain.Credits.format(c.balance)} left")
+            }
+        }
     }
 }
 
@@ -412,7 +416,8 @@ private fun ImproveStage(
         module.writtenQuestions.forEach { q ->
             val saved by store.draft(writtenDraftKey(module, q)).collectAsState(initial = null)
             val answer = saved.orEmpty()
-            val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0) }
+            val refreshCredits = pk.parhlou.student.ui.components.LocalPremium.current.refreshCredits
+            val mark by produceState<WrittenMark?>(null, q.id, answer) { value = ai.markWritten(q, answer, 0); refreshCredits() }
             val m = mark
             if (m != null) {
                 val missing = m.criteria.filter { it.status == CriterionStatus.NOT_FOUND }

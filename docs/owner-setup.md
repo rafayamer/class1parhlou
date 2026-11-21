@@ -2,18 +2,33 @@
 
 These steps are done once by the owner. The automatic safety rules stop the assistant from deploying to the live server, changing the live database or publishing content on its own.
 
-## Premium (Rs 3,999 a month)
+## Premium (Rs 3,999 a month) and credits
 
-Free students get chapters 1 and 2 of every book (lessons, practice, exam kit, solutions), one past paper of their choice and
-3 tries of Ask Ustaad or AI marking. Everything else is Premium and shows blurred with a lock and an "Unlock Premium" button:
-chapters 3 onward, the Guess Paper, all other past papers, Make my own test, model papers, Ask Ustaad and AI marking.
+**Free:** the first quarter of every book: lessons, practice, exam kit and solutions (Maths: Units 1–3 of 13; Physics:
+Chapters 1–2 of 9). No papers and no AI, no free allowance.
+**Premium:** every chapter, every paper with no limit on tries (Guess Paper, all past papers, model papers, papers made for the
+student), and **1,000 credits a month** for everything the AI does: Ask Ustaad, photo questions, AI marking, reading answer
+pages, examiner reports and choosing a paper's questions. Locked things show blurred with a lock and an "Unlock Premium" button.
 
-- **Price:** owner panel → Payments → Plans → "Premium price per month" (Rs 3,999 once the App design database update is run).
-  Students can pay for 1, 3 or 12 months; you approve each payment as before and Premium switches on for the months paid.
-- **Switch the paywall off** (for a free week, a school demo, or launch day): owner panel → App design → Features → "Premium
-  paywall". Off makes everything free for everyone; you can also roll it out to a share of students first.
-- **AI costs stay safe:** the app stops free students after 3 tries, and the server keeps their monthly AI allowance at $0.05 as a
-  backstop (Payments → Plans → "Free: AI allowance").
+- **1,000 credits = US$3.50 of AI time.** Every AI call uses what it really cost (its tokens at your prices in AI settings), so
+  credits can never cost you more than $3.50 per Premium student per month. Change either number in owner panel → Payments →
+  Plans ("Premium: credits per month" and "what those credits are worth").
+- **The Premium month runs from the day the student paid**, not the calendar: paid on the 21st, credits renew on the 21st. When
+  the paid months end, Premium and its credits stop (the server checks `paid_until` on every AI call).
+- **Before a paper**, the app shows about how many credits making it, checking it and the examiner's report will use, and the
+  student confirms. The estimates come from the real average cost of each kind of AI call over the last 30 days.
+- **Price:** Payments → Plans → "Premium price per month". Students pay for 1, 3 or 12 months; you approve each payment.
+- **Promo codes:** Payments → Promo codes → choose the days of Premium and how many students can use it → **Make a code**. The
+  code is shown once; only its hash is stored. Students type it on the Premium screen (direct-download app only: the Play
+  version sells Premium through Google Play). Each account can use a code once; 10 wrong codes in an hour and they must wait.
+- **Switch the paywall off** (a free week, a school demo): App design → Features → "Premium paywall". The server still gives AI
+  only to Premium students unless you also raise "Free: AI allowance" above 0.
+
+### Apply the Premium credits database update (2 minutes, needed)
+After the App design update below, open `supabase/migrations/20261121000002_premium_credits.sql` → **Copy raw file** → paste
+into https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new → **Run**. It sets 1,000 credits = $3.50, turns off
+free AI, adds promo codes (with your test code) and the cost estimates. The AI gateway updates itself from this push (Actions
+→ "Deploy AI server"); until the database update runs it keeps the old allowances.
 
 ## Newest round: App design (5 minutes)
 

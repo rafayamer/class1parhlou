@@ -102,7 +102,8 @@ fun TestsScreen(
     exercises: List<String> = emptyList(),
     /** Prints one exercise as a paper; true = with the worked answers. */
     onExercisePdf: ((String, Boolean) -> Unit)? = null,
-    attemptsLeft: (String) -> Int = { pk.parhlou.student.domain.PaperAttempts.MAX },
+    /** How many times each paper has been handed in (no limit). */
+    attemptsUsed: (String) -> Int = { 0 },
     /** Premium papers show a lock; opening one shows what Premium unlocks. */
     isLocked: (String) -> Boolean = { false },
     /** The student's subjects (id to name); with more than one, a switch picks whose papers are shown. */
@@ -153,7 +154,7 @@ fun TestsScreen(
                 FlowChips(boards, chosenBoard, label = { it }) { chosenBoard = if (chosenBoard == it) null else it }
                 chosenBoard?.let { b ->
                     all.filter { boardOf(it.second) == b }.forEach { (id, tag) ->
-                        blueprints.firstOrNull { it.id == id }?.let { bp -> PaperCard(bp.copy(title = tag), id in available, true, attemptsLeft(id), onOpen, isLocked(id)) }
+                        blueprints.firstOrNull { it.id == id }?.let { bp -> PaperCard(bp.copy(title = tag), id in available, true, attemptsUsed(id), onOpen, isLocked(id)) }
                     }
                 } ?: Muted("Choose a board above.")
             }
@@ -187,12 +188,12 @@ fun TestsScreen(
             "more" -> {
                 if (board.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Full papers in the 2027 pattern")
-                    board.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen, isLocked(b.id)) }
+                    board.forEach { b -> PaperCard(b, b.id in available, true, attemptsUsed(b.id), onOpen, isLocked(b.id)) }
                 }
                 if (chapterTests.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Chapter tests")
                     Column(Modifier.testTag("scope-picker"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        chapterTests.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen, isLocked(b.id)) }
+                        chapterTests.forEach { b -> PaperCard(b, b.id in available, true, attemptsUsed(b.id), onOpen, isLocked(b.id)) }
                     }
                 }
                 if (exercises.isNotEmpty() && onExercisePdf != null) {
@@ -228,11 +229,7 @@ fun TestsScreen(
                     modifier = Modifier.testTag("guess-paper").then(Modifier.appear(1))) { onOpen(guess.id) }
                 if (pastIds.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("📅", "Past papers",
                     "${pastIds.size} real board papers, by board and year",
-                    badge = when {
-                        premium.unlocked -> null
-                        premium.samplePaper == null -> ({ FreeTag("1 free paper") })
-                        else -> ({ pk.parhlou.student.ui.components.PremiumTag() })
-                    }, modifier = Modifier.testTag("past-papers").then(Modifier.appear(2))) { page = "past" }
+                    badge = if (!premium.papers) ({ pk.parhlou.student.ui.components.PremiumTag() }) else null, modifier = Modifier.testTag("past-papers").then(Modifier.appear(2))) { page = "past" }
                 if (onPractice != null && chapters.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("✏️", "Make my own test",
                     "Practice test: choose chapters and how long", accent = pk.parhlou.student.ui.theme.LocalBrand.current.success,
                     badge = if (!premium.papers) ({ pk.parhlou.student.ui.components.PremiumTag() }) else null,
@@ -241,7 +238,7 @@ fun TestsScreen(
                     pk.parhlou.student.ui.components.SectionHeader("Your results")
                     Column(Modifier.testTag("my-results"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         results.take(5).forEach { (id, title, pct) -> TaskRowLike(title, "$pct% · see the examiner's report") { onResult(id) } }
-                        mine.filter { m -> results.none { it.first == m.id } }.forEach { PaperCard(it, it.id in available, true, attemptsLeft(it.id), onOpen, isLocked(it.id)) }
+                        mine.filter { m -> results.none { it.first == m.id } }.forEach { PaperCard(it, it.id in available, true, attemptsUsed(it.id), onOpen, isLocked(it.id)) }
                     }
                 }
                 if (board.isNotEmpty() || chapterTests.isNotEmpty() || (exercises.isNotEmpty() && onExercisePdf != null)) {
@@ -254,9 +251,9 @@ fun TestsScreen(
     }
 }
 
-/** One paper: its name, then time, marks and tries left. */
+/** One paper: its name, then time, marks and how often it has been sat. */
 @Composable
-private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, triesLeft: Int, onOpen: (String) -> Unit, premium: Boolean = false) {
+private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, timesSat: Int, onOpen: (String) -> Unit, premium: Boolean = false) {
     pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(b.id) }, enabled = unlocked && ready, modifier = Modifier.fillMaxWidth().testTag("paper-${b.id}"),
         shape = RoundedCornerShape(22.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -264,7 +261,8 @@ private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, trie
                 Text(b.title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
                 if (premium) pk.parhlou.student.ui.components.PremiumTag()
             }
-            Muted(if (!ready) "Coming soon" else "⏱ ${b.durationMinutes} min · ${fmt(b.totalMarks)} marks · $triesLeft ${if (triesLeft == 1) "try" else "tries"} left")
+            Muted(if (!ready) "Coming soon" else "⏱ ${b.durationMinutes} min · ${fmt(b.totalMarks)} marks" +
+                (if (timesSat > 0) " · sat $timesSat ${if (timesSat == 1) "time" else "times"}" else ""))
         }
     }
 }
@@ -328,7 +326,7 @@ fun AssessmentStartScreen(
     onResult: () -> Unit,
     onReset: () -> Unit,
     onBack: () -> Unit,
-    /** Hand-ins so far and the best score, for the 3-attempt rule. */
+    /** Hand-ins so far and the best score. There is no limit on tries. */
     attemptsUsed: Int = 0,
     bestPercent: Int? = null,
     /** Makes the printable paper; true = with the marking scheme. Null hides printing. */
@@ -341,9 +339,21 @@ fun AssessmentStartScreen(
     onPaper: Boolean = false,
     /** Abandons the running paper: it is cleared and does not use a try. */
     onQuit: (() -> Unit)? = null,
+    /** About how many credits checking and the report use, written on paper (true) or in the app; null: not shown. */
+    cost: ((Boolean) -> pk.parhlou.student.domain.Credits.PaperCost)? = null,
 ) {
     val problems = BlueprintValidator.problems(blueprint)
-    val attemptsLeft = (pk.parhlou.student.domain.PaperAttempts.MAX - attemptsUsed).coerceAtLeast(0)
+    // Before a paper starts, the student sees what checking it will use and confirms (true = on paper).
+    var confirmFor by remember { mutableStateOf<Boolean?>(null) }
+    fun begin(onPaper: Boolean) {
+        val go = if (onPaper) onStartOnPaper else onStart
+        if (cost == null) go?.invoke() else confirmFor = onPaper
+    }
+    confirmFor?.let { onPaper ->
+        pk.parhlou.student.ui.components.CreditConfirm("Sit this paper?", cost!!(onPaper),
+            onConfirm = { confirmFor = null; (if (onPaper) onStartOnPaper else onStart)?.invoke() },
+            onDismiss = { confirmFor = null }, confirmLabel = "Start the paper")
+    }
     val started = ExamLog.startedAt(examLog) != null
     val submitted = ExamLog.isSubmitted(examLog)
     ParhlouScreen("Before you start", onBack = onBack) {
@@ -351,12 +361,9 @@ fun AssessmentStartScreen(
             Text(blueprint.title, style = MaterialTheme.typography.titleLarge)
             Text("⏱ ${blueprint.durationMinutes} min · ${fmt(blueprint.totalMarks)} marks", style = MaterialTheme.typography.bodyLarge)
             Text(
-                when {
-                    attemptsLeft == 0 -> "All ${pk.parhlou.student.domain.PaperAttempts.MAX} tries used" + (bestPercent?.let { " · best $it%" } ?: "")
-                    attemptsUsed == 0 -> "🔁 ${pk.parhlou.student.domain.PaperAttempts.MAX} tries"
-                    else -> "🔁 Try ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}" + (bestPercent?.let { " · best $it%" } ?: "")
-                },
-                style = MaterialTheme.typography.bodyLarge, color = if (attemptsLeft == 0) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurface,
+                if (attemptsUsed == 0) "🔁 Sit it as often as you like"
+                else "🔁 Try ${attemptsUsed + 1}" + (bestPercent?.let { " · best $it%" } ?: ""),
+                style = MaterialTheme.typography.bodyLarge,
             )
             var info by remember { mutableStateOf(false) }
             TextButton(onClick = { info = !info }, modifier = Modifier.heightIn(min = 48.dp).testTag("paper-info")) { Text(if (info) "ⓘ Hide details" else "ⓘ How it works") }
@@ -379,13 +386,17 @@ fun AssessmentStartScreen(
             }
             if (onQuit != null) QuitPaper(onQuit)
         }
-        if (!started && !submitted && attemptsLeft > 0 && problems.isEmpty()) {
+        if (!started && !submitted && problems.isEmpty()) {
             pk.parhlou.student.ui.components.SectionHeader("How will you write?")
             if (onStartOnPaper != null) pk.parhlou.student.ui.components.ActionCard("✍️", "Start on paper",
                 "Like the board: print it, write, then scan your pages. The clock starts and Ask Ustaad locks.",
-                accent = pk.parhlou.student.ui.theme.LocalBrand.current.success, modifier = Modifier.testTag("start-on-paper"), onClick = onStartOnPaper)
+                accent = pk.parhlou.student.ui.theme.LocalBrand.current.success, modifier = Modifier.testTag("start-on-paper"), onClick = { begin(true) })
             pk.parhlou.student.ui.components.ActionCard("📱", "Start in the app",
-                "Tap MCQs, type your working with the maths keyboard, or add a photo per question.", onClick = onStart)
+                "Tap MCQs, type your working with the maths keyboard, or add a photo per question.",
+                modifier = Modifier.testTag("start-in-app"), onClick = { begin(false) })
+            if (cost != null) Text("⚡ Checking and the examiner's report: about ${cost(onStartOnPaper != null).total} credits" +
+                (if (onStartOnPaper != null) " on paper, ${cost(false).total} in the app." else "."),
+                style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("paper-cost-hint"))
             FocusModeCard()
         }
         if (problems.isNotEmpty()) {
@@ -398,25 +409,17 @@ fun AssessmentStartScreen(
             submitted -> {
                 BigButton("See your result", onClick = onResult)
                 var confirm by remember { mutableStateOf(false) }
-                if (attemptsLeft == 0) Sheet(Modifier.testTag("attempts-used")) {
-                    Text("No attempts left", style = MaterialTheme.typography.titleMedium)
-                    Muted("You've sat this paper ${pk.parhlou.student.domain.PaperAttempts.MAX} times" + (bestPercent?.let { "; your best score, $it%, stands" } ?: "") +
-                        ". Move on to the next paper; your weak topics from it are already in your plan.")
-                }
-                else if (!confirm) SecondaryButton("Sit this paper again ($attemptsLeft ${if (attemptsLeft == 1) "try" else "tries"} left)", onClick = { confirm = true })
+                if (!confirm) SecondaryButton("Sit this paper again", onClick = { confirm = true }, modifier = Modifier.testTag("sit-again"))
                 else Sheet {
                     Text("Start again?", style = MaterialTheme.typography.titleMedium)
-                    Muted("Your answers, photos and report for this paper will be removed from this phone. This uses attempt ${attemptsUsed + 1} of ${pk.parhlou.student.domain.PaperAttempts.MAX}.")
+                    Muted("Your answers, photos and report for this paper will be removed from this phone" +
+                        (bestPercent?.let { "; your best score, $it%, stays in your history" } ?: "") + ".")
                     BigButton("Yes, clear and start again", onClick = { confirm = false; onReset() })
                     SecondaryButton("Cancel", onClick = { confirm = false })
                 }
             }
             started -> if (onPaper && onWrittenOnPaper != null) BigButton("Scan my pages and hand in", onClick = onWrittenOnPaper, modifier = Modifier.testTag("continue-on-paper"))
                 else BigButton("Continue your paper", onClick = onStart, enabled = problems.isEmpty())
-            attemptsLeft == 0 -> Sheet(Modifier.testTag("attempts-used")) {
-                Text("No attempts left", style = MaterialTheme.typography.titleMedium)
-                Muted("You've used all ${pk.parhlou.student.domain.PaperAttempts.MAX} attempts at this paper" + (bestPercent?.let { "; your best score is $it%" } ?: "") + ".")
-            }
             else -> Unit
         }
         if (onPrint != null && problems.isEmpty()) {
@@ -775,11 +778,3 @@ private fun FocusModeCard() {
     }
 }
 
-/** A small green tag for a free taste of Premium ("1 free paper"). */
-@Composable
-private fun FreeTag(text: String) {
-    Text(text, style = MaterialTheme.typography.labelSmall, color = pk.parhlou.student.ui.theme.LocalBrand.current.success,
-        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-        modifier = Modifier.clip(RoundedCornerShape(8.dp)).background(pk.parhlou.student.ui.theme.LocalBrand.current.successPale)
-            .padding(horizontal = 8.dp, vertical = 3.dp).testTag("free-tag"))
-}

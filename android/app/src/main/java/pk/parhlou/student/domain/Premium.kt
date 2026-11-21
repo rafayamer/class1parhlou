@@ -1,37 +1,35 @@
 package pk.parhlou.student.domain
 
 /**
- * What Premium unlocks, and the free taste every student gets.
+ * What Premium unlocks.
  *
- * Free: chapters 1 and 2 of every book (lessons, practice, exam kit and solutions), one past paper of the student's choice
- * (the first one they open), and three tries of Ask Ustaad or AI marking. Premium (Rs 3,999 a month): every chapter,
- * every paper (Guess Paper, all past papers, Make my own test, model papers) and unlimited Ask Ustaad and AI marking
- * within the monthly allowance. The owner can switch the paywall off in the owner panel (App design, "Premium paywall").
+ * Free: the first quarter of every book (lessons, practice, exam kit and solutions). No papers and no AI.
+ * Premium (Rs 3,999 a month): every chapter, every paper with no limits (Guess Paper, all past papers, model papers, papers
+ * made for you), and 1,000 credits a month for everything the AI does (Ask Ustaad, photo questions, AI marking, reading
+ * answer pages, examiner reports, choosing a paper's questions). Premium and its credits stop when the paid months end.
+ * The owner can switch the paywall off in the owner panel (App design, "Premium paywall").
  */
 object Premium {
     /** Default monthly price; the server's price (owner panel, Payments) wins when it is known. */
     const val PRICE_PKR = 3999
-    /** Chapters 1 and 2 of every book are free. */
-    const val FREE_CHAPTERS = 2
-    /** Ask Ustaad questions plus AI markings a free student can try. */
-    const val FREE_AI_TRIES = 3
+    /** Credits Premium gives each month (1,000 credits = US$3.50 of AI time); the server's number wins when known. */
+    const val MONTHLY_CREDITS = 1000
+
+    /** The free first quarter of a book with [total] chapters, at least one: 13 chapters → 3, 12 → 3, 9 → 2, 4 → 1. */
+    fun freeChapters(total: Int): Int = maxOf(1, (total + 2) / 4)
 
     data class Access(
         val premium: Boolean,
         /** False when the paywall is off (owner switch, or builds and tests without one): everything is open. */
         val paywall: Boolean,
-        /** The past paper the student chose as their free one; null until they open one. */
-        val samplePaper: String? = null,
-        val aiTriesUsed: Int = 0,
     ) {
         val unlocked: Boolean get() = premium || !paywall
-        /** [index] counts from 0, so chapters 1 and 2 are indexes 0 and 1. A chapter that can't be found stays open. */
-        fun chapter(index: Int?): Boolean = unlocked || index == null || index < FREE_CHAPTERS
-        fun pastPaper(id: String): Boolean = unlocked || samplePaper == null || samplePaper == id
+        /** Chapter [index] (from 0) of a book with [total] chapters. A chapter that can't be found stays open. */
+        fun chapter(index: Int?, total: Int): Boolean = unlocked || index == null || index < freeChapters(total)
+        /** Every paper, with no limit on tries. */
         val papers: Boolean get() = unlocked
-        /** Null means no limit. */
-        val aiTriesLeft: Int? get() = if (unlocked) null else (FREE_AI_TRIES - aiTriesUsed).coerceAtLeast(0)
-        val ai: Boolean get() = unlocked || (aiTriesLeft ?: 1) > 0
+        /** Ask Ustaad, AI marking, examiner reports: Premium's credits. */
+        val ai: Boolean get() = unlocked
 
         companion object {
             /** Everything open: tests, previews and builds without a paywall. */
@@ -41,13 +39,11 @@ object Premium {
 
     /** What the Premium screen lists, free vs Premium. */
     val COMPARISON = listOf(
-        Triple("Lessons and practice", "Chapters 1–2", "Every chapter"),
-        Triple("Exam kit and book solutions", "Chapters 1–2", "Every chapter"),
-        Triple("Past board papers", "1 paper", "All boards and years"),
-        Triple("Guess Paper 2027", "—", "Included"),
-        Triple("Make my own test", "—", "Included"),
-        Triple("Ask Ustaad", "3 tries", "Included"),
-        Triple("AI marking and examiner reports", "3 tries", "Included"),
+        Triple("Lessons and practice", "First quarter of each book", "Every chapter"),
+        Triple("Exam kit and book solutions", "First quarter of each book", "Every chapter"),
+        Triple("Past papers and Guess Paper 2027", "—", "All, no limits"),
+        Triple("Papers made for you", "—", "No limits"),
+        Triple("Ask Ustaad, AI marking and reports", "—", "1,000 credits a month"),
         Triple("Ads", "Short ads after quizzes", "No ads"),
     )
 

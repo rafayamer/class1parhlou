@@ -108,9 +108,10 @@ class LunaGateway(
             .put("subjectIds", JSONArray(req.subjectIds.toList())).put("moduleId", req.moduleId ?: JSONObject.NULL)
             .put("examActive", req.examActive)
         call(body)?.let(UstaadAnswer::parse)?.let { return it }
-        if (signInNeeded) return UstaadAnswer("OFFLINE", "Sign in to ask Ustaad (Profile → Sign in). It's free, and keeps your progress safe.")
+        if (signInNeeded) return UstaadAnswer("OFFLINE", "Sign in to ask Ustaad (Profile → Sign in). It keeps your progress and Premium safe.")
+        if (premiumNeeded) return UstaadAnswer("OFFLINE", "Ask Ustaad is part of Premium. Premium gives you 1,000 credits a month for questions, photo questions and AI marking.")
         creditsResetOn?.let { date ->
-            return UstaadAnswer("OFFLINE", "Ustaad's energy for this month is used up. It refills on ${pk.parhlou.student.ui.screens.prettyDate(date)}. Your lessons, practice and papers still work.")
+            return UstaadAnswer("OFFLINE", "You've used this month's credits. They renew on ${pk.parhlou.student.ui.screens.prettyDate(date)}. Your lessons, practice and papers still work.")
         }
         return UstaadOffline.answer(fallback, req).let {
             if (it.kind == "OFFLINE") it else it.copy(reply = it.reply + "\n\n_(Answered offline from your course notes.)_")
@@ -138,26 +139,37 @@ class LunaGateway(
             "x-parhlou-install" to installId(),
         )
         val (status, text) = transport(endpoint, headers, body.toString()) ?: return null
-        // This month's AI allowance is used up: remember when it comes back, so screens can say so kindly.
-        if (status == 402) { creditsResetOn = runCatching { JSONObject(text).optString("resetsOn") }.getOrNull().orEmpty().ifBlank { "the 1st" }; return null }
+        // AI is Premium, or this month's credits are used up: remember which, so screens can say so kindly.
+        if (status == 402) {
+            val o = runCatching { JSONObject(text) }.getOrNull()
+            premiumNeeded = o?.optString("error") == "PREMIUM_REQUIRED"
+            creditsResetOn = if (premiumNeeded) null else o?.optString("resetsOn").orEmpty().ifBlank { "your next Premium month" }
+            return null
+        }
         signInNeeded = status == 401 && text.contains("SIGN_IN_REQUIRED")
         if (status != 200) return null
         creditsResetOn = null
+        premiumNeeded = false
         JSONObject(text).optJSONObject("result")
     }.getOrNull()
 
-    /** Set when the last request was refused because this month's allowance is used up. */
+    /** Set when the last request was refused because this month's credits are used up. */
     @Volatile var creditsResetOn: String? = null
+    /** Set when the last request was refused because AI is part of Premium. */
+    @Volatile var premiumNeeded: Boolean = false
     /** Set when the server asked for an account (AI that costs money needs one). */
     @Volatile var signInNeeded: Boolean = false
 
     override suspend fun allowance(): Allowance? = call(JSONObject().put("task", "credits"))?.let { r ->
-        val usd = r.optJSONObject("usd")
-        val left = r.optJSONObject("left")
-        if (left == null && usd == null) return@let null
-        Allowance(r.optInt("balance"), r.optString("resetsOn").ifBlank { usd?.optString("resetsOn").orEmpty() },
-            left?.let { l -> l.keys().asSequence().associateWith { l.optInt(it) } }.orEmpty(),
-            usedUsd = usd?.optDouble("used", 0.0) ?: 0.0, capUsd = usd?.optDouble("cap", 0.0) ?: 0.0)
+        if (!r.has("balance")) return@let null
+        val e = r.optJSONObject("estimates")
+        Allowance(
+            balance = r.optInt("balance"), resetsOn = r.optString("resetsOn"),
+            monthly = r.optInt("monthly", pk.parhlou.student.domain.Premium.MONTHLY_CREDITS),
+            plan = r.optString("plan", "plus"),
+            premiumUntil = r.optString("premiumUntil").takeIf { it.isNotBlank() && it != "null" },
+            estimates = e?.keys()?.asSequence()?.associateWith { e.optDouble(it) }?.filterValues { !it.isNaN() && it > 0 }.orEmpty(),
+        )
     }
 
     override suspend fun sendFeedback(text: String, screen: String, appVersion: String): Boolean =

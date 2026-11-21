@@ -18,6 +18,8 @@ object Plans {
         val freeUsd: Double,
         val plusUsd: Double,
         val lastRequest: Request?,
+        /** Credits Premium gives each month. */
+        val monthlyCredits: Int = Premium.MONTHLY_CREDITS,
     ) {
         /** Ads only on the free plan, and only when the owner has them switched on. */
         val showAds: Boolean get() = !plus && adsEnabled
@@ -42,11 +44,15 @@ object Plans {
             pricePkr = o.optInt("pricePkr", Premium.PRICE_PKR),
             wallets = wallets,
             adsEnabled = o.optBoolean("adsEnabled", true),
-            freeUsd = o.optDouble("freeUsd", 0.5),
-            plusUsd = o.optDouble("plusUsd", 3.0),
+            freeUsd = o.optDouble("freeUsd", 0.0),
+            plusUsd = o.optDouble("plusUsd", 3.5),
             lastRequest = r?.let { Request(it.optString("status"), it.optInt("months"), it.optInt("amount"), it.optString("txn"), it.optString("note")) },
+            monthlyCredits = o.optInt("monthlyCredits", Premium.MONTHLY_CREDITS),
         )
     }.getOrNull()
+
+    /** A promo code as typed ("ph-1a2b 3c4d…"): letters and digits only, upper case, at most 40. */
+    fun cleanCode(raw: String) = raw.filter { it.isLetterOrDigit() }.uppercase().take(40)
 
     /** A transaction ID as the server stores it: letters and digits only, upper case. */
     fun cleanTxn(raw: String) = raw.filter { it.isLetterOrDigit() }.uppercase()
@@ -56,6 +62,9 @@ object Plans {
         "ALREADY_WAITING" -> "Your last payment is still being checked. We'll confirm it soon."
         "TRANSACTION_USED" -> "That transaction ID has already been used."
         "OFFLINE" -> "Connect to the internet and try again."
+        "CODE_NOT_VALID" -> "That code isn't valid, or it has been used up or has expired."
+        "CODE_ALREADY_USED" -> "You've already used this code."
+        "TOO_MANY_TRIES" -> "Too many wrong codes. Please wait an hour and try again."
         else -> "That didn't work. Please try again."
     }
 }

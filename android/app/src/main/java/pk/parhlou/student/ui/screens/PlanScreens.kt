@@ -94,8 +94,15 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
         }
         if (i.plus) Sheet(Modifier.testTag("plan-plus")) {
             Text("You're on Premium", style = MaterialTheme.typography.titleLarge)
-            Muted("Until ${i.paidUntil}. You can pay for more months below; they're added to the end.")
+            Muted("Until ${i.paidUntil?.let { prettyDate(it) }}. Premium and its credits stop then. " +
+                if (manualPayments) "You can pay for more months below; they're added to the end." else "")
+            pk.parhlou.student.ui.components.LocalPremium.current.credits?.takeIf { it.hasCredits }?.let { c ->
+                Text("⚡ ${pk.parhlou.student.domain.Credits.format(c.balance)} of ${pk.parhlou.student.domain.Credits.format(c.monthly)} credits left · renew ${prettyDate(c.resetsOn)}",
+                    style = MaterialTheme.typography.titleSmall, modifier = Modifier.testTag("plan-credits"))
+            }
         }
+        // Promo codes give Premium for some days. Only in the direct-download app: Play builds sell Premium through Google Play.
+        if (manualPayments) PromoCode(plans, onRedeemed = { info = it; onPlanChanged(it) })
         i.lastRequest?.let { r ->
             Sheet(Modifier.testTag("plan-request")) {
                 when (r.status) {
@@ -162,6 +169,40 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
                     }
                 })
         }
+    }
+}
+
+/** "Have a promo code?": a code from Parhlou gives Premium for some days, on this account. */
+@Composable
+private fun PromoCode(plans: PlanClient, onRedeemed: (Plans.Info) -> Unit) {
+    val scope = rememberCoroutineScope()
+    var open by rememberSaveable { mutableStateOf(false) }
+    var code by rememberSaveable { mutableStateOf("") }
+    var error by remember { mutableStateOf<String?>(null) }
+    var done by remember { mutableStateOf<String?>(null) }
+    var sending by remember { mutableStateOf(false) }
+    if (!open) {
+        androidx.compose.material3.TextButton(onClick = { open = true }, modifier = Modifier.testTag("promo-open")) { Text("Have a promo code?") }
+        return
+    }
+    Sheet(Modifier.testTag("promo")) {
+        Text("Promo code", style = MaterialTheme.typography.titleMedium)
+        OutlinedTextField(code, { code = it.take(40); error = null }, singleLine = true, label = { Text("Code, like PH-1A2B-3C4D-5E6F") },
+            modifier = Modifier.fillMaxWidth().testTag("promo-input"))
+        error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+        done?.let { Text(it, color = MaterialTheme.colorScheme.primary, modifier = Modifier.testTag("promo-done")) }
+        BigButton(if (sending) "Checking…" else "Apply code", enabled = !sending && Plans.cleanCode(code).length >= 6,
+            modifier = Modifier.testTag("promo-apply"), onClick = {
+                sending = true; error = null
+                scope.launch {
+                    val (updated, err) = plans.redeem(code)
+                    sending = false
+                    if (updated != null) {
+                        code = ""; onRedeemed(updated)
+                        done = "Premium is on until ${updated.paidUntil?.let { prettyDate(it) } ?: "the code's end"}. Enjoy!"
+                    } else error = Plans.explain(err)
+                }
+            })
     }
 }
 
