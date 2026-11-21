@@ -111,7 +111,7 @@ class PremiumShotsTest {
     @Test fun sitPaperCost() {
         assumeTrue(dir != null)
         val credits = pk.parhlou.student.ai.Allowance(820, "2026-12-21", monthly = 1000)
-        val bp = pk.parhlou.student.data.PaperBlueprint("p", "Mathematics · Lahore 2024", 180, 75.0,
+        val bp = pk.parhlou.student.data.PaperBlueprint("p", "Mathematics · Lahore 2024", 180, 39.0,
             listOf(pk.parhlou.student.data.BlueprintSection("MCQ", 15, 15, 1.0), pk.parhlou.student.data.BlueprintSection("Short", 18, 12, 2.0)), official = true)
         rule.setContent { ParhlouTheme(dark = night) {
             androidx.compose.runtime.CompositionLocalProvider(pk.parhlou.student.ui.components.LocalPremium provides

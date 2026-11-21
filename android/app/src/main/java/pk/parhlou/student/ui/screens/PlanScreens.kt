@@ -76,7 +76,7 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
                 }
                 Text("Everything you need for full marks", style = MaterialTheme.typography.headlineSmall, color = Color.White, fontWeight = FontWeight.Bold)
                 Text(pk.parhlou.student.data.LocalAppSettings.current.plusPitch
-                    ?: "Every chapter of every book, the Guess Paper and all past papers, your own tests, Ask Ustaad and AI marking. No ads.",
+                    ?: "Every chapter of every book, every paper with no limit on tries, and 1,000 credits a month for Ask Ustaad and AI marking. No ads.",
                     style = MaterialTheme.typography.bodyMedium, color = Color.White.copy(alpha = 0.9f))
                 Text("${pk.parhlou.student.domain.Premium.rupees(price)} a month", style = MaterialTheme.typography.headlineSmall, color = Color.White,
                     fontWeight = FontWeight.Bold, modifier = Modifier.testTag("plan-price"))
