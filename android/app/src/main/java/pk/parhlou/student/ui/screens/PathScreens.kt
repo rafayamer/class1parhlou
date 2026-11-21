@@ -54,13 +54,11 @@ import pk.parhlou.student.domain.LearningState
 import pk.parhlou.student.data.Module
 import pk.parhlou.student.data.ProgressStore
 import pk.parhlou.student.data.Subject
-import pk.parhlou.student.domain.RewardSummary
 import pk.parhlou.student.domain.Rewards
 import pk.parhlou.student.ui.components.LocalReducedMotion
 import kotlin.math.sin
 
 private val Gold = Color(0xFFF4B400)
-private val Flame = Color(0xFFFF7A00)
 
 /**
  * The section to practise today: a weak section first, then the first examined section not yet strong, then the
@@ -80,37 +78,6 @@ fun todaysModule(subjects: List<Subject>, progress: ProgressStore, day: Long = j
         return examModules(s).first { level(it) < Rewards.LEARNED_LEVEL }
     }
     return all.minByOrNull { level(it) }
-}
-
-/** Streak, today's XP against the goal, and level, at the top of Home. */
-@Composable
-fun RewardBar(r: RewardSummary, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
-    Row(modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).clickable(onClickLabel = "Open your progress", onClick = onClick).testTag("reward-bar"),
-        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        val streak = pk.parhlou.student.ui.components.countUp(r.streakDays)
-        val today = pk.parhlou.student.ui.components.countUp(r.xpToday)
-        Chip("🔥", "$streak", if (r.streakDays == 1) "day streak" else "day streak", if (r.studiedToday) Flame else MaterialTheme.colorScheme.outline,
-            "${r.streakDays} day streak" + if (r.freezes > 0) ", ${r.freezes} streak freeze" + (if (r.freezes > 1) "s" else "") else "", Modifier.weight(1f))
-        Chip("⚡", "$today/${r.dailyGoalXp}", if (r.goalMet) "goal met!" else "XP today", Gold,
-            "${r.xpToday} of ${r.dailyGoalXp} XP today", Modifier.weight(1f))
-        Chip("⭐", "Lv ${r.level}", "${r.toNextLevel} XP to go", MaterialTheme.colorScheme.primary, "Level ${r.level}", Modifier.weight(1f))
-    }
-}
-
-@Composable
-private fun Chip(icon: String, value: String, label: String, color: Color, description: String, modifier: Modifier) {
-    pk.parhlou.student.ui.components.Chunky(
-        modifier = modifier.semantics(mergeDescendants = true) { contentDescription = description },
-        colors = pk.parhlou.student.ui.components.ChunkyColors(MaterialTheme.colorScheme.surface, color.copy(alpha = 0.55f),
-            MaterialTheme.colorScheme.onSurface, color.copy(alpha = 0.55f)),
-        shape = RoundedCornerShape(16.dp), lip = 3.dp, contentPadding = PaddingValues(vertical = 8.dp, horizontal = 6.dp),
-        contentAlignment = Alignment.Center,
-    ) {
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Text("$icon $value", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.ExtraBold, maxLines = 1)
-            Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
-        }
-    }
 }
 
 /**

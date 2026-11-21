@@ -1,5 +1,14 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.border
+import androidx.compose.foundation.background
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -46,23 +55,55 @@ import pk.parhlou.student.ui.components.Sheet
 
 @Composable
 fun WelcomeScreen(onStart: () -> Unit) {
+    // The first page: Ustaad on an illustrated card with drifting maths and science symbols, what Parhlou does in three
+    // pictures, and one button. Ustaad waves hello (an eyebrow lift and a cheer) when the page opens.
+    var cheer by remember { mutableStateOf(true) }
+    LaunchedEffect(Unit) { kotlinx.coroutines.delay(1600); cheer = false }
     Surface(color = MaterialTheme.colorScheme.background, modifier = Modifier.fillMaxSize()) {
+        // The pictures and words scroll on small phones; "Get started" always stays in view at the bottom.
+        Column(Modifier.fillMaxSize().systemBarsPadding().padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Column(
-            Modifier.fillMaxSize().padding(24.dp),
-            verticalArrangement = Arrangement.Center,
+            Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Icon(Icons.Filled.AutoStories, contentDescription = null, tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(88.dp))
-            Spacer(Modifier.height(16.dp))
-            Text("Parhlou", style = MaterialTheme.typography.headlineMedium, color = MaterialTheme.colorScheme.primary)
+            Box(
+                Modifier.fillMaxWidth().height(280.dp).clip(RoundedCornerShape(32.dp)).background(pk.parhlou.student.ui.theme.heroGradient()),
+                contentAlignment = Alignment.Center,
+            ) {
+                androidx.compose.foundation.Canvas(Modifier.matchParentSize()) {
+                    drawCircle(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.10f), size.width * 0.45f, androidx.compose.ui.geometry.Offset(size.width * 0.95f, 0f))
+                    drawCircle(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.07f), size.width * 0.35f, androidx.compose.ui.geometry.Offset(0f, size.height))
+                }
+                FloatingGlyphs(androidx.compose.ui.graphics.Color.White.copy(alpha = 0.18f), Modifier.matchParentSize())
+                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Box(Modifier.size(150.dp).clip(androidx.compose.foundation.shape.CircleShape)
+                        .border(4.dp, androidx.compose.ui.graphics.Color.White.copy(alpha = 0.9f), androidx.compose.foundation.shape.CircleShape)) {
+                        pk.parhlou.student.ui.components.Ustad(150.dp, if (cheer) pk.parhlou.student.ui.components.UstadMood.CHEER else pk.parhlou.student.ui.components.UstadMood.HAPPY)
+                    }
+                    Text("Assalam-o-Alaikum! I'm Ustaad.", style = MaterialTheme.typography.titleMedium, color = androidx.compose.ui.graphics.Color.White,
+                        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+                }
+            }
+            Text("Parhlou", style = MaterialTheme.typography.headlineMedium, color = MaterialTheme.colorScheme.primary,
+                fontWeight = androidx.compose.ui.text.font.FontWeight.ExtraBold)
             Text("پڑھ لو", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            Spacer(Modifier.height(12.dp))
             Text(
                 "Study from your book, practise with quizzes and sit real-style papers for your board exams.",
                 style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center,
             )
-            Spacer(Modifier.height(32.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxWidth()) {
+                for ((icon, label) in listOf("📖" to "Lessons from your book", "🎯" to "Board-style papers", "🎓" to "Your own tutor")) {
+                    Column(
+                        Modifier.weight(1f).clip(RoundedCornerShape(18.dp)).background(MaterialTheme.colorScheme.surfaceVariant).padding(12.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp),
+                    ) {
+                        Text(icon, style = MaterialTheme.typography.headlineSmall)
+                        Text(label, style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
+                    }
+                }
+            }
+        }
             BigButton("Get started", onClick = onStart)
         }
     }

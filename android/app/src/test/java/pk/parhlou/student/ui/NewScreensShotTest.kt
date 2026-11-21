@@ -125,6 +125,15 @@ class NewScreensShotTest {
         save("26-progress-$mode")
     }
 
+    /** The first page on a fresh install. */
+    private fun shootWelcome(dark: Boolean) {
+        assumeTrue(dir != null)
+        rule.setContent { ParhlouTheme(dark = dark) { pk.parhlou.student.ui.screens.WelcomeScreen(onStart = {}) } }
+        save("19-welcome-${if (dark) "dark" else "light"}")
+    }
+
+    @Test fun welcomeLight() = shootWelcome(false)
+    @Test fun welcomeDark() = shootWelcome(true)
     @Test fun moreLight() = shootMore(false)
     @Test fun moreDark() = shootMore(true)
     @Test fun progressLight() = shootProgress(false)

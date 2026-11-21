@@ -194,57 +194,38 @@ fun HomeScreen(
     Box(Modifier.fillMaxSize()) {
     ParhlouScreen(title = null) {
         UpdateBanner()
-        // Ustaad greets the student; his mood follows the streak.
-        Row(Modifier.appear(0).fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            pk.parhlou.student.ui.components.Ustad(56.dp, pk.parhlou.student.ui.components.moodFor(rewards))
-            Spacer(Modifier.width(12.dp))
-            Column(Modifier.weight(1f)) {
-                Text(if (onboarding.name.isBlank()) "Assalam-o-Alaikum!" else "Assalam-o-Alaikum, ${onboarding.firstName}!", style = MaterialTheme.typography.titleLarge)
-                Text(homeMessage ?: pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
-        }
+        // Ustaad greets the student on an illustrated card; his mood follows the streak, and a tap gets a study tip.
+        HomeHero(
+            name = onboarding.firstName,
+            line = homeMessage ?: pk.parhlou.student.ui.components.moodLine(rewards),
+            mood = pk.parhlou.student.ui.components.moodFor(rewards),
+            modifier = Modifier.appear(0),
+        )
         banner?.let { b -> AnnouncementBanner(b, onDismiss = { onDismissBanner(b.id) }) }
-        // Ask Ustaad: one big tap, near the top, never covering anything.
-        if (showTutor) pk.parhlou.student.ui.components.Chunky(
-            modifier = Modifier.fillMaxWidth().testTag("home-ask"), colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(),
-            shape = RoundedCornerShape(22.dp), onClick = onTutor, contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
-        ) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Icon(Icons.Filled.Forum, contentDescription = null, modifier = Modifier.size(24.dp))
-                Text("Ask Ustaad", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
-                Text("📷 💡 📄", style = MaterialTheme.typography.titleMedium)
-            }
-        }
-        // Goals: streak, today's XP against the goal, level; and how yesterday's goal went.
-        RewardBar(rewards, Modifier.appear(1), onClick = onProgress)
+        // Ask Ustaad: one big tap, right under him, never covering anything.
+        if (showTutor) AskUstaadCard(onTutor, Modifier.appear(1))
+        // Today's goal: the XP ring, the streak with this week's days, the level; and how yesterday's goal went.
+        GoalCard(rewards, onClick = onProgress, modifier = Modifier.appear(2))
         if (yesterday.xpToday > 0 || yesterday.goalMet) Text(
             if (yesterday.goalMet) "✅ Yesterday's goal done (${yesterday.xpToday} XP)" else "Yesterday: ${yesterday.xpToday} of ${yesterday.dailyGoalXp} XP",
             style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
 
         // Today's session.
-        if (today != null) Sheet(Modifier.appear(2)) {
-            Text("Today", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-            Text(today.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), style = MaterialTheme.typography.titleMedium)
-            BigButton("Start today's session", onClick = { onStartSession(null, onboarding.minutesPerDay) }, modifier = Modifier.testTag("start-session"))
-            TextButton(onClick = { onStartSession(null, 5) }, modifier = Modifier.heightIn(min = 44.dp).testTag("busy-day")) { Text("Busy day? 5 minutes") }
-        }
+        if (today != null) TodayCard(today.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), onboarding.minutesPerDay,
+            onStart = { onStartSession(null, onboarding.minutesPerDay) }, onBusy = { onStartSession(null, 5) }, modifier = Modifier.appear(3))
 
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
         // "Do this now": the plan's first task (a topic to fix comes first), else the next lesson. Shown once.
         val first = plan.firstOrNull()?.takeIf { onboarding.pathway != Pathway.TEST_SERIES }
         val now: Pair<String, () -> Unit> = if (first != null) first.title to { onPlanTask(first) } else task.title to go
-        Sheet(Modifier.testTag("do-this-now")) {
-            Text("Do this now", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.primary)
-            Text(now.first, style = MaterialTheme.typography.bodyLarge, maxLines = 2)
-            pk.parhlou.student.ui.components.AccentButton("Continue", onClick = now.second)
-        }
+        NextStepCard(now.first, now.second)
         if (quests.isNotEmpty()) Sheet(Modifier.testTag("home-quests")) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("Today's quests", style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
                 Text("${quests.count { it.done }}/${quests.size} ✅", style = MaterialTheme.typography.labelLarge)
             }
-            quests.forEach { q -> Text("${if (q.done) "✅" else "🎯"}  ${q.title}  (${q.progress.coerceAtMost(q.target)}/${q.target})", style = MaterialTheme.typography.bodyMedium) }
+            quests.forEach { q -> QuestRow(q) }
             if (!showChest) Unit
             else if (quests.all { it.done }) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
             else Text("🎁 Finish all ${quests.size} to open today's bonus chest", style = MaterialTheme.typography.bodyMedium,
@@ -294,6 +275,8 @@ private fun SubjectJourneyCard(s: Subject, progress: ProgressStore, taskTitle: S
     pk.parhlou.student.ui.components.Chunky(modifier = Modifier.fillMaxWidth().testTag("journey-${s.id}"), shape = RoundedCornerShape(22.dp), onClick = onOpen) {
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
+                SubjectBadge(s.id)
+                Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text("${s.name} · Class ${s.grade}", style = MaterialTheme.typography.titleMedium)
                     if (examIn != null) Text("📅 $examIn days to the exam", style = MaterialTheme.typography.labelMedium,
