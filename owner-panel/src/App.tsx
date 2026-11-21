@@ -10,15 +10,17 @@ import { AiLog } from "./pages/AiLog";
 import { Care } from "./pages/Care";
 import { Student } from "./pages/Student";
 import { Payments } from "./pages/Payments";
+import { AppDesign } from "./pages/AppDesign";
 
 const PAGES = [
-  ["dashboard", "Dashboard"],
-  ["content", "Content"],
-  ["payments", "Payments"],
-  ["settings", "AI settings"],
-  ["learners", "Learners"],
-  ["care", "Student care"],
-  ["ai-log", "AI log"],
+  ["dashboard", "Dashboard", "📊"],
+  ["design", "App design", "🎨"],
+  ["content", "Content", "📚"],
+  ["payments", "Payments", "💳"],
+  ["settings", "AI settings", "🤖"],
+  ["learners", "Learners", "🎓"],
+  ["care", "Student care", "💬"],
+  ["ai-log", "AI log", "🧾"],
 ] as const;
 type Page = (typeof PAGES)[number][0];
 
@@ -70,8 +72,8 @@ export function App() {
     <div className="shell">
       <nav className="nav" aria-label="Sections">
         <div className="brand">Parhlou · Owner</div>
-        {PAGES.map(([id, label]) => (
-          <a key={id} href={`#/${id}`} className={page === id ? "active" : ""} aria-current={page === id ? "page" : undefined}>{label}</a>
+        {PAGES.map(([id, label, icon]) => (
+          <a key={id} href={`#/${id}`} className={page === id ? "active" : ""} aria-current={page === id ? "page" : undefined}><span aria-hidden className="nav-icon">{icon}</span>{label}</a>
         ))}
         <div className="who">
           <div>{session.user.email}</div>
@@ -81,6 +83,7 @@ export function App() {
       <main>
         {viewing ? <Student userId={viewing} onBack={() => setViewing(null)} /> : <>
         {page === "dashboard" && <Dashboard />}
+        {page === "design" && <AppDesign />}
         {page === "content" && <Content />}
         {page === "payments" && <Payments />}
         {page === "settings" && <Settings />}

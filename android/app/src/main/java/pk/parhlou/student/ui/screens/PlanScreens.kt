@@ -58,7 +58,7 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
             Muted("Every lesson, quiz, solution, past paper and Guess Paper. A small amount of Ask Ustaad and AI marking each month. Short ads after some quizzes, never in lessons or papers.")
             Text("Plus ⭐", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
             val times = if (i != null && i.freeUsd > 0) (i.plusUsd / i.freeUsd).toInt() else 6
-            Muted("Everything in Free, ${times}× more Ask Ustaad and AI paper marking every month, and no ads.")
+            Muted(pk.parhlou.student.data.LocalAppSettings.current.plusPitch ?: "Everything in Free, ${times}× more Ask Ustaad and AI paper marking every month, and no ads.")
             Text("Rs ${i?.pricePkr ?: 499} a month", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold,
                 modifier = Modifier.testTag("plan-price"))
         }

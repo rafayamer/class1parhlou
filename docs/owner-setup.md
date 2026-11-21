@@ -2,7 +2,29 @@
 
 These steps are done once by the owner. The automatic safety rules stop the assistant from deploying to the live server, changing the live database or publishing content on its own.
 
-## Newest round: $3 AI cap, League, Plus payments and ads (about 20 minutes)
+## Newest round: App design (5 minutes)
+
+### Apply the App design database update (2 minutes, needed)
+Open `supabase/migrations/20261121000001_app_customization.sql` → **Copy raw file** → paste into
+https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new → **Run**. (If `20261119000004_security.sql` and
+`20261120000001_audit_fixes.sql` aren't applied yet, run those two first, in that order.)
+
+### What the App design page does
+Owner panel → **App design**. Every change shows in the phone preview first; **Publish to students** sends it, and phones use it
+the next time they open the app (offline phones keep the last version they saw). Nothing here needs a new APK.
+- **Brand**: the app's main colour (buttons, rings, the selected tab). The page warns when white text would be hard to read.
+- **Announcement**: a card at the top of Home with an emoji, title, message and an optional https:// button; for everyone, free
+  students or Plus students; with optional start and end dates. "Show again to students who closed it" re-posts it.
+- **Features**: switch the League tab, daily chest, celebrations, the Ask Ustaad button on Home, Guess Paper, past papers, Make my
+  own test, video lessons and the Plus upgrade on or off. "Try on a share of students first" gives a feature to 5–95% of
+  students (each student always gets the same answer), then **Give to everyone**.
+- **Game & XP**: XP for lessons, written answers and papers, the daily chest's prize range and the daily goal.
+- **Texts**: the line under the Home greeting, the evening reminder (`{streak}` becomes the streak length) and the Plus pitch.
+- **App health**: maintenance mode (covers the app with "We'll be right back") and a minimum build that must update first. Both
+  ask you to confirm before publishing.
+- **History**: every publish is kept; load an earlier one, check it and publish to restore it. You can also download a backup file.
+
+## Previous round: $3 AI cap, League, Plus payments and ads (about 20 minutes)
 
 ### 1. Apply three database updates, in this order (5 minutes, needed)
 For each file: open it, **Copy raw file**, paste into https://supabase.com/dashboard/project/hulfrloizndafqchcwhz/sql/new and **Run**.

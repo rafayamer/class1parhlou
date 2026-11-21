@@ -39,9 +39,11 @@ data class RewardSummary(
  * missed day. Levels follow total XP.
  */
 object Rewards {
-    const val LESSON_XP = 15
-    const val WRITTEN_XP = 10
-    const val PAPER_XP = 50
+    /** The game's numbers, which the owner can tune from the owner panel (App design). */
+    @Volatile var tuning: Tuning = Tuning()
+    val LESSON_XP: Int get() = tuning.lessonXp
+    val WRITTEN_XP: Int get() = tuning.writtenXp
+    val PAPER_XP: Int get() = tuning.paperXp
 
     fun xpOf(e: Evidence): Int = when (e) {
         is Evidence.SessionCompleted -> e.xp
@@ -57,7 +59,7 @@ object Rewards {
     private fun studied(e: Evidence) = e !is Evidence.ModuleOpened && e !is Evidence.ChestOpened && e !is Evidence.Helpful
 
     /** The daily goal grows with the minutes the student chose (about 4 XP a minute). */
-    fun dailyGoal(minutesPerDay: Int): Int = (minutesPerDay.coerceIn(10, 120) * 4 / 10) * 10
+    fun dailyGoal(minutesPerDay: Int): Int = (minutesPerDay.coerceIn(10, 120) * tuning.xpPerMinute / 10) * 10
 
     /** Level n starts at 50·n·(n−1) XP: 0, 100, 300, 600, 1000 … */
     fun level(totalXp: Int): Int {

@@ -185,6 +185,8 @@ fun ParhlouApp(
     store: LocalStore,
     /** This build's number; when above 0, "What's new" opens once after each update. Tests leave it 0. */
     currentBuild: Int = 0,
+    /** Fetches the owner's settings again (the maintenance cover's "Check again"); tests leave it empty. */
+    refreshSettings: () -> Unit = {},
     ai: ParhlouAi = remember(repo) { DemoBrain(repo) },
     /** Sign-in and sync; null in builds without a Supabase address. */
     account: Account? = null,
@@ -240,6 +242,11 @@ fun ParhlouApp(
     // Upload new progress whenever the app goes to the background.
     LifecycleEventEffect(Lifecycle.Event.ON_STOP) { account?.let { a -> scope.launch { a.syncNow() } } }
     val needsSignIn = account != null && session == null && !guest
+    // The owner's switches (owner panel → App design). A switch can be on for only a share of students (gradual rollout).
+    val appSettings = pk.parhlou.student.data.LocalAppSettings.current
+    val installId by produceState("") { value = store.installId() }
+    fun featureOn(key: String) = appSettings.enabled(key, installId)
+    val dismissedBanner by store.draft("banner_dismissed").collectAsState(initial = "")
     val plans = remember(account, planClient) { planClient ?: pk.parhlou.student.data.PlanClient(account?.sync) }
     var plan by remember { mutableStateOf<pk.parhlou.student.domain.Plans.Info?>(null) }
     LaunchedEffect(session?.email, planClient) { plan = if (session != null || planClient != null) plans.info() else null }
@@ -390,7 +397,8 @@ fun ParhlouApp(
         PlanKind.READINESS -> nav.navigate(Routes.READINESS)
     }
     val current = nav.currentBackStackEntryAsState().value?.destination?.route
-    val showBar = current in navItems.map { it.route }
+    val shownNav = remember(appSettings, installId) { navItems.filter { it.route != Routes.LEAGUE || featureOn("league") } }
+    val showBar = current in shownNav.map { it.route }
     fun goTop(route: String) = nav.navigate(route) {
         popUpTo(Routes.HOME) { saveState = true }
         launchSingleTop = true
@@ -482,7 +490,7 @@ fun ParhlouApp(
             val homeNow = System.currentTimeMillis()
             val homeRewards = remember(homeHistory, state.minutesPerDay) { Rewards.summary(homeHistory, state.minutesPerDay, homeNow) }
             val homeQuests = remember(homeHistory, homeRewards.dailyGoalXp) { pk.parhlou.student.domain.Quests.today(homeHistory, homeRewards.dailyGoalXp, homeNow) }
-            if (celebrate) CelebrationHost(store, homeRewards, remember(homeHistory) { Rewards.achievements(homeHistory) }, homeQuests.all { it.done })
+            if (celebrate && featureOn("celebrations")) CelebrationHost(store, homeRewards, remember(homeHistory) { Rewards.achievements(homeHistory) }, homeQuests.all { it.done })
             HomeScreen(
                 repo = repo, onboarding = state, progress = progress,
                 onOpenModule = { nav.navigate("module/$it") },
@@ -504,6 +512,13 @@ fun ParhlouApp(
                 chestReady = pk.parhlou.student.domain.Game.chestReady(homeQuests, homeHistory, homeNow),
                 chestOpened = pk.parhlou.student.domain.Game.chestOpenedToday(homeHistory, homeNow),
                 onOpenChest = ::openChest,
+                showChest = featureOn("chest"),
+                showTutor = featureOn("askUstaad"),
+                banner = appSettings.banner?.takeIf { b ->
+                    b.id != dismissedBanner && b.showsOn(java.time.LocalDate.now().toString(), plan?.plus)
+                },
+                onDismissBanner = { id -> scope.launch { store.saveDraft("banner_dismissed", id) } },
+                homeMessage = appSettings.homeMessage,
                 // Camera: straight into the scanner of the paper in progress, or choose a paper first.
                 onScan = {
                     val active = activeExam
@@ -584,15 +599,16 @@ fun ParhlouApp(
                 chestReady = pk.parhlou.student.domain.Game.chestReady(leagueQuests, history, now),
                 chestOpened = pk.parhlou.student.domain.Game.chestOpenedToday(history, now),
                 onOpenChest = ::openChest,
+                showChest = featureOn("chest"),
             )
-            if (celebrate) CelebrationHost(store, rewards, leagueAchievements, leagueQuests.all { it.done })
+            if (celebrate && featureOn("celebrations")) CelebrationHost(store, rewards, leagueAchievements, leagueQuests.all { it.done })
         } }
         composable(Routes.PROFILE) { WithTabBarSpace {
             val soundOn by store.soundOn.collectAsState(initial = true)
             ProfileScreen(
                 repo, state, progress,
                 onEditProfile = { nav.navigate(Routes.EDIT_PROFILE) },
-                onPlus = { nav.navigate(Routes.PLUS) },
+                onPlus = if (featureOn("plus")) ({ nav.navigate(Routes.PLUS) }) else null,
                 planLabel = plan?.let { p -> if (p.plus) "Plus until ${p.paidUntil}" else "Free plan · upgrade for more Ask Ustaad, no ads" }
                     ?: "More Ask Ustaad and no ads",
                 soundOn = soundOn, onToggleSound = { scope.launch { store.setSound(!soundOn) } },
@@ -673,7 +689,7 @@ fun ParhlouApp(
                         progress.add("session", Evidence.SessionCompleted(r.xp))
                         nav.popBackStack()
                         // Free plan: an ad may follow a finished quiz (never inside lessons or papers).
-                        if (plan?.showAds != false) ads.afterQuiz()
+                        if (plan?.showAds != false && appSettings.adsEnabled) ads.afterQuiz()
                     },
                     onClose = { nav.popBackStack() },
                 )
@@ -746,6 +762,7 @@ fun ParhlouApp(
                 onAskTutor = { openTutor(it) }, onBack = nav.back(),
                 onOpenLesson = { nav.navigate("lesson/$it") },
                 onPractice = { nav.navigate("session/$it?min=${state.minutesPerDay}") },
+                showVideos = featureOn("videos"),
                 videoQuery = pk.parhlou.student.domain.VideoSearch.query(subject?.name.orEmpty(), subject?.grade, repo.chapterOf(id)?.number, module.title),
             )
         }
@@ -771,15 +788,15 @@ fun ParhlouApp(
                 onReadiness = { nav.navigate(Routes.READINESS) },
                 onOpen = { nav.navigate("assessment/$it") },
                 onBack = null,
-                guessId = paperSubject?.guess?.blueprint?.id,
+                guessId = paperSubject?.guess?.blueprint?.id?.takeIf { featureOn("guessPaper") },
                 guessNote = paperSubject?.guess?.let { g ->
                     val all = g.paper.mcqs.map { it.pastPapers.size } + g.paper.written.map { it.pastPapers.size }
                     "${all.count { it > 0 }} of ${all.size} questions came in real board papers; together they appeared ${all.sum()} times."
                 },
-                pastIds = paperSubject?.past?.map { it.blueprint.id }.orEmpty(),
+                pastIds = if (featureOn("pastPapers")) paperSubject?.past?.map { it.blueprint.id }.orEmpty() else emptyList(),
                 pastTags = paperSubject?.past?.associate { it.blueprint.id to it.tag }.orEmpty(),
                 chapters = paperSubject?.subject?.chapters?.map { it.number to it.title }.orEmpty(),
-                onPractice = paperSubject?.let { sp -> { chs: List<Int>, len: pk.parhlou.student.domain.PracticeTests.Length ->
+                onPractice = paperSubject?.takeIf { featureOn("makeTest") }?.let { sp -> { chs: List<Int>, len: pk.parhlou.student.domain.PracticeTests.Length ->
                     val recipe = pk.parhlou.student.domain.PracticeTests.Recipe("practice-${System.currentTimeMillis()}", sp.subject.id, sp.subject.name,
                         chs, len, System.currentTimeMillis(), System.currentTimeMillis())
                     if (pk.parhlou.student.domain.PracticeTests.build(recipe, sp.bank) == null)
@@ -959,14 +976,25 @@ fun ParhlouApp(
         exit = if (reduced) ExitTransition.None else fadeOut() + slideOutVertically { it },
     ) {
         GlassTabBar(
-            items = navItems,
-            selectedIndex = navItems.indexOfFirst { it.route == current }.coerceAtLeast(0),
-            onSelect = { goTop(navItems[it].route) },
+            items = shownNav,
+            selectedIndex = shownNav.indexOfFirst { it.route == current }.coerceAtLeast(0),
+            onSelect = { goTop(shownNav[it].route) },
             backdrop = backdrop,
         )
     }
     }
     if (offline) OfflineCover(onRetry = { retried++ })
+    // The owner's covers (owner panel → App design): maintenance first, then a minimum version.
+    when {
+        appSettings.maintenance -> OwnerCover("maintenance", "We'll be right back", appSettings.maintenanceMessage, "Check again", onAction = refreshSettings)
+        currentBuild in 1 until appSettings.minBuild -> {
+            val offer = pk.parhlou.student.ui.components.LocalUpdateOffer.current
+            OwnerCover("must-update", "Time to update", appSettings.updateMessage, "Update now") {
+                if (offer != null) offer.install()
+                else Links.open(context, "https://play.google.com/store/apps/details?id=${context.packageName}")
+            }
+        }
+    }
     }
 }
 

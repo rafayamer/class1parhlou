@@ -32,7 +32,8 @@ jobs:
       - uses: gradle/actions/setup-gradle@748248ddd2a24f49513d8f472f81c3a07d4d50e1 # v4.4.4
       - name: Test
         working-directory: android
-        run: ./gradlew :app:testPrototypeDebugUnitTest :scanner:testDebugUnitTest
+        # Both versions: the direct-download prototype and the Play Store build.
+        run: ./gradlew :app:testPrototypeDebugUnitTest :app:testPlayDebugUnitTest :scanner:testDebugUnitTest
       - name: Private release key (when the owner has added it)
         env:
           RELEASE_KEYSTORE_B64: ${{ secrets.RELEASE_KEYSTORE_B64 }}

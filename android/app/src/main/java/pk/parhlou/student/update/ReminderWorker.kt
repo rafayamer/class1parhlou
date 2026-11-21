@@ -36,8 +36,11 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         val minutes = store.onboarding.first().minutesPerDay
         val r = Rewards.summary(progress.history(), minutes, System.currentTimeMillis())
         if (r.studiedToday) return Result.success()
-        val text = if (r.streakDays >= 1) "Your ${r.streakDays}-day streak is waiting. 5 minutes with Ustaad keeps it alive!"
-        else "Ustaad is ready for today's session. Just 5 minutes builds your exam marks."
+        // The owner can write the reminder in the owner panel; {streak} becomes the streak length.
+        val custom = pk.parhlou.student.data.AppSettings.parse(store.draft(pk.parhlou.student.data.RemoteSettings.KEY).first().ifBlank { null }).reminderText
+        val text = custom?.takeIf { r.streakDays >= 1 || "{streak}" !in it }?.replace("{streak}", "${r.streakDays}")
+            ?: if (r.streakDays >= 1) "Your ${r.streakDays}-day streak is waiting. 5 minutes with Ustaad keeps it alive!"
+            else "Ustaad is ready for today's session. Just 5 minutes builds your exam marks."
         notify(applicationContext, text)
         return Result.success()
     }

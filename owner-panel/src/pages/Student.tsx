@@ -13,6 +13,8 @@ interface Portfolio {
   credits: { kind: string; amount: number; task: string | null; at: string; expires: string | null }[];
   flags: { id: number; category: string; excerpt: string; status: string; created_at: string }[];
   feedback: { id: number; text: string; status: string; created_at: string }[];
+  /** This month's AI use against the plan's allowance (the app shows it as the Ustaad energy bar). Needs migration 20261121000001. */
+  ai_month?: { plan: "free" | "plus"; paid_until: string | null; spent_usd: number; calls: number; allowance_usd: number };
 }
 
 const WHAT: Record<string, string> = { O: "Opened a lesson", V: "Watched a video", L: "Lesson finished", R: "Book reading", Q: "Quiz", W: "Written practice",
@@ -36,11 +38,8 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
   // The parent's email comes from what the student typed: use it only if it is a plain email address (no extra mail headers).
   const typed = String((p.profile?.guardian_email as string | undefined) || (p.settings?.["guardianEmail"] as string | undefined) || "").trim();
   const parent = /^[^\s@?&#<>"']+@[^\s@?&#<>"']+\.[A-Za-z]{2,}$/.test(typed) ? typed : "";
-  const now = Date.now();
-  const balance = p.credits.reduce((s, c) => {
-    if (c.kind === "grant") return c.expires && Date.parse(c.expires) > now ? s + c.amount : s;
-    return s - c.amount;
-  }, 0);
+  const ai = p.ai_month;
+  const used = ai && ai.allowance_usd > 0 ? Math.min(100, Math.round((Number(ai.spent_usd) / Number(ai.allowance_usd)) * 100)) : null;
   const days = new Set(p.events.map((e) => e.at.slice(0, 10))).size;
   return (
     <>
@@ -50,7 +49,11 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
       <div className="grid">
         <div className="card stat"><div className="n">{days}</div><div className="l">days studied</div></div>
         <div className="card stat"><div className="n">{p.marks.length}</div><div className="l">answers marked</div></div>
-        <div className="card stat"><div className="n">{Math.max(0, balance)}</div><div className="l">credits left (approx.)</div></div>
+        <div className="card stat">
+          <div className="n">{used == null ? "—" : `${used}%`}</div>
+          <div className="l">{ai ? <>AI used this month · {ai.plan === "plus" ? "Plus ⭐" : "Free"} plan (${Number(ai.spent_usd).toFixed(2)} of ${Number(ai.allowance_usd).toFixed(2)}, {ai.calls} calls)</> : "AI used this month (needs the App design database update)"}</div>
+          {used != null && <div className="meter-bar" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={used} aria-label="AI allowance used"><span style={{ width: `${used}%` }} className={used >= 90 ? "hot" : ""} /></div>}
+        </div>
         <div className="card stat"><div className="n">{p.flags.filter((f) => f.status === "open").length}</div><div className="l">open safety flags</div></div>
       </div>
       <div className="card">
@@ -60,8 +63,8 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
           : <p className="muted small">No parent email on file.</p>}
       </div>
       <div className="tabs">
-        {(["overview", "activity", "chats", "credits"] as const).map((t) => (
-          <button key={t} className={tab === t ? "on" : ""} onClick={() => setTab(t)}>{{ overview: "Overview", activity: "Activity", chats: "Chats (30 days)", credits: "Credits" }[t]}</button>
+        {(["overview", "activity", "chats", ...(p.credits.length ? ["credits" as const] : [])] as const).map((t) => (
+          <button key={t} className={tab === t ? "on" : ""} onClick={() => setTab(t)}>{{ overview: "Overview", activity: "Activity", chats: "Chats (30 days)", credits: "Old credits" }[t]}</button>
         ))}
       </div>
       {tab === "overview" && <>

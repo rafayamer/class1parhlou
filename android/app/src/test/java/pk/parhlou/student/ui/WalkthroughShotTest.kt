@@ -39,6 +39,8 @@ import java.io.File
 @org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
 @Config(sdk = [32], qualifiers = "w393dp-h852dp-xxhdpi")
 class WalkthroughShotTest {
+    private val night = System.getProperty("parhlou.night") == "1"
+    private val nightSuffix = if (night) "-dark" else ""
     @get:Rule val rule = createAndroidComposeRule<ComponentActivity>()
     private val dir = System.getProperty("parhlou.screenshotDir")
     private val bundle = System.getProperty("parhlou.courseBundle")
@@ -51,7 +53,7 @@ class WalkthroughShotTest {
         val bmp = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         view.draw(android.graphics.Canvas(bmp))
         File(dir!!).mkdirs()
-        File(dir, "$name.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        File(dir, "$name$nightSuffix.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     private val social = object : SocialClient(null) {
@@ -81,7 +83,7 @@ class WalkthroughShotTest {
             store.replaceProgress((0..3).joinToString("\n") { EvidenceCodec.line(now - it * 86_400_000L, "session", Evidence.SessionCompleted(60)) })
         }
         val repo = ContentBundle.repository(JSONObject(File(bundle!!).readText()), 1, FakeRepository())
-        rule.setContent { ParhlouTheme { ParhlouApp(repo, store, socialClient = social, planClient = plans) } }
+        rule.setContent { ParhlouTheme(dark = night) { ParhlouApp(repo, store, socialClient = social, planClient = plans) } }
         rule.waitUntil(8_000) { has("tab-home") }
         save("w01-home")
         rule.onNodeWithTag("home-quests").performScrollTo(); save("w02-home-quests")

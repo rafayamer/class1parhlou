@@ -64,6 +64,7 @@ fun LeagueScreen(
     chestOpened: Boolean = false,
     /** Records today's chest and returns the XP it gave. */
     onOpenChest: () -> Int = { 0 },
+    showChest: Boolean = true,
 ) {
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -129,7 +130,7 @@ fun LeagueScreen(
                 }
             }
             if (quests.all { it.done }) Text("🏆 All done today. Brilliant!", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
-            pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
+            if (showChest) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
         }
         if (achievements.isNotEmpty()) Sheet {
             Row(verticalAlignment = Alignment.CenterVertically) {

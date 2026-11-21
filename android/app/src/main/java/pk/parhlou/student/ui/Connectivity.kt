@@ -76,3 +76,24 @@ fun OfflineCover(onRetry: () -> Unit) {
         }
     }
 }
+
+/**
+ * A cover the owner controls from the owner panel: maintenance mode ("we'll be right back") or a must-update notice for
+ * builds below the minimum. Ustaad delivers the message; the app underneath can't be used until it's lifted.
+ */
+@Composable
+fun OwnerCover(tag: String, title: String, message: String, action: String? = null, onAction: () -> Unit = {}) {
+    Box(
+        Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
+            .clickable(interactionSource = remember { MutableInteractionSource() }, indication = null) {}
+            .testTag(tag),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(Modifier.padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            pk.parhlou.student.ui.components.Ustad(120.dp, pk.parhlou.student.ui.components.UstadMood.THINKING)
+            Text(title, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
+            Text(message, style = MaterialTheme.typography.bodyLarge, textAlign = TextAlign.Center)
+            if (action != null) BigButton(action, onClick = onAction)
+        }
+    }
+}

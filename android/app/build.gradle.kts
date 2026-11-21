@@ -102,6 +102,7 @@ android {
             test.setForkEvery(15)
             // -PscreenshotDir=/path renders design screenshots (ScreenshotTest); skipped otherwise.
             project.findProperty("screenshotDir")?.let { test.systemProperty("parhlou.screenshotDir", it.toString()) }
+            project.findProperty("shotNight")?.let { test.systemProperty("parhlou.night", it.toString()) }
             project.findProperty("iconOut")?.let { test.systemProperty("parhlou.iconOut", it.toString()) }
             // -PcontentExport=/path/sample.json writes the sample content for the AI gateway (ContentExportTest).
             project.findProperty("contentExport")?.let { test.systemProperty("parhlou.contentExport", it.toString()) }

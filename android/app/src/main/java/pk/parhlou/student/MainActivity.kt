@@ -82,8 +82,17 @@ class MainActivity : ComponentActivity() {
         // Ads for free-plan students (child-safe, non-personalised); nothing loads until a quiz is finished.
         val adMob: pk.parhlou.student.ads.Ads =
             if (BuildConfig.ADS) pk.parhlou.student.ads.AdMobAds(this, BuildConfig.ADMOB_INTERSTITIAL) else pk.parhlou.student.ads.NoAds
+        // The owner's app settings (owner panel → App design): the saved copy at once, then fresh on every open.
+        val remoteSettings = pk.parhlou.student.data.RemoteSettings(supabaseUrl, BuildConfig.SUPABASE_ANON_KEY, store)
         setContent {
-            ParhlouTheme { ProvideMotion {
+            var appSettings by remember { mutableStateOf(pk.parhlou.student.data.AppSettings()) }
+            androidx.compose.runtime.LaunchedEffect(Unit) { appSettings = remoteSettings.cached() }
+            LifecycleEventEffect(Lifecycle.Event.ON_START) { lifecycleScope.launch { remoteSettings.refresh()?.let { appSettings = it } } }
+            androidx.compose.runtime.SideEffect { pk.parhlou.student.domain.Rewards.tuning = appSettings.tuning }
+            val accent = remember(appSettings.accent) {
+                appSettings.accent?.let { runCatching { androidx.compose.ui.graphics.Color(android.graphics.Color.parseColor(it)) }.getOrNull() }
+            }
+            ParhlouTheme(accent = accent) { CompositionLocalProvider(pk.parhlou.student.data.LocalAppSettings provides appSettings) { ProvideMotion {
                 // Parhlou's own sounds, following the student's sound switch.
                 val soundOn by store.soundOn.collectAsState(initial = true)
                 val sounds = pk.parhlou.student.ui.components.rememberSoundBoard(soundOn)
@@ -130,11 +139,12 @@ class MainActivity : ComponentActivity() {
                     }, ready = ready)
                 }
                 CompositionLocalProvider(LocalUpdateOffer provides offer) {
-                    ParhlouApp(ads = adMob, celebrate = true, repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE, requireInternet = true, ai = ai, account = account,
+                    ParhlouApp(ads = adMob, celebrate = true, repo = repo, store = store, currentBuild = BuildConfig.VERSION_CODE,
+                        refreshSettings = { lifecycleScope.launch { remoteSettings.refresh()?.let { appSettings = it } } }, requireInternet = true, ai = ai, account = account,
                         versionLabel = "Parhlou ${BuildConfig.VERSION_NAME} (build ${BuildConfig.VERSION_CODE})")
                 }
                 }
-            } }
+            } } }
         }
     }
 }

@@ -97,6 +97,7 @@ fun ModuleScreen(
     onPractice: (String) -> Unit = {},
     /** The YouTube search for this section's lectures (VideoSearch.query). */
     videoQuery: String = pk.parhlou.student.domain.VideoSearch.query("", null, null, module.title),
+    showVideos: Boolean = true,
 ) {
     var open by rememberSaveable { mutableStateOf<Stage?>(null) }
     LaunchedEffect(module.id) {
@@ -107,7 +108,7 @@ fun ModuleScreen(
     ParhlouScreen(module.title, onBack = { if (open != null) open = null else onBack() }) {
         val stage = open
         if (stage == null) {
-            SectionHub(module, quiz.isNotEmpty(), progress, videoQuery, ai,
+            SectionHub(module, quiz.isNotEmpty(), progress, videoQuery.takeIf { showVideos }, ai,
                 onLesson = { onOpenLesson(module.id) }, onPractice = { onPractice(module.id) }, onOpen = { open = it },
                 onAskTutor = { onAskTutor(TutorSeed(moduleId = module.id, question = "Help me with ${module.title}")) })
             return@ParhlouScreen
@@ -140,7 +141,7 @@ private fun SectionHub(
     module: Module,
     hasPractice: Boolean,
     progress: ProgressStore,
-    videoQuery: String,
+    videoQuery: String?,
     ai: ParhlouAi,
     onLesson: () -> Unit,
     onPractice: () -> Unit,
@@ -201,7 +202,7 @@ private fun SectionHub(
             when { wrote -> StepStatus.DONE; taught && practised -> StepStatus.NEXT; else -> StepStatus.TODO }, "step-write") { onOpen(Stage.WRITE) }
     SectionStep("🔁", "Improve", "What to fix next, and why", StepStatus.TODO, "step-improve") { onOpen(Stage.IMPROVE) }
 
-    VideoLessons(module, videoQuery, ai)
+    if (videoQuery != null) VideoLessons(module, videoQuery, ai)
     TextButton(onClick = onAskTutor, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("💬 Ask Ustaad about this section") }
 }
 

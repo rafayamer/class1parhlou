@@ -32,6 +32,8 @@ import java.io.File
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 @Config(sdk = [34], qualifiers = "w393dp-h852dp")
 class AuditShotsTest {
+    private val night = System.getProperty("parhlou.night") == "1"
+    private val nightSuffix = if (night) "-dark" else ""
     @get:Rule val rule = createAndroidComposeRule<androidx.activity.ComponentActivity>()
     private val dir = System.getProperty("parhlou.screenshotDir")
     private fun exists(t: String) = rule.onAllNodes(hasText(t, substring = true)).fetchSemanticsNodes().isNotEmpty()
@@ -40,7 +42,7 @@ class AuditShotsTest {
         val v = rule.activity.window.decorView
         val bmp = Bitmap.createBitmap(v.width, v.height, Bitmap.Config.ARGB_8888)
         v.draw(android.graphics.Canvas(bmp))
-        File(dir!!).mkdirs(); File(dir, "$name.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        File(dir!!).mkdirs(); File(dir, "$name$nightSuffix.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     @Test fun allSubjects() {
@@ -59,7 +61,7 @@ class AuditShotsTest {
                 name = "Ayesha Khan", email = "ayesha@example.com", favoriteSubject = FakeRepository.PHYSICS_9))
             store.setReadinessPassed(true)
         }
-        rule.setContent { ParhlouTheme { ParhlouApp(repo, store) } }
+        rule.setContent { ParhlouTheme(dark = night) { ParhlouApp(repo, store) } }
         rule.waitUntil(20_000) { exists("Do this now") }
         save("a01-home")
         rule.onNodeWithText("Your journey").performScrollTo(); save("a02-home-journey")

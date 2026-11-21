@@ -9,9 +9,20 @@ import java.time.ZoneId
  * worth celebrating (a new level, a streak milestone, a new achievement, all quests done). Nothing here can be earned
  * without studying: the chest needs today's quests done, and celebrations only follow the study history.
  */
+/** The game's numbers, tunable from the owner panel; defaults are the original design. */
+data class Tuning(
+    val lessonXp: Int = 15,
+    val writtenXp: Int = 10,
+    val paperXp: Int = 50,
+    val chestMinXp: Int = 20,
+    val chestMaxXp: Int = 35,
+    /** Daily goal = minutes a day × this, rounded down to tens. */
+    val xpPerMinute: Int = 4,
+)
+
 object Game {
-    const val CHEST_MIN_XP = 20
-    const val CHEST_MAX_XP = 35
+    val CHEST_MIN_XP: Int get() = Rewards.tuning.chestMinXp
+    val CHEST_MAX_XP: Int get() = Rewards.tuning.chestMaxXp
     val STREAK_MILESTONES = listOf(3, 7, 14, 30, 50, 100, 200, 365)
 
     private fun day(at: Long, zone: ZoneId): LocalDate = Instant.ofEpochMilli(at).atZone(zone).toLocalDate()

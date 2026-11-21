@@ -41,7 +41,8 @@ class PlanTest {
 
     @Test fun payingForThreeMonths() {
         val fake = Fake(free)
-        rule.setContent { ParhlouTheme { PlanScreen(fake, signedIn = true, onSignIn = {}, onPlanChanged = {}, onBack = {}) } }
+        // Wallet transfers exist only in the direct-download version (the Play version is tested below).
+        rule.setContent { ParhlouTheme { PlanScreen(fake, signedIn = true, onSignIn = {}, onPlanChanged = {}, onBack = {}, manualPayments = true) } }
         rule.waitUntil(5_000) { rule.onAllNodes(hasTestTag("plan-pay")).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("months-3").performScrollTo().performClick()
         rule.onNodeWithText("Send Rs 1497 to", substring = true).assertExists()

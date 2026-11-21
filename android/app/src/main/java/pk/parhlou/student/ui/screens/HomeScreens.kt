@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.border
 import pk.parhlou.student.data.word
 
 import kotlinx.coroutines.launch
@@ -168,6 +169,14 @@ fun HomeScreen(
     chestReady: Boolean = false,
     chestOpened: Boolean = false,
     onOpenChest: () -> Int = { 0 },
+    /** Switches from the owner panel. */
+    showChest: Boolean = true,
+    showTutor: Boolean = true,
+    /** The owner's announcement (already filtered by date and audience) and its dismissal. */
+    banner: pk.parhlou.student.data.AppSettings.Banner? = null,
+    onDismissBanner: (String) -> Unit = {},
+    /** The owner's line under the greeting, instead of Ustaad's mood line. */
+    homeMessage: String? = null,
 ) {
     val subjects = onboarding.subjectIds.mapNotNull { repo.subject(it) }
     val task = nextTask(subjects, onboarding.pathway, progress)
@@ -193,11 +202,12 @@ fun HomeScreen(
             Spacer(Modifier.width(12.dp))
             Column(Modifier.weight(1f)) {
                 Text(if (onboarding.name.isBlank()) "Assalam-o-Alaikum!" else "Assalam-o-Alaikum, ${onboarding.firstName}!", style = MaterialTheme.typography.titleLarge)
-                Text(pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text(homeMessage ?: pk.parhlou.student.ui.components.moodLine(rewards), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             }
         }
+        banner?.let { b -> AnnouncementBanner(b, onDismiss = { onDismissBanner(b.id) }) }
         // Ask Ustaad: one big tap, near the top, never covering anything.
-        pk.parhlou.student.ui.components.Chunky(
+        if (showTutor) pk.parhlou.student.ui.components.Chunky(
             modifier = Modifier.fillMaxWidth().testTag("home-ask"), colors = pk.parhlou.student.ui.components.ChunkyDefaults.primary(),
             shape = RoundedCornerShape(22.dp), onClick = onTutor, contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
         ) {
@@ -237,7 +247,8 @@ fun HomeScreen(
                 Text("${quests.count { it.done }}/${quests.size} ✅", style = MaterialTheme.typography.labelLarge)
             }
             quests.forEach { q -> Text("${if (q.done) "✅" else "🎯"}  ${q.title}  (${q.progress.coerceAtMost(q.target)}/${q.target})", style = MaterialTheme.typography.bodyMedium) }
-            if (quests.all { it.done }) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
+            if (!showChest) Unit
+            else if (quests.all { it.done }) pk.parhlou.student.ui.components.ChestCard(ready = chestReady, openedToday = chestOpened, onOpen = onOpenChest)
             else Text("🎁 Finish all ${quests.size} to open today's bonus chest", style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.primary, modifier = Modifier.testTag("chest-teaser"))
             TextButton(onClick = onLeague, modifier = Modifier.heightIn(min = 44.dp).testTag("open-league")) { Text("League, badges and friends") }
@@ -762,4 +773,26 @@ fun prettyDate(iso: String): String = runCatching {
     val d = java.time.LocalDate.parse(iso.take(10))
     "${d.dayOfMonth} ${d.month.getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ENGLISH)}"
 }.getOrDefault(iso)
+
+/** The owner's announcement on Home: an emoji, a title and a message, an optional button, and a close. */
+@Composable
+fun AnnouncementBanner(b: pk.parhlou.student.data.AppSettings.Banner, onDismiss: () -> Unit) {
+    val context = androidx.compose.ui.platform.LocalContext.current
+    val brand = pk.parhlou.student.ui.theme.LocalBrand.current
+    val tone = when (b.tone) { "success" -> brand.success; "warning" -> brand.sun; "danger" -> brand.danger; else -> MaterialTheme.colorScheme.primary }
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(20.dp)).background(tone.copy(alpha = 0.14f))
+            .border(2.dp, tone.copy(alpha = 0.5f), RoundedCornerShape(20.dp)).padding(14.dp).testTag("announcement"),
+        verticalAlignment = Alignment.Top,
+    ) {
+        Text(b.emoji, style = MaterialTheme.typography.headlineSmall)
+        Column(Modifier.padding(start = 12.dp).weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(b.title, style = MaterialTheme.typography.titleMedium, fontWeight = androidx.compose.ui.text.font.FontWeight.Bold)
+            if (b.message.isNotBlank()) Text(b.message, style = MaterialTheme.typography.bodyMedium)
+            if (b.button != null && b.link != null) TextButton(onClick = { pk.parhlou.student.ui.Links.open(context, b.link) },
+                modifier = Modifier.heightIn(min = 44.dp)) { Text(b.button) }
+        }
+        TextButton(onClick = onDismiss, modifier = Modifier.heightIn(min = 44.dp).testTag("announcement-close")) { Text("✕") }
+    }
+}
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { db, explain } from "../supabase";
 import { Stat, when } from "../ui";
 import { estimateCost, money } from "../cost";
+import { bannerLive, fromSaved, type Customization } from "../customization";
 
 interface Figures {
   learners_total: number; learners_active_today: number; learners_active_7d: number;
@@ -15,12 +16,15 @@ export function Dashboard() {
   const [f, setF] = useState<Figures | null>(null);
   const [rates, setRates] = useState({ usdPerMillionInput: 0, usdPerMillionOutput: 0, pkrPerUsd: 0 });
   const [error, setError] = useState("");
+  const [design, setDesign] = useState<Customization | null>(null);
 
   useEffect(() => {
     db.rpc("owner_dashboard").then(({ data, error }) => (error ? setError(explain(error)) : setF(data as Figures)));
     db.from("app_config").select("key,value").then(({ data }) => {
       const v = (k: string) => Number((data ?? []).find((r) => r.key === k)?.value ?? 0);
       setRates({ usdPerMillionInput: v("usd_per_million_input"), usdPerMillionOutput: v("usd_per_million_output"), pkrPerUsd: v("pkr_per_usd") });
+      const saved = (data ?? []).find((r) => r.key === "app_customization");
+      if (saved) setDesign(fromSaved(saved.value));
     });
   }, []);
 
@@ -34,6 +38,9 @@ export function Dashboard() {
     <>
       <h1>Dashboard</h1>
       <p className="muted">Live figures from the server.</p>
+      {design?.maintenance && <div className="card alert" role="alert">🛟 <strong>Maintenance mode is on.</strong> Students can't study until you switch it off in <a href="#/design">App design → App health</a>.</div>}
+      {design && design.minBuild > 0 && <div className="card notice">⬆️ Builds older than {design.minBuild} must update first (<a href="#/design">App design → App health</a>).</div>}
+      {design && bannerLive(design.banner, new Date().toLocaleDateString("en-CA")) === "live" && <div className="card notice">📣 Showing on Home: “{design.banner.title}” (<a href="#/design">change</a>)</div>}
       <h2>Learners</h2>
       <div className="grid">
         <Stat n={n(f.learners_total)} label="Signed-up learners" />

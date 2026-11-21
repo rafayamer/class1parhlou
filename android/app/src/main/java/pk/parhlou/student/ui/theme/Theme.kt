@@ -150,8 +150,20 @@ private val Type = Typography(
 )
 
 @Composable
-fun ParhlouTheme(dark: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    CompositionLocalProvider(LocalBrand provides if (dark) DarkBrand else LightBrand) {
-        MaterialTheme(colorScheme = if (dark) Dark else Light, typography = Type, content = content)
+fun ParhlouTheme(dark: Boolean = isSystemInDarkTheme(), accent: Color? = null, content: @Composable () -> Unit) {
+    // The owner can set a brand colour in the owner panel; it replaces teal for buttons, highlights and the 3D lip.
+    val base = if (dark) Dark else Light
+    val brand = if (dark) DarkBrand else LightBrand
+    val scheme = if (accent == null) base else {
+        val main = if (dark) androidx.compose.ui.graphics.lerp(accent, Color.White, 0.25f) else accent
+        base.copy(
+            primary = main,
+            primaryContainer = androidx.compose.ui.graphics.lerp(accent, if (dark) Color.Black else Color.White, if (dark) 0.6f else 0.85f),
+            onPrimaryContainer = if (dark) Color.White else androidx.compose.ui.graphics.lerp(accent, Color.Black, 0.55f),
+        )
+    }
+    val lip = if (accent == null) brand else brand.copy(lip = androidx.compose.ui.graphics.lerp(scheme.primary, Color.Black, 0.3f))
+    CompositionLocalProvider(LocalBrand provides lip) {
+        MaterialTheme(colorScheme = scheme, typography = Type, content = content)
     }
 }

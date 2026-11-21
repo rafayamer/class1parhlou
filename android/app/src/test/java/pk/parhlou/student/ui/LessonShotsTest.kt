@@ -37,6 +37,8 @@ import java.io.File
 @org.robolectric.annotation.GraphicsMode(org.robolectric.annotation.GraphicsMode.Mode.NATIVE)
 @Config(sdk = [32], qualifiers = "w393dp-h852dp-xxhdpi")
 class LessonShotsTest {
+    private val night = System.getProperty("parhlou.night") == "1"
+    private val nightSuffix = if (night) "-dark" else ""
     @get:Rule val rule = createAndroidComposeRule<ComponentActivity>()
     private val dir = System.getProperty("parhlou.screenshotDir")
     private val bundle = System.getProperty("parhlou.courseBundle")
@@ -48,7 +50,7 @@ class LessonShotsTest {
         val bmp = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         view.draw(android.graphics.Canvas(bmp))
         File(dir!!).mkdirs()
-        File(dir, "$name.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
+        File(dir, "$name$nightSuffix.png").outputStream().use { bmp.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
     private fun exists(t: String) = rule.onAllNodes(hasText(t, substring = true)).fetchSemanticsNodes().isNotEmpty()
     private fun tap(t: String) { rule.onAllNodes(hasText(t, substring = true) and hasClickAction())[0].performScrollTo().performClick(); rule.waitForIdle() }
@@ -62,7 +64,7 @@ class LessonShotsTest {
         val module = subject.chapters.flatMap { it.modules }.first { it.lesson != null }
         val progress = ProgressStore(store)
         var screen by androidx.compose.runtime.mutableStateOf("hub")
-        rule.setContent { ParhlouTheme {
+        rule.setContent { ParhlouTheme(dark = night) {
             if (screen == "hub") ModuleScreen(module, repo.moduleQuiz(module.id), progress, store, DemoBrain(repo), "class 9", {}, {},
                 onOpenLesson = { screen = "lesson" }, onPractice = {})
             else pk.parhlou.student.ui.screens.LessonPlayer(module.lesson!!, module.id, module.title, true, {}, {}, {}, {}, { screen = "hub" })
