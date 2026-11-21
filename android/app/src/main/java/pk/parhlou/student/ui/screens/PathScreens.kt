@@ -1,5 +1,8 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.background
+import androidx.compose.material.icons.filled.Lock
+import androidx.compose.ui.draw.blur
 import pk.parhlou.student.data.word
 
 import androidx.compose.foundation.layout.PaddingValues
@@ -99,17 +102,22 @@ fun LearningPath(subjects: List<Subject>, progress: ProgressStore, current: Stri
             TextButton(onClick = { showAll = !showAll }, modifier = Modifier.heightIn(min = 48.dp)) { Text(if (showAll) "Show less" else "All units") }
         }
         var n = 0
+        // Free students see Premium chapters blurred, with a tag; opening one shows what Premium unlocks.
+        val access = pk.parhlou.student.ui.components.LocalPremium.current.access
         shown.forEach { c ->
-            UnitHeader(c, onKit)
-            c.modules.forEach { m ->
-                PathNode(m, Rewards.sectionLevel(progress.evidence(m.id), m.lesson != null), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false, unit = c.number) { onStart(m.id) }
+            val locked = !access.chapter(subjects.firstNotNullOfOrNull { s -> s.chapters.indexOf(c).takeIf { it >= 0 } })
+            UnitHeader(c, onKit, locked)
+            Column(if (locked) Modifier.blur(2.5.dp).graphicsLayer { alpha = 0.55f } else Modifier) {
+                c.modules.forEach { m ->
+                    PathNode(m, Rewards.sectionLevel(progress.evidence(m.id), m.lesson != null), m.id == current, n++, inExam = m.inExam && c.kit?.inExam != false, unit = c.number) { onStart(m.id) }
+                }
             }
         }
     }
 }
 
 @Composable
-private fun UnitHeader(c: Chapter, onKit: (String) -> Unit) {
+private fun UnitHeader(c: Chapter, onKit: (String) -> Unit, locked: Boolean = false) {
     val out = c.kit?.inExam == false
     val (face, lip) = unitColour(c.number)
     pk.parhlou.student.ui.components.Chunky(
@@ -122,6 +130,11 @@ private fun UnitHeader(c: Chapter, onKit: (String) -> Unit) {
                 val fg = if (out) MaterialTheme.colorScheme.onSurfaceVariant else Color.White
                 Text("${c.word} ${c.number}" + if (out) " · not in this year's exam" else "", style = MaterialTheme.typography.labelMedium, color = fg.copy(alpha = 0.8f))
                 Text(c.title, style = MaterialTheme.typography.titleMedium, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                if (locked) Row(Modifier.padding(top = 4.dp).clip(RoundedCornerShape(8.dp)).background(Color.White.copy(alpha = 0.22f))
+                    .padding(horizontal = 8.dp, vertical = 2.dp).testTag("unit-locked-${c.id}"), verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Filled.Lock, contentDescription = null, tint = fg, modifier = Modifier.size(12.dp))
+                    Text(" Premium", style = MaterialTheme.typography.labelSmall, color = fg, fontWeight = FontWeight.Bold)
+                }
             }
             if (c.kit != null) TextButton(onClick = { onKit(c.id) }, modifier = Modifier.heightIn(min = 48.dp)) {
                 Text("Exam kit", color = if (out) MaterialTheme.colorScheme.primary else Color.White, style = MaterialTheme.typography.labelLarge)

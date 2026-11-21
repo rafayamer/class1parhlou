@@ -1,5 +1,6 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.foundation.background
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
@@ -169,6 +170,10 @@ fun TutorScreen(
     /** While a paper runs: go back to it, or quit it (cleared, no try used) to use Ustaad now. */
     onGoToPaper: (() -> Unit)? = null,
     onQuitPaper: (() -> Unit)? = null,
+    /** A free student's remaining Ask Ustaad tries (null: Premium, no limit), counting one per question, and Upgrade. */
+    aiTriesLeft: Int? = null,
+    onAiUsed: () -> Unit = {},
+    onUpgrade: () -> Unit = {},
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -197,7 +202,8 @@ fun TutorScreen(
     }
 
     fun send(text: String, image: String? = null, shown: String = text) {
-        if (thinking || examActive || (text.isBlank() && image == null)) return
+        if (thinking || examActive || (text.isBlank() && image == null) || aiTriesLeft == 0) return
+        onAiUsed()
         val history = messages.toList()
         messages += UstaadMessage("student", shown, image?.let { PhotoInput.thumbnail(it) ?: it })
         thinking = true
@@ -239,8 +245,22 @@ fun TutorScreen(
         title = "Ask Ustaad",
         onBack = { if (showChats) showChats = false else onBack() },
         scrollToEndKey = if (messages.isEmpty() || showChats) null else messages.size + (if (thinking) 1 else 0),
-        bottomBar = if (showChats || examActive) null else ({
+        bottomBar = if (showChats || examActive) null else if (aiTriesLeft == 0) ({
+            // A free student's three tries are used: the answers stay readable, and Premium carries on.
+            pk.parhlou.student.ui.components.PremiumCard("Keep asking with Premium",
+                "You've used your free questions. Ask Ustaad anything, any time, with Premium.",
+                pk.parhlou.student.ui.components.LocalPremium.current.pricePkr, onUnlock = onUpgrade, modifier = Modifier.testTag("tutor-upgrade"))
+        }) else ({
             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                if (aiTriesLeft != null) Row(
+                    Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(MaterialTheme.colorScheme.primary.copy(alpha = 0.08f))
+                        .padding(horizontal = 12.dp, vertical = 6.dp).testTag("tutor-tries"),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text("$aiTriesLeft free ${if (aiTriesLeft == 1) "question" else "questions"} left", style = MaterialTheme.typography.labelMedium,
+                        modifier = Modifier.weight(1f))
+                    TextButton(onClick = onUpgrade, modifier = Modifier.heightIn(min = 36.dp)) { Text("Go Premium") }
+                }
                 photo?.let { p ->
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         PhotoInput.bitmap(p)?.let { Image(it.asImageBitmap(), "Photo to send", Modifier.size(56.dp).clip(RoundedCornerShape(10.dp)), contentScale = ContentScale.Crop) }

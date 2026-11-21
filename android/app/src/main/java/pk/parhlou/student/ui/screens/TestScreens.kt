@@ -103,6 +103,8 @@ fun TestsScreen(
     /** Prints one exercise as a paper; true = with the worked answers. */
     onExercisePdf: ((String, Boolean) -> Unit)? = null,
     attemptsLeft: (String) -> Int = { pk.parhlou.student.domain.PaperAttempts.MAX },
+    /** Premium papers show a lock; opening one shows what Premium unlocks. */
+    isLocked: (String) -> Boolean = { false },
     /** The student's subjects (id to name); with more than one, a switch picks whose papers are shown. */
     subjects: List<Pair<String, String>> = emptyList(),
     selectedSubject: String? = null,
@@ -151,7 +153,7 @@ fun TestsScreen(
                 FlowChips(boards, chosenBoard, label = { it }) { chosenBoard = if (chosenBoard == it) null else it }
                 chosenBoard?.let { b ->
                     all.filter { boardOf(it.second) == b }.forEach { (id, tag) ->
-                        blueprints.firstOrNull { it.id == id }?.let { bp -> PaperCard(bp.copy(title = tag), id in available, true, attemptsLeft(id), onOpen) }
+                        blueprints.firstOrNull { it.id == id }?.let { bp -> PaperCard(bp.copy(title = tag), id in available, true, attemptsLeft(id), onOpen, isLocked(id)) }
                     }
                 } ?: Muted("Choose a board above.")
             }
@@ -185,12 +187,12 @@ fun TestsScreen(
             "more" -> {
                 if (board.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Full papers in the 2027 pattern")
-                    board.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen) }
+                    board.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen, isLocked(b.id)) }
                 }
                 if (chapterTests.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Chapter tests")
                     Column(Modifier.testTag("scope-picker"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        chapterTests.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen) }
+                        chapterTests.forEach { b -> PaperCard(b, b.id in available, true, attemptsLeft(b.id), onOpen, isLocked(b.id)) }
                     }
                 }
                 if (exercises.isNotEmpty() && onExercisePdf != null) {
@@ -218,20 +220,28 @@ fun TestsScreen(
                         else "${results.size} paper" + (if (results.size == 1) "" else "s") + " done · best $best%",
                         style = MaterialTheme.typography.bodyLarge, color = androidx.compose.ui.graphics.Color.White.copy(alpha = 0.92f))
                 }
+                val premium = pk.parhlou.student.ui.components.LocalPremium.current.access
                 if (guess != null) pk.parhlou.student.ui.components.ActionCard("🔮", "Guess Paper 2027",
                     guessNote ?: "The questions most likely to come, in the board pattern",
                     enabled = guess.id in available, accent = pk.parhlou.student.ui.theme.LocalBrand.current.xp,
+                    badge = if (isLocked(guess.id)) ({ pk.parhlou.student.ui.components.PremiumTag() }) else null,
                     modifier = Modifier.testTag("guess-paper").then(Modifier.appear(1))) { onOpen(guess.id) }
                 if (pastIds.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("📅", "Past papers",
-                    "${pastIds.size} real board papers, by board and year", modifier = Modifier.testTag("past-papers").then(Modifier.appear(2))) { page = "past" }
+                    "${pastIds.size} real board papers, by board and year",
+                    badge = when {
+                        premium.unlocked -> null
+                        premium.samplePaper == null -> ({ FreeTag("1 free paper") })
+                        else -> ({ pk.parhlou.student.ui.components.PremiumTag() })
+                    }, modifier = Modifier.testTag("past-papers").then(Modifier.appear(2))) { page = "past" }
                 if (onPractice != null && chapters.isNotEmpty()) pk.parhlou.student.ui.components.ActionCard("✏️", "Make my own test",
                     "Practice test: choose chapters and how long", accent = pk.parhlou.student.ui.theme.LocalBrand.current.success,
+                    badge = if (!premium.papers) ({ pk.parhlou.student.ui.components.PremiumTag() }) else null,
                     modifier = Modifier.testTag("make-test").then(Modifier.appear(3))) { page = "make" }
                 if (results.isNotEmpty() || mine.isNotEmpty()) {
                     pk.parhlou.student.ui.components.SectionHeader("Your results")
                     Column(Modifier.testTag("my-results"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         results.take(5).forEach { (id, title, pct) -> TaskRowLike(title, "$pct% · see the examiner's report") { onResult(id) } }
-                        mine.filter { m -> results.none { it.first == m.id } }.forEach { PaperCard(it, it.id in available, true, attemptsLeft(it.id), onOpen) }
+                        mine.filter { m -> results.none { it.first == m.id } }.forEach { PaperCard(it, it.id in available, true, attemptsLeft(it.id), onOpen, isLocked(it.id)) }
                     }
                 }
                 if (board.isNotEmpty() || chapterTests.isNotEmpty() || (exercises.isNotEmpty() && onExercisePdf != null)) {
@@ -246,11 +256,14 @@ fun TestsScreen(
 
 /** One paper: its name, then time, marks and tries left. */
 @Composable
-private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, triesLeft: Int, onOpen: (String) -> Unit) {
+private fun PaperCard(b: PaperBlueprint, ready: Boolean, unlocked: Boolean, triesLeft: Int, onOpen: (String) -> Unit, premium: Boolean = false) {
     pk.parhlou.student.ui.components.TapCard(onClick = { onOpen(b.id) }, enabled = unlocked && ready, modifier = Modifier.fillMaxWidth().testTag("paper-${b.id}"),
         shape = RoundedCornerShape(22.dp)) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-            Text(b.title, style = MaterialTheme.typography.titleMedium)
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(b.title, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+                if (premium) pk.parhlou.student.ui.components.PremiumTag()
+            }
             Muted(if (!ready) "Coming soon" else "⏱ ${b.durationMinutes} min · ${fmt(b.totalMarks)} marks · $triesLeft ${if (triesLeft == 1) "try" else "tries"} left")
         }
     }
@@ -760,4 +773,13 @@ private fun FocusModeCard() {
         }
         TextButton(onClick = { pk.parhlou.student.ui.FocusMode.askPermission(context) }, modifier = Modifier.heightIn(min = 44.dp)) { Text("Allow") }
     }
+}
+
+/** A small green tag for a free taste of Premium ("1 free paper"). */
+@Composable
+private fun FreeTag(text: String) {
+    Text(text, style = MaterialTheme.typography.labelSmall, color = pk.parhlou.student.ui.theme.LocalBrand.current.success,
+        fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+        modifier = Modifier.clip(RoundedCornerShape(8.dp)).background(pk.parhlou.student.ui.theme.LocalBrand.current.successPale)
+            .padding(horizontal = 8.dp, vertical = 3.dp).testTag("free-tag"))
 }

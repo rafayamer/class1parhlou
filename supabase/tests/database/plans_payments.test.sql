@@ -16,7 +16,7 @@ select is(public.my_plan() ->> 'plan', 'free', 'a new student is on the free pla
 select throws_ok($$select public.payment_request('jazzcash', 2, 'ABC12345')$$, '22023', null, 'only 1, 3 or 12 months');
 select throws_ok($$select public.payment_request('jazzcash', 1, '12')$$, '22023', null, 'a transaction ID is needed');
 select is((public.payment_request('jazzcash', 3, ' 0123-4567 89 ') -> 'lastRequest' ->> 'status'), 'pending', 'a payment waits for the owner');
-select is((public.my_plan() -> 'lastRequest' ->> 'amount')::int, 1497, 'the amount is the price times the months');
+select is((public.my_plan() -> 'lastRequest' ->> 'amount')::int, 11997, 'the amount is the price (Rs 3,999) times the months');
 select throws_ok($$select public.payment_request('easypaisa', 1, 'XYZ98765')$$, '22023', null, 'one waiting request at a time');
 select throws_ok($$select public.owner_payments()$$, '42501', null, 'students cannot see payments');
 select is((select count(*)::int from public.payment_requests), 0, 'payment rows are not readable directly');

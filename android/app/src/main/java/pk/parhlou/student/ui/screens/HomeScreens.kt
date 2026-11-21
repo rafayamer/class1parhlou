@@ -213,6 +213,10 @@ fun HomeScreen(
         if (today != null) TodayCard(today.title.replace(Regex("^\\d+(\\.\\d+)*\\s*"), ""), onboarding.minutesPerDay,
             onStart = { onStartSession(null, onboarding.minutesPerDay) }, onBusy = { onStartSession(null, 5) }, modifier = Modifier.appear(2))
 
+        // A quiet invitation to Premium for free students.
+        val premium = pk.parhlou.student.ui.components.LocalPremium.current
+        if (!premium.access.unlocked) PremiumInvite(premium.pricePkr, premium.upgrade)
+
         // Your journey: one card per subject (book).
         Text("Your journey", style = MaterialTheme.typography.titleLarge)
         // "Do this now": the plan's first task (a topic to fix comes first), else the next lesson. Shown once.
@@ -502,7 +506,7 @@ fun ProfileScreen(
         // This month's Ustaad time, as things the student can still do.
         val left by androidx.compose.runtime.produceState<pk.parhlou.student.ai.Allowance?>(null) { value = allowance() }
         left?.let { a -> UstaadEnergy(a, onPlus) }
-        if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Plus", planLabel, onPlus)
+        if (onPlus != null) TaskRow(Icons.Filled.Star, "Parhlou Premium", planLabel, onPlus)
         var feedbackOpen by remember { mutableStateOf(false) }
         TaskRow(Icons.Filled.Feedback, "Send feedback", "Tell us what to fix or add", { feedbackOpen = !feedbackOpen })
         val legalContext = androidx.compose.ui.platform.LocalContext.current
@@ -749,7 +753,7 @@ fun UstaadEnergy(a: pk.parhlou.student.ai.Allowance, onPlus: (() -> Unit)?) {
         }
         Muted("Asking Ustaad, photo questions and AI paper marking use energy. It refills on ${prettyDate(a.resetsOn)}. " +
             "Lessons, practice, solutions and papers never use it.")
-        if (low && onPlus != null) TextButton(onClick = onPlus, modifier = Modifier.heightIn(min = 44.dp)) { Text("Running low? Plus gives you much more") }
+        if (low && onPlus != null) TextButton(onClick = onPlus, modifier = Modifier.heightIn(min = 44.dp)) { Text("Running low? Premium gives you much more") }
     }
 }
 

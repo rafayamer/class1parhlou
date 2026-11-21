@@ -368,11 +368,18 @@ private fun WriteStage(module: Module, progress: ProgressStore, store: LocalStor
         SecondaryButton("Edit my answer and check again", onClick = { submitted = false })
         BigButton("Next: improve", onClick = onNext)
     } else {
-        BigButton("Check my answer", onClick = {
+        // AI marking is Premium; a free student's tries are shared with Ask Ustaad.
+        val premium = pk.parhlou.student.ui.components.LocalPremium.current
+        if (!premium.access.ai) pk.parhlou.student.ui.components.PremiumCard("AI marking is Premium",
+            "You've used your free AI markings. Get every answer marked like the board, with Premium.", premium.pricePkr, onUnlock = premium.upgrade,
+            modifier = Modifier.testTag("write-upgrade"))
+        else BigButton("Check my answer", onClick = {
+            premium.useAi()
             progress.add(module.id, Evidence.WrittenSubmitted)
             justChecked = true
             submitted = true
         })
+        premium.access.aiTriesLeft?.takeIf { premium.access.ai }?.let { Muted("$it free AI ${if (it == 1) "marking" else "markings"} left") }
     }
 }
 

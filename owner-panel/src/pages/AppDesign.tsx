@@ -97,7 +97,7 @@ export function AppDesign() {
             <div className="seg" role="group" aria-label="Preview screen">
               {(["home", "plus", "cover"] as Screen[]).map((s) => (
                 <button key={s} aria-pressed={screen === s} className={screen === s ? "on" : ""} onClick={() => setScreen(s)}>
-                  {s === "home" ? "Home" : s === "plus" ? "Plus" : c.maintenance ? "Maintenance" : "Update"}
+                  {s === "home" ? "Home" : s === "plus" ? "Premium" : c.maintenance ? "Maintenance" : "Update"}
                 </button>
               ))}
             </div>
@@ -220,7 +220,7 @@ function Announcement({ c, set }: EditorProps) {
       <Card title="Who and when">
         <label className="field"><span>Show to</span>
           <select value={b.audience} onChange={(e) => setB({ audience: e.target.value as Audience })}>
-            <option value="all">Everyone</option><option value="free">Free plan only</option><option value="plus">Plus only</option>
+            <option value="all">Everyone</option><option value="free">Free plan only</option><option value="plus">Premium only</option>
           </select>
         </label>
         <div className="two">
@@ -329,8 +329,8 @@ function Texts({ c, set }: EditorProps) {
           <div>{reminder}</div>
         </div>
       </Card>
-      <Card title="Plus pitch" hint="The line on the Plus screen that says what Plus gives. Leave empty for the automatic one.">
-        <Counted label="Pitch" area value={c.plusPitch} max={LIMITS.plusPitch} onChange={(plusPitch) => set({ plusPitch })} placeholder="Everything in Free, 6× more Ask Ustaad and AI paper marking every month, and no ads." />
+      <Card title="Premium pitch" hint="The line on the Premium screen that says what Premium gives. Leave empty for the automatic one.">
+        <Counted label="Pitch" area value={c.plusPitch} max={LIMITS.plusPitch} onChange={(plusPitch) => set({ plusPitch })} placeholder="Every chapter of every book, the Guess Paper and all past papers, your own tests, Ask Ustaad and AI marking. No ads." />
       </Card>
     </>
   );
@@ -402,7 +402,7 @@ function History({ current, onLoad }: { current: Customization; onLoad: (c: Cust
   );
 }
 
-/** A sketch of the app's Home, Plus screen and covers with the owner's changes. */
+/** A sketch of the app's Home, Premium screen and covers with the owner's changes. */
 function Phone({ c, screen, dark }: { c: Customization; screen: Screen; dark: boolean }) {
   const accent = c.accent || DEFAULT_ACCENT;
   const on = (k: FeatureKey) => c.features[k].on && c.features[k].rollout > 0;
@@ -424,15 +424,15 @@ function Phone({ c, screen, dark }: { c: Customization; screen: Screen; dark: bo
         </div>
       ) : screen === "plus" ? (
         <div className="phone-body">
-          <div className="p-title">Parhlou Plus</div>
+          <div className="p-title">Parhlou Premium</div>
           <div className="p-card">
             <strong>Free</strong>
-            <p className="p-muted">Every lesson, quiz, solution, past paper and Guess Paper.</p>
-            <strong style={{ color: "var(--accent)" }}>Plus ⭐</strong>
-            <p className="p-muted">{c.plusPitch || "Everything in Free, 6× more Ask Ustaad and AI paper marking every month, and no ads."}</p>
-            <div className="p-price">Rs 499 a month</div>
+            <p className="p-muted">Chapters 1 and 2, one past paper and 3 tries of Ask Ustaad.</p>
+            <strong style={{ color: "var(--accent)" }}>Premium</strong>
+            <p className="p-muted">{c.plusPitch || "Every chapter of every book, the Guess Paper and all past papers, your own tests, Ask Ustaad and AI marking. No ads."}</p>
+            <div className="p-price">Rs 3,999 a month</div>
           </div>
-          {!on("plus") && <p className="p-muted">The Plus switch is off: students can't open this screen.</p>}
+          {!on("plus") && <p className="p-muted">The Premium upgrade switch is off: students can't open this screen.</p>}
         </div>
       ) : (
         <div className="phone-body">

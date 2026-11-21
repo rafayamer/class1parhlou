@@ -46,6 +46,8 @@ fun ActionCard(
     trailing: String = "›",
     enabled: Boolean = true,
     selected: Boolean = false,
+    /** A small tag under the title, e.g. "Premium". */
+    badge: (@Composable () -> Unit)? = null,
     onClick: () -> Unit,
 ) {
     val brand = LocalBrand.current
@@ -66,6 +68,7 @@ fun ActionCard(
             Column(Modifier.padding(start = 14.dp).weight(1f)) {
                 Text(title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
                 if (subtitle.isNotBlank()) Text(subtitle, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                if (badge != null) Box(Modifier.padding(top = 6.dp)) { badge() }
             }
             if (trailing.isNotBlank()) Text(trailing, style = MaterialTheme.typography.titleLarge, color = if (selected) accent else MaterialTheme.colorScheme.onSurfaceVariant)
         }

@@ -189,7 +189,7 @@ private fun ConsentStep(acknowledged: Boolean, onChange: (Boolean) -> Unit) {
         Text("Staying safe", style = MaterialTheme.typography.titleMedium)
         Muted("Ustaad only helps with studies. Messages about sex or illegal things are refused and flagged to Parhlou's safety team, who may contact your parent.")
         Text("If you are under 18", style = MaterialTheme.typography.titleMedium)
-        Muted("Ask a parent or guardian to read this with you. Only a parent or guardian may pay for Plus.")
+        Muted("Ask a parent or guardian to read this with you. Only a parent or guardian may pay for Premium.")
         Text("Your rights", style = MaterialTheme.typography.titleMedium)
         Muted("Download, correct or delete your data any time from Profile.")
     }

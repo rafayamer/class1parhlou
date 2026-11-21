@@ -1,5 +1,17 @@
 package pk.parhlou.student.ui.screens
 
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.WorkspacePremium
+import androidx.compose.material.icons.Icons
+import androidx.compose.material3.Icon
+import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.foundation.border
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -51,19 +63,28 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
         if (signedIn) { info = plans.info(); info?.let(onPlanChanged) }
         loaded = true
     }
-    ParhlouScreen("Parhlou Plus", onBack = onBack) {
+    ParhlouScreen("Parhlou Premium", onBack = onBack) {
         val i = info
-        Sheet(Modifier.testTag("plan-compare")) {
-            Text("Free", style = MaterialTheme.typography.titleLarge)
-            Muted("Every lesson, quiz, solution, past paper and Guess Paper. A small amount of Ask Ustaad and AI marking each month. Short ads after some quizzes, never in lessons or papers.")
-            Text("Plus ⭐", style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
-            val times = if (i != null && i.freeUsd > 0) (i.plusUsd / i.freeUsd).toInt() else 6
-            Muted(pk.parhlou.student.data.LocalAppSettings.current.plusPitch ?: "Everything in Free, ${times}× more Ask Ustaad and AI paper marking every month, and no ads.")
-            Text("Rs ${i?.pricePkr ?: 499} a month", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold,
-                modifier = Modifier.testTag("plan-price"))
+        val price = i?.pricePkr ?: pk.parhlou.student.domain.Premium.PRICE_PKR
+        // The offer: what Premium is and what it costs, then free vs Premium side by side.
+        androidx.compose.foundation.layout.Box(Modifier.fillMaxWidth().clip(RoundedCornerShape(24.dp)).background(pk.parhlou.student.ui.theme.heroGradient())) {
+            HeroArcs(Modifier.matchParentSize())
+            androidx.compose.foundation.layout.Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                androidx.compose.foundation.layout.Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Filled.WorkspacePremium, contentDescription = null, tint = Color.White, modifier = Modifier.size(20.dp))
+                    Text("  PREMIUM", style = MaterialTheme.typography.labelLarge, color = Color.White, fontWeight = FontWeight.Bold)
+                }
+                Text("Everything you need for full marks", style = MaterialTheme.typography.headlineSmall, color = Color.White, fontWeight = FontWeight.Bold)
+                Text(pk.parhlou.student.data.LocalAppSettings.current.plusPitch
+                    ?: "Every chapter of every book, the Guess Paper and all past papers, your own tests, Ask Ustaad and AI marking. No ads.",
+                    style = MaterialTheme.typography.bodyMedium, color = Color.White.copy(alpha = 0.9f))
+                Text("${pk.parhlou.student.domain.Premium.rupees(price)} a month", style = MaterialTheme.typography.headlineSmall, color = Color.White,
+                    fontWeight = FontWeight.Bold, modifier = Modifier.testTag("plan-price"))
+            }
         }
+        PlanComparison(Modifier.testTag("plan-compare"))
         if (!signedIn) {
-            Sheet { Muted("Sign in first, so Plus is linked to your account."); BigButton("Sign in", onClick = onSignIn) }
+            Sheet { Muted("Sign in first, so Premium is linked to your account."); BigButton("Sign in", onClick = onSignIn) }
             return@ParhlouScreen
         }
         if (!loaded) { Muted("Loading…"); return@ParhlouScreen }
@@ -72,14 +93,14 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
             return@ParhlouScreen
         }
         if (i.plus) Sheet(Modifier.testTag("plan-plus")) {
-            Text("You're on Plus ⭐", style = MaterialTheme.typography.titleLarge)
+            Text("You're on Premium", style = MaterialTheme.typography.titleLarge)
             Muted("Until ${i.paidUntil}. You can pay for more months below; they're added to the end.")
         }
         i.lastRequest?.let { r ->
             Sheet(Modifier.testTag("plan-request")) {
                 when (r.status) {
                     "pending" -> { Text("Checking your payment", style = MaterialTheme.typography.titleMedium)
-                        Muted("Rs ${r.amount} · transaction ${r.txn}. Plus switches on once it's confirmed, usually within a day.") }
+                        Muted("Rs ${r.amount} · transaction ${r.txn}. Premium switches on once it's confirmed, usually within a day.") }
                     "rejected" -> { Text("We couldn't confirm your last payment", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.error)
                         Muted(r.note.ifBlank { "Check the transaction ID and try again, or contact us." }) }
                     else -> {}
@@ -87,7 +108,7 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
             }
         }
         if (i.waiting) return@ParhlouScreen
-        if (!manualPayments) { Sheet(Modifier.testTag("plan-play-soon")) { Muted("Plus will be available to buy through Google Play soon.") }; return@ParhlouScreen }
+        if (!manualPayments) { Sheet(Modifier.testTag("plan-play-soon")) { Muted("Premium will be available to buy through Google Play soon.") }; return@ParhlouScreen }
         if (i.wallets.isEmpty()) { Sheet { Muted("Payments open soon.") }; return@ParhlouScreen }
 
         var months by rememberSaveable { mutableIntStateOf(1) }
@@ -140,6 +161,35 @@ fun PlanScreen(plans: PlanClient, signedIn: Boolean, onSignIn: () -> Unit, onPla
                         if (updated != null) { info = updated; onPlanChanged(updated); txn = "" } else error = Plans.explain(err)
                     }
                 })
+        }
+    }
+}
+
+/** Free vs Premium, row by row. */
+@Composable
+private fun PlanComparison(modifier: Modifier = Modifier) {
+    androidx.compose.foundation.layout.Column(
+        modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(MaterialTheme.colorScheme.surface)
+            .border(1.dp, MaterialTheme.colorScheme.outlineVariant, RoundedCornerShape(22.dp)).padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+    ) {
+        androidx.compose.foundation.layout.Row {
+            Text("", modifier = Modifier.weight(1.3f))
+            Text("Free", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.weight(1f),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+            Text("Premium", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.Bold, modifier = Modifier.weight(1f))
+        }
+        pk.parhlou.student.domain.Premium.COMPARISON.forEach { (what, free, premium) ->
+            androidx.compose.material3.HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+            androidx.compose.foundation.layout.Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(what, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Medium, modifier = Modifier.weight(1.3f))
+                Text(free, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.weight(1f).padding(horizontal = 6.dp),
+                    textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+                androidx.compose.foundation.layout.Row(Modifier.weight(1f), verticalAlignment = Alignment.CenterVertically) {
+                    Icon(Icons.Filled.CheckCircle, contentDescription = null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(16.dp))
+                    Text(" $premium", style = MaterialTheme.typography.bodySmall, fontWeight = FontWeight.SemiBold)
+                }
+            }
         }
     }
 }

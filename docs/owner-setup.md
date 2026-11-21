@@ -2,6 +2,19 @@
 
 These steps are done once by the owner. The automatic safety rules stop the assistant from deploying to the live server, changing the live database or publishing content on its own.
 
+## Premium (Rs 3,999 a month)
+
+Free students get chapters 1 and 2 of every book (lessons, practice, exam kit, solutions), one past paper of their choice and
+3 tries of Ask Ustaad or AI marking. Everything else is Premium and shows blurred with a lock and an "Unlock Premium" button:
+chapters 3 onward, the Guess Paper, all other past papers, Make my own test, model papers, Ask Ustaad and AI marking.
+
+- **Price:** owner panel → Payments → Plans → "Premium price per month" (Rs 3,999 once the App design database update is run).
+  Students can pay for 1, 3 or 12 months; you approve each payment as before and Premium switches on for the months paid.
+- **Switch the paywall off** (for a free week, a school demo, or launch day): owner panel → App design → Features → "Premium
+  paywall". Off makes everything free for everyone; you can also roll it out to a share of students first.
+- **AI costs stay safe:** the app stops free students after 3 tries, and the server keeps their monthly AI allowance at $0.05 as a
+  backstop (Payments → Plans → "Free: AI allowance").
+
 ## Newest round: App design (5 minutes)
 
 ### Apply the App design database update (2 minutes, needed)

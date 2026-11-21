@@ -399,3 +399,24 @@ fun SubjectBadge(subjectId: String, modifier: Modifier = Modifier) {
         Icon(icon, contentDescription = null, tint = colour, modifier = Modifier.size(24.dp))
     }
 }
+
+/** Home's invitation to Premium: what it unlocks and the price, one tap to the Premium screen. */
+@Composable
+fun PremiumInvite(pricePkr: Int, onOpen: () -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(22.dp)).background(heroGradient()).clickable(onClickLabel = "See Premium", onClick = onOpen)
+            .padding(16.dp).testTag("home-premium"),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Box(Modifier.size(44.dp).clip(CircleShape).background(Color.White.copy(alpha = 0.18f)), contentAlignment = Alignment.Center) {
+            Icon(Icons.Filled.WorkspacePremium, contentDescription = null, tint = Color.White, modifier = Modifier.size(24.dp))
+        }
+        Spacer(Modifier.width(14.dp))
+        Column(Modifier.weight(1f)) {
+            Text("Unlock Premium", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = Color.White)
+            Text("Every chapter, all papers, Ask Ustaad and AI marking · ${pk.parhlou.student.domain.Premium.rupees(pricePkr)} a month",
+                style = MaterialTheme.typography.labelMedium, color = Color.White.copy(alpha = 0.9f))
+        }
+        Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, tint = Color.White, modifier = Modifier.size(20.dp))
+    }
+}

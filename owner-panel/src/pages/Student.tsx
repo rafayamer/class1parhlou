@@ -51,7 +51,7 @@ export function Student({ userId, onBack }: { userId: string; onBack: () => void
         <div className="card stat"><div className="n">{p.marks.length}</div><div className="l">answers marked</div></div>
         <div className="card stat">
           <div className="n">{used == null ? "—" : `${used}%`}</div>
-          <div className="l">{ai ? <>AI used this month · {ai.plan === "plus" ? "Plus ⭐" : "Free"} plan (${Number(ai.spent_usd).toFixed(2)} of ${Number(ai.allowance_usd).toFixed(2)}, {ai.calls} calls)</> : "AI used this month (needs the App design database update)"}</div>
+          <div className="l">{ai ? <>AI used this month · {ai.plan === "plus" ? "Premium" : "Free"} plan (${Number(ai.spent_usd).toFixed(2)} of ${Number(ai.allowance_usd).toFixed(2)}, {ai.calls} calls)</> : "AI used this month (needs the App design database update)"}</div>
           {used != null && <div className="meter-bar" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={used} aria-label="AI allowance used"><span style={{ width: `${used}%` }} className={used >= 90 ? "hot" : ""} /></div>}
         </div>
         <div className="card stat"><div className="n">{p.flags.filter((f) => f.status === "open").length}</div><div className="l">open safety flags</div></div>

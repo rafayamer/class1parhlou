@@ -83,3 +83,9 @@ begin
 end $$;
 revoke all on function public.owner_student(uuid) from public, anon;
 grant execute on function public.owner_student(uuid) to authenticated;
+
+-- Premium is Rs 3,999 a month. Only changes the starting price (Rs 499); a price the owner already set is kept.
+update public.app_config set value = '3999'::jsonb, updated_at = now() where key = 'plus_price_pkr' and value = '499'::jsonb;
+-- Ask Ustaad and AI marking are Premium: the app gives a free student 3 tries, and the server keeps their monthly AI
+-- allowance small as a backstop. Only changes the starting value ($0.50); an allowance the owner already set is kept.
+update public.app_config set value = '0.05'::jsonb, updated_at = now() where key = 'free_monthly_usd' and value = '0.5'::jsonb;

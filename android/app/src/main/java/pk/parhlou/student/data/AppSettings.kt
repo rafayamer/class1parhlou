@@ -54,7 +54,7 @@ data class AppSettings(
 
     companion object {
         /** Every switch the owner panel offers, with what it controls (the panel shows the same list). */
-        val FEATURES = listOf("league", "chest", "celebrations", "askUstaad", "guessPaper", "pastPapers", "makeTest", "videos", "plus")
+        val FEATURES = listOf("league", "chest", "celebrations", "askUstaad", "guessPaper", "pastPapers", "makeTest", "videos", "plus", "paywall")
 
         fun parse(text: String?): AppSettings {
             val o = runCatching { JSONObject(text ?: return AppSettings()) }.getOrNull() ?: return AppSettings()

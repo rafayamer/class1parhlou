@@ -3,7 +3,7 @@ package pk.parhlou.student.domain
 import org.json.JSONObject
 
 /**
- * Free and Plus. Plus is paid by hand for now: the student sends money to the founder's JazzCash or Easypaisa wallet, types the
+ * Free and Premium (called "plus" on the server). Premium is paid by hand for now: the student sends money to the founder's JazzCash or Easypaisa wallet, types the
  * transaction ID, and the founder approves it in the owner panel. (Google Play Billing replaces this later.)
  */
 object Plans {
@@ -39,7 +39,7 @@ object Plans {
         Info(
             plus = o.optString("plan") == "plus",
             paidUntil = o.optString("paidUntil").takeIf { it.isNotBlank() && it != "null" },
-            pricePkr = o.optInt("pricePkr", 499),
+            pricePkr = o.optInt("pricePkr", Premium.PRICE_PKR),
             wallets = wallets,
             adsEnabled = o.optBoolean("adsEnabled", true),
             freeUsd = o.optDouble("freeUsd", 0.5),

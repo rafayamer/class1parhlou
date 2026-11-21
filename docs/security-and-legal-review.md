@@ -110,3 +110,14 @@ version from the owner panel (migration `20261121000001_app_customization.sql`).
 - **Students can always recover.** The maintenance screen has "Check again"; the app refreshes the settings every time it
   opens.
 - "View as student" now shows the student's AI use this month against their plan's allowance (still logged on every look).
+
+## Premium paywall, 21 November 2026
+
+- Premium status comes from the server (`my_plan`); the phone keeps the last confirmed end date so Premium still works offline.
+- Free tries (the one past paper, 3 AI tries) are counted on the phone. Reinstalling resets them, so the server is the real
+  limit for anything that costs money: AI calls stop at the free plan's small monthly allowance ($0.05).
+- Lessons, papers and solutions ship inside the app's course file, so the paywall hides them in the app but can't stop someone
+  who unpacks and modifies the APK. That is normal for an offline-first app at this stage; if it ever matters, Premium chapters
+  can be delivered from the server per student instead.
+- Under-18s: the payment screen still asks for a parent or guardian's agreement, and the refund policy is unchanged.
+

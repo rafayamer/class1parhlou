@@ -52,7 +52,8 @@ export const FEATURES = [
   { key: "pastPapers", name: "Past papers", emoji: "📜", what: "Real board papers from earlier years on the Papers tab." },
   { key: "makeTest", name: "Make my own test", emoji: "🛠️", what: "Students build a test from the chapters they choose." },
   { key: "videos", name: "Video lessons", emoji: "▶️", what: "YouTube lectures on each section page." },
-  { key: "plus", name: "Plus upgrade", emoji: "⭐", what: "The way into the Plus screen from Profile." },
+  { key: "plus", name: "Premium upgrade", emoji: "⭐", what: "The way into the Premium screen from Profile." },
+  { key: "paywall", name: "Premium paywall", emoji: "🔒", what: "Locks Premium content for free students (chapters 3+, papers, Ask Ustaad, AI marking). Off makes everything free." },
 ] as const;
 export type FeatureKey = (typeof FEATURES)[number]["key"];
 

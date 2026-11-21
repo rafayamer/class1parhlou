@@ -1,7 +1,7 @@
 -- App customisation: the owner saves it, every phone can read the public part, nothing private leaks.
 begin;
 create extension if not exists pgtap;
-select plan(9);
+select plan(11);
 
 select public.set_owner_email('chief@example.test');
 insert into auth.users (id, email) values
@@ -36,7 +36,11 @@ set local role authenticated;
 select set_config('request.jwt.claim.sub', 'c3000000-0000-0000-0000-0000000000ee', true);
 select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'spent_usd')::numeric, 0.20::numeric, 'the owner sees this month''s AI spending only');
 select is(public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'plan', 'free', 'and the student''s plan');
-select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'allowance_usd')::numeric, 0.5::numeric, 'and the free plan''s allowance');
+select is((public.owner_student('c3000000-0000-0000-0000-00000000000a') -> 'ai_month' ->> 'allowance_usd')::numeric, 0.05::numeric, 'and the free plan''s allowance');
+
+-- Premium: Rs 3,999 a month, and a small free AI allowance behind the app's three free tries.
+select is((select value from public.app_config where key = 'plus_price_pkr'), '3999'::jsonb, 'Premium costs Rs 3,999 a month');
+select is((select value from public.app_config where key = 'free_monthly_usd'), '0.05'::jsonb, 'free students keep only a small AI allowance');
 
 select * from finish();
 rollback;

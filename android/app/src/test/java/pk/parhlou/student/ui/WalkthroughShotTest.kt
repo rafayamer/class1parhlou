@@ -96,8 +96,8 @@ class WalkthroughShotTest {
         rule.onNodeWithTag("friends").performScrollTo(); save("w07-friends")
         rule.onNodeWithTag("groups").performScrollTo(); save("w08-groups")
         rule.onNodeWithTag("tab-profile").performClick(); rule.waitForIdle()
-        rule.onAllNodes(hasText("Parhlou Plus"))[0].performScrollTo(); save("w09-profile-plus")
-        rule.onAllNodes(hasText("Parhlou Plus"))[0].performClick()
+        rule.onAllNodes(hasText("Parhlou Premium"))[0].performScrollTo(); save("w09-profile-plus")
+        rule.onAllNodes(hasText("Parhlou Premium"))[0].performClick()
         rule.waitUntil(8_000) { has("plan-pay") }
         save("w10-plus")
         rule.onNodeWithTag("plan-pay").performScrollTo(); save("w11-plus-pay")
